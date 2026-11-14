@@ -1,0 +1,725 @@
+{
+ "game": {
+  "id": "backbeat-164120",
+  "igdbId": 164120,
+  "name": "Backbeat",
+  "cover": {
+   "imageId": "co9ar6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9ar6.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar23e6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar23e6.jpg"
+  },
+  "ps5Release": "2023-03-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "backbeat-164120@major-2023-11-28",
+   "gameId": "backbeat-164120",
+   "displayName": "Update notes for November 28 video card fix and logic regressions",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-28T12:31:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to support from our players we have identified several problems that impact different users of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firstly, player PRPE7UAL has helped us identify a situation where the game would hang on start with a white screen due to a Unity issue involving certan vsync settings on Nvidia graphics cards. Accordingly we have switched to using the software encoder for movie playback on all Windows builds. This should resolve launch issues you have in these setups.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Second, thanks to Yhprum we found an issue where the updated movement UI could cause unsolvable puzzles in a few levels due to subtle changes in how potential movesets are generated. 9-2 is one such level and should be solvable again now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, thanks to omgkitteh we discovered in previous versions of the game there was an unintended glitch that allowed Toshi to move in certain ways with his powermove. This was culled in the QoL update inadvertantly, but we have restored this behavior now to preserve the 1.0 experience of the game for those players which may have been using the glitch to solve some of the levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to our community for helping make Backbeat even better and more compatible on all devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you run into difficulty with the game, please reach out in the forums and we will assist as promptly as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From snowy Stockholm,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "David",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1585730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1585730/view/5382426458995191632"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-28T12:31:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.159Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-28T12:31:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.160Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-28T12:31:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.623Z"
+  },
+  {
+   "id": "backbeat-164120@major-2023-11-15",
+   "gameId": "backbeat-164120",
+   "displayName": "Quality of Life Update November",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-15T11:43:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Backbeat fans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This month we have released a quality of life update to all platforms to help improve the game experience and get you on track to knocking out all the achievements. A new How To section is available in the pause menu showing off all the basic mechanics and scoring rules for Backbeat, along with short looping videos to demonstrate the feature. The move previews for each character are now displayed at all times to help with level readability. Tutorial text has also been reworked to explain some of the musical resources. Finally, the dialog system now has a more iconic UI in the lower left hand corner of the screen so you can throttle the cutscene playback speed or keep it interactive. All tutorial dialogue segments automatically shift to manual advance so you nothing slips by.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for continuing to support us! We are a four-person studio and your reviews and feedback help us keep producing fresh takes on strategy games. Please review Backbeat today, or reach out in the forums if you're having trouble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yours from Stockholm,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "David and the Backbeat team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1585730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1585730/view/5322753221338114993"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-15T11:43:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.159Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-15T11:43:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.159Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-15T11:43:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.622Z"
+  },
+  {
+   "id": "backbeat-164120@major-2022-12-27",
+   "gameId": "backbeat-164120",
+   "displayName": "Demo quality of life improvement update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-27T14:39:05.000Z",
+   "notes": [
+    {
+     "title": "Happy Holidays from Ichigoichie!",
+     "items": [
+      {
+       "text": "After the Steam Next fest in October, we have been in full bug bash mode, but taken the time to sneak a few holiday goodies into our free demo to make the game easier on the eyes and fingers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dialogue auto-advance",
+     "items": [
+      {
+       "text": "We have added an auto-advance feature to the dialogue system so you can enjoy the cutscenes with much less effort. Pressing TAB or the X/Square button during dialogue will cycling between two advance speeds and manual. Your preferences will be retained between gameplay sessions so sit back and enjoy the 90s!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Language! Idioma! Sprache!",
+     "items": [
+      {
+       "text": "To make enjoyment of our ensemble dramedy even easier, you can now choose between Japanese, Spanish, German, and Simplified Chinese! The operating system language will be used by default on initial installs, but you can change at any time with the refined OPTIONS menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Playback camera system upgrades",
+     "items": [
+      {
+       "text": "We squeezed a shot composition and lighting editor into the playback camera system, so on level clear you now can enjoy a wider range of desaturated pastels, lights, and bloom settings as Powerslyde takes the stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And many, many more small upgrades in sound and graphics we don't have changelists for right now, but trust us, it's better, and all thanks to your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Beta testers wanted!",
+     "items": [
+      {
+       "text": "There are still a few months to go before we release the retail version of our game, and we're spending our days hunting bugs. Do you think you have what it takes to help? Send us a comment or message on social media we will review your application for beta testing and give you access to a deeper version of the retail game to tinker with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you soon, god fortsättning, and 良いお年を！",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "/151a Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1585730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1585730/view/5000716037460829311"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-27T14:39:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.158Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.621Z"
+  },
+  {
+   "id": "backbeat-164120@1.0",
+   "gameId": "backbeat-164120",
+   "displayName": "Update 1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-26T02:52:26.000Z",
+   "notes": [
+    {
+     "title": "It's time for an update!",
+     "items": [
+      {
+       "text": "More great news this week as we are happy to announce that we have just reached our alpha milestone so we are now feature complete! To celebrate, we have added some extra content to the demo so now is a great time to come get another taste of Backbeat before our release later this year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New content",
+     "items": [
+      {
+       "text": "The full version of Backbeat has forty levels that progressively introduce four musical resources, twenty themes, special power moves, and point-based tricks. A lot of the unique mechanics in Backbeat are spread out slowly so the player is not overwhelmed at the start. To help give you a tiny taste of some of the time management challenges, we've added an additional level to the free demo where the player may learn about the keys/doors mechanic which requires synchronization of the four characters' timelines. A new character, the saxophonist Chaz, showcases the mechanic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Audio polish",
+     "items": [
+      {
+       "text": "Starting in this version we have added chatter sounds to the dialogue engine so when characters are talking you can get a deeper sense of their personality. The four members of Backbeat each have their own instrument timbre, and NPCs are unified with softened woodblock when they speak. An new musical theme is also included in the expansion level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Usability tweaks",
+     "items": [
+      {
+       "text": "We have a number of features designed to help the player when breaking conditions occur in the game. When a musical resource or turns have been depleted, the character triggering the conflict will appear and specify exactly why play cannot continue. This is especially important when a timeline break is about to occur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We also adjusted several levels in the tutorial slightly to improve visibility of obstacles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "More to come!",
+     "items": [
+      {
+       "text": "All levels in the full version of Backbeat are now complete! In the next month we will be working on adding the unlockable instrument and audio effect customizations, graphical polish, and performance optimizations. We're looking forward to sharing more with you in April's dev blog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "More from you!",
+     "items": [
+      {
+       "text": "Some of these improvements came directly from suggestions made by superfans like you! Do you have another idea for an improvement to make the funky story of Powerslyde even better? Drop us a comment below or shout at us on social media.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay cool and funky!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- The Backbeat team at Ichigoichie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Instagram - Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 2,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1585730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1585730/view/4258723269513786876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-26T02:52:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.157Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:44.716Z"
+  },
+  {
+   "id": "backbeat-164120@0.93",
+   "gameId": "backbeat-164120",
+   "displayName": "Update 0.93",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-24T11:09:01.000Z",
+   "notes": [
+    {
+     "title": "It's time for an update!",
+     "items": [
+      {
+       "text": "We have no dev blog this month as things are quite intense, but we do have a tiny demo update that will help some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Usability tweaks",
+     "items": [
+      {
+       "text": "We have a number of features designed to help the player when breaking conditions occur in the game. When a musical resource or turns have been depleted, Watts will appear and specify exactly why play cannot continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We've also improved playback and guard rendering to make things a little easier to see. Paths for guards are now drawn so you can predict their movements, and all paths and collision areas are hid during the victory level playback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "More to come!",
+     "items": [
+      {
+       "text": "Fifteen of the main story levels in Backbeat are complete! In the next month we will be working on finishing the rest and starting the remix levels which fill out the single player campaign. Additional features like audio customization and stats in My Backbeat are on the way and we're looking forward to sharing more with you in February's dev blog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "More from you!",
+     "items": [
+      {
+       "text": "Some of these improvements came directly from suggestions made by superfans like you! Do you have another idea for an improvement to make the funky story of Powerslyde even better? Drop us a comment below or shout at us on social media.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay cool and funky!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- The Backbeat team at Ichigoichie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Instagram - Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1585730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1585730/view/4237325463685526171"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-24T11:09:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.156Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:44.716Z"
+  },
+  {
+   "id": "backbeat-164120@0.9",
+   "gameId": "backbeat-164120",
+   "displayName": "Update 0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-02T19:23:49.000Z",
+   "notes": [
+    {
+     "title": "It's time for an update!",
+     "items": [
+      {
+       "text": "Thanks to all of the players who have tried the Backbeat demo in its first month. Production of the full version of the game is continuing, and we have some small updates to the sights and sound of the game to make playing the demo a little easier and a little more funky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Options and usability",
+     "items": [
+      {
+       "text": "As before you can toggle between fullscreen and windowed mode with Alt-Enter/Cmd-F. Fullscreen is now the default and you can change the window size manually in the new baby Options menu. Language is also no longer constrained to a Steam launch option. You can change between English and Japanese at any time as well. Button guides and WASD prompts have been added until we are able to add mouse support in a future version of the game. As we get closer to release of the full version we'll be adding for options for customization of the dialogue and sound.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Realtime reverb",
+     "items": [
+      {
+       "text": "Speaking of sound, as in Hexagroove, we run our own custom audio engine inside of the game. This month we have upgraded our signal chain to include realtime reverb to simulate the sound of different locations inside of the game. In the full version this will help create a live feeling based on the venue Watts' band is playing, regardless of which pack of sound clips and instruments are used (did we mention the full version has over six configurable instruments and instrument playing styles?), but for now you can hear how music in Josh's Hollywood Movies has gained a more cavernous feeling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Club mode++",
+     "items": [
+      {
+       "text": "On the other side of the coin, we've added some graphical enhancements to make playback even funkier. When Watts, Toshi, and Josh are strutting to the goal area, the playback feels more like a music video with the addition of camera tilt, disco balls, and pulsing spotlights. Check out their saunter to the stage in Callahan's dive bar for maximum effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Removal of Prologue, 2-1a, and 3-1a",
+     "items": [
+      {
+       "text": "Several story-heavy levels were removed from the demo to make the path of trying the mechanics and getting to the big STAGGER resource reveal on level six even faster. If you have already played the prologue, you got a sneak peak! The three removed levels are now sealed and will be waiting in the full version, so if you find them missing it's not a bug, it's a feature!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition to the larger adjustments above, there are buckets of smaller stability and performance improvements under the hood. To reinforce the system requirements, when you run the demo on an unsupported version like Windows 7 or macOS High Sierra, a popup will tell you about the baseline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "More from you!",
+     "items": [
+      {
+       "text": "Some of these improvements came directly from suggestions made by superfans like you! Do you have another idea for an improvement to make the funky story of Powerslyde even better? Drop us a comment below or shout at us on social media.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay cool and funky!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- The Backbeat team at Ichigoichie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Instagram - Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1585730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1585730/view/4186652357043194729"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-02T19:23:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1585730",
+      "checkedAt": "2026-11-13T03:15:35.156Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:44.714Z"
+  }
+ ],
+ "issues": []
+}

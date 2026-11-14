@@ -1,0 +1,5994 @@
+{
+ "game": {
+  "id": "zoochosis-282935",
+  "igdbId": 282935,
+  "name": "Zoochosis",
+  "cover": {
+   "imageId": "co7vpg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7vpg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2p8t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2p8t.jpg"
+  },
+  "ps5Release": "2025-08-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "zoochosis-282935@post-2025-09-08",
+   "gameId": "zoochosis-282935",
+   "displayName": "🎮 Patch Notes #46",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-08T17:45:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Zookeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve rolled out a new update that fixes several bugs and makes the overall experience smoother. Thanks for continuing to share your feedback — it helps us keep improving the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠 Fixes and Improvements",
+     "items": [
+      {
+       "text": "🎮 Added gamepad navigation support in the Ending Tracker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🔒 Fixed an issue with adding hidden locker codes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🦘 Fixed a bug where the hidden code in the kangaroo enclosure wasn’t displayed correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🦓 Fixed an issue where the zebra clone could appear with other bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "👻 Addressed several issues with screamers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⚙️ Various minor fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1809869180170355"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T17:45:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.429Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T17:45:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.429Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-08T17:45:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.009Z"
+  },
+  {
+   "id": "zoochosis-282935@major-2025-04-19",
+   "gameId": "zoochosis-282935",
+   "displayName": "SCREAMERS WITH MONSTERS UPDATE + Patch Note #45",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-19T18:47:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Zookeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve finally reached Screamer System 2.0. In addition to the basic “preparatory” screamers, we’ve now added screamers with animals and monsters. Honestly, this probably should’ve made it in before release, but fate had other plans. We're looking forward to your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oh, and of course—our classic patch notes. This past week, softlocks and blockers have barely shown up in Trello, which feels like a good sign. The ones that do appear are extremely difficult to reproduce. Here's a short list:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocking during blood collection: It took us two days to track this one down. We've fixed it multiple times, and every time we see it pop up in Trello again, it’s a tragedy. The issue turned out to be in the AI action system architecture—on very rare occasions, it would trigger two actions at once for animals. The same bug was causing issues with petting and parasite vomiting. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parasite screamer fix: It was blocking controls during location transitions. Now resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Giraffe bossfight trigger after tutorial: If you initially shot the wrong giraffe, the bossfight now still starts. This wasn’t exactly a bug, but rather a gap in game design—since all giraffes appear healthy, it's hard to tell which one is infected, as the infected animal only mimics external symptoms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also made several minor level design adjustments to fix animal pathing and stuck issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope the upgraded screamer system makes things even scarier. Be careful—monsters in the hallways can kill you too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1797185861711518"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-19T18:47:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.428Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.008Z"
+  },
+  {
+   "id": "zoochosis-282935@1.6.5",
+   "gameId": "zoochosis-282935",
+   "displayName": "Patch 1.6.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-11T15:46:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Zookeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Another hotfix with bug fixes from Trello",
+     "items": [
+      {
+       "text": "Fixed the Moose monster hypnosis bug where it wouldn’t cancel hypnosis during convulsions and would pull another moose towards it: https://trello.com/c/3Ljbusnb/624-roselawolfegamingyt-2025-4-8-164322-moose-killing-other-moose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the monster's attack triggering while placing food into the feeder: https://trello.com/c/woCz4MQJ/633-doctorostrich-2025-4-9-174710-stuck-in-air: https://trello.com/c/39aHMotE/643-tenoke-2025-4-10-18438-camura",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stacking issue when petting the giraffe: https://trello.com/c/CN6YfKxq/642-jcreatorgamer567-2025-4-10-192724-petting-the-giraffe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed interaction with the biofilter at the animal station, which could result in getting stuck. This was an old bug that only reproduced with old save files: https://trello.com/c/DQxgAZ8l/647-jennymaus-2025-4-11-124757-stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a silly issue with the parasite being spit out during monster treatment. Sometimes regular vomiting would trigger instead and cancel the parasite task: https://trello.com/c/fnnpMhoG/637-terumaker-2025-4-10-233047-%ED%95%98%EB%A7%88-%EA%B8%B0%EC%83%9D%EC%B6%A9-%EC%82%BC%ED%82%B4-%EB%B2%84%EA%B7%B8: https://trello.com/c/aPJ5Gwil/631-1walkerr-2025-4-9-215112: https://trello.com/c/suxjdOyM/636-doctorostrich-2025-4-9-232828-no-parasite: https://trello.com/c/IoRGCMS8/646-piconino-2025-4-10-205421-wallaby-enclosure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where the MFE would remain in hand when opening the PDA: https://trello.com/c/SDjUFgbe/644-piconino-2025-4-10-20345-penguin-enclosure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Wallaby and Elephant monsters would move and spin during convulsions: https://trello.com/c/A0XuHhlW/508-mommy-2025-4-2-01030-elephant-turning-in-circles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the intro and outro animal scenes in the main menu. Should no longer crash for players with low RAM or VRAM",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Rewrote aggressive behavior logic that was causing major issues with frozen animals, blood collection, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for sending in your reports and staying with us! Wishing everyone the best and good vibes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1796631172282488"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-11T15:46:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.428Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.008Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2025-04-02",
+   "gameId": "zoochosis-282935",
+   "displayName": "STILL ALIVE + Patch note #42",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-04-02T15:56:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Big update with NEW ANIMALS coming soon! 🐼 We will bring this update together with the CONSOLE RELEASE, Steam, and Epic all at once. Stay tuned – it’s on the way! 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are some additional bugs we have fixed",
+     "items": [
+      {
+       "text": "Giraffes sometimes stood still and didn’t react to anything during the tutorial. This issue had been around for a long time, but it was very difficult to find and pinpoint. Now, it’s fully resolved, and their appetite has been restored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Infected animals sometimes wouldn’t heal before transforming, or in some cases, they would mutate when shot with the correct medicine. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On Xbox controllers, players couldn’t exit the kitchen-factory using (B). This was just an oversight on our part—fixed now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed a very rare issue where a mutant not only attacked the player but also permanently took away their controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mutants would revert to normal animals after being fed meat, only to transform back again. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some sounds were not affected by the volume settings. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The disk insertion animation in the laboratory computer could be triggered an unlimited number of times. Now it can't 🙂",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lily's voice would become loud at the start of the game after listening to the tape recorder. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hidden segments in the ending tracker are now visible during gameplay to make it easier to unlock endings across the entire tree. Hiding the whole tree turned out to be a bad idea.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the bipedal aggressive monkey. It was fun, but it broke IK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We still have some known issues that we will be fixing soon, such as animals and bosses getting stuck in certain places, a couple of conditions for achievements, some areas where you can’t pet animals or draw blood, and a few incorrect subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There are also some hard-to-reproduce bugs, so please don’t forget to use the bug report feature and provide as much detail as possible. This has proven to be a powerful tool for solving complex issues in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for your support and belief in us. We couldn't be happier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1795917897296488"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-02T15:56:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.427Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.007Z"
+  },
+  {
+   "id": "zoochosis-282935@major-2025-03-29",
+   "gameId": "zoochosis-282935",
+   "displayName": "GRAND UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-29T15:52:37.000Z",
+   "notes": [
+    {
+     "title": "Hey Zookeepers!",
+     "items": [
+      {
+       "text": "It's been a while since our last update, and now we’re excited to announce a massive update that fixes all known major bugs and brings significant design changes to the game. We've worked to reduce repetitiveness, make the game more accessible, and implement extensive quality-of-life improvements. Here’s the list of fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Design",
+     "items": [
+      {
+       "text": "The global core loop has been changed. Now, your primary objective is solely to extract the parasite from an infected animal. All other mechanics are auxiliary and serve to help achieve this main goal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The tutorial has been globally reworked and expanded. You will complete a parasite extraction mission, which will serve as the first gameplay task for identifying a mutant before transformation. IMPORTANT: If you have existing save files, it is strongly recommended to start a new game with the tutorial to understand the new gameplay mechanics and prevent potential bugs. We have attempted to accommodate old save files, but issues may still arise. A replay option for the tutorial has been added for each new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mandatory gameplay loop requiring full analysis collection to determine the correct medicine has been completely removed. Now, you can diagnose animals by analyzing only external symptoms such as scars, mucus, and zoochosis. This mechanic was present before but is now more transparent, making the UV flashlight a more essential tool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The vet station has been completely redesigned and simplified. You no longer need to search for the correct medicine in a list by description—just apply the necessary filters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parasite vaccines have been completely removed. Now, both mutants and animals are treated with a single type of medicine, and your task is only to identify the disease and the mutant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A major new feature: If you make a mistake with the mutant’s medicine or kill the mutant, all infected animals will die along with it. You will have multiple ways to prevent animal deaths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Posters have been reworked. Collecting them now unlocks additional information in the vet station about animal behavior under different diseases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disease balance has been adjusted to ensure a more even distribution of diverse animal behaviors for all players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The task system in the PDA has been reworked. Now, only the latest active task will be displayed in the PDA to avoid confusion, and each task will include a clear description of what needs to be done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The monster will now appear immediately in the next enclosure after the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The balance and generation of consumable items have been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "The control system has been completely rewritten to eliminate focus loss on certain screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Support for DualShock 4 and DualSense controllers has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full UI navigation via keyboard has been implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "UI/UX",
+     "items": [
+      {
+       "text": "New control hints for both PC and gamepads have been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Animal avatars in terminals have been redesigned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The vet station has been completely overhauled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The parasite storage system has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UX improvements to the PDA task system and its hint system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The profile menu’s visuals have been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed boss health bar animations for damage and recovery states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added notifications for gamepad connection and disconnection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The story choice notification has been made more noticeable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Animations",
+     "items": [
+      {
+       "text": "Many IK animation issues for animals and bosses have been fixed (still needs polishing).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hands now lower when holding gadgets near walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "The game has undergone a major transition to Unreal Engine 5.5, which fixed numerous rendering issues. We hope this will resolve many optimization-related problems. On an RTX 3060, we are seeing 90 FPS without DLSS and 140 FPS with DLSS enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "BUGS",
+     "items": [
+      {
+       "text": "Parasites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Parasitic Disappearance: The parasite disappears in the enclosure if the player loads a save after the boss spits it out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Parasite Collection Input Block: Switching gadgets while collecting a parasite into the MFE blocks player controls and prevents collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controls & UI",
+     "items": [
+      {
+       "text": "Input Lock with PDA Open: If the boss attacks while the PDA is open, all inputs get blocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Movement Input Not Working: Left stick and right stick do not respond until performing another action after entering the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PDA Sometimes Opens Without a Model, Only Screen Visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI Input Lock in In-Game Menu When Switching Between Mouse/Controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "PDA Task List Opens at Bottom: Players must scroll up to see tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text Formatting Issues: Ending texts are incorrectly split across screens (TITLE_01/02/03).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Story Notes Display Issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Boss Fights",
+     "items": [
+      {
+       "text": "Boss Feeding Exit Block: The player is unable to leave the enclosure while feeding the boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Healing Issue: Healing the boss with meat does not properly complete the boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Grab During Transformation: The boss can grab the player during the transformation sequence at the start of the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exit Block After Pre-Healing Boss: The player cannot leave the enclosure after pre-healing the boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Not Healing: Sometimes, bosses do not heal after being shot with the correct medicine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss in Defeat State Eats Meat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Takes Too Long to Enter Feeding State.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Fight UI Not Disappearing: The UI remains active when leaving the enclosure during the boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bosses Do Not Retreat After Biting the Player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Spins in Defeat State When Shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss HP Bar Refills: When leaving the enclosure after defeating the boss, the HP bar refills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Regained HP Above 6 Unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Animal Behavior",
+     "items": [
+      {
+       "text": "Animals with Allergy Won't Eat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infected Animal Teleport Issue: The infected animal does not teleport under the enclosure at the start of the boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood Extraction Possible While PDA is Open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tranquilized Animals Have No Collision: This makes blood extraction inconsistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Fight Animal Behavior Persists: Previously infected animals still behave aggressively after the boss is healed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animals Poop Instead of Vomiting After Eating Meat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enclosures & Animal AI",
+     "items": [
+      {
+       "text": "Animal Stuck in Rocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant and Animal Stuck Inside Each Other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant Stuck on Slide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant Passed Through Player: The boss phased through the player during landing, grabbed the camera, attacked a penguin, and got stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elephant Stuck, Won't Eat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant Movement Issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant Stuck and Not Responding to Shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gorillas Get Stuck on the Bridge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animals Incorrectly Interact with Petting Animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant Can Enter Terminal Zone and Get Stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant Spawns Invisible and Stays AFK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutant Has No Collision in Defeat State.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hub & Train Issues",
+     "items": [
+      {
+       "text": "Doc Blocks Train Entry: If the player listens to Doc’s monologue outside the train, he may block the entrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doc Vanishes: Doc does not return to the train and disappears entirely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locked Train Doors in NG+ Tutorial: The train doors remain locked after parasite submission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Getting Stuck Behind Doc in Terminal Area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Items & Gadgets",
+     "items": [
+      {
+       "text": "Mobile Device Duplication: Using the mobile device in the lab allows duplication of the vacuum bucket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gadget Disappearance: Some gadgets disappear randomly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vet Gun Appears in Player’s Hand and Train Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lethal Dart Ineffective After Monster-to-Animal Transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switching from UV Light to Another Gadget Leaves Mucus Visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paul's Hands Detached from Gadgets Near Walls/Props.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story & Missions",
+     "items": [
+      {
+       "text": "Temperlax Dispenser Issue: The task to collect Temperlax from the dispenser does not progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Impossible to Craft Temperlax: The vet station opens in the \"Symptoms\" tab instead of \"Crafting\" in the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Task Not Updating: If the player enters another enclosure after completing the giraffe enclosure, tasks do not update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Medic\" Achievement Not Unlocking: The \"Medic\" achievement does not unlock when healing an infected animal without taking any samples.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wrong Ending Triggered: Ending 3 triggered instead of the expected Ending 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cutscenes & Animations",
+     "items": [
+      {
+       "text": "Cutscene Input Not Blocked: The player can still move during the cutscene where Sara receives the poison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doc Lacks Facial Animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hub Area Visible for Several Frames in Opening Cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Jump & Wall Poses: Boss animation issues when climbing walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game+ & Tutorial Issues",
+     "items": [
+      {
+       "text": "Soft Lock on NG+ Tutorial Failure: Failing the tutorial in NG+ results in being unable to travel to any enclosure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Escape Soft Lock: Pressing \"Esc\" in the NG+ tutorial selection window starts a new game without a tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mucus Disease Generation: In rare cases, the game generates mucus disease in all giraffes instead of only Beau and Poe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NG+ Tutorial Rains Unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Terminal Soft Lock: Unable to exit the terminal if the player enters it just before the boss fight starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who responded to our request for help in finding difficult and elusive bugs, and to all those who continue to support us despite the issues you encountered during your playthrough. We are continuing to polish the game, and good news is coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 0,
+    "other": 79,
+    "ps5": 0,
+    "topNew": [
+     "Soft Lock on NG+ Tutorial Failure: Failing the tutorial in NG+ results in being unable to travel to any enclosure.",
+     "Escape Soft Lock: Pressing \"Esc\" in the NG+ tutorial selection window starts a new game without a tutorial.",
+     "Mucus Disease Generation: In rare cases, the game generates mucus disease in all giraffes instead of only Beau and Poe."
+    ]
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1795283637888540"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-29T15:52:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.426Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.006Z"
+  },
+  {
+   "id": "zoochosis-282935@40",
+   "gameId": "zoochosis-282935",
+   "displayName": "Patch 40",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-28T20:15:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "📸 Patch #40 Update 9 — **\"Photo Mode\"**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "**Greetings, zookeepers!** 🦒📷",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have **exciting news**: our game now features a **PHOTO MODE**!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Embark on a virtual **photo hunt** to capture **adorable animals**, **impressive monsters**, and the most **thrilling moments** of your adventure! ✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!!!To activate photomode in the game, press N on the keyboard or L3 on the controller.!!!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "📢 **Share your shots!** Use the hashtag **#zoochosisgame** on social media!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy snapping, and may your captures be legendary! 🏆",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ **Bug Fixes & Improvements**",
+     "items": [
+      {
+       "text": "A **huge thank you** to everyone who reported bugs using in-game tools! Your **save files** helped us track down elusive problems, and we’ve already tackled **some of the biggest issues**. **Check them out below!** 👇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "### 🐾 **Petting System Rework**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "**Rewritten petting system!** No more getting stuck after petting animals!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "**New petting animations added** — Enjoy more **realistic** and **adorable interactions**! ❤️: ### 🔧 **General Fixes**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "**Fixed tooltip bug** — No more lingering tooltips cluttering your screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "**Fixed softlock after train gate screamer** — You can now move freely again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "**Fixed disappearing gadgets** — If gadgets **vanish**, they’ll now **reappear in the cart** (temporary fix while we investigate further).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "**Various cosmetic fixes and UI improvements**.: ---: #: 🐛 **Found a bug? Report it here!** 👉 [Zoochosis Feedback Board]: Thanks for your continued **support and feedback**! 🚀: Enjoy the **new Photo Mode**, and stay safe in the zoo! 🦁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1792751526052198"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-28T20:15:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.425Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.005Z"
+  },
+  {
+   "id": "zoochosis-282935@8",
+   "gameId": "zoochosis-282935",
+   "displayName": "Update 8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-20T18:22:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Zookeepers!🐾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re working on resolving all the bugs and kindly ask for your help.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve added a new feature allowing you to report any bugs you encounter directly in the game through a special feedback form.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To increase transparency, we’ve created a Trello board where all your reports are automatically posted, and you can track their status. On this board, you’ll see when a bug is being worked on and when it’s fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We truly appreciate your support and are working together with you to make Zoochosis better. Your help is invaluable, and we’re grateful for every report.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1792116353201442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-20T18:22:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.425Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.005Z"
+  },
+  {
+   "id": "zoochosis-282935@38",
+   "gameId": "zoochosis-282935",
+   "displayName": "Patch 38",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-12T18:04:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "# 🛠️ Patch 38 — Bug Fixes & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey Zookeepers! 🦁🔧",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back with another patch, bringing **fixes and improvements** to enhance your experience. Let’s get into it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎧 **Bodycam Fixes & Improvements**",
+     "items": [
+      {
+       "text": "🎥 **Fixed Bodycam Clock Bug** — The timer no longer runs **backwards** when the in-game menu is open. No more negative time travel! ⏳❌",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🔄 **Fixed Bodycam Display Issues** — The bodycam now consistently **displays correctly** in all intended moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🔊 **Added VHS Audio Filter Setting** — Now you can **adjust the intensity of the VHS sound filter** to your liking!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🎯 **Vet Gun Fixes**",
+     "items": [
+      {
+       "text": "🦠 **Fixed Vet Gun Disappearance** — No more **losing the Vet Gun** in Act 3 after completing lab actions or picking up a briquette.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎯 **Fixed Aim Menu Bug** — Opening the in-game menu while aiming **no longer locks you out of returning to gameplay**.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "⚙️ **UI & Gameplay Fixes**",
+     "items": [
+      {
+       "text": "📺 **VHS UI Auto-Enable Fix** — Starting a **New Game** will no longer automatically turn on the VHS UI if \"Bodycam\" was previously disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🎊 **Seasonal Update**",
+     "items": [
+      {
+       "text": "🏮 **Lunar New Year decorations have been removed** — The celebrations may be over, but the zoo is always open!: This patch smooths out a lot of rough edges — thanks for your feedback and support! ❤️: Enjoy the game, and stay safe in the zoo! 🦁🔬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1791482680864899"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-12T18:04:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.424Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.004Z"
+  },
+  {
+   "id": "zoochosis-282935@7",
+   "gameId": "zoochosis-282935",
+   "displayName": "Update 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-07T23:21:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "# 🎥 Update 7 + Patch 37 — Bodycam Visual Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey Zookeepers! 🦁🔧",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update brings some exciting **body cam features** and **important fixes** to make your experience even better. Let’s dive in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎥 **Body Cam Update**",
+     "items": [
+      {
+       "text": "📷 **Added Body Cam Mode** for a more **analog horror** experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎞️ **New VHS Mode** for that **classic found-footage** feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎛️ **Expanded Settings Menu**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "❗ **Important: You can switch these settings at any time in the game** ❗",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎥 **Camera Lag** — Toggles smooth camera movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌍 **Camera Shake** — Toggles camera shake while moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📺 **VHS UI** — Switches to a classic VHS-style UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👁️ **Fish Eye** — Adjusts lens distortion intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📼 **VHS Interference** — Adjusts VHS-style screen distortion intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🕶️ **Vignette** — Toggles camera vignette effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧼 **Lens Dirt** — Adjusts the intensity of lens dirt and grime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔲 **4:3 Mode** — Switches to a classic VHS aspect ratio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎮 **Reworked Inventory Slot UI** to improve **gamepad controls**.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔧 **Overhauled DLSS Settings** and **revamped the entire settings menu**.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "⚡ **Added Interaction Animation Speed Setting** — Customize how fast animations play when interacting with objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎯 **New Aiming Slowdown Feature** — Precision aiming just got smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐛 **Bug Fixes**",
+     "items": [
+      {
+       "text": "📱 **Fixed PDA Bug** — You could open the PDA before \"receiving\" the Vet Gun if you skipped the first cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎯 **NG+ Vet Gun Fix** — If you started NG+ and immediately loaded a save, the Vet Gun would disappear. Now it's back where it belongs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎮 **Fixed Apply Button on Gamepad** — Now works correctly in the settings menu.: Enjoy the new features, and as always, thank you for your support! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1790848102667419"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-07T23:21:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.424Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.004Z"
+  },
+  {
+   "id": "zoochosis-282935@36",
+   "gameId": "zoochosis-282935",
+   "displayName": "Patch 36",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-04T20:58:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "# :tools: Patch #36 — QoL Improvements & Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hey Zookeepers! :lion_face::wrench",
+     "items": [
+      {
+       "text": "This update brings some **quality-of-life improvements** and **bug fixes** to enhance your gameplay experience. Check out what’s new!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": ":sparkles: **What's New?**",
+     "items": [
+      {
+       "text": ":desktop: **Added a Shader Compilation Screen** to provide better feedback during loading.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": ":video_game: **Fixed RB Slot Switching on Gamepad**—now switching between slots 1 and 2 works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": ":knife: **Cut Briquettes with Precision!** We've added a **percentage indicator** to show how much you've sliced—**no more guesswork!**: These tweaks should make your zoo-saving adventures even smoother! :rocket:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1790214123255506"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-04T20:58:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.423Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.003Z"
+  },
+  {
+   "id": "zoochosis-282935@35",
+   "gameId": "zoochosis-282935",
+   "displayName": "Patch 35",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-01T17:28:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎯 Patch #35 Update 6 — Vetgun Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey Zookeepers! 🦁🔫",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've made a major quality-of-life update to improve your experience with the Vetgun. No more hassle—just smooth and efficient gameplay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔥 Vetgun Now Always in Inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏃 No Need to Grab It from the Cart! The Vetgun is now permanently in your inventory, making it quicker and easier to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎯 Instant Access in Critical Moments—whether you're tranquilizing a rampaging mutant or curing an infected animal, your Vetgun is always ready to go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Cart Management Simplified—focus on objectives and survival without the extra step of retrieving your weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is all about streamlining gameplay and making your zoo-saving adventure smoother than ever. 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know what you think—your feedback helps shape the game! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Report any issues with this update in the attached thread.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1790214123153259"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-01T17:28:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.422Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.003Z"
+  },
+  {
+   "id": "zoochosis-282935@hotfix-2025-01-30",
+   "gameId": "zoochosis-282935",
+   "displayName": "Patch Note #34 + Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-30T19:19:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Zookeepers! 🦁🔨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re rolling out a quick hotfix to address some urgent issues. Thank you for your feedback—here’s what’s been fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠 **Fixes & Improvements**",
+     "items": [
+      {
+       "text": "🚄 **Sprint Mode (Press Option):** Fixed an issue where **Shift** in \"Press\" mode did not speed up the cart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🌑 **Train Screamer Lighting:** After the **BP_Train_Teaser_C_1** screamer, the train lights now turn back on properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎮 **In-Game Menu:** Fixed a bug where the in-game menu wouldn’t close if opened while the **PDA** was active.: Thanks for your patience and support! More updates coming soon. 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1790214123091297"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-30T19:19:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.422Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.002Z"
+  },
+  {
+   "id": "zoochosis-282935@major-2025-01-26",
+   "gameId": "zoochosis-282935",
+   "displayName": "Patch Notes #33 – Lunar New Year Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-26T20:45:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎉 Patch Notes #33 – Lunar New Year Update 🧧🐍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy Chinese New Year, Zookeepers! 🐯✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As we celebrate the Year of the Snake, this festive patch introduces exciting updates and important fixes to enhance your zoo management experience. Thank you for your continued support—here’s what’s new!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎨 **Design Updates**",
+     "items": [
+      {
+       "text": "🛠 **Contextual Hints:** Fixed naming issues with contextual hints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Horror System Parameters:** Adjusted and verified parameters for the horror system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Butcher Table:** Made food slicing mechanics more intuitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Localization:** Reviewed and corrected auxiliary action labels for accuracy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Cutscenes:** Added the ability to skip phrases in Lily’s dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Doctor Screamer Logic:** Reworked the logic for Doctor’s appearances to improve pacing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Horror System Polish:** Polished horror system mechanics for enhanced immersion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Boss Fight Timer:** Removed the timer for healing a fallen boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Steam Deck FPS Options:** Added the ability to adjust FPS settings on Steam Deck.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🐛 **Bug Fixes**",
+     "items": [
+      {
+       "text": "🐾 **Boss Fights:** Fixed an issue where animals remained scared while the boss was incapacitated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🐾 **Menu Background:** Resolved a bug where the menu background disappeared after completing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🐾 **Splash Screen:** Fixed a bug preventing the first splash screen from being skipped if left uninterrupted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🐾 **In-Game Menu:** Addressed an issue where the in-game menu wouldn’t close when opened alongside the PDA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🐾 **Stress System Fixes:**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stress levels now reset properly after triggering top screamers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where stress from the first completed enclosure persisted as a minimum level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where stress didn’t reset after switching enclosures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🐾 **Vetgun and Cart:** Fixed issues with pushing the cart while holding the vet gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🐾 **Doctor Screamer Sounds:** Added sounds for a more immersive Doctor screamer experience.: ---: 🐍 **Celebrate the Year of the Snake with us!** 🧧: Your feedback continues to shape the future of Zoochosis. Thank you for being part of this journey—we hope you enjoy this festive update and all the improvements it brings! 🎇🎆",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1789580505413263"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-26T20:45:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.422Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:55.002Z"
+  },
+  {
+   "id": "zoochosis-282935@major-2024-12-30",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES– FINAL UPDATE OF 2024",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-30T15:28:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As we count down to 2025, we want to take a moment to thank all of you—our amazing community! ❄️ Today, we’re rolling out the **final patch of the year**, shaped by your invaluable feedback and support. 🐾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your love for **Zoochosis** inspires us every step of the way. ❤️ Here’s to an even more thrilling year ahead! 🎆🍾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in 2025! 🥂🎊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠 **Patch Notes – Final Update of 2024**",
+     "items": [
+      {
+       "text": "### 🔧 **Fixes and Improvements:**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Doctor in Tutorial:** Adjusted Doctor’s appearance trigger in the tutorial. This is a hotfix to make his appearance easier to activate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **New Game+:** Added an NDA signing (or not signing) sequence at the start of all New Game+ runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Audio Settings:** Fixed an issue where some sounds weren’t affected by volume settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Hippo Gas Bug:** Resolved an issue where the hippo wouldn’t release gas while climbing out of a hole if hit at the same moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Animal Scars:** Fixed a bug where the appearance and placement of scars on infected animals would change after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠 **Parasite Collector UI:** Added **Control Hints** to the parasite collector interface for better usability.: ---: 🎉 **Thank You for an Amazing Year!** 🎉: Here’s to even bigger and better adventures in 2025. We couldn’t have done it without you! 💚: 💚 **Your Clapperheads Team** 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1786573930974892"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-30T15:28:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.421Z"
+  },
+  {
+   "id": "zoochosis-282935@4",
+   "gameId": "zoochosis-282935",
+   "displayName": "UPDATE 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-19T22:44:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "# 🐾 Patch Notes: Improved Monster Encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello, Zookeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re thrilled to introduce Improved Monster Encounters—a major update packed with exciting changes to combat and gameplay. Check out the details below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the introduction of these major updates, some players might encounter issues with older save files. Please rest assured that we are actively working on addressing this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To ensure a smooth experience, we recommend starting a new game session to avoid potential errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚔️ New Combat System",
+     "items": [
+      {
+       "text": "Locked in Battle: You are now trapped in the enclosure with the monster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Every Action Matters: Each action and resource is crucial for survival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Boss Battles: Gates now close during boss fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dart Containers: Added containers to supply darts for the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stronger Monsters: Monsters now have increased health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Damage Over Time: Attacks now deal gradual damage.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🩺 New Monster Healing System",
+     "items": [
+      {
+       "text": "Healing the boss is now separate from combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After defeating the boss, you can choose to heal or kill it.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "☠️ Player Death",
+     "items": [
+      {
+       "text": "Fighting a monster can now cost your life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health Indicator: A new player health bar appears during fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your health runs out, the monster will kill you.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧬 Parasitic Infection",
+     "items": [
+      {
+       "text": "Parasite infections now weaken you during battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PDA Update: A new infection level tab has been added to the PDA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Higher infection levels reduce your health, making fights more dangerous.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐾 Monster Spawning",
+     "items": [
+      {
+       "text": "Boss appearances are now more unpredictable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters attack when you least expect it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn rules for monsters have been overhauled.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "😈 New Monster Behavior",
+     "items": [
+      {
+       "text": "Monsters are now more aggressive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "They’ve gained new, unique traits, making encounters tougher.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🎵 New Monster Sounds",
+     "items": [
+      {
+       "text": "A variety of new combat sounds have been added for monsters.: ---: These updates bring new intensity and excitement to the game! Let us know your thoughts—we’re excited to hear your feedback.: With love,: 💚 Clapperheads Team 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0,
+    "topNew": [
+     "Locked in Battle: You are now trapped in the enclosure with the monster.",
+     "Every Action Matters: Each action and resource is crucial for survival.",
+     "Boss Battles: Gates now close during boss fights."
+    ]
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1786573930635242"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T22:44:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.420Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.420Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-12-07",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #29",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-07T12:59:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎮 Patch Notes #29 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello, Zookeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just released another patch to address several bugs and improve your experience. Thank you for sharing your feedback and helping us make the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "### 🛠 Fixes and Improvements",
+     "items": [
+      {
+       "text": "📨 Fixed an issue where two identical messages from Doc were sent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "📞 Fixed a bug where Doc's call in the enclosure was interrupted after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎮 Gamepad support improved: You can now scroll through the list of diseases in the analyzer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎥 Addressed minor cutscene issues in some endings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🔊 Added a sound effect for opening the Ending Tracker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎮 Fixed gamepad bugs, such as overly fast input in the vet station.: ---: We hope these fixes improve your experience! Let us know if you encounter anything else. Your feedback is crucial in helping us make the game even better. 💌: With love,: 💚 Clapperheads Team 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1785321795670972"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-07T12:59:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.419Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.419Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-11-29",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #28",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-29T19:08:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎮 Patch Notes #28 - Hotfix 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here’s a quick hotfix to address some pressing issues. Thank you for reporting them and helping us improve the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠 Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the Final Ending 0 cutscene would not start, displaying only a black screen instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a bug that blocked controls when quickly attempting to slice a new briquette.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the tracker not separating by profiles, which caused endings to be tracked across all profiles simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your patience and support! Keep your feedback coming—we’re always listening 💌",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "💚 Clapperheads Team 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1784506359055340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-29T19:08:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.419Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.419Z"
+  },
+  {
+   "id": "zoochosis-282935@3",
+   "gameId": "zoochosis-282935",
+   "displayName": "UPDATE 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-28T22:10:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As part of the Steam Autumn Sale, we’re releasing Major Update #3!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚀 What's New",
+     "items": [
+      {
+       "text": "Optimized for Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Full controller support added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ending tracker now available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed storage room doors being locked forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad controls not available at some moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the briquette trolley lever that didn’t work in rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed meat briquettes sometimes being impossible to be placed onto the trolly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Penguins should now always produce feces after eating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Paul’s shoulders and hands that were visible during some interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the moose mutant that could attack through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wallaby mutant now properly screams when hit with any shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases of wallabys creating a traffic jam in the passage to the rest area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases of Paul’s hands appearing uninfected in several animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved some petting animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed severed hand appearing more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some of Doc’s lines in the tutorial triggering when the player was too far away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed poison injection choice for keyboards with a non-QWERTY layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Doc sometimes getting stuck in the tunnel when pushing the cart back to the train.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the new game warning appearing even if there’s no progress to reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed positions for parasites that were vomited out on elevated surfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed PDA being accessible before the NDA was signed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animals reacting to being aimed at with a gun through the enclosure walls: PLEASE USE THE OFFICIAL ZOOCHOSIS LAYOUT.: Thank you for your support, and don't forget to share your feedback!: With love, Clapperheads Team 🦒🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 19,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Full controller support added",
+     "Ending tracker now available"
+    ]
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/1784506359026099"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-28T22:10:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.418Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.418Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-11-08",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #26",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-08T20:22:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch #26 is here! Bringing more improvements and bug fixes to enhance your zoo experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s what’s been updated",
+     "items": [
+      {
+       "text": "Fixed a bug where animals could stop moving after being petted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the penguin monster could push players into the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several visual bugs when interacting with interactive objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected some visual bugs with the hippo monster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animal analysis indicators when using filters in the Vetstation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with duplicate tasks appearing in the PDA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the Food Dropper to prevent placing meat bricks inside.: Thank you for being with us on this journey. We appreciate every one of you!: With love,: The Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6148070194801639254"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-08T20:22:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.418Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.418Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-11-06",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #25",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-06T18:52:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch #25 is here with some exciting improvements and fixes! Check out the full notes below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhanced the screamer system—expect even more thrills in-game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved monster AI behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issues with the Gorilla monster, addressing teleportation bugs and its response to tranquilizers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issues with the animal test indicators when using filters in the Vetstation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with duplicate tasks appearing in the PDA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Food Dropper: now it no longer allows placing meat briquettes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized GPU performance across the game, boosting FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled Halloween event content.: Thank you for your feedback! We hope you enjoy the improvements.: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6148070194801570706"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-06T18:52:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.417Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.417Z"
+  },
+  {
+   "id": "zoochosis-282935@2",
+   "gameId": "zoochosis-282935",
+   "displayName": "UPDATE 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-29T06:56:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To celebrate the upcoming holiday, we’re releasing a major update #2!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In honor of Halloween, we've decorated the zoo with thematic assets 👻 to set the spooky mood!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎃 What's New",
+     "items": [
+      {
+       "text": "Added the \"Screamer Director\" in version 1.0. This feature will be expanded and updated with each new patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Conducted a major optimization for the entire zoo, especially targeting GPU performance 🎮. Temperatures should now be significantly lower!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed gorilla monster teleportation issues during death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some navigation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The gorilla monster now properly reaches the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where a second boss would appear if you loaded into the enclosure entrance before pre-treating an infected animal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a tutorial bug: if you shot the wrong giraffe, the \"Complete the Giraffe Enclosure\" task would not start after the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed many minor visual and technical bugs.: Thank you for your support, and don't forget to share your feedback!: With love,: Clapperheads Team 💀🦒🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212245217911976317"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-29T06:56:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.416Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.416Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-25",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #23",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-25T20:04:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve got a fresh patch #23 with various fixes! Here’s what’s new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhanced AI for the elephant and penguin monster, improving interactions and overall behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed feeding bug where animals avoided the feeder if a carcass was nearby. Now they’ll eat regardless!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision update for large animals like elephants and hippos – no more walking through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New sounds added to enrich interactions with in-game balls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Linda’s call bug.: Thank you for your support!: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212245217911865425"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T20:04:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.416Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.416Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-24",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #22",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-24T17:07:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're excited to bring you a light Patch #22 with the following updates:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new idle sounds for the giraffe and wallaby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the penguin monster couldn't find a suitable landing spot to start the hunt in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a bug where boss logic would break if you shot a lethal dart after the boss appeared, left to the hub, and then returned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some misplaced VHS visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where it was impossible to interact with gadgets while the train was moving.: Thank you for your support!: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212245217911828340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-24T17:07:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.415Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.415Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-22",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #21",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-22T18:36:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to introduce Patch #21, which brings several improvements and fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with animal feces not saving or spawning correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where monsters would disappear after the \"animal morph into monster\" sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animals suddenly teleporting to greet at the entrance when entering their enclosure for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save/load issues with feeding zones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where crafting material vials could be taken through the locker doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the Gorilla monster landing sound effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked and refined various Gorilla monster sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The blood collector will now only take blood if no previous sample has been collected from the animal, ensuring the analysis is unknown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood collection is now limited to one vial per animal.: We hope these fixes make your experience even smoother. Thank you for your continued support!: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212244583194924597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-22T18:36:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.415Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.415Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-21",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #20",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-21T18:03:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's what we've done today! Patch Notes 20 – presenting the list of fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where blood collection in certain areas of the enclosure could cause you to get stuck in objects. With the new blood collection system, no more instances of this issue have been found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a blocker where, during a boss fight, bosses could attack you while drawing blood, causing a loss of your control after the boss’s attack. This is now fixed with the new blood collection system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blood collection from resting elephants now functions correctly with the updated system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a blocker where the penguin boss's flight animation would interrupt and block your controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the strange behavior of the mutant gorilla, where it would flee after being shot instead of attacking you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where, after interacting with the lab door scanner using CJ’s hand, Paul’s hands would disappear.: New Feature: We've added physical toys to animal enclosures as an experimental feature. How do you feel about these new sandbox elements that let you interact with the game world in new ways?: Thank you for playing and providing the feedback!: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212244583191195067"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-21T18:03:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.414Z"
+  },
+  {
+   "id": "zoochosis-282935@1",
+   "gameId": "zoochosis-282935",
+   "displayName": "UPDATE 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-18T21:56:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the most challenging issues in the game was the animal blood collection system, and we’re excited to announce that we’ve completely overhauled it. We hope that from now on, taking blood from animals will be much smoother for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s what’s new in Update #1",
+     "items": [
+      {
+       "text": "You can now collect blood from an animal from multiple angles, as long as the side is not obstructed by an obstacle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A universal blood collection animation is created for all animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After interacting with the animal using a syringe, the player will now wait for the animal to take the correct position for blood collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blood can now be collected in any situation unless something specifically prevents it, such as the animal's fear, aggression, or a monster's attack.: In some cases, tranquilizing animals like gorillas was necessary to collect blood. Now, that issue has been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "And here’s what’s new in Patch #19",
+     "items": [
+      {
+       "text": "Fixed an issue where opened ampoule boxes appeared closed after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed gorilla AI bugs during player chases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed non-working quick reload menu for darts in the corner of the screen when reloading through the PDA without holding the vet gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the appearance of scars when animals were killed with a rifle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added hippo idle activity sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And many minor visual fixes have been addressed.: Starting today, in addition to patches, we will begin releasing game updates that will enhance the player experience and make the game more fun.: Of course, we read and analyze all the feedback we receive from you. Thank you for helping us improve the game and for your continued support.: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "You can now collect blood from an animal from multiple angles, as long as the side is not obstructed by an obstacle.",
+     "A universal blood collection animation is created for all animals.",
+     "Fixed an issue where opened ampoule boxes appeared closed after loading."
+    ]
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212244583180850014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-18T21:56:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.414Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-17",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #18",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-17T19:04:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Mechanics Fixes",
+     "items": [
+      {
+       "text": "Fixed: Visual effects of the gas cloud from the hippo monster affecting the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issue with monsters attacking while placing food in the feeder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Elephant footsteps sounds; added new elephant idle sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Boss now reacts and transforms when a monster vaccine is shot at a non-infected animal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Minor bugs during monster fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Bug where the penguin monster should grab the player while flying away but didn’t, causing blocked controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Gadget duplication issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quest & Progression Fixes",
+     "items": [
+      {
+       "text": "Fixed: Issue where next tasks weren’t issued after defeating the boss in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Task completion for \"Feed the infected animal.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio Fixes",
+     "items": [
+      {
+       "text": "Fixed: Elephant footstep sounds and added new idle sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Audio volume issues in the penguin enclosure.: Thank you for all your feedback! We're always working to improve your experience.: With love,: Clapperheads Team ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212244583176767383"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T19:04:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.413Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.413Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-16",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #17",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-16T17:19:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, Zookeepers! 👋",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your feedback! Here’s what’s new in this patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Monsters",
+     "items": [
+      {
+       "text": "Fixed gorilla monster navigation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Polished cure/transform sequences of monsters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed gas clouds not disappearing after curing the hippo monster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various monster penguin issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "-Fixed reload issue during penguin attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Animals & Environment",
+     "items": [
+      {
+       "text": "Fixed cured animal loading issue related to parasite expulsion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed terrain holes in open enclosures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected positioning of objects in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI & PDA",
+     "items": [
+      {
+       "text": "PDA Widget: Fixed visual bug with the selected category button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PDA Widget: Fixed bug where the \"Use\" button was available for the Blood Ampoule.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Optimized decal count in the hub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed stained glass rendering.: Thank you for helping us make the game better! ❤️: With love,: The Clapperheads Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6212244583172855663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-16T17:19:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.413Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-15",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #16",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-15T17:22:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, Zookeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you once again for all your valuable feedback! Here’s what’s new in this patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Mutations",
+     "items": [
+      {
+       "text": "Fixed the monster's reaction after being hit with a dart while in animal form (triggered by feeding meat during a monster encounter).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with the gorilla monster during climbing sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the visual design of the monster’s health bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the gorilla monster got stuck when it should have transformed into an animal to vomit a parasite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the gorilla monster got stuck on a wall when killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Darts & Status Effects",
+     "items": [
+      {
+       "text": "Corrected incorrect state display when shooting either medicine or lethal darts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game Mechanics",
+     "items": [
+      {
+       "text": "Fixed an issue where players were unable to scoop poop or take a parasite near an animal.: Keep sharing your thoughts—it helps us make the game better! ❤️: With love,: The Clapperheads Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6211118320242143913"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-15T17:22:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.412Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-14",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTES #15",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-14T19:51:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for all your messages and feedback! Your input has been invaluable in helping us improve the game. Here’s what’s new in our Patch #15:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Animals",
+     "items": [
+      {
+       "text": "The elephant monster's transition back into an animal has been polished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the elephant monster attacks, the player now gets up at the spot where the monster pinned them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new “roar” sound for the mutated elephant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The VHS noise effect has been removed from the animal-to-monster transitions inside enclosures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where healing the mutated wallaby with darts triggered two morphs simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monsters no longer die near other dead animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The rotation of a monster's dead body now saves correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Environment",
+     "items": [
+      {
+       "text": "Fixed a bug where interaction with game objects was disabled during train movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where players could leave the hub immediately, before the biowaste filter message appeared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Carpenter's locker stickers were floating in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Animations",
+     "items": [
+      {
+       "text": "Fixed a bug where revisiting the hippo enclosure caused nausea in the corridor again.: Thank you for your feedback and continued support! Keep sharing your thoughts—they help us improve the game.: With love,: Clapperheads team 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6211118320238875976"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-14T19:51:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.411Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-13",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #14",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-13T21:10:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your feedback, we listen to each and every one of you. Here's the weekend light patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed game freezing when switching cameras in animal enclosures in both the main and final game menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual stuttering of Doc during the train sequence in the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the inventory UI and key prompts would disappear during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a few missing key prompts for interacting with the game world.: Thank you for all your messages!: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6211118320235430262"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-13T21:10:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.411Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-11",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #13",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-11T20:21:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're excited to bring you patch #13 for the weekend! Enjoy your gaming, and rest assured, we're continuing improving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Fixed achievements not dropping correctly before the final stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Mutations",
+     "items": [
+      {
+       "text": "Fixed a conflict between the monster transformation effect and the wallaby monster's vanish-reappear effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where healing darts wouldn't register if shot just before transformation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where monsters would fall through the ground while trying to eat an animal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the mutated kangaroo would shift position during an attack, causing the mutant to teleport and finish off the animal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Blood Collection",
+     "items": [
+      {
+       "text": "Fixed several bugs related to blood collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blood indicators at the vet station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blood indicators at the enclosure terminal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blood indicators for the animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Environment",
+     "items": [
+      {
+       "text": "The gas cloud near the hippo now appears only when you're close to it and disappears when you walk away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The effect no longer triggers when you're far from the cloud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interactions & Objects",
+     "items": [
+      {
+       "text": "Fixed a bug with the quiet phone ring in the penguin enclosure and storage room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where vegetable and herb briquettes couldn’t be picked up after finishing the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the vial delivery from Doc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI & Gadgets",
+     "items": [
+      {
+       "text": "Fixed a bug where the PDA screen would flicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where during a call with Lily via PDA, Paul’s gadget wouldn't be removed from his hands in the call montage.: Have a great time with the new patch, and we hope you enjoy the improvements! Thank you for your feedback!: With love,: Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6931694080296180035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-11T20:21:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.410Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-10",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #12",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-10T18:48:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back again today with a new patch! If you have any suggestions for improvements, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Mechanics",
+     "items": [
+      {
+       "text": "Fixed a bug related to incorrect loading of current tasks during the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added sequences for turning monsters fed with meat back into animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bugs in some animal AI reactions during monster battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hippo navigation around dug-out holes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flow issues when returning to the giraffes after the tutorial.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cutscenes",
+     "items": [
+      {
+       "text": "The \"New Animals Unlocked\" cutscene now only plays after finishing the first game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed sound issues in the cutscenes for endings 6, 7, 8, and 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound issues in the cutscenes for endings 10, 11, 13, and 14.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Interactions & Items",
+     "items": [
+      {
+       "text": "Fixed randomizer: Ampoule Boxes were empty in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interactions with fridges after the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the biometric lock on the large gate in the hub—you can no longer get stuck when interacting with it.: ---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI & Visuals",
+     "items": [
+      {
+       "text": "Fixed the PDA inventory interface limit—no longer limited to 15 slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor visual bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed kangaroo scream issues! 🦘: Thank you for all your comments and messages.: With love,: The Clapperheads Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6931694080292300721"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-10T18:48:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.410Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-09",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #9",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-09T05:06:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, Zookeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've got a fresh patch for you all! Here's what's changed and improved in this update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Mailbox: Fixed an issue causing the mailbox to not function properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Meat Grinder: Resolved a bug with the meat grinder’s interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PDA Updates",
+     "items": [
+      {
+       "text": "Added indicators for new items in the PDA, so you never miss what’s new! 🆕",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced overall PDA UX to streamline the interface and navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enclosure Terminal Widget: Improved sample status indicators (Blood, Feces) for better visibility when collected but not yet submitted. 🔬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vet Station Widget: Updated collected sample status indicators (Blood, Feces) when they are pending submission. 💉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Inventory Display",
+     "items": [
+      {
+       "text": "Fixed a bug where the player’s inventory in the PDA would display incorrectly if more than 15 items were present.: Thank you for all your feedback and support! Keep letting us know what can be improved, and stay tuned for more updates!: Your Clapperheads Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6360862737590907244"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-09T05:06:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-13T03:36:56.408Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-07",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #8",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-07T20:48:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re back with another update! Thank you for all the messages and feedback you are providing. We continue refining the game and enhancing your experience. Here’s what’s new in this patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visuals",
+     "items": [
+      {
+       "text": "Fixed animal LODs for better rendering quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected Sara’s piercing display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Sara’s LODs across multiple settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Render Distance setting to fine-tune visual performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a notification for enclosure failures. It functions similarly to the \"Congratulations\" message but displays upon failure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated monster health bar visuals for clearer health status indication.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Corrected text localization for animal blood sample descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Sound",
+     "items": [
+      {
+       "text": "Fixed sound issues with Paul’s vomiting scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected parasite sounds in the parasite storage area.: Your Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6350729003509935760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-07T20:48:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.407Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-06",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-06T18:10:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sunday patch is here! We continue working to improve your gaming experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization and Performance",
+     "items": [
+      {
+       "text": "Memory usage has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GPU optimization has been carried out in the giraffe enclosure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CPU optimization has been carried out in the enclosures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "The \"Clean the biowaste filter\" task now appears on time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where, on low settings, Sara's body stretched like a mesh when lying on the couch and when being taken off the hook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lily is now visible from Doc’s office window after the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many minor visual bugs have been fixed.: Your Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6350729003505891490"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-06T18:10:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.406Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.406Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-05",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-05T01:00:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to share Patch #6 with you! This time, our focus has been on enhancing the cutscene experience for a more immersive and polished gameplay. 🎬✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎥Cutscene Fixes & Improvements",
+     "items": [
+      {
+       "text": "Lip Sync Adjustments: Cutscenes now have better lip synchronization, making character dialogues feel more natural and lifelike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Subtitle Synchronization: Subtitles are now perfectly in sync with audio, ensuring you don’t miss any part of the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Subtitle Display Issues: We’ve fixed glitches that caused subtitles to appear incorrectly or not at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music & Audio: Added background music to enrich key scenes and enhance the atmosphere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visual Bug Fixes: Addressed multiple visual bugs, making each scene look smooth and polished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your continuous feedback and support as we keep working on improving the game! 🐾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Your Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6350729003499640347"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-05T01:00:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.405Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-04",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-04T20:03:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here we are again, and we won’t get tired of saying it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s the 5th patch notes",
+     "items": [
+      {
+       "text": "! Contains spoilers !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Mechanics",
+     "items": [
+      {
+       "text": "You can now open the PDA while petting animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"collect samples\" task now completes when taking the temperature during feeding [NG+].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the elephant's armor overlay during sleep when hit by a tranquilizer dart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a control freeze during blood collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where submitting collected blood in the Hub wasn't counted in the diagnostics terminal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where an infected penguin wouldn't eat and would remain standing in place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the reaction of mutated animals to being hit by a dart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tranquilizer darts now accumulate sleep time if the monster is hit several times before falling asleep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bug where the penguin monster wouldn't fall asleep for a long time after being hit with a tranquilizer dart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blood collection task completion when the player is in the Hub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the first sample collection task completion in the last enclosure for the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"NewGame+\" button has been returned to the main menu, replacing \"Continue+.\" There's also a \"NewGame\" button for a full reset of progress (the game starts from the tutorial).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed infected animal recipes. Preparation was starting in the wrong order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Tuned the gadget switcher visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the correctness of the segmented slicing bar when cutting food for mutated animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the UI to show monster health and cure immediately after being hit.: Your Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6350729003498888293"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-04T20:03:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.404Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.404Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-03",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-03T00:34:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here we are again with a new patch of fixes! We're listening to all of you, and thank you again for providing your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "! Contains spoilers !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Mechanics",
+     "items": [
+      {
+       "text": "Fixed the flashlight interaction on the cart, where it couldn’t be picked up after loading in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the blood symptom status in the terminal, vet station, and animal widget during blood collection in the BloodCollector (While being in the HUB)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the parasite spawned underground after killing the mutated animal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the zebra, while in a calm state, played the running animation when encountering the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where there were no interactions with gadgets on the cart until the cart on the platform was interacted with (NG+).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game Flow",
+     "items": [
+      {
+       "text": "Fixed a bug where Paul didn’t vomit in the сorridor after completing the giraffe enclosure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the task \"feed the infected animal with meat\" wasn’t completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the task to feed the infected animal didn’t trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where infected hands appeared healthy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Linda would call again in the last enclosure (4), causing Sarah to greet the player in the chair during the return to the hub (NG+).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues in one of the cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the credits roll faster, and now they can be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization and Performance",
+     "items": [
+      {
+       "text": "Significant work has been done on CPU optimization (check if your FPS has improved!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conducted a major review to address crashes—if you’re still experiencing them, please reach out and let us know! Your reports help us pinpoint and resolve these issues faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interface",
+     "items": [
+      {
+       "text": "Fixed incorrect scaling of columns on the сcutting table when the deviation percentage warning appears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved visibility of control hints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed scaling of frames in control hints when there is long text (relevant for the Japanese language).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with control hints in the gadget switcher and dart switcher.: Your Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 14,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6350729003492281521"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T00:34:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.403Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-13T03:36:56.404Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-02",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-02T20:38:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working hard to improve the game as quickly as possible. With these efforts, we will deliver a better gaming experience to you in the near future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the bug fixes and patch notes for today",
+     "items": [
+      {
+       "text": "*! CONTAIN SPOILERS !*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Settings",
+     "items": [
+      {
+       "text": "Added DirectX 11 support to improve game performance and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed an issue where Paul didn’t warn Lily about the meat during a phone conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the missing call from Doc after completing the second enclosure if Linda’s call was previously answered in the giraffe enclosure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In one of the endings, fixed the problem where the Matriarch's hands were clipping through the door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Sarah’s line being repeated during a phone conversation with her husband.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in one of the endings where the ending wasn’t displayed when poison was injected into Sarah.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the problem of the giraffe monster’s head falling through the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed errors in one of the cutscenes involving Sarah’s twin sister.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sarah’s animation, where she would move while sitting in a chair after the player took the mobile phone prematurely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game Mechanics",
+     "items": [
+      {
+       "text": "Fixed the issue of parasites reappearing in dead bosses when returning to the station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed premature triggering of phone calls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where starting a new game would spawn the player outside the map, preventing the game from starting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved the issue preventing the collection of reagent bottles in the moose, giraffe, and penguin enclosures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the freezing of the mutated zebra after eating an animal, as well as errors occurring when returning from the hub by train.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the incorrect behavior of poison in the vet station when creating items on top of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the possibility of killing a zebra with the moose mutation vaccine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where a mutated moose, tranquilized with two darts during the first phase, would kill an animal after the player returned to the train.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Interface",
+     "items": [
+      {
+       "text": "Text errors at the vet station have been fixed: the availability of 3 vaccine doses is now displayed correctly.: Your Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6350729003491684053"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-02T20:38:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.402Z"
+  },
+  {
+   "id": "zoochosis-282935@post-2024-10-01",
+   "gameId": "zoochosis-282935",
+   "displayName": "PATCH NOTE #1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-01T22:48:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Zookeepers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for all the attention and feedbacks. We appreciate and value all your time and energy put into the game. We will work hard to bring a better gaming experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your review and feedbacks are very important to us, we are reading and learning everyone of them, positive and negative. And we are working on it asap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Following are the bug fix and patch note for today",
+     "items": [
+      {
+       "text": "We’ve changed the options for starting a new game. Now you can start a completely new game or continue the previous one at any time. Starting a new game will erase your previous progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All 4 next animals are now available for the second playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For the 3rd, 4th, and subsequent playthroughs, animal enclosures will be available randomly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the visual of a loaded dart in the reload widget. Now you can see which dart is loaded in the bottom left corner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the mutant's pause: after shooting it with a tranquilizer and exiting the enclosure, the mutated animal no longer kills other animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed dart reloading from LMB. Now, after firing the veterinary gun, LMB no longer reloads it. Reloading darts is now only possible by pressing R or through the PDA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the head tilting of the Hippo in the corridor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The boss transformed into an animal is now cured instantly with a vaccine dart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Animals no longer mutate if you have already dealt with the mutant in that enclosure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the double-dead parasite issue: in rare cases, two parasites would drop from the boss. Now only one will drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor bugs at the vet station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now, if a monster reverts to an animal, it can be cured or neutralized with a single dart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a sound for the dart dispenser so you won’t miss them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hands being visible through doors in some cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted resource balance, now there will be enough vials to last the entire playthrough.: Your Clapperheads team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458560/view/6350729003488368070"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-01T22:48:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458560",
+      "checkedAt": "2026-11-13T03:36:56.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:56.401Z"
+  }
+ ],
+ "issues": []
+}

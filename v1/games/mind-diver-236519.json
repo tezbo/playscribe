@@ -1,0 +1,512 @@
+{
+ "game": {
+  "id": "mind-diver-236519",
+  "igdbId": 236519,
+  "name": "Mind Diver",
+  "cover": {
+   "imageId": "co9o3v",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9o3v.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar25gk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar25gk.jpg"
+  },
+  "ps5Release": "2026-08-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mind-diver-236519@1.0.95",
+   "gameId": "mind-diver-236519",
+   "displayName": "Patch 1.0.95",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-17T09:14:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Apologies for the delayed patch notes but we have rolled out a hotfix which fixes several reported issues and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the game would try to save and load simultaneously, which could cause the game to stop saving progress. The game also now loads the save file less often, which should improve scene loading times a little bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where spamming the Enlarge button could cause the Close-ups menu to get stuck: Refer to GIF below:\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain memories getting culled in specific situations if the FOV was set very high",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the doctor having two names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed long memory titles overflowing in the top-left display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some lights not affecting hovered items, making characters and items look like dark silhouettes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed offset outlines on Case Files and Messages in the Helmet Interface when selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Unity version to address Unity-wide security issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We will continue to keep a close eye on your reports and feedback. If you would like to report a bug/issue, please use our pinned Bug Threads in the Discussions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PLAYISM",
+     "items": [
+      {
+       "text": "Visit the PLAYISM Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PLAYISM Publisher Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259330"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259330/view/1813674388965330"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-17T09:14:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259330",
+      "checkedAt": "2026-11-12T08:24:20.839Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:20.839Z"
+  },
+  {
+   "id": "mind-diver-236519@major-2025-09-10",
+   "gameId": "mind-diver-236519",
+   "displayName": "Demo Rework/Update Patch Notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-10T09:24:09.000Z",
+   "notes": [
+    {
+     "title": "Attention Divers!",
+     "items": [
+      {
+       "text": "We're excited to roll out an update that revamps the demo and provides a number of improvements to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "\"Messages\" tab is now available in the demo! Use it to review all transmissions sent by the Operator and view a list of all tutorial guides you've found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional Options added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Improved translation overlay for Close-Ups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some objects in \"The Day After\" were moved to easier to find and logical places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New models and textures for giant roots in the Mind Ocean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New swim animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Intro animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New visuals for Subconscious Gate labels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Brushed up the visuals of the multitool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly improved placements of tutorial prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved UI scaling for various resolutions and aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vastly improved optimizations (Demo is now 1.7 GB smaller than before, among other things!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Important Disclaimer",
+     "items": [
+      {
+       "text": "Please note that save files created in previous versions will not carry over. We’ve made several updates to the save system, which means that saves from older demo versions are no longer compatible with the latest version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We truly appreciate everyone's support and we hear all of your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are currently working closely with the developer to try and polish the build as much as possible in preparation for release! Stay tuned for more updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have any feedback or bugs to report, please post them on the forum(s):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PLAYISM",
+     "items": [
+      {
+       "text": "Visit the PLAYISM Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PLAYISM Publisher Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0,
+    "topNew": [
+     "Additional Options added",
+     "Improved translation overlay for Close-Ups",
+     "Some objects in \"The Day After\" were moved to easier to find and logical places"
+    ]
+   },
+   "sourceIds": [
+    "steam-2259330"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259330/view/1810503566378399"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-10T09:24:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259330",
+      "checkedAt": "2026-11-12T08:24:20.837Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:20.837Z"
+  },
+  {
+   "id": "mind-diver-236519@major-2025-06-11",
+   "gameId": "mind-diver-236519",
+   "displayName": "Demo Update Patch Notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-11T03:54:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After hearing your feedback and bug reports, we have rolled out a patch which fixes several bugs that were affecting the playability of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved swimming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More fine-grained control to better be able to adjust course. Especially useful when having to go through narrow passageways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the boost system so that the player no longer has to time it correctly. The boost now simply charges up and can be used at any time. There is no \"penalty\" for missing a timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Larger floor colliders on memories, so that players do not fall down when leaving a memory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes / Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coloured subtitles to help with distinguishing characters speaking. Also in transcripts to make the reading experience of transcripts more clear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved environmental guidance towards \"The Day After\" from \"Party: Welcome\", and hid the party memories when players are outside to avoid misleading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with not being able to select a transcript if the echo is currently playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the echo highlight effect sometimes not appearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimization, especially for faster loading times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio for listening part of the multitool changed to be more discreet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to make the arms/tools switching avoid overlapping to avoid having three arms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes to colliders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced the survey button with a Discord button to capture more feedback from Steam Next Fest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We truly appreciate everyone's support and we hear all of your feedback! We are currently working closely with the developer to try and squash more bugs and implement more QoL features! Stay tuned for more updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have any feedback or bugs to report, please post them on the forum(s):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PLAYISM",
+     "items": [
+      {
+       "text": "Visit the PLAYISM Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PLAYISM Publisher Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259330"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259330/view/1802261838701582"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-11T03:54:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259330",
+      "checkedAt": "2026-11-12T08:24:20.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:20.836Z"
+  }
+ ],
+ "issues": []
+}

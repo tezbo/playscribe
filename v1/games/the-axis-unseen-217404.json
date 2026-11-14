@@ -1,0 +1,1789 @@
+{
+ "game": {
+  "id": "the-axis-unseen-217404",
+  "igdbId": 217404,
+  "name": "The Axis Unseen",
+  "cover": {
+   "imageId": "co8owc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8owc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1v9r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1v9r.jpg"
+  },
+  "ps5Release": "2025-12-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-axis-unseen-217404@1.13",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Patch 1.13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-25T01:35:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new patch has been released. This fixes a few small issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Steam achievements. A minor error was preventing this from working. Any achievements unlocked during the period when this was broken will retroactively unlock. No progress will be lost.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some incorrect trees in the Main Menu level that were animating incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the position of the Main Menu buttons to not block text in certain versions of the game/certain resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/1822556746164744"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-25T01:35:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.735Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-25T01:35:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.736Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-25T01:35:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.145Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@1.12",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Patch 1.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-17T15:42:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new patch has been released. This fixes a few small issues and has a few fixes from the XBox/PS5 release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Blocked Spirit Arrow in the Main Menu level - This broke once these became free to use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the compass on the hand from an arrow to an N to make it more clear that it simply points North, not at anything in particular.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added buttons to the Main Menu for Discord and Merch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated FSR to 3.1.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocked powers/magic from working in the ending section of the game where it should be a new player without powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the “Skip Intro” button to the section that is now the ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various small bugs that were fixed for the console port of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/1819386365087057"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T15:42:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.735Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T15:42:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.735Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-17T15:42:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.144Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@major-2025-05-14",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Major Update! Overhauled Intro, Tutorial and Ending!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-14T17:43:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The intro, tutorial and ending to The Axis Unseen has received a major overhaul.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The short version is that the intro tutorial is longer and has monsters. The previous intro tutorial that was set to music is now no longer at the beginning and occurs at the end of the game, depending on how the player played the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should make it much easier for new players to ease into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you all like the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the full details of the update",
+     "items": [
+      {
+       "text": "-New intro text when starting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Moved tutorials further up on the screen so they are harder to miss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new section at the start of the tutorial about crouching and created a new cave the player starts in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Prevent enemy despawning due to range in the intro/tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the intro tutorial section longer and added monsters for the player to fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed the bow having a light on in the intro tutorial but no magic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Show key art behind the new quote at the start of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Moved difficulty gates all next to each other instead of having Pacifist/Permadeth behind the main difficulty gates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Moved the difficulty gates to AFTER the tutorial instead of right away. That way the player has a feel if the game is hard or not instead of just guessing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Stop time of day from progressing during the intro tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made it so you can die in the intro tutorial (previously the player was invulnerable)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added ambient sound for the intro tutorial, it was broken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Remove tutorials from part that was previously the intro set to music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Move the section that was previously the intro set to music (\"In Fiction\") to the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Moved credits to after this section set to \"In Fiction\", unless the player does the path of the Eagle, in which case they are triggered after the end of the previous Ending section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed the hand of the Hunter who finds the dead Hunter in the section set to \"In Fiction\", it was mutated but should have been normal looking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reset the \"should play 2nd section of the intro\" if you quit to the Main Menu so it won't trigger twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added text at the end of the first part of the Ending depending on how the player beat the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Disable the player's powers when playing the \"In Fiction\" segment, footprints were glowing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Show the bow helper tips that you see in the Options Menu as part of the initial tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Show Difficulty text right away when going to the difficulty selection area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made sure that the creatures in the intro tutorial area spawn in at specific times instead of being there from the start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-If you Skip the \"In Fiction\" segment, that now triggers the Credits instead of skipping to the main game now that it occurs at the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated the localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/1799722702500383"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-14T17:43:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.734Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.144Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@patch-2025-02-24",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Digital Journal and New Patch!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-24T19:12:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Digital Journal for The Axis Unseen has been released!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This Digital Journal contains the entire journal from the game The Axis Unseen. This includes all of the monster drawings and descriptions, equipment, sense powers, magic, journals and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It contains 441 pages of content including 72 monsters and hundreds of pages of journals from various people throughout time who have been in the world of The Axis Unseen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can check it out here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also new bundles on the main store page that include the Digital Journal and the full game or the Digital Journal, full game and the soundtrack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch has also been released for The Axis Unseen. Here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.092 - Released on February 24 2025 - 19 changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Large Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where the main save could be older than a backup for a variety of reasons. Now it always checks all the saves and uses the most recent one. Previously, backups were only used if the main save was actually corrupt and not able to be loaded. This prevents a periodic issue where some people would lose progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Autosaves update the “time last saved” timer correctly. This prevents edge cases where the autosave and another save would trigger on top of each other, causing an occasional crash or save corruption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where retrieving arrows in a certain way would cause them to duplicate. This meant you would slowly gain more and more arrows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made spirit arrows free and updated all of the journals and tool tips to reflect this. They previously used the Magic resource whenever they were fired.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where creatures thought they were stuck inside something when they were in water. This caused them to continually pop up into the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tuned the way that monsters turn to help prevent cases where they would get stuck walking in circles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Confirmed that the Nucklavee can be permanently killed but also made it take into account if it is on fire when it dies. Previously it was only checking the final damage type, meaning if it was on fire but you then killed it with another arrow type, that was not considered a “fire death”. Now it is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where enchanting your arrow would cause the damage multiplier to go up every time you fired an arrow that was enchanted. It now resets properly every time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Small Changes",
+     "items": [
+      {
+       "text": "Fixed a lot of random spelling and grammar errors in the journals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some grass poking through rocks at the start of the intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made kills using the Stone Flesh power (turning to stone and dropping onto someone) unlock statues in The Lodge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the splash sounds for footsteps louder (the sound itself, not how AI perceives it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clarified how many monsters are in Hard Mode in the menus, it’s twice as many creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed thousands (literally) of floating dirt and rock pieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the Legendary Smoke Golem XP consistent with all of the other Legendary Golems. It was too low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the opaqueness of the Bunyip poison cloud. It was reduced in a previous patch, but it was a bit too much. Now you can see it more easily but it is still not as solid as it used to be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed the “Stuck Check” on the Maxacotal and Screecher to prevent them from “jumping” and unsticking from things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated a few missing localization strings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the navmesh and HLOD to reflect all of the fixed floating objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 2,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/1792116353332245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-24T19:12:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.734Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.143Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@1.091",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Update 1.091",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-15T17:12:24.000Z",
+   "notes": [
+    {
+     "title": "A small patch has been released for The Axis Unseen",
+     "items": [
+      {
+       "text": "Fixed the blocks in The Lodge on the table that reflect how many of the map sections. These were not hiding when you unlocked a Map Altar. Now if you unlock one, you can tell how many are left to find in the region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the number of save backups from 100 to 20. This way it takes up less space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the stealth damage multiplier on Metal arrows. It was 4x, now it’s 2x. It was overpowered and could one shot large creatures even in the final region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made enchanting arrows with magic cost 2 magic instead of 1. It was too easy to enchant every arrow and get that magic right back and never run out. Especially for stealth players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the Bunyip poison clouds less opaque. Their purpose is to cause poison damage from a high heart rate, not to obscure the Bunyip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a lot of minor spelling/grammar fixes for the journals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the shooting/melee tutorials from the Intro since they are already there before the intro now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the floating Legendary Vampire statue in The Lodge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the Sasquatch from the demo area. It works better once people have a better handle on how to play the game and spaces things out better for pacing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update the HLOD/Navmesh to account for some minor changes in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/1788945554762368"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-15T17:12:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.733Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.142Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@1.09",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Update 1.09",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-03T22:29:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Made sure Screechers/other creatures with addon actors don't check against themselves when seeing if they are stuck in something. This was causing them to float up into the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the shooting tutorial part in the intro, moved the arrow retrieve section to a new spot so it isn't always teleporting you around in the same area. This was confusing to some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed \"Screench\" in Alicantu journal misspelling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Rapidly\" in the last sentence metal arrow journal being mispelled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Don't unhide the tip icons in the main menu, the player only needs to see this one ingame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the map excavation tip never going away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Woman breathing sounds not impacted by volume settings? - Missing sound class, fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Specify that the map excavation area is in the center of the safe area, some players were not finding it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/1787858252760367"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-03T22:29:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.732Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.141Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@patch-2024-11-22",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "New Patch! Map Excavation, AI Director, Overhauled Gravity and more!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-22T16:34:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest patch for The Axis Unseen is out now. This is the biggest patch yet and addresses most of the issues people have brought up with the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the biggest changes/additions",
+     "items": [
+      {
+       "text": "-New map system - There is now a way to keep track of where you have been in the world and a map that you can examine in the safe area. Areas are unlocked by finding a new type of altar out in the world that also acts as a permanent spot that you can get a free spirit arrow view from. There are new markers on the tables for each region to show how many of these exist in each region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Overhauled gravity - Things are now less \"floaty\" and small creatures don't push the player as far. Larges creatures will still throw you far. All of the forces, fall damage and dodge jump have been adjusted to work with this new setup. The low end dodge jump is also now not as effective, but the high end is slightly better than before. This gravity change should also cause creatures to not fly into the air as much when running down steep hills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-AI Director - There is a new AI director that ramps up and down how many creatures will track the player at once. This changes based on various factors such as if you recently died, if it's night or if you're running around making a ton of noise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-More Soundtrack Variety - All of the main tracks have more variants that show up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Boar Juggling - This was adjusted even more to ensure that boars don't stay under the player when they toss them up into the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Major Intermittent Performance Loss - A number of things that were causing inconsistent performance have been addressed. If you see any other cases of inconsistent performance, let me know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Pass on Creature Attack Ranges - A pass has been done to make these distances more accurate. Some were too far, some were too short, some had the creature's eye heights set incorrectly throwing it all off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Buffed Stealth Damage Bonus - This was previously a 2x damage multiplier if you damage a creature that hasn't detected you, now it is 4x.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Here are all the smaller changes",
+     "items": [
+      {
+       "text": "-Put the \"Continue From Last Save\" button back into the new main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced the timeout on arrows that never got looted that would keep making a whooshing sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated a few strings that were not localized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a UI tip for the dots on the bow for Magic on the Options screen and Death Tips screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a case where some journals were not putting out the Ultrasonic sound anymore if too many other sounds were triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Show the playtime on the new Immersive Main Menu when you are near a portal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed going through a portal making your bow get stuck aiming. Forced it to release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Slowed down time even more in photo mode, unfortunately it can't be 0 or FX such as blood freak out and twitch in random directions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed persistent bat noises from bats that were no longer there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed wind on the Redwood trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the look of the Wolf and Boar to be more detailed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced how much magic Golems were giving the player, it was inconsistent with every other creature and way too high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed displacement on the small world trees hiding some journals and also letting the player look inside of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bunch of minor spelling/grammatical errors in the journals thanks to feedback from the Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted a bunch of creature collision capsules to move with the mesh so that they are less likely to clip into the player when moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Redid the Horned Beast ragdoll so it doesn't freak out so much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Trigger the full song after a few Lodge visits, it was a bit too rare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a few of the journals for the Desert and the Mountain that were incorrectly acting like you found them if you found a different journal. This means that when this happened, one journal would act as if you found two journals. Behind the scenes, the journals that were found was being tracked correctly, so this is just a cosmetic bug that has been fixed and it now reflects the journals you have actually found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Rare and Unique Boar fur has been fixed, it was using the incorrect binding and looked strange.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Don't wait to show the Yes/No prompt for the intro if you already have an existing save game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated the navmesh and HLOD to reflect new changes to the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Removed the eye adapt mask because it was making eye adapt too inconsistent and going too dark when it shouldn't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made shadows a bit brighter on low end hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Gave dodge jumps going uphill an even bigger boost so you don't just jump into the hill as much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Flipped the portal exit around near the Breathe Poison portal so that it points at the Quiver upgrade so that people are less likely to miss it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 0,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/1783872412019779"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T16:34:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.732Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.140Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@patch-2024-11-11",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Latest Patch Out Now - New Immersive Main Menu!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-11T22:58:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest patch for The Axis Unseen is out now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This features lots of bug fixes and polish, but most importantly, the entire main menu has been overhauled. Instead of being a series of menus, the majority of it (besides options, etc.) is now a playable space you can explore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This lets players practice freely with no outside threat, resume old games, start new ones and pick your difficulty, all while moving around as the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This also makes the game more flexible for future updates, so new difficulties or game modes can be added without the menu getting even larger than it already was. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the major changes",
+     "items": [
+      {
+       "text": "-Added a new immersive main menu - Starting/resuming a game and selecting your difficulty is now all done in a playable space. This fits in more with the “no UI” pillar of the game and is more flexible for future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed players taking fall damage if they jumped through a portal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Branched the Boar AI so they are less likely to juggle the player. They attack and then go a random distance away before charging again instead of staying right next to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the weathers right as night starts/ends to not get quite so dark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added UI tips about the bow runes/health icon to both the Options screen and the Death UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated localization to fix all the missing strings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can read the full patch notes here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/6148070194801737643"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-11T22:58:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.731Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.139Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@1.051",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Update 1.051",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-04T20:28:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Changed the default magic type so that people loading an old save before equipped Magic Type was stored default to the Earth Power, which is the first one that is unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased the Boar attack cooldown to prevent multiple hits and also reduced their vision to 60% of the previous value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made sure that Rock Slam could hurt creatures when you land directly on top of them. Adjusted some arrow logic to make sure this doesn’t break anything since it now blocks some additional traces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made sure that Screechers were not rotating in place. This was a side effect of some logic to get creatures who were stuck out of where they were.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made sure that all unlocks are refreshed when loading a save. There were some cases where depending on where you were and how things loaded where you could re-loot objects. Existing saves are fine, there was no corruption issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Destroy arrows when the Nucklavee respawns, this was causing a lot of strangeness trying to spawn a creature on top of arrows. Duplicate arrows could be created, physics could freak out, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the Lurkers not hop. This was another side effect of logic to unstick creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Set the player to be temporarily invisible when loading a save to prevent fringe cases where loading a Pacifist save would cause nearby creatures to aggro the player for a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced the low end of the Dodge Jump. The initial dodge jump doesn’t go as far but the high end is the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the sound meter not blink and instead just adjust based on what’s happening so it’s less distracting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/6146943657174039439"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-04T20:28:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.730Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.138Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@1.05",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "Update 1.05",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-01T19:02:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest patch is out now. You can read the notes here or below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's some of the biggest changes",
+     "items": [
+      {
+       "text": "-Fixed some cases where your Death Energy would fall through the world or get lost when you loaded up a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed volume sliders/a few other things resetting the first time you used the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Birds now disperse if you loot the energy beneath them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Magic power towers have the glowing particles above them shut off after you have collected the magic power. Confirmed that all other items shut off their particles as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Creatures now move towards you while you are in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a way to permanently kill the Nucklavee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed the hotkeys breaking in Photomode if you clicked and dragged with the mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Added a slight delay after you go through a portal before creatures will start to perceive you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a crash in Photomode caused by DLSS by upgrading the DLSS plugin",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Buffed stealth more. Arrows/knives make sounds that don’t travel as far (reduced by more than 50%), sprinting is not quite as loud (was 2x, now 1.5x), crouch is a bit quieter (was 33% now 25%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Expanded the randomized radius that creatures search for sounds at. The further away the sound is, the less precise their search will be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where if you quit the game while outside of any valid region (which only happened if you went climbing over cliffs/jumping down holes), your save would no longer have a valid respawn. Reloading it and picking “Abandon Hunt” to force a respawn will fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the smaller changes",
+     "items": [
+      {
+       "text": "-Added a kill trigger in the gap in the cliffs between the Forest and Swamp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Did a pass on the arrows in the world to prevent the “Arrow Full” message from getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Latest Steam Deck update fixes the crash loading between levels (such as loading to the end of the game) If you run into this, make sure your Deck is updated.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Made the Multitude use the Teleport instead of Move function so the player is not moved to an invalid spot where they get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made sure that if you kill something with the Rock Skin crush it will unlock the Statue/Journal entry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed text that was cutoff in some of the menu dropdowns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed sensitivity not saving. It was just pulling the current value not the one from the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated the portal images on some of the newer portals that were added recently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Scaled how much the sound meter goes up based on your Stealth stat, so if your stat is higher, the meter does not go up as high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the scent particles to only adjust visibility based on if you’re downwind or not, the view angle no longer matters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Save/Load which Magic/Arrow you have active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Put the “Save Bug Position” button back in. This saves the camera position and rotation to make it easier to track down things like floating trees/rocks. This goes into BugComments.sav in the save folder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the Epic Store login flow to be more robust if you ever get logged out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Extended the distance that the Redwood trees move with the wind and made sure the trunk now moves with the wind as well, that was not supported when those first went in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a note that the FPS readout is wrong if you use frame generation",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Added a periodic check to make sure the holster doesn’t get stuck out if you sprint by the restock portals and spam the quiver check button. You could sometimes end up with four arms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the “Tick Manager” that optimized how often creatures would update to run better. Larger creatures need to be further away before they use large values. This stops stuff like large golems looking like they are moving like stop motion characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted how the “Last Played” date is displayed, if it had a single digit (such as 9) it would show times like 10:9. Now it says 10:09 in these instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Refined the collision of smaller rocks in the forest region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Repeatedly pulling the trigger/clicking while you have the sledgehammer will now only trigger a spear attack. You have to actually hold down the button to trigger the Sledgehammer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made sure that the icon that indicates that you can level up doesn’t show a false positive when you have a stat at the Max level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the damage vignette around the edge of the screen to not show up until 30% damage. This way you don’t stub your toe and have it already a bit harder to see. This was especially an issue in the dark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a distance cap to how far Metal Arrows will pull in Primitive arrows, also don’t do it for ones placed in the world. This caused some strange behavior and also even some slowdowns/crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed the Use Key not showing the correct key in all cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-FOV adjustment wasn’t working for the Photomode Free Cam, fixed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a failsafe on flying arrows to get rid of them if things broke and they started to circle the player forever making a whoosh sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 35,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/6146943657173942381"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-01T19:02:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.729Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.138Z"
+  },
+  {
+   "id": "the-axis-unseen-217404@patch-2024-10-25",
+   "gameId": "the-axis-unseen-217404",
+   "displayName": "🤘The Axis Unseen Demo Back Up! New Patch! Overhauled Tutorial! Stealth buff!🤘",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-25T03:04:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Axis Unseen demo is now back up! A new patch has also been released!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The demo was down briefly for launch, but now it is back up and it has a lot of fixes, balance changes and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It features over lots of changes and you can read the full patch notes here if you want.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Some of the major changes include",
+     "items": [
+      {
+       "text": "A new pre-intro tutorial area was added before the main intro kicks off so you can take your time before diving into the intense metal intro!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stealth was buffed, it is now harder for creatures to see and hear you. It is even more effective once you level up this stat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overhauled the cliff collision so that it is impossible to go inside of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thinned out the spawns significantly in the starting area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the logic for how creatures get unstuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed and issue where some settings would reset going from the Main Menu to the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the spirit arrow would break the fog in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Fire/Strength stat now lowers falling damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the exposure settings so that things don’t blow out so much if you’re in a heavily shaded area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added fullscreen support. Note: Borderless windowed is still the preferred method since it doesn’t cause issues with Windows when you alt tab and doesn’t have issues losing focus of the screen when switching resolutions. If you have performance issues using your native monitor resolution you should consider using DLSS, FSR or XeSS. This also is better visually.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I hope you all have fun with the demo and if you like it, pick up the full version and leave a review! Feel free to send feedback to me. I'm actively working on the next patch after this. All of your feedback is useful! Thanks and happy hunting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Purkey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807810/view/6212245217911841947"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T03:04:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807810",
+      "checkedAt": "2026-11-13T03:32:53.728Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.136Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,945 @@
+{
+ "game": {
+  "id": "mars-base-194273",
+  "igdbId": 194273,
+  "name": "Mars Base",
+  "cover": {
+   "imageId": "co4usw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4usw.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1z5m",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1z5m.jpg"
+  },
+  "ps5Release": "2023-11-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mars-base-194273@1.1210",
+   "gameId": "mars-base-194273",
+   "displayName": "Update 1.1210",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-16T05:39:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added V Sync support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed animal feeding functionality where sometimes the first item is not selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash after leaving the chicken coop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animal not saving correctly after arriving on the first day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/1816307528967840"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-16T05:39:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.126Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-16T05:39:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.126Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-16T05:39:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.130Z"
+  },
+  {
+   "id": "mars-base-194273@1.1207",
+   "gameId": "mars-base-194273",
+   "displayName": "Patch 1.1207",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-09T02:42:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed spawning in cave issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Lucy the dog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/1801617199509215"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-09T02:42:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.126Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-09T02:42:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.126Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-09T02:42:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.129Z"
+  },
+  {
+   "id": "mars-base-194273@1.1204",
+   "gameId": "mars-base-194273",
+   "displayName": "Patch 1.1204",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-24T12:27:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed crash when attempting to place the hydroplanter boxes in the hydroponic greenhouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed auto dialogue selection issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/5759622039990660993"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-24T12:27:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-24T12:27:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.125Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-24T12:27:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.129Z"
+  },
+  {
+   "id": "mars-base-194273@1.1202",
+   "gameId": "mars-base-194273",
+   "displayName": "Patch 1.1202",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-12T11:02:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New patch v1.1202 is out now for PC and macOS with minor fixes for the game and preparation for new content (later this year).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fixes include",
+     "items": [
+      {
+       "text": "Rover disappearing from main base when the player visits the Mars Ranch and comes back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player is able to purchase the same rocket parts multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In chef mode, the player's own ingredients aren't used in the final calculations and not deducted properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game crashes when placing water bucket in Mars Ranch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player cannot add food to the animals bucket (when its been resorted).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/5768625435406221958"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-12T11:02:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-12T11:02:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.125Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-12T11:02:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.128Z"
+  },
+  {
+   "id": "mars-base-194273@major-2023-02-13",
+   "gameId": "mars-base-194273",
+   "displayName": "Mars Base Ranch Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-13T15:55:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Mars Ranch update is here! Now you can live out your cowboy dreams on Mars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "3 New Buildings!",
+     "items": [
+      {
+       "text": "-Mars barn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Coop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Train Loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Animals!",
+     "items": [
+      {
+       "text": "-cows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-goats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-sheep",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-pigs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-chicken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-rabbits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other than that, we have quality of life updates such as adding a new Mars wood resource and other inventory enhancements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "-Mars barn",
+     "-Coop",
+     "-Train Loop"
+    ]
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/5036749277244488957"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-13T15:55:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.124Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.127Z"
+  },
+  {
+   "id": "mars-base-194273@1.1",
+   "gameId": "mars-base-194273",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-23T23:43:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The new patch 1.1 Mars Ranch update will be dropping in January. It’ll feature the ability for the players to raise and breed animal livestock, then eventually run a mini petting zoo or sell them off to the markets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new Mars Ranch level features indoor and outdoor areas as well. There will even be new props for the Ranch and the home pod interior!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are three new buildings: Mars Barn, Coop and Train Loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can store animals in the barn and coop, and travel using the train loop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New animals include cows, goats, sheep, pigs, chicken and rabbits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New animals can be stored in the barn and coop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For some quality of life updates, we have added a new Mars wood resource, as well as inventory enhancements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve done a lot of work on the back end with bug fixes, updates, and more, so we hope you’ll check out the update in January! If you have any feedback or want more updates, check out our Discord and Twitter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/5035621474427155614"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-23T23:43:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.124Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.110Z"
+  },
+  {
+   "id": "mars-base-194273@1.024",
+   "gameId": "mars-base-194273",
+   "displayName": "Patch 1.024",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-28T14:37:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! We've got another patch for you all today continuing to address the bugs you all have found. We've also added in some more quality of life stuff, like mouse support menu interactions!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We're also working on our first big content patch that we want to tease a little bit for you all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to the wild west of Mars Base, a new enclosed biome to explore and new resources to salvage. In the effort of sustaining future colonies, you are tasked with setting up a ranch to acquire animal livestock from Earth. You will raise them up, and then move them on to the Mars zoo or sell them off to the markets. The base inhabitants can visit the zoo for recreational purposes and earn you additional income in the process. Lastly, there will be new buildings, interior and exterior props to engineer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Mars Ranch patch will be landing soon. Now onto v1.024 patch notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Addtions/Fixes",
+     "items": [
+      {
+       "text": "Fixed crash if player is carrying crop seeds and interacts with bun.ie droid in the greenhouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when swapping weapons in the Dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added transparency when the player walks behind a building or machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added mouse support for Build, Freedom, Terrain and Planter mode. The mouse can move or select objects within the camera view now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added mouse support for all menu interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added mouse right click support to open the menu throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added mouse left click to shoot in the dungeons if any enemies exist.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/4706851091176978379"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-28T14:37:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.123Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.109Z"
+  },
+  {
+   "id": "mars-base-194273@1.015",
+   "gameId": "mars-base-194273",
+   "displayName": "Patch 1.015",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-20T13:18:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've got another patch for you all today updating and adding some things, as well as fixing some more of the issues that you all have been reporting. Please keep the reviews and feedback coming. We love reading through it all, plus it will help us continue improving the game! If you run into any issues or want to send more feedback than what you want to include in a review, feel free to post in our discussion boards, or in our Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates/Fixes",
+     "items": [
+      {
+       "text": "Fixed soft lock issue with recycling the buildings or machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allow camera to zoom out when in Freedom or Terrain mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera issue where it prevented the player from moving or placing objects closer to the edge of the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with non-pistol weapons not equiping properly in the dungeons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed low energy darkness levels so it won't get darker each time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera zoom setting before and after going to bed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed oxygen and water machines max levels as you recycle the respective machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Inventory key 'i' which will load straight the player straight into the blueprint or items inventory depending where they are.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added 'exit' button to the market or forging menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated shop functions so it won't sell blueprints or recipes that the player have already.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated enemy stats (knock back, speed and hp) in the dungeons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/4714731755412214294"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-20T13:18:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.123Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:07.109Z"
+  },
+  {
+   "id": "mars-base-194273@1.013",
+   "gameId": "mars-base-194273",
+   "displayName": "Patch 1.013",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-19T13:45:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have our first patch for you all! Please keep the feedback coming! We love hearing from our community and will continue improving the game. This first patch addresses some of the crashes and bugs that we've seen reported. If you have encountered any more bugs along your journey on Mars, please report it in our Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed crash that occurred when players obtained 24 out of the 25 rocket parts and then went to sleep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound bug where it keeps looping if player drives it around and then exits the Rover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animation glitch with the bike rover when driving right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Rover issue not appearing in the open plains after exiting the Rover, leaving the area and then coming back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are still working on some other bugs and such that have been reported. Thank you for your patience with us in the meantime!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1687590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1687590/view/4714731755408637181"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-19T13:45:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1687590",
+      "checkedAt": "2026-11-13T03:25:18.122Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:47.156Z"
+  }
+ ],
+ "issues": []
+}

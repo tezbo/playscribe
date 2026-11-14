@@ -1,0 +1,6338 @@
+{
+ "game": {
+  "id": "hellpoint-36476",
+  "igdbId": 36476,
+  "name": "Hellpoint",
+  "cover": {
+   "imageId": "co2bwn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2bwn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar71i",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar71i.jpg"
+  },
+  "ps5Release": "2022-07-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hellpoint-36476@patch-2022-08-13",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Bug Fixes, Balance",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-13T17:30:53.000Z",
+   "notes": [
+    {
+     "title": "The Hellpoint patch v.495 is live on Steam",
+     "items": [
+      {
+       "text": "Fixed two loading crashes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a memory leak",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed enemies not switching aggro properly in co-op",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Improved Leech not doing more than the base one",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Balanced Federal Plastic drop rate",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Balanced Fear projectiles damage and impact",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Balanced Turret damage and impact: Please, update your game.: WALK FORTH WITH COURAGE",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/4607764924157995301"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-13T17:30:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.211Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-13T17:30:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.212Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-13T17:30:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.777Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2022-07-16",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Disabled Audio Occlusion By Default, DLC Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-16T18:27:06.000Z",
+   "notes": [
+    {
+     "title": "The Hellpoint patch v 488 is live on Steam",
+     "items": [
+      {
+       "text": "Disabled the Audio Occlusion option by default. Can be changed in the game's config file:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Paste this path into your FIle Explorer address bar: %UserProfile%\\AppData\\LocalLow\\Cradle Games\\Hellpoint;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Find the hellpoint.cfg file;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Open it using the Notepad software. Set the AudioOcclusion option to \"= 1\" to turn Audio Occlusion on (\"= 0\" to turn it off).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed loot drop from Majesty;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with save game progression on game termination;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Balanced Fear projectile damage;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the save warning icon not dispaying;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed music not playing properly in the Blue Sun DLC boss fights;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the hand cluster projectile not bouncing off the floor and walls;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed control lock up for players in splitscreen co-op when travelling to other locations.: Please, update your game.: WALK FORTH WITH COURAGE",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/4937651144693347504"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-16T18:27:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.211Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-16T18:27:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.211Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-16T18:27:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.777Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2022-07-12",
+   "gameId": "hellpoint-36476",
+   "displayName": "QoL Update Is Live: Stats Respec, Inventory Management And More",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-12T14:17:33.000Z",
+   "notes": [
+    {
+     "title": "● Stats Respec",
+     "items": [
+      {
+       "text": "You can now respec your stats at the console of the first location: the Pond.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "● Inventory Management",
+     "items": [
+      {
+       "text": "You can now sort items in your inventory by a number of criteria.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "OTHER CHANGES",
+     "items": [
+      {
+       "text": "Added entries to the Blue Sun DLC levels;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now take contracts for specific challenges and rewards;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New NPCs are now populating the Irid Novo space station;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new audio occlusion technology;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Local co-op splitscreen can now be set to vertical an ultra-wide monitor is detected;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Major bosses now scale better with progression;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some NPCs no longer get stuck in some stairs;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hungarian language added;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization and minor bug fixes.: Update the game via your Steam client library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/4539082035577491503"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-12T14:17:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.210Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-12T14:17:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.210Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-12T14:17:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.776Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-12-23",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: bug fixes (co-op, Arena)",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-23T18:54:49.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed an issue that made main bosses immune to any damage if you talked to them in the Underworld first",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash when first selecting an item for an Arena custom preset",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash when killing an Archon in the Underworld in co-op mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a rare crash occurring when reviving your co-op partner: Please, update your game.: WALK FORTH WITH COURAGE",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3917534300070489166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-23T18:54:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.210Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.331Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2020-12-22",
+   "gameId": "hellpoint-36476",
+   "displayName": "Arena update is live, Hellpoint is 40% off!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-22T18:13:12.000Z",
+   "notes": [
+    {
+     "title": "⚔️ PvP ARENA ⚔️",
+     "items": [
+      {
+       "text": "This huge stadium had been built in the Dargass tower during the golden age of humanity—long before the Merge wiped everything out. Brutal combat was used as a release valve for people under pressure, clans were solving disputes through clashes of their leaders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At present, there seems to be natural hostility between some of the spawns, although it is not clear why. After countless cycles, more and more of them become naturally attracted to Dargass to slaughter each other in brutal fashion. it may or may not be of their own volition. Could some external agent be looking for entertainment?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "___",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Arena in Dargass tower is a battleground where Hellpoint players can challenge each other in heated PvP battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HOW TO GET TO DARGASS TOWER",
+     "items": [
+      {
+       "text": "(WARNING! Spoilers ahead. Hover to reveal)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reach Sohn District",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get the Dargass tower key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Win the Arisen Congregators boss fight (the entrance to the boss fight area is shown on the screenshot below)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take the fog gate to the right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take the elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the end of the long corridor, turn right. You should reach Dargass tower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is the alternative route—taking the back alleys and bypassing the fight with the Congregators:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you make it to the tower, the Arena tab appears in your Multiplayer menu. You don't have to travel to Dargass again in order to PvP—just open the menu, select that tab and look for a fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MATCHMAKING",
+     "items": [
+      {
+       "text": "You can choose a pre-set character or create a character yourself. In the arena, all builds are level 100 with 10+ weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you are searching for a PvP match, the game tries to find you an opponent with a rating similar to yours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If there are no players that match your rating, the range is slowly widened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "❗ Requirements for obtaining",
+     "items": [
+      {
+       "text": "ᗜ Argent Warrior, Nanocarbon Exosuit - Participate in 50 fights in the PvP arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ᗜ Aureate Warrior, Crimson Sentinel, Pristine Spacesuit - Emerge victorious in 100 fights in the PvP arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🏆 LEADERBOARDS 🏆",
+     "items": [
+      {
+       "text": "(Multiplayer menu - Arena tab - Leaderboard)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Win matches to move up the rankings and challenge tougher opponents in pursuit of becoming the best Hellpoint player on the globe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📢 OPEN MATCHMAKING SYSTEM 📢",
+     "items": [
+      {
+       "text": "(Multiplayer menu - Online tab)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Place co-op and PvP invites regardless of your location and without wall signs. Cannot prevail against a horde? A boss proves to be too much of a challenge? Feel competitive but do not wish to travel all the way to the Arena? Just leave an invite via the Multiplayer menu and wait for someone to join—or join another player's session yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": ":: Patch v364 ",
+     "items": [
+      {
+       "text": "Added tutorial prompts when the Online or Arena tab becomes available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed co-op revive circle sometimes being too close to platform edges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Don't miss the PvP community stream at 1:00 pm PT / 3:00 pm CST!",
+     "items": [
+      {
+       "text": "One of the most dedicated Hellpoint fans, T̶Y̶R̶A̶N̶T̶™, will be giving away some Hellpoint copies and battling it out with other savages from our community… and we might even join that mayhem too! Hit \"Set Reminder\" to get notified:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "●●●●●●",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "●●●●●●",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Follow Hellpoint to be updated with all the latest news and join the best indie RPG community in the world",
+     "items": [
+      {
+       "text": "◦ Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◦ Reddit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◦ Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◦ Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◦ Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◦ Official website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3917534300066745107"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-22T18:13:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.209Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.330Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-11-24",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: fixed glitches, character name creator",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-11-24T18:00:14.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed a level of detail flickering (Embassy)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the player missing a step in some stairs (Embassy)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the M key not working when creating a name for a new character: Please, update your game.: WALK FORTH WITH COURAGE",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3856732771972260712"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-11-24T18:00:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.208Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.329Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-10-29",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: an option to disable the Halloween event, fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-29T18:58:55.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Added option to disable Halloween Special event in the main menu Gameplay settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash on a specific loot item",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Halloween jukebox icon",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed the carnival music when the enemy playing it dies",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Bone Bat, Coffin Crusher and Scary Scooper blueprints missing their base weapon requirements: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3884878205215355306"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-29T18:58:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.208Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.328Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-09-09",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Missing coin №66 added, online mode fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-09T23:06:41.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Added NAT \"health indicator\" to the Online tab:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Green: connection is fine",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Yellow: behind a symmetric/CG NAT, ports are being switched",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Red: UDP is blocked",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Moved the inaccessible coin in Alma Mater (sorry for the inconvenience!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "All weapons (except those from the Pond console) can be dismantled",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Unused Breach Synchronizers now aren't lost in New Game+",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed fire/frost effects not being properly applied to some enemies",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(Attempt) Fixed some menu reacting to input even while Alt-Tabbed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Balanced NG+ damage and rewards for higher levels: axions got slightly lower, enemies' damage & health now go much higher in NG+ (level 5 and above)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated and speeded the credits up",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Prevented a co-op partner from being able to attack neutral NPC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added \"Camera shake\" option to settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed GOG achievements not being unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Ring Puzzle gates not opening in some situations",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed attacks feedback not showing up for online players",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Balanced the amount of radiation damage applied",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some firearm melee attacks not dealing damage",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash from doing a heavy jump attack with some firearms",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some invisible enemies in co-op mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed unwanted items from showing up in the inventory: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3819571572127472702"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-09T23:06:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.207Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.327Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-18",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Co-op & boss fight fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-18T22:40:02.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed the issue with enemies having empty health bars while being still alive in co-op mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the guest receiving \"invisible attacks\" in co-op mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The host can now kick the guest in co-op mode using the \"Disconnect\" option in the Online tab",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A lot of items can now be dismantled",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Ghost having overly powerful stats in New Game +",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Interface having an \"exploitable\" floor pattern",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Interface laser being blocked by its arms",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Interface laser dealing \"one-shot\" damage instead of damage over time",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a floating platform to the Sentient fight (co-op)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the quest reward for Ozyormy Goija, added a missing catalyst to the world",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tweaked the \"wall\" firing mode of the Channelers",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Changed when the Council opens Nemundis' gate when turning in 150% quest, so it doesn't stay closed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a stuck Horde in Arisen Palace",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Online sample rate is now 30 instead of 100, which should prevent buffer overflow",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a Ring Puzzle fog gate not opening properly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an exploit involving the Omnicube Transposition program",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Clamped the energy cost reduction from the Firearm Conductor",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increased the Dagger and Shard hitbox reach",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tweaked some Twitch integration vote options",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized the main processor cost of the axion visual effects: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/4828375451938552511"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-18T22:40:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.207Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.326Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-14",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Boss softlock, inaccessible items fixed",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-14T22:31:09.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed the softlock in the Sentient fight cinematic (black screen)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed 3 items that weren't accessible",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Nemundis' revive option from the council",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "An attempt to fix the ghost locking itself in strafing or dodging",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Celestial Beast not spawning properly as \"tinyBeast\" pet (Twitch integration mode)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added game version display to the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the \"Level of detail\" option to the .config file (the file is located at: [system disk]:/Users/[user name]/AppData/LocalLow/Cradle Games/Hellpoint/); the option may be added to the in-game options later",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Performance optimization on FX and interactive objects: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/4828375451924075941"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-14T22:31:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.206Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.326Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-11",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Online multiplayer & co-op fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-11T22:53:58.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed wall (\"hand\") invites not providing proper connection",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added UPnP support; If you're having a connection problem, you can turn it on on your Internet router",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bosses not giving axions and items to the second player in co-op",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed invisible enemies when spawned from Room Controllers",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue of upgrading a conductor without a weapon",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the environment loading issue after death in co-op",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reduced boss Ozyormy Goija's front and back slams' areas of effect",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Moved the unreachable item in Arisen Palace",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Antigravity Module",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the missing Underworld fog gate in Alma Mater",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed music not sounding properly on stereo/surround systems: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3667572003478066879"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-11T22:53:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.206Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.325Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-10",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Online multiplayer connectivity fixed",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-10T22:43:47.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "The online multiplayer fix is live: added port sniffing and switching to increase connectivity",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed invisible enemies in the co-op mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a few localization mismatches",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the invincibility while interrupting teleportation",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the horde not showing under some circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the infinite loading screen when connecting online",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed the unneeded fog gate before Uthos in the Underworld",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where you could teleport to the arena of a revived boss",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where you couldn't face Nemundis if called from the council on 150% data",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made the heal upgrade shareable in the co-op mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Re-enabled erasing game saves",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tweaked some Twitch integration vote effects",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made neutral NPCs immune from attacks landed in the co-op mode: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3667572003474427287"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-10T22:43:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.205Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.325Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-08",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Boss fight fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-08T21:50:01.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed the Ozyormy Goija boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a softlock when teleporting to the arena of a revived boss",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a softlock when beating the Sentient before the Disciple: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3667572003467064535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-08T21:50:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.205Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.324Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-05",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Returning missing items",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-05T21:03:06.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Players whose items disappeared from their inventories now can return them. Previously lost keys, omnicubes, programs, blueprints and healing items are returned to your inventory when you visit the level they were previously looted in.: Example: you found a key at Sohn District and it disappeared from your inventory. When you enter Sohn District again, this key is automatically added to your backpack.: Unfortunately, weapons, armor and consumables (like upgrade chips) cannot be recovered. Accept our apologies for this.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed firearms and catalysts in the online multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed omnicube replication in the online multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash happening when two attacks were being executed at the same time while in online co-op",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a potential lock up when attacking with a melee weapon and a firearm at nearly the same time: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3664194214736058602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-05T21:03:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.205Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.324Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-02",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Rad healing, Ghost bugs fixed",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-02T22:29:40.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed the player not holding heavy weapons on his shoulder",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the outro cinematic of the hard-mode Sentient",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Radiation healing item so it would remove the damage over time effect",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Potential fix for the Ghost that keeps walking back into a wall",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed and changed the timing of servers requests: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3664193578971844370"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-02T22:29:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.204Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.323Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-08-01",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: Omnicube & weapons fix, main menu feedback, cloud optimizations",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-01T09:58:52.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Automatically equip the omnicube for people who unequipped it and couldn't equip back",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the damage cone of different shotguns' firing mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the melee attack of the Daemon Cannon weapon",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tweaking of the Sentient",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added feedback to the main menu when the game is synchronizing with the cloud",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added timeout to the synchronization if the cloud is too heavy",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized a number of calls towards the cloud",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the material stencil on the Artillery weapon: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3664193578966342174"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-01T09:58:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.203Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.322Z"
+  },
+  {
+   "id": "hellpoint-36476@patch-2020-07-31",
+   "gameId": "hellpoint-36476",
+   "displayName": "Patch: visual fixes, armor fix",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-07-31T23:48:00.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint patch is live on Steam",
+     "items": [
+      {
+       "text": "Fixed a situation where armor would not work at its fullest if its minimum requirements are provided by a body or mind module (this includes a specific spacesuit not working in space)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a number of loot items being invisible",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed switches that link Alma Mater to the Building where they could be used only once",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a display issue where dismantling items would show pretty bonkers values",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized server communication to lighten the load on them: Please, update your game.: Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3664193578964809276"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-07-31T23:48:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.203Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.321Z"
+  },
+  {
+   "id": "hellpoint-36476@dayone-2020-07-31",
+   "gameId": "hellpoint-36476",
+   "displayName": "Day one patch",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2020-07-31T02:03:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, everyone! Here's a couple of quick fixes (all thanks to your bug reports)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hellpoint v343 - 24465",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue were the omnicube could be unequipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the second swing of the Victim's Poker not doing any damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the shield charge (to execute it, raise your shield and rush at an enemy while holding down the Sprint button)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the number of save interactions with the cloud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Multiplayer will be back on soon, please follow the announcements, and thanks for your patience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Join Discord to chat with the devs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The community",
+     "items": [
+      {
+       "text": "Reddit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3664193578961534889"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-07-31T02:03:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.203Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.320Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2020-07-29",
+   "gameId": "hellpoint-36476",
+   "displayName": "Hellpoint out tomorrow! | Update: online & performance improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-07-29T19:45:33.000Z",
+   "notes": [
+    {
+     "title": "Hello, Hellspawns!",
+     "items": [
+      {
+       "text": "Hellpoint comes out tomorrow at 4:00 pm UTC / 9 am PT on Steam and 1:00 pm UTC / 6:00 am PT on consoles, so we couldn't be more excited. Along with the release we are bringing you the launch trailer. Set reminders so that you don't miss it:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the review embargo lifted, impressions from the press started to come in earlier today. We are getting some great feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are the notes for what probably is going to be our final update before the release. Lots of outstanding performance and online functionality issues have been addressed. We will make sure that your experience is as good as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online functionality fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made combat more fluid for the client by reverting the control of some events back to the client, instead of waiting for the host to process them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved input processing: previously input may fail because of possible state differences, now we force a state change, so the attacks would always be synchronized.: Performance fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Performance during the Horde event with lots of spawning enemies is now stable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FPS drops in many locations have been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some crashes and freezes have been addressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also",
+     "items": [
+      {
+       "text": "Added missing audio in 2 of the Interface cinematic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a number of movers not being replicated online in Palace and Alma",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unlock door when coming out of the Building by the main entrance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 2 blueprint using raw resources instead of processed ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added message to the save game picking menu when it's empty (explaining to create a second save for split screen)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some \"boxiness\" on some fonts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized weapon trails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Data counter being stuck on screen in some specific events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized enemy damage calculation (enemy stats are always 1 internally)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed constant tenacity regeneration. Now only regen when it's not at max.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss breaches are now hidden when in the underworld (prevent teleporting around)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Healing station regen healing charges at a cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added choice of input icons when using unknown controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added choice of speaker modes (stereo, quad, surround, 5.1, 7.1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimization in large scale FX, including the Artillery explosion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization in turning on and off FX at a distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies no longer update their environmental status when \"normal\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss can no longer \"lose aggro\" on a player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a Twitch Websocket closure issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a PRB decal issue with the smoothness channel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with room controller having both visual and enemy spawner in the same context",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Pet entry code would fail to reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a \"!what\" command to Twitch chatbot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where a client would spawn without air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the background of the message creation UI darker to see the icons better: Thank you for your support and patience, community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 10,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3664193578956973016"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-07-29T19:45:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.202Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.319Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2020-05-08",
+   "gameId": "hellpoint-36476",
+   "displayName": "Beta update: Walk mode, controls & UI tweaks",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-05-08T17:30:59.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint beta update is live on Steam",
+     "items": [
+      {
+       "text": "Walk button (press & hold V key to walk; only available when using keyboard)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Option to \"toggle\" sprint and walk modes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\"Apply\" feedback in the Weapon Upgrade menu—similar to leveling up",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Preview of the results of dismantling and processing resources",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Multi-selection of resources",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New UI animation when recovering axions or other important events (similar to when beating bosses)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3110243214559842880"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-05-08T17:30:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.201Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.317Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2020-05-01",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update: new data counter, Ring Puzzle fix, bug fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-05-01T13:40:18.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint update is live on Steam",
+     "items": [
+      {
+       "text": "The data progression is now visible on the Spawn's head (the ring fills up as you gather data, and starts to pulse when you're at 100%)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Patriach is talkative again",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed loading to Outer Space and Time when reloading",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Culture issue when loading float values",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed unwanted blood splatters when firing some guns and catalysts",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a number of doors and elevators (again)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed patterns A and B of the Ring Puzzle (wrong codes in the world messages)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added missing localization",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some skybox rendering issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3127131079128884932"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-05-01T13:40:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.201Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.317Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2020-04-27",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update: Bug fixes, Linux version fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-04-27T16:02:20.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint update is live on Steam",
+     "items": [
+      {
+       "text": "Fixed the missing library issue on Linux",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the stats bug on Linux",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with Axions respawning at the bottom of holes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a performance issue related to clothes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where some range weapons wouldn't scale properly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increased the stun time of enemies when their guard is broken",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3112493747281711678"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-04-27T16:02:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.200Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.316Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2020-04-09",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update: Control rebinding, co-op health bar",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-04-09T21:17:42.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint update is live on Steam",
+     "items": [
+      {
+       "text": "Full key remapping (for keyboards and gamepads)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed fog gates for bosses; now battles start upon entering a boss arena",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the health bar over your co-op partner",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HUD now shows polarization and New Game + level instead of the number of rotations around the black hole",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reworked a lot of attacks and impact animations",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed clicking tabs in the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed clicking checkboxes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed dragging a list using the mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the missing hitbox with the Scythe",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the diagonal walk speed while in combat",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3112492477887150193"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-04-09T21:17:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.200Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.305Z"
+  },
+  {
+   "id": "hellpoint-36476@major-2020-03-07",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update: Entangled ghost, shield mechanic tweaks, fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-07T18:09:48.000Z",
+   "notes": [
+    {
+     "title": "Hellpoint update is live on Steam",
+     "items": [
+      {
+       "text": "An Entangled ghost of yourself is now roaming the space station if you die, be careful!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Deploying your shield at the right moment now gives you a massive boost in deflection (Parry)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Emotes now don't auto-populate the menu in medium class",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed the mind cube reader as its dialogs were not intended for the demo, replaced it with a nice weapon",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Omnicube tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added sound on weapon leveling up",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed a somewhat recurring leather sound from the player soundbank",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added more obvious warning when energy is too low to perform an ability, fire a gun, or use the Omnicube",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Speeded up dialog while adding delay on discussion choices",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Stopped enemies' abilities when they die",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with hitting crates filling up your energy and healing you",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the modules Greed Sacrifice and Leech",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with removing or adding stat boosting module tinning the stats screen values green or red",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a number of melee and firearm passive unlockable abilities that would fail to provide a proper stat boost",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed where the motion sensitivity wouldn't go down to the minimum",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a case where the Omnicube transposition could trigger an endless loading screen in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Warrior Saber missing its upgrade chip effects",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the player unable to fall for a split second after getting off a ladder",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the world wouldn't load after the player would respawn in a very specific spot in a pit",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Black Hole door beam being misaligned",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a few walls missing collisions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a case with enemies freezing in place after losing sight of the player",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the player would perish again after dying from a fall in a pit",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the horde enemy not having their spawning effect",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed enemies popping in an out of the world",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2579938650931405476"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-07T18:09:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.200Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.304Z"
+  },
+  {
+   "id": "hellpoint-36476@post-2020-01-23",
+   "gameId": "hellpoint-36476",
+   "displayName": "Depth of field and motion blur",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-01-23T14:02:38.000Z",
+   "notes": [
+    {
+     "title": "Beta update is live on Steam",
+     "items": [
+      {
+       "text": "Added depth of field and motion blur. Feel free to turn it on and off in the graphics settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fish is no longer invisible",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed stuck AI created from fixing the invisible fish",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with healing count when dying or changing scene",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added missing localization to some dialogs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2597949245047240850"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-01-23T14:02:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.199Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.303Z"
+  },
+  {
+   "id": "hellpoint-36476@0.178",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.178",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-31T03:54:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 30: Build : Beta - 0178 - 20200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with the main menu when exiting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some specific sound not being played at the right place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some sound overwritting others, namely ambiance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error with decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error with Camera update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player being visible on the intro cinematic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor tweaks to speed up the initial load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor tweaks to speed up map loading time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of Nintendo Switch fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2451574645856560657"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-31T03:54:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.198Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.302Z"
+  },
+  {
+   "id": "hellpoint-36476@0.176",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.176",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-29T03:28:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 28: Build : Beta - 0176 - 20088",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of guns and catalysts tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots more of CPU (AI, Pathfinding, Triggers) optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a number of switches and doors that would fail to be interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of meshes being wrongly baked in splitscreen/console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sentient satellites can now be targeted and destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with right arm aiming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue related to far looping audio source",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2504491307420159395"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-29T03:28:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.198Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.301Z"
+  },
+  {
+   "id": "hellpoint-36476@0.175",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.175",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-26T21:58:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 25: Build : Beta - 0175 - 20019",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "20,000 Changelists!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked and parallelized lights culling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sectorized switches, door and other interactive objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Centralized enemy event coloring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized weapons CPU usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2504491307412101871"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-26T21:58:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.198Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.300Z"
+  },
+  {
+   "id": "hellpoint-36476@0.173",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.173",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-25T06:36:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 24: Build : Beta - 0173 - 19977",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some language switching issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed annoying sound when talking to NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turned on VSync by default on consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed death, survive and unsafe zones detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some type of projectile not increasing their weapon's XP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"shotgun\" fire type (Catalyst \"Hands\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of shader failing on PS4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2504491307406174829"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-25T06:36:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.197Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.295Z"
+  },
+  {
+   "id": "hellpoint-36476@0.172",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.172",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-25T06:35:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 23: Build : Beta - 0172 - 19940",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed visual inversion in Embassy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save game naming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Continue to optimize CPU",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed enemies showing in T-pose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed reloading of environment failing on death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed light flickering in splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sentient is now accessible (Disciple and Architect quest full walkthrough)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some math improvement (CPU)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added capsule cast to prevent jumping through walls when framerate is low",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2504491307406172426"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-25T06:35:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.197Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.213Z"
+  },
+  {
+   "id": "hellpoint-36476@0.171",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.171",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-23T23:20:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 22: Build : Beta - 0171 - 19841",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More quest fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shaved off 3Gb+ off the build size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked totally how batching is handled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Major FPS boost on console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major loading time reduction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with breach respawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2504491307401468103"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-23T23:20:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.196Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.213Z"
+  },
+  {
+   "id": "hellpoint-36476@0.170",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.170",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-20T10:52:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 18: Build : Beta - 0170 - 19750",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of quests fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization in hit boxes and trigger zones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decompress of load a number of audio files (for PS4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS4 build!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2404285581871253730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-20T10:52:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.196Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.212Z"
+  },
+  {
+   "id": "hellpoint-36476@0.169",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.169",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-16T01:19:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 15: Build : Beta - 0169 - 19640",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roar!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Terrorizer and Transporter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a color grading issue with LUTs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disable \"Talk\" option when a NPC doesn't feel chatty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of Architect quest fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added framework needed for future Asian language support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resized and recompressed most textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2404285581855362151"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-16T01:19:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.196Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.212Z"
+  },
+  {
+   "id": "hellpoint-36476@0.168",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.168",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-11T03:12:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 9: Build : Beta - 0168 - 19510",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed audio volume issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visibility issue with the \"pet\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Drastically reduced the initial loading time of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some missing achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3051677487677223100"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-11T03:12:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.195Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.211Z"
+  },
+  {
+   "id": "hellpoint-36476@0.167",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.167",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-10-02T20:04:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM October 1: Build : Beta - 0167 - 19390",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed icon and blueprint for Major Jester suit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where dismantling multiple copies of the same item would increase the reward each time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Ring Puzzle would fail to open a gate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved some HUD items to be withing a 90% safe frame (PS4/X1 TRC)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final mixer version; drastic CPU boost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the \"pet\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turn off the current scene audio when triggering a loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2426802221716265683"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-02T20:04:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.195Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.211Z"
+  },
+  {
+   "id": "hellpoint-36476@0.166",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.166",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-28T05:32:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM September 27: Build : Beta - 0166 - 19350",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an number of issues with Nemundis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked how audio is mixed, should provide a noticeable performance boost for lower end CPU",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed how data is preloaded, should offer a faster loading of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked how dismantling items is performed. Multiple items can be dismantled at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a character sliding issue when jumping and interacting with objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "First PS4 build!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2422298078089577334"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-28T05:32:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.194Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.210Z"
+  },
+  {
+   "id": "hellpoint-36476@0.165",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.165",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-20T14:16:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM September 19: Build : Beta - 0165 - 19217",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Eyes work once again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue making the firearms/catalysts unable to level up and unlock different projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Number of material fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made sure dead people don't talk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2406534841131821684"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-20T14:16:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.194Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.210Z"
+  },
+  {
+   "id": "hellpoint-36476@0.164",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.164",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-19T16:52:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM September 18: Build : Beta - 0164 - 19171",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revamped the targeting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Number of fix for the Eyes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added life to animation when idling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Linux version updated",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2406534841128599664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-19T16:52:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.194Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.209Z"
+  },
+  {
+   "id": "hellpoint-36476@0.163",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.163",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-18T04:40:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM September 17: Build : Beta - 0163 - 19140",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Number of bundle fixes (shader, audio)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made bundle caching occur async",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes secret doors in Low City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make boss aggro as you step through the fog gates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flagged and optimized all audio sources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of baked collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of axion tweak (scaling)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rework of the Hostess",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2406534841123148881"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-18T04:40:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.193Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.208Z"
+  },
+  {
+   "id": "hellpoint-36476@0.161",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.161",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-13T05:07:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM September 12: Build : Beta - 0161 - 19040",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drastically change how assets are packages. This is a big patch, but following patches will be much smaller and should give a slight initial loading time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the temperature, radiation and oxygen display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lot of loot rework",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Underworld loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the chain of event when hitting occurs (should be less CPU stressful)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed craft menu selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3658535001293767644"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-13T05:07:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.193Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.206Z"
+  },
+  {
+   "id": "hellpoint-36476@0.160",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.160",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-07T08:23:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM September 7: Build : Beta - 0160 - 18915",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trimmed old code related to picking up items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with save game displaying time played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the Deprave sleep properly, you can now stab it properly too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with baking reflection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with player's light being affected by Dark Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2413289226961550615"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-07T08:23:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.192Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.205Z"
+  },
+  {
+   "id": "hellpoint-36476@0.158",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.158",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-04T04:34:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM September 3: Build : Beta - 0158 - 18804",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The build is now connecting to our live database",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with the Artillery shield pin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio issues with splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an audio issue related to audio played behind walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a specific camera setup when the player is \"grabbed\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a lockup occurring when the player is changing map at the same time as being killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player placed messages should be visible again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Breach menus are all selectable even when disable, so that player can see tips for each options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a safeguard to the save thread in case of running condition, should prevent save game from failing to save, but it's only a temporary solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added similar safeguard to other multithreaded systems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added aura for coop and invader characters (Coop = Blue, Invader = Red). Helps in splitscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the underworld player coloring system to match the auras",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the coop revive node color to match the characters colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the jump when chaining jumps in different direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the \"turn on spot\" when initiated from a combat stance (ex.: after a dodge)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where quickly turning on spot while running would decelerate the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added skeleton posing to invader so they can use heavy weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Interface floor is now moving and its hit boxes has been tweaked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a nasty dots issue in the shadows on consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cockroaches not showing up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a walkthrough break related to switches changing world data states incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where major bosses would fail to give completion data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 9,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2413288973183893701"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-04T04:34:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.192Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.204Z"
+  },
+  {
+   "id": "hellpoint-36476@0.155",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.155",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-27T02:43:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM August 26: Build : Beta - 0155 - 18634",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Archon light absorption ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character \"freezing\" and \"on fire\" visual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added total time played on save display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with character-carried lights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual glitch with enemies turning to face the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with disabled enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Healing is now based on a % of the max health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2416665403786088529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-27T02:43:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.191Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.204Z"
+  },
+  {
+   "id": "hellpoint-36476@0.154",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.154",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-24T07:48:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM August 23: Build : Beta - 0154 - 18595",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most icons size has doubled on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tweaked the turn on stop feeling, both in and out of combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tons of weapons and enemy tweaking (weight, push, tenacity)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the archon's negative light radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the beast and terrorizer collider (can't push them anymore)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allows enemies to be \"chain\" stunlock. This does not apply to players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue about data collection in the underworld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Native man's eyes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kill the player after some time when crossing a dead zone, instead of waiting for an impact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2416665403776011620"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-24T07:48:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.191Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.203Z"
+  },
+  {
+   "id": "hellpoint-36476@0.153",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.153",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-23T00:12:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 22: Build : Beta - 0153 - 18540",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the jump feeling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added feedback on axion gained",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issues with Utility and Crafting station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lot of bug fixed in quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a fish thinking it has a left hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialog interaction on entry/exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed Healing upgrade effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2416665403771254185"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-23T00:12:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.191Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.200Z"
+  },
+  {
+   "id": "hellpoint-36476@0.152",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.152",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-22T02:26:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "5:00PM August 20: Build : Beta - 0152 - 18484",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting station can now process all resources type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the tutorials in Embassy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the respawn of the Funicular elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimization in the interactive objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of work done to prepare for the splitscreen optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Majority of the texts are in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2416665403767977561"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-22T02:26:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.190Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.062Z"
+  },
+  {
+   "id": "hellpoint-36476@0.151",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.151",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-20T05:01:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "9:00PM August 19: Build : Beta - 0151 - 18342",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "650Mb patch; more high resolutions textures on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Lot of NPC dialog and quests fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed reviving in coop not having a blood cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a display issue with items without stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential overlap between narration and dialog subtitles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where blocking with a shield would trigger an attack instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Merge Jesters would spawn without their heads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3556075649736141663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-20T05:01:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.190Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.062Z"
+  },
+  {
+   "id": "hellpoint-36476@0.150",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.150",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-17T05:08:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "8:00PM August 15: Build : Beta - 0150 - 18302",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "800Mb patch; major texture size increase on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Lot more of hitboxes tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with stats display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All weapon panel now allow to list through skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of armor and weapon stat tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/3556075649725319838"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-17T05:08:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.189Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.061Z"
+  },
+  {
+   "id": "hellpoint-36476@0.149",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.149",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-15T02:52:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 14: Build : Beta - 0149 - 18250",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot of hitboxes tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with voice overs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized how save game is performed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hide data collection until quest is performed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Display \"Mobility\" in stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Architect and Disciple quests revamp & completable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2412161173663232732"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-15T02:52:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.189Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.060Z"
+  },
+  {
+   "id": "hellpoint-36476@0.148",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.148",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-14T00:46:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 13: Build : Beta - 0148 - 18198",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization in zone detections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with environmental boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with scrolling view (Item selection, settings, inventory)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More lore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks on hit boxes; many offhand attacks now work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2412161173659302798"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-14T00:46:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.058Z"
+  },
+  {
+   "id": "hellpoint-36476@0.147",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.147",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-10T00:52:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 9: Build : Beta - 0147 - 18130",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a lot of minor issues in Palace",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies coming out of walls wouldn't play their animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where turning off dynamic shadow wouldn't really turn them off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where distant enemies might start flying around and get stuck in walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the axion spot of previous life would spawn even with 0 axion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updating engine version broke all cloth. We will redo them in the upcoming days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2412160539859429547"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-10T00:52:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.058Z"
+  },
+  {
+   "id": "hellpoint-36476@0.146",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.146",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-09T00:11:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 8: Build : Beta - 0146 - 18106",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with armor and weapon visibility on death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgraded to new version of engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switched to progressive garbage collector",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lot more audios!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2412160539855714216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-09T00:11:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.057Z"
+  },
+  {
+   "id": "hellpoint-36476@0.145",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.145",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-09T00:11:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 7: Build : Beta - 0145 - 18060",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with audio duplication",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with audio positioning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with double doors in Arisen boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where shadows would stop updating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a sectorization issue on characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Major rework of stat bonus and upgrade chip scaling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2412160539855713362"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-09T00:11:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.187Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.054Z"
+  },
+  {
+   "id": "hellpoint-36476@0.144",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.144",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-05T23:42:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 5: Build : Beta - 0144 - 18002",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some switch and elevators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with audio spawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked the realtime shadow blending algho",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where the camera could become \"unaligned\" while using firearms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can switch targets using the mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2412159905941929113"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-05T23:42:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.053Z"
+  },
+  {
+   "id": "hellpoint-36476@0.143",
+   "gameId": "hellpoint-36476",
+   "displayName": "Update 0.143",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-03T02:16:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "7:00PM August 2: Build : Beta - 0143 - 17948",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed input being trapped when not in focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shield, firearm and catalyst upgrade chip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some firearm and catalyst stats display issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked the cost of leveling up and the upgrade chip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the buff enemies get in a New Game+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a key not showing up in the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked Prophet Hands damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-628670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/628670/view/2412159905931474985"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-03T02:16:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-628670",
+      "checkedAt": "2026-11-13T03:22:43.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:19.053Z"
+  }
+ ],
+ "issues": []
+}

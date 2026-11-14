@@ -1,0 +1,3131 @@
+{
+ "game": {
+  "id": "the-coin-game-99192",
+  "igdbId": 99192,
+  "name": "The Coin Game",
+  "cover": {
+   "imageId": "co1x7b",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1x7b.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arpgg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arpgg.jpg"
+  },
+  "ps5Release": "2026-03-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-coin-game-99192@hotfix-2026-03-22",
+   "gameId": "the-coin-game-99192",
+   "displayName": "The Coin Game Hot Fixes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-22T07:43:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Islandvillers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off just wanted to say that I am sorry for the rough launch and the failure of many key systems in the game. It was unacceptable and Its no ones fault but mine. I had a new game saving system and Player controller that I rebuilt and I thought it was ready to go. It turns out I could not have been more wrong. I wont dwell on it and make excuses. I am just going to work as hard as I can to fix these mistakes for the community. Thank you very much for your patience and understanding in these times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have spent the last 48 hours working on things that I CAN fix right away. The inventory and Controller configs intermittently saving will take me a little longer to fix properly and I will have more news on that as SOON as I have it. Again. I am very sorry and I will have this remedied as soon as BOTly possi.... eeerr I mean humanly possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are the current Day 2 Hot Fixes that I have finished: Just restart your game to take advantage of them...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXED the floaty feeling in the player controller. The Character Controller drag was not getting reset to full \"drag\" after jumping. Also added a little faster digital axis button simulation speed. That will return the button push back to \"stopped\" faster and make it more linear/binary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIXED a bug that would allow the player slide around very easily until they hit the jump button one time after scene load and reset the friction controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Babysitter job not being able to grab the bots and put them into the bed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the leaderboards on the Stackem machines. now they are reset as well as they were not recording to the new lists",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a system in to save the Barry's Hot Items between saves and make sure they last each WHOLE day in survivor Mode. In Birthday mode they will just reset every time you load the game like they used to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FIXED the carnival games not saving your game credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIXED the programable bots that were not saving their current state during a job and amount of items \"completed\". Now they will get you what's owed when you save and reload the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIXED The audio not working on the Bike when riding on roads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIXED the audio not working on the approaching cars. I saw a couple streamers get hit out of nowhere yesterday and we are sorry about the Island safety issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turned the culling distance down a little to make the vehicles a little more optimized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed 12 extra Traffic Audio Sources from the traffic vehicles to try to free up Audio Headroom for the culling of sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted all vehicles tire friction and their suspension travel to help them travel off the main roads a little.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a menu to the bottom of the screen to let players know that the Phonebooth is in there watch after unlocking it. It was not clear and not found in testing. Its only available in English for now and will be translated in time. The Phonebooth is only available in Survivor Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added helper colliders around the ZOLBOT machine to help with users dropping cards and losing them in the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FIXED the mesh that would get left in the world when you put the Slingshot in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LOWERED the energy consumption on the Lawn Mowing system to make it a little easier to not die.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "ADJUSTED the mower speed and turning ability to make it a little easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed the Street Tuffs from the front door of Larry's Arcade. They were beating up guest through the walls at Larry's Arcade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXED the super bright lights in Dunko after a HUGE Bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered the bingo cards to allow the player to click the lower left number on the cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "FIXED Barry's door not showing the loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LITTLE MORE Speed on the mower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXED the bots attacking you at the Goose Lodge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues that I am working on",
+     "items": [
+      {
+       "text": "Player Inventory is not saving properly. Items placed in a pile or on the ground are safer for now as the inventory is not writing to the save file correctly. Items in the world are saving correctly. Its just the inventory for now and I will get it fixed asap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller mapping and AXIS reversing not saving between games. Built on the same system and currently not writing to the save file correctly. Fix is to remap at start for now. Will have a fix for this one shortly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loss of audio in certain areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bike causing damage to players on exit. Careful jumping off at full speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "and more optimization coming after I figure these game saving bugs out.: That's all I have for this first quick update and I will be on the rest until they are fixed. You have my word. Thank you for your understanding and support.: Kevin (devotid)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 4,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/1827626365761306"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-22T07:43:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.045Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-22T07:43:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.046Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-22T07:43:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:36.176Z"
+  },
+  {
+   "id": "the-coin-game-99192@patch-2025-10-11",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Unity security patch for (CVE-2025-59489) is complete",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-11T00:22:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Unity recently announced a major security vulnerability (CVE-2025-59489) affecting many games that are made with Unity. So yesterday, BarryBot and I implemented the security fix that was issued. You will see a small update being pushed to all users the next time you start the game. It was just for security and only backend stuff. I am still converting the game to a newer version of Unity but this HAD to be done. Barry and I value all users and their ability to game safely in Islandville.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I will also be removing the original free demo for The Coin Game on Monday of next week. It is so old that it doesn't even represent the game properly. I will possibly look into a new one after the next large update comes out this winter season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's about it for now and to be totally honest.... BarryBot didnt do anything. He just stared at me yelling about \"cleaning his new wheels\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a wonderful weekend!!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "... and BarryBot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/1813041031256381"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-11T00:22:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.045Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:36.174Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2025-10-01",
+   "gameId": "the-coin-game-99192",
+   "displayName": "The Coin Game Development update Fall 2025",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-01T14:25:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/32533218/4ccd1828aa9c646c16e50140775708e748399adb.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What month is it? Summers not over is it? No way. I missed it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What an adventure. Its been a couple months since I have seen another human besides my wife and maybe a couple random postal workers. The days all blend together and sometimes I feel like Jerry Bot and I are really friends. He talks about the old days when gas was only pennies for a gallon as I tell him all about the new version of Unity and how tough it is to update a 100 Gig project in the middle of developing it. He pretends to understand what I am talking about but I can tell he is clueless, as he knows nothing about modern technology. As always though, The ol'fart is weirdly optimistic and always encouraging me to get er done. I can tell he trusts me with all of his gears. He knows better than anyone that it is a big responsibility to build and maintain such a wonderful island. He knows and trusts that I love Islandville as much as he does... so he just sits and stares at me in the corner patiently moving stuff around trying to pretend like he is helping. I love the guy. I really do. I am also going crazy. Hahaha.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/32533218/f10d6021c75c4bffdd10fef3d81996ca21f43792.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have now spent 7 months with a team of coders that have helped me update the whole project to Unity 2022 from Unity 2018 (its about 6 versions of updates and I was told to NOT do this unless I wanted to \"rebuild the entire game\"). The process has been very challenging but a wonderful growing experience for me as a developer. I have learned so much and I have essentially used this opportunity as a way to \"rebuild\" the entire game the way that it should have been from the beginning. Below I will tell you all about the steady but slow progress I have made. (Spoiler alert.... I have a proof of concept already running with all the updates in it and it is the fastest and best it has EVER been. Sorry I got a little excited and had to tell everyone. I still have a ways to go yet but wanted to share that.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The current builds (from the new Unity 2022 version) that I am working on in the background have much faster loading times. Higher overall frame rates in all areas. Better looking graphics. Better feeling physics. New better menus with Controller Glyphs. New locations and even new vehicles. The list goes on and on. Even working in the Unity editor's \"backend\" is so much nicer and I feel like I am making more quality changes to the game than I have in years. Entire systems that I didnt really like before have been updated or even completely replaced. Also, As a result of all the new updates and changes, the stupid Garbage Collection \"hiccup/glitch\" that happens every 15 seconds on some machines is COMPLETELY gone in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/32533218/b52320bfbc8c00e3290b74bcdd9f5ae420d9ba0d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To get these amazing results, I have chopped the game up into modular better working \"chunks\" or scenes. From day one when I started this game back in 2019 I really didnt know how to build a huge open world game in Unity. I mean... who knew that stuffing a whole game into one scene was a dumb idea? (Yes, I actually did that.) This resulted in very long loading times and low FPS on many machines. The rookie mistakes I made when I built this game in 2019 were starting to show their rough edges the more I filled the island with content. As I rammed more and more objects into an already full game, I came to the conclusion that I needed to reset and work on the foundation first. So that is what I have done. Every single inch of this place. With a fine tooth comb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/32533218/a81f01ef478ca0e0830108131af476456eb0df66.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since dividing the game into 11 smaller scenes, this has given me the ability to \"unload\" more of the world when it is not being used or in view of the players camera. In the current and older versions I was just \"turning objects off\" in the background as a form of Occlusion Culling. The problem with that is Unity will only truly \"unload\" the objects from the games \"total used memory\" if it is in another scene and completely \"unloaded\" from the \"main\" scene. When objects were just \"turned off\", the memory was not getting \"released\" for use in other areas. This would cause a glitch and a lower frame rates. The new version I am finishing up will run much faster and the loading times in the opening scene are about 1/10th of the time that it used to be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another big thing I have done is, I have began the process of translating the entire game into a bunch of different languages. I thought this was a good way to make everyone feel more at home in Islandville. I am currently building a menu system to easily change the native language in the options menu. I will talk more about this after it is closer to completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/32533218/4116343ea7e1f82ea7f949db7b519ece24d636dd.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During this update to Unity 2022 I have also finished two more vehicles for us to cruise around the island in. One is the Race Kart from UFO arcade. When released you will be able to buy it from a local bot behind Sparkys Doggie Bone factory. The other vehicle is a fresh new Sports Car called the Lambeaux. I think we all kind of wanted to drive it since we have seen it parked behind Barrys Pawn shop. I am still finishing up the audio and some physics on these new vehicles. More news and info on these later when they are closer to release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/32533218/f4c714f7c6ba8abfdc121f66583506f8fa9c7267.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So as you can see there is a lot going on in the background even though it is pretty quiet around here. AGAIN. This update is not fully complete yet and will be available in the future. I just wanted to touch base and let you all know the state of development. If I had to give numbers, I would say that I am about 75% done with the Unity upgrade to 2022 and will be working on rebuilding some more systems in the game (like wrapping up survivor mode story, finishing multiplayer, new game saving systems and EVEN MORE content!). I do not have any dates yet. I can only say that it will be worth it in the end. Just like Jerry... you must trust me.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all for supporting The Coin Game and as always... Support your local arcade! Tell them The Coin Game sent ya!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now I have to go \"fishin\" with Jerry. He wont stop until I say yes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love you all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/1811772772444806"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T14:25:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.044Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:36.173Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2024-12-13",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Tis the Season! Fun Holiday decorations update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-13T16:04:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "HO HO HO! Hello Islandvillers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I had a chat with Jerry Bot while filling up the family van last week and he said he told all the bots around Islandville that we needed to up the \"festive cheer\" this year. He said he cant be the only one who loves the holidays and they all agreed. So Jerry, Barry and the worker bots went crazy last week and decorated the whole island. True story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I actually wanted to do this last year but I was busy cramming in the water park, so there was just not enough time. This year, I went all out and put up Christmas decorations all around the island. I hope you like it. I had an absolute blast making it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I always loved small town pole decorations and also when businesses would put a huge Santa sleigh on the roof. The cheesier the better. I had to throw in a couple of those.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barry organized all the Main Street lights that are overhead, and also went a little overboard on his pawn building. He loves this time of year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everyone has that one neighbor that just LOVES this time of the year. Haha.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So thats about it. Just some fun ambiance for the holiday season. Take a cruise in the Mini Van and enjoy the smooth Christmas tunes on the radio (R Key) while you take in the islands decorations. This update is just for fun and will be temporary for the holiday season. After this I will be working on the next location (Goose Lodge) and I will also be working with the new coding team to bring The Coin Game into a newer version of Unity. It's going to be a LOT of work but the game deserves it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you all next year. Thank you again for supporting The Coin Game, and don't forget to support your LOCAL arcade!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/1785774543562846"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-13T16:04:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.043Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.220Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2024-11-07",
+   "gameId": "the-coin-game-99192",
+   "displayName": "The Coin Game Fall content update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-07T16:45:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update #029",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.9990",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build# 000000000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greetings fellow Islandvillers! It's update time! This is the first update working with my new partners and all I can say is... So far. So Wonderful! They are showing me more opportunities for the game than I even knew existed. We are going to build great things together. That I know. I now have the ability to just work on the GAME. It's amazing. (I mean... I even have a teammate that checks my speling and grammer. I prob don't need it thuogh.) So BIG THANK YOU to the Kwalee team. Well Barry's in the background yelling at me right now \"Enough suit talk junior... lets get to the gravy!\". So here we go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update brings one new vehicle, a couple of new games, a couple of new locations, a programmable nanny bot and some good old fashion bug fixing. I made sure to spend some time fixing older bugs that were haunting players for years. I am really striving to make the game better and not just bigger. But hopefully there will be no more bicycles on the roof of Jerrys. I see players are exchanging strats in the discord on how to fetch their bikes from the roof. If you haven't checked out the discord I recommend it. Lots of fun and some great islandvillers in there. The Coin Game memes alone are worth it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This updates features",
+     "items": [
+      {
+       "text": "Nanny Bot is now programmable just like Stinky Jimmy the Junkman and Skippy the Scout newspaper bot. If you are playing survivor mode, the old bucket of bolts can be programmed to go shopping for you and Gary. You must have $20.00 in your ICU Savings account for the program to work. If you have the money, click on her yellow button on her back and she will \"open up\" with a key pad. Then you can enter the 4 digit code into the key pad and she will deliver the goods to your kitchen counter. She is not the fastest but she gets great deals from Jerry on items as they come from the same bot manufacturing plant. She will probably complain a little but she just doesn't like to be away from her Gary. If you program her and then go to sleep in survivor mode, she will have your goodies in the morning on the table. Remember that to program a \"programmable\" bot you simply click the back round yellow button on them and then click the key pad when it rotates out. Then you can enter the 4 digit code. It will give an error if you don't have the money in your savings or the code is entered wrong. The programmable bots rear LED will be green when in \"default\" mode and Nanny Bot will be purple when she is doing a job or in \"program\" mode. You can cancel a program with code 0000. I don't know why you would do that but I coded it in. lol. Just in case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I added a Used Family Mini Van for sale in Jerry's parking lot. $1800 is a steal for a unit like this. It's a little faster to travel around Islandville. It also has a few planned features which are not yet finished. The van will make cruising with friends possible in Multiplayer someday but for now it is just another option to cruise around with. It takes a little more gas but it is much faster than the bike or the golf kart. Make sure to check the gas gauge when you buy it... Jerry has been known to sell cars with little to no gas in them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There is a radio in the Van (R key) or (Left D Pad) on controller to turn it on or off. For now, it's really simple and has no other features yet. It just plays the local radio and if you turn the radio on and off it will skip to the next song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New PAY LOAD Coin Dump game at the Mall Arcade. One of my favorite games in the real world. Inspired by the classic coin ramp game \"Big Rig Truckin\". Line up the ramp and time it just right to win big tickets. Get it in the bucket... 10 tickets. Hit the dump lever or through the bonus hoops and win BIG on just a single $1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I added a shady \"Shell Game\" behind Barry's pawn shop. Who doesn't love a good street artist? Well I guess you could call it that. When the limo driver is not dragging Islandville brats around the town, he is making a little extra money behind Barry's pawn shop. You can wager some cash and if you pick the correct cup after he shuffles them up you will win double your money back. Make sure to keep your eye on the red ball... but it's kind of impossible as he is a robot and is faster than you think. Good luck. You are going to need it. Make sure to keep your head on a swivel so you don't get beat up by the bad bots while you are on their turf. Oh I almost forgot. For you big gamblers...you can also go ALL IN and risk it all for the ultimate double up. Make sure to have some back up cheesy poofs to get home though if things don't work out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more \"construction\" zones to the island to show some of the future building sites. The bots are always working in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Goose Lodge 377 at the main intersection. It will be open in the future for some fun \"old school\" games and more in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the , and . buttons that speed up and slow down the C \"Free cam\" for making better movies and pics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a reset Van button to the wrist watch map. It can still roll over in a bad crash so I am working on a \"self righting\" system for the future. For now, you can always use the reset van button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the bug where the bike would disappear when you went into a building or when you left it under the awning at Jerrys Gas and Go. Bike is now \"frozen\" when you go inside any building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quieter Mega Drop Noise when Ball Drops. No more EREEEEEERRRRREEEEEEEEEEEEEGGGHGHGHHHHH screaming from the mega drop machine. Well, it still screams, but just not as loud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the Red Cross markings from the game as it violated Article 38 of the Geneva Convention. Thanks to the Finnish Red Cross Volunteer for pointing that out to me. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted Health and Energy on Pizza and Lemonade. A little bit of health increase instead of just energy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the Health and Energy from a nights rest in Survivor Mode. It no longer just sets the health to 99 and 65 energy. It will now just add +35 points of health and +50 energy to the players current levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the small percentage menu on the fish tank. When it says 100%, it would look like 10%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the \"glitch\" were you could insert an item into Barry's pawn shredder and get free loot. I loved all the piles of cash pics but it was bankrupting Barry. He said he is going to need that loot for his new Lambo wheels. Sorry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the display of Coins Balance in the watch stats menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the Coins Saved Balance to the wrist watch stats menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some other small optimization bugs for garbage collection.: So that's about it for this Fall update. For now I will be fixing bugs and doing small patches to adjust some parameters after I get more feedback from the update. After checking out the new update, make sure to check out all of our new socials that I am working on with Maddie. We have a Discord now, an official Facebook page, and more to come. As always a HUGE thank you to all of you for supporting this crazy project. Now I have to go win my money back from that lucky limo driver...: Don't forget to support you local arcade!: Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/6148070194801600529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-07T16:45:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.042Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.219Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2021-12-21",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Winter Holiday UPDATE! New games, locations and jobs.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-21T20:18:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This end of year holiday update brings new claw machines, new locations and even a new Pirate Pizza delivery job to earn more money around the island!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank you very much for all the support of The Coin Game!",
+     "items": [
+      {
+       "text": "Also... WELCOME to all the new players of The Coin Game! We are honored to have you and are VERY Thankful that you chose The Coin Game. Here at devotid... we take wasting your time very seriously. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have been working quietly in the background on this new update for a couple months (ok... more like 6 months). I am really glad to finally have it completed as my wife and I went through a large move over the last 5 months. We also had two very old Weiner doggies (16 and 17) that we spent precious last months with at our new home. All of this at once.... and no internet for 2.5 months made working on the project virtually impossible. It was also a really large job selling the old house but worth it in the end. We lived in our old home for 17 years. Its tough to leave a comfy familiar space and rebuild somewhere new. It took us about 2 years to find a nice quiet location..... but we are very lucky to have found a home in the woods. We now have a home office for us to continue working on The Coin Game were we get to stare at Gary's geese friends all day on the neighboring pond. Thank you again to all of The Coin Game supporters for helping me make this happen for my family. Without all of you NONE of this would be possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Silly to think that 6-7 years ago I was working part time at BestBuy installing car stereos, painting used cars in my driveway and making wakeskates at night in my garage... to now building the project of my dreams on Unity 3D. If you are passionate about games... Look into the wonderful community that Unity game engine has to offer. I could barely turn a computer on when I started this journey. Now I am more excited. More Empowered and even more inspired than I have ever been. And also.... Never give up. #indiegamedev",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HOLIDAY UPDATE",
+     "items": [
+      {
+       "text": "Dec 22nd 2021",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update #024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.9943",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build# 7920670",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Radio Controlled Sailboats",
+     "items": [
+      {
+       "text": "One Eye'd Billies still had open area in the back... so I finished up the Radio Control Boat pond. Players can now earn tickets by piloting a wooden radio controlled sailboat around the pond and collect life rafts worth 50 tickets each. There is a time limit so be sure to hurry through all of the sea going traffic. If you get the minimum number of rings you will earn a 500 ticket bonus on top of your score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This is a small replica of the old Radio Controlled boats from Cedar Point in Sandusky, Ohio. I had a blast playing with these as a child and would look forward to them all year. The boats were removed in the 90's and was VERY hard to find any pictures of info on them. The entire machine was modeled and built from one single old photo I found online. I hope it brings back great memories for others or makes new ones for those that couldn't be there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Pizza delivery Job",
+     "items": [
+      {
+       "text": "Now you can earn money delivering food to hungry islanders. Who didnt love delivering pizza pizzas as a job? Being your own boss... The open road... Pure freedom. The process is pretty simple. You buy pizzas with your own money. Put them into your inventory. Then just drop the pizza into the delivery box at each location with a light on the porch and also receive tip if you are fast enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "summary: Purchase pizzas from the Pirate Pizza outdoor vending machine at One Eye'd Billies. Then you will see a countdown timer and a place appear on your watches mini map and also on the top left of the screen in red. Deliver any Pirate Pizza that you have to the location before the timer runs out to get paid, if you hurry you will get a nice tip from the local islanders. These delivery pizzas are not the ones from inside One Eyed Billies that you eat. Those are different and not packaged for delivery. You can not eat the delivery pizzas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you dont make it in time you can always sell the old pizzas to Barrys Pawn Shop for a little cash. There is a dozen locations spread around the map to deliver to. There is even a new subdivision out by the UFO arcade with 3-4 new houses. Good luck Matey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW GAMES at One Eye'd Billies",
+     "items": [
+      {
+       "text": "\"Fishy fishy\" is a regular style of claw machine that gives stuffed animals you can collect or trade for loot at Barrys. It works just like Dude Where's My Cow?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Cash Claw\" is a new scoop style claw machine (more of a crane bucket) that you attempt to scoop up cash and small prizes that are worth different amounts of money. If you win prizes in this machine the game will automatically add the money right to the players wallet and does not have to be \"picked up\" like other claw machines. This new machine is a work in progress and needs a little more optimization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"MegaDrop EXTREME!\" It deserves ALL CAPS... because it is huge! Its is a similar version to the very popular Mega Drop that is currently at Larrrys Arcade but just way way bigger. Complete with the same catchy music. haha. Lets see those leaderboard scores... only bigger!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved a copy of the Pinball Machine and the Snow Ball Battle Arcade Game to One Eye'd Billies, It wasnt getting much play at the Dollar Store. Let me know what you all think. The pinball game has not been optimized yet for One Eye's Billie's and may be a little slow on frame rate. I get about 50-60 on a GTX2060/ i7. I have to add a few more controllers to OEB to finalize the install of it... but I thought I would sneak it in there for the Holidays.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "MISC updates and bug fixes",
+     "items": [
+      {
+       "text": "Added new audio for One Eye'd Billies prize counter character. YARRRRRGGGGHHHH!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new audio for UFO arcade Price counter character. Space robots...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the Mini Map to show the recent locations and new subdivisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the mini map \"zoom\" to move farther away from the player to look around the map more. Currently you could not see the edges of the map when moving around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the onscreen GPS to the Bike to help delivering stuff to the destinations. Hit the \"Tab\" key on the keyboard or the watch button on the controller to view it while riding.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the Mini Map Player Icon from Wandering around on the mini map. It works a little more precise now. It also works a little better when in a cart or on a bike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "update the button colors on the Player Transporter on the player watch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of the leaderboards not recording data.: That about does it for this surprise holiday update. I have a few more things I wanted to get into this update but I have taken long enough finishing up One Eye'd Billies. I am still working on the Co-op/Multiplayer, more optimizations and a BUNCH cool new areas and games coming to Islandville throughout 2022.: Thank you all again. Have a MERRY CHRISTMAS from devotid.: Kevin: devotid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 7,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/5320438099055175116"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-21T20:18:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.041Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.216Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2020-12-25",
+   "gameId": "the-coin-game-99192",
+   "displayName": "BIG UPDATE! New location, 8 new games, 18 hole mini golf and cheap pizza!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-25T04:25:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dec 24th, 2020",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update #022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.9941",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build# 6012822",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is the first version of the new One Eye'd Billie's Adventure and Fun Center. The new arcade comes complete with 10 New machines and an indoor 18 Hole Putt Putt Golf Course. It is located pretty close to the home over by the mountains. You can see it on your watch mini map now as \"Billies\". If you are taking the bus there, you should get off at the Mountains stop and walk the rest of the way. Remember this arcade is still a WORK IN PROGRESS and not fully complete yet but I really wanted to get this to you all for a little extra holiday cheer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8 new games inspired from modern popular releases and also some good ol'arcade classics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Pirate themed prizes at the prize booth ran by One Eye'd Billie himself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New character bots that will \"play\" the games at One Eye'd Billies. Makes it feel a little more alive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New indoor 18 hole putt putt golf course. You can play just the front 9 holes or the back 9 holes... or all 18. You will win tickets when you complete the full golf game. Lower score = More tickets. (Work in progress... still adjusting winning values)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pirate pizza snack Bar inside the new arcade so you never have to leave. (Pizza Delivery Job coming later in future.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Half the arcade is \"closed and under construction\". This update is just a \"pre grand opening\" party. Feel free to look around. Billy wanted to get everyone in for the holidays. He is such a push over. I barely had to even ask him and he was like \" Do you think they will even want to come when its only 3/4 of the way complete.?\" I told him \"We have to try Billy... we have to try.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other features additions and bug fixes",
+     "items": [
+      {
+       "text": "By popular demand I have added a sitting feature to the character controller. This will let you waste some time and watch a sunset at the beach or even enjoy some \"bro/goose time\" with Gary watching the TV. Now when you hover on an applicable chair, a cursor will show a sitting image. Left Click or the interact button on controller to sit down. Then when you want to stand up again just hit the the Exit \"vehicle\" button or the E Key. When you are at home or at the babysitters the TV Remote will be in your right hand. Left click or press the \"Interact\" button to change the channel. I am still working on more ways to get better TV shows coming... So this is just a tool to make it a little cooler when that stuff is done in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a few new Clothing options to both the characters. I still plan on replacing the main characters someday but I also like to keep it fresh for the new year. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Visual Heath damage queues. The screen will flash red upon hurting yourself and also when you are under water and drowning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "decreased the amount of health loss when energy is very low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Health resets to 99 after a full nights rest in Survivor Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a drowning controller when you are underwater now. you will lose health for being underwater so plan accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the ability to get paid in babysitting by getting all but one of the dirt spots. Just like the toys now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- Ticket Toboggan",
+     "items": [
+      {
+       "text": "Old school ticket ramp game. Play one shot at a time. Go for the thin red slots to win the bonus. TIming is everything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- Lava Mayhem",
+     "items": [
+      {
+       "text": "Ball/Marble Coin Style pusher with bonus wheel and Ice Ball Ramp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- Wheel Er Up",
+     "items": [
+      {
+       "text": "Timing Pinball Style level up game. Make it to the top to get to spin the bonus wheel for big ticket prizes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- Pick Yer Treasure",
+     "items": [
+      {
+       "text": "As close as you can get to roulette for kids. Place your \"wager\" and spin it. Not too much involved here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- Octo Swirl",
+     "items": [
+      {
+       "text": "Coin dropper style game. Timing is everything. Drop it on the wheel at the right time to get the coin in one of the circles on the edges. Easier said than done though. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- Super Hoops",
+     "items": [
+      {
+       "text": "A classic basket ball shooter game. Last 15 seconds are 3 pointers... all the others are 2. You get paid about 3 tickets per point when all said and done. I am still adjusting all winnings on all games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- Power Puck",
+     "items": [
+      {
+       "text": "All star classic Air Hockey game. There is also some new opponents to play against. Aim and hit one button. I tried to make it very simple but still fun to play. I dont want to turn this game into a Air Hockey sim. I mean that would be fun.... but we have arcades to build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES for One Eye'd Billies",
+     "items": [
+      {
+       "text": "Minion Bots may \"stick to you\" on lower end PC's. Collider issue still getting fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new machines and building is NOT OPTIMISED Yet. This is a fun sneak peek at the new arcade and may run about 10-20% slower than normal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wheel Er Up game may skip a tooth due to a physics issue I am still working on.: Thank you for being understanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Arcade character Bots",
+     "items": [
+      {
+       "text": "I have been testing some new characters that will travel around, occupy and play some of the arcade games along side of you. This is only at One Eye'd Billies for now. It should make the arcades feel a little more alive until we get the multiplayer done some day. Now there will be a another gamer wandering around One Eye'd Billies playing games with you. Sometimes he is \"filming clips\" for his day job. The guy is a Arcade legend! ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I hope you all enjoy it! Let me know in the comments what you think.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After the Christmas break I will be continuing work on the rest of the machines for One Eye'd Billies, RC Boat game and the Shooting Gallery. Thank you for all the support for The Coin Game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GET MERCH HERE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 7,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/3917534300075568729"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-25T04:25:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.039Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.215Z"
+  },
+  {
+   "id": "the-coin-game-99192@patch-2020-08-12",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Damage System Patch: Fixes and adjustments to Damage, Health and Energy systems",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-12T02:29:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Aug 11th 2020",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update #021",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.994",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build# 5400544",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UPDATE SUMMARY",
+     "items": [
+      {
+       "text": "This update mainly addresses the \"insta-death\" from the bad bots or a random goose food item to the head. I have been watching many of your hilarious streams over the last few weeks and have seen way too many insta-deaths. I have made some changes to the way damage is dealt to the player and also at what times. Now the most damage you can get from an whipping item is about a 1/10th of what it was before. I turned all of the damage down on those items. This should eliminate the insta-deaths from holding items or falling down a hill and receiving a -50 damage. Now you will receive at the most a -10 Damage when falling off of a roof. Getting hit by a car will still kill you... so dont hang out in the road. In one of the future updates I plan on including damage when you are on the bike and Golf Cart. So start getting used to watching out more for traffic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Congrats to all of you veterans that played and LIVED through these rough and barbaric early times here on Islandville Isle. Well done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I made the bad bots \"Short Circuit and burn up\" now when you shoot them 3 times with a rubber band gun or even the Roman Candles. Shooting them 3 times will short circuit the bad bots and make them run to Larry's back door by the lambo to \"heal up\". This will give you more time to get to Barry's front door and be a little more \"in control\" around the pawn shop. I still have plans to add more \"weapons\" to battle them and also better \"burning up\" animations for the bad guys but that will come at a later date. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I also turned down the \"constant declining health\" system a bit. Now your health will only drop quickly if you are really low on energy. I am still working on a \"low energy and health\" visual warning system that will come in the next phase of Survivor Mode beta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also check in to go to bed 2 hours earlier now. 7 PM instead of 9 PM the blankets in your bed will now be open. This should also ease the health drain a bit and allow you to get some rest a little bit earlier and refresh yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I am still working on a Dev blog with some early teasers for the next location. One Eye'd Billies Fun and Adventure Center. I will have the blog post ready very soon with a little road map for some of the coming games and even some ideas for future development. So stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's about all I have for this small patch update. You may notice a couple more small patch updates coming to keep adjusting the new beta Survivor Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to all of you for all the support. I could not do this without ALL OF YOU!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "DAMAGE SYSTEM",
+     "items": [
+      {
+       "text": "Turned off the player damage system when using the Karting System and Lazer Tag systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turned off the player damage system when you are holding an item to stop the killing yourself when trying to feed Gary/Fish or manipulate other things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turned down the health damage received from all items and also the health damage from falling off of higher areas.: Old Values: -50 = High Damage: -25 = Med Damage: -5 = Low Damage): New Values: -10 = High Damage: -5 = Med Damage: -2 = Low Damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the amount health that will be subtracted throughout the day. Now only when you are really really tired will it start to decrease a drastic amount. Turned down about 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Deactivate the bikes wheel colliders sooner to stop the bikes wheels from interfering with the player controller and sending you to the moon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CURFEW",
+     "items": [
+      {
+       "text": "You can now check in 2 hours earlier and go to sleep to get that needed boost of health. The bed \"covers\" will open at 7 PM instead of 9 PM now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BARRYS",
+     "items": [
+      {
+       "text": "Fixed a bug in Barry's that would allow the player to eat an item and still get paid for it. Now the menu and system will auto update when changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the Barry's \"Hot item\" System not displaying the proper names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with Barry's not paying double on some of the \"Hot Items\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebuilt the bad bots and how they respond to being shot. You can also now \"stop\" them with fireworks. Hit them three times to make them \"retreat\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more locations for the \"bad bots\" to randomly visit around Barry's area to help spread out the \"presence\" of them at the front door of Barry's.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fireworks can damage the bad bots and deactivate them for about 30 seconds as they are \"burning up\". (Work In Progress)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rubber bands can damage the bad bots and deactivate them for about 30 seconds as they are \"burning up\". (Work In Progress)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MISC",
+     "items": [
+      {
+       "text": "Changed the way the Carnie Pool Ducks are loaded at the carnival. Ducks were slowly disappearing after a bunch of plays and locking the player in the game after they were all gone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some Random Items that were not spawning on the Dollar store roof.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the Mountain Bike to the help menu. H Key at anytime will open the help menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed and tweaked a bunch of Nanny Bots house hang out destinations. Now she wont be annoying and in the kitchen all the time messing up you and Gary's chow time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the manual time simulation \"sun mover system\" when you are on \"Manual Time Mode\". Saves a little GPU Load and stops the shadows from flicking and moving as much. When the time is progressing through the day the shadows will move all the time and can get annoying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the \"H Key\" Help Menu that was not working on all resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 1,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/3667572547699299058"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-12T02:29:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.038Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.213Z"
+  },
+  {
+   "id": "the-coin-game-99192@patch-2019-12-03",
+   "gameId": "the-coin-game-99192",
+   "displayName": "New Help Menus, Small patch and bug fixing.",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-12-03T08:53:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update #011",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.979",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build #4453460",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now that the game is in a \"together state\" and not spread all around my office in pieces, I am now able to put up more small bug fixes and little changes. So here is just a little one with a couple doodads here and there. (< thats technical speak for you non computer people haha)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I would say half of these bugs were just reported in the last 24 hours. I read them all and I am working all hours of the clock to build the best game that I can for you. Thank you for all the wonderful reviews and nominations for the Steam Awards. I am truely touched and even more charged up to make this the best game I possibly can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Another small patch and more bug fixes",
+     "items": [
+      {
+       "text": "Menus: Added an all new Help Menu when your card is in any machine. When your card is in the machine you will see a Small Box with a ? on it in the corner appear. Hit the H key and you will see more info on the current machine. This should help answer some of the questions that folks have on how some of the machines function. This menu is not done but I felt an unfinished help menu is better than no Help menu at all. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Menus: No Help Menus on SpeedDrop and StackemUp. They will be added later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "GolfCart: I gave the Golf Cart more Miles Per Gallon as it was eating a little too much fuel. 50% increase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Popcorn Petes Coin Pusher: Moved the Bonus spawn spot for popcorn Pete and Dunko plush was appearing in the machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Popcorn Petes Coin Pusher: Added a little more interior light to the Popcorn Pete Pushers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Popcorn Petes Coin Pusher: Moved the celebration menus up a bit so you can continue smashing that play button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Popcorn Petes Coin Pusher: Made the Connie Kernal card a little less rare so you dont have to play one machine all night long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dunko Coin Pusher: Made the Dunko Cards all a little less rare aswell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kart Race: Fixed the bots freaking out in the Trophy Ceremony at the Race Karts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kart Race: Rebuilt the Driving Menu on the Race Karts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kart Race: Fixed the spawn spots on the podium for the player. Before you would spawn into the floor and not on the podium.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kart Race: Fixed broken colliders to the Podium back wall at the Kart Race Track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LazerTag: Fixed the ticket showing through the wall after playing a round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UFO Arcade: Fixed the LCD signs and reset them now when you go inside or outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UFO Arcade: Added the Uncle Phil funded Money Blower Machine to the UFO Arcade to save time to Birthday go'ers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UFO Arcade: Added some larger poster of some of the Popcorn Petes cards as someone wanted to see them up a little closer.: Please let me know how the changes go and be sure to stop by the SUGGESTIONS thread and tell me what you would like to see in The Coin Game. I read EVERY single one of them. You never know when your idea (silly or not) may make it into The Coin Game.: Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/2551782186276037180"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-12-03T08:53:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.037Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.211Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2019-06-30",
+   "gameId": "the-coin-game-99192",
+   "displayName": "The Carnival is in town! Largest update ever!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-30T09:01:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "CARNIVAL is Here! Largest Update Ever!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update #007 - Version: V0.953",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carnival is Here! Come get your worthless trinkets and under-stuffed rip-off plush toys! Who doesnt love warm summer nights and getting haggled at by some crusty carnival worker for overpriced junk. :) Step Right Up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope the carnival brings back as many wonderful memories for you as it did for us making it. This one was about 6 years in the making. (Literally) I have been dreaming this carnival up since I was a wee lad. Ever since I started making video games I have imagined this carnival and the silly games that I could create. It feels great to get it completed and share it all with you. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Islandtime Amusements Traveling Carnival",
+     "items": [
+      {
+       "text": "8 new interactive carnival booth games with robotic workers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "15+ new carnival inspired toys/prizes to win and barter with at Barrys or to keep on your shelf at home. You decide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7 classic carnival rides to make you sick and feel like your flying at your desk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of new silly characters to interact with that work for Islandtime Amusements.: UPDATE 7-1-2019: Pushed a small hot fix for the Carnival coin pushers, The bus loading system and parked semi colliders.: UPDATE 7-9-2019: Pushed another small update to fix some small bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the colliders in the Hockey Hut that was eating some of your wins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the exiting of vehicles. You must now Hit the Exit Vehicle button/key. (E Key on the Keyboard and Y button on a generic controller.) no more having to take out the player card.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Turned the BasketBall announcer down a bit. He was all fired up and yelling at everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turned off the cursor controller and the ability to grab things and push buttons while in the golf cart. It was just causing all kinds of problems. No more drive thru service. haha",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Readjust the freebie dropper at the carnie coin pusher as it was putting items in un-winnable locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Carnival Ticket Booth",
+     "items": [
+      {
+       "text": "Just walk up and put your playercard in and blow some coin on some fun rides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Food and Drink",
+     "items": [
+      {
+       "text": "There is also a couple new places to grab some overpriced \"food\" (if you want to call elephant ears a food) and some good old fashioned \"fresh\" squeezed lemonade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other bug fixes and Notes",
+     "items": [
+      {
+       "text": "Added 6 New Achievements for riding the carnival rides and playing the carnival games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of audio menu bugs were it would reset the menu click sound and blow your ear drums out. oops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Option to turn off the leaderboards in game. You can always turn them On or Off from the options menu in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wiggling bots crisis when you got close to them. No. They were not scared of you... just broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Treasure in the Sand as it was displaying a wrong price on the Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Arcade Coins falling onto the floor of arcade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the hoverboard kids mouth on the side of their faces...lol.: and a bunch of other little stuff that will make gameplay a little smoother.: Now I am going to take a couple days off and I think I know of a good carnival across town the wife and I will go do some more \"research\". ;): Thank you again for supporting me and my wife on this amazingly fun journey. This is the best community we have ever been involved with and we cannot thank you enough for allowing us to make this game for you.: I will post more news and info about the coming Survivor Mode, Donnies Dump, UFO Arcade and even more silliness coming later down the road.... but for now go and enjoy the summer carnival. Uncle Phils orders!: Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/2436926440577115789"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-30T09:01:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.036Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.210Z"
+  },
+  {
+   "id": "the-coin-game-99192@post-2019-04-27",
+   "gameId": "the-coin-game-99192",
+   "displayName": "KABOOOM! Fireworks, fuel, robo friends and refresh of ALL leaderboards!",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-04-27T06:19:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update #006",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.943",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TITLE: KABOOOOOOM! New robo friends, fireworks, eye candy, fixed leaderboards, cart fuel burning physics and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Over the past 30 days I have touched almost every aspect of the game tweaking and fixing the little things that make big differences to enjoyment and flow of the game. I also threw in a bunch of new stuff to have a bunch of fun with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is a short Vid of the new update.... Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "LEADERBOARDS",
+     "items": [
+      {
+       "text": "Fixed the leaderboards not updating at Larry's Arcade and also made it so you have to pick up your tickets that you just won from each machine. After the game is over the the ticket dispenser will drop your tickets right in front of the machine. (obviously only if you won some silly). You then have to pick them up (F KEY) and take them to the ticket eater before you can spend them. There is no way that Larry is counting all those tickets for you. Not for $8.25 an hour anyway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I also had to RESET all leaderboards and all save game files. I am very sorry BUT this had to be done for the early access version as things are always changing and I am adding new content. They may reset again in the future as I change the way that the leaderboards are calculated. (ie; best single game and not most played. Its not fair if someone plays all day..... So I am working on that along side of the new leaderboards for the other locations. But look on the brightside if you are reading this early you can get that screen grab of you topping the charts and share it around the watercooler tomorrow at lunch break. Huh huh? Right?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FIREWORKS",
+     "items": [
+      {
+       "text": "Added a new fireworks stand at the beach across from the bus stop. Its run by a cool old dude named Frankie. He is an old vet that loves his pyrotechnics, Rhonda (His Lady Friend), baseball and freedom. He shows you all the \"good stuff\" without even having to ask and he never asks for an ID. Roman Candles, extra large bottle rockets, 16 shot mortar bricks and of course some of them new hip smoke bombs that are all the rage on the interwebs. So save up that money and put on a show for the locals. They will love you for it.: You light the fireworks with the right click button. After enjoying the splendor of the boom and bangs you can even get .50 cents for some of them at Barry's Pawn shop/recycler machine. The bottle rockets can be pretty hard to find after sending them into space though. lol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "GOLF CART",
+     "items": [
+      {
+       "text": "Added a fuel burning system to the golf cart. You now have to buy fuel from Jerrys Gas and Go with your cash. You can purchase it in a single can or a 5 pack of cans from the pumps in front of Jerry's. Jerry's is still out of the RACE FUEL but I heard that stuff will make the golf cart sing. He said he doesn't know when it will be in stock again but he said it should be around the same time the Carnies come to town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To fill the golf cart with fuel you simply purchase a can from Jerry's (available in single or 5 packs) and then set it next to the driver side of the cart. You can see the gas cap on the side with the steering wheel. Once you have the can in position, right click on the can and it will autofill into the cart. The cart fuel tank holds about 5-6 cans(Approx 6.5 Gallons). Currently the carburetor on the golf cart is pretty clogged and its getting REALLY bad gas mileage. Later in the future Jerry should be able to help you get a little more oouummmfff outta of her. But for now he is really busy working on the vintage trucks from the carnie thats coming into town soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CURSORS",
+     "items": [
+      {
+       "text": "I added a new ICON cursor system that will be the base framework for the ability to \"use\" items in the future. For now you can only \"Use\" the gas/fuel can when refueling the Golf cart. But in the future this will be how you will interact with \"tools\"and \"objects\" to perform more tasks and jobs to earn money. Earning loot the old fashioned way will be a big part of the coming survivor mode. It's not all fun and games when Uncle Phil's not greasing the pockets of ol'Islandville. Your going to have to get those hands dirty working odd jobs to earn your keep if you want to enjoy all the fun things the island has to offer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BOTS",
+     "items": [
+      {
+       "text": "Added a bunch of NPC bots to the main areas of town and a couple other random areas throughout the island. The robots will get more and more interactive as EA development goes on. For now they are just cruising around doing some errands and testing their navigation systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a few Character bots to the Main locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jerry @ Jerry's Gas and Go",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barry @ Barry's Pawn Shop (With his lady friend money counting helper)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frankie @ Frankie's Quality Fireworks Stand (With his lady friend Rhonda and her kid)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some bots to the bus to give it a little life when you are riding around town. In the future I might want to make them get on and off the bus and transport around town.... But for now the bots will remain in there main \"areas\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a bus Driver and made the front doors not open anymore as you cannot board the bus from there anyway. The front doors will be how the bots get on and off in the future. Prob should have made that a little more clear. lol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "VISUALS",
+     "items": [
+      {
+       "text": "Added some volumetric lighting to a bunch of the lights around the island. Mainly the flashlight, headlights on the cars and the Streetlights. As a kid I had to be home when the streetlights came on... So I spent a LOT of time staring at them. haha. Still adjusting these suckers. They can be pretty picky and will look overblown in some areas and not others. Again, Still tuning em.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed a bunch of optimization and lighting settings for the outside world and gained quite a few frames per second. About another 10-15% increase all around. Also gained some frames inside all the buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading time should be a bit quicker as I am loading the audio a new way to help. This should help on some of the smaller GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new full moon with a \"night light\" sky for all the scaredy cats out there. It will give the open areas a little bit more light to see what you are doing but still remain a little spooky for the wooded and non lit areas. I also spiced up the campfires and tents with a little flicking realistic glow, volumetric lighting and some shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new simple water visuals to all the water surfaces with reflections and some blur effects for \"underwater\" cameras. I do not plan on adding any water physics (buoyancy) to any objects for now. you can just walk into the water for now and hold your breath for unlimited time... but don't get too used to that. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Teddy spruced up the stage show a little bit in the VIP Birthday area with some smoke machines and lasers plus a couple old folks reading the paper. The band has been doing well so they blew some coin on some stage equipment. Barry gave him a sweet deal on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "OTHER",
+     "items": [
+      {
+       "text": "Audio Options menu will now update right away as it was not setting the audio from the previous round settings. Your settings should carry over from game to game now. Feel free to tune those peskie idiots out now. Very sorry for the confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES",
+     "items": [
+      {
+       "text": "Sometimes you can get stuck on the bus while exiting. Click the exit button twice as a workaround.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MEGA Drop is still not completely redone. Will scam you out of some tickets every now and then from a timing issue.: _ You can still mess up the game by grabbing things out of the golf cart with the inventory button. For now try to make it a habit of removing them from the cart first and then putting them into your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SUMMARY",
+     "items": [
+      {
+       "text": "That's about all for this update..... Now I am full steam ahead on the Carnival and the beta survivor mode. Stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for supporting The Coin Game. I can not thank you all enough for helping me create this game. I am very honored and excited to have this opportunity to build this adventure with all of you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know what you think in the comments below and as always.... feel free to share!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 1,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/2432417221741902039"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-04-27T06:19:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.035Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.209Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2019-03-22",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Small patch update, ticket controllers, player emergency rescue system and new g",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-22T06:56:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update #005",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.942",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DESCRIP: Mainly just fixing some bugs with this update and getting ready for the next content update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the way all the machines count the tickets to stop the rolling of bonuses to the next game. It was fun while it lasted! haha. Il'l be testing a few more things before resetting the leaderboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new player rescue system that will keep track of the players last location and will teleport you if you get into trouble and need to be reset. This should help with getting stuck below the map. It basically will always be checking if there is good ground below you and if you are still inside a building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the lotto tickets that were showing your last winning amount on the screen even when you lost. Now it will show and encouraging comment to propel you into victory. Or something like that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue were your saved game would not show up without resetting the game. The saved game menus will now refresh when you save a game. That way it is there if you want to just save and restart were you were.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the loud noises when resetting the game. There was a camera turning off and causing that. When there is no audio listener on an active camera it will just play all the sounds at once. Got it handled though. Move along... nothing to see here. Never happened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the loading of the golf cart on a uneven surface. Camera will now set it self up properly according the golf cart and not the ground angle. OOps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Free Cam loading angle. It will not point toward the sky when you click C Key anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Golf cart now resets to the home house garage. It will be towed to the driveway for no charge in Birthday mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the female Cheesy poof package disappearing when eating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Free Cam Mode not going back into the bus if you were riding it.: Thanks for supporting The Coin Game and Ill see you in the next one.: Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/2543878145174410317"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-22T06:56:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.034Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.208Z"
+  },
+  {
+   "id": "the-coin-game-99192@post-2019-03-19",
+   "gameId": "the-coin-game-99192",
+   "displayName": "64 bit Version, New Clothing Options and a new Free Camera Mode!",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-03-19T10:21:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update #004",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.941",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "64 bit Version, New Clothing Options and a new Free Camera Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have finished a new 64 bit version of The Coin Game. This should use a bunch more of that Memory and Ram you paid good money for. If you are on a 32 bit system it should not change at all except for re-installing a the new version. The Steam installer will auto install the correct 32 bit or 64 bit version for your system. I am hoping this will help the memory problems some folks are having with crashing on some Intel integrated HD Cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I also whipped up a new first draft of a \"Free Camera\" mode (C Key) that will allow you to fly around the island with a just a simple camera. Thanks CaptainSauce for the idea. It is great for taking screenshots and getting those tough angles in videos. It is similar to how a Spectator Camera works in a multiplayer game. It will NOT move the player and only the Free Camera. You can rotate the camera with the mouse. The WASD keys for now will pan the camera Forward/ Backward Left and Right. You can change the speed of camera pan with the comma and period (,.) keys (Min 0.5 - max 10). You will see the speed of the pan in the lower left of the screen on the Free Camera Menu. It Opens and Closes when you hit the C Key. Holding the Shift key will turbo the pan speed X 10 times. You can hide the \"free camera\" menu for screenshots by clicking the little hide button. You can lock the camera to the X and Z Axis (it locks the Y height) by holding the Space Bar.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "KNOWN ISSUE- If you hit the TAB Key (Watch Menu) when in Free Camera Mode it will open the Watch Menu wherever you are. I am fixing that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "KNOWN ISSUE- DO NOT hit the Free Camera C Key on the bus. It will mess up the seat and you will not be able to get off the bus. this will get silently patched along with a couple other small hiccups in a small update that I am working on still.: https://www.youtube.com/watch?v=bR7m4qmTBWI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I added 3 different clothing choices for each character in a simple character customizer. This will change in the future but I thought I would make it a little more interesting while you wait with a couple options. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a nice small town cop to the traffic that is cruising. He will come in handy later.... ;): That's about it for this little patch update. Not too much new content as this was kind of an unplanned patch update to makes things work a little smoother with the new camera and the 64 bit version.: See you in the next one and like always Please let me know what you think in the comments below.: Kevin: Here is a couple of screenshots from the new Free Camera that were not possible before.: Here is another shot of the New clothing menu choices. Work in progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/3140604542258998067"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-19T10:21:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.034Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.207Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2019-03-15",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Small update with more bug fixes, more optimizations, a couple sneak peeks and n",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-15T13:43:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "WORK IN PROGRESS PHOTO NOT YET RELEASED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have been working on some more bug fixing and a bunch of behind the scenes stuff for the last couple of weeks in preparation for some of the new content we have coming. I also added a sneak peek photo section at the bottom of this post showing the next location and activities coming to The Coin Game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-------------------------------------------------------------------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update #003",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.94",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Includes",
+     "items": [
+      {
+       "text": "* Fixed the music credits as they were not showing half of the artists. BIG THANK YOU to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Changed some of the Graphics Raycaster Components on some of the touchscreen enabled computers to stop the no mouse input problem.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "* Higher res in the Potato Setting. I mean you couldn't even read the menus. lol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Dunko cards get stuck under the pusher less now. I made the colliders on them a bit thicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed the NO colliders on some static buildings. People were walking through walls. yikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fix formatted text on Mega Drop panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* You can no longer add larry to your inventory. He didn't like being crammed in your backpack anyway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed \"Remaining\" spelled wrong in Text message. I'm not a English Grammar Wiz kid and I am really sorry about that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed more spelling errors \"Buss Pass\" on bus stop is now \"Bus Pass\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Cant click on doors from the golf cart anymore.... I basically closed the Drive Thrus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added some extra colliders to the Hockey Hut to stop stray pucks from trying to run away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Gave Larry The recognition that he deserves by adding his name to the sign out front of his own business. Thanks BrutalMoose. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed the Drinks not spawning an empty can after you drink them. They were just piling up behind one of the machines in Larrys Arcade. Right behind the Stack em up game is 0,0,0 in world space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* made a Reset golf cart button on the watch map menu when you are outside. It will reset the golf cart to the original spawn spot from the beginning of the game. It is right next to Larrys Arcade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No I did not fix Mega drop yet. She is still in the shop getting repairs to the super bonus. Its broken from scamming so many users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Camera Post Processing",
+     "items": [
+      {
+       "text": "* Added a little Bloom (Very Little)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added a little AntiAliasing to help with the jaggy edges of mesh. (Not too much as I like the PS2 vibe to give it a little flavor)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* A little Tone mapping to tone down the drastic coloring of some of my texturing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's about it for this patch.... As I am mainly working on the overall flow and play of the game still for all the new users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kevin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I thought I would drop a couple teaser pics of the next location coming to The Coin Game below. It will be a fun interactive traveling carnival with approx 5 of your classic amusement rides. There will also be around 6 - 7 new detailed and interactive classic carnival games at the large parking lot venue. There will be some new prizes to win. Yes they will be jumbo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More news on this later but I just wanted to get it out there and show a couple of the carnie games and early Substance Renders of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WORK IN PROGRESS PHOTOS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WORK IN PROGRESS PHOTOS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WORK IN PROGRESS PHOTOS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WORK IN PROGRESS PHOTOS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Following these classics are many more games, unhealthy foods, unregulated and unmaintained amusement rides plus lots of silly youth filled activities in The Coin Game. So stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/3140604542245050735"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-15T13:43:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.033Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.206Z"
+  },
+  {
+   "id": "the-coin-game-99192@post-2019-02-25",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Bug fixes, Couple of bug fixes and a few other small bug fixes for The Coin Game",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-02-25T05:26:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Below you will find the list of fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you SOOOOO MUCH for supporting The Coin Game and helping me find all of these little buggers. It has been a wonderful first two days and I could not be more excited to be sharing all of The Coin Game with all of you fellow arcade lovers. If you enjoy the game and greatly helping out an indie dev, please consider leaving a review in the steam store. Just a few seconds of your time makes a huge difference for the future of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now I must get back to work on all those cool ideas I have been getting from the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you could choose ONLY ONE MACHINE to add to The Coin Game what would it be? (we will work on new features later when everyone understands more about where we are taking the survivor mode.) For now I am curious what ONE MACHINE you would like to see when you go to the arcade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "devotid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update #001 (yay!!!!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: V0.92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TITLE: The first public Steam update. Bug fixes and all that good stuff!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "INCLUDES",
+     "items": [
+      {
+       "text": "Fixed the loading of objects from your inventory. They were not getting the colliders turned back on properly as I am still finishing the Golf Cart \"carrying system\" and they were getting mixed up with that. I got that handled and now items should appear back in front of you like they are supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the SmartWatch Menu (TAB Key) Toggle ON/OF to open and close now instead of push and hold. I must play too much insurgency as im am a push and hold kinda guy. But I guess the kids are into the toggle these days. Ok I'm hip..... I can do toggle. Fixed. You must have the smartwatch menu closed to open the main menu now as there were some heavy handers that found out if you click a couple things here and there at the right time it breaks things. So I put some checks into fix that too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new realtime light to the money machine so it doesn't look lame when you are not playing it. Uncle Phil would not be too proud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed Colliders on the Coin Pushers platforms as they were not counting all the coins being pushed off. Cards are still getting stuck sometimes but I didn't get enough time with it today so I will finish that up soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the colliders on Stackem Up for the Major Prize. Now gives you the prize when you win were it used to just fall through the ground. face palm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cuckoo Coin would turn off the credits left menu after a \"late bonus win\" and not turn back on. oops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the colliders on the claw machine to fix the freak outs it was having while getting stuck in the floor. No more bonus tickets laying all over the place. It still needs work on the body of the claw as it gets stuck in things still but is getting better. Ill work more on it this week. Unity hinges have to be the most black box system I have ever encountered. haha Im slowly eliminating them all over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reset all the prizes for the Prizemaster and now the bottom row is 100 Tickets, middle row is 250 Tickets and the top row is 1000 tickets. Go get em.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebuilt the Glass Colliders from on the MegaDrop as a bunch of balls were going missing. There is a automagic feature built in. (lets be real here...its a timer.) that will make sure all the balls are counted and you get the right amount of drops. The whole machine received a little time in the shop and should be running much better. let me know how it handles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the way the player is loaded into the scene as there was some dumb timing issues I didn't see happening when we were beta testing in house. Got it wrapped up though and the players camera will now double check a few things before it loads your head (camera) on the body. Before it was not finding the body and the head (camera) was going to 0,0,0 (Which was inside the empty arcade). Busch League mistake. Sorry about that that creepy side effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the celebration menus on MegaDrop. They were not giving you credit for all that hard work you put in. You were still getting credits your toward lifetime tickets though.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the MegaDrop not paying the MegaBonus out to winners. The ball was not being deleted after winning and causing havoc when it went back through the standard points triggers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New seperate audio Mixers for the two claw machines. They used to be on the same channel so they would not fade correctly when you would join one or the other. That made things a bit confusing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made new Puck Score menus and \"H-O-C-K-E-Y\" menu for the hockey Hut Game. You could not tell what letters were lit before. now they are a world space gui and will be much more noticable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Stackem Hack were you could just hold the button and win.... Git to work now you lazy winners. haha: See you next time.... :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/2480825216202213980"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-02-25T05:26:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.205Z"
+  },
+  {
+   "id": "the-coin-game-99192@major-2019-01-25",
+   "gameId": "the-coin-game-99192",
+   "displayName": "Update for Q 2019 Release Date for The Coin Game.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-01-25T00:23:21.000Z",
+   "notes": [
+    {
+     "title": "Update on Release Date",
+     "items": [
+      {
+       "text": "In typical devotid fashion I have gone way overboard and added a ton of stuff. The problem is that with only one person working on a title of this size is that things take way longer than ever expected. Now that I have finished and filled the first arcade, I can start to get more beta testers in the mix and get the Early Access version out to patiently waiting users very soon ;) I had to move the release date to Q1 2019 as I have changed the overall vision of the game and added some different modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is a quick teaser of the characters available in The Coin Game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I am essentially building two games now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Birthday Mode",
+     "items": [
+      {
+       "text": "A standard Arcade \"simulator\" where you can just enjoy playing the arcade games and getting prizes without the worry of earning money and having to eat/drink to keep your health up. This is just a fun stress free way to enjoy a night of ticket hunting. You can even teleport instantly around the island from the map menu on your smart watch. (if you are outside). No curfew, No hunger and no mom texting you all the time. Just pure prize winning freedom all granted to you by your rich unlce Phil.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Survival Mode",
+     "items": [
+      {
+       "text": "Then there is another mode where you start with nothing and have to earn money doing jobs and scavenging things around the island town to continue progressing and winning prizes. There is a daily paper route to deliver newspapers to a dozen spots around the island. Each paper you deliver will earn you a couple bucks. You also get a bonus tip for delivering all 12 papers to all the red newspaper boxes around the island. The newspaper spots are marked with a small mailbox on your smart watch menu and will turn green when you have already delivered to that location for the day. You can walk, run or take the bus to get to all 12 delivery locations or the real paperboys get themselves a used golf cart from Barry's pawn and swap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is another quick teaser of the characters available in The Coin Game with a new menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everyday before midnight you will have to check in with your mom and then go to sleep. This will complete a full day. The next day more jobs will be available again to earn more money. This mode is still in development and will be evolving throughout the early access version. Lots of fun and exciting things are coming for the world's first Arcade Survival Game. Yeah I totally just made that genre up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Having the two different modes will give users the chance to enjoy the game in any way that they like.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Female",
+     "items": [
+      {
+       "text": "Stay tuned for Larry's Arcade Machines Part 1 coming next. It will have in depth info on each arcade machine available in the first arcade coming to Islandvill Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for checking out The Coin Game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "devotid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-598980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/598980/view/2425653583383879147"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-01-25T00:23:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-598980",
+      "checkedAt": "2026-11-13T03:33:02.031Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:14.204Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "5e2d0552d77d",
+   "text": "If you hit the TAB Key (Watch Menu) when in Free Camera Mode it will open the Watch Menu wherever you are. I am fixing that.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@post-2019-03-19"
+  },
+  {
+   "id": "43e36ea02250",
+   "text": "DO NOT hit the Free Camera C Key on the bus. It will mess up the seat and you will not be able to get off the bus. this will get silently patched along with a couple other small hiccups in a small update that I am working on still.: https://www.youtube.com/watch?v=bR7m4qmTBWI",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@post-2019-03-19"
+  },
+  {
+   "id": "705b4a35c313",
+   "text": "Sometimes you can get stuck on the bus while exiting. Click the exit button twice as a workaround.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@post-2019-04-27"
+  },
+  {
+   "id": "5ade07cc8944",
+   "text": "MEGA Drop is still not completely redone. Will scam you out of some tickets every now and then from a timing issue.: _ You can still mess up the game by grabbing things out of the golf cart with the inventory button. For now try to make it a habit of removing them from the cart first and then putting them into your inventory.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@post-2019-04-27"
+  },
+  {
+   "id": "eb1bcfd7a8ff",
+   "text": "Minion Bots may \"stick to you\" on lower end PC's. Collider issue still getting fixed.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@major-2020-12-25"
+  },
+  {
+   "id": "4b2803bacb1b",
+   "text": "The new machines and building is NOT OPTIMISED Yet. This is a fun sneak peek at the new arcade and may run about 10-20% slower than normal.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@major-2020-12-25"
+  },
+  {
+   "id": "31dd6c4f3b4e",
+   "text": "Wheel Er Up game may skip a tooth due to a physics issue I am still working on.: Thank you for being understanding.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@major-2020-12-25"
+  },
+  {
+   "id": "2fc994b7f7a3",
+   "text": "Player Inventory is not saving properly. Items placed in a pile or on the ground are safer for now as the inventory is not writing to the save file correctly. Items in the world are saving correctly. Its just the inventory for now and I will get it fixed asap.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@hotfix-2026-03-22"
+  },
+  {
+   "id": "73e17a7e7745",
+   "text": "Controller mapping and AXIS reversing not saving between games. Built on the same system and currently not writing to the save file correctly. Fix is to remap at start for now. Will have a fix for this one shortly.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@hotfix-2026-03-22"
+  },
+  {
+   "id": "31d524e024b5",
+   "text": "Loss of audio in certain areas",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@hotfix-2026-03-22"
+  },
+  {
+   "id": "08264f8e97ba",
+   "text": "Bike causing damage to players on exit. Careful jumping off at full speed.",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@hotfix-2026-03-22"
+  },
+  {
+   "id": "7ae047930bf6",
+   "text": "and more optimization coming after I figure these game saving bugs out.: That's all I have for this first quick update and I will be on the rest until they are fixed. You have my word. Thank you for your understanding and support.: Kevin (devotid)",
+   "status": "open",
+   "firstReleaseId": "the-coin-game-99192@hotfix-2026-03-22"
+  }
+ ]
+}

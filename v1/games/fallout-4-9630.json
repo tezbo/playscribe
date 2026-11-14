@@ -1,0 +1,5663 @@
+{
+ "game": {
+  "id": "fallout-4-9630",
+  "igdbId": 9630,
+  "name": "Fallout 4",
+  "cover": {
+   "imageId": "co1yc6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1yc6.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "bkrnaoqfkr6ny5lsqkbm",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/bkrnaoqfkr6ny5lsqkbm.jpg"
+  },
+  "ps5Release": "2024-04-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "fallout-4-9630@major-2026-10-15",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 Creation Kit Update - October 15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-15T14:35:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PC to PlayStation .nif conversions now process correctly for filtered PreCombines (those generated from within the Creation Kit’s GUI). The player should no longer hit an infinite loading screen pending the Creator re-combines geometry and updates their Creation with new archives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Resolved an intermittent issue where the Creation Kit could not find files to archive/the file explorer would appear empty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Bink files (.bik and .bk2) were not being added to Extra Files even when detected correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where .ssf files were not on the allowed files list when packing archives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1846651706677951"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T14:35:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.593Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T14:35:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.593Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-15T14:35:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.733Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2026-08-18",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 Update - August 18th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-18T16:12:21.000Z",
+   "notes": [
+    {
+     "title": "Added and Updated Features",
+     "items": [
+      {
+       "text": "Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the BA2 archive limit from 256 to 1024 to better accommodate larger collections of mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added localized strings fixes for UI and platform terminology.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Creation Kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Archives are now supported on PlayStation. New file types (.nif, .dds, .bink, .cdx, .csg, .wav, and .fuz (with embedded .wav)) for PlayStation Creations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Bink files can now be added to Creation uploads via an Extra Files browser.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Localization export support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Creations up to 2 GB in size can now be uploaded for Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Updated \"Search and Replace\" to align with Starfield, adding buttons for \"Select Form in Object Window\" and \"Open Form Editor.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Crashes",
+     "items": [
+      {
+       "text": "Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when the player opens the Virtual Keyboard on a Steam Deck device.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a top crash that would occur due to a streaming audio error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash on the Microsoft Store when players enter the Creations menus after resuming internet connectivity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exiting out of Search when viewing a specific Creation now properly returns the player to the Details page of that Creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Creations category lists should now return ordered results more consistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Error messages from the Bethesda.Net service now contain error codes that can be provided to Customer Service for investigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Creation Kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Archiving a plugin that uses pre-existing assets in a new form no longer causes the pre-existing assets to be duplicated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Material or Heightmap terrain edits now cause grass to generate properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Running LipGen from the command line or launch argument now properly generates .lip files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Updated the game credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 11,
+    "balance": 0,
+    "other": 1,
+    "ps5": 1,
+    "topNew": [
+     "Game",
+     "Increased the BA2 archive limit from 256 to 1024 to better accommodate larger collections of mods.",
+     "Added localized strings fixes for UI and platform terminology."
+    ]
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1840944183789236"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-18T16:12:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.592Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-18T16:12:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.593Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-18T16:12:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.732Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2026-05-27",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 Update - May 27th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-27T14:18:02.000Z",
+   "notes": [
+    {
+     "title": "Fixes & Improvements",
+     "items": [
+      {
+       "text": "Fixed an issue that could cause an infinite loading screen when signing into the Creations menu with an account already linked to another platform account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash on PlayStation that could occur when downloading a Creation and backing out to the Main Menu during the download.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed an issue where selecting “Download all Creations in My Library” could fail and return the player to the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue on PC where Bunker Home Pack could incorrectly report “not enough space” despite sufficient disk space.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the Enclave Remnants Creation could sometimes fail to spawn NPCs and objects under certain progression paths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where “LOOKUP FAILED!” could appear instead of “Commonwealth” across UI elements such as the Pip-Boy map and door transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Creations Storage Expansion for Console",
+     "items": [
+      {
+       "text": "We’ve significantly expanded the amount of storage available for Creations across all platforms. Players will see a slight difference on how their Creations are stored by platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Xbox One: up to 15 GB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Xbox Series X|S: up to 100 GB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "PlayStation 5: expanded to 15 GB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "PlayStation 4: expanded to approximately 16 GB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 3
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1833968530885542"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T14:18:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.592Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T14:18:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.592Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-27T14:18:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.731Z"
+  },
+  {
+   "id": "fallout-4-9630@patch-2025-12-16",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 December Patch - now available",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-16T16:35:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With our December patch we’re addressing the following fixes listed below. Your feedback and reports have been greatly appreciated and have helped us sort through a few key pain points for players. It was a goal of ours to launch storage expansion on console this year, knowing it's been one of the top requests from players. While the team has made progress, we need a little more time to roll this out for console players and will need to wait until the new year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued feedback with our support and community team. Please keep an eye on our channels for updates on future patches and new creation content coming in the new year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save/Load and Content Handling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with the missing Creations Bundle add-on for Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game now recognizes Creation Club content upon loading a save file from an older build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Correct warning dialogue is shown when Creations are disabled but not deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General UI/UX Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved visibility and interaction in the Category List, fixed overlapping boxes, and ensured button prompts display correctly on all platforms (including ROG Ally and Steam Deck).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issues with missing or broken UI elements, such as missing button layouts, gallery image enlargement, and empty titles in “My Library”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved sort menu transparency and restored the 'Best Results' sort option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Addressed keyboard input loss and cursor visibility issues in the Creations menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed prompt and navigation issues when rapidly re-entering the Creations Store or using the PS Store overlay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Creations removed from the storefront can now be individually deleted from the Load Order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Banner carousel/category rows no longer endlessly scroll when opening the Purchase Credits menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash & Stability Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed crashes related to downloading all Creations, data reloads, idling in menus, profile sign-out, and leaving the Creations menu (especially on PS4/PS5).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed rare crashes after store purchases, during scrolling/viewing in the Creations menu, and when starting a new game with Creations enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved error handling for rapid menu actions and ensured the game no longer hangs on quit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ultrawide, Steam Deck, and Platform-Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Workshop menus and reset screens are now optimized for ultrawide and super ultrawide monitors.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed performance hitches and UI alignment issues on ultrawide",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Addressed platform-specific issues such as button prompts, misplaced UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Text, Localization, and Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apostrophes and other special characters now display correctly in the in-game Creations menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prompt for Anniversary Upgrade now fits correctly in German, French, and Spanish localizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 0,
+    "other": 12,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1818752592136433"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T16:35:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.590Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T16:35:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.590Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-16T16:35:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.729Z"
+  },
+  {
+   "id": "fallout-4-9630@patch-2025-11-21",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 - November Patch Now Available",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-21T19:13:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The team is focused on DLC installation issues, occasional crashing, and general user experience in Patch 1, and of course, continued preparation for mod storage expansion for consoles. While we initially hoped to release the storage expansion in our November patch, we will need a little extra time to roll out this heavily requested feature from the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll share more details on the December Patch 2 in the coming weeks. In the meantime, to help prepare for mod storage expansion, console players may want to ensure their mod load order is protected. Please see the following steps to help preserve your mod load orders as a console player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re also excited to share \"The Varmint Rifle\", the first of several free Fallout 4 Creations coming to players, will be available next week! Fall down a manhole, discover a unique rifle, solve an elaborate set of puzzles, but in true wasteland fashion, you're not the only thing trapped down here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/8957493/05af488e0343b2360e6a29532b82a5f29d294e0a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Crash and Stability Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash when starting a new game with Creations installed on PS4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when quitting after exiting an interior with Pip-Boy open (PS4/PS5).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Guest/local users can no longer access the Creations menu, which resulted in an inoperable state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed rare crashes when choosing to use the save data load order, especially when loading saves with missing Creations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when selecting 'Purchase Credits' on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash when selecting \"Download all owned Creation Club Creations\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save/Load & Profile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exit saves are now correctly created when exiting to the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed infinite loading when downloading missing Creation Club content from a save made on a different platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Switching Xbox user profiles no longer causes softlocks or loss of controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where loading a save file with different creations enabled did not prompt a load order warning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Downloading a creation and disabling it immediately, will no longer cause content that relies on it to become permanently disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI & User Experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements in the Creations menu across platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed softlocking when entering/exiting the Creations menu repeatedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed infinite loading/hang when loading a save file that requires creations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bundle prices now update immediately after purchasing individual items in the bundle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bundles now show correct file sizes for included creations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-game Creations menu now respects the load order set by the player, not alphabetical order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now like/unlike creations in the Load Order menu as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guest/local users can no longer access the Creations menu; option is now greyed out as on PS4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Downloaded Creations will now remain visible in your Load Order after deletion from BethesdaNet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note, PS5 players with low internet speeds or latency may encounter a potential issue that causes the Creations Menu to be grayed out. If encountered, please try refreshing your connection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 20,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1816849002015332"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T19:13:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.589Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T19:13:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.589Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-21T19:13:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.728Z"
+  },
+  {
+   "id": "fallout-4-9630@hotfix-2025-11-17",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 - November 17th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-17T16:25:09.000Z",
+   "notes": [
+    {
+     "title": "Today’s Fallout 4 hotfix addresses the following",
+     "items": [
+      {
+       "text": "Resolved an issue preventing users from enabling Creations that rely on DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved stability in the Creation menu, particularly on PS4/XB1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Identified an issue causing DLC to become uninstalled on PlayStation. For players still experiencing this issue, we recommend the following: Please enable any of your Creations after your DLC is completely installed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "We’re continuing to collect everyone’s feedback and encountered issues, so if you’ve submitted a ticket with our support team or provided details to our team in Discord, thank you. It’s been extremely helpful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For next steps, the team is focused on additional fixes in our first November Patch. We’ll share those details as soon as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1816307528971099"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-17T16:25:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.588Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-17T16:25:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.588Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-17T16:25:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.726Z"
+  },
+  {
+   "id": "fallout-4-9630@hotfix-2025-11-12",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 Upcoming Hotfixes and Creation Storage Increase",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-12T22:41:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re actively investigating issues you’re encountering with the latest Fallout 4 update and Anniversary Edition launch. You should now see faster load times of the Creations menu, game menu, and redemption of Creation Club items. We plan to publish a hot fix early next week to address the following:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hot Fix: Fixing stability problems particularly on XB1/PS4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hot Fix: Fixing an issue causing creations that rely on DLC to not work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hot Fix: Fixing an issue causing DLCs to become uninstalled after updating the game on PlayStation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "The hotfix will be followed by two patches. The first patch will be the week of Nov 24th, and the second, in the first half of December. We’ll provide an overview of these patches soon. Thank you for your continued updates and support tickets, it’s helped us to pinpoint issues. We’ll work to address these as quick as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Notably, in the November patch, Xbox Series X/S players will see Creations local storage limit increased substantially. Growable up to 100GB to match your needs. We are also looking into increasing storage on PlayStation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1816215235364760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-12T22:41:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.588Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-12T22:41:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.588Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-12T22:41:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.725Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2025-11-04",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 - Creations Menu Update - November 10th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-04T18:31:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This coming week brings both the launch of the Fallout 4 Anniversary Edition and the launch of Fallout 4 Creations! As we prepare for these launches, please note that Fallout 4 mods will undergo maintenance from November 6th through 10th. During this time, Fallout 4 Mods and Creation Club will be offline. And while you won't be able to download or upload any new content, you will still have access to change your mod load order and play the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fallout 4 update on November 10th will require adjustments to the main menu screen. So, prior to November 10th, please disable any mods which change the main menu, as these may break with the patch. Thank you for your patience as we work to roll these changes out and lay the groundwork for things like additional storage for Creations. Please keep an eye out on Bethesda Support and the official Bethesda Game Studios Discord for additional info.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fallout 4 – Patch Notes/New Features",
+     "items": [
+      {
+       "text": "Creations Menu: A new in-game Creations menu has been added, making it easier than ever to discover, download and enjoy content from professional developers and passionate enthusiasts alike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gameplay & Performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "VATS Accuracy: VATS hit chances are now consistent across platforms and no longer drop to 0% or show incorrect values. Targeting enemies through walls without the Penetrator perk is no longer possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NPC Visual Creations: Fixed stuttering and hitching caused by Creations that edit NPC visuals. Performance is improved when using such Creations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stability & Crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BNET Connectivity: Better handling when there is a Bethesda.net outage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crafting Station Crash: Interacting with crafting stations or the workshop on ultrawide monitors no longer causes crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ultrawide & Super Ultrawide Support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "UI & HUD Scaling: UI elements, HUD backgrounds, and item previews now scale correctly for 21:9 and 32:9 aspect ratios. Menus, quest updates, tutorials, workshops, and inspected objects are no longer stretched or squished.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Pip-Boy Map: Players can now place markers, fast travel, and pan the map to the right side in the Pip-Boy when using ultrawide resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Save Preview Images: Save preview images are now letterboxed to avoid looking squished on ultrawide monitors.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolution Detection: Autodetect now sets supported display resolutions, preventing crashes on launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Gameplay & Performance",
+     "Stability & Crashes",
+     "BNET Connectivity: Better handling when there is a Bethesda.net outage"
+    ]
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/1815034433041639"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-04T18:31:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.587Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-10T23:59:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.587Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-10T23:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.317Z"
+  },
+  {
+   "id": "fallout-4-9630@2",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-13T16:43:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fallout 4 has received a new update that adds the ability to manage your control over the game’s graphic fidelity or performance. There have also been additional fixes and improvements to address some of the feedback you provided us with on the previous update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Versions",
+     "items": [
+      {
+       "text": "PC 1.10.984",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Highlights",
+     "items": [
+      {
+       "text": "Xbox Series S|X and PlayStation 5 Display Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Thanks to your feedback, we’ve been able to implement the ability to control your graphic fidelity and performance. We highly recommend you run with the default settings but now you can change your options to better fit your playstyle and display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Frame Rate Target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Frame Rate Target allows you to choose between 30, 40, and 60 (default). It is important to note that to select 40, your display must be able to support 120hz.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visual and Performance Prioritization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now choose between Visuals and Performance (default) while trying to maintain frame rate target. If you choose Frame Rate Target of 60, we recommend selecting Performance. Both modes may adjust internal resolution dynamically when scenes or action get heavier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Please note both modes can only be changed from the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "General stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue with certain imagespaces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Auto HDR is re-enabled (Xbox Series S|X)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed issue where reserved space was not displayed correctly in load order menu (Xbox Series S|X)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed issue with character name field when in widescreen mode. (PC)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue that occasionally caused bundles to not fully download and could cause a crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with material swaps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with load order that would break DLC until a restart after downloading mods (PlayStation 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed an issue that would occasionally cause a crash if you returned to the Main Menu with queued mods still downloading (PlayStation 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed an issue that could cause the Creation Club menu to not appear (Microsoft Store)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when connecting to the network after a suspend/resume with the network disabled (Xbox One)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Creations Fixes",
+     "items": [
+      {
+       "text": "Fixed missing art issue with certain Creations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 3
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/5768625435410729013"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T16:43:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.586Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T16:43:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.586Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-13T16:43:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.722Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2024-04-25",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 Next Gen – Update Notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-25T14:36:34.000Z",
+   "notes": [
+    {
+     "title": "New Creation Club Content Free for Everyone",
+     "items": [
+      {
+       "text": "Enclave Remnants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some say the past is a scar, cut across the skin of the Commonwealth. Others believe it's a scab clotted over an unhealed wound. Those who fought the Enclave, and those who serve them subscribe to the latter. And when the scab is broken the flag of this old-world cabal will once more stand at full mast. Unless of course, you stop them first. Features the classic Enclave Colonel uniform and over a dozen workshop items! If you have other Enclave creations installed, some of these troops may use this equipment against you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Quest \"Echoes of the Past\" starts on the road north of Saugus Ironworks.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Armor and Weapon bundle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "X-02 Power Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hellfire Power Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Heavy Incinerator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tesla Cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enclave Weapon Skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enclave Armor Skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Makeshift Weapon Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Whether it be grenades or piggy banks, there's no shortage of objects you can transform into murderous projectiles with this collection of unique weapons. Included are two grenade launchers, a Nail Gun, Baseball Launcher, Saw Blade launcher, and piggy bank based weaponry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Quest \"When Pigs Fly\" starts at a merchant workshop northwest of Greenetech Genetics.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Halloween Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "On the eve of the end, the New England Technocrat Society has thrown a spooky Halloween gala for anyone with the nerve to attend. Drop in on this fa-boo-lous pumpkin-lit soiree replete with witches, cauldrons, and ghouls, and unlock 38 new spine-tingling Halloween props to decorate your settlement! Includes new wearables, such as the iconic De-Capitalist helmet!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Quest \"All Hallow's Eve\" starts by tuning into the Mysterious Signal on your Pip-Boy.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes and New Features",
+     "items": [
+      {
+       "text": "Native PS5 and Xbox Series applications. Includes performance and quality mode options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Performance mode: 60 FPS target, 4k resolution, standard settings, relying on dynamic resolution scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quality mode: 30 FPS*, 4k resolution, ultra settings, should not require dynamic resolution scaling.: *When connected to a 120Hz display, Quality mode will target 40 FPS.: *When connected to a 1440p display, the title will run at 1440p resolution at 60 FPS w/ ultra settings regardless of rendering mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Release on Epic Store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Widescreen and Ultra-widescreen support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam Deck Verified",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "9 Free Creation Club Items. Enclave Remnants (New!), Enclave Weapon Skins, Enclave Armor Skins, Tesla Cannon, Hellfire Power Armor, X-02 Power Armor, Heavy Incinerator, Halloween Workshop (New!), Makeshift Weapon Pack (New!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added “Installed Content” menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Resolved issues preventing Japanese and Chinese users from connecting to Bethesda.net (this restores access to Mods).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue preventing save data from properly loading during the prologue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue that could prevent the Vault 111 Door from opening on new games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue that could prevent the quest “Go Home” from advancing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue that could result in Codsworth being broken on the ground after fast traveling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue with mipmaps in DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue that could result in a softlock when in dialogue with Prestson Garvey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue preventing autosaves while fast traveling in Power Armor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where text would occasionally disappear in the Creation Club menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issues with text formatting in the credits in Japanese and Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue causing the camera to fail when leaving furniture after an extended time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that could misplace quest markers while the VR Workshop Creation was installed alongside Automatron.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue with player movement in some underwater areas at Thicket Excavations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue that could cause corruption within the Settlement system resulting in wrong resource counts and/or destroyed settlements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue where the “Level Up” notification would display even if there was not a level up available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some flickering in Vault 111.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PC Only",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please note: The Fallout 4 next gen update is not currently available on GOG but will be available soon. We will let you know as soon as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Resolved issue preventing saves being made under Windows Usernames with Cyrillic, Chinese, or Japanese characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Creation Kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed non-functional “Hot Load” button. Removed non-functional “Material Editor” button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Editor IDs longer than 99 characters will no longer crash the editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved crash that could occur while viewing a quest’s Objectives tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved hang that could occur while adding a reference to a layer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 23,
+    "fixed": 23,
+    "balance": 0,
+    "other": 0,
+    "ps5": 1,
+    "topNew": [
+     "Enclave Remnants",
+     "(Quest \"Echoes of the Past\" starts on the road north of Saugus Ironworks.)",
+     "Armor and Weapon bundle"
+    ]
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/5759616966664772192"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-25T14:36:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.585Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-25T14:36:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.585Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-25T14:36:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:06.721Z"
+  },
+  {
+   "id": "fallout-4-9630@1.10.40",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.10.40",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-11-07T16:58:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new update is now available for Fallout 4 (v.1.10.40).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues or have any feedback, please let us know here or on our official support forums: https://bethesda.net/community/category/48/pc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a full list of fixes and changes, please see the list below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with screenshots displaying incorrectly in Creation Club/Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Message of the Day heading revised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed logic for how Creation Club content is initialized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes to Bethesda.net",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682980752"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-11-07T16:58:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.584Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.489Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2017-03-14",
+   "gameId": "fallout-4-9630",
+   "displayName": "High Resolution Texture Pack Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-03-14T01:57:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Fallout 4 High Resolution Texture Pack was update today with the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with face tinting for player, spouse, Shaun and Father",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tint of water in the Institute",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor issues with missing textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682980957"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-03-14T01:57:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.584Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.487Z"
+  },
+  {
+   "id": "fallout-4-9630@1.9",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-01-31T18:32:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The 1.9 Update for Fallout 4 is available on Steam today",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fallout 4 1.9 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW FEATURES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support for High Resolution Texture Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Featured category for mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to sort Highest Rated and Most Favorited filters by today, week, month and all time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added number of ratings count to Mods Browsing Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added number of favorites count to Mod Details page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added required dependencies to Mod Details page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General performance and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to Reporting mods categories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed occasional crashes while scrolling through Load Order menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Bethesda.net error messaging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682981072"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-01-31T18:32:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.583Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.486Z"
+  },
+  {
+   "id": "fallout-4-9630@1.8",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-11-07T20:07:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Starting today, you can try out Fallout 4's 1.8 update via Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.8 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which some sound effects would not persist after reloading in an area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an occasional crash when exiting to the Main Menu, and trying to start a New Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issues with spaces in Mods search queries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cannot rate “WIP” Work in Progress Mods, and Mods can now only be rated after they have been downloaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doubled the amount of browse-able tiles in the Mods menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare crash that would occur when a Mod had an unexpected data structure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which Library and/or Favorite Mods categories would not display correctly in specific situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which some Mods images would not load when scrolling quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A Sentry Bot firing dual Gatling Lasers will no longer cause the audio to cut out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682981284"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-11-07T20:07:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.582Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.485Z"
+  },
+  {
+   "id": "fallout-4-9630@1.7.19",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.7.19",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-09-29T15:19:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update (10/3): The 1.7.22 update for Fallout 4 fixes issues with Mods not appearing properly. The update is live on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Original Post",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 and Nuka-World were both updated today on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fallout 4 1.7.19 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes General updates to Bethesda.net Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Nuka-World",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Fixed issue where \"The Grand Tour\" could not be completed if Gage was your active companion when the quest started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Far Harbor and Contraptions Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Far Harbor and Contraptions were also updated on PC, Xbox One and PS4 with minor updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Far Harbor (JP) was updated to fix untranslated strings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682981400"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-09-29T15:19:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.581Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.484Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2016-09-27",
+   "gameId": "fallout-4-9630",
+   "displayName": "Bethesda.net Mods Update: Comment Moderation Tools for Mod Authors",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-09-27T16:15:48.000Z",
+   "notes": [
+    {
+     "title": "We’re pleased to release several new tools for mod authors",
+     "items": [
+      {
+       "text": "Disable comments on your mod, blocking further discussion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Delete specific or all comments on your mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This should give modders greater ability to manage their content. We’ve improved the backend moderation tools as well, allowing us to better handle reported problems. Let us know what you think of these improvements. We’re also always interested in further suggestions to improve the Mods platform, and better empower modders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additionally, over the next few weeks we will be migrating some data related to Ratings and Followers. You may see rating numbers fluctuate a bit, but they should catch up. Ratings will now use a new, weighted average system for sorting by ‘Highest Rated’ – this has taken immediate effect with the ‘All Time’ filter. ‘Weekly’ and ‘Monthly’ will eventually update to the new ratings system, as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For more on Mods, visit mods.bethesda.net",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Disable comments on your mod, blocking further discussion.",
+     "Delete specific or all comments on your mods.",
+     "For more on Mods, visit mods.bethesda.net"
+    ]
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682981512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-09-27T16:15:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.483Z"
+  },
+  {
+   "id": "fallout-4-9630@1.7",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-08-02T14:50:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "NEW FEATURES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support for upcoming DLC, Nuka-World",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New store art type for Workshop settlements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ability to delete Add Ons without doing a full uninstall (PS4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General optimization and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jun and Marcy Long are no longer essential after completing \"Sanctuary\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vendors can offer large shipments of Ceramic, Copper, Rubber, Steel and Wood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to accuracy and control with picking up and placing objects (not Workshop mode)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grenades and molotov cocktails can now be used with the Junk Mortar (Contraptions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with companions unequipping clothing when fast traveling with player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with player animations not loading properly after reloading a saved game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where certain dog armors would not equip properly on Dogmeat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where objects from Add Ons would not scrap correctly or would not be stored properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed infinite load that would occasionally occur while logging off while downloading a mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to investing in a store while trading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where \"Quartermastery\" would send player to erroneous locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed performance issues related to dropping certain weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where melee weapon would not properly after dying and reloading the save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where Sturges and Mama Murphy would stop moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed snapping issue with Surgery Center in Workshop mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MODS FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the number of Mods that can be paged through Mods browsing menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where Mods images would stop displayed while scrolling through Mods menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disable All Mods now works properly when offline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs that are changed in a Mod will update changes like hairstyles properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed animation error related to NPCs changed in Mods who have died, and reloading the save without the Mod activated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where sneaking would turn player invisible while running with Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Master files no longer automatically sort above plugins in Load Order menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization strings moved to Interface archive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor UI improvements to Mods menu and Mods Detail menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 15,
+    "balance": 1,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682981816"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-08-02T14:50:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.481Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2016-08-02",
+   "gameId": "fallout-4-9630",
+   "displayName": "Vault-Tec Workshop Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-08-02T14:42:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Vault-Tec Workshop was updated with several fixes. The Update is live on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vault Exterior Door no longer has a missing texture if Wasteland Workshop is not installed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs will no longer incorrectly sit at the Vault Security Desk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vault-Tec Water Pump and starting generator now auto repair when entering workshop mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player can no longer assign companions or Overseer Barstow using the population management system to prevent this from breaking them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vault-Tec population management system will no longer say jobs are available when is no one valid for job assignment available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vault Experiments can be scrapped in workshop mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with Overseer Barstow’s audio cutting out after Clem’s interview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interviewing the second settler candidate will not reset after the dialogue option take a break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682981928"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-08-02T14:42:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.479Z"
+  },
+  {
+   "id": "fallout-4-9630@1.6",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-30T19:51:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Fallout 4 1.6 Update was released to Steam Beta today. In addition to several bug fixes, we've introduced a new type of saved game, Exitsave!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please give us feedback in the Bethesda.net forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.6 Steam Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW FEATURES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ExitSave - Exiting to the Main Menu will create an ExitSave. During next play session, the ExitSave will delete itself after you load it. The Existsave works in all difficulty levels including Survival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Add On specific icons in Workshop mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support for upcoming Add Ons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash related to targeting an enemy weapon while in VATS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a Companion would become stuck walking and unable to run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in \"Mankind Redefined\" to prevent the player from getting stuck in elevators while in Mass Fusion Building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In \"Boston After Dark\" quest now completes properly when waiting for Old Man Stockton",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed occasional issue where player would become permanently invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dead settlers can no longer be commanded or assigned to supply lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where deleting saved games would cause other saves to disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional issues with activating mods that did not come from Bethesda.net",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fixes and optimizations to Mods load order and browsing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How to access the Steam Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Log into Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Click on Fallout 4 in your Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Betas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A drop down menu will appear. Select Beta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select OK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wait a few minutes and Fallout 4 should update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When done, Fallout 4 should appear as Fallout 4 in your Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682982263"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-30T19:51:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.477Z"
+  },
+  {
+   "id": "fallout-4-9630@1.5.4",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.5.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-21T01:25:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new Fallout 4 Steam Beta was released today featuring improvements and bug fixes for Mods. This update will be released to the general public on Steam and consoles next week. Also note, this update will be required for the PS4 Mods Closed Beta - come back for updates on when the closed beta will start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To provide feedback on the update, please visit our Bethesda.net forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.5.4 Steam Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW FEATURES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased space for Mod text on Mod details page for improved readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Load Order menu now displays text about each Mod when highlighted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most Popular filter now toggles between Daily, Weekly and All Time (defaults to Daily)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reporting categories added when reporting a mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load Order menu displays options to Disable or Delete All Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Count of ratings now appears on Mod details page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved stability when reinitializing with certain mods loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mod menu will check available space before starting mod downloads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with certain mods not downloading properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with certain mods not appearing properly in the Load Order menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "How to access the 1.5 Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Log into Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Click on Fallout 4 in your Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Betas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A drop down menu will appear. Select Beta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select OK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wait a few minutes and Fallout 4 should update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When done, Fallout 4 should appear as Fallout 4 in your Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 1,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682982465"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-21T01:25:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.574Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.475Z"
+  },
+  {
+   "id": "fallout-4-9630@1.5.211",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.5.211",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-01T21:19:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fallout 4 Update 1.5.211",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General stability and optimization improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability to filter by Daily Most Popular mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance when browsing mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where plugins would occasionally not delete properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with mod file size calculation on Load Order menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with screenshots occasionally not loading properly on mod preview page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Different music track for browsing mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To provide feedback, visit our official forums here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How to access the 1.5 Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Log into Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Click on Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Betas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A drop down menu will appear. Select Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select OK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wait a few minutes and Fallout 4 should update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When done, Fallout 4 should appear as Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682982580"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-01T21:19:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.573Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.474Z"
+  },
+  {
+   "id": "fallout-4-9630@1.5.205",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.5.205",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-05-17T15:43:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve released a new Beta update for Fallout 4 that features a number of improvements to how users access and navigate mods. Details below…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.5.205 Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Mod Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General Improvements to the Mods menu, and support for Xbox Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Added option to delete all mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to disable all mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a search option to the mod browser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the amount of displayed mods per category",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added bumper navigation to jump forward while browsing Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added access to the “Load Order” menu on the Bethesda.net login screen (offline Mod management)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a few issues with how images display in the browser and Mod details screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "How to access the 1.5 Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Log into Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Click on Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Betas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A drop down menu will appear. Select Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select OK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wait a few minutes and Fallout 4 should update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When done, Fallout 4 should appear as Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To discuss the Beta update, please use our re-opened Beta forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 1,
+    "balance": 1,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682982685"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-05-17T15:43:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.572Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.472Z"
+  },
+  {
+   "id": "fallout-4-9630@1.5",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-04-20T14:36:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Starting today, you can try out Fallout 4's Beta Update on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Along with support for our upcoming add-on, Far Harbor, and additional gameplay optimizations, the 1.5 Update – now available as a Beta on Steam -- features the revamped Survival Mode which incorporates a number of changes based on beta feedback. Thanks again to all those who participated! In the coming weeks, 1.5 – complete with Survival Mode – will be released on Xbox One and PlayStation 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Also in development, Creation Kit and Bethesda.net Mods are still in closed beta. We hope to add Support for Mods to the 1.5 Steam Beta soon with console support for Mods coming in updates that follow. Stay tuned to Bethesda.net and the forums for when those updates will go live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that we strongly advise players running third party mod managers to back up saves and disable/uninstall them before opting into the Beta, until they have been updated to support the new changes from the 1.5 Update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.5 Steam Update (1.5.157)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with plugins.txt file being written to wrong directory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fallout 4 1.5 Steam Beta Update (1.5.154)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General performance and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed occasional flashing issue with entering and exiting Power Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where terminals would not work properly after downloading and initializing an Add-On from the Add-Ons menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mod Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where deleting a Mod would not properly remove associated archives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fixes and optimizations related to Bethesda.net",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.5 Update Release Notes (Version 1.5.151)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Survival difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Survival adds additional challenges including no fast travel, saving only when you sleep, increased lethality, diseases, fatigue, danger and more. See the in-game Help menu for more details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Characters set to Survival difficulty appear under their own Character Selection filter: Please Note: Survival difficulty characters are not backward compatible with the 1.4 version of Fallout 4. If you opt out of the Beta, do not use Survival character saved games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Third person camera movement improvements when player is close up against walls and other objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rare crash related to reloading a save that relies on Automatron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the robot workbench camera not moving properly immediately after canceling out of the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with perks being repeatedly added when reloading a saved game while in robot workbench",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Ada not properly traveling to an assigned settlement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Robots can now be assigned as settlement vendors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with \"Appropriation\" where blueprints would not appear properly if the container had already been looted prior to getting the quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In \"The Nuclear Option,\" entering the Institute using the targeting helmet on Power Armor no longer inadvertently causes the player to go into combat, and become stuck in the Institute",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed distance check with Robotics Expert perk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While in Workshop mode, if the Jump button is remapped, the Y or Triangle button can still be used to jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with \"Defend the Castle\" where speaking to Ronnie Shaw would not properly complete the quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During \"The Nuclear Option,\" fast traveling away from the Institute immediately after inserting the relay targeting sequence holotape will no longer block progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where Workshop placed light bulbs would occasionally not light properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 15,
+    "balance": 0,
+    "other": 17,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682982903"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-04-20T14:36:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.570Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.469Z"
+  },
+  {
+   "id": "fallout-4-9630@major-2016-04-06",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 Survival Beta Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-04-06T20:58:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated the Survival Beta with changes based on feedback. You can tell us what you think at Survival Beta forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.5.147 Survival Steam Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Supply lines can now be properly assigned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.5.146 Survival Steam Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Survival Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thirst, hunger, sleep and disease icons will change color based on status",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Survival Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Less food and drink are required to maintain proper sustenance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carry capacity lowered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sleep cycle has been lowered from 24 hours to 14 hour days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increases chance to get a disease",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fusion cores weigh more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nuka Cola Quantums no longer cancel out caffeine effect from Nuka Cola and Nuka Cola Cherry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed occasional issue with becoming parched or peckish when thirst or hunger are actually satisfied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Adrenaline effect would incorrectly persist after changing difficulty level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When companion is down, a quest target will appear on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/260454846502395446"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-04-06T20:58:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.569Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.467Z"
+  },
+  {
+   "id": "fallout-4-9630@post-2016-03-29",
+   "gameId": "fallout-4-9630",
+   "displayName": "Fallout 4 Survival Steam Beta",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2016-03-29T14:02:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fallout 4 1.5 Survival Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to announce that overhauled Survival Difficulty is now available for beta testing on Steam. This update will be available on consoles next month. Also, there are additional fix notes related to this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tell us what you think of the new Survival mode at our forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Survival difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Survival adds additional challenges including no fast travel, saving only when you sleep, increased lethality, diseases, fatigue, danger and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Characters set to Survival difficulty appear under their own Character Selection filter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Survival difficulty characters are not backward compatible with the 1.4 version of Fallout 4. If you opt out of the Beta, do not use Survival character saved games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rare crash related to reloading a save that relies on Automatron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the robot workbench camera not moving properly immediately after canceling out of the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with perks being repeatedly added when reloading a saved game while in robot workbench",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Ada not properly traveling to an assigned settlement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Robots can now be assigned as settlement vendors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with \"Appropriation\" where blueprints would not appear properly if the container had already been looted prior to getting the quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In \"Nuclear Option,\" entering the Institute using the targeting helmet on Power Armor no longer inadvertently causes the player to go into combat, and become stuck in the Institute",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed distance check with Robotics Expert perk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "How to access the Survival Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Log into Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Right Click on Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Select Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Select Betas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• A drop down menu will appear. Select Survival Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Select OK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Wait a few minutes and Fallout 4 should update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• When done, Fallout 4 should appear as Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682983110"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-03-29T14:02:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.568Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.466Z"
+  },
+  {
+   "id": "fallout-4-9630@1.4.131",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.4.131",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-02-22T19:01:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fallout 4’s 1.4 update is now live and public on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fallout 4 1.4.131 Beta Update - February 26, 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.4.125 Beta Update - February 22, 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unnecessary debug functionality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallout 4 1.4.124 Beta Update - February 22, 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support for add-ons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional art customization added to Workshop:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Super Mutant clutter including meat totems, meat bags and meat cart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raider clutter including raider poles, cages and tents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Abstract and portrait paintings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Variety of new signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More metal and wood doors variants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During \"Getting a Clue\" quest, Kellogg's desk will remain a working container",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During \"Rocket's Red Glare\", resolved issue where companions could not be dismissed after completing the quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with \"Kremvh's Tooth\" quest item not spawning properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settlements under attack will now display an updated message with the results of the attack if player does not respond",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with screen effects not clearing away properly after using a scope",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with trying to sprint while in third person with a minigun equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rank 4 of Demolition Expert perk now properly increases the area effect of explosives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Scrounger perk now includes additional common ammo types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Calvin Whitaker would disappear in Vault 81",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ninja and Sandman perks combined would apply the incorrect damage bonus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Rank 3 of Grim Reaper's Sprint did not fill critical meter properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with key cards not spawning correctly in Vault 75",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies would stop spawning during \"Airship Down\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Being in first person while wearing power armor and quickly switching weapons will no longer cause the Pip-Boy to be stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the autosave counter getting incorrectly reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that would cause the Pip-Boy menu to turn invisible while swimming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where scrapping larger quantities of a single item would inadvertently scrap a legendary item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where exiting workbenches would cause third person to stop working properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Scribe can now be assigned consecutive settlements properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with duplicating scraps shipments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with vendors not properly exchanging caps after several consecutive transactions in a row",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the quicksave and autosave message persisting through loading screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where updating to the latest patch would cause Options settings to reset back to default (Xbox One)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue with loading save with a placed object in water, not properly floating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "How to access the 1.4 update beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To get the Beta, you need to do the following",
+     "items": [
+      {
+       "text": "Log into Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Click on Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Betas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A drop down menu will appear. Select Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select OK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wait a few minutes and Fallout 4 should update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When done, Fallout 4 should appear as Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued support. If you have feedback to share, contact our support staff here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 18,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/295354025639285430"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-02-22T19:01:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.567Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.465Z"
+  },
+  {
+   "id": "fallout-4-9630@1.3",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2016-01-15T15:45:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Beta Update 1.3.47 - January 19, 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed texture threading issue causing unusually long load times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Original Posting: Fallout 4’s 1.3 Update is now available in beta for Steam users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This beta update is a work in progress so before opting into the beta, you should back up your saved games. Please give us feedback at our the Fallout 4 beta forums, which re-opened today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To get the Beta, you need to do the following",
+     "items": [
+      {
+       "text": "Log into Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Click on Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Betas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A drop down menu will appear. Select Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select OK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wait a few minutes and Fallout 4 should update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When done, Fallout 4 should appear as Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you decide you don’t want to run the Beta anymore, redo steps 1 – 4. At the drop down, select NONE – Opt out of all beta programs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beta Update 1.3.45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New ambient occlusion setting, HBAO+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New weapon debris effects (NVIDIA cards only)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added status menu for settlers in your settlements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to rotate an object you are holding with left/right triggers and pressing down on left thumbstick lets you switch the rotating axis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved \"ESDF\" keys remapping support while in Workshop mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gameplay Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General memory and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance when looking through a scope",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where player could warp to a different location when aiming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Companions can no longer get stuck with radiation poisoning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Vault 81 residents would not dismember correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Big Leagues perk now displays calculated damage correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with third person camera not displaying properly after exiting certain crafting stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where subtitles would occasionally not update properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Effects will properly be removed on companions when items are unequipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacReady’s Killshot perk now calculates headshot percentages properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with NPCs getting stuck in Power Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue with companions getting stuck in down state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Second rank of Aquaboy now calculates properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with resistance not always lowering the damage correctly when added by mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enabled number of characters available when renaming an item (XB1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with player becoming dismembered while still alive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Robotics expert is now usable in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stimpaks can now be used on Curie after the transformation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Playing a holotape found in wilderness while switching point of view no longer causes the screen to blur or controls to be locked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with \"Taking Independence\" where the minutemen remaining from the battle against the Mirelurk Queen would not gather in the Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where invulnerable characters would get stuck in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Preston would send player to a settlement instead of a dungeon as part of a Minutemen quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Synths could attack the Castle while the player was friends with the Institute",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where killing a caravan would leave a quest open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Dogmeat would stay at Fort Hagen after \"Reunions\" was completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player couldn't talk to Desdemona to complete \"Underground Undercover\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get stuck exiting the cryopod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could no longer get Preston as a companion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In \"The End of the Line,\" fixed an issue that would prevent the player from killing the leaders of the Railroad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with Minutemen quests repeating improperly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player couldn't get back into the Railroad headquarters after being kicked out of the Brotherhood of Steel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After finishing \"The Big Dig,\" fixed an issue where Hancock would no longer offer to be a companion or help with the \"Silver Shroud\" quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with obtaining the Dampening Coils from Saugus Ironworks before going to Yangtze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During \"Unlikely Valentine,\" fixed an issue where the player could be blocked from entering Vault 114",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In \"Confidence Man,\" Bull and Gouger can now be killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During \"Taking Independence,\" fixed an issue that would prevent the radio transmitter from powering up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In \"Human Error,\" fixed an issue where killing Dan would cause the quest to not complete properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with \"Tactical Thinking\" where leaving dialogue early with",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Captain Kells to reprogram P.A.M. could cause quest to not completely properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workshop Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that would cause settler counts to appear incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could prevent the player from setting up a supply line in settlements with a high population",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to snapping pieces together while in Workshop mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that caused powered items to stop functioning permanently if its power source was ever removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player can now build workbenches in their Diamond City house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Building wires no longer uses up copper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with certain settlement attacks not generating properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with settlement happiness calculations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settlers assigned to weapons stand will now stand next to it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Diamond City house now shows provided power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repairing items will now correctly consume resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where companion would ignore commands at workshop locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with crops appearing destroyed after saving and reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your continued support. If you have feedback to share, contact our support staff here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 29,
+    "balance": 0,
+    "other": 40,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/4249665521682983463"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-01-15T15:45:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.462Z"
+  },
+  {
+   "id": "fallout-4-9630@1.2",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2015-12-07T16:34:24.000Z",
+   "notes": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Number pad keys can now be used for remapping (PC)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Remapping Activate now works on Quick Container (PC)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General memory and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Performance improvements inside the Corvega Assembly Plant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimizations to skinned decal rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with player becoming stuck in terminals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where equipped weapons become locked after completing Reunions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with \"When Freedom Calls\" where the quest would not complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "During \"Confidence Man\" fixed issue where player's health would continuously regenerate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed crash related to jumping into water and reloading saved games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where Launcher would not save God Rays Quality setting properly (PC)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Fixes",
+     "General memory and stability improvements",
+     "Performance improvements inside the Corvega Assembly Plant"
+    ]
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/377537649187584694"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-12-07T16:34:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.460Z"
+  },
+  {
+   "id": "fallout-4-9630@1.2.37",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.2.37",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2015-12-02T18:28:09.000Z",
+   "notes": [
+    {
+     "title": "Beta Update 1.2.37",
+     "items": [
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General memory and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements inside the Corvega Assembly Plant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with player becoming stuck in terminals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This beta update is a work in progress so before opting into the beta, back up your saved games. Please give us feedback at our beta forums",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To get the beta, you need to do the following",
+     "items": [
+      {
+       "text": "1. Log into Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Right Click on Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Select Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Select Betas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. A drop down menu will appear. Select Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Select OK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Wait a few minutes and Fallout 4 should update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. When done, Fallout 4 should appear as Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you decide you don’t want to run the Beta anymore, redo steps 1 – 4. At the drop down, select NONE – Opt out of all beta programs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/377537649169802840"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-12-02T18:28:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.562Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.459Z"
+  },
+  {
+   "id": "fallout-4-9630@1.2.33",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.2.33",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2015-11-23T15:55:46.000Z",
+   "notes": [
+    {
+     "title": "Beta Update 1.2.33",
+     "items": [
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Number pad keys can now be used for remapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remapping Activate now works on Quick Container",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General memory and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where equipped weapons become locked after completing Reunions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with When Freedom Calls where the quest would not complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During Confidence Man, fixed issue where player's health would continuously regenerate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash related to jumping into water and reloading saved games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Launcher would not save God Rays Quality setting properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This beta update is a work in progress so before opting into the beta, back up your saved games. Please give us feedback at our beta forums",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To get the beta, you need to do the following",
+     "items": [
+      {
+       "text": "1. Log into Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Right Click on Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Select Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Select Betas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. A drop down menu will appear. Select Beta Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Select OK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Wait a few minutes and Fallout 4 should update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. When done, Fallout 4 should appear as Fallout 4 in your Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you decide you don’t want to run the Beta anymore, redo steps 1 – 4. At the drop down, select NONE – Opt out of all beta programs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/377536659007123573"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-11-23T15:55:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.561Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.457Z"
+  },
+  {
+   "id": "fallout-4-9630@1.1.30",
+   "gameId": "fallout-4-9630",
+   "displayName": "Update 1.1.30",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2015-11-10T18:39:51.000Z",
+   "notes": [
+    {
+     "title": "The 1.1.30 Beta is now Live.",
+     "items": [
+      {
+       "text": "1.1.30 Update (PC)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes crash related to xaudio drivers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-377160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/377160/view/378661012862476623"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-11-10T18:39:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-377160",
+      "checkedAt": "2026-11-13T03:20:37.559Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:27.453Z"
+  }
+ ],
+ "issues": []
+}

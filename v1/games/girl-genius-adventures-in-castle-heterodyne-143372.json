@@ -1,0 +1,617 @@
+{
+ "game": {
+  "id": "girl-genius-adventures-in-castle-heterodyne-143372",
+  "igdbId": 143372,
+  "name": "Girl Genius: Adventures in Castle Heterodyne",
+  "cover": {
+   "imageId": "co2spv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2spv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1th1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1th1.jpg"
+  },
+  "ps5Release": "2024-09-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "girl-genius-adventures-in-castle-heterodyne-143372@major-2025-10-28",
+   "gameId": "girl-genius-adventures-in-castle-heterodyne-143372",
+   "displayName": "Minor update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-28T11:36:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have changed how the sidebar in the main menu behaves. Here's how it used to work:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The sidebar would be maximized / open from the beginning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It would never open or close on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It would save, with a \"now saving\" indicator, whether or not it had been maximized by the player, and stay that way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There would be no indication that new items had been added, if minimized by the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the new behaviour",
+     "items": [
+      {
+       "text": "The sidebar will be closed when you open the game, with one exception.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It will be maximized / open when you return to the main menu after playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It will be maximized / open the second time you start the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After launching the game, if the sidebar is closed (this in not the exact second game launch), and there are new items to see, there will be an indication on the up arrow (maximize / open button).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We no longer save the minimize / maximize state of the sidebar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "The sidebar will be closed when you open the game, with one exception.",
+     "It will be maximized / open when you return to the main menu after playing.",
+     "It will be maximized / open the second time you start the game."
+    ]
+   },
+   "sourceIds": [
+    "steam-1789370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1789370/view/1814309641605216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T11:36:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:45.001Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T11:36:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:45.001Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-28T11:36:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:19.637Z"
+  },
+  {
+   "id": "girl-genius-adventures-in-castle-heterodyne-143372@major-2025-02-19",
+   "gameId": "girl-genius-adventures-in-castle-heterodyne-143372",
+   "displayName": "Minor bug fixes and sidebar update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-19T11:11:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated the sidebar to show platform icons for game links",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added graphics and default mapping of the DualSense controller on Windows machines.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed all-white skybox visible when flying into the abyss in one of the levels with Dingbot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1789370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1789370/view/1792116353157368"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-19T11:11:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:45.000Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-19T11:11:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:45.000Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-19T11:11:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:19.636Z"
+  },
+  {
+   "id": "girl-genius-adventures-in-castle-heterodyne-143372@1.0.8",
+   "gameId": "girl-genius-adventures-in-castle-heterodyne-143372",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-26T10:49:32.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes: Version 1.0.8",
+     "items": [
+      {
+       "text": "This patch addresses some issues regarding saving of data, that could lead to a softlocked gamestate if the player hard exits the game inbetween certain stages of gamestate and saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The arena console will no longer save twice after the first engagement, to avoid broken save states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated logic on certain gameobjects in many scenes, so that they don't save too early and create a temporary broken save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The banner with links now show up-to-date content from Rain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1789370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1789370/view/5875595438702407709"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-26T10:49:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:44.999Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:21:45.000Z"
+  },
+  {
+   "id": "girl-genius-adventures-in-castle-heterodyne-143372@1.0.6",
+   "gameId": "girl-genius-adventures-in-castle-heterodyne-143372",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-16T11:21:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Accessibility / QOLI (Quality of Life Improvements)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased various text sizes in Game Menu to improve readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1789370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1789370/view/6300039510137664068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-16T11:21:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:44.999Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:19.635Z"
+  },
+  {
+   "id": "girl-genius-adventures-in-castle-heterodyne-143372@1.0.5",
+   "gameId": "girl-genius-adventures-in-castle-heterodyne-143372",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-10T13:02:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes - v1.0.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug & Issue Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Crypt Clank Boss attacks now sync up correctly on every difficulty settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor spelling issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could land on broken rails in Art Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"End of Act\" UI not queueing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Agatha could jump down on some Air Vents and get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed old Debug Warning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing colliders to certain walls in Great Cog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Missing Collider in Lucrezias Study.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pressing the \"Pause\" button on controller will now correctly close the \"Load Game\" window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1789370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1789370/view/5220292521198854720"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-10T13:02:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:44.998Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:19.634Z"
+  },
+  {
+   "id": "girl-genius-adventures-in-castle-heterodyne-143372@1.0.4",
+   "gameId": "girl-genius-adventures-in-castle-heterodyne-143372",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-15T07:35:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Accessibility / QOLI (Quality of Life Improvements)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jumping down from ledges has been adjusted to make it a little better for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug & Issue Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"A Perfect Moment in Time\" achievement can now be unlocked correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tarvek is feeling a little better, and won't write dialogue over other lines of dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A cutscene issue within Phosphorous Gate has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain pistons will stay behind walls as they're supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hiding inside staircases are no longer possible (clanks reported that it felt unfair)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed certain text typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A certain treasure canister will no longer hold Dingbot back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arena Console has been adjusted to use a linear time format for best clear time evaluation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Should Agatha use the death ray within an Arena-Challenge, it will now be recharged accordingly after exiting the challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RollerClanks have gotten a better understanding of collision with stairs in the vault levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision within the arena has been adjusted to keep any dropped item from clipping through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some issues regarding Zola's animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1789370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1789370/view/5480373588785382040"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-15T07:35:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1789370",
+      "checkedAt": "2026-11-13T03:21:44.997Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:19.634Z"
+  }
+ ],
+ "issues": []
+}

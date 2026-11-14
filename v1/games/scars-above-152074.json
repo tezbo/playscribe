@@ -1,0 +1,398 @@
+{
+ "game": {
+  "id": "scars-above-152074",
+  "igdbId": 152074,
+  "name": "Scars Above",
+  "cover": {
+   "imageId": "co56q7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co56q7.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar906",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar906.jpg"
+  },
+  "ps5Release": "2023-02-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "scars-above-152074@post-2023-10-30",
+   "gameId": "scars-above-152074",
+   "displayName": "SCARS ABOVE - PATCH NOTES",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-30T14:30:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apologies for the silence; we investigated the freezes reported with the last issue and are happy to share that a fix was deployed today to mend this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are sorry for this unintended last change and hope you will now be able to continue your adventures without technical troubles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay related improvements",
+     "items": [
+      {
+       "text": "The game will now correctly pause, when a controller is disconnected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a fallback option for the first boss, to make the journey between attempts a little bit easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option for Sprint to be selectable to use hold button vs. toggle in the game options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare blocker, where a gate in the snow area could not be opened as intended by destroying the power pylons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a pulse scan related issue, where already looted items would remain highlighted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a blocker, where the Credits would be displayed on loop after successfully finishing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a controller related blocker, that could lock up player controls, when connecting a controller during an active cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a random crash, that was caused by reconnecting a controller under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Graphics related improvements",
+     "items": [
+      {
+       "text": "Removed a Fog FX in the Metahedron, which could cause some issuers performance issues unintendedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the range of view in the Swamp level, to avoid assets popping in at far distances at times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Options related issues",
+     "items": [
+      {
+       "text": "Motion blur can now normally turned on/off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a Graphics options issue, where changes would be accepted, event when a user chose to not save said changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some missing Icons for key binds.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Achievement related fixes",
+     "items": [
+      {
+       "text": "\"Scientific Collection\" sometimes lost progress, when a played died under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Flash and Bones\" to always get correctly rewarded, when fulfilling all criteria.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Face the Nightmare\" to always get correctly rewarded, when fulfilling all criteria.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck",
+     "items": [
+      {
+       "text": "Fixed a player related issue, which caused videos to not be displayed correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Sound related improvements",
+     "items": [
+      {
+       "text": "Resolved a sound issue, that sometimes caused the hypothermia warning to play double, or even when Kate is not affected by said effect at times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General audio mix improvements, to address user feedback and improve the overall quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some Sound event related issues, which caused sounds under certain conditions to deteriorate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some Sound effects to not play correctly, depending on the landscape the player is located on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved sound warnings for Scorpiod enemies to be more distinct, and less frequent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "The game will now correctly pause, when a controller is disconnected.",
+     "Added a fallback option for the first boss, to make the journey between attempts a little bit easier.",
+     "Added an option for Sprint to be selectable to use hold button vs. toggle in the game options."
+    ]
+   },
+   "sourceIds": [
+    "steam-1196090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1196090/view/5229301621590868276"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-30T14:30:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1196090",
+      "checkedAt": "2026-11-13T03:29:58.101Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-30T14:30:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1196090",
+      "checkedAt": "2026-11-13T03:29:58.101Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-30T14:30:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:49.850Z"
+  },
+  {
+   "id": "scars-above-152074@1",
+   "gameId": "scars-above-152074",
+   "displayName": "Patch 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-01T16:01:07.000Z",
+   "notes": [
+    {
+     "title": "Greeting S.C.A.R members,",
+     "items": [
+      {
+       "text": "We hope the beginning of your adventure is going well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the content of today's hotfix",
+     "items": [
+      {
+       "text": "Fixed an issue with cutscenes not playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with Steam VR activating HMD devices when connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Version number: 1.0.1.129298",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Patch Size: <1GB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't hesitate to share your feedback and concerns with us here, or report bugs in the dedicated forums section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Be sure to check our other social media channels",
+     "items": [
+      {
+       "text": "Twitter, Facebook, Instagram, TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Fixed an issue with cutscenes not playing",
+     "Fixed an issue with Steam VR activating HMD devices when connected",
+     "Version number: 1.0.1.129298"
+    ]
+   },
+   "sourceIds": [
+    "steam-1196090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1196090/view/5070528176558917347"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-01T16:01:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1196090",
+      "checkedAt": "2026-11-13T03:29:58.100Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-01T16:01:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1196090",
+      "checkedAt": "2026-11-13T03:29:58.100Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-01T16:01:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:49.848Z"
+  }
+ ],
+ "issues": []
+}

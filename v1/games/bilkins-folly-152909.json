@@ -1,0 +1,1466 @@
+{
+ "game": {
+  "id": "bilkins-folly-152909",
+  "igdbId": 152909,
+  "name": "Bilkins' Folly",
+  "cover": {
+   "imageId": "co4uza",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4uza.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1qxk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1qxk.jpg"
+  },
+  "ps5Release": "2023-10-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bilkins-folly-152909@1.0.52",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "Update 1.0.52",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-07T03:17:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Achievements will now unlock retroactively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a misaligned solid that was preventing access to the platform at the top of Crabb Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Burt's (the Crabb Island shopkeeper) voice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/1834602721195211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T03:17:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T03:17:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.083Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-07T03:17:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.647Z"
+  },
+  {
+   "id": "bilkins-folly-152909@1.0.51",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "Update 1.0.51",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-05-31T05:01:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Oops, that last build disabled achievements. I've updated Bilkins to run on NWjs 0.94 which should fix the previous issues AND allow acheivements :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/1833968530894678"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-31T05:01:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-31T05:01:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.083Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-31T05:01:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.647Z"
+  },
+  {
+   "id": "bilkins-folly-152909@post-2026-05-26",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "Winston's diary - Pixel font size adjustment",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-05-26T01:30:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A couple of players noted that some of the text in Winston's diary was cut off when using pixel fonts (regular fonts was fine). This patch fixes that issue :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/1833334318578343"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-26T01:30:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-26T01:30:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.082Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-26T01:30:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.647Z"
+  },
+  {
+   "id": "bilkins-folly-152909@hotfix-2024-01-03",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "Bat temple key hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-03T00:30:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where players could unlock the same lock twice, using up an extra key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5410576585175411181"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-03T00:30:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-03T00:30:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.082Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-03T00:30:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.646Z"
+  },
+  {
+   "id": "bilkins-folly-152909@major-2023-12-11",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "a decently-sized update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-11T23:20:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "dialogue addition: (ending spoiler) - La Moina will now acknowledge if you've spoken to Winston",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where it was possible to bring up map tools while out of journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Numberly Rocks quest icons to local map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cecil - changed \"it's\" to \"its\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - icon text would appear on screen after local map had been dismissed if hovering over icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed - 'Paused' text would not clear from screen in certain situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed a line in the journal - 'save from their fate' to 'leave to their fate'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blum's diary - fixed a typo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crabb Island - fixed missing water tile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big Catch trophy now appears in Percy's cabin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed bug where carrying Drayton into water that quickly gets deep could warp Percy to different locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where carrying Drayton into water after a leap of faith would create two Draytons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with ordering Drayton to pull the Crabb Mountain chain twice causing game to softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an extra fast travel point on Leeky Harbor in the stumpy spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "lowered the time it takes for the telescope zoom to return to the normal game zoom level - allows for faster opening of journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can no longer unlock fast travel points early using the telescope",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can no longer unlock the Crabb Island cemetary fast travel point early by going around the cliffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare bug with the Leeky Harbor chest break-ins that could trigger the wrong treasure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If the Leeky Harbor chest bug was activated, game will check and unlock the thief achievement retroactively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Act 3 - can no longer ask fishmaster about pearls after completing quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "typo fix: \"shipyards\" to \"shipyard's\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "typo fix: \"it's\" to \"its\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "typo fix: \"your\" to \"you're\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "typo fix: \"mentioned\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Act 3 - removed certain livestock from a certain farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "experimental - can now cycle objects with mouse wheel scrolling",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a moment where during a specific line of dialogue with Philmore, Percy's lips wouldn't move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ultrawide monitors - titlescreen fadeout now covers entire screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed ruler not rounding to the nearest degree in certain cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Drayton's icon could occasionally disappear from the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed an old cheat code for QA testers that would set lockpicks to novice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drayton can now be dropped with the interact button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remy's Lott, no longer possible to stand in swamp water and open the ship chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remy's Lott, swamp ship now fades out correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remy's Lott, swamp chest depth sorting fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievement - pirate perfectionist would not unlock if fishing tasks were completed in a very specific order. Will unlock automatically for players who experienced this",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gail's achievement unlocks no matter dialogue choices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 1,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5395938616810560152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-11T23:20:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-11T23:20:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.081Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-11T23:20:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.645Z"
+  },
+  {
+   "id": "bilkins-folly-152909@1.0.39",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "Hotfix 1.0.39",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-15T23:11:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a rare bug that could lead to disappearing clues, possibly only affected ultrawide monitors.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5322753221339857936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-15T23:11:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-15T23:11:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.081Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-15T23:11:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.645Z"
+  },
+  {
+   "id": "bilkins-folly-152909@major-2023-11-12",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "A tiny update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-12T01:08:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Turned windowed mode back on",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a secret room that allows players to bypass the timed minecart puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5302486388007186936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-12T01:08:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-12T01:08:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.080Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-12T01:08:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.645Z"
+  },
+  {
+   "id": "bilkins-folly-152909@major-2023-11-11",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "A nicely-sized update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-11T02:32:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A lot of smaller fixes in this update. A big thanks to everyone across the Steam forum and Discord who helped report these. Without that info, none of these patches would exist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's also a couple of retroactive Steam achievements that will be unlocked if you completed certain tasks but didn't meet all requirements - previously, giving Gail all the fish without having a high or low relationship with her would not trigger the achievement. so if you launch the game and one of these achievements suddenly unlocks, that's why.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Can no longer fast travel on local map when holding ruler, eraser or pins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crabb Island - map tools adjustment, pins were off by a few pixels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Tot4C map wasn't always unlocking in the journal treasure tab - Retroactively fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievement 'marital bliss' now unlocks no matter what when you give Gail all the fish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievement 'marital bliss' will retroactively unlock for players who already gave her the fish but did not meet the original requirements to unlocking that achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Factors of' changed to 'multiples of'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed an invisible fish from the ship's hold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed typo in dialogue text word: 'pitiful'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remy's Lott - map pins were not visible in one specific area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bat dungeon - moved a rogue bat off-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Accessiblity - Shattered Peak bell statues - added a visual indicator to show tone of each bell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed ability to move sheep with the mouse during Cecil's herding puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Crabb Island journal map, moved a statue icon to be closer to it's in-game location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swamp dungeon - fixed bug if the door code was entered a second time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main menu - left a note detailing how to toggle fullscreen mode (\"F11\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Detective Bumsted will now acknowledge (in her own way) that you've solved the case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed controller issue where picking up the ruler would create an additional line if button was held",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed journal entry not being added when collecting Cecil's map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialogue line at start of Act 3 to correctly acknowledge which parts of the key had been collected so far",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed fishmaster's icon on the local map once entering Act 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed wind and water checkboxes not being unchecked at startup on main menu when they have been disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Forest grove on Crabb Island not fading out if wind effect was disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where La Moina's key wasn't being unlocked in journal treasure page if pieces were collected in a certain order, which also prevented the keysmith achievement from unlocking which will be fixed retroactively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mining on Phelmy Island causing softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gail's diary appearing when parked at certain mysterious islands...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Local map, adjusted player's icon so that it's a few pixels more accurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now drop bombs on Phelmy Island... if you really want to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5302486388003753506"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-11T02:32:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-11T02:32:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.079Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-11T02:32:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.644Z"
+  },
+  {
+   "id": "bilkins-folly-152909@hotfix-2023-10-19",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "Hotfix - Pirate Perfectionist achievement",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-19T09:12:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix - I miscounted the total number of treasures in game so it was possible that the 'Pirate Perfectionist' achievement wasn't unlocking for some players :/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5218041989042345997"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-19T09:12:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-19T09:12:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.079Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-19T09:12:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.643Z"
+  },
+  {
+   "id": "bilkins-folly-152909@major-2023-10-19",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "A medium-sized update :)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-19T00:04:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Jake Grubb will now give a hint on his diaries in normal mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minecart puzzle - adjusted timer to be more forgiving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remy's Lott - slight adjustment to distillery map icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "keysmith achievement would not always unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remy's Lott - final Flo's Hunt token, made sensor for this more forgiving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare bug where the player would get stuck looking out to sea on the ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "increasing Drayton's sniffing ability could remove sniffing sensor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed softlock in skull dungeon if entering the same wheel code twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed unneeded graphic in tutorial menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blum's puzzle could be inadvertedly solved by spamming the 'esc' key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switch icons - should reflect reversed a/b now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Cecil's step puzzle more forgiving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where player could run outside of the bounds of a cutscene before it triggered after getting map off Cynthia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If player skipped that cutscene, it will now trigger on reloading Crabb Island if story has not progressed further",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where after beating Big Catch tournament, bait was still being deducted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a warning on new game that it will delete progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5218041989040958518"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-19T00:04:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-19T00:04:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.078Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-19T00:04:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.643Z"
+  },
+  {
+   "id": "bilkins-folly-152909@major-2023-10-09",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "A small update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-09T01:35:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.0.25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed - Bron's position after cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed - Drayton could level up during inappropriate moments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed - Lost in translation map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5220292521193469275"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-09T01:35:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-09T01:35:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.077Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-09T01:35:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.642Z"
+  },
+  {
+   "id": "bilkins-folly-152909@hotfix-2023-10-08",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "Cid's hideout hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-08T01:43:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "bug fix - Cid's anchor cutscene would sometimes not play correctly. This is now fixed and will also patch out the bush for player's who discovered this bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "bug fix - Fish hook showed wrong move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5220292521189845684"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-08T01:43:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.076Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-08T01:43:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.077Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-08T01:43:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.641Z"
+  },
+  {
+   "id": "bilkins-folly-152909@hotfix-2023-10-06",
+   "gameId": "bilkins-folly-152909",
+   "displayName": "telescope bug hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-06T00:56:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This build fixes a serious bug with the telescope",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1526370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1526370/view/5220292521182439224"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T00:56:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.063Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T00:56:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1526370",
+      "checkedAt": "2026-11-13T03:16:05.063Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-06T00:56:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.640Z"
+  }
+ ],
+ "issues": []
+}

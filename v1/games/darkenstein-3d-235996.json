@@ -1,0 +1,2547 @@
+{
+ "game": {
+  "id": "darkenstein-3d-235996",
+  "igdbId": 235996,
+  "name": "Darkenstein 3D",
+  "cover": {
+   "imageId": "co8h4n",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8h4n.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar250c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar250c.jpg"
+  },
+  "ps5Release": "2026-10-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "darkenstein-3d-235996@1.4.2",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.4.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-23T16:42:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Again one small hotfix to try to finally stop the 'final level to intro' bug once and for all. I believe this should do it this time. Of course, don't try to reproduce. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But let me know if it still happens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, I've done away with the white flash at the beginning if you are skipping the splash screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rowye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1847286114037163"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T16:42:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T16:42:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.748Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T16:42:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.612Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.4.1",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.4.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-22T18:13:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, this is a hotfix-y update to sort a couple things I saw after the last update. This is for both for DLC and base game, mostly the former, so since I don't want to spam events it's all in one here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BOTH",
+     "items": [
+      {
+       "text": "Fixed most blood wrongly sitting off of edges and now more blood stamps on terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level 10 outdoors ambient sounds being heard inside the fortress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "DLC only",
+     "items": [
+      {
+       "text": "Level 9 RMX: Switched small shotgun ammo rack for large MP40 one mid-way, as it’s more helpful in the next section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 10 RMX: Added missing “You are exiting this area” help text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stopped AAA mode enemy markers leaking into games played after it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Endless mode purchase sound not being directed to the Effects channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple menu options that were displaying wrong in the Spanish translation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Homicidal Rant bar's title and number displays.: Cheers!: Rowye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1847286114033784"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-22T18:13:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.612Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.3.8",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.3.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-18T14:00:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The checkpoint system had improved but that caused a huge hitch on touching checkpoints. I have managed to remove that! I don't see any new bugs from it in my build, but let me know how it works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aside of that, a few more fixes as usual. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heavily reduced stutter when reaching a checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensured dialogue choices are represented correctly after a checkpoint load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enforced health policies on switching levels to ensure health does not reset in 2-part levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensured player cannot shoot inside a No Weapon Area under any circumstance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed dialogue not resetting after pressing “Last Checkpoint”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed terrain geometry softlock near a tree in level 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1832700592798561"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-18T14:00:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.611Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.3.7",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.3.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-12T12:43:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's another week, another update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one is mostly focused on ironing out the save states and more importantly, stop bugs related to continuing the game, some of which can be really annoying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed bug where player would be put back to level 1 if quitting during the final boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved secrets text down a bit to avoid overlapping with subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed level 1’s last soldier line not being properly written in the text box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased damage of the level 5 electric trap by 5x.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed set of stairs in level 5 that enemies could not use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made fix for rare bug in level 10 where the boss door would not open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed scarab model that was facing backwards toward the end of level 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Let me know how it works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1832065502823744"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-12T12:43:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.610Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.3.6",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.3.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-08T14:51:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just a very quick patch today, to fix blood and gibs defaulting to 0 on new installs, and remove some dev stuff that was left in by mistake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1832065502815398"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T14:51:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.610Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.3.5",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.3.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-07T13:45:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It’s a smaller one today but again trying to tackle pretty serious issues, hope all is better now. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also this is not part of the update, but GeForce Now is now available, along with cloud saves.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please report how this works if you try it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed doors activated by 2 buttons not being open on checkpoint load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed objective not changing when level 10 boss fight ends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level 12 not carrying ammo to part 2 of the map in Challenge mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Restart Level putting player at the 2nd part of level 12 instead of restarting from the beginning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2nd attempt to fix final level saves registering as level 1 saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1832065502812113"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-07T13:45:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.609Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.3.4",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.3.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-04T16:22:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We aren't changing big numbers but this is a big one. The checkpoint system is now fully fleshed out, and checkpoints load reliably. Cloud saves support has also been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the moment of writing, I have not set up Steamworks for cloud saves yet! But it will be done in the next hours.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "THIS IS NOT TESTED AND IT'S BETTER NOT TO RELY ON IT until we have word that it works fine or reports of its bugs. Try at your own risk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Checkpoint loading is much more solid now, but not 1000% guaranteed yet. You shouldn’t see issues with missing/dumb enemies or previously opened locks resetting on load. I’m also now tracking enemy position so they reappear where they were at checkpoint time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quirks might happen, specially in very specific scenarios. As usual, please report any mishaps you see. ^.^",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "— Fixed checkpoint loads for enemies, items and stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Fixed on rails enemies that could stop mid path, like the first dog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Fixed big shotgunners messing up their movement when trying to escape grenades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Levels",
+     "items": [
+      {
+       "text": "— Fixed some Z-fighting in level 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Fixed trigger deviating projectiles in lvl 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Fixed column without collision in level 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Fixed naviagtion mesh so enemies can no longer walk through some corners in level 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Added kill trigger in level 7’s patio, so player will always die if falling off a ledge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Added doors to ensure neither player nor enemies leave the sand ambush room in level 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Made last resort fix for rare but possible softlock in that same level 12 spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1831432155577956"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-04T16:22:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.608Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.3.2",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.3.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-28T16:27:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another quick patch to try to get the worst offenders out of here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mind you, I can't make the game crash, so I do not know if this is going to work. Please report how this does if you try.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Half-blind attempt to fix crashes in level 2. Please report.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed wrong collision near small table at the end of level 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gondola is now a no-weapon area in level 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed softlock in gondola escape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong subtitle after Queen death in level 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gunther not appearing in cutscene in level 10 if the player loaded a checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored Next Item to Y in the Gamepad while keeping the new D-pad Down as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attempted fix for last level saves registering as level 1 saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1830797770245907"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-28T16:27:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.608Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.3.1",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.3.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-24T11:36:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just a quick patch to fix a severe bug in level 11, and a few more things I got done. Here's the changelog:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Levels",
+     "items": [
+      {
+       "text": "Restored missing jail cell floor in level 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved grenades pickup outside some barrels in level 3 secret.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed overlapping geometry near last secret in level 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issue in stairs from level 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved decoration that would get player stuck in level 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controller",
+     "items": [
+      {
+       "text": "Moved Next Item to D-Pad down and fixed its flakiness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added next and previous weapon controls to D-Pad right and left buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a couple settings that were not reachable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1830797770235744"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-24T11:36:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.607Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@major-2026-04-14",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "New update coming the 21st!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-14T18:02:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a long time without any news so here it goes. The 21st of April Darkenstein 3D will be 6 months old!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To celebrate, a BIG update will be dropping on that day. While this is not a content update, there are a few new things coming that you asked for, some more QoL features, and many, many fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I will, of course, add the full changelog when the update drops, but I do hope this will make many people happy. As a teaser, one of the main focuses has been performance, and this is what that section looks like:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PERFORMANCE",
+     "items": [
+      {
+       "text": "Game size reduced from 18GB down to 9.4GB.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized performance in all levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced CPU cost for all enemies and combat events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Better overall CPU performance game-wide after switch to Forward+ rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the duration of stutters that consistently occur in the same spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lightmaps now take up to 80% less RAM while maintaining original quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many more settings tied to general Graphics Preset for better gains on slower PCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced computational cost of some materials and reduced number of materials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "And here's another of the sections, so the scope is more clear:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controls & Input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More robust weapon switching mechanics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better weapon selection with MouseWheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapon wheel for M&K now works via cursor selection.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Weapon wheel now shows weapons without ammo greyed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapon wheel no longer allows selecting weapons without ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed extra field from weapon wheel to avoid confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aim assist for controllers (default on).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New option to disable weapon auto-switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better weapon auto-switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "...and so forth. There are about 5 more pages of this. :D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Are you ready for it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Catch you all soon. ^.^",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rowye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 3,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1829528821318609"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T18:02:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.606Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.1.1",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-26T19:01:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's just a smaller upadte today, with a few more fixes. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed troubles with level 7 blue key trap’s door not opening in time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with some exceptions to trigger “A place I used to call Fatherland” achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few small visual glitches in the floors of level 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Steam stats not updating in a timely manner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level 2 exit information trigger showing up at the wrong time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced or shortened instances of blood decals wrongly sticking to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced file size of a few assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rowye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 2,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1817483467034746"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T19:01:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.743Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.605Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.0.10",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.0.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-03T17:33:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The tenth patch is coming around and here are the changes",
+     "items": [
+      {
+       "text": "Level 9, added missing collider near generator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 10, fixed collision in first set of stairs in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 10, fixed colliders around oil pump area to stop player from getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 10, fixed secret room buttons animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 10, fixed secret room cinema lighting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 10, fixed hitch before the dialogue due to shoddy asset loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 10, fixed boss fight’s end commentary triggering twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level, fixed death cutscene breaking if trying to skip it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level, fixed final door not opening if skipping death cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level, fixed final door not closing during escape cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level, fixed Gunther appearing with the player on loading a checkpoint save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level, fixed boss health bar not appearing on loading a checkpoint save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level, fixed music overlap when loading from a checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered movement smoothing or inertia for controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed minigun’s animation staying on if dying while shooting or other few situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed announcer lines being displayed by mistake after exiting pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix for enemy jumpers that get stuck in jumping animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attempted fix for spinning camera while using mouse and keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Attempted fix for last achievement: The place I used to call \"Fatherland\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attempted fix for some weapons becoming unavailable later in the game.: With this, I think I will take a bit more time now, to make a few constructive changes, quality of life, etc.: Sadly, a couple bad issues still remain, like the level 8 lever that won't work, or the disappearing cells in the first levels.: If you have these bugs, please keep posting information about how they happen, maybe we'll figure it out soon.: Cheers,: Rowye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1815034433007461"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-03T17:33:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.743Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.605Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.0.9",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-31T23:14:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another late night update for me.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed disappearing treasure in level 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed 1 piece of treasure in level 5 that was in a place where player could not reach it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 8 boss fight not starting if restarting the game from a checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 8 garage doors being wrongly closed when loading checkpoint before boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed small invisible wall/door in level 9 secret.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed a bit of terrain that overlapped a toilet space in level 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 11 double key door, where one key would be enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed treasure stuck inside a box at the end of level 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 12 consoles that had no collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed infinite death loop if dying before touching the 1st spawn of the 2nd part of level 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed scroll wheel bug created when fixing Tesla weapon image display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed bug where player would not automatically stand up when coming out of vents if crouch is in press mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed softlock where if the rat is thrown at an enemy that dies before rat gets there, the player would no longer be able to shoot or use items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know if some if this is still causing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rowye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1815034432918552"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T23:14:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.742Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.604Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.0.8",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.0.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-30T22:33:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here goes another bunch of much needed fixes",
+     "items": [
+      {
+       "text": "· Enemies spawned by other enemies no longer are added to the kill count totals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Added “covers” to disappearing cells, to avoid players seeing the void.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Made possible fix for disappearing cells on level 1 (I can’t reproduce this, pls report if it works).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Remade lightmaps for level 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Equipping the Tesla weapon now displays the correct weapon image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Removed voice line in level 4 that would easily intersect with other lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Fixed sniper scope malfunctioning if entering and exiting Pause with the scope on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Hobo can no longer talk while dead or dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Fixed crossbow bolts showing the wrong kind of blood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Fixed Knight’s death scream and final blood splurt triggering in the wrong situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Fixed rat effect not working if enemy gets zapped while rat is attached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Fixed rat behavior when interacting with fire. Rat now will disengage if burned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Lowered default general audio volume to 0.75.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Restored the demo’s light in player weapons’ muzzleflash, which had gone with the Unity update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Restored lights in some of the enemy projectiles as seen in the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "· Attempted fix for achievement: The Place I Used To Call Fatherland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rowye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1815034432884477"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T22:33:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.742Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.603Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.0.7",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-29T13:57:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I know broken achievements is very frustrating, so here you go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Uber-fail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not Bad For A Human",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leben-Tod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One Man Chorus Line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Master Finder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Won’t You Come Home, Franz Brauder?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Place I Used To Call Fatherland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Level 8, fixed lightning rays blocking hitscan weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 8, fixed potential soft lock right before falling down the balcony.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small changes to credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These take a long time to test and I'm trying to serve it as quick as possible so, let me know if you find any that are still bugged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1814942955102083"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-29T13:57:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.741Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:32.397Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.0.6",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.0.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-28T13:48:05.000Z",
+   "notes": [
+    {
+     "title": "A few more quick map specific fixes",
+     "items": [
+      {
+       "text": "Level 12: added fence to the right side to stop a possible exploit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level 12: fixed geometry that was slightly off the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level 12: enlarged wooden platform up top, so Gunther can't block the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level 12: fixed Gunther respawning when loading from a checkpoint save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level 10: fixed missing back side of stairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level 7: fixed alien plants not appearing on checkpoint reload.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level 7: Fixed enemies in the beginning that would cross through moving door if detecting the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level 6: fixed some lights not showing in the sleeping rooms area if entering from checkpoint past them.: Cheers,: Roger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1814309641608209"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T13:48:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.740Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:18:28.740Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@1.0.5",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Update 1.0.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-27T21:02:32.000Z",
+   "notes": [
+    {
+     "title": "Here goes a quick list of the changes in this patch",
+     "items": [
+      {
+       "text": "· Fixed checkpoint spawn bugs in final boss pre-fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed final level's teleporter spheres giving the crosshair hit feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed final level's green area trigger that softlocked the player outside of the area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed final level's cutscene 1 being replayed if player moves back onto its trigger or when loading a checkpoint save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed final level's checkpoint glitch where an old checkpoint could be taken thus condemning the player to repeat parts of the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 6 machine near blue door that had no collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 5 generator enemies not appearing when entering the area through top door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 5 decoration pickaxe that could get the player stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 5 item switch reminder to only ever appear once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 4 items inside pyramid that would become invisible when in proximity to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· In level 4, I added a few colliders to the ground of the lava pool, so it's not hard to get out of it once the player has the weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Rebaked lighting for level 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed a couple lights in level 8's lab that had 0 intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Broken balcony parts in level 8 boss fight now disappear after a few seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Adjusted some meshes in level that could potentially show the exterior of the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Removed part of level 8 geometry that made it wrongly seem like a secret was there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1814309641581543"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T21:02:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.739Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:32.396Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@4",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Hotfix 4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-25T21:12:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So I still can't reproduce the problem locally, but I have been testing a force-teleport that shoudl put you in the right place regardless.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "People with this bug, pls report if you are now spawning inside the arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1814309641517354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-25T21:12:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.739Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:32.395Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@3",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-24T15:32:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here goes another quick patch to fix some of the relevant issues with the current build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "· Flamethrower fire no longer sticks to player character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Lowered final boss' max health by 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 4 boss bug where it would have more health than its max health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed a set of level 10 stairs that could get the player stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level selection not showing rebound keys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed/added several outdoor environment collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed cutscenes starting at half speed the powerup is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed machinegun's empty clip sound being itn the wrong channel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed small mistake in level 9 dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Possible fix for level 8 lever not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1814309641477304"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-24T15:32:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.738Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:32.395Z"
+  },
+  {
+   "id": "darkenstein-3d-235996@hotfix-2025-10-23",
+   "gameId": "darkenstein-3d-235996",
+   "displayName": "Hotfixes 1 & 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-23T16:27:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Since I missed the 1st hotfix, I'm just adding both here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed invisible wall preventing to pick up a checkpoint in level 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed camera bug on Pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Small changes to game credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed small errors in the Controls rebinding tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed lighting bug in a level 1 secret.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed antagonist not appearing in lvl 10 cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed hole in level 9 where player could get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 5 dialogue that could be triggered twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed level 6 secrets text display that was not showing up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're getting the final boss bug where you are left outside the barriers, here's a workaround a Steam forum user found:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do this: start the level, collect all items, except for the +100 health. Take the elevator down and trigger the cutscene. Kill yourself with the Panzerfaust. You'll respawn on the hill where you started the level. Now collect the +100 health and jump onto the rocks from the small platform where the Minigun pickup is. You should have about 70 health left on a medium difficulty level. Run left across the rocks and from there you'll reach the first generator. Then you can continue the level normally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kudos to OGHR3N for the trick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2195910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2195910/view/1814309641445423"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-23T16:27:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2195910",
+      "checkedAt": "2026-11-13T03:18:28.737Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:32.394Z"
+  }
+ ],
+ "issues": []
+}

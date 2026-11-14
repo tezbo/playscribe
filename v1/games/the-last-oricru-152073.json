@@ -1,0 +1,737 @@
+{
+ "game": {
+  "id": "the-last-oricru-152073",
+  "igdbId": 152073,
+  "name": "The Last Oricru",
+  "cover": {
+   "imageId": "co392p",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co392p.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar14v9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar14v9.jpg"
+  },
+  "ps5Release": "2022-10-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-last-oricru-152073@1.1",
+   "gameId": "the-last-oricru-152073",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-16T17:05:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been almost a month since we released The Last Oricru on PC, PS5 and XBOX Series X/S. It was a long and demanding month filled with hard work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "It isn't easy to make a game like The Last Oricru, which has multiple paths through which you can play -- and multiple combinations of each path. Some of you even encountered unexpected blockers. Being the amazing, curious players that you are, some of you managed to take a turn on certain pahts that even our QA didn't think of, and consequently got stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We fixed most of these scripting issues in several smaller updates. We have also managed to solve issues with the Intel ethernet during online co-op, and make the whole online experience more stable -- even for players who are far from each other, and previously encountered disconnection issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition you've given us valuable feedback, even beyond just bugs and other issues. And we have listened. So in this first major update, called Patch 1.1, we bring you more than just fixes. Part of this patch is also new, free content for all players of The Last Oricru.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hellbarder Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Protector Gloves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Protector Boots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Protector's Legins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Training Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Spear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Protector's Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infantry Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Veteran's Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to thank all of you who bought The Last Oricru during its first month, and we promise that this is just the first big update of many more to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patchnotes for Update 1.1",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Online Multiplayer) Stabilized and improved connection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online Multiplayer) Extended replication fixes (so both players’ have similar experience)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online Multiplayer) Hologram player sees texts in their selected language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online Multiplayer) Weapon effects now behave in most cases correctly for Hologram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online Multiplayer) Inventory description and additional information about items are now also displayed for Hologram player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online Multiplayer) Hologram player now sees additional buffs and stats subcategory in inventory when selecting the items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online Multiplayer) Improvements of selected cutscenes for Hologram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Settings) Added input mapping option for keyboard (gamepad still work-in-progress)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(Settings) Improved visual quality of the game for lower graphics settings (work-in-progress implementation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Settings) Added option to set the size of subtitles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Settings) Additional minor settings features (motion blur, etc.) and fixes (saving of the settings state etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(UI) Minor technical and visual improvements (e.g. HealthBar now has animated elements)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Camera) Completely reworked camera, reducing motion sickness experienced by players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Level Design) Reworked select places where players were getting lost (usually by adding light navigation, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Level Design) Added new assets to improve visually important places (e.g. behind Maltis in the first dialogue sequence)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Cinematics) Fixes to many sequences (handled double characters, flying assets, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Equip) Added new assets to improve overall quality of the game (e.g. the armor set player receives from the Queen in the first level got reworked to a higher visual quality)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Weapons) Balanced Freeze Area spell for Deathbringer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Fight) Parry windows increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Goals) Fixed various goals which were not correctly updating their progress status",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Achievements) Fixed missing dialogue with Gok in the Monastery which lead to the achievement Revenge Raider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Achievements) Fixed issue where the achievement Gory Gift-Bringer could not be obtained on consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Scripting) Player allied with ratkins can no longer approach Grachus on the Bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Scripting) Marco no longer appears on the Bridge requesting General Draap’s head when a player has chosen to help Draap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Scripting) Fixed dialogue with Draap (he was using old dialogue after meeting with the Queen on the Cliff)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Scripting) Fixed issue when Ilvar’s arrival to the City was played twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Scripting) Reworked dialogue with Ilvar in the Monastery to fix issue where player could not talk to him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Scripting) Adjusted positions of Ilvar and Grachus on their meeting at the Monastery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Level Design) Adjusted positions of the enemies in the Fortress. Player should no longer be overwhelmed when leaving the terminal. Also, some enemies should more effectively lead to map shortcuts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Level Design) Removed unnecessary crossbow enemies in the Fortress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Level Design) Fixed missing texts on signs in Mines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Level Design) Removed Naboru soldiers guarding the entrance to the Mines from the Bridge after Draap arrives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(AI) Fixed passive enemy in the City which did not react to the player’s presence when approached",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "…Plus many other minor fixes and polishes across the entire game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online) Some cutscenes still have wrong NPCs displayed for Hologram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online) Some special effects for weapons are not displayed for Hologram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Other) GeForce now version doesn't work (Plaion is looking into that)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(Coast) The 3rd person camera has a bad angle while running in the water [Specter area]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+ Multiple known issues presented in previous versions as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue we could not find stable repro for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Online) After observing a certain (big) amount of items client stops seeing any interactions with the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 55,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1663640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1663640/view/4789043687471015362"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-16T17:05:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.684Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-16T17:28:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.685Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-16T17:28:46.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:40:51.140Z"
+  },
+  {
+   "id": "the-last-oricru-152073@25.10.2022",
+   "gameId": "the-last-oricru-152073",
+   "displayName": "Patch 25.10.2022",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-25T15:44:16.000Z",
+   "notes": [
+    {
+     "title": "Patchnotes",
+     "items": [
+      {
+       "text": "Improved transition between areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved connection stability in online coop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional polishing of gameplay in singleplayer and coop (cutscenes, level design, and more)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various fixes of smaller bugs and issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1663640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1663640/view/4714731755430805692"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-25T15:44:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.683Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-25T15:44:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.683Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-25T15:44:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:51.137Z"
+  },
+  {
+   "id": "the-last-oricru-152073@major-2022-10-19",
+   "gameId": "the-last-oricru-152073",
+   "displayName": "Update notes for October 19",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-19T15:03:56.000Z",
+   "notes": [
+    {
+     "title": "Major",
+     "items": [
+      {
+       "text": "Networking cooldown added & other optimizations to stop freezing Intel Ethernet Adapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minor",
+     "items": [
+      {
+       "text": "Fixed issue with language cached correctly in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with fast credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music bank files updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1663640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1663640/view/4714731755408836436"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-19T15:03:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.683Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-19T15:03:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.683Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-19T15:03:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:51.137Z"
+  },
+  {
+   "id": "the-last-oricru-152073@post-2022-10-14",
+   "gameId": "the-last-oricru-152073",
+   "displayName": "The bug hunt has begun!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-14T17:49:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for alerting us to the technical issues that are inherent in every new game release. The bug hunt has begun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The most common reported issues are connection drops. They are caused by a problem with the Intel® Ethernet Controller. We're working hard to fix it ASAP. Meanwhile, try to download/install new drivers for the network card. This issue usually occurs when not-quite-the-latest drivers are used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note, we're also working hard on stabilizing online multiplayer and handling all disconnection and desynchronization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're very grateful for your feedback. Please post any problems you may encounter directly on our Discord channel. https://discord.gg/zcsuQg7f72",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And once again, thank you for your interest in The Last Oricru.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1663640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1663640/view/6402455182508913196"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-14T17:49:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.682Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-14T17:49:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1663640",
+      "checkedAt": "2026-11-13T03:33:29.682Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-14T17:49:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:51.136Z"
+  }
+ ],
+ "issues": []
+}

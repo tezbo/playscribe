@@ -1,0 +1,612 @@
+{
+ "game": {
+  "id": "manairons-369857",
+  "igdbId": 369857,
+  "name": "Manairons",
+  "cover": {
+   "imageId": "cobhg8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobhg8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar592y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar592y.jpg"
+  },
+  "ps5Release": "2026-02-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "manairons-369857@1.1.7",
+   "gameId": "manairons-369857",
+   "displayName": "Patch 1.1.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-03T11:38:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just released a small update focused on fixing minor issues and improving overall stability and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔧 Fixes & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some missing vibrations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added full haptic support for the DualSense controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy shadows now correctly appear on the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music volume is now set to 50% by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Batteries in the shoes store now activate the power cables they are connected to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several UI elements on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a puzzle in the Mas Del Pla chicken coop where it was possible to obtain the battery without defeating all enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could be launched forward when climbing up to fight Mecagallo if standing too close to the back wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added sound effects to metal platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where certain objects, such as the shell game boxes or moving platforms in the shoe store, would duplicate infinitely after dying or fast traveling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could leave one of the shoes store puzzles incomplete and impossible to solve when resuming the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the load and save order to prevent data from being overwritten if a process did not complete correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Levitating objects now load properly, activating their respective slots and events to correctly restore the game state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The active dialogue indicator in Plaza De La Villa now reloads and updates correctly when dialogues change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plaza De La Villa now reloads correctly when exiting a level after Mas Del Pla; returning to the main menu is no longer required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that could cause animation errors when interacting too quickly with platforms or when loading a new area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The dragon in the toy store now roars correctly when attempting to free the princess.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The initial audio fade now lasts slightly longer to properly match the camera fade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted several lights in the shoe store so they no longer turn off when the camera moves away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted a rope in the barbershop where the player could get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed several collision issues in the shoe store, workshop, and barbershop that could cause the player to fall into the void.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an area in the shoe store that caused indefinite controller vibration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Catalan text that was displayed incorrectly on the story pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a fast travel text that incorrectly displayed a level name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the skip widget, which displayed truncated text in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The exit popup now displays centered text correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted a light in the shoe store to make the side quest more intuitive to complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the particle effect for the “Volcans” melody.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a nullptr error on the platforms that transport the player through the shoe store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the hook travel particle on PC: the shader now displays correctly, and on consoles it is no longer necessary to reactivate the melody to visualize an already unlocked path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hook particles now remain permanently active after being activated by playing the song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When fast traveling, the last used puff is now saved correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If saving at a puff fails, the character will automatically stand up to prevent a soft lock, indicated by a red flash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fast travel no longer stops the music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Malafil’s music in the toy store no longer stops when the player dies and retries the fight, or when returning after defeating her via fast travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss lock-on targets no longer disappear during attacks when the player jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pausing or opening the inventory during the final battle is no longer possible to prevent desynchronization between the song and attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The character now correctly plays the damage sound effect when hit by objects that do not cause knockback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where levitating objects could be stacked in certain contexts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added cutscenes to side quests to make them clearer and easier to complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Expanded the enemy lock-on range so targets are not lost as quickly when moving away to dodge attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now saves when collecting each story page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The achievement for completing all collectibles (PS5 Platinum) now only unlocks if the Village Square collectibles have also been obtained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "The final page now only unlocks after collecting all collectibles, including those in the square.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is no longer possible to spam the back button during the credits, which caused infinite flickering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resetting to default or discarding changes in a settings tab now only affects that specific tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll continue monitoring feedback and working on future improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "JanduSoft Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 14,
+    "balance": 3,
+    "other": 29,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3453450"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3453450/view/1825727806720015"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-03T11:38:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3453450",
+      "checkedAt": "2026-11-13T03:25:13.501Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-03T11:38:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3453450",
+      "checkedAt": "2026-11-13T03:25:13.501Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-03T11:38:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:04.670Z"
+  },
+  {
+   "id": "manairons-369857@1.0.3",
+   "gameId": "manairons-369857",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-24T16:09:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just released a small update focused on fixing minor issues and improving overall stability and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch does not include major new content, but it should make the experience smoother and more consistent. Thank you to everyone who reported bugs and sent feedback — it really helps us improve the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔧 Fixes & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fast travel no longer causes quest rewards to be lost or prevents the player from advancing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the full screen mode that prevented the cursor from moving across the entire screen. On PC, the default mode is now Borderless.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The status of SideQuests (2, 3 & 4) is now saved and displayed correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The dialogue for the Dolceta side quest in Spanish is no longer inverted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The area for the Dolceta side quest has been modified. Now, the volume for playing volcanoes appears when you have unlocked the side quest to avoid confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the shoe store, the sewing machine for the side quest now saves and restores its status correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the secret area of the shoe shop, enemies now correctly paint the Melosa decals on the table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the hole in the shoe shop where you could fall into the void.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the hole in Masdelpla where you could fall into the void in the chicken coop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the icons for the Xbox controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed loss of control when quickly entering and exiting flute mode near a melody area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The witch now hides the mushrooms in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now when the witch takes away your mushrooms in combat, Nairol mushrooms do an animation of eating them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced the final bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawnable enemies of the Mansio boss now move when spawned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All final bosses now vibrate and sound correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several animations that did not cut when skipping dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the final section of the secret area of the toy store that caused multiple errors with the dragon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’ll continue monitoring feedback and working on future improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "JanduSoft Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3453450"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3453450/view/1825093633198022"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T16:09:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3453450",
+      "checkedAt": "2026-11-13T03:25:13.500Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T16:09:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3453450",
+      "checkedAt": "2026-11-13T03:25:13.500Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-24T16:09:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:04.658Z"
+  }
+ ],
+ "issues": []
+}

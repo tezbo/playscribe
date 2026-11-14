@@ -1,0 +1,2406 @@
+{
+ "game": {
+  "id": "bugsnax-134602",
+  "igdbId": 134602,
+  "name": "Bugsnax",
+  "cover": {
+   "imageId": "co45t5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co45t5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar70g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar70g.jpg"
+  },
+  "ps5Release": "2020-11-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bugsnax-134602@2.070638",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.070638",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-22T14:19:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Fix recognition of retail Steam Frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I want to add here that even though we made it such that the game can run on standalone Steam Frame, it wasn't ever developed in mind for that performance level, so the preferred way to play is via PCVR streaming. But, it's available and players who use the teleport-based navigation may find it tolerable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1844115010504354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T14:19:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.321Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T14:19:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.321Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-22T14:19:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.621Z"
+  },
+  {
+   "id": "bugsnax-134602@2.070617",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.070617",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-24T17:47:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Windows: Fix a memory leak that can occur when alt-tabbing the game on uncapped framerate setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1836506165546767"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-24T17:47:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.320Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-24T17:47:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.320Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-24T17:47:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.620Z"
+  },
+  {
+   "id": "bugsnax-134602@2.070602",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.070602",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-09T15:36:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adds preliminary VR support for Steam Frame and Steam Frame standalone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1834602721202200"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-09T15:36:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.320Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-09T15:36:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.320Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-09T15:36:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.620Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.70474",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.70474",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-03T14:54:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Fix an issue where low frame rate can prevent returning to game from the SteamVR void after loading a new level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Deck: Correct display of input images when using mouse and keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Raise player teleport location for Intruder scene to prevent falling through floor with low framerate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1790214123213658"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-03T14:54:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.319Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-03T14:54:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.319Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-03T14:54:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.619Z"
+  },
+  {
+   "id": "bugsnax-134602@2.070452",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.070452",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-17T15:04:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Fixes for smooth turning (enabled while snap turning is set to disabled), including rotation around headset instead of scene origin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1785774543689520"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T15:04:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.319Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T15:04:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.319Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-17T15:04:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.618Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.70438",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.70438",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-02T20:14:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Fix an issue where a custom render resolution multiplier in SteamVR and Advanced Supersample Filtering enabled could cause only black screen to display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1784506359153755"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-02T20:14:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.318Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-02T20:14:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.319Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-02T20:14:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.617Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.70436",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.70436",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-24T04:50:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Allow jumping with the right analog stick up direction while walking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fix OpenGL issue with Snaxscope UI rendering upside down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1783872412067642"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-24T04:50:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.318Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-24T04:50:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.318Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-24T04:50:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.617Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.70430",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.70430",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-21T04:19:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Improvements to controller joystick navigation modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1783872411968912"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-21T04:19:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.318Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-21T04:19:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.318Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-21T04:19:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.616Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.70428",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.70428",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-19T14:45:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Fixed UI interaction issues with non-1080p monitors. Restore full screen toggle for mirrored game window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Increased shadow resolution and sharpened sampling range for High and Ultra shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Additional method of teleport (A buttons) for knuckles-style Valve Index controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Support for additional controller types (Vive wands, WMR).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Require touchpad click for Vive wand camera snap input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Changed joystick walk direction to match body direction instead of head.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Added settings to change joystick walk direction between body, head, and controller direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixed an issue regarding frame discontinuity with snap camera turn disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixed tracked controller button issues while additional gamepads are connected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixed an issue where letting up on a button after skipping dialogue can accidentally select a dialogue option after it appears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Prevent hand tracking from being interpreted as a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1783238125376970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T14:45:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.317Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T14:45:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.317Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-19T14:45:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.615Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.70367",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.70367",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-15T05:37:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VR: Improve tutorial messaging at the start of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Temporarily force the mirrored game window to run in windowed mode for non-1080p monitors in order to fix UI control alignment issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "VR: Preliminary support for additional controller types (Vive wands, WMR). For now, please press enter on your keyboard at title screen to move to main menu, then use primary hand shoulder button to click UI buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "VR: Assorted control fixes and changes with regards to UI navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/1783238125235699"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-15T05:37:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.317Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-15T05:37:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.317Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-15T05:37:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.614Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.7033x",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.7033X",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-11T20:06:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 2.0.70336/7 (11/11/2024)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for timing issue introduced from previous update when Uncapped and Vsync settings on and at certain framerates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update 2.0.70332 (11/11/2024)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows: Full support for SteamVR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows: Full touchscreen-based control scheme support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows: Improved performance for DirectX 11.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Windows: Improved support for non-QWERTY keyboard layouts.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Update 2.0.70331 (11/11/2024)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance for OpenGL.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Show tool UI even when tool select wheel is unavailable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance optimizations for Snaxburg and end game sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow skipping the opening projector scene and ending credits sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve object pool respawn order to prioritize objects furthest away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Button requirements for object interactions are now always displayed in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Assorted font rendering and emoji spacing fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix visual glitches associated with Trip Shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorial Lollive correctly flies away after grabbing Snak Trap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sweetiefly definitions reference correct weather.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimakis no longer spawn when sleeping after completing Wiggle’s sidequest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gramble no longer levitates into position at the end of the quake scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shelda is no longer stuck in the ground during Chandlo scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Filbo no longer sits backwards at the campfire after sleeping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for Chandlo positioning for hut quests during other Snaxburg-related sidequests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for infinite lights added when feeding Grumpuses in Snaxburg at night.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Public branch \"previous - 2022\" added to beta branches if you'd like to rollback for speed running or other issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/6148070194801734100"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-11T20:06:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.316Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-11T20:06:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.316Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-11T20:06:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.613Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.65949",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.65949",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-05T19:45:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 2.0.65949 (10/5/2022)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolve Mama Mewon crash, Buggy Ball maze disappearing, and trap placement clipping issues when playing at Uncapped framerate setting above 60fps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolve issue with input button instructions rapidly switching when using mouse emulation on Steam Deck or with Steam Controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4613399405937530118"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-05T19:45:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.315Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-05T19:45:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.315Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-05T19:45:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.612Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.65788",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.65788",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-19T20:54:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Windows: Enhanced DualSense™ / DUALSHOCK®4 feature support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for physics issue on uncapped fps setting where Buggy Ball could get stuck in mazes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Filbo returning to walking behavior after being interrupted in tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where Buggy Ball can navigate outside of the maze in Simmering Springs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where Cheezer is incorrectly using Kwookie's normal and specular map in Sizzling Sands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Maintain 'feed' requirement line in HUD once any bugsnak has been fed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A change to the multipaneled maze geometry in Broken Tooth to reduce Buggy Ball collision issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disable hut editing during story scenes and ensure envelope appears when mailbox can actually be interacted with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Detect when player is holding to sprint on keyboard and release to walk as an alternative to tap toggle sprint.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Avoid switching away from joystick button instructions when using emulated mouse movement on Steam Controller and Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "macOS: Fix for timer precision issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor polish fixes for some art assets and collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/6258337460559385133"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-19T20:54:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.315Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-19T20:54:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.315Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-19T20:54:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.611Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64758",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64758",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-02T13:51:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Restored missing Find Lizbert quest in journal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabled save backup archive folders for Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed emissive lighting bug in OpenGL.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed journal lighting to reduce graphical glitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4469272893492672744"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-02T13:51:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.314Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-02T13:51:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.314Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-02T13:51:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.610Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64716",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64716",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-31T15:54:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added seismometer in Snaxburg to track progress unlocking Bigsnax DLC area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New scannable Snakpod remnants detailing respawn conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issues with several hut items not showing outlines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing Shelda line near Snaxburg campfire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4437747060845119250"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-31T15:54:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.314Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-31T15:54:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.314Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-31T15:54:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:41.609Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64623",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64623",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-23T20:21:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Indicate bugs that have been donated to Gramble's barn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix save blocking issues that can occur in Frosted Peak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add reminder indicator billboard to Mothza Supreme replay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix an issue where sleeping can cause Bugsnax with unique spawn conditions to respawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where some Bugsnax would additionally like sauces they shouldn't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4292505348840981482"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-23T20:21:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.313Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-23T20:21:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.313Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-23T20:21:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.515Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64570",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64570",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-16T19:38:37.000Z",
+   "notes": [
+    {
+     "title": "Windows",
+     "items": [
+      {
+       "text": "Correct buttons displayed in UI/Tutorial for Switch Controller, Steam Controller, and Playstation Controller if using the Steam Configuration Support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/5849624375833698792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-16T19:38:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.313Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-16T19:38:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.313Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-16T19:38:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.461Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64550",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64550",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-10T01:33:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed crash when a certain Bugsnak would respawn after being punted by Scoopy Banoopy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348799082206701146"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-10T01:33:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.312Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-10T01:33:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.312Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-10T01:33:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.460Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64540",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64540",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-09T17:42:25.000Z",
+   "notes": [
+    {
+     "title": "macOS",
+     "items": [
+      {
+       "text": "Completely redid macOS controller input to use SDL2. Steam Controller, Xbox Series and Elite Controllers, Switch Controller, and hundreds of others should work now without remapping. You may have to reset input mappings in Settings Input if you had remapped a controller previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Xbox and Switch Controllers should display the correct button names in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348799082205510056"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-09T17:42:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.312Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-09T17:42:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.312Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-09T17:42:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.460Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64517",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64517",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-06T23:25:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "macOS: Fixed Wireless Xbox One Controller Support. Matched button images to Xbox Controller when connected instead of using Playstation images.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348799082195451319"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-06T23:25:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.311Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-06T23:25:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.311Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-06T23:25:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.459Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64510",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64510",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-05T19:55:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Cheddorb's having wrong spin direction if they have respawned after catching them all during the Cheddarboardle fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added various contingencies if Broken Tooth quests completed in certain order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Italian font missing characters and missing translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348799082191279394"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-05T19:55:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.311Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-05T19:55:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.311Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-05T19:55:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.459Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64483",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64483",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-03T22:41:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Uncapped FPS physics issues and it has returned to Settings->Display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Chandlo getting stuck in final phase of Mama Melon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Daddy Cakelegs candle lighting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored speed run path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Cheddorb spawning during boss replay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "macOS: Removed unused dynalibs from app package contents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348798430294144697"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-03T22:41:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.310Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-03T22:41:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.310Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-03T22:41:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.458Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64460",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64460",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-03T00:58:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Triffany talking to nobody when Floofty isn't around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensure Broken Tooth time trial flare is visible if quest active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mothza Supreme tornados no longer turn black when Mothza Supreme is sauced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Lollive and Tikkada Masala getting stuck carrying objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bugsnax frozen and punted by Scoopy Banoopy should properly be encased in ice instead of falling into a void.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added blocker to prevent Chandlo from trying to walk into the wall forever when he has to poop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348798430290848821"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-03T00:58:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.310Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-03T00:58:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.310Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-03T00:58:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.458Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64441",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64441",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-02T14:14:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Cellystix and Cheddaboardle Rex from being catchable while giant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Triffany Broken Tooth Quest where quest dialogue would be unavailable on level restart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Limited display of barn inventory to one Bugsnax per type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348798430289220849"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-02T14:14:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.309Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-02T14:14:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.309Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-02T14:14:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.457Z"
+  },
+  {
+   "id": "bugsnax-134602@2.0.64433",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update 2.0.64433",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-01T17:11:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed Uncapped FPS for now as there are too many small physics issues with the 120hz physics timestep that can prevent completing parts of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Snakgrappler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added contingency for Snorpy not reaching his spot in Major Celebration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Cheddorb respawn issue and improved Cheddorb movement/forces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Buggy Ball to prevent spinning in a circle forever if retargeting or clearing autopilot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added workaround for Intel Surface Pro GPU hang/crash on DX11 using default Windows driver. If using an Intel driver on first launch the game will now switch to DX9 instead of DX11 which does not have issues. If you are currently having crashes on an Intel cpu please switch to DX9 in Settings->Display or update your Intel driver from the Intel website to latest instead of Windows supplied driver (may cause other issues on Surface Pro though).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed rendering issue with frozen Pinkle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Falling mail challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed collision issues allowing you to leave level while in The Intruder sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348798430286025227"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-01T17:11:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.309Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-01T17:11:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.309Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-01T17:11:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.457Z"
+  },
+  {
+   "id": "bugsnax-134602@major-2022-04-30",
+   "gameId": "bugsnax-134602",
+   "displayName": "Update for 4/30",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-30T14:56:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimization: Allow Windows to choose core scheduling instead of locking to certain cores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-674140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/674140/view/4348798430282042645"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-30T14:56:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.308Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-30T14:56:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-674140",
+      "checkedAt": "2026-11-13T03:16:40.308Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-04-30T14:56:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:47.456Z"
+  }
+ ],
+ "issues": []
+}

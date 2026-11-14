@@ -1,0 +1,3907 @@
+{
+ "game": {
+  "id": "kona-14404",
+  "igdbId": 14404,
+  "name": "Kona",
+  "cover": {
+   "imageId": "co5vwz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5vwz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ardaj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ardaj.jpg"
+  },
+  "ps5Release": "2021-12-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "kona-14404@3.1.4",
+   "gameId": "kona-14404",
+   "displayName": "Patch 3.1.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-05T22:35:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Yet another patch fixing issues raised by players and bringing some other improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PCVR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Room-scale: walking around your room no longer brings up a black veil. If you drift too far, your body fades to hands only and a small RECENTER prompt shows, which we recommend you do because the game is not made to handle out of body experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The upper body now follows your head when you lean, including a slight lean back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redesigned the wrist pause button on Index and Steam Frame controllers (watch gesture on the off hand). It’s now hidden on Touch controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Survivor mode’s dark red object highlight is back in VR, somehow it got replaced at some point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Internal HDR rendering on PCVR to reduce colour banding in dark areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Shadow atlas resolution now scales with Shadow Quality (Very High 8K, High 4K, Medium 4K).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Light shadows are prioritised by role, so the flashlight and headlights always keep theirs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Fixed a terrain seam near the car crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Survivor: invisible walls at the broken bridge so you can no longer fall in and get stuck. The snowmobile lane is still passable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Polish: fixed oversized accented letters (like ą) and improved the handwritten font’s spacing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam",
+     "items": [
+      {
+       "text": "The Kona soundtrack is now a proper Steam Soundtrack, with MP3 plus an optional FLAC download, a track list, cover art and a store page in 8 languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully I will not spam you with daily updates from now on, since things are looking more stable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/1848664643343396"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-05T22:35:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.055Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-05T22:35:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.055Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-05T22:35:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:27.104Z"
+  },
+  {
+   "id": "kona-14404@3.0.2",
+   "gameId": "kona-14404",
+   "displayName": "Patch 3.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-04T18:46:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another patch drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I figured why updates were 1.5gb in size even with small changes, but that means one last big update... so, sorry about that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Release Notes",
+     "items": [
+      {
+       "text": "Fixed missing music bundles causing a fatal loading screen, including near the cavern. Essential world-loading failures still stop the game safely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game data is no longer compressed as one block, so future patches should download much less.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the main menu Play button staying highlighted after the mouse moves away.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the snowmobile key at the generator building not being picked up correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed snow looking see-through near some fences and at the entrance to Bédard’s house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Documents and letters are easier to read in dark places (reduced reading light intensity and adjusted eye adaptation).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made ajustments to prevent wolves from sinking into the ground on slopes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed light from inside houses showing on outdoor props such as trash can lids.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Car headlights no longer flicker or break up on bumpy roads, but that may cause other yet smaller issues, time will tell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Polish AI translation (per user request and approval): then I fixed overlapping journal text and letters running into each other in handwritten notes, and corrected the Survivor mode title which displayed wrong in Polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Alt+Tab triggering the Back action and unintentionally re-equipping or storing the player’s item.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The game hangs on non-Steam-Deck Linux. I am still trying to figure out why this is happening, For now, the legacy version still works (but does not have the new Survivor Mode, unfortunately).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/1848557880480441"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T18:46:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.054Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T18:46:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.054Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-04T18:46:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:27.104Z"
+  },
+  {
+   "id": "kona-14404@3.0.1",
+   "gameId": "kona-14404",
+   "displayName": "Patch 3.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-04T07:01:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "An update is now live with the following bug fixes from yesterday's players reports:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed stale option highlights when returning from the Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed settings description-panel flickering when clicking empty menu space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made save-selection arrows clickable with the mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a progression restriction that could prevent exiting the truck after the crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved interaction-marker tracking on moving objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added keyboard light controls: tap F to toggle the body light; hold F to equip or put away the flashlight.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a smooth body-light fade when equipping the flashlight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed body-light restoration indoors and allowed toggling it during ladder and fixed-object interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved wolf ground alignment and enabled light-probe lighting on the standard wolf model.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored high-fall landing animation triggering while holding an item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repaired six confirmed road-mesh gaps and smoothed a shading seam near the crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved flying-leaf lighting and reduced oil-lamp brightness in Survivor mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted wood-stove shadow settings across affected scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved cash-register selection and safe-dial highlights as their materials were broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added shadow casting to the store garage panel and the frozen-house blue fill light to address light leakage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Limited automatic Linux graphics recommendations to High, added GPU-snow capability checks, and constrained shadow-map sizes to hardware limits. Will need more logs to truly fix the hang on Linux because I can't reproduce it with my machines.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added release-build startup diagnostics to help investigate the Linux menu hang.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/1848557880478038"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T07:01:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.053Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T07:01:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.053Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-04T07:01:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:27.103Z"
+  },
+  {
+   "id": "kona-14404@major-2026-11-04",
+   "gameId": "kona-14404",
+   "displayName": "Kona Halloween Update is Out Now (Windows & Linux)!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-04T00:27:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "DISCLAIMER: This update contains a lot of changes and I expect bugs to surface, but I’ll be there to fix them as they reveal themselves, and the Legacy Version is always available to download in the game's Properties > Game Versions > Legacy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hi there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been a long, long while!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those who don’t want to read through why it has been this long, I suggest you skip the following part and go directly to the release notes, which tell you everything you need to know about the massive update I’ve uploaded today. It was scheduled for Halloween, but as you can see, it slipped a little bit...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, for those who don't know me, I am Alexandre Fiset, former CEO of Parabole, the studio that delivered Kona and Kona II: Brume, and now CEO of Voyage, the studio that now has all the publishing rights for the two games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parabole went bankrupt last year, so needless to say, the past few years have been kind of rock and roll...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At one point, I had to move away from trying to do everything: looking at forums and responding to almost everyone, which is something I did for a while. My inbox grew, and the number of tasks left behind grew as well, to an unmanageable, unhealthy level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today marks a new chapter in my life, which I decided would focus on “now and tomorrow”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Why Update Years After Release?",
+     "items": [
+      {
+       "text": "Kona 1’s latest version shipped with Unity 2018 as its engine. At that time, we used the built-in renderer, Enlighten Global Illumination, and OpenVR. If we wanted to update to support the engine's newest optimizations, we would have to migrate to their new rendering pipeline, called URP. But URP, before Unity 6, had no Enlighten GI, no light probe blending and was restricted to four dynamic lights. It made the migration literally impossible without recoding parts of the engine, which we don’t have source code access to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OpenVR is also a deprecated package and no longer supported. What it all means is that Kona remained stuck in time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Why Update Now?",
+     "items": [
+      {
+       "text": "With Unity 6, Unity has taken very helpful steps to smooth the process. There is now a Forward+ rendering path, allowing many dynamic lights to coexist. It also supports Enlighten. So it left only the VR part to cover, and the migration to URP, which is now easier than ever (shaders are quite similar, as are the look and feel).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But that’s not all there is to it. There is Kona II: Brume too, running on Unity HDRP and powered by a codebase of its own, with very specific technologies such as Data-Oriented Technology Stack (ELI5: It is just coded differently).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So my long-term goal is to bridge the gap between these two games, not because I want to constantly improve them, but because they will set the foundation for the creation of a new title, with battle-tested modules such as our UI, localization, build pipeline, streaming, interaction, XR, saving, and settings systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By consolidating these, I can improve and stabilize them for future usage and simplify the delivery of updates and ports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "So What’s in It?",
+     "items": [
+      {
+       "text": "Well, a lot of things. An 8y+ update brings a lot of engine optimizations and features. While I couldn’t get rid of all the stutters, I can claim I’ve more than halved their occurrences and made them much less annoying. The remaining stutters are mostly on the Enlighten part, which will not be used for the next game anyway, but we have to live with it for Kona 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features and Bug Fixes",
+     "items": [
+      {
+       "text": "Steam Cloud Saves",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "120–240 Hz displays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DX12, Vulkan and Metal support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HDR displays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shader prewarming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A persistent world to avoid the loading of big houses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Volumetric lights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Revamped and less buggy UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoother and faster controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck & Upcoming macOS",
+     "items": [
+      {
+       "text": "The new set of builds supports the Steam Deck natively (SteamOS / Linux), so in itself it should run smoother and look better. I have a working and very performant Apple Silicon build too, but am awaiting acceptance into the Apple Developer Program to be able to code-sign, notarize and upload the build for it to be available to all. It is running exceptionally well on my M3.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New VR Runtime",
+     "items": [
+      {
+       "text": "Interactions with both hands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Full-body awareness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Foveated rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Throwable items and multiple settings to further enhance the experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This is the biggest risk: I only have a Quest 3 headset to test it on, so let me know what headset you are using, and let me know what works and what doesn’t. I’ll be actively updating this as I’m planning to ship standalone Quest and Frame versions in the near future. Please let me know if you run into any issues in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Survivor Mode",
+     "items": [
+      {
+       "text": "Then, a new Survivor mode has been made. Mainly for fun, I wanted a mode where I could add more encounters and make things a bit more “halloweenesque” to play around with color grading and a darker mood. I did it mostly for myself out of curiosity, but also for you to try out, because why not? It also solves some of the criticism that the game was dull. It might be less dull for them this way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is currently marked as Experimental, because it ended up being a lot of work, but I will deliver constant updates to it, so if you hit a game-breaking bug, please report it and it will receive a fix in a matter of days, if not hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't expect Resident Evil-style horror; it is still Kona, but in the dark, with more encounters. I didn't order any new animation or narration for this mode; it is mainly a styling and balancing change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What About Kona II?",
+     "items": [
+      {
+       "text": "I initially planned to update both games at the same time, but I ran out of time. My goal now is to have a second wave of updates around the holidays of this year, which likely will be the last feature update for both games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What I really want out of this is to have both games sharing the same Unity version, so that I can use things from both games to produce a third one, if time and budget permit it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What About Kona III?",
+     "items": [
+      {
+       "text": "I would love to make one, but only time will tell if it is a viable project financially.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game modes and combat",
+     "items": [
+      {
+       "text": "Added Detective, Balanced, and Survivor modes, with the selected mode displayed beside each save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Survivor’s night presentation, storm effects, red interface accents, and additional wolf encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added five Survivor achievements in a separate Steam achievement set.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the hidden Golden Gun, with its own unlock conditions and unlimited ammunition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked wolf encounters with more space between attacks, clearer preparation before lunging, and revised recovery times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated wolf retreat behaviour according to the selected mode. In Survivor, living wolves keep fighting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed attack-queue issues and cases where a dead wolf could still deal bite damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wolf navigation failures that could send an animal toward an invalid destination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebalanced rifle and revolver damage against wolves, including headshots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced sprint stamina consumption in Balanced and Survivor modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made the time from firing input to shot much shorter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance and graphics",
+     "items": [
+      {
+       "text": "Updated Kona’s engine and rendering pipeline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked terrain, scenery, and texture loading, with improvements to visibility management and background loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced repeated object searches, unnecessary per-frame work, and memory allocations in several gameplay systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Spread scenery spawning and visibility updates across frames to reduce sudden bursts of work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated shader preparation to reduce first-use rendering stalls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expanded graphics settings and frame-rate limits, including 72, 80, and 90 FPS options, mainly for VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added experimental NVIDIA DLSS and AMD FSR 2 upscaling for supported Windows hardware, disabled by default.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added optional volumetric lighting and GPU snow particles on supported configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated snow, water, fog, and material rendering for the new pipeline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed colour-grading and exposure issues, including incorrect transitions between lighting conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored missing effects on vision characters and glowing footprints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved motion-blur support for moving objects and held equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Menus, reading, and controls",
+     "items": [
+      {
+       "text": "Reworked settings navigation, controller focus, and confirmation dialogs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed pause-menu backgrounds intercepting input intended for submenus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where menu transitions could become stuck while the game was paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved save-slot readability and added clearer mode labels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added page indicators and previous/next arrows when reading documents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed document-navigation clicks also triggering unrelated gameplay input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed settings panels reopening at an old scroll position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed notification cleanup and several input and interface errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved movement input handling at high frame rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "VR",
+     "items": [
+      {
+       "text": "Replaced the legacy VR integration with OpenXR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added revised hand poses, support-hand grips, and left- or right-handed item handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added physical steering-wheel interaction, with stick steering still available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved firearm aiming and reloading, including partial reloads for supported equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved journal navigation, document handling, and Polaroid positioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved menu pointers, interaction markers, subtitle readability, and recentering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several loading and fade issues that could reveal the world too early or leave interface elements in the wrong place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved teleport landing checks around steps and obstacles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added separate PC VR preferences so switching between desktop and headset play preserves each setup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Saves, achievements, and other fixes",
+     "items": [
+      {
+       "text": "Added Steam Cloud saves, allowing you to continue your investigation across computers and Steam Deck, with your checkpoints and journal photos synchronized.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a migration prompt for older saves, with recovery backups created before importing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved checkpoint and photo saving, including recovery copies and safer handling of interrupted writes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unreadable checkpoints preventing other saves from being listed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save triggers failing to retry after an unsuccessful save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved achievement delivery and retry handling when Steam is temporarily unavailable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed water incorrectly counting as alcohol for the Prohibition achievement, with recovery handling for eligible older saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed road sections disappearing when travelling between certain loading regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved restoration of indoor context when loading a checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed radio playback initialization and several animation-state errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other bug fixes and optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "About Existing Saves",
+     "items": [
+      {
+       "text": "When launching the updated game, you may be asked to migrate your existing saves. The game creates recovery backups before proceeding and preserves the original files. Existing adventures continue in Balanced Mode; start a new save to try Detective or Survivor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully this update doesn't cause you any trouble... just let me know if it does! I no longer have the full studio with many computers to test the game on, so I'll have to monitor the forums for a while to make the game as stable as before, but at least it comes with more improvements than regressions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 27,
+    "balance": 6,
+    "other": 34,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/1848557880477272"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T00:27:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.052Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T00:27:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.053Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-04T00:27:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:27.102Z"
+  },
+  {
+   "id": "kona-14404@3",
+   "gameId": "kona-14404",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-06-21T20:10:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s right, there’s a new update today! We know that some Mac and Linux players experienced issues with the last update and this is mostly what we improved here. However, we do not have access to a wide range of machines running on these operating systems, so if you encounter bugs, glitches, etc, please let us know in the forums or by email at support@parabole.ca.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "FIXES AND IMPROVEMENTS",
+     "items": [
+      {
+       "text": "That being said, here is a glimpse of what today’s patch brings:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Linux: The black screen glitch in the main menu should be fixed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Linux: The mouse should now appear and work correctly in the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mac: Bloom and Depth of field are now disabled by default as we are working on fixing compatibility issues with both effects (can be enabled if you have no issues with these options)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shader quality can now only be set at “high” if your graphic cards supports DirectX 11+",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the ice spike attack bug when encountering ice wolves on the snowmobile, which would sometimes make the game crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Most random crashes (when loading a game, for instance) have been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor bug fixes and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "And here’s a short list of known issues and changes to come",
+     "items": [
+      {
+       "text": "Linux: the name of the region you are visiting doesn’t show on the screen when you arrive",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Linux: some may still encounter the black screen glitch and/or the mouse not working bugs in the main menu. If this is the case, please let us know, there is a work-around fix and we will make a sticky post in the forums",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mac: Bloom and Depth of field disabled by default should fix most of the graphical glitches encountered in the last update. However, if you encounter similar glitches while these options are disabled, please let us know and we will fix them as soon as possible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Random crashes: we were able to fix most of them, but there may be some that we might have missed. As usual, we will work on fixing them as soon as you report/we notice them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will add Russian language for subtitles, texts and menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will add an option to enable/disable quick loading screens between areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More optimizations and bug fixes, as always ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COMMUNITY SCREENSHOTS",
+     "items": [
+      {
+       "text": "To finish this post in beauty, here are some of our favorite screenshots from our community:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by LucaelSera83",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Boris Strugatsky",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by XSaintsXTroopsX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Jay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if there is anything, leave a comment below :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682860954"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-06-21T20:10:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.051Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:27.099Z"
+  },
+  {
+   "id": "kona-14404@2",
+   "gameId": "kona-14404",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-05-18T15:01:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An update for Kona has just been released!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FIXES AND IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Here’s a list of bug fixes and improvements that come with the patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We removed two loading screens (on bridges, when leaving the General Store area)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now delete photos (by clicking on a picture, a small window will open and let you choose)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mouse smoothing option has been added in the controls options",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In the same option menu, we also added an option to enable/disable autosaves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed unresponsive mouse and trackpad clicks in menus (when you have a touch screen)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The yellow arrow in the middle of radial menus is now aligned accordingly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed a screen resolution display issue for Mac and Linux, which always showed the same resolution. This prevented players who changed it of bringing it back to its default value",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The first journal entry of “The Hunt” is now triggered automatically when approaching the first crossbow bolt instead of direct interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed a rare bug in which the player would complete the game in daylight when loading a checkpoint at a specific moment and location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed a rare bug that would let the combat music continue at the end instead of changing for the end credits song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed the invisible mouse cursor on Linux",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Many textures and collision fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor bug fixes and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Also, we updated Unity 3D engine (version 5.6) and here are some important notes about how it affects the game:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Graphics settings will be reset to their default value. Before playing, make sure to set them back to your own preferences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you own a computer with a not-so-powerful CPU, but with a good GPU, the game should run better than before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some visual effects and materials have changed a little (they were not compatible with the new version of Unity)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cloths have been temporarily deactivated due to unusual crashes. Most have been replaced with animations, others will be fixed in the next patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UPCOMING CHANGES & KNOWN ISSUES",
+     "items": [
+      {
+       "text": "And here’s a short list of what to expect in the next months:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will add Russian language for texts, interface and subtitles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will add an option to enable/disable quick loading screens between areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More optimizations and bug fixes, as always ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COMMUNITY SCREENSHOTS",
+     "items": [
+      {
+       "text": "Let’s wrap it up with three handpicked screenshots from the community:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by exSKEUsme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by costastg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by djcrazybHk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don’t hesitate to leave us comments, we read every one of them :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682861078"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-05-18T15:01:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.049Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:27.096Z"
+  },
+  {
+   "id": "kona-14404@1",
+   "gameId": "kona-14404",
+   "displayName": "Patch 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-03-31T21:06:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been two weeks now since we have launched Kona on Steam. It looks like both the press and you guys are enjoying it! Since launch, more than 5,000 additional players bought Kona and joined us on Steam and 36,987 persons added the game to their wishlists! We’ve had some solid press coverage too:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A 8.5/10 review from Destructoid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A great unscored review from Rock, Paper, Shotgun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A 15/20 review from jeuxvideo(dot)com (in French)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While this is all good news, it’s certainly not going to stop us from improving the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FIXES AND IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Here are the things we fixed in the latest patch...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed the headlight bug and hid a second one, just in case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now keep all random pictures you take (new tab in the journal)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed the disappearing Iron Box bug (it should reappear in your inventory)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We fixed “The Hunt” achievement (it will unlock when you reload a save in which you found all crossbow bolts)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We added a light to be able to see the map in the car at night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Radio interacting icon in the car is now hidden when holding the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various minor bug fixes and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "...and the things we expect to ship in the coming weeks",
+     "items": [
+      {
+       "text": "We will add an option to delete pictures in the journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will add an option to disable quick loadings between areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will add Russian language for texts, interface and subtitles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NVIDIA will whitelist Kona in its driver to support Ansel and other NVIDIA features",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We will fix the bug with the notification stuck on-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will fix the bug of the night that never triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "DLC SOUNDTRACK AVAILABLE NOW",
+     "items": [
+      {
+       "text": "Along with this update, we are proud to announce that the original soundtrack by CuréLabel will be available as a DLC on our store page soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MESSAGE TO KICKSTARTER BACKERS WHO PURCHASED THE DIGITAL SOUNDTRACK: you should receive your Steam key within an hour! If there is anything, contact us at support@parabole.ca.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COMMUNITY SCREENSHOTS + ANSEL",
+     "items": [
+      {
+       "text": "Not only do we love the screenshots you guys are sharing on Steam, but we’re now working with NVIDIA to bring the magic of Ansel to Kona. Ansel allows any player to freely move the camera around to take gorgeous HD screenshots, 360° panoramas and VR-compatible stereoscopic images of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ansel is already supported, but not yet whitelisted in the official drivers. You shouldn’t have to wait long for the update to arrive, but for those who are eager to try it out, you can simply open the command line, paste the following line (including quotes) and press enter:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"C:\\Program Files\\NVIDIA Corporation\\Ansel\\Tools\\NvCameraEnable.exe\" whitelisting-everything",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When it’s done, pressing Alt-F2 anytime during gameplay (except during cutscenes) will open Ansel. Note that this requires a compatible graphics card (NVIDIA 600 series and up). We’re going to share more details about Ansel in another update.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "EDIT: Driver update is now live on Geforce Experience and Kona is now whitelisted by default. You don't need to write this command anymore :)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "That’s it for today’s update! Let’s finish this in beauty, here are three handpicked screenshots from the community:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Rainer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Silent Winds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by UN0W3N",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy the weekend :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682861309"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-03-31T21:06:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.048Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:27.094Z"
+  },
+  {
+   "id": "kona-14404@major-2017-02-24",
+   "gameId": "kona-14404",
+   "displayName": "Update: Key Remapper, New Journal Sections and More!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-02-24T23:58:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you enjoyed our latest update we sent a few weeks back! We just sent a new one today and here's some of its content:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controls Settings: Key remapper!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics Settings: 3 different ways to set depth of field",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio Settings: All volume values are now 100 by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Journal: Table of content has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Journal: Biography tab has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-game quick loading screens: Removed letterbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-game quick loading screens: Removed darkening effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-game quick loading screens: Accelerated animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camp behind Bédards’ house: Now appears on reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revolver: Added a sound when there is no ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RavensCourt/Parabole Screen: Mouse cursor is no longer visible",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "UI: Subtitles will no longer disappear after Alt-Tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: Mouse prompt now shows by default in title screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "UI: Revamped design of the reader screen for documents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: Scroll bar is now visible in the reader screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller: Can now open map with D-pad shortcut",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some minor bug fixes and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Controls Settings: Duplicate keys are possible in key remapper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settings: Clicking on arrows doesn’t make a loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: A notification can remain on screen when picking up items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: Controller prompt still shows by default instead of mouse when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Journal: Cannot click on tabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Journal: Biography “unlocked” before update won’t show",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for taking the time to send us feedback! The final release is coming soon and we really appreciate you helping us making the final version better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a nice weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EDIT: Added a UI known issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682861542"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-02-24T23:58:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.046Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.594Z"
+  },
+  {
+   "id": "kona-14404@major-2017-01-27",
+   "gameId": "kona-14404",
+   "displayName": "New Update, Partnership and Release Window",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-01-27T14:02:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s Friday, and we have good news for your guys! For starters, a new update will go live in a few minutes. On top of adding text support for German, Spanish and Italian, the new build also contains hundreds of layers of enhancements as well as support for Steam Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Before moving further into the details of the update, we have something equally exciting to announce: Kona is finally coming to Windows, Mac, Linux, Xbox One and PS4 simultaneously in March of this year, thanks to our new and awesome partnership with Ravenscourt!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "“But you said no update until launch, you liar!”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "True.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Reasons for Update",
+     "items": [
+      {
+       "text": "IMPORTANT: PLEASE NOTE THAT YOUR OLD SAVEGAME WON'T WORK WITH THE NEW UDPATE, as explained down below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We had long talks about whether or not we should update the game on Steam and GOG, but many factors helped us make our decision.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Firstly, even if we did our best to avoid it, your existing save data won’t work in the final game. This is due to the large number of changes we made to Kona since the last update. However, any savegame you create in the new update will work on launch and afterwards. To us, this was the main reason to update. The last thing we want if for you to be penalized for having supported us early on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Secondly, as we mentioned before, some story-related elements were stripped out of the game in order to keep some surprises for the final version. This was great six months ago, but with Kona’s launch just around the corner, we feel like you should be playing something closer to the actual thing, hence the need for an updated build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thirdly, on the business side of thing, the game base price will be USD $20 after launch. At some point we have to get closer to that price, but we can’t if we do not provide anything in exchange. With this update, Kona pricing will increase now from USD $10 to USD $18 (of course, if you own it already, you won’t have to pay extra).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bottom line is that we did not want past and new Early Accessors to be disadvantaged on game launch. We wanted our message to be clear and consistent across Steam, GOG, press releases and trailers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Content of Update",
+     "items": [
+      {
+       "text": "With this update, the game world and play time will remain the same as before. It simply is a more polished first hour (or so) of gameplay that won’t be erased in March when Kona finally launches. Still, you’ll find many drastic improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You will also notice that all voices (French and English) are now in the game and that texts, subtitles and menus have been localized in Italian, German and Spanish thanks to Ravenscourt (Russian language is still part of the plan and we will keep you in the loop as soon as we are ready to add it to the game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Finally, you can now use F to equip your flashlight and M for the map (it works in the car now). The key remapping feature for keyboards will come in another update we will publish soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Published by Ravenscourt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Everywhere outside of Steam, GOG and Humble store, Kona will be published by Ravenscourt. That is on Xbox One, PS4 and other PC storefronts. With a team of 7, we can’t handle them all, but we still believe being close to our audience is really important nowadays in the industry. On that front, our partnership with Ravenscourt is simply perfect. We get to keep talking to you all while bringing the game to new crowds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Thanks (again) to All of You",
+     "items": [
+      {
+       "text": "That’s all for now, but again, we want to thank you all for believing in our project and for your patience facing the many delays the game had in the past. The real thing is coming and it looks great! Try it for yourself and feel free to send us your comments, as always :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Talk soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everyone at Parabole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682861747"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-01-27T14:02:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.045Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.591Z"
+  },
+  {
+   "id": "kona-14404@major-2016-06-16",
+   "gameId": "kona-14404",
+   "displayName": "Game Update: Introducing the New Interaction System",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-16T17:35:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few weeks have passed since our last update, so it’s time for a new one! Following your feedback in the forums, we added the version number in the top-right corner of the main screen and we fixed a few bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, some of you experienced motion sickness while playing Kona. It usually goes away after a while or by changing some graphics options. However, someone suggested to add an option for a crosshair that could probably help a little. So we did! It is available in the controls options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This week, we also introduce our new interaction system. I will avoid spoilers and if you write comments that include spoilers, please use the Spoiler formatting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interactors",
+     "items": [
+      {
+       "text": "Most of the feedback we receive is about our user interface. We’ve decided to change all interactors to make things clearer. Here’s a preview of what it looks like:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From now on, every interactor you will see will be a little square (see image). When you approach, the square will turn a little and you will be able to interact with the object. If you don’t know what action it might trigger, you will see a brief description or a small image of what the interactor does after a few seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "No More Combine Menu",
+     "items": [
+      {
+       "text": "We decided to remove the combine menu. Instead, when you have all required items, you will need to hold the interaction key (usually the E key or the A button on a controller) until the bar is full. Since our game doesn’t really focus on crafting, why not find a simpler way to do so!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "Here are some of the known issues that we are already working on fixing:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mouse scroll for texts works now. However, some the W and S buttons don’t work in all of them;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When you have the lantern equiped (and sometimes with the flashlight) and you smoke a cigarette, the lantern is still in your hands until the end of the animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So that’s it! And if you’re in L.A., come say hi at the IndieCade @ E3 Showcase!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682862172"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-16T17:35:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.043Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.520Z"
+  },
+  {
+   "id": "kona-14404@major-2016-05-17",
+   "gameId": "kona-14404",
+   "displayName": "Quick Update for Game Breaking Bug",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-05-17T18:21:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to some of you guys, we found out a game breaking bug, so we're sending a quick update to fix it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's something that happened at the Lachance's house, so if you still haven't visited the place, don't read the hidden message below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is what happened: You arrive at the house and go through the vision, but when you get out of it, interactors don't work anymore. If you left the bathroom door closed, you can't even get out of bathroom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, we fixed it :D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682862486"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-05-17T18:21:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.042Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.519Z"
+  },
+  {
+   "id": "kona-14404@major-2016-05-16",
+   "gameId": "kona-14404",
+   "displayName": "Update to Start the Week on the Right Foot!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-05-16T15:41:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a small update today. We fixed many bugs and worked on optimizations (as usual).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Among other things, we fixes the treasure hunt maps that didn't appear in the menu. However, you will need to either find one of these or start a new game for them to work. If you don't want to do that, here is a link to the maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plus, we added a graphics option : Render Sampling. In short, this option allows you to raise or reduce 3D rendering resolution. Reducing it below 1 reduces quality but increases performance. Above 1, we can compare it to a powerful antialiasing. At the high cost regarding performances, the game looks way better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's next...",
+     "items": [
+      {
+       "text": "We are working on revamping the interactors and \"combine\" menus. Here's a glimpse of what it will look like (work in progress):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There would be no \"combine\" menu anymore, which makes things clearer for players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's it! We will try to send updates weekly like we did before. Rest assured that I will keep you in the loop if we can't ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682862606"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-05-16T15:41:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.041Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.518Z"
+  },
+  {
+   "id": "kona-14404@major-2016-04-23",
+   "gameId": "kona-14404",
+   "displayName": "Kona Weekly Update: Optimizations",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-04-23T00:56:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today's update will feature many bug fixes and a significant framerate optimization. You may stumble upon some detail pop-in, but those should be smoothed out in the near future. We designed everything to get the best compromise between quality and performance at a level of detail setting of 3, and the new graphics quality presets start from there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other important stuff we added",
+     "items": [
+      {
+       "text": "A wild river appeared!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjustements to the stress mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "And those known issues remain",
+     "items": [
+      {
+       "text": "Big \"hangs\" in loading scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may need to start a new game to access all journal features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy! Thanks again for all the feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "A wild river appeared!",
+     "Adjustements to the stress mechanic"
+    ]
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682862920"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-04-23T00:56:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.040Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.516Z"
+  },
+  {
+   "id": "kona-14404@major-2016-04-15",
+   "gameId": "kona-14404",
+   "displayName": "Kona Weekly Update: Stress Mechanic (WIP) and Mac Fix",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-04-15T22:15:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today's update will feature many bug fixes. Hopefully, it will fix the issue some of you encountered this week. We can't pinpoint what it is exactly with the information we have, so if you encounter a similar issue, please send us the log file at support@parabole.ca. You can find the file here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows: C:\\Program Files (x86)\\Steam\\steamapps\\common\\Kona\\Kona_Data\\output_log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mac: ~/Library/Logs/Unity/Player.log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux: ~/.config/unity3d/CompanyName/ProductName/Player.log",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here's what's new in this update",
+     "items": [
+      {
+       "text": "We introduce the stress mechanic (still work in progress). Keep your cigarettes close!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some Mac users encountered performance issue. We tested today's build and it run way smoother. Hopefully, you will get the same result ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "And known issues remain",
+     "items": [
+      {
+       "text": "Big \"hangs\" in loading scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may need to start a new game to access all journal features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, we tested a build for Windows 32-bit and it worked fine, so we will release it on Steam. It has been tested on a 64-bit processor though, so if it doesn't work, don't hesitate to get a refund from Steam :P",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "That's it! Thanks again for all the feedback in the forums, you're awesome!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682863030"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-04-15T22:15:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.039Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.514Z"
+  },
+  {
+   "id": "kona-14404@major-2016-04-08",
+   "gameId": "kona-14404",
+   "displayName": "Kona Weekly Update: Journal Content and Small Changes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-04-08T22:39:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time for business, here’s what’s up with today’s update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we fixed many bugs and worked on optimizing performances. Plus, a few things:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more locations and characters to the journal. However, it might not work on certain old saves;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a few burrows with talismans in them;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Firestarters now have a weight and can be dropped;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now have a first-aid kit and a firestarter in the pickup trunk at the beginning;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a few firestarters and matches to find in houses;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You now keep the wired magnet after using it;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some “combines” now feature a glimpse of what they’ll look like once they are done (image).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues/WIP",
+     "items": [
+      {
+       "text": "Big \"hangs\" in loading scenes, working on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You might need to start a new game to access all journal features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So that’s it for now! As always, contact us if there’s anything, we read everything you post. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/260454846509875882"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-04-08T22:39:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.038Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.513Z"
+  },
+  {
+   "id": "kona-14404@major-2016-03-24",
+   "gameId": "kona-14404",
+   "displayName": "Kona | March 24th Update | Mac & Linux",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-03-24T15:59:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that since we only have two machines to test on, there might be some issues at first, but we promise to fix them asap :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Also note that the Steam UI sometimes does not show Mac and Linux icons next to the game \"add to cart\" yet on non-english Steam pages)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Mac and Linux Requirements",
+     "items": [
+      {
+       "text": "Please take a look at the full requirements on the game page",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mac: We recommend playing on 2013 Macbook Pro, iMac and Mac Pro and newer models",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mac: Since most Mac don't have powerful GPU, we recommend playing on low settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Linux: The same requirements as the PC version apply to Linux machines.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The game may not auto-select discrete GPU on laptops. For more details; read this thread",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are several hangs on scene streaming, we’re working on it;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On Mac and Linux, the initial loading can be very, very long. We are working on it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Performance & Compatibility",
+     "items": [
+      {
+       "text": "Kona is now on Mac and Linux!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Controller is now fully supported;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added an option to remove window transparency (shader quality setting);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made several changes to occlusion culling; should improve frame rate on low settings;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We added support for various screen resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Balancing",
+     "items": [
+      {
+       "text": "Now possible to walk on non-deep water. However, don’t do it if you don’t want Carl to freeze to death;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an option to turn off tooltips;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made on-screen feedback a bit more aggressive when the character’s temperature decreases;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Temperature bar is now displayed when it’s filling up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixed Bugs",
+     "items": [
+      {
+       "text": "Fixed some animation glitches while manipulating objects and driving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutting locks no longer equips the map afterward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed some Steam Controller settings on Steam store so it auto-select the right layout on game boot",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes various collision bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "We are playing with a texture streaming tech that should make the game run much smoother and noticeably reduce loading times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on a big area that we plan to unlock in April.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More translations & French voice overs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many more bug fixes: Again, if you have any suggestion, concern or question about the game, feel free to discuss here or in the forums!: Cheers guys and thank you for joining us on Early Access!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everyone at Parabole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 4,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/272839101170696272"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-03-24T15:59:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.037Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.485Z"
+  },
+  {
+   "id": "kona-14404@post-2016-03-22",
+   "gameId": "kona-14404",
+   "displayName": "Kona | Small Updates March 21st and 22nd",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2016-03-22T19:43:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "About the 2 small updates in the last two days, here's what it's all about.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultra Wide Screen now works",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recurring \"eye notification\" fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Texture quality option now works",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "----------------------------------------------------------------------------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Salut tout le monde,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Il y a eu 2 petites mises-à-jour hier et aujourd'hui, voici ce qui a été fait:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Les résolutions ultra wide fonctionnent maintenant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "La notification de l'oeil qui apparaît tout le temps est corrigée",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "L'option de qualité des textures fonctionne maintenant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merci beaucoup pour vos commentaires et suggestions, vous êtes les meilleurs(es)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "À plus!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/4249665521682863488"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-03-22T19:43:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.035Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.484Z"
+  },
+  {
+   "id": "kona-14404@major-2016-03-18",
+   "gameId": "kona-14404",
+   "displayName": "Kona | March 18th Update (Minor)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-03-18T23:04:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new minor update has been uploaded to Steam and should soon be available for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "Inventory: Added the ability to deposit and withdraw items from the pickup truck trunk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Display: Added ultra wide screens support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Display: Added 4:3 screens support (still, we do not recommend playing in 4:3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Audio: Surround is now supported, but you should change the settings in the main menu, not in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Audio: Added an option to reduce the frequency of voice overs. Mostly for streamers or people who prefer silence in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "We removed some useless voice overs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We moved some voice overs from \"playing on trigger\" to \"playing on interaction\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We changed the behavior of wolves so they do not \"freeze\" for 10 seconds, but they are still WIP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We changed the two visions in order to make them clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We reduced the time it takes to freeze as it was too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "The reader (F on keyboard, X on controller) would not refresh its position from one letter to another. It now does.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with tooltips not showing up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the temperature bar not showing up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some other smaller issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "ZE FUTURE",
+     "items": [
+      {
+       "text": "We started working on Mac and Linux port. We should announce next week when we plan to release both versions. It should be soon enough :)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We are also working on a big update scheduled for the beginning of April. More on that later!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If there is anything you would like to see in forthcoming updates, feel free to write suggestions in the forums. We read them all :D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a good weekend everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 3,
+    "balance": 5,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Inventory: Added the ability to deposit and withdraw items from the pickup truck trunk.",
+     "Display: Added ultra wide screens support",
+     "Display: Added 4:3 screens support (still, we do not recommend playing in 4:3)"
+    ]
+   },
+   "sourceIds": [
+    "steam-365160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/365160/view/272838467475791444"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-03-18T23:04:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-365160",
+      "checkedAt": "2026-11-13T03:24:21.035Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:50.483Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "e51eda7402c3",
+   "text": "The game may not auto-select discrete GPU on laptops. For more details; read this thread",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-03-24"
+  },
+  {
+   "id": "b5e458999a18",
+   "text": "There are several hangs on scene streaming, we’re working on it;",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-03-24"
+  },
+  {
+   "id": "4e0905412893",
+   "text": "Big \"hangs\" in loading scenes, working on it",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-08"
+  },
+  {
+   "id": "d0c665b445ff",
+   "text": "You might need to start a new game to access all journal features",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-08"
+  },
+  {
+   "id": "58e7b754ad30",
+   "text": "So that’s it for now! As always, contact us if there’s anything, we read everything you post. ;)",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-08"
+  },
+  {
+   "id": "5f5abada03ef",
+   "text": "Cheers!",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-08"
+  },
+  {
+   "id": "5efe44ffbd00",
+   "text": "Big \"hangs\" in loading scenes",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-15"
+  },
+  {
+   "id": "89a912090b6b",
+   "text": "You may need to start a new game to access all journal features",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-15"
+  },
+  {
+   "id": "118ac848238c",
+   "text": "That's it! Thanks again for all the feedback in the forums, you're awesome!",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-15"
+  },
+  {
+   "id": "a2b62bcdfb81",
+   "text": "Enjoy! Thanks again for all the feedback!",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-04-23"
+  },
+  {
+   "id": "37ac4522b7fb",
+   "text": "Here are some of the known issues that we are already working on fixing:",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-06-16"
+  },
+  {
+   "id": "0e6e2ca2eead",
+   "text": "When you have the lantern equiped (and sometimes with the flashlight) and you smoke a cigarette, the lantern is still in your hands until the end of the animation.",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-06-16"
+  },
+  {
+   "id": "c7cb01d5919b",
+   "text": "So that’s it! And if you’re in L.A., come say hi at the IndieCade @ E3 Showcase!",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2016-06-16"
+  },
+  {
+   "id": "4a1d94b304c9",
+   "text": "Controls Settings: Duplicate keys are possible in key remapper",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "1f4d30e8d0da",
+   "text": "Settings: Clicking on arrows doesn’t make a loop",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "41a863f5596e",
+   "text": "UI: A notification can remain on screen when picking up items",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "73264145c99b",
+   "text": "Journal: Cannot click on tabs",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "ddcddb65e2d3",
+   "text": "Journal: Biography “unlocked” before update won’t show",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "020aa765dc74",
+   "text": "Thanks again for taking the time to send us feedback! The final release is coming soon and we really appreciate you helping us making the final version better!",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "78536d5d018c",
+   "text": "Have a nice weekend!",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "7c91175c745d",
+   "text": "EDIT: Added a UI known issue.",
+   "status": "open",
+   "firstReleaseId": "kona-14404@major-2017-02-24"
+  },
+  {
+   "id": "febbd13d328a",
+   "text": "And here’s a short list of what to expect in the next months:",
+   "status": "open",
+   "firstReleaseId": "kona-14404@2"
+  },
+  {
+   "id": "4018d5f52a2b",
+   "text": "We will add Russian language for texts, interface and subtitles",
+   "status": "open",
+   "firstReleaseId": "kona-14404@2"
+  },
+  {
+   "id": "ea357a6f44d0",
+   "text": "We will add an option to enable/disable quick loading screens between areas",
+   "status": "open",
+   "firstReleaseId": "kona-14404@2"
+  },
+  {
+   "id": "c88236b4c56d",
+   "text": "More optimizations and bug fixes, as always ;)",
+   "status": "open",
+   "firstReleaseId": "kona-14404@2"
+  },
+  {
+   "id": "b28c03241d04",
+   "text": "Mac: Bloom and Depth of field disabled by default should fix most of the graphical glitches encountered in the last update. However, if you encounter similar glitches while these options are disabled, please let us know and we will fix them as soon as possible",
+   "status": "open",
+   "firstReleaseId": "kona-14404@3"
+  },
+  {
+   "id": "ef482ad44464",
+   "text": "Random crashes: we were able to fix most of them, but there may be some that we might have missed. As usual, we will work on fixing them as soon as you report/we notice them",
+   "status": "open",
+   "firstReleaseId": "kona-14404@3"
+  },
+  {
+   "id": "91bec307e1d5",
+   "text": "We will add Russian language for subtitles, texts and menus",
+   "status": "open",
+   "firstReleaseId": "kona-14404@3"
+  }
+ ]
+}

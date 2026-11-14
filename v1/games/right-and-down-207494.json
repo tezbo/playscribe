@@ -1,0 +1,792 @@
+{
+ "game": {
+  "id": "right-and-down-207494",
+  "igdbId": 207494,
+  "name": "Right and Down",
+  "cover": {
+   "imageId": "co5b7r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5b7r.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1pfh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1pfh.jpg"
+  },
+  "ps5Release": "2023-03-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "right-and-down-207494@1.2.2",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.2.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-25T15:41:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update v1.2.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: In Daily Mode, the \"Random Level\" card could block the player input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: In ingame settings some controller icons where being shown even when using keyboard and mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix: Daily Quest mode card tooltip fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Now you can check the Next Level cards when using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Tutorial could be locked if incorrect input was used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/5035622109506037937"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-25T15:41:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.867Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.867Z"
+  },
+  {
+   "id": "right-and-down-207494@1.2.1",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.2.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-26T09:28:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update v1.2.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: Fire Belt artifact was being activated with each movement, this has been solved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: When using an unknown controller, Xbox icons are used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/5000716037456400685"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-26T09:28:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.866Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.866Z"
+  },
+  {
+   "id": "right-and-down-207494@1.2.0",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-22T09:14:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With this update we added controller support for the game! Although the control of the character is done using only two buttons, controller integration has required an effort to replace the mouse functionality, for example to check the tooltips of other cards or your current artifacts, but we are happy with the result!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you have any feedback about controller support or something is not working as intended, let us know about it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kiko",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.2.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feature: Added Controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation: Added missing skills in spanish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/5000716037441787704"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-22T09:14:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.865Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.865Z"
+  },
+  {
+   "id": "right-and-down-207494@1.1.2",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-21T17:59:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update is focused on the frozen altered status. Its effect has been diminished and we introduced five new artifacts and two skills that synergize with it. We hope that with this changes you show some love to the Snowland biome!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.1.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balancing: Impact of the frozen altered status has been reduced. From now on, the number of frozen artifacts is equal to your frozen points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Content: 5 new artifacts, one for each biome and all related to the Frozen altered status.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Content: 2 new skills, both related to the Frozen altered status.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix: Improved the Japanese translation of the Daily Dungeon Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are working on more stuff, more news soon. As always, let us know your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kiko",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/4789043687489256262"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-21T17:59:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.865Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.865Z"
+  },
+  {
+   "id": "right-and-down-207494@1.1.0",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-07T14:53:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For this update, we have a new game mode: the Daily Dungeon Mode! There is available a new Dungeon each 24 hours, with three randomly selected modifiers. There are also 4 new achivements that you will unlock winning runs in the Daily Dungeon Mode :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on a Ledearbord for the Elemental Dungeon and Daily Dungeon Mode and also on controller support and keeping on eye on some balance stuff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kiko",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.1.0 Update",
+     "items": [
+      {
+       "text": "New Game Mode: Play a randomly generated dungeon each day in the Daily Dungoen Mode!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix: Selection of the Gold Ripper artifact from the Perks was not working correctly (fixed again).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Ice Potion sound effect was too loud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Tooltips in the Collection Section could be bugged when you returned to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Improved navegation between different menus and sections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Some Artifacts where not getting highlighted when checking the next biome cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Hunting Dagger artifact now gives the correct amount of MaxHP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/4732747437216773606"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-07T14:53:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.864Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.864Z"
+  },
+  {
+   "id": "right-and-down-207494@1.0.5",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-27T10:11:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v1.0.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: Now when you are blinded and in a campsite you can't hover the biome cards and get info if you are not next to that cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Fire Bow artifact is now highlighted when you hover the Snowland Card in the campsite or the Snowland banner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Selection of the Gold Ripper artifact from the Perks was not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Void Biome background particles were not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/4706851091172657492"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T10:11:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.863Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.863Z"
+  },
+  {
+   "id": "right-and-down-207494@1.0.4",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-24T14:34:00.000Z",
+   "notes": [
+    {
+     "title": "v1.0.4 Changes",
+     "items": [
+      {
+       "text": "Fix: It could happen that in Boss Levels the Campsite card was not dealt leading to a softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Poison tooltip was showing the incorrect poison damage value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Some artifacts sound effects were too loud (Wine Bottle, Philosopher's Stone).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balance: Reinforced Ring Artifact changed cost (7 to 8) and armor given (4 to 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance: Dwarven Armor Artifact changed armor given (6 to 4).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance: New Parts Skill changed armor given (8 to 6).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation: Fixed minor errors in english.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation: Improved japanese translation (special thanks again to 地獄変).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/4714731755426982713"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-24T14:34:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.862Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.862Z"
+  },
+  {
+   "id": "right-and-down-207494@1.0.3",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-21T07:27:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v1.0.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buff: Campsites starting at Dungeon Level 3 have better potion and armor cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/4714731755414971666"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-21T07:27:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.861Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.861Z"
+  },
+  {
+   "id": "right-and-down-207494@1.0.2",
+   "gameId": "right-and-down-207494",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-20T17:28:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v1.0.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of Life Feature: New feedback when you don't have enough experience to acquire a skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation: Fixed minor errors in italian and english.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation: Fixed errors in the japanese tooltips (special thanks to 地獄変).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: There was a problem displaying some tooltips when using chinese, japanese or korean language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Engineering Skills now doesn't activate Big Explosives artifact if there are no enemies available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Some artifacts that maxed HP were not stacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: When two padlock cards were dealt a softlock where the player did not have movement options could happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2008050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2008050/view/4714731755412847897"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-20T17:28:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2008050",
+      "checkedAt": "2026-11-12T10:23:17.860Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.861Z"
+  }
+ ],
+ "issues": []
+}

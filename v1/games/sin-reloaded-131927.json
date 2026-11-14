@@ -1,0 +1,936 @@
+{
+ "game": {
+  "id": "sin-reloaded-131927",
+  "igdbId": 131927,
+  "name": "Sin: Reloaded",
+  "cover": {
+   "imageId": "coczu2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coczu2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1rh4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1rh4.jpg"
+  },
+  "ps5Release": "2026-09-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sin-reloaded-131927@1.2",
+   "gameId": "sin-reloaded-131927",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-13T17:07:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/38692522/36fb44c6a5921a6cfef5fd6fa62a18c9045bcb9c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.2 of SiN Reloaded is now live, bringing several adjustments to levels, gameplay, multiplayer, and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major Feature: Save Compatibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This version introduces a new save compatibility system that retroactively applies to all old saves (both from the initial launch version and Patch 1.1). Players can load saves from these versions and continue to play the episode that they were playing from that version without losing any data. Once you transition to the next episode, however, you will then be playing on the latest levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The upside is you can continue to play your saved games, even after patching, without any issues. The downside, however, is that you may experience some minor bugs that were fixed in later versions if you load that episode from an old save. If you’re concerned about that, you can simply use the Episode Select option in the New Game menu to start that episode over, which will use the latest versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major Feature: Directional Driving toggle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve added new toggles in both Keyboard & Mouse and Gamepad menus for controlling your driving style. By default, on Keyboard & Mouse, it is enabled, and on Gamepad it is disabled. When disabled, your vehicle’s turning is always controlled by your left/right movement inputs rather than being controlled by your camera.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Note that this option does not affect vehicles with treads - those always use “tank controls” (since they are literally a tank)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General Changes/Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new splash screen has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Climbing on ropes is now more visually smooth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed player roll oscillation when moving quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Nintendo Switch) Improved movie performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added timer when inputting a new bind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sprites now properly absorb lighting from the light grid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Entity Contrast” option works properly again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several wrapping issues with CJK languages were fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hoverbike no longer wastes 4x as much turbo than vanilla.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On split screen, multiple players no longer see ghost centerprints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The weapon wheels can no longer get stuck on screen in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speargun’s glass now works properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bug enemies can now jump properly instead of just hopping in place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both training levels can now no longer be saved, and no longer eat autosave slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grappling hook and “use” no longer fire at the same time; if you have a usable object in front of you, it will take priority.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gamepad users can now benefit from button repeat on the virtual keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When using a terminal, numlock is now forced on so you can use the numpad keys for numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The screen will no longer warp while not underwater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Nintendo Switch & Nintendo Switch 2) Keyboard & Mouse options are now available.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Level Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A certain beer-swilling mutant in Geothermal Plant will finally notice the player’s presence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies can now open certain doors in the Dam level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies can better navigate the area around the Elexis statue in the Underground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fewer instances of texture flickering in the Freeport Sewers map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fewer instances of the player getting stuck on certain doors as they close.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player can collide with some spider robots in the Inner Sanctum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ATV could become stuck on some geometry in the Construction Site. This has been remedied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The forklift could get stuck on some geometry in the Waterfront maps. This has also been remedied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A certain Armored Vehicle in the SinTek Warehouse would clip through a parked vehicle in its path. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some floating Spider Mines in the Hidden Docks no longer float.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some lighting improvements/changes have been made on several maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some audio balancing and improvements have been made across all maps in the main campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A hovering NPC near some slot machines in Manero’s Casino hovers no longer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some posters in the Abandoned Subway were flickering on walls. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some pipes in ship-day/night had see through faces around the valves. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some fences in vacant-day/night had see through faces around the wall area. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several textures have been adjusted to appear sharper and typos are fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some surfaces in several levels that had incorrect sound applied to them have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SD variants of certain magazines have been adjusted to match the HD ones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The final boss of WoS has had many quirks fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiplayer Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elexis’s jump no longer causes a controller vibration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stopped grappling hook from going through teleporters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Lag Compensation for ThrallPulse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebalanced ThrallPulse alt-fire for Rocket Launcher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed footstep sounds not playing for splitscreen players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed menu getting stuck when a controller is disconnected in splitscreen mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several cases of texture flickering in multiplayers maps have been corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cloak rebalanced for deathmatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please let us know your thoughts in the comments below, or on our Discord server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 1,
+    "other": 51,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-632950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/632950/view/1849192144188226"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T17:07:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-632950",
+      "checkedAt": "2026-11-13T22:23:27.482Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T17:07:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-632950",
+      "checkedAt": "2026-11-13T22:23:27.484Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-13T17:07:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T22:23:27.484Z"
+  },
+  {
+   "id": "sin-reloaded-131927@1.1",
+   "gameId": "sin-reloaded-131927",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-22T17:09:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/38692522/36fb44c6a5921a6cfef5fd6fa62a18c9045bcb9c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.1 of SiN Reloaded is now live, bringing several adjustments to levels, gameplay, multiplayer, and bug fixes. This patch was primarily aimed at fixing the highest priority bugs that caused progression issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General Changes/Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added period “.” character to the on-screen terminal keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed sniper rifle shoot sound not playing when zoomed in / disappearing when players are zoomed in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The shotgun now properly performs upper and lower torso gib animations on monsters that support these. Additionally, shotguns will no longer perform a full gib if killed by pellets, fixing a balance issue with armor dropped by enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Armor dropped by enemies can now no longer exceed the maximum pickup for Blade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game errors should properly drop to menu and not show a black screen now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles will no longer build up a slight velocity while remaining idle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “attack” button must now be held for at least 100ms before skipping cutscenes. Additionally, other keys don’t trigger cutscene skips any more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Function keys can now be bound, and function similarly to how they worked in vanilla.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lava will no longer damage the player once after respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The movement keys bound for the player can now be used to move the cursor in terminals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bikes no longer cause a crash in certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading a quicksave or manual save from the menu will no longer prevent music from playing. Save files made before the patch may still exhibit this issue until the current map is exited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Atari logo should no longer stutter when playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few more textures are now censored with Streamer Mode enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typos in some bulletin boards fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Construction Site now includes a flashlight if Wages of Sin mode is enabled. Additionally, the pipes are dimly lit with red “safe-lights” so you don’t have to waste ammo trying to find your way around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The forklift in SinTEK Warehouse should now ram through boxes and enemies more effectively instead of bouncing off of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Biomech Security, the doors operated by the blue keycard now visually change to show you they are unlocked after grabbing the key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Biomech Labs, enemies will no longer run aimlessly around in the cutscene when Blade gets into the HC chopper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In SinTEK Laboratories, you will now be granted the achievement/trophy “Nobody Suspects A Thing” even if you run past the scientist during his second appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many levels received fixes to doors that were crunching the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscenes can no longer cause cameras to spot you in Shipyard levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mancini should no longer run towards the player in Abandoned Buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several audio cues have had their volumes adjusted in many levels. This is still ongoing, and ambient noises will be addressed in a future patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Shipyards at Night, a specific ladder near the ship will no longer block the player from climbing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Shipyards at Night, a specific camera’s view range has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Waterworks, the easter egg with Eon & Peon should no longer be exploitable to stunlock him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Jungle Pass, a turret that was underneath rubble if you blew up the Geothermal Plant would still shoot the player. It has been removed in this situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Jungle Wilds, a few instances of the red mutants getting stuck on the level geometry has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Recycling Facility, a meat shredder will actually shred the player while it is turned on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Further Underground, a U4 canister, when shot, would levitate out of the pool of radioactive sludge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiplayer Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\PC: Fixed display name being reset upon loading a map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\PC: Fixed player count lowering to 2 when opening the “Start multiplayer game” menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\PC: Fixed incorrect ping showing in the server browser.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\PC: Fixed unnecessary calls to Steam Networking before selecting multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\PC: Added descriptive error when joining a server that is full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed hoverbike lasers shooting at incorrect angles when looking up or down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when ending the match in Hoverbike Deathmatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered Chaingun damage in deathmatch from 32 to 24.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered default multiplayer tick rate from 40 to 20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Please let us know your thoughts in the comments below, or on our Discord server. We have more adjustments planned in the future, and we welcome your input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 2,
+    "other": 41,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-632950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/632950/view/1847286114033577"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-22T17:09:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-632950",
+      "checkedAt": "2026-11-13T03:30:35.488Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-22T17:09:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-632950",
+      "checkedAt": "2026-11-13T03:30:35.488Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-22T17:09:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.472Z"
+  },
+  {
+   "id": "sin-reloaded-131927@1",
+   "gameId": "sin-reloaded-131927",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-16T00:45:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/38692522/36fb44c6a5921a6cfef5fd6fa62a18c9045bcb9c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have pushed a small update for the demo. Here are the notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update 1 changelog",
+     "items": [
+      {
+       "text": "Fixes to non-Steam Input gyroscope path; yaw/roll should be correct now",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Gyro turn is no longer inverted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a few more missing gyro options, and decrease step value of gyro deadzone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed small typo in settings (\"bost\" -> \"boost\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Something of a Paradox: Fixed not having proper lightmaps (was a half-resolution bake, missing both high and vanilla resolution lightmaps)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Something of a Paradox: Fixed being able to escape the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missile Silo: Fixed medic healing the floor once his patient dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you're enjoying the demo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daniel G",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nightdive Studios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-632950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/632950/view/1835236783572628"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T00:45:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-632950",
+      "checkedAt": "2026-11-13T03:30:35.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.470Z"
+  }
+ ],
+ "issues": []
+}

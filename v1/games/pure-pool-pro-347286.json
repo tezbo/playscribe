@@ -1,0 +1,3144 @@
+{
+ "game": {
+  "id": "pure-pool-pro-347286",
+  "igdbId": 347286,
+  "name": "Pure Pool Pro",
+  "cover": {
+   "imageId": "coakle",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coakle.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3o2u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3o2u.jpg"
+  },
+  "ps5Release": "2026-02-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "pure-pool-pro-347286@4",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Hotfix 4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-16T13:04:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again, Pool Fans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pure Pool Pro Hotfix #4 is now live on PC & Console. Please update your game for the best possible experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is a small, focused quality-of-life pass, aimed squarely at smoothing out local multiplayer, online stat tracking, and match resolution logic, while also tightening up some other areas and the rare but notorious \"Cueing Discrepancy\" bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Local Play Now Supports a 2nd Controller",
+     "items": [
+      {
+       "text": "Local matches now support two controllers - one per player - instead of relying solely on pass-the-pad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Hotfix 4, players can now connect and use a second controller in supported local game types, giving each player direct control on their own pad. Many of you who have asked for a more “couch‑friendly” setup should now find local sessions feel closer to a traditional head‑to‑head experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player Card Online Stats Fix",
+     "items": [
+      {
+       "text": "Your Player Card should now correctly display online-only stats. These stats combine both Ranked and Versus performance rather than including matches played in offline modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Previously, stats displayed here incorrectly included stats that combined online and offline modes and/or failed to update as expected. With this hotfix:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online Versus and Ranked wins, losses and related stats should update more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player Cards will more accurately represent your current online record.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you've been grinding competitive matches and not seeing that reflected in your card, this should now be resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Important Note: your online stats will display as 0 until connecting to our servers for the first time after the patch goes live. If the game is launched offline you will need to connect to the internet in order for your stats to sync. This is because online stats are now held on the server to ensure wins and losses are attributed correctly, even when disconnecting during a match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cueing Discrepancy Bug Fix",
+     "items": [
+      {
+       "text": "We’ve finally found a fix for a known online desync issue which caused drifting cues / odd cue ball behaviour. Thank you for your patience and for your detailed reports on this one; it was notoriously difficult to pinpoint the issue as it would only ever occur on the live build!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Online Win Attribution Fix",
+     "items": [
+      {
+       "text": "We’ve fixed a bug that would occasionally mess with how online results are handled when an opponent disconnects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In rare cases, a win could be incorrectly attributed if an opponent disconnected at specific points in a match. The underlying logic has been updated so that:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Match results are aligned with the intended outcome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disconnect scenarios are processed in a fairer and more predictable way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Our goal here is to reduce edge-case frustration in online play and ensure your record better reflects what actually happened on the table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous Minor Improvements",
+     "items": [
+      {
+       "text": "Alongside the above, Hotfix 4 includes a series of smaller polish passes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI refinements across menus and match presentation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subtle audio tweaks for clearer, more consistent feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor graphical adjustments for improved overall visual cohesion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Individually these are small changes, but together they should help Pure Pool Pro feel just that little bit smoother and more joined‑up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you again for your continued detailed feedback on Pure Pool Pro - from local play and online behaviour to UI presentation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "OTHER PURE POOL PRO NEWS...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pure Pool Pro - Xbox Series X|S launches 23.07.2026",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Pure Pool Pro - Snooker Expansion Pack now in full development.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pure Pool Pro - US 8-Ball Community Tournament in August; Discord Moderator Aurakite is running this - you have just 2 weeks left to enter, here: SIGN UP FOR COMMUNITY TOURNAMENT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, every report, post, and note helps us decide what to address next - so keep it coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’ll see you at the table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Pure Pool Pro Team 🎱",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 12,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Alongside the above, Hotfix 4 includes a series of smaller polish passes and improvements:",
+     "UI refinements across menus and match presentation",
+     "Subtle audio tweaks for clearer, more consistent feedback"
+    ]
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1838407329256618"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T13:04:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.459Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T13:04:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.459Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-16T13:04:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.155Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@major-2026-04-10",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Pure Pool Pro | Controller Vibration & DualSense Haptics Update - Now Live",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-10T15:09:26.000Z",
+   "notes": [
+    {
+     "title": "Pure Pool Pro | Controller Vibration & DualSense Haptics Update - Now Live",
+     "items": [
+      {
+       "text": "With today’s update, we’ve introduced Controller Vibration on PC and full DualSense Haptic Feedback on PS5. We hope this makes Pure Pool Pro feel that little bit more tactile, satisfying, and immersive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "This update is live now on PC and PlayStation 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "PC - Controller Vibration Support",
+     "items": [
+      {
+       "text": "On PC, players using supported game controllers - including the DualSense - will now experience new force feedback vibration effects during gameplay and in menus.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What You’ll Notice",
+     "items": [
+      {
+       "text": "Vibration when striking the cue ball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vibration feedback while navigating UI menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Shot Feedback",
+     "items": [
+      {
+       "text": "Cue-to-cue ball vibration will vary in intensity and duration depending on the power of your shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The goal here is to make each shot feel a little more physical and responsive in your hands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PS5 - DualSense Haptics Support",
+     "items": [
+      {
+       "text": "Please note: this is a PS5-exclusive feature. PC players who use the DualSense Controller will only experience the standard “PC - Controller Vibration Support” described above.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "On PlayStation 5, we’ve implemented full DualSense haptics, which includes the use of the controller speaker for additional sensory feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What You’ll Notice",
+     "items": [
+      {
+       "text": "Enhanced cue-to-cue ball contact feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced Money Shot heartbeat effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI navigation haptics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional immersive sound effects played through the DualSense speaker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dynamic Shot Feedback",
+     "items": [
+      {
+       "text": "On PS5, cue strike feedback also varies in intensity and duration depending on the on-shot power, with the addition of some dynamic SFX from the DualSense’s built-in speaker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "This should make shot impacts feel that bit more expressive and immersive, especially during those high-pressure moments!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Prefer to Play Without Vibration/Haptics?",
+     "items": [
+      {
+       "text": "If you’d rather keep things vibration-free, that’s totally fine! You can switch these features off at any time:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PC / Steam → via your controller or Steam input settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "PS5 → via your system's DualSense settings (you can adjust the controller speaker volume to your liking here, too).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Make Sure You Update Before You Play",
+     "items": [
+      {
+       "text": "Be sure to update the game before your next session to make sure you’re getting the best possible experience. We hope Vibration/Haptics add a satisfying layer to every break, pot, and pressure shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re now continuing our work on Patch 3 and hope to share concrete details of what this will include soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll see you at the table!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Pure Pool Pro Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 6
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1829528821310434"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T15:09:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.456Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T15:09:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.456Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-10T15:09:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.152Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@3",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Hotfix 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-31T11:03:41.000Z",
+   "notes": [
+    {
+     "title": "Hello again, Pool Fans!",
+     "items": [
+      {
+       "text": "Pure Pool Pro Patch 3 arrives Thursday, 21st May.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our most substantial patch yet introduces ranked matchmaking, fairer starts with Lag for Break, the long‑requested Push Out rule for 9-Ball, online stability improvements, and a major visual fix that’s been on our hit list since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ranked Game Mode - Global Leaderboards & More Competitive Focus",
+     "items": [
+      {
+       "text": "“Quick Game” will now evolve into our new Ranked Game experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ranked Game introduces",
+     "items": [
+      {
+       "text": "Global Leaderboards for each online game mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Separate rankings for all three difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When selecting “Any” as your game type, you’ll also see an overall ranking board of your performance across all ranked matches at all difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/038de95ada3d1b812cb942f7c642f0ad9809eea8.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Whether you’re grinding 8-Ball, mastering 9-Ball, or mixing it up across modes and difficulties, you’ll now have a clear way to measure your progress against the global player base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/3e6d28981ee1a9dac9f359e5d59fa68512334441.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Our goal here is to ramp up the competitive layer of Pure Pool Pro, give you more reasons to keep coming back, and make every rack feel that bit more meaningful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, we recommend joining our community on Discord to organise match-ups!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Lag for Break",
+     "items": [
+      {
+       "text": "In relevant multiplayer modes, the break is now decided by the Lag, bringing Pure Pool Pro closer to real-world play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you’re unfamiliar with the term, in pro pool, the lag is used to decide who breaks. Both players hit a cue ball from behind the headstring up-table, aiming to get as close as possible to the top rail and back without touching a pocket. The player whose ball finishes closest to the rail wins the lag - and with it, the right to choose who breaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Our implementation works as follows",
+     "items": [
+      {
+       "text": "Both players take their lag attempts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/55ba186e152a1814761e7b561d116983c7b8f8bc.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You’ll then be shown your attempt side-by-side with your opponent’s (in ghost ball form if playing online).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/6523ec9db5a6bf93113f5920509c0cc30e4cf071.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The closest ball to the head rail wins, and that player can decide to take the break themselves or pass it to their opponent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/c1d108b9c28cc72c84f2a3ae84d330e2780e1855.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Should both players foul (or, in the unlikely event of lagging in the exact spot), a re-lag will take place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should make the opening of each match feel fairer, add a more skill-based/tactical element, and make things more authentic to how things work on real tables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ball Shadow Pop Fix & Restored Gloss",
+     "items": [
+      {
+       "text": "Since launch, we’ve been working to the ball “shadow pop” - distracting little jumps in lighting and shadow as balls came to rest. Pure Pool Pro uses a much more advanced and demanding reflections system compared to its predecessor, and this visual issue has been a tough nut for us to crack!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With Patch 3, we’ve made notable improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shadow “pop” and reflection instability on balls have been dramatically reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’ve also reintroduced the glossy and vivid look of the balls, which was unintentionally dialled back/desaturated during earlier attempts to fix the issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The result should be cleaner, more stable reflections with that satisfying, polished finish many of you loved - without the distracting artefacts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PRE-PATCH 3 VISUALS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Community noted that previous shadow pop fix attempts had reduced the glossiness for a ‘matte’ look.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/c3c40f22dd4895c511758b19c882ca39332d3c97.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PATCH 3 VISUALS - ARRIVING 21st MAY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced reflections and richer, warmer colour restoring that ‘glossy’ look - with more stable performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/eef887e9058e73d5154ba5d77c995b3dabd4d155.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’ll continue to monitor feedback here, but we feel this represents a major step toward the visual standard we’ve been chasing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Increased Frame Rate Stability",
+     "items": [
+      {
+       "text": "Alongside the ball shadow and gloss improvements, Patch 3 will deliver smoother overall frame pacing and increased frame rate stability across both console and PC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While the core goal of these changes was visual fidelity, the underlying optimisations have:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced minor hitches and stutters related to ball reflections and lighting, most notably at the break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved consistency of performance during busy table states",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The result should be a more fluid, reliable experience that better matches the precision and responsiveness Pure Pool Pro is built around - whether you’re playing on a high-end PC or from the comfort of your home console.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "9-Ball Push Outs - A New Tactical Layer",
+     "items": [
+      {
+       "text": "In 9-Ball, we’ve implemented proper Push Out functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/9fd45a890d9239eff2c44ea811e229fc36681380.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After a legal break in 9-Ball, the incoming player can now choose to play a push out - making contact with the cue ball without the usual requirement to hit the lowest-numbered ball first or to drive a ball to a cushion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/6fc533d306e64a42c55a41227e58701d40c1b251.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Key points for those unfamiliar",
+     "items": [
+      {
+       "text": "Push Outs are only available immediately after a legal break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After a push out, your opponent can choose to take on the shot from the new position or pass the shot back to you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This adds a deeper tactical layer to 9-Ball, especially in high-pressure frames where controlling the table and leaving awkward layouts can be just as important as potting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General online stability improvements",
+     "items": [
+      {
+       "text": "“Freeplay” will now remember your difficulty preference upon launching the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Clarence Clearance” has been fixed for those who were struggling to pop the crest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Accumulator” rule tweak - this mode will now permit sequential potting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steam Controller API now ensures correct icons are used for your chosen controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Controller API now permits re-mapping of gamepad controls via the Steam overlay",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We’ve tweaked the “Match Preferences” flow to make “Preferences” clearer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Thank You For Your Continued Support!",
+     "items": [
+      {
+       "text": "Patch 3 arrives next week as a result of your continued detailed feedback - on ranked systems, rulesets, QoL, and visuals. Every detailed review, Reddit post, and Discord message genuinely helps us decide what to prioritise next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re thrilled to get these changes into your hands and to keep pushing Pure Pool Pro forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you enjoy next week’s patch and want to help us continue to support the game and keep building the community, please consider leaving/or updating a Steam review.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll see you at the table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Pure Pool Pro Team 🎱",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 21,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0,
+    "topNew": [
+     "Global Leaderboards for each online game mode",
+     "Separate rankings for all three difficulties",
+     "[img src=\"{STEAM_CLAN_IMAGE}/45586874/038de95ada3d1b812cb942f7c642f0ad9809eea8.gif\"]"
+    ]
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1828441623111913",
+    "ps5Page": "https://ripstone.com/feedback"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-31T11:03:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.455Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-31T11:03:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.458Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-31T11:03:41.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:28:37.458Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@2",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-24T15:46:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again, Pool fans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A hotfix for the \"Free Item Pack\" is now live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve fixed an issue where some Steam players were reporting being unable to access the \"Free Item Pack\" even when it was installed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you were affected, the items should now appear in-game - just make sure the “Free Item Pack” DLC is ticked in your Steam properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pure Pool Pro - Free Item Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/7c4b6cbdc56360526394df6d2eb4f7b95e8eee3a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1827626365766151"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T15:46:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.454Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T15:46:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.454Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-24T15:46:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.150Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@post-2026-03-17",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Pure Pool Pro | Month 1 Patch Notes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-17T10:00:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again, Pool Fans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Month 1 Patch is now live on both PC and Console.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the best possible experience, be sure to update your game before you next play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here’s what’s included in this patch;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Improvements",
+     "items": [
+      {
+       "text": "Competitive Stats - Statistics are now shown on Player Cards at the beginning of online matches: Games Won, Games Lost, Win Ratio %, and Win Streak. Additional stats available in the “Socials” Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/aefb3ad512c08059cd26ccbde51bc1080049a41e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Star Unlock Criteria Adjustments - Certain challenges throughout the career have been rebalanced and made more forgiving to better reflect their intended difficulty. Notably, challenges involving specific potting distances and multiple pots will now reward you if you exceed the challenge, too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rule Adjustment: Potting the 8-Ball from the Break in US 8-Ball was considered a Foul - Now, if the player pots the 8-Ball on the break, the player re-racks and takes the break again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Checkpoint Timing Adjustments - We’ve made some minor tweaks to the timing behaviour to allow for final buzzer-beating shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Power Feather Added to FTUX - We’d noticed a lot of players were unaware of this function, so explanation text for the ‘Power Feather’ mechanic has now been added to the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI Opponent Profiles - Short bios have been added to the “Profiles” of each AI opponent in the Versus menu, with details on their playing styles as well as their signature cue and how to unlock it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/4d3ccdebf1f7dd70a9af3fc2a39e2bc57a34d0d9.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI Behaviour Tweaks - We’re continuing to adjust our AI opponent behaviours following Hotfix 1. Further reduced instances of AI players accidentally potting ‘flukey’ shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI & Quality of Life",
+     "items": [
+      {
+       "text": "Career Completion Tweak - Added congratulatory messaging for completing each career path. An additional credit roll sequence will trigger upon completing the ‘Pro’ career path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sub Menu Navigation Functionality - Improved navigation when browsing the Equipment, Crest, and Player Card menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stand-Up Interaction Fix - Fixed a bug where players could not stand up or adjust spin while a music track notification was visible. The user can now observe the table or reset the spin whilst the notification is present.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Baize Decal Sub Menu Added - Added dedicated sub menus for baize decals, which are now sorted by category.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visual Improvements",
+     "items": [
+      {
+       "text": "Aim Guide Clipping Fix - Addressed some edge case visual clipping issues with the aim guide on both ‘Amateur’ and ‘Focused’ settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "‘Money Shot’ Visual Improvements - Adjusted the visual presentation and timing of the Money Shot moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Ongoing) Reflection Stability Optimisation - Made optimisations to reduce the “shadow pop” issue on balls. These 'pops' are now less frequent in most scenarios further up the table - but still apparent when balls come to rest at the near end of the table. Work is ongoing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Audio Improvements",
+     "items": [
+      {
+       "text": "Cue and Table Audio Enhancements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved break and ball impact sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Refined pocket and table mechanism sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added reactive audience sounds in the Tetradome arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Smoother soundtrack transitions between menus and gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Headphone Audio Fix - Reduced ‘crackle’/’interference’ reported on some headphones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Optimisation",
+     "items": [
+      {
+       "text": "Steam Deck and Handheld PC Optimisations – Pure Pool Pro now detects popular handheld PCs such as Steam Deck, ASUS ROG Ally and Lenovo Legion Go, and runs with new device-specific profiles on each. These profiles apply adjusted anti-aliasing, optimal resolution settings, bespoke reflections, and GPU tweaks to deliver better performance and a smoother experience on handhelds that meet the system requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "PC Framerate Optimisations - General framerate improvements on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "PS5 Framerate Optimisations - General performance improvements on PlayStation 5 and PS5 Pro.",
+       "ps5ProOnly": true,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Content & DLC",
+     "items": [
+      {
+       "text": "20+ New National Flags for your Player Card - We’ve added an assortment of new national flags for player cards, based on the countries in which Pure Pool Pro is most popular. Want your country’s flag in-game? Be sure to let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "DLC Store Added - A new in-game DLC store has been introduced, accessible via the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "DLC Free Item Pack - Our complimentary “Free Item Pack” is now available to all players. Including a new ball set, 4x Player Cards, 5x Baize Designs, and a Premium Animated Crest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[carousel autoadvance=\"true\"][img src=\"{STEAM_CLAN_IMAGE}/45586874/ef71b9398cd8ff00be8e142d31d8aea040d12248.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45586874/97134b64a5bd981dbc02a498e7508c60c698d660.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45586874/bfcdc924f87d9b5f9a81644e318a76d4bdfe2211.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*DLC Premium Item Packs Now Available - 3x item packs are now available for purchase: the Classic Item Pack, the Cyber Item Pack, and the Party Item Pack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each pack includes 9 Themed Items;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 2x Premium Ball Sets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 2x Premium Pool Cues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 2x Baize Designs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 3x Premium Animated Crests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[table equalcells=\"1\" colwidth=\"197,195,198\"][th colwidth=\"197\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Classic Item Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[th colwidth=\"195\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cyber Item Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[th colwidth=\"198\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Party Item Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[td colwidth=\"197\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/299bbad81acadabc2943c2e19af747908617dd4c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[td colwidth=\"195\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/a5b220636ae3ec4837c1cc7a38bce937b2172f4f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[td colwidth=\"198\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/6463097d95b3ec5354e70673cefe25b8191cf8c7.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[td colwidth=\"197\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Includes",
+     "items": [
+      {
+       "text": "• 2x Ball Sets: The Hughes Classic Set & The Argyle Spotted Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 2x Premium Cues: Ruby Royal & Douglas Fir",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 2x Baize Designs: Hughes & Argyle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 3x Premium Animated Crests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[td colwidth=\"195\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Includes",
+     "items": [
+      {
+       "text": "• 2x Ball Sets: The Photon Set & The Convexor Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 2x Premium Cues: Jade Tiger & Cyan Sabre",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 2x Baize Designs: Circuit Board & Tetra Core",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 3x Premium Animated Crests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[td colwidth=\"198\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Includes",
+     "items": [
+      {
+       "text": "• 2x Ball Sets: The Inflatable Set & The Racing Livery Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 2x Premium Cues: Emerald Ore & Bengal Tiger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 2x Baize Designs: Visualiser & Bass Drop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 3x Premium Animated Crests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Please Note: All DLC item packs are purely cosmetic. Ball sets, cues, baize designs, and crests do not affect gameplay or provide any competitive advantage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Still to Come Soon",
+     "items": [
+      {
+       "text": "Haptics & Vibration - Though we’d hoped to include this in the Month 1 Patch, we’ve bumped into a few complications with haptics interfering with our engine’s audio system. We don’t expect this to be too far behind and will rapidly patch it in as soon as we can. When it lands, we’re confident it’ll add another layer of immersion to the Pure Pool Pro experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Next Up...",
+     "items": [
+      {
+       "text": "Work continues on the following;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Next Patch - based on your Feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ports to additional platforms; Xbox & Epic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Snooker DLC & more…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your passion and constructive feedback have been incredibly helpful in this first month of Pure Pool Pro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Pure Pool Pro Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 41,
+    "fixed": 0,
+    "balance": 0,
+    "other": 31,
+    "ps5": 1,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/45586874/aefb3ad512c08059cd26ccbde51bc1080049a41e.png\"]",
+     "[img src=\"{STEAM_CLAN_IMAGE}/45586874/4d3ccdebf1f7dd70a9af3fc2a39e2bc57a34d0d9.png\"]",
+     "‘Money Shot’ Visual Improvements - Adjusted the visual presentation and timing of the Money Shot moments."
+    ]
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1826992588603345"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T10:00:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.453Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T10:00:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.454Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-17T10:00:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.150Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@patch-2026-03-17",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Patch Number 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-17T09:52:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Gameplay Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Competitive Stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Star Unlock Criteria Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Rule Adjustment: Fix where potting the 8-Ball from the Break in US 8-Ball was considered a Foul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Checkpoint Timing Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Power Feather Added to FTUX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• AI Opponent Profiles bios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• AI Behaviour Tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI & Quality of Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Career Completion Tweak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Sub Menu Navigation Functionality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Stand-Up Interaction Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Baize Decal Sub Menu Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aim Guide Clipping Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "‘Money Shot’ Visual Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Ongoing) Reflection Stability Optimisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Cue and Table Audio Enhancements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved break and ball impact sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Refined pocket and table mechanism sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added reactive audience sounds in the Tetradome arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Smoother soundtrack transitions between menus and gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Headphone Audio Fix - Reduced ‘crackle’/’interference’ reported on some headphones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance & Optimisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Steam Deck and Handheld PC Optimisations",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• PC Framerate Optimisations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• PS5 Framerate Optimisations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "New Content & DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 20+ New National Flags for your Player Card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• DLC Store Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• DLC Free Item Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• DLC Premium Item Packs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 31,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1826992588603334"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T09:52:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.452Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T09:52:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.452Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-17T09:52:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.148Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@1",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-24T10:36:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again, Pool Fans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been closely monitoring feedback around AI opponents - particularly concerns about unrealistic multi-rail pots, fluke misses dropping in, and shots that simply didn’t feel believable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While broader AI tuning remains part of our Month 1 Patch in March, we’ve moved quickly to deploy a targeted hotfix addressing the most egregious behaviours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is live now on Steam and PlayStation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "AI Behaviour Adjustments",
+     "items": [
+      {
+       "text": "We’ve implemented two significant changes to shot logic and outcome validation:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "1. Miss Validation – Preventing Frequent “Fluke Pots”",
+     "items": [
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When the AI missed a shot, there was no secondary validation to prevent the miss from unintentionally potting another ball. This led to a frustratingly high frequency of “I missed… but it went in anyway” moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What We’ve Changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI misses are now checked to ensure they have a far lower probability of accidentally potting another ball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should significantly reduce unrealistic fluke outcomes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "2. Multi-Rail Shot Classification Fix",
+     "items": [
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI shot selection works via weighted categories (e.g. all our players have different probabilities of straight pots, banks, kicks, plants, and “crazy” shots).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Previously, bank and kick shots were categorised as such regardless of how many rails were involved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This meant extreme multi-rail attempts could be selected far more often than we intended - resulting in a lot of outrageous, highlight-reel style pots (that a lot of you will have seen in vids posted on Reddit and YouTube!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "What We’ve Changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Any shot involving more than one rail is now classified as a “Crazy” shot; a value used for our AI's attempting a shot that would be considered out-of-the-ordinary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Most AI opponents now have only a 0–8% chance of ever attempting a Crazy shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This change has dramatically reduced unrealistic multi-rail conversions and improbable snooker escapes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI Player Ermina Merdanović remains the exception, with her Crazy shot percentage notably higher than that of other players. This is an intentional choice to reflect her distinct playing style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "In summary, these changes should result in",
+     "items": [
+      {
+       "text": "Far fewer “impossible” feeling pots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced fluke behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "More believable shot selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More realistic AI escapes from snookers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This, however, is not the final word on AI - and we want to be clear about that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI tuning is something we will continue refining over time based on feedback and data. The Month 1 Patch will include more difficulty curve and behaviour adjustments, but this hotfix directly targets the issues causing the most frustration right now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A Small Ask",
+     "items": [
+      {
+       "text": "If this update improves your experience, please consider updating your review so it reflects the current state of the game. It genuinely helps us reach more players and continue long-term support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We understand how strongly people feel about competitive fairness in offline play. Thank you to everyone who raised concerns constructively - and please keep the feedback coming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you at the table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 2,
+    "other": 17,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1825093633197181"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T10:36:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.451Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T10:36:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.451Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-24T10:36:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.147Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@hotfix-2026-02-24",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Pure Pool Pro | AI Behaviour Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-24T10:28:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve been closely monitoring feedback around AI opponents - particularly concerns about unrealistic multi-rail pots, fluke misses dropping in, and shots that simply didn’t feel believable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While broader AI tuning remains part of our Month 1 Patch in March, we’ve moved quickly to deploy a targeted hotfix addressing the most egregious behaviours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI Behaviour Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve implemented two significant changes to shot logic and outcome validation:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Miss Validation – Preventing Frequent “Fluke Pots”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When the AI missed a shot, there was no secondary validation to prevent the miss from unintentionally potting another ball. This led to a frustratingly high frequency of “I missed… but it went in anyway” moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What We’ve Changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• AI misses are now checked to ensure they have a far less probability of accidentally potting another ball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• This should significantly reduce unrealistic fluke outcomes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Multi-Rail Shot Classification Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI shot selection works via weighted categories (e.g. all our players have different probabilities of straight pots, banks, kicks, plants, and “crazy” shots).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously, bank and kick shots were categorised as such regardless of how many rails were involved. This meant extreme multi-rail attempts could be selected far more often than we intended - resulting in outrageous, highlight-reel style pot (that a lot of you will have seen in vids posted on Reddit and YouTube!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What We’ve Changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Any shot involving more than one rail is now classified as a “Crazy” shot; a term used for our AI attempting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Most AI opponents now have only a 0–8% chance of ever attempting a Crazy shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• This change has dramatically reduced unrealistic multi-rail conversions and improbable snooker escapes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• AI Player Ermina Merdanović remains the exception, with her Crazy shot percentage notably higher than that of other players. This is an intentional choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What This Hotfix Means",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "These changes should result in",
+     "items": [
+      {
+       "text": "• Far fewer “impossible” feeling pots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Reduced fluke behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• More believable shot selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• More realistic AI escapes from snookers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This, however, is not the final word on AI - and we want to be clear about that. AI tuning is something we will continue refining over time based on feedback and data. The Month 1 Patch will include more difficulty curve and behaviour adjustments, but this Hotfix directly targets the issues causing the most frustration right now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Small Ask",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If this update improves your experience, please consider updating your review so it reflects the current state of the game. It genuinely helps us reach more players and continue long-term support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We understand how strongly people feel about competitive fairness in offline play. Thank you to everyone who raised concerns constructively - and please keep the feedback coming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you at the table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 29,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1825093633197168"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T10:28:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.450Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T10:28:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.451Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-24T10:28:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.146Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@post-2026-02-19",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Week 1 Patch Notes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-02-19T08:13:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Based on your feedback since launch, we've tried to target the most reported issues as fast as we could.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here’s what’s changing in this patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CAMERA FIX – Too Close to Cue Ball & Off-Centre Aiming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many players - especially on Pro difficulty without aim lines - reported difficulty lining up shots. This was worsened when forced cue elevation caused the camera to shift (most noticeable near rails).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We pushed for realism here. In practice, the camera shifting off-centre made shot judgment far harder than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What We’ve Done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The camera is now permanently centred in all scenarios - even when the cue is elevated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The camera has been moved much further back from the cue ball to improve overall table readability in all scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should dramatically improve shot alignment and Pro-level playability, particularly near cushions. If you've gotten used to the current camera, please do give yourself a little time to readjust - we think it's worthwhile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note: We are continuing to review expanded camera options based on your feedback and hope to provide more options and customisability, but this will require comprehensive testing and additional work. More on that soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CONTROL FIX – Mouse Sensitivity Overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players experienced overly high or “twitchy” mouse sensitivity at certain DPI ranges, making feathered or gentle shots unreliable. Our mouse sensitivity scaling was out of whack!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "What We’ve Done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Reworked mouse sensitivity scaling",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Improved power consistency",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Enhanced fine shot control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lining up shots and gauging stroke strength should now more intuitive for mouse users.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "VISUAL FIX – Ball Reflection “Pop” / “Flicker”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our most reported visual issue since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reflections on balls were refreshing at slightly different rates, causing a noticeable “pop” or flicker - particularly in Rackhaus and on certain baize designs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What We’ve Done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented several lighting and reflection adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the shadow/reflection popping effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improvements apply across platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI FIX – Aim Guide Clipping (Royal Rumble)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Royal Rumble, the floating object ball could block the aim guide, making lines unreadable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What We’ve Done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Aim guides now pass cleanly through the floating ball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ADDITIONAL FIXES - Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players reported issues with the following achievements, which we have now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed “Crest Conqueror” achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1825093633184202"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-19T08:13:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.450Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-19T08:13:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.450Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-19T08:13:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.146Z"
+  },
+  {
+   "id": "pure-pool-pro-347286@post-2026-02-18",
+   "gameId": "pure-pool-pro-347286",
+   "displayName": "Pure Pool Pro | Week 1 Patch Notes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-02-18T17:35:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again, Pool Fans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all - thank you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since launch, thousands of you have jumped in, played hard, and told us exactly where things weren’t landing. We’ve been reading Steam reviews, Discord threads, subreddit posts - all of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This Week 1 Patch goes live at 8 am 19.02.26 on Steam and PlayStation, and we've tried to target the most reported issues as fast as we could.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Here’s what’s changing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CAMERA FIX – Too Close to Cue Ball & Off-Centre Aiming",
+     "items": [
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many players - especially on Pro difficulty without aim lines - reported difficulty lining up shots. This was worsened when forced cue elevation caused the camera to shift (most noticeable near rails).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We pushed for realism here. In practice, the camera shifting off-centre made shot judgment far harder than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "What We’ve Done",
+     "items": [
+      {
+       "text": "The camera is now permanently centred in all scenarios - even when the cue is elevated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The camera has been moved much further back from the cue ball to improve overall table readability in all scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45586874/1a89d5dfd7b989659be72241bff40e838e6bf6fb.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should dramatically improve shot alignment and Pro-level playability, particularly near cushions. If you've gotten used to the current camera, please do give yourself a little time to readjust - we think it's worthwhile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note: We are continuing to review expanded camera options based on your feedback and hope to provide more options and customisability, but this will require comprehensive testing and additional work. More on that soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CONTROL FIX – Mouse Sensitivity Overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players experienced overly high or “twitchy” mouse sensitivity at certain DPI ranges, making feathered or gentle shots unreliable. Our mouse sensitivity scaling was out of whack!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What We’ve Done",
+     "items": [
+      {
+       "text": "Reworked mouse sensitivity scaling",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved power consistency",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced fine shot control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lining up shots and gauging stroke strength should now more intuitive for mouse users.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "VISUAL FIX – Ball Reflection “Pop” / “Flicker”",
+     "items": [
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Our most reported visual issue since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reflections on balls were refreshing at slightly different rates, causing a noticeable “pop” or flicker - particularly in Rackhaus and on certain baize designs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "What We’ve Done",
+     "items": [
+      {
+       "text": "Implemented several lighting and reflection adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the shadow/reflection popping effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improvements apply across platforms, including PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "UI FIX – Aim Guide Clipping (Royal Rumble)",
+     "items": [
+      {
+       "text": "The Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In Royal Rumble, the floating object ball could block the aim guide, making lines unreadable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "What We’ve Done",
+     "items": [
+      {
+       "text": "Aim guides now pass cleanly through the floating ball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements & Trophies",
+     "items": [
+      {
+       "text": "Players reported issues with the following achievements, which we have now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam",
+     "items": [
+      {
+       "text": "Fixed “Crest Conqueror” achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PlayStation",
+     "items": [
+      {
+       "text": "Fixed “Double Cheeseburger” trophy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed “Crest Conqueror” trophy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What’s Next?",
+     "items": [
+      {
+       "text": "Month 1 improvements are already in development - please refer to our Month 1 plan for full details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll continue refining the AI, presentation, and competitive layer as feedback evolves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A Quick Ask",
+     "items": [
+      {
+       "text": "If this patch improves your experience, we’d truly appreciate updating your review to reflect the changes. Early launch feedback has helped shape this update - and continued feedback will shape what comes next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll see you at the table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Pure Pool Pro Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 11,
+    "balance": 1,
+    "other": 20,
+    "ps5": 4
+   },
+   "sourceIds": [
+    "steam-3456930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3456930/view/1825093633183072"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-18T17:35:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.449Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-18T17:35:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3456930",
+      "checkedAt": "2026-11-13T03:28:37.449Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-18T17:35:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:25.145Z"
+  }
+ ],
+ "issues": []
+}

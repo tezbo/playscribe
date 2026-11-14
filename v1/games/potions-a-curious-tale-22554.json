@@ -1,0 +1,1695 @@
+{
+ "game": {
+  "id": "potions-a-curious-tale-22554",
+  "igdbId": 22554,
+  "name": "Potions: A Curious Tale",
+  "cover": {
+   "imageId": "co740n",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co740n.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2giy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2giy.jpg"
+  },
+  "ps5Release": "2025-12-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "potions-a-curious-tale-22554@1.0.4.0",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 1.0.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-02T21:33:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Potions Masters,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will note this is a larger patch than usual! This patch contains massive optimization overhauls and required restructuring of the project. These optimizations should greatly reduce load times, especially on lower end machines, and will provide memory performance improvements as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are also working on some free endgame content for you to enjoy, including a new temple to explore, the Temple of Spirit! Unfortunately, it is not ready to share just yet, but we’re sure you’ll enjoy the puzzles and strategic boss fight when it is released!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, before we get into the patch note details, I wanted to let you know that the Helios plushie is now available along with various extra items from our Kickstarter backer rewards, including a gorgeous book, The Art of Potions: A Curious Tale, full of both lore and developer commentary. If you’d like to adopt your own Helios, explore the art and creative decisions behind Potions, or enjoy posters and postcards of Luna and Helios, then please check out: https://www.stumblingcat.com/merch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Now onto the changes/fixes",
+     "items": [
+      {
+       "text": "Load time optimization improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Memory usage optimization improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multicraft bug that would occasionally eat ingredients upon increasing craft count",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug causing Mac builds to crash on game exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prince Charming returns to the Inn at the end of the game with a better attitude (so he can be used to get his related achievement)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs preventing Horse and Mold Key interactions with mouse click (in the Swamp and Temple of Destruction)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added broom instruction tips to player’s first encounter with gaps after receiving broom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various environment audio sounds that would erroneously persist through level transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused the Groostlang to move the stalactites in his room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that allowed stalactite times to desync during menu and dialog pauses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed saved dwarf run orientations so they won’t run backwards upon rescue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Grootslang health bar to properly reflect fight mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added mold puzzleroom hint poem in the Temple of Destruction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buffed all of the Furious potions to do more damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recategorized Minor Protective Draught as an Earth potion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recategorized Greater Sandstorm Potion as an Air Potion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Card Gate interaction glow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected achievement grant for crafting first potion (because Granny was giving it to you a smidge too early)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved the credits to the main load scene and removed from the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added cooldowns for closing popup windows to prevent accidental closures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sphinx now animates properly for all of her dialog options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Chimera would spawn on top of Luna when she exits from its lair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where card names wouldn't load properly when page turned from a blank card in their section in the Magical Card Book",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where a limited chase range wouldn’t break aggro and cause monsters to run away while still facing Luna",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Luna’s footsteps stop when the game is paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that could cause Luna to lose her mounted status between levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing Darkness sounds in the Temple of Destruction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Snail animation bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with Emily’s golem illusion scene in the Temple of Truth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jinn is now less likely to instantly fly back into his bottle on spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added gate close noises to buttons so it is more apparent how they are deactivating gates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extinguish sound to turning lanterns off via the deluminator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing dragon roar SFX in dragon dialog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where forge timer would increase while game was paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that would allow interruption of dialog by exiting Granny’s house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed World Cauldron and World Equipment bug that would briefly teleport you to Granny’s house on exit back to the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor layering issues in the Temple of Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare bug that could prevent Luna from teleporting home when stunned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And many, many more minor fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you so much for all of your help identifying these issues and for your support of Potions: A Curious Tale. I am truly grateful to be able to share this world with you, and I hope to share the new content with you soon, too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With Magic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 41,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/1798454487648578"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-02T21:33:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.917Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.918Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@1.0.3.2",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 1.0.3.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-03T23:16:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is just a hotfix that ensures controller glyphs are properly rendered on lower-end PCs. It is a pretty rare bug, but I felt it was enough of a potential issue to push this hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Magic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5842939267332949105"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-03T23:16:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.917Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.917Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@1.0.3.1",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 1.0.3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-30T17:57:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’ve just uploaded a hotfix, 1.0.3.1. The main issue this fixes is Sylvie being unrecruitable due to a data error created in the last patch. All of the fixes/changes are:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sylvie is now again recruitable, talk to her again if she did not appear in town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monkey can no longer be booted off screen with potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Helios no longer runs away if you ask him to harvest fruit trees too quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kelpies are now immune to water attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a grammatical error when talking to the imp whose name is unknown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Abada bestiary observation to properly list the tail’s name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shadows behind Grootslang that were causing Luna to go invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With Magic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5842939267321203209"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-30T17:57:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.916Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.916Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@1.0.3.0",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 1.0.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-28T03:15:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’ve just released a patch for Potions: A Curious Tale that includes a bunch of wonderful quality of life improvements, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Autofill” crafting ingredients from a recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controls rebinding*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics optimization options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magical Card Book has a new view that shows 9 cards per overview page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated art for Prince Charming and Calum MacDonald (the farmer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Granny provides helpful crafting tips when you craft unexpected outcomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved mana display on item views",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lava area entrance visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased font sizes for better visibility on the Steam Deck and small screens",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "And more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Please note that rebinding mouse left click to other actions causes interaction issues, though you can unbind it. Use “Restore Defaults” in the Controls menu to restore left click interaction functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "As well as minor bug fixes including",
+     "items": [
+      {
+       "text": "Miniquest NPCs no longer will give unsolvable quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing genie boss fight audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where you could freeze your controls interacting with the genie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crafting book now displays proper number of owned potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Saved dwarves run fully away from Grootslang",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed environment sound artifacts in Farm 2 and Fairy Forest 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some of these changes touch a significant number of systems, so please let me know if you run into any bugs or other issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I also plan to enable Steam Cloud Saves once I get a greenlight from Valve that any old, possibly corrupt data has been removed from their Cloud Save servers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Finally, as I have been working on the design and manufacturing of the Potions: A Curious Tale Kickstarter physical rewards, I decided to look into creating an item that I have dreamed of– a Helios plushie! I would love for everyone to have their own sharp-tongued feline companion at their side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This design is by the extremely talented Julie Godwin, previously of Funko. If you would be interested please fill out this: Helios Plushie Interest Survey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With Magic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 11,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5842939267311681263"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-28T03:15:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.916Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.916Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@1.0.2.0",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 1.0.2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-21T04:18:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you enjoy this latest update, which includes many improvements, bug fixes, and asset updates, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Italian localization support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New song for temples with variations for each temple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated art assets for Sinbad, Deckhand, and Cory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Failed recipe combinations are now saved (and shown in the potion preview)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extended final encounter (Temple of Life) design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grootslang audio issues resolved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where stalactite hazards could be moved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where fruit could be affected by potions while on the tree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level collision issues in the Fire Mountain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed invulnerability bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented Explosive Spear from shattering objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect Imp name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have another patch we are preparing with even more art asset updates, bug fixes, and quality of life improvements. We hope to enable Steam Cloud Saves with that patch as well.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please let me know if you run into any issues and thank you so much for your support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Magic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5762994032400447497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-21T04:18:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.915Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.915Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@1.0.1.0",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Patch 1.0.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-14T21:18:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Potions Masters,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Situation",
+     "items": [
+      {
+       "text": "Due to unexpected issues around enabling Steam Auto-Cloud Save, some players may have had their main game save files overwritten by previous demo save information. (You can read more details about this issue here: https://store.steampowered.com/news/app/378690/view/7409056619623908850?l=english )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Solution",
+     "items": [
+      {
+       "text": "This build adds a \"Recover Save\" button to the Load Game screen, which attempts to rebuild a player's saves by scraping player log files on their machine. Please only use this functionality if your main save is missing and you are on the machine that you were playing on previously. This should recover your game progress, quests, collected cards, recipes, and bestiary entries. As recovering items and potions were not possible, it also provides 5 potions from every recipe you've learned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "If you have NOT started a new game or made new progress since you last played your lost save",
+     "items": [
+      {
+       "text": "Select \"Load\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Select \"Recover Save\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "If you HAVE started a new game or made new progress since your lost save",
+     "items": [
+      {
+       "text": "If you would like to use the Recover Save function and have played the game since your save files disappeared, you will first need to clean your logs with the following steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you are trying to recover an old save and have started a new game since playing that save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Going into your save and log file location (makes sure hidden files are visible):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Windows: C:\\Users\\\\AppData\\LocalLow\\Stumbling Cat\\Potions_ A Curious Tale\\",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mac: ~/Library/Application Support/Stumbling Cat/Potions_ A Curious Tale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Linux: ~/.config/unity3d/Stumbling Cat/Potions_ A Curious Tale",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Make a copy of this folder in a safe location on your computer in case you accidentally remove a log file you need.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You may also wish to do this even if you did not create a new game to further backup this process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Go into the Log folder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Remove the logs dated with your playtime of those \"new\" saves into a different file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Then use Recover Save.: If you have started a new game and do not remove the new game’s logs as described above, it will start adding your newer game quests to your more advanced save, causing confusing quest log information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "An Apology",
+     "items": [
+      {
+       "text": "From the bottom of my heart, I am so very sorry about this incident. I never would have imagined a situation like this would have occurred from enabling the Steam Auto-Cloud Saves. It absolutely wrenches my heart to think that enabling this function has damaged the beloved saves of so many players. I hope that this recovery function helps any of those who have been affected. If you have any additional issues, questions, or concerns, please do not hesitate to reach out to me at: renee@stumblingcat.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sincerely,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Select \"Load\"",
+     "Select \"Recover Save\"",
+     "If you are trying to recover an old save and have started a new game since playing that save."
+    ]
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/7309977427436085049"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-14T21:18:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.914Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.915Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@1.0.0.2",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 1.0.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-13T08:01:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've added made some minor quality of life improvements, some minor bug fixes, and made it possible to farm golems (useful for getting 100% achievements after the end of the game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Temple of Truth now provides a camera-zoom hint about needed solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swapped water for air turrets in Fairy Forest 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that could cause Luna to freeze if collecting multiple final items in Snow White quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gaps in Fire Mountain border",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Frost Golem to properly drop special loot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Magma Golem for farming golem materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Swamp colliders to prevent aggressive enemies from pushing Luna out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed Deep Dark Forest 1 shatterable rock colliders to allow passage when only destroying one rock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor grammar issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With Magic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5686429670867008143"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-13T08:01:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.914Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.914Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@major-2024-03-10",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "March 9th - Second Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-10T00:39:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please pardon the minor patches, I am working to make the game as polished and stable as possible!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug in Jason's quest that would cause Luna to freeze if she picked up multiple yeti fur at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5679673637661190417"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-10T00:39:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.913Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.913Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@1.0.0.1",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Hotfix 1.0.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-09T10:13:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for all of your support and feedback. I've put together a quick patch to address some issues. Most importantly, I finally identified where the extremely rare progression bug was coming from (only ~3% of players had a chance to see this). If you find yourself \"stuck\", thinking you missed getting your next quest or other event, please go back a save or two and it should work fine now. If you run into this issue again, please let me know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed bug that would cause post-dialog events to sometimes fail to trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that would occasionally show a broken item in the Item Book",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Temple of Time boss obstacles should now behave more consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added orb in Temple of Truth to allow for backtracking after using cauldron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed typos in Jason's and Ziggy's dialog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you so much for your support. Please let me know if you run into any issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Magic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5679673637658999519"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-09T10:13:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.912Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.912Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@0.9.9.6",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 0.9.9.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-20T01:52:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, potions masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're thrilled to bring you the latest patch update for \"Potions: A Curious Tale,\" packed with enhancements aimed at refining your gameplay experience and immersing you deeper into the magical world we've crafted together. Let's dive into the cauldron of updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's New in the Brew?",
+     "items": [
+      {
+       "text": "Recipe & Item Books at Your Fingertips: Access your recipe book and item book directly from the action bar while exploring, making it easier than ever to concoct the perfect potion on the go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Equipment Backpacks: Change your equipped potions anywhere in the game world with the new equipment backpacks, available at every world cauldron. Perfect for those unexpected encounters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced Controller Handling: We've fine-tuned the controller support to ensure a smoother and more intuitive gameplay experience, letting you focus on the magic at hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quicker Potion Throwing: The animation and speed of potion throwing have been increased, making it easier to target those pesky moving enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Asset Improvements: New sound effects for many endgame creatures, and enjoy the final dialog art for our dwarven friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI Improvements: We've restored button rollover and select click sounds to add that satisfying feedback to your menu navigations, and controllers now properly interact with scrolling menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Important Fixes",
+     "items": [
+      {
+       "text": "Passive Enemy Behavior: A pesky bug causing passive enemies to occasionally turn aggressive without reason has been squashed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolution Settings (Widescreen Fix): For our widescreen users, we've added resolution settings for windowed mode. For the best experience, please use a 16:9 resolution setting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Your Adventure Awaits",
+     "items": [
+      {
+       "text": "These updates are part of our ongoing commitment to make \"Potions: A Curious Tale\" as enjoyable and immersive as possible. We're always listening to your feedback and looking for ways to improve the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your thoughts and suggestions are invaluable to us. Please continue to share your experiences, and let's brew this potion to perfection together!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued support and for being a part of this magical journey. Here's to many more adventures in the enchanting world of \"Potions: A Curious Tale\"!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enchanting Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/8033928544508984890"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-20T01:52:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.911Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T09:24:14.911Z"
+  },
+  {
+   "id": "potions-a-curious-tale-22554@0.9.9.4",
+   "gameId": "potions-a-curious-tale-22554",
+   "displayName": "Update 0.9.9.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-03T18:39:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Potions Masters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have finished the rest of our localization work and you can now find support for:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spanish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brazilian Portuguese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Russian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Korean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Traditional Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam should launch Potions: A Curious Tale into your preferred language, but you can also adjust the language directly in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are plenty of small bug fixes and other quality of life updates in this build as well. If you'd like to view the full patch notes, please see the #patch-notes channel on our Discord:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing Potions: A Curious Tale, and look forward to our next set of updates soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-378690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/378690/view/5582843074948902072"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-03T18:39:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-378690",
+      "checkedAt": "2026-11-12T09:24:14.910Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:14.910Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,92 @@
+{
+ "game": {
+  "id": "spectrewoods-154987",
+  "igdbId": 154987,
+  "name": "Spectrewoods",
+  "cover": {
+   "imageId": "co3dst",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3dst.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1cx7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1cx7.jpg"
+  },
+  "ps5Release": "2022-08-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "spectrewoods-154987@post-2025-10-14",
+   "gameId": "spectrewoods-154987",
+   "displayName": "unity security fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-14T14:12:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed newly discovered unity security vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2081640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2081640/view/1813041031373435"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T14:12:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2081640",
+      "checkedAt": "2026-11-13T03:31:12.366Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T14:12:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2081640",
+      "checkedAt": "2026-11-13T03:31:12.366Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-14T14:12:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:36.868Z"
+  }
+ ],
+ "issues": []
+}

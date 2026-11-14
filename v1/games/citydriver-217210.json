@@ -1,0 +1,797 @@
+{
+ "game": {
+  "id": "citydriver-217210",
+  "igdbId": 217210,
+  "name": "CityDriver",
+  "cover": {
+   "imageId": "co77bw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co77bw.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1v3j",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1v3j.jpg"
+  },
+  "ps5Release": "2023-12-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "citydriver-217210@major-2025-12-22",
+   "gameId": "citydriver-217210",
+   "displayName": "City Driver | Small Update ⚙️",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-22T15:05:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42791338/0c564060bb8fe47b1fe71f6e21bc8ccfcf0eb3cb.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we're releasing a small update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It fixes the issue where some traffic lights disappear or are not visible to the player. It also finally fixes the bug where the steering axes were swapped when configuring steering wheels, which sometimes prevented them from being set up correctly. Unfortunately, due to this fix, we had to make a change that means steering wheels can now only be adjusted in the main menu!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is also available for PS5 and Xbox Series X|S. Many more steering wheels are now supported on these platforms, such as various Thrustmaster and Fanatec steering wheels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2064810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2064810/view/1819386365102160"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-22T15:05:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2064810",
+      "checkedAt": "2026-11-13T03:17:26.398Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-22T15:05:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2064810",
+      "checkedAt": "2026-11-13T03:17:26.398Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-22T15:05:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:15.037Z"
+  },
+  {
+   "id": "citydriver-217210@major-2025-07-01",
+   "gameId": "citydriver-217210",
+   "displayName": "Free update out now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-01T14:00:46.000Z",
+   "notes": [
+    {
+     "title": "CityDriver Free Update",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're happy to present a new update for CityDriver on all platforms! Check below for the Changelog!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun driving!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://www.youtube.com/watch?v=-F2A7oVIeWs\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance Improvements",
+     "items": [
+      {
+       "text": "Thanks to the update to a new version of Unreal Engine 5, we can take advantage of a new system that improves the game’s performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you could previously only play on medium graphics settings, you'll now likely be able to play on higher settings.*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42791338/eb78958e369005797e9f2d449ab0b0a9534b936f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improved Lighting and Foliage",
+     "items": [
+      {
+       "text": "With the engine update, we’re using an enhanced lighting system that makes lighting situations in the game appear much more beautiful!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Foliage in trees and bushes also looks more realistic now. Look forward to an even more detailed and immersive depiction of Munich!*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42791338/f3c7bb0389ac2ca8285877afefed60d165f7f97d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day-Night Cycle",
+     "items": [
+      {
+       "text": "With the brand-new day-night cycle in the game, you can now explore the streets of Munich even in the dark!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy picturesque sunsets and take on the challenge of navigating the city's dark alleys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42791338/88f49aa2eeebe7e34a08e1bbcd513b9ffa604865.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saved Mission Progress",
+     "items": [
+      {
+       "text": "Your mission progress is now saved! Play through all missions with top ratings and beat your own high scores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update, you can track your achievements and aim for even better results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can you follow every traffic rule?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42791338/67156f05fab460733702a1139afa5737245eb0a8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improved AI and Vehicle Physics",
+     "items": [
+      {
+       "text": "The AI of NPC vehicles has been improved to better follow traffic rules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicle physics have also been optimized, so you no longer spin out as easily after collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42791338/178c835bc174ac8c43a75464ac82e8bb5b723324.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Of course, this update also fixes several annoying bugs and potential crashes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "*Due to the many different PC systems and hardware configurations, improvements will vary in impact. Performance and graphical improvements will be most noticeable on PlayStation 5 and Xbox Series X|S.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 17,
+    "ps5": 1,
+    "topNew": [
+     "If you could previously only play on medium graphics settings, you'll now likely be able to play on higher settings.*",
+     "[img src=\"{STEAM_CLAN_IMAGE}/42791338/eb78958e369005797e9f2d449ab0b0a9534b936f.jpg\"]"
+    ]
+   },
+   "sourceIds": [
+    "steam-2064810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2064810/view/1803527891672494"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-01T14:00:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2064810",
+      "checkedAt": "2026-11-13T03:17:26.397Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-01T14:00:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2064810",
+      "checkedAt": "2026-11-13T03:17:26.397Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-01T14:00:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:15.036Z"
+  },
+  {
+   "id": "citydriver-217210@1.2",
+   "gameId": "citydriver-217210",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-09T15:00:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "CityDriver Update 1.2 is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ What's New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The time set in photo mode remains active in the game even after exiting photo mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Vehicle physics improvements for Moruga Turbo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Vehicle physics improvements for Vela GT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Performance enhancements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️ Update to Unreal Engine 5.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️ Optimization of geometries, material count, and texture sizes for player and NPC vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️ Optimization of foliage geometry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️ Optimization of foliage texture sizes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️ Optimization of environment textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️ Optimization of building textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️ Cleanup of obsolete asset references",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Update of the DLSS plugin to version 3",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "◽ Addition of decorations on Türkenstraße",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Fixed an issue where lights were not working on AI Marathon vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2064810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2064810/view/5302486387998356114"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-09T15:00:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2064810",
+      "checkedAt": "2026-11-13T03:17:26.396Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:15.035Z"
+  },
+  {
+   "id": "citydriver-217210@1.0.1",
+   "gameId": "citydriver-217210",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-14T06:25:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 1.0.1 is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ What's New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Added the Vela GT vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Added Steam Achievements that can now be unlocked in-game",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "◽ Force Feedback has been expanded and improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Added default button/axis mappings for the Logitech G920",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Radio stations \"Flashbass.fm\" and \"Double Bass FM\" have been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Modding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️the rotation direction of the vehicle wheels can now be inverted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▫️The wheel friction value can now be configured which is used during braking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ During transport missions, the parking options available in the vehicle are now displayed using a UI element when loading the packages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ There are now various force feedback customization options in the settings under \"Advanced Controls\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ In the settings under \"HUD and Gameplay\" you can now adjust the wheel adhesion value of the vehicles to fine-tune the handling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Brake and wheel grip values have been adjusted for all vehicles so that braking distances are now more realistic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ With the default key binding of the Logitech G29, the radio menu can now be closed with the same key that opened it",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "◽ Interiors of all vehicles have been brightened (only affects \"High\" and \"Ultra\" graphics presets)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The warning lights on the dashboards of the vehicles are now always sharp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The engine sound of the Alvarez-Lenz BPW C64 has been revised and improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The vehicle mirrors can now be adjusted so that they are displayed without stuttering (Warning: this setting reduces overall performance!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The rear camera views of the Alvarez-Lenz Marathon and Ferdinand Habanero Turbo have been improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ After completing a quest, new quests are now offered even after a while",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The Alvarez-Lenz BPW C64 is now in Sport mode by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The appearance of Chrome materials has been revised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The radio now also works correctly in mission vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Driving vehicles now works correctly even after abandoning missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The correct joystick button icons are now displayed for the Filters on the World Map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Correct joystick axis icons are now displayed for World Map Zoom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ After changing a vehicle the radio now works correctly again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Radio playback can now always be started correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Collisions with pedestrians will now correctly reset, so the collision message will not reappear immediately after a collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Pedestrians are now not on the road at intersections while waiting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ When driving on the road, the speed limit display in the UI now works more reliably",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ Pause menu navigation calculation now works more reliably so the game no longer crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The Pedastrian Collision Message can now also be properly dismissed by pressing the \"B\" key on gamepads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The Engine RPM Needle no longer appears twice on the Habanero Turbo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ The AI marathon transporter the turn signals now work correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◽ In the pause menu, the force feedback effects are now correctly stopped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 37,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2064810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2064810/view/5126832680916437375"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T06:25:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2064810",
+      "checkedAt": "2026-11-13T03:17:26.395Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-11T21:58:15.033Z"
+  }
+ ],
+ "issues": []
+}

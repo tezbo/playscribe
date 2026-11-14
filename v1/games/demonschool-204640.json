@@ -1,0 +1,1854 @@
+{
+ "game": {
+  "id": "demonschool-204640",
+  "igdbId": 204640,
+  "name": "Demonschool",
+  "cover": {
+   "imageId": "coacd2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coacd2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1ojh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1ojh.jpg"
+  },
+  "ps5Release": "2025-11-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "demonschool-204640@major-2026-09-14",
+   "gameId": "demonschool-204640",
+   "displayName": "Another little update for you all - now you can jump through time in NG+!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-14T19:05:16.000Z",
+   "notes": [
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/b928d41f58dcc3e49bbd1ed8c9f3f128560dc286.png\"]Hey all! Another little update for you all - now you can jump through time in NG+!",
+     "items": [
+      {
+       "text": "By accessing the planner you can choose a day and time to warp to, if you want to speed around the game to access specific moments. Because of how our flag system works, you can't go back in time, only forward. But still, pretty nice?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This is only accessible after you've beaten the game once, of course.",
+     "items": [
+      {
+       "text": "Here's some video of the planner in action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/3de6debdba66a16d553248c9c4122d5f687191aa.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, we've made a minor ending change, which is only relevant to new players. Now, regardless of how many relationships you've built, a new player's first ending will always be Namako's. This is what we view as the canon ending, and it has the most emotional impact. Frankly, it should've been this way at launch, to avoid someone accidentally choosing a \"goofy\" ending to the game, which can cheapen the experience. Once you've gone through her ending, all the others become available as normal. And of course, if you've already beaten the game this doesn't affect you at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "The planner has been updated for NG+, allowing you to skip forward in time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most endings are now tied to NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Exit markers to bunker rooms that were missing them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Week 6 - Quiz: Fixed some sprite issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Week 6 - Quiz: Fixed some answers awarding too many credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Week 10 - Quiz: Fixed a white overlay being stuck over quiz options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bunker 01: Fixed saves made in Bunker 01 not showing a correct location name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bunker 08: Improved navmesh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Abandoned Rooftop: Improved navmesh around the tents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clubhouse - Cafe: Fixed some upgrades not having a collision box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Liminal Clubhouse: Improved navmesh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Newspaper: Fixed white pixels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Newspaper: Fixed rendering issues on week 7’s newspaper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Newspaper: Each week's newspaper read flag now gets transferred over to NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NG+: Fixed showing connections in Clubhouse before the clubhouse is unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Faye sometimes being movable during an upgrade placement animation in the clubhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aina connection 3: Now waits for unlock on week 6 Tuesday morning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Knute’s availability during week 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clubhouse not loading the correct style from a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settings: Fixed some cases where screen resolution could be incorrectly handled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cheating sparkles sometimes incorrectly rendering in the beetle race minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping NPCs on week 4, Tuesday morning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping NPCs on week 2, Demonic Harbour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some stray pixels on Pocket’s overworld sprite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the world boundaries on the demonic and boat variants of the Lighthouse scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Karaoke: Fixed a missing portrait for Primrose when doing Karaoke",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Karaoke: Fixed missing shadow sprites when sitting on the couch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed music sometimes not resetting correctly when opening a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the logo on Faye’s tshirt sometimes being mirrored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash when loading into the Clubhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect relationship points calculations for maxed-out characters in NG+, which was making some endings not appear when unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Battle",
+     "items": [
+      {
+       "text": "Ti - Special attack: Fixed crash to title when using Ti's special to perform a combo in at least one direction but not all directions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kestrel: Fixed issue where one tile might be incorrectly highlighted when hovering over a move that's a Kestrel special while Kestrel has Filler Killer equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pressing pause in battle no-longer undoes the last planned move on keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Town Alley: moved background object that could clip into battle UI in all Town Alley variants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 28,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1900250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1900250/view/1843481262702757"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T19:05:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.804Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T19:05:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.804Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-14T19:05:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:09.932Z"
+  },
+  {
+   "id": "demonschool-204640@major-2026-05-23",
+   "gameId": "demonschool-204640",
+   "displayName": "The BIG free update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-23T12:07:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all! Thanks for all the support you've given Demonschool so far. It's been lovely to hear from folks who see themselves in these characters, people who vibe with the battle mechanics, and folks who just like hanging out in this world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As we hinted in our last update, there were a few more things we had wanted to do with the game if we had extra time. So we decided to reward everyone with a nice update. We want to be clear about what this is and isn't - this is a quality of life update with a bunch of extra interactive details, not a major story update. But there's enough here that we hope folks will get something out of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New game plus",
+     "items": [
+      {
+       "text": "You can now start a New Game+ from your completed save file. This allows you to play through the game from the start with all abilities, opals, credits, relationships, clubhouse styles, clubhouse upgrades and fish gained through past playthroughs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All characters are playable from the first point at which you have a full team (late week 10). This means you can use characters in battles where they weren't meant to be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/57db5d0af38d90c906828902af0706171c63da4f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Narrative",
+     "items": [
+      {
+       "text": "Faye mentions in the early game that there's a pretzel she wants to buy in the alley. We promised that if we hit 500 reviews, we'd let Faye buy one. And so: now Faye can buy a pretzel from the alley starting week 9 on Mondays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/c6acd7d8be712383d50fc3523036cdf50c1a6927.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forming connections between non-Faye characters now prompts short, two-line dialog interactions (around the clubhouse). There are 182 of these interactions, two per character combination. These connections are formed (as mentioned in the help menu) by completing battles with the characters between whom you want to form a bond. They just need to be in the same battle together. These interactions are just a short little extra bit of color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are now more than double the number of character lines in the clubhouse. Previously, our characters would only have something new to say when something happened in that particular week. Now they also react to whatever clubhouse style they're in, depending on the action they're doing. So, essentially, more goofy lines of text in the clubhouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fulfilling another big request, we've added a text log for those that want to read over older conversations. The last 20 lines of dialog will be available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/a57586dcf74202912b141d94dc2b2051d2d4dd80.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have sped up and improved the cutscene actions and character sprite movements in several weeks, focusing especially on some of the slower weeks pacing-wise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've gone through and done a grammar check through the main story and NPCs. In particular we checked for comma and period usage. Sidequests and connections may get this treatment at a later time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/b8e6511757b10b04790532d8c66dd4e3b5d83ce9.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay additions and fixes",
+     "items": [
+      {
+       "text": "We've added mouse-only control for the game. You can now play the entire game with just the mouse. You can left-click and Faye will run to that location, or you can right-click and drag, and she'll follow the cursor around.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/13163efc64b250f8c39af765a4b21df9c2fc43a4.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There are tons of fixes to minigames, battles, achievements, abilities, et cetera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "You can see the full list of changes below",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patchnotes -v1.10 - 7ACC2E37F8 \\[2026/05/23]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "Added New Game+ mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a dialogue history log (finally!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added in full overworld mouse movement",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the Pretzel store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Friendship dialogues around the clubhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Week 0: Updated character acting & SFX on Monday",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week 1: Updated dialogue portrait, animation timings, added more vfx and sound fx throughout the week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week 2: Updated dialogue portrait, animation timings, added more vfx and sound fx throughout the week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week 4: Corrected typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week 5: Updated character acting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week 7: Updated character acting & SFX during Thursday Night, Friday Evening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week 8: Updated background extras to fix some dialogue displaying too early in the week. Updated some Character acting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wk11 extras dialogue, and position edits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Endings: Improved fadeout effect used on most endings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grammar pass on all weeks and npc lines (outside of clubhouse)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Primrose Connections: Updated some portraits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aina Connections: Updated availability & character acting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Namako Connections: Updated availability & character acting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pangxie Connections: Updated availability & character acting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ti Connections: Updated some character acting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Destin Connections: Updated some character acting & availability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Knute Connections: Updated some character acting & availability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ocean Connections: Updated some character acting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Varka Connections: Updated some character acting & availability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Connections: Corrected typos in Aina, Destin, Jem & Knute’s connection quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimised gangster sprite atlases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed characters with only 3 levels of relationship ending on \"Friend\" rather than \"Soulmate\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Week 2: Tuesday Night and Friday Evening - moved quest start triggers so they are easier to activate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Week 2: Fixed map location availability during the week",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Week 4: Wednesday Evening - Fixed the gangster in the harbour not being interactable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the south exit in the Town Alley not being visible during the riot state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a full-screen flash when opening the newspaper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit in Beetle Racing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock if you cheat and win/lose at the Beetle Race at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "made big buttons on the party invite screen for minigames mouse-clickable",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some mouse interaction issues when equipping techniques in the profile menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made the error screen work with mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved the clubhouse style selection screen’s mouse interactions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed background glitching caused by selecting Planner or Profile from the tab buttons with a mouse whilst on the map screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the map screen sometimes breaking overworld lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed selection sound playing when it shouldn’t be in dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Faye able to walk through a wall on the rightmost side of Bunker Room #10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed layering issue in the Mansion Entrance, where you could see characters clip through the stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clipping into pipes in the bunker hospital",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cancel button (escape/b/circle) not selecting exit on the main menu after navigating to a different sub menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved default screen resolution detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash when primrose is missing in the clubhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Battle",
+     "items": [
+      {
+       "text": "Aina: Fixed some availability/unlock issues during week 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash to title when performing a phaser move that both hits something impassable and pulls a target into the crowd in Harbour crowd battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for an error kicking the player back to title when doing a multi-target knockback attack against a stunned enemy and then attacking and killing that same enemy with another character if that enemy has no death animation (e.g. Unfinished Being)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Ganger AI: gangsters will still attack desks, but not explosives, which would damage them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed grunts clipping through the floor in the Queen boss battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exception during the boiler boss lava column attack when the team is wiped but faye has Immortal equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect Game Over when Faye has an Immortal equipped and dies with no surviving teammates on her side in a double field battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Henk items crushed by the skeleton finger attack now show the proper death effect instead of a blood geyser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Henk items are now affected by boiler boss lava waves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Henk items are now affected by lamprey boss push attack and can properly fall into death pits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Henk receiving 1 healing when placing an item when Self Heal is not equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/7e6d575cb31c61f2b3b77d1ed73b10d93c640e17.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's inevitably going to be a little weirdness and narrative dissonance in New Game+. Some of that is to be expected since the game was built to work in a certain order. But if you see any actual crashes or bugs, do let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing Demonschool, both new players and old! And if you've never reviewed the game, please do! Negative reviews have a huge amount of power on Steam, and they increase whenever we do a sale, as we're doing right now. We need many positive reviews to lift us above them.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We hope you enjoy the updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 24,
+    "balance": 0,
+    "other": 42,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1900250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1900250/view/1833334318573768"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-23T12:07:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.803Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-23T12:07:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.803Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-23T12:07:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:09.931Z"
+  },
+  {
+   "id": "demonschool-204640@patch-2025-12-20",
+   "gameId": "demonschool-204640",
+   "displayName": "Demonschool's third big rollup patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-20T01:04:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you for playing Demonschool! We deployed another large patch this Thursday - and today we are delivering patch notes to you! This patch has also been deployed to PS5 - PS4 should be live soon. Other platforms to follow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Build Info",
+     "items": [
+      {
+       "text": "Windows: v1.0.492 macOS: v1.0.496 Linux/Steam Deck: v1.0.494 Steam Build ID: 21233474 Commit Hash: 892516077c Date: 2025/12/19",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": ":dsnamako: Updates",
+     "items": [
+      {
+       "text": "Updated all localized text to the latest versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Color blindness options now have previews in the options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Oh, Deer! cheaper in the store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made fish 11 slightly easier to find",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved fishing bar layer rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": ":dsprimrose: Fixes",
+     "items": [
+      {
+       "text": "Ability: Passing Through is now incompatible with Heal Down Attack and Heal Down Defense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Faye-only dialogue being displayed when not directly controlling Faye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The newspaper screenshot is now correctly captured for week 1. Mid-week bosses will no longer overwrite the current newspaper boss screenshot (oops)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the Paladin ability to the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made sure some unlocakable students do not show up in the profiles screen until they are fully added to the party",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved some Mountain stream week 0 NPCs so you can interact with their bubbles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved some Farm week 1 NPCs so you can interact with their bubbles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved some Lighthouse NPCs so you can interact with their bubbles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hopefully fixed a weird crash if you touched the screen when playing Demonschool. (if its a touchscreen - obviously)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": ":dsfaye: Battle",
+     "items": [
+      {
+       "text": "Attendant: fix for skipped action phase when using a 0 damage move to close an attendant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed error when using Kestrel's special attack against two Spinner enemies who are two tiles apart from each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when hitting a Spinner into a death pit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for repeated Cross Slash attack behavior in action phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "TV Bomb: Fixed error when performing a move where a teammate damages themself with a TV bomb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Setting a teammate on fire by using Push Friends on them while on fire now unlocks the I'm On Fire achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Mercy's special and Varka's special (if performing a standing attack from an adjacent tile) not applying their special elements, which could cause part of the action phase to be skipped visually when attacking an enemy which is weak or resistant to that element.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Varka's special can no longer target boss appendages which caused unusual behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the game would hang in a double field battle if you don't move any teammates in the second field at all, and then one of them performs a counterattack during that turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved d-pad controls for circular battle grids",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 14,
+    "balance": 0,
+    "other": 10,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1900250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1900250/view/1819386365097211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-20T01:04:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.801Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-20T01:04:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.801Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-20T01:04:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:09.929Z"
+  },
+  {
+   "id": "demonschool-204640@patch-2025-11-29",
+   "gameId": "demonschool-204640",
+   "displayName": "Demonschool's second big post release patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-29T19:41:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you for playing Demonschool! We have been diligently checking the bug thread on the Steam forum, as well as issues reported in our Discord. Many of these reported issues have now been addressed in today's patch. If you stumble upon a bug, please let us know about it! This patch is now LIVE! on Steam, and will be coming to consoles that we can rapidly patch on Monday next week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Build Info",
+     "items": [
+      {
+       "text": "Windows: v1.0.473",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "macOS: v1.0.471",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux/Steam Deck: v1.0.472",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Build ID: 20991891",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commit Hash: 9a66b2f592",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Date: 2025/11/29",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ːdsnamakoː Updates",
+     "items": [
+      {
+       "text": "Updated LATM Spanish localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the ability 'Add Stun\" from the game - it had accidentally been left in the store. This was an older version of the Stunner skill and was not actually usable. If you have bought this skill, next time you open your save, the game will refund you the 700 opals you spent on the ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Profile screen now directly says what day/time period students will return from resting after studying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added vsync and framerate cap options to display settings. If you are experiencing performance problems in the game, try disabling vsync and setting a 60fps framerate cap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "ːdsprimroseː Fixes",
+     "items": [
+      {
+       "text": "Stopped the game from defaulting to untrawide screen resolutions (we do not support ultrawide at this time)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Attempted to fix a hard crash bug on Linux/Steam Deck when lots of explosions are going off in a battle. We are not 100% sure if this is 100% fixed yet - please let us know if you find any other hard crashes in battles on Linux. If you do hit one, switching to Steam Proton usually fixes it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed typos throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Week 5: fixed some objects that were not tagged as being on the floor layer in Prison Hallway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Week 2 Friday Night's main story quest awarding the Paladin ability and not Paladin Plus as designed. If you open a save that is after Friday Night on Week 2 and do not have the Palain Plus ability in your inventory, your save will automatically update to put it in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "ːdsfayeː Battle",
+     "items": [
+      {
+       "text": "Fixed bug preventing Stoic technique from being effective on non-knockback characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some targets not taking damage in the planning phase when performing a Cross Slash attack against a group of enemies containing immovable enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Attendant enemy's behaviour when taking damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss week 10: The TV bombs thrown by the TV tower boss now properly explode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss week 6: Fix for invalid Mercy special move being generated under certain circumstances in the boiler room fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various issues with attacks against Spinner enemies using Cross Slash technique",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlap logic error when using Filler Killer technique to phase through a gap that was created by another character's previous move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with attacks against Spinner enemies using the Cross Slash technique",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error when using Fossa's special against a Spinner enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempting to use Fossa's special against an inanimate object will no longer spend double AP and fail to hit the object",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Self Heal new takes effect on Henk on moves where he places an item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an bug when doing a pull combo into sideline allies while having the Phase technique equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1900250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1900250/view/1817483467041883"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T19:41:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.800Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T19:41:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:38:29.278Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-29T19:41:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.278Z"
+  },
+  {
+   "id": "demonschool-204640@patch-2025-11-22",
+   "gameId": "demonschool-204640",
+   "displayName": "Demonschool's first big post release patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-22T23:33:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519171/90d6cd48132ae659c141653bf689c7a7f03aa979.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing Demonschool! We have been diligently checking the bug thread on the Steam forum, as well as issues reported in our Discord. Many of these reported issues have now been addressed in today's patch (or in earlier hotfix patches). If you stumble upon a bug, please let us know about it! This patch is now LIVE! on Steam, and will be coming to consoles that we can rapidly patch on Monday next week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Build Info",
+     "items": [
+      {
+       "text": "Windows: v1.0.433",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "macOS: v1.0.434",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux/Steam Deck: v1.435",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Build ID: 20904863",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commit Hash: 2503ce4a9c",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Date: 2025/11/22",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ːdsnamakoː Updates",
+     "items": [
+      {
+       "text": "Added an icon to the Profiles screen that shows if a relationship connection is on hold because of a progress lock (meaning, you can't play the next connection quest because it is gated behind story progression)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Actually turn off the TV in Karaoke if you fail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week 6 - Updated the flame arch VFX in the boiler room so the fireballs can no longer vanish before hitting the lava",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it more obvious when the map screen's location list is scrollable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a typo in credits & added missing Japanese LQA credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Intro video volume level is now affected by the Music volume setting (but clamps to a minimum of 20 so they will always play back some level of audio)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ːdsprimroseː Fixes",
+     "items": [
+      {
+       "text": "Fixed a softlock in the abilities menu when trying to assign an ability to a student who already has two assigned (Spanish localisation only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the lighthouse shrine vanishing in some later shrine events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You no longer lose the chance to do karaoke or cooking if you back out of the companion picker screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare edge case when removing unused characters from the world. (the 'talking to primrose in wk5 monday morning crashes the game after moving to two other locations' bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock in Mercy’s lvl 3 Connection quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stopped incorrectly named SFX play commands from crashing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Week 11 Friday night - NPC students now have the correct portrait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed battle music sometimes being silenced when restarting a battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "ːdsfayeː Battle",
+     "items": [
+      {
+       "text": "Week 9 - Fix for edge case where the skeleton boss could summon a grunt and a red demon in such a way that they attempt to walk on the same tile at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for action phase hanging when using Ti's special across exactly one tile with Push Friends equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mercy is no longer unable to perform a special attack when she doesn't have a companion equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additionally, these fixes were delivered in hotfixes earlier in the week...",
+     "items": [
+      {
+       "text": "Fixed a softlock when unlocking some stat-driven achievement on Steam (for example, One-Two punch)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a softlock when trying to play shake sfx when talking to NPCs on computers with operating systems set to some European languages, like Polish or French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensure 1080p is always a selectable resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing progress locks to some of Pangxie & Varka’s connection quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1900250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1900250/view/1816849002017710"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-22T23:33:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.799Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-22T23:33:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:38:29.278Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-22T23:33:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.278Z"
+  },
+  {
+   "id": "demonschool-204640@patch-2024-06-14",
+   "gameId": "demonschool-204640",
+   "displayName": "Demonschool Demo: Its patch time!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-14T23:29:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been working away based on bug reports and our own feature adds, and as of the latest build, here's what we've done:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New stuff!",
+     "items": [
+      {
+       "text": "The store is in now so you have somewhere to spend your opals (check the alley). not everything will be available at first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added rare \"dire\" variants of all fish since folks seem to be enjoying the fishing minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The fish music now resumes if you continue fishing within a few seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes!",
+     "items": [
+      {
+       "text": "Fixed a few battle bugs. since the underlying systems are quite complex we do sometimes get odd edge cases, so keep reporting these if you find them (with video if possible!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hopefully squashed all UI locks. menus were stacking on top of each other causing a few softlocks, but these should be sorted now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some mesh/boundary issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There's still (a little) more to come and more bug fixes as we find them, so stay tuned, and thanks for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Oh, and to be clear, we've gotten a few questions and yes - anyone can stream the game who would like to! We encourage it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added rare \"dire\" variants of all fish since folks seem to be enjoying the fishing minigame",
+     "The fish music now resumes if you continue fishing within a few seconds."
+    ]
+   },
+   "sourceIds": [
+    "steam-1900250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1900250/view/6890025005354123383"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-14T23:29:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1900250",
+      "checkedAt": "2026-11-13T03:18:57.798Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:09.925Z"
+  }
+ ],
+ "issues": []
+}

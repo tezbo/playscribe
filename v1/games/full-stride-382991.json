@@ -1,0 +1,1757 @@
+{
+ "game": {
+  "id": "full-stride-382991",
+  "igdbId": 382991,
+  "name": "Full Stride",
+  "cover": {
+   "imageId": "cob4k5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob4k5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar50s8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar50s8.jpg"
+  },
+  "ps5Release": "2026-07-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "full-stride-382991@01.023",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.023",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-11-07T12:43:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "【Update Information】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update fixed several issues related to owned horse race entries, race records, in-race parameter calculations, and in-game dialogs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where owned horses could sometimes not be entered into races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where race wins were not recorded correctly for some owned horses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where Sprint and Stamina calculations could be incorrect while drafting behind other horses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the save dialog could remain on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the dialog shown when the Ranch was full and a horse could not be moved would remain on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please update the game to the latest version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can check the current version number from the Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1848664643349241"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-07T12:43:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-07T12:43:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.826Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-07T12:43:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.373Z"
+  },
+  {
+   "id": "full-stride-382991@01.022",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.022",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-25T14:09:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v01.022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "【Update Information】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ New Features and Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added a Bug Report & Save Data Sharing UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added an on-screen indicator when autosave is in progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Optimized the progression process when selecting “Next Week”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Reduced the number of spectators when Graphics Quality is set to “Low” to improve performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where NPC jockeys with Personality set to “3 (Stubborn)” would not use the whip during races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1847286114042005"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-25T14:09:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-25T14:09:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.826Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-25T14:09:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.372Z"
+  },
+  {
+   "id": "full-stride-382991@01.021",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.021",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-27T19:38:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "【Update Information】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update includes an Unreal Engine upgrade, improvements to replay cameras and NPC race scheduling, along with the following fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Adjustments and Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Updated Unreal Engine to version 5.8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As part of the engine upgrade, frame rate stability has been improved, particularly during races: ・Changed the replay Spectator Camera to a more broadcast-style race camera: ・Adjusted NPC horse race selection logic and the interval between races: ■ Bug Fixes: ・Fixed an issue where horse numbers could become mismatched when selecting a camera during replays: ・Fixed an issue with the “10 G1 Wins” requirement for each running style, where only wins achieved with horses in the player’s stable were counted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "G1 wins achieved with horses ridden through Negotiate will now also count toward the requirement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1844751498229831"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-27T19:38:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-27T19:38:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.825Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-27T19:38:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.371Z"
+  },
+  {
+   "id": "full-stride-382991@01.020",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.020",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-05T11:11:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "【Update Information】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update focuses on improving multiplayer flow and reducing the impact of network latency, along with the following fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Multiplayer Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Matches will now automatically proceed once two or more players have joined",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・The Results screen will now automatically proceed after a set amount of time, even if the host does not make an input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・To help reduce the impact of network latency, repeated Start button inputs from clients will now be accepted while horses are still inside the starting gates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are experiencing noticeable lag, repeatedly pressing the Start button before the gates open can help reduce its impact: ・A notification dialog will now appear when another player joins a multiplayer session: ■ Bug Fixes: ・Fixed an issue where players could become unable to exit the post-race replay without first entering Photo Mode: ・Fixed an issue where multiplayer information was not properly reset after joining a multiplayer session as a guest: ・Fixed the ranking display when a dead heat occurs: Please update the game to the latest version once the update is available.: You can check the current version number from the Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1842846814448862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T11:11:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T11:11:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.825Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-05T11:11:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.369Z"
+  },
+  {
+   "id": "full-stride-382991@01.018",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.018",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-08T03:08:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "■ Changes and Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Horses will now be promoted in class when finishing second in a graded race",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Adjusted the weight calculation system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added Steam Cloud support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Changed the Niigata 2000m course to use the outer course",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・The radar will now continue to function after crossing the finish line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Improved the radar display to make the player’s horse easier to identify",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue with LR button selection controls in the Ranch scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where some races, including the Ibis Summer Dash, could not be selected through Negotiate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed collision detection around the starting position of the Kokura 1200m course",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the horse could no longer decelerate when Motivation reached zero",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1840310314346734"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-08T03:08:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-08T03:08:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.824Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-08T03:08:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.368Z"
+  },
+  {
+   "id": "full-stride-382991@01.017",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.017",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-07T02:09:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "【Update Information】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update includes expanded in-game guides, a new multiplayer feature, and the following improvements and fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ New Features and Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Expanded the in-game guides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added guides explaining each screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Revised the controls guide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revised the race guide: ・Discontinued the PDF manual previously included with the Steam version following the expansion of the in-game guides: ・Added a Private Code feature to multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players who set the same code in the Options screen will only be matched with each other: ・Added a display showing the highest class currently available through Negotiate based on the player’s Jockey Points: ■ Bug Fixes: ・Fixed calendar-related issues, including incorrect weekday displays during certain weeks: ・Fixed an issue where Race 1 could be held again after Race 12: ・Fixed an issue where some parameters were displayed incorrectly on the two-year-old horse entry screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1840310314343586"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-07T02:09:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-07T02:09:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.823Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-07T02:09:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.367Z"
+  },
+  {
+   "id": "full-stride-382991@01.015",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.015",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-27T09:52:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "■ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the Cornering, Left/Right-Handed Track Aptitude, and Race Pace values were not displayed correctly on the Status screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Corrected the point calculation when returning a retired horse to active racing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1839041357035269"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-27T09:52:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-27T09:52:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.823Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-27T09:52:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.366Z"
+  },
+  {
+   "id": "full-stride-382991@01.014",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.014",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-25T07:36:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "■ Adjustments and Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Adjusted graphics and performance on the PS5 version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "・Revised the English trophy descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Adjusted the dirt course at Kyoto Racecourse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where horses set outside the game’s active loop period could appear twice in the store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1839041357031481"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-25T07:36:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-25T07:36:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.822Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-25T07:36:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.365Z"
+  },
+  {
+   "id": "full-stride-382991@post-2026-07-24",
+   "gameId": "full-stride-382991",
+   "displayName": "Edit Features Guide Now Available",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-24T16:02:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I’ve released a guide explaining the edit features available in Full Stride 🏇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It covers the basic setup, what can be edited, important notes, and includes a link to the Google Sheet used for editing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you find it helpful when setting up and using the edit features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1839041357030026"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T16:02:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T16:02:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.822Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-24T16:02:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.365Z"
+  },
+  {
+   "id": "full-stride-382991@01.013",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 01.013",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-24T02:23:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "【Update Information】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update includes a specification change related to support for edited horse data, along with the following improvements and fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Specification Change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Horses whose data falls outside the game’s active loop period will now appear as active racehorses from the age of two",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Restored the weight display on the Negotiate screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added game version information to the Options screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where spectators were not displayed at Kyoto Racecourse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the BGM volume could become unusually low in certain environments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1839041357028288"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T02:23:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T02:23:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.821Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-24T02:23:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.364Z"
+  },
+  {
+   "id": "full-stride-382991@1.00.1.012",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 1.00.1.012",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-22T21:44:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "■ New Features and Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added running style information to the Negotiate screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Race entries selected through Negotiate are now saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Corrected the header text on the Rankings screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Corrected the names of several races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where Season Best records were not updated correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where standard whip actions would sometimes not appear during replays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the kickback sound effect could continue playing during replays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where controls could become unresponsive when using the grandstand camera in the post-race replay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue that could cause points to be duplicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Adjusted background elements at local racecourses, including the placement of furlong markers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Adjusted collision detection between horses during races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where stamina would stop decreasing for closers under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1839041357025118"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-22T21:44:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.820Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-22T21:44:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.821Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-22T21:44:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.363Z"
+  },
+  {
+   "id": "full-stride-382991@1.00.1.010",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 1.00.1.010",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-18T23:14:52.000Z",
+   "notes": [
+    {
+     "title": "The main changes are as follows",
+     "items": [
+      {
+       "text": "■ Multiplayer Stability Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added safeguards against an issue that could cause horses to continue spinning in circles when players joined around the start of a race",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue that prevented players from joining another room after a failed connection attempt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added error dialogs when joining a room fails or when a room is disbanded during a session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "■ Additional Fixes for the Sudden Deceleration Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Adjusted collision detection to reduce the likelihood of horses becoming stuck or overlapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Added a minimum-speed safeguard to reduce the impact if the issue still occurs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1838407329262760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-18T23:14:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-18T23:14:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.820Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-18T23:14:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.361Z"
+  },
+  {
+   "id": "full-stride-382991@1.00.1.009",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 1.00.1.009",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-17T14:19:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Adjusted slowdown behavior when an NPC horse cuts in front",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The automatic slowdown that occurred when an NPC horse moved in front of the player has been removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instead, the player will now slow down slightly each time they make contact with a horse ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue that could prevent progress in post-race Replay Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where repeatedly switching between the Results screen and Replay Mode after a race could prevent players from returning to the Results screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3. Changed the default Quality setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The default Quality setting in System Settings has been changed from “High” to “Medium.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Adjusted the “High” Quality setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS5-specific optimizations have been applied to improve overall performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1838407329259664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T14:19:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T14:19:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.819Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-17T14:19:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.360Z"
+  },
+  {
+   "id": "full-stride-382991@1.00.1.007",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 1.00.1.007",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-16T16:57:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "**Ful Stride v1.00.1.007 Update Notice**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added controller instructions and a text-based race guide to the in-game Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"Quit Game\" button to the in-game Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with the starting gate placement for the Kyoto Racecourse Dirt 1800m couse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several other minor bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45899452/404b51b5aab44814fe2cc2a0d00d0f725c3275de.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1838407329257295"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T16:57:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T16:57:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.818Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-16T16:57:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.359Z"
+  },
+  {
+   "id": "full-stride-382991@1.00.1.006",
+   "gameId": "full-stride-382991",
+   "displayName": "Update 1.00.1.006",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-16T03:05:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where previous ranking data remained after starting a New Game from the Save & Load menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where horses could become embedded in the rail at the second corner of Hanshin Racecourse’s outer course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where browbands were incorrectly displayed as shadow rolls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue affecting dirt races at Kyoto Racecourse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where changing the player’s name during a playthrough was not reflected in the rankings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the career win rate was displayed at one-hundredth of the correct value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the BGM volume setting could be reset when certain voice lines were played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where parts of custom racing silks designs were displayed out of alignment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1838407329255613"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T03:05:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T03:05:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.817Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-16T03:05:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.359Z"
+  },
+  {
+   "id": "full-stride-382991@dayone-2026-07-15",
+   "gameId": "full-stride-382991",
+   "displayName": "Day one patch",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-15T15:36:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "軽微なバグ修正",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4181970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4181970/view/1838407329254548"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T15:36:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-4181970",
+      "checkedAt": "2026-11-13T03:21:25.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:47.358Z"
+  }
+ ],
+ "issues": []
+}

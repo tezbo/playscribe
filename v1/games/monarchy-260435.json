@@ -1,0 +1,246 @@
+{
+ "game": {
+  "id": "monarchy-260435",
+  "igdbId": 260435,
+  "name": "Monarchy",
+  "cover": {
+   "imageId": "co8ylh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8ylh.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2g61",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2g61.jpg"
+  },
+  "ps5Release": "2024-11-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "monarchy-260435@post-2024-11-09",
+   "gameId": "monarchy-260435",
+   "displayName": "Added a new map with no enemies and fixed some issues",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-09T16:28:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a new map, Safe Lands. There are no enemies in this map and no wining or lose conditions: Playing this map in easy mode will use the summer tileset, in normal the autumn and in expert mode the winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an sfx when you activate the windmill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a gamepad issues when you go back to welcome screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a soft lock in The Siege, to build the trebuchet you now need to advance to the castle. It is no longer required that the trebuchet is inside the safe zone (between last wall and ground banner).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a particle effect for farms when the windmill is activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2391650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2391650/view/6148070194801665529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-09T16:28:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2391650",
+      "checkedAt": "2026-11-13T03:25:51.940Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-09T16:28:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2391650",
+      "checkedAt": "2026-11-13T03:25:51.940Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-09T16:28:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.921Z"
+  },
+  {
+   "id": "monarchy-260435@post-2024-11-08",
+   "gameId": "monarchy-260435",
+   "displayName": "Updated difficulty and balance adjustments",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-08T23:06:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added difficulty levels, easy, normal and expert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Horse has higher stamina on normal and easy levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrading to a tent costs 2 coins less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horses at stables costs 2 coin less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased distance from the outer wall to the ground banner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted costs of catapult tower to be cheaper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When completing a scenario you go back to the welcome screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in the siege map with the cutscene where enemy guards could spawn too close to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the number of squirrels in the forest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Upgrade tree costs 1 coin less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the beggar picking up a coin would not play an sfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 3,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2391650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2391650/view/6148070194801642760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-08T23:06:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2391650",
+      "checkedAt": "2026-11-13T03:25:51.940Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-08T23:06:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2391650",
+      "checkedAt": "2026-11-13T03:25:51.940Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-08T23:06:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.920Z"
+  }
+ ],
+ "issues": []
+}

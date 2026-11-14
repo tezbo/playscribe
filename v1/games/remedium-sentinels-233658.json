@@ -1,0 +1,89 @@
+{
+ "game": {
+  "id": "remedium-sentinels-233658",
+  "igdbId": 233658,
+  "name": "Remedium: Sentinels",
+  "cover": {
+   "imageId": "co68kw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co68kw.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar23ct",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar23ct.jpg"
+  },
+  "ps5Release": "2025-08-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "remedium-sentinels-233658@major-2025-03-27",
+   "gameId": "remedium-sentinels-233658",
+   "displayName": "Optimization update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-27T11:41:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Upgrade game to last Unreal 5.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add Vulkan shaders, gain 10-20% performance boost on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Other optimizations for various hardware implemented",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2244480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2244480/view/1795283637817451"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-27T11:41:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2244480",
+      "checkedAt": "2026-11-12T09:24:39.938Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:39.938Z"
+  }
+ ],
+ "issues": []
+}

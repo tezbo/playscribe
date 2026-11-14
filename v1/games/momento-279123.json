@@ -1,0 +1,2114 @@
+{
+ "game": {
+  "id": "momento-279123",
+  "igdbId": 279123,
+  "name": "Momento",
+  "cover": {
+   "imageId": "coc5a8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc5a8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5zgj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5zgj.jpg"
+  },
+  "ps5Release": "2026-06-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "momento-279123@1.1.14",
+   "gameId": "momento-279123",
+   "displayName": "Update 1.1.14",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-11-04T23:19:37.000Z",
+   "notes": [
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "Added a “skip unpacking” toggle to Settings. This is particularly helpful for those runs where you’ve completed levels and don’t want to redecorate—just focus on the choices to get to a new location!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New game button moved to settings if there is an existing game file. To prevent accidental save deletion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the Beach House with new UX. Now, after you’ve completed an editing, the frame of that ending will fade in to show the impact it has on the room (look for what items it spawned!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also added a popup to let players know how many endings they’ve completed—and how many they need to discover to read the letter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other small bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Know issues",
+     "items": [
+      {
+       "text": "Save issue on draws, items placed in draws are disappearing when the room is reloaded from a save file. Still looking into the cause of this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1848557880481167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T23:19:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T23:19:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.550Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-04T23:19:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.163Z"
+  },
+  {
+   "id": "momento-279123@1.1.13",
+   "gameId": "momento-279123",
+   "displayName": "Update 1.1.13",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-01T06:13:08.000Z",
+   "notes": [
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "Character Glossary added. This can be found in the pause menu in story mode. And contains all the names of the characters in the story and the alternative names they go by.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settings menu, delete current mid level save added. This will allows players who have a corrupted mid level save to reset their rooms remotely and continue the story. If you find the game stuck in a infinite loading loop on a story mode level use this button to fix this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mirror additional art states added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Metal Grate additional art states added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hall way table additional art states added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Old Laptop interactable state added, with desktop screen that turns on when clicked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "City background fixed to remove the buildings with odd cut off. Full building now visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Musical Symbol added to the music stand top to help with clearer identification of items purpose.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other small bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for playing Momento!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1842212951312288"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-01T06:13:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-01T06:13:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.550Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-01T06:13:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.162Z"
+  },
+  {
+   "id": "momento-279123@1.1",
+   "gameId": "momento-279123",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-06T19:32:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re excited to bring you our first major update since the game launched, which we’re calling Realities. The core of this is alternative versions of early rooms, so you'll be able to play different versions through your playthroughs, giving a clearer sense of all the loops that you've visited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2474770/Momento/\"]Now let's dive into Realities!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Alternate Early Rooms 🔀",
+     "items": [
+      {
+       "text": "We’ve added multiple versions of the Cot Room, Childhood Bedrooms, and Teenage Bedrooms so that you’ll see different versions as you play through different loops. There are now three versions of the Cot Room (the first level) and two versions of the Childhood Bedrooms (Dinosaur, Teddy, and Unicorn) Teenage Bedrooms (Mom's Place, Dad's Place, Tyler & James's Place)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know these early rooms are encountered the most, so wanted to give you more variation in play—we hope you enjoy it. And the layouts aren't the only things that change, so keep an eye out! What else can you learn?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[carousel autoadvance=\"true\"][img src=\"{STEAM_CLAN_IMAGE}/44776801/e4b300d8ce34707dd3eea2eba26e6bf32571a7db.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/44776801/1092cf0c3cfc9eb006a56b3e4d4ae3da0a7940c2.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/44776801/e25043c3639420f85c6fa896261f0f6c53b59e1c.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/44776801/101158f77c3a458310fb94667b5401f0d9b5ce28.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you play these rooms, you can access the Variants through the Wall of Memories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/9461f2eb31ba7ff12db2fe076edf29f59543da1c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Creative Mode Features 🖼️",
+     "items": [
+      {
+       "text": "We've added a few things to make Creative Mode a bit more fun. First up, new backgrounds! You'll be able to swap between backgrounds, including a cityscape, back garden, mountain range, and space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/afc0fb618f312eaede5303f2962f147ca6cca0ef.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've added new states to windows and other items too, so you can place them on either wall!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/ff5abe3a4e25ff826845d5583782b9f14b77a870.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "That pesky test tube layering is fixed now too 😌",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/deb94b79184c10cd01860fc3a6e140e8834d46a6.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AND you can change the room size without restarting the room—we're very excited about this one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "More Puzzles 🧩",
+     "items": [
+      {
+       "text": "When we added puzzles to this game, we had no idea that they would resonate so much with people! We were delighted, of course, and now have added 70 more for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Our deepest apologies for the updated work that this means for this very good Achievement Guide creator! 🙇🏻‍♂️)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/332991630f0f4f3876b3f6af50ea7ed86048a555.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And of course, we've squashed bugs and added a few QOL updates, the most important of which is we've made it more clear which items you've chosen on previous runs, and when you hover over a momento box, the vines will remain so it's easier to find the relevant item to read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[carousel autoadvance=\"true\"][img src=\"{STEAM_CLAN_IMAGE}/44776801/824ae146b61557877b5d3b88aaebb9822a3f1994.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/44776801/95c0d8a932599665b6485ec9ab709168234aed1c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can read the full list of updates in our Patch Notes here, and then go ahead and dive in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the Momento team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/44776801/afc0fb618f312eaede5303f2962f147ca6cca0ef.gif\"]",
+     "We've added new states to windows and other items too, so you can place them on either wall!",
+     "[img src=\"{STEAM_CLAN_IMAGE}/44776801/ff5abe3a4e25ff826845d5583782b9f14b77a870.jpg\"]"
+    ]
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1840310314342971"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T19:32:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.549Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T19:32:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.549Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-06T19:32:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.161Z"
+  },
+  {
+   "id": "momento-279123@1.1.11",
+   "gameId": "momento-279123",
+   "displayName": "Patch 1.1.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-06T19:19:02.000Z",
+   "notes": [
+    {
+     "title": "Major Updates",
+     "items": [
+      {
+       "text": "Alternate versions of early rooms are now available and will cycle through as you play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two alternate versions of Cot Room (three variants total, including the original)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One alternate version added for Childhood Bedrooms & Teenage Bedrooms (two variants total, including the original)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to swap into room variants in the Wall of Memories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New backgrounds in Creative Mode (& more!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "70 new puzzles across all levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Creative Mode Updates",
+     "items": [
+      {
+       "text": "Four new backgrounds to swap between",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Four new wallpapers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New furniture states for tables, beds and desks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New states for windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Change rooms size in without restarting room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QOL Updates",
+     "items": [
+      {
+       "text": "Key item \"vines\" will now remain so it's easier to find the items that unlock them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated UI to more clearly show what choices you've made in previous runs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you've completed a level in Story Mode, screenshots will save to your game save folder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam screenshots feature added—you can toggle it on in Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized and improved loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text scaling of UI added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated translation strings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fridges now have lights!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Small bug fixes",
+     "items": [
+      {
+       "text": "Hidden placeable area in Childhood Bedroom (Dino) fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vintage mirror contact point fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Open door change of direction light fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Portable TV interaction collider added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Puzzle hint for \"Still Life Practice\" in Tyler & James's apartment no longer showing before the items available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Screen edge panning disabled when controller in use to fix camera movement bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that was resetting puzzle progress on room progress after save and quit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vsync, frame rate caps, settings added in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Legacy item placement bugs fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vinyl state flickering fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Items spawn delay in creative mode fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Test tube rake now has snapping and correct layering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level select camera transition bug fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 13,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1840310314342940"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T19:19:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T19:19:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.548Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-06T19:19:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.160Z"
+  },
+  {
+   "id": "momento-279123@1.0.34",
+   "gameId": "momento-279123",
+   "displayName": "Patch 1.0.34",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-15T10:46:46.000Z",
+   "notes": [
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "QOL improvement on sound track to reduce repetitiveness of the early room sound tracks. The main theme of each room plays less often now and the is more chill and improvisation sections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve UX feedback on context clues, vines stay visible helping players find the notes connected to each Momento Box. A star shoots out from the note when read to unlock the Momento box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hint camera zoom out update - camera stays zoomed out and you can can select items related to a puzzle immediately to allow for easier puzzle completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Outlines on items staying on -> FIXED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steam achievements not triggering -> FIXED and any already completed acheivements should auto complete on next game start.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "New strings added that are not properly localised. Localisation in some of the Wall of Memory mode is temp and will be updated in v1.1 once we get the localised string back from the external localisation team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Items appearing in Bins on load. Throwing out the boxes and crates after they are unpacked into the bin is leading to items appearing in the bin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Errors in the hint system, some puzzles like “reforged in the fire” are showing there hint button before the puzzle is solvable. Leading to confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missing Audio issues, and musical instruments continuously playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will be the last patch before our first major update Realities Update v1.1 which is coming out early August. We are super excited to share this with you, it aims to address the key concerns and feedback we have received from the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for helping make Momento better!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1838407329253899"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T10:46:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.547Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T10:46:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.547Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-15T10:46:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.160Z"
+  },
+  {
+   "id": "momento-279123@1.0.31",
+   "gameId": "momento-279123",
+   "displayName": "Patch 1.0.31",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-18T05:27:25.000Z",
+   "notes": [
+    {
+     "title": "Major",
+     "items": [
+      {
+       "text": "Momento box not showing choices - improvements to system to make it more stable and less prone to errors. We were unable to recreate this issue but have added extra debugging checks so if it happens please send in the files requested in the bug report form and we will be able to identify the issue quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Error on puzzle pop up UI to prevent lost puzzle data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional garbage collection between each scene load to improve performance on lower end devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Minor",
+     "items": [
+      {
+       "text": "Fixed resolution dropdown to show all available screen sizes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed video players to remove warning on creative mode load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed obsoleted functions and objects from scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Know Issues",
+     "items": [
+      {
+       "text": "Crash due to particle systems. We have seen a significant drop in crashes due to the unity engine particle error but still a couple happening for players. We are continuing to investigate this issue and are working with Unity to resolve it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mid Level saves, legacy items disappearing. Working on a solution to this, next update will have fix to prevent this happening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continuity error on photo(can't say more without spoiling story). Will be fixed next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Achievements not completing despite all puzzles solved in a level. We are working on a fix and will make sure you get these achievements on start when the patch is pushed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Coming soon.... Level select!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for playing!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1835871199302910"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T05:27:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.547Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.159Z"
+  },
+  {
+   "id": "momento-279123@major-2026-06-17",
+   "gameId": "momento-279123",
+   "displayName": "First week update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-17T21:22:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's been ✨ ONE WEEK ✨ since Momento secretly launched on Steam during Wholesome Direct, and what a week it's been! We wanted to put together a post to talk about what we've been working on this past weeks, some known issues that have appeared, and a couple things coming down the pike.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/16075c3d28b0335a54d3a31516acdbdbad63a137.jpg\"]the two plushies in the middle represent our two studios: Fat Alien Cat & Nomo Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Reviews",
+     "items": [
+      {
+       "text": "We've had some lovely coverage from a few outlets, including Checkpoint Gaming, ScreenHub, Gaming.net and Game Grin! Still a bit wild to see these come in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A few QOL updates! 🎉",
+     "items": [
+      {
+       "text": "We are working on more of these that will come with a future patch, so stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌖 increased the brightness for nighttime levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⌨️ updated key rebinding so you can't softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⌨️ two actions can now be rebound to have the same key input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧩 updated a few puzzle solutions so they're not as strict",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔍 working on a way to see all the levels at once (and a level select 👀)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💻 made some silly goofs with streamers. No, AO3 is not in the game... yet?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/380f957daf95c45f2826ef3dfa96954b1240738b.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues! 📋",
+     "items": [
+      {
+       "text": "We've had one gnarly bug in particular (unexpected crashing) that we're working to fix. We'll be updating known issues in this thread in our Steam Forums if you want to keep track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💥 Some players are still experiencing crashes. We've put through four patches to fix it, but it's persistent, so we're still figuring out what could be causing it. We've updated Unity as well which we think will help—the particle system seems to be a likely culprit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧐 Missing key choices in some levels (we're on the hunt!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚙️ Legacy items breaking from mid-level saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎨 On Mac: Creative Mode presets breaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs Squashed! 🐞",
+     "items": [
+      {
+       "text": "Just a little taste of bugs, you can see more of them in individual updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A misplaced ending in our ink file resulted in cryptic text (\"HIDE ME\") sneaking through to the Beach House. Some enterprising players on Steam assumed it was narrative & we do appreciate that faith in us, but it was a bug 😅",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Some players were getting soft locked by placing context clues behind the unpacking boxes. We've prevented this from happening!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Couldn't snap blocks to the \"halfway\" setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Books on windowsills weren't connecting properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Layering issues tweaked on some items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Colliders updated on some furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44776801/0d1b0141b5e65f5b0d91d3770e68eca2b31dc685.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Console Timing",
+     "items": [
+      {
+       "text": "We're so excited that console ports are coming very soon: June 30th! SO close!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join our Discord",
+     "items": [
+      {
+       "text": "Our Discord has been a lovely space if you want to chat theories, share Creative Mode screenshots, or chat with other players. Join us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks so much for all of your support for this launch, we have been so touched seeing how people have been enjoying the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-the Momento team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1835871199301973"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-17T21:22:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.546Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.158Z"
+  },
+  {
+   "id": "momento-279123@1.0.30",
+   "gameId": "momento-279123",
+   "displayName": "Patch 1.0.30",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-15T10:56:09.000Z",
+   "notes": [
+    {
+     "title": "1.0.30",
+     "items": [
+      {
+       "text": "Only one update with this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unity engine update to resolve game crashes. There is a known issue with the Unity particle system that we believe is responsible for a majority of the crashes that have been reported. We've updated Unity to a newer version that reportedly fixes this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: This has been a tricky bug to reproduce, but we have received reports that this patch has resolved the issue for some players. If you are still experiencing game crashes after the update, please let us know here or via the bug report form in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "Missing Momento options: some players are finding the momentos UI is not working in particular rooms. We are currently investigating this issue. In the meantime if this happens you can restart the level to resolve the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mid level saving breaking on Legacy items. Legacy items(items from different lives) are disappearing from save file. We are currently looking into fixing this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MAC, Creative mode presets causing infinity loading loop on first time loaded after updates. Work around is to close the game and return to creative mode, this fixes the issue. We are currently investigating this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1835236783569813"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T10:56:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.545Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.157Z"
+  },
+  {
+   "id": "momento-279123@1.0.28",
+   "gameId": "momento-279123",
+   "displayName": "Patch 1.0.28",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-12T11:51:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.0.28",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CRITICAL FIXES",
+     "items": [
+      {
+       "text": "Particle system optimisation - removed additional problematic particle systems that were leading to crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hint error caused by bags being thrown into bins - resolved and now will show hint correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Flash Animation error - resolved and not longer causing hints to error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controller Disconnection error resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Minor Fixes",
+     "items": [
+      {
+       "text": "\"HIDE ME\" temp text removed from beach house room in run 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Memory leak in level load leading to crashes on a small number of players devices. We are working on a solution for this as a high priority.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missing Key Choices. Some players are finding rooms momento boxes are not correctly displaying the key choice leading to a soft lock. We are also looking for a solution for this as a high priority.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for playing!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1835236783563217"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T11:51:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.545Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.156Z"
+  },
+  {
+   "id": "momento-279123@1.0.27",
+   "gameId": "momento-279123",
+   "displayName": "Update 1.0.27",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-10T12:00:25.000Z",
+   "notes": [
+    {
+     "title": "CRITICAL FIXES",
+     "items": [
+      {
+       "text": "Particle System optimization - Unity Engine has a memory leak issue with its built in particle systems :sparkles: . This was causing some players games to crash after 10-20mins of continuous play. We have found a work around for this and the issue should no longer be occurring. If it does still happen please let us know and we will prioritise getting a fix for you asap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soft Lock fixed - Some players were getting soft locked by placing context clues behind the unpacking boxes. This has been resolved and can't happen anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Minor Fixes",
+     "items": [
+      {
+       "text": "Lighting update - Night time lighting has been increased in brightness to help with visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1835236783557330"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T12:00:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.544Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.156Z"
+  },
+  {
+   "id": "momento-279123@1.0.25",
+   "gameId": "momento-279123",
+   "displayName": "Update 1.0.25",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-09T12:31:32.000Z",
+   "notes": [
+    {
+     "title": "CRITICAL Fix",
+     "items": [
+      {
+       "text": "Rebinding the \"PickUp\" no longer breaks the UI interaction leading to a soft lock of the game. You can now change your key bindings as you wish without fear.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Minor Fixes",
+     "items": [
+      {
+       "text": "Two actions can now be rebound to have the same key input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Credits: Updated with missing play tester names and typos fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Puzzle Updates",
+     "items": [
+      {
+       "text": "Gladiator: Simlified puzzle so it isnt as annoying to solve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Always a Chance: Fixed missing item from puzzle hidden in chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shooting Stars: Fixed annoying placement issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Crash for some players after a consistent period of time playing (30min-1hr). We have narrowed down the issue with this one and are close to having a solution. Sit tight, hopefully we will have this fully resolved in the next patch.: Thanks for playing!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Julian and the Momento team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1834602721201635"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-09T12:31:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.544Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.155Z"
+  },
+  {
+   "id": "momento-279123@1.0.23",
+   "gameId": "momento-279123",
+   "displayName": "Update 1.0.23",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-07T04:31:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.0.23",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critical save issue resolve. A small percentage of players were losing access to their save files when they hit continue from the main menu. This issue has been resolved and all save data should be retained.: If this issue affected you, thank you so much for reporting it so quickly. You should be able to continue where you left off without issue now.: Thank you so much for playing Momento!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1834602721195262"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T04:31:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.543Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.155Z"
+  },
+  {
+   "id": "momento-279123@post-2026-05-13",
+   "gameId": "momento-279123",
+   "displayName": "We've updated the Momento 🧸 Demo!",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-05-13T02:55:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all! It's been a while since our demo first released, and even a few months since Next Fest, so we figured it was time to give our demo a polish to make it more in line with how the game will look and feel. So dive back in and let us know what you think—and enjoy the mid-level saving that's not incorporated (hooray!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Key Features",
+     "items": [
+      {
+       "text": "Context clues for each momento choice - you'll need to inspect items in the room to unlock the momento",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New unpacking mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Book snapping improvements (very satisfying!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated soundtrack and sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Creative mode UI updated for smoother decorating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Room layouts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Puzzle rewards in each room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed quite a few seam and layering issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "annnnnnd...... mid-level saving!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And as a reminder, don't forget to tune in to Wholesome Direct this year for a big announcement from us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Context clues for each momento choice - you'll need to inspect items in the room to unlock the momento",
+     "New unpacking mechanic",
+     "Book snapping improvements (very satisfying!)"
+    ]
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1832700592785213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-13T02:55:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.542Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:26.154Z"
+  },
+  {
+   "id": "momento-279123@0.2.8",
+   "gameId": "momento-279123",
+   "displayName": "Update 0.2.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-10T12:35:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to all those who have played the demo so far!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have just pushed a small update to the demo with some Quality of Life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are primarily focusing on the main game production so I haven't had a chance to address more of the feedback but we have plans for a bigger demo update early next year so stay tuned for that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of Life update: 0.2.8 (windows only - Mac update coming soon)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial pop ups updated to not keep showing after confirm button pressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "control guide removed from loading screen and spawned after title card on first play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading Screen updated with new tip text to show where to find control guide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocked state tutorial art updated to have red box to reflect game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Teddy Bear choice icon replaced with Locked Icon to better indicate locked state for demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main Menu Load times improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settings option added to allow for cursor to be unlocked from window confines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steamworks setup",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "SFX added to menu buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various small fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again to all the people who have submitted feedback and/or filled out bug reports! It really helps me identify what areas need attention.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warm regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Julian and the Momento Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2474770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2474770/view/1818752592120579"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-10T12:35:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2474770",
+      "checkedAt": "2026-11-13T03:25:51.541Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:15.886Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "169d94ac8773",
+   "text": "Crash for some players after a consistent period of time playing (30min-1hr). We have narrowed down the issue with this one and are close to having a solution. Sit tight, hopefully we will have this fully resolved in the next patch.: Thanks for playing!!!",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.25"
+  },
+  {
+   "id": "dce62e0ec164",
+   "text": "Julian and the Momento team",
+   "status": "addressed",
+   "firstReleaseId": "momento-279123@1.0.25",
+   "addressedBy": "momento-279123@major-2026-06-17",
+   "addressedAt": "2026-06-17T21:22:01.000Z"
+  },
+  {
+   "id": "ad51fd423031",
+   "text": "Memory leak in level load leading to crashes on a small number of players devices. We are working on a solution for this as a high priority.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.28"
+  },
+  {
+   "id": "6b0e30f2928e",
+   "text": "Missing Key Choices. Some players are finding rooms momento boxes are not correctly displaying the key choice leading to a soft lock. We are also looking for a solution for this as a high priority.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.28"
+  },
+  {
+   "id": "5d50f2c92b5e",
+   "text": "Thanks for playing!!",
+   "status": "addressed",
+   "firstReleaseId": "momento-279123@1.0.28",
+   "addressedBy": "momento-279123@1.0.31",
+   "addressedAt": "2026-06-18T05:27:25.000Z"
+  },
+  {
+   "id": "086bbd00b3cc",
+   "text": "Missing Momento options: some players are finding the momentos UI is not working in particular rooms. We are currently investigating this issue. In the meantime if this happens you can restart the level to resolve the issue.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.30"
+  },
+  {
+   "id": "3cb2307ebd61",
+   "text": "Mid level saving breaking on Legacy items. Legacy items(items from different lives) are disappearing from save file. We are currently looking into fixing this issue.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.30"
+  },
+  {
+   "id": "a0b223c559ed",
+   "text": "MAC, Creative mode presets causing infinity loading loop on first time loaded after updates. Work around is to close the game and return to creative mode, this fixes the issue. We are currently investigating this issue.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.30"
+  },
+  {
+   "id": "008dcb1bd981",
+   "text": "We've had one gnarly bug in particular (unexpected crashing) that we're working to fix. We'll be updating known issues in this thread in our Steam Forums if you want to keep track!",
+   "status": "open",
+   "firstReleaseId": "momento-279123@major-2026-06-17"
+  },
+  {
+   "id": "217e3a5c1f96",
+   "text": "💥 Some players are still experiencing crashes. We've put through four patches to fix it, but it's persistent, so we're still figuring out what could be causing it. We've updated Unity as well which we think will help—the particle system seems to be a likely culprit.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@major-2026-06-17"
+  },
+  {
+   "id": "f9e0d11c7047",
+   "text": "🧐 Missing key choices in some levels (we're on the hunt!)",
+   "status": "open",
+   "firstReleaseId": "momento-279123@major-2026-06-17"
+  },
+  {
+   "id": "861ebcf607d9",
+   "text": "⚙️ Legacy items breaking from mid-level saves",
+   "status": "addressed",
+   "firstReleaseId": "momento-279123@major-2026-06-17",
+   "addressedBy": "momento-279123@1.0.31",
+   "addressedAt": "2026-06-18T05:27:25.000Z"
+  },
+  {
+   "id": "27635c16c774",
+   "text": "🎨 On Mac: Creative Mode presets breaking.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@major-2026-06-17"
+  },
+  {
+   "id": "c4e41f496d07",
+   "text": "New strings added that are not properly localised. Localisation in some of the Wall of Memory mode is temp and will be updated in v1.1 once we get the localised string back from the external localisation team.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.34"
+  },
+  {
+   "id": "3ca53b781f40",
+   "text": "Items appearing in Bins on load. Throwing out the boxes and crates after they are unpacked into the bin is leading to items appearing in the bin.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.34"
+  },
+  {
+   "id": "c9cb32e23647",
+   "text": "Errors in the hint system, some puzzles like “reforged in the fire” are showing there hint button before the puzzle is solvable. Leading to confusion.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.34"
+  },
+  {
+   "id": "a9c599fd5e79",
+   "text": "Missing Audio issues, and musical instruments continuously playing.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.34"
+  },
+  {
+   "id": "f09c585b006a",
+   "text": "This will be the last patch before our first major update Realities Update v1.1 which is coming out early August. We are super excited to share this with you, it aims to address the key concerns and feedback we have received from the community.",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.34"
+  },
+  {
+   "id": "83f9fba48688",
+   "text": "Thank you for helping make Momento better!!!",
+   "status": "open",
+   "firstReleaseId": "momento-279123@1.0.34"
+  }
+ ]
+}

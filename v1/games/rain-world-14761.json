@@ -1,0 +1,4323 @@
+{
+ "game": {
+  "id": "rain-world-14761",
+  "igdbId": 14761,
+  "name": "Rain World",
+  "cover": {
+   "imageId": "co24pm",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co24pm.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4yg0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4yg0.jpg"
+  },
+  "ps5Release": "2023-07-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "rain-world-14761@1.11.8",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.11.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-14T22:09:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released a new patch which fixes Watcher’s final ending sequence not progressing properly, Artificer’s ending sequence not triggering, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to read the full patch notes, I’ll list them below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed Watcher's final ending sequence not progressing properly if you visited The Prince on the same cycle that the ending sequence was triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Watcher's final ending sequence not progressing properly depending on your character's position in one of the ending rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some players with older Watcher save files not being able to trigger Spinning Top's ending properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Artificer's ending sequence not triggering sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash in the Shattered Terrace region affecting console versions of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when loading save files that was affecting some PlayStation 4 players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed echo encounters crashing the game when Rain World Remix is disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a Ripple Spider related crash that was affecting console versions of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause Steam Workshop uploads to eventually fail if you updated your mod too many times.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed one of the encounters with Spinning Top in Ancient Urban unintentionally awarding the player with the Void Weaver achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some of The Prince's miscellaneous dialogs not triggering if Jolly Co-op was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Watcher's purple eye effect still being able to be triggered before Watcher actually has ripple attunement .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Spinning Top still being able to spawn inside of Watcher safari mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked karma flower behavior with ripple spawn eggs to not overlap as much with ripple tree mechanics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Retroactively unlocked rotted Watcher safari mod regions for players that completed the Sentient Rot ending prior to the Watcher Safari patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some extra diversity to Watcher creature spawns in Competitive arena mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you run into any issues please report them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 1,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1830163047252215",
+    "ps5Page": "https://bugs.akuparagames.com/rain-world/bugs"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T22:09:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.566Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T22:09:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.566Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-14T22:09:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:32.785Z"
+  },
+  {
+   "id": "rain-world-14761@1.11.7",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.11.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-31T19:49:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We have a new set of patch notes hot and ready.",
+     "items": [
+      {
+       "text": "This patch adds Watcher to safari mode, improves ripple spawn pathing, and more… so much more… The patch notes are two pages long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Safari Mode is now available for the Watcher campaign's regions and creatures (there are no new tokens to collect, the orange tokens in Watcher's campaign will unlock both arena map & safari region)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Ripple Trees\" now appear throughout the Watcher campaign's regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual polish to the ripple spawns, including a big graphical overhaul and rebalancing of the ripple jellies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved ripple spawn pathing to warp points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better Lobe Tree and Bone Shaker positioning in rotted rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Lobe Trees and Bone Shakers more resistant to wind currents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Lobe Trees duplicating and having erroneous collision when reloading a room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lobe Trees from being able to be pulled into warp points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash if you tried to create a warp point while outside of the screen bounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed corruption erroneously appearing near the respawn room at the start of Watcher's campaign if you revisit it more than once before meeting Spinning Top for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain music events failing to stop playing after performing a dial warp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unplucked karma flowers still staying attached to their stems after being pulled through a warp point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inconsistencies where one way warps or sealed warps may show wrong visuals, or sealed warps may visually reappear after being sealed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inconsistencies in the warp map that could occur if dying on the same cycle that you sealed a warp point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inconsistencies in the warp map where bad warps could sometimes show up on the map even though they're unusable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed warp point markers not showing up when viewing region maps inside of the hibernation screen and title screen Region menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situations where the region map ends up scrolled to random or undiscovered locations on the map when the map is first opened for viewing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Vulnerable Jellyfish\" Remix config not actually making jellyfish vulnerable to spear throws.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Breath Time Leniency\" Remix config only giving leniency to Rivulet and not to any other slugcats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a select few creatures that would crash the game if adult Sand Grubs attempted to grab them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a select few noise sources that could crash the game with Drill Crabs too when they tried to react to the noise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the volume of the background audio not adjusting properly during the final encounter in Outer Rim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some creatures failing to be sedated by nearby echoes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Overseers and ripple spawns being able to be killed by Thermal Relay's zappers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the extra cycles you get from Pebbles in Hunter's campaign not persisting if you died or visited an echo immediately after getting the extra cycles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed slugpups sometimes spawning inside shelters that aren't accessible to the slugcat you're currently playing with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Dragon Slayer passage being glitchy if you changed the enabled state of More Slugcats and Watcher DLCs mid-playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some progression data persisting after resetting your save file that wasn't meant to persist (like Watcher character profile art, and tutorial flags).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the special Watcher title screen illustration reverting to the normal Watcher title screen illustration if you entered and exited from Expedition mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that could potentially happen if holding a directional key while Hunter's intro cutscene was loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed not being able to trigger most of the music triggers in the game when playing Inv's campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some broken spawns in some of the arena maps in Competitive mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few dangerous Watcher creatures which didn't trigger the threat music when hostile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Scavenger Templars and their packs never wandering a region if the wrong scavenger became the leader of their pack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusting some Watcher music triggers to tweak levels of repetition or frequency of playback, and to fix a few that wouldn't trigger at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it so you can still return to the hibernation screen after seeing a Watcher dream sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added protection against flame jets when sitting inside of pipe entrances or traveling through a pipe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made Weaver Threads display every time a sealed warp is visited on a cycle, not just on the first time it is visited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the swimming and pipe traversal behavior for Frogs and Rats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made it so multiple frogs can attach at the same time to larger creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the path following for Sky Whales.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the collision handling and interaction between creatures and sloped terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Yellow Lizard pack behavior by having them no longer treat dead lizards in their pack as active members of the pack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some nerfs to Basilisk Lizards and Blizzard Lizards, fixed softlock with Blizzard Lizards inside of shelters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made creatures more actively try to avoid touching shelled Barnacles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more varied inter-creature relationships for creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modified Loach's diets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some visual polish to Spinning Top despawning and ripple spider spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the speed that rooms bake for region modders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you run into any issues please report them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 28,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1828441623113190"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-31T19:49:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.565Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-31T19:49:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.566Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-31T19:49:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:32.784Z"
+  },
+  {
+   "id": "rain-world-14761@1.11.6",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.11.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-02T17:28:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Patch alert!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This patch includes multiple fixes including Jolly Co-op, the electric death effect failing to kill the player, restoring Artificer’s ability using the special key, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you would like to read the full patch notes then read them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored Artificer's ability to explosion jump using the Special key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Jolly Co-op mode, fixed Remix's drowning meter often not displaying properly for Player 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Jolly Co-op mode, fixed only one of the players having a glowing light source around them while underwater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Jolly Co-op mode, fixed a 2x speed glitch that would happen in most iterator cutscenes if multiple players entered the room simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Jolly Co-op mode, fixed Rubicon's karma sigils not working for any players other than Player 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked creature sedation mechanics inside shelters to make it slightly more lenient for the player to escape when there's aggressive creatures inside the player's shelter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed adult sandgrubs crashing the game after killing one, if you unloaded then reloaded the room its corpse was in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain hypothermia mechanics not working if only Watcher was enabled and not More Slugcats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Watcher's statistic screen crashing if More Slugcats was disabled and certain affected creatures were included in the creature kill tracker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few edge cases where the unlockable token tracker would display a token that didn't actually exist or wasn't obtainable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the popcorn plant sandbox unlockable in Farm Arrays not being obtainable by Rivulet or Saint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few edge cases where delivering some pearls in Expedition Mode wouldn't actually properly add those pearl to More Slugcat's Collections menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the end of cycle electric death effect failing to kill the player in situations where it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the end of cycle electric death effect rendering incorrectly on PlayStation and a few other related graphical effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed medium and large Centipede spawners in Sandbox mode not spawning the correctly sized centipedes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed angry Noodleflies being able to still accurately track Watcher's location while Watcher is camouflaged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the scavengers that spawn in Artificer's tutorial failing to spawn on subsequent Artificer playthroughs after the first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of the Karma Flowers in Drainage System not spawning when More Slugcats was enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some parts of lizards' bodies not being graphically affected when the lizard is covered in mud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some improper layering between region gate graphics and other graphics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Nerfed the amount of time that Saint gets stunned by Snail pops, and made it so extended Saint exhaustion from stuns can't continuously stack on each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the arena maps that are unlocked via The Surface region to have blizzard end of cycle threat instead of rain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Watcher can now progress the Scholar passage after obtaining the mark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you had fully cured a region of sentient rot prior to the v1.11.5 patch, you can now properly mark it as cured by returning to the affected regions and hibernating once inside of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues please report them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 14,
+    "balance": 1,
+    "other": 15,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1823191198611935",
+    "ps5Page": "https://bugs.akuparagames.com/rain-world/bugs"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-02T17:28:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.564Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-02T17:28:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.564Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-02T17:28:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:32.783Z"
+  },
+  {
+   "id": "rain-world-14761@1.11.5",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.11.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-17T18:05:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released a patch which fixed a large number of memory leaks issues that could lead to the game crashing randomly over an extended play session, made a large number of miscellaneous performance optimizations, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This might be the longest patch notes I have ever received. It takes up almost two pages in the Google Doc I am reading from. If you would like to read the full patch notes, you can read them below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed a large number of memory leak issues that could lead to the game crashing randomly over an extended play session (especially on the Nintendo Switch version).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made a large number of miscellaneous performance optimizations that should improve frame rates with some creatures or in certain areas of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed color palettes rendering incorrectly inside ripple rifts and within the Migration Path region on the Nintendo Switch version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flashing graphical artifacts that could randomly occur on the Nintendo Switch version of the game in the presence of Sentient Rot floater particles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed graphics sometimes glitching out for a single frame, or sand terrain colors glitching for a single frame, when switching between rooms or screens on the Nintendo Switch version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some graphics and particle effects unintentionally rendering with solid square borders on PlayStation and Nintendo Switch versions of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Warp points now pull important key items from a larger radius so there's less chance of them accidentally getting left behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relocated a couple player-generated warp target destinations so they won't ever spawn above bottomless bodies of water that can swallow player's important items after traveling through the warp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed pearls not getting brought through the portal into Ancient Urban sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the map icon still showing a region as being rotted even after all rooms in that region have had their rot purified.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rot lizards still remaining as rotted on subsequent cycles even after the rot has been purified from the room they spawned in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Prince not giving the player the mark during Watcher's final ending sequence if the game was set to certain languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional issues with key item trackers that could cause the game to crash if loading into a room adjacent to another room with a tracked key item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rooms containing void spawns crashing the game in Jolly Co-op mode if Player 1 got killed in a way that despawns their corpse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"Friends Sheltered\" counter on the statistics screen always incrementing every cycle when Jolly Co-op is enabled, even if a friend wasn't sheltered that cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an occasional crash with Drill Crabs due to their data in the save file being saved incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of the Watcher tutorial messages not having been translated outside of English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed adult and baby sandgrub spawning working improperly in Sandbox mode, where the number of adults/babies placed didn't match the amount of adults/babies that actually spawned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed two of the dens in the Drill Site arena being impossible to enter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incompatibility between the Region Kit mod and Watcher's Vortex arena map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sandbox mode issues shortly after disabling Watcher in Remix Menu, due to the Peach lizard sandbox unlock still being present in the absence of Watcher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player needing to visit the Prince throne room more times than necessary, if they had previously visited the throne room with an insufficient ripple level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a possible unintentional Game Over scenario during Watcher's final ending due to ripple creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain Downpour tutorials never displaying if you had previously been shown the starvation tutorial during other slugcat campaigns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Excluded certain minor creatures like batflies, leeches, and coalescipedes from spawner tracking, which could cause the no creature spawning glitch to still occur in certain scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another fix for whales in the Fractured Gateways region in which they could still spawn in invalid locations sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General fix for offscreen creatures like Miros Birds, etc, where they also could sometimes spawn in rooms or locations they're not meant to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked light sources in underwater sections of Fetid Glen to make them less of a photosensitivty issue, and provide better guidance for navigation around the maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made some other miscellaneous small tweaks to some Aether Ridge rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Scavenger trader in Badlands missing their trading outpost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Rattler creatures having their graphics glitch out briefly when first entering a room with them in it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some miscellaneous glitches that would occur depending on the timing or order of rooms getting unloaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made some miscellaneous additional crash fixes and additional safeguards for crashes based on reported crash logs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wow, that's a long one. Congrats on reading it this far. May ton of batflies and danglefruits fill your shelters tonight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues please report them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 24,
+    "balance": 0,
+    "other": 15,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1819386365087618",
+    "ps5Page": "https://bugs.akuparagames.com/rain-world/bugs"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T18:05:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T18:05:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.563Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-17T18:05:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:32.782Z"
+  },
+  {
+   "id": "rain-world-14761@1.11.4",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.11.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-24T18:36:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Patch Alert!",
+     "items": [
+      {
+       "text": "This patch fixes regions in the Watcher campaign sometimes failing to spawn any creatures, fixed tracked key items sometimes respawning in previous shelter, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you would like to read full patch notes you can read them below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed regions in the Watcher campaign sometimes failing to spawn any creatures depending on how the warp points were interacted with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tracked key items sometimes respawning in the previous shelter that they were stored in, rather than the most recent shelter location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the screen sometimes shaking violently or the screen going black in certain scenarios where lizards interacted badly with sloped terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Passages perk in Expedition mode freezing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some information in Expedition mode's menus failing to display on certain consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Jukebox menu in Expedition mode freezing depending on your music settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a warp point issue with Watcher's final ending that would cause the ending to break if you replayed the ending a second time shortly after the first time playing through that ending. (For players who already are experiencing the glitch in their current save file, this won't retroactively fix it, but hibernating for at least 5 cycles before replaying the ending will also fix that issue in your current save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an additional console-exclusive hardlock that would occur after spawning ripple rifts at higher ripple levels and hibernating in the same region as the rift(s). Or equivalently, warp points crashing if warping into a region that includes those player-spawned ripple rifts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual glitches that would occur when entering the void sea while in ripple space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the void sea sequences in non-Watcher campaigns breaking in various ways if you were in Jolly Co-op mode and one or more of the characters were playing as The Watcher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the wrong illustration to show on Watcher's statistics screen depending on which installed DLCs were enabled/disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the lighting interactions with sloped terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some memory leaks in the Remix menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a glitched piece of level geometry in the Sinkhole arena that would instantly kill the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an incompatibility with the Region Kit mod that would cause the Heat Ducts region to crash the game for players using that mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the speedrun validation strings to include info for cheat configs for Watcher and Remix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for reporting these issues to us. If you run into any bugs please report them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 14,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1816849002021406",
+    "ps5Page": "https://bugs.akuparagames.com/rain-world/bugs"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-24T18:36:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.562Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-24T18:36:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.562Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-24T18:36:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:32.781Z"
+  },
+  {
+   "id": "rain-world-14761@1.11.3",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.11.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-22T16:25:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New patch alert!",
+     "items": [
+      {
+       "text": "This patch fixes many warping issues along with a few other things!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can read the full patch notes below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fix for pearls and other key items duplicating inside of shelters when key item tracking is turned on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for portals not spawning or opening properly after you warp into a room adjacent to the portal (Daemon portals being a prominent issue for this case).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix whales in Fractured Gateway spawning in rooms or locations that they're not supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the dial warp ability sometimes warping the player to a different region than the one they selected, if they had already reached a certain point of progression in the Watcher campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Watcher DLC disabling itself in the Remix menu on certain consoles after closing and relaunching the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Watcher achievements not getting unlocked properly on certain consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Windows Store version of the game not detecting installed DLC properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for various other glitches that were discovered linked to the user's system being set to certain languages like French or Portuguese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the Watcher final ending sequence getting interrupted or not progressing properly if the music volume was set to zero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for being able to create a portal in the same room as a sealed portal, resulting in a portal that can't be interacted with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for being unable to sleep in a shelter without maxing out your food if you had been parasitized by a frog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for frog parasitization effects being applied across all players in multiplayer contexts, instead of just the player the frog is attached to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the rain timer not being hidden in Fractured Gateways despite the region not having a rain cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few other miscellaneous safeguards against game crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few additional miscellaneous creature and item tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues, please report them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1814309641415423",
+    "ps5Page": "https://bugs.akuparagames.com/"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-22T16:25:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.561Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-22T16:25:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.561Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-22T16:25:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:32.780Z"
+  },
+  {
+   "id": "rain-world-14761@1.11.2",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.11.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-09T17:03:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We released a new patch which fixes game crashing after sheltering, crashing in arena mode, and many other fixes.",
+     "items": [
+      {
+       "text": "If you would like to read the full patch notes, you can read it below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fix for the game crashing after sheltering, showing large playtime numbers, or crashing on a white screen if the regional language of the user's system was set to certain languages like French or Portuguese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix frequent crashes in arena mode while playing Competitive rounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the Watcher region screen and new warp ability crashing the game if the game's quality setting wasn't set to High Quality mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix cutscene sequences in the game crashing if the game's music volume was set to zero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an intermittent crash when Scavengers trade items with the player or other Scavengers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an intermittent crash related to frogs attaching to certain entities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the player drowning interrupting the ending sequence of Saint's campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Challenge 70 crashing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Progression menu in Expedition being empty in the console versions of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the karma flower in the throne room not respawning when it should, leading to potential softlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Dragon Slayer passage not working as intended when Watcher was set as the only enabled DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix messages in Daemon being displayed in areas they're not supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a visual bug when warping between Daemon and Outer Rim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor UI inconsistencies in the console version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a forced one-way path in Cold Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow important items and tamed creatures to be brought through ripple portals even when they're on the non-ripple side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Display warp markers on the region and hibernation maps as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have the player treated as being camouflaged while in the process of a portal warp, so they don't get targeted or attacked by creatures while defenseless.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few miscellaneous creature tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For PC, a fix for the Unity CVE 2025-59489 vulnerability has been applied.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please submit your bugs here if you run into any issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1813041031213388",
+    "ps5Page": "https://bugs.akuparagames.com/rain-world/bugs"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-09T17:03:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.560Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-09T17:03:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.560Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-09T17:03:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:32.779Z"
+  },
+  {
+   "id": "rain-world-14761@1.10.4",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.10.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-13T21:57:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released a new patch which updated Korean and Russian localization, disabled warp fatigue in Daemon area, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can read the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Updated Korean and Russian localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled warp fatigue in Daemon area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Basilisk lizards to not apply their effects while unconscious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed warps playing their opening sound effect repeatedly while open, rather than just once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed objects that are supposed to be filtered out in presence of a warp, not getting filtered out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hunter and Monk endings not displaying properly if playing in low quality mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to open the map for a region on the warp region map in certain circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Barnacles re-growing their shells after sleeping with a deshelled one in a shelter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frozen popcorn plants not progressing their frozen state properly, or opening up towards end of cycle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you do continue running into a bug or issue after the patch please report it in the bug report form and the team will have better tracking on it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1799088288000779"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-13T21:57:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.559Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-13T21:57:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.559Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-13T21:57:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.920Z"
+  },
+  {
+   "id": "rain-world-14761@1.10.3",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.10.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-29T21:14:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New patch alert!",
+     "items": [
+      {
+       "text": "This patch fixes a constant game crash in Rusted Wrecks, prevents being swarmed by locusts immediately upon warping into a place that contains them, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you want to read more about the patch, I’ll write the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed a consistent game crash in one of the areas in Rusted Wrecks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent being swarmed by locusts immediately upon warping into a place that contains them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ripple tears will no longer spawn inside shelters and some other key areas in the campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some scenarios where it was possible to create multiple player-created warps within the same room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some warp points not displaying their icon on the mini-map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed mini-map icon for ripple warps to distinguish them from normal warps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it easier to deal with portals in areas that have wind effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made boosts received by geysers more consistent and reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various incorrect interactions and visual bugs inside the ripple space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"Points\" value not being displayed on Expedition's Challenges page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tamed slugpups not following the player or obeying commands at the start of a cycle until being given an object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Karma flower animation not playing on Hunter's death statistics screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you do continue running into a bug or issue after the patch please report it in the bug report form and the team will have better tracking on it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1797820624634210"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-29T21:14:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.558Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-29T21:14:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.558Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-29T21:14:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.919Z"
+  },
+  {
+   "id": "rain-world-14761@1.10.2",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.10.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-15T20:00:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released a patch which tweaks the behaviors and mechanics of a number of creatures, warp points being displayed on the mini-map, fixing some crashes that affected Arena and Challenge modes, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can read the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many new tweaks to the behaviors and mechanics of a number of creatures (Barnacles, Locusts, Moths, Watcher-campaign lizards)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warp points are now displayed on the mini-map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some extra and clearer progression hints on the warp point region map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some adjustments to creature spawns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some crashes that affected Arena and Challenge modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mini-maps that were not rendering properly in some regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some items disappearing or reverting state after storing them in a shelter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional crashes when bringing certain creatures through warps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed resetting save data for non-Watcher slugcats causing some Watcher save data to get reset as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed death fall gradients sometimes not being visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some dialogs showing a TEXT ERROR in French language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some region mini-map properties like water color not displaying on the hibernation screen mini-maps: I am continuing monitoring the bug reports and issues you have been facing! If you do continue running into a bug or issue after the patch please report it in the bug report form and the team will have better tracking on it!: https://docs.google.com/forms/d/e/1FAIpQLSezXL3WE2udFn8qJn-4bKHf-YkxiIbzmLB6jSwP6XYfp8DJtQ/viewform: The team is continuing toiling through the earlier reports and working hard on the feedback you have been providing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1796631172417141"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-15T20:00:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.557Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-15T20:00:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.557Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-15T20:00:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.919Z"
+  },
+  {
+   "id": "rain-world-14761@post-2025-03-29",
+   "gameId": "rain-world-14761",
+   "displayName": "Rain World: The Watcher - Patch Notes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-29T02:40:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We released a new patch which fixes 16:10 resolution, frequent crashes when visiting gate rooms, updated BepInEx, and more!",
+     "items": [
+      {
+       "text": "Read below for the full patch notes. Note there will be spoilers.!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fix the game graphics being visually broken when playing in 16:10 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a frequent crash when visiting gate rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update BepInEx to 64-bit to fix issues with loading code mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Watcher is no longer selectable in Safari mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Watcher is no longer selectable in Jolly Coop mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Unfortunate Evolution warp point being broken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix players sometimes getting permanently held inside a warp point, causing an infinite warp back and forth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players no longer lose their grip on Sky Whale whiskers when they change directions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug that prevented viewing region maps on the warp map after starving yourself in a shelter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix wind blowing the player to their death when taking the Badlands to Cold Storage warp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some softlock prevention in Torrid Desert out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix errant tentacle in Station Annex clipping through the wall and grabbing the player from out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix room image glitching out after traveling through the Outer Rim warp from the Daemon area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix warp point on right side of Outer Rim warping the player inside of a wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduce number of Tardigrades in Rusted Wreck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please continue reporting bugs in the Rain World Bug Form if you run into any!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1795283637871156"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-29T02:40:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.556Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-29T02:40:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.557Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-29T02:40:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.918Z"
+  },
+  {
+   "id": "rain-world-14761@1.9.15.3",
+   "gameId": "rain-world-14761",
+   "displayName": "Hotfix 1.9.15.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-01T17:11:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released a hotfix patch (v1.9.15.3) that fixes some players to be stuck in the loading screen, pup hunger bar not displaying, and more! You can read the patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed a bug that disabled players from restarting Expedition Mode after dying on their first run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused some players to be stuck in the loading screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that flipped the load order of asset mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the pup hunger bar not displaying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Burdens disappearing after dying or restarting in Expedition Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a frequent game crash when Mother Long Legs are present in rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Remix’s “Jetfish Item Protection” toggle not working if More Slugcats isn’t enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused Noodlefly eggs in shelters to persist after hatching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused Layer 4 backgrounds to not be displayed in rooms that used them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple Safari Mode audio issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the game occasionally reapplying mods on launch in situations where it isn’t necessary to do so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some important debug information not appearing in the log files when Dev Tools is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Slugcat (We learned that 100% of Rain World deaths were when people were playing a slugcat. We wanted to remedy this)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/5749481331452144308"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-01T17:11:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.556Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-01T17:11:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.556Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-01T17:11:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.915Z"
+  },
+  {
+   "id": "rain-world-14761@1.9.14",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.9.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-18T16:07:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The quality of life patch (1.9.14) is now out on PC!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This includes many fixes players have been asking for such as: inaccuracies with the speedrun timer, fixing controller customized configs not saving for players 2-4, and more. Here are the full patch notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed controller customized configs not saving for players 2-4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mouse buttons can now be bound in controller customized configs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some bugs that would cause issues when ordering mods in the Remix Menu, causing errors because dependencies were sometimes not respected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Safari) Fixed Scavengers doing random actions even when not inputted to do so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Safari) Fixed soft locks caused by creature transports moving to inaccessible areas of the region, or parts of the region from other time periods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a soft lock in CC_B04 if MSC isn’t enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when deselecting Player 1 in the Arena Slugcat Player Selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that sometimes caused Artificer’s dream sequences to crash the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inaccuracies with the speedrun timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when swimming near another exit pipe in flooded GW_A13 when GW_S08 had a shelter failure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cycle length setting in Remix not also adjusting the timings for the day/night trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed precycles making it impossible to escape MS in some scenarios outside of Rivulet’s campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed belly slides failing to stick a spear in walls if the slugcat’s throw force was too low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues in Expedition mission loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the SunBlock room effect sometimes not covering the edges of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General crash fixes and stability fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Natively integrated fixes from the following community workshop mods",
+     "items": [
+      {
+       "text": "Guardian (by Vigaro)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Merge Fix (by Bro748)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Yeek Fix (by Willburd)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Speedrun Timer Fix (by Forthbridge)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Superstructure Fuse Fix (by Xan/Eti)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Needle Cleanup (by SabreML)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Miros Vulture Priority Fix (by Coder23848)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music Triggers Fix (by Jevmen)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moon and HR_C01 No Flood Fix (by solo race)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No More Tinnitus (by Slime_Cubed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 23,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/7309977427449876146"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-18T16:07:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-18T16:07:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.555Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-18T16:07:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.900Z"
+  },
+  {
+   "id": "rain-world-14761@1.9.07",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.9.07",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-21T01:19:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, slugcats!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have another patch for you! This bad boy fixes map exploration not getting properly saved when you cross through a gate, fixes passage illustrations, and plenty of minor issues that folks have been reporting. Please remember that this patch may break some community mods, so if you’re currently subscribed to anything, you may need to accommodate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Overhauled the game's input system and input configuration system for better controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Tools is now deactivated in-game by default now until you press the O key, to avoid confusion for non-modders. (Note to modders: you can still use your setup.txt file to disable this behavior)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More Slugcat's \"unlock all campaigns\" cheat will now also unlock all More Slugcats characters in Expedition mode as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed map exploration not getting saved properly on cycles where you crossed through a gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error with world data parsing that caused some slugcat-specific region content (like artificer/spearmaster garbage wastes) to not display properly on the mini-map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed passage illustrations failing to display while using LOW/MEDIUM quality mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When key-item tracking is enabled, pearls left inside Pebbles' chamber will now respawn outside in the access shaft instead (except for with Artificer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tracked key-items will now avoid respawning submerged in lethal bodies of water (and will just tend to avoid respawning underwater in general)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Spearmaster's broadcast progression not advancing properly or resetting if you die to Pebbles on your first meeting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that trapped you in an infinite death loop if you had an active electric spear in your shelter when a shelter failure event occured.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that was preventing Pebbles' Rivulet-campaign pearl from showing up in the Collections menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of Saint's tutorial messages not appearing as it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dream illustrations being off-centered in lower resolutions and some buttons being cut off at lower resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hidden challenges in Expedition mode not being counted towards the Total Challenges Completed counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various small tweaks to some of the regions (a few extra shelters, some spawn changes, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for all the bug reports! I’ve been keeping track of them and the amazing team has been able to get these patches out to fix the various bugs you have been reporting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/5125698536870316439"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-21T01:19:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:28:50.554Z"
+  },
+  {
+   "id": "rain-world-14761@1.9.05",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.9.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-13T17:12:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, slugcats!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you have been enjoying Rain World: Downpour and Rain World: Remix. Over the weekend we have released another patch that fixes many Co-op bugs and adds support for adding tags to mods on Steam Workshop. The full patch notes are below.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Certain options, like resolution, controller input configs, etc, will no longer be synced across devices in Steam Cloud.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for adding tags to mods on Steam Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added extra options in input configuration to invert analog stick axes for some gamepads that were having this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the arena unlock token in Undergrowth not actually unlocking the corresponding arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pearls displaying their discovery status incorrectly in the Collections menu if delivered in a timeline that doesn't have a unique variant for that pearl.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Delivering a pearl during an Expedition will now properly add that pearl to the Collections menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More Expedition challenge adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added double-click feature to disable all but one challenge in Expedition filter menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed duplicated Slow Time HUD elements in Expedition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few vista point locations that were unreachable during certain More Slugcat timelines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In parry challenges in Challenge Mode, item parries will now also count towards the parry counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed kill tracker not working properly with Jolly Co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the shelter door could close too soon in Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed starvation and malnourished issues with Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed karma flower placements when playing with Jolly Co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed karma flower animation not playing when speared by Spearmaster in Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some camera cycling issues in Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues that arose when players died in Co-op mode with items in their stomachs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved inaccuracies in reported playtime for your save file when using Co-op with Remix disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced lag that would arise when a player eats a neuron in Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Remix custom colors carrying over into arena mode, and fixed some bugs with Jolly Co-op Auto color mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed carrying animation for slugpups when Jolly Co-op is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Artificer's mauling ability will no longer activate against slugpups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The pause menu's Continue/Exit buttons no longer go off the screen while playing in 16:10 aspect ratio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed all of the arenas in the level list displaying the \"new\" flashing animation if unlocked via the Cheats menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When picking up arena unlocks in non-English languages, fix the text overlapping the unlock icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for reporting these bugs! We are working hard on patching out more bugs and the bug reports help us investigate them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 15,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/5036749277244685227"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-13T17:12:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.897Z"
+  },
+  {
+   "id": "rain-world-14761@1.9.04",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.9.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-06T17:38:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, slugcats!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you have been keeping Gourmand well fed and Artificer away from the scavs. Over the weekend we released another patch to fix various bugs including echoes in Expedition mode putting the player's karma cap into a broken state and adding an extra 16:10 aspect ratio resolution option for better display on Steam Deck. You can read the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Added an extra 16:10 aspect ratio resolution option for better display on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed death gradient not showing up by bottomless pits in most of the rooms in Metropolis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with deer not interacting with spore puffs properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked some issues with hypothermia mechanics that in some situations could cause body heat to drop abnormally quickly, or body heat to not be transferred between creatures as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that could cause pearls to get deleted in a shelter if Remix was enabled but key item tracking was disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arena player buttons now remember which players were active after the game was restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom title screen and sub menu backgrounds no longer get reverted after the game is restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Artificer pilgrimage ending sometimes being inaccessible even when the correct requirements were met.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Leeches now release their prey after being snatched by a Squidcada, and spiders release their prey if the spider dies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved confusion with blue colored BLLs in past Garbage Wastes in respect to Expedition requirements and mini-map color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Expedition now properly prevents a previous More Slugcat Expedition from being continued if More Slugcats has since been disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with echoes in Expedition mode putting the player's karma cap into a broken state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Expedition's agility perk no longer get unintentionally carried over into other non-Expedition game modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed players being able to simultaneously grab each other in Jolly co-op mode, creating an infinite grab loop that breaks physics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When only one player is left in Co-op mode, fix the Game Over screen not appearing when a lizard grabs you but doesn't kill you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialog text now properly reverts back to white colored text when the text should no longer be colored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added back the important sleeping emote feature into Jolly Co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various extra fallbacks and safeguards for areas where players reported crashes or softlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed creatures being launched away at light speed whenever Gourmand rolled into them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Again, thanks for reporting all these bugs! They seriously help us find and patch out the bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/5035622743895208280"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-06T17:38:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.896Z"
+  },
+  {
+   "id": "rain-world-14761@1.19.03",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.19.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-30T20:25:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, slugcats!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On Saturday, we released a new patch for Rain World. This patch fixes tracked key items sometimes respawning out of bounds inside of shelters and crash on game startup in Japanese/Chinese/Korean languages after subscribing to workshop mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full patch notes",
+     "items": [
+      {
+       "text": "When the game version updates, only subscribed workshop mods will be auto-disabled on the first launch, and not the built-in mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed slugpups and other non-playable slugcats triggering the Game Over popup on death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gourmand's food tracker resetting if the Survivor Passage Requirement option was enabled in Remix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Deer and Miros Birds not spawning properly when More Slugcats Expansion was disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tracked key items sometimes respawning out of bounds inside of shelters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash on game startup in Japanese/Chinese/Korean languages after subscribing to Workshop mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialog text added by mods not defaulting to English when there's no translation for the current language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue where progress in Collections menu would sometimes get wiped out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overseer guidance in Shaded Citadel being wrong when More Slugcats Expansion was enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issues with save data for on-going Expedition Missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved and resolved issues with Expedition Mission tooltips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Expedition perk limit not increasing after completing certain quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted passage challenge point rewards for some slugs in Expedition mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added kill trackers to the sleep screen for all slugs, including other player's kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Hidden challenges not revealing themselves in Expedition mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed slugpups not getting food when using Jolly Co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Swallowed items/creatures will no longer disappear if the player perma-dies on Co-op Easy mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash when a player crosses a region in Co-op, with an item in their stomach, leaving a dead player behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to make sure all Co-op features get properly disabled in Arena Modes (including Safari).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additionally rewarding campaign completion achievements on character select screen in case the original achievement trigger was missed by skipping end cutscene(s).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed one of the region's non-English subtitles overlapping the title in the Region selection screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue where navigation with a controller in the arena mode UI would sometimes skip over buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unbroke a broken unlock token in Waterfront Complex.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still hard at work at patching out the bugs that you are finding. Thanks for all the bug reports which help us patch out these bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 16,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/5035622109524988115"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-30T20:25:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.551Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.895Z"
+  },
+  {
+   "id": "rain-world-14761@1.9.02",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1.9.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-24T02:24:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, slugcats!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoying the new soundtrack in Rain World: Downpour?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On Friday, January 27th the Downpour soundtrack will hit different music platforms covered by Black Screen Records. This includes Spotify, Apple music, and more! If you want to take a listen then check out the soundtrack on Youtube here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also I wanted to take the time to highlight the amazing people that came together to make the soundtrack!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "James Primate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lydia Esrig",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Intikus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ongomato",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Connor \"12LBS\" Skidmore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bwarch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Progfox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Annoying Flower designed the soundtrack art while Norgad provided the region art for the video, both incredibly talented designers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch v1.9.02",
+     "items": [
+      {
+       "text": "Also over the weekend we have released a patch for Downpour. Here are the full patch notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash when hibernating in The Exterior with certain characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allowing all endings, including secondary ones, to count towards campaign completion unlockables now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed latin characters rendering incorrectly with workshop mods installed when an asian language is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updates to Chinese localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Play button not being greyed out when no Safari regions are unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed graphical display of credits list in Remix menu when playing the game with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the number of spiders that appear in Gourmand's tutorial room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Expedition Mission buttons are now greyed out if the associated slugcat has not been unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlocked Expedition slugcats will no longer become locked again after exiting the Jukebox menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with the Expedition menu UI when More Slugcats is disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added tooltips for Jukebox buttons and randomized backgrounds for the Jukebox menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug with Expedition score challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional crashes when using shelters or region gates in Jolly Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes a bug with tamed creatures in shelters in Jolly Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with death display when a co-op player dies in another room not viewed by the camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the map on the hibernation screen in Co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Artificer can no longer maul other players in Co-op while friendly fire is turned off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced slider flicker on Jolly's Color dialog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a crash when visiting an Iterator chamber in Safari Mode while Jolly Co-op is enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player 1 Jolly options (Color, Label) will no longer get reset on restart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still hard at work on patching out more bugs. Thank you all for your reports! They seriously help in patching them out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 2,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/5035621474427563492"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-24T02:24:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.894Z"
+  },
+  {
+   "id": "rain-world-14761@1.5",
+   "gameId": "rain-world-14761",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-12-11T17:09:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Slugcats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have been following along with the Rain World news, you might have seen that the Watcher will be receiving a 1.5 content update on September 25th!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I do want to reveal some of the features that will be part of this update! This isn’t going to be a deep dive into the content but instead a bit of a flyover on what is going is coming! If you want to remain completely in the dark about what is changing then you should turn away now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Watcher 1.5",
+     "items": [
+      {
+       "text": "Arena mode support for The Watcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New unlockables for Arena mode to be found!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jolly Co-op support for the Watcher campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Retroactive Jolly Co-op support for all five of the More Slugcats campaigns which previously did not have official Co-op support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several new creatures and items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New endings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There are a couple other things that the developers have listed, but I think I’ll have to leave that for you to discover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you on September 25th!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "riv otter: Vvrfi yxzs egderwggbsq kb yvrgl ig gjs guvgx eoigg bs xjx zwigf, nah vamb bh hur wvtz kvvv svzg lxcxgg, nah vamb gjs guvgx wt pqzhzru omfgkqny.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/1816307528974764"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T21:22:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.562Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 3,
+   "updatedAt": "2026-11-13T03:28:50.559Z"
+  },
+  {
+   "id": "rain-world-14761@1",
+   "gameId": "rain-world-14761",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-04-06T14:00:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello friends and slugcats! We present to you patch #1: Rain World v1.01",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This quick patch is intended to accommodate some early player feedback and polish assorted rough edges on the various game systems, etc. These were all low-hanging fruit that we think improves the player experience without taking anything away from the concept of the game. Rain World should be an existential experience: unforgiving and even occasionally unfair. But it should be the jaws of a Lizard that gets you or the Rain, not some ragdoll physics wonk or design oversight!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay improvements",
+     "items": [
+      {
+       "text": "* “stuck in holes” fix - disconnected exits will no longer snag you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* subtle backlit slugcat in low visibility swimming situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* quicker turning around in tunnels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* larger lung capacity while swimming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* nerfed the more intense waterfalls in Shoreline to prevent repeated drownings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* more pearls near Scav tolls in Garbage Wastes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* more food in central Garbage Wastes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* more food in central Shaded Citadel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* more karma flowers in world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* karma gate requirements on the Shaded Citadel, Drainage System and Underhang side were lowered to prevent players becoming stuck in challenging regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* food / karma flowers regeneration now ticks forward on deaths (helps eliminate stuck / starvation situations at low karma)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* players will now keep map progress between deaths (Id say 99.5% of people asked for this)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* map now features gate karma symbols and shelter icons when locations are discovered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* karma depletion on game exit removed if done within 30 seconds of sleep cycle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* full karma drop on exit bug fixed (that was a brutal one, sheesh!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* intro cinematic is now skippable by holding start / esc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* for players having issues with Grey Screen of Death and starting the game from sav files, you can now entirely skip loading the intro by holding \"s\" when pressing \"New Game.\" hopefully this helps until we have a real fix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* many many minor room fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Stability improvements",
+     "items": [
+      {
+       "text": "* map loading bug fixed (was causing the corrupted savs, ugh)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* gate crashing bug fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* assorted stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Next steps: More patches and content is on the way, of course! We would like to see how this current round of bugfixes land before digging into further issues, as we have a feeling that these might solve a lot of the problems we've seen. But of course if you could keep sending in those bug reports and sav files that would be fantastic and hugely beneficial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks to all for feedback and please keep it coming! Let's all get through this tedious fixing and tweaking so we can get rolling on the fun stuff: new content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "<3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "--Rain World team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 18,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "* “stuck in holes” fix - disconnected exits will no longer snag you",
+     "* subtle backlit slugcat in low visibility swimming situations",
+     "* quicker turning around in tunnels"
+    ]
+   },
+   "sourceIds": [
+    "steam-312520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/312520/view/4249665521681125600"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-04-06T14:00:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-312520",
+      "checkedAt": "2026-11-13T03:28:50.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:29.808Z"
+  }
+ ],
+ "issues": []
+}

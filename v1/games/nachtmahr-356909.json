@@ -1,0 +1,453 @@
+{
+ "game": {
+  "id": "nachtmahr-356909",
+  "igdbId": 356909,
+  "name": "Nachtmahr",
+  "cover": {
+   "imageId": "coa61e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa61e.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3vsj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3vsj.jpg"
+  },
+  "ps5Release": "2025-09-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "nachtmahr-356909@1.0.2.0",
+   "gameId": "nachtmahr-356909",
+   "displayName": "Patch 1.0.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-24T02:53:33.000Z",
+   "notes": [
+    {
+     "title": "Latest Patch Notes",
+     "items": [
+      {
+       "text": "The latest game patch contains major changes and bug fixes. The most notable is the new Game Compass. This is a new game setting that is off by default but can be enabled via the Game Settings menu. When enabled, key items, objects, puzzles and zones will be marked on the compass to help keep you on the right path. Other notable changes/fixes include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Engine level game breaking bugs that could cause interactable objects to silently reset their values, causing states to save that did not match with the actions as well as cause DataLayer loading crashes. These were game breaking bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked some puzzle positions to make things more clear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reworked zone transition tunnels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Auto save now increments through 5 slots, allowing breaking bugs to be recovered from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced loading aggressiveness on consoles. This will slow load time but prevent crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "DLSS has been repaired and can now properly be enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Created a restore system that will restore Objects to their proper saved state on reload if they had not properly triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lastly, if you experience any bugs or issues, please reach out to use at https://mangygoblingames.com/support so we can address them right away! We value your input and time to help make this game an experience that can be enjoyed by all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 3,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3900740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3900740/view/1844751498220103"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T02:53:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.609Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T02:53:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.609Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-24T02:53:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:49.638Z"
+  },
+  {
+   "id": "nachtmahr-356909@1.0.0.9",
+   "gameId": "nachtmahr-356909",
+   "displayName": "Patch 1.0.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-10T03:16:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for a rare bug where gravity blocks can fall through the ground and become saved underneath it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievement overhaul - A more accurate achievement tracking system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3900740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3900740/view/1826362059931894"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-10T03:16:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.608Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-10T03:16:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.609Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-10T03:16:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:49.637Z"
+  },
+  {
+   "id": "nachtmahr-356909@post-2026-02-03",
+   "gameId": "nachtmahr-356909",
+   "displayName": "Patch Notes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-02-03T02:29:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Major Bug Fix: Players could end up not able to complete a chain puzzle in the Windswept Plains area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Minor Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3900740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3900740/view/1823191198612676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-03T02:29:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.608Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-03T02:29:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.608Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-03T02:29:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:49.637Z"
+  },
+  {
+   "id": "nachtmahr-356909@1.0.0.7",
+   "gameId": "nachtmahr-356909",
+   "displayName": "Update 1.0.0.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-03T21:43:34.000Z",
+   "notes": [
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "-Save lock rarely gets stuck in tower puzzles in The Ashlands when running over button too quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3900740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3900740/view/1809869180012835"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-03T21:43:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.608Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-03T21:43:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.608Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-03T21:43:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:49.631Z"
+  },
+  {
+   "id": "nachtmahr-356909@1.0.0.6",
+   "gameId": "nachtmahr-356909",
+   "displayName": "Patch 1.0.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-03T11:57:08.000Z",
+   "notes": [
+    {
+     "title": "Multiple Bug Fixes from the Frozen Expanse including",
+     "items": [
+      {
+       "text": "-Crystals are lit up for timed puzzles, but don't count.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-The player gets trapped in the statue puzzle of the frozen expanse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Tutorial windows will not close when pressing the prompted button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-When exiting an re-entering a save lock zone the game rarely will not let you shoot magic projectiles in save lock areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3900740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3900740/view/1809869179999272"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-03T11:57:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.607Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-03T11:57:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3900740",
+      "checkedAt": "2026-11-13T03:26:26.607Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-03T11:57:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:49.557Z"
+  }
+ ],
+ "issues": []
+}

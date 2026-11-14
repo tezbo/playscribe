@@ -1,0 +1,507 @@
+{
+ "game": {
+  "id": "unholy-90213",
+  "igdbId": 90213,
+  "name": "Unholy",
+  "cover": {
+   "imageId": "co53wa",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co53wa.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1qji",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1qji.jpg"
+  },
+  "ps5Release": "2024-09-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "unholy-90213@1.3",
+   "gameId": "unholy-90213",
+   "displayName": "Patch 1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-28T15:05:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.3 is now live and ready to improve several aspects of Unholy’s experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Let’s see together all the improvements available right now",
+     "items": [
+      {
+       "text": "After being chased and hiding in the locker Dorothea will be executed by the enemy (Guards, Plagueman, Hunters)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding mouse smoothing option in the menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Collision fixes in Inner Monastery main compound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sister no longer should block Guards from passing her",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for navigation in the administration building on the Priest Plaza Level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved system to check if the enemy went out of the navmesh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for restoring blocker in the Church Complex library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better player noticing for the AI in very dark areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various tweaks and improvements to sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We hope those fixes and improvements can make your own journey to the Eternal City even more unforgettable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "After being chased and hiding in the locker Dorothea will be executed by the enemy (Guards, Plagueman, Hunters)",
+     "Collision fixes in Inner Monastery main compound",
+     "Sister no longer should block Guards from passing her"
+    ]
+   },
+   "sourceIds": [
+    "steam-817020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/817020/view/5220291886487346948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-28T15:05:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-817020",
+      "checkedAt": "2026-11-12T16:50:33.670Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.671Z"
+  },
+  {
+   "id": "unholy-90213@1.2",
+   "gameId": "unholy-90213",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-10T15:08:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The patch 1.2 for Unholy is live and ready for download.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to your feedback, we were able to improve many aspects of Unholy’s gameplay, make several improvements, and fix some of the bugs you reported to us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The following are all the fixes implemented right now",
+     "items": [
+      {
+       "text": "Better pathfinding for Infected and Hunters. This means that the issue where Infected, while chasing the player in the Office, would go to a different floor instead of running towards the player, is resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Securing Vent Spawners from NPC glitching. Sometimes NPCs would abruptly stop exiting the Vent and get stuck inside the wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When the player is in a locker, enemies will immediately enter Blind Chase mode instead of running into a wall or staring at the locker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restores now trigger a Sensing Reset, so NPCs won't \"know\" what they knew before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Infected rotation is precise to the Player. They won't take 45-degree steps four times to turn around 180 degrees, but they will turn 180 degrees precisely towards the Player they are chasing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sisters no longer make Guards stuck if they want to pass them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where enemies would not properly exit the vents in the City Hall area in Chapter V",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Guards could get stuck in certain place in Chapter V Square arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Players could jump over a ladder and avoid the dialogue with trapped citizen in Chapter V Slums",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various improvements to various sounds during the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With all these improvements, we hope to make the experience better for all of you. Let us know what you think.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-817020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/817020/view/5839532486211098561"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T15:08:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-817020",
+      "checkedAt": "2026-11-12T16:50:33.670Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.670Z"
+  },
+  {
+   "id": "unholy-90213@1.1",
+   "gameId": "unholy-90213",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-03T14:53:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As announced a few days ago, we are now ready to publish our first update for the Eternal City.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to your feedback, we were able to improve many aspects of Unholy’s gameplay, make several improvements, and fix some of the bugs you reported to us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The following are all the fixes implemented right now",
+     "items": [
+      {
+       "text": "Optimization: Second Floor of Chapter X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improving the slide tutorial mechanics so players will not get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restore fix so you cannot see the unstreamed level at Chapter 3 after the restore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removing a bug that caused the slingshot to hide unintentionally in Chapter X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removing a bug that causes Dorothea to breathe during the outro sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removing a bug with sounds during the Pit sequence in Chapter VII",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adding occlusion to a sound of an exploding mine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The flashlight state will be saved if the player takes out the slingshot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision issues in Chapter X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrupted materials in chapters V and VII",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI improvements - Guards glitching on equipping a weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI improvements -Guards is not correctly recognizing player on a Burning Plaza in Chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI Improvements - Improved rotating for Sister character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI Improvements - Guards are now better at notifying each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Making clearer that exploding barrel has to explode in Distillery in Chapter III",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increasing visibility of new tutorials entries on HUD and in the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improving UI - visibility of the controls to switch ammunitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adding the option to switch ammunition without having to take out the slingshot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ongoing optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI improvements: Enemies are more efficient in going around each other and not getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to handling switching masks and slingshot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various improvements to various sounds during the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With all these improvements, we hope to make the experience better for all of you. Meanwhile, we are working on more fixes and refinements for the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 24,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-817020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/817020/view/5124585319849448567"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-03T14:53:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-817020",
+      "checkedAt": "2026-11-12T16:50:33.669Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.669Z"
+  }
+ ],
+ "issues": []
+}

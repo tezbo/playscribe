@@ -1,0 +1,1324 @@
+{
+ "game": {
+  "id": "tiny-terry-s-turbo-trip-253106",
+  "igdbId": 253106,
+  "name": "Tiny Terry's Turbo Trip",
+  "cover": {
+   "imageId": "co8adt",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8adt.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2coz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2coz.jpg"
+  },
+  "ps5Release": "2025-02-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.925.2317",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.925.2317",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-13T15:20:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello. I came back to fix a few things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now enable/disable the “Camera Smoothing” for gamepads in the Gameplay Settings. The setting is turned off by default, because a few people mentioned experiencing nausea due to the smoothing. The default behaviour should now feel familiar if you’re used to other games where the camera stops moving immediately when you release R-stick. If you liked the smoothing, you can turn it back on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with cloud save files not working across different systems when their system locales were different (e.g. playing on your French PC and loading that save on a Steam Deck). Save files are now consistent no matter which system or locale you are using. The game should also still be able to read legacy save files in case you previously saved using a certain locale.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Vulkan rendering should now work properly on Windows again (see Patch 1.783.1129 Notes). I’ve kept the launch options for now because DirectX12 should theoretically remain more stable on Windows, but Vulkan is back for the extra FPS if you want it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If this update introduces any new issues for you, please let me know. And in the meantime you could always use the revert branch to go back to the previous version and finish your playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/1849192144187730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T15:20:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T22:38:09.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T15:20:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T22:38:09.577Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-13T15:20:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T22:38:09.577Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.789.2312",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.789.2312",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-30T14:26:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare issue where the UI navigation was malfunctioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Discord link in the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/1836506165562755"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-30T14:26:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.159Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-30T14:26:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.159Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-30T14:26:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.963Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.783.1129",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.783.1129",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-22T16:50:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello. This hotfix solves the graphical glitches affecting ground textures on Windows.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When you launch the game for the first time, you'll now see 2 launch options. One for Windows and one for Steam Deck. Pick the one that matches your system and the game will automatically use the recommended rendering API.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Windows: Launches the game with DirectX12 with DirectX11 as a fallback if needed. DirectX resolves the ground texture glitches that Windows players were experiencing.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Deck: Launches the game using Vulkan. Vulkan continues to provide the best performance and is recommended when using the highest graphics settings on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44214266/4ab6ae51b8d516304bfef1ef4d7a1fd276a8e678.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* EDIT: Patch 1.783.1129 fixes the achievements that accidentally got disabled in 1.779.1758",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/1835871199313498"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-22T16:50:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.158Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-22T16:50:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.158Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-22T16:50:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.962Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.581.1346",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.581.1346",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-03T12:13:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have translated the game to Dutch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44214266/82ee4e4c6a705288fab06755d5a959381120e2fa.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/1818118366169983"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T12:13:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.157Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T12:13:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.158Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-03T12:13:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.961Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.518.0008",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.518.0008",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-01T20:22:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changed the way the camera works when playing with mouse & keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The camera no longer slows down after the mouse stopped moving, which I believe was contributing to some players experiencing dizziness. The behaviour on gamepad remains the same.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "There are also some performance enhancements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Unity security patch has been applied. You can read more about this specific issue here: https://unity.com/security/sept-2025-01/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional tips for players that may (still) experience dizziness",
+     "items": [
+      {
+       "text": "You can increase the FOV Slider in the gameplay settings. This increases how much you can see at once, which means you won't have to rotate the camera as much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can lower the Camera Sensitivity in the gameplay settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can disable Screen Shake in the gameplay settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can disable the Tilted Camera Angles in the gameplay settings. This will keep the horizon straight in certain cutscenes & interiors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can press CTRL or Left Trigger to put the camera directly behind Terry. When playing on gamepad, this also enables the behaviour where the camera smoothly tries to point at where Terry is headed. This behaviour is then cancelled when you manually adjust the view with R-stick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While generally not recommended, you can also play the game in first person mode by pressing INSERT or R-stick (except in interiors & cutscenes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you do run into any unexpected issues, please try reinstalling the game. Remember you can always use the BETAS tab and opt into the \"revert\" branch to roll back to the previous version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/1811772772452974"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T20:22:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.157Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T20:22:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.157Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-01T20:22:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.960Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.50.1018",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.50.1018",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-21T22:16:16.000Z",
+   "notes": [
+    {
+     "title": "Discord Competition Winners",
+     "items": [
+      {
+       "text": "There was a competition in the snekflat enthusiasts Discord to create a new hat & a new insect and everyone voted for their favourites. The winning entries have been added to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seagull Hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wool came up with the seagull hat. This ended up becoming a new feature. I always felt bad for players when nothing would happen after they managed to hit a bird with a bug net (which is pretty tricky to do). So now you can catch birds with the bug net and wear them as hats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Sliamk\" Insect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This purple snail-like insect was designed by wupporulz(forever)ok. There are 10 different insects in the game now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full credits list is now also available from the Title Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/5759622039981217147"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-21T22:16:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.156Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.959Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.36.1206",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.36.1206",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-06T14:28:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Insect Probability: increases the chance to spawn insect types you haven't caught before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed the game not being able to shut down when trying to exit from a soccer match or bumper car battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"cursed\" tree where cars would keep driving in circles south of Sky Plaza.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cars spawning behind the rocks around Poedelstark & Mokernakt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that occurred if you jumped into a car from inside an elevator as the elevator was closing.: Cheers!: Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/5746109972549058764"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-06T14:28:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.156Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.959Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.36.0055",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.36.0055",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-05T22:22:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's another quick update",
+     "items": [
+      {
+       "text": "Accessibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay Settings: Added a toggle to disable \"Tilted Camera Angles\". This is toggled on by default. If you turn it off, the game will have alternated camera angles in most of the interiors, which should be helpful if you find the tilted camera discomforting (or nauseating).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few missing characters in the Chinese font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues related to Post Processing.: Cheers!: Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/5746109972546610655"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-05T22:22:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.155Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.958Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.34.1831",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.34.1831",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-04T19:00:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the patch notes for the latest version",
+     "items": [
+      {
+       "text": "Enhancements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Turbo Junk Finder Hat now also beeps nearby entrances to buildings that still have uncollected Turbo Junk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Turbo Junk Finder Hat now also beeps nearby Ricky if he still has Turbo Junk in his pocket.: Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Gameplay Settings don't show the applied settings after re-launching the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the shovel sometimes not working as expected on slopes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the mini map not opening if you tried opening it immediately after closing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some lighting issues in The Generator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with some hat descriptions not displaying when acquiring the item.: Achievement revalidation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If somehow the Mushroom Chime achievement didn't trigger for you, it should now be revalidated when you load your save file or enter a map.: Cheers!: Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/5742731639349177409"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-04T19:00:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.155Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.958Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.33.1654",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.33.1654",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-03T16:18:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's a bunch of changes, based on your feedback.",
+     "items": [
+      {
+       "text": "Accessibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay Settings: Added a toggle for screen shake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay Settings: Added a FOV slider.: Compatibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added DirectX12 support (Experimental). Vulkan still recommended if your graphics card supports it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added resolutions: 1280x800 (Steam-Deck), 1366x768: Graphics Setting: Shadow Quality: The quality of the shadows is now more customizable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To get the same quality level as before the update with shadows toggled on: set the Shadow Quality to High.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To get the same quality level as before the update with shadows toggled off: set the Shadow Quality to none.: Balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered the price of most cosmetic items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the range of the Turbo Junk Finder Hat by 25%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Earn an additional 15 Turbo Junk (or money) after defeating Ricky. The total amount of junk has not increased, Ricky will just run out faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Earn an additional amount of money after winning a soccer match, equal to how many goals you scored more than the opposite party.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bumper Car Battle: You can now also hit Ricky's car if you released the Turbo button a bit early, but still have significant speed.: Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed ending a phone call early in one of the late-game phone dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented a fix in case a Turbo Trash Can doesn't come along with you after hitting it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can't go into screenshot mode anymore when looking through binoculars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Terry's head being deformed if you land on the ground right before picking up an item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that Terry's Car sometimes falls through the ground when using a parking sign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where terry was able to hit Ricky's car once more after the battle ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues regarding not being able to enter your car after battling with Ricky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few holes in the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the game displaying 100% before actually having all the turbo junk.: Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented save file backups, as well as a feature that tries to revert a save file in case something went wrong during saving. If this happens through the main menu, gameplay should continue and you can try again.: Cheers!: Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 7,
+    "balance": 2,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/5742731639345123005"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-03T16:18:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.154Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.957Z"
+  },
+  {
+   "id": "tiny-terry-s-turbo-trip-253106@1.30.1806",
+   "gameId": "tiny-terry-s-turbo-trip-253106",
+   "displayName": "Patch 1.30.1806",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-31T15:55:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. I have been smiling all day reading your reviews <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the patch notes for the latest version",
+     "items": [
+      {
+       "text": "Added a setting to the Gameplay Settings that allows you to scale the UI. Currently this affects the size of the mini map and the legend on your full screen map, as there was high demand for these specific elements for Steam-deck users. I may add more elements in the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Achievement: Get 450 Turbo Junk” should now also unlock regardless of whether you’ve upgraded the Turbo Junk into Turbo Ups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the credits from saying “Super Rage Originals” to “Super Rare Originals” xD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that occurred if your car fell into the water while you were in a menu or dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you had to press a random button on your keyboard to continue the dialogue if you managed to press space & mouse click on the exact same frame when rushing through dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the government quest doesn’t show up in the progress window once you completed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could interact with plastic chairs that were placed inside of a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in one of the dialogues, of one of the gummy pup resting grounds statues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a confusing collider in the beach area nearby the Beach Club.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can no longer eat beach fries from your car (which introduced a broken animation).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lars (snekflat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2238040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2238040/view/5742731639334129119"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-31T15:55:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2238040",
+      "checkedAt": "2026-11-13T03:34:21.154Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:18.956Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,110 @@
+{
+ "game": {
+  "id": "billy-101-192964",
+  "igdbId": 192964,
+  "name": "Billy 101",
+  "cover": {
+   "imageId": "co5bmo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5bmo.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1hr6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1hr6.jpg"
+  },
+  "ps5Release": "2023-03-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "billy-101-192964@major-2025-08-18",
+   "gameId": "billy-101-192964",
+   "displayName": "Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-18T18:06:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug with checkpoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved level design across several stages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the energy bar sprite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized performance in stages with many crates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1836280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1836280/view/1808061939476365"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-18T18:06:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1836280",
+      "checkedAt": "2026-11-13T03:16:05.479Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-18T18:06:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1836280",
+      "checkedAt": "2026-11-13T03:16:05.479Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-18T18:06:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.746Z"
+  }
+ ],
+ "issues": []
+}

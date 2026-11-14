@@ -1,0 +1,5933 @@
+{
+ "game": {
+  "id": "hydroneer-123783",
+  "igdbId": 123783,
+  "name": "Hydroneer",
+  "cover": {
+   "imageId": "co6e20",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6e20.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arin2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arin2.jpg"
+  },
+  "ps5Release": "2026-05-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hydroneer-123783@major-2026-05-08",
+   "gameId": "hydroneer-123783",
+   "displayName": "[Update] Hydroneer Mega-Optimization",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-08T13:56:49.000Z",
+   "notes": [
+    {
+     "title": "A Huge Optimization Update Has Landed!",
+     "items": [
+      {
+       "text": "This update includes optimizations across the board - these touch on multiple elements of the game. From improvements to performance in specific areas of the world, to upgrades with large mining setups. You should see a significant increase in performance with certain scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've also reworked a lot of errors with localization across all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As some of you may know after we finished Hydroneer in April 2024 we've been hard at work on our next game, Die Trying. Since we're a tiny team, even whilst working on Hydroneer we didn't have enough man-power to simultaneously work on the console port ourselves, and with how busy we are on the next game, we definitely don't have time right now! This has led us to partnering up with PlayEveryWare, console development pros that have worked with the teams behind \"Among Us\", \"Fall Guys\", \"Valorant for Consoles\", \"Dispatch\", and many other successful quality games on consoles. We chose them because they're the best of the best.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whilst the console version (Xbox Series X|S + PlayStation 5) is going to be an almost exact copy of what PC players enjoy, their expert engineers have revealed some opportunities for more optimisation on Hydroneer. We've decided it would be a really nice to bring some of these optimisations to the original PC version!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Even though Hydroneer is a finished title, we want to continue to support the game with optimizations and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/1832065502815252"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T13:56:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.474Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T13:56:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.474Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-08T13:56:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.371Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.9",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 3.0.9",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-10T11:28:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been facing a problem for a long time now where in extremely rare circumstances some players have their save file corrupted. This has been a very hard bug to fix as it is impossible to reproduce the issue, and with no correlation between affected players, we could not see how to approach the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It seems like some anti-virus programs would prevent Hydroneer from saving, amongst other things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Despite our efforts, that bug has defeated us time and time again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "until today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are deploying this new patch to fix this issue! Instead of corrupting the save file, the game will crash to desktop and give you an error telling you the save file was about to be corrupted. Now you'll be able to use the previous auto-save to load your game back up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you're enjoying Hydroneer :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/1793384379499131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-10T11:28:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.370Z"
+  },
+  {
+   "id": "hydroneer-123783@3.08",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 3.08",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-03T17:44:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Content Reader now reads the quantity of uses the Logic Spanner Hurling Unit contains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Content Reader now reads the total weight of shard bar(s) in a pressure tank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sickle can now be used by holding down left mouse button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The save file browser now lists the date of when each file was saved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Diamond / Diamond jewelry is added to villager requests pool in Volcalidus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed an exploit with cooking boots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mod uploader QoL addition. When updating a mod, it'll now auto-fill the details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Russian / Spanish localisation improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5742731639345340037"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-03T17:44:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.369Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.7",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 3.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-22T17:07:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drop Target now appears under the item you're \"freeplacing\"/\"precision placing\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where drills with speed buffs would actually output less than their slower counterparts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boosted output of Heavy Drills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted animations of Heavy Drills to sync up with speed buffs applied to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Left Ctrl can now be bound in the keybind menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with Hand Sorters keeping their split item preferences sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with items being locked as they enter the storage zone of the Quad / Bike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Logic Mini Nukes now work in Icehelm dig site.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted New Glade vehicle recall point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved readability when continuing a save, if that save will be marked as 'dirty' for Steam Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed issue where sometimes coins would duplicate while purchasing vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue with Forge Marks not being saved while inserted into the masterwork forge in Volcalidus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Uncovering Relics with the HydroThaw will no longer (very rarely) cause the Relics to not be uncovered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grocers now have 'c' instead of 't' when displaying how much they're purchasing goods for.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced max size of Cut Beetroot to prevent it getting stuck in the Logic Saw Hook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "NPCs will no longer whistle when being turned into roadkill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 3,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5762994032406039149"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-22T17:07:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.369Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.6",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 3.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-15T12:52:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where sometimes the DLC will fail to install correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved reliability with hand sorters while sorting items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where NPCs no longer walk around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where NPCs could no longer be victims of vehicular collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Lava Hauler not storing small items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved collision in Lava Hauler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Heavy Drill now has collision on its upper portion when placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heavy harvesters now correctly spawn water when placed, no longer requiring a re-load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydrobike no longer pulls left while going straight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the bucket could sometimes spawn an Ice chunk in Bastion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localisation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Construction crates in New Glade now show their contents correctly when game is loaded if already has contents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lever sound now correctly applies to its sound slider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Shard/Shard Bar description when in volcalidus to include \"lava\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug with racetrack Steam achievements being triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Uncut gems descriptions updated as previously they mentioned they can be sold at the stocks when they cannot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Glade sign missing collision added.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Overhaul on coin text display. Now displays in splitscreen, unique colours for each type, separated text into grouping: ex. \"1,420,690\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold / Cloutium melted liquid colour changed to help distinguish each type in smelters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/6474562312195671416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-15T12:52:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.368Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.5",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 3.0.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-10T10:46:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Save Raw Resources' toggle in gameplay settings no longer affects Hardstone Blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue with steam cloud not saving correctly for DLC save files.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Crafting a T1 Ice Shovel no longer creates a T1 Dirt Shovel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added keybind for \"Vehicle Mode\" in vehicles. (Default 'F')",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed issue with Hand Sorters forgetting what they're splitting when they're lifted and placed down whilst having an item on the pedestal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Limited the amount of sounds effects to occur with the gem compressor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed ability to spam-click drills to produce more resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved graphical performance of trees in Volcalidus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed issue with bones not having a particle effect on LOW settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resized the Construction Store / Ore Miner requirement text so it doesn't clip through the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with delivery crate drop sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered the lava at Shattered Breach slightly so its no longer clipping with built items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue with item prices not appearing in Burnscroft store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player no longer sometimes spawns outside of the vehicle when loading back into a vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Duplicating logic TNT on Volcalidus now works as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "T2 and T3 stores now have the 't' displaying correctly when showing how much the total cost is on the buy platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue with an invisible space when a certain clothing combination is made on the character editor page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the height of the Volcalidus Peak trophy so when placed down it sits at the bottom of the grid square.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed issue with carts and store interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timetrial Steam achievements should now trigger properly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Streaming in discord will now show the new Hydroneer icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue with using the gravity wand in trucks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 2,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5762993398268899735"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-10T10:46:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.471Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.368Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.4",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 3.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-07T12:31:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're continuing our mission to put out smaller patches effecting the most common/problematic issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ore Mines and Construction Stores no longer have a rounding error causing them not to be built even if the board appears to have all their required materials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infinite Filter (a creative mode item) now hooks onto lava pipes in all orientations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where items stored in a truck that would pass by the scrapyard burn zone would not be removed from the list of items from the scrapyard to burn when the truck moved out of the burn zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "'Clear all Dirt Chunks' in the ESC menu now reads 'Clear all Ice / Frost Rock' while on Volcalidus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Toggle Save Dirt Chunk's in the gameplay settings menu now reads 'Toggle Save Ice / Frost Rock / Dirt' while on Volcalidus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5756237364318958392"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-07T12:31:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.471Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.367Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.3",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 3.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-06T12:56:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Coins no longer get stuck inside carts if they're a single coin mesh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added icons to store construction boards to aid in readability and prevent mis-communication to languages that use non-english characters.: We're currently focusing on applying frequent small patches to address the biggest issues in the release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5756237364315376209"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-06T12:56:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.470Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.366Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.2",
+   "gameId": "hydroneer-123783",
+   "displayName": "Day one patch 3.0.2",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-05T22:54:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Purchasing the Lava Bike will now trigger the Steam achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Completing the lap time on Mots island in under 1:11 will now trigger the Steam achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed issue where multiple drills could be purchased from the limited drill store in New Glade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed localisation issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed broken bucket textures in Ironil and Icehelm exit store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5756237364313246785"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-05T22:54:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.470Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.365Z"
+  },
+  {
+   "id": "hydroneer-123783@3.0.1",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 3.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-05T17:58:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've created a quick patch in the first hour to remove some issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where out-dated mods were causing the game to not launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where players were unable to pick up carts after dropping them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where vegetable basket could not be dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5756237364312497900"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-05T17:58:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.469Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.363Z"
+  },
+  {
+   "id": "hydroneer-123783@patch-2024-04-05",
+   "gameId": "hydroneer-123783",
+   "displayName": "Hydroneer's MEGA PATCH!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-05T16:54:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "To celebrate the launch of the DLC, we're putting out a mega patch for the base game! It's full of commonly requested quality of life improvements, as well as some bug fixes and changes we feel will improve the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydroneer: Journey to Volcalidus DLC is also out now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Patch Notes",
+     "items": [
+      {
+       "text": "These changes apply to both the base game and DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You do not need to purchase the DLC for these changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tip: If you're using mods, make sure you disable them! They'll cause the game to crash as they'll be outdated until the mod developers update them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New build-snapping while placing build items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lighting is reworked. Shadows are now brighter, making it easier to see in the dark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magnets now do not effect items in pans/buckets etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Water Pipe and Logic Cable optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skip Save and Return to Menu button added to esc menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vehicle Changes",
+     "items": [
+      {
+       "text": "Vehicle handling rework, all vehicles now handle better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydro Roller torque increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A selection of vehicles now allow you to chose which side you exit on, depending on which way the camera is facing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game now saves if the player is inside the vehicle when re-loading a save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Logic Changes",
+     "items": [
+      {
+       "text": "Added Logic Content Reader, which outputs the total liquid quantity in a Smelter / Ice Melter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Logic explosives and mini nuke slight changes to their voxel destruction, now has a ring around the surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Storage Changes",
+     "items": [
+      {
+       "text": "Coins/Tokens/Seed Bags/Dirt/Cut Veg now stack whilst they're stored by a Truck/Pan/Bucket/etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Empty Soup Bowls can now be stored in pans/buckets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crucible now no longer destroys resources that are entered into it if its already smelting a different type of resource.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World Map can now be zoomed in on by pressing right mouse button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When 'freeplacing' (hold E while carrying items) and using the scroll wheel will now change the distance the item is from the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Freeplacing a shard bar inside a vertical pressure tank is now easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carts are now wider to make it easier to store large items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screenshot camera can now move faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'For the King!' quest now requires a shark, not a lobster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Angled Decorative Pole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual Changes",
+     "items": [
+      {
+       "text": "Improved outline highlight when looking at items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked signposts around the island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Purchasing platforms have had a visual overhaul.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World Map now indicates which direction the player is facing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FPS now defaults to 60 FPS instead of uncapped, which increases performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remodeled Items: Small Furnace, Camp Bed, Greenhouse Flooring, Brush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Retextured Items: Blacksmithing Hammer, Construction Mallet, Magnifying Glass, All Pickaxes, All Shovels, All Rakes, Saw, Decorative Pole, Fish Bucket, Fish Trophy, Grinding Wheel, Planter Box, Smelter, Build Windows, Funnel, Tool Rack, Rod Rack, Fancy Bed, Deer Trophy, Logic Button, Fancy Table, Basic Chair, Toolbag, Wall Lantern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tables appearing in stores have reworked textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tooltips dynamically change size depending on its contents to prevent them from going off screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keybind tips now appear when entering vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Controller Changes",
+     "items": [
+      {
+       "text": "Controller vehicle movement reworked. Now uses triggers for forward/backward and thumbstick for turning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller remapped for vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to move the player camera closer/further away whilst in a vehicle and using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to move building items closer/further away whilst placing them by tapping the R/L shoulder buttons on controller. (Like mouse scroll wheel)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increased the controller right thumbstick default sensitivity X axis by 2x.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Carrying pans / bucket / similar storage items, AND trucks will no longer heavily reduce frame rate when moving large amounts of items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue with tears appearing in diggable terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue with saves sometimes taking an extended time to complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimizations on drills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw Hook can now cut bars in both directions as intended, it also hooks properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items no longer fly in a random direction when removing them from the Hydro Quad (Thanks Roboticaust for finding the cause of this one!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When un-successfully stealing an item in the store, it'll no longer still appear in your hand whilst in screenshot camera or on vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Keypad will no longer forget what its outputting when its picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Flip Hook now reads '000000000' as '0', and will flip it accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Keypad/Button no longer fails to work after loading if it was purchased on a pallet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Construction Hammer and Magnifying Glass no longer clips through the tool rack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flight Cap no longer prevents Magnifying Glass or Gravity Wand from working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 2,
+    "other": 44,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5756237364312335366"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-05T16:54:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.469Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.362Z"
+  },
+  {
+   "id": "hydroneer-123783@2.2.5",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.2.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-27T12:56:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "While we're busy at work on the next Hydroneer update, we've noticed a few common issues that are cropping up for players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since the next update is still a little far away, we wanted to address these issues in a small patch, which is now released. Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Information about the next update for Hydroneer will be announced when it's ready, we're really excited about this incredibly large update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2.2.5 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "27 July 2023",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Splitters/Hand sorters no longer 'forget' what item they're splitting when they're picked up and placed down again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed rare issue where coins/tokens do not stack when dropped together.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items can no longer be placed underground in the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where soundtrack restarts when hundreds of items are dropped at once causing memory issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc. drop item optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs no longer give rewards from a quest if it has not been accepted by collecting the quest scroll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed rare crash when pressing the 'drop' button after an item in the players hand is destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pipes will no longer be able to pass water when they're in their placing mode.```: If you're enjoying Hydroneer please consider leaving us a Steam review, it really helps us out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5124584686246033158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-27T12:56:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.468Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:50.052Z"
+  },
+  {
+   "id": "hydroneer-123783@2.2.4",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.2.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-03T13:59:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.2.4 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3 May 2023",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major improvements on placing items near diggable dirt. Will not prevent placement as much as before when placing items near/inside dirt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw no longer drops FPS after using it to cut many items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw will now 'timeout' items to prevent them from being cut multiple times when passing through once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw will only work when powered by water in the conveyor's pipe that it's attached to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw will no longer cut items when its picked up and dropped onto items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clearing raw resources will no longer sometimes remove resources on splitters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Splitters can now split all items, including some build items that previously would not register.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Splitters will no longer register placed build items that are very close to the registration platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Splitters will now properly split items properly and won't require being picked up again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor splitters will now stop splitting fish when fishes are removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anvils will no longer be able to craft items using the same bar if balanced the bar between two slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Users will no longer fall through voxel dirt when loading their save files.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dirt wand will now be able to place dirt anywhere in a dig site, instead of only placing dirt when already looking at dirt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Splitter names are updated, they now read 'left/right'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rake prices updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5138087875075946141"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-03T13:59:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.467Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:50.051Z"
+  },
+  {
+   "id": "hydroneer-123783@2.2.3",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-28T15:48:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.2.3 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "28 April 2023",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Task Note Board. Store two task notes on a board for quick readability. Purchasable with either type of tokens. Can also be used to world maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 'Remove Resources' when continuing a save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more UI elements to indicate how mods and creative mode prevent Steam Achievements being awarded.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enable/Disable all mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs will now display their name as well as the token type they're rewarding above their head before they're approached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subtitles can now be scaled in the audio settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new preventative measures for corrupted files. You'll automatically be directed to the backup of the save file if it detects a corruption.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed GPU issue causing some players to have graphical crashes due to DLSS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with vertical conveyor belt pushing items below it in long climbs vertically..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Seed bags in stores no longer display their price as 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw Hook will no longer interact with held items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw Hook will now work better with fish and vegetables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw Hook will now change the visible size of the item being cut as it passes through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Centraliser Hook improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Destroyer now has better collisions for accepting items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dreck Quarry dirt tier levels adjusted, you can now have working T3 drills on the very bottom of the claim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fish Bucket scaling error fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where sometimes multiple drills/harvesters can be bought from the travelling merchant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clyde and Roy will now display their locations as 'Bridgepour' instead of 'Ember Cradle'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Splitter Alt now lines up correctly (visual glitch)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Very small scrap metal pieces will now be removed when selling to the jeweller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New weapon storage items no longer have the first weapon entered in too low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Misc. translations and description changes.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest progression in farming guild tasks are accelerated, higher value tasks will appear sooner after completing previous tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes to the loading menu. Will now display if the save file has Steam Achievements enabled, as well as a message when starting a save with mods or creative mode on.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Task Notes requesting crafted items will now display their name as well as the image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Drills and Harvesters will now play a sound effect when they're broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Destroyer idle sound effect lowered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5133583642655153166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-28T15:48:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.467Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:50.051Z"
+  },
+  {
+   "id": "hydroneer-123783@2.2.2",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-18T14:23:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.2.2 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "18 April 2023",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tasks will no longer display with a 0 weight requirement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Masterworkin'' Steam Achievement will now unlock as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Walking past a Logic Gem Compressor no longer will pull the item out of your hand if you move too close to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafted items passed through the Logic Saw Hook will no longer make them disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision issue at Icehelm Entrance now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Purchasing a Hydro Mole now comes with a full tank of gas! (What a bargain!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dirt no longer bounces out of the T3 harvester: in rare occasions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where logic keypad sometimes disappears if clicked too fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sometimes items stored in the back of truck no longer impact the trucks movement behaviour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sleeping in a bed in split screen while another player is sleeping no longer soft-locks the first player into an endless sleep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed resource duplication glitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some store items would not disappear from stores if not purchased when loading save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tokens no longer are inside female NPC hands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a lantern lands in the water while on, it no longer players its extinguish sound globally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX when chopping vegetables with the cooking knife will no longer play twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stairs in the harbour no longer have weird collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Built items no longer appear as their red/blue placement colour when placed down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player icon in the main menu now updates the image properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'For The King!' Task notes no longer are miscoloured.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stock Market in Ironil now display the new models for weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimisations for T2 drill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc. translation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor fixes.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Massively decreased the sound of the logic saw hook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rate of crucible/bars heating up increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maximum size of boot decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Area for Anvils to accept bars/gems now slightly increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plinths can now store coins and tokens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scales now show the total weight of crafted items by their contents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crucible description updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 29,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/6539831519503928900"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-18T14:23:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.466Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:50.050Z"
+  },
+  {
+   "id": "hydroneer-123783@major-2023-04-14",
+   "gameId": "hydroneer-123783",
+   "displayName": "The Prospecting Update is Here!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-14T16:41:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been hard at work with our 2.2 update. This update brings Tier 3 mechanics into the world, with its corresponding tools, machinery, and pipes. A new resource also spawns now - Corestone! Found in Tier 2 and Tier 3 depths, this orangy-purpleish material is required for the crafting of T3 machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update we've also introduced Ore Veins - randomly spawned zones which when using a drill or shovelling into these zones will increase the chance of a certain resource spawning. Use a prospecting helmet or the new Hydro Prospector to help find these ore veins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since pre-2.0, players have missed the Hydro Excavator - a vehicle capable of storing dirt while it digs holes into the ground. We've revisited the concept of a mining vehicle. And whilst it doesn't store dirt, it certainly is a massive step up from our previous excavator. The Hydro Mole is a versatile, easy to handle vehicle which is perfect for digging tunnels. It has locked angles to make it easy for you to dig up, down, or straight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A common request from players is a reason to progress through the game. With this feedback, we've implemented a mainline quest! With increasing difficulty, progress through Bastion Keep, to complete a quest for the king, with a pretty sizable reward!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another thing players have been requesting for a while now is Steam Achievements! We've gone ahead and added over 50 achievements for you to get.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "That's not everything from us for this update, see the full patch notes below for everything. There's some good quality-of-life improvements we've added in, such as NPC locations on quest scrolls, the ESC menu pausing time, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're not finished with Hydroneer, there's still lots more we want to do to the game. Everyone here at our small studio is very excited to share with you our hard work on this update, we hope you enjoy it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you do, please consider leaving us a Steam review. It really helps us out :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Max",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Patch Notes",
+     "items": [
+      {
+       "text": "2.2 Prospecting Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "14 April 2023",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Hydro Mole - a utility vehicle which can dig dirt terrain. Can be set to three different angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New resource: Corestone Ore. Slightly more common than Cloutium, not as expensive but can only be found in Tier 2 and Tier 3 depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Complete Anvil crafting rework. Weapons and Jewellery can now be crafted by using any material besides shards. Anvil is also doubled in size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Currency: Prospecting Guild Tokens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New tasks: Craft items for NPCs using the anvil to gain Prospecting Guild Tokens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New store in the Bridgepour Harbour to spend these new tokens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New ‘Main Story’ Quest progression: “For The King!” With a secret new item reward for completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Tier 3 Tools and Equipment:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corestone Tools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corestone Pipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corestone Drills and Harvesters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ore veins have been added to Hydroneer. Randomised locations where drilling and digging will result in a higher yield of this resource type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prospecting Helmet. Detects nearby ore veins depending on which direction the player is facing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydro Prospector. A utility vehicle which can find nearby ore veins and prospects downwards to find what type of vein is under the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Saw Hook. Input a logic value to split resources to a certain size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gem Chisel, used to split gems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafted weapon storage racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "All items can now be magnetised and conveyored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial accessible from the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ESC menu now pauses time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New voicelines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "'H' taskbar icon for the Hydroneer app.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bucket/Pan now drops dirt on the correct drop target location when emptied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bucket stability improved when dropping it. It’ll try and land straight up now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed minor issue where multiple currency types in a purchasing bucket of a vehicle will remove the unused currency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pipes and conveyors no longer rotate off grid in rare occasions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players no longer 'splash' when exiting near water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicle lights no longer effect water fuel tanks visually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Splitting coins/cut veg on top of scales will now update the scale reading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items placed down in build mode over a storage vehicle will no longer still be snapped to the vehicle after being picked up and dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dropping a helmet while wearing a helmet of the same type will no longer stop the effects of that helmet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pressure gauge reverts back to 0 when picked up or water is no longer passing through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Gem Compressor sound effects now linked to the 'machines' sound slider as intended.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Task notes will now display the location that NPC is located to return the item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various balancing changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shards are now slightly rarer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cloutium is now slightly less rare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced prices of masterwork crafting recipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Smelter changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No longer takes damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doors close automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pipe Pressure can no longer be bypassed by using a lower tier of pipe and then using a booster back up to the pressure of the intake pipe. It'll now be capped by the maximum pressure of the weakest pipe in the line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In creative mode, the Masterwork Forge can now be used without any resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using a splitting tool (Saw/Cooking Knife/Chisel/Pickaxe) will only be able to split the intended use item, as well as currencies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Complete foliage visual overhaul, including all grass, bushes and trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bridgepour Harbour, Bastion Keep, and misc. world changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs will no longer call female characters \"Lad\", will instead refer to them as \"Lass\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the volume of crucibles and smelters when a large amount of ores enter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the size of the Boot item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hydro truck now has visible windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New visual effects for the masterwork forge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 0,
+    "balance": 2,
+    "other": 52,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/6539831519489700435"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-14T16:41:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.465Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:50.049Z"
+  },
+  {
+   "id": "hydroneer-123783@2.2",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 2.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-05T16:12:12.000Z",
+   "notes": [],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5070528176573523156"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-05T16:12:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.464Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:50.048Z"
+  },
+  {
+   "id": "hydroneer-123783@2.1.3",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-02T15:05:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed issue where the Hydro Cropper would not output resources properly if multiple types of vegetables were collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items that leave the bounds of the worlds will now return to their last dropped location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bucket and Pans no longer cause items simulating physics to fly away if they're hit when the Bucket/Pan is picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with save file corruptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed minor issue with stores being functional with no coins in the tray after they've been removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plant pots no longer resize randomly and their plants are now attached to the pots as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5035622743880239340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-02T15:05:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.464Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:50.047Z"
+  },
+  {
+   "id": "hydroneer-123783@2.1.2",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-21T16:44:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've compiled our final patch for this year. This one includes a full vehicle overhaul as well as some much needed bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Patch Notes",
+     "items": [
+      {
+       "text": "2.1.2 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "21 December 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the issue where a small amount of players would have their save file completely empty while loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed rounding issue when completing soup tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydro Cropper now properly saves its contents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various sound fixes, water sounds are now appropriately in their correct volume level switchers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soup values are now appropriate to their contents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation fixes for some store items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skipping time in screenshot camera will no longer grow plants faster, but this feature will still work with the hourglass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subtitle text now correctly appears in all languages with unique letters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple currency types in a store no longer delete the un-used currency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carrots now spawn slightly higher than before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corn maximum scale size reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carrots no longer roll around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seed bags will no longer change size.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overhauled vehicles completely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5000716037439281378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-21T16:44:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.463Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.897Z"
+  },
+  {
+   "id": "hydroneer-123783@2.1.1",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-13T16:24:30.000Z",
+   "notes": [
+    {
+     "title": "TL;DR",
+     "items": [
+      {
+       "text": "We've been listening to player feedback over the weekend since the 2.1 launch and have applied some changes as well as fixes to this update, the biggest changes being:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalances to make farming slightly more rewarding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cut veg can be added to a soup pot after the soup has been created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seed bags can be stacked in store to make multi-purchasing easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soup contents now displays in the soup's description box.: Thanks everyone for your feedback on this update! We hope you're enjoying it :) If you are, please consider leaving us a steam review, it really helps us out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full patch notes",
+     "items": [
+      {
+       "text": "2.1.1 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "13 December 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Request notes are no longer removed when the save is reloaded, the note for 'grandmaMax' will no longer appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items on pallet will no longer appear red after placing a pallet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soup bowl weight now displays correctly when on scales.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain items in the truck no longer cause the truck to fly off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Emeralds will now move along conveyor belts easier and will not be stuck on the edge of the gem compressor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking pot will now always heat up when placed on the stove.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cut vegetables will now stack everytime they make contact, instead of if the bigger is dropped onto the smaller stack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carrots will no longer clog on the seed mill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs will no longer 'steal' items when accidentally handing them the item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gem Compressor sounds no longer playing globally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When picking up dirt it'll no longer be added to a bucket if its in between the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soup sounds no longer playing globally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor issue with collisions in the world stone stairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed Veg Stacker description issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor light fix on the Hydro Cropper.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MAJOR CHANGE: Cut Veg can now be added into a soup pot after the soup has been created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soup descriptions now display the contents of that soup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the value of vegetables, cut vegetables, and soup (for both tasks and selling).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Seed bags can now be stacked in the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest markers on the map are now easier to see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ember Cradle store info board no longer has collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs no longer hang around the area dedicated to the mod shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the largest size Cut Brocolli can be to prevent them not fitting inside the cooking pot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cropper collision updated to prevent the player from walking inside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cropper collision update to prevent objects colliding with the step on the side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grangefield equipment store now sells scales.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Lamp light size increased back to it's size before the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 2,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4980448574127321166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-13T16:24:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.463Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.896Z"
+  },
+  {
+   "id": "hydroneer-123783@2.1",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 2.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-05T14:39:51.000Z",
+   "notes": [],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4621277624705627576"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-05T14:39:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.462Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.895Z"
+  },
+  {
+   "id": "hydroneer-123783@major-2022-08-05",
+   "gameId": "hydroneer-123783",
+   "displayName": "[Dev Vlog] Hydroneer FARMING SEASON Update - What's going to be in it?",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-05T15:38:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Take a peek at this months dev vlog: This time I'm talking about the 2.1 FARMING SEASON update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4598757090454155242"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-05T15:38:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.894Z"
+  },
+  {
+   "id": "hydroneer-123783@2.0.8",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-09T13:21:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where spanner hurlers would not hit their targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved palette storage on trucks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various minor optimisations.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Conveyor Splitter Alt and Conveyor Merger Hook into the Icehelm store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4539082035566422293"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-09T13:21:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.894Z"
+  },
+  {
+   "id": "hydroneer-123783@2.0.7",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-08T13:04:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update to fix a few of the minor issues from the suggestions update, enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2.0.7 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8 July 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where sometimes magnets would make resources unable to lock into pans/buckets/crucibles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Conveyor splitter / hand sorter now correctly keeps resources when clearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor belt visual improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc. storage fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4539082035562738288"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-08T13:04:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.893Z"
+  },
+  {
+   "id": "hydroneer-123783@major-2022-07-05",
+   "gameId": "hydroneer-123783",
+   "displayName": "We took YOUR suggestions and made an update! OUT NOW!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-05T14:28:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.0.6 is out now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've piled in a load of suggestions, fixes, and gameplay changes that didn't quite make it into 2.0. We hope you enjoy this update. Next we'll be working on the 2.1 FARMING UPDATE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full patch notes",
+     "items": [
+      {
+       "text": "2.0.6 Suggestions Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5 July 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Splitter now has an alternate direction version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Merger Hook which allows items to be passed in a T shape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New character jail-break outfit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dirt Tiers now have distinctive diggable dirt textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dirt Chunks now have different textures depending on the tier they were dug from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Hard Hat item. While wearing will duplicate any item that is placed down to allow for quick building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pickaxe and Construction Hammer now also works by holding down LMB for repetitive strikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Holding CTRL (by default) reverses RTY direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New options for drop reticule.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new options for auto-save time intervals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Logic Lamp item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Logic multiply and divide items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Store tooltips now appear in the vehicle store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows hotbar item is no longer the default Unreal Engine icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New item description badges for vehicles and creative items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Land claims can now be purchased for free in creative mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay options for toggle sprint/crouch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sound effects for opening/closing house doors.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various vehicle improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harvester improvements to prevent dirt chunks getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harvesters are now effected by pressure to produce better resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pipes occasionally locking up and working intermittedly no longer happens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moving far away from a dig site will no longer fudge collisions while machinery is running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "T2 Drills can now be placed pointing towards conveyor belts without clipping issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big conveyor optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major animation optimisations making large drill sites easier to run, as well as other items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic weight reader no longer outputs with a comma when above a value of 999.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic weight reader now shows the input/output arrows correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where Logic Smelter would not take damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements for loading game files with large amounts of items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Save Dirt Chunks / Save Raw Resources' in gameplay options now work as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Storage items no longer occasionally cause the game to lag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual fix: Conveyor Shredder T1 drum now spins the correct direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store tooltip sizes expanded to allow for languages with lots of words (we're looking at you, Germany)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now fish at world bounds.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rake reworked to be easier to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rake will align to the rotation of build items for new saves created after this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cloutium Ore can only be found under the ground now using drills. Will still spawn for pans at any level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gem prices and spawn rates have been changed. Onyx is still expensive and rare, then Rubies, Sapphires, then Emeralds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drills and Harvesters will now limit the amount of pressure they can take to their corresponding tier max pressures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Construction hammer now uses LMB to lock down items and RMB to unlock items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Placement grid is now more subtle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sale signs no longer have metal bands which hide some text well selling extremely valuable resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Invincible Filter remodel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hourglass pausing time now saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hourglass now has a sand effect which shows if time is paused/continuing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Half walls can now be RTY rotated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cottage and Wooden wall windows now have glass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scales are now rotated to be aligned with the grid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 1,
+    "balance": 0,
+    "other": 47,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4474904295773706248"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-05T14:28:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.460Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.893Z"
+  },
+  {
+   "id": "hydroneer-123783@2.0.5",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-23T12:51:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.0.5 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "23 May 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Validator Hook - prevents a 0 value from passing through a logic cable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a button to reset resolution for when a player presses 'multi-monitor splitscreen' and it throws half the game off the screen.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Major optimisations on animations: most importantly making running large amounts of drills work better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added preventative measures for T1 harvesters clogging up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Harvester particle effect now works as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Smelter now spawns the bar in the correct position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Smelter visual liquid level now functions properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue with loops in logic systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic hooks do a better job connecting to the correct cable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Light is now brighter and covers more area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Light now retains its light value when loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocked players from picking up a bed if its being used, preventing an issue which locks the player into the void of sleepy time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where some store item's we have moved around keep their original positions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dropping coins into cobwebs no longer prevents you from picking them back up. Sneaky spiders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more preventative measures for things getting stuck in funnels.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Screenshot Camera no longer has a confined bounds to move in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Icehelm store now has new items to buy: Smelter, Rake, and Standing Torch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now walk up a Vertical Conveyor Belt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4292505348839841359"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-23T12:51:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.459Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.891Z"
+  },
+  {
+   "id": "hydroneer-123783@2.0.3",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-17T12:37:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.0.3 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "17 May 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keybind reset button",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New UI menu for remote play to aid players with setting up controllers.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed discord integration to fix issues with some users not being able to launch the game if Discord is open in admin mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harvesters will now not (hopefully) clog up when moving far away from them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "T1 Drills can now be placed next to eachother on both sides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed issue where the pallet would sometimes cause the selected item to bug out and select items that aren't being looked at.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with infinite water loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Relic cave now works appropriately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dropped machinery in the travelling merchant store no longer locks out if the item rolls out of the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse inversion setting now saves properly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mouse inversion now works for vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed issue where sometimes players can drop a shovel in mid animation causing it to enter the void.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various fixes for throwable dynamite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Centraliser no longer picks up items in players hand or functions in the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented keybindings being able to be set to Left/Right mouse button which stops players from interacting with things.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5849624375836275751"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-17T12:37:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.459Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.890Z"
+  },
+  {
+   "id": "hydroneer-123783@2.0.2",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-12T18:03:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.0.2 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12 May 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor Centraliser Hook. Centralises resources passing on the belt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional mod loading tools to support mod creators.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stock Market prices now work properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Compressor no longer prevents gems from entering when away from the base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stock market by the harbour now is now trading in crafted jewellery as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relics now spawning properly. Will also not be destroyed by explosives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "German / Portuguese translation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor particle fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various sound fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc. Logic Destroyer fixes.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gem Polisher hook now automatically centres gems after cutting them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ironil stock market now displays all weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5849624375818888970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-12T18:03:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.458Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.890Z"
+  },
+  {
+   "id": "hydroneer-123783@2.0.1",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 2.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-11T13:01:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "For this patch we wanted to address the biggest issues in the game so far. We're going to be working really hard over the next few weeks to patch over all the bugs in the game! Thank you for your patience with any issues you might be coming across.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're enjoying the game please consider leaving a steam review. It REALLY helps us out and only takes a minute of your time!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2.0.1 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11 May 2022",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to prevent players from placing items under ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cloud saves now work properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues where pallets would cause trucks to bug out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various issues with the trucks storage are fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with hand sorters getting clogged up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with magnet on the stick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wearing a hat that is stored in the truck will no longer make the truck go nuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where some users were unable to launch the game with Discord open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issue with wooden stairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Explosions will no longer set off store explosives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Standing Torches light up correctly now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crucibles now save their liquid states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Funnel collision issues fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tin Sheet descriptions to no longer say 'minors' instead of 'miners'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Holding a fish in splitscreen will now have the correct fish in hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coin stacks in splitscreen will now show up on both screens.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor belts have arrows are now laid flat when placing (Thanks Giantwaffle!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pallets can now be purchased in more stores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved lighting in various stores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4288001105332311583"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-11T13:01:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.458Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.889Z"
+  },
+  {
+   "id": "hydroneer-123783@1.7.2",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 1.7.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-24T17:42:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've got another patch for you! This patch includes some quality of life additions as well as ✨ player requests ✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.7.2 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "24 November 2021",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now build anywhere in the world in creative mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Weight Reader which outputs resource weight when an item is infront of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save Icon now appears on the screen when auto-saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keybinding tooltip now appears when looking at hats.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fish Stock prices no longer plummets randomly sometimes.: I hope you enjoy this patch! If you're liking Hydroneer please consider leaving us a steam review, it really helps us out :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4224935490632757895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-24T17:42:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.456Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.888Z"
+  },
+  {
+   "id": "hydroneer-123783@1.7",
+   "gameId": "hydroneer-123783",
+   "displayName": "UPDATE 1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-05T15:01:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "tl;dr",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big update: Not 2.0, Creative Mode, Fishing Expansion, Super Rare Onyx resource.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey everyone! I've been hard at work programming this new update for Hydroneer! It can be broken down into three sections:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative mode: Duplicate/delete items, flight cap, gravity wand, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing Expansion: Rework of the fishing with lots of new fish to catch! Upgrade your fishing rod, cook some fish, and make some moneys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Onyx Resource: Treasure hunters! A new resource has entered the game... Onyx! Its a super rare gem, and super expensive!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "WATCH THE DEV VLOG HERE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Just a couple quick disclaimers",
+     "items": [
+      {
+       "text": "2.0 is coming along really well! We are trying our best to get a release date for you ASAP. A lot of the technical hurdles ahead of us are quite hard to judge as to how much time they'll take. We're going to let you know as soon as we know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update does not include anything from 2.0 - From optimizations to balancing, to all the new items and areas. This update is built on top of the current version of the game, unfortunately 2.0 is using a completely different version of Hydroneer and we can't pull those changes across to this branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update has not delayed the release of 2.0. I programmed this update by myself, I am not part of the 2.0 programming team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PATCH NOTES",
+     "items": [
+      {
+       "text": "1.7 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5 November 2021",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability to steal any item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Wand - duplicate or destroy any item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity Tool - Pick up and throw any item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flight Cap - enable flight with a fancy hat!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hourglass - Change or pause time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Onyx - super rare gem that has a 0.1% spawn chance. Includes Uncut Onyx, Compressed Onyx, Onyx Ring, and Onyx Necklace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing Expansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New unlockable fishing rods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wide variety of fish to catch, sell, and trade for new rods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated fishing pot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Rod Rack for storing Rods!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fish Cooking. Use a Small Furnace to cook fish to increase their value. Be careful not to burn them!: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mining helmet now turns on automatically when worn. Turns off when removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles now have an 'empty fuel tank' sound when empty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Old Fishing Rod, Fish, and Boots have been removed.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic Smelter no longer randomly decides to fly away when sometimes dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4186652991113411288"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-05T15:01:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.456Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.887Z"
+  },
+  {
+   "id": "hydroneer-123783@1.6.11",
+   "gameId": "hydroneer-123783",
+   "displayName": "Patch 1.6.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-17T12:21:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Since the news of the 2.0 delay, I've decided to work on an optimisation patch for the current version of the game. Here's some quick notes about this patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This effects save files with lots of items in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally please remember to use the 'Toggle Save Dirt Chunks' and 'Toggle Save Raw Resources' options in the gameplay settings menu if you have lots of dirt/resources in your base, this will help with FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is not the 2.0 optimisations, they will be much much much better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will break the Logic Extended and Pipe Extended mods, please remove these before playing. I'm going to be working with the mod developers to get these fixed asap.: Enjoy the optimisations! Look out for our next dev vlog on YouTube (link below) on Oct 5th for news about the new range of house building parts!: If you're enjoying Hydroneer please consider leaving a Steam review... It really helps us out!: -grandmaMax",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/5418383147738990807"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-17T12:21:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.455Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.886Z"
+  },
+  {
+   "id": "hydroneer-123783@2.0",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-04T19:18:39.000Z",
+   "notes": [
+    {
+     "title": "The following information is out of date, please find the latest info in the following video and FAQ post",
+     "items": [
+      {
+       "text": "Due to complications with development we are no longer developing true multiplayer, instead we're taking a splitscreen approach due to issues with physics engines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FAQ Post",
+     "items": [
+      {
+       "text": "...We've got some bad news unfortunately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please watch through, where we talk features, game development and delays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4020014099096439405"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-04T19:18:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.455Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.886Z"
+  },
+  {
+   "id": "hydroneer-123783@1.6",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-01-15T17:56:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hydroneer's BIGGEST update is now live! Check the patch notes below. I've also got a MAJOR announcement that'll be going live on YouTube in the next Monthly dev vlog (Feb 5th)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max: --- New Features: 40 new items!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major game systems: Powerline and Logic system. Powerful items to have full customization over your base of operation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hobson's Powerworks, the new Logic and Power store in Bridgepour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Three variations of Hand Carts used to transport items around your base easily. New players start with one by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Itchy's Hand Cart store located in Bridgepour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Partial controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ramped and triangle variations of the window block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New gameplay option to toggle whether to save raw resources. (iron ore/gold ore/shards/cloutium ore/uncut gems.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stock market complete rework. Now behaves more realistically and saves.: --- Fixes: Major Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading large saves has been given some optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game loading thread optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Picking up items you're standing on no longer flings you into the air.: Construction Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Axes no longer occasionally fling into the air when being created on an anvil.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows/poles will no longer block sunlight for growing plants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing pot will no longer spawn fish above it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "D.A.V.I.D. no longer plays audio when turned off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Left Conveyor Belt no longer flips its dial when being turned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor fix on Conveyor Belt Barrier collisions.: Tool Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing rod/fishing pot no longer spawns fish worth nothing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing rod no longer works if unpurchased.: Vehicle Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved truck technical stability.: Misc. Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Screenshot camera will now remove highlight from highlighted object when entering camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor RAM optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various item name/description typo fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor sound fixes.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicle camera can now pan up and down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Durability items will now stop working at 0 durability instead of 25. They will decrease faster. Time from full health to completely broken remains the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased protection to reduce items being placed under undiggable terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Iron, Gold, and Cloutium bar now smelt in a semi-hot state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple resources hitting the floor/other objects will now sound much quieter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added multiple items to be fully rotatable while building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UserData will now be saved to the Steam cloud, or locally if cloud is not available.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The previous save slot will now be remembered when loading up the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various map changes.: Balances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing Pole catch time set to a larger range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Filter durability decreases slightly faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player can no longer sprint and move slower while holding the pallet, to balance carts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Shovel will place a smaller amount of dirt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 1,
+    "other": 34,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4483864038806701099"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-15T17:56:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.454Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.885Z"
+  },
+  {
+   "id": "hydroneer-123783@1.5",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-14T17:03:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update is mostly packed with QoL additions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydroneer is now on GeForceNow! Don't meet the minimum specs? Don't worry! You can now play via Nvidia's streaming service.: -Splitters now check for CLOUTIUM instead of DIRT.: -Excavator and the UI have had an overhaul.: -Hand miners will be delighted to know that they can now shovel DIRECTLY onto the conveyor belts, also making early game a lot easier when you can only afford a harvester.: -Screenshot camera is now here! Take cool images and share them on discord/reddit!: -Hitting 'B' will now open up the Bridgepour Wiki on whatever you're looking at!: -And of course, I can't legally call it the 'Hydroween' update if I don't actually do anything remotely spooky, so for a limited time you can purchase Jack-O-Lanterns and light up your base.: Thanks so much for your support, happy Halloween.: Max :)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Full Patch Notes",
+     "items": [
+      {
+       "text": "--- New features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screenshot camera accessible from the ESC menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles now have stronger 4 wheel drive strength.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interactive wiki integration. Hit B while looking at an item to see the item in the wiki.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dirt can now be directly placed on a conveyor belt from a shovel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Cloud Saving",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "GeForce Now integration!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Jack-O-Lanterns available to purchase for a limited time. Happy Halloween!: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Excavator major overhaul.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various map collision fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DAVID/Pressure Tanks no longer resize the bar visual incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc. optimisations.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Splitter will now sort Cloutium instead of dirt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various UI reworks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Large Angled Wall can now be rotated by all axis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/3854477638701252164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-14T17:03:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.453Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.884Z"
+  },
+  {
+   "id": "hydroneer-123783@1.4",
+   "gameId": "hydroneer-123783",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-11T16:41:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today's 1.4 mini-update is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update includes a few cool new features as well as fixes and changes. The highlight of the update is the Gem Compressor - a water powered machine which can compress any gem into a compressed gem. These compressed gems can be used in crafting just like regular gems!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another addition is the player sprinting ability - a highly requested feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Workshop is now implemented for Hydroneer! Now you no longer have to visit github to download mods. Please be patient with the quantity of mods listed on the Workshop, more mods will be added over time by the community. This is completely out of my control. The old mods are still available on their respective sites: https://bridgepour.com/mods",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you're interested in making mods, there's a great channel to discuss with other mod devs in the discord: https://discord.gg/hgYBTGP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally another new addition in this update is the new community created wiki. We've got rid of the Fandom wiki and a new one has been created from the community: https://bridgepour.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can find more info about this update and more on my YouTube channel - I upload weekly development videos: https://www.youtube.com/c/FoulballHangover",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks everyone, hope you enjoy 1.4!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "1.4.0 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11 September 2020",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--- New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Compressed Gems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Compressor object to combine multiple uncut, gems, or compressed gems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mod support via Steam Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Player sprinting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New fansite wiki: Bridgepour.com. Created by ItchyBeard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Necklaces can now be placed on golden head statues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player jumping sounds.: --- Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shard has a better collision box to improve movement on conveyor belts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chinese localisation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to collisions for Conveyor Shredders to reduce items clipping through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the pallet was breaking the fishing rod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enter vehicle key tool tip now changes with the keybinding.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Player can no longer crouch in main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turkish localisation no longer displays Spanish.: --- Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conveyor belt visual speeds changed to represent pressure and physical speed better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed dynamic light on Goliath Drill to improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased visual minimum resource size by 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Battleaxe, Axe, Dagger, and Swords no longer rotate when being dropped, and are held higher to avoid collision issues when placing on sale table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered centre of gravity for resources to reduce rolling on conveyor belts and improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 2,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/4249665521683159651"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-11T16:41:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.452Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.883Z"
+  },
+  {
+   "id": "hydroneer-123783@1.3",
+   "gameId": "hydroneer-123783",
+   "displayName": "UPDATE 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-07-15T17:01:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.3 releases on July 15th 2020 (12pm US Pacific) with some game changing new features, as well as fixes, changes and balances!! I've been working constantly since the release to bring the largest ever update to Hydroneer. Full patch notes will be released on the day, but here's some highlights:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New blueprint crafting progression system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Progressively craft bigger and more expensive and useful items with the new crafting workbench! Purchasable from the new Bridgepour Harbour location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "D.A.V.I.D. Shard powered machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greatly improve the convenience of using the Goliath drill with the Dynamic Auto Voxel Inclusion Distributor (D.A.V.I.D.) - a shard powered machine which duplicates dirt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cloutium Resource",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As well as balancing resource spawn rates, a super-rare ore is now in Hydroneer - Cloutium!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Conveyor Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Conveyor system has had a total rework, as well as new corner belts, barriers, and directional arrows when placing down!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of Life Improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.3 is packed full of quality of life improvements, optimisation, and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots, lots more!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Find the full patch notes here",
+     "items": [
+      {
+       "text": "You can follow the development of Hydroneer with my weekly YouTube highlights:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save files will continue over from previous versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for all the support, I really hope you all enjoy 1.3,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1106840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1106840/view/3659688711190803493"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-07-15T17:01:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1106840",
+      "checkedAt": "2026-11-13T03:23:16.452Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:49.882Z"
+  }
+ ],
+ "issues": []
+}

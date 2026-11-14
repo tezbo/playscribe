@@ -1,0 +1,979 @@
+{
+ "game": {
+  "id": "outcast-a-new-beginning-171215",
+  "igdbId": 171215,
+  "name": "Outcast: A New Beginning",
+  "cover": {
+   "imageId": "co6x9d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6x9d.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1bt8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1bt8.jpg"
+  },
+  "ps5Release": "2024-03-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "outcast-a-new-beginning-171215@patch-2024-06-04",
+   "gameId": "outcast-a-new-beginning-171215",
+   "displayName": "Outcast - A New Beginning Patch 2024/06/04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-04T13:07:53.000Z",
+   "notes": [
+    {
+     "title": "New and updated Features",
+     "items": [
+      {
+       "text": "Added new Quality Mode (40 FPS) on consoles (requires a 120Hz monitor and the output of the console set to 120 Hz)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance and stability on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated the \"Hide HUD\" feature:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When Hide HUD option is enabled, damage numbers, enemy health bar and enemy names are hidden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "During combat, crosshair, \"Quick use items\" and \"Weapons ammo\" are still shown, also with Hide HUD enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When Hide HUD option is enabled, several other UI elements are now hidden during various gameplay segments (Orym trail plants, glide for seed plant, items on the ground)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved support for Super Wide monitors (32:9) by fixing various scaling issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Implemented reverse Camera Up/Down in Tower of Reality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Player-reported bugs fixed",
+     "items": [
+      {
+       "text": "Fixed a bug that disabled music after the start of a cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a massive frame drop in the center of Emea once the Galenta has hatched",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing audio on the first line of a cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with pick up items not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frame drop in the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing audio in the WFA cutscene when Jack reports to the Earth Command",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Jack Boerum fight triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lehaz comlinks triggering during the Nôm-Nôm races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various bugs on Gork Eruption",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with AI ending in T-Pose after loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the Fae Fruits Quest in Bidaa remaining unfinished if you find Mirko before talking to Marzo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Galenta's growing Quest trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various localization issues (as-recs, voiceovers, context and logic issues)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various flying assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Additional bugfixes and optimization",
+     "items": [
+      {
+       "text": "Fixed black background when coming back to main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that made the Fae fruits transparents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various collision issues in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI teleporting and T-Pose in Outposts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed low FPS when the game is played in Arabic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug involving Scoot not moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various physics bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various Optimization and fixes on several stalls happening in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 22,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added new Quality Mode (40 FPS) on consoles (requires a 120Hz monitor and the output of the console set to 120 Hz)",
+     "Updated the \"Hide HUD\" feature:",
+     "When Hide HUD option is enabled, damage numbers, enemy health bar and enemy names are hidden"
+    ]
+   },
+   "sourceIds": [
+    "steam-1013140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1013140/view/5742731639348284616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-04T13:07:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.146Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-04T13:07:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.146Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-04T13:07:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:44.947Z"
+  },
+  {
+   "id": "outcast-a-new-beginning-171215@patch-2024-04-22",
+   "gameId": "outcast-a-new-beginning-171215",
+   "displayName": "Outcast - A New Beginning Patch 2024/04/22",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-22T13:35:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch brings a lot of fixes following bugs reported by players, whom we’d like to thank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "“Hide HUD”: Players can now select the option “Hide HUD” from the Game Settings, removing all interface elements from the screen for a more immersive experience. Note that with this option enabled, the HUD will briefly appear while using the scanner and partially (life and shield gauges) during combat gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life Improvements and Optimization",
+     "items": [
+      {
+       "text": "Skill Tree: adapted the font size and the skill costs to make it more readable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance in Tower of Reality significantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ultra Graphic Mode: improved shadow quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs Fixed",
+     "items": [
+      {
+       "text": "Fixed several crashes happening while using Oru’s Gun on the PS5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed several crashes on console saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several crashes related to dialogs and missions (all Platforms).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Anatok’s Diaries - all 33 Anatok’s Diaries can now be collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Quality/Performance selection mode on Xbox Series S.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed various environment issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPC being stuck inside walls or the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various localization issues including as-recs, non-localized voice-overs, facial animations, and overflowing texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various dialog issues (context and logic).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where saves were getting corrupted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed auto-save issues - the game auto-saves more regularly and auto-saves triggered by dialogs launching missions always happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various Game Credits issues including a bug preventing specific entries from displaying in the end game credits, missing contributors, and typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed status update of Base SAN-1S - the status is updated to “done” when all the chests are open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several Gork Eruptions creatures spawning points position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the achievement “The things you own end up owning you” - the achievement will unlock without having to unequip the modules from the weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the achievement “Kitchen Nightmare” - launching the game will unlock the achievement if all the recipes have already been purchased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the achievement “You want fear? I’m the fear” - launching the game will unlock the achievement if all 30 Outposts have been neutralized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when restarting side activities or instantiated missions during the loading fade-out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialog camera (Zaleb in Sappa).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Bases guidance status - the relevant information now displays when hovering on Bases in the Quest Map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed keyboard mapping - players no longer need to restart the game to have their mapping applied.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed soft-lock issue during the “Find the Artifact” mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 21,
+    "balance": 0,
+    "other": 1,
+    "ps5": 1,
+    "topNew": [
+     "Skill Tree: adapted the font size and the skill costs to make it more readable.",
+     "Improved performance in Tower of Reality significantly.",
+     "Ultra Graphic Mode: improved shadow quality."
+    ]
+   },
+   "sourceIds": [
+    "steam-1013140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1013140/view/5762994032405502100"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-22T13:35:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.145Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-22T13:35:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.145Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-22T13:35:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:44.946Z"
+  },
+  {
+   "id": "outcast-a-new-beginning-171215@patch-2024-03-28",
+   "gameId": "outcast-a-new-beginning-171215",
+   "displayName": "Outcast - A New Beginning Patch 2024/03/28",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-28T19:04:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Nom-Nom race controls have been simplified. You can now steer Nom-Noms easily with your controller or WASD on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Players can now save their game on the Galenta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimisation",
+     "items": [
+      {
+       "text": "Fixing the FPS drop in the Base SAP 1 on PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixing the FPS drop around Base EGZ 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed a bug that triggered an infinite energy boost on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the Daoka did not open when the player reaches Prokriana to find Kureg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where English texts where shown in the German language setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"The Anomaly\" spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Scoot the Twon-Ha did not wake up during its challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused a crash in the Main menu if not connected to the Internet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the number of convoys the player must destroy in the UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players are no longer able to kill Scoot or the Twon-ha’s in Bidaa with the Oru's gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the black Save Screen and the wrong number of Daokas in the save game information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several Kamenaïs spawn points so they don’t look like they’re floating in the sky",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could speak to an invisible NPC in Palana",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where White Helidium wasn’t counted correctly for a quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 3,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1013140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1013140/view/5749481331437852164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-28T19:04:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.144Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-28T19:04:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.144Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-28T19:04:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:44.945Z"
+  },
+  {
+   "id": "outcast-a-new-beginning-171215@1",
+   "gameId": "outcast-a-new-beginning-171215",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-20T16:00:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a possible soft-lock when the player could not chose a dialog option with Yel, preventing them from placing the last Daromôn in Kizaar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple possible freezes and crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Galenta behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved drone behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance and optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1013140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1013140/view/5686430301714745537"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-20T16:00:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.144Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-20T16:00:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.144Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-20T16:00:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:44.944Z"
+  },
+  {
+   "id": "outcast-a-new-beginning-171215@patch-2024-02-22",
+   "gameId": "outcast-a-new-beginning-171215",
+   "displayName": "Demo Patch 2024/02/22",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-22T15:14:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new PC demo patch (1.2) has been released. Console patch to follow soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the limited tries (every demo can now be played with unlimited tries)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized performance and reduced stutters and stalls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update on Gamor behaviour to avoid them getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1013140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1013140/view/5728086065182223004"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-22T15:14:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:44.943Z"
+  },
+  {
+   "id": "outcast-a-new-beginning-171215@patch-2024-02-14",
+   "gameId": "outcast-a-new-beginning-171215",
+   "displayName": "Demo Patch 2024/02/14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-14T15:27:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We appreciate and examine every bit of feedback we get, especially from long-time Outcast fans, and are working on making adjustments and improvements where we can, especially the stutters so many of you encountered, which we will fix until release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a start, we are providing you with a patch to the demo today, which will include the following fixes/features:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reset the tries for each demo so you can give it another go in case you already used your tries (in some cases due to technical problems)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance in general",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed collision issues where Cutter can be stuck in the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added tool tip prompting the use of melee attacks against the blue NaGamors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gork eruptions can now be cleared by only destroying the Krakit nest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Display of Glide / Jetsprint in the control image",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1013140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1013140/view/5750603429273007456"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-14T15:27:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1013140",
+      "checkedAt": "2026-11-13T03:27:29.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:44.942Z"
+  }
+ ],
+ "issues": []
+}

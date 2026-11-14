@@ -1,0 +1,178 @@
+{
+ "game": {
+  "id": "life-is-strange-reunion-386431",
+  "igdbId": 386431,
+  "name": "Life is Strange: Reunion",
+  "cover": {
+   "imageId": "cobbp8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobbp8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar54yg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar54yg.jpg"
+  },
+  "ps5Release": "2026-03-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "life-is-strange-reunion-386431@major-2026-04-15",
+   "gameId": "life-is-strange-reunion-386431",
+   "displayName": "Patch update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-15T16:00:59.000Z",
+   "notes": [
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "-Fixed keyboard layout detection on launch of the game. Defaults for keybindings will now better suit non-qwerty layouts.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed various graphical issues during rewind sequences. -Fixed various vibration issues in several scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed ambient noise in several locations. -Some NPCs finally got their drinks from Amanda in the Snapping Turtle (she's busy, alright?!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some minor bugs with a hidden rewindable sequence. -Improved stability overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated audio code to be more robust. -Fixed a crash when replaying a scene several times in the same session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an occasional crash with some NVIDIA GPUs (series 30 and 40). -Fixed many small bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "-Added a warning when we detect some Windows security settings prevent game saves to be written properly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed an issue where using Alt+Tab in a specific scenario may cause the title to freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Improved Steam Deck default settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed shadow flickering for local hair shadows with lower quality settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Made it clearer in the settings that the game does support upscaling (Unreal Engine’s TSR).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2624870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2624870/view/1830163047255356"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-15T16:00:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2624870",
+      "checkedAt": "2026-11-13T03:24:43.726Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-15T16:00:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2624870",
+      "checkedAt": "2026-11-13T03:24:43.726Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-15T16:00:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:41.317Z"
+  }
+ ],
+ "issues": []
+}

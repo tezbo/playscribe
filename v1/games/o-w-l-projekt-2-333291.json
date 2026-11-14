@@ -1,0 +1,137 @@
+{
+ "game": {
+  "id": "o-w-l-projekt-2-333291",
+  "igdbId": 333291,
+  "name": "O.W.L Projekt 2",
+  "cover": {
+   "imageId": "co9gds",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9gds.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3c2d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3c2d.jpg"
+  },
+  "ps5Release": "2025-03-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "o-w-l-projekt-2-333291@patch-2025-10-03",
+   "gameId": "o-w-l-projekt-2-333291",
+   "displayName": "Security Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-03T16:42:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we released a small security patch on Steam. (the version number remains the same as before)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The engine provider identified a security vulnerability affecting Windows, and this update includes the fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "According to them, no exploitation has been detected and no players were ever at risk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For O.W.L Projekt 2, there was never any danger since this is a single-player experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both the engine developers and Microsoft have already updated Windows Defender, so without this patch, you might encounter issues with being able to launch the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch contains no other gameplay changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more technical details about the vulnerability, see: https://unity.com/security/sept-2025-01#details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3348500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3348500/view/1811772772514452"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-03T16:42:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3348500",
+      "checkedAt": "2026-11-13T03:27:00.632Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-03T16:42:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3348500",
+      "checkedAt": "2026-11-13T03:27:00.632Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-03T16:42:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.397Z"
+  }
+ ],
+ "issues": []
+}

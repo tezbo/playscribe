@@ -1,0 +1,1183 @@
+{
+ "game": {
+  "id": "darksiders-warmastered-edition-25081",
+  "igdbId": 25081,
+  "name": "Darksiders: Warmastered Edition",
+  "cover": {
+   "imageId": "co24hi",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co24hi.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "vqvgkappadgzduvp0kwc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/vqvgkappadgzduvp0kwc.jpg"
+  },
+  "ps5Release": "2026-05-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "darksiders-warmastered-edition-25081@2026",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "Patch 2026",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-26T11:51:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In-game version number: v1.1 cs:4334",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a cause of VK_ERROR_DEVICE_LOST that was appearing often, especially on Linux",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fixed a problem where Camera Control was too fast or slow when using mouse or Steam Controller at high or rather low fps",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "made it so a Dialog is shown when very fundamental graphics API initialization failed and the game can not be run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "revised BFA Achievement code to more reliably trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed graphics issue where the mini map was visible inside of other UI elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Video playback problem when running below 60 fps (e.g. fixed framerate throttle)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a potential corruption of graphics objects, like discoloroization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "various stability issues removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "removed some log file spilling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "removed some causes of hangs or crashes when closing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In case you wanna switch back to the old version there is a public beta branch called warmastered2016 with the last state from 2016.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/1833334318579161"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-26T11:51:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-26T11:51:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.409Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-26T11:51:52.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-11T21:58:51.349Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@hotfix-2026-05-21",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "Hotfix released for Darksiders Warmastered on PC",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-21T13:06:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A hotfix has been released today to fix the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash when toggling secondary weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed window size issue on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed inadvertently removed Soundtrack and Comic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The version number in-game should now be v1.1 vs 4278.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/1833334318568870"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-21T13:06:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-21T13:06:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.407Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-21T13:06:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:51.347Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@major-2026-05-20",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "War Rides Again: New Darksiders Warmastered Update Released",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-20T11:11:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With the release of Warmastered on PS5 and Xbox Series we now also updated the PC version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Requires 64bit CPU",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rendering powered by Vulkan. Vulkan graphics API requiring Vulkan 1.3",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Photo mode (access this by entering the pause menu while in-game, then take your screenshot via Steam's screenshot function or Windows' screenshot function)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Steam Input support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Support for motion-aiming (requires enabling Steam Input and using a controller with motion support)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed reticule on low texture resolution settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes to controller glyphs of different controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If this version has issues please report a bug via our bugreporting form:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please make sure to include the following information in your bug reports:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Summary of the issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Detailed description including what were the last few steps you took before the issue occurred",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version number (can be found in the top left corner of the main menu)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "screenshot/video, if possible (note the max. file size of 50 MB)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "save file (this can be found under C:\\Program Files (x86)\\Steam\\userdata[your user ID]\\462780\\remote\\autocloud\\save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "your dxdiag (press Windows key + R key and enter \"dxdiag\", let it compile, then click \"Save all information\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "your crash dump logs (the game will ask you if you wish to upload diagnostic data when it crashes--do so, then right-click game in Steam > Properties > Browse and attach the crashdump.log file that is next to your game's .exe file to the bug report)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In case you want to switch back to the old version, there is a public beta branch called warmastered2016 with the last state from 2016. You can access this by closing the game, then right-clicking the game in Steam > Properties > Game Versions & Betas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 16,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/1833334318566006"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T11:11:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T11:11:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.407Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-20T11:11:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:51.347Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@6",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "Patch 6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-03-08T18:01:42.000Z",
+   "notes": [
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "8th March 2017",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Simplified Chinese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Native Steam controller support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "D3D errors don't crash the game but show a message box with the proper error code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Please note",
+     "items": [
+      {
+       "text": "When you use Steam Controller, only button prompts for the actual Steam Controller will be shown, never prompts for Dual Shock 4 or other controllers supported by Steam Big Picture. You might end up not seeing button prompts at all if using Dual Shock 4 or other controller via Steam Big Picture.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/75838332253747652"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-03-08T18:01:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.406Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:51.345Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@5",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "PATCH 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-01-06T19:09:42.000Z",
+   "notes": [
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "6th January 2017",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Videoplayer rewrite: Takes less CPU (up to three times), more stable synchronization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for freeze when skipping videos right away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed application crash on startup due to virtual memory problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better DualShock 4 controller detectopm (newer models are working now)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Xbox One controller users see Xbox One button prompts (doesn't work in some setups with multiple controllers connected)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Added better diagnostic code to get rid of the remaining crash problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Comic & Soundtrack: Happy new year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/84839823700441962"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-01-06T19:09:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:51.343Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@4",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "Patch 4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2016-12-21T15:08:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch #4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "19th December 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash on start fix : Game displays a Message box in cases where the steam client fails to provide a save data Api. You need to update steam or reinstall steam to resolve this - or play without saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Abyssal armor was not carried over into a new game if the new game was not started in the same session. Please note : If you *have* a save with abyssal armor already then load that game, save again and restart the application.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screen saver should no longer kick in when playing with some game pads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reticle was small (sometimes close to invisible) in any texture Quality other than highest. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXP between Harvester and Scythe was not correctly transferred, fixed now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS4 controller could not be reconnected after disconnect, fixed now.: Stay tuned.: Your THQ Nordic Team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/91593954388177299"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-12-21T15:08:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.404Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:51.342Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@3",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2016-12-13T13:33:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We know that we need to iron out a few issues asap and are working hard to deliver the best possible Darksiders experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch #3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12th December 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Video player received some cleanup, including a few leaks fixed here and there. Please report if this fixes anything",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash when running on a system without Audio output",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It could happen that one could not assign gear, this should be fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse cursor is now automatically hidden after 5 sec when playing with game pad",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Game pad dead zone can now be adjusted (start game, let it save settings, then edit the settings file - gamepad_deadzone under - value is 0 to 1, default 0.35. There is a minimal deadzone built in that you can not remove)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some remaining resource leaks were fixed that could lead to crashes when on low memory or switching between modes / resizing the window often",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/91592690508360416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-12-13T13:33:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.403Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:51.341Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@2",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2016-12-07T22:52:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We know that we need to iron out a few issues asap and are working hard to deliver the best possible Darksiders experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "7th December 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-VRAM / Memory leak issue fixed that made the game use up all RAM, then",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "crashing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Russian voiceovers added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Settings should now save correctly if Windows user name contains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "non-ANSI characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Crash when corrupt Key mapping was read fixed. We don't know yet how",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "corrupt Key mapping files are written.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-BFA Achievement should now unlock correctly (should unlock on game start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "if you have already earned it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The tutorial text explaining how to throw objects was showing the wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "button for keyboard / mouse users.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New Feature : Force saved data import",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This allows more control over importing saved data from the original",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "game into Darksiders Warmastered Edition saved data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instructions for Force saved data import",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Open the file %appdata%\\kaiko\\darksiders1\\config.ini",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Add the line 'force_save_data_import=true' to the section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When starting the game it should now always ask you whether or not",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "to import saved data, given it finds original saved data. Please note",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "that all slots that your original save contains will get overwritten in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the WME savedata. You can remove unwanted slots from the original saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "data before importing, these are files either in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "%userprofile%\\Documents\\My Games\\Darksiders or",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "%userprofile%\\Documents\\My Games\\Darksiders\\.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please backup your darksiders1 WME saved data before force",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "importing, but make sure you store your backup outside of the steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "cloud folder, otherwise the game can't save any more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are looking forward for your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/91592690488083558"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-12-07T22:52:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:51.340Z"
+  },
+  {
+   "id": "darksiders-warmastered-edition-25081@1",
+   "gameId": "darksiders-warmastered-edition-25081",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2016-12-05T09:52:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We know that we need to iron out a few issues asap and are working hard to deliver the best possible Darksiders experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch #1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2nd December 2016",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for AMD performance problems",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for users with Non-ANSII character based usernames that had problems to get config saved / loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for users without pre-existing keyboard config could not load / save keyboard config: Note : If you had working keyboard config load / save, then please copy your keyboard configuration to the new place.: The old file was %localappdata%\\Darksiders\\controls.dcon: New location and filename is %appdata%\\kaiko\\darksiders1\\keymapping.bin: Please just copy the file and rename it.: We are looking forward for your feedback in this thread: http://steamcommunity.com/app/462780/discussions/0/154642447922267001/",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-462780"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/462780/view/91592053119010836"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-12-05T09:52:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-462780",
+      "checkedAt": "2026-11-13T03:18:30.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:33.330Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1840 @@
+{
+ "game": {
+  "id": "star-wars-zero-company-340113",
+  "igdbId": 340113,
+  "name": "Star Wars Zero Company",
+  "cover": {
+   "imageId": "coc7a0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc7a0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6i6f",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6i6f.jpg"
+  },
+  "ps5Release": "2026-08-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "star-wars-zero-company-340113@1.2",
+   "gameId": "star-wars-zero-company-340113",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-15T15:26:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Welcome to the 1.2 Patch Notes, Operators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We’re excited for you to dig into the new Campaign Modifiers feature, feature updates, and bug fixes that went live today. Thank you to the community for your continued support and love for the Zero Company crew!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Campaign Modifiers",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Developer’s Note: We’ve heard that the community wants the ability to increase the game’s difficulty and start campaigns with additional rules, particularly around Injuries and Permadeath. We’ve prepared a set of new configurable campaign options that can be enabled when starting a new campaign, allowing players to modify key gameplay rules. These include Advantage generation, Injury and death rules, Assist Shots, progression rates, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]These options can be used on any difficulty level, though we recommend playing with the default rules on Normal before applying modifications. For veteran players looking for a more tense and less forgiving experience, these options provide new ways to substantially increase the challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We’re pleased to offer these options and plan to explore additional configurations in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Campaign Modifiers can only be enabled via the Difficulty Settings menu when starting a new campaign on any difficulty. Click the Additional Campaign Options button to see the Campaign Modifiers below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Developer’s Note: Any selected Campaign Modifiers will be enabled after you complete the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Modify Injury Limits",
+     "items": [
+      {
+       "text": "Instant Death: An Operator defeated in a Tactical Mission is permanently killed, regardless of how many Injuries they currently have. Operators injured during Operations in the Galaxy Map are not killed in this manner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer’s Note: While enabled, this option modifies the behavior of the For My Brothers ability, allowing Trick to be downed and injured once during any given mission. When defeated, Trick is injured. If Trick is defeated a second time during the Tactical Mission, Trick will be killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two Strikes: An Operator defeated in a Tactical Mission with one or more Injuries is permanently killed. Operators injured during Operations are not killed in this manner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Three Strikes: The default rules for Star Wars Zero Company. An Operator defeated in tactical combat with two Injuries is permanently killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Add Risk of Death",
+     "items": [
+      {
+       "text": "No Risk of Death: The default rules for Star Wars Zero Company. Operators only die in Tactical Missions when they are injured enough times to be killed under the currently selected death rules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Static Risk of Death: All Operators have a 20% chance to be permanently killed when defeated in tactical combat. Operators injured during Operations on the Holo-Table do not suffer this risk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escalating Risk of Death: All Operators have a 20% chance to be permanently killed when defeated in tactical combat. Additionally, the first time an Operator is defeated in tactical combat and survives, the risk of death permanently increases to 40%, and then to 80% on the second defeat. All further defeats in combat remain at 80% risk. Operators injured during Operations do not suffer this risk, and injuries during Operations do not increase the risk of death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Health Progression",
+     "items": [
+      {
+       "text": "Standard Health Increases: The default rules for Star Wars Zero Company. Operators gain +1 Maximum Health for every 3 Focus Points they have received.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Health Increases: All Operators gain +1 Maximum Health for every 6 Focus Points they have received, significantly reducing their natural health gains over the course of the campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "No Health Increases: Operators do not receive any Maximum Health increases from Focus Points, dramatically reducing their total health by the end of a campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bond Progression",
+     "items": [
+      {
+       "text": "No Cross Trainings Between Disliked Pairs: While enabled, Operators do not receive Cross Training from Bond Level increases until they reach Bond Level 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Advantage Rules",
+     "items": [
+      {
+       "text": "No Advantage from Area Attacks: While enabled, Area Attacks such as grenades, scatterguns, and flamethrowers do not generate Advantage when damaging enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No Advantage from Assist Attacks: While enabled, Assist Attacks such as backup shots and the Easy Mark ability do not generate Advantage when damaging enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Advantage from Damage: While enabled, damaging attacks that generate Advantage have only a 50% chance to increase Advantage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Tactical Modifiers",
+     "items": [
+      {
+       "text": "Assist Shots Can Miss: While enabled, assist shots are no longer guaranteed to hit their targets and follow standard ranged attack rules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies Can Critically Hit: While enabled, all enemy ranged and melee attacks gain a 5% chance to critically hit for +8 damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No Perfect Shots: While enabled, all Operator ranged attacks have a maximum chance to hit of 99%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lockout Modifiers",
+     "items": [
+      {
+       "text": "Locked Talent Respec: While enabled, the player cannot change the talent of any Operator on the roster. All Operators will show the talent as locked in the change specializations interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locked Tactical Respec: While enabled, the player cannot change the primary or secondary specialization of any Operator on the roster. All Operators will show these specializations as locked in the change specializations interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locked Weapon Respec: While enabled, the player cannot change the weapon of any Operator on the roster. All Operators will be unable to confirm weapon changes in the Change Weapon interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer’s Note: When enabled, Trick will be permitted to change weapons once after his mandatory switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locked Recruitment Refresh: While enabled, the Refresh Recruits button will no longer be available in the recruitment facility. Note that recruits refresh at the beginning of each cycle automatically, and this option does not modify that behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Reduced uses of the Astromech's Self-Repair ability to twice per combat. The amount healed is now equal to the AP spent 30%/45%/60%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced uses of the Astromech's Built-In Comlink ability to three per turn at maximum rank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Developer’s Note: While this change is subtle, it stops an interaction that allowed the Astromech to dump the Action Points it granted itself into other units through Built-In Comlink. This combination was particularly disruptive when running multiple Astromechs on the same team. Limiting Built-In Comlink to three uses per turn allows the Astromech to continue granting AP to allies under normal circumstances while limiting the feedback effect from Coordinated Support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced the Scout's Tactical Timing passive progression per tier from 20/‌40/60/80/100 to 30/‌40/50/65/80. Additionally, Scouts no longer gain Advantage from all attacks, only ranged and melee attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Developer’s Note: After observing community gameplay, it became clear that Tactical Timing’s 100% chance to gain ADV on kill was much stronger than intended, especially when paired with various Area Attacks. This interaction needed to be removed to prevent guaranteed Advantage gain of this scale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cly’s Electroweb Dart is now limited to 3 uses per turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cly’s Combat Jump is now limited to 1 use per turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Developer’s Note: We’ve also made some balance adjustments to Cly's abilities. Her Combat Jump was limited to once per turn to eliminate exploitative strategies caused by the displacement effect of Combat Jump and the excessive mobility it can provide within a single turn. Additionally, ElectroWeb Dart has been limited to three uses per turn. This both reduces the exponential effect from placing huge numbers of darts on enemies and limits some over-the-top tactical combinations that allowed Cly to dominate the battlefield without using the rest of the team to back up her playstyle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Upgrade Facility",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Developer’s Note: The initial goal of the Upgrade Facility was to encourage interesting strategic decisions around Build Slots. Data gathered after the game’s release showed us that players weren’t engaging deeply with the Upgrade Facility, often because they lacked enough credits to do so. We believe reducing Upgrade Facility costs across the board will make Build Slots more viable, especially once you unlock the ability to research multiple upgrades at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longarm Critical Chance II cost reduced from 4500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longarm Critical Chance III cost reduced from 6500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longarm Damage II cost reduced from 5500 to 2500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longarm Range II cost reduced from 5500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pistol Critical Chance II cost reduced from 5000 to 3000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pistol Damage II cost reduced from 5500 to 2500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pistol Movement II cost reduced from 3500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pistol Movement III cost reduced from 3500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pistol Movement III cost reduced from 5000 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repeater Movement II cost reduced from 4500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repeater Damage II cost reduced from 5500 to 2500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repeater Overwatch II cost reduced from 4000 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repeater Overwatch III cost reduced from 5500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rifle Movement II cost reduced from 4500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rifle Range I cost reduced from 3000 to 1500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rifle Range II cost reduced from 5500 to 1500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rifle Damage II cost reduced from 5500 to 2500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rifle Damage III cost reduced from 7000 to 2500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crew Upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock Lounge cost reduced from 3250 to 3000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Lounge cost reduced from 2750 to 3000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Teamwork Assist Damage II cost reduced from 3000 to 2500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional Weapon Mod Slot cost reduced from 4500 to 4000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional Utility Slot cost reduced from 5000 to 4000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat Readiness I cost reduced from 2500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat Readiness II cost reduced from 3250 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat Readiness III cost reduced from 4000 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Crew Quarters I cost reduced from 400 to 0 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Crew Quarters II cost reduced from 600 to 0 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Crew Quarters III cost reduced from 800 to 0 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Crew Quarters IV cost reduced from 1000 to 0 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Focus Point I cost reduced from 3500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Focus Point II cost reduced from 4750 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Focus Point III cost reduced from 6500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facility Upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Medical Bed III cost reduced from 600 to 500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Medical Bed IV cost reduced from 700 to 500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Persuasion I cost reduced from 2500 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Persuasion II cost reduced from 2750 to 2000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cautionary Intel cost reduced from 2000 to 1500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Core Influence I cost reduced from 2000 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Core Influence II cost reduced from 2500 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mid Influence I cost reduced from 2500 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mid Influence II cost reduced from 3500 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outer Influence I cost reduced from 3000 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outer Influence II cost reduced from 4500 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Market Inventory I cost reduced from 1250 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Market Inventory II cost reduced from 2000 to 1000 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Expedited Delivery cost reduced from 750 to 500 Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Recruitment Facility",
+     "items": [
+      {
+       "text": "Operators will now always cost 100 Credits to recruit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer’s Note: Previously, the cost to recruit Operators increased as your roster expanded. It will now always cost 100 Credits, making it easier to fill out your roster without breaking the bank and missing out on other upgrade opportunities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Call For Backup",
+     "items": [
+      {
+       "text": "[p align=\"start\"]The Call For Backup ability can now be bound to a hotkey of your choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Abilities",
+     "items": [
+      {
+       "text": "Fixed an issue that caused Visser’s Miasma ability to malfunction after loading an autosave at the beginning of the battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Umbaran soldiers in the “Umbara Rescue” mission incorrectly had the Droid Vendetta ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Courage Under Fire not preventing Overwatch damage after loading from a save. **",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allowed Cly’s Electro Web Surge to target and kill Mission VIPs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where using Quick Draw could break hit chance or damage previews on subsequent abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the reaction warning UI prompt appeared even when using Abilities like Quick Draw.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tel-Rea's Deflection Chance was not being calculated correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allowed Cly to Combat Jump into pits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reflected blaster bolts will no longer incorrectly trigger Retaliation or Overwatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the reliability of the Shared Suffering effect provided by Coil Guardians.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Teamwork Assist Shot from the Easy Mark ability applied damage even when it missed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where downed Operators couldn’t trigger the enemy’s Overwatch, or use the Noble Stance Deflection and Retaliation abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tel-Rea's second lightsaber no longer turns off after the first Deflection in Noble Stance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Customization",
+     "items": [
+      {
+       "text": "Fixed an issue where Clones would unintentionally reset to their default appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed customization slots that unintentionally displayed the overridden icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the back button not working while editing an Operator’s Dossier in the Customization facility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Cly’s nose clips through some helmets at the Customization Facility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where rapidly switching between customization options in the Customization Facility would cause the preview to desynchronize.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cinematics and Conversations",
+     "items": [
+      {
+       "text": "Removed a duplicate Holocron from Tel’s hand during a cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Baker used the incorrect rifle during a cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some character models were unintentionally visible during conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Kabb’s jacket moving too much in some cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Hawks could become stuck in their office chair or desk after the cinematic where Bennic & Jae arrive at the Den.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed an issue where the displayed chance to hit for enemies disappeared during targeting if the enemy was offscreen out of view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some Operations wouldn’t provide rewards or an outcome after completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that occasionally blocked Cly’s Combat Jump from being used due to non-existent overheard obstructions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Speak with your Other Companions epilogue mission from blocking progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some of the shadowing artifacts that displayed on Fathom during cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you couldn’t interact with the console during the third exploration phase of the “Retake Lunata” tactical mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could jettison yourself into space after completing the first encounter of the final Tactical Mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The final battle will now correctly end in failure when the mission-critical NPC is killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in multi-encounter Tactical Missions where Morale stacks could be consumed two or three at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Launch Operation for Luco Sullust Search\" objective didn’t expire properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Stun Resistance was applied in the next tactical combat if an Operator was dazed when the last mission ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an unremovable Lethargy effect was applied in the next tactical combat if an Operator was Drained when the last mission ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rotation of the holographic Imperial crest in the Den.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Clev and Disha didn’t spawn as intended during the epilogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “Speak with Kabb” objective didn’t resolve if the corresponding conversation wasn’t available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hostage objective NPCs unintentionally displayed a health bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Coil Strikers would go invisible but the player was unable to see them do so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where units did not lose the effect of Shared Suffering when knocked out of the battlefield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Combat Readiness upgrade did not work in multi-encounter Tactical Missions after loading a save during the exploration segment of the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Resonance stacks transferred to a target that already Surged instead of transferring to a legal target or canceling the transfer if no legal target remained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Resonance would transfer to defeated units knocked out of the battlefield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Tactical Offense cross training that grants Advantage when an Operator kills a target at full health now correctly works if the Operator is not a Sharpshooter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Authored Operator objectives didn’t expire upon the death or dismissal of the Operator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented an Operator from being recruited while simultaneously exiting the Recruitment Facility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Operations tab still appeared on the Galaxy Map even if no Operations were available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where B1 Battle Droids could not be flanked if they were in high cover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the damage bonus to Retaliation shots provided by Unstoppable wasn’t properly included in the damage notification, making it appear this bonus did not work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Defense bonus from the Double Down cross training would be lost if the player saves the game and reloads their save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player’s viewpoint was obstructed while using Cly’s Combat Jump ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the final boss’s Trance Wave kept hitting Coil enemies post-death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the enemy’s logic that caused them to play unreliably on certain maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain bosses could have their actions blocked by Overwatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Retaliation wouldn’t work against enemies in high cover because they couldn’t be seen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the No Mercy cross training would apply the Vicious ability before the first turn began and it would immediately expire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the camera would shift to the wrong unit when rapidly switching between Operators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which the final opponent of Tel's story arc wouldn’t move their full distance to close the range gap when attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a unit would lose a stack of Evasion when a Timed Mine was placed on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused Invulnerable to be incorrectly bypassed, often when Area Attacks dealt damage to multiple targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Medpac and Surgeon's Tools no longer throw two projectiles when targeting allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Operators in the Medbay were not removed from the Medbay during solo-assignments on Operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the final boss would sometimes melee attack a target and nothing would happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the final boss would move in and set up a kill twice against the same target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the final boss would move in to set up a kill against a target and incorrectly generate huge numbers of kill preparation status effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Bacta Tanks were not made available to the player when they switched from hard to an easier difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused enemy trooper and enforcer overwatch shots to often have an 85% chance to hit, regardless of the range at which the shot was taken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance and Stability",
+     "items": [
+      {
+       "text": "Fixed various performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that occurred during the Utility Tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could be softlocked if they spammed the inspection input and cycled between units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where progression could be blocked on the “Retake Luunata” mission if the player saved in the elevator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that occurred when closing Star Wars Zero Company from the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Targeting and Overwatch",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Developer’s Note: We have worked to address many of the technical issues plaguing (pun intended) Overwatch gameplay, including Overwatch triggering at inappropriate times, or failing to trigger when it should. These fixes will make the Overwatch experience more consistent and reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a target validation issue for Geryon and Typhon's Call for Protection ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Geryon and Typhon's priority target effect would expire before it could be used by enemies to select targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Overwatch cones indicated coverage that actually blocks the shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies would place the Overwatch cone on the location they took cover from, instead of the position they shoot from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented Visser from shooting multiple times if only two targets were available to shoot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Open Fire ability where enemies targeted with the second or third shot in the chain would incorrectly receive their cover bonus even when flanked by the shooter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Developer’s Note: This issue resulted in hit chances that were significantly lower than those presented in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that stopped Overwatch cones from triggering and allowed some cones to have an invisible coverage zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Rally UI would display when trying to target other abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with melee targeting where some enemies aren't clickable if they are just outside the movement range, but reachable with the melee offset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with activating Overwatch and its UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed an issue where player inputs were not registering on the Radial Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the visibility of some warnings in the Upgrade Facility when under construction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In Hybrid Mode, the Linear Ability Bar would automatically open if the Radial was moved off-screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the Linear Ability Bar would go missing after inspecting a unit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Specializations appeared to be locked after selecting an Operator with limited Specialization options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the incorrect range value was listed for the Sabotage ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bacta Stims now correctly preview the amount of health they restore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the “New Customizations Unlocked” UI message would appear when no cosmetics were unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Tactical Mission complete screen now accurately reflects the outcome of the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 83,
+    "balance": 16,
+    "other": 84,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2075800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2075800/view/1846651706678178"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T15:26:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2075800",
+      "checkedAt": "2026-11-13T03:31:34.617Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T15:26:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2075800",
+      "checkedAt": "2026-11-13T03:31:34.617Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-15T15:26:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:48.743Z"
+  },
+  {
+   "id": "star-wars-zero-company-340113@1.1",
+   "gameId": "star-wars-zero-company-340113",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-09T13:01:11.000Z",
+   "notes": [
+    {
+     "title": "Performance and Stability",
+     "items": [
+      {
+       "text": "Fixed various crash issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various visual stutters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Beskar saves were temporarily deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash issue for Beskar mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the minimum suggested drivers to the current game-ready versions for Nvidia and AMD.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Developer’s Note: We’ve also updated the dialog prompt’s text update to state that you need to update your driver versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Updating Global Illumination and Reflections settings accidentally referenced Ray Tracing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare softlock on the main menu caused by aggressively spamming inputs while the introduction cinematic plays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save corruption issues that could occur on sudden or forced game shutdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players were not receiving their preorder or Deluxe Edition items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cinematics and Conversations",
+     "items": [
+      {
+       "text": "Fixed unintended motion of Fathom's hair during some cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the response animations of several characters in the Den when Hawks is nearby or in conversation with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animations for Clone Troopers during certain cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animations for Kabb during conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the way Hawks’ arm appeared during a standing animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Trick would equip his default helmet when entering Stillwatch without one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Trick would equip his default outfit before entering Stillwatch following a game restart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Hawks was sometimes missing from the Bespin closing cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Customization",
+     "items": [
+      {
+       "text": "Fixed an issue where Tel-Rea Vokoss’ lightsaber would still be shown after swapping to an Astromech in the Customization facility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where swapping an Operator's Origin from another Humanoid to a Clone and vice versa uses the default Voice Preview of the previously-selected origin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the preview Dossier for Hawks wouldn’t play during character creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Databank",
+     "items": [
+      {
+       "text": "Fixed an issue that would corrupt characters if you interacted with the Databank while saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where information could become corrupted while editing characters in the Databank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where another Operator’s name is mistakenly changed after editing another Operator’s name, resulting in duplicate character names and broken customization for the affected Operator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Encounters",
+     "items": [
+      {
+       "text": "Fixed an issue where the final opponent of Tel-Real Vokoss' hero mission didn’t properly reassign their targeting to the Operator that hit them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the final opponent of Tel-Real Vokoss's hero mission failed to reassign their targeting to the Operator that Rallies Tel while she’s in danger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Strategy",
+     "items": [
+      {
+       "text": "Fixed an issue where the Bacta Tank could be used more than one in a cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an extra autosave was generated when loading from a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare softlock that occured in the Medbay tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where transitioning to and from the Squad selection menu while opening the inspection mode blocked progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Secondary Specializations didn’t correctly add the Specialization's passive Cross Trainings to the selection pool at Relationship level +8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secondary Specializations will now correctly count when testing Specialization-specific requirements and results during Operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tactical",
+     "items": [
+      {
+       "text": "Fixed an issue where shots can be missed, even when the chance to hit is 100%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tier 2-4 Scatterguns would accidentally use Tier 1 values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where cone attacks unnaturally snapped when targeting on mouse and keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with Kabb’s firing animation when using the M-32.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented the player from using Operators that ended up outside of the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Droid Dismantler incorrectly granted Harmony on all enemy deaths instead of only on Droid deaths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tel Rea’s Force attacks displayed incorrect damage values in the UI when bonuses were applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tel Rea’s Force attacks applied the Ranged Damage Cross Training bonus twice instead of once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Tel Rea’s Force attacks did not properly add Critical Damage bonuses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with base damage for the DC-17m Anti-Armor shot that prevented it from being able to score Critical Hits or receive damage bonuses that should apply to grenades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that made targeting with Rocket Strike and DC-17m Anti-Armor difficult to control.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ion Blasters doubled their Critical Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Focus amount displayed in the Radial Menu wasn’t also displayed in other menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Astromech's Enhanced Scanners ability would display Invalid Target when activating the ability on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Rally UI was missing when targeting a unit from the Move preview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where damage reduced to or below zero wasn’t properly represented in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shared Suffering might occur offscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Immovable status was applied but didn’t provide any bonuses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where no projectiles would show when a Droideka would shoot with their line of sight blocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies outside of Sweeping Salvo’s targeting cone were still hit by the ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the second tier of the A Life of Labor talent that would cause it to infinitely accumulate its bonuses if repeatedly purchased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved camera stability to reduce camera drift while selecting targets for abilities in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Overwatch shots triggered against attackers caused the enemies to fire through solid objects at Operators they couldn't see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some instances of Overwatch triggering on a unit outside of the targeting cone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various Overwatch issues that caused enemies and Operators to be unintentionally attacked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the camera to wobble when transitioning to over the shoulder view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an Operator could be missing from your squad when arriving at a Tactical Mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a turn ordering issue that caused the Coil Captain to heal a target already slain by Overwatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where combat actions were not properly processed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tutorial",
+     "items": [
+      {
+       "text": "You may now use the back option in the Weapon Mods menu to close the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Upgrade Facility",
+     "items": [
+      {
+       "text": "Canceling an upgrade that takes multiple cycles now properly shows that progress has been reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tel-Rea Hero Mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The final battle of Tel's hero mission will no longer prematurely end when the remaining survival turns reach 1. The mission now succeeds at the end of the final enemy turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Note For Players using Minimum Specs",
+     "items": [
+      {
+       "text": "If you are playing STAR WARS Zero Company on an NVIDIA GTX 10-series or RTX 20-series graphics cards that meet Minimum Specification, adjusting a specific video setting can help improve your overall framerates.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "These graphics architectures can encounter additional rendering overhead when processing complex environmental detail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization Steps",
+     "items": [
+      {
+       "text": "Open Options and select Graphics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Find the Environment Geometry Detail option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switch Environment Geometry Detail to Off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabling this setting lowers geometry processing overhead, which can assist in stabilizing and improving framerates on these GPU configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 57,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2075800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2075800/view/1843481262688958"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T13:01:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2075800",
+      "checkedAt": "2026-11-13T03:31:34.614Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T13:01:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2075800",
+      "checkedAt": "2026-11-13T03:31:34.614Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-09T13:01:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:48.740Z"
+  }
+ ],
+ "issues": []
+}

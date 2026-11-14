@@ -1,0 +1,110 @@
+{
+ "game": {
+  "id": "airoheart-142513",
+  "igdbId": 142513,
+  "name": "Airoheart",
+  "cover": {
+   "imageId": "co4tra",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4tra.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1m87",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1m87.jpg"
+  },
+  "ps5Release": "2022-09-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "airoheart-142513@post-2022-10-10",
+   "gameId": "airoheart-142513",
+   "displayName": "Major progression fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-10T05:44:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed major issue, where if the interact button is quickly spammed when opening a locked door, two keys could be consumed, likely breaking dungeon progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed duplicate key glitch in dungeon 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed progression break in dungeon 7, due to doorway collision issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a glitch associated with the Kobold Tech Rune (teleportation rune), where it would not function whilst the Companion Pet is active. This fixes progression issues in multiple dungeons.: More miscellaneous dungeon and puzzle related patches to come, as we gather feedback. Thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1493940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1493940/view/4613399405953620822"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-10T05:44:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1493940",
+      "checkedAt": "2026-11-13T03:14:33.191Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-10T05:44:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1493940",
+      "checkedAt": "2026-11-13T03:14:33.191Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-10T05:44:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:44.804Z"
+  }
+ ],
+ "issues": []
+}

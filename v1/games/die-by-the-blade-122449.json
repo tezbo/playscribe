@@ -1,0 +1,1845 @@
+{
+ "game": {
+  "id": "die-by-the-blade-122449",
+  "igdbId": 122449,
+  "name": "Die by the Blade",
+  "cover": {
+   "imageId": "co7sn4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7sn4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aroii",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aroii.jpg"
+  },
+  "ps5Release": "2024-05-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "die-by-the-blade-122449@1.0.10",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "UPDATE 1.0.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-12T13:00:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Special attacks using sequences of directional input, stance, and attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Potential rating change are now displayed in the character selection screen and during duels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Returning players in the duel selection screen can now change character, weapon, or confirm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game no longer crashes when spamming Duel History",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Feint tutorial now mentions the cooldown period",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players can no longer miss rolling opponents with Chokuto's MID vertical: Good luck on the battlefield!: Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Special attacks using sequences of directional input, stance, and attack",
+     "Potential rating change are now displayed in the character selection screen and during duels."
+    ]
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/6000566704269314728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-12T13:00:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.132Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-12T13:00:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.132Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-12T13:00:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.183Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.9",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "UPDATE 1.0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-04T14:18:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update 1.0.9 is here! Here are the detailed notes",
+     "items": [
+      {
+       "text": "It is no longer possible to change active stance during an attack, even for S2 and S3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The perfect parry with the wakizashi was resetting too soon, making it impossible to block S3 attacks. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feint locking is fixed. Previously, it was possible to execute a feint over and over, entering a state of constant attack -> feint -> attack loop, which was very hard to defend against. Not anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some Nodachi attacks don't play feint animations at the end anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is no longer possible to open the pause menu when the app loses focus during travel to character selection from the waiting room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Duel history records have been added to the Stats screen.: Keep it up fighters! See you on Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5842939267335231957"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-04T14:18:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-04T14:18:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.131Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-04T14:18:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.182Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.8.1",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "Hotfix 1.0.8.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-28T07:05:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Warriors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we are bringing you a small hotfix for our recent update (1.0.8.1) Here is the list of fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the wakizashi feint sequence playing after the attack animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the testing sequence for the new combo system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5842939267312264728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-28T07:05:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-28T07:05:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.131Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-28T07:05:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.181Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.8",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "UPDATE 1.0.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-27T15:15:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Loading Screen is properly shown in the waiting room if loading started while the pause menu was active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Character skin is no longer reset to the first one in character skin selection when returning back from body part customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Naginata High Sequence A sometimes does not hit the enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possibility to open pause UI (and leave to the main menu) when loading starts in the waiting room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overflowing characters in the invite code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Katana Low Sequence B: missing S2 hit when the opponent is turned towards the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changed",
+     "items": [
+      {
+       "text": "Sequence names in the pause menu are now simply Sequence 1, Sequence 2,... etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "New option in Audio Settings to enable/disable all sounds if the game application isn't focused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More combo sequences - sequence widgets (pause menu as well as tutorial) were updated accordingly to reflect this change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Taunts now use specific montage sections instead of simple fade out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced rating stats (onset rating, last assigned rating, time elapsed since last ranked match)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "IMPORTANT NOTES",
+     "items": [
+      {
+       "text": "1. Onset Rating: This is your live rating value, which declines as time passes. It is used to calculate your rating after any ranked duel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Last Assigned Rating: This rating value was calculated at the end of a ranked duel using your Onset Rating. Its value remains unaffected by time once it is sent to the leaderboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep up the great job fighters! See you on Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 6,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "New option in Audio Settings to enable/disable all sounds if the game application isn't focused",
+     "More combo sequences - sequence widgets (pause menu as well as tutorial) were updated accordingly to reflect this change",
+     "Taunts now use specific montage sections instead of simple fade out"
+    ]
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5842939267309857023"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T15:15:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T15:15:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.130Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-27T15:15:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.180Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@major-2024-06-27",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "Latest DBTB Devlog Episode UPDATE LOG #1 is Out!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-27T14:48:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this video, we'll dive into the latest improvements and fixes we've implemented since the game's launch. Join us as we break down and review all the enhancements we've made based on your invaluable feedback. Don't miss out on seeing how your input is shaping the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Short breakdown of what underwent major fixes and changes",
+     "items": [
+      {
+       "text": "Combo System Overhaul - Enhanced Parry and Roll Mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player Rating System Overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game Performance and Visual Enhancements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Server and Network Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Controls and Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unlocking All Content: A new set of updates is coming soon. For those of you who are new, we remind you that the free DBTB demo is available on Steam.: More cool news is coming out soon. Stay tuned!: See you on the battlefield!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5842939267309787547"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T14:48:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T14:48:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.130Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-27T14:48:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.179Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.7",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "UPDATE 1.0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-20T15:18:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New patch has just been released, and here are the notes",
+     "items": [
+      {
+       "text": "Remaining lives in online duels are now correctly displayed in all supported languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tutorial hints no longer disappear when the controller is disconnected while in the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added: Implemented a waiting room (practice mode) while searching for ranked duels or tournaments: X Enjoy the improvements and keep fighting strong! X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Remaining lives in online duels are now correctly displayed in all supported languages",
+     "Tutorial hints no longer disappear when the controller is disconnected while in the pause menu"
+    ]
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5759622039976513774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-20T15:18:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.129Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-20T15:18:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.129Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-20T15:18:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.179Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.6.1",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "Hotfix 1.0.6.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-17T14:18:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Warriors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we are bringing you a small hotfix for our recent update (1.0.6), since in certain instances players could unlock all customization options for free. This is now fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/6890025005363664905"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-17T14:18:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.129Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-17T14:18:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.129Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-17T14:18:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.178Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.6",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "UPDATE 1.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-13T15:14:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "News for today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update 1.0.6 is out! Here is the list of fixes",
+     "items": [
+      {
+       "text": "Stance can no longer be changed mid-roll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Roll attack no longer requires forward movement input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fade to black now occurs later after the player is killed in a round",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player input display now correctly shows directions for both sides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Server location info is no longer missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sequence list now also contains stance input buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ranked matchmaking is now restricted to regions (you can change your region anytime in the game settings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Important note on matchmaking",
+     "items": [
+      {
+       "text": "We have introduced region-based matchmaking to improve your gaming experience. Upon starting the game for the first time, players are assigned a region. You can change your region anytime in the game settings. Matchmaking will now only connect players within the same region. The current regions are NSA (North and South America), EMEA (Europe, Middle East, and Africa), and Asia-Pacific. These regions may be updated in future patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And some more exciting news... From today on, the Die By The Blade DEMO is available on Steam. All new players wanting to get a feel for this fighting-multiplayer game before diving into the samurai punk scenes and mastering the art of the one-hit-kill can now try out the free demo version.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "As a reminder, in the Demo, you will find",
+     "items": [
+      {
+       "text": "2 CHARACTERS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 WEAPONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "STREET ENVIRONMENT UNLOCKED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LOCAL AND ONLINE MULTIPLAYER MODE: Rest assured that the team is tirelessly fixing bugs and working on performance improvements.: A new patch is coming out next week.: Thanks, fighters, for everything! It is a huge pleasure to have you around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/6890025005349223158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-13T15:14:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.128Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-13T15:14:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.128Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-13T15:14:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.177Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.5",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "UPDATE 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-07T10:04:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New patch 1.0.5 is out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "PATCH NOTES",
+     "items": [
+      {
+       "text": "Combo system overhaul - Removed movement direction from all combos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perfect parry now affects attacker's stamina as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reimplemented lighting for multiple levels. This should also increase readability of characters a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with leaderboard not showing the proper kill count",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "S2 Attacks are now blockable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roll attack is now a bit faster - since it's S2 as well, it is now blockable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parry time is now increased to make it easier to perform in high ping scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can no longer move when parrying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "S3 attacks are no longer effective in tracking the enemy - can be countered by dash/rolls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stances can now be mapped to key/input - this should allow support for any (non-axial) input method",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack type as well as attack time are indicated using lens flare effects -: white = attack can be blocked, red = attack can't be blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players with more uncertain ratings (new players) will have lower ratings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added open-Discord button to the main menu: PLAYER RATING SYSTEM OVERHAUL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accuracy-Based Rating: Player rating now incorporates an \"accuracy\" metric, which increases with the number of games played in ranked modes and decreases over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Impact on Ratings: Due to this new system, player ratings will initially decrease for everyone after this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Live Rating: A new stat called \"Live Rating\" has been introduced in the backend. This time-adjusted rating will be accessible in the next update. Live Rating reflects your rating decreased by the duration since your last game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rating Display: The game uses recorded ratings for leaderboards and player stat screens. After each match, your rating is recalculated, which may result in a decrease even if you win. This is expected and is due to the difference between \"Live\" and \"Saved\" ratings, as the game readjusts accuracy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOME BONUS NEWS - For our new players, we are preparing a FREE DEMO to introduce them into the samurai punk world of Die By The Blade for the first time and give them the look and feel of the DBTB overall experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "In the Demo, you will find",
+     "items": [
+      {
+       "text": "2 CHARACTERS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 WEAPONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "STREET ENVIRONMENT UNLOCKED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LOCAL AND ONLINE MULTIPLAYER MODE: Demo is coming out next week.: Once again, we can't thank you enough and stress how important your knowledgeable support and engagement are to us in this period. We're all ears to your thoughts, feedback, and ideas as we continue to fine-tune the game. Keep in mind that your role in polishing and grooming the DBTB into the experience you want to be a part of is IMMENSE! We, the whole team, are on plenty of tasks already in order to deliver new updates on a regular basis. So, keep those suggestions coming! Feel invited to our Discord anytime and bring ideas, comments, feedback… anything there (or here); we're eager to hear from you.: Let's reignite passion on the battlefield. SHOUTOUT TO ALL OF YOU!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5746109972552036225"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-07T10:04:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.127Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-07T10:04:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.128Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-07T10:04:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.175Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.4",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "UPDATE 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-23T14:09:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Warriors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working hard to implement your feedback as quickly as possible. Therefore, we are pleased to bring you a new update, version 1.0.4, which includes the following changes to Die by the Blade:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"open combo\" mode for free flow sequences. This also means that roll attack is no longer predetermined and uses S2 attack of given stance - only allowed in local, hosted and practice modes. If community finds this as preferred system, then it will replace default combo system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Roll combo can now be executed only in MID stance (in default combo mode) - This should eliminate situations where players were able to change stances during roll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forward roll and Backward roll are bit slower now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed death animations with dismemberment. Characters no longer limp without limbs, but fall to the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased maximum distance of camera to fix characters being off the screen in certain situations. This can still happen, but should be less prominent now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player rating is visible in stats and also with his name in online modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Movement and attack speed are now properly affecting characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Characters were rebalanced for specific attribute or attribute combination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Server location info is now present in overlay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added sanity check and update of Mouse sensitivity setting when the game starts.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added option to enable/disable depletable stamina in practice mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to turn ON/OFF haptic feedback for controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added note to online lobbies that rating will be updated only when playing ranked online modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated icon for Rating stat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased katana stagger state length after parry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Parry takes less time to recover from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rolls and dashes are now using more resolve and can't be executed if resolve is too low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased warm-up frame count and active frame count in Chokuto top stance attack. It should be easier to parry/block it now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue with mouse input not registered for some players. If problem persists, please switch game to fullscreen mode. Then you can go back to borderless and it will work. New installs will run the game in fullscreen by default.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue on character selection screen with some equipments being rendered with low-res textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animation issue with LOW-VERTICAL chokuto attack which was not registering hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In finisher tutorial, player no longer resets when hitting opponent with S1 or S2, making it easier to execute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several issues in Chinese, Korean, German, Spanish and Japanese localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 3,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5741605105607400557"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T14:09:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.127Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T14:09:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.127Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-23T14:09:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.172Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.3",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "PATCH 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-17T13:53:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey fighters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.0.3 patch is available. Take a look at the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Characters, weapons, stats, and all game modes are now unlocked from LVL 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ping to server in current online session info panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controls option added to the in-game menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Offline notification is less obtrusive now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed tutorial issue in which players might got stuck when killing AI character which resets arena configuration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved readability of input prompts in tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased notification font size to be easily readable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Result screen shows player's name more prominently now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5747233970422265877"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T13:53:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.126Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T13:53:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.126Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-17T13:53:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.171Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@1.0.2",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-15T08:21:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes - Die by the Blade - 1.0.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed - Epic Games logo is displayed on the .exe file present in the root folder",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed - \"Show input\" in practice mode can become disabled and requires game restart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed - Mouse Sensitivity options are reset after next app launch",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed - Infinite loading screen in Challenge mode when app loses focus while loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed - Unable to break through opponent's auto-block while low on resolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed - Incorrect color variation of some skins when body parts were spawned after dismemberment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5747233970414131116"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-15T08:21:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:04.820Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@post-2024-05-08",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "Patch Notes for 5/8/2024",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-08T12:56:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed performance issues on Epic Games build in Host Duel and Host Tournament lobbies caused by Steam online subsystem",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Grindstone splash screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Host/ranked duel mode is now unlocked from level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/5768625435391930584"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-08T12:56:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.124Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:04.819Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@major-2021-12-23",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "Get Ready to Sleigh - A Pre-Christmas Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-23T17:18:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In the spirit of the season, we’ve got a special Christmas update for you. Watch the video below and enjoy a sneak peek at what we have been working on over the past year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Die by the Blade will be releasing across all platforms in 2022, but what’s going to happen in the meantime? And how can you stay informed on the latest updates?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve got a tonne of announcements planned for next year, including character reveals, new weapons, gameplay footage, and lots more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For now, we’d like to say thank you to all of our followers for your ongoing support and feedback on Die by the Blade. Don’t forget to wishlist Die by the Blade on Steam if you haven’t already.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Let us eat cake!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/4224938027300023300"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-23T17:18:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.123Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:04.815Z"
+  },
+  {
+   "id": "die-by-the-blade-122449@major-2021-01-04",
+   "gameId": "die-by-the-blade-122449",
+   "displayName": "End of the year development update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-01-04T08:07:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Are you asking what we managed to do since the end of our Kickstarter campaign? Chief developer Peter Adamondy is here for your to explain all these steps and to wish you happy Christmas holiday 🎅 !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1154670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1154670/view/3917534300112498959"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-04T08:07:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1154670",
+      "checkedAt": "2026-11-13T03:19:02.122Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:04.813Z"
+  }
+ ],
+ "issues": []
+}

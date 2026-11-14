@@ -1,0 +1,3124 @@
+{
+ "game": {
+  "id": "oaken-165396",
+  "igdbId": 165396,
+  "name": "Oaken",
+  "cover": {
+   "imageId": "co3p5p",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3p5p.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1247",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1247.jpg"
+  },
+  "ps5Release": "2023-07-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "oaken-165396@1.1.7",
+   "gameId": "oaken-165396",
+   "displayName": "Update 1.1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-01T15:29:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Spirits, we have improved some stuff for you yet again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This time we focused on improving general text quality and readability on smaller screens - with focus on Steamdeck gameplay. And also made some visual tweaks here and there, enjoy 🦖",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fixed bugs",
+     "items": [
+      {
+       "text": "LE: various UI fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LE: shrines having incorrect sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LE: Lumi Crystals chance resetting after leaving the editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "interaction between Wild Pickers and Miniscule Seedlings trinket",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "interaction between Flit and Mind's Eye trinket",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "lethal damage from Banesplitter now correctly defeats Bane instead of Entombing him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sponges in the Seas of Serpents no longer stack water onto units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "being able to swap a unit's wisp and make it have 0 max health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lumi Crystals hidden beneath a Basin Fungus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raiku's upgraded talent sometimes not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the Menace fight softlocking when flying away after being pushed by a Roamer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the Reigniter bug when moving with Propel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/5395937983665056364"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-01T15:29:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-01T15:29:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.414Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-01T15:29:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.800Z"
+  },
+  {
+   "id": "oaken-165396@1.1.1",
+   "gameId": "oaken-165396",
+   "displayName": "Hotfix 1.1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-12T15:31:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Spirits, a small bugfix just landed for Oaken, enjoy! 🍒",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the missing localization for the Level Editor, especially in CN.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed bugs",
+     "items": [
+      {
+       "text": "trinkets that grant Reach should now always work properly after relaunching the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Taunt+ creating enemy hexes when targeting allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Breeze Flute now properly gives Shooters Haste on the turn of their summoning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Propel+ C now properly rotates and pushes units in Kidu's rear arc away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "incorrect interaction between Seed Sling and Switch+ skill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "incorrect spawner sequence in one of the Roots standard battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "rare bug of lumi crystals spawning on another special hex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the Menace hitting its allies with the Hunt spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "wrong tooltips on a few spells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/6438516944120860932"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-12T15:31:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.413Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-12T15:31:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.413Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-12T15:31:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.799Z"
+  },
+  {
+   "id": "oaken-165396@1.1.0",
+   "gameId": "oaken-165396",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-02T11:59:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Spirits of the Oak! Time has come for another big update in Oaken!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "with Modding support! 🖤",
+     "items": [
+      {
+       "text": "FIrst of all, thank you all for all the comments and feedback after the release, we are so happy many of you found Oaken fun and challenging, recent reviews have been very supportive 💕 Now thanks to our partner CurseForge Oaken just recievied ingame modding features!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MAIN CHANGES",
+     "items": [
+      {
+       "text": "Added the Level Editor, Trial editor and Trial Challenges Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Masteries are now unlocked in tiers of 5 instead of one by one to quicken the difficulty progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added options for framerate limit and mute in background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed the following bugs",
+     "items": [
+      {
+       "text": "infinite loading screens that had a small chance to appear in one of the Roots encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "issue with updating very old Early Access saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "issue with Deigo/Kidu skill (Flit) not working correctly when a unit was facing a hex which was not on the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"can choose no direction\" bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "rare issue of the tutorial not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the bug of having more than 18 trinkets crashing the run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the \"Embers don't always create allied hexes\" bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the switched achievements for JP localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the switched achievements for the last guide and the bonus ending for all localizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "leaving any tutorial level on the victory screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Imperial Fungus / Invasive Fungi trinket combo not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bark Splitter not triggering Slay effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "a few incorrect items having increased chances of dropping with the \"increased guide loot chance\" talent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"the Collector\" event only accepted unique wisps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ancestral Hand / Toothing Rhizome combo not triggering correctly on objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buried Bulblets cannot be stepped onto by units that move onto the target on Slay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Outsmart not working when the attacker is completely Shielded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "'Don't receive Degeneration' objective now doesn't fail when the received amount is 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elder Daughter properly refreshes her ability when she kills an enemy during enemy turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "clarified the wording of some keywords and trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "many other minor bugs with localizations and levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Try Oaken right now!",
+     "items": [
+      {
+       "text": "Have fun, spirits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 21,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/5141476355664713664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-02T11:59:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.413Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-02T11:59:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.413Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-02T11:59:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.798Z"
+  },
+  {
+   "id": "oaken-165396@1.0.4",
+   "gameId": "oaken-165396",
+   "displayName": "Hotfix 1.0.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-06T10:28:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another small post-release patch just landed on the release! Enjoy Spirits 💜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed the following bugs",
+     "items": [
+      {
+       "text": "leaving to menu on any tutorial level on the victory screen caused the next tutorial step to not load correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Imperial Fungus / Invasive Fungi trinket combo not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bark Splitter not triggering Slay effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few incorrect items having increased chances of dropping with the \"increased guide loot chance\" talent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"the Collector\" event only accepted unique wisps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "some minor localization errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ancestral Hand / Toothing Rhizome combo not triggering correctly on objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buried Bulblets cannot be stepped onto by units that move onto the target on Slay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "some other minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "guide items from guides unlocked in old saves are now properly shown in the collection panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/5124585319859713772"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-06T10:28:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-06T10:28:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.412Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-06T10:28:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.798Z"
+  },
+  {
+   "id": "oaken-165396@1.0.3",
+   "gameId": "oaken-165396",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-25T12:22:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fresh hotfix for recently found minor bugs in the release version 🍀🐻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed an issue with updating very old Early Access saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with Deigo/Kidu skill (Flit) not working correctly when a unit was facing a hex which was not on the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the \"can choose no direction\" bug on gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a rare issue of the tutorial not working correctly on gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the bug where having more than 18 trinkets crashed the run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the \"Embers don't always create allied hexes\" bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the switched achievements for JP localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the switched achievements for the last guide and the bonus ending for all localizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "some other minor bugs with localizations and levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/5124584051987893436"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-25T12:22:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-25T12:22:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.411Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-25T12:22:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.797Z"
+  },
+  {
+   "id": "oaken-165396@0.10.0",
+   "gameId": "oaken-165396",
+   "displayName": "Update 0.10.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-21T12:00:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Spirits of the Oak! Are you ready for twice as much cards in Oaken!?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "+ Steam Deck Support! 🖤",
+     "items": [
+      {
+       "text": "We decided it is time to share our second hero - Kidu and his gang - with all of you! There are maaany new spirits and spells to check out, as well as events, levels and game improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The biggest improvements are connected to the UI and UX of the game, we have improved further the gamepad mode, and high readability font and thus we think Oaken will now work perfectly on your Steam Deck too!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "MAIN CHANGES",
+     "items": [
+      {
+       "text": "added a new hero - Kidu and the Outcasts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added full Steam Deck support and improved controller support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "updated localisation for all available languages (CN has no more missing symbols)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "made a ton of bugfixes in different areas of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added a few new achievements and reduced the required counters of some old ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added wild Outcasts and their levels to all worlds for gameplay variety",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "reworked and balanced levels in all worlds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reworked and balanced many trinkets, wisps and cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "made some guides more fun (Raiku, Baralai) and nerfed the most powerful one a bit (Kusta)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased the difficulty of the final boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "removed all placeholder art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "made some global changes to shrines, talents and pushing immobile units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[you can see the full detailed lsit of changes on our discord]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wishlist or join the Early Access right now!",
+     "items": [
+      {
+       "text": "And check our Discord to talk about the development of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun, spirits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 3,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/5133583099798908545"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-21T12:00:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.796Z"
+  },
+  {
+   "id": "oaken-165396@0.9.3",
+   "gameId": "oaken-165396",
+   "displayName": "Update 0.9.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-19T11:19:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Spirits of the Oak! Here we are with yet another update of Oaken!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "+ Gameplay Balance! 💜",
+     "items": [
+      {
+       "text": "This time we have focused on improving your boss fights experience, and reworked many levels to have a more balanced and polished feeling (especially in the Crown world).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "MAIN CHANGES",
+     "items": [
+      {
+       "text": "the final boss fight was reworked - it's more streamlined and more challenging, especially with masteries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "boss fights in the SoS, the Crown and the Hollows were reworked/improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "all old levels in the Crown were reworked/improved, and a few additional levels were added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "you can now choose the world you want to visit, based on the guaranteed rewards from the chapter's boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "achievements now track progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "masteries are now selected by rows - you can still select the masteries you want, but masteries from further tiers can only be selected after a whole previous tier is selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "you can now preview the enemy hero on their portrait, and enemy skills are visible all the time, with the one that's currently available being highlighted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the highest mastery on which you have won with a particular guide is now displayed in the player profile as a trophy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "shrine visibility was improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "chill mode is now more visible and available since the first game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "strength, shield and other modifiers had their system improved and should now display more sensibly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "many, many various bugs were removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a few slight changes to items and masteries were made",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: CN localisation is not fully supported for this update, it will come at the end of the month!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ps. we are just one step from the release of the second faction - the Outcast!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wishlist or join the Early Access right now!",
+     "items": [
+      {
+       "text": "And check our Discord to talk about the development of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun, spirits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/5035621474410691731"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-19T11:19:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.796Z"
+  },
+  {
+   "id": "oaken-165396@0.8.2",
+   "gameId": "oaken-165396",
+   "displayName": "Update 0.8.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-07T14:40:36.000Z",
+   "notes": [
+    {
+     "title": "+ a HUGE visual update! 🍪",
+     "items": [
+      {
+       "text": "IMPORTANT: As this patch has some substantial changes, it will clear your current run - not the whole player profile, just the run. If you have a run in progress, we recommend downloading the patch after finishing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "↓ Complete patch notes ↓",
+     "items": [
+      {
+       "text": "[expand type=details]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MAIN CHANGES",
+     "items": [
+      {
+       "text": "Seas of Serpents - a new world for Chapter 2 with a new boss, elites and events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX visuals for most spells, skills and abilities were reinvented",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple objects, cards and units were improved or has been recreated from scratch (finally shrines too!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Objectives were completely reworked and should work and display more accurately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spell targeting was completely reworked and should now allow for more precise spell range indicators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A large general balance/rework pass was also performed, with all guides, talents, trinkets, spells, wisps, etc that needed a buff/nerf receiving one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bosses and elites that leave the board for a turn now cannot move or attack after returning, but they now cast those spells only after finishing their turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refuge node now restores all Exhausted cards to the player, no matter which option they choose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regen/Degen now activate at the end of a unit's turn, not the start and it is much easier to anticipate its damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More events are now shared between worlds in the same chapter for an increased variety",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Obstacles are now interactive and can be destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Node distribution was changed to allow for more varied outcomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elder and hollow units are now easier to differentiate from their basic versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New trinkets were added (16)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Wisps were added (16)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And, as always, a ton of bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SPELLS",
+     "items": [
+      {
+       "text": "wade can now also push units onto occupied hexes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "impale can now be cast on allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "decompose has been redesigned a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "decomposeA+ and flowB+ also make the caster swap rotation with the target (this was inconsistent between spells)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "flow now costs 1 less Lumi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "flowB+ now moves the targets forward instead of giving strengthened targets strength",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "surge now costs 1 more Lumi - it overperforms by a lot for it's cost and should still be competitive at 3 Lumi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "allureC+ can now affect allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "repel can now target enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "addle can now target allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "debilitateB+ now inflicts Exposure based on the amount of allied hexes adjacent to the target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "recycleC+ now deals additional damage if the target is ensnared, not weakened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "launch now can be cast onto the hero in its basic version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "launch A+ now restores health to the target after a collision occurs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "launch C+ now gives the target Growth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "shift now doesn't prevent attacking and can be cast onto any nearby hex, but doesn't have reach: shift A, B and C+ have been changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "protect was fixed to include Strength, but now only affects nearby hexes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "recycle now spawns niblets rotated in the same direction as the target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "sprout now spawns niblets rotated in the direction of the spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SKILLS",
+     "items": [
+      {
+       "text": "Aya's skill can now target allies if the player for some reason wants to do it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "upgraded Aya's skill now deals additional damage if the target is not adjacent instead of hitting more targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "upgraded Enju's skill now makes the target a Defender",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kusta's skill now only affects a single enemy in your LoS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kusta's upgraded skill now works like the previous unupgraded one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Baralai's upgraded skill now pushes all units in your frontal arc away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plague now deals damage to ALL nearby units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "upgraded Plague now deals damage to ALL units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "upgraded Cultivate now creates an additional allied hex under yourself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buff Up now also removes Weakness from the target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ENEMIES",
+     "items": [
+      {
+       "text": "The lord of niblets now summons a single Wild Niblet instead of 2, but also summons one when attacked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The conqueror's spit now summons a hollow orbling instead of 2 wild ones on expert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now summon pawns in a way which is not so vulnerable to outsmating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grandmaster Artisan was changed a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TRINKETS",
+     "items": [
+      {
+       "text": "Lifeblood now works on turn start, not on turn end",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Emblem of Loyalty now grants Shield on losing Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zapbloom now triggers on Slay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crippling Vines are now AoE and trigger the first time you attack each battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cycle affects the whole board, not only nearby units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toxic Coating doesn't give you degen anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spore Infestation now weakens all adjacent units when you are attacked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lumite Symbionts now inflict Weakness and Exposure on the attacker, not yourself, but don't give any stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleansing Heart now protects from becoming Weakened, too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Source of Eternity doesn't give minus stats now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alluring Sundew gives +1 health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horn of the Winds doesn't grant \"Elusive\" but \"Mobility\" instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Necklace of Forecast grants just Vigilant now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorruptible Bark gives +1 health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thorn Thrower grants just Shooter now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barbed Rose's Seed doesn't deal damage to your units now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dark Infusion now heals all Fatigue when received",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The rarity of some trinkets was changed to better fit the way they now work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "WISPS",
+     "items": [
+      {
+       "text": "Wisp and trinket names are now colored by rarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twisted Wisp now Ensnares the first enemy in the line to its front",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Caustic Wisp now deals 1 damage, but to all enemies in its frontal arc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Versatile Wisp now doesn't trigger on Outsmart, only on Awake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unwavering Wisp now grants Shield, not Strength, to actually increase the survaviblity of the unit with Fatigue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Storm Inbound now grants Haste on Slay, not Mobility - it was overperforming by a lot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UNITS",
+     "items": [
+      {
+       "text": "Elder Daughter is now 3/4 instead of 4/3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elder Shaper now summons Niblets in its frontal arc instead of pushing the unit in front of it away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aya's Awake now deals bonus damage to non-adjacent units (up to 2), and her talent increases that to up to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TALENTS",
+     "items": [
+      {
+       "text": "Talent 1:3 doesn't remove units from your deck anymore, but it also cannot roll trinkets of the highest rarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Talent 4:3 now gives a Lumi Globe at the start of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Talent 5:2 was reworded to better mean what it actually does. More rewards are included as guide-synergistic, but the chance increase was reduced to +25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Talent 5:3 now gives +0/+3 instead of an upgraded spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "OTHER",
+     "items": [
+      {
+       "text": "Luminati is now a global event that can only appear in the 2nd and 3rd chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wishlist or join the Early Access right now!",
+     "items": [
+      {
+       "text": "And check our Discord to talk about the development of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun, spirits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 83,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/5035620387695326982"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-07T14:40:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.795Z"
+  },
+  {
+   "id": "oaken-165396@major-2022-10-25",
+   "gameId": "oaken-165396",
+   "displayName": "Deigo, the Mystic Update - Out Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-25T17:09:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello spirits,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released our latest update, including a new guide and... gamepad support! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of you have been waiting for this feature, and we hope you will enjoy it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, you can share your feedback with us on Discord - https://discord.gg/edTWrG4BTj",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "↓ Complete patch notes ↓",
+     "items": [
+      {
+       "text": "[expand type=details]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added a new Guide centered around movement - Deigo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gamepad controls are now supported",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the Glossary with all keywords listed and additional tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reworked the Bane fight in Amber Falls to be much more dynamic and consistent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly reworked Wurm boss to increase its dynamics - especially the way it colapses the ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All enemy unit cards used by enemy heroes are now spells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies no longer have a Lumi pool (none of them actually used it for a while) and can simply use all cards they have in their hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new keyword to replace \"also attacks allies and enemies in its frontal arc\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked Reckless Rioter wisp to include the new Swing keyword",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the length of tutorial texts wherever possible to decrease the amount of reading a new player has to do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Legend has been removed from the world map and tooltips appear on hovering over map nodes instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed an issue that prevented Linux and Steam Deck saves from being synchronized via Steam Cloud. For players with existing saves on different devices the save with higher level will be chosen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed many minor bugs of all kinds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Save 20% off Oaken / Play now!",
+     "items": [
+      {
+       "text": "Have fun, spirits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 1,
+    "balance": 3,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "Added a new Guide centered around movement - Deigo",
+     "Gamepad controls are now supported",
+     "Added the Glossary with all keywords listed and additional tutorials"
+    ]
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/4714731755431023292"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-25T17:09:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.794Z"
+  },
+  {
+   "id": "oaken-165396@major-2022-09-23",
+   "gameId": "oaken-165396",
+   "displayName": "Valley of Thorns Update - Out Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-23T15:57:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey spirits,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As announced two days ago on our Discord server, our latest update is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is called Valley of Thorns and includes a new world, a new boss and more! 🍀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "↓ Complete patch notes ↓",
+     "items": [
+      {
+       "text": "[expand type=details]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "the Valley of Thorns is now available as a variation of the first chapter! It's available after beating the Crown world at least once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "a new boss awaits at the end of the Valley - defeat the suspicious deity of the cult!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "5 new events were added, and 2 events made for the Valley were moved from the Crown to their homeland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "12 new battles, 7 new encounters, 3 new elites, all of them overgrown with the Spikeweed - the main global mechanic of the Valley of Thorns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "several new achievemenets added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added animations for Trailer and repaired some missing animations globally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "wild Conservators had their keyword changed to be more consistent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "wild Orblings had their keyword changed to be more balanced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "elite Picker fight has been redesigned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "elite Hive fight has been reworked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "fixed an issue causing multiple objects (shrines, obstacles) to spawn on the same hex in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with effect countdowns remaining visible after Undo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some issues causing some achievements to by unlocked incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue causing the Difficulty/Mastery tree to glitch in some situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue causing units present on the board when Undo was used to not have fatigue/mana reduction correctly applied after the battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue causing \"Spellcast\" on player units to trigger when an enemy hero used a spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the drawing order of the dialogue actors at the start/end of a level. They don't appear under a board foreground decoration anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the frontal arc fade in/out animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue causing \"Slay\" to not trigger correctly for voiceless units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Save 20% off Oaken / Play now!",
+     "items": [
+      {
+       "text": "Have fun, spirits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 9,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "a new boss awaits at the end of the Valley - defeat the suspicious deity of the cult!",
+     "5 new events were added, and 2 events made for the Valley were moved from the Crown to their homeland",
+     "several new achievemenets added"
+    ]
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/4589754330736097602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-23T15:57:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.793Z"
+  },
+  {
+   "id": "oaken-165396@major-2022-08-10",
+   "gameId": "oaken-165396",
+   "displayName": "Spellcasters Update - Out Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-10T17:02:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey spirits,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As announced earlier, we have a new update for you: the Spellcasters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play a new guide, the scientist Raiku, and enjoy 8 new spells!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "↓ Complete patch notes ↓",
+     "items": [
+      {
+       "text": "[expand type=details]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Main Features",
+     "items": [
+      {
+       "text": "improved tutorial, now it includes world-map steps and much more information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added a new Guide - Raiku. He can be unlocked in any chapter after the player has unlocked 3 or more Guides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added 8 new spells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added separate world illustration for the Crown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "many UX improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "large rework of the keyword script system, making interactions between different unit effects, spells and special fields more consistent and fixing multiple issues with \"on death\" effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "slightly reduced and unified the amount of Lumi Dust gained, especially from main battle objectives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added animations for Keeper spirit and a new model and animations for Picker spirit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "changed few achievements to provide a better challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "fixed trinkets sprite areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed shrines and made them more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug causing shrines to sometimes spawn on top of each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed few achievements not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Source of Eternity and Spore Infestation trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed levitating Lurkers bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some VFX visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Save 20% off Oaken / Play now!",
+     "items": [
+      {
+       "text": "Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 7,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "improved tutorial, now it includes world-map steps and much more information",
+     "added a new Guide - Raiku. He can be unlocked in any chapter after the player has unlocked 3 or more Guides",
+     "added 8 new spells"
+    ]
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/4607764924146994750"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-10T17:02:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.406Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.774Z"
+  },
+  {
+   "id": "oaken-165396@major-2022-07-13",
+   "gameId": "oaken-165396",
+   "displayName": "Mastery and Talents Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-13T15:58:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey spirits,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The biggest gameplay addition yet - Mastery and Talents Update - is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy a brand new difficulty system with the Mastery and Talent Trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mastery will allow you to apply difficulty modifiers while choosing Talents before starting the game will provide some benefits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock Mastery points by completing harder runs, and unlock Talent points by finishing runs with various guides and completing achievements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "↓ Complete patch notes ↓",
+     "items": [
+      {
+       "text": "[expand type=details]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Main Features",
+     "items": [
+      {
+       "text": "Completely revamped the difficulty system - expert mode was removed, Mastery Tree was added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The player can now choose difficulty modifiers they wish to impose on themselves and unlock Mastery Points by completing runs with the highest Mastery level available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the Talent Tree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The player can choose talents before starting the game that provide some benefits, up to 6 talents can be chosen at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Talents can be unlocked by finishing runs with various guides and completing achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Heal Button for healing Fatigued and Exhausted spirits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 'Reset Profile' button in the game options (which will allow to restart all tutorials and local progression)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added free Mastery point for each 5 profile levels beyond the 10th (which will allow experienced players to try new modes without unlocking everything again)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added one card discard possibilty each turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 'Reset Profile' button in the game options (which will allow to restart all tutorials and local progression)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added free Mastery point for each 5 profile levels beyond the 10th (which will allow experienced players to try new modes without unlocking everything again)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other Changes",
+     "items": [
+      {
+       "text": "Reduced the length of each chapter by 1 node",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Buffed/Nerfed some weak/broken trinkets and abilities:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tripwire Creepers - works on enemies only",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lumite Symbionts - gives +1/+5 instead of +1/+3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Swift Gardener Wisp - works up to 3 times per turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted Fatigue values in a few Events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added 5 new trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved clarity and terms of some keywords",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the possibility of freely rotating before moving - this feature did not work as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refuge shop was balanced a bit - trinkets can now appear there, good items appear more frequently and cost less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deckbuilder interaction improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 4 new Wisps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Talent tree is now available at the start of the second run (even if the first one was lost)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localisation for achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "fixed an issue causing Aya to be considered the current guide for achievement purposes if the game was reloaded from a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed issues causing shrines to not correctly apply their effects in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some issues with displaying Unstable cards in hand and deck preview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug causing push and amber prison interactions to not work as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "other minor bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug that made it possible for cards to go below 0 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some visual issues with the talent tree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug that caused two tracks of music to play at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug causing the card-to-mouse trail to show under board decoration",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Play now!",
+     "items": [
+      {
+       "text": "Have fun! ♥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 8,
+    "balance": 3,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/4591999790063422590"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-13T15:58:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.774Z"
+  },
+  {
+   "id": "oaken-165396@0.3.5",
+   "gameId": "oaken-165396",
+   "displayName": "Hotfix 0.3.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-18T15:32:56.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Increased neutral Spitter's health to let them live through a single enemy attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed Contaminated Lumi Crystals from existence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Art",
+     "items": [
+      {
+       "text": "Replaced most placeholder trinket images",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed most cases of elder and hollow versions of units working incorrectly: UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added 'cure fatigue' visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added counters for delayed effects description boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed a bug causing Baralai to soft-lock the game if he died during his initial charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a soft-lock after summoning a Defender right after Undo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing fatigue to be applied post battle if unit card was hovered over Corrupted Lumi.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed achievement counters for some achievements not carrying over between battles and runs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an interaction between trinkets activating on damage taken, Degeneration and C1 boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Undo that made it possible to multiply Baralai",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where gaining/losing fatigue would be shown as taking damage/healing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the interaction between Baralai's trinket and the push mechanic/other push trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lurker Hatchling unit animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/4292505348822040475"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-18T15:32:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:31.773Z"
+  },
+  {
+   "id": "oaken-165396@0.3.3",
+   "gameId": "oaken-165396",
+   "displayName": "Hotfix 0.3.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-06T17:58:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey spirits, how are ya? We've got a fresh hotfix for you! Let's get this EA rolling!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Open beta branch only",
+     "items": [
+      {
+       "text": "Moving unit to another field now requires choosing a direction to avoid rotation mechanic confusion for new players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Release branch",
+     "items": [
+      {
+       "text": "Deck preview is now available during muligan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rotating your units BEFORE making a move or attack action is now possible and can be corrected freely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "global balance pass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "adjusted the damage of the Conqueror's landing from 8 to 5 on expert mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "adjusted the rarity of a few trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed incorrect trinket distribution in a few events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed end screen not showing rewards after beating the final boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed victory achievements not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a blocker on deckbuilder tutorial prompt while entering pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that sometimes soft-locked the game on slower hard drives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "fixed the localization issue of Reach and Drain keywords in spells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a few words and descriptions in French and English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Technical",
+     "items": [
+      {
+       "text": "Linux support (experimental)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Join our discord channel to suggest changes and talk with devs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/4348799082194625346"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-06T17:58:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.404Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:26.429Z"
+  },
+  {
+   "id": "oaken-165396@0.2.6",
+   "gameId": "oaken-165396",
+   "displayName": "Update 0.2.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-13T04:40:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello spirits, been a while!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oaken Second Playtest is live now, and there are only two simple steps to follow to participate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Step 1 - Request Access on the game page",
+     "items": [
+      {
+       "text": "Once this is done, you will receive an email from Steam to grant you access to the playtest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Step 2 - Join our Discord server to give us your feedback!",
+     "items": [
+      {
+       "text": "📢 This is super important. We need as many feedback as possible to offer you the best gaming experience possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your precious help! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1348690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1348690/view/6154735015623697232"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-13T04:40:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1348690",
+      "checkedAt": "2026-11-13T03:27:01.403Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:26.295Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,2456 @@
+{
+ "game": {
+  "id": "the-outbound-ghost-132449",
+  "igdbId": 132449,
+  "name": "The Outbound Ghost",
+  "cover": {
+   "imageId": "co55fu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co55fu.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arlxn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arlxn.jpg"
+  },
+  "ps5Release": "2022-11-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-outbound-ghost-132449@major-2024-10-17",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "An Update After 2 Years...",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-17T19:54:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is Conrad, the lead developer of The Outbound Ghost. This page has been quite quiet, and if you've been following the game you'll know it's because it was the subject of a lawsuit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Well... In about 22 hours from now, I'll be releasing the FINAL update about all of that. Check the video below to watch it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you all soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/6212244583176894067"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T19:54:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.768Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T19:54:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.768Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-17T19:54:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.660Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.0.17",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Update 1.0.17",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-30T02:14:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! Here's another patch, and this week I'm also going to be showing the longer-term post-launch roadmap so keep an eye out for that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, if you're liking the game and would like to support me, I would also super appreciate it if you left a review! Anyways, here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where some players reported being blocked from progressing the story in the Soggy Swamp when you meet Lori for the 3rd time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some players reported being blocked from progressing the story after beating the first boss in the Soggy Swamp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some players reported being blocked from progressing the story in Ravenside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some players reported being blocked from progressing the story in other minor areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Triple SP Steal bug that prevented the skill from giving the user SP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the skills menu for Doubt wouldn't work properly if your player level was high enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted EXP drops for the Mimic boss fight, but kept the EXP skill scaling the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where some enemies didn't have the correct turn order sprite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted balancing for Head Start 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed typos in credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A bit of a shorter this time around, but there's a good reason for that - we've started localizing the game! I can't confirm which languages are in the works right now, but there's a good bunch of them and I'm hoping to announce more soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyways, that's it for today's patch! If you appreciate the support that I'm giving the game (it's not going to end anytime soon), then leave a review cause it helps me out immensely :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4588629064112590179"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-30T02:14:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.659Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.0.16",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Update 1.0.16",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-26T00:59:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! There's another patch coming your way, and this one like the other ones is filled to the brim with new stuff and fixes! As I mentioned previously, next week I'm also going to be showing the longer-term post-launch roadmap so keep an eye out for that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, if you're liking the game and would like to support me, I would also super appreciate it if you left a review! Anyways, here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to skip the intro cutscene if you hold start/escape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now hold down the interact button to slowly speed up dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option that lets you skip dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now hold down the dash button to dash repeatedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that prevented some players on the randomizer mode from progressing past the Leaf miniboss in Central Outbound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted chapter 5 start text to better convey the objective of the chapter (it's postgame).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted SP costs of several poison/freeze/burn/zap skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed bug that prevented some players from progressing past Ravenside in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that froze the dialogue box if you talked to Phoebe twice next to the Train Station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that made Mary and Linda appear offscreen during a cutscene with Michael in Ravenside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that made The Scare not appear in certain spots sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that made some minimap elements appear in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that made the audio sliders not affect the wind and windchimes in Escales.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Soggy Swamp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in Strand Beach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in Rundoyer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Drylands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's it for today's patch! If you appreciate the support that I'm giving the game (it's not going to end anytime soon), then leave a review cause it helps me out immensely :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 12,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4589754330744754378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-26T00:59:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.658Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.0.15",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Update 1.0.15",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-25T00:52:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! I know that yesterday I said that I wouldn't push an update today, but I got some time in the evening to compile a few of the updates that I had made previously and hadn't pushed, and combine them into this update (together with some small bug fixes)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, if you're liking the game and would like to support me, I would also super appreciate it if you left a review! Anyways, here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added minimap/radar icons to all items of importance (chests, recipe pickups, breakables, secret bosses, etc).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted balancing in the Barbed Apparition fight to make it less tedious.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted balancing in the Fungal Duo fight to make poison less punishing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed bug that made the info screen in battle not display the correct HP of enemies when in hard/spectral difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed another bug that made some users not get Levi as their partner in Ravenside in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that saw some users report occasional frame drops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added better tutorialisation for status effects, and how the status stack works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added better tutorialisation for aspect forging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added better tutorialisation for the status glossary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Outbound Trail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Soggy Swamp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you've read yesterday's patch notes you'll now why todays patch is a bit smaller, but it fixes some key things that are important!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you'd like to support the game I would really appreciate it if you left a review :) Anyways, until next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 5,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4589754330741093778"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-25T00:52:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.766Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.657Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.0.14",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Update 1.0.14",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-24T02:07:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's day 3 of patching and we're making some good progress! I believe the rest of the reported game breaking bugs are now fixed as of this patch! On top of that, we're going to be sharing a roadmap of more reworks/post-launch content next week so keep an eye out for that 👀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, if you're liking the game and would like to support me, I would also super appreciate it if you left a review! Anyways, here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to obtain chapter 1/2/3's non-chosen Aspect Recipes in chapter 4/5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the accessibility option to remove the sound distortion that you get from entering bushes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the accessibility option to remove the timing gauge on skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where some users experienced \"crackling\" in menu sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that made some users not get Levi as their partner in Ravenside in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-balanced the two harder difficulty settings to still have the same level of challenge, but with less tediousness. This was done through making the enemies' HP/Stun HP remain the same as the base difficulty, with everything else scaling to be more difficult.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balancing tweaks for the boss fight right before you get Trust.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed typos in some skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added dash tutorialization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added first strike tutorialization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added bushes tutorialization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Today's patch is a bit shorter in length, but each individual point makes up for it because the changes and improvements are massive!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Would also like to say that there's not going to be a patch tomorrow unless it's super critical since it's my girlfriend and I's anniversary so I will be taking the day (mostly) off for the first time in a while!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you'd like to support the game I would really appreciate it if you left a review :) Anyways, until next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 3,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4589754330737642411"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-24T02:07:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.765Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.656Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.0.13",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Update 1.0.13",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-23T05:23:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there! Day 2 and we're up to the 13th patch... Kinda crazy when you think about it! I've got more fixes coming your way, and if you're liking the game and would like to support me, I would also super appreciate it if you left a review! Anyways, here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added SUBTITLES to the intro cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "DEFINITIVELY fixed the \"shaking screen\" bug. There was 1 case that was fixed yesterday, but this patch fixes the rest of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DEFINITIVELY fixed the bug that didn't allow some players to edit their name. There was 1 case that was fixed yesterday but this patch fixes the rest of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now have a low chance of missing, always.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Memory stones with hidden Figments now don't disappear once you defeat them, in order to make it clearer that you can rematch them if you want.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where some players couldn't say \"No\" to deaspecting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted balancing of the ??? Apparition, the first chapter 2 boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed typo in several skills that SP steal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the balancing of some overworld enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Rocky Pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot next to the big tree in the Snowy Pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision softlock in the Ravenside Cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision exploit that allowed you to skip over the first Soggy Swamp boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Outbound Trail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Frank would sometimes not follow you after you unlocked the door with the 3 Keys of Delusions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typo in deaspecting dialog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for the support again everyone! And again, if you enjoyed the game leave a review cause it helps me out immensely :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 2,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4589754330734494475"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-23T05:23:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.765Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.656Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.0.12",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Patch 1.0.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-22T01:02:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! It's day 2 and I still have even more fixes and QOL changes coming your way 😎. Check out what they are:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where if you lost to the first chapter 2 boss, you could get the Annoyance figment multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where if you left the cutscene trigger of the cutscene before the first chapter 2 boss, you could play the cutscene again without Michael being there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where sometimes the screen would shake and audio would be muffled in some spots like Strand Beach and the Southern Outskirts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where sometimes you could not edit the default character name in the name input screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a \"Mirror\" to the Southern Outskirts that allows you to change the player's name after it has been first set.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Toterwald.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Outbound Trail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds spot in the Soggy Swamp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision lock in Central Outbound where you could get stuck inside of Ethel's stall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed invisible collision in the Snowy Cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed floating tree in Ravenside Path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted LOD error in the Outbound Trail that resulted in sometimes showing a floating tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed typos in chapter 2 cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPC in Ravenside that would freeze the conversation under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted balancing for the Sadism 1 and Sadism 2 aspects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Grave Spirit 1 aspect description said that it replenished SP, but replenished HP instead. This has been fixed and now matches the description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the balancing of the last chapter 3 boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted Mimicry AI for your figments, so that they make for more interesting fights when enemies with Mimicry turn into your own characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted balancing for the first chapter 1 boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Callousness' Guard skill said that it applied Major Defense to itself, but it applied it to the target. This has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where lifesteal aspects would heal characters adjacent to a character using an area of effect skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the Ligrou figment caused issues with story progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed graphical issue where the Corvid Apparition in the Deep Toterwald had a white line coming out of its wing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lockpick gate that said it required lockpicks, when in reality it required Roald's Key. Functionally this is the same as before, the description just didn't match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted chest drops in the torch puzzle in the Soggy Swamp that rewarded you with a duplicate aspect recipe set instead of 2 aspect gems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thank you everyone for reporting the stuff you find, it's only because of you that I can fix it all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 15,
+    "balance": 6,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4589754330730190023"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-22T01:02:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.764Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.655Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.0.3",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Update 1.0.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-18T17:53:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! Although the game is not out yet, there are some people who have access and this post is aimed at them. V1.0.3 fixes the following:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed NPC north of Central Outbound that would freeze the text bubble when you talked to them in certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cutscene issue in chapter 4 that occurs after leaving Ravenside that prevented you from moving forward in certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balanced of some randomization level scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game is out in just 2 days, I'm looking forward to seeing what you all think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/6258337460555285672"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-18T17:53:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.763Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:01.654Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.04",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-17T21:03:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the difficulty and special settings buttons in the title menu not being affected by the UI audio slider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some sound effects in the battles that weren't affected by the SFX audio slider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the power of Field Heal by 67%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a typo in the skill description of Lifesteal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the skill description of meteor that said it dealt medium damage, when it dealt high damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sped up the timing gauge for the meteor skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a typo in the skill description of Triple Lifesteal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds locations in Eris' Forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds locations in Strand Beach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds locations in the Southern Outskirts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds locations in the Outbound Trail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused you to get the same figment twice in a row if you started with a figment that you get regularly in your playthrough and figment randomization is on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where music wouldn't play in the battle scene if you spammed the restart button after losing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the map menu would stay on screen even when it wasn't opened if you declined using quick travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera bug in the combat scene where sometimes the camera would tend too far towards the enemies, obstructing the action menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in the first boss where sometimes it would try to use a skill, but it would never come out and you were forced to restart the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in the cutscene before entering Adrian's house where sometimes Michael would phase through the floor and end up very far down, making his dialogue impossible to read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed SFX for confirming the enemy selecting in the battle scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where resetting or applying the graphics settings would reset the difficulty settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/6214419130143792899"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-17T21:03:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.762Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:53.017Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.03",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Patch 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-15T23:06:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! It's the third day that the demo's available, and I'm glad to announce that I've barely gotten any new bug reports today, so we're nearing the singularity ;) Anyways, today's patch has quite a few balancing changes, and some bug fixes as well! Very importantly as well, I managed to get the game's file size to 4GB down from 10GB! You won't believe how this happened...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Callousness now gets Minor Limit Break at level 9 instead of at level 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Callousness now gets Minor HP Share at level 11 instead of level 13.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Callousness now gets Fair Defense at level 13 instead of level 17.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Callousness now gets Guard at level 17 instead of level 20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Callousness now gets Fair Limit Break at level 21 instead of at level 25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets Minor Power at level 4 instead of at level 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets Lesser Revive at level 5 instead of at level 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets SP Defense Levarage at level 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets Minor SP share at level 7 instead of at level 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets Minor Replenish at level 8 instead of at level 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets SP Steal at level 11 instead of at level 17.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets Field Heal at level 14 instead of at level 22.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets Fair Heal at level 17 instead of at level 27.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comradery now gets Fair Revive at level 20 instead of at level 31.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Regret now gets Poison Poke at level 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Regret now gets Magic Strikes at level 5 instead of at level 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor SP Share now shares 7 SP instead of 5 SP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed point where you get Comradery from the third conversation with Mary and Michael to the second.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where sometimes the textbox in Michael's first line in the fourth cutscene would be out of view of the camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Minor Limit Break such that it gives you an AP benefit even if you use it with 1 AP, whereas before it was only useful with 2 AP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Major Limit Break such that it gives you an AP benefit even if you use it with 1 AP, whereas before it was only useful with 2 AP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds situations in Eris' Forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds situations in Strand Beach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra dig spots next to shovels in Strand Beach to make it clearer how the shovel is used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Got the game's filesize down to 4GB from 10GB (it was literally a checkbox to enable compression, I could've sworn that this was already on but I guess not 🙃).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added demo version counter in the title screen.: Hope you enjoy your newly squished game file!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 27,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4480533160883887035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-15T23:06:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.762Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:53.016Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.02",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-15T02:17:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! It's been fantastic seeing all of the continued playthrough of the demos, and with all of the bugs that I managed to squash yesterday, the experience is looking super solid ;) Anyways, I've made some more changes today, and you can see them below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Added VFX to Callousness' shelter that makes it clear what it's protecting, and when it is intercepting an attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered the sound of letters popping in in characters' text boxes and in the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it such that the SFX slider affects the sound of letters popping in in characters' text boxes and in the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where you couldn't finish a cutscene near the end of Eris' Forest if you played with the \"Start With All Apparitions\" special setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where sometimes when you defeated all enemies, you could still act 1 more time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with Callousness' shelter where it would infinitely protect its target if you used shelter on another target in that same turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed jumping in cutscenes bugging out if your machine's country configuration used \",\" instead of \".\" for the decimal separator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4480533160880726688"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-15T02:17:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.761Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:53.015Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@1.01",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "Patch 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-14T01:49:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you so much to everyone who has played the demo! The reception so far has been very heartwarming, and it's been a blast to see everyone's experiences! I just put up a patch with a few changes that you can see below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed out of bounds locations in Eris' Forest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed out of bounds locations in Southern Outskirts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed item description for Pink Gem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased EXP yield of Sanguine Apparition by 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decreased damage output for Sanguine Apparition by 10%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Comradery healing stat by 30%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted AI of Magical Apparition such that it has a 10% chance of attacking instead of healing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Huge Power skill description changed to match the correct turn duration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Life Link SP cost reduced from 75 to 25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor Healing Down turn duration increased from 2 to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor Power Down turn duration increased from 2 to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lesser Heal SP cost reduced from 10 to 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lesser Revive SP cost reduced from 20 to 13.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where quitting a boss and fighting another enemy would despawn the boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it 5% easier to hit \"Spectral\" on the timing gauge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed occlusion data that could have potentially made it such that some cutscenes would bug out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed tombstone in Strand Beach battle area that obstructed enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed \"Minor Wind Cut\" to \"Low Wind Cut\" in the status glossary to match the status.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced Minor Wind Cut cost from 16 SP to 10 SP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed jump point from Glade of Dawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where spamming the interact button after completing a lockpicking puzzle would make the lockpick dialog stay on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where master volume wouldn't save unless you saved a file first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where cutscenes would fling the camera up into space but only if your computer is from one of the following countries:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Albania",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Algeria",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Andorra",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Angola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Argentina",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Armenia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Austria",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Azerbaijan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Belarus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Belgium",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bolivia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bosnia and Herzegovina",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brazil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bulgaria",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cameroon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Canada (when using French)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Colombia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Costa Rica",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Croatia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cuba",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cyprus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Czechia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Denmark",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "East Timor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ecuador",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Estonia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faroes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Finland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "France",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Germany",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Georgia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Greece",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Greenland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hungary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Iceland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Indonesia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Italy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kazakhstan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kosovo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kyrgyzstan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Latvia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lebanon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lithuania",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Luxembourg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Macau (in Portuguese text)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mauritania",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moldova",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mongolia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Montenegro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Morocco",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mozambique",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Namibia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Netherlands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "North Macedonia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Norway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paraguay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Peru",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Poland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Portugal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Romania",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Russia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Serbia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slovakia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slovenia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Somalia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "South Africa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Suriname",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sweden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Switzerland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tunisia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turkey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turkmenistan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ukraine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Uruguay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Uzbekistan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Venezuela",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vietnam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Zimbabwe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No, I'm not joking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hope you all continue enjoying the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Conrad, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 106,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4480532686364072807"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-14T01:49:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.760Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:53.015Z"
+  },
+  {
+   "id": "the-outbound-ghost-132449@major-2021-08-04",
+   "gameId": "the-outbound-ghost-132449",
+   "displayName": "New Demo Update, Spinoff Announcement, Friday's Devlog, And Being 223% Funded",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-04T16:40:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! If you're in the game's Discord server you might know that I've recently been working on making controls clearer! The main feedback I've received from players of the demo is that the button prompts being standardized regardless of your input device is very confusing, and I agree. That solution was always meant to be temporary, but I finally got to implementing something more reliable! The screenshot below shows the new HUD that is in the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you can see on the top left, the HUD includes button prompts for both dashing and your currently selected item. Something I noticed when watching people play the demo is that they knew how to select an item with the item wheel, but they didn't know how to use it or expected the item to be used immediately upon selection. This new addition should make it clearer! Let me know what you guys think of the change!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speaking of button prompts, at the beginning of the demo you can now select which input type you would like to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you select it, all prompts in the game will match your choice! Below you can see a before/after screenshot comparing how the prompts were before and how they are now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can play the demo right now on Steam so if these new quality of life updates interest you, make sure to give it a try!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Those of you who have seen one of my previous updates know that I am working on a little spinoff of The Outbound Ghost, and below's a little screenshot showing how it's progressed since then.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're not aware, the artstyle is based off of the original prototype version of The Outbound Ghost before it went in a more Paper Mario-like direction! What genre do you think this game pertains to? I'd love to hear your thoughts in the comments! If you want to learn more about it, this Fridays YouTube devlog will cover most of your answers and more! Make sure to catch it! The spinoff will also be free for all Kickstarter backers who pledged for any tier containing a copy of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This cool pixel style won't just be limited to this spinoff though, as I'll also announce in this Fridays devlog a special option in the main game regarding this style that only Kickstarter backers will have!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lastly, I'd like to thank you all again! We're 223% funded, which is absolutely insane! I can't wait to continue working on this awesome game, and I hope that you will all like it when it comes out next year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1276810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1276810/view/4032396459856410291"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-04T16:40:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1276810",
+      "checkedAt": "2026-11-13T03:33:47.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:53.012Z"
+  }
+ ],
+ "issues": []
+}

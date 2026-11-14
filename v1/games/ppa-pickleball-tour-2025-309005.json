@@ -1,0 +1,270 @@
+{
+ "game": {
+  "id": "ppa-pickleball-tour-2025-309005",
+  "igdbId": 309005,
+  "name": "PPA Pickleball Tour 2025",
+  "cover": {
+   "imageId": "co8qip",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8qip.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar30zt",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar30zt.jpg"
+  },
+  "ps5Release": "2024-07-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ppa-pickleball-tour-2025-309005@1.3.0",
+   "gameId": "ppa-pickleball-tour-2025-309005",
+   "displayName": "Patch 1.3.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-21T21:29:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Quang Duong, Jack Sock, Genie Bouchard, Jessie Irvine, and Dave Fleming as playable pros.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved graphics quality for all pro players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lighting quality in both San Clemente and Atlanta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the sounds of paddles hitting the ball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased wrong-button leniency at the start of firefights and dink battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted tour brackets to include new pro players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2574120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2574120/view/1783872411993242"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-21T21:29:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2574120",
+      "checkedAt": "2026-11-13T03:28:20.878Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-21T21:29:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2574120",
+      "checkedAt": "2026-11-13T03:28:20.878Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-21T21:29:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:15.489Z"
+  },
+  {
+   "id": "ppa-pickleball-tour-2025-309005@1.1.0",
+   "gameId": "ppa-pickleball-tour-2025-309005",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-24T22:30:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added the ability to skip post-rally reactions and screen transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new gameplay options to limit net battle (dink battle/firefight) play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Singles Net Battles” option can be turned off to disable net battles in singles completely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Control CPU Partner Net Battles” option can be turned off to disable needing to act for your CPU partner in doubles net battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer’s Note: We have heard feedback that some players do not like net battles or have: difficulty performing them. These new options allow players to limit how much they need to perform net battles. Net battles still cannot be entirely disabled in doubles because doing so results in situations where it is exceedingly difficult for either side to score when all players are at the kitchen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new commentary to prevent situations where no commentary plays at the end of a rally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several bugs in local multiplayer play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The timing window for dinks will now get progressively shorter as a dink battle continues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firefights on Easy mode in player versus player will now use 2 possible buttons instead of 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer’s Note: PvP Firefights on Easy would go on forever since both players need only continuously press the bottom button. This change, as well as the previously listed change to dink battles, should prevent never-ending situations in player versus player net battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the speed of serves on Easy difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the number of times most actions need to be repeated in the game tutorials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the sun light not being rendered correctly on San Clemente",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Developer’s Note: We are currently working on improving the quality of our character graphics across the board. This improvement process takes time, and we wanted to get this patch of gameplay improvements out to our players as soon as possible. We look forward to improving our graphics in a future pass. Thank you for your patience and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 2,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2574120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2574120/view/5875595438696893843"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-24T22:30:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2574120",
+      "checkedAt": "2026-11-13T03:28:20.877Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-24T22:30:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2574120",
+      "checkedAt": "2026-11-13T03:28:20.877Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-24T22:30:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:15.488Z"
+  }
+ ],
+ "issues": []
+}

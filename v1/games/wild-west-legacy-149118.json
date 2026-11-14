@@ -1,0 +1,6367 @@
+{
+ "game": {
+  "id": "wild-west-legacy-149118",
+  "igdbId": 149118,
+  "name": "Wild West Legacy",
+  "cover": {
+   "imageId": "cobr1m",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobr1m.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5jc2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5jc2.jpg"
+  },
+  "ps5Release": "2026-03-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "wild-west-legacy-149118@post-2026-03-30",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Patch Notes March 30th",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-30T17:19:51.000Z",
+   "notes": [
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "The game no longer softlocks after pressing the \"~\" (tilde) button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Some buildable icons have been updated.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "PC-WinGDK",
+     "items": [
+      {
+       "text": "The UI no longer locks up when building a coal mine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clicking on the \"Spacebar to continue\" text no longer triggers the filling circle animation during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some buildable icons have been updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CONSOLES",
+     "items": [
+      {
+       "text": "Cleanup has been improved to help prevent frequent stuttering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscene loading has been further improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading screen images now display at the correct resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Quality Mode setting is now correctly applied when set from the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold mine, silver mine, and clay mine no longer appear unnecessarily in the radial menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Render texture handling has been improved to increase stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some buildable icons have been updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/1828441623110342"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-30T17:19:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.284Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-30T17:19:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.284Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-30T17:19:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:22.224Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@post-2026-03-13",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Patch Notes",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-13T18:00:02.000Z",
+   "notes": [
+    {
+     "title": "NEW FEATURES",
+     "items": [
+      {
+       "text": "The custom controller/keyboard binding loader now adds missing default bindings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Workers can now be dismissed from the Workstation panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Input hints are now shown during food selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The residents panel now uses a more contextual layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "House panel navigation layout and behavior have been updated for better usability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The animal data cell layout has been updated to prevent text from being cut off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Pantry panel is now fully localized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Panel highlighting has been updated for better readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Settlers panel now displays all icons correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New glyphs for gamepad have been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NPCs that get stuck in a building, in the air, or in an off-navmesh location are now automatically repositioned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Glyphs in notes have been updated to the new atlas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controllers are now supported in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Missing controller bindings for DualSense controllers are now available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI & UX",
+     "items": [
+      {
+       "text": "The hotkey icon for the Lift Up action now displays correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect icons in the icons database are now correct.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The glyph for enabling filters on the transport screen now displays correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The button prompt for \"Filters\" in the Storage Management tab now displays correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Button prompts now appear correctly across all Craft tabs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now scroll through the item list in the Pantry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Checkboxes in the Management missions tab are now marked correctly when completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The button prompt for waypoint removal now appears on the Map tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The furniture list no longer exceeds the allocated window on the Rent Out panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text in the Pantry menu is now an appropriate size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Analyze icon and Equipped icon are now the same size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The radial menu is no longer accessible on the trade screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Number combinations in the 'Craft multiple' progress UI no longer display as fractions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Buildings\" entry in the Journal tab no longer overflows the text border in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Button prompts on the Management tab now display in the correct case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All relevant buttons are now visible in the Workstation tab, not just \"Hire\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Active subpanels in the Manage panel are now highlighted correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sub-navigation in the Manage panel is now easier to read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Workers panel highlight now displays more clearly when selecting assignable buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Building list navigation now works automatically after the panel opens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Food selection for animals and settlers now has a more intuitive UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The houses list in the Residents tab now displays more clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The workplaces list in the Residents tab now displays more clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The houses list is now easier to navigate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlight in the Warehouse tab (Management) now displays more clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlight in the Settlers contextual panel now displays more clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlight in the Settlers tab list now displays more clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The buildings list selection highlight now displays more clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item descriptions now display correctly in the storage menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The chest panel now registers navigation input on the first press.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chest selection now starts from the first row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item descriptions now display correctly, loading only after the details panel has initialized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The trash button now registers clicks correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The buildings list now supports mouse scrolling.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The active panel now refreshes correctly when a mine building is selected (stone/iron/sawmill).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The interaction button now correctly opens selected house details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controls & Gamepad",
+     "items": [
+      {
+       "text": "Hotkeys are no longer missing when placing objects or furniture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotkey for adding/removing guards in the management panel is now correct.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Filters in the transport panel now work correctly with mouse and keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The gamepad glyph now displays correctly when purchasing small farm animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scrolling now works correctly when changing workplace in the Settlers Management tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players no longer lose focus after equipping/unequipping tools & weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The pause menu is now fully interactive with the D-pad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The selected building index no longer resets continuously when using a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The food state can now be changed with a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The D-pad now works correctly in the food selection panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "D-pad navigation in the building list now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horizontal D-pad navigation is now supported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigation events are no longer sent to multiple lists simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Only the active list now holds focus when switching between the player and chest item lists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing a filter no longer causes focus to be lost when the new category contains fewer items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Closing the quantity selection popup no longer closes the entire chest panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Input on the chest panel is now blocked while the quantity selection popup is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting can now be canceled using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Journal navigation with gamepad now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "D-Pad navigation issues on DualSense have been fixed (may require restoring controller settings to default).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigation in the Settlers panel on DualSense now works correctly (may require restoring controller settings to default).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The DualSense controller now works correctly on the Map panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The DualSense controller now works correctly on the map in the Management Panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The touchpad icon for the DualSense controller now displays correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Floor height adjustment using D-Pad Up/Down now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Players can no longer place fences on farm fields.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now move while placing a building when holding a weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resources in FPV mode can now be collected without needing to get too close to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equipped clothing can no longer be dropped while the player is wearing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items now disappear from the Radial Menu after the player uses the place or drop option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now destroy Pigstry and Goat shed buildings without needing to reload the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players are no longer pushed far away when going through building doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The skill points number now updates in real time after unlocking 3 skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"New level 1\" pop-up no longer appears every time the player levels up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Identical items now stack correctly instead of appearing as separate entries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sold animals now disappear immediately after being sold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orders can now be placed in the General Store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now navigate between active transports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The same transport can no longer be canceled multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Canceled transports now disappear immediately when canceled right after creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can no longer navigate to an empty row in the Rent House panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The building menu can no longer be opened while placing a fence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skills can now be upgraded twice in a row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Buildings & Settlement Management",
+     "items": [
+      {
+       "text": "Clay mine and Gold mine now build as the correct mine type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Building a coal mine no longer breaks the player's camera or prevents cancellation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The workbench can no longer be destroyed during the crafting process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replacing a worker now correctly removes the previous worker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ingredients list now disappears correctly when exiting Production and New Production panels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The looped option toggle in the New Production panel now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The workers list now auto-selects the first worker when focused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Empty resident slots in the residents list can no longer be selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resident info now refreshes correctly after selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The house selection panel now closes correctly when dismissed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The workplace selection panel now closes correctly when dismissed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resident count in houses now displays as a whole number instead of a fraction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switching between houses on the houses list now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The house ownership toggle now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first house is now auto-selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relocating residents to another house now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigating the houses list no longer scrolls the residents list simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting a house now correctly updates the house info.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The residents list is now visible when opened from house settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workers now appear correctly in the animal pen management panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Empty data cells in multiple panels can no longer be selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A worker can now be dismissed from a building even if another worker is assigned there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Data cells no longer lose focus after a hire/dismiss action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resident assignment in the Manage panel now counts toward the appropriate missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The settler's workstation now updates immediately after changing the active settler in the Management panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Change\" button in the Settlers menu in the Management panel has been disabled — settlers can be assigned to buildings in the Buildings section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NPCs",
+     "items": [
+      {
+       "text": "NPCs now go to work in the Shed building correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs can no longer float in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs can now find their way home correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs are less likely to get stuck while navigating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs in homes are now detected and interact with furniture more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs now sit at the correct height on furniture instead of floating above it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs no longer move in the background during the NPC house rental panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs no longer end up outside their house after loading a save created at a large distance from the house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crafting & Items",
+     "items": [
+      {
+       "text": "The stone knife and Carpenter's hammer now work correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The live hare trap now displays with the correct icon in the relevant craft branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The active item can now be unequipped during crafting without breaking animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple crafting actions can no longer be triggered simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The item change menu can no longer be opened during crafting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The saddle list in horse inventory now works correctly with a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Transport & Economy",
+     "items": [
+      {
+       "text": "Resources can now be correctly filtered on the transport screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items no longer disappear after reaching max transport quantity, allowing quantity changes and removal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The resource selection panel now closes correctly after sending transport.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shop items now display as grouped correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Words in the item quantity selection and cooking windows no longer wrap mid-word in Ukrainian localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The tooltip text \"No city to select\" in the Management tab is now localized in all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The text description for the Thick-skinned skill is now available in Ukrainian and Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The acquired quantity of resources needed for a quest no longer displays as \"Null\" in RU and UA languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The status message now correctly shows \"Overheating\" instead of \"Freezing\" after changing game language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map region localization text now displays more accurately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Manage button for houses is now correctly localized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Manage button for houses now uses the correct color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wall category icons in house management now display more accurately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The POI scroll area no longer causes text to overlap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Spacebar to skip\" text on the cutscene screen now respects the active localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outdoor decoration names now match the names shown in the radial menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quests",
+     "items": [
+      {
+       "text": "Objective progress is now displayed correctly in The Promise quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The correct cutscene now plays for the quest \"Sleep with Mercedes\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical & Save Data",
+     "items": [
+      {
+       "text": "Objects' names no longer disappear or become non-interactable after reloading the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Memory is now correctly cleared if the house rename panel closes unexpectedly during editing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paul's gunpowder now saves correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Runtime objects now save correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Technology state now saves and loads correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The camera no longer becomes disengaged from the character after loading a save created while a gun was equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Characters now animate correctly in the Inventory when time is stopped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The glyph conflict between cutscenes and Spacebar has been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settings category icons are now highlighted correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES",
+     "items": [
+      {
+       "text": "In some cases, if a building is placed on a high foundation, NPCs may not be able to properly navigate to their destination. This can cause them to walk around the building instead of reaching the target point. As a temporary workaround, NPCs may occasionally be repositioned to the correct location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In some cases, NPCs may appear in a T-pose after loading the game. Moving away from the NPC should cause the issue to resolve automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs may sometimes be unable to exit a house if the player is standing close to the doorway. Moving away from the door should allow the NPC to find their way out automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some pre-defined buildings on the map (other than those placed by the player) may not provide proper protection from cold or heat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Occasionally after loading a game, the Side Quest category may not be selected by default and the quest needs to be selected again to track it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After destroying animal enclosures, the surrounding fences may not be removed automatically. The player must destroy each fence manually or save and reload the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you experience issues with the DualSense controller, restoring the control settings to default often resolves the problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 0,
+    "balance": 0,
+    "other": 151,
+    "ps5": 0,
+    "topNew": [
+     "Workers can now be dismissed from the Workstation panel.",
+     "Input hints are now shown during food selection.",
+     "The residents panel now uses a more contextual layout."
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/1826992588596378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T18:00:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.283Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T18:00:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.284Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-13T18:00:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:22.222Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9198",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Update 1.0.9198",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-30T07:48:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have another update applied on the beta branch for testing before releasing it. So, without further ado:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How do I play on a beta branch?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A quick guide:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prerequisite: You must have Wild West Dynasty in your library – of course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open your games library. Right-click on Wild West Dynasty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the ‘Properties’ menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click on the ‘BETA’ tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use the drop-down menu and select ‘Public Staging Branch’. This is the beta version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click ‘Close’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam should now download this version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Missing cutscene related to the Mercedes quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes and Improvements",
+     "items": [
+      {
+       "text": "Pathfinding system improvements. NPCs should not become stuck if the destination is not reachable or blocked for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The cutscene music has been changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Cookbook recipes could not be analysed properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Manage House radial menu icon colour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The house's custom name was not saved properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPC were sleeping above the bed (their ability to levitate removed).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPC could not be assigned properly to different Workstations if they are currently working in the stable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wrong map indicator for arable area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tools in the shop display were not stacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rawhide was not displayed in the resources category.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some technology recipes were not saved after unlocking them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The campfire in the old camp could cause camera issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 10,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0,
+    "topNew": [
+     "Missing cutscene related to the Mercedes quest.",
+     "Pathfinding system improvements. NPCs should not become stuck if the destination is not reachable or blocked for it.",
+     "The cutscene music has been changed."
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/1798454487563302"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-30T07:48:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.282Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:22.220Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@major-2025-04-11",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Wild West Dynasty – Update on the Beta Branch",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-11T09:40:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back! We have a new update for you that we'd like to test on the beta branch before releasing it into the wide-open spaces of the prairie. So, without further ado:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How do I play on a beta branch?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A quick guide:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prerequisite: You must have Wild West Dynasty in your library – of course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open your games library. Right-click on Wild West Dynasty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the ‘Properties’ menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click on the ‘BETA’ tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use the drop-down menu and select ‘Public Staging Branch’. This is the beta version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click ‘Close’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam should now download this version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "The ability to move settlers to different houses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A panel to manage houses in Management tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ability to have more than one settler in one house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ability to assign a house to yourself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Indicator in radial menu showing that crafting multiple is RMB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resource list the player needs for buildings in the building wheel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more save slots and the ability to label them. Saves can now be deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ability to name horses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ability to destroy just tents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ability to paint the roof triangle on a house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 32 new investigation recipes (for cooking)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More saddles are available for purchase at Four Nines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed Annie's mail from the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horse options to mount/dismount and a horse menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The map is centring on the player when opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Local transport now does not cost any money (in range of a city)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transport system has been updated – after removing a city, every transport will be updated. If the destination for a transport is a removed city – the transport will be cancelled and will return to the starting point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the seeds tutorial/tip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Ed's and Roger's tutorial/tip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Annie now marks her promised location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All fires supply warmth now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The first fire should not have the Analyse option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Created a marker for “can be eaten” for NPCs in the menu. It is a checkmark instead of an X.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Granger’s behaviour when dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Items stacking is now working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All the buildings are now destructible. Including the warehouse! And the Barn!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where post-processing was not working in animal’s buildings (barn/pigsty/ranch/stable)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the detection of animal buildings was not working properly (player could not see name or health of the building)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Barn was not showing its name and health and could not be destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong names displayed on animal’s buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with loading map state after save/load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with loading Granger’s state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Barn’s marker was not visible on the map after loading a saved file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Windmill marker was not visible on the map after loading a saved file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Mine marker was not visible on the map after loading a saved file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the de-synchronisation of animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with roof material in winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Food now is updated on a daily basis, instead of every hour (food loses 40 points of condition per day)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where items prepared with the cookbook were not transferred into rotten food if their condition reached 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Granger, Owl and Grama Lucy now offer things to buy after reaching a certain point in the storyline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with scroll in the Journal and notes panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 22,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0,
+    "topNew": [
+     "The ability to move settlers to different houses",
+     "A panel to manage houses in Management tab",
+     "The ability to have more than one settler in one house"
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/1796631172273687"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-11T09:40:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.281Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:22.219Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9123",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9123",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-08T12:35:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hold in our hands yet another hotfix for you, which brings these changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "Added a rifle to the shop in Hope.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Four more colts were added to the shop in Hope.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Rifle ammo to the shop in Hope.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added separate support for the General Store vendor’s storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a saver for the vendor in the General Store (On existing saves he replenishes items he is selling).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Horse selector map - fixed the scaling for 16:10 aspect ratio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Animal's stable selector UI - fixed the scaling for 16:10 aspect ratio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with City mission that requires Sheriff building at City level 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the General Store required at City level 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the technology UI to match the new order (General store available at City level 2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The General Store will now sell items at 50% base sale price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a chest collider in the stone mine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a chest collider in the iron mine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a building collider in the stone mine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a building collider in the iron mine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the storage of the General Store's vendor storage was identical to the General Store's chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changed the eating cycle for NPCs from 2 hours to 6 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The General Store's vendor sells items at 75% of the original price.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on more fixes! Thank you for your ongoing support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 11,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Added a rifle to the shop in Hope.",
+     "Four more colts were added to the shop in Hope.",
+     "Added Rifle ammo to the shop in Hope."
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6148070194801628111"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-08T12:35:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.280Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:22.218Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9111",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Update 1.0.9111",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-27T11:04:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have prepared another hotfix for you, which brings these fixes and optimisations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on more fixes! Thank you for your ongoing support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where skill points were displayed in Spanish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animals for purchase in Taxation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Red Rock - Fixed the NPC T-Poses after assignment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the scrolling in the inventory after selecting any filter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ghost Town Forest - Adjusted parameters to prevent trees from spawning inside houses).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grandma Lucy – Added a furniture saver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You are back - Replaced beans with a can of beans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where a stable was not destructible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bridge area forest - Adjusted parameters to prevent trees from spawning in undesired places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Henrietta – Can now be caged (support for existing saves is WIP).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a settler camp beyond Ed's farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a settler camp nearby the old shooting range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a settler camp nearby Serenity Stand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the navmesh to support new settler camps and to improve the navigation in several areas at Red Rock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the storage UI on ultra-wide resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with detecting hovering over items in the storage UI for all resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a furniture saver to Granger's house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where data could not be loaded properly after the last update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Taxation's cemetery becomes active once the entry Warehouse plans: Fix the Warehouse is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The destroyed convoy is disabled once the entry Warehouse plans: Fix the Warehouse is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City Missions - Is now being checked for conditions, such as animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Women - Replaced dysfunctional animations with proper ones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 6,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6339469370185323241"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-27T11:04:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.279Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:22.217Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9103",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9103",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-17T09:19:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re starting this week with another hotfix bringing a few changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on further updates! Thank you for your active support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the system for placing animals at a farm (the fence collision system was altered).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The windmill can now be destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a health bar to the windmill UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI: Unified vertical scrollbar in Shop Panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: Unified vertical scrollbar in Pantry Panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: Unified vertical scrollbar in Food Storage Panel (animal stable/animal cage/city warehouse).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: Unified vertical scrollbar in Water Storage Panel (animal stable/animal cage/city warehouse).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI: Fixed an issue with horizontal scrolling in the Pantry building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where only a single animal in the stable was feeding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player can craft seeds at the Barn's crafting station now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new item: Animal fodder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The player can craft animal fodder at the Barn's crafting station now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animal fodder is transported to animal stables or cages by NPC by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Women's hair updated to partially remove intense mirror effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Coal Mine was creating an error which locked the city progress from saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the map colliders and streams (alpha walls were removed, the map is now more organic).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization in Hope's gun shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the store UI could experience high memory usage after many transactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Barn: Added flower seeds to the production queue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barn: Added missing resource seeds to the production queue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barn: Added animal fodder to the production queue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC working in an animal stable, or cage will now deliver 5 food items in each cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barn – equipped the crafting station inside to replace the crop dryer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a chest in the sawmill so the player can collect items manually without having them transported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a chest in front of the stone/iron mine so the player can collect things manually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a chest to every animal stable so the player can collect things manually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can now buy turkeys at the 9999 Ranch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the player received stacks of tools from the shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the saddle could not be unequipped after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where horse equipment was not visible after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing recipes for the cookbook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cookbook: the UI was improved to support multiple food effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where clicking \"E\" was triggering an action (like closing the options panel/opening the save panel) in the background once the controller mapper was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where key binds were not working properly on non-QWERTY keyboards.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the pause menu or the settings menu could not process inputs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional stock supplied for both Momma J and Hope's Food shop to boost more recipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated visuals to Hope.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with Hope's Warehouse (missing assets).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated and added missing icons for cookbook recipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 9,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6250522009530779475"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-17T09:19:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.279Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:22.216Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9094",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9094",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-06T19:40:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Again a small hotfix bringing a few fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on further updates! Thank you for your active support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs will not kill young animals in cages (less than 10 years).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs will transfer a maximum of two food items into the cage from storage in one cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The food and water consumption of caged animals is significantly reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs assigned to cages housing animals should no longer trigger a crouch-stand-crouch action when managing the cage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs assigned to animal cages will now transfer water/food for animals. Condition: the cage does not contain 25 water units or 99 food units. (Dev note: We do want to give you a better option to manage animal cages. We are working on solutions. You will be able to control how many items the NPCs shall add to the cage's storage, to keep the economy and cycle balanced in your city.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The water consumption for animals in barns is significantly reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the player could plant seeds with insufficient amounts in the inventory (Note: this could have caused the -x value).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Workshop craft hierarchy now reflects the technology tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The weight of Henrietta and Ada's letter are reduced to zero (0).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where assigning NPCs to the Barn/Sawmill in Ghost Town could corrupt saving those buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a transport route could break the saving process",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where having a windmill, farm plots and/or barn and having NPC assigned to the barn, could cause save issues. (Note: We are still investigating issues when sometimes buildings are not saved.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a canteen was not providing water for NPCs in the city.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where outpost buildings could not be destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPCs working on a farm will take only as much seeds as required, depending on farm size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the cost of crafting a colt bullet from 10 shells and 10 gun powder, to 1 respectively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an endless loop Mercedes – Confront the Sheriff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the health of houses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Settlers are no longer eating up buckets. Empty buckets will be automatically returned to the warehouse storage. The support for animals is work in progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6242640076601356167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-06T19:40:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.278Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.278Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9090",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9090",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-03T13:59:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we have a small update, but with an important addition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on further updates! Thank you for your active support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Settlers Camp was not randomizing settlers correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The task: Have (x) specialists in the city will now work for any worker assigned to the city.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most quest item weights are set to zero (0).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a save logger for debugging purposes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a problem with displaying where a mine can be placed (\"Can be placed on !\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6240387642472680586"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-03T13:59:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.277Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.277Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9089",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9089",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-02T10:48:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To start the week, we have another hotfix for you, which brings these bug fixes and optimisations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on further updates! Thank you for your active support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Pantry could freeze players after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where items in Pantry could duplicate after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where taking items from Pantry was corrupting them, if these items had the same definition (like for example mushrooms).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed corrupted food copies from pantry after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animal cages now show the amount of food/water items available for these animals instead of corresponding progress bars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where flowers were not visible in animal cages as food.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Carter Ash cannot be assigned multiple times to a house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a fallback if Grandma Lucy will glitch herself underground. After saving/loading she should be back on the surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Carter Ash cannot be talked to before starting The Promise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You are back! - Elmer is now giving the player a key after the final quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player cannot die as long as he is in the cooking panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting planks – fixed an issue with a \"nil\" value displayed in the chapter entry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added destructible planks in the Granger house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the trader was not selling a rifle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled the option to show the render debug panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the render debug view could be enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with extremely large sized saves. Shops could feature too many items - causing those saves – after loading. They will now reset to a default stock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where city missions could not be completed for specific requests of animal types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the Unstuck logic. Now the player will teleport to a nearby house after clicking Unstuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default Unstuck position has changed to the start position in Ghost Town now if no houses are built yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where jills (female hares) were not numbered to the chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where animals in cages could not reproduce.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where NPCs were planting potatoes in winter only.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hired women had the wrong clothes. This also applies to women after loading from a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where farm 4x4 had a wrong fertilizer decal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the NPC navigation on a farm. Now NPCs will try to find the nearest possible node to work on a farm instead of forcing themselves to the center of the farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where unlocking technology by investigating plans was removing technology points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some items (like Momma J's soup) were not restored after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where NPCs planted more than the specified number of seeds in a given season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Richard and Ed now sell bean seed (on existing saves the players have to wait a season for reset).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 16,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6240387642468552413"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-02T10:48:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.276Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.276Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9082",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9082",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-30T17:45:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We got a hotfix before the weekend for you, which brings these fixes and optimisations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on more fixes! Thanks so much for your enthusiastic support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warning: the list may contain spoilers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a key to Granger's chest for players with a broken quest state after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the focus was lost in the inventory when scrolling with the mouse wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized some object physics which in turn should help during exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization to animal spawners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the display of the skill tree in Polish language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The chest in the ghost town is not interactable before the quest asked to collect food.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where Felipe could not be addressed by the player when he saved the game (before reaching the point with dead Miss Hood).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added nails to the shops in Hope and Taxation (on existing saves players have to wait a season before the storage refreshes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where some saves could not be loaded after having multiple questlines given by NPCs and Owl's in a state of near completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when sometimes resources were not spawning after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the door to the General Store's door in Taxation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the well couldn’t be fixed, if the player did not finish Aid for Taxation: Animal Farm first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the display on how much money the player needs to upgrade the City.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the misleading information \"WIP\" in the missions panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Mines and the Barn are not visible to assign settlers via its settler menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where putting water/food to the warehouse was not detected as chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A bottle of water will now serve as a drinkable item to NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several issues with doors in Ghost Town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed problem with investigating Owl's mushroom stew (+ secret recipe added).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Owl's stews bestow 30 food points instead of 10 now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Momma J and the trader in Hope do sell cans of beans now Taxation (on existing saves players have to wait a season before the storage refreshes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animals transport cost adjusted to 30$ as a static value (distances are neglectable now).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a misleading popup about assigning animals to a farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated seed descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Momma J’s shop was not available after completing Aid for Taxation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "WIP animal system – This is still in testing",
+     "items": [
+      {
+       "text": "The UI for buying animals now shows a correct header for animal gender.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where all animals spawned for purchase had the same gender.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where animals lost their gender/age property in the inventory after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when after the purchase of small animals (chicken/turkey) the animal property changed in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where animals were not restoring properties in the shop after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hares captured by a player could have wrong attributes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where attributes of large animal (gender/age) were not randomized correctly after a season change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 17,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6240387642458673291"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-30T17:45:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.276Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.276Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9076",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9076",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-28T14:42:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have prepared another hotfix for you, which brings these fixes and optimisations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on more fixes! Thank you for your ongoing support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug with cookbook recipes not providing any food for settlers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that showed pumpkin instead of potatoes to harvest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an NPC assigned to a house in Red Rock could stack in a T-Pose sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem where interaction with a Tent could create an input freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the localization for \"Analyze bed blueprint\" for Ukrainian, Russian and Chinese languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ghost Town Ghost – Fixed a problem that \"Ghost\" was not proper waypoint in the first night after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Henrietta: Fixed a problem where she was not visible on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Henrietta is now highlighted by the sense ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hank should not hammer the air anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking recipes unlocked in the Technology Tree now work in the cooking menu (old saves are supported).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A player should be able to buy Flour in Hope or in Taxation after reaching Stage 2 of Momma J (on existing saves the player needs to wait a season for item reset).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various fixes for Mercedes quests (Warning: contains spoilers!):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where both Felipe and Miss hood survived if the wrong quest was triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with dialogue triggers in the Mine quest part.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a quest could be triggered by talking to Owl.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a quest could not trigger correctly if Felipe was killed by Miss Hood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a quest was not started automatically after Felipe got killed by the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a player could ask about Pat without completing Owl: What’s left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Confront the Sheriff could be triggered after the first dialogue with Mercedes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a player could not talk to Mercedes initiating the dialogue with her.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the barkeeper had no trigger after starting Mercedes Mine quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Owl now starts an additional quest for the player if in the meantime the player completed the Mine quest without finishing Owl's story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the dialogue with Owl was not triggering the quest: Find Mercedes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/6240387642450917878"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-28T14:42:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.275Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.275Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9073",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9073",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-26T18:14:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have prepared another hotfix for you, which brings these fixes and optimisations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on more fixes! Thank you for your ongoing support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The kid: Added a lantern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghost town ghosts: Fixed the waypoints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The convoy should now trigger properly even in different order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The convoy should work for people who saved it in a broken state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adventure mode added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All rivers and wells can be interacted with, and drinking affects overheating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tent - should not be pickable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "John (trader in taxation) – The shop is available even without completing Aid for Taxation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workbenches are no longer pickable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seamstress table should be able to interact with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workbenches got a destroy option added (to destroy from house if the player placed it by mistake).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a problem where changing the language in-game could cause a problem with placing furniture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled higher food consumption during the winter (survival mode only).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled higher water consumption during the summer (survival mode only).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some map improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subtitles added to intro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kid cave: Fixed a problem where fast discovered clues could lock the progress (old saves should work now).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kid cave: Fixed a problem where clues could be investigated too fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grandma Lucy house: Fixed a problem where a player could not place furniture in her house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vendors in Hope should now sell proper goods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each Vendor in Hope now offers a cloth set with different stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disappearing workbench from Owl`s house fixed (save/load).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5875595438703533408"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-26T18:14:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.274Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.274Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9069",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9069",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-24T21:08:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy partner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're working on balancing heat generation. Thus, we bring you some fixes for the thermic system, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drinking water from a canteen will decrease the overheat bar now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new item - Bottle of water - after drinking it, it will decrease the overheat value (availability will be invreased soon).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Drinking from a river will restore the overheat value to zero (some rivers, more to come).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a problem with saving the technology progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem where placing furniture used a glyph icon instead of key code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the dialogue in Martha’s quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stone Axe – durability and damage increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iron Axe - durability increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Woodman Axe - durability increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bow and arrows issue after they were purchased from the trader in Taxation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the interaction with the 4x4 farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added experience as rewards for several quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Overheat and freezing bar value will reset to zero after respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various fixes on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The overheat bar rises much slower now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The health bar decreases much slower now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The freezing bar rises much slower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hand craft icon replaced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The maximum temperature is reversed back to 41 degrees Celsius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hear you! Your concerns and observations have not eluded us. We follow everything closely on the forums and are working hard to resolve any problems that arise. That's why we continue to ask you to share your experiences or bug reports with us. All feedback is invaluable to us as it helps us to improve Wild West Dynasty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would also like to sincerely thank you for your continued support and patience. We appreciate it all the more at a time when this is not a given. It is very important to us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still working on additional bug fixes in the upcoming days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5875595438696685965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-24T21:08:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.273Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.273Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@1.0.9068",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 1.0.9068",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-23T17:23:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The maximum summer temperature is lowered to 35 degrees instead of 42 degrees Celsius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a small tree name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The name for \"Shed\" got changed to \"Workshop I\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Houses now have a better insulation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Farm is fixed after NPC harvest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The transport cost for animals now has a fixed value of 30$.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled the Wanted trigger from the sheriff’s office.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aaron Reave got his proper name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ukrainian dialogue localization imported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing localization in Polish for one quest entry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Ada's letter translation (Polish).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Felipe`s appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added cold-resistant pants to the chest in Owl's house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the collider for the Coal deposit in Serenity Stand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various Chapter III translations fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5875595438692470885"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-23T17:23:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.273Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.273Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@major-2023-10-31",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Winter is Coming... and so is the update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-31T17:00:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Settlers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "isn't it too early to think about winter?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not in the Wild West.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because in merely two days time our next big update will be arriving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And that includes not only literally hundreds of bugfixes, but will also add a lot of enhancements and improvements, for example",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Winter Season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dynamic rain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New City Management Panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Overhauled Techtree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Building Mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We cannot wait to show you how the Frontier has changed and are very much looking forward to welcoming you back to Wild West Dynasty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5229301621594893813"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T17:00:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.267Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.267Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.8420",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.8420",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-06T09:00:12.000Z",
+   "notes": [
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Corner added to tech-tree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Fixed a rare issue with saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Drop prompt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Adjustments to the localisation system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Corner added to tech-tree"
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5124582150155650111"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-06T09:00:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.267Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.267Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.8414",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.8414",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-30T16:53:43.000Z",
+   "notes": [
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "New Shed with light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for placing/picking up pots with flowers and other decoration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for City Warehouse resources double cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More dung on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5124582150134982895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-30T16:53:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.266Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.266Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@major-2023-06-29",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Wild West Dynasty - The Home Improvement Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-29T17:00:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Cowboys and Cowgirls!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's time for another update, which provides several bug fixes and updates several things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New for example are the flowers as agricultural items. In addition, there is a new system for building walls. And there are craftable paints you can freely use to color your houses!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Furthermore we have a new roadmap for you to give an outlook on coming content updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, go ahead, rush into the Desert Bloom!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Hoof sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional plant and flower seeds, season specific (new seeds can be bought in Taxation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dung (can be picked up near the cows in Taxation and used as fertilizer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Flowerpots (crafted at Workbench (Tinkerer))",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Collectible flowers on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Box-trap to catch live rabbits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The player can now kill a rabbit in his inventory – doing so yields the related resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed house modules from section B (planks) and from section C (stones) to a brand-new look",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The player can craft paints on the tinkerer table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Floor module now also starts with a frame-skeleton (same as wall modules)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The player can craft fertilizer on the tinkerer table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visual representation for some farming-related seeds (such as cotton)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Feature to paint a house for several colours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dev note on colouring: Our goal is to give players plenty of opportunity and room to unleash their creativity. Previously all the houses looked similar, so the first step to customize them is to give the players the option to paint the wall modules in the colours of their choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can choose from 7 colours for painting the facade and 7 colours for painting the module's decorative elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Moved the sun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changes to starter cave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Streamlined quest indicators on compass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items after picking up full chest will be returned to inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood decals for several animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unused NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved thunder mug counting (early pick up will not break quest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bucket weight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Muzzle flash for all colt models, missing hit layer for rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made bigger animals harder to kill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized shop window (looks, mechanics and performance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fields can now be placed and used without a barn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New decals for field states (fresh, seeds, watered, plants)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fields now need fertilizer (craft from Dung at Workbench (Tinkerer))",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dryer and pantry functionality: dryer turns harvested plants into seeds, food items stored in the pantry spoil more slowly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crashed wagon destruction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes to directional keys work on foot and on horseback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to first person tool animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved horse movement (less chances of getting stuck)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rabbits spawn further away from Taxation and will no longer terrorize the citizens there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plants now need 2 seasons to grow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More resources can be bought in Taxation (seeds, dung, and fertilizer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When selecting a module for a house, the player sees the full visual representation of the module instead of the green ghost- Shader for modules have been changed and improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The UI for the building system has been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vendors in Taxation are right now split into 3 categories. Those categories are food, building resources and decoration and paints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Ghost material not appearing on every LOD of walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading of houses if game was saved in a different language than used for loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disappearing fences on save/load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settler assignment issues on save/load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disappearing arms in first person for several items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tool animation in first person (stone axe, wooden hammer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disappearing mother in certain camera angles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several buildings could not be destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Work benches not showing in inventory after crafting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vendor interaction prompt missing for Momma J.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved butter cookies to make them eatable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recipes using wrong type of corn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Healed wounded boars on the prairie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lake collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ranged weapon damage (+ headshot damage multiplier)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weapon weight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Falling and teleporting Roger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dialogue loop with The Stranger (A Friend in Need)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player crafted oil barrel functionality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bed indicator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential fix for “spreading blackness” issue in specific cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Placing farm plot on another farm plot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Water tower requiring city to build",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Floating planks in several buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Floating thunder mug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Key binds cannot be exited with ESC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Key binds not always saving correctly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Jack Just’s disappearing head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some floating plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Galloping with the horse should now feel much smoother (improved obstacle detection system)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some floating building elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 29,
+    "balance": 1,
+    "other": 27,
+    "ps5": 0,
+    "topNew": [
+     "Hoof sounds",
+     "Additional plant and flower seeds, season specific (new seeds can be bought in Taxation)",
+     "Dung (can be picked up near the cows in Taxation and used as fertilizer)"
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5124582150131352183"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-29T17:00:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.265Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.265Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.8251",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.8251",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-25T02:06:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello cowboys and cowgirls!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another hotfix to ease life in the West.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Fixed the cutscene text synchronization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the load of broken save with a house error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a loading issue for various structures with modules loading wrong.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with crafting, causing an operands error, displaying minus symbols in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pantry and Crop dryer issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed placing furniture on a foundation D sized 5x12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the purchase costs for skills were doubled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Momma J should serve and distribute food properly now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Naming the warehouse should now be consistent between different panels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused damage to a dismounting player on horseback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Added audio for refilling a lantern (as feedback)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several terrain updates like colorization and textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPORTANT: Some modules for houses could have disappeared, these modules can be replaced anew and will stay after replacement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5151600576586366229"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-25T02:06:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.264Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.264Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.8238",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.8238",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-22T11:36:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, pioneers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We had a quick Sunday hotfix for you. Here are its patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Animal spawn times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sticks not spawning (sticks from trees that have fallen to the ground will not be present after save/load).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sticks from trees not visible with the sense ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing subtitles in cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing translations for several items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with item name display in shop windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dialogue mouse click occasionally has no impact.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Shadow fix for items in first person.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dropped items could disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Leaving the player menu with “X” could lead to lockup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stone drop from rocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hare cage cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save menu refresh when using an empty slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Skill tree functionality and descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horse call ability and icon added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horse marker on map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes in key-binding should be reflected in in-game UI (e.g. hotkeys).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default close button for player menu (inventory/skill/map/technology) set to TAB for all (ESC still works as well).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hit detection for pickaxe (more accurate).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Physics of rock parts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Technology tree unavailable options no longer interactable (were 99 points before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warehouse built before Chapter III should be recognized retroactively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added self-speech near bridge for Rich in Stone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Teleport to safety in case player falls through the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced horse stamina.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The sixth installation of the dev blog shows some of the features of the recent update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5140340943319542702"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-22T11:36:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.264Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.7554",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Update 0.1.7554",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-10T16:50:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy, cowboys and cowgirls!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first regular update following the hotfixes. This update should eliminate a few issues around saving and loading. The next updates are already being planned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Farm rotation is now stored and restored correctly after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed characters with broken clothes/pink hairs in the settler camps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several NPCs on the map with pink hairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed empty dialogue box once talking with an NPC in camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed farm state (plant/claim) after load broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with picking up items from farms, what could lock input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing potatoes on farms after load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed double-farms spawner after load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed quest info overlapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the camera issue after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPC problem with textures on mid/long range rendering distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Child hair rendering problem with mid/short rendering distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck after teleportation from point-to-point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem with loading state of MyTree NPC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem with an uncuttable tree after loading (MyTree).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem with players being locked in their own house if they built a prototype and missed the materials to build a door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed most issues falling down after loading a save game created while on horseback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Friend in Need” Quest – fixed an issue with the Treasure Chest being unlockable (without a prompt) when facing it to open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Friend in Need” Quest – if the player dies from wolves, the player will be respawned next to Jack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with game physics just after save/reload.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 20,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5070528810296323446"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-10T16:50:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.262Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.262Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.7488",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.7488",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-26T23:26:30.000Z",
+   "notes": [
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Sense ability -> set as unlocked from the beginning of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New variant of sticks -> should be more visible in various areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Door sounds added in some areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Warehouse storage & chests -> fixed problem with restoring seeds after load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jack (Just) horse should now work for all (as a reward for finish the quest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotbar buttons can now be changed in key-bindings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hide UI button can now be bound to another key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jack (Just) will no longer get up in a dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chapter 3 - added handler to fulfill the entry \"finish site-quests\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Chapter 3 was locked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue when player died after load close to the treasure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weight in the inventory not updated after item was destroyed - fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pantry not saved - fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pantry interaction before fully built - fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Politic character fixed hair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resources shop hope - fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weapons shop - fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Free carts panel in management menu fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Drop item (Q) and Hotbar (Q) keybinding conflict resolved. MIGHT REQUIRE REASSIGNING IN SETTINGS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Q is no longer closing the menu panel (unified - ESC button)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest items are not visible in general category in inventory now. They are visible in Quest Items category (filter)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled bandit attacks event for now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest task entries scale now on UI (no more overlapping)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 15,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Sense ability -> set as unlocked from the beginning of the game",
+     "New variant of sticks -> should be more visible in various areas",
+     "Door sounds added in some areas"
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5059268543369369213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-26T23:26:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.259Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.259Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.7463",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.7463",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-22T23:11:52.000Z",
+   "notes": [
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Added amount panel for interaction with chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added amount panel for interaction with storage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Chris Yorke - fixed pink beard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPCs in Hope - fixed some pink hairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPCs in Hope - fixed eyes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading state of Buildings and Inventory for advanced saves (you will get back your buildings and inventory - right now we are fixing loading issues with the production queues)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(WIP) Lost Treasure - fixing quest progression. Test for older saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Bow - started to refactor usage of bow (should be much more \"intuitive\"). Player can also right now use bow during walking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Journal - started to refactor UI for Quest Panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animal respawn limiter. Full animal herd will respawn only one per day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shop and Storage-panels can now be filtered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loca updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced music volume in Taxation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Added amount panel for interaction with chest",
+     "Added amount panel for interaction with storage"
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5059268543354756788"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-22T23:11:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.258Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.259Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.7429",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.7429",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-20T23:52:46.000Z",
+   "notes": [
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Saving of the selected language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Saving of chest content in players houses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Loading of quest markers and progression (to prevent other unpredictable problems we strongly suggest to start a new game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shed interactable after load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Workshop interactable after load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with warehouse inventory display bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with restoring items in inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Decimals for prices adjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further improved Key-Binding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved running-animation with bow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved light/shadow settings at night (should affect performance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked parts of the menus / UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Some more French loca",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some more Italian loca",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 5,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5059268099252604529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-20T23:52:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.258Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.258Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.7166",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.7166",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-19T02:12:37.000Z",
+   "notes": [
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Colt in chest as a quest objective to \"A Friend in Need\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Another saver for money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Saving of the menu/game settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "NPCs were in some cases not visible after loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Branches should be again spawning while cutting trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with locking unfinished buildings after loading. Now you should be able to continue building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "Code for saving / loading the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Code for saving / loading for warehouse items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Colt in chest as a quest objective to \"A Friend in Need\"",
+     "Another saver for money",
+     "Saving of the menu/game settings"
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5059268099245670601"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-19T02:12:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.257Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.257Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.7404",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.7404",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-18T09:47:04.000Z",
+   "notes": [
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Basic key-bind menu added (still under development, therefore you may encounter issues).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vegetation render distance (in meters) setting added in the main and pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added parts of Spanish loca.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added parts of Turkish loca.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added further parts for questline \"A Friend in Need\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "A lot of popping rocks were fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Chapter III where money spent was not accounted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sold material remained for crafting – fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"A Friend in Need\" Taxation quest marker fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "City Slicker quest marker fixed (after loading).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tree collision with colliders (trees in the air).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exploding trees further.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the double tree effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed and reorganized Lost Treasure Quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Updated",
+     "items": [
+      {
+       "text": "NPC ages corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Exploit-Rock in the starting cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased trigger for putting the flowers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced speed at which food is rotting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced tree rolling on slopes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updates to the Pause Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 9,
+    "balance": 3,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Basic key-bind menu added (still under development, therefore you may encounter issues).",
+     "Vegetation render distance (in meters) setting added in the main and pause menu.",
+     "Added parts of Spanish loca."
+    ]
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5059268099243176988"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-18T09:47:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.256Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.256Z"
+  },
+  {
+   "id": "wild-west-legacy-149118@0.1.7379",
+   "gameId": "wild-west-legacy-149118",
+   "displayName": "Hotfix 0.1.7379",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-16T22:54:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are sorry that you are experiencing so many problems with Wild West Dynasty. We are currently trying to work through the biggest blockers. Many players had the problem of not being able to load their game from the main menu. So here is the important first hotfix of many more to follow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix 0.1.7379",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load saves fixed from Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level message remaining on screen - fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potential crash in cutscenes - fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlocking bucket for Shed - fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1329880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1329880/view/5059267908815755036"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-16T22:54:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1329880",
+      "checkedAt": "2026-11-13T03:36:15.256Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:15.256Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "6798901197b6",
+   "text": "In some cases, if a building is placed on a high foundation, NPCs may not be able to properly navigate to their destination. This can cause them to walk around the building instead of reaching the target point. As a temporary workaround, NPCs may occasionally be repositioned to the correct location.",
+   "status": "open",
+   "firstReleaseId": "wild-west-legacy-149118@post-2026-03-13"
+  },
+  {
+   "id": "81f4627783c6",
+   "text": "In some cases, NPCs may appear in a T-pose after loading the game. Moving away from the NPC should cause the issue to resolve automatically.",
+   "status": "open",
+   "firstReleaseId": "wild-west-legacy-149118@post-2026-03-13"
+  },
+  {
+   "id": "bd3456d7572a",
+   "text": "NPCs may sometimes be unable to exit a house if the player is standing close to the doorway. Moving away from the door should allow the NPC to find their way out automatically.",
+   "status": "open",
+   "firstReleaseId": "wild-west-legacy-149118@post-2026-03-13"
+  },
+  {
+   "id": "d52e3b06a98b",
+   "text": "Some pre-defined buildings on the map (other than those placed by the player) may not provide proper protection from cold or heat.",
+   "status": "open",
+   "firstReleaseId": "wild-west-legacy-149118@post-2026-03-13"
+  },
+  {
+   "id": "8636229e7370",
+   "text": "Occasionally after loading a game, the Side Quest category may not be selected by default and the quest needs to be selected again to track it.",
+   "status": "open",
+   "firstReleaseId": "wild-west-legacy-149118@post-2026-03-13"
+  },
+  {
+   "id": "5e4aee7121d2",
+   "text": "After destroying animal enclosures, the surrounding fences may not be removed automatically. The player must destroy each fence manually or save and reload the game.",
+   "status": "open",
+   "firstReleaseId": "wild-west-legacy-149118@post-2026-03-13"
+  },
+  {
+   "id": "2acfe45b196c",
+   "text": "If you experience issues with the DualSense controller, restoring the control settings to default often resolves the problem.",
+   "status": "open",
+   "firstReleaseId": "wild-west-legacy-149118@post-2026-03-13"
+  }
+ ]
+}

@@ -1,0 +1,478 @@
+{
+ "game": {
+  "id": "streetdog-bmx-280252",
+  "igdbId": 280252,
+  "name": "Streetdog BMX",
+  "cover": {
+   "imageId": "co9cko",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9cko.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2oia",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2oia.jpg"
+  },
+  "ps5Release": "2026-07-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "streetdog-bmx-280252@post-2026-09-14",
+   "gameId": "streetdog-bmx-280252",
+   "displayName": "Experimental Mac Build now Live!",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-14T14:57:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "You can now play Streetdog on your Mac!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707870/view/1843481262701926"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T14:57:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707870",
+      "checkedAt": "2026-11-13T03:31:54.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T14:57:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707870",
+      "checkedAt": "2026-11-13T03:31:54.409Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-14T14:57:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:59.246Z"
+  },
+  {
+   "id": "streetdog-bmx-280252@major-2026-01-28",
+   "gameId": "streetdog-bmx-280252",
+   "displayName": "Update notes Wednesday 28th January",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-28T13:12:10.000Z",
+   "notes": [
+    {
+     "title": "Pushing the beta branch to main with some small fixes",
+     "items": [
+      {
+       "text": "FIX: Added an option for LB flips! This replaces R-stick flips which were admittedly weird anyway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: fixed a bug with Skate-style manuals and modified (advanced) manuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Rare issue where the game quits after 30 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707870/view/1823191198599825"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-28T13:12:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707870",
+      "checkedAt": "2026-11-13T03:31:54.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:59.246Z"
+  },
+  {
+   "id": "streetdog-bmx-280252@major-2026-01-20",
+   "gameId": "streetdog-bmx-280252",
+   "displayName": "Update Notes for Jan 20th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-20T09:12:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I've pushed the beta branch to main, this fixes three small initial issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "problems with advanced manuals when using the 'sim-style' manuals, specifically doing a L2 air trick to manual and always landing in a hang five.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to use the L1 button for flips. This moves lip tricks to L3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a very rare issue with the game quitting after 30 seconds.: There are more updates and fixes coming, but I'm going to take a couple of days off now to recover from launch before kicking off the next round!: Ads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707870/view/1821922921822946"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-20T09:12:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707870",
+      "checkedAt": "2026-11-13T03:31:54.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:59.245Z"
+  },
+  {
+   "id": "streetdog-bmx-280252@major-2026-01-16",
+   "gameId": "streetdog-bmx-280252",
+   "displayName": "Streetdog BMX Beta Branch Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-16T11:38:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Yo, Happy Friday!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wow. What a few days! I’m beyond blown away by the response, thank you so much for playing, and please keep posting videos cos I’m loving them! The response has been pretty overwhelming and is gunna take a while to process I think. But yeah, thank you. ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There’s a new build now available on the ‘beta’ branch - this has the below fixes in it. If you’re an ‘LB flipper’ or a ’skate style manualler’ give it a test for me and let me know how you get on / what issues you hit! Best place to discuss bugs is the Discord (link in the game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So…. What have I been up to this week!?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Launched a game called Streetdog BMX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX: fixed a bug with Skate-style manuals and modified manuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Added an option for LB flips!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Rare issue where the game quits after 30 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On the agenda for next week is a little bit of light challenge balancing. There are definitely some challenges that are a bit too hard for where they are in the game, or a bit confusing etc. So I’ll do a little bit of that. And then I’ll probably tidy my office or something - it’s a mess!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a great weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ads x",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707870/view/1821922921815643"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T11:38:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707870",
+      "checkedAt": "2026-11-13T03:31:54.335Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:59.244Z"
+  },
+  {
+   "id": "streetdog-bmx-280252@major-2025-07-12",
+   "gameId": "streetdog-bmx-280252",
+   "displayName": "Streetdog BMX Development Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-12T14:05:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Yo! Sorry for the massive lack of updates, but I’m still alive and I’m still working on the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Those of you on the Discord ( https://discord.gg/RBk8We8RQ9 ) will have heard this already, but for everyone else:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’m still cracking on with the game, and I’m very much in the polish phase - making sure all the levels are jam packed with fun stuff to ride and interesting spots to discover. After that I need to polish all of the challenges, and then it’s on to final bug fixing and then finally release! The exact release timing is still up in the air, but I’m currently aiming for the end of the summer on PC, around September time. This is not final and things may change etc etc, but it works as a very rough estimate of when to expect the full game to drop. I’ve had a little set back on the console side of things - my (ex) publisher Null has shut down all of their publishing operations, so I’m back to working on the game totally solo. For those that don't know, I've been a solo dev (previous games include Pumped BMX and Trailboss BMX) for most of my 'career', but this game is a much bigger game than any of those games were. So you might need to bear with me a bit while I figure out how to manage it all by myself!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As for what I’ve been doing recently, this week I’ve been working on the final level in the game. This is a wild level with some nice technical lines, but some really massive gaps and drops too. These levels have all been mostly done for quite a while, but based on the craziness I’ve seen people do in the demo I’ve been slowly going back through all the levels and beefing up the available lines. I’m nearly done with this last level, then I’m going to be going back through all the challenges and making sure they all work with the extra features etc. Then there's a little more work to do on the cosmetic stuff, then testing, more testing, etc etc etc!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now that’s I’m back to managing all the Steam stuff solo (which I’m still finding my way around!), I’ll try and post more of these updates here to keep you in the loop. But for more info and chat head over to the Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nice one, Ads x",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707870/view/1805065414270795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-12T14:05:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707870",
+      "checkedAt": "2026-11-13T03:31:54.334Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:59.244Z"
+  },
+  {
+   "id": "streetdog-bmx-280252@major-2024-12-18",
+   "gameId": "streetdog-bmx-280252",
+   "displayName": "Playtest Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-18T00:24:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Streetdog BMX’s first playtest is going super well 👏 This cool clip is from one of our community playtesters, who already seems like a pro!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who joined in. We’re more excited than ever to bring you an awesome BMX game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707870/view/1786409468825229"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-18T00:24:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707870",
+      "checkedAt": "2026-11-13T03:31:54.334Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:59.243Z"
+  }
+ ],
+ "issues": []
+}

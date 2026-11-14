@@ -1,0 +1,1349 @@
+{
+ "game": {
+  "id": "let-s-revolution-242101",
+  "igdbId": 242101,
+  "name": "Let's! Revolution!",
+  "cover": {
+   "imageId": "co69xu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co69xu.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar29oc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar29oc.jpg"
+  },
+  "ps5Release": "2024-04-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "let-s-revolution-242101@1.3.16",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.3.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-03T20:30:17.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed Unity security vulnerability CVE-2025-59489",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/1815034433011670"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-03T20:30:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.255Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-03T20:30:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.255Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-03T20:30:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.740Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.3.14",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.3.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-19T22:18:18.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed crash caused by Flawless passive while Japanese localization was selected. This would result in a crash any time you selected the Witch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash that could happen with Insight if you played through a run during the application lifecycle, then started a new Daily Challenge run with a character that starts with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor improvements to gamepad reticle display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/1786573930634369"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T22:18:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.255Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T22:18:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.255Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-19T22:18:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.740Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.3.12",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.3.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-28T18:43:27.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed bug in the last patch where in-game Achievements display wasn't working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor issue with navigating language menu with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5382426458996132430"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-28T18:43:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.254Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.739Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.3.11",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.3.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-16T20:44:30.000Z",
+   "notes": [
+    {
+     "title": "New Languages",
+     "items": [
+      {
+       "text": "Added support for Korean and Japanese to languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed postprocessing effects that were accidentally removed. This restores the red vignette effect when player health is low and also bloom effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which run timer could be seen on map generation screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mouse hitboxes for Library cards for traits with only two upgrade levels being in the wrong position",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug in which Library energy costs could be wrong for School of Power or School of Knowledge abilities if you returned to the menu from an active run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple minor issues while playing using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which Follow Up could continue its effect between runs in rare cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added support for Korean and Japanese to languages"
+    ]
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/6560117310265298358"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-16T20:44:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.254Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.738Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.3.00",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.3.00",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-11T17:29:56.000Z",
+   "notes": [
+    {
+     "title": "Daily Challenges",
+     "items": [
+      {
+       "text": "This major update adds a new game mode, the Daily Challenge. Here are some details on how it works:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you've beaten at least one run at any difficulty you can access \"Daily Challenge\" from the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each day of the week features one character class with a new set of 3 to 4 starting abilities. For any particular date, the class and abilities are the same for all players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Daily Challenge is typically harder than the normal game since you start with fewer abilities. Can you win a Shadow run without Backstab? What about using the Oracle without Teleport? In our experience, it feels like playing at least 2 difficulty levels higher than the normal game. Figuring out how to finish the run while utilizing new abilities is part of the fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can view and play up to a week of previous dates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mondays: Trooper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuesdays: Shadow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wednesdays: Oracle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thursdays: Charger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fridays: Hunter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saturdays: Witch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sundays: One randomized class of the six",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game stores some stats of your Daily Challenge runs. If you beat a run on your very first try (without losing or abandoning the run) you will be awarded a \"First Try Win\" and a sparkle will appear next to the medal you earned in the Daily Challenge menu. The game also stores your \"Win Streak\" and \"Total Wins\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All character classes and abilities are unlocked during the Daily Challenge regardless of your unlock progression in the main game. Playing the Daily Challenge will not earn green gems for unlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controller Vibration Added",
+     "items": [
+      {
+       "text": "Vibration effects have been added when playing the game with a controller or on Steam Deck. If you prefer the game without them they can be turned off with Settings>General>Vibration.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed bug in which Throwing Knives restock cost at different upgrade levels was inconsistent (should always be 1 gold)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Charger's portrait above the passives list being the Trooper's colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Oracle or Witch could get trapped and have no moves available and not receive a Deus Ex Chovy Bubbleship Ticket",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which the game would not save immediately after exiting Chovy's",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5246188851834985759"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-11T17:29:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.738Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.2.23",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.2.23",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-22T14:20:19.000Z",
+   "notes": [
+    {
+     "title": "Performance Updates",
+     "items": [
+      {
+       "text": "Improved level generation so that higher NG+ levels will generate with a less choppy framerate, particularly on lower-powered machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed bug in which when Mitzi reveals a cluster of non-road tiles with the same number, you could inadvertently reveal the King or another enemy if they were hidden in the cluster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mitzi no longer always has 20 gold when you load a game (this was from Rich triggering incorrectly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Uses per level\" traits (ie Sneak, Magic Flute, Sixth Sense, etc) now save and load their uses remaining correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fully fixed bug in which the game flow would break if the King created too many bombs during the final boss fight (could only happen on high NG+ levels).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI/UX Changes",
+     "items": [
+      {
+       "text": "D-Pad works to move the scroll bar on Achievements screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "English: Fixed copy issues with class descriptions (Hunter no longer refers to \"mana\" and all instances of \"enemies\" and \"energy\" are lowercase)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified and Traditional Chinese: Updated label of \"Permanent Hidden Enemy Markers\" in the Settings/Display menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Updates",
+     "items": [
+      {
+       "text": "Snoop is no longer a free action to avoid exploit potential with Hunter's Momentum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5127964289191303797"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-22T14:20:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.737Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.2.22",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.2.22",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-08T16:14:25.000Z",
+   "notes": [
+    {
+     "title": "Engine Update",
+     "items": [
+      {
+       "text": "Upgraded Unity engine to a later release. This may help with some crash and performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Charge count saves and loads correctly. Previously was resetting to 0 each time you saved and loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which Parry would not work properly with stunned enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft lock on the final level if you had allowed the King to place enough mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI/UX Changes",
+     "items": [
+      {
+       "text": "Increased the size of fonts in many areas of the game to improve the experience on Steam Deck and playing on television.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated description of Pacifist achievement to be more accurate for all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Updates",
+     "items": [
+      {
+       "text": "Settings>Display>Permanent Hidden Enemy Markers allows you to play without the skull icons expiring when you hide enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settings>Display>Visible Run Timer allows you to play with a run timer in the bottom right corner. This is the same timer used by the Make Haste achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfed Flow State from 7 to 10 cooldown and from 4|5|6 slip time to 3|4|5 slip time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5124585319867878436"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T16:14:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.252Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.736Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.2.21",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.2.21",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-27T18:15:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch features fixes for a few typos and achievements. We also fixed some issues where traits could be combined into exploits we felt broke the spirit of the game. Stop by our Discord to let us know what you think of the updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Painless achievement only unlocks on Normal difficulty or higher (matches description)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make Haste achievement only unlocks on Normal difficulty or higher (matches description)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "English: Pacifist achievement description is more accurate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "English: Fixed typo in the description of Safe Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Updates",
+     "items": [
+      {
+       "text": "Flow State now has a 7 turn cooldown instead of 6 for at all upgrade levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Teleport at level 3 is no longer a Free Action, but instead costs 0 energy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Desperate Hour is removed from the Cymbidium trait pool, ie Shadow and Hunter can no longer get it. This is to prevent an exploit where you could easily get infinite free Backstabs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5124584686246840414"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-27T18:15:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.250Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:39.735Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.2.20",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.2.20",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-21T13:39:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "First patch for the game, featuring minor fixes. No changes to gameplay/mechanics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed count left of Throwing Knives not saving or resetting between runs correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with pressing back on controller while selecting resolution in the dropdown in Display settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed misspelling of MItzi's name for a few languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI/UX Changes",
+     "items": [
+      {
+       "text": "Larger font for resolution list in the dropdown in Display settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved language selection on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5124584051973507792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-21T13:39:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.249Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:10.499Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.2.17",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.2.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-11T19:05:33.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes v1.2.17",
+     "items": [
+      {
+       "text": "This is hopefully (*fingers crossed*) our last patch before our launch on 7/19.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI and Controller Updates",
+     "items": [
+      {
+       "text": "New designs for all controller input icons in the UI. Larger icons with higher contrast for more visibility. New design for \"hold button\" radial UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Switch Pro Controller input is now correct: A is used for confirm and B is used for back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Nerfed Desperate Hour to giving 3|4|5 energy reduction instead of 3|5|7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shrouded and Investments now always round up to nearest whole number to determine how much gold they give",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed bug in which moving sound settings sliders all the way left would not mute channels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which you could enter and exit pages of the ASM quickly on controller and break the tween animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which sometimes a passive in the class selection screen would display values from the incorrect level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which class name in player UI could be wrong after continuing from a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed not being able to access unlocked skill tooltips when playing on controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animation issues with menu transitions between main menu and class selection on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which gem unlock track could not get reset to 0 and saved, allowing free unlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues in which the Let's! Revolution! demo save data could effect the main app's data during Steam Cloud synching.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed controller bug in which you could switch to selecting abilities while a turn was resolving, resulting in an invalid selection state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues in which Hunter's Breather may not trigger during boss battle, despite all enemies being hidden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in which a piece of the parallaxing background art in Phlox was rendering in the wrong order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5124582150175402501"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-11T19:05:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.249Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:10.498Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.2.05",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.2.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-26T19:53:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes v1.2.05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug in which the Shadow's Favor ability cost 0 gold and never increased in cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5124581515270322238"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-26T19:53:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:10.498Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.2.04",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.2.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-22T21:22:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes v1.2.04",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Memory Optimization: In an effort to fix some of the crash reports we've been getting which we suspect are memory related, we decided to push a major refactor of how the game handles memory that we have had in the works. Pros: Much smaller overall install size + more performant game. Con: This required changing most of the binary of the application, meaning that this patch will require nearly a full redownload of the game if you already had it installed (~500 MB). From here on out, patches should be much smaller though!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added preloading animations to initial boot and choosing to \"Continue\" a saved run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bug in which the full pool of barks the King can give at the start of the boss battle were not included. There should be many more now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5124581515255979163"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-22T21:22:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:10.497Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.1.02",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-16T18:18:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes v1.1.02",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a bug in which the big dialogue box that the Smith and Gemma have could appear empty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed English description for Shrouded passive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5896948309843837285"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-16T18:18:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:10.496Z"
+  },
+  {
+   "id": "let-s-revolution-242101@1.1.01",
+   "gameId": "let-s-revolution-242101",
+   "displayName": "Patch 1.1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-14T16:24:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes v1.1.01",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed controller-based soft lock in which players could get into a state where their selection reticle could not select the continue button of the Gem distribution panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with cursor locking during application boot, if the player didn't have the app window focused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2111090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2111090/view/5126832680917954862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T16:24:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2111090",
+      "checkedAt": "2026-11-13T03:24:41.247Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:10.496Z"
+  }
+ ],
+ "issues": []
+}

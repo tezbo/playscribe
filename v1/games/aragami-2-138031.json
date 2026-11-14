@@ -1,0 +1,3121 @@
+{
+ "game": {
+  "id": "aragami-2-138031",
+  "igdbId": 138031,
+  "name": "Aragami 2",
+  "cover": {
+   "imageId": "co2lk1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2lk1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ars9k",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ars9k.jpg"
+  },
+  "ps5Release": "2021-09-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "aragami-2-138031@1.0.30079.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.30079.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-12T13:11:25.000Z",
+   "notes": [
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Added crossplay with Epic Games Store. You can now invite your EGS friends to the game session.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "An enemy may not approach the player closely enough in some circumstances after hearing a whisper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Two enemies were present outside the playing area in mission 35.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you use the Blood Smoke power to kill the boss in the last mission, it might be blocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4607764924153696778"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-12T13:11:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.556Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-12T13:11:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.556Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-12T13:11:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:01.485Z"
+  },
+  {
+   "id": "aragami-2-138031@major-2022-06-13",
+   "gameId": "aragami-2-138031",
+   "displayName": "Difficulty Update now live",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-13T17:34:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aragami 2 now has difficulty modes! This update aims to adapt the experience to the player's preferences, whether they want a more challenging approach or a more relaxed one. This new patch includes new Easy and Hard modes that add some tweaks to the gameplay and enemy behavior. The difficulty of a mission can be selected on the Mission Board before starting it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Difficulty Update features the following",
+     "items": [
+      {
+       "text": "Option to select a mission's Difficulty on the Mission Board (EASY, NORMAL and HARD).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "General tweaks (applied on all difficulties) of enemy parameters and behaviors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The behavior of the aragami enemies has been revamped, and are now more present in the missions of the last third of the game, on NORMAL and HARD difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Max player level has been increased to 48.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A medal counter has been added to the Mission Board, as well as a rune reward for each type, if 25 medals are collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "These are some of the parameters that change depending on the selected difficulty:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Time the enemies need to detect the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Distance at which the enemies detect some player actions (e.g. player killing an enemy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Distance at which the enemies detect events in their environment (e.g. corpse on the ground).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemies' aggressiveness in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player's strength in combat (only in Easy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Experience obtained at the end of a mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player's Ability cooldowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player's stamina regeneration rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If you encounter any problem with this update, please email our support team: support@linceworks.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Below you can also find the complete patch notes of the Difficulty Update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Difficulty Update is now available! The Difficulty Update adds Easy and Hard difficulty modes, available in all story missions selected in the Mission Board. Each difficulty setting applies general tweaks to enemies' awareness, aggressiveness in combat, and reaction time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Euskera localization to all PC platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A medal counter has been added to the Mission Board, as well as a rune reward for each medal type if 25 medals are collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Change",
+     "items": [
+      {
+       "text": "The behavior of Lurker enemies has been redesigned and their placement rate has been increased in all modes besides EASY.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fanatic Soldiers now wake up some time after being knocked out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elite Soldiers are now resistant to most throwing weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In EASY mode, player Strength is increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mission Experience reward is adjusted depending on the difficulty level selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max player level has been increased to 48.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To celebrate the release of this update, we’ve activated a weeklong deal of 30% on Steam! Now is the perfect time to grab your copy of Aragami 2 and enjoy the final version of the game with all its updates - photo mode, advanced customization options, classic mode and difficulty modes!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This is the last update we’re bringing to Aragami 2, meaning that we’ll not be working on future content - just some bug fixing patches when needed. We’re so thankful for all the support and feedback - both positive and negative - you’ve been sharing with us during the post-launch period. We really hope that this final version of Aragami 2 satisfies both long-time fans and newcomers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So what now? You may wonder. Now we’re actively working on new and exciting projects. It’s still too soon to share more info, but we’ll do so when the time comes. Hence, we recommend that you follow us on Twitter and join our Discord server so you’re up to date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for your support during this journey, we hope that you stick with us in our new projects. We cannot wait to show you what we’re working on!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you next time! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 16,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4480532686362820857"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-13T17:34:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.556Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-13T17:34:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.556Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-13T17:34:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:01.484Z"
+  },
+  {
+   "id": "aragami-2-138031@major-2022-05-19",
+   "gameId": "aragami-2-138031",
+   "displayName": "Difficulty Update - Beta (Iter. 3)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-19T14:51:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all we’d like to THANK YOU for all the feedback you’ve been sharing with us. It is very valuable! We’ve already made some tweaks to the gameplay based on your input, which affects abilities’ cooldowns and stamina regeneration rate on Easy and Hard modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is now available in the beta version, and the difficulty branch should automatically update to the latest version - if not, just click on the \"Update\" button that you'll see in the game page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Aragami 2 Difficulty Update beta feedback - Iter. 3",
+     "items": [
+      {
+       "text": "Play any missions you want, to your heart's content, and tell us what you think. Preferably, select missions with different objectives and enemies throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Collecting your feedback from this test branch is important for us so we can look into potential bugs and issues, and changing difficulty balance if needed upon the release build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In case you still didn’t try the beta, this is how you can access the branch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Right click on ARAGAMI 2 on your Steam library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Go to \"Properties\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Select \"Betas\" on the left menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Select the \"difficulty - Difficulty modes beta\" from the dropdown menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Your game will then update in your Steam library and you’ll see “difficulty” next to the game’s name. You now have access to the beta branch and can launch the game with the new difficulty modes unlocked. The difficulty of a mission can be selected on the Mission Board before starting it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "IMPORTANT INFORMATION",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Any form of streaming, or videos by content creators, of difficulty modes are not permitted at this point as it is not a release build and is subject to change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "The Difficulty Update features the following",
+     "items": [
+      {
+       "text": "● Option to select a mission's Difficulty on the Mission Board (EASY, NORMAL and HARD).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● General tweaks (applied on all difficulties) of enemy parameters and behaviors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● The behavior of the aragami enemies has been revamped, and are now more present in the missions of the last third of the game, on NORMAL and HARD difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Max player level has been increased to 48.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● A medal counter has been added to the Mission Board, as well as a rune reward for each type, if 25 medals are collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "These are some of the parameters that change with the difficulty:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Time the enemies need to detect the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Distance at which the enemies detect some player actions (e.g. player killing an enemy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Distance at which the enemies detect events in their environment (e.g. corpse on the ground).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Enemies' aggressiveness in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Player's strength in combat (only in Easy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Experience obtained at the end of a mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● ✅ [NEW on Iter. 3] Player's Ability cooldowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● ✅ [NEW on Iter. 3] Player's stamina regeneration rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If you encounter any problem with this update, please email our support team: support@linceworks.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 26,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4292505348825577960"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-19T14:51:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:09.782Z"
+  },
+  {
+   "id": "aragami-2-138031@major-2022-05-05",
+   "gameId": "aragami-2-138031",
+   "displayName": "Difficulty Update - Beta",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-05T14:07:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll soon be releasing the new difficulty modes for Aragami 2! But before doing so, we’d like to know your input on this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For that, we’ve enabled a public beta branch to everyone that will let us test some fixes and gather your feedback about the new changes in the game before they are officially introduced in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "If you opt to play the beta and would like to give us valuable feedback, please fill in this questionnaire, it should take only a couple of minutes",
+     "items": [
+      {
+       "text": "Aragami 2 Difficulty update feedback questionnaire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To access the beta branch please follow these instructions",
+     "items": [
+      {
+       "text": "● Right click on ARAGAMI 2 on your Steam library (the list of games on the left).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "● Go to \"Properties\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "● Select \"Betas\" on the left menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "● Select the \"difficulty - Difficulty modes beta\" from the dropdown menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your game will then update in your Steam library and you’ll see “difficulty” next to the game’s name. You now have access to the beta branch and can launch the game with the new difficulty modes unlocked. The difficulty of a mission can be selected on the Mission Board before starting it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPORTANT INFORMATION",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any form of streaming, or videos by content creators, of difficulty modes are not permitted at this point as it is not a release build and is subject to change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Difficulty Update features the following",
+     "items": [
+      {
+       "text": "● Option to select a mission's Difficulty on the Mission Board (EASY, NORMAL and HARD).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● General tweaks (applied on all difficulties) of enemy parameters and behaviors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● The behavior of the aragami enemies has been revamped, and are now more present in the missions of the last third of the game, on NORMAL and HARD difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Max player level has been increased to 48.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● A medal counter has been added to the Mission Board, as well as a rune reward for each type, if 25 medals are collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "These are some of the parameters that change with the difficulty:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Time the enemies need to detect the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Distance at which the enemies detect some player actions (e.g. player killing an enemy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Distance at which the enemies detect events in their environment (e.g. corpse on the ground).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Enemies' aggressiveness in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Player's strength in combat (only in Easy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "● Experience obtained at the end of a mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Play any missions you want, to your heart's content, and tell us what you think. Preferably, select missions with different objectives and enemies throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Collecting your feedback from this test branch is important for us so we can look into potential bugs and issues, and changing difficulty balance if needed upon the release build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 15,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4348799082190396967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-05T14:07:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.554Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:09.781Z"
+  },
+  {
+   "id": "aragami-2-138031@major-2022-03-17",
+   "gameId": "aragami-2-138031",
+   "displayName": "Classic Mode Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-17T16:29:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been 6 months since the release of Aragami 2, and we’re so grateful for the support you’ve been giving us throughout this time. Community feedback is so important to us, and we’ve listened to you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, we’re so excited to show you the latest update arriving today to Aragami 2: the Classic Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inspired by the mechanics that fans loved from the first game, classic mode will challenge players to stick to the shadows and plan their moves with extra caution. These are the main features that you’ll find in the Classic Mode:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Free leaps to shadows around you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stamina levels are limited and recharge slower in bright areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Direct combat is now extremely challenging and will more likely be deadly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switch between normal and classic mode before starting missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Classic mode is available both for single-player and multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "See the Classic Mode overview here",
+     "items": [
+      {
+       "text": "Apart from that, we also added some new fixes to the game, including a fix for vegetation issues on AMD GPUs. Check the complete patch notes below:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Classic Mode is now available! The Classic Mode, inspired by Aragami (2016), applies a series of changes to the base mobility of the hero to offer an alternative game experience. To learn more, start a mission in Classic Mode at the Mission Board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Japanese localization to Steam and GOG.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a Tutorials section in the Status Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix vegetation on some AMD video cards. Tall grass visibility issues are now solved for those with certain AMD GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In some situations you could lose the progression after visiting the dyes shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Performance improvements on multiplayer sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Classic Mode is our biggest update yet, but we’re not done. We’re happy to announce that we’re working on another update coming Q2 2022: difficulty modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty modes will most likely be our last content update for Aragami 2, as we move on to new unannounced projects. Even so, we’ll continue to support Aragami 2 with fixes when necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for your support and feedback. We hope you enjoy the Classic Mode, whether you're a long-time fan of the Aragami series or a stealth enthusiast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lince Works team ♡",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4259848535828018451"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-17T16:29:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-17T16:29:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.553Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-17T16:29:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:01.482Z"
+  },
+  {
+   "id": "aragami-2-138031@1.0.29359.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.29359.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-01T15:03:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.0.29359.0 is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brings various improvements to the game and fixes, including improved combat experience in multiplayer sessions, as well as new advanced customization options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Added new Customization Options! You can now customize a secondary color and a detail color for each of your equipment parts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Steam Deck compatibility with Dynamic Cloud Sync.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can now skip cutscenes in multiplayer sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added DualSense™ haptic features for the PS5™ controller on PlayStation®5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Added Loadouts to save specific combinations of Equipment, Runes and Dye.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "On PC, added keyboard shortcuts for the Power and Item Wheel using the numeric keys.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Online Tab in the Status Menu will now show your current Server Region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixes to various Shadow Powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Camera Collision algorithm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a T-Pose bug that could happen at the start of a mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Controller vibration settings now enable you to adjust vibration intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved combat experience in multiplayer sessions. Latency problems when playing as the client in MP sessions have now been solved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 1,
+    "topNew": [
+     "You can now skip cutscenes in multiplayer sessions.",
+     "Added DualSense™ haptic features for the PS5™ controller on PlayStation®5.",
+     "Added Loadouts to save specific combinations of Equipment, Runes and Dye."
+    ]
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4246335832526616513"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-01T15:03:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-01T15:03:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.552Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-01T15:03:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:01.481Z"
+  },
+  {
+   "id": "aragami-2-138031@1.0.28649.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.28649.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-17T16:36:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New update incoming! This is the second major update released for Aragami 2 since launch, and fixes some of the issues reported since the last patch and includes changes and new content, like the brand new Photo Mode! See the full patch notes below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Added Photo Mode! You can now take screenshots both in single player or while playing online, and apply special camera effects to capture ninja action in all its splendor. You will find the Photo Mode in the Status Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Credits button in Status Screen. Now you can see the full list of people who brought Aragami 2 to live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Hungarian language support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Multiple mission scripting fixes affecting M20 (cutscene killing all NPCS), M23, M33, M46, M47 among other missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy facial animations when dying not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player input stopped working when a tutorial message appears while power wheel is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some texts were not visible in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Control mapping issues on PC platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various fixes to cutscene visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Rune descriptions for some rune effects are now easier to understand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added separate keyboard and mouse mapping options to control mapper.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Who knew you could get fashion advice from the dead? The legendary Peach Dye is now unlockable when visiting the \"ancestors\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "New: Added Region Selector to Server Browser. You can now create and join public games in regions different than your own. This enables crossplatform online play with players from different world regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added button to set your online session as public or private. Useful when you want to create public 2 player games by letting only 1 person join your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix: Multiple Multiplayer fixes and performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Change: A popup now appears when you receive an invitation but you are already in an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That is all for now! We'll keep working on future patches with more fixes and content, hence, we recommend that you follow us on Twitter and join our Discord server so you’re up to date about the progress being made on Aragami 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/5320438099040050824"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-17T16:36:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-17T16:36:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.552Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-17T16:36:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:01.481Z"
+  },
+  {
+   "id": "aragami-2-138031@1.0.28069.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.28069.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-06T20:05:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Aragami fans and players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we'd like to thank you for your patience and understanding during the last couple of weeks as we worked hard on fixing all the bugs and issues you've been reporting since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is the first big update the game will receive and will fix most of the issues you’ve been reporting lately, but we’re not done yet. We are committed to keep working on fixing bugs and crashes to make sure you enjoy the game regardless of the platform you're playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Players can now pause the game when playing single player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game now enters slow motion when opening the Ability / Item Wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new tutorials to introduce enemy types and special objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added keybard mapping screen on PC platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added setting to disable automatic target lock when attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added setting to automatically target a parried character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added setting to toggle Slow Motion when using the power wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added setting to disable HUD for Available Actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added player noise visual feedback to enemy awareness HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added idle player animations for blacksmith and dye shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some current mission info in Status Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Medals that can't be obtained due to mission clauses or special objectives will not be shown in mission results or in the mission board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player is now able to review the Ability Tree from the Status Screen (Pause Menu).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added button and key shortcuts to swap to next/previous item/power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added counter for hostiles killed and player detections in Status Screen (Pause Menu).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Vertical Sync setting in consoles to remove Screen Tearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Player stuck in vault loop when vaulting just after grabbing a body.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Parry failing to trigger while staggered or blocking enemy attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies block shurikens / kunais even when unaware of the player position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player can throw corpses through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unconscious enemies dying when being dropped to the floor from low heights while grabbed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player can glitch through player house early in the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy fire area attacks hitbox hitting players jumping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Target Lock targetting enemies very far away from the character and/or failing to target close enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Assassination targets and special objectives affecting player detection events, making it impossible to obtain certain medals like no kills / no detections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player stuck in a fall pose when performing an aerial elimination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Healing VFX shouldn't trigger when at full health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player clipping through the floor/wall when vaulting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shadow Leap to Walkable Rope sometimes hard locked the player to that rope trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Solved online multiplayer invitations failing and lobby discovery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player could get stuck on top of a rope trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hard Landing would sometimes teleport the player to another position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Citizens and Slaves were spawning in T-Pose.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player could use Shadow Powers and items on Akai and Nobu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various minor multiplayer fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple mission scripting fixes affecting M00, M03, M18, M22, M23, M24, M40, M51 among other missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to cutscene visual fidelity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed constant wind affecting player cloth in Kakurega Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While carrying a body and on top of other bodies, interactions can become unavailable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Combat Jump behaviour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sync issues with combat music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sync issues when grabbing enemy bodies, and bodies getting stuck suspended in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple fixes in Fire Capital location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple fixes in Mine location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple fixes in Fire Palace location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scene blinking for a single frame after custscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues with mouse sensitivity setting not being saved.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mission 40 scripting issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues with loot spawners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player could carry a corpse through a wall in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with clients not being properly reset after cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer T-Pose fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Momentum upgrade not working in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Final battle desync issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues with Dark Flame not working properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Final encounter combat takedown animation glitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Functional fixes in Kakurega Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chameleon ability delay inconsistency with upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor improvements to cinematics and some dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Knocked out enemies dying when dropped to the floor from low height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Button prompts disappearing on some specific situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Momentum could kill civilians.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mission 20 scripting issues with cinematic actor spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Floating Essence Crystals in Mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player doing a climb animation when falling on a steep floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues with stealth covers (grass) in Mountain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player freezing when knocking out an enemy while an eavesdrop action is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shade ability not working for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Torchbearer spirit link lines not visible in Shadow Vision for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Stamina and Vitality are now infinite in Kakurega Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes to Enemy Citizen Animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased enemy peripheral vision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed body inverse kinematics in player dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated outdated Tutorial videos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mesmerize can now be used in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes to interaction system so that items can be interacted even if they end up out of view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Momentum will now trigger on alerted enemies if they are in range of the original target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalance of enemy hearing in relation to player movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scorcher fireballs have now more movement attraction toward players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added facial animations to various cinematics and enemy animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebalanced final encounter to provide a more suitable challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changes to score event management to try and solve remaining issues with enemies killed calculations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer fixes",
+     "items": [
+      {
+       "text": "Solved online multiplayer invitations failing and lobby discovery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various minor multiplayer fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sync issues with combat music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sync issues when grabbing enemy bodies, and bodies getting stuck suspended in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with clients not being properly reset after cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer T-Pose fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Momentum upgrade not working in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Final battle desync issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shade ability not working for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Torchbearer spirit link lines not visible in Shadow Vision for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 62,
+    "balance": 2,
+    "other": 14,
+    "ps5": 0,
+    "topNew": [
+     "Players can now pause the game when playing single player.",
+     "Game now enters slow motion when opening the Ability / Item Wheel.",
+     "Added new tutorials to introduce enemy types and special objectives."
+    ]
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4069556867201689677"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-06T20:05:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-06T20:05:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.551Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-06T20:05:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:01.480Z"
+  },
+  {
+   "id": "aragami-2-138031@1.0.28045.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.28045.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-28T19:38:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is available in the beta branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes: 1.0.28045.0 Beta",
+     "items": [
+      {
+       "text": "New: Added counter for hostiles killed and player detections in Status Screen (Pause Menu).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix: Player could carry a corpse through a wall in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Issues with Dark Flame not working properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Final encounter combat takedown animation glitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Functional fixes in Kakurega Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Chameleon ability delay inconsistency with upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Minor improvements to cinematics and some dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Knocked out enemies dying when dropped to the floor from low height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Button prompts disappearing on some specific situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Momentum could kill civilians.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Mission 20 scripting issues with cinematic actor spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Floating Essence Crystals in Mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player doing a climb animation when falling on a steep floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Issues with stealth covers (grass) in Mountain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player freezing when knocking out an enemy while an eavesdrop action is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Photon Bolt Multiplayer backend updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Final battle desync issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Shade ability not working for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Torchbearer spirit link lines not visible in Shadow Vision for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Various smaller fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Change: Small tweaks to final Mission to rebalance difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These changes along with other updates in the Beta branch will be available in the Default branch at the end of the week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lince Works",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 19,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/3936699406889056305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-28T19:38:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:09.776Z"
+  },
+  {
+   "id": "aragami-2-138031@1.0.27899.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.27899.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-22T20:36:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is available in the beta branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes: 1.0.27899.0 Beta",
+     "items": [
+      {
+       "text": "New: Added counter for hostiles killed and player detections in Status Screen (Pause Menu).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix: Shadow Leap to Walkable Rope sometimes hard locked the player to that rope trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Multiple fixes in Fire Capital location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Multiple fixes in Mine location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Multiple fixes in Fire Palace location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Scene blinking for a single frame after custscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Issues with mouse sensitivity setting not being saved.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix: Mission 40 scripting issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Issues with loot spawners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Issues with control mapping tool related to Power Wheel and remapping modifier keys like Control or Alt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Photon Bolt dll update to fix Online Matchmaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Issue with clients not being properly reset after cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Multiplayer T-Pose fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Momentum upgrade not working in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Change: Added facial animations to various cinematics and enemy animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Changes to score event management to try and solve remaining issues with enemies killed calculations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Rebalanced final encounter to provide a more suitable challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/3936699406867360104"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-22T20:36:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.549Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:09.760Z"
+  },
+  {
+   "id": "aragami-2-138031@1.0.27605.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.27605.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-22T15:23:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick hotfix to solve a global server shutdown affecting games using the Photon Bolt multiplayer backend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotfix will roll out on all platforms in the next hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new build in the beta branch will be uploaded in the next hours too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes: 1.0.27605.0 Hotfix",
+     "items": [
+      {
+       "text": "Fix: Updated Photon Bolt dll to fix global server shutdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/3936699406866568215"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-22T15:23:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-22T15:23:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.548Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-22T15:23:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:01.478Z"
+  },
+  {
+   "id": "aragami-2-138031@1.0.27808.0",
+   "gameId": "aragami-2-138031",
+   "displayName": "Patch 1.0.27808.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-21T16:11:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we'd like to thank you all for your incredible support since the launch of Aragami 2, we hope you're enjoying the game so far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been receiving a lot of feedback regarding bugs and issues and we've been working hard for the last days to be able to adress them asap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is now a public beta branch available to everyone that will let us test bug fixes and new changes in the game before they are officially introduced in upcoming updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is the first step in our compromise to bring you the best game experience possible. We'll keep working in order to deliver on that promise, and in the meantime you can keep reporting bugs and issues through our Discord server at discord.gg/aragami and let us know if you find any issues in this beta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To access the beta branch please follow these instructions",
+     "items": [
+      {
+       "text": "● Right click on ARAGAMI 2 on your Steam library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "● Go to \"Properties\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "● Select \"Betas\" on the left menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "● Select the \"public beta branch\" from the dropdown menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now have access to the beta branch and can launch the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes: 1.0.27808.0 Beta",
+     "items": [
+      {
+       "text": "New: Players can now pause the game when playing single player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Game now enters slow motion when opening the Ability / Item Wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added new tutorials to introduce enemy types and special objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added keyboard mapping screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New: Added setting to disable automatic target lock when attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added setting to automatically target a parried character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added setting to toggle Slow Motion when using the power wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added Setting to disable HUD for Available Actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added player noise visual feedback to enemy awareness HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added idle player animations for blacksmith and dye shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added some current mission info in Status Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Medals that can't be obtained due to mission clauses or special objectives will not be shown in mission results or in the mission board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Player is now able to review the Ability Tree from the Status Screen (Pause Menu).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Added button and key shortcuts to swap to next/previous item/power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix: Player stuck in vault loop when vaulting just after grabbing a body.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Parry failing to trigger while staggered or blocking enemy attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Enemies block shurikens / kunais even when unaware of the player position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player can throw corpses through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Unconscious enemies dying when being dropped to the floor from low heights while grabbed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player can glitch through player house early in the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Enemy fire area attacks hitbox hitting players jumping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Target Lock targetting enemies very far away from the character and/or failing to target close enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Assassination targets and special objectives affecting player detection events, making it impossible to obtain certain medals like no kills / no detections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player stuck in a fall pose when performing an aerial elimination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Healing VFX shouldn't trigger when at full health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player clipping through the floor/wall when vaulting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player could get stuck on top of a rope trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Hard Landing would sometimes teleport the player to another position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Citizens and Slaves were spawning in T-Pose.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Player could use Shadow Powers and items on Akai and Nobu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Multiple multiplayer fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Multiple mission scripting fixes affecting M00, M03, M18, M22, M23, M40, M51 among other missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Improvements to cutscene visual fidelity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Removed constant wind affecting player cloth in Kakurega Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: While carrying a body and on top of other bodies, interactions can become unavailable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Improved Combat Jump behaviour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Sync issues with combat music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Sync issues when grabbing enemy bodies, and bodies getting stuck suspended in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Change: Stamina and Vitality are now infinite in Kakurega Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Changes to Enemy Citizen Animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Increased enemy peripheral vision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Removed body inverse kinematics in player dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Updated outdated Tutorial videos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Mesmerize can now be used in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Changes to interaction system so that items can be interacted even if they end up out of view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Momentum will now trigger on alerted enemies if they are in range of the original target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Rebalance of enemy hearing in relation to player movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Scorcher fireballs have now more movement attraction toward players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's all for now! We'll keep you updated on future patches and hotfixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lince Works team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 24,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/5418383147754134445"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-21T16:11:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:09.759Z"
+  },
+  {
+   "id": "aragami-2-138031@major-2021-03-09",
+   "gameId": "aragami-2-138031",
+   "displayName": "Aragami 2 Launch Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-03-09T18:07:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have important news about the launch of Aragami 2, scheduled for early 2021. As you may have noticed, “early 2021” is coming to an end ...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right now the game is finished and playable from start to finish, but there is still a lot of work to do. This mainly includes bug fixing and polishing, especially in its version for new generation consoles. Aragami 2 is a much more ambitious game than its predecessor and that is why we are working hard to bring you the best gaming experience possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For that reason we have decided to move the release of Aragami 2 to Q3 2021.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will keep you updated on any other major development changes, as well as the final release date as soon as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, remember you can add Aragami 2 to your wishlist - that helps us a lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lince Works Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1158370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1158370/view/4057152305731548228"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-03-09T18:07:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1158370",
+      "checkedAt": "2026-11-13T03:14:56.547Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:09.756Z"
+  }
+ ],
+ "issues": []
+}

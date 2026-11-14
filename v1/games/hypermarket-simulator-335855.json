@@ -1,0 +1,6257 @@
+{
+ "game": {
+  "id": "hypermarket-simulator-335855",
+  "igdbId": 335855,
+  "name": "Hypermarket Simulator",
+  "cover": {
+   "imageId": "co9un4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9un4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3d3c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3d3c.jpg"
+  },
+  "ps5Release": "2025-03-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hypermarket-simulator-335855@0.2.75",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 0.2.75",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-17T15:22:27.000Z",
+   "notes": [
+    {
+     "title": "Hypermarket Simulator — Patch v0.2.75",
+     "items": [
+      {
+       "text": "[p align=\"start\"]October 17, 2026",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• Placement preview: When carrying a box, see where products will go on shelves, clothing rails and produce stands, and where boxes will fit on storage racks. The crosshair turns green when placement is possible and red when the spot is full, reserved or unsuitable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]• Graphics quality presets: Choose Low, Medium or High. On first launch, the game selects a preset based on your graphics card’s memory. Texture memory stays well below the preset’s target to help reduce stuttering. Your chosen quality level is remembered across updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improvements and Fixes",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• Max Staff Per Shelf now keeps your chosen value instead of reverting to 2. You can change it from the main menu. This setting is shared across all save slots; when you first load an older save, its value becomes the setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Changing graphics quality no longer resets V-Sync or your frame-rate limit. Unapplied graphics changes are discarded when you close the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Improved Steam Cloud saving and quitting. Cloud saves are now more reliable, and saving issues are less likely to prevent the game from closing.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]• An unreadable save slot no longer prevents you from starting a new game. New Game offers an empty slot and leaves the unreadable save untouched. Save problems in the main menu are now shown on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Fixed saves that incorrectly showed “No Fridge” or “No Freezer” and prevented refrigerated or frozen products from being sold, even when the store already had the required appliances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Staff no longer repeatedly pick up and put down the same empty or spoiled box when a trash bin can’t be reached. Blocked bins are skipped for a while, and boxes that can’t be discarded are taken to outdoor drop spots and spread between them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Staff no longer stack boxes into towers. Boxes are placed on nearby reachable floor space, never on top of other boxes, behind walls or over balcony edges. Unloading a stock cart no longer leaves boxes stuck in shelves or walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Customers who can’t reach a shelf, checkout or exit no longer wait forever. After about a minute, they give up on that trip, step out of blocked checkout queues so others can move forward, or leave the shop if they get stuck again. Customers interrupted while paying at a self-checkout no longer remain stuck in a paying state. These fixes ensure the day can always end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Fixed crash issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Moving objects no longer causes slowdowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Fluorescent ceiling lights, escalator rim lights and factory lamps glow again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Refreshed the store’s interior lighting. Lighting was re-baked, the floor and several interior surfaces now use the store’s light probes, the interior walls are brighter and the ceiling is slightly darker. Reflections were updated, and the overall image is a little brighter and more saturated. The store sign now has a glossy blue background with light-colored lettering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Freezer display cabinets and beverage showcases now have a soft glow and a slightly glossier finish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Retuned the highlight on the item you’re looking at and fixed a Halloween pumpkin that always appeared highlighted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Picking up a product no longer flashes a red “more below” arrow beside the carried-items list. The arrow now appears only when you carry more product types than the list can show. Carried item counts are now green instead of red.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Folded clothing labels have their white backgrounds back and sit neatly on the fabric. Clothes removed from a rail now show the correct name and icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Halloween products now have their own names in every language. Books show the titles printed on their covers, and two books have new cover art.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Fixed the pet supplies category name in French, German, Italian, Dutch, Portuguese, Danish, Spanish and Swedish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Loading saves with many fruit and vegetable shelves now involves less repeated work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "👉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 20,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1846651706684802"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-17T15:22:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.256Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.650Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@0.2.73",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Update 0.2.73",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-29T16:38:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎃 Halloween Furniture Is Back!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Halloween furniture is back for you to decorate your store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Give your hypermarket a spooky makeover and get ready for Halloween. 👻🕸️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "👷 Employees & Storage",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• Improved employee box placement to reduce collisions when putting down carried boxes or unloading individual boxes from stock carts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Employees now prioritize pallets containing temperature-sensitive products and prefer suitable cold storage when available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Pallets placed on storage racks now correctly follow the rack’s cooling state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Employees also reconsider storage destinations when cooling conditions change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚚 Deliveries",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• New deliveries now keep full pallets of the same product together, mixing only leftover quantities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Delivery trucks loaded from older saves retain their previous packing arrangements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "💰 Pricing & Discounts",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• Price and discount edits now take effect only when confirmed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Closing the panel with Escape or Back keeps the previous settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Unconfirmed edits no longer affect customer interest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛍️ Customers",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• Improved customer escalator boarding to reduce unnecessary waiting near entrances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎯 Objectives",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• The “Order products” objective now completes as soon as a product purchase order is confirmed, without waiting for delivery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Fixed objective completion actions being triggered more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Fixes",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• Fixed a loading issue that could leave starting a new game stuck at 0%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Corrected issues when returning to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]• Fixed unintended audio muting when closing settings from the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🏆 Steam Achievements",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• Improved recovery of earned store-level achievements when loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]• Pending achievements are now retried when Steam becomes available.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]Thank you for playing Hypermarket Simulator and for all your feedback! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1844751498234856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T16:38:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.255Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T16:38:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.255Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-29T16:38:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.737Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@post-2026-08-01",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Bug fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-01T09:31:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please save your game, quit to the main menu (or close the game), and then load your save again. This will place the forklifts back on the floor correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also believe we’ve fixed the major lag issue. Please give it a try and let us know if you’re still experiencing any performance problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1839676055890364"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-01T09:31:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.254Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-01T09:31:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.254Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-01T09:31:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.736Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-07-29",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Major Warehouse & Delivery Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-29T19:26:16.000Z",
+   "notes": [
+    {
+     "title": "🚚 Major Warehouse & Delivery Update",
+     "items": [
+      {
+       "text": "[p align=\"start\"]This is one of our biggest update yet, completely redesigning the delivery and warehouse systems while adding smarter staff automation, new player tools, cloud saves, major optimizations and much more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📢 Important Information",
+     "items": [
+      {
+       "text": "💾 Auto-save has been removed. Don't forget to save your progress manually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⌨️ The pause menu is now opened with ESC instead of TAB.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Staff will no longer place boxes onto untagged storage racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚚 Brand-New Delivery Truck System",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Deliveries have been completely redesigned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🚚 Orders now arrive by delivery trucks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📦 Choose between Box and Pallet deliveries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🛒 Order mixed-product pallets or traditional box deliveries: it's entirely up to you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📍 Choose your preferred delivery dock (10 available).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🚛 Cargo becomes available only after the truck has fully parked and opened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🔄 New trucks can arrive to the same dock as soon as the previous truck starts leaving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "📦 Warehouse Improvements",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Managing inventory is now much more efficient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🚜 Forklifts, Stock Carts and Hand Trucks are now available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "👥 Both players and staff can use all warehouse equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "♻️ Leave empty pallets inside departing trucks for automatic disposal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📚 Stack pallets inside your warehouse for easier management.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🤖 Smarter Staff Automation",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Staff are now significantly more efficient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Staff can now",
+     "items": [
+      {
+       "text": "📦 Collect boxes from delivery pallets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Collect boxes from warehouse shelves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Collect boxes directly from other carts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚶 Pick up boxes directly from carts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛒 Use Stock Carts to transport multiple boxes at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚜 Operate forklifts to move pallets into storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚙️ Automatically use carts, forklifts and pallets after deliveries arrive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👤 Players always have priority over all equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "♻️ Collect empty pallets from warehouse racks, stack them together, and load them into departing trucks to dispose of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚫 Staff will no longer place boxes onto untagged storage racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📋 Ordering & Catalog Improvements",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Ordering products is now much clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Product cards now display placement icons for:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🗄️ Shelves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "❄️ Fridges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🧊 Freezers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🛒 Floor Displays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🚂 Rail Displays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Additionally",
+     "items": [
+      {
+       "text": "🪑 Furniture cards now show every compatible placement surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📦 Delivery boxes now clearly display",
+     "items": [
+      {
+       "text": "Contents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quantity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Placement destination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🖥️ New Player Tools",
+     "items": [
+      {
+       "text": "[p align=\"start\"]A brand-new expandable Toolbelt has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Supports",
+     "items": [
+      {
+       "text": "📱 Tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎨 Paint Roller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📡 Hand Scanner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Additional improvements",
+     "items": [
+      {
+       "text": "🛒 Manage your store anywhere using the Tablet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "✨ Completely rebuilt interaction prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🎮 Improved controller and keyboard icons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "⌨️ ESC now opens the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "📦 Better Box Physics",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Working with boxes feels much more natural.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Freely place boxes on valid floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📚 Stack boxes naturally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📐 Improved snapping for cleaner stacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚖️ Better physics when removing boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎯 Fixed loose products colliding with invisible objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "💾 Save & Load",
+     "items": [
+      {
+       "text": "💾 Multiple Save Slots added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "☁️ Steam Cloud Save support added.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "⚠️ Auto-save removed (remember to save manually).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚡ Performance & Stability",
+     "items": [
+      {
+       "text": "[p align=\"start\"]A huge optimization pass has been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🚀 Major optimization across multiple gameplay systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🧠 Reduced memory allocations to minimize micro-stuttering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixed numerous rare issues involving",
+     "items": [
+      {
+       "text": "Stuck customers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stuck staff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Delivery targeting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vehicle instability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🌅 Improved HDRI day/night transitions for a smoother atmosphere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you all for your incredible support! We hope you enjoy this major update, and as always, we'll continue improving Hypermarket Simulator based on your feedback. ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS: We'd like to apologize for the delay. Due to an unexpected personal reason, we weren't able to release this update as planned. Everything is okay now, and we're happy to finally bring it to you today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 23,
+    "fixed": 11,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0,
+    "topNew": [
+     "[p align=\"start\"]Deliveries have been completely redesigned.",
+     "🚚 Orders now arrive by delivery trucks.",
+     "📦 Choose between Box and Pallet deliveries."
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1839676055883389"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-29T19:26:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-29T19:26:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.254Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-29T19:26:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.736Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@2",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-26T12:05:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Warehouse Update 2 will be released tonight!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]This is one of our biggest updates so far, introducing a completely new delivery system that changes how you order and receive products.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]What's new?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚚 Brand-new delivery system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Products are now delivered by truck instead of instantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛒 New Orders menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Choose between box and pallet deliveries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📍 Select your preferred delivery dock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏬 Store Front (A) and Warehouse (B) delivery docks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📱 New Tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛒 New Stock Carts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚜 New Forklift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "☁️ Steam Cloud Save support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "💾 Multiple save slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Bug fixes, performance improvements, and quality-of-life enhancements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✨ And much more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Thank you all for your incredible support. We can't wait for you to try the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]See you tonight!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To better understand how the new delivery system works, be sure to watch this video:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://youtu.be/n1xJOTUpJSo\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1839041357033661"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-26T12:05:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-26T12:05:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.253Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-26T12:05:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.735Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@post-2026-06-23",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Bug fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-23T14:48:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v00.02.042.012",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed customer checkout product placement delays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed font issues affecting aisle signs and store title text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where the Wall-Mounted Kitchen Cabinet could be placed on the floor instead of on walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed escalator carrying behavior where carried objects could lag behind the player while moving between floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed navigation issues causing staff to struggle when moving between the new Warehouse Racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed aisle sign text rendering so custom labels update instantly and display correctly in all supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed the color picker so players can select the intended color directly from the main palette without needing additional slider adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where the outdoor store sign font unlock text could display placeholder values such as \"XX Fonts\" and prevent newly unlocked fonts from appearing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue that could cause the day counter to skip after starting a new day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue causing the sky to appear unnaturally dark in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed excessive material shine on vehicles parked in the parking lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved reliability of object placement on escalators by better detecting valid placement surfaces and hiding placement-only helper objects when placement is not possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved staff reliability when using escalators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added clearer numbering for Warehouse Racks and shelves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Warehouse rack tags and shelf labels now use a numbering system, making storage areas easier to identify, organize, and manage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Staff now react faster to newly delivered boxes, reducing delays in warehouse operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved save/load handling for Design Panel Managers and Store Title font/material settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835871199315773"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T14:48:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.252Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T14:48:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.252Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-23T14:48:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.734Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@hotfix-2026-06-22",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Warehouse Hotfix & Improvements",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-22T14:36:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "22 June: v00.02.041.003",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the size of the Delivery Location Marker checker area so it more accurately shows where delivered boxes can be distributed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated Warehouse Racks so they can now store the largest box sizes as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the frosty/snow material on Warehouse Racks for a better visual appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where display item boxes could stack in one row on Warehouse Racks. Now you can add two row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that made AC units difficult to place on Warehouse walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a secret Computer Teleporter button for the ones who could not locate their in-game computer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45564029/445addaff45d47cedd7015437c3e8d6cb20cb03d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835871199313169"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-22T14:36:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.251Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-22T14:36:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.251Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-22T14:36:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.733Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@post-2026-06-21",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Bug fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-21T22:31:58.000Z",
+   "notes": [
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Prices can once again be set from both the computer and racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The cone and staff gathering point have been moved from the back of the store to the side of the building near the Warehouse entrance. (This only affects players who had these objects placed behind the store, where the new Warehouse area has now been added)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "👉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835871199311711"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-21T22:31:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.251Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-21T22:31:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.251Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-21T22:31:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.732Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-06-21",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Warehouse Update & Staff Improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-21T19:14:40.000Z",
+   "notes": [
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Improved performance in stores with very large numbers of products.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized staff and customer systems to reduce lag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Warehouse",
+     "items": [
+      {
+       "text": "Added the new Warehouse area and a New Warehouse Rack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 6 unlockable Warehouse expansions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the visuals of expansion cards on the computer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where players could not properly pass through the Warehouse entrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Staff Improvements",
+     "items": [
+      {
+       "text": "Staff are now smarter when restocking shelves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Staff will prioritize shelves with the most available space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved decision-making when restocking from the floor or from storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced situations where staff could become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When stocking with loose products, fresher items are now prioritized first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased maximum staff capacity from 31 (24 permanent + 7 daily) to 36 (26 permanent + 10 daily).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Storage & Shelves",
+     "items": [
+      {
+       "text": "Added 4 new shelf types. (Inner and Outer Corner Racks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Storage racks now correctly keep their frosty cooling-area appearance after briefly turning red while being moved near obstacles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Display items can now be placed on the floor correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Placement & Building",
+     "items": [
+      {
+       "text": "Increased the buildable area in front of the store by approximately 30%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Objects that cannot be placed no longer get stuck in place; they now continue moving while showing the red invalid-placement state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various placement restriction issues and incorrect placement warnings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Clothing & Product Fixes",
+     "items": [
+      {
+       "text": "Fixed a rail-clothing edge case where quickly picking up an item during the placement animation could leave an unfolded clothing object stuck inside a box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempted a fix for the POS terminal issue where product prices could occasionally fail to display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization & UI",
+     "items": [
+      {
+       "text": "Fixed several untranslated texts found on expansion cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "What's Next?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're already working on the next update, which will introduce truck deliveries, pallets, and a brand-new stock cart to make warehouse and stock management even more immersive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 5,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Staff are now smarter when restocking shelves.",
+     "Staff will prioritize shelves with the most available space.",
+     "Improved decision-making when restocking from the floor or from storage."
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835871199311520"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-21T19:14:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.250Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-21T19:14:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.250Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-21T19:14:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.732Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-06-13",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Inventory & Staff Movement Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-13T18:40:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Scanner Improvement – The hand scanner now shows extra information for display products: storage stock + loose item count, making inventory checks much easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooling Area Visual Feedback – Storage racks placed inside air-conditioned cooling zones now display a frost effect, making it easy to see which racks are cooled and where boxes are protected from spoilage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer Pathfinding Fix – Fixed an issue where customers could walk through Fruit & Vegetable Outer Corner Displays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Staff Movement Improvement – Staff now move across escalators faster based on their walking speed stat. Higher-ranked and better-trained employees will travel between floors more efficiently, making movement speed upgrades feel more impactful throughout the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835236783566429"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-13T18:40:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.250Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-13T18:40:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.250Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-13T18:40:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.731Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@post-2026-06-12",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Bug fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-12T11:47:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]A new patch is now live. It includes fixes for:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The in-game computer freeze issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Staff interaction problems with storage racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item count inaccuracies on the Hand Scanner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Thank you for your patience, and please let us know if you encounter any other issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835236783563204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T11:47:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.249Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T11:47:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.249Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-12T11:47:48.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T07:24:04.578Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.02.035.002",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.02.035.002",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-11T15:57:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v00.02.035.002 Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ">Boxes that became stuck on escalators should now be recovered after Saving and Reloading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ">Fixed an issue where the new tile area in the storage section was not being saved correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ">Added An Outer Corner Vegetable & Fruit Rack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835236783560890"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-11T15:57:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-11T15:57:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.248Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-11T15:57:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.532Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@post-2026-06-10",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Bug Fixes and Improvements",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-10T19:49:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v00.02.033",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a typo where Perry was incorrectly displayed instead of Pear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where boxes located under the escalators were not being moved when the store was first loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Time now only progresses after opening the store by flipping the Open/Closed sign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue preventing objects from being placed on parts of the upstairs back wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some mural placements were not working correctly on upstairs walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the visual alignment issue affecting the bottom banknote on the Manual Checkout Desk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the AC Unit coverage area. The cooling volume now extends further downward to better cover the upper floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made improvements to the Computer and Paint panels to reduce the chances of UI softlocks and navigation issues (please let us know if you still encounter problems)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1835236783558564"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T19:49:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T19:49:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.248Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-10T19:49:53.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T16:20:49.006Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-05-08",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Inventory & Pricing Update + Bug Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-08T12:22:34.000Z",
+   "notes": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added Shelf and Stock price information to Product Cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bulk ordering is now available from both the Computer and the Hand Scanner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now check product prices and manage discounts directly from the Products Order section on the Computer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The Computer and Hand Scanner now display both",
+     "items": [
+      {
+       "text": "the amount of products currently on shelves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the total amount of products not placed on shelves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Staff will no longer interact with boxes placed inside the Dump'NProfit Truck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed the level text and progress info numbers overlapping in the top-right bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed players getting stuck on Staff Gather Points and Delivery Location Markers after loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text distortion issues when moving racks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Added Shelf and Stock price information to Product Cards",
+     "Bulk ordering is now available from both the Computer and the Hand Scanner",
+     "You can now check product prices and manage discounts directly from the Products Order section on the Computer"
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1832065502814972"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T12:22:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.247Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T12:22:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.247Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-08T12:22:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:04.529Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-05-01",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Language Update & Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-01T13:00:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've added support for several new languages and improved localization!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arabic, Japanese, Chinese, Korean, and Russian are now supported",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed translation issues when assigning tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game now automatically detects and applies your system language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Also, a quick heads-up: the big update (featuring the second floor, fruits and vegetables, expanded storage, and more — as voted on Discord) is still on the way and progressing as planned. Stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉 https://discord.gg/yagvmMCnR7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1831432155571314"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T13:00:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.246Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T13:00:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.246Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-01T13:00:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.639Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.02.023.004",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Update 00.02.023.004",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-18T14:29:53.000Z",
+   "notes": [
+    {
+     "title": "Performance & Optimization",
+     "items": [
+      {
+       "text": "-Improved overall performance and RAM usage optimization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased the force applied when throwing boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "-Fixed localization issues in heatmap panels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where product names and discount labels in price tags would not update when changing the language during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where product names on boxes would not update when changing the language during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed oversized store-closed warning message overlapping with in-game computer UI elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the cash register continued displaying the change amount after the customer had already left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed localization issues in the checkout desk middle panel (Product, Unit, Unit Price, Price columns).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Added descriptions under icons on the left vertical panel of the in-game computer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the top middle panel always displayed \"Day\" regardless of selected language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed localization issues in computer dropdown menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed localization issues in employee card data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Also, don’t hesitate to tell us what you’d like to see next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1830163047262473"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-18T14:29:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.246Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-18T14:29:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.246Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-18T14:29:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.639Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-04-10",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "MAJOR UPDATE LIVE + Daily Deal at 7PM GMT+2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-10T16:24:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "✨ Update Overview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update, you now have much more control over how you run your supermarket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "No more asking questions like",
+     "items": [
+      {
+       "text": "• “Why isn’t this product selling?”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• “Why does restocking take so long?”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• “What price should I set?”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now have the tools and insights to make informed decisions and optimize every aspect of your store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take full control, analyze your performance, and build the most efficient and profitable supermarket possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🆕 Update v00.02.016.012 – Patch Notes 🎯",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Discount System Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "o You can now apply discounts to products to attract more customers and boost sales.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "o Discounted products are more likely to be purchased and can generate bonus earnings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "o Tip: Use discounts wisely, more sales doesn’t always mean more profit.!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Customer Attractiveness System",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "o A Customer Attractiveness bar has been added to the main UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "o Track how many additional customers your store can attract when using discounts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Bonus Customers & Earnings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "o Bonus customers and extra earnings are now calculated and displayed in the end screen statistics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Analytics Tab Added o A new analytics section is available on the in-game computer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "o Includes both 2D and 3D heatmaps with the following data",
+     "items": [
+      {
+       "text": "Customer Traffic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Staff Traffic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Units Sold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revenue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Profit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Abandoned Interest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restock Pressure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Queue Pressure: Use this data to redesign your store for better efficiency and higher profits.: • Staff Waiting Position: o You can now set where your staff waits (inside or outside the store).: 🛠️ Improvements: • Improved and updated price input UI with more options and better usability.: • Added keyboard support for setting product prices.: • Added categories to: o Furniture tab o Brand agreements: • Added Swedish localization.: 🪑 New Content: • Wall Murals (32): o Decorate your store with a variety of new wall designs.: • Cage-Type Stock Cart o Toss boxes over the top or push them through the wire mesh when close.: o Staff will not interact with boxes inside the cage.: 🐞 Fixes: • Fixed a camera issue during card payments.: • Fixed object flickering while moving. • Fixed other small bugs.: [p align=\"start\"]Join our Discord to report bugs, share suggestions, and ask questions!: [p align=\"start\"]Also, don’t hesitate to tell us what you’d like to see next, another big update is on the way!: https://discord.gg/yagvmMCnR7: [p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1829528821310653"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T16:24:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.245Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T16:24:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.245Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-10T16:24:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.638Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-03-11",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "🚀 Major Update Coming to Hypermarket Simulator – April 10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-11T16:09:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🚀 Major Update Coming to Hypermarket Simulator on April 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to announce that a major update for Hypermarket Simulator will be released on April 10!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]This update will introduce new gameplay features, improvements, and quality-of-life updates that expand the experience of running and managing your own hypermarket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]✨ The highlight of this update",
+     "items": [
+      {
+       "text": "A brand-new gameplay mechanic that adds a new layer of realism and fun to the game. We’re really excited for players to try it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Here’s a small preview of what’s coming",
+     "items": [
+      {
+       "text": "[p align=\"start\"]• 🆕 New gameplay features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 🧠 A brand-new gameplay mechanic that makes the experience more realistic and engaging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• ⚙️ Improvements to existing systems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 🎮 Quality-of-life updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• 🛠️ Various fixes and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• ✨ And more surprises to be revealed soon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We’ll share more details about the update as we get closer to release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]⭐ If you're interested, make sure to wishlist the game to be notified when the update goes live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Thank you for all the support and feedback, it helps us keep improving Hypermarket Simulator!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1826992588590473"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-11T16:09:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.244Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-11T16:09:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.244Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-11T16:09:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.635Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.02.015",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Update 00.02.015",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-20T16:09:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "January 20th, 2026 v00.02.015",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional tutorial information for better guidance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with Aisle Sign materials not updating correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a self-checkout bug where customers could get stuck and freeze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where staff could transport empty boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing information on the in-game computer interface Fixed certain issues that could cause crashes: [p align=\"start\"]Join our Discord to report bugs, share suggestions, and ask questions!: Also, don’t hesitate to tell us what you’d like to see next, another big update is on the way!: [p align=\"start\"]: https://discord.gg/yagvmMCnR7: [p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1821922921823708"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-20T16:09:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.244Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-20T16:09:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.244Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-20T16:09:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.634Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@post-2026-01-16",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Bug fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-16T20:52:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "January 16th, 2026 v00.02.014",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the maximum number of items purchased by customers back to 5 to reduce store crowding and make restocking more manageable.: We’re still experimenting and fine-tuning these values, so this is a temporary solution. We’re planning to add this as a difficulty option in the settings (Easy / Medium / Hard), allowing players to control how crowded the store gets. Don’t hesitate to share your thoughts and feedback!: -Adjusted the sizes of fridge and freezer products: all products should now fit correctly in fridges and freezers.: -Fixed an issue where mirrored auto-checkout positions were not being saved.: -Fixed an issue that was causing crashes.: -Fixed a problem where customers could freeze at self-checkouts.: [p align=\"start\"]Join our Discord to report bugs, share suggestions, and ask questions!: [p align=\"start\"]: https://discord.gg/yagvmMCnR7: [p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1821922921817051"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T20:52:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.243Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T20:52:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.243Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-16T20:52:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.634Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@post-2026-01-12",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Bug fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-12T19:41:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "January 12th, 2026 v00.02.012",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a pricing issue with the Four-Door Buffet Cabinet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Disabled the ability to order furniture using the hand scanner (As by the request of several players)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased the maximum number of permanent workers from 18 to 22",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an alignment issue on the Recruitment Board related to level requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an incorrect checkout amount during card payments when a staff member is operating the checkout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed incorrect pizza sizes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a strange overlapping visual issue where products appeared to clip into each other on certain racks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where customers were not buying display items -Fixed an issue that could freeze player movement during box placement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced the maximum number of products a customer can buy from 30 to 15 to reduce store crowding (Further improvements are planned)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1821288646586669"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-12T19:41:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.242Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-12T19:41:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.243Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-12T19:41:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.633Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2026-01-10",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "The Biggest Update Yet – New Systems, New Content, Faster Than Ever",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-10T18:06:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🔥 Our biggest update yet has arrived! 🔥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This massive content drop brings brand-new systems, hundreds of new products, deep customization options, major visual upgrades, and huge performance improvements across the entire game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Get ready for more control, more realism, and a much smoother experience than ever before 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Version: v00.02.011",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Release Date: January 10th, 2026",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Content",
+     "items": [
+      {
+       "text": "Added 32 new licenses, increasing the total from 70 → 102",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 200 new products, increasing the total from 346 → 546",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Introduced a brand-new product type: Display Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bakery products, frozen products, new gardening & home-style items, household items, furnitures and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 17 new furniture items, including bakery racks, new refrigerators, fridges, clothing racks, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added a new Sell Truck",
+     "items": [
+      {
+       "text": "Sell Furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sell Product Boxes (including products inside)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Buyback percentage changes daily",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added customizable aisle signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added credit card terminal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added hand scanner support for ordering",
+     "items": [
+      {
+       "text": "Display Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added interior wall and ceiling painting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added floor reflections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added staff hair customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a ladder to access the roof from the back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Products can now be placed outside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Gameplay & Systems",
+     "items": [
+      {
+       "text": "Increased manual checkout desk queue limit from 10 → 18",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Customer maximum purchased product count now scales with",
+     "items": [
+      {
+       "text": "Player level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Number of products in the store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Customers can now buy between 1 and 30 products)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fence doors are now semi-transparent and allow one-way passage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added flip furniture feature for",
+     "items": [
+      {
+       "text": "Doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added 4 video quality presets based on VRAM",
+     "items": [
+      {
+       "text": "Low (2GB)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Medium",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "High",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ultra",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Load times reduced by up to 50% in complex scenes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FPS improved by up to 50%",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Note: Installation size increased significantly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎧 Audio & Localization",
+     "items": [
+      {
+       "text": "Added German and French voice localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Localized job descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed multiple paint-related sound issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🖼️ Graphics & Visuals",
+     "items": [
+      {
+       "text": "Improved interior lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a plane flying across the sky from time to time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes & Improvements",
+     "items": [
+      {
+       "text": "Fixed a gamepad controller bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple packing and tagging issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect tag on placeable doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved Jemz Rice Pudding and Winters Wheel of Wrath to their correct categories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several gameplay bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 23,
+    "fixed": 7,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "Added 32 new licenses, increasing the total from 70 → 102",
+     "Added 200 new products, increasing the total from 346 → 546",
+     "Introduced a brand-new product type: Display Items"
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1821288646583152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-10T18:06:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.242Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-10T18:06:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.242Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-10T18:06:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.632Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.02.010",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Update 00.02.010",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-29T18:58:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v00.02.010",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "•⁠ ⁠Added the three custom products for the Halloween contest winners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "•⁠ ⁠Fixed some translation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "•⁠ ⁠Added localization support for the hand scanner text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "•⁠ ⁠Added localization support for shelf price tags",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1817483467041838"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T18:58:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.241Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T18:58:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.241Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-29T18:58:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.631Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-11-15",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Christmas Update – New Racks, Products & Floor Materials",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-15T12:00:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "📅 November 15th, 2025 – Patch v00.02.008",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Hello Shopkeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎄 New Furnitures",
+     "items": [
+      {
+       "text": "A few new racks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Christmas-themed furnitures & products",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a toolbox desk (To customize your floor)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🧱 Floor Customization",
+     "items": [
+      {
+       "text": "Added 66 new floor materials to give your store the perfect look",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🎁 New Brand Agreements",
+     "items": [
+      {
+       "text": "2 new Christmas-themed brand licenses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Includes 12 brand-new seasonal products",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes & Improvements",
+     "items": [
+      {
+       "text": "Fixed multiple resolution issues on different screen sizes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with transparent boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "A few new racks",
+     "New Christmas-themed furnitures & products",
+     "Added a toolbox desk (To customize your floor)"
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1816307528966254"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-15T12:00:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.240Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-15T12:00:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.240Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-15T12:00:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.630Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@01.00.02.06",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 01.00.02.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-10T22:48:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Shopkeepers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today’s update is a small but important one focused on performance and visual stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Performance & Loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized box loading time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved overall performance in stores with a large number of boxes and products.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced small stutters and hitches when loading items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Draw Distance Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shelves, boxes and other store props should now render correctly at proper distances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]If you notice any remaining issues (lag spikes, etc.), please let us know on Steam discussions or Discord. Your feedback really helps us improve the game. 🥐💛",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1815580768404891"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-10T22:48:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.240Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-10T22:48:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.240Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-10T22:48:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.615Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@01.00.02.04",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Update 01.00.02.04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-06T13:53:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "November 6th, 2025 – Patch v01.00.02.03",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the Store Naming feature: you can now name your store! (78 different fonts & 27 animated backgrounds)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a confirmation pop-up when firing staff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Staff called via the microphone now gather within a smaller radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plant and lamp products adjusted: boxes now contain more items, and more can be placed on floor display racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a UI display issue that occurred on certain screen ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Important Notice: To apply the new plant and lamp size update, please load your save → save it → quit → and reload it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1815580768262386"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-06T13:53:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.239Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-06T13:53:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.239Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-06T13:53:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.615Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@01.00.02.03",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 01.00.02.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-26T15:26:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "October 26, 2025 – Patch v01.00.02.03",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Thanks to your reports, we’ve addressed several issues to improve the gameplay experience:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]• Fixed an issue where gardening products (and some other products) were showing a box quantity of 10, but fewer items were actually received upon purchase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a bug where players could earn too much money at the cash register.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Implemented a potential fix for the cashier bug where the animation continued but the cashier stopped scanning items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the “BigItemOrderPlaceholder” text appearing on the middle screen of the Manual Checkout Desk when scanning large items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed an issue where payments made in exact $50 increments were causing problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a bug where, if the player took the money during the cashier’s transaction, the cashier could no longer collect the payment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1814309641541118"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-26T15:26:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.238Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-26T15:26:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.239Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-26T15:26:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.614Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.02.002",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.02.002",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-24T16:49:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch v00.02.002 is live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update brings new products to your hypermarket along with important quality-of-life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🛒 New Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added 27 new products, including 5 new licenses (Total: 327 products now!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🖥️ UI & Display Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed several resolution issues, especially for 21:9 and even 32:9 ultrawide monitors",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Halloween products are now sorted by their level requirement (no longer pushed to the bottom of the list)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Secondary Category panel text enlarged for improved readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🎮 Gamepad Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed an issue where certain main categories were unselectable when using a gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Enjoy the update and let us know your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1814309641479212"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-24T16:49:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.238Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-24T16:49:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.238Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-24T16:49:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.613Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-10-20",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Manual Checkout Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-20T13:10:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🛒 Patch v00.60.099 – Manual Checkout Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Manual Checkout Desk now features a working conveyor belt and products are automatically placed into a shopping bag during checkout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Large items now appear as a small box (document) at the cash register for a cleaner look.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where a brief “0” appeared during the checkout process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted cashier hand position for a more natural animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a VSync option in the settings for smoother gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enjoy the update and keep your feedback coming! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1813674389067920"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-20T13:10:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-20T13:10:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.237Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-20T13:10:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.613Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-10-18",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Cashier Update – New Training & Manual Checkout Features",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-18T08:32:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "💼 The Cashier Update is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your staff just got a major upgrade! This update introduces brand-new Cashier Training and Checkout Speed Training, letting your team become faster and more efficient at the registers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What’s new",
+     "items": [
+      {
+       "text": "• 🧾 Added new training types: Cashier Training and Checkout Speed Training",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 👩‍💼 Permanent staff can now operate Manual Checkout Desks (requires Cashier Rank 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 📦 Manual Checkout Desks can now be packed back into boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 🛒 Manual Checkout Desks are now available for purchase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• ⏱️ Staff with active training tasks now display the remaining training time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 🧰 Fixed the issue where a mysterious box appeared when clicking on a staff member for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "• 🧾 Added new training types: Cashier Training and Checkout Speed Training",
+     "• 👩‍💼 Permanent staff can now operate Manual Checkout Desks (requires Cashier Rank 3)",
+     "• 📦 Manual Checkout Desks can now be packed back into boxes"
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1813674388997665"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-18T08:32:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-18T08:32:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.237Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-18T08:32:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.612Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-10-15",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Shopping Bags & Spooky Sweaters Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-15T18:20:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch v00.60.096 & Patch v00.60.097",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛒 Added shopping bags, baskets, and trolleys to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎃 Fixed the box quantities for Scary Pumpkins Sweater, Skull and Raven Sweater, and Spooky Hoodie v1, v2, v3 they will now correctly display 10 units per box on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1813674388912471"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-15T18:20:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-15T18:20:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.236Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-15T18:20:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.611Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.60.094",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.60.094",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-13T11:46:58.000Z",
+   "notes": [
+    {
+     "title": "Patch v00.60.094",
+     "items": [
+      {
+       "text": "🧺 Only one staff member can now target each shelf at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🍫 Fixed the Nutty Choco Spread icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]👕 Resolved performance issues related to the new clothing items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🎮 Fixed the throw action (L1) when using a gamepad on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]💻 Improved input display: when a controller is connected on PC, the game will now automatically show the correct controller icons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1813041031335484"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-13T11:46:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-13T11:46:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.236Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-13T11:46:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.611Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.60.93",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.60.93",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-12T11:59:05.000Z",
+   "notes": [
+    {
+     "title": "12 October 2025 - Patch v00.60.093",
+     "items": [
+      {
+       "text": "Fixed an issue where the Employee Recruitment Board was not updating properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Refixed the Witch Hat problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a safeguard to prevent the mic desk from being repeatedly selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Staff now look for tasks more slowly while in the waiting state; once they start working, their normal speed is restored. (to increase performance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Staff can now sit down during training.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Box Carrying task couldn’t be assigned, it can now be assigned properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Products > XXXX” and “Boxes > XXXX” appearing as the same task in the list issue solved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved: Task names changing after saving (e.g. “Category 2000 - Sub 2006”).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pathing problem between fences etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1813041031303445"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-12T11:59:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-12T11:59:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.235Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-12T11:59:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.610Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.60.91",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.60.91",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-10T19:23:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch v00.60.91 & v00.60.92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🧙‍♀️ Fixed products (like the Witch Hat) that were causing lag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👥 Fixed a Staff UI issue where you couldn’t close the menu after maxing out a staff rank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👕 Adjusted the colors of folded T-shirts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💻 Corrected an issue with the computer UI, where some cards couldn’t be selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🐦 Improved performance of the birds flying outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📋 Fixed the \"unparsed\" issue when assigning a job under a category to staff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎤 Added info text to the microphone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💰 An alert is now shown 3 days before staff wage payments, so you’ll know when payment is due. If you don’t have enough funds, you may lose your staff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1813041031250106"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T19:23:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T19:23:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.235Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-10T19:23:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.609Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-10-10",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Staff Management & Halloween Update 🎃",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-10T17:54:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is one of our biggest updates yet!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👥 Staff Management & Training",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Your staff just got a serious upgrade. Now you can",
+     "items": [
+      {
+       "text": "· Train employees to improve their movement speed and stocking speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Give them breaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Assign job priorities (e.g., always stock dog houses first, then freezer products, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Hire daily workers or permanent staff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fire them if things don’t work out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Call staff to your office using the microphone and assign jobs directly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Decide how they address you: “Sir,” “Madam,” “My King,” … and more 👑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎃 Halloween Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get ready to spook up your supermarket with a massive set of Halloween-themed products and furniture. Creepy décor, festive items, and seasonal surprises await, transform your hypermarket into the ultimate haunted shopping destination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to see how you’ll train your staff and decorate your store for Halloween.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1813041031247843"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T17:54:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.234Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T17:54:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.234Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-10T17:54:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.609Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-10-07",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Staff Management Update + Halloween Licenses Out October 8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-07T20:47:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "👋 Hello Managers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to announce that the Staff Management & Training Update and the brand-new Halloween Licenses will be released on October 8! 🎃",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s what’s coming",
+     "items": [
+      {
+       "text": "📋 Staff Management: Hire permanent staff, manage daily hires and improve efficiency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎓 Training System: Level up your staff’s movement and stocking speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🕸️ Halloween Licenses: Add a spooky twist to your store with seasonal products and decorations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎥 Watch the new trailer here",
+     "items": [
+      {
+       "text": "👉 Staff Update Trailer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "👉 https://shorturl.at/rUCHb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thanks for playing and supporting Hypermarket Simulator! 🛒✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "👉 Staff Update Trailer",
+     "👉 https://shorturl.at/rUCHb",
+     "Thanks for playing and supporting Hypermarket Simulator! 🛒✨"
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1811772772648385"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T20:47:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.234Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T20:47:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.234Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-07T20:47:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.608Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-09-13",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Stocker Fix & New Licenses Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-13T23:24:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.⁠ ⁠The major stocker bug has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are truly sorry for the issues it caused. Thank you so much for your patience and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. 5 new licenses have been added!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of them are placed earlier in the license tree, so your unlocked license count stays the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, due to this rearrangement, you might need to repurchase some licenses you’ve already unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We apologize for the inconvenience and hope you enjoy the new additions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1810503566496628"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-13T23:24:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.233Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-13T23:24:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.233Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-13T23:24:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.607Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.60.081",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.60.081",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-05T20:58:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update brings plenty of new items to decorate your store and office, helping you prepare for the upcoming Staff Management Update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also added a brand-new extra trash bin that you can freely place anywhere, and now all trash bins are fully movable for maximum flexibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On top of that, we’ve worked hard on fixing the customer freezing bug, and we believe this issue is finally resolved, meaning smoother gameplay and happier shoppers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1809869180078318"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-05T20:58:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-05T20:58:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.233Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-05T20:58:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.607Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.60.074",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.60.074",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-30T09:52:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "29 Aug 2025 - Patch v00.60.074",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been listening to your feedback and packed this patch with fixes, improvements, and exciting new features:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛒 Customer Fixes – No more freezing or endless waiting at self-checkouts and racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏷️ Content Corrections – Adjusted product names and images for accuracy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Storage Rack Fix – Boxes no longer disappear when racks touch trash bins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚪 Front Door Update – Adjusted player collision with the front door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "❄️ Lighting Tweaks – Reduced glow from freezers and fridges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧱 New Modular Walls – Build your dream store layout with doors and windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚖️ Placement Options – Choose between Realistic or Perfectly Aligned product placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👷 Stocker Upgrade - The trash bins at the back of the store can now be used by stockers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👷 Stocker Upgrade 2 – Maximum stockers increased from 9 → 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚡ Performance Improvements – Smoother gameplay across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1809235871647512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-30T09:52:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-30T09:52:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.232Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-30T09:52:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.606Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@00.60.072",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Patch 00.60.072",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-23T12:23:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "23 Aug 2025 — Patch v00.60.072",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed A/C unit shader (no longer too dark at night).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where boxes could disappear when taken from storage space and touching a trash bin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added ground grid to assist with object placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed outlines not appearing on: Shelf Round 4 Racks, Shelf 2 Racks, Shelf 3 Racks, Shelf 4 Racks, Shelf L-Shaped 4 Racks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an extra color to the aim indicator so it remains visible when aiming at white surfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shelves, products, tags, and boxes behind walls or tents can no longer be selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1808601382510065"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-23T12:23:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.231Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-23T12:23:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.231Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-23T12:23:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.605Z"
+  },
+  {
+   "id": "hypermarket-simulator-335855@major-2025-08-08",
+   "gameId": "hypermarket-simulator-335855",
+   "displayName": "Hypermarket Simulator – Demo Update Now Live!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-08T13:36:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest Hypermarket Simulator Demo Update is here! 🛒",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s what’s new in this version",
+     "items": [
+      {
+       "text": "Hovering furniture now shows definitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Refactored save/load system for improved stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added descriptions for AC, PIR, and cone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Brand-new selection outline effect for better clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted level requirements and progression for balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed AC placement errors and other bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved object placement and shelf logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized staff and customer AI for smoother gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Balanced sound levels to industry standards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added LODs to characters for better performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Max level capped at 15 for the demo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Settings and pause menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced visuals, UI feedback, and product handling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General bug fixes and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Come try the updated demo and see what’s new! 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Hovering furniture now shows definitions",
+     "Refactored save/load system for improved stability",
+     "Added descriptions for AC, PIR, and cone"
+    ]
+   },
+   "sourceIds": [
+    "steam-3614460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3614460/view/1807332909604636"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T13:36:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.230Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T13:36:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3614460",
+      "checkedAt": "2026-11-13T03:23:18.231Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-08T13:36:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:51.605Z"
+  }
+ ],
+ "issues": []
+}

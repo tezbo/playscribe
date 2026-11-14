@@ -1,0 +1,555 @@
+{
+ "game": {
+  "id": "cycle-chaser-h-5-231369",
+  "igdbId": 231369,
+  "name": "Cycle Chaser H-5",
+  "cover": {
+   "imageId": "co604b",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co604b.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar24m6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar24m6.jpg"
+  },
+  "ps5Release": "2025-01-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cycle-chaser-h-5-231369@1.6",
+   "gameId": "cycle-chaser-h-5-231369",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-20T20:02:49.000Z",
+   "notes": [
+    {
+     "title": "Here's some changes introduced from builds 1.5.1a and 1.6",
+     "items": [
+      {
+       "text": "1.5.1a",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Reduced gamepad input lag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1.6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Control sticks are now fully-compatible! (I still recommend D-pad controls for shmup precision, but the stick option exists for players who want it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-All connected gamepads can be used instead of just gamepad index 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Visual clarity update to boss 4 arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Devolution phase 2's drop bomb attack has a reduced area of effect (RNG made it sometimes unavoidable)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Slight tweaks to achievement descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Enemy bullets no longer hurt player after boss is already dead and fade off-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A player requested the boss healthbar to be moved behind player bullets, I tested it but couldn't at this time because bullets and enemies exist on the same layer, I would have to re-write the Z-sorting system. I apologize in advance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Have some Rajaburn art as a treat :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "1.5.1a",
+     "-Reduced gamepad input lag",
+     "1.6"
+    ]
+   },
+   "sourceIds": [
+    "steam-2274550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2274550/view/5762994032399193554"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-20T20:02:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2274550",
+      "checkedAt": "2026-11-11T21:58:46.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:46.143Z"
+  },
+  {
+   "id": "cycle-chaser-h-5-231369@post-2023-09-27",
+   "gameId": "cycle-chaser-h-5-231369",
+   "displayName": "Steam Overlay Shenanigans",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-27T17:21:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If you've been playing CCH5 between now and launch, you probably noticed the Steam Overlay is upside down.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I still can't fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On a semi-related note, C3 (the engine CCH5 is made in) is transitioning away from NW.js and has now offered a beta version of Webview 2 Steamworks compatibility. Long story short, if you make games in Construct, you can export using the old wrapper (NW.js, which sucks and runs bad) or the new one (Webview2, which is Chrome-based and Nice and Clean). Problem is, up until now, NW.js was the only wrapper that you could use to get your game on Steam. That's not the case anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "So I've pushed out a new version of CCH5 1.5 using Webview2 on Steam, and the performance from testing seems overall better. My hope was that moving CCH5 away form NW.js would fix the Steam Overlay issue, but, it didn't, which tells me one of two things:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A) The Overlay glitch is a problem with the game code. I don't know how, since C3 event sheets give me basically no access to API's related to Steam or rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "B) The Overlay glitch is a problem with settings related to Steam's API packages or options in the Steamworks menus, neither of which I've had any luck manipulating.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I don't write this with intent to throw any of the staff @ Steamworks Support or Construct 3 under the bridge, but I've sent multiple help tickets over the course of half a year about this problem and gotten back no useful feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If the Steam Overlay glitch is interfering with your ability to enjoy CCH5, please write me @ petersdavidcgt@gmail.com and I can provide you with a free code for the Itch version - it won't have achievement support, but it'll run better and render properly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "LAST ADDENDUM - A streamer has been working with me to showcase CCH5 and ran into an error where he couldn't capture game footage on OBS: It appeared as a white screen in Window Capture. We found a fix by changing Capture Method to Windows 10. If you try recording CCH5, try using this workaround.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2274550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2274550/view/5220291886484045011"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-27T17:21:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2274550",
+      "checkedAt": "2026-11-11T21:58:46.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:46.142Z"
+  },
+  {
+   "id": "cycle-chaser-h-5-231369@1.5",
+   "gameId": "cycle-chaser-h-5-231369",
+   "displayName": "UPDATE 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-29T19:22:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Cycle Chaser H-5's 1.5 Update (handful of a name lol) is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The following features have been added",
+     "items": [
+      {
+       "text": "IMPACT MODE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The final difficulty mode, with even more aggressive enemies. The shield only activates at 300% meter now, and the Super Tatsujin's barrier effect lasts for a shorter amount of time. Your point-blank and rushdown abilities will be put to the test. Look out for a couple new surprises, too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW WEAPONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Beat the game once, and you'll get a cheat code to unlock two new experimental weapon sets: Backbeat and Noise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "HIGH-SCORES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The high-score board now keeps track of the difficulty mode you played on. Note: Any high-scores from 1.1 and prior versions will remain un-labeled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Additional notes",
+     "items": [
+      {
+       "text": "-A SteamOS/Linux export has been added, but I have no way to test for myself if it's functional.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-The Steam overlay is still upside-down and I still have no idea how to fix it :/",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "IMPACT MODE",
+     "NEW WEAPONS",
+     "Beat the game once, and you'll get a cheat code to unlock two new experimental weapon sets: Backbeat and Noise."
+    ]
+   },
+   "sourceIds": [
+    "steam-2274550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2274550/view/5151600576603565018"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-29T19:22:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2274550",
+      "checkedAt": "2026-11-11T21:58:46.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:46.142Z"
+  },
+  {
+   "id": "cycle-chaser-h-5-231369@1.1",
+   "gameId": "cycle-chaser-h-5-231369",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-03T23:17:57.000Z",
+   "notes": [
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "-2612's HUD icon has some new animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Turn on visible hitbox in the options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Adjust BG brightness/opacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Content roadmap",
+     "items": [
+      {
+       "text": "-Steamdeck/Linux version",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Difficulty labels for the high score board & My Chronicle menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-New weapon sets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Final difficulty mode (tentative name)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-...and maybe more, TBA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "-2612's HUD icon has some new animations",
+     "-Turn on visible hitbox in the options menu",
+     "-Adjust BG brightness/opacity"
+    ]
+   },
+   "sourceIds": [
+    "steam-2274550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2274550/view/6839319551998029919"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-03T23:17:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2274550",
+      "checkedAt": "2026-11-11T21:58:46.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:46.141Z"
+  },
+  {
+   "id": "cycle-chaser-h-5-231369@1.0b",
+   "gameId": "cycle-chaser-h-5-231369",
+   "displayName": "Update 1.0b",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-01T18:58:31.000Z",
+   "notes": [
+    {
+     "title": "Changes made to 1.0b",
+     "items": [
+      {
+       "text": "-Super Tatsujin's hitbox no longer triggers while the game is paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Some bosses that move using lerp functions (Oxygen Crisis, Hybrid King Apollus 2, Devolution 1 & 2) did not account for delta-time - i.e., their movement was affected by framerate. When played on 30fps monitors, they move too slow, and too fast on 120fps monitors. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Chromium devtools menu pops up when hitting F12, the same key as Steam Overlay & screenshots. We attempted to fix this, and our solutions work for the raw EXE build, but not when injected into Steam. There's something overwriting our command arguments. We apologize; it will take a little bit longer to fix this.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2274550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2274550/view/6839319551990085444"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-01T18:58:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2274550",
+      "checkedAt": "2026-11-11T21:58:46.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:46.140Z"
+  }
+ ],
+ "issues": []
+}

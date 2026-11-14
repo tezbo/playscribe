@@ -1,0 +1,1182 @@
+{
+ "game": {
+  "id": "thumper-10960",
+  "igdbId": 10960,
+  "name": "Thumper",
+  "cover": {
+   "imageId": "co1z4e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1z4e.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar8hs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar8hs.jpg"
+  },
+  "ps5Release": "2023-02-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "thumper-10960@2",
+   "gameId": "thumper-10960",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-09T01:00:28.000Z",
+   "notes": [
+    {
+     "title": "One more fix",
+     "items": [
+      {
+       "text": "Fixed crash when selecting levels in PLAY+ mode that are in-progress in PLAY mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/4480532526715894535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-09T01:00:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.553Z"
+  },
+  {
+   "id": "thumper-10960@hotfix-2022-06-08",
+   "gameId": "thumper-10960",
+   "displayName": "Hotfix for Practice Mode Update",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-08T03:32:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update contains just one fix for a small bug in the latest update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed case where resume/restart appears (instead of start) on the level select screen when you start a level, complete the checkpoint, restart back to the first checkpoint, then return to the level select screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/4480532526712635412"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-08T03:32:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.553Z"
+  },
+  {
+   "id": "thumper-10960@major-2022-02-15",
+   "gameId": "thumper-10960",
+   "displayName": "Steam Deck and Controller Compatibility Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-15T10:44:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here's an update to ensure the game will work well on Steam Deck. It also improves how the game works with different controller types. It should also let Linux users play the game via Proton (though we don't officially support that).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here's what's changed",
+     "items": [
+      {
+       "text": "Fixed issues Steam Deck compatibility issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for PS5 and Nintendo Switch controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Adjusted trigger vibrations to feel better on Xbox Series S/X controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed single frame glitch of whiteness when game starts up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 0,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/6154735015631900431"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-15T10:44:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.552Z"
+  },
+  {
+   "id": "thumper-10960@major-2021-11-02",
+   "gameId": "thumper-10960",
+   "displayName": "Maintenance Update (Resolution Options)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-02T04:16:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update to fix an issue where resolution options for only the primary display were available. Now resolution options for all displays connected to the primary video card should be available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/4186652357040900438"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-02T04:16:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.552Z"
+  },
+  {
+   "id": "thumper-10960@major-2020-05-26",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Maintenance Update (Keyboard Remap Hang)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-05-26T00:25:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest update fixes a reported hang when attempting to remap the keyboard \"SELECT\" input on the OPTIONS > CONTROLS screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/3112496281307494877"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-05-26T00:25:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.551Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.551Z"
+  },
+  {
+   "id": "thumper-10960@major-2020-02-15",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Maintenance Update (VR issues)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-15T06:07:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest update fixes a few issues related to VR mode (both Steam VR and Oculus)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed re-centering VR position and orientation (hold ESC key OR start/pause button)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pausing via keyboard (ESC key) in VR mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Playing in VR mode no longer requires the Thumper desktop window to be focused. This was causing issues where the game appeared to hang when launching into VR mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/3183419193833515754"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-15T06:07:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.551Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.551Z"
+  },
+  {
+   "id": "thumper-10960@major-2020-01-31",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Maintenance Update (DX9 Graphics Issues)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-01-31T02:35:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest update fixes minor visual issues with the \"DX9 Legacy\" version of the game. The other (DX11) versions are not affected.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/2609208878382300718"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-01-31T02:35:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.550Z"
+  },
+  {
+   "id": "thumper-10960@post-2020-01-19",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Soundtrack Updated for New Steam Experience",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-01-19T05:52:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated Thumper's Original Soundtrack to take advantage of some new Steam features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First, you can now browse, manage, and filter the soundtrack from your Steam library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can also play it directly from the Steam library",
+     "items": [
+      {
+       "text": "Finally, high-quality FLAC audio is optionally available for the soundtrack. To get it, make sure you've checked the \"Download high-quality audio files\" in your Settings > Music dialog. The FLAC files will be installed into a \"flac\" folder in your soundtrack installation directory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/3690071589850804068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-01-19T05:52:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.550Z"
+  },
+  {
+   "id": "thumper-10960@major-2020-01-18",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Maintenance Update (ASIO crash)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-01-18T06:14:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The latest update fixes a startup crash caused by certain ASIO audio drivers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/3690071589847244983"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-01-18T06:14:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.549Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.549Z"
+  },
+  {
+   "id": "thumper-10960@major-2019-11-26",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Maintenance Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-26T12:00:38.000Z",
+   "notes": [
+    {
+     "title": "A few small fixes are in the latest update",
+     "items": [
+      {
+       "text": "Fixed case where game will run in slow motion in Oculus VR mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Windows 10 exe is only auto-launched when using Windows 10 build 15063 or later. This avoids potential compatibility issues with older Windows 10 releases.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Re-deprecated Razor Chroma support. If it was working for you and you want to keep using it, you can add \"-chroma\" to your launch options (Library > Thumper > Properties > GENERAL > SET LAUNCH OPTIONS...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/2551782186251209734"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-26T12:00:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.549Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.549Z"
+  },
+  {
+   "id": "thumper-10960@hotfix-2019-10-03",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper (Final??) Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-03T09:03:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Of course our \"final\" update has to be followed by a \"final\" hotfix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Limit update rate of Xbox One controller vibration in Windows 10 exe to 30Hz to fix trigger vibration issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Allow alternate key for menu “select” to be remapped on keyboard controls screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with some keys not working when mapped to gameplay actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor input issues on keyboard controls screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Prevent boss bonus thumps from unlocking shields when pounded. This prevents bugs that happen when a shield is prematurely unlocked before a boss phrase begins (thanks Hannes!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor issues with DualShock 4 controller in Windows 10 exe",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Disable vibration on previous controller when hot swapping to a new controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should address all known issues we plan to fix. Of course, we'll still be looking out for any new major issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/2426802221718221325"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-03T09:03:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.548Z"
+  },
+  {
+   "id": "thumper-10960@major-2019-10-01",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper (Final?) Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-01T07:56:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our latest update includes many small usability improvements and fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're not planning further updates at this time, but we'll respond to any new major issues. A special thanks to all the players who've helped us find and fix everything!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added controller/keyboard hot swapping support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved button/key remapping on controls screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added stereo vibration effects for Oculus Touch (Oculus VR Mode)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the three “Win10” launch options. Windows 10 is now detected by the default executable and the Windows 10 compatible executable is automatically launched. If you want to use the Windows 7/8 exe on Windows 10, use the \"-force_win8\" launch option.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added automatic pause when active controller is disconnected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added automatic pause when SteamVR dashboard is displayed (SteamVR Mode)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added automatic pause when Oculus system menu is displayed (Oculus VR Mode)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added credits to options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed case when pounding boss weapon only spawns one bonus thump instead of two (thanks Austin!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional extra height jumps/flight (thanks again Austin!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed checkpoint restart bug that can happen right after checkpoint is passed (thanks tuftyfrog!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text overlapping on VR options screen in some languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced aliasing on keyboard helpbar icons in VR",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Razer Chroma support fixed and re-enabled by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/2426802221710824323"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-01T07:56:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.548Z"
+  },
+  {
+   "id": "thumper-10960@major-2019-08-07",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Update with More Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-08-07T12:41:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed potential crash when applying video settings (thanks Ronaldo!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed slight discrepancy between Xbox One controller left/right trigger vibrations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed potential crash remapping keyboard input",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed rare crash on initial button press",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scoring exploit (thanks Austin!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few more minor fixes and usability improvements are coming soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/2412160539850368539"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-07T12:41:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.547Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.547Z"
+  },
+  {
+   "id": "thumper-10960@major-2019-07-01",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper Update Out Now",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-07-01T02:39:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A maintenance update with the following fixes and changes is out now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various stability and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues playing in VR mode with multiple video cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed vibration issues with Xbox One controller and added support for trigger vibration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Allow Start/ESC press + hold to recenter VR tracking origin on title screen (as well as after)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"pre Windows 10\" launch options for legacy support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated FMOD to fix audio device initialization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Polish text (thanks Marek!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Dutch text (thanks Jordy!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Oculus VR SDK to fix compatibility issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Dutch language setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled Razer Chroma support by default (to enable add “-chroma” option under Library > Thumper > Properties > GENERAL > SET LAUNCH OPTIONS...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're having trouble running the game with this update, see this post on diagnostic information and how to send it to us for support. Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/2436926440579769046"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-01T02:39:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.546Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.546Z"
+  },
+  {
+   "id": "thumper-10960@major-2019-06-29",
+   "gameId": "thumper-10960",
+   "displayName": "Thumper update preview now on experimental branch",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-29T07:29:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new update with fixes and performance improvements is coming soon. But we've made an in-progress version available on a \"experimental\" branch now because it will help some people with technical issues. See this forum post for details:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-356400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/356400/view/2436926440573270898"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-29T07:29:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-356400",
+      "checkedAt": "2026-11-12T15:41:15.546Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:15.546Z"
+  }
+ ],
+ "issues": []
+}

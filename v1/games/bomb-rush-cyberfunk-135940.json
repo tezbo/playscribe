@@ -1,0 +1,640 @@
+{
+ "game": {
+  "id": "bomb-rush-cyberfunk-135940",
+  "igdbId": 135940,
+  "name": "Bomb Rush Cyberfunk",
+  "cover": {
+   "imageId": "co6ya8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6ya8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arzj0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arzj0.jpg"
+  },
+  "ps5Release": "2023-09-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bomb-rush-cyberfunk-135940@3",
+   "gameId": "bomb-rush-cyberfunk-135940",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-15T12:11:58.000Z",
+   "notes": [
+    {
+     "title": "Patch 3 changelog",
+     "items": [
+      {
+       "text": "Fixed the 'auto-save' bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made quarterpipe multipliers reliable and fixed the ones in Hideout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A rail in Millenium Square no longer breaks your combo if you jump from it going upwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing wall collision to the ferry port to the pyramid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Closed a gap letting players miss a checkpoint on entering the Versum Hill court.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Mataan dream death zone collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1353230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1353230/view/6300039510134147151"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-15T12:11:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1353230",
+      "checkedAt": "2026-11-13T03:16:23.566Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-15T12:11:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1353230",
+      "checkedAt": "2026-11-13T03:16:23.566Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-15T12:11:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:52.998Z"
+  },
+  {
+   "id": "bomb-rush-cyberfunk-135940@2",
+   "gameId": "bomb-rush-cyberfunk-135940",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-26T15:55:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In this patch we have some more general fixes lined up. Some specific places were breaking combo's due to faulty setups, happy to say those have been mostly eradicated. You can take a look at the notes for the full picture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main dish of this patch is the improved pause menu map that now shows Taxi Signs, Cypher Spots and Public Toilets. The toilets will be visible from the get go, but the Taxi and Cypher spots you will have to discover yourself first before they show up on the map. We've also included a counter for how much stuff you still have left to collect in the current stage. Think outfits, skateboards, music or graffiti.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added voice lines for the Oldhead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Sjoerd Poldermans to the dance credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map markers for available Toilets and discovered Cypher Spots and Taxi Signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added collectable counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added shuffle functionality to the Music app",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coil now reappears in Mataan even if you haven't gotten his text yet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Red Felix appears in cyphers during appropriate sections in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed more spots that caused your combo to drop in Versum Hill and Mataan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed name of the Natas Spin trick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Apply language text changes along with language selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collision issue in Mataan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tankwalker target reticules sticking around on using a toilet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPC characters attacking turrets also teleporting the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Felix not using his spraycan in the final dream.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed music and graffiti app not reopening in the same spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck when dancing or pausing in front of an opening bmx door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Photo Generic achievement not unlocking reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mixtape restarting on every stage switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing support for unknown controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the game would crash on startup when the Steam cloud was disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the video settings of the PC would be applied to the Steam Deck, which would result in the Steam Deck version not launching.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Character Select is no longer dependent on the frame rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 12,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1353230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1353230/view/5229301621576506786"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T15:55:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1353230",
+      "checkedAt": "2026-11-13T03:16:23.565Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T15:55:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1353230",
+      "checkedAt": "2026-11-13T03:16:23.565Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-26T15:55:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:52.997Z"
+  },
+  {
+   "id": "bomb-rush-cyberfunk-135940@1",
+   "gameId": "bomb-rush-cyberfunk-135940",
+   "displayName": "Patch 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-30T16:40:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, Dion here. We had a crazy good launch so here's a big thank you from the team to you for playing our game. Looking at the numbers we can see people spend 10 to 12 hours on a comfortable playthrough, double that for a 100%. But we are also happy to see people going wild with mods to get even more out of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this first patch we focused on fixing mostly technical issues. Still, we managed to sneak a new app onto your flip phone: Micro Boy. I'll tell you right now it doesn't give you anything in the game, but you can't really have a flip phone without a good mini game on it in my opinion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other than that some ease of use of the game has been improved as well. Rest assured we plan to tackle the information shown on the map and pause menu among other things in an upcoming patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Micro Boy mobile game to the flip phone apps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a cypher spot to the Hideout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Knxwledge - hwbouths to the Bomb Rush Cyberfunk Soundtrack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added album art to the Bomb Rush Cyberfunk Soundtrack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Paul Koster to Environment Artists in Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Localization teams to Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Benni the taxi driver's missing voice in taxi menu related cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added OpenGL Core backend to Windows build",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for changing the movement controls and phone movement controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a more explicit boost gate door to the intro of the chapter 3 dream",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the transition from Versum Hill to Millennium Square sometimes soft locking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed combo multipliers not resetting when entering a Robo-post mid combo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain building edges in Mataan considered safe to respawn on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the police heat sensitivity being overly high in chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved garage unlocks to be one chapter earlier so discovered movestyle colorways can be used earlier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed getting REP for redoing a graffiti spot after another crew has gone over it again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed movestyle garages not working when playing as the FRANKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a graffiti spot on a high billboard in Brink Terminal that did not save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Graffiti at the end of races no longer disappear upon reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Completed Combat Encounters are not set as REP target anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Felix's last 2 outfits unlocking before finding the collectables for them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lot of faulty grind lines that were breaking combos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed many issues with missing colliders in the environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Nice achievement now also works with BMX and Inline Skates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the artist and title names on several small graffiti pieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed VSYNC setting getting saved incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players should no longer be locked out of boss battle environments when they fall out of the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oldhead, Base and Jay show correct number of outfits in character select",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players should no longer be able to fall out of the chapter 5 dream intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map on phone should no longer show graffiti spots that are not yet available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Rise’s second challenge activating before the first challenge is completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game no longer halts execution when the game does not have focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased speed at which you can skip a cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ensured player loads into the right scene after a crash during scene changes so that cutscenes and character/movestyles/phone app unlocks are not missed by any chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shader change for certain VFX used by enemies including turrets that caused crashes for certain players on older hardware",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several memory leaks causing crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 16,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1353230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1353230/view/5141476355654487689"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-30T16:40:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1353230",
+      "checkedAt": "2026-11-13T03:16:23.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:16:23.564Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1660 @@
+{
+ "game": {
+  "id": "destroy-all-humans-2-reprobed-171214",
+  "igdbId": 171214,
+  "name": "Destroy All Humans! 2: Reprobed",
+  "cover": {
+   "imageId": "co3ub3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3ub3.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6owj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6owj.jpg"
+  },
+  "ps5Release": "2022-08-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@6.9.2",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "Patch 6.9.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-30T13:00:29.000Z",
+   "notes": [
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Fixed various minor visual issues, particularly in Tunguska",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a water patch not being displayed correctly in Albion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved stability, especially on weaker hardware",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/1845383656377520"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-30T13:00:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.311Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-30T13:00:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.311Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-30T13:00:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.183Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@6.9",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "Patch 6.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-15T15:00:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "General performance improvements and switch from DirectX11 to DirectX12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked Landscape setup:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Four times the amount of component tiles allow for improved lodding of the landscape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unnecessary landscape component tiles that are under water or not visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Landscape, LOD and occluder improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked complex lighting scenarios in Cutscenes and Dialogues, reducing lights and shadow casting to improve visual readability and performance of the scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reworked falling rocks behaviour in the Volcano in Takoshima and in the bunkers in Tunguska",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized Kojira Boss Fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kojira building destruction doesn't cause the navigation to constantly regenerate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Amount of active NPCs and vehicles is reduced when in the Flying Saucer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visibility fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed visibility issues in the Volcano where the player would disappear at a certain spot during the lava escape segment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Created additional visibility zones when inside the Blisk base on the moon, skipping rendering of the Solaris base when it's not needed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Map in Solaris so the Blisk bases are treated as an underground area and only rendered when appropriate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 3,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/1843481262704812"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-15T15:00:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.310Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-15T15:00:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.310Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-15T15:00:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.182Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@patch-2023-06-21",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "Summer Patch! Tell me more, tell me more…",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-21T15:01:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "… like, did he throw a car? Tell me more, tell me more, did it fly really far? (you know the melody ;) )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General fixes",
+     "items": [
+      {
+       "text": "Fixed various performance issues for PC and Steamdeck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed that the “Meteor Strike” is disabled when the player is leaving Photo Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a display issue with one of the skins in a cutscene in the first mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that a mission step in Arkvoodle mission “Con Mods“ didn’t fail if the building targeted by the enemy gets destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that Gastro’s voice-over lines did not play correctly in some instances in German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the hours played entry displayed in the Statisticon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shaders issue in the Takoshima environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed random potential blocker issue with the turret behavior in the Mission 15 “You only Live 137 Times”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Player-reported issues",
+     "items": [
+      {
+       "text": "Fixed an unlocking issue with the Quantum Deconstructor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that the mission “The Ravages of Mohgra” is not failing any longer when the eggs are dropped in the volcano incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that Crypto's body-snatched body will no longer disappear after being abandoned and hit by a car.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that if the player is in a body-snatched NPC and gets hit by a car, the NPC will continuously screams and not stop (I kinda miss that one)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed so the player is now able to change key bindings for PK Slam whilst in bodysnatch",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed that in Mission “The Alien Who Probed Me” Bongwater does not get stuck in running animation after his attack has been cancelled by a Dislocator hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the proximity detector to ensure it works more consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enjoy the Summerfest and spread the Good Pick-up (this game) Line of the Great Arkvoodle!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/5124581515251366731"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-21T15:01:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.310Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-21T15:01:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.310Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-21T15:01:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.181Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@patch-2023-02-21",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "February Fixes Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-21T09:12:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "General Fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a random issue that OJ18 - The Ravages of Mohgra could fail without a reason",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed random issues with Blisk enemies and Agent Oranchov showing wrong behavior when the Dislocator was used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some stability issues where the combination of Saucer destruction on a city, followed by a player death thus restarting / reloading the last checkpoint would cause hangs or freezes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a balancing issue when Quantum Deconstructor and Sonic Boom are used together, causing the Quantum Deconstructor to do less damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some saucer camera behavior especially for looking down causing judders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some Furon handbook entries being not unlocked properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a music issue during ARK16 - The Coming of Arkvoodle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that was caused by the alert level modification player cheat persisting wrongly across reloads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[Previously known issue in the last delivery] Fixed a random issue, Natalia getting stuck in the escort mission “SM15 - You Only Live 137 Times”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Previously known issue in the last delivery] Fixed a random issue, the Turret behavior in the mission “SM15 - You Only Live 137 Times”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For PC,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "All of the above, plus the corrective patch to the previously rolled-back patch. The rolled-back patch notes as originally you had are below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Fixed so the Ninja Bodyguard mutator is no longer visible in certain cutscenes during mission 9 – “The Majestic File”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed a replay issue from the Holopox deck (mission 06 – “No Pox Please We're British”).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed that the subtitles do not follow the voice over during a cutscene in Oddjob 01 – “I Left My Parts In San Fran... Err, Bay City”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixed an audio issue encountered in the cutscene after completing Arkvoodle mission 16 – “The Coming of Arkvoodle”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Fixed so the Dislocator will not lose ammo under certain circumstances in Solaris.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Fixed SFX issues in Takoshima",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Fixed a number of respawn issues in water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability issues",
+     "items": [
+      {
+       "text": "1. Fixed a rare crash in Takoshima when the alert level is raised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2. Fixed a rare crash after an attack wave in mission 20 - \"The Comrade Who Came From The Cold\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3. Fixed a rare crash at the end of mission 2 - \"Where Have All The Flower Children Gone?\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Community reported issues fixed",
+     "items": [
+      {
+       "text": "1. Fixed a rare crash whilst exiting the Jukebox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2. Fixed that the Moghra egg in OddJob 18 – “The Ravages of Mohgra” is overly sensitive to disturbance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3. Fixed so the proximity detector is now functioning when discovering Furotech Cell or Artefacts in Takoshima.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "4. Fixed an issue after Photo Mode in Solaris, where Crypto's breathing bubble is active in Bodysnatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "5. Fixed the Jukebox, so every song is playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "6. Fixed audio issues during a cutscene after completing Arkvoodle mission 16 – “The Coming of Arkvoodle”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "7. Fixed audio issues during a cutscene in mission 16 – “Kojira Kaiju Battle”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "8. Fixed an audio issue during a cutscene in OddJob 01 – “I Left My Parts In San Fran... Err, Bay City”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 19,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/5059268099254021831"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-21T09:12:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.308Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-21T09:12:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.309Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-21T09:12:57.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T02:58:58.179Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@patch-2023-01-02",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "Patch-Rollback!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-02T13:26:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are rolling back to the previous patch-version, as some players are experiencing crashes on the latest pre-Christmas patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have not encountered these crash-issues during the extensive testing of the patch and are investigating the cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/5000716037482505359"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-02T13:26:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.307Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-02T13:26:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.307Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-02T13:26:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.177Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@post-2022-12-14",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "It's beginning to sound a lot like Patch Notes!",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-12-14T13:52:09.000Z",
+   "notes": [
+    {
+     "title": "PATCH NOTES",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed so the Ninja Bodyguard mutator is no longer visible in certain cutscenes during mission 9 – “The Majestic File”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a replay issue from the Holopox deck (mission 06 – “No Pox Please We're British”).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed that the subtitles do not follow the voice over during a cutscene in Oddjob 01 – “I Left My Parts In San Fran... Err, Bay City”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed an audio issue encountered in the cutscene after completing Arkvoodle mission 16 – “The Coming of Arkvoodle”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed so the Dislocator will not lose ammo under certain circumstances in Solaris.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed SFX issues in Takoshima",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a number of respawn issues in water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability issues",
+     "items": [
+      {
+       "text": "• Fixed a rare crash in Takoshima when the alert level is raised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed a rare crash after an attack wave in mission 20 - \"The Comrade Who Came From The Cold\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed a rare crash at the end of mission 2 - \"Where Have All The Flower Children Gone?\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Community reported issues fixed",
+     "items": [
+      {
+       "text": "• Fixed a rare crash whilst exiting the Jukebox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed that the Moghra egg in OddJob 18 – “The Ravages of Mohgra” is overly sensitive to disturbance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed so the proximity detector is now functioning when discovering Furotech Cell or Artefacts in Takoshima.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed an issue after Photo Mode in Solaris, where Crypto's breathing bubble is active in Bodysnatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed the Jukebox, so every song is playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed audio issues during a cutscene after completing Arkvoodle mission 16 – “The Coming of Arkvoodle”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed audio issues during a cutscene in mission 16 – “Kojira Kaiju Battle”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed an audio issue during a cutscene in OddJob 01 – “I Left My Parts In San Fran... Err, Bay City”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/4991708208074699166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-14T13:52:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.307Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-14T13:52:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.307Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-12-14T13:52:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.176Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@major-2022-12-07",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "'Tis the season to get FREE stuff!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-07T14:04:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New Free Content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "3 New merry Crypto skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1 New festive Saucer skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some stability issues: o Rare Multiplayer freeze after dying in Bay City waters,: o rare crash after Arkvoodle mission 13,: o potential game freeze issue after transmogging the courier’s vehicle in SM11,: o rare soft-lock in Multiplayer pause for Player 2,: o rare crash when Player 1 enters the saucer with Player 2 PK’ing a specific NPC,: o potential SM17 freeze during the escort step,: o rare Ion Detonator-related crash: o rare input-mashing related crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues around the bodysnatch ability: o Bodysnatched NPC models work properly with Selective X-Ray Vision mutator: o Fixed a case where powers and weapons might become unusable if bodysnatching an NPC and breaking line-of-sight at the right time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some audio issues: o Fixed some cutscenes music not playing properly: o Fixed an issue where Crypto’s three-point-landing with Smashdown unlocked would have no sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed objective blocker in Arkvoodle mission “Publicity Stunt”, where a hippie could be slurped and blocking the missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some Blisk movement issues in SM07",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tanks to have consistent physics behavior against Ion Detonator grenades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some collision issues in Solaris",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed objective blocker in Oddjob mission “Ruin Lives - The Secretary!”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with the Free Love ability to make it consistent in some gameplay instances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential objective blocker in Oddjob mission 23 “The Abominable Yeti”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential objective blocker in Arkvoodle mission 11 “Alien Overlords: The Reality”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a collectible issue in Tunguska, now the music disc can be properly collected: Player reported issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bongwater can no longer randomly get stuck during the boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-balanced the building destruction with Sonic Boom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed that collected tracks are in the Jukebox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio issues in Bay City occurring in certain conditions after defeating Coyote Bongwater",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue after using the Slurbmaster in Arkvoodle mission “Publicity Stunt”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inconsistencies in the voice lines for the prank calls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that no more US military vehicles spawn in Takoshima when the alert level is raised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed objective blocker with mission progression for the “The Siberian Job” rg. Sergei’s truck, spore cylinders, and the KGB cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that the PK’ed objects do not get stuck in geometry when those objects are mission-relevant: Keep watching the skies (and watch out what's coming up your chimney)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 19,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/4980448574105098565"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-07T14:04:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.306Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-07T14:04:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.306Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-12-07T14:04:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.175Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@patch-2022-11-15",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "DLSS 3 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-15T14:01:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Implemented DLSS 3 with AI-Powered Frame Generation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "It's all about the buzz, man!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/6368680725439378582"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-15T14:01:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.305Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-15T14:01:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.305Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-15T14:01:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.174Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@2",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-19T15:12:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The controller layout for the saucer has now correct information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues when the second player joins whilst the first player is in the saucer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that the mission “Space 1969” could not be finished when the player respawned during the last objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Natalya’s NPC behavior during “You Only Live 137 Times” mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple collision issues in Takoshima",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the low height limit for the Saucer in Solaris",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collisions on the moon rovers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the camera posts disappearing in “On Natalya’s Secret Service”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes about the Photo Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Blisk mutants getting stuck outside the gameplay area during the mission “Le Femme Natalya”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unwanted controller feedback when using PK slam on NPC’s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with the traffic system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bodysnatch and Bodysnatch cancel is now again triggered with the same key (default: F)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some more keybinding options: Cloak: Dismiss Tutorial: Expand Tutorial: Open Map: Player Facing Cheats",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Issues still being investigated",
+     "items": [
+      {
+       "text": "On PC, certain rare Nvidia hardware/software configurations may experience a persistent issue causing the game to crash: We are currently investigating this with Nvidia.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/4714731755408857168"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-19T15:12:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-19T15:12:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.304Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-19T15:12:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.173Z"
+  },
+  {
+   "id": "destroy-all-humans-2-reprobed-171214@1",
+   "gameId": "destroy-all-humans-2-reprobed-171214",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-20T13:14:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a rare issue after Mission 8 where the button to land the saucer would not work for some players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue that could block progress with on-screen HUD ‘NaviCom’ (shortcut from saucer) to display / disable correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue preventing the player from landing the saucer during Mission 16",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue related to Crypto dying and respawning several times that would cause enemy pop-up turrets to not activate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with enemy turrets in Mission 15 not correctly respawning if destroyed in ‘open world’ play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that spamming the Saucer’s SlurpMaster and Abduct-o-Beam together could cause a crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an urgent issue causing Albion world to remain locked after exiting the ‘No Pox Please We’re British’ if the player travels back to Bay City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue preventing the bonus ‘Salad Days’ videos from playing fully",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a common issue with the player not receiving the announced Furotech reward after completing ‘Lights Out For Lobsters’ side-mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could break mission access in savegames if the player used the Navicom to travel during an active mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a common issue with the player not receiving the announced Furotech reward after completing Mission 27 ‘Dark Side of the Moon’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash (and possible savegame corruption) caused by selecting ‘continue’ after leaving the HoloPox deck during ‘Guns of Alcatraz’ mission with certain Mutators active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an urgent issue causing access to Takoshima world to be incorrectly locked after completing ‘Revenge of the Ninja’ mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an urgent issue preventing progress after selecting ‘Freaky Flyers’ Arkvoodle quest via the HoloPox deck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an urgent issue causing Tunguska world to remain locked incorrectly after completing ‘The Siberian Job’ mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue preventing the Weapon Selector (Q key) from being remapped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue that could cause a crash during Mission 12 while fighting Black Ninjas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a keybinding / remapping issue to allow ‘cancel bodysnatch’ to be changed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug with workaround fix",
+     "items": [
+      {
+       "text": "In HoloPox Deck, leaving the mission “Guns of Alcatraz” during the Destroy the Nuke Vans step and then selecting Continue, removes the nuke vans, preventing progress and leading to a corrupted save game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Happens if the following mutators are active",
+     "items": [
+      {
+       "text": "Transmog Mork Mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Murica",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Silhouette’s Mask",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graviton Lunaformer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This issue is fixed now, but to fix the save game, please restart the mission from the beginning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known PC Issue",
+     "items": [
+      {
+       "text": "Certain rare Nvidia hardware/software configurations may experience a persistent GPU issue causing the game to crash: We are currently investigating this with Nvidia.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1266700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1266700/view/6258337460561864484"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-20T13:14:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.302Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-20T13:14:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1266700",
+      "checkedAt": "2026-11-13T03:19:00.303Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-20T13:14:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:58.169Z"
+  }
+ ],
+ "issues": []
+}

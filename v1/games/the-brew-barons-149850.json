@@ -1,0 +1,4482 @@
+{
+ "game": {
+  "id": "the-brew-barons-149850",
+  "igdbId": 149850,
+  "name": "The Brew Barons",
+  "cover": {
+   "imageId": "co7l31",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7l31.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2btb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2btb.jpg"
+  },
+  "ps5Release": "2026-01-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-brew-barons-149850@major-2026-04-10",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Small update 4/10/2026",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-10T16:32:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix bug reporter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix softlock at the end of the tutorial that was affecting some users (if you still experience this please let me know)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controller bindings can now map one control element to more than one action, since there are unfortunately more actions in the game than buttons on most gamepads, controller players can now map the camera centre action to a button already in use (recommend mapping it to the reverse button)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add new achievement, since its a pretty dry update otherwise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/1829528821310668"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T16:32:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.090Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T16:32:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.090Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-10T16:32:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.019Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2025-12-12",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Japanese and French subtitles now available",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-12T17:37:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Japanese and French translations have now been released, you can change the display language in the Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/1818752592128299"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-12T17:37:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.089Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.019Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2025-10-03",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Unity security patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-03T21:33:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update contains only a patch to address a security exploit that was discovered in Unity (the engine used to build the game). Information about the issue can be found here. There should be no functionality changes at all, but if you do encounter a problem please submit a bug with the bug reporter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The next actual patch should be in a few weeks with the French and Japanese translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/1811772772521504"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-03T21:33:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.089Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.018Z"
+  },
+  {
+   "id": "the-brew-barons-149850@major-2024-09-27",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Update 09/27 Fixes and Fighters",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-27T22:48:39.000Z",
+   "notes": [
+    {
+     "title": "A few fixes and new things",
+     "items": [
+      {
+       "text": "Magnus wing pitch tuning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Refuel plane day/night glow adjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgrade costs balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sensitivity slider for manual mode orbital and lookaround camera speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reverse input now requires short button hold instead of press to prevent accidental reversing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hangar damage speech now has a random chance to play instead of all the time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix softlock in the brewery section of the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix propeller trait bonus not applying to Pearl Grape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Vapor Rockets detaching after visiting bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix cockpit camera position to prevent visible pilot goggles in front of the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missiles use a new interception calculation called Proportional Navigation, which means they will more accurately intercept the target heading, instead of the current simple method of chasing from behind. Rate of turn has been decreased so the overall difficulty has not increased, but the importance of the first evasive maneuver is increased. If the first evasion is good then they will generally not turn around and keep chasing you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pirate Fighter planes have been added, these are faster and much more maneuverable than the gunships so they are a bit more difficult to chase down and shoot, however they have less health and do less damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fighters and Gunships are used in various combinations, increasing in number as the game goes on. There may also be additional waves of fighters later in the game, as well as fighter variants that have different behaviours. In the later game as the number of bosses increases there will remain one gunship/fighter encounter (previously they were all removed).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/6339469370187106025"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-27T22:48:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.089Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.018Z"
+  },
+  {
+   "id": "the-brew-barons-149850@hotfix-2024-08-15",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Small Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-15T20:26:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just a couple of quick things to address from the last patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix Vapor Wings water recharge not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix overlapping ambient cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix air refuelling sometime not working under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/6909171012596763491"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-15T20:26:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.088Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.017Z"
+  },
+  {
+   "id": "the-brew-barons-149850@major-2024-08-12",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Fixes, tuning, QOL and more plane parts update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-12T20:19:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New wing part for both heavy and light plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gunship patrols planes now deploy a shootable swarm of slow flying kamikaze bomb drones once the player reaches sufficient fame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scavenger Ornament perk now includes bomb drones. Materials or ingredient spawn chance when breaking a camp, gun tower or drone bomb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further tuning of the Vacuum Boost fuselage. Removed health recovery perk in exchange for significant bolstered boosting speed to make it moderately useful for fast travel. Along with a base engine power increase to make it a bit more competitive in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Manual mode cameras now accept mouse input for looking around (for those using HOTAS or keyboard)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Camera return input added for manual mode orbital camera, the default binding for this is F on the keyboard, but there is no default gamepad binding because we are out of buttons on the gamepad, so unfortunately if you want to use it with the gamepad you will have to choose something to unbind (I generally get rid of reverse).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Products panel added archive checkbox so you can choose to hide recipes you don't want to see (also view archived option will display all)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Product panel add view button which will load the bottle screen again for that brew",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the refuel plane easier to spot from afar with a very small pillar of light.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an airship boss edge case during the final battle that caused the retreat phase to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed airship sometimes failing to reset tunnel gates after subsequent battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Madam Minello finger painting taunt whist retreating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed smog dome aerial flare occasionally spawning from incorrect pirate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The lower ropes on the plane boss now highlight orange when the minion hatch opens to better indicate the vulnerability of the lower engines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce chances of over-bright square looking artifacts when flying through particles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed manual mode plane control was sometimes lost after boosting at high speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inventory duplication going in and out of the hangar with certain heavy plane configurations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed heavy plane taking damage when exiting hangar due to insufficient buoyancy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed plane sometimes unexpectedly capsizes when docking at shipyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed saving issue that could cause game to freeze when changing settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed post final battle save game sometimes spawns plane at old hangar location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sometimes repair sound does not stop playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gojko-Marin story mission encounter could relocate causing mismatch with mission map icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tumble Frame fuselage would cause unexpected fatal crash when performed near to water or ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tutorial will no longer allow collection of wheat which would cause a softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tour plane throttle hud indicator was not showing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sunset sky would appear a bit stuttery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed if Irena is in the plane and flying at night the sky would flash after the ghosts had passed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pirate airship boss weakpoints would sometimes not register projectile hits.: Thanks again for supporting the game, we will continue to try and make improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 18,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5963414363406134975"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-12T20:19:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.088Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.016Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-06-06",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Small fixes patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-06T22:38:52.000Z",
+   "notes": [
+    {
+     "title": "Fixes for a few things in the recent updates",
+     "items": [
+      {
+       "text": "Fix excessive upward drift using boost targets in autopilot mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix unexpected upward deflection during boost targets with some heavy plane configurations in manual mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Slat pontoons would sometimes never slow down on water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix copter was visible in first person hud only view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix FOV slider did not apply for cockpit cameras",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Plane decals take priority over trim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix selecting free camera with hotkey following cockpit camera would no longer follow plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix draw distance on bomb camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5746109972550299628"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-06T22:38:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.087Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.016Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-05-31",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "First person view, no pirates mode, new parts, fixes etc.",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-31T23:15:00.000Z",
+   "notes": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "First person view added with two versions for cockpit visuals on or off. Please note that the airplane art was created for visuals and style first so some of the biplanes have very poor visibility, it has also not been possible to create high resolution and functional cockpit instruments. The new cockpit views are hotkeyed to f4 (with visuals) and f5 (without) or in manual mode with the camera cycle button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Manual mode locked/orbital camera option has been removed, and now both can be accessed through the camera cycle sequence along with the first person views, the order is Orbital, 3rd person locked, bomb camera (heavy only), first person with visuals, first person without visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pirate activity option, the number of pirate encounters can be chosen when starting a new game, the options are Normal which is what we currently have, Low (half the encounters) and None (no encounters). This option can be changed for a game in progress from the pause menu, however it will only take effect after saving and restarting, so make sure to dock after making the change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The final battle will only trigger when Pirate Activity is set to Normal, so if you have it set to None or Low and fill up the fame bar it will not happen, however if you change the setting to Normal it will then trigger after restarting. Likewise if you trigger the final battle and then change the setting to Low or None then after restarting the final battle will not take place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If Pirate Activity is set to None or Low then the Gojko-Marin story mission will not trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New light pontoon with fishing net trait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New heavy pontoon with explosive damage reduction trait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Tuning",
+     "items": [
+      {
+       "text": "Canopy wings add fuel consumption bonus and increase maximum rest recovery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pirate gunships minimum speed increased, rate of turn decreased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Highlights added to certain objects to highlight what needs to be shot for certain gameplay situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix home indicator not working for second HQ",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix ingredient turrets frequently not firing at all or being very inaccurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix plane inventory contents doubled after resetting modifications in the hangar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix missing reflection for heavy pontoons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix black screen in floating market caused by resting for a long time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix missile misfire speech keeps playing incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added some missing speech lines for pirates and copilot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed speed/altitude UI overlap for widescreen users",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix propeller collection bonus not applying to Swept Seed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix incorrect button focus if pause menu is opened whilst pitch down is pressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix input binding for salvage minigame did not work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix HOTAS inputs for salvage minigame were missing: Thanks for continuing to play the game and giving us valuable feedback on where to make improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 12,
+    "balance": 3,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5742731639335241864"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-31T23:15:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.087Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.015Z"
+  },
+  {
+   "id": "the-brew-barons-149850@hotfix-2024-05-10",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Hotfix for reverse not working",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-10T18:43:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks to the user who pointed this out quickly, sorry this did not get picked up in testing. This patch just contains two changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix reverse not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for manual mode rudder overly responsive after transitioning back from very high speed mode to normal flight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5768625435400099054"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-10T18:43:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.086Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.014Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-05-09",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Manual mode very high speed handling and a few other fixes and tuning",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-09T22:12:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Not a big change this time, mostly addressing some issues from the last patch to do with the manual mode handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Manual mode very high speed (500ish kts+) uses a different dynamics to make the boost targets ability much more playable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some people did not like manual mode stability update that was added last time so there is an option to turn it off and go back to the previous handling, you can do this in Settings/Controls/Manual mode stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New heavy engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New light engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Emergency Stop pontoon + 15% water tank capacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ingredient Pontoons + 35% cargo capacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vertical Lift wings renamed to \"Ascending Lift\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sharpened wing model improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss health bars increased in size and end points cleared to ensure people can see when the boss just has a small amount of health remaining",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed hangar camera could not view rear facing engines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Particle motion blur fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bank money transfer slider could not be operated with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix cargo transfer doubles transfer amount when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Respawning after leaving bank could spawn in midair or crash instantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rudders on the tour plane a bit more stable: Thanks again for your continued feedback and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5768625435396982885"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-09T22:12:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.086Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.014Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-05-01",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "New parts, manual controls improvement, other fixes and balance",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-01T19:11:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed product panel would stop working with too many entries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ingredient rounds incorrectly drain water charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ingredient rounds increase damage and decrease windup time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alcohol rounds decrease damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vaccuum boost increase height threshold for automatic boosting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hangar prevent create new plane or load plane when modifications are in progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New light fuselage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New heavy fuselage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Floating market added refuel, repair, and rest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Manual mode handling update to significantly reduce the snap back bounce as the stick is released, which would also cause some noticeable wobbling in the heavy plane at high speeds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rate of turn increased a bit in manual mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera position and lag tuning for manual mode cameras to try and better keep the plane in the lower portion on the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interior UI in controller mode, UI elements that can be cycled (the ones with left and right arrows) now have a new selection mode where both left and right arrows are selected, and can be cycled using the left and right navigation buttons, instead of having to navigate to the arrow and then press it. Elements that also have a central button such as the brewery dispenser, or the bottle design can activate the central button by pressing the submit button, there is no need to navigate to the button. This has been implemented for the plane modify UI, roster UI, bottle design and main menu character select, unfortunately the plane paint UI could not be converted since left/right navigation is needed to move between the controls, still thinking of a good way to handle this...: Hopefully this update will allow controller players to more easily make the kind of precise maneuvers that some of the gameplay requires, although I think controller mode will always be more difficult. Anyway if you are a controller player please let us know what you think of these changes. Thanks again for playing the game, we will keep on trying to improve the experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5766372999940870334"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-01T19:11:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.085Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.013Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-04-13",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Fixes and improvements",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-13T19:07:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix bad dice rolls in board game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Dijana spoiled ingredient trait sometimes applies when she is not in the plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix brewery dispose button could be pressed multiple times causing refund exploit with Dijana trait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix forwards/reverse hud icon incorrect colour when exiting lz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix heavy plane max health modifiers not applying for engine and propeller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix burning ship quest logic keeps running after failing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bar menu buttons can be pressed too soon after boardgame complete in Ena-Franci story mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bartender dialogue sometimes displayed empty box resulting in softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a softlock in the contracts section of the tutorial when it runs in the brewery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix HOTAS map button does not also close the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Smog dome and double team chances reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Irena void mission bounds size reduced to reduce chance of getting lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Dijana-Nigel clothes mission clothes colliders are larger in manual mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fireworks pickup colliders larger in manual mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Airship boss spinning tunnel spins slower in manual mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Text scaling option added to settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Keyboard pitch/yaw/roll re-centre time applies the same sensitivity slider value as pressing",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "gamepad right stick can be used to control mouse pointer in menus, pressing the submit button will simulate a mouse click at the pointer location if the last input was a right stick move, otherwise pressing submit will activate the currently highlighted button",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "add menu navigation for HOTAS, it uses the hat buttons for navigation, trigger for submit and another stick button for back/cancel (which button will depend on your stick): Thanks for continuing to play the game and give us feedback, many of the items in the update are a direct result of people taking the time to give their thoughts constructively so if you have an idea please let us know, even if we don't reply immediately we do read all the comments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 5,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/6474562312189333635"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-13T19:07:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.085Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.013Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-04-01",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Fixes and improvements",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-01T20:26:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed ship boss minions not exiting retreat mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abrupt smog dome transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Self Repair engine stops working after refuelling at shipyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix pirate encounter speech would not play whilst player was using boost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix restarting save game from floating market in post game resulted in a very unstable plane and missing buoyancy: Tuning/Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pirate Gunship given damage effect when under 30% hp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Streamlined Pontoons remain tucked whist flying fast over water. Low speed and altitude are required for deployment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switching gears to reverse mode made more apparent with extra UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Placement of mission and contract icons on map better positioned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Airship vents given circling effect for better visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smog grenade explosions expire quicker.: Snap back settings given 10second option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sensitivity slider for keyboard pitch/yaw/roll inputs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Recipe book filter options are now stacked vertically instead having to cycle through them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pirate harvesting encounters will now begin later in the game once the player has more fame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pirate smog domes and double teams will also begin at a higher fame level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chance of pirate smog dome deploying reduced a bit depending on difficulty (Easy is less, Hard is about the same): New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recipe shop is now available at the floating market, it works the same as the owned recipe book except that it has purchase options. Cash and ingredients can be used for payment. Note that not all recipes will be available from the shop, the selection will increase as the players fame increases.: Thanks for continuing to play the game, reporting bugs and giving feedback, many of the changes above are the direct result of suggestions from players so even if we don't reply right away to your comments we do read them all and take note.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5749481331452638206"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-01T20:26:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.084Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.012Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-03-25",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfixes and improvements",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-25T18:43:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "cave mission given more time and more visuals identifiers for slightly easier navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fireworks mission given 30 more seconds and speculative fix for stuck dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fiberhop brews balanced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "boss plane: weakpoints are now correctly impervious to damage when not exposed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "airship boss: can now properly be defeated unassisted in final battle sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "final boss: fixed bombs or alcohol rounds having lacklustre effect on engines. Fixed brief moments of side wall invulnerability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "final sequence given more time and doubled boss decay rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "speculative fix for the salvage crates self destructing on start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix pressure washer visual and sound fx don't stop if plane crashes whilst holding ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix alcohol rounds do not drain water charge and will fire when water charge is empty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix mouse pointer appears during flight in controller mode after moving mouse or other actions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix controller open map input button does not also close map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix Darkmoon Shrine does not appear as discovered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix keyboard pitch/roll/yaw inputs have much greater input lag than the same inputs on controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Recipe book filter by Distilled/Fermented option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recipe book sort by name/quality/ingredient option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recipe book remembers its selection until the brewery is exited",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Water Missiles are now a proper secondary weapon, meaning that they must be toggled to using the secondary weapon cycle before they can be used. They no longer autofire, instead once the lock is achieved they will maintain the lock for a few seconds during which the player can choose to fire one or both missiles, or not at all. For people who prefer the previous implementation they can choose this by turning on Settings/Controls/Autofire Missiles. Note that this setting change will only take effect after the plane gets reset by going in an out of the hangar.: Thanks for continuing to play the game and providing feedback, we do take everyone's comments and bug reports on board when deciding what to do next even if we can't always respond to everybody.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5686430301733385108"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-25T18:43:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.084Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.011Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-03-19",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix and tuning patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-19T22:47:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Additional fixes to prevent black screen in salvage minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent collection of two crates at once in salvage minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix ingredient spawners that have been harvested incorrectly displaying the unharvested visual model which then would not yield any fruit when shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix brew bottle not correct when creating brew from purchase panel, note that some bottles created prior to this patch may still not come out correct, but all bottles from this patch on should be fine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix incorrect date on the loan UI panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix wrecks that have been fully salvaged will no longer be highlighted when the highlighter ornament is equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix tutorial could be softlocked if the final ring of the ring section was entered at the very side of the ring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Board game dice values reset properly between games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix initial drop in speed when boosting: There are a couple of reported bugs that we have been unable to repro so additional diagnostics have been added, if you encounter either of these please submit a bug and the logs will help us to find out what is happening:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pirate encounters sometimes do not terminate properly (e.g. you defeat the boss, but the smog dome remains)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sometimes after making a successful delivery the bar owner may become angry with you and then you have to make amends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tuning",
+     "items": [
+      {
+       "text": "Reduced cost of hangar repair and refuel by 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Additional trait for Vacuum boost, which will now self repair above 400kts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Additional trai for Recovery Package, pilots are immune to incapacitation in a crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The player will now start the game with all 1* recipes in the recipe book, since these are easy to guess and not very valuable it means that recipes awarded through the crates and bottles are more likely to be something that will benefit the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Options",
+     "items": [
+      {
+       "text": "Manual mode orbital camera time options added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse X and Y axis can now be bound: Thanks for supporting us as we continue to try and improve the game, please keep your bug reports and suggestions coming in, even if we can't respond right away we do actually look at them all.: Hopefully the next patch will include some kind of recipe shop.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 4,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5686430301712129466"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-19T22:47:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.011Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-03-15",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix and recipe/contract balancing",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-15T04:20:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix compact fuselage hydro boost bonus not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Irena void visuals sometimes not disappearing correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent docking when Irena void effect is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix plane stuck detector getting stuck and not resetting the plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix torpedo could be targeted by copter or auto turrets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix controller navigation issues in the hangar, unable to create new light plane or sell plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix tumble frame VFX stuck on plane if it crashed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for unpausing landmark dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for lower screen UI visuals cut off for widescreen users",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix floating bottles in bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Camera fixes and softlock prevention in final battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bad looking propeller blur",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pilot traits not working when starting a non-tutorial game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Pelican and Pipe not offering you a contract on day 1 if you quit the conversation and restarted it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bar sales panel incorrectly reported fame from sales (modifiers were excluded)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Contract frequency for bars increased across the board, particularly for The Thirsty Sailor and The Pelican and Pipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Dijana bad ingredient trait chance reduced from 10% to 5%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fame from bar sales reduced by 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Compact frame boost modifier reduced to +1% per cargo unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Easy mode repair cost reduced by 75%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Easy mode fuel cost reduced by 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Recipe and contract generation limits what it will award according to fame level in Easy and Normal mode. It works with these ranges: 0 - 10000 only recipes and contracts using group 0 ingredients are awarded (no upgrades needed): 10000-20000 only recipes and contracts with group 0 or group 1 ingredients are awarded (upgrade level 1 required): 20000-30000 group 2 (upgrade level 2): > 30000 no restrictions.: Hard mode continues to use the existing RNG system without group restrictions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Contract quality requirements increase as fame increases for Normal and Hard mode. For normal mode > 50k fame contracts will start to require 1*, > 75k it will be 2*. Hard mode is 30k-50k 1*, 50k-75k 2*, 75-100k 3*.: We hope that these balance changes will make the early game a bit less starved for income as there will be more contracts and the contracts will not require any upgrade purchases. We know that recipe discovery is is still a major issue and we are working to add more ways to acquire recipes as well as a bit of an overhaul of brewing in general, but that is a bit of a larger job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 7,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/7309977427437151301"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-15T04:20:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.010Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-03-12",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix and tuning patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-12T00:03:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix ingredients not spawning in post end game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix paints not purchasable under some conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix restarting save game from floating market now works",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bar conversation softlock with empty dialogue box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bar conversation sometimes not displaying player options as menu but playing them sequentially",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clamp maximum buoyancy to try and avoid planes being catapulted into the sky",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reset water after salvage minigame to try and prevent unexpected submersion after returning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More validation when saving, if an unexpected error occurs a message box will appear to take you to the main menu and a prompt to contact us for help",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save games with no player planes will now load instead of hanging, even though technically you should not have been able to delete all your planes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The water cost of the standard light plane projectile is decreased, allowing for more shots before a refill is required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brew of 2-5star values decreased by 20-30% because players found they were advancing to the end content far too quickly when higher quality brews were stocked in their bar. This resulted in players reaching the end without a proper combat plane or enough combat know how, thus the lowering of their value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flight instrument location support added. Your Altitude and Speed can now be positioned on the upper or lower portion of the screen, particularly more useful for widescreen users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for your continued patience as we work through the issues, we will continue to put out patches with more fixes and improvements as frequently as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A special note to anyone experiencing issues loading a saved game, please do get in touch with us right away either by email or on discord. We are often able to fix up save game files so they work and we really don't want anyone to lose their progress. There are a couple of people who have submitted bug reports and their save games can be restored, but we don't know how to get in touch with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5679673637668389857"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-12T00:03:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.009Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-03-09",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix and tuning patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-09T18:02:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix Ena-Franci softlock after boardgame, also a fix for savegames that ran into this problem and could not restart the mission, if you go back the The Opal Retreat with Ena and Franci it should fix the data and allow you to continue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Pluck'n Plunder controller inputs not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix softlock when 2 crates are salvaged at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix harshly blurred visuals in time trial race and on propellers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix manual/controller mode rudder inputs causing the plane to slow down unexpectedly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Tour Plane pilot passing out causing softlock, for the duration of this minigame the pilots will not become fatigued",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a number of brew recipes that could not be created",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix 4 and 5 star brew achievements, these should also be awarded retroactively if you begin a game with a 4 or 5* brew in your brewery inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Light plane bomb radius increased by 40%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Ingredients that require an upgrade to be collected will now display the upgrade level on their icon in the map and recipe book.: Sorry again for all the the frustrations caused by the issues, we will continue to make fixes and improvements as quickly as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5679673637660186438"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-09T18:02:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.009Z"
+  },
+  {
+   "id": "the-brew-barons-149850@post-2024-03-07",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix and FPS Limiter",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-07T21:44:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "FPS Limiter added to settings menu, this will limit the target FPS of the game for those who find their hardware runs too hot but prefer to have more options than VSync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional VSync \"half\" option. Please note that FPS Limiter and VSync are not compatible so only one should be set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization to improve performance in the Hangar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix brews going missing when transferred between inventories, this was particularly likely if the player created multiple different brews with the same name, but this should now be safe to do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Klare-Franci mission could not be restarted after failing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix broken recipes The Sea Hag and Dim Fiber Whisky: Thanks again for your patience as we keep working through the issues, we will keep putting out patches as quickly as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5679673637653456752"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-07T21:44:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:33.008Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-03-06",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-06T07:02:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Try to fix the crashing on exit from bars by a slightly different method of resetting the water, which we think is the problem, unfortunately since we cannot reproduce this on our machines trying to fix this one is a bit of trial and error, if anyone has any clues please let us know..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix heavy plane achievement not being awarded, it should also award retroactively if you have previously built the heavy plane, when you load the heavy plane into the hangar (you may need to load a different plane and then reload the heavy for this to work)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix softlock in brewing ferment/distill phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix Sky Breeze Whisky and Bland Aqua Brandy which could not be made due to incorrect data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix home indicator disappearing after you go into the hangar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix contract tutorial softlock when it ran in the brewery and the contract was accepted before the dialog prompt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fallback for games failing to load when they unexpectedly cannot load a plane, they will default to the hangar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added location indicators that correspond to an additional legend the map to give clues about where ingredients can be found",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "number of ingredient slots on map legend increased so that all ingredients on an island will be shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5679673637647577631"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-06T07:02:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.784Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-03-05",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix and tuning patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-05T09:18:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix brewery softlock when blending animation step fails to finish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix brewery ingredients would be lost if you selected the contracts or recipe panel after having dropped some ingredients in the pot, now the pot keeps its contents when those panels are opened. If other brewery panels are opened then the pot will be reset and ingredients returned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix Marin-Keften mission softlock in the hangar when the initial conversation failed to play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix wind barrier from slowing down the plane and made it more transparent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix controller mode roll input causes unexpected pitch up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "recipe collection UI moved to the side to prevent blocking vision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "all world quests received from NPC planes receive more money and fame, and time allowance is increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage Control heavy fuselage rewards 40% less money on damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final battle time allowance increased: Thanks for your continuing patience as we work through these issues, we will keep on making these patches as frequently as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5688680204387776043"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-05T09:18:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.784Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-03-04",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-04T08:53:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix for salvage minigame getting stuck in black screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for crates being pushed out of reach in salvage minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for exit button being unclickable in salvage minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for unexpected plane deaths when returning from bars or salvage minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix mouse cursor disappearing in interiors after using pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix smog dome not deactivating after beating boss in Gojko-Marin mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix some save games fail to load with unexpected pirate data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "new games will now validate copied data files before starting the game, if an error is found a warning message box will display instead of starting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "starting a previously saved game using Load or Continue will copy the save game to a backup folder prior to starting. This folder will have the suffix _bkp and can be used to restore the game if the original gets corrupted which some people have experienced.: If you do get a problem with your save game please get in touch with us on the Discord, we may be able to fix it up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5688680204384065245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-04T08:53:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.783Z"
+  },
+  {
+   "id": "the-brew-barons-149850@patch-2024-03-03",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Bugfix Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-03T09:46:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix Brewery product panel Create was not working, now it should automate the brewing process for a previously created brew as long as you have the required ingredients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bomb tutorial conversation clashing with Franci story conversation causing bomb to never be unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added fallback for saved games which did not activate the bomb ability, this should restore the ability although it may not happen instantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed New Chapter button in the Roster panel should not appear as it causes bugs, people who pressed it previously may have put that story into a bad state.: Sorry again for the inconvenience caused by these bugs, if you think your save game might be in a bad state please get in touch with us on our Discord where we might be able to fix the files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5688680204380555331"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-03T09:46:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.783Z"
+  },
+  {
+   "id": "the-brew-barons-149850@hotfix-2024-03-02",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Tutorial and Pause Menu Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-02T09:52:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Continuing apologies to everyone affected by these problems and thanks for your patience:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for softlock at the end of the Bar section of the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for loss of input after opening pause menu to change settings, and then using Escape to close menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for pirate smog dome not deactivating after you defeat a pirate boss with the smog engine equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for brews disappearing from inventory if they were discarded from the Product panel.: We will continue to fix issues as fast as we can so do keep submitting bug reports when you encounter problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5688680204376926886"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-02T09:52:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.782Z"
+  },
+  {
+   "id": "the-brew-barons-149850@hotfix-2024-03-01",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Tutorial Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-01T20:00:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have had reports of a softlock in the Brewery section of the tutorial, though we cannot reproduce this on our machines we have written something that we hope will fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also a fix for a softlock if you suffer a fatal crash after completing the Tour Plane and restart and the tour landing zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our apologies if you experienced these bugs, we are continuing to work on other bug reports as they come in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5688680204374821116"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-01T20:00:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.781Z"
+  },
+  {
+   "id": "the-brew-barons-149850@0.990",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 0.990",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-27T03:11:42.000Z",
+   "notes": [
+    {
+     "title": "Beta Patch",
+     "items": [
+      {
+       "text": "📜 Patch (0.990)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6 additional missions with over 400 new voiced lines added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12 new unlockable pilot traits added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brewery upgrades now accompanied with art visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Foggy and Overcast weather chance added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission prerequisite flight time now visible on HUD when appropriate pilots are paired.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the sudden pirate gunship slowdown that would occur after being defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor balance applied to the end game sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several pilot and pirate voice lines that weren't playing their audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "World map depicting outside of playable area added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tumble frame takes slightly longer to flip and Gamblers Frame earns a more appropriate amount of money per boss hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boost targets upgrade added, if you want to see what it is like to go at 1500kts+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tour plane minigame added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix Big Picture mode steam keyboard would not appear if closed and reopened",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix Brewery tutorial softlock if steam keyboard opened and closed in bottle phase",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix Brewery clicking finish button quickly could create duplicate inventory items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix Time Trial sometimes teleports plane to LZ when results panel showing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pirate encounters will now return in open play after final battle has been completed, just cos there isn't much to do otherwise...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix salvage minigame awards duplicate recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix newspaper incorrect or placeholder text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix incorrect player position on map when in interiors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "inventory sliders now have acceleration if activated by controller button hold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "collecting spoiled ingredients now triggers the smog screen effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix Ena negative trait speech playing incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix Nigel negative trait speech lines not playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix Irena negative trait audio persists when entering bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Our release is coming up at the end of the week! A big thanks to all those that helped with their bugs with their bug reports in this latest patch or prior ones!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5728086065198619752"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-27T03:11:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.780Z"
+  },
+  {
+   "id": "the-brew-barons-149850@0.897",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 0.897",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-09T01:20:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our first Backer Beta patch is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Beta Patch",
+     "items": [
+      {
+       "text": "📜 Patch (0.897)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 6 pilot missions with over 200 new voiced lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 3 new minigames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1 new unlockable trait for each pilot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Distance between islands slightly reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All brews of level 4 & 5 quality have a unique thumbnail visual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New UI screen particles placed throughout several areas of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The \"compact frame\" fuselage converted into a bi-plane.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a few tutorial sections that had missing voice lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A handful of portraits slightly polished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bombing ring is more visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several unwanted underwater salvaging sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing voice lines for submarine boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made water bombs a bit less likely to fill your screen with particles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam cloud saves enabled",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Multiple input devices supported",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To access the missions there is a small gameplay requirement, hopefully it will be clear what that is, if not then let us know, we might need to signpost it a bit better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those interested in using HOTAS and pedals, multiple inputs are now supported, we don't actually have any pedals so it was tested using HOTAS + joypad, so if anyone does have pedals please let us know if it works for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All bugs and feedback are welcome, preferably on Discord or through the bug reporter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5395938616799929884"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-09T01:20:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.076Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.780Z"
+  },
+  {
+   "id": "the-brew-barons-149850@0.880",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 0.880",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-21T08:05:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our first Backer Beta patch is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Beta Patch",
+     "items": [
+      {
+       "text": "📜 Patch (0.880)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed terrain that was snagging ship boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "increased cycle rate of the brewery ingredient wheel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "art fixes for Irenas night trait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed bugged refueling planes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "torpedo damage radius increased and fixed description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "prevent photomode being using in interiors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "removed duplicate recicpe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "corrected a mis-voiced bar owner line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "speculative fix for cocoa bean missing material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reduced vacuum distortion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "engine dimmer quicker to update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "speculative fix for over bright interiors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "speculative fix for lingering underwater sfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "voice volume slider added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed broken UI in market",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed text UI scale in recipe book",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "dandiewheat spawners release less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "end content balance adjustment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed stacking ambient shipyard sfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bad tooltip in the hangar explaining yeast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spinning stars at night fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "info gathering and potential fix for plane sinking bug (probably not fixed but so rare I need more info)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "explosive buoyancy or game freeze long pause fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "floating grass fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "unable to collect higher tier wheat after purchasing upgrade fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "front end improved validation to prevent invalid game names from being entered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix water plants showing incorrect icon when equipment warning is displayed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix farm plants not displaying icon for equipment warning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix plane inventory saved when new plane is loaded causing double counting when plane is reloaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "additional check to prevent crash restart on islands that have pirates present",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "pause menu sometimes unable to reopen after being opened once fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "materials that are transferred from drop off were lost if game was saved and reloaded fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "remove red faced portrait for bar patron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "skipping recruit conversation skipping would not stop audio line fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kickstarter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 2,
+    "other": 29,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/5218041989049465629"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-21T08:05:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.075Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.779Z"
+  },
+  {
+   "id": "the-brew-barons-149850@0.025",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 0.025",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-25T03:15:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is potentially our last demo update as we ramp up full-time production.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Demo Patch",
+     "items": [
+      {
+       "text": "📜 Patch (0.025)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pirates - will parachute money bags on defeat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX - added close proximity water sparkles to slightly help judge your landings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SFX - pontoon landing sound volume now tied to softness of landing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI - Cargo and fuel icons added to hud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI - money that is earned or lost will now briefly display next to your total funds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX - fixed pontoon water vfx not triggering when exiting the hangar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX - fixed boost effect not triggering on light frame fuselage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added UI and SFX to plane forward/reverse toggle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor city buildings optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shoreline terrain gradients improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix fuel consumption being zero for new planes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix tassel screen glitch on world translate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "removed kickstarter logo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "add no roll camera option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "manual cameras reworked to change position on water, descending from altitude, cruising",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "camera distance sliders and in game inputs added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "manual mode autolevel bound to L, or left stick click",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "manual mode yaw much more useable (uses new method of steering)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "manual mode default input bindings changed (throttle to should buttons, ability cycle to X, free camera to d-pad left)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "manual mode scale inputs at very high speeds to make plane more controllable when boosting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "timer removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/4258723269510203107"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-25T03:15:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.075Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.778Z"
+  },
+  {
+   "id": "the-brew-barons-149850@0.022",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 0.022",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-03T01:12:57.000Z",
+   "notes": [
+    {
+     "title": "Demo Patch",
+     "items": [
+      {
+       "text": "📜 Patch (0.022)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FOV slider added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX - boost polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX - distant water sparkles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SFX - brewery updated with several new sfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improved bottle weathering texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "drag and rudder tuning to significantly reduce turn speed in water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Detect attached controller and display info panel when starting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More sensible default bindings for controller (for new players only unless all settings are deleted).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kickstarter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/4247462367428640869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-03T01:12:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.074Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.777Z"
+  },
+  {
+   "id": "the-brew-barons-149850@0.021",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 0.021",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-24T21:37:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're nearly at 50% funded on Kickstarter and we're at the halfway point with 15 days to go! If you have a friend or family member that might be interested in our game, consider sharing! Thanks to all who've played and have supported us thus far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Demo Patch",
+     "items": [
+      {
+       "text": "📜 Patch (0.021)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "speculative fix for widescreen UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "motion blur effect/setting added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "night lighting has a blue-ish tint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "camera sits closer to idle plane, pulls away from plane when moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "new foley sfx added when moving inventory items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed vacuum sfx stacking when clicking rapidly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "compass visible range widened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed dialogue window not saving preference",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for contract tutorial softlock if contract panel was already open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for plane becoming very hard to move sometimes after docking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for pilot energy not decreasing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "speculative fix and extra logging for ability cycling bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kickstarter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/4246335832509401583"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-24T21:37:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.074Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.777Z"
+  },
+  {
+   "id": "the-brew-barons-149850@2.5k",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 2.5k",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-21T18:02:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've now broken passed 2.5k Wishlists which is amazing! We tend to let the demo and media speak for itself and generally don't remind people to wishlist all that often. That said, it's pretty crazy to see it already get to this number. In celebration a new trailer has been released on the store page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📜 Patch (0.020) with the following fixes/improvements",
+     "items": [
+      {
+       "text": "fixed reticle/crosshair jitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a contract softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For users with widescreen issues, expect a fix likely in the next demo patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kickstarter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/4246335198907723568"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-21T18:02:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.073Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.776Z"
+  },
+  {
+   "id": "the-brew-barons-149850@0.019",
+   "gameId": "the-brew-barons-149850",
+   "displayName": "Patch 0.019",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-20T05:35:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated our Kickstarter backer rewards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🍺 A single order Beer Mug reward tier with a reduced cost has been added (previously only orders of two were offered)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🥃An additional Highball international reward tier has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪙 A price reduction in both Highball and Water goblets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We welcome anyone to change their order if these new additions are of desire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📜 Patch (0.019) with the following fixes/improvements",
+     "items": [
+      {
+       "text": "fix rest not restoring pilot energy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix frame rate issue after loading new plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix brewery lock if customization buttons were pressed quickly after Finish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "update to throttle hud indicator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "update to Yeast UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recipe and Contract buttons are available all the way through the brewing process without resetting the brew.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix out of bounds restart not working in manual mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "auto-pilot icon added to plane UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "📜 Notable updates from Patch (0.018)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed distorted pilot portraits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "headsup throttle UI added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "bloom slider added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "engine sfx dimmer added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "setting added for HOTAS throttle range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed plane getting stuck after salvage minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LINKS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kickstarter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 20,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1636710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1636710/view/4246335198902192277"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-20T05:35:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1636710",
+      "checkedAt": "2026-11-13T03:32:57.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:09.776Z"
+  }
+ ],
+ "issues": []
+}

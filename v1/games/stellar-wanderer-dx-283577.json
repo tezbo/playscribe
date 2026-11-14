@@ -1,0 +1,1636 @@
+{
+ "game": {
+  "id": "stellar-wanderer-dx-283577",
+  "igdbId": 283577,
+  "name": "Stellar Wanderer DX",
+  "cover": {
+   "imageId": "co7nqu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7nqu.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2pgq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2pgq.jpg"
+  },
+  "ps5Release": "2026-03-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.17",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Update 1.0.17",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-24T13:34:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear pilots,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce that we have a new update for game - version 1.0.17!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Highlights",
+     "items": [
+      {
+       "text": "This is one of our biggest updates yet! In this one we added the possibility to defer story missions, fixed various issues related to equipped items, we reworked the Mining Silencer, fixed some HUD and Interface issues, added more info and status messages for the repair function and class abilities, fixed the per-joystick axis calibration settings, and many, many more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Story Progression Warnings",
+     "items": [
+      {
+       "text": "Added a Story Progression Warnings toggle in the settings list. It is off by default, and a popup explains the new state each time you toggle it. When it is on, and a jump gate or a docking would move the story mission forward, a confirmation popup appears:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Your story mission continues in . Continue the story now?\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Your story mission continues on the station. Continue the story now?\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose NO to jump or dock in SANDBOX mode, or YES to continue with the STORY. You will be asked again the next time you arrive there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: A story mission can have several parts, you can only defer the beginning of the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Class Abilities & Repair Unit",
+     "items": [
+      {
+       "text": "Abilities show status messages: *Locked*, *Active*, *Recharging*, *Activated*, and *No Class Selected Yet*.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The repair unit shows status messages: *Hull Repaired*, *No Repair Unit*, *Repair Unit Recharging*, and *Hull Integrity Full*.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HUD shows ghost icons for abilities and the repair tool when you try to use them without being unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repair no longer triggers on a full hull, and Taunt no longer triggers with no enemies in range. Neither spends its cooldown in those cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability names and more stats are now displayed in the PILOT page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hangar shows a REPAIR UNIT installed/not installed stat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Mining Silencer",
+     "items": [
+      {
+       "text": "An active silencer jams random-encounter pirate forces so they can no longer track you. Jammed hostiles get a green reticle and a JAMMED tag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New corresponding HUD messages for the Mining Silencer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Attacking a ship, including with missiles or torpedoes, breaks the silencers` cover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turrets respect silencer jamming when they pick targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Advanced tractor beam/teleporter",
+     "items": [
+      {
+       "text": "If a Smuggler's Den is installed together with an advanced tractor beam or multi-teleporter, illegal cargo is collected automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Turrets",
+     "items": [
+      {
+       "text": "Fixed an incorrect bullet range when engaging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Phase Turret now fires the correct bullet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where turrets would engage invisible targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with energy consumption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Equipment",
+     "items": [
+      {
+       "text": "Fixed some energy consumption discrepancies between reported value and gameplay value for various equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with scanners range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "HUD",
+     "items": [
+      {
+       "text": "Energy display now shows the absolute energy value instead of a percentage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The energy gizmo turns red at the \"Energy Low\" level, then fades back once energy recovers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ability timer (e.g. Aegis) no longer shows a stray extra decimal digit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The lock \"red dot\" now also works for torpedoes and the silencer, showing when they are loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interface",
+     "items": [
+      {
+       "text": "Negative energy values in hangar are shown in red, and launch is not allowed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hangar PRI FIRE / SEC FIRE stats:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some issues with the estimations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Show *not installed* when no weapon is equipped, and *no energy* when the loadout leaves no battery energy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They are shown in yellow when sustained fire lasts less than 10 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turret details were revamped. New fields are Time, Range, Guns and Mode (Burst/Cont). DPS now includes gun count, fire mode and delay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a few display issues for the Items compare table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgrade badges:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The upgrade icon is now cyan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some equipment upgrade badges not showing when better equipment is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A badge on the HANGAR button shows when something can be upgraded at the current base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The contraband label is no longer missing in the CARGO section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The battery extender bonus and the MINING stat now display correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialogue:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The PREV/NEXT/CLOSE buttons are centered and closer together, so mashing through dialogue while docked no longer launches the ship by accident.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A missing menu texture (mission icon) was fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Joystick",
+     "items": [
+      {
+       "text": "Fixed Joystick axis settings per device (invert, dead zone and sensitivity for each axis).: ##: Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when leaving the Titan base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some dialogues being played twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where closing a dialogue would redirect to main menu instead of hangar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where after a jump or undock, a gate or station did not have collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Various localization fixes and updates.: If you have any feedback or encounter any issues let us know on the game's Community Hub page.: Happy exploration,: Stellar Wanderer DX team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 13,
+    "balance": 0,
+    "other": 35,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1844751498221528"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T13:34:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.034Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T13:34:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.034Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-24T13:34:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.816Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.16",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Patch 1.0.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-31T12:04:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, pilots! This update brings quality-of-life improvements across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Multiple connected gamepad controllers are now supported simultaneously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"Sell All\" button to the cargo section, allowing bulk sale of items by type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Selected target's off-screen indicator now displays a distance label next to the directional arrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Secondary mission markers updated with a more distinct color for better visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tutorial popups display input command binding glyphs for the current control scheme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Splash screen logos can now be skipped with Escape, Space, or controller A/B buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with binding Mouse Right Click to some actions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Stellar Wanderer Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Multiple connected gamepad controllers are now supported simultaneously",
+     "Added a \"Sell All\" button to the cargo section, allowing bulk sale of items by type",
+     "Selected target's off-screen indicator now displays a distance label next to the directional arrow"
+    ]
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1839676055887967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T12:04:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.033Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T12:04:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.033Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-31T12:04:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.814Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.15",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Patch 1.0.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-15T22:33:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, explorers! Patch 1.0.15 squashes a couple of pesky bugs and adds a small quality-of-life improvement to control bindings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue in the Dysons system where a duplicate lost cargo pickup would register as collected without awarding the actual shard, potentially leaving some players one shard short of the Hellcat Ship/Archaeologist achievement. All 22 shards can now be properly collected. Huge thanks to Shadwen for helping us track this one down!: If you were affected: no action needed - the achievement will unlock automatically the next time you land at a base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a mouse hover issue that prevented the info button (for opening equipment descriptions) from being displayed. Thanks to WiseHart for the report!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "You can now delete a selected binding with right click in the keyboard/joystick control bindings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Stellar Wanderer Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1838407329255259"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T22:33:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T22:33:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.032Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-15T22:33:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.812Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.14",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Update 1.0.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-05T09:23:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear pilots,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce that we have a new update for game - version 1.0.14!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The list of changes includes",
+     "items": [
+      {
+       "text": "implemented the option to fast-forward the dock and jump-gate cutscenes. To do this, just press again the in-game dock/jump key after the dock/jump has started (the default key is 'F')",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "for the Archeologist achievement, the number of available and collected shards can now be found in the MAP > MARKET table for every system. For each system, the info becomes available after it is visited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "various other stability, UI and localization fixes: If you have any feedback or encounter any issues let us know on the game's Community Hub page.: Happy exploration,: Stellar Wanderer DX team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1836506165573696"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-05T09:23:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-05T09:23:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.032Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-05T09:23:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.811Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.12",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Update 1.0.12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-07T07:13:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear pilots,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce that we have a new update for the demo and full game - version 1.0.12!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The list of changes includes",
+     "items": [
+      {
+       "text": "added French and Italian localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "many fixes and improvements for the Japanese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "localization fixes for all languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added a counter for the number of shards collected in each system to help with the Archeologist achievement. The counter can be found when landed on a station in the Market > Cargo section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added the option to invert the slide X and Y axes separately, and fixed setting persistence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed some space structures that were mineable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed display names of certain asteroids: If you have any feedback or encounter any issues let us know on the game's Community Hub page.: Happy exploration,: Stellar Wanderer DX team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1834602721195397"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T07:13:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.031Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T07:13:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.031Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-07T07:13:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.810Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.10",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-04T23:37:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello pilots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Patch 1.0.10 - In this patch we made various localization fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many fixes and improvements for German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some missing and corrupted texts for Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various other issues for all languages: Additionally, we made some small improvements for controller detection.: If you see any issues, let us know!: Happy exploration,: The Stellar Wanderer Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1831432155578863"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-04T23:37:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.031Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-04T23:37:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.031Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-04T23:37:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.810Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.9",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Update 1.0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-18T11:44:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, pilots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce that we have implemented support for multi-device HOTAS and HOSAS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The changes include",
+     "items": [
+      {
+       "text": "added support for up to 4 connected devices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed stuck on binding issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "improved axes and buttons detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added support for up to 40 buttons per device",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "detect device connected/disconnected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some incorrectly configured bindings: Additionally, the patch includes some other fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with incorrect cargo being dropped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed several issues regarding upgrade of pilot abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some missing or incorrect item descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some missing translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed display of credits over 1 million: If you have any questions or encounter any issue, please use our [Joystick and HOTAS Discussion Thread]: Happy exploration,: The Stellar Wanderer Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1830163047262244"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-18T11:44:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.030Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-18T11:44:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.030Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-18T11:44:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.809Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.4",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Hotfix 1.0.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-24T09:50:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello pilots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Hotfix 1.0.4: In this patch we made some fixes and quality-of-life improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added continuous press option for Buy an Sell buttons in the Market",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the option to set the volume of Player SFX, SFX and Voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the player class in the save game description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the option to disable the Cockpit Flash Effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Tourist achievement, 2 bases were not properly counted (land on any base for the achievement to update)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with incorrect cargo being dropped in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the scroll wheel input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rendering issue when the game window is dragged to another monitor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some rare crashes when certain enemies are destroyed: UPDATE: there is still an issue when dropping cargo with the gamepad: Happy exploration,: The Stellar Wanderer Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1827626365765256"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T09:50:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.030Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T09:50:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.030Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-24T09:50:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.808Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.3",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-15T23:47:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello pilots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Hotfix 1.0.3: Time Multiplier Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this patch we improved the Time Multiplier experience. If using afterburner when multiplier is active, it will not drain out, thus making this mode similar to a 'cruise mode'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally we fixed mouse and keyboard pitch axis not responding to the invert pitch axis setting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Stellar Wanderer Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1826992588600442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-15T23:47:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.029Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-15T23:47:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.029Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-15T23:47:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.808Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@1.0.2",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-13T17:51:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🛠️ Hotfix 1.0.2: HOTAS Support & Stability Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello pilots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all for an incredible launch day! We apologize for the crash to desktop that occurred in the initial build, and we want to express our gratitude for your support, your reports are the reason why we were able to fix the bug so quickly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, we have received a lot of great feedback and we plan to provide further stability and quality-of-life improvements in the coming days/weeks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For now we published 2 patches, latest being v1.0.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔄 v1.0.2 - HOTAS Support: Fixed an issue where HOTAS throttle axis input was not being processed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game currently only supports single device HOTAS setups. We know our hardware support is incomplete, but we are committed to improving it. If your single-device setup isn't working—or if you'd like to see multi-device support in the future—please let us know in Community Hub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔄 v1.0.1 - Resolved the crash to desktop that occurred shortly after launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are still seeing crashes, please check if your game has updated to the latest version, sometimes it takes a while before Steam detects there is an update available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Stellar Wanderer Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/1826992588596364"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T17:51:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.028Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T17:51:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.028Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-13T17:51:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.807Z"
+  },
+  {
+   "id": "stellar-wanderer-dx-283577@major-2024-09-23",
+   "gameId": "stellar-wanderer-dx-283577",
+   "displayName": "Big update for the Stellar Wanderer DX demo!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-23T08:52:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are pleased to announce that the Stellar Wanderer DX demo has been updated to version 0.6! This update brings a slew of visual, sound, UX, and localization improvements to the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check the patch notes below",
+     "items": [
+      {
+       "text": "updated environments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated capital ships and installations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated fighter ships and cockpits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated space stations (interior and exterior)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "new jumpgate and dock animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "new sounds and fxs for engines and weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "new explosions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "new localizations. The full list now includes German, Portuguese, Russian, Spanish, Japanese, Simplified/Traditional Chinese. This is still in a work in progress, some texts might still show up not translated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "many other under-the-hood fixes and improvements: Please don't hesitate to share with us your feedback and any issues you may encounter in the demo on the game's Community Hub page.: Stellar Wanderer DX team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1401630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1401630/view/6341720536516581808"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-23T08:52:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1401630",
+      "checkedAt": "2026-11-13T03:31:43.027Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:53.805Z"
+  }
+ ],
+ "issues": []
+}

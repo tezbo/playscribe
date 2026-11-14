@@ -1,0 +1,1654 @@
+{
+ "game": {
+  "id": "happy-s-humble-burger-farm-140654",
+  "igdbId": 140654,
+  "name": "Happy's Humble Burger Farm",
+  "cover": {
+   "imageId": "co398u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co398u.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1btt",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1btt.jpg"
+  },
+  "ps5Release": "2021-12-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "happy-s-humble-burger-farm-140654@1.18.1",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 1.18.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-18T22:27:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.18.1 is now live. This patch focuses on stability, save reliability, display fixes, Steam Deck improvements, and a handful of issues reported by players.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thanks to everyone who sent in logs and bug reports. They helped us track down some stubborn issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Obligatory mention: If you enjoyed the game, please consider leaving us a review. It helps greatly with visibility!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saves, Inventory & Collectibles",
+     "items": [
+      {
+       "text": "Fixed the held-item counter on the HUD showing the wrong number of items, including cases where it showed zero dots while you were still holding something.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed items occasionally being dropped from your inventory when moving between areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inventory now stays in sync every time you change scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hardened the save system so one error can no longer prevent inventory, action figures, or progress from saving to disk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash when entering the apartment that could prevent collectibles, such as the jukebox and flatscreen TV, from appearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where players could load into the wrong spot after certain transitions, such as the apartment kitchen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Display & Resolution",
+     "items": [
+      {
+       "text": "The resolution selector now properly changes your resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where changing resolution in the default fullscreen mode had no visible effect for many players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The resolution list is now built from your actual monitor, so you should only see modes your display supports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for missing common resolutions, including ultrawide resolutions like 3440x1440.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the game saving your monitor's resolution instead of the resolution the game was actually running at.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one resolution list entry applying the wrong resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck",
+     "items": [
+      {
+       "text": "Removed the forced 1280x800 resolution lock.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Your selected resolution is now respected, including higher resolutions when docked to a TV or monitor.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added proper default control layouts for Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Reworked key rebinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Custom keybinds now save and persist between sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Custom keybinds are now applied consistently across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Performance & Stability",
+     "items": [
+      {
+       "text": "Fixed several internal errors that were firing every frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced heavy log spam that could hurt frame rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players affected by these errors should see improved smoothness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional crash and error hardening across scene loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Apartment & Miscellaneous",
+     "items": [
+      {
+       "text": "Fixed the apartment TV not switching correctly between CRT and flatscreen modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please keep sending reports if you run into anything weird. The details help a ton.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/1835871199305618"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T22:27:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.224Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T22:27:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.224Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-18T22:27:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.634Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@1.18.0",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 1.18.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-11T12:59:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a long-overdue care pass touching performance, install size, Steam Deck support, and a stack of minor bugs. The two headliners: a major Steam Deck compatibility restoration, and a project-wide disk footprint + load-time reduction.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck: major compatibility restoration",
+     "items": [
+      {
+       "text": "HHBF was one of the first games verified for Steam Deck at launch. Since then, it had quietly drifted out of compat. This patch puts it back in shape, top to bottom.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Game now pauses cleanly when the Deck sleeps. Press the power button mid-shift and your save is flushed, audio mutes, and the simulation freezes. Wake up to the pause menu with everything intact, no more customers magically progressing while you were away.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Full gamepad support in the rebinding menu. Before this patch, the Controls screen could detect controller input but only let you bind keyboard keys. Gamepad bindings are now first-class: every action can be bound to either, and they work simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Live keyboard/gamepad prompt swapping. Interaction prompts now read the active input device and update on the fly: `Press to use` becomes `Press to use` the moment you put the keyboard down and pick up a controller. Switches back the same way.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Native 1280×800 16:10 handling. Deck's display aspect is now treated as a first-class resolution. UI elements that anchor to screen edges get a small safe-area inset so nothing hugs the bezel awkwardly. Ultrawide users benefit from the same fix.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Auto-tuned settings on first Deck launch. When the game detects it's running on a Deck for the first time, it applies a balanced preset: 1280×800, Medium quality, MSAA off, hard 60 fps cap on both Deck LCD and Deck OLED (so OLED Decks aren't burning battery rendering 90 fps you can't feel mid-shift). Subsequent launches respect any manual settings you change.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New \"Restore Deck Defaults\" button. Tucked into Settings → Controls. Resets visuals + keybindings to the recommended Deck preset if you've tweaked things and want a clean slate.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Cloud save sync. Your save now mirrors to Steam Cloud after every write and downloads the newer copy on launch. Start a shift on your desktop, finish it on the Deck, and your progress comes with you. Last-write-wins, automatic, no per-slot ceremony.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Performance & install size",
+     "items": [
+      {
+       "text": "Dramatic install size reduction. Project-wide texture compression pass across every major location: Apartment, City, Burger Farm, Warehouse, Charlie, Parking Garage, Sewers, Radio Station, Flashback Surgery, Toes Room, and others. Disk footprint and VRAM usage both drop substantially.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Audio asset re-encoding. Sound effects and music re-compressed at sensible bitrates. Smaller download, no audible quality loss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All scenes fully lightbaked. Static lighting was finally baked across the entire game: every restaurant interior, exterior, OOB scene, Dream Scene, Ending Laboratory, Boss arenas, Museum Interior, Key Room, Drive Through, Bungalow, Break Room, 50s Diner, and more. This is a huge perf win for low-end hardware: lighting that used to be computed every frame is now precomputed once, freeing the GPU for the things that actually need it. Visual quality also goes up across the board, with proper bounced lighting and shadows where there used to be flat shading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apartment occlusion culling rebake. Reduces drawcalls in one of the most-visited scenes in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Significantly improved game save performance. Saving is now dramatically faster with far less hitching during autosaves and manual saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced in-game stuttering. Optimized memory usage across restaurant operations, customer interactions, food assembly, and AI encounters to minimize frame drops and micro-stutters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Smoother AI encounters. Improved efficiency of distance checks and physics queries during enemy encounters, reducing CPU overhead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized cooking and order systems. Streamlined collision detection and item handling across the assembly board, drink station, fryer, and bagging systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved water rendering performance. Optimized AQUAS water caustic and lens effect updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced memory churn. Cached frequently-used timers and references across 100+ scripts to reduce garbage collection pauses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed unnecessary background processing. Cleaned up 73 unused engine callbacks that were consuming resources silently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed action figures not saving in the apartment. The Sammy, Petey, Charlie, Farmer, and Happy action figures now correctly save their position when placed in your apartment, and they reappear where you left them after a restart. This was the most-reported save bug in the game. The root cause was an internal name mismatch in the five prefabs, which caused the apartment save system to silently fail when trying to reload them. Note: action figures missing from existing saves will not be auto-recovered (you will need to re-collect those); anything placed after this patch saves correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera collectible not spawning correctly. The SureShot Camera collectible now properly appears in the restaurant when unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Landing Gear collectible not saving. The Landing Gear music collectible now correctly saves and loads its collected state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed season calculation. August is no longer incorrectly classified as Fall; seasons now transition correctly throughout the year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI encounter data not persisting. Total AI encounter count now properly saves and loads between sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed coroutine stacking in restaurant simulation. Prevented a rare issue where customer spawning and shift timing could double up, causing erratic behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect DontDestroyOnLoad usage in the achievement system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Presentation",
+     "items": [
+      {
+       "text": "Refreshed Main Menu icons. Cleaned-up iconography on the title screen, small but visible polish for the first thing players see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 2,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/1835236783560275"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-11T12:59:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.223Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-11T12:59:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.223Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-11T12:59:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.633Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@major-2022-07-14",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Happy's Humble Burger Farm - Twitch Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-14T18:23:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Did you enjoy Happy's Humble Burger Farm? Did you ever stop and think, \"Wow, I wish this was even more chaotic!\" Do you enjoy giving strangers control of your destiny? Then boy do we have the update for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing the Twitch Edition!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The scientists at Scythe Dev Team have done it again, those rascals! They've fully integrated Twitch into the game. After logging in and connecting your account, your chat can use commands to influence gameplay! It doesn't matter if you have 5000 fans or just your grandma, everyone can interact!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Right Click the game in your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Select Properties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Open the 'Betas' tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• In the dropdown select, 'twitch_edition'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Update and Play!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The commands include",
+     "items": [
+      {
+       "text": "!command",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!talk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Makes speech bubbles appear over customer's heads with your message",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!radio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A text-to-speech Klattersynth will say whatever you type to the player!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!mascot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make the mascots speak to the player from a pool of their favorite phrases!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Give the player a bite to eat from a random assortment of goods!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn a friend (but really it's just a foe) for the player to have EXTRA fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!scare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trigger a dynamic scare event if applicable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's too bright in here, if applicable, toggle a light switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!tv",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggle the TV in the player's apartment!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's too drafty in here, open (or close) a random door if applicable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!throw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't like what the player is holding? Me neither, throw it! (this makes cooking real fun)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "JUMP! AHHH!!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!booze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buy the player a drink, everyone knows it's fun to get buzzed at work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "!pills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I CAN TASTE THE COLORS!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you have as much fun with this update as we did testing it. Let us know if you find any issues, we're always listening! There may be a few bugs here and there, but report and we shall fix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, Have a Happy, Humble Day! Now get to work!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "P.S. need some artwork for twitch? We've got your covered here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Signed,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scythe Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 41,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/4937651144686052202"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-14T18:23:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.222Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-14T18:23:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.222Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-14T18:23:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.631Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@1.17.0",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 1.17.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-13T23:18:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello to all of our amazing Happy Humble Employees!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we bring you a small change, but with big impact! As of version 1.17.0 any items left in your apartment will be there when you get back! This means you can safely save your stuff, decorate your apartment, or steal all of Toe's coffee, and never worry about it disappearing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This means the game can be played very differently, or more at your own pace. REMEMBER, any items your player is holding or left in your backpack WILL NOT BE SAVED! So be sure to drop them off at your place before Clocking Out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We did our best to account for every item that could possibly be saved, but we may have missed 1 or 2 items. If this is the case or you experience any weird behavior, please stop by our discord and let us know in our Bugfixing channel! https://discord.com/invite/happyshumble",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you all enjoy this QoL feature, and be on the lookout for lots more bugfixing/QoL features. We're listening to ALL your feedback and really appreciate everyone's support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/4224936849666631819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-13T23:18:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.221Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-13T23:18:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.221Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-13T23:18:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.627Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@1.16.5",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 1.16.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-07T23:30:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Lots more fixes coming your way in this update. Please make sure you are up to date by looking at the version number in the bottom corner of your Main Menu screen. If not, restart steam and you should have the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update you will find fixes for all of this stuff down below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We thought \"New Game\" meant, well, \"New Game\"! Endless mode now stays unlocked even if you start a new game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed backpack issues in the Diner scene preventing players from putting finished burgers on the plate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI issues that prevented backpack usage while all jacked up on coffee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the money in the Steal & Sell from breaking your inventory system!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the special disks in the special places not showing up for our special players who want to play again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimization pass in a few places to hopefully make it run just a tad bit more smooooooth. Get it, 'sMOOOOOOth'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's pretty much the main stuff, there is also a lot of little things Obscura did while you were sleeping. They were searching for contraband and might have shuffled some things around. If it wasn't where it was before, or doesn't look like it did before, blame THEM!: It may not seem like a lot, and if you don't see your reported bug on this list, please don't fret! We are trying to prioritize to the best of our abilities so you can keep making Happy, Happy! We have notated everything and are trying to fix everything as fast as we can!: If you haven't figured it out yet, just trust Obscura, they will ALWAYS lead you in the right direction. But their help line is disconnected... so until they start fixing their own problems, we are around to fix any issues you may be having! The best place to get a hold of us is our DISCORD.: We want to fix bugs, so, give us what you got! We will be waiting, hanging out with the Barnyard Buds!: -Scythe Dev Team: https://discord.gg/BpvAZwU9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/4224936215403460295"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-07T23:30:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.220Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-07T23:30:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.220Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-07T23:30:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.626Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@1.16.4",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 1.16.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-05T20:28:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 1.16.4 straight from Happy herself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy doesn't like when her restaurant isn't running well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1 day has gone by and we have been hard at work fixing bugs to make sure you can keep cooking burgers! Good news though, we have managed quite a few little changes to make your cooking experience even better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "In this patch you will find fixes for the following",
+     "items": [
+      {
+       "text": "Eliminated an unfriendly from the restaurant area that was trespassing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soft lock when player picks up and throws the burger bomb right away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "V.I.C. didn't rehearse his lines well enough so we had a talk with him about that (hint system fixed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Modified intensity of unforseen events that can occur while cooking at the restaurant!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soft lock when you tried to get coffee while holding a Paragon forbidden item (keypad hacker)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now store your burger bombs in your inventory. No more accidentally throwing them with the scroll wheel!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soft lock for being such a good employee and trying to throw ALL the trash in the game away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some people beat Charlie but weren't able to recive their reward! That reward is now availible in musueum if this happens to you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There was a couple of audio tapes that managed to slip through the cracks, but we found them! So hopefully now you can too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Assured that all the collectible notes are able to be observed throughly by either standing or crouching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Got rid of that old antenna for that broken TV in your apartment so it wouldn't obstruct that beautiful flat screen TV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Couldn't hear V.I.C. too well, so we cranked him up to 11",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 'Traditional Chinese' translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "People who couldn't see the path before can now see the path to freedom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The patties in Toe's room were so spoiled that even The Fabricator didn't want them. So we made Toe throw them out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented items in certain places from doing bad things! (fixed inventory bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few other small, minor changes that only 1 person on our team understands but we are told that you will like it, so from the people who brought you Obscura biotech Trust Us: That about does it as far as bugs go. We want to thank each and every one of you for your support and your understanding/patience while we work out the first day bugs! We have had a LOT of feedback, both positive and negative, and we want to make sure that we are doing our best to provide the best gaming experience that our small little team can muster.: So we have taken some of that negative feedback, strewn it about various different people/fans/players and we decided to switch some things up. We hope you enjoy!: As always, if you have any bugs/feedback/questions please don't hesitate to join our amazing, helpful community at our DISCORD server!: Have a Happy Sunday from The Barnyard Buds!: (And Scythe Dev Team, they helped a little bit): https://discord.gg/zgwVKd4E",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 17,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/4224936215395716385"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-05T20:28:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.219Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-05T20:28:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.220Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-05T20:28:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.626Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@1.16.3",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 1.16.3",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-03T23:13:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2 patches in 1 day!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry for the inconvenience, we want to fix all the problems we can as soon as we can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this version 1.16.3 patch we were able to figure out the slight bug that was causing steam achievements to not recognize. As well as fixing a bug that occurred when the player would activate a burger bomb and then switch levels.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you very much for your understanding and please let us know in our discord server if you find any other sneaky bugs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/4224936215388851910"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-03T23:13:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.219Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-03T23:13:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.219Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-03T23:13:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.625Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@1.16.2",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 1.16.2",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-03T21:03:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Comin' to you straight from New Elysian City. Our first patch! There has been reports of the screen going black right after the first splash screen upon launching the game. This unfortunately was due to those who had played any of our demos or playtests. We do greatly apologize and we hope you forgive us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch is here to fix all that and make sure you can get to your job on time! Sorry for making you late to your first shift. 😦",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scythe Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/4224936215388524486"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-03T21:03:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.218Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-03T21:03:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.218Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-03T21:03:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:38.624Z"
+  },
+  {
+   "id": "happy-s-humble-burger-farm-140654@0.4.7",
+   "gameId": "happy-s-humble-burger-farm-140654",
+   "displayName": "Update 0.4.7",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-05-16T00:27:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all you Happy Humble Heroes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Very happy to see so much feedback from all of the play-testing! Have even caught a few streams. (Keep an eye out, we might just stop by!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An update to the playtest is being pushed that addresses many reported bugs. Below is a changelog. If you're play-testing, be sure to grab the latest build. There's functionality within the pause menu itself to submit bug reports! But it's most helpful to get pictures, so if you are on Discord, feel free to screenshot and submit them to our official server; discord.gg/scythesaga",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And now for the ch-ch-ch-changes...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CHANGELOG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player no longer spawns in kitchen of apartment when restarting game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collider no longer missing in BF scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toe coming into your apartment and clipping thru walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"New Elysian City...\" spiel has a second trigger around the back of the Apartment building.​",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collider on kitchen door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added colliders to Graveyard building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "No boss call on day of crane crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse icon pops up on delivery boxes for daily task",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Map hole is observed in restaurant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cash registers floating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Energy issue. Player now spawns with full energy after Game Over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added posters to kitchen with cooking explanations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stuck spot in apartment bedroom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interactive system break in warehouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added wishlist steam overlay",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed infinite loading bug for Plaza: https://store.steampowered.com/widget/1433330",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1433340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1433340/view/4767601588119563705"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-16T00:27:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1433340",
+      "checkedAt": "2026-11-13T03:22:25.217Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:01.512Z"
+  }
+ ],
+ "issues": []
+}

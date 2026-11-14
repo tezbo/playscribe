@@ -1,0 +1,500 @@
+{
+ "game": {
+  "id": "shepherd-s-crossing-246758",
+  "igdbId": 246758,
+  "name": "Shepherd's Crossing",
+  "cover": {
+   "imageId": "co7icf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7icf.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2a3z",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2a3z.jpg"
+  },
+  "ps5Release": "2023-04-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shepherd-s-crossing-246758@post-2025-10-02",
+   "gameId": "shepherd-s-crossing-246758",
+   "displayName": "Fixed the issue related to the red fox.",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-02T02:51:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We sincerely apologize for the long wait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have fixed the issue where the game would stop progressing after the Red Fox capture event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To use the game in Japanese, please edit the following file",
+     "items": [
+      {
+       "text": "SheepVillage_Data/StreamingAssets/text/splocalize.ini.txt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Make the following changes",
+     "items": [
+      {
+       "text": "textset=1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "dir=ja",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fontset=def",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After saving these settings, you will be able to play the game in Japanese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2162720"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2162720/view/1811772772461889"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-02T02:51:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2162720",
+      "checkedAt": "2026-11-13T03:30:20.800Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-02T02:51:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2162720",
+      "checkedAt": "2026-11-13T03:30:20.800Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-02T02:51:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:05.222Z"
+  },
+  {
+   "id": "shepherd-s-crossing-246758@major-2024-07-16",
+   "gameId": "shepherd-s-crossing-246758",
+   "displayName": "0716　UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-16T03:22:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With this update, you can now edit in-game text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can only edit text, not graphics with embedded characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "# About text editing functions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operate the following folders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Install Path) \\SheepVillage_Data\\StreamingAssets\\text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Configuration File",
+     "items": [
+      {
+       "text": "splocalize.ini.txt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enable/disable the User Localization function",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Folder specification for used text: Check the file for details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About Translations",
+     "items": [
+      {
+       "text": "The text in the ko, sc and tc folders is to be translated. Part of it has been translated for testing purposes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The en and ja folders contain the actual text used. Please translate and use it with reference to this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update also includes minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2162720"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2162720/view/6000566704282431485"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T03:22:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2162720",
+      "checkedAt": "2026-11-13T03:30:20.799Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T03:22:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2162720",
+      "checkedAt": "2026-11-13T03:30:20.800Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-16T03:22:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:05.221Z"
+  },
+  {
+   "id": "shepherd-s-crossing-246758@1.01",
+   "gameId": "shepherd-s-crossing-246758",
+   "displayName": "Update 1.01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-16T01:03:48.000Z",
+   "notes": [
+    {
+     "title": "You can now use the keyboard!",
+     "items": [
+      {
+       "text": "Thank you for your patience. Updated to support keyboard-only operation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fix point 1",
+     "items": [
+      {
+       "text": "You can now move from the title screen to the config screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can switch between and functions with the cursor or up and down the gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fix point 2",
+     "items": [
+      {
+       "text": "Keyboard input has been correctly handled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I also modified the in-game so that it can be played only on the keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When the controller pad (hereafter referred to as pad) is not inserted in the key configuration screen, the button display has been corrected so that it is not displayed. We also fixed a bug where the key settings were broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "*Caution *",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enter is not allowed. It's the same as making a \"decision\" on the keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "However, the color is red because it can be selected but not used for compatibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you set \"Enter\" in 1.00, please change to another key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fix point 3",
+     "items": [
+      {
+       "text": "Added help display for keyboard operations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Press the \"F1\" button during the game to display the operation on the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Press F1 again to hide it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Notes",
+     "items": [
+      {
+       "text": "Some changes to how kennels are operated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some operations of the \"kennel\" have been changed due to specification problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game Pad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Even one can go \"hunting\" by choosing \"Next.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The \"Next\" item is hidden because the \"Decision\" and \"Next\" keys are the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, if you have less than three partners in your kennel, you can still go hunting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2162720"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2162720/view/6557848386957605402"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-16T01:03:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2162720",
+      "checkedAt": "2026-11-13T03:30:20.798Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-16T01:03:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2162720",
+      "checkedAt": "2026-11-13T03:30:20.799Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-16T01:03:48.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T10:24:05.220Z"
+  }
+ ],
+ "issues": []
+}

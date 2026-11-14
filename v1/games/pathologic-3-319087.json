@@ -1,0 +1,5390 @@
+{
+ "game": {
+  "id": "pathologic-3-319087",
+  "igdbId": 319087,
+  "name": "Pathologic 3",
+  "cover": {
+   "imageId": "cob0w6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob0w6.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3kyc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3kyc.jpg"
+  },
+  "ps5Release": "2026-01-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "pathologic-3-319087@major-2026-10-23",
+   "gameId": "pathologic-3-319087",
+   "displayName": "October Grand Update: Full Patch Notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-23T13:46:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "October is the perfect time for the Great Autumn Update for Pathologic 3. Throughout summer, we've fixed a lot of bugs — and also added several highly-requested features like difficulty levels and customizable subtitle language. And also a photomode!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We couldn't have done it without you, by the way. Community testers helped us identify and sort out a lot of issues. Thank you for this invaluable assistance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also invite you to read our letter from the developers, where we reflect on the process of improving a game after release and on game development in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Highlights",
+     "items": [
+      {
+       "text": "Subtitle language independent of the voice-over language. You asked for the option to keep the Russian audio while using English subtitles — now you can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Photo Mode. Yes! You can adjust the scene, weather, and lighting, use stickers — and make some ridiculously beautiful screenshots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Two new difficulty levels: one easier and one harder. You might find this funny, but we actually got a lot of requests for both. The original difficulty is still there too. Difficulty affects a lot of parameters, from the amount of amalgam available to how strongly mania and apathy affect the Bachelor — everything is explained on the difficulty selection screen — and makes the playthrough more or less feverish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New ways to deal with Shabnak. Originally, we wanted to show that she could be both dangerous and cunning, but the mode where there were two Shabnaks simply didn't work very well. We've replaced it and added one more variation on top of that. You'll see what exactly you need to do in the game, but this time you'll have to rely more on paying attention than on quick reflexes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lots of new thoughts from the Bachelor about the things around him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A huge number of fixes to quests, dialogue, level design, balance, and UI. More details below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The game has been optimized for weaker CPUs and adapted for Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Full Patch Notes",
+     "items": [
+      {
+       "text": "Please note: the detailed patch notes contain story spoilers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Prologue and General Quest Fixes",
+     "items": [
+      {
+       "text": "Two items that increase mania and apathy have been added near the children by the train, so the player can no longer get stuck there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The boy at the Train Station no longer offers dialogue intended for before the Bachelor obtains the Prototype once the morgue sequence is complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The children near the train no longer offer introductory thoughts and Mania tutorial dialogue after the Prototype has been obtained. The dialogue can no longer be repeated indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed premature thoughts about Grief near the freight train, which could introduce him earlier than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the highlighting of papers during the microscope sequence in Thanatica: they are highlighted only when they can be interacted with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Low-health screen effects no longer appear during the microscope sequence in Thanatica.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled the street sweeper's introductory dialogue after the Prototype has been obtained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed situations in which characters or objects displayed thoughts intended for a different quest state, including Nina's statue at the Cape and the Child Face Stealing quest on Day 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thoughts near the Theatre sandbox now become available only after the quest to find a location for the Hospital. They no longer appear prematurely on Days 1-3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed doors and objects offering interaction prompts when they could not actually be used, including the Bachelor's open cell door during the Prison Escape quest and a door in the Wicked Old House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Day 2",
+     "items": [
+      {
+       "text": "Isidor's Funeral: Grace no longer delivers both the successful and failed funeral-visit dialogues when the player arrives before 19:00, leaves without speaking to her, and returns later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before Isidor's Funeral: Fixed the Embalmer becoming stuck in Shekhen after returning to Isidor's body.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Isidor's Funeral: Fixed Isidor's body flickering at the Cemetery when Concentration was activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Musical Interlude decree: The decree now unlocks regardless of whether the Bachelor first speaks to the Dogheads or to Mark Immortell. Previously, one dialogue order could lock the decree for the rest of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 3",
+     "items": [
+      {
+       "text": "Examining the Dancer / Saving Andrey: Vlad's vaccine is now correctly removed from the inventory when the quest is reset, preventing the quest from restarting in an incorrect state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decree scene in the Gut: Fixed a camera transition that left the Pawn outside the dialogue frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Registration decree in Skinners: The patrolman no longer appears inside a tent during the conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Stillwater: Townspeople and their voices now disappear together when the End of Day sequence begins, rather than leaving disembodied voices behind. This also affects Day 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 4",
+     "items": [
+      {
+       "text": "Hospital: Little no longer repeats his introductory briefing about the next stage of Hospital work if the day is restarted after some patients have already been diagnosed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Murky's conversation: Removed a branch in which Murky repeated the same line twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 5",
+     "items": [
+      {
+       "text": "Katerina and Morphine: Fixed the conditions for Katerina's first dialogue so it remains available when the quest is replayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grief's death: Added a Concentration highlight to Grief's body in the Warehouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extradition of Rubin: Fixed Georgiy's dialogue animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rubin's fate: Fixed thoughts and quest conditions for all three outcomes (which we are not going to spoil). A living Rubin no longer displays thoughts about his own death, however much he might want to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prison Break: The exit marker from the Backbone now disappears after the player leaves the district.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Crucible: Fixed the camera angle during the conversation with Georgiy by the furnace. He no longer hides behind a pipe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Crucible: Georgiy's quest marker now remains visible until the corresponding quest is actually complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 6",
+     "items": [
+      {
+       "text": "Children Search: Khan at the Water Tower can now be interacted with and his thoughts are accessible. Removed an additional conversation that did not belong to this quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mask at the Warehouses: Fixed a conversation that initially showed only text with no character on screen and then repeated with the character visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Inquisitor Coming: The marker pointing to Victor now appears with every outcome of the dangerous street quest, rather than only one of them. This fix also applies to events on Day 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 7",
+     "items": [
+      {
+       "text": "Grief's escape: The quest now completes even if the Bachelor goes directly to Grief at Isidor's house without first clearing the Mind Map node about searching the Warehouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Stillwater: The front door now opens at End of Day even when the Inquisition flashback at the Institute has not been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invitation to the Beheading: The dialogue near the gallows can now be triggered only once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Street closure in the Atrium: Barricades now remain in place when returning to Day 7 after having closed the street, even if the quest was not reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bull analysis: The final thought now unlocks only after the sample has been collected and analysed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rioters near the Saburovs' house: The three rioters at the barricade no longer repeat the same conversation individually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saburov's trial: Accusing the Changeling of spreading the plague no longer cuts the dialogue short or causes the Mind Map to refer to events the player has not seen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Institute flashback: Fixed camera shots that made characters appear to float above the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 8",
+     "items": [
+      {
+       "text": "Heron at the Cathedral: Fixed a quest-reset issue that could make Heron disappear permanently after resetting Saving the Decrees and Secretary Replacement: Heron.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood Grass: The quest reward is no longer added to the inventory repeatedly every time the day starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saving the Decrees: Removed an obsolete Cathedral marker requesting Heron if the relevant note was picked up after the quest was complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plague Devouring: The messenger now appears only once and no longer returns after the Bachelor has already visited the Hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wicked Old House: Corrected speaker names and portraits in the conspirators' dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vlad and Maria: The Utopians' lines are now attributed to the correct characters instead of all appearing under Vlad's name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bull: Samples can no longer be collected after the animal has disappeared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Khan's choice: Improved camera positioning in the cage conversation to avoid views through the bars and situations where the Bachelor is hidden by a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Days 9-10",
+     "items": [
+      {
+       "text": "Karminsky and Emilia (Day 9): The game now correctly remembers Emilia's passage through the closed street and the confirmation of her diagnosis when the Day 7 street quest is reset and replayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clara's arrest: Dialogues with Rubin, Saburov and The Good One now refer to Clara as imprisoned only if she was actually arrested, rather than after either ending of her quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Little's Hospital quest (Day 10): Corrected a Mind Map node that mistakenly displayed the title and description of the examination node instead of Little's personal file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 11",
+     "items": [
+      {
+       "text": "Nina Walking: Victor's dialogue now plays only once, and Victor and the onlookers no longer spawn on top of one another near the statue's remains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "False Andrey: He no longer appears during the performance at the Cathedral if he has already died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Day 12",
+     "items": [
+      {
+       "text": "Burakh in the Odongh village: Fixed an obstruction caused by the rock on which he sits, allowing the Bachelor to speak to him and inspect his thoughts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sticky and Sticky's Shadow: Adjusted their positions in the Odongh village so the characters do not clip into the tent flag or nearby objects during their final conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "My Path Was Called...: Corrected a quest marker that pointed to Lara's house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Saburovs' shadows at the Rod: Corrected the positions of Alexander's and Katerina's Tragedian shadows when they are dead, and removed two extra conversations about suicide and overdose that incorrectly appeared after the main scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Story Events",
+     "items": [
+      {
+       "text": "Shabnak: The death notification now appears whether Shabnak is shot from cover or stunned before being shot during hide-and-seek.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay and Balance",
+     "items": [
+      {
+       "text": "Reduced the amount of matches found in containers. Both drop rates and stack sizes now depend on the selected difficulty, with significantly fewer matches on Hard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced Amalgam acquisition on Hard. The Cathedral now grants half its previous amount, and Eva's morning conversations grant very little. Her evening conversation grants the same amount as on Normal. Euthanising dying people now grants more Amalgam than before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed mirrors on Easy difficulty granting too little Amalgam. Regular mirrors now grant 50 Amalgam on Easy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mirrors inside the Polyhedron now grant the same amount of Amalgam as regular mirrors on the corresponding difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added gramophones at the Cathedral after Karminsky's arrival that allow the player to adjust Mania and Apathy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Interface, Map and Controls",
+     "items": [
+      {
+       "text": "Fixed a bug that could break the Mind Map when opening it after receiving an important thought not associated with a particular day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The time-travel screen now correctly shows how much Amalgam will be spent when restarting the current day. Added a visual effect to indicate the expenditure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Health indicator occasionally displaying values above 100.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping Apathy values and text wrapping in save profiles and the Load Game interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grief and Aglaya are now correctly marked as alive on the People screen after completing the quests that save them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected location icons in the Load Game window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quest markers are now drawn over district exit markers on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed characters appearing wet in their dossier portraits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed compression artifacts in the crafting window's gradient background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked dossier and tooltip positioning so longer descriptions, including those for Peter Stamatin and the Changeling, fit on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Corrected the ordering of weapon slots and restored missing Prototype and revolver icons, as well as the corresponding indicator colours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the silver-bullet indicator on the weapon bar. Throwing a match no longer makes a loaded bullet appear absent, and the indicator is hidden until the Prototype has been obtained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected tooltips in Emergency Command and context menus along the edges of the inventory and quick slots that could extend beyond the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unified fonts across the analyser, crafting, silver-bullet crafting, microscope, time-skip and Prototype-charging windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Controls settings displaying a placeholder instead of the name of the S key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The People screen now remembers the player's scroll position after a dossier is closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now mutes music and sound effects while its window is minimised, without pausing gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added individual icons for decrees in Emergency Command to make different types easier to identify.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed input actions triggering multiple times after reopening certain windows, or remaining active after they were closed. This affected looting, the furnace, stash, vault, inventory, analyser, crafting, microscope, Prototype charging, Casebook, profile screen and key rebinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decrees assigned to days that have become unavailable can now be removed in Emergency Command.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected positive and negative values, as well as their highlight colours, in notifications and the Mind Map when contagion or unrest decreases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Emergency Command no longer displays Change Decree or Remove Decree hints during the Day 5 introduction, when the player can inspect Vlad the Younger's decree board but cannot change it yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Casebook now retains the diagnosis stamp when the player diagnoses a patient and then restarts the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unintended bright outlines around UI elements, including the clock, district names and consequence warnings, in dark locations and at night.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the map being cropped on ultrawide monitors, including 21:9 displays. Route markers and building shadows near the screen edges are now visible.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Restored a missing house on the map of the Backbone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Photo Mode support for gamepads: camera movement and menu controls now work separately, and the lower toolbar can be operated with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a first-use spoiler warning for Photo Mode and completed the localisation of its weather presets, stickers and controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Environment, Graphics and Level Design",
+     "items": [
+      {
+       "text": "Corrected the lighting and time-of-day rendering at the Train Station when starting a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rain splashing against invisible surfaces, including above flowerbeds in the Marrow and Backbone districts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the visuals of fresh graves at the Cemetery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved the mirror at the Water Tower to the base of the tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the visuals of the mirror outside the Stillwater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored the gramophone outside the Stillwater during the Musical Interlude decree scene and fixed records not spinning on several types of gramophone around town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the positioning and appearance of plague scarecrows and townspeople in the Spleen and on Bridge Square during Protection from Shabnak decree scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a spot at the Train Station where the Bachelor could become stuck between train cars and iron bars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added collision to barrels in barricades in the Warehouses during riots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added collision to rocks near the Trammel in the Chine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Concentration highlight to the door of Grace's lodge at the Cemetery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corrected the Concentration highlight on the Crowstone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Concentration highlights to the pipe and taps in the Broken Heart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the Changeling's animation in the eighth End of Day pantomime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the dialogue animation for Poshinok's son in the Hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the placement of plague samples that were floating above the ground in the infected Hindquarters and Skinners districts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an overly bright, blurred hair material on a townswoman in peaceful districts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved a Hospital patient who was standing inside a desk with papers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the placement of a Quarantine decree painted symbol that was partially cut off, including the one opposite the Town Hall in the Backbone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Concentration outline of a door in the Saburovs' house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a trader to the previously empty counter in the Maw area and adjusted his position and orientation at the counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed incorrect lighting on dumpsters, which made them appear too dark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced the playground swings in Maw with the double swings used at other playgrounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the exterior views visible through windows in the Saburovs' and Isidor's houses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Cathedral lever's chains clipping through the balconies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enlarged the interaction area of Stamatin's stash near Crowstone and corrected its lighting in overcast weather.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed children sitting beside benches rather than on them when the benches were placed at an angle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unlocked interior doors sometimes behaving as if they were locked and refusing interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the Concentration highlight on the flower in Kira's herbarium, which flickered previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain environmental effects, including gates, bonfires and lanterns, appearing through trees in infected districts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted a sunken bench in the Gut so townspeople sitting on it no longer appear to float.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Repositioned a Doghead at the Water Tower so he stands on a pedestal instead of floating above the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected a shovel stuck in the kerb in the Gut.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the pose of a dead steppe man at the Train Station on Day 11 to stop his hand clipping through the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed walls flickering in Concentration mode inside the Polyhedron on Day 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected a reflection on a glass window near the Crucible that ended before the edge of the glass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed kerbs in the Backbone wrong lighting and appearing darker than the surrounding environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing collision to a table in the Odongh village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced ordinary burning barrels with the correct infected-district versions in the Flank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The poster in Lara's house now highlights correctly in Concentration mode when its thoughts are available on Days 4-12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the positions of children who were standing knee-deep in the ground during the Day 9 decree scene at the Cape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Concentration highlighting so characters and objects without currently available thoughts, including Hypat during the Poisoned Water quest, are no longer highlighted as though they have something to say.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed an unintended stick from child's hand during the children's army scene at the Cape on Days 9-11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced the two boxes and invisible wall near the Polyhedron bridge with a proper barricade on Days 6-8. The barricade also appears correctly when loading saved games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the floor of the jerboa cage near the Crucible flickering in Concentration mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing collision to columns in the Saburovs' fireplace hall and chairs in the Olgimskys' house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mobilising Vigilantes: Corrected a townsman sitting beside a bench rather than on it, as well as character positions that caused heads to overlap during dialogue on Bridge Square and near the Town Hall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Filat's house in Skinners: Added the missing Concentration highlight to the entrance door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sound and Music",
+     "items": [
+      {
+       "text": "Fixed the main outdoor music track continuing to play over interior music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music themes from some locations no longer randomly play inside unrelated buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed music and sound-effect volume controls both in the main menu and during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected audio transitions when opening thoughts, the map, inventory and other interface screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interrogation music sometimes failing to start when speaking to the Inspector immediately. The interrogation track now starts at the intended time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rain ambience no longer continues inside the interrogation room when it was raining outdoors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored Serafima's missing opening line in the Day 6 interrogation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored the flute music near the Rat Prophet and Clara during the Day 11 quest by correcting its sound source.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored the Thanatica theme in the Institute hall during the Day 7 flashback and in the Capital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed an unrecorded English reaction to Shabnak's scream that had no matching voice-over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Text, Subtitles and Localisation",
+     "items": [
+      {
+       "text": "Fixed approximately 100 typos, grammatical errors, punctuation and formatting issues across Russian and English dialogue, subtitles, thoughts, Mind Map entries, tutorials and interface text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Russian thoughts on the test tubes in the introduction sequence to match the current English version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Day 4, Filat's room: Corrected thoughts on the shelf and mop that revealed information from a neighbour before the player had spoken to her.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Day 5, the God’s Fool: Restored missing text in a repeated Hospital conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected a Shabnak appearance subtitle that had not been translated into Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Day 8, Vlad's fate: Corrected Hospital dialogue, Mind Map text and the conversation with the Worm that referred to Vlad as dead even if the player had saved him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored thoughts about Vlad the Younger after Day 8 and corrected dialogue conditions involving the children and Notkin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored the missing English translation in the Day 11 conversation between the Rat Prophet and the Changeling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected subtitle timing in an End of Day sequence and improved consistency between subtitles and spoken dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the credits with additional contributors and sections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank You for Your Support!",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/a30e9c5fea57f517a3db41d8a1f99c763968171f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who reported bugs, helped us test the game, and shared suggestions. We're especially grateful to the team of volunteers who helped us prepare this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope these new features and fixes make your time in the Town a little better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care of yourselves!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 55,
+    "balance": 8,
+    "other": 92,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1847286114036468"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T13:46:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.351Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T13:46:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.354Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T13:46:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:55.751Z"
+  },
+  {
+   "id": "pathologic-3-319087@major-2026-06-25",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Pain, Difficulty, Shabnak, and Other Topics: A Pathologic 3 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-25T15:54:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is Alexander Souslov, producer at Ice-Pick Lodge and game designer of Pathologic 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The studio has been quiet for a while. We needed a moment to catch our breath. The team had no New Year holidays, and frankly, no vacations at all while working on the game's updates. But we weren't silent because we were lounging on a beach, eating watermelons and baursaks (if you've never encountered baursaks before, you have my deepest sympathies). We were working on a major update that not only fixes bugs, but also adds a few new things to the game itself (hopefully not new bugs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today I'd like to tell you about what we've been working on for the last three months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before that, though, I need to say thank you. To those who left positive reviews, and to those who left negative ones. To everyone who waited with us for the game's announcement (we were definitely reading the comments). To those who praised us, criticized us, defended us, or argued with us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developing Pathologic 3 involved a great deal of pain. At times it was genuinely difficult. But we don't regret it. Pain is the fuel our studio runs on, and a videogame is our way of giving that pain an artistic form. You can strip away what is unnecessary and allow someone else to feel it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For example, you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perhaps we should talk to you more often. Ice-Pick Lodge has never been particularly good at that. There is never enough time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Which, incidentally, is what the game is about.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, let's talk about the update we're preparing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "There were quite a lot of bugs. Quite a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I'd dare say most of them had already been fixed by the March update, but we've continued polishing the game. Performance has been significantly improved. Our engineer Kolya optimized everything he could get his hands on. Various remaining absurdities, such as certain characters unexpectedly entering a T-pose, have been fixed. Typos have been corrected. Overall, we believe we've largely won the war against bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That said, we may still need the help of volunteer testers to make absolutely sure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We'll return to that subject soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game Difficulty",
+     "items": [
+      {
+       "text": "Balancing the game is the game designer's responsibility, which means it's my responsibility, and therefore I owe you an explanation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In its late testing phase, the game was difficult. Finding the right combinations of Dankovsky's decrees was a sweaty exercise. Supplies were scarce. The Shabnak killed very quickly. Running away from bandits was nearly impossible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tomonobu Itagaki, the game designer of Ninja Gaiden, once said:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "\"At first it was easier, but when the testers said 'this is too difficult', I made it even more difficult.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "That is a man with a unified sense of self.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "My own game designer self is somewhat fragmented, and the question of difficulty has always been a cursed one for me.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Should Sekiro have difficulty levels? Absolutely not. It would destroy the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "What about Cuphead? Probably not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "But what if I simply want to experience the story and look at the beautiful moving pictures?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Is a game primarily a system of rules, or is it a story?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If I sit down to read a difficult novel like The Brothers Karamazov, but the book keeps trying to jump away from me, suddenly snap shut, or break my fingers, does that make the experience richer or poorer?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "This is that partly imaginary debate between narratology and ludology, a debate that becomes especially sharp in the case of Pathologic. After all, this isn't a system about stabbing things with a samurai sword.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "There is quite a lot of reading involved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Before release, my decision was to pull the lever toward accessibility and prioritize the narrative over the mechanical systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "As a result, most of the pressure currently comes from the Amalgam. The difficulty approaches from that direction, and it arrives gradually. Yes, I know it starts running out toward the end of the game, and it runs out in a rather terrifying way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "But that's what fear of death is, isn't it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The stress of running out of time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "That stress has to be real and serious. Otherwise it simply stops being stressful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "That said, I think now is a good moment to introduce multiple difficulty levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "There is a separate dilemma here. If a game has several difficulty settings, which one is the \"real\" difficulty? If I'm playing on a different one, am I receiving an incomplete version? The equivalent of Marcus Aurelius in 90 Minutes?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "But let's stop that train of thought before it inevitably leads us into a discussion of authorship, canon, authenticity, and whether one version is somehow more genuine than another.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We can have that conversation another day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "For now, I'll simply say that we're adding a harder difficulty for those who wish to suffer properly, keeping the current difficulty as it is, and introducing a very easy mode as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "The Dangerous District Exploit",
+     "items": [
+      {
+       "text": "I'm afraid this could easily turn into yet another essay about the nature of difficulty in games and the strange beauty of exploits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So I'll keep it brief.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yes, we know about it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've known about it the whole time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And yes, we're going to do something about it, taking into account everything I just said above.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Killing the Shabnak",
+     "items": [
+      {
+       "text": "During development, we considered all sorts of possibilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was spinning Dankovsky around on a special carousel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was launching Dankovsky on an Enormous Swing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'll put it this way: Roger Caillois identified four fundamental forms of play, and I think videogames make surprisingly little use of ilinx - the pleasure of losing control, dizziness, disorientation, and the sensation of your neurons quietly giving up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At one point there was even an idea involving transferring Dankovsky's consciousness into a jerboa, who would then deal with his enemy in a very particular way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although that admittedly starts looking suspiciously like Dishonored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In short, there were many ideas, some of them even prototyped. In the upcoming update we'll likely make some adjustments to one of the existing ways of dealing with the Shabnak and add a completely new one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The carousel probably deserves its own game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Photo Mode",
+     "items": [
+      {
+       "text": "I'm not entirely convinced that you need a photo mode, considering the screenshots you've already been taking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They are FANTASTIC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Besides, the dataminers have already found everything there was to find, including several things they probably weren't supposed to find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Still, life is more comfortable with a photo mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we're adding one in this update. Our tech lead Albert is incredibly proud of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I suppose this is a good place to stop and talk about timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'd rather not promise an exact release date just yet, but we're already conducting internal testing and should soon be ready to begin working with volunteer testers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll try to talk to you more often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/fb9ca4ce3d6977b3479c30c2938b934528fb0a61.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 23,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1836506165549896"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-25T15:54:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.346Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-25T15:54:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.347Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-25T15:54:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:55.749Z"
+  },
+  {
+   "id": "pathologic-3-319087@11",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 11",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-11T16:49:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re done with Hotfix #11. Most of these changes are about frustration: someone was giving out an unnecessary map marker, someone wasn’t showing up when you expected them, somewhere there was a fence that wasn’t supposed to be there. Now it’s all in the past: everyone shows up, nobody hands out extra stuff, the fences are accounted for, and the Cemetery is even more comfortable. We also added a small batch of Quality of Life improvements — like camera bob intensity and showing which DLC you have enabled. Details below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Most important) Fixed endings starting incorrectly after resetting knowledge with the Rat Prophet. If you don’t understand what this means — it probably means it’s not time for you to read it yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Very important) Fixed resetting the Capella inauguration quest on Day 9 when time-traveling straight from the Lump. If this quest is already broken in your save, you’ll need to enter this command in the in-game console:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "set_global_variable Day9_Q9_MM_Heiress true",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "then re-enter the day and reset the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patient Kira used to add frustration by appearing far too late. Now she’ll frustrate you an hour earlier — she appears at 6 PM.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The children in Kira’s house were also masters of frustration — we moved them into the corridor so they wouldn't interfere with the investigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Petrel, the patient with… questionable behavior, will no longer confuse you with an extra map marker on Day 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Quite important) Close your eyes if you’re afraid of spoilers — we changed the check for the Lara murder quest on Day 9. The quest resources for “dead Lara” weren’t resetting even when Lara was alive. Now death and resources work as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a black screen during dialogue with Grace after the funeral on Day 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added more sounds to the crowd near the Theatre on Day 6 — so they can crowd more intensely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an extra hint about Concentration mode when leaving the jail on Day 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Markers for the sample-collection tutorial are now properly turned off when you reset the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made life easier by adding a teleport to the Cathedral for the Inquisitor quest after talking to the courier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved Thoughts on the Mind Map for patient Aristarkh, making them easier to read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a setting for headbobbing intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored the missing sorting for symptom groups and symptoms in the Casebook. Previously, after time travel, symptoms could appear in a random order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed map highlighting for the Crowstone and Shekhen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raindrops on the window in Isidor’s house used to move incorrectly — now they move with artistic and physical perfection!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the late days, something silly was happening with the lighting on the papers in Lara’s house. We put the papers in order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Town has many fences, but some weren’t marked on the map. You could call it part of the experience — but we decided it was too much and fixed the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added footstep sounds inside the train car at the Train Graveyard; and trimmed the grass under that tricky car that was poking through the floor and ruining the scene aesthetically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tuned shadows at the Cemetery to make it even cozier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Near Farkhad’s grave (sorry for the spoiler, but yes — Farkhad also dies in the story), we tweaked some physics that were interfering with important conversations. Rest easy, Farkhad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a display of enabled DLC in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic. We read everything, send stimulating signals to the responsible parties, and fix things with all due effort.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at support@ice-pick.com and send:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "the problematic save from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(save profile folders: Default / 1 / 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/5f7cb281ec86524c4f3d96adde31ee488f041500.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 2,
+    "balance": 1,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1824459501604319"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T16:49:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.342Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T16:49:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.342Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-11T16:49:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:55.746Z"
+  },
+  {
+   "id": "pathologic-3-319087@10",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 10",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-06T16:30:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix #10 is here. In this one, we fixed a few particularly noticeable oddities (like those soldiers in front of the Town Hall), made streamer mode a bit clearer, improved the Casebook UI — and patched up a number of quest and geometry issues. And yes… we fixed Georgiy’s mouth. He now has an excellent mouth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "(Finally!) The soldiers in front of the Town Hall that everyone kept screenshotting no longer stand knee-deep in the steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a prompt on first launch asking whether you want to enable or disable Streamer Mode (which hides nudity).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly adjusted the quest reset tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Karminsky no longer disappears on Day 9 (if he’s already gone in your save, restart the day).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kira no longer shows up on Day 10 if the hospital is closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Synced Daniil’s footstep audio in one of the endings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improved the Casebook’s usability, specifically",
+     "items": [
+      {
+       "text": "Added an option to hide unnecessary hints in the Casebook when you open diagnosis descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added strikethrough for symptoms in the diagnosis list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the locking of a symptom group in the Casebook if you checked it under the microscope and it turned out to be healthy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map markers: near Maria (in the waking-up quest), and at the Stillwater for saving the bull after you’ve already saved said bull.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly adjusted resetting for patient Petrel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed another hole at the Train Graveyard (you could fall in and get stuck).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIXED GEORGIY’S MOUTH MATERIAL. HE NOW HAS AN EXCELLENT MOUTH.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "support@ice-pick.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "the problematic save from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(save profile folders: Default / 1 / 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us find the issue faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/560990cad56cbcca84c3336b500b51d13e8661b8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1823825466500126"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-06T16:30:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.341Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-06T16:30:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.342Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-06T16:30:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:55.745Z"
+  },
+  {
+   "id": "pathologic-3-319087@9",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 9",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-04T16:03:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix #9 is here. This time we tackled recipe distribution logic for the child traders, added clearer explanations for a few contentious story situations (that looked like bugs), introduced new tutorials — and, of course, shipped a batch of quest/technical fixes that affected progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "(Important!) Child traders will no longer give you recipes you already know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Pretty important!) Added a tutorial about canceling major quests. Some storylines can be canceled — but doing so will reset a huge number of quests, which you’ll then have to replay from scratch if you decide to bring them back. We’re keeping the option, but the warning is now much clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(More tutorials!) Added new tutorials for the tablet, examinations, and the “vaccine of the day.” We noticed many players mark symptoms in the tablet very conservatively — even though it’s usually better to mark everything, interview the patient, and then remove what doesn’t fit. We tried to make that clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed resetting the escape quest on Day 10. If it disappeared in your save, open the console and enter:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "set_global_variable Day10_Q16_StationFarewell_1_Done false",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the quest about saving Rubin on Day 3. He should no longer be dead when he isn’t dead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sleeping Rubin has stopped staring at the player!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The quest about his final wish can now be reset properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Simon’s office quest on Day 2 resetting on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vlad the Younger now places a few more decrees in the Headquarters (this doesn’t affect gameplay, just so you know).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Access to the Decree Board is now disabled when the Bachelor first leaves the Town Hall as part of the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the sound and behavior of Farhad’s lamp (from the Supporter’s Pack).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Map markers: Town Hall (Day 3), Mirosya’s house (Day 8).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hyoscyamine now works correctly during euthanasia.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the courier in Viktor’s quest on Day 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the credits so the ending scroll reaches the top nicely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly adjusted Pyotr’s tooltip in the “People” window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly adjusted images for some diseases in the reference book.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pyotr used to show up for the performance on Day 11 even if you talked him out of it. Now he behaves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Mirror Room after endings — sometimes it wouldn’t let you leave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at support@ice-pick.com and send:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "the problematic save from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(save profile folders: Default / 1 / 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us find the issue faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/f26c4f793baad03eb627aff87ebdd4e574c1e63b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1823825466494415"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-04T16:03:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.341Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-04T16:03:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.341Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-04T16:03:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:55.744Z"
+  },
+  {
+   "id": "pathologic-3-319087@8",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-28T17:10:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix #8 is here! This time we tackled a few important things — from the Stamatins’ performance state on Day 11 and one of the endings, to making sure Eva appears where she was always supposed to. And, of course: Thoughts, markers, “Mind Palaces,” dialogues, and highlights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "(Important!) Fixed logic issues with the Stamatins’ performance on Day 11. Their state should now be counted correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) Fixed an infinite loading screen in the escape ending if the player had never been to Day 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) In the right situation, Eva now appears in the Stillwater — as she always should have (but didn’t).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a reaction for Sticky on Day 5 if you’ve met him before!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved several different “Mind Palaces.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced the heart icon in the profile/save selection window <3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also fixed images for a number of locations there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an additional dialogue for the dancer on Day 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Thoughts related to Isidor’s funeral (Day 2) and Thoughts related to rivers of blood (Day 9).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed map markers and Thoughts in the steppe sacrifice quest on Day 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed forced dialogue with the water carrier and Lara.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Sticky's fate on Day 12 — he could die when he wasn’t supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added highlights to boxes in the Warehouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed a grave on the Cemetery on Day 1 — one that shouldn’t exist yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Variables now reset correctly when discussing plague mold on Day 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed transitioning into dialogue in the chess flashback (it wouldn’t trigger if you didn’t clear the “Mind Palace” on the first try).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The cursed street quest (Day 7) now resets properly if you didn’t finish it. (This doesn’t mean something that’s meant to be non-cancelable is now cancelable!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at support@ice-pick.com and send the following files from your PC:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The problematic save file, located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves — open the save profile folder. There are three of them: Default (slot 1), 1 (slot 2), and 2 (slot 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us find the issue faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/0b1ed1df55bd1994ff7944d7f5c3551e84e87b32.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1823191198600420"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-28T17:10:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.339Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-28T17:10:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.339Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-28T17:10:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:55.742Z"
+  },
+  {
+   "id": "pathologic-3-319087@7",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-21T15:54:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If something's good, why not do it again? We enjoyed releasing the last update so much that we're putting out another one today (it’s live by the time you're reading this).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mainly we’re fixing a rather annoying gamepad issue that made playing the game with a controller quite frustrating. But while we were at it, we also fixed a few things that came to our attention after the Great October Update. Here's the full list of the issues we’ve fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quests and dialogues",
+     "items": [
+      {
+       "text": "1. Day 4 — Aglaya's letters in the pub stove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Broken Heart pub, the interaction prompt didn't appear when looking at the stove, so you couldn't pick up Aglaya's Charred Correspondence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Day 4 — The Cathedral’s levers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously, the Cathedral quest on Day 4 only started if you talked to the Caretaker on Day 3 after pulling the lever. Now pulling the lever is enough — the conversation is optional.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Day 5 — Children and Rubin's fate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The children's dialogue was repeatable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Day 6 — Eva missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Under certain conditions, Eva wasn't where she was supposed to be on the evening of Day 6. Unacceptable!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Day 8 — Atrium: patrolmen at the southern cordon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You could talk to Yulia Lyuricheva first, then go to the guards at the southern cordon and ask them where she was.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Day 9 — The silent Taya",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In one of Taya's conversations, the first line had no voice-over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Day 10 — The Inquisitor's mirrors in the Cathedral",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mirrors were missing from the Inquisitor's workplace in the Cathedral, making the quest impossible to complete and the Noose achievement impossible to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Decrees",
+     "items": [
+      {
+       "text": "8. The Executions decree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soldiers from the Executions decree scene were appearing on Days 1-8, even though the decree only becomes available on Day 9. They should no longer appear before Day 9. If they're still there, restart the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the same scene, one soldier was speaking all the lines, despite a volunteer being right there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Decree icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Protocol 7 had the icon of Protocol 8, while Protocol 8 still had its old icon (with a number at the bottom). The Variolation of the Population decree now has its previous icon back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interface and controls",
+     "items": [
+      {
+       "text": "10. Concentration bound to mouse buttons",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Concentration didn’t work if bound to a mouse button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "11. Quick slots with the HUD turned off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the HUD turned off, you couldn't scroll through or use quick slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12. Slick bandits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a bandit turned the hero around, the camera often didn't sway, making it look as if the player had turned around voluntarily",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "13. (CRITICAL!) Gamepad input switching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game kept switching between gamepad and keyboard controls every time you pressed a button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Environment and graphics",
+     "items": [
+      {
+       "text": "14. Day 9 — The Cape: Nina's broken statue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nina's broken statue had no collision, and its thoughts couldn't be read when approaching it from the front.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "15. The Water Filtration decree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Only three barrels in the pile had collision, so you could walk through the rest. Now this engineering miracle is removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "16. The Theatre — bleak gramophone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The gramophone in the Theatre wasn't highlighted in Concentration mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sound",
+     "items": [
+      {
+       "text": "17. Music in the Institute",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Looks like the music in the Institute hall didn't actually start playing after the Great October Update. Let’s see if this fix actually brings it back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also updated how music and sound work overall — please let us know if anything changes in an unintended way (which is to say, breaks).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Text and localization",
+     "items": [
+      {
+       "text": "18. English fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've proofread the English texts in the character dossiers, as well as some dialogue, fixing punctuation, wording and typos. The thoughts next to a rubbish bin in Backbone have also been updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/b4f6b4e28b655457dd7fb72cb6a3a9e2dc734d39.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 39,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1822556746157003"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-21T15:54:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.336Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-21T15:54:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.355Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-21T15:54:55.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:27:46.355Z"
+  },
+  {
+   "id": "pathologic-3-319087@6",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-20T17:14:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a tradition: after every release, we give out ice picks (real, physical ice picks, heavy and made of metal) to everyone who helped get the game out the door and doesn’t have one yet. Yesterday, our newest team members also gained the ability to commit political assassinations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/b3cadf4100f742ca498abdf055d5c8a78394eb1a.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And today, we’re back with another hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) Fixed Eva’s state on Days 11 and 12. She no longer stands where she shouldn’t (you know where) if you’ve done certain things (you know which).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Moo!) Also fixed her disappearance on Day 8, which could prevent you from saving the bull. IMPORTANT: to make Eva reappear in an already broken save, you need to reset the quest twice. Don’t ask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) Brought back the disappearing barrels on Day 4 and moved the map markers. The water quest should now be completable without issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed variable resets when examining Peter (you know what we mean) on Day 8. They could “stick” in one state and block quest progress on repeat runs. Experimenting should be easier now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a dialogue for Victor after reconciliation on Day 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Occasionally, something would break a little when switching weather and time of day — adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the door in the Thanatica during a flashback in one of the conversations with the Inquisitor — it used to lock incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A butterfly has landed on one of the gravestones on Day 6. No, this is not purely a cosmetic fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a mindmap node for the hospital investigation on Day 5, and fixed resetting patient quests on Day 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Georgiy no longer discusses the Polyhedron on Day 8 if he’s already dead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polished the “shmowder” quest: fixed the marker, the mindmap node, and the shmowder itself is now removed correctly after analysis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some conditions on the “People” tab for the Changeling, Block, Karminsky, and Lara.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Twyre now properly disappears from your inventory when used. Steppe magic is dying…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed marker text while searching for Nina’s monument.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unlocked the door to Emilia’s house on Day 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a map marker that could get stuck after taking power on Day 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now correctly checks whether you picked up the morphine from Katerina on Day 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the quest about finding the train driver for the escape on Day 7: removed extra dialogues from Boulder and Grace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some recipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased interaction colliders for reading tags when examining Saburova on Day 9 and The Good on Day 10 (so you have to wiggle the cursor around a bit less).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If you leave the room early during Saburova’s operation, your items now return correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patient Patchwork no longer escapes the hospital ahead of schedule.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the “Taboo” achievement again. The problem was with violating the integrity of the earth on Day 6, FYI. If you’ve already completed the quest, you’ll need to replay it to get the achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the scary house on Day 10, items are now given with the correct icons (this issue was purely cosmetic).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved Yulia slightly near the Town Hall on Day 3 — some players were running past without noticing her. Just like real life…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved Capella around on Day 4 (two quests were trying to use her at the same time).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "support@ice-pick.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The problematic save file, located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the save profile folder — there are three of them: Default (slot 1), 1 (slot 2), and 2 (slot 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us find the issue faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/0d074547fd2ea9d52ac415954b0e708197f4f923.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 1,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1821922921823905"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-20T17:14:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.335Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-20T17:14:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.346Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-20T17:14:16.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:27:46.345Z"
+  },
+  {
+   "id": "pathologic-3-319087@5",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-15T12:31:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new hotfix is here. This time we tweaked several important systems (and a couple of things that were a bit too noticeable — in the most literal sense), and also tackled bugs in quest logic, achievements, and the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "(Incredibly important!) During interrogations, a note was glowing bright green. We wanted it to be a piece of paper the player can’t read — but we didn’t want it to outshine the entire interrogation room. So we removed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) As originally intended, you can no longer place the same Decree multiple times within the same day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) When analyzing an item in the Analyzer, the game would mistakenly show its description before analysis — even though that description changes after analysis. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) The Day 8 plague research storyline could reset on its own — fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Returned tobacco to the traders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can view descriptions of already analyzed items in the “Artifacts” menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialogue lines should no longer occasionally merge together. (This was caused by a typographic ellipsis we diligently used instead of three dots. There’s probably a moral in there somewhere.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When playing with a controller, the cursor in the Thought Map now works properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the requirements for the bull-related achievement, “Never Sits on His Hands”, and “Taboo.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed prices when trading with Grief.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a highlight to Katerina’s morphine box — the one we mentioned in the previous hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed how descriptions for some characters display in the “People” window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Anna Angel on Day 12 — you couldn’t talk to her.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made passerby dialogues one-time only. Farewell, ankle guy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed a bunch of quest-logic bugs",
+     "items": [
+      {
+       "text": "— “Mind Palaces” about mirrors on Day 10;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— proper door closing when restarting Emilia’s storyline on Day 7 (an open door could break progression — fear doors);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— if you don’t finish Katerina’s operation, it now resets correctly;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— replaced the dialogue with the mortus and the soldier in Kira’s Day 10 storyline with the correct one;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— removed the Haruspex funeral dialogue that could stick around even after the funeral;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— the Lyuricheva Street quest on Day 7 no longer resets automatically along with Karminsky’s trial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And, as usual: typos and minor text tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or in the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "support@ice-pick.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The problematic save file, located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the save profile folder — there are three of them: Default (slot 1), 1 (slot 2), and 2 (slot 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us find the issue faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also: from now on, at the end of each bugfix we’ll leave you a small gift — a new piece of art or a portrait from the game. Consider it a little thank-you for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/9794465fbedd819b4e07c815123e76631aa1e4bc.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing the props mid-performance,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 1,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1821922921812821"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T12:31:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.332Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T12:31:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.345Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-15T12:31:46.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:27:46.344Z"
+  },
+  {
+   "id": "pathologic-3-319087@4",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Hotfix 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-13T18:38:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "What is the butterfly effect? It’s a concept from chaos theory: in complex systems, even a tiny event can have unpredictable and huge consequences—somewhere else, at a different time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All of Pathologic 3 is about that effect: we plastered the whole game with butterflies and moths—visually and logically. And where did that lead us? To the notes for Update #4, where we list some of the logical errors, inconsistencies, and loose ends we’ve fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We promise we won’t make any more games about events with consequences: the studio’s next game will be a hockey simulator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below are the key changes in this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Key Changes",
+     "items": [
+      {
+       "text": "(Most important) Fixed the kids at the Polyhedron who could remain there even after we had already led them out earlier. For the fix to work properly, you need to restart the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important) Fixed nodes in Capella’s branch in the Cursed Inquisitor quest on Day 10. Players whose nodes disappeared in this quest will need to restore them manually via the console:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "set_global_variable Day10_Q10_5_MM_Earth true",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "and then reset the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Fairly important) Fixed an outcome in Isidor’s funeral quest where players could end up with no final node to reset the quest. If you ran into this issue before the update, you’ll need to grant the final node via the console:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "set_global_variable Day2_Q5.1_MM_BuriedSecrets true",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a UI bug when opening the Emergency Command at the end of the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a sound cue to the time-traveling UI—it was getting a bit too quiet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The flying kids in the Polyhedron have been brought to order and now behave as they should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed odd behavior of the marker in Shekhen in Vlad the Younger’s quest on Day 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved Georgiy away from the Water Tower location once he no longer needed to be there. Also fixed the map marker behavior when resetting this quest and addressed issues on the location itself near the Water Tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cathedral Caretaker no longer repeats the euthanasia dialogue (even though the topic clearly concerns him deeply).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On Day 11, the child’s bone and hooks are now removed correctly in the Rat Prophet quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lara’s petition for Rubin quest now correctly applies its consequences on Day 6 and Day 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an erroneous auto-reset of the quest where you talk to Artemy Burakh after the funeral on Day 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scrolling in the Settings window under the “Other” tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When opening the Notes tab, it now automatically selects the note you just interacted with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the ability to put drugs from crafting recipes into your inventory. What it did before was absolutely unlawful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the euthanasia interface (hopefully making it easier to use).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the tutorial shown the first time you open the euthanasia window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed studying Rubin’s vaccine on Day 5. You can no longer leave Day 5 with the vaccine. In saves where the vaccine was studied on other days, you’ll need to re-enter Day 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soldiers in scenes in the Marrow and the Crucible have stopped misbehaving and now stand where they should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Marrow, we also fixed some potential traps for players who like to explore locations a bit too thoroughly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the icon for the White Whip toxin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled the Eva and Grace dialogue on Day 4 if that day has already ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled head-turning for the dead Stamatins in the Cathedral. We delayed this fix for a long time, because, honestly, there was a certain gesture to it—a certain magic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed two different tutorials triggering in the same Decrees window if you killed Shabnak before opening the Decree Board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Decree Board of Hypat the water carrier is now functioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If, after the update, you still run into bugs or odd behavior, please report them in the Steam discussions or the relevant Discord channel/thread. We read everything, send stimulating signals to the responsible parties, and fix things with all due effort.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also welcome reports by email. Write to us at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "support@ice-pick.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The problematic save from",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(save profile folders: Default / 1 / 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/dbf5692964de912193214d503a1062c5d745cecf.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1821288646588768"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-13T18:38:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.331Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-13T18:38:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.344Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-13T18:38:32.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:27:46.343Z"
+  },
+  {
+   "id": "pathologic-3-319087@3",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-12T17:44:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is our third major patch. Crucial bits: a lot of fixes to the late-game rations quest and—finally—the ability to ENABLE LARGE DIALOGUE FONT. Also: we sorted out the Haruspex’s English voice, fixed a bunch of inconsistencies, mowed the grass, and made the curbs get properly wet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Damned Rations",
+     "items": [
+      {
+       "text": "We fixed a lot of things in this broken late-days quest. It should now be unbroken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grief’s note about the rations now appears not only on Day 10, but also on Day 11. Many players missed it, so it looked like the quest had bugged out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The quest also used to reset on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "…And on Day 9, the part where we try to talk Grief out of it could reset by itself and break when re-entering the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "…AND ALSO the quest could sometimes break if you picked the wrong dialogue options with Block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And we fixed all of that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Large Font",
+     "items": [
+      {
+       "text": "We added an option to enable large dialogue text in the game! For playing on consoles, TVs, or just if it’s more comfortable. Pick it in the settings and play the way that works best for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Everything else",
+     "items": [
+      {
+       "text": "(Important!) Fixed the Haruspex’s English voice—we re-recorded it for the pantomimes, but didn’t replace the regular lines, so he was speaking in two different voices. Not anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) Now, when you open the Headquarters, Heron automatically triggers an explanatory dialogue. That dialogue was treated as the moment you assume power, but some players skipped it and couldn’t understand why the quest wouldn’t close.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) Tweaked the fates of Karminsky and the Stamatins a bit more so everything lines up logically and nobody comes back to life when they shouldn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) Same goes for the Saburovs’ fates on Day 7 and Day 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On Day 12, the army visuals no longer disappear from the Town Hall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steppe Wolf on Day 6 no longer repeats an unnecessary dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed small logic issues when opening the hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Returned pestles and mortars to the brides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed map markers",
+     "items": [
+      {
+       "text": "At the Station on Day 12 (it wasn’t disappearing when it should).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the Day 10 quest for finding Victor (markers wouldn’t disappear if you did things out of order).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed thoughts on the Mindmap: in Rubin’s quest (Day 11), and in Farkhad’s map quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On Day 12, not only does Sticky no longer die when he shouldn’t, but also stands where he’s supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The quest where the kids follow the piper no longer resets on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "…Same for the Headquarters board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of UI fixes! In particular: corrected the hearts icon in many places, improved the euthanasia and patient examination windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Karminsky now stands where he should in the “Rot” ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added highlights for drawings on the wall in Kira’s house on Day 10 and for the back-yard door at Stamatin’s. Also added highlightable objects in a few other places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soldiers on Day 10 no longer fly! (But only on new saves—on old ones they’re still free…)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Inquisitor’s servants during the Day 11 performance, too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved a sick person you couldn’t interact with in the Flank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Polyhedron voices—on Day 8 it started talking to us like a radio—could sometimes be heard on earlier days as well. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the Tragic’s textures so they’re not as shiny. Same for Maria’s dress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In places where time shouldn’t pass, it now correctly pauses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Curbs now get wet better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quoting the technical art director again: “Minor, but very hurtful fixes were made to interface textures.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added physics around the closed empty lot in the Backbone that some very inquisitive players kept somehow seeping into.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "By player request, decoupled camera controls from the arrow keys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The carts near the Station now have physics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added footstep sounds on the approaches to the Polyhedron and near Saburov’s house. For the latter, we also removed some extra shadows (with a lowercase “s”—just shadows of things that don’t exist).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at support@ice-pick.com and send the following files from your PC:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The problematic save file, located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves — open the save profile folder. There are three of them: Default (slot 1), 1 (slot 2), and 2 (slot 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us find the issue faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/78fa5c34c16df7d0f2591f13cb67a03d92c26b5e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 24,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1823191198605966"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-30T17:20:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.340Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-12T17:44:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.340Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-12T17:44:03.000Z"
+     }
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:27:46.339Z"
+  },
+  {
+   "id": "pathologic-3-319087@2",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-11T17:11:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second major patch (not a hotfix) is out. We’re continuing to bring quest logic, UI, visuals, and a whole bunch of “little things” back into shape — and in a game like this, little things suddenly turn out to be not so little.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Key Highlights",
+     "items": [
+      {
+       "text": "After numerous (three) requests, we’ve renamed Dankovsky’s interaction with plush bulls. He no longer kicks them — he presses them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/7ab6fb9c0338a8a5e785de798251e81b0345ba71.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a softlock where Concentration in the interrogation room wouldn’t turn off and wouldn’t let you start the interrogation. At this rate, Bachelor Dankovsky would never get out of there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General Block no longer disappears on Day 10 in the quest about rescuing the Inquisitor. And the Inquisitor’s servants no longer spawn inside each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Logic & Quests",
+     "items": [
+      {
+       "text": "The Weaver now gives you the hooks in dialogue on Day 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed map markers: the Bone Stake Lot on Day 8 and the hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The doghead mask on Day 6 wasn’t removed after resetting the Steppe Wolf quest, breaking it. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Peter and Andrey’s texts on the “People” screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved some “Mind Palaces” (for example, the chess flashback one).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a number of key nodes to the Mindmap (“key nodes” are the ones shown outside of specific days).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A decree is now awarded correctly for the quest with the boarded-up house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the thoughts related to restoring the Headquarters table after the bull ate it (bad boy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eva now discusses Heron’s departure once, instead of endlessly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grief no longer disappears on Day 10 in the escape quest (there were conflicts with another quest).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The conversation with Georgiy on Day 10 now resets correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Returned Victor’s Shadows’ dialogue on Day 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visual, Audio, Geometry",
+     "items": [
+      {
+       "text": "(Important!) Everyone’s skin should now look less plastic and be less shiny.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Important!) Notes now glow less aggressively — no furious neon green anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gave Yulia a cigarette; gave Maria’s Signs correct glasses; and gave the brides in the village mortars and pestles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Shadows of Saburov and Katerina now (supposedly) stand where they should on Day 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added calluses to Astrild’s hands — they were mentioned in the description, but not shown visually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trimmed a bit of grass at the waste lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed dynamic lighting in the Backbone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kids who pretend to be soldiers with sticks now do so with sticks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toned down the fireworks a bit more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The river in the Maw now babbles the way it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The dramatic mirror burial mound in the Cathedral no longer pokes the killer in the butt with its shard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a sparkle to Grief’s eyes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gave ponytail girls eyelashes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally reduced the shine on Sticky’s skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The plague trap that spits spores from a wall now glows slightly in the dark — it used to be basically invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the lighting in Rubin’s house and the lamps at his Warehouse location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the physics of a table and stool — they could create softlocks in hospital quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a curtain to the window in the little operations room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Buckets no longer fly around the Stillwater!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And the Cathedral no longer has mirrors (the wrong kind).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The drawing on the Stillwater wall no longer overlaps the mop used to wipe it off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Returned the clock to Simon’s study door — it was disappearing when it shouldn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the doll that Dankovsky reflects on once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Fixed one thought icon on the Mindmap (it was a white square).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Concentration highlights: on levers in the Cathedral, on the drawer of Olgimsky’s desk, on bull tracks near the Stillwater, and on the book in Emilia’s wardrobe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shabnak sometimes incorrectly appeared in the Headquarters as dead when she was alive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The paper bull now correctly leaves the Artifacts section after a quest reset. Previously, tiny bulls were piling up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scenes showing townsfolk reactions to certain decrees used to trigger in rioting districts, where they don’t belong.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Traders can now provide a recipe for Herbal Mixture — a light sedative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you talk to Sticky in the prison on Day 12, he no longer gets smacked in the forehead by the door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If resetting a quest returns resources to the player, this is now shown on the node in the Mindmap only at the start of the day, not constantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the “Other” menu, you can now toggle numeric hints for thoughts in “Mind Palaces” (for keyboard play).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "support@ice-pick.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The problematic save file, located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves — open the save profile folder. There are three of them: Default (slot 1), 1 (slot 2), and 2 (slot 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us find the issue faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/1a772af187687e0a7a5359f34ea13f1c648bd53e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 8,
+    "balance": 0,
+    "other": 40,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1822556746162311"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T16:35:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.337Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-11T17:11:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.338Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-11T17:11:51.000Z"
+     }
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:27:46.337Z"
+  },
+  {
+   "id": "pathologic-3-319087@1",
+   "gameId": "pathologic-3-319087",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-14T16:54:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is the game’s first update! Yep — not a hotfix, but a full-on patch. It includes everything we managed to polish up over the past week that didn’t make it into the hotfixes: critical progression blockers, quest and story logic, holes in UI and controls, plus a hefty batch of visual and technical fixes. Hotfixes are for things we can address quickly and that critically break progress; patches are for issues that can wait at least a week so we can handle them a bit more thoughtfully. We’ll keep working in this format for the foreseeable future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you can see, the game is large and logically very complex: many elements are tightly intertwined and affect each other. We can’t catch everything without your help. Thank you for your reports and attention — this list is built directly from them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Important Changes",
+     "items": [
+      {
+       "text": "(Important!) Fixed a softlock on Day 1. Eva could disappear, making it impossible to continue the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Pretty!) One character who dies near the end of the game was meant to lie in a beautiful burial mound made of mirrors — but the mound was missing. It is now back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Extra pretty!) In the “shadow theatre” end-day performances (the ones with the white screen), the wrong shadow was being shown — always the same silhouette. Each pantomime is supposed to have its own unique shadow scene. Restored as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to take another look: even if you’ve already seen the old versions, you should be able to return to them within the same playthrough — they’ll update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Smart!) Corrected chess setups in the Institute. The pieces were placed improperly. Chess is no joke. The first patch comes with the most crucial fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI & Controls",
+     "items": [
+      {
+       "text": "Fixed animations and the progress bar in the euthanasia screen. Hopefully it’s clearer now what you’re supposed to do there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The key for switching the Prototype into projectile mode (default “3”) can now be rebound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quest Logic",
+     "items": [
+      {
+       "text": "(Important!) Fixed a whole lot in the storyline about Grief, Block, and rations — on Day 9 and Day 11. It might actually work properly now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the worst ending, added an option to ask Mark Immortell for direct hints about which quests you missed and when. It’s optional; he’ll scold you, but he’ll give you a clue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Saburovs’ storyline on Days 5–7 — sometimes you did things with them (it’s so hard to write patch notes without spoilers), but on Day 7 the outcome behaved as if you hadn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed many issues in the Soul-and-a-Halves shelter storyline on Day 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The dancer on Day 3 no longer delivers her dialogue if you diagnose her immediately. The result of her diagnosis is also processed correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nina’s monument no longer appears in the Atrium.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the logic of the storyline about Maria’s dream on Day 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sometimes Telmann wouldn’t let you leave the interrogation. Rat. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The quest about excavating Simon’s grave on Day 6 no longer freezes with a black screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When resetting the node about a death… (how do you write this without spoilers?) …of a certain character — it stayed improperly highlighted. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Karminsky would sometimes lock the player inside the Cathedral on Day 10. We disapprove of Inquisition methods — fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the Headquarter Papers could be considered “eaten by the bull” even if the bull wasn’t in the Stillwater. Fixed the quest nodes there too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Patients on Day 7 now reset correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Changeling now spawns properly in the scary house on Day 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lyuricheva Street quest no longer resets on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If we learn about one heroine’s death (not the one we avoided spoiling above — lots of people die in Pathologic 3) from the future, the nodes now report it correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the prison “Mind Palaces.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visuals & Geometry",
+     "items": [
+      {
+       "text": "Moved the Bachelor’s hands so his shoulders no longer clip into the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In one pantomime, an uncut chunk of grass was sticking out. It no longer is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some characters were standing inside each other: two dancers on Day 12, the courier and the boy in Viсtor’s quest on Day 10, and Georgiy’s visitors on Day 6 (only after his quest for some reason).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed animations in the children’s duel on Day 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted windows in the Trammel, put books back on the shelves, dealt with a floating paperweight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed physics in a couple of places at the Train Graveyard — the softlocking kind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fires no longer pause during dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some hair (Willow would approve), including when TAA/upscaling is disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In one scene, Rubin was hilariously holding a revolver without actually having a revolver. Returned the poor man his weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bull painting in Capella’s Wing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved one of the flamethrower guys to the correct spot and adjusted the dialogue camera for him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed courier animations in Emilia’s quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In Shekhen, Taya was sitting on air instead of a stone — and everyone followed her example. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passersby clothes soak in rain better now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-baked lighting in the Stillwater without extra shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the animation of Maria’s maid at the Cape on Day 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored Sharp’s vanishing hand. Probably. We’re not 100% sure yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There were various conflicts between Eva’s fireflies, decree decorations, and Concentration mode in the courtyard by the Stillwater — we untangled that Gordian knot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed dynamic lighting in the scary house. Also, you can no longer fall behind the screen there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Kains’ boat on Day 12 had geometry issues. For one, that’s why you couldn’t talk to the Shadows of one of the heroes. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed tutorial pop-up layouts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The mysterious creature you meet in Kira’s quest (Day 10) spawned in the wrong place and thus wasn’t visible in the dialogue. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The shadow at Capella’s inauguration stopped T-posing menacingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved stone physics and the grass below it near Yulia’s house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Microscope slide icons are no longer a blurry mess.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the overall physics of Nina’s monument — previously, you could fall into it (Victor already did).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quoting our tech art director’s commit: “Mured up potentially dangerous palisades for good!”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed window glass in Isidor’s house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored the top of the Polyhedron in Eva’s location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the clock in the Cathedral.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of small geometry and set-dressing fixes in Backbone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dealt with invisible walls around the Cemetery and Crowstone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Map Markers",
+     "items": [
+      {
+       "text": "The Tanners on Day 8 and Day 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lara’s storyline on Day 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Searching for Grief on Day 7 (the marker could remain after a quest reset)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Markers on the children on Day 8 (in the scary house storyline)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Some characters (Nara, Georgiy) could block other speakers in polylogues. Taught them some manners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thought clouds: in the Cathedral; on the smoking guys at the very start of the game; in the scary house on Day 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized texture memory usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the “Academic” achievement being awarded incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If the Gut was rioting, you couldn’t load a save there — now you can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Stillwater music theme stopped playing where it shouldn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rubin’s vaccine in the Stillwater now disappears properly after being used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more microscope reagents to the hospital cabinet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(For Supporter Pack owners) Fixed receiving glass slides from Farkhad’s Lamp with a full inventory — previously they could disappear in that situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And we won’t even mention typos — you know how it is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If after the update you still run into bugs or odd behavior, please report them in the appropriate Steam Community thread or the relevant Discord channel/topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Email reports are also extremely helpful: write to us at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "support@ice-pick.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player and Player-prev logs located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The problematic save file, located here",
+     "items": [
+      {
+       "text": "C:\\\\Users\\\\%Username%\\\\AppData\\\\LocalLow\\\\Ice-Pick Lodge\\\\Pathologic 3\\\\Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the save profile folder — there are three of them: Default (slot 1), 1 (slot 2), and 2 (slot 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That way we can find the problem faster and fix it sooner!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, here’s a small gift at the end of the patch notes: a piece of in-game art. This time, you can see a self-portrait of Ice-Pick Lodge staff over this past weekend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45235074/21a95dbb6350b283e8fe8ec08705deeac7a88824.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuning reality until it matches the intent,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice-Pick Lodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 17,
+    "balance": 1,
+    "other": 64,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3199650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3199650/view/1821922921816938"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T19:41:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-3199650",
+      "checkedAt": "2026-11-13T03:27:46.334Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:27:46.334Z"
+  }
+ ],
+ "issues": []
+}

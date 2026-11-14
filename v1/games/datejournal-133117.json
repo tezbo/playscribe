@@ -1,0 +1,138 @@
+{
+ "game": {
+  "id": "datejournal-133117",
+  "igdbId": 133117,
+  "name": "DateJournal",
+  "cover": {
+   "imageId": "co2i6r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2i6r.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arshf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arshf.jpg"
+  },
+  "ps5Release": "2024-03-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "datejournal-133117@2021.03.19",
+   "gameId": "datejournal-133117",
+   "displayName": "Update 2021.03.19",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-03-19T12:39:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bug Fix: Game soft lock after ~30% game progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1176890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1176890/view/4048146376713658738"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-03-19T12:39:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1176890",
+      "checkedAt": "2026-11-11T21:58:52.624Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:52.624Z"
+  },
+  {
+   "id": "datejournal-133117@post-2021-02-26",
+   "gameId": "datejournal-133117",
+   "displayName": "Fixed Bugs in Tutorial",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-02-26T12:46:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed bug in the tutorial: After opening the first girl's photo by log message, the tutorial stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug - if player click too fast while girl talking about gift the girl stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added \"Game Saved\" message on game save event. Game saved every time player stopped on cell. During tutorial autosave are disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1176890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1176890/view/4060529371705674732"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-02-26T12:46:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1176890",
+      "checkedAt": "2026-11-11T21:58:52.622Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:52.622Z"
+  }
+ ],
+ "issues": []
+}

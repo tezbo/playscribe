@@ -1,0 +1,101 @@
+{
+ "game": {
+  "id": "i-m-on-observation-duty-6-254443",
+  "igdbId": 254443,
+  "name": "I'm on Observation Duty 6",
+  "cover": {
+   "imageId": "co979i",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co979i.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2eyf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2eyf.jpg"
+  },
+  "ps5Release": "2024-10-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "i-m-on-observation-duty-6-254443@major-2026-07-02",
+   "gameId": "i-m-on-observation-duty-6-254443",
+   "displayName": "Small update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-02T17:27:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the potential Unity vulnerability issue (see more info from Unity's website) for windows. Mac and Linux will be patched later.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Observation Duty 1, 7 and 8 have been fixed for all platforms previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2137700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2137700/view/1836506165568664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T17:27:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2137700",
+      "checkedAt": "2026-11-13T03:23:21.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T17:27:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2137700",
+      "checkedAt": "2026-11-13T03:23:21.768Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-02T17:27:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:07.720Z"
+  }
+ ],
+ "issues": []
+}

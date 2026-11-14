@@ -1,0 +1,3410 @@
+{
+ "game": {
+  "id": "parking-world-build-manage-265546",
+  "igdbId": 265546,
+  "name": "Parking World: Build & Manage",
+  "cover": {
+   "imageId": "co88db",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co88db.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2igj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2igj.jpg"
+  },
+  "ps5Release": "2025-08-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "parking-world-build-manage-265546@hotfix-2026-11-02",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-02T15:18:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/4370ab2ff1ea8fe6df861d1d6342aa3ee00273e2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unity recently shared a couple of security advisories, and we did what a responsible game studio should do: we checked our games and applied the necessary fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The issues involve some technical parts of the Unity engine, including security certificates and data handling. Nothing particularly exciting from a player's perspective, but still worth taking care of.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are mostly small, behind-the-scenes fixes. We also took the opportunity to include a few minor bug fixes we had already prepared for our next major patch, based on issues you reported here on Discord, such as a bug with language selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No new content, just some maintenance and a few small improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1847920302248527"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-02T15:18:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.610Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-02T15:18:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.611Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-02T15:18:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.912Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@1.0.10",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 1.0.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-21T12:00:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/258f226612f53efbfa7a0293101f6fd4351d50cf.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In preparation of more to come we have a small Patch to fix some issues and prepare the game for the next things to come. We also worked on communicating some states of your garages status better to you. Here are the details for this patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Features & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added failsafe to ignore empty save files during operation on all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added notification about missing materials preventing workers from taking on new tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gave positive and negative floating texts a green/red tint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sun and moon lighting now moves smoothly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor loca smart string inconsistencies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scenario selection navigation with controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visitors never getting a coffee in freeplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weather not changing for several days after scenario start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare case where workers would refuse to do their work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed new workers not being displayed instantly after being hired.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed workers not sitting on their bench properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visitors appearing briefly in a different position after exiting their vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typos and missing translation in builder localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NRE on solar panel turbine lamp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed notification for missing materials to work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blocked worked being reported with false positive props.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated font shaders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unity upgrade to version 6000.3.15.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some missing translations in the finance menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gameplay Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved ramp railing and wall to ramp category.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved water fountain from shrubs category to misc. category.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 13,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1844115010501164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T12:00:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.610Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T12:00:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.610Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-21T12:00:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.912Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@1.0.8",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 1.0.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-20T10:00:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/c8edec5a196bd93f1743d1035f9b8f3f18eb2747.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a minor Update for you with some small fixes and gameplay blanaces mostly regarding maintenance the game should now generate way less work so smaller garages need fewer staff. We also reduced the amount of daily visitors needed for some achievements. As always we fixed some community reported bugs. Some older saves might experience some issues in handling new content but you can delete them and continue. Here are the details for this patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Added proper shader branching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Parking-chan as Graffiti",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Daily Visitors to statistik panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed Dither effect for some placables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Wind Turbine Back Face Culling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Snow sparkle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Materials for shader branching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Curved Wall Material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Unity vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Chance for Graffiti Visitor Need",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Chance for Trash Drop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "✨ Gameplay Changes",
+     "items": [
+      {
+       "text": "Decrease requirements for the daily visitor number achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Halfed Spawn Chance of following Maintenance",
+     "items": [
+      {
+       "text": "Damage Foundation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage Glass Foundation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage Parking Lot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leaves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trash Drop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wall Damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visitor Need to Graffiti",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased base car spawn rate in free play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased base visitor stay duration in free play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Visitor stay duration can now be increased up to 200% from the free play menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because of the maintenance chance change we also adjusted material prices for tasks:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maintenance Damage Remove Price: 10 -> 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maintenance Leaves & Weed Remove Price: 0 -> 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maintenance Graffiti Remove Price: 50 -> 120",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maintenance Vermin/Fire Remove Price: 100 -> 200 ( didn't get chance halved but increased for more weight in comparison to Graffiti)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 9,
+    "balance": 2,
+    "other": 17,
+    "ps5": 0,
+    "topNew": [
+     "Added proper shader branching",
+     "Added Parking-chan as Graffiti",
+     "Added Daily Visitors to statistik panel"
+    ]
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1813674389063309"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-20T10:00:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.609Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-20T10:00:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.609Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-20T10:00:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.911Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@1.0.6",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-16T14:00:20.000Z",
+   "notes": [
+    {
+     "title": "New Feature Added",
+     "items": [
+      {
+       "text": "Per Request we added the Feature to keep the game running in the background!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We hope you like the change!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your Parking World Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Per Request we added the Feature to keep the game running in the background!",
+     "We hope you like the change!",
+     "Your Parking World Team"
+    ]
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1810503566580997"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-16T14:00:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.608Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-16T14:00:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.608Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-16T14:00:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.910Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@1.0.5",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-05T13:00:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/fb2f472e12e1e8c3e53fdd0356b05e43ae7bea9c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to many of your helpful reports, we were able to make some major performance improvements. In our testing, we saw up to double the performance with these fixes, especially in late-game situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The freeplay got extended with more config options. As always we fixed some community reported bugs. Some older saves might experience some issues in handling new content but you can delete them and continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features & Improvements",
+     "items": [
+      {
+       "text": "Added an option to increase the visitor stay duration in free play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to increase the car spawn rate in free play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced the core shader stack increasing performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized handling of UI entities to further improve performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed various text labels in the main menu not updating on language change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Steam Manager assembly dependency leading to a rare issue with achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where workers would be unable to reach certain maintenance locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Workers are now able to repair damaged foundations in places where a car is parked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Weed Maintenance from Glass Foundation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Added an option to increase the visitor stay duration in free play",
+     "Added an option to increase the car spawn rate in free play",
+     "Replaced the core shader stack increasing performance"
+    ]
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1809869180067137"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-05T13:00:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.608Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-05T13:00:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.608Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-05T13:00:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.910Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.76",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.76",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-27T12:27:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 0.2.76 is live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/c8247d2492c10f376abab6ac4b30e26d2859050a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Auto-saving got a quality of life update as well as the visual representation of safe files. We also fixed some community reported bugs. Some older saves might experience some issues in handling new content but you can delete them and continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the details for this patch",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/0a3ebae213e306b163514c7ba51beebd840bcc9c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Autosave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The autosave interval can now be adjusted, based on a predefined interval size in 3 steps (5, 10, 15 min).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Layout is now simplified, showing an image and the name of the scenario within the savegame,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Autosaved files are also marked with an additional tag,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved videoplayer in onboarding prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/68e563f8b07a57de7c5f1a95b7cf2618a43d48df.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that prevented achievements from unlocking,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ambiguous wording of an objective in scenario 4,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wind sound playing when returning to first person perspective from a high altitude,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player avatar spawning in the wrong position in free play,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed progression for GameCore achievements,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Invisible Graffiti Position in Scenario 4,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPC Mesh Penetration on Summer and Fall Clothing (Tops) for Male NPCs,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Curve Fill Snapping into Corners independent of Rotation,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Scenario 6 Snapping out of grid of Island in the middle,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Workers not Removing Damage in Scenario 6,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Normal Map on Pavement Foundations doesn't disappear under Puddles anymore,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed SystemMenu navigation issues,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed custom scenario achievements message,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/820d4ad818c5ae2f034a404807c2b9e95040a2eb.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added access to middle Area Scenario 6,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vending Machine Outline doesn't disappear anymore once they are powered,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44533592/b0f6ed9a9df17ad10b4832b0026a83b6b518634a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 12,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1803527891542165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-27T12:27:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.607Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.909Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.74",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.74",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-16T09:37:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With this patch we introduce settings for the freeplay scenario to give you a way to customize your play through. We also added some more security guidelines for the agent decision making to stabilize worker NPCs. Some older saves might experience some issues in handling NPC but you can delete them and continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the details for this patch",
+     "items": [
+      {
+       "text": "🆕 New Features & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved render performance of guidance connectivity indicators. Approx. 1-2 ms in a parking garage with ~100 parking spaces.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Water Pipes received a visual overhaul.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added customization to freeplay with the following options",
+     "items": [
+      {
+       "text": "Start finances,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Start materials,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Maintenance options: none | casual | default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Start season,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Start time of day,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weather override (disables seasonal weather)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changing this settings disables achievements: 🛠️ Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed passengers returning instantly if their return time was to high.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Maintenance Timing on Damage and Weed Spawning.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Scenario Settings Start Material Amount.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Debris Material Amount.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with the character floating above ground/floors.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that prevented workers in scenario 4 from removing debris piles.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that caused workers to get stuck in various scenarios.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that allowed agents to engage in unsolvable activities.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue that prevented maintenance tasks from being scheduled for workers to complete.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Foundation and Plastered Wall Sizes to avoid Z Fighting.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed initial tutorial about maintenance tasks not triggering in earlier scenarios.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed water particles not being rotated randomly (fountain/leaks and sprinkler).,: ✨ Gameplay Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased max visitor stay time to reasonable values for each scenario.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Maintenance Balancing: Adjusted Cost and Timing for Maintenance.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted Material amounts at start of Scenarios.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added WorkerTools to Initial placeables Scenario 2 & 3.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Pedestrian Barriers in Scenario 4 Initial Placeables so Pedestrians use the stairs instead of the Ramps.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reorganized some help articles to be available in earlier scenarios.,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed parking usage to be displayed as percent in statistics panel.,: Thanks for the Feedback on our discord and in the steam boards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 27,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Start finances,",
+     "Start materials,",
+     "Maintenance options: none | casual | default"
+    ]
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1799817379496462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T09:37:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.607Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.908Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.72",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.72",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-25T11:05:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 0.2.72 – Fixes Fixes and Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our next patch is here! We focused mainly on your feedback and fixed a lot of smaller issues. We also had a massive performance improvement. Some older saves might experience some issues in handling NPC but you can delete them and continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the details for this patch",
+     "items": [
+      {
+       "text": "🆕 New Features & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visitors now stand in the correct position when using toilets or vending machines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workers sit down at the workstation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Texture Memory by 1,39 GB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved Render performance and CPU usage. Mostly for late game. Results vary depending on the setup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Photo mode and Save hotkeys to the controls menu for Mouse and Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Backwards parking cars in EV parking spaces now charge correct",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Green Technology LOD Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an inspector for Wind Turbines displaying, when the turbines are not working due to occlusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Completed UI scaling Options. You can now scale the UI for better readability on TV and/or Steamdeck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added input icons to the help menu to display the correct icons for the used input method",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved controller navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Repaired vending machines will count in objectives and be used by visitors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Curve & Corner Placeables: Improved snapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rearranged HUD InfoArea to prevent linebreak/text overlap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing localization strings for a lot of items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Scenarios now have different weather depending on the current season. Old savegames will continue at their saved date",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added help entry about the \"show control hints\" setting: Improved spreading of electricity: 🛠️ Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue that would cause workers to stop performing work when unsolvable work tasks are scheduled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Weed spawn blocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pedestrian Animator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed navigation inside the staff management panels scroll view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Roof and Foundation Snapping on top of walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Solar and WindTurbines roof snapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stair placing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Debris Progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Scenario 4 invisible Toilet issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Scenario 5 Building Blocker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Inclined wall snapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Corner and Curve building blocker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cars icon and TextSpawner position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rebinding in the Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping/ invisibility of UI elements, when setting the \"UI scale\" option to 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed displayed cash amount after deadline being cut off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation inside dropdowns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed and issue where you could not navigate the system menu and build menu after loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Stair Railings snapping on top of each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unselectable main menu button in scenario win/lose dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, where toolTips were displayed at the right hand side of the screen instead of near to the selected UI element",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue, where you were able to select the greyed out Framerate option, when vsync is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the position of the sound for various elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio slider values being inconsistent when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, where menus with scroll views could flash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lost navigation after complete/reset all dialog in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lot of smaller community reported issues: ✨ Gameplay Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reintroduced Fire gameplay from scenario 5 onward. Better build sprinklers and watch for oil leaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the objective \"Build enough E-charging stations\". Now, only reachable and power-supplied stations will count towards the objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Placeables: Corner Roof Tiles in Size 6 & 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Interactions are activated only after the Loading Screen has disapeard. Preventing weird movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed reported issues in scenario 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Scenario 2 Terrain blocking vehicle exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed wireless Fusebox from the game. Lamps must now connected with cables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced amount of parking spaces needed for \"Sir Park a lot\" and \"Par King\" achievements: Thanks for the Feedback on our discord and in the steam boards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 30,
+    "balance": 2,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1794830911030257"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-25T11:05:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.606Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.908Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.61",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.61",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-30T12:56:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our first patch for 2025 is finally here! We focused on extending our management gameplay. We also managed to get another slight performance boost and as usual a lot of fixes and quality of life features. We also added the option to select the screen the game is being displayed on with a multiscreen setup. Last but not least we added full controller support for PS, XBOX controller. We are now working on balancing with your support and we are aiming for a stable ingame economy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Management",
+     "items": [
+      {
+       "text": "The player can change the price for every vending machine purchase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Impressions generated by a vending machine are now driven by its price.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visitors now show their needs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full trashbins now spawn trashbags that workers has to bring to the dumpster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tradeable resouces now have dynamic pricing that can be used to optimize their buying and selling over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Worker now show information about what work they are doing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Advertisement Signs",
+     "items": [
+      {
+       "text": "Advertisement Signs can now be placed in different sizes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Signs generate Revenue when Visitors pass them, but there is a chance that they might also: generate a negative rating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Signs will change the shown advertisement on completed maintenance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Save Games including old Advertisement placeables are not broken, but the signs will not load and: will have to be replaced by the new reworked placeables.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workers now have backpacks when carrying objects like trash or debris.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added full controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a help entry for parking space reachability icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added better control for displays & hints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing LOD for vendind machines, trash, planes, speedbumps and some foundations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved snapping accuracy of Water, Electrical, Green Technology, Service, Guidance and Flower: Tub placeables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Monitor selection was added as a option to the graphic settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renamed the drone modes to Default (previously Hold Altitude) and Advanced (previously Free flight). The settings are inverted, because we set Hold Altitude as default. So go to the settings and check if you are using your preferred setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where pedestrians and vehicles would oscillate around the path they were following, leading to glitches and undefined states in game logic. (zick zack driving)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed object names being cut off in build menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed confusing names of inclined wall objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occlusion for solar panels, they now generate less or zero power when covered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with indicators of solar panels being visible in the PhotoMode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Airplane Culling Distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed SDF for Buildings, Facades. Pedestrian Access, Pedestrian Barrier, Speedbump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some color issues with videos in .mp4 assets by adding missing h264 metadata",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error with some ambient sound locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sunlight flickering at noon sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, where the money objective in Scenario \"Changing Times\" was completed on scenario start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, where some cars were paying the parking fee a second time after saving and loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, where the money and materials UI at the bottom were displaying -9999999",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, where the money-waterfall was displayed 2 times instead of 1 time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weird camera positions in some scenario starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an objective in Scenario 6 being able to be exploited",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several Maintenance Issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cistern size and connection points to be in the grid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed name and description of the Fuse Box to clear up any confusion regarding its use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cars now pay the parking fee when leaving your build garage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve Barrier Tape Selection visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement to snapping of Ramp Wall & Ramp Railing Snapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase Cistern volume to 100",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add Pipe Floor Junction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved snapping accuracy of Water, Electrical, Green Technology, Service, Guidance and Flower Tub placeables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Renamed the drone modes to Default (previously Hold Altitude) and Advanced (previously Free flight). The settings are inverted, because we set Hold Altitude as default.: Thanks for the Feedback on our discord and in the steam boards! Keep it coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 18,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1790214123082062"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-30T12:56:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.907Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.57",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.57",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-16T13:01:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 0.2.57 is live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will be the last 2024 Patch and we end the year with a banger. A major rework of the scenarios 4,5 and 6 as well as a slight performance boost and as usual a lot of fixes and quality of life features. Be aware that the rework of the scenarios might break some saves from those scenarios. You can still load old games but your buildings might no longer be valid. Also the adjusted gameplay settings will only be in affect when restarting a scenario not when loading an old save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's are the details",
+     "items": [
+      {
+       "text": "🆕 New Features & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Overhaul of scenario 4 \"Changing Times\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Building Area was reduced to only the space of the derelict parking garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Debris was moved inside the parking garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Overhaul of Scenario 5 \"Go With the Flow\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Building Area reduced to a 6x6 area for 12-1-12 Foundations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Second Entrance for Shopping Mall was added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Greenery was added to Front and Back Entrance of the Shopping Mall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Players can now connect to the roof of the mall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Overhaul of Scenario 6 \"Green Thumbs\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Building Area was reduced and Entrances change so that one Building Area has an entrance and the other one an Exit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Players will now have to build a bridge to make a valid garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed EV parking space objective description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved notification messages that result from errors and failed commands issues to the object placement system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added \"change perspective\" as a rebind option to control settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added max worker count info and hint to staff panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved timing for traffic rules calculations which should increase performance slightly (more to come).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted reflection probes calculation which should increase performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where workers would get stuck after a failed attempt to complete an activity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where the interactions of pedestrians with services and other placeable objects would not correspond with the visual appearance of that object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed animation blend to reduce sliding in pedestrians.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed animation speed to use the simulation time directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed issue on restoring a savegame that was saved while some agents were still waiting to be restored fully.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed UI navigation of input fields in game menu market tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed controller / M&KB sensitivity mismatch when swapping devices.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed Placeables snapping in the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed NotificationSystem layout issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Cars don't spawn on top of Tunnel anymore in Freeplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Wall building options for Scenario 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Invisible Graffiti Maintenance in Scenario 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Invisible Vermin Maintenance in Scenario 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Dumpster Broken State.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed several localization issues for maintenance effects & vending machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed rebind action & categories localization in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Cable Material.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Eco Technology: Solar Panels and Drains efficiency reacts to weather changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✨ Gameplay Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Scenario 2 \"Sharing is Caring\"",
+     "items": [
+      {
+       "text": "-Pedestrian Bridge now aligns better to the grid to avoid the ability to build with an offset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Toilet Objective now only registers toilets once they are connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed toilet objective from 20 toilets to 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Removed height blocker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Moved Corner Curves and their Railings from Scenario 3 to later scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Scenario 4 \"Changing Times\"",
+     "items": [
+      {
+       "text": "-It is no longer required to remove the debris in a set order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Freeplay",
+     "items": [
+      {
+       "text": "-Removed Car IN and OUT from building menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added Building Blocker so stairs and ramps no longer snap into the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Add 1k Buttons to Trade Market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the spawn rates of cars in all scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted parking duration of cars in all scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Doubled the length of an ingame day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 51,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1785774543653831"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T13:01:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.604Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.906Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.52",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.52",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-03T13:33:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 0.2.52 with more fixes and improvements is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This week we have a minor patch for some fixes and some improvements. We’re preparing the next bigger content update and this patch will be a preparation for that. Again we also cramped in some community requests! Here's what’s new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🆕 New Features & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Overhaul roof elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added \"reset all\" option for control rebinds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Moved special parking space onboarding from S3 to S5 and disabled the associated narrative chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added barrier tape to S2 to align with onboarding text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added auto scroll to selection in control settings necessary for upcoming controller integration 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added extra delay for last chat message which fixes narrative chats sometimes disappearing too early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a better indication to the range of fuseboxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed the volume of the crickets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Graffiti maintenance effect having the wrong sound effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed layout keyboard layout dependent binding for \"delete mode\" (Z key location is default in QWERTY layout)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed some localization spelling errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed invisible building border being able to catch on fire 🔥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed game menu staff panel UI navigation necessary for upcoming controller integration 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed vertical movement for PC & upcoming controller integration 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed onboarding prompts being marked as completed when aborting them on the last page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed electrical cables having no name and description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed traffic tutorial being displayed twice in the tutorial catalog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed \"delete modes\" controller binding 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed time scale controller bindings 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed camel case background label in general settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue, where the \"IsPowered\" indicator for some electrical devices (e.g. wall lamps) was not working as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Disabled electricity onboarding remnant in S3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed \"trees\" to \"shrubs\" in onboarding text to align with available placeables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Removed unused tab action ref",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Removed fly & walk menu action maps (redundant)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Removed misleading numbers in the Build Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✨ Additional Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a toggle setting for the waterfall effect for the numbers in the UI for better performance adjust-ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Overhaul Eco Water Drain model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for the Feedback on our discord and in the steam boards! Keep it coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1784506359177202"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-03T13:33:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.603Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:53.905Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.51",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.51",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-26T13:22:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 0.2.51 – New Features, Improvements, and Fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to share the latest update, 0.2.51, packed with new features, community-requested changes, and a host of fixes to enhance your gameplay experience. Here's what’s new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🆕 New Features & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Snapping Rules Overhauled: Enjoy a smoother and more intuitive building experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New Flight Controls: A community-requested addition, now available as an option for drone handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Expanded Control Rebinding Options: Rebind any control to suit your playstyle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Parking Spot UX Update: Missing car or pedestrian access information is now displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Maintenance Task Guide: When viewing tasks (e.g., fixing a broken toilet), a helpful textbox in the -bottom-right corner explains what to do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Building Menu Cleanup: Improved organization for better navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fountain preview display issue resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-PlantTub-rectangle preview fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-PedestrianRamp preview corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Privacy wall snapping works as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Wall stacking fixed for proper functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Streetlight snapping issues resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue with navigation randomly stopping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Resolved an issue preventing toilet repairs in first-person view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Empty objective box in Free Play mode no longer appears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Maintenance collider size adjusted to match visual elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✨ Additional Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New Tutorial Media: Added videos and images to tutorials that lacked visual guidance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "-New Wall Variants",
+     "items": [
+      {
+       "text": "-Wall plastered 12-6-0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Curve-12 concrete added (community request).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-New Curve Outer Fillings: A long-awaited community-requested feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Updated Models",
+     "items": [
+      {
+       "text": "-Walls-6-3-0 no longer have connectors at the top and now indicate they cannot be stacked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to your feedback, this update brings significant improvements to both functionality and user experience. Your suggestions drive our development, and we can’t wait to hear what you think of this update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, keep the feedback coming, and happy building!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0,
+    "topNew": [
+     "-Wall plastered 12-6-0.",
+     "-Curve-12 concrete added (community request).",
+     "-New Curve Outer Fillings: A long-awaited community-requested feature."
+    ]
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1783872412143461"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-26T13:22:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:15.007Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.49",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.49",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-15T18:02:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have a new update for Parking World: Build & Manage for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕Reworked Content",
+     "items": [
+      {
+       "text": "-Reworked Freeplay Scenario.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🚮 Bug Fixes",
+     "items": [
+      {
+       "text": "-Workers no longer get stuck while disposing of trash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed NPCs attempting unreachable tasks (e.g., blocked by vending machines).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Corrected tooltip localization and positioning errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed Brazilian and Polish translations of status displays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Resolved errors during tooltip initialization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Savegame and exit dialogs now appear above the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Items that are buildable can now also be deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed workers getting stuck when no dumpster is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Various improvements to overall robustness and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🚪 New Features",
+     "items": [
+      {
+       "text": "-Focus indicator added for tutorial nodes in drone mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-New Freeplay button added to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Notifications added for recurring payment due dates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Indicators added to show NPC access points for placeables like vending machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🚧Tutorial Enhancements",
+     "items": [
+      {
+       "text": "-All tutorials and help texts unlocked at the start of scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Tutorial catalogue accessible via the build menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Stairs tutorial moved from Scenario 3 to Scenario 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔔Scenario Updates",
+     "items": [
+      {
+       "text": "-Scenario 2 (Sharing is Caring): Substation, Water Spring, and Dumpster are now buildable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Electrical placeables now correctly play VFX when placed or removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "-NPC Behavior Improvements",
+     "items": [
+      {
+       "text": "-Enhanced stability and behavior of NPC interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update now and explore! 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 9,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "-Reworked Freeplay Scenario.",
+     "-Focus indicator added for tutorial nodes in drone mode.",
+     "-New Freeplay button added to the main menu."
+    ]
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/1783238125253621"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-15T18:02:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:15.007Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@0.2.45",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Update 0.2.45",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-12T14:18:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a new update for Parking World : Build & Manage for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "-Improved overall performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved stability of optimized code paths. This should resolves some known issues with agent -pathfinding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a notification when trying to load an invalid save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added Scenario 2 - Sharing is Caring: Pedestrian Bridge is now extensible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added better graphics for pedastrian access in all Sceanrios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added Game is now paused after loading (community feature request)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed PackIDs from HighwayBridge in Scenario 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Foundation A 12-1-12 not saving properly (old saves will not have the part)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Foundation 12-1-12 Asphalt Name and Description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed errors during scene cleanup and remove obsolete logs in SimulationSystem",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for being part of our community and supporting us with your feedback! We hope you enjoy the new improvements and look forward to your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/6148070194801758332"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-12T14:18:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.601Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:15.006Z"
+  },
+  {
+   "id": "parking-world-build-manage-265546@patch-2024-10-11",
+   "gameId": "parking-world-build-manage-265546",
+   "displayName": "Demo Patch | Available Now!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-11T10:15:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Parking World v0.2.30 just went live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Added forced welcome onboarding in scenario 01.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Snapping of all placeables is now more predictable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New walk-fly toggle element to HUD bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted onboarding content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Snow and rain particle respect in- and outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed issue where toilets did not connect from time to time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Vending Machine in scenario 3 doesn't spawn with smoke anymore and won't go up in flames after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed issue where vehicles would not pay their parking fee after loading a savegame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where workers behave weirdly when deleting their (only) workstation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When a workstation is deleted, the workers will try to find a new one. If no workstation is available, they will get fired.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Water and Electricity generate debt again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a crash related to vehicle pathfinding that occurs after a few minutes of play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Various changes to improve stability and robustness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Privacy Walls now snap neatly to other walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Cars refrain from driving certain routes to help with smoothly flowing traffic outside of parking lots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Gate boxes now respect the simulation time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed scenario overview objective summary layout & content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2551570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2551570/view/6931694080294647025"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-11T10:15:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2551570",
+      "checkedAt": "2026-11-13T03:27:44.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:15.004Z"
+  }
+ ],
+ "issues": []
+}

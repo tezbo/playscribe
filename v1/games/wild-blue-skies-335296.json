@@ -1,0 +1,104 @@
+{
+ "game": {
+  "id": "wild-blue-skies-335296",
+  "igdbId": 335296,
+  "name": "Wild Blue Skies",
+  "cover": {
+   "imageId": "coaw26",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaw26.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4qa8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4qa8.jpg"
+  },
+  "ps5Release": "2026-08-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "wild-blue-skies-335296@1.0.6",
+   "gameId": "wild-blue-skies-335296",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-15T01:13:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added \"Combined\" option to \"Control Type\" setting that allows players to use a single button to both fire a blaster shot (quick press) or charge shot (hold).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed \"Time for a Little Payback\" achievement not always triggering correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved enemy collision avoidance to lessen issues with clipping in All Range levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1921490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1921490/view/1846651706676014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T01:13:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1921490",
+      "checkedAt": "2026-11-13T03:36:13.620Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T01:13:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1921490",
+      "checkedAt": "2026-11-13T03:36:13.620Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-15T01:13:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:20.868Z"
+  }
+ ],
+ "issues": []
+}

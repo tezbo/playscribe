@@ -1,0 +1,285 @@
+{
+ "game": {
+  "id": "unichrome-a-1-bit-unicorn-adventure-204925",
+  "igdbId": 204925,
+  "name": "Unichrome: A 1-Bit Unicorn Adventure",
+  "cover": {
+   "imageId": "co5fkp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5fkp.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1ooe",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1ooe.jpg"
+  },
+  "ps5Release": "2022-09-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "unichrome-a-1-bit-unicorn-adventure-204925@post-2022-09-22",
+   "gameId": "unichrome-a-1-bit-unicorn-adventure-204925",
+   "displayName": "Major Bug Fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-22T07:17:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This build fixes common bugs in the blue chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grappling Hook *Fixed*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hook would sometimes fail to hook at all. This would happen when all your bombs were depleted to zero or your last item selected was completely depleted. The game was treating the hook with the same logic as the bombs. So if you had no bombs you couldn't swing. An early fix was to turn on infinite ammo in the options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infinite Death Loop *Fixed*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also in the blue levels. This glitch looped the skeleton death animation over and over and over and over again until you just had to close out the game and start over. This has been fixed. The game now will notice if an animation is playing over and restart you from your last checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few other changes have been made throughout the levels to make things run smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you find some glitch please detail it and post about it so I can fix it ASAP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2026340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2026340/view/4589754330731139151"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-22T07:17:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2026340",
+      "checkedAt": "2026-11-13T03:35:10.908Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-22T07:17:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2026340",
+      "checkedAt": "2026-11-13T03:35:10.908Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-22T07:17:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.838Z"
+  },
+  {
+   "id": "unichrome-a-1-bit-unicorn-adventure-204925@major-2022-06-28",
+   "gameId": "unichrome-a-1-bit-unicorn-adventure-204925",
+   "displayName": "New Update (pre release for streamers and reviewers)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-28T00:17:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New Build includes easier to use grappling horn!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Whenever you are in range of a hook that can be swung on a large indicator appears. This should relieve ambiguity with the grappling horn. There is also a better explanation of how to use the horn. I've noticed some people try to hold the button down to swing but holding the button down changes weapons. Tapping the button will automatically attach you to the nearest hook, tapping the button again will release you from the swing. Pressing forward and backward will move you in either direction. Holding down a direction will increase momentum. Up and Down will increase or decrease the size of the rope. You can use this to climb or decend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition to some minor UI / UX things, the resolution has also been fixed. No more odd flickering in chapter 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, I am giving away keys to streamers and reviewers so if you are interested in an early copy go to thestreetlevelhero.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2026340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2026340/view/4474904295746055040"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-28T00:17:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2026340",
+      "checkedAt": "2026-11-13T03:35:10.907Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.837Z"
+  },
+  {
+   "id": "unichrome-a-1-bit-unicorn-adventure-204925@major-2022-06-14",
+   "gameId": "unichrome-a-1-bit-unicorn-adventure-204925",
+   "displayName": "First Steam Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-14T18:12:58.000Z",
+   "notes": [
+    {
+     "title": "We are on STEAM baby! ...and this is my first update!",
+     "items": [
+      {
+       "text": "Hi! I'm super8bitRafa a solo dev on my journey to releasing my first game (Unichrome).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Unichrome is a 4 year-long journey for me to understand the ins-and-outs of the indie game scene. The game is coming to both console and PC. Checkout my very high-budget announce trailer:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "The actual update",
+     "items": [
+      {
+       "text": "The first update comes with some obligatory bug fixes. The end of each level has a specific graphic now too. Loading back your save file works better now. The Extras are slightly better and play a bit smoother. New button prompts as well. Smoother and more readable text. And much much more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the future expect more extra modes and updates that improve the overall experience. Stay tuned and feel free to reach out on twitter or instagram @super8bitrafa and let me know what you think.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2026340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2026340/view/4480532686366562698"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-14T18:12:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2026340",
+      "checkedAt": "2026-11-13T03:35:10.907Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.836Z"
+  }
+ ],
+ "issues": []
+}

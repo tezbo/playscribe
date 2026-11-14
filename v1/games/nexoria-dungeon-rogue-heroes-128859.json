@@ -1,0 +1,1332 @@
+{
+ "game": {
+  "id": "nexoria-dungeon-rogue-heroes-128859",
+  "igdbId": 128859,
+  "name": "Nexoria: Dungeon Rogue Heroes",
+  "cover": {
+   "imageId": "co210k",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co210k.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arbqp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arbqp.jpg"
+  },
+  "ps5Release": "2021-09-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.6",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-25T00:23:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Stability & Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash when navigating the cursor after all enemies are defeated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when enemies try to attack with no players alive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when enemies attempt to heal with no allies remaining",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to the interrogation system when no target exists",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash caused by division by zero for units with 0 Agility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when using the zombie resurrection spell on invalid targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a memory leak where card deck data was never cleaned up between battles, causing performance degradation over long sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Invisibility effect lasting forever instead of expiring after its duration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"Convinced\" debuff permanently disabling enemy attacks instead of wearing off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"Disgust\" debuff permanently slowing units even after it expired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Speed and \"Attack Again\" effects canceling each other out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed toxic rain weather not properly applying poison ticks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weather effects sometimes not applying to players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed consumable items corrupting the Hunger stat when used in battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed heroes losing all HP when any party member is destroyed, even if they were still alive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balance Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rage damage multiplier reduced (x3 → x2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invisibility damage bonus reduced (x2.5 → x2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stealth + Defense combo bonus reduced (x2.5 → x2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy mana is now capped at 20 (same as player), preventing infinite scaling in long fights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invisibility perk (Perk 4) now grants 15 seconds of stealth instead of being nearly instant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/1833334318576231"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-25T00:23:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-25T00:23:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.488Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-25T00:23:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.596Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@post-2024-11-19",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Game crash fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-19T13:24:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A little more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/1783238125375066"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T13:24:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T13:24:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.487Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-19T13:24:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.595Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@post-2024-10-31",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Steam achievements fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-31T17:28:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Now it should work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/6146943657173906603"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-31T17:28:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-31T17:28:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.487Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-31T17:28:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.595Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@post-2024-10-26",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "One bug fixed",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-26T00:46:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed crash with error Object_object10_Step_0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/6212245217911871767"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-26T00:46:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-26T00:46:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.486Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-26T00:46:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.594Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@post-2024-10-23",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Mini bug fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-23T21:37:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello. Thank you for playing my game. I'm gradually fixing it to make it more stable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/6212245217911800940"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-23T21:37:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-23T21:37:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.486Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-23T21:37:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.594Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.4",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-27T18:42:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Ukrainian language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/4038024692305094187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-27T18:42:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.593Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.3.3",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.3.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-14T15:38:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "One new music track for battles;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved stability and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/5019805792175984607"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-14T15:38:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.592Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@major-2020-12-08",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Taimumari five-year anniversary and update to Definitive Edition",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-08T18:30:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "On December 16, 2015 I released my first commercial game - Taimumari. It was not a perfect and polished game, but it was my dream. With Taimumari I was able to leave my office work and realize my projects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And today, five years later, the game gets a major upgrade, straight from the consoles. I hope you will be pleased with the new graphics in the dialogues. If you wish, you can also play the classic version. https://store.steampowered.com/app/375520",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new Definitive Edition also includes an addition with Kanashimi, which now does not need to be purchased separately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I am also developing Taimumari 2 and unfortunately I was not able to release it by the fifth anniversary as planned. There's still a lot of work to do, so I don't know when I can release it yet. https://store.steampowered.com/app/1292400",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, my small BakuMari project will be released soon - you can check out its Steam page now. https://store.steampowered.com/app/1470880/BakuMari",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I appreciate your support and hope that you will also play my future games. Thank you all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/3856733878313511355"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-08T18:30:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.484Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:19.582Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.2.2",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.2.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-14T22:38:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I found my mistake - I hid the Paladin and the Archer from everyone! Now everything is back to normal and the Archer is available to everyone from the first launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An explanation of how to open each of the heroes was also added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And, of course, bug fixes! The game is now more stable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/3854477638702093144"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-14T22:38:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.484Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:04.553Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.2.1",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.2.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-05T16:44:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi! This is small update that cleans bugs after the last major update. Also for those who find the game too hard or too easy - you can change the difficulty in the options of the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug with crash game on \"ENG ENG\" spell;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added levels of difficulty in Options Menu;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/3807188575863931163"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-05T16:44:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.484Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:04.552Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.1.3.1",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.1.3.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-25T21:39:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Mini update. There'll be more soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The time limit during the fear effect has been increased;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed \"33 food\" achievement (now working);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shields and other effects now disappear when a character dies;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the death of a character, you can't click on the character;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Information about the characters in battle is now more clearly visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/3444639924495317861"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-06-25T21:39:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.483Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:04.536Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.0.1",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-01-12T21:56:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After the release I got some more very useful feedback, based on which I made some small updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "List of changes",
+     "items": [
+      {
+       "text": "The normal difficulty mode now shows you the walls in the dungeon, making it easier to navigate;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cell with boss now has a special icon, after its exploration;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When selecting a hero, you can now see his basic attack power;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a lot of buggies (really a lot).: In future updates I will try to add more hints in the control and explanation of the mechanic of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/2600199781652194123"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-01-12T21:56:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.483Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:04.519Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@0.4",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-07T17:55:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New update for you to be more interesting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes in battles",
+     "items": [
+      {
+       "text": "Battles take up a lot of time, and that's not bad for a roguelike. However, when one battle takes several tens of minutes to cast a monotonous attacks, it becomes boring. I've read people's feedback and made some important changes in the combat process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The amount of health of heroes and enemies is reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now every HP counts, and attacks become more dangerous, as well as spells. Any strike can be fatal, so keep an eye on your opponents' weaknesses. This has resulted in a rebalancing of spells and treatment potions, which now restore less health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mana points are now given more often, once a second.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This allows you to cast spells more often than ever before, and not just to use default attacks endlessly. However, keep in mind that enemies can now use spells more often as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animation of the attack is accelerated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "People have asked for a fast-track option, but I have decided that the attack animation should be accelerated in general, not only in the fast-track mode. You can still speed up the fight even more by holding down Ctrl.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes in dungeon",
+     "items": [
+      {
+       "text": "The research mode also has its own problems, and I would like to answer the frequent question: \"Why are the needs being wasted, even if the heroes are just pushing against the wall? The answer is simple - I would like to make players more thoughtful about their movements, and trying to memorize the map, or even sketch it, so as not to bump into walls and previously visited places. Do not try to get to the end as quickly as possible. This game is not about rushing. And now about the update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the chances of getting some events in the dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It so happens that although I have added a lot of new events, they were hardly noticed, because the chance of their falling out was extremely small. I fixed it and added a couple of new events to make you have more fun. You can even find a robot from IN-VERT, I hope you can do it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, various bugs were also fixed, for example, when deleting each item gave you a point of knowledge. Points should only be given for removing spells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who plays and tests the game, thanks to you it will be more interesting and fun to release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/2448197582019727828"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-07T17:55:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.482Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:04.517Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@0.3",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-22T14:28:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New game mode \"Dark Forest' and new boss and hero — Witch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Four brave heroes journeyed to explore the mysterious dense forest. Many legends tell about mysterious events happening here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All kinds of evildoers have been living here for many years, and the heroes have to find out who is behind all this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Complete \"Dark Forest\" and get a new hero Witch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update 0.3 include",
+     "items": [
+      {
+       "text": "New Game Mode \"Dark Forest\";",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Hero Witch;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Boss Witch;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "3 new enemies;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1 new spell;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/2404285581879022816"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-22T14:28:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.481Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:04.516Z"
+  },
+  {
+   "id": "nexoria-dungeon-rogue-heroes-128859@1.3",
+   "gameId": "nexoria-dungeon-rogue-heroes-128859",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-12-13T20:18:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Look at the alternative history of Taimumari! What if the main character of the story is Kanashi? And who will be a villain?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play a familiar game with new features!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main character is Kanashi;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New experience from game with distance default attack;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New spells with new mechanics;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update physic for player with new jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Support me and the development of Taimumari 2 by purchasing this DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-932210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/932210/view/3244179105160951570"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-12-13T20:18:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-932210",
+      "checkedAt": "2026-11-13T03:26:42.481Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:04.495Z"
+  }
+ ],
+ "issues": []
+}

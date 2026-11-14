@@ -1,0 +1,239 @@
+{
+ "game": {
+  "id": "welcome-to-empyreum-189240",
+  "igdbId": 189240,
+  "name": "Welcome to Empyreum",
+  "cover": {
+   "imageId": "co5hsh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5hsh.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1f44",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1f44.jpg"
+  },
+  "ps5Release": "2024-09-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "welcome-to-empyreum-189240@1.0.10",
+   "gameId": "welcome-to-empyreum-189240",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-16T19:00:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is just a small update to fix achievement \"Bon Voyage! (Leave the entire hotel 100% clean)\", which wasn't unlocking for some players after they had cleaned 100% of every level. We believe this happened if the last level where you got a 100% score was the \"top floor\" of the hotel (if you know, you know...).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those affected: The achievement should know unlock as soon as you get 100% again in any level. If it still doesn't unlock for you, please, let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'd also like to remind you that you can report any bug or issue you find through this form: https://forms.gle/d4cwCTUKGKgMDctP7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We apologize for any inconvenience, and thank you for your help!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807220/view/6212244583173110355"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-16T19:00:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807220",
+      "checkedAt": "2026-11-13T03:36:03.846Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-16T19:00:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1807220",
+      "checkedAt": "2026-11-13T03:36:03.846Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-16T19:00:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:11.996Z"
+  },
+  {
+   "id": "welcome-to-empyreum-189240@1.0.9",
+   "gameId": "welcome-to-empyreum-189240",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-07T14:34:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for supporting Welcome to Empyreum. We have just released an update to address a few bugs that were reported during these past two weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's a list of all the changes",
+     "items": [
+      {
+       "text": "Fixed a bug in the Nursery levels where babies created invisible puddles below the floor that could not be cleaned, and therefore it was not possible to obtain a 100% score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Bakery's wooden pallet getting stuck in some walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed asleep players not being able to move after being woken up with a slap in Castle levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the Castle's gear pedestals that allowed players to place more than one gear on them, but only one gear could be removed. This meant that all other gears that had been placed in the same pedestal couldn't be recovered and the level couldn't be finished. Now, pedestals only take one gear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Shadows quality level not being applied nor saved in the Graphics Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the amount of dust you need to vacuum in order to unlock achievement \"No more dust\" to 1000 specks. Players that have already vacuumed more than that should obtain the achievement automatically shortly after starting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We have also created a form where you can submit any other bugs you might find from now on: https://forms.gle/d4cwCTUKGKgMDctP7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1807220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1807220/view/6350729003508989464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-07T14:34:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1807220",
+      "checkedAt": "2026-11-13T03:36:03.845Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-07T14:34:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1807220",
+      "checkedAt": "2026-11-13T03:36:03.845Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-07T14:34:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:11.995Z"
+  }
+ ],
+ "issues": []
+}

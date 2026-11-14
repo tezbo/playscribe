@@ -1,0 +1,950 @@
+{
+ "game": {
+  "id": "dunecrawl-318505",
+  "igdbId": 318505,
+  "name": "DuneCrawl",
+  "cover": {
+   "imageId": "coawgh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coawgh.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar53ab",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar53ab.jpg"
+  },
+  "ps5Release": "2026-10-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dunecrawl-318505@1.13",
+   "gameId": "dunecrawl-318505",
+   "displayName": "Update 1.13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-18T23:22:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all! Small update with a few fixes / optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of optimizations, especially to memory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Toggle Sprint option. 45 FPS frame-rate option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added requirement tooltips to inventory slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a long-session issue where saved-game and scene time could stop advancing, particularly at high frame rates. Sometimes causing guns to not work correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could occur when using Save followed shortly by Save and Quit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1833200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1833200/view/1844115010496276"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T23:22:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1833200",
+      "checkedAt": "2026-11-12T02:59:27.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:27.411Z"
+  },
+  {
+   "id": "dunecrawl-318505@1.12",
+   "gameId": "dunecrawl-318505",
+   "displayName": "Update 1.12",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-19T21:43:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all! Update with some fixes, and large optimizations as we get ready for other platforms. Let us know any issues / thoughts on our Discord or Steam forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Large CPU and physics optimization pass across AI searches, melee and area-damage checks, explosions, homing projectiles, interactions, and open-world scene streaming. Large increases to start up time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified many environment colliders and reduced the number of unnecessary physics checks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved particle and rendering performance with GPU instancing, visibility culling, and removal of redundant depth rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Options",
+     "items": [
+      {
+       "text": "Added Graphics Quality presets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Render Scale slider, allowing the game to render at a lower internal resolution for improved performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an Advanced Video menu with individual post-processing options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a No Blood option under Interface settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "EOS join codes are now checked for uniqueness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dungeon resets not properly clearing discovered shrines, or immediately rediscovering them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed beehive bomb effects not activating correctly while off-screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some interaction issues involving the crawler helm, human cannon slots, held items, and secondary interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a revived beetle steed sometimes appearing partially underground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1833200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1833200/view/1841579228663781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-19T21:43:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1833200",
+      "checkedAt": "2026-11-12T02:59:27.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:27.410Z"
+  },
+  {
+   "id": "dunecrawl-318505@1.11",
+   "gameId": "dunecrawl-318505",
+   "displayName": "Update 1.11",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-09T15:35:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added new networking option for 'EOS Cross Platform'. Uses EpicGamesServices (no login required). In our testing it's more stable than Photon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for a issue after last update, when on loading old saved games the Crawler's hat was in the steed dock spot and couldnt be removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a issue with ammo in Cannons going into negative when host was offscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some settings being editable when 'allow players to edit settings' was off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for bug where charge input started immediately if the held item was automatically switched to another charging item after using the current one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1833200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1833200/view/1829528821307146"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-09T15:35:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1833200",
+      "checkedAt": "2026-11-12T02:59:27.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:27.409Z"
+  },
+  {
+   "id": "dunecrawl-318505@1.02",
+   "gameId": "dunecrawl-318505",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-15T16:44:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! We've made a bunch of changes to the game's campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know your feedback on our Discord or the Steam forums! We're still deciding on content updates, and where to take the game next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More Mercenaries! Also Mercenaries now respawn where they started after death so you can immediately rebuy them (before they only respawned after players died)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stash now holds 42 items (was 20)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now set max players up to 6 (It still defaults to 4, since we designed the game with 1-4 players in mind, but we've tested with 6 and it's fun, so we added as option)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spark count on map is now more accurate, and includes the Dungeons on islands, so you can better find which sparks you have left to get. Also updated Dungeon icons to be more obvious which ones are not complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Auto save option: Now auto saves every 30 minutes (can turn off autosave, and set the amount of minutes between autosaves, in the Interface options)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text Chat: With 'Enter' key now, and also a ingame menu option for gamepad / SteamDeck players",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Duel Hatchet now uses Stamina on attack, so its a little less OP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Quest Journal hotkey (J) to open and close it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Game Setting: Can now set 'Spawn Rate' in game options menu - to increase the amount of enemy spawning ingame. Can also set 'Player Take Damage Multiply' and 'Players Do Damage Multiply' to customize how much damage players take/do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Controls options: 'Confine Cursor To Window', 'Gamepad Aim Speed Up Over Time', 'Gamepad Aim Distance'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some relic changes (Additional Desecrated Totem to find)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Change User' option in Players screen, to more easily switch which player your controlling (if your saved game has multiple local/remote players)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other fixes",
+     "items": [
+      {
+       "text": "OldKeeper fixes: fixed not being able to reach a leg to heal sometimes. Fixed some saved games having OldKeeper missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where joining as a new player would have you fall off ledge, if first player was very close to ledge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the Wild Crab relic more obvious on the wild crab. Fixed Wild Crab disappearing on scene unload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some missing icons for Mercenaries in Act2. Fixed not being able to heal Mercenaries once you have 4 of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of spots where the player's crawler could get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues that caused Steeds to not be counted as herded for all clients (in Scuttledrome)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a 'collection modification' error on saving in Prawnelope's Tomb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some solo players have a left over objective of 'Enter Ceramicist' on finishing game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a cannon upgrade in Primordial Grove not being pickable once picked up from cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ceramicist ghost showing up on coming back to Gate area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 11,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1833200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1833200/view/1821922921813591"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T16:44:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1833200",
+      "checkedAt": "2026-11-12T02:59:27.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:27.408Z"
+  },
+  {
+   "id": "dunecrawl-318505@major-2026-01-09",
+   "gameId": "dunecrawl-318505",
+   "displayName": "Update with New Networking",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-09T20:22:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We had an issue last night where networking stopped working for a lot of players. It turns out this was due to a Steam Networking outage, and it also affected other games using Steam’s P2P networking. It appears to be fixed now, though we haven’t heard back from Valve yet. It’s also unclear how long this was affecting players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because of this, we’re releasing an update today that adds new networking options as an alternative to Steam Networking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now select “Networking System” in the online settings. You can switch between Steam, Cross Platform, and LAN Only. If you’re having networking issues, try switching to Cross Platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cross Platform is built on Photon. It will also allow you to play with players outside of Steam once we release DuneCrawl on more platforms. Join codes are 4 letters long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LAN Only lets you play with computers on the same local network — no internet required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We added a 'Copy Join Code' button which will copy the join code to your clipboard so you can paste it to friends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A few other fixes and changes from this build",
+     "items": [
+      {
+       "text": "Fix for some saved games having left over Crawler objects on reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for 'Wild Crab' errors causing some slow downs / performance issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "'Idol' in idol quest can now be grabbed again, incase it gets lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc level fixes for z fighting / collision issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Let us know if you have any issues! On our Discord or the Steam forums,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1833200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1833200/view/1821288646581815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-09T20:22:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1833200",
+      "checkedAt": "2026-11-12T02:59:27.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:27.407Z"
+  },
+  {
+   "id": "dunecrawl-318505@post-2026-01-08",
+   "gameId": "dunecrawl-318505",
+   "displayName": "More fixes!",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-08T03:44:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've updated with more fixes! Version 10507. Thank you to the players who help us by sending in bug reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed double player crab issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a issue with certain players rejoining a game, and not talking over the same player (It looks like this was caused by certain Chinese/Japanese characters in Steam user names, we now check Steam IDs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for issue where if a client herded a steed in the herd quest, it wouldn't add to objective count if host was not nearby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Prawnelope's Tomb target, so Boomerang on gamepad can reach it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Relics now have more friction/drag, to not be as easily lost / fall off crawler",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Much larger distance to interact with crawler to change it's hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed 'Crush 5 Vassals' achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed selling 'big hammer'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 'push to talk' not showing in controls rebind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for issue with 'Dark Shrine' where 'lock on' didn't sometimes work for targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some text not localized: map screen title, 'hold to sprint' in intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're still working on some additional networking options (like a 'Lan Only' mode) - after that we're hoping to get back to working on content changes / updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you do have feedback - use the in game feedback tool to let us know any issues / thoughts, or feel free to talk to us on our Discord or the Steam forums,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1833200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1833200/view/1821288646577949"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-08T03:44:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1833200",
+      "checkedAt": "2026-11-12T02:59:27.406Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:27.406Z"
+  },
+  {
+   "id": "dunecrawl-318505@post-2026-01-06",
+   "gameId": "dunecrawl-318505",
+   "displayName": "Launch Fixes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-06T15:53:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've done a quick update to fix some issues, and added a new option:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Allow Helper In Multiplayer' is now a option in Game Settings, letting you use the Old Keeper on crawler in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We fixed a crash that would happen for Chinese Simplified players. Specifically on leaving the 'Temple' with the idol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a issue with getting a 'version mismatch' error on trying to join a server with a different language ('1,01' being compared to '1.01')",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a issue in 'Pale Pastures' where if you were on a steed that the thief was using when you finished the quest, your player disappeared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few cases of text not being localized (in Join Game menu)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with being able to swim under level in Sanctuary Hill near water fall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New build shows as '10466' in main menu, built on January 6th.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Some things we're still working on",
+     "items": [
+      {
+       "text": "Localizing achievements on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Making the 'text chat' option more clear (it's F1 right now)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Networking issues: We're going to have a cross platform non Steam option soon (within days).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1833200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1833200/view/1819386365125969"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-06T15:53:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1833200",
+      "checkedAt": "2026-11-12T02:59:27.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:27.405Z"
+  }
+ ],
+ "issues": []
+}

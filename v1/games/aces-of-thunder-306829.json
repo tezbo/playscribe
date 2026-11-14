@@ -1,0 +1,2772 @@
+{
+ "game": {
+  "id": "aces-of-thunder-306829",
+  "igdbId": 306829,
+  "name": "Aces of Thunder",
+  "cover": {
+   "imageId": "co8ed4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8ed4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar30y7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar30y7.jpg"
+  },
+  "ps5Release": "2026-02-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "aces-of-thunder-306829@0.1.2.22",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.2.22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-16T16:25:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Behavior of AI aircraft on Pacific theatre was fixed: now they follow their mission tasks as they should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daily tasks no longer overlap each other on the tactical map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that would sometimes prevent scrolling the missions list in Custom Battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weapons/ammo lists scrolling up when navigation to the left was expected instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed navigation and scrolling with hats/controllers in windows with long lists of options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scaling/rotating decals with D.Pad no longer changes the cursor position to the Back button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A rare issue that caused mouse/gamepad navigation to stop working after applying the decal with VR Controllers that were disconnected afterwards was fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Occasionally missing hover highlights in Options and Controls tabs were partially fixed. Complete fix will be released as a future patch for technical reasons. The items under cursor are still considered «selected» even if the highlight is lagging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue when menu navigation would stop working after the scene changes when any other window was previously open (e.g. after returning from battle)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would let Thrustmaster Hotas4 Throttle to block navigation with its Hat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1846651706682229"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T16:25:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.371Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T16:25:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.371Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-16T16:25:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.198Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.2.18",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.2.18",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-09T11:56:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the distance to allies not respecting the player’s measurement unit settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed oversized quadrant markers on the map when the game window was larger than 1080p.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly improved the default VR head position in the I-16.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bailout (parachute) animations for the Ju 87 D-5, Bf 109 Z-1 and I-16.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasionally unreadable text on ally markers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Vibration setting sometimes being turned off or reset on its own. The option has been moved to Controls → Devices to keep it consistent with when and what is stored and loaded. Vibration is now reliably enabled by default and changes are no longer lost mid-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved directional navigation (gamepads/controllers) in many windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed trees and other objects flickering on the Flanders airfield when the tree render range is set above Default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1846018067933064"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T11:56:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.370Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T11:56:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.371Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-09T11:56:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.197Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.2.16",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.2.16",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-30T10:15:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed rare crash on starting battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare crash in USA Test Flight, that could happend while shooting at runaway, while take off, shooting ally forces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash that happened in the first minute after game launch for some users with Radeon videocards.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "VelocityOne Rudder pedals no longer affect the UI navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1845383656377032"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-30T10:15:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.370Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-30T10:15:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.370Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-30T10:15:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.197Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.2.15",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.2.15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-25T13:48:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed trees and other objects flickering on the Stalingrad airfield when the tree render range is set above Default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Newly added DLC aircraft are now also available to bots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a number of race conditions that could break the controls setup wizard flow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced the parked aircraft models in Test Flights with the Yak-9T and I-16 type 27.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that could occasionally cause the Flight Menu to close unexpectedly during flight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would sometimes block subsequent contact searches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1844751498224615"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-25T13:48:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.369Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-25T13:48:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.369Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-25T13:48:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.197Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.2.14",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.2.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-19T13:02:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Crash reporing daemon that prevented the game from starting up in some cases was reverted. Older crash reporting tool is used instead. In an unfortunate event of the game crashing, please send the report - it helps us fix it faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A message is now shown if the game is being run on hardware that does not support DX12. Integrated GPUs are not supported. Please check hardware requirements beforehand.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\\[Hurricane Mk.4] an empty secondary weapons preset was fixed and can now be selected in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loudness of engine sounds has been corrected for a number of aircraft. Previously, the engines in some aircraft were quieter than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A number of other minor sound issues was fixed across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1844115010497112"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T13:02:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.369Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T13:02:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.369Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-19T13:02:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.196Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.2.4",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.2.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-16T10:20:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ju 87 D-5 bomb presets have been reassembled to correctly display and use the bombload.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a brief teleportation right after takeoff in the Pas-de-Calais mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash when returning to the hangar from battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Sound",
+     "items": [
+      {
+       "text": "Fixed a bug that caused excessive loudness of guns and cannons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cockpit door sounds mistakenly playing in the I-16 type 27.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The changes listed below are experimental, and we'd especially love to hear your feedback on how they feel in battle:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cockpit vibration sounds have been changed to make them more informative. The vibration sounds from G-forces are now joined by structural vibration sounds that reflect airflow separation at critical angles of attack (buffeting), as well as dangerous airframe flutter at excessively high speeds, such as during a dive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added rocket launch sounds from the player's own aircraft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nearby anti-aircraft shell bursts have been made more noticeable to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1844115010488681"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-16T10:20:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.368Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-16T10:20:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.368Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-16T10:20:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.195Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@major-2026-09-14",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update \"One sky for all\"",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-14T13:04:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update brings crossplay between PC and PlayStation 5, three new DLC aircraft, and a wide range of gameplay, controls, and interface improvements. Details below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Crossplay",
+     "items": [
+      {
+       "text": "Players on PC and PlayStation 5 now share the same battles and matchmaking queues by default. PS5 players can opt out in settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "Three new aircraft available as separate DLC packs: Ju 87 D-5, I-16 type 27 and Bf 109 Z-1 Zwilling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Two new single-player missions: Zero Fuel and Convoy Hunter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Khalkhin gol operation can now be encountered in general matchmaking for USSR vs Japan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Tunisia operation may now appear in general matchmaking for Germany vs. USA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Pas-de-Calais operation has been added to general matchmaking for WWI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A Pas-de-Calais mission for WWI aircraft has been added to Team Death Match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New missions have been added to Custom battles: Tunisia and Khalkhin Gol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pas-de-Calais location has been added to the mission editor for WWI aircraft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "The accuracy of AI aircraft turrets has been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bots behavior in Air Domination missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In multiplayer missions ground units now react to destroyed bridges: units too close to a destroyed bridge are destroyed, units nearby stop moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed score not being awarded for some battle actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Progression and unlocks",
+     "items": [
+      {
+       "text": "Specific unlock conditions for skins are now displayed clearly in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed one single-player mission counting as several battles in the leaderboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "New auxiliary actions can now be bound in control settings: toggles for the collimator sight and cockpit lights, and separate actions to open and close the canopy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the loss of spatial control when opening the Multi-Function Menu: spatial inputs are no longer affected by other bindings or by the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that might occasionally prevent changing an input binding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some gameplay actions could happen while binding controls in battle (e.g. camera zoom-out or throttle changes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Missions and Mission Editor",
+     "items": [
+      {
+       "text": "Added allied and enemy aircraft selection and their number to the Mission editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed missing bombing and assault missions in the Mission editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced the Tu-4 with the Yak-3 and La-5 in the USSR test flight for historical accuracy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interface",
+     "items": [
+      {
+       "text": "Added a player card with brief player statistics and all contact actions. Contact actions have moved here, while the contacts menu keeps the basic actions for each group and invitation handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to search for players by nickname globally, without having to enter a battle together first. Local contacts are searched first and shown immediately. Group search has been added as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The interface options layout has been improved: settings for altitude and speed source data are now in a separate section above the measurement units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn point icons on the map are now easier to notice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the map disappearing in the lobby after changing the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the inability to change team in a Custom Battle that is already in progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the inability to select the opposite team's country in the Custom Battles lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the kill log which caused bot names to be missing under some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the QR code (Support) window not closing in the respawn menu, and some cases where it could not be closed with conventional gamepad buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When using a controller to navigate side tabs in menus, the selection no longer jumps to the menu on the left on up/down movements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI navigation hints for xinput-compatible devices are now shown and hidden properly. Previously they were hidden when the cursor was over the menu panel even if navigation with a connected device was available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some localization strings have been updated in a number of languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "VR",
+     "items": [
+      {
+       "text": "Default head positions were adjusted to be more realistic and comfortable for the Bf 110 G-2, Hurricane Mk.IV, Typhoon Mk.Ib, SBD-3, Spitfire Mk.I, Yak-3, Yak-9T, IL-2M 1943, P-40, Fokker Dr.I , Bf-109 F-4, Bf-109 G-2 and FW-190 A-4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored the missing gear indicator hint on the Bf 110 G-2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update 0.1.2.2",
+     "items": [
+      {
+       "text": "Fixed the missing briefing for the \"Zero Fuel\" single mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Japanese aircraft are now correctly used instead of German ones in the Khalkhin Gol mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The layout of the mission tuner window has been adjusted, and grouping has been added for clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing localization for some Multi-Function Menu options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We did our best to test everything thoroughly, but if by any chance you experience any bugs or issues, please report them via community.gaijin.net — that way we'll be able to notice and fix them faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 14,
+    "balance": 0,
+    "other": 16,
+    "ps5": 2,
+    "topNew": [
+     "Three new aircraft available as separate DLC packs: Ju 87 D-5, I-16 type 27 and Bf 109 Z-1 Zwilling.",
+     "Two new single-player missions: Zero Fuel and Convoy Hunter.",
+     "The Khalkhin gol operation can now be encountered in general matchmaking for USSR vs Japan"
+    ]
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1843481262701625"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T13:04:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.367Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T13:04:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.367Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-14T13:04:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.194Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.64",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.64",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-12T14:10:00.000Z",
+   "notes": [
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "The Team Death Match (TDM) mode is no longer limited to WWII aircraft: a new WWI TDM mission, \"Flanders,\" has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Bomber Cover and intercept Bombers missions have been added to the Custom Battles mode:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[Air Battle] Bulge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[Air Battle] Britain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[Air Battle] Smolensk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[Air Battle] Honolulu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the spawn logic in Team Death Match: the game now prioritizes the country selected in your hangar, rather than assigning one at random as before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Settings and Interface Features",
+     "items": [
+      {
+       "text": "Ammo limit settings have been added to the mission editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The mission editor now allows selecting suspended armament before the mission starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The respawn screen now includes \"Gun targeting distance (m)\" for guns and cannons, as well as \"Bomb fuse\" delay adjustment for low-altitude bombing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "New Bomber Cover and intercept Bombers missions have been added to the Custom Battles mode:",
+     "\\[Air Battle] Bulge",
+     "\\[Air Battle] Britain"
+    ]
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1840944183774085"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-12T14:10:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.366Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-12T14:10:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.366Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-12T14:10:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.194Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.59",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.59",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-29T14:14:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a “Limited Ammo” option to Test Flight settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue in Custom Battles where player statistics were not sent correctly after leaving and rejoining the same battle multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the placement of several German anti-aircraft guns in the “Berlin BFD” mission. Some guns were moved farther from buildings so that they can engage targets more effectively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1839676055882659"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-29T14:14:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.366Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-29T14:14:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.366Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-29T14:14:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.193Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.58",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.58",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-08T15:24:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improved Mulit-functional Menu interaction. The MFM activation binding has been removed in favor of a more conventional and faster activation system. Items now activate after the selection has been held for at least 0.125s and is then released (e.g. the stick or hat returns to neutral). This greatly eases MFM navigation and helps operate it faster, though it may take a bit of getting used to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In the controls template selection dialog, connected joysticks are now shown at the top of the list, before gamepads and other controllers (e.g. VrSense/DualSense/Xbox controllers).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the UI was missing if the game config contained a malformed resolution entry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where kills sometimes did not count in kill statistics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Substantially improved UI rendering performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare UI crash when starting single missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the display of already completed daily tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that produced a malformed URL in the QR code for Support/Bug Report.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of incorrect window titles in English localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some localization strings in a number of languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed occasionally incorrect text size when running the game in a 4K.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would occasionally cause a frag not being awarded if the damaged target crashed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the missing \"Make a Leader\" icon in Squads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasionally incorrect display of actions available for contacts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1836506165580980"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-08T15:24:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.365Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-08T15:24:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.365Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-08T15:24:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.192Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.52",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.52",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-19T15:27:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Slight HUD performance optimization in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that could occasionally cause a single stuttering frame while looking around the cockpit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Simultaneous press of Increase and Decrease axis actions now cancels out, instead of always applying Increase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug in the Join-in-Progress mechanic that occasionally prevented players from joining battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash when exiting the game with joysticks connected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1835871199307505"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T15:27:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.364Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T15:27:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.365Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-19T15:27:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:36.191Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.39",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.39",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-07T17:36:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bindings are now configured in a separate modal dialog that clearly describes the process and lets you choose what to do next. To reassign an axis or button combination, click on it in the controls window. Previously, the binding process was non-modal, which caused inconvenience and required extra steps to fix accidental bindings. As before, all settings are saved atomically after explicit confirmation when leaving the controls page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the automatic server selection algorithm for multiplayer. It now relies on actual network latency and prefers servers with the lowest ping for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed country selection in TDM mode. Resolved an issue where a squad member's country was forcibly changed to the leader's country when joining a session. Country is now synchronized with the leader only if the player's chosen nation is not available on the leader's team side in the current mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted matchmaking settings: priority has shifted toward increasing the number of live players in a session. Average maximum wait time will increase only slightly — by no more than 25 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue causing UI navigation hints to randomly disappear. Hints are only shown when a gamepad — or a device recognized by the system as a gamepad — is connected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed outdated axis parameter values (non-linearity, correction, etc.) being displayed in the control settings window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1832065502812938"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-07T17:36:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.364Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-07T17:36:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.364Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-07T17:36:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.112Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.35",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.35",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-28T11:47:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The multifunctional radial menu no longer blocks control via the virtual stick and throttle (spatial controls), which previously could lead to ground collisions while extending or retracting the landing gear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The algorithm for the experimental “Mouse-Joystick” control mode has been updated. It now allows more complex maneuvers and more closely matches the capabilities of other control methods available in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue that caused a sharp drop in frame rate when scrolling long texts (e.g., the license agreement).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where 20 mm MG FF/M belts for the Fw 190 A-4 were not awarded when destroying two strike aircraft in under a minute. Previously, an issue that prevented counting two player aircraft destroyed within a minute was fixed; now all aircraft destroyed by the Fw 190 A-4 should be counted correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1830797770245024"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-28T11:47:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.363Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-28T11:47:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.363Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-28T11:47:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.112Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.34",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.34",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-06T12:53:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a login screen freeze: resolved an issue where, if the connection was lost during the later stages of logging in, the login window couldn’t be closed and would remain visible even during a test flight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where player nicknames in the Contacts list could be shown as question marks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eliminated shimmering of panel textures and ghosting artifacts that appeared during motion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the rendering of airfield objects when viewed through rear-view mirrors; previously they could appear to be floating or sitting on large “hills” (that didn’t actually exist).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect rendering of the pilot’s glove shadows when interacting with the spatial interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the ammunition indicator on aircraft (particularly German ones): when ammo is fully expended, the counter now correctly shows zero instead of resetting to a visually full load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the missing description for the British decal (No. 602 Squadron).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1828894815565160"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-06T12:53:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.363Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-06T12:53:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.363Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-06T12:53:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.111Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.32",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.32",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-20T16:03:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added the ability to configure matchmaking wait time for each country in the Historical Battles mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the “Team Deathmatch: WWII Aircraft” mode, in which either side of the conflict can include representatives of any country.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where 20 mm MG FF/M belts for the Fw 190 A-4 were not awarded when two enemies were destroyed in under a minute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented applying decals to aircraft in VR mode, forcing a switch to flat-screen mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game version has not changed; updating local files is not required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1827626365758223"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-20T16:03:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.362Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-20T16:03:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.362Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-20T16:03:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.110Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.27",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.27",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-13T08:59:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added the ability to use the game client in VR without the need for VR controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where a VR player could end up outside the cockpit upon respawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with low-quality glove textures when high texture settings were selected. In this case, the pilot’s hands are now displayed correctly and in detail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Developer comment",
+     "items": [
+      {
+       "text": "\"We know how much you’ve been waiting to play in VR without VR controllers. The current implementation works in most scenarios: menu navigation supports mouse and keyboard input, devices compatible with gamepad/controller interfaces (or recognized by the system as such), and hand interactions (as before). We’re aware of some issues and are continuing to improve the display and layout of elements, but we released the functionality early so you can use it right now. Please send your suggestions and bug reports through our reporting service.\"",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1826992588594857"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T08:59:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.361Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T08:59:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.362Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-13T08:59:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.109Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.24",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.24",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-06T13:22:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added the ability to respawn in online matches in the same aircraft (the limit of four respawns per match remains unchanged).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added display of the number of remaining respawns in online matches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added display of the game client version in the “Extras” tab in the Options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added QR codes for quick and convenient access to the support contact form and the bug report form.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to pause the game in Test Flight via the multi-functional menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed missing Firefly FR Mk V camouflages in the customization menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where destroyed ground targets were not counted when playing the Bf 110 G-2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where a player could not respawn in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1826362059924196"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-06T13:22:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.361Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-06T13:22:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.361Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-06T13:22:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.109Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.18",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.18",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-27T16:46:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where, in some cases, it was impossible to interact with the game UI after loading into a battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an aircraft on an aircraft carrier would fall off when the carrier was moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In Team Deathmatch in the Custom battles, when selecting “Country selection: By mission,” only aircraft from nations that are historically appropriate to the scenario can participate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the mission \\ Berlin to the Random Battles rotation, where the USSR, USA, and Britain fight against Germany. Adding new missions will speed up matchmaking for players choosing aircraft from these nations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To optimize matchmaking, the period during which additional players can be backfilled into an already started battle has been increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1825727806711434"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T16:46:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.360Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T16:46:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.360Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-27T16:46:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.107Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.17",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.17",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-20T16:44:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The kneeboard map can now be freely dragged around the cockpit and left wherever is most convenient. [img src=\"{STEAM_CLAN_IMAGE}/45107724/0a3e1ce323d8f16275fa6011c696f422e6445e0d.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in Test Flights where selecting the “Stealth” ammo belts was ignored and the weapons were loaded with “Tracers” instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Three-digit page numbers on the Monthly Leaderboards screen now fit correctly on the navigation buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On the War Tales mode screen, a hint has been added showing the conditions to unlock the next mission if it is unavailable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the display of aircraft cards when purchasing DLC, the top part of the cards is no longer cut off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Menu fonts have been updated and unified for better readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom battles: fixed an issue in the \\ “Berlin” mission where it was impossible to respawn when choosing the German side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash related to the Steam Overlay and some other third-party overlays.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed blacklist behavior: you can now add a player to your blocklist even if they have already blocked you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1825093633188428"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-20T16:44:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.360Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-20T16:44:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.360Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-20T16:44:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.106Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.8",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-11T14:15:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45107724/4bdf543c41e31cb2180a36fff59b7c8e4efec2dc.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where, for some players, the game failed to launch and displayed the message “Cannot find precompiled shaders for this videocard…”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1824459501603935"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T14:15:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.359Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T14:15:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.359Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-11T14:15:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.104Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.7",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-09T17:26:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45107724/7155b5b25ce5f173aeb1479d77bcd6d729485918.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored support for TrackIR and similar devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved reliability of authentication and network requests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a crash when launching the game at very low screen resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The control issue indicator in Settings now more accurately detects connected devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several rare crashes and stability issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1823825466506121"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-09T17:26:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.358Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-09T17:26:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.358Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-09T17:26:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.104Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.5",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-05T10:01:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45107724/1cbbb9ad0e01249271624c4e2574abf8db5d4519.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Controls screen could freeze when remapping buttons in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved assigning mouse movement to axes on the Controls screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a critical bug that caused the game to crash when opening the Mission Creation tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a freeze when switching from fullscreen to windowed mode in the game settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1823825466496079"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-05T10:01:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.358Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-05T10:01:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.358Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-05T10:01:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.103Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@0.1.0.2",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "Update 0.1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-03T17:37:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45107724/fcf15d44e7b00ae826c160b30e1a332ace1ef9d5.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed localization errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues that prevented binding control axes to any device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed button and axis icons not displaying in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are aware of compatibility issues with OpenXR Toolkit. We recommend disabling it for now, as it can cause crashes. At the moment, we cannot say whether this will be fixed, since the software is no longer maintained by its developer. We will continue investigating, but we cannot make any promises.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1823191198617332"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-03T17:37:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.357Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-03T17:37:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.357Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-03T17:37:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.102Z"
+  },
+  {
+   "id": "aces-of-thunder-306829@major-2026-02-03",
+   "gameId": "aces-of-thunder-306829",
+   "displayName": "A short update on our plans",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-03T15:35:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45107724/7a99640da6cec6b3c717b6e863b3117cff90c764.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone for sharing their feedback and reports since release. We’re closely following community discussions and are already working on a number of improvements to control usability, the VR experience, TrackIR support, and technical stability. Some of the issues raised are already in progress and will be refined in future updates. We’ll keep you updated on our progress. Thank you for staying with us and helping make the game better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2754090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2754090/view/1823191198617017"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-03T15:35:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.356Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-03T15:35:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2754090",
+      "checkedAt": "2026-11-13T03:14:11.356Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-03T15:35:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:08:26.101Z"
+  }
+ ],
+ "issues": []
+}

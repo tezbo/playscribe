@@ -1,0 +1,2355 @@
+{
+ "game": {
+  "id": "sacred-2-remaster-358752",
+  "igdbId": 358752,
+  "name": "Sacred 2 Remaster",
+  "cover": {
+   "imageId": "coa7p8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa7p8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3xty",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3xty.jpg"
+  },
+  "ps5Release": "2025-11-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sacred-2-remaster-358752@6",
+   "gameId": "sacred-2-remaster-358752",
+   "displayName": "Patch 6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-20T13:53:36.000Z",
+   "notes": [
+    {
+     "title": "The main features for this patch are",
+     "items": [
+      {
+       "text": "new Blacksmithing interface in the inventory (requires the blacksmithing skill)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "various bugfixes related to Blacksmithing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "controller quick casting for potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "controller quick casting input tooltips to the HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The button to access the Blacksmithing interface from the inventory is a small anvil located beneath the inventory grid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The button is disabled, unless the blacksmithing skill has been learned by the character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controller quick casting for potions is done by holding down d-pad left,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "which will then blend in the quick casting tooltips to show the specific button combinations for each potion slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quick casting a potion this way will both attempt to consume a potion in the slot AND set the slot as the active slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Besides these main features, the patch also includes a variety of other fixes and changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "These will be listed in the patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If certain changes do not affect all platforms, the affected platforms are listed infront of the change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "and we hope you enjoy the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Have a great summer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "ADDED the ability to open and use the Blackmisthing interface, if the character has learned the skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various item bonus stats not being correctly displayed in the Blacksmithing interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues of tooltips not showing in the Blacksmithing interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a tooltip would display Blacksmithing forge slots with the design of the original Sacred 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added equip feedback to blacksmith forge slots based on the maximum forgable item level, and wether an item can be forged into a slot or not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED controller quick casting for potions by holding left d-pad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED input prompts for all controller quick casting, that are being shown when holding down a quick cast modifier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where quick casting with a slot that uses LB could permanently open the mini-map instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where quick casting sometimes would not register LB as an input, if the button was held too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ADDED the ability to pick up and manually move/ sort items in the stash chest by holding the transfer button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where transfering items to the stash chest would temporarily drop items to the ground, resulting in a performance issue when transfering large stacks of potions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed and issue with item tooltip sizes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the campaign status percentage in the character selection menu not showing the correct values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed navigation issues inside the combat arts menu, that could occurr if certain combat arts were not learned yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Runemaster where navigation focus could sometimes jump to the \"buy\" button unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the localizations for skill level tooltips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the discoloration of shield HP bars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Rendering",
+     "items": [
+      {
+       "text": "Added fur for various animals (Panther, Boar, Spider, Bear, Lion, Troll, Monkey, Rat, Deer, Rabbit, Dog, Cat, Sheep, Werewolf, Gripphon, Minotaur, Horse).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed rendering issues related to fur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[Ps5 & XBOX only] Fixed an issue where fur was visible through fog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Improved Shader of the Dryades Ancient Bark Spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Shader of the High Elfs Incandescent Skin Spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several issues with the Seraphim Mystique Armorset Wings FX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[Ps5 only] Fixed an issue where the Temple Guardian would become invisible when using Untouchable Force.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Improved rendering logic for Resource loading, Texture management and Terrain patch handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Shaders for Tree rendering and lighting interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with particle emitters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rendering issue with footsteps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Input && Spells",
+     "items": [
+      {
+       "text": "Fixed an issue where the player character can become immortal after interacting with quest dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the controls for \"rotate left\" and \"rotate right\" would not move the world map left and right, causing usability issues when using original Sacred 2 character controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some health potions could not be used with the healing button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the order in which potions would be used by the healing button was inverted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where opening the ingame menu while givin movement input could cause permanent movement input being given.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Seraphims Battle Stance would produce a clicking sound if it was active while playing with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Inquisitors Clustering Maelstrom and Raving Thrust, and the Shadow Warriors Scything Sweep spells could damage and kill Mounts and Followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Inquisitors Inexorable Subjugation spell would freeze the caster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where interacting with an NPC could cast a spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Fixed a crash that would occur when fighting the swamp dragon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[PC only] Manually added hardware detection for AMD RDNA 4 GPUs to resolve issues where the GPU was not identified on game start.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the savegame could be loaded in the wrong difficulty setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[Ps5 & XBOX only] Fixed an issue where graphics settings were changed when leaving the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "ADDED the requirement to APPLY changes to settings after using the RESET settings option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[Ps5 only] Fixed sorting issues with savegames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "\\[Ps5 only] Fixed an issue with \"ghost\" savegames taking up slots and reduce the number of available savegames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 27,
+    "fixed": 27,
+    "balance": 0,
+    "other": 5,
+    "ps5": 5
+   },
+   "sourceIds": [
+    "steam-3906660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3906660/view/1838407329265590"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T13:53:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.893Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T13:53:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.894Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-20T13:53:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:40.046Z"
+  },
+  {
+   "id": "sacred-2-remaster-358752@5",
+   "gameId": "sacred-2-remaster-358752",
+   "displayName": "Patch 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-06T12:00:45.000Z",
+   "notes": [
+    {
+     "title": "Today we bring you: Patch 5",
+     "items": [
+      {
+       "text": "returning many of the inventory and equipment slots that were present in the original game,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "adding quick casting combat arts and hot-switching weapons to specific slots to controllers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "and improved UI readability for the Steamdeck (only active when played on a handheld device).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As usual, a more detailed changelog will follow below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A short note on controller quick casting",
+     "items": [
+      {
+       "text": "the controls for how to use the quick cast system are not yet shown, displayed or explained in-game, but this will be added in Patch 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for the blacksmithing skill and the ability to smith from \"anywhere, anytime\" is also NOT included in the patch, but will be included in Patch 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat Arts",
+     "items": [
+      {
+       "text": "Hold down RT/ R2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then press the following buttons to trigger the combat art in the respective slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(LB/ L1 )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(X/ ☐ ) (Y/ △ )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(A/ ✕ ) (B/ O )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weapons",
+     "items": [
+      {
+       "text": "Hold down LT/ L2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then press the following buttons to select the weapon in the respective slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(RB/ R1 )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(X/ ☐ ) (Y/ △ )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(A/ ✕ ) (B/ O )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank you all so much for your continued support and kind words that reach us.",
+     "items": [
+      {
+       "text": "Patchnotes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Equipment & UI",
+     "items": [
+      {
+       "text": "added the 5th Combat art slot and Weapon slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added the 3rd and 4th relic sets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed various visual issues where changing the relic sets would not update the hud or armor displays correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added the 4th, 5th and 6th Potion slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2 potion slots will now be unlocked every at level 1, level 2 and level 5 each",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "due to the new total number of potion slots using potions with the controller now requires cycling through the slots by pressing dpad left twice, pressing dpad left once will consume a potion of the highlighted slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a bug where empty but unlocked potion slots were being classified as disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "active equipment slots now change to the \"hovered\" state correctly, as navigating with the controller could be confusing when an active slot would not change visually when focussed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "expanded the inventory grid by 2 rows to a total of 180 cells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a button for Smithing has been added to the inventory screen, but it will be disabled until Patch 6 as it is not yet functional",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mounts, Statistics (active bonus stats), Smithing and Scrapping buttons are now present as icons in the bottom of the inventory screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the Statistics button now opens ONE singular, but scrollable list, which remains open until the button is pressed again, or until the inventory is closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "due to screen space limitations, buffs are no longer present in the inventory screen and potions are no longer present in the combat arts screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a bug where buffs could not be assigned with the controller in ultrawide screen resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fixed a bug where closing the combat art screens window while a combo was opened would result in a crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the game is now paused while any menu screen is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed various issues where elements that were supposed to be scrollable were not",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where Quest descriptions of quest steps following the initial starting text would be cut off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added new rml modifiers ``forced-nav´´ to improve UI navigation with controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added a new rml modifier ``@media (theme: handheld)´´ that affects the UI when the game is being played on a handheld device",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "overhauled the UI to be more readable when the game is being played on a handheld device",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a crash where certain screen resolutions would cause scrollable elements to run into an infinite loop (namely the stash chest on the steamdeck)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Controller Quick Casting",
+     "items": [
+      {
+       "text": "adding quick casting combat arts and hot-switching weapons to specific slots to controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat Arts",
+     "items": [
+      {
+       "text": "Hold down RT/ R2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then press the following buttons to trigger the combat art in the respective slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(LB/ L1 )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(X/ ☐ ) (Y/ △ )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(A/ ✕ ) (B/ O )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the selected combat art will be executed and upon releasing RT/ R2 the selection will revert back to the combat art that was active before the quick cast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the previous methods of using and selecting combat arts are still functional",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weapons",
+     "items": [
+      {
+       "text": "Hold down LT/ L2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then press the following buttons to select the weapon in the respective slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(RB/ R1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(X/ ☐ ) (Y/ △ )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(A/ ✕ ) (B/ O )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "switches to the selected weapon and executes an attack, the weapon will now be permanently selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the previous methods of using and selecting weapons are still functional",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "fixed NVIDIA 50XX series GPUs not being detected correctly, resulting in the integrated graphics card being used",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fixed a memory leak with the video decoder, resulting in rapid accumulation of memory while a video was playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where skipping the intro videos could disable movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where the minimap would rapidly switch between locations on game start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where black bars for cutscenes would not be displayed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where a second fade in would be played after leaving/entering dungeons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where additional damage floating texts would overlap with the regular damage numbers with the help of @Marko",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a Loca ID for the Sound directions with the help of @atraxy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where the sound volume after fade-in would be wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a some cases where loca formatting for numbers would lead to confusingly displayed numbers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added support to rebind controlls to the arrow keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added a init.txt file to the scripts folder, that allows overwriting the Language via ``sys.setLanguage(\"nameOfYourLanguageFolder\")´´",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(make sure to remove the -- before the system command aswell)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "this script effects text, speech and video files, allowing GoG users to set their preferred language outside of the installer",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "added various quests to free play which were previously not available in the gamemode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 14,
+    "balance": 0,
+    "other": 42,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3906660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3906660/view/1832065502808666"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T12:00:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.892Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T12:00:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.893Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-06T12:00:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:40.045Z"
+  },
+  {
+   "id": "sacred-2-remaster-358752@4",
+   "gameId": "sacred-2-remaster-358752",
+   "displayName": "Patch 4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-07T09:00:33.000Z",
+   "notes": [
+    {
+     "title": "Greetings heroes,",
+     "items": [
+      {
+       "text": "we've got a little Easter present for you !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bringing a large amount of memory and performance improvements, as well as a number of Gameplay and UI fixes.",
+     "items": [
+      {
+       "text": "You can find the detailed patchnotes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Patch 5 which includes the 5th weapon and combat art had to be delayed, but is in development.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We hope you had nice holidays and thank you for your continued support and interest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "fixed the shadow warrior dual wield run animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where only the combat art selected when loading the game could be used, if the game was last saved while mounted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where leveling a combat art beyond 200 would reset its level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where main quest wastelands 1a station 9 would not trigger correctly due to being placed BEHIND the teleporter instead of in front of it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed multiple issues with ranged projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where the screen would switch to black and fade in a second time after teleporting/ leaving dungeons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where jump animations would fast forward to the finish when movement input is given",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where the current target was lost when it moved from longRange into shortRange",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a crash when in character menus while the dragon mage morph duration runs out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "fixed a controller navigation bug in the savegame selection screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some controller navigation issues in the character creation menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue that prevented \"Load Previous Savegame\" from working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed issues with Combat Regeneration Time Sliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where the leave game menu could break the UI if you switch to a different menu while it was open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with wrong savegame thumbnails being displayed sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "improved visibility/ readability of the minimap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improved visibility of active weapon / combat art / buffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "slightly improved visibility of the selected inventory item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed an issue with the mouse inventory when interacting with the blacksmith or runemaster",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fixed issues with the last enemy display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "ADDED",
+     "items": [
+      {
+       "text": "integrated 'Marko's Sacred 2 Rune Icons Re-Urm-Kinda-Mastered' mod for improved Rune Icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "performance & memory",
+     "items": [
+      {
+       "text": "fixed black & disappearing textures (especially ground textures)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added various instance limits to remove memory leaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed performance issues with floating text, reduces lag spikes when being hit a lot in a short time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "improved performance of entities when the game is paused to fix stutters when un-pausing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed some issues with texture cleanup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed rmlui deltatime issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed performance issues related to how ai equipment data was stored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed performance issues with reloading Spell data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some issues where sound sources wouldn't unload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with particle memory usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "improved performance of reading static object data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improved performance of savegame loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improved performance of quest loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed some issues with GrannyFx animation buffer updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "misc",
+     "items": [
+      {
+       "text": "fixed issues with the dummy texture appearing accidentally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with mesh draw calls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed issues with the GrannyPreProcessor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Added freeplay mode",
+     "items": [
+      {
+       "text": "fixed an issue where the \"Game Saved\" message after saving was not displayed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the savegame ordering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "PS5 only",
+     "items": [
+      {
+       "text": "Fixed an issue with minimap flickering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed an issue with savegame thumbnails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed item name localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 34,
+    "balance": 0,
+    "other": 2,
+    "ps5": 3
+   },
+   "sourceIds": [
+    "steam-3906660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3906660/view/1828894815566854"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-07T09:00:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.891Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-07T09:00:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.891Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-07T09:00:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:40.044Z"
+  },
+  {
+   "id": "sacred-2-remaster-358752@3",
+   "gameId": "sacred-2-remaster-358752",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-17T15:04:17.000Z",
+   "notes": [
+    {
+     "title": "Dear Sacred 2 Community!",
+     "items": [
+      {
+       "text": "We are happy to announce, that Patch 3 is NOW LIVE!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "As the main feature for this update, we are adding the Free Play game mode.",
+     "items": [
+      {
+       "text": "How does the game mode work?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "the main quest progression is disabled completely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "side quest progress is reset every time you restart the game, allowing you to repeat quests over and over again to farm items and experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "most main quest BOSSES spawn without the quest requirements allowing you to kill them over and over again to farm items and experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "How do i play the gamemode?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "to play the game mode, make sure that you select \"Free Play\" during the save game selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "you will be able to switch back and forth between campaign and Free Play freely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "after switching back to the campaign mode, all previous quest progress made during the campaign mode is restored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Free Play can not be selected during character creation, so you will need to create a character first, and then switch to the Free Play game mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Free Play will be accessible for both single player, and multi player depending on the game mode the host selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additionally, the patch also addresses some crashes and makes some quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We will share the full changelog below this announcement so you can take a look at the details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you all for your continued reports, patience, and support — it genuinely helps us keep improving the game. We hope you enjoy exploring Free Play and the improvements coming with Patch 3!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Fixed a Lua script bug which avoided books from spawning/dropping for all game versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed quest icons not being displayed sometimes when loading a game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some crashes related to spells and effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "notably for Narmul, boss of the ice region and the summoning of demons in the blood forest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when remapping keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when holding an item while opening the character statistics in the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that might occur while accepting or completing a quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, where creating a new character would delete the shared chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where selling many items to merchants leads to the merchant's inventory becoming so large that items were no longer displayed or available for purchase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character naming issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Item colors in various UI screens and when dropped in the world not working properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fur not being rendered properly for the seraphim special mount, some equipment and wolves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed item tooltip overlapping in the inventory and when talking to traders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad Y button not dropping inventory items to world anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with the taskbar visual logic while switching between hero mounted (for e.g. on a horse) and unmounted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some missing localization strings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flickering of info texts when pressing ALT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed main menu character preview sometimes not matching the last played character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some text overlap issues for the save game selection screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a shader pipeline for the dryads summons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with quests not being active in gamemodes, even when the relevant bit was set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Added Free Play mode where players can repeat quests and farm bosses (PC ONLY)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Added new options",
+     "items": [
+      {
+       "text": "Camera Rotation Speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "invert x/y-axes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dead Zone for left/right thumbstick with adjustable threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changed",
+     "items": [
+      {
+       "text": "Improved controls when transferring items between the player’s inventory and chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "with controller: pressing A (xbox) /X (ps) directly transfers the item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "with mouse and keyboard: holding Left-Control while left clicking an item transfers the item directly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 21,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "How does the game mode work?",
+     "the main quest progression is disabled completely",
+     "How do i play the gamemode?"
+    ]
+   },
+   "sourceIds": [
+    "steam-3906660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3906660/view/1819386365086954"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T15:04:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.890Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T15:04:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.890Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-17T15:04:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:40.042Z"
+  },
+  {
+   "id": "sacred-2-remaster-358752@2.0",
+   "gameId": "sacred-2-remaster-358752",
+   "displayName": "Patch 2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-26T15:00:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Heroes of Ancaria!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce that we just released a significant patch for all platforms, addressing most of the stability issues and crashes that occurred since the release. It unfortunately took us a bit longer than expected to provide this update, since most of the stability issues were caused by memory leaks, hidden deep in the 20 year old, T-Energy infected legacy code - truly our greatest foe throughout the entire development.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also want to take this opportunity to apologize for the bumpy start and hope that with this new patch you are able to enjoy the remaster without any bigger interruptions. Thank you so much for reporting bugs and providing feedback throughout all the different channels!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside implementing the stability fixes, we’ve also tried to include additional updates to gameplay, usability and the general experience where we could.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy this update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in Ancaria!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Multiple crashes caused by various memory leaks related to pathfinding, AI manager, the bonus factory and UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple crashes caused by UI tooltips, namegenerator and Inventory Grid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crashes related to lightsaber rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential crashes caused by sector graph sorting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A crash that could occur when unpausing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential movement locks after using the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Incorrect handling of game difficulty unlocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI hover sounds being triggered on attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue where some spell projectiles would collide with the spell caster and despawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue where dead people would block arrows being fired over them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue with physics capsule overlap for certain spells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple shading and texture issues with some armors/equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stretched skill icons when level ups are available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Expert Touch” option being visually disabled by default but enabled by code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue where Orb sets would activate incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue where quest book entry references would be invalidated in the quest icons (not a full fix to quest icons disappearing as there were multiple causes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some issues where Background music could permanently disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue with displaced Item Tooltips and Tooltips not being unloaded correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overlapping item compare screens for wider item screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "VSynch Display Option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Alternate PC movement controls where A/D rotate the camera (can be turned off by changing the keybindings)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changed",
+     "items": [
+      {
+       "text": "Improved mouse hit detection",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved performance when loading a game or unpausing due to issues with the bonus factory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "God icons in the Character creation are now in correct order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved sorting of 3d info texts (e.g. Signposts)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved floating text readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 19,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3906660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3906660/view/1817483467033757"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T15:00:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.889Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T15:00:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.889Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-26T15:00:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:40.041Z"
+  },
+  {
+   "id": "sacred-2-remaster-358752@1.5",
+   "gameId": "sacred-2-remaster-358752",
+   "displayName": "Hotfix 1.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-15T12:10:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Sacred 2 Community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We made a small adjustment to yesterdays Hotfix",
+     "items": [
+      {
+       "text": "reverted a fix to crashes in the UI when Tabbing through inventory filters: As the fix caused an issue, where hovering over an item in the inventory: would cause movement input to get locked when closing the inventory.: We hope you continue to enjoy Sacred 2 Remaster over the weekend and that this Steam patch further improves your gaming experience.: Remember to continue to report any issues you run into here - Bug Reporter: The Sacred 2 Remaster Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3906660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3906660/view/1816307528966286"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-15T12:10:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.888Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-15T12:10:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.888Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-15T12:10:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:40.040Z"
+  },
+  {
+   "id": "sacred-2-remaster-358752@1",
+   "gameId": "sacred-2-remaster-358752",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-14T17:01:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Sacred 2 Community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The dev team is working hard to fix the problems with the game and further improve the experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to deliver the first Hotfix patch for Steam today, which addesses the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed two crashes related to UI Elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some crashes related to the trader & item name generator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a crash where the disabled “Load Latest Savegame” could be clicked when there were no existing savegames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "potential fix for the game crashing if a video cannot be played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a crash when leaving the menu with a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with cut off strings in item tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "increased the World Map zoom speed from 4 to 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Please note that this is only the first patch. We have implemented further improvements and are currently working on more, but these will need to be thoroughly tested next week. These include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added VSynch Display Option for PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fixed memory leaks related to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "pathfinding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ai manager",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the bonus factory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed an issue with Mouse Hit Detection",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "improved sorting of 3d info texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed an issue where dead people would block arrows being fired over them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where some spell projectiles would collide with the spell caster and despawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some issues with Physics capsules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Once testing is complete, we will release these improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you continue to enjoy Sacred 2 Remaster over the weekend and that this first Steam patch further improves your gaming experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Sacred 2 Remaster Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 1,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3906660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3906660/view/1816307528952496"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-14T17:01:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.888Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-14T17:01:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3906660",
+      "checkedAt": "2026-11-13T03:29:45.888Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-14T17:01:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:40.039Z"
+  }
+ ],
+ "issues": []
+}

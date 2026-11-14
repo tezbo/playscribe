@@ -1,0 +1,253 @@
+{
+ "game": {
+  "id": "shinorubi-173320",
+  "igdbId": 173320,
+  "name": "Shinorubi",
+  "cover": {
+   "imageId": "co4co4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4co4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1571",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1571.jpg"
+  },
+  "ps5Release": "2024-01-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shinorubi-173320@post-2024-03-29",
+   "gameId": "shinorubi-173320",
+   "displayName": "13875644 is out, with real-time leaderboard ranking, improved SteamDeck support",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-29T14:38:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 13875644 has been released, featuring enhanced Vulkan/Steam Deck stability and the addition of real-time online leaderboards during gameplay, fix offline mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665900/view/5749481331440823709"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-29T14:38:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665900",
+      "checkedAt": "2026-11-13T03:30:23.635Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-29T14:38:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1665900",
+      "checkedAt": "2026-11-13T03:30:23.635Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-29T14:38:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:06.673Z"
+  },
+  {
+   "id": "shinorubi-173320@post-2024-02-02",
+   "gameId": "shinorubi-173320",
+   "displayName": "13296830 is out, fixing SteamDeck / Vulkan issues, Offline mode.",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-02T17:17:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "▼Significant Resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved a problem causing the game to freeze (GPU timeout) on Vulkan / SteamDeck when exiting a demo or finishing a run.: ▼Additional Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Addressed an issue occurring when running the game without Steam being connected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665900/view/5582843074945049028"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-02T17:17:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665900",
+      "checkedAt": "2026-11-13T03:30:23.635Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-02T17:17:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1665900",
+      "checkedAt": "2026-11-13T03:30:23.635Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-02T17:17:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:06.673Z"
+  },
+  {
+   "id": "shinorubi-173320@post-2024-01-23",
+   "gameId": "shinorubi-173320",
+   "displayName": "Build 13242511 is live! Steam Deck support & Online leaderboard display fixes.",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-01-23T13:18:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello community, we're excited to announce the release of update 1.0.4, featuring Steam Deck compatibility and a resolved issue with the top leaderboard display. Best regards, The Lastboss88 Team.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665900/view/5510784213116145775"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-23T13:18:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665900",
+      "checkedAt": "2026-11-13T03:30:23.634Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-23T13:18:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1665900",
+      "checkedAt": "2026-11-13T03:30:23.634Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-23T13:18:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:06.672Z"
+  }
+ ],
+ "issues": []
+}

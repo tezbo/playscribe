@@ -1,0 +1,120 @@
+{
+ "game": {
+  "id": "blades-of-fire-333600",
+  "igdbId": 333600,
+  "name": "Blades of Fire",
+  "cover": {
+   "imageId": "co9gvk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9gvk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3c98",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3c98.jpg"
+  },
+  "ps5Release": "2025-05-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "blades-of-fire-333600@2.1",
+   "gameId": "blades-of-fire-333600",
+   "displayName": "Hotfix 2.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-28T15:53:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 2.1 - Fixes & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a compatibility issue affecting save files created prior to Update 2.0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential crash that occured when multiple mods were loaded in the Forge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a PS5 controller compatibility issue on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated the wording for several graphics options, including Depth of Field and Motion Blur, to improve clarity and avoid misunderstandings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2091020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2091020/view/1833968530888613"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-28T15:53:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2091020",
+      "checkedAt": "2026-11-13T03:16:13.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-28T15:53:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2091020",
+      "checkedAt": "2026-11-13T03:16:13.132Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-28T15:53:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:47.405Z"
+  }
+ ],
+ "issues": []
+}

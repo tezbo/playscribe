@@ -1,0 +1,3040 @@
+{
+ "game": {
+  "id": "toem-118193",
+  "igdbId": 118193,
+  "name": "Toem",
+  "cover": {
+   "imageId": "co97ni",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co97ni.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arivv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arivv.jpg"
+  },
+  "ps5Release": "2021-09-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "toem-118193@major-2025-10-07",
+   "gameId": "toem-118193",
+   "displayName": "Unity Security Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-07T07:02:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our game engine of choice, Unity, had a severe security vulnerability recently discovered,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This little update is just to patch that out! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/1811772772629800"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T07:02:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.840Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T07:02:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.840Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-07T07:02:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.708Z"
+  },
+  {
+   "id": "toem-118193@3.0.10",
+   "gameId": "toem-118193",
+   "displayName": "Update 3.0.10",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-07T12:43:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Self-portrait/Player closeup not enabling when sitting on Painter's Stol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock after jumping off the raft in Stanhamn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nanna playing the wrong animation making her stand on the couch inside the Basto tent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/5124582150159861749"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-07T12:43:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.839Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-07T12:43:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.839Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-07T12:43:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.707Z"
+  },
+  {
+   "id": "toem-118193@3.0.8",
+   "gameId": "toem-118193",
+   "displayName": "Update 3.0.8",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-28T11:26:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch adds Native Linux/Steamdeck build support and fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Native Linux 64bit support! (Game should run faster!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Upgraded to Unity version 2019.4.40 LTS (Makes the game stabler)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frame perfect bug where Cow in Homeland played a bell sound just after the game has unloaded the Homelanda audio bank causing weird behaviors throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock inside the city café if you take a photo of a mouse just before it enters the hole in the wall",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/5133583642654489309"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-28T11:26:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.839Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-28T11:26:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.839Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-28T11:26:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.706Z"
+  },
+  {
+   "id": "toem-118193@3.0.7",
+   "gameId": "toem-118193",
+   "displayName": "Update 3.0.7",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-22T09:44:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This fixes so certain mac machines can take photos again! 📸",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PGN Photo fallback (If our WebP plugin doesn't work the photos are instead saved as PNGs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "@Resort_flower@ dialogue variable showing up: Appeared inside the Spanish translation, tt now shows the number of flowers that are left to water on Basto, as it should.: Thanks for all the fan art, comments, and love since our last post! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/5059268543352713735"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-22T09:44:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.838Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-22T09:44:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.838Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-22T09:44:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.706Z"
+  },
+  {
+   "id": "toem-118193@post-2022-10-27",
+   "gameId": "toem-118193",
+   "displayName": "Jump straight to Basto!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-27T10:02:04.000Z",
+   "notes": [
+    {
+     "title": "Patch 3.0.5",
+     "items": [
+      {
+       "text": "In this patch we have added an new game option to jump directly to the post game content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What does that mean?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Normally, to be able to access the post-game content island Basto you have to finish the 'Experience TOEM' quest before the ticket can appear in your living room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the new start game option you will start with 'Experience TOEM' completed, all the regions unlocked, and you'll have all the items (HikeLady, Bag, Camera, Honk, Tripod, Community Card, Album, Frames & Filters) you need for Basto.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(The New Adventure menu has a scrollbar, a new option can be found at the bottom!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Due to having all of these items from the start, 'Experience TOEM' completed, and the ability to go to any region can make some sequences in the game be a bit weird, along with not being able to experience the ending sequence of the game since the quest for it already is completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just something to keep in mind if you're choosing to use this option when starting a new save!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Option to jump to post-game content when starting a new adventure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nana now accepts a blurry TOEM picture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sight Photos are never counted as blurry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4706851091172633215"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T10:02:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.837Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T10:02:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.838Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-27T10:02:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.705Z"
+  },
+  {
+   "id": "toem-118193@3.0.3",
+   "gameId": "toem-118193",
+   "displayName": "Update 3.0.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-03T13:18:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Detached photos not being cleaned up if save gets corrupted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Detached photos\" are photos that are not inside the save file but somehow still exist on the disc. This is not good as it results in photos lingering and taking up both disc space but also cloud storage space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4588629064125198279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-03T13:18:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.837Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-03T13:18:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.837Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-03T13:18:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.534Z"
+  },
+  {
+   "id": "toem-118193@3.0.2",
+   "gameId": "toem-118193",
+   "displayName": "Hotfix 3.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-28T11:53:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This small hotfix makes it possible to complete \"Photo of Nana\" quest in Basto by talking to Nana in her tent at Basto, giving her a photo of herself, and the quest is completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It also makes it possible to unlock \"Complete all quests in Region X\" by restamping the community card. We added this because some of you out there completed Basto region but did not get the achievement. Now if you have all of that region's stamps AND restamp the card, the achievement will unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restamping the community card can now unlock complete all quests achievement for that region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The initial loading screen information for the rare case where it would never finish.: (This makes it possible for us to know where something went wrong)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game soft locking if you had the album open when Honk Hero carnival game finished",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Photo of Nana\" quest not being completable once the Basto was visited",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4588629064106764584"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-28T11:53:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-28T11:53:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.837Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-28T11:53:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.533Z"
+  },
+  {
+   "id": "toem-118193@3.0.1",
+   "gameId": "toem-118193",
+   "displayName": "Update 3.0.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-22T09:13:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This hotfix addresses the bugged compendium photo achievements by changing their unlock logic, this should make it possible for everyone to unlock them and 100% the game! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All you have to do is take a new photo of a compendium critter and make sure to save the photo. The achievement should unlock!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added unlock condition to \"Look at those cuties\" when base game compendium is completed as a fallback if it's not previously unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed all compendium-related achievements not unlocking on rare occasions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4589754330731431951"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-22T09:13:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-22T09:13:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.836Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-22T09:13:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.533Z"
+  },
+  {
+   "id": "toem-118193@3.0.0",
+   "gameId": "toem-118193",
+   "displayName": "Update 3.0.0",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-20T07:45:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We won't increment the game version because this was just an oversight and such a silly fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player being taller and stretched when they are not supposed to be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player not bumping when honked at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/6258337460561032381"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-20T07:45:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.835Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-20T07:45:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.836Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-20T07:45:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.529Z"
+  },
+  {
+   "id": "toem-118193@major-2022-09-12",
+   "gameId": "toem-118193",
+   "displayName": "🏝️ Free \"Basto\" region update!! 🏝️",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-12T14:22:56.000Z",
+   "notes": [
+    {
+     "title": "Free Major Content Update!",
+     "items": [
+      {
+       "text": "It's already been a whole year since TOEM's release and wowee what a journey it's been!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've been overjoyed seeing players laugh at our dumb jokes, squeal with excitement after finding something cute, and of course all your photos! 💖",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To celebrate TOEM's one year anniversary, we're announcing something we've been working on for a while...🥳",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The free content update (part 2/2) and the end of our BIG update for the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "So what is Basto?",
+     "items": [
+      {
+       "text": "Basto is TOEM's biggest region filled with brand new content like treasure hunting, minigames, and spooky stories!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Left to right) Treasure hunting, the carnival, and spooky stories around a campfire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to get to Basto? 🎫",
+     "items": [
+      {
+       "text": "To unlock the Basto region, complete the base game and visit Nana back home in Homelanda!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is, of course, FREE!! And it's all thanks to everyone who bought the game and supported us, thank you! 💖",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1-2 hours of new content ⏰",
+     "items": [
+      {
+       "text": "As any other region, there is more things to explore and photograph! And for most players this new region will take about 1-2 hours to 100%, so it should give you plenty of more TOEM to experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The island of Basto has its own special behavior, which you need to find out on your own! 🛏️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "A New Camera Attachment 🎈",
+     "items": [
+      {
+       "text": "With the new water popper you can interact with the world of TOEM in a whole new way, splash your way into stamps and new adventures! It's also kinda funny looking!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Inside your camera, a new button will appear once you get the water popper, giving you the option to swap between launching water balloons and honking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "6 Music Tracks 💿",
+     "items": [
+      {
+       "text": "Jamal Green & Launchable Socks have knocked out some more bangers for TOEM! They're so amazing at what they do, and we couldn't be happier about having their music in TOEM!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More music for your experience at Basto! As always you'll get the cassettes when unlocking new tracks so you can make your own playlist while playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "20 Compendium Critters 🐌",
+     "items": [
+      {
+       "text": "Looking for funny, cute, and interesting critters is a favorite of many, that's why we added as many new compendium entries as we could!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of the new critters are not in plain sight and will take some time figuring out how to find!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "20 More Quests ⭐",
+     "items": [
+      {
+       "text": "Ideas that we didn't have time to do in the base game as well as new ones, all found their way to Basto! And we hope you will have a fun time checking out what we've been up to!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sometimes all you need is some ice cream!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes 🐛",
+     "items": [
+      {
+       "text": "New bugs have been made, then resolved, causing old ones to appear, that we then fixed! We think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We sincerely hope you enjoy this update and all its changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’re eagerly awaiting your reactions on social media, the forums, or Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hugs and kisses, 💋",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 4,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4606641560263163750"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-12T14:22:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.835Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-12T14:22:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.835Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-12T14:22:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.528Z"
+  },
+  {
+   "id": "toem-118193@2.0.5",
+   "gameId": "toem-118193",
+   "displayName": "Patch 2.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-11T14:27:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch contains some very well-needed fixes and improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now we will go on vacation and be quiet for a little while cause we're cooking up a little something-something for you but we're not quite ready to talk about that! 🏖️🏝️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TOEM no longer has to be focused on to be counted as a sight photo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localized \"OK\" button inside New Compendium Photo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frames & Filter Photo Challenger's laugh sound no longer plays at maximum volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized systems across the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized hide and seek scene (sometimes it would load slowly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game unloads non-generic sounds from memory when returning to the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed photos being deleted after completing the gallery quest AND restarting the game 2 times, lol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All quick/radial menu buttons being useable without having the required item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Photo quests not triggering after starting a new game without restarting the application",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain door frames being active inside the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Error caused by certain ambiance soundscapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Newest photo's title not saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interaction tutorial prompt appearing again when continuing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game thinking player is inside a certain region when returning to the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect word for \"Controller\" in Turkish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All banks being loaded into memory when they shouldn't be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music getting loaded before entering the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TOEM showing incorrect indicator icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4539082035573873108"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-11T14:27:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.834Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-11T14:27:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.834Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-11T14:27:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.527Z"
+  },
+  {
+   "id": "toem-118193@2.0.4",
+   "gameId": "toem-118193",
+   "displayName": "Patch 2.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-01T09:52:44.000Z",
+   "notes": [
+    {
+     "title": "Gooooood morning!",
+     "items": [
+      {
+       "text": "It's another sunny day in Karlshamn and another patch for TOEM is out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's a short rundown of what we've done with the game this time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New language - Turkish! 📖",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Item - Award mask! 🏆: Because TOEM won the BAFTA Debut Game category we added a celebratory item resembling the trophy that you can wear! (Don't worry, it's not required for the cosplayer achievement!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New option - 120fps setting is now available. 🎥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "MacOS - Not being able to take photos... In a photo game. 😳: Some older Macs seem to still have this issue and there doesn't seem to be a way to fix it. 😢",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS - The screen turns fully magenta for a few frames while opening the camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS - Softlocks when trying to load into the game due to errors during loading of photos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start a new game - Softlock if attempting to restart a new game if the current game has no photos taken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localized - \"Show Achievement Prompts\" option is now localized again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Community Card - If your sight photos are missing from your save file, the game won't load and empty frame and soft-lock when you try to inspect it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera frame tutorial always appears when starting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Memory leak - Small leak was found when swapping photos in a picture frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quit - Could not press \"Quit\" inside the title screen if no game had been started. lol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS - Uses faster scripting backend (IL2CPP) which results in the game running faster!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AntiAliasing - We removed the old AA since it only affected very small parts of the world, the updated options are None, FXAA, and SMAA. (SMAA being the coolest one.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Options menu - Re-organized some settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Preformance - Removed some unnecessary graphics calculations, TOEM should run a little faster now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gyro - Both inspecting a photo and the map is affected by gyro now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading screen information when starting the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4469272893488426103"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-01T09:52:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.833Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-01T09:52:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.833Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-01T09:52:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.527Z"
+  },
+  {
+   "id": "toem-118193@2.0.3",
+   "gameId": "toem-118193",
+   "displayName": "Patch 2.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-18T16:22:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "FOREST LOG BLOCKING PATH, AAHH FINALLY!!! 🪵🪵",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FOREST ANTS NOT REGISTERING INSIDE CAMERA 🐜🐜🐜🐜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare issue when honking which froze the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare issue when taking photos which froze the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game freezing if \"Quit\" was pressed on the title screen before entering the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City granny car does not appear sometimes 🧓",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City cars do not play idle sounds when stopped 🚗",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City car logic optimizations 🏎️💨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera shiver shake calculations only happen when the camera is open (more optimizations!) 🧣",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed old legacy testing code (Loading speed-ups and such) 💀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/5493837466494323387"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-18T16:22:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.833Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-18T16:22:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.833Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-04-18T16:22:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.526Z"
+  },
+  {
+   "id": "toem-118193@2.0.2",
+   "gameId": "toem-118193",
+   "displayName": "Patch 2.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-15T18:59:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch is focused on fixing as many photo issues as possible that occurred after version 2.0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Completely overhauled the photo loading process",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During our testing, this overhaul manage to load up the broken save file that has been sent to our bugs@somethingwemade.se email.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It was a lot of work and we hope it fixes all photo-related issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do note that if some of your photos have been deleted due to earlier issues, there's nothing we can do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"You Found Us\" achievement does not trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Photodetection errors (Hopefully this solves the issues with photographing the forest ants!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mountain Explorer Closeup not activating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hugs & love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TOEM Development Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/5493837466483874909"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-15T18:59:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.832Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-15T18:59:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.832Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-04-15T18:59:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.525Z"
+  },
+  {
+   "id": "toem-118193@2.0.1",
+   "gameId": "toem-118193",
+   "displayName": "Hotfix 2.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-13T14:07:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Addresses various issues that have been reported in since the QoL release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading Screen Information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Force photos to be loaded as PNG if the photo file is not using WebP format.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We added this to give basic feedback during the initial loading of photos. As all photos are converted into the new WebP format the first load takes a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not being able to visit Mountain Region (Bus Driver Dialogue not starting)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "News Director's Mustache not registering inside camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare error occurring when entering game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4353300763399883848"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-13T14:07:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.831Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-13T14:07:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.832Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-04-13T14:07:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.525Z"
+  },
+  {
+   "id": "toem-118193@major-2022-03-08",
+   "gameId": "toem-118193",
+   "displayName": "TOEM's big update part 1/2 beta test!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-08T14:36:55.000Z",
+   "notes": [
+    {
+     "title": "Beta access code",
+     "items": [
+      {
+       "text": "GamesAreCool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Some specific things we would love to get your feedback on are",
+     "items": [
+      {
+       "text": "🖼️ The new photo filters! Which is your favourite? Talk to the new npc inside the Photo Guild's house in 'Harbor'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⌨️ The ability to play with keyboard! Are there any features missing or unnecessary?",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "🎮 PS5 controller gyro functionality! Let us know how it feels and fits into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "🐞 The camera has gotten an upgrade when detecting compendium items, can you feel the difference?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔁 Restamp your community card to your hearts desire!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---------------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Press F1 to open our dev menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "❗ Stay safe while exploring the new features! ❗",
+     "items": [
+      {
+       "text": "Since we have done a major overhaul of our save system it would be wise to go into your save folder and make a copy in the unlikely event that something break!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "How to find your save folder",
+     "items": [
+      {
+       "text": "1. Press the 'Windows' key + 'R'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Type in 'Appdata' and hit 'OK'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Click on the folders: LocalLow -> Something We Made -> TOEM and then there should be a folder named Save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Copy the folder somewhere for safe keeping!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bam! You're all set!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to access the beta branch",
+     "items": [
+      {
+       "text": "1. Right-click TOEM on Steam and click 'Properties...'",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "2. In the window that opens, go into 'BETAS' found on the top left side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Enter the code GamesAreCool and press 'Check Code'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Press the big blue button that shows up below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And that's it! Your Steam should now automatically download the new build!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4247462367448883396"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-08T14:36:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.831Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.524Z"
+  },
+  {
+   "id": "toem-118193@major-2022-01-19",
+   "gameId": "toem-118193",
+   "displayName": "Big Update Announcement - Part 1/2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-19T13:50:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's finally time for us to reveal what's next",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TOEM is getting an update... A BIG ONE!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's even split into two parts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Part #1 is focused on Quality of Life update and is coming Q1 2022. It’s meant to improve your playing experience and for that to happen we need your input on what’s missing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How can you help?",
+     "items": [
+      {
+       "text": "Simply comment on this post!! It can be whatever, a language, a feature, as long as you think it’s missing we’ll look into it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "Cloud save",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Button Remapping (HOPEFULLY!!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Keyboard compatibility (movement, interaction, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Console",
+     "items": [
+      {
+       "text": "PS5 haptic feedback + adaptive triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Switch HD Rumble (improved vibrations)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Settings",
+     "items": [
+      {
+       "text": "Photomode steering sensitivity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reset all options to default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ambience music silence duration (How long it will be silent until the next song plays)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Autosave interval",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Camera blur quality setting (Not on Switch)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Increased photo capacity for all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gyroscope support (PS5, Switch, and certain PC controllers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Ability to start a new game without resetting all in-game achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability to re-place stamps inside the community card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kinder compendium creature detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Making more items usable from the inventory like opening the camera or placing the tripod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major performance increases across the whole game, most when using the photo mode camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Help prompt/menu when showing an NPC a photo for a quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "----------------------------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for reading through it all, we hope you like what we have planned for this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re eagerly awaiting your input!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "❗️We are accepting input until 31th of January 2022❗️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 1,
+    "other": 18,
+    "ps5": 2,
+    "topNew": [
+     "Photomode steering sensitivity",
+     "Reset all options to default",
+     "Ambience music silence duration (How long it will be silent until the next song plays)"
+    ]
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4237325463667726560"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-19T13:50:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.830Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-19T13:50:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.830Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-01-19T13:50:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.523Z"
+  },
+  {
+   "id": "toem-118193@1.11",
+   "gameId": "toem-118193",
+   "displayName": "Hotfix 1.11",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-10T14:38:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Okay... Now the mountain yeti puppy's bouncing ball is fixed forever and should no longer crash people's games haha",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a lovely Christmas and a great holiday!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Systems needed for gameplay no longer run in the title screen (yey for speed and battery time!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rare bug where Yeti puppy's bouncing ball would crash the game after a couple of minutes of playtime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay systems sometimes throw errors while the game is returning to the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4224936849654391494"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-10T14:38:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.829Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-10T14:38:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.829Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-10T14:38:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.523Z"
+  },
+  {
+   "id": "toem-118193@1.10",
+   "gameId": "toem-118193",
+   "displayName": "Update 1.10",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-02T14:31:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With all these new people playing we've found more issues that have now been fixed, so here's the update for it, yey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many edged cases and weird bugs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock when entering the scene to the left of balloon family while birthday balloon is following player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare bug where an on-screen message prompt would not be set up correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grass rendering crashing the game if graphics card don't support GPU instancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully fixed rare crash caused by YETI puppy's bouncing ball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Unity logo inside splash screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Completed achievements no longer keep checking if their requirements are met",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized grass rendering a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game icon is no longer compressed, it's crisper ^^",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "If TOEM is crashing for you, write us at",
+     "items": [
+      {
+       "text": "hello@somethingwemade.se",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "so we can fix it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4224936215383891464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-02T14:31:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-02T14:31:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.829Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-02T14:31:58.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T16:30:23.522Z"
+  },
+  {
+   "id": "toem-118193@1.0.9",
+   "gameId": "toem-118193",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-02T13:46:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch brings new and fancy upgrades to TOEM's backend system which makes loading and saving faster, everything is now done asynchronously so hick-ups have been reduced!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Along with the new backend upgrades, there are other gameplay changes and fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New backend system which improves load times by loading several files at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "System to detect and clean up photos that's not referenced in savefile but still had been created on disk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hike Lady's shuffle and repeat buttons now toggle each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased bus stop sign collision box to make it easier to click on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Snail moves EVEN FURTHER each time it's honked at during its snail race",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Discord\" button not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock if player took a photo and then immediately opened the album",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock if player was already sitting on the bench while starting the fisherman's tune cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock if player pressed \"change expression\" and \"selfie\" button. Thanks @Astotheles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pine critter triggers if you photograph them just before the stare timer is done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Being able to clip into walls on the monster spotting mountain scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pirate queen sometimes still didn't wear the correct hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game progressively became slower and slower the more you opened the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/4186652357042340248"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-02T13:46:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-02T13:46:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.828Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-02T13:46:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.521Z"
+  },
+  {
+   "id": "toem-118193@1.08",
+   "gameId": "toem-118193",
+   "displayName": "Patch 1.08",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-29T08:36:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A little more than a week has passed and we're so happy to see the positive reaction to TOEM, we sit at a stunning 99% positive review with only 1 negative!! That's crazy! We also love all of the in-game photos you've shared, both online and on our Discord Channel!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all very much! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch contains bug fixes, updates to certain scenarios, and generic improvements. Another thing is that the game is now built using IL2CPP (Windows only) so the game should run even smoother than before!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But most importantly... YOU CAN NOW PET ALL OF THE DEV TEAM'S PETS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(This patch will also arrive on consoles as soon as possible)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now pet all cats, \"Pet rock\", and \"Tom\"!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Honk reaction to Harbor Wizard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Birthday hats to all of the dev team's pets!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navmesh corrections for all regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Going long!\" achievement no longer requires Clogs to be completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Help! I can't move\" button now teleport the player to a fixed position by each region's bus stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interactions with NPCs are now given priority",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Honk House Minigame's timing: When you stare at the last ship out at shore the cutscene will now be triggered directly instead of a timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Ghost date\" & the lost dog's follow distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seagull ritual chant volume no longer ducks when playing music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock when photographing the raft operator after honking away the seagulls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soft-lock when talking to Honk Master when the last boat is being blown away from the rocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Help! I can't move!\" button crashed game if used while on a face board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick select menu activating items the player didn't have inside their inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Album no longer remembers the last tag opened between sessions (We see you speedrunners)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game sometimes throwing errors when returning to the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player not being centered on face boards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grammar issue inside Harbor Wizard's start show dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grammar issue in \"100 followers\" achievement description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare bug where next region would not get unlocked even though region stamp has been received",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sight photos getting destroyed when it's not supposed to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World photos no longer disappear when deleting the same photo inside the player's album",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievement description text cutting off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rearranged Meck's house layout for better viewing (Teddy is no longer so hidden)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pirate Queen's hat now shows the correct one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/3938951840875815092"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-29T08:36:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-01T14:54:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-12T16:30:23.520Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-01T14:54:39.000Z"
+     }
+    }
+   ],
+   "revision": 4,
+   "updatedAt": "2026-11-13T03:38:29.317Z"
+  },
+  {
+   "id": "toem-118193@hotfix-2021-09-18",
+   "gameId": "toem-118193",
+   "displayName": "\"Help! I can't move!\" hotfix!",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-18T12:01:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This small 6MB hotfixes to the game's navigation and a \"Help! I can't move!\" button inside the pause menu for those situations where you're really stuck inside things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That said, we've noticed some issues like players getting stuck, soft-locking while talking to certain NPCs. We have taken notes and while fixing it in the coming week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're so happy seeing everyone streaming, sharing photos, and most importantly, having a good time while playing TOEM!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALSO PLEASE LEAVE YOUR HONEST STEAM REVIEW! We want to hear what you think about TOEM ^^",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "### Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Help! I can't move\" button inside the Pause Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggleable UI by pressing F2 F3, or F4 (three different levels of hiding with F4 hides everything): ### Fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain navigation errors where you could get stuck in the city region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1307580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1307580/view/5418383147742583044"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-18T12:01:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-18T12:01:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1307580",
+      "checkedAt": "2026-11-13T03:34:23.826Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-18T12:01:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:23.519Z"
+  }
+ ],
+ "issues": []
+}

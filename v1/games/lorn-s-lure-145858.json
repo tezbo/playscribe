@@ -1,0 +1,1318 @@
+{
+ "game": {
+  "id": "lorn-s-lure-145858",
+  "igdbId": 145858,
+  "name": "Lorn's Lure",
+  "cover": {
+   "imageId": "co8ugv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8ugv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar36lj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar36lj.jpg"
+  },
+  "ps5Release": "2025-10-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "lorn-s-lure-145858@post-2026-03-25",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "UI Click fix .... again...",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-25T18:30:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Minor patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NOW you should test the UI click issue changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical details",
+     "items": [
+      {
+       "text": "Theoretically, the unity asset I was using: ReWired was detecting mouse pads as the first input, and not including the mouse as a player.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "So if this was affecting you and you were NOT using a laptop let me know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1827626365768860"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T18:30:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.699Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T18:30:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.699Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-25T18:30:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.071Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-03-19",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Removed culling areas in Foundation (Chapter 6)",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-19T17:30:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "These seem to always cause problems so I just got rid of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance seemed similar with and without, so hope this solves some of the levels not showing up bugs people get!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1794102528275393"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-19T17:30:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.698Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.067Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-03-14",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Linux workshop support pt. 2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-14T18:59:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Linux support for workshop maps actually maybe? Gotta test.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Also added support for turning fog clouds off in your custom maps. Just set the FogTo's alpha value to zero in the AtmosphereDefinition component (attached to the \"Atmosphere\" gameobject under \"Systems\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1794102528116534"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-14T18:59:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.698Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.067Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-03-13",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Should now have Linux (Steamdeck) support for workshop maps",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-13T03:56:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Theoretically....",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have yet to test it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1794102528060488"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T03:56:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.697Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.066Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-03-03",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "New accessibility option in settings",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-03T16:23:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Mostly German language translations have been updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also should fix the death screen text in this locale!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apologies, long overdue!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1792751526143584"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-03T16:23:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.696Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 9,
+   "updatedAt": "2026-11-13T03:24:55.697Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-02-04",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Grapple reticle doesn't appear in the mod levels by default",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-02-04T15:13:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "There was an issue where it would always be visible. Fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1790214123247041"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-04T15:13:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.696Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.064Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-01-15",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Simulation changes for closed beta group",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-15T17:07:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Wasn't able to play multiple workshop maps before. Only picked the first one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This fixes it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1788945554762352"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-15T17:07:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.696Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:18:26.070Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-01-14",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "grapple stamina fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-14T22:50:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue where stamina was depleting too fast for grapple after my changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1788311419189782"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-14T22:50:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.695Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.069Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@major-2025-01-12",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Global Volume zeroing from last update. should be fixed...",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-12T05:17:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Attempted to fix the global volume zeroing. Let me know if it didn't work...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1788311419101978"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-12T05:17:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.694Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.069Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2025-01-12",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Simulation Button Enabled",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-12T01:26:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I enabled the Simulation button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here you will see workshop items :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workshop has not been enabled yet, but this is in prep for the map maker beta!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1788311419096839"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-12T01:26:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.694Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:24:55.695Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2024-11-26",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Added Explore Mode Tooltip",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-26T04:34:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In case new players who don't follow my updates don't know what it is!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1783872412131414"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-26T04:34:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.694Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.067Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@major-2024-11-22",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Minor patch for the update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-22T03:37:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed dev teleports :P",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1783872412001312"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T03:37:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.693Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.066Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@post-2024-11-22",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Explore Mode QOL Changes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-22T02:28:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey climbers, just pushed a minor update to the Explore Mode for quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This includes",
+     "items": [
+      {
+       "text": "Explore mode saves are now separate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many more checkpoints in Chapter 8!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alert icon to show new folks where the settings is",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regarding separate saves, this also implies separate records! So when you hover over the chapter in the level select menu, while Explore Mode is selected, you'll see empty records.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just beat the chapter in Explore Mode and you'll see a record populated. Do the same for regular mode if you beat the game on Explore mode first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This also applies to the full run mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Records had to be separated cause chapter 8 has a different number of scans in Explore mode, and folks probably want a way to measure their runs separately anyway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know if you have any issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/1783872411999988"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T02:28:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.693Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.065Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@major-2024-10-01",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Another Smaller Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-01T03:48:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Had to make a smaller followup update after some issues were reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full Run and Crystal Run achievements should now load :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 6 loading bug likely fixed (There was a case where the culling group did not trigger when scanning)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 8 path obstruction bug likely fixed (trigger logic changed to be consistent with saving checkpoint)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a slide in the chapter 8 tutorial area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chapter 4 now correctly only has 4 scans vs 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that if you're in the middle of Chapter 6 or 8, you should restart the level to make sure these items are applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also there's an issue where settings reset when I update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'll try to solve this in a future update. But for now, don't put your headphones on, cause global audio maxes out :P",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/6339469370198800350"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-01T03:48:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.692Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.060Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@major-2024-09-30",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "BIG Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-30T12:56:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's time for the first of many updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Achievements implementation fix. The achievements you should have gotten will now be populated on startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Invisible triggers should not kill you now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save progress should never be lost, even if you alt+f4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some triggering volume logic. This affects levels loading properly (chapter 6 after the harvester). Waypoint hints may also be fixed. Chapter 8 path block may also be fixed. Please report if not with your save.dat and player.log file!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Not really a bug, but the community updated some dialogue in certain locales",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Control jank fixes",
+     "items": [
+      {
+       "text": "Standing next to a slide and jumping should not launch you off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tic-Tacs had a minor change that may help improve reliability, but still thinking about this one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No more dying when touching a vertical wall at terminal velocity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Waste tunnel improvements",
+     "items": [
+      {
+       "text": "Death volume is now below sludge so it will feel more fair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Flare light range has increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Flares last longer, so you can trace a path with them, or take your time platforming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't allow looping back into start of caves once you've triggered the sludge flow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chase segment sludge has been slowed down a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Failed Biome improvements",
+     "items": [
+      {
+       "text": "Better teaching of Tic-Tac by having the tutorial appear right after getting it, and the exit being closer by",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player cannot start the sky tram if they don't have the Mold Flower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There are now 3 paths to the mold flower, and underneath the island is visible from farther away to make it more obvious that you have to go under the island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some new checkpoints here and there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Dissolution improvements",
+     "items": [
+      {
+       "text": "Added more platforms in area after the long fall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added platforms in the area where you have to go upwards through a hole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Second last section where you surf on the left: I cut off the top part since folks mistakenly went up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed misleading path in the meat room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slowed down many sequences of meat and blocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made it clearer that the block in the rotating checkered room kills you by changing the texture to glow-meat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the length of the starting area so that it better trains the player to use the grappling hook (also more fun to be had)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I'm still looking for solutions to accommodate pure exploration players. Including a mode that simply stops the chases in the game. I just don't know how to do this for the last chapter for obvious reasons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I hope these changes at least ease the pains some of you have been having. I already have things in mind for the next update too, so stay tuned for more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 18,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Death volume is now below sludge so it will feel more fair",
+     "Flare light range has increased",
+     "Flares last longer, so you can trace a path with them, or take your time platforming"
+    ]
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/6339469370196541781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-30T12:56:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.691Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.059Z"
+  },
+  {
+   "id": "lorn-s-lure-145858@major-2021-05-25",
+   "gameId": "lorn-s-lure-145858",
+   "displayName": "Boring Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-25T17:27:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I've been working on boring stuff for a while now, BUT I have a lot to show for it now, and the boring is almost completely done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What I've Been Up To",
+     "items": [
+      {
+       "text": "Controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redone main menu, with level select!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level select shows high scores for each level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redone stats summary at end of level, with broken record diffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fully functional options menu, that can be accessed while playing as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saving / Loading with multiple levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New in-game HUD - now with crystals + scans, including total possible in the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bunch of bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Video",
+     "items": [
+      {
+       "text": "As you can see, I've been very busy. And with a lot of this out of the way, soon I can focus on the fun stuff - designing the main campaign!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned for more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417930/view/4069544181446950673"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-25T17:27:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417930",
+      "checkedAt": "2026-11-13T03:24:55.690Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:26.051Z"
+  }
+ ],
+ "issues": []
+}

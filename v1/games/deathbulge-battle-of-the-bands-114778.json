@@ -1,0 +1,2601 @@
+{
+ "game": {
+  "id": "deathbulge-battle-of-the-bands-114778",
+  "igdbId": 114778,
+  "name": "Deathbulge: Battle of the Bands",
+  "cover": {
+   "imageId": "co6vul",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6vul.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ardq2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ardq2.jpg"
+  },
+  "ps5Release": "2026-06-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@2.0.2",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 2.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-06T03:54:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a softlock that was happening if you game overed on an endgame spoilery fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/1845383656395213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-06T03:54:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.544Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-06T03:54:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.544Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-06T03:54:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.765Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@2.0.1",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 2.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-10T05:27:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a very rare bug where the game would softlock if encountering an enemy on the exact same frame Ian's shockwave \"stunned\" status wears off on that enemy on the field.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where enemy performances would sometimes prematurely end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where upon initial entry into the Mad Zone, the player was sometimes on the wrong layer and could walk through walls and couldn't speak to anyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a memory leak -- the fast travel screenshots were leaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a thread leak in the pathfinding system that was causing crashes on some platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could be pushed outside the Bus Station during a cutscene that takes place inside it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/1840310314350381"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T05:27:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.543Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T05:27:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.543Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-10T05:27:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.764Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@2.0.0",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Update 2.0.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-10T06:52:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are thrilled to officially announce v2.0.0 will release on JUNE 30TH! ːianjoyːːianjoyːːianjoyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're making the game easier....AND HARDER. ːkeefmadːːkeefmadːːkeefmadː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is what you can expect to see in this FREE :barryhappy::barryhappy::barryhappy: content update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MAD BOSSES",
+     "items": [
+      {
+       "text": "For those who were BREEZIN' through the game's bosses and wanted somethin' with a bit more bite, this one's for you. We have prepared some OPTIONAL brutally hard variants of the game's boss fights that will definitely have you kitting your band out to prepare for! These battles are NOT for the faint of heart, SO DON'T SAY I DIDN'T WARN YA!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35386669/a75747894cf834f1edfe25ef506de2e9c80f4f45.png\"]Don't feel too bad if you see this screen a few times...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "EASY MODE",
+     "items": [
+      {
+       "text": "On the flip side, there were many who felt the game was too challenging and were perhaps locked out of experiencing over half of the game due to that. WE FEEL FOR YOU TOO; we want everybody to at least experience the story, so we added an EASY MODE! It can be freely turned on or off at any time by talking to Modpod. It reduces all damage taken from both hits and measure effects by 66%, making the game quite a bit easier to survive!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35386669/0654863ca5abbb6b1d62d13d2e264fabe18f2a6f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beware however, if you ever turn it on it permanently STAINS your file as an \"easy mode\" save!! MUAHAHAH",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW MEASURE EFFECTS",
+     "items": [
+      {
+       "text": "These are exclusively used by the new bosses, they will be throwing some NASTY new measure effects at you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35386669/9c9a32ae2f2298a70b1dc296cff53652c8a27789.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Flashy new measure effect graphics! Not saying what they do yet...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW ITEMS",
+     "items": [
+      {
+       "text": "We've also sprinkled in a few new MERCH & BEATS for you all to enjoy! One of them was retroactively added to Eezer's EVIL GOODS Shop in Hoho, and the others are obtained as rewards from the aforementioned new boss fights. (Achievements NOTE: if you already popped the collection achievements they will never unpop, but if you HAVEN'T just yet, you'll now need to gather ALL of these new items as well to pop them!!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35386669/ad8bdeb940d66f88184e29e4f237d523295ccd82.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Oxymorons R Us",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "HEADBANGING TO CONSOLES",
+     "items": [
+      {
+       "text": "Got any console-only pals?? This one's for them. Ecstatic to announce Deathbulge: Battle of the Bands will release on Nintendo Switch, PlayStation® 4, PlayStation® 5, Xbox Series X/S, Xbox One, and Microsoft Store (PC) on the same day JUNE 30TH!!!! ːianjoyːːianjoyːːianjoyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "SHINY NEW TRAILER made for that as well",
+     "items": [
+      {
+       "text": "Besides all this, as usual a plethora of optimizations and bugfixes mostly made for the benefit of the console release, but they will make the game run better on Steam too! Oh, almost forgot, the version of FMOD (the audio engine) will be upgraded which promises native Linux support, meaning hopefully Proton is no longer needed as a workaround on some flavors of Linux like it is now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "See you guys on JUNE 30TH!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Deathbulge dev team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 1,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/35386669/9c9a32ae2f2298a70b1dc296cff53652c8a27789.png\"]",
+     "Flashy new measure effect graphics! Not saying what they do yet...",
+     "[img src=\"{STEAM_CLAN_IMAGE}/35386669/ad8bdeb940d66f88184e29e4f237d523295ccd82.png\"]"
+    ]
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/1835236783556674"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T06:52:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.543Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.763Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.2.3",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-07T03:53:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've received some reports of the collection achievements not popping for some people, so as a workaround the only thing this patch changes is talking to any Saeva in the game and saving your game at her will do a full fresh submit of all 8 of the collection achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/1821288646575903"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-07T03:53:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.542Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.763Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.2.2",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-01T00:54:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "So sorry again! Another small but important bugfix patch. A certain mysterious boss was sometimes broken after you defeat him, fixed now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.2 patch was so huge that a few bugs unfortunately leaked through. Hopefully this is the last!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Amazingly we did 3 full 100% playthroughs on 3 different platforms and not once came across the bug. It ended up being an unpredictable 50/50 coinflip thing and of COURSE we got 3 \"good flips\" in a row ːkeefmadː )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/1784506359094665"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-01T00:54:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.541Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.762Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.2.1",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-28T15:15:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "So sorry about this! Just a quick hotfix. The UI was broken if your OS was set to languages other than English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/1784506359016540"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-28T15:15:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.541Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.761Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.2.0",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-27T18:01:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch doesn’t have much in terms of gameplay changes or fixes, but it marks a significant progress milestone for us on the technical end, hence the version bump up to 1.2 and the hefty update size. Most of the game’s asset organization, loading & packaging has been completely redone in preparation for console ports, and in so doing this also means the game is much better optimized for potato PCs too as a bonus. I know some of you are still gaming on those old IBM computers running OS/2, so this one’s for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CHANGELOG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stopped Ian and Faye from weighing in on an incredibly situational conversation they’re not even around for.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed an invisible test warp that was accidentally included and could break the game if used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Autosave text is more visible and occurs after screen fade instead of during.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Wither’s “increased Melody damage taken” attribute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A couple of single target skills were doing ALL TARGET visual fx. Not anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that broke the camera if you skip a cutscene during a “camera follows target” moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brand new Tonewood Forest combat background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/1784506358985385"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-27T18:01:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.540Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.761Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.1.1",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-18T09:24:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After the WILD THRILL that was patch 1.1, this one might feel a tad uneventful. Just addressing a few little things that have surfaced since.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, thanks again for leaving all those lovely reviews, they've been wonderful to read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALT_FX description text is no longer squashed. (It wasn’t a space typo I swear.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MISC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed pre-signup Tonewood entrance dialogue trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Saeva note dialogue trigger in Hoho tent no longer clashes with Modpod interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/6890025005366567478"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-18T09:24:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.540Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.760Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.1",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "PATCH 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-18T11:00:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello and welcome to a particularly HEFTY patch update! So hefty in fact that Dan felt compelled to draw up comics depicting some of the changes, just for flavour's sake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've also discounted the game by 25% from now until the 27th to celebrate the occasion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "REMAPPABLE CONTROLS",
+     "items": [
+      {
+       "text": "You can now remap both keyboard and controller bindings through the config menu. As a result, many of the alternate keys we defined for keyboard controls have been removed. Feel free to rebind them to your personal preference!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As a result of this addition, the default “Skip Cutscene” keyboard binding has been changed from ESC to Backspace. Feel free to change it in the config menu to your heart’s content!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "INDICATING ENEMY WEAKNESSES AND STRENGTHS",
+     "items": [
+      {
+       "text": "“Weak” and “Guard” labels have been added to damage values to indicate how effective an attack is based on the enemy’s toughness and resistance stats. In addition, many enemies have had their toughness and resistance values adjusted to better emphasize these intended differences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We realized a lot of players may have overlooked that there are differing attack types and feel this is a great way to highlight when players could be doing more damage rather than letting players assume the enemy just has high defense all round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MODS",
+     "items": [
+      {
+       "text": "We wanted to take a look at some of the lesser-used mods and see if we could make them more attractive to use. Faye’s in particular suffered from an over-characterization of drawback effects. As the native Show-off, and her own clumsy personality, it made sense to see most of her mods having these kinds of effects. In reality though, this just led to a bunch of them being never used, and hampering her build possibilities. With these changes, we hope to see more build variety across the band.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, we made some adjustments to mods we felt needed a second look.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dazzling Shred: Now has a 50% chance to strike a second time, additionally dealing minuscule melody damage to the target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dazzling Shred: Hype cost reduced to 90 / 45 (Previous: 100 / 50)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dazzling Shred: Now generates 10 glam and 15 glam if both hits trigger. (Previous: 10)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Axe of Annihilation: Now deals massive melody damage normally and obscene melody damage if it triggers the sick version. (Previous: Heavy and massive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reckless Shredding: Now applies 1 measure of pain to the player’s bar. (Previous: 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reckless Shredding: Now generates 6 glam. (Previous: 4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BIG ANGRY RIFF OF FURY: Hype cost reduced to 80 / 40. (Previous: 120 / 60)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALT_FX: Now applies a random negative measure effect onto the enemy’s bar for each enemy struck. (Previous: Applies a random measure effect)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALT_FX: Hype cost increased to 100 / 50. (Previous: 80 / 40)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fresh Twist: Now deals heavy noise damage to all foes. (Previous: Minuscule to single foe)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fresh Twist: Now deals an additional 15% damage per negative measure effect on the player’s bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fresh Twist: Inverts all 4 measures on the player’s bar. (Previous: Inverts 2 measures on the player’s bar)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fresh Twist: Hype cost increased to 150 / 75. (Previous: 120 / 60)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let Me Try Something: This skill no longer applies 2 random measure effects to the player’s bar and now only deals heavy noise damage to a single foe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let Me Try Something: Hype cost increased to 110 / 55. (Previous: 100 / 50)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heartwarmer: This skill now either revives a defeated bandmate at a quarter of their max life (75% chance) or revives them at full health (25% chance). (Previous: Either revives a fallen bandmate at 100% of their max life (50% chance) or fails to revive them at all (50% chance).)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ugh: Now deals an additional 15% damage per empty measure on the player’s bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beefy Double: Now generates 6 glam. (Previous: 4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hammer Jamming: Now deals moderate noise damage to all foes. (Previous: Light)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hammer Jamming: Now generates 15 glam. (Previous: 10)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hammer Jamming: Hype cost increased to 70 / 35. (Previous: 40 / 20)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Intimidate: Now additionally deals light melody damage to a single foe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Poppin’ Off: Now generates 12 glam. (Previous: 6)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EVERYBODY BROKEN BONES: Now deals obscene noise damage. (Previous: Massive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twang Frenzy: Now generates 6 glam. (Previous: 4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Palm Destroyer: This skill now also deals moderate noise damage to a single foe in addition to applying 2 measures of mad pain to both the player and enemy bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dr. Tonebone: Now heals a single ally for a heavy amount. (Previous: Moderate)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tribute to Babby: Amount healed by FISH abilities reduced by 16-25%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Briff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Basketball: Can now score up to 10 points across 5 uses, increasing its maximum damage bonus to 200%. (Previous: 8 points across 4 uses, 150% maximum damage bonus)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PATCHES",
+     "items": [
+      {
+       "text": "Delayer’s knockback effect is now substantially reduced when using consecutive noise skills against an enemy before they’re able to get a turn. Once they’re able to take a turn, this reduction penalty will be reset. This penalty is incurred by consecutive noise skill uses, not consecutive hits via multi-hit skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let’s face it, we all knew this was coming. We wanted to approach this adjustment in a way that still kept it valuable, but not completely game breaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "EARLIER ACCESS TO FAST TRAVEL",
+     "items": [
+      {
+       "text": "Fast travel can now be accessed A LITTLE EARLIER, but at the cost of 300 bops per journey (unless you’ve done a certain sidequest).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two new fast travel destinations have been added. Please do not question their practicality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TREASURE LOCATOR",
+     "items": [
+      {
+       "text": "Bocks now offers help in narrowing down the whereabouts of unclaimed treasures during late-game (i.e. tells you how many treasures are left in Bopstead or Tonewood, etc). Perhaps this is their way of showing appreciation for winning the popularity tournament.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MERCH",
+     "items": [
+      {
+       "text": "Flipped Cap: Now inverts 2 measures on the player’s bar. (Previous: Inverts all 4 measures on the player’s bar.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flipped Cap: Stock cost reduced to 3. (Previous: 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the big redesign to Faye’s Fresh Twist, we wanted the Flipped Cap to have some individuality and fill a gap missing amongst inversion skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BEATS",
+     "items": [
+      {
+       "text": "Starstrike now has a 33% chance to strike a second and third time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased cost to boost Shrubbash from level 2 to level 3 to 1,500 bops. (Previous: 500)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased cost to boost Toot from level 2 to level 3 to 1,000 bops. (Previous: 500)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "MEASURE EFFECTS",
+     "items": [
+      {
+       "text": "Empowered Slow now reduces speed by 40%. (Previous: 50%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Beat Booster: Selecting fully upgraded beats will now display their current information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MISCELLANEOUS",
+     "items": [
+      {
+       "text": "The game’s credits can now be viewed from the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saeva now leaves a note for Briff to let him know of her post-bus non-tent whereabouts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the visibility of one of the bottles in Claire’s Hair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed a bug that gave Briff a much higher base toughness stat than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could allow for unintended player control when skipping a cutscene during the ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the player from aggroing enemies after the boombox fight in Claire’s Hair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue that caused the combat performance crowd to incorrectly appear overtop certain foreground elements on the bus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that sometimes caused the sound created by kicking Who Cares to sound like a tent door kick. The game is now playable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause certain music elements to persist upon quitting to the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused a softlock in combat when counter attacking an enemy with a beat that overwrote a Harmony measure effect during the counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed numerous issues with enemy attack elements and incorrect corresponding visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a UI issue that would cause certain measure effect icons to render incorrectly in shops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Zee now only has a post-it face during the ending sequence if you triggered the necessary conversation prior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 2,
+    "other": 51,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/5747233970425470699"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-18T11:00:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.539Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.759Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.0.6",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-06T01:52:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "SAVING",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each save slot is now divided into two save files: your latest autosave and your latest manual (Saeva) save. Upon loading the save screen, you will be presented with the LATEST save first, but will have the ability to cycle between them using UP and DOWN while the save slot is highlighted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For existing saves made prior to this patch, they will appear as a single autosave in the menu until new saves are performed in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "DOOR KICKING",
+     "items": [
+      {
+       "text": "There is now a special little extra event that occurs in Bopstead once a certain someone finds out you’ve kicked every door in. If you’ve already completed this portion of the game, fret not, you don’t need to talk to him again to trigger this and can scope this out immediately without starting a fresh file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MODS",
+     "items": [
+      {
+       "text": "Updated the TYPE of a few mods to better align with their effects. This is purely a cosmetic change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COMBAT",
+     "items": [
+      {
+       "text": "Added Exit to Title functionality: by holding the MENU button (C on keyboard, Y on Xbox/Steam Controller) you’ll now be able to exit the current battle and return to the title screen. This can come in handy if you want to try out a different gear setup without dying/force restarting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Reduced the duration of field invincibility after winning a battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The duration of the post-battle victory invincibility was too long to the point of being potentially annoying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "?????",
+     "items": [
+      {
+       "text": "Added additional exits to improve pacing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Improved the appearance and clarity of sold-out items when selected in shops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the clarity of the Info button in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "MISCELLANEOUS",
+     "items": [
+      {
+       "text": "Optimized memory usage for certain character/class combos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to skip a certain endgame cutscene in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an extra tidbit of situational dialogue for the Whale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed a bug that prevented Harpleen from summoning her Mooncloud minion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented Shredded Shred from Shredding three times when Ian’s Mad Fortify was up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug that occurred when displaying measure modifiers in the beat booster menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed layering issues with certain bus stops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which caused characters to drop to 0 HP when equipping certain patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused certain abilities to deal 1 damage when they weren’t supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused Orbomina to play the incorrect encounter sound effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the Hoho music to play the indoor variant outdoors after skipping certain cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused Who Cares? to sometimes make the incorrect door kick sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the game from autosaving when skipping certain cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various sound mixing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various collision issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various grammatical errors and typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 13,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/5220292521182580868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T01:52:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.538Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.757Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.0.5",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-24T00:20:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "CONTROLLER SUPPORT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved controller support for the Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved support for MORE controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "MODS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Goth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The SPIDER summon from Briff’s Weaver of Darkness will now use Widney’s Rebuke less often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faye’s Dead Inside signature mod hype cost reduced to 40 / 40. (Previous: 60 / 60)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faye’s Graveyard Shuffle hype cost reduced to 70 / 35. (Previous: 120 / 60)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faye’s ugh hype cost reduced to 90 / 45. (Previous: 120 / 60)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Briff’s Surging Sorrow hype cost reduced to 70 / 35. (Previous: 90 / 45)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Briff’s The Great Unjoying hype cost reduced to 90 / 45. (Previous: 140 / 70)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of the goth mods simply cost too much hype considering their effects and drawbacks. Since goths themselves are already low on hype, this meant that the mods didn’t have a ton of utility even when used as the goth class. Therefore, we’re establishing goth mods as a low cost, high output option for builds that don’t focus as much on player-side measure effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Busker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faye’s Heartwarmer now revives fallen bandmates at 100% LIFE but only works half of the time. (Previous: HEAVY life heal, works 75% of the time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HASTE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Haste now increases speed by 80%. (Previous: 100%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Empowered Haste now increases speed by 125%. (Previous: 150%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Empowered Haste can now increase the player character’s speed stat beyond the cap, up to 125. (Previous: 99)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The NOW NOW NOWs patch can now increase the player character’s speed stat beyond the cap, up to 125 while crossing Haste measures. (Previous: 99)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We felt that Haste was a bit too strong (and dangerous when used by enemies) and lacked utility towards the later sections of the game. These changes aim to bring the speed boost provided by Haste down a bit and give The NOW NOW NOWs and Empowered Haste a more noticeable effect, enabling EVEN FASTER builds with the right setup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PERFORMANCES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The calculation used for the damage/healing component of Performance actions has been reworked. Performances will now output a static amount of base NOISE/MELODY damage/healing determined by your band level, which can be further enhanced by the user’s NOISE or MELODY stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EGO EXORCISM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve heard a lot of feedback on the amount of time/effort it takes to complete the Ego Exorcism side gig and frankly, we agree. Therefore, we are making a number of adjustments to this side gig to make it more palatable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The number of encounters present in the Upper Decks, and by extension required to defeat for this side gig, has been dramatically reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The number of enemies that can appear in most encounters throughout the Upper Decks has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With these changes, the player is expected to defeat 20 total encounters to complete the gig instead of the previous 33. We definitely agree this was FAR too many. In conjunction with the reduction in LIFE from the previous patch and the reduction of enemies per encounter, we’re hopeful that this puts the side gig in a better spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ENEMIES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Puppettoot - Significantly increased bops dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fiendship - Significantly increased bops dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUG FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Altered dialogue that implied you couldn’t come back later and finish the Ego Exorcism side quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused the wrong area name to appear on a save file cassette in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weird camera shift that happened when choosing a particular series of options during the CHAMP segment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that was causing a certain thread of Bocks’ dialogue to not trigger. (Funnily enough this bug was actually caused by the Bocks dialogue fix from patch update 1.0.3 that addressed a different bit of dialogue not triggering. Oh dear.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause some enemies to give double EXP & bops rewards in the same fight under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple of typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/5141475722325150766"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-24T00:20:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.537Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:00.756Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.0.4",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Update 1.0.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-17T03:49:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve been paying close attention to all the feedback everyone has been giving and really appreciate the amount of detailed thoughts and experiences shared in both the reviews and discussion board thus far. It takes a lot of time and diligence to articulate these things, so we take every comment to heart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall, we’re floored by the amount of positive feedback that’s been flooding in, but we recognize that there are some key areas of the game that could use some work. The focus of this patch is to improve on many of those sore points and better balance certain elements of the game to encourage MORE build options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you’ve expressed a pain point and don’t see it addressed below, rest assured we’ve heard you and are always discussing ways we can approach them without compromising the experience elsewhere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ENEMIES & COMBAT",
+     "items": [
+      {
+       "text": "Enemies on the field will no longer aggro or chase you if they’re considerably weaker than you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escape now only requires the active character to have 50% of their max hype and now drains 50% of the party’s current hype. (Previous: 100%/75% max hype)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bass Base Basement",
+     "items": [
+      {
+       "text": "Harmony damage effects play out faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flustered Harmony’s damage effect now only deals damage to the active character. (Previous: Party damage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slow Harmony’s damage effect now deals MELODY damage. (Previous: NOISE)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hear the feedback regarding the pacing issues of the Harmony damage effects. We are also discussing ways to make Harmony effects occur less often. These changes will come in a future patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Upper Decks",
+     "items": [
+      {
+       "text": "Twinklespark: Life reduced by 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twinklespark’s “Dark and Light” skill now takes significantly less time to perform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twinklespark’s “Lunar Mending” skill now puts down 1 measure of SOOTHE. (Previous: 25% self heal)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ravestone: Life reduced by 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ravestone’s “The Party Zone - Club Mix” skill now heals all enemies for a MINUSCULE amount of health. (Previous: LIGHT)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flaunthaunter: Life reduced by 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harpleen: Life reduced by 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harpleen’s “Lunar Lover” skill now heals Harpleen for a LIGHT amount of life. (Previous: ALL enemies for a MODERATE amount of life)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hellblivion",
+     "items": [
+      {
+       "text": "Duncubus: Life reduced by 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Duncubus: Chase speed reduced by 12.5%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orbomina: Life reduced by 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Event Security: Life reduced by 10%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lower Locks",
+     "items": [
+      {
+       "text": "Ghoulstump: Life reduced by 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghoulstump: Chase speed reduced by 60%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shrubbanshee: Life reduced by 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shrubbanshee: Chase speed reduced by 53%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boohiss: Life reduced by 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boohiss: Chase speed reduced by 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of these changes are aimed at making dungeon delving, whether for STORY, SIDE GIGS or BEAT FARMING, to be less time consuming or frustrating. We will continue to monitor feedback regarding enemies and field play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MODS",
+     "items": [
+      {
+       "text": "Show-off mods with backfiring effects now display the percent chance to backfire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Briff Mods",
+     "items": [
+      {
+       "text": "Heart Kickstart now restores a HEAVY amount of LIFE to the revived bandmate. (Previous: LIGHT)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ian Mods",
+     "items": [
+      {
+       "text": "Twang Frenzy now deals MINUSCULE NOISE damage TWICE to enemies and MINUSCULE damage to Ian. (Previous: LIGHT and LIGHT)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zero Hertz now deals LIGHT party damage. (Previous: MODERATE)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zero Hertz hype cost adjusted to 70 / 35 (Previous: 90 / 45)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EVERYBODY BROKEN BONES now deals MODERATE party damage. (Previous: HEAVY)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EVERYBODY BROKEN BONES now WEAKENS both the player and enemy’s bar. (Previous: WEAKEN only the player’s bar)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EVERYBODY BROKEN BONES hype cost adjusted to 100 / 50 (Previous: 130 / 65)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Palm Destroyer hype cost adjusted to 90 / 45 (Previous: 120 / 60)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We recognized that many of Ian’s Headbanger mods didn’t make too much sense to use when Twang Frenzy dealt very good damage for very little cost comparatively. On top of that, Twang Frenzy’s self-damage component was a little high for a starter move, so it made sense to drop it down to MINUSCULE damage. We realize this change would remove a significant portion of the available AOE damage early on, so we’re removing the damage penalty normally present on other multi-hit mods to soften the blow. In total, this change will reduce the move’s damage by roughly 16%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Palm Destroyer’s hype cost, when compared to other similar, drawback-less mods didn’t make much sense. We still feel that other classes should be more efficient at applying devastating measure effects, but the drawback of this mod should account for a much lower hype cost than it had.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zero Hertz and EVERYBODY BROKEN BONES suffered from a similar issue: too many drawbacks for too little in return considering the hype cost. We feel these changes should make them much more appealing to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BEAT DROPS",
+     "items": [
+      {
+       "text": "Beat drop chances have been increased across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DJ Beatseek now increases the band's beat find chance by 3%. (Previous: 2%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major Droppage now increases beat find chance by 6%. (Previous: 4%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hear you regarding the time it takes to collect all these, so we’re KICKING much of that time out of the equation. We’ll continue to monitor the conversation around these going forward. Also note that the beat find patch values are, and have always been, added to the base chance - not multiplied. The description on these patches have been updated to reflect this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Improved the clarity of the Treasure UI when acquiring MODS by displaying the character’s name it’s associated with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The info button in combat has been centered and made bigger to become more noticeable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MISC",
+     "items": [
+      {
+       "text": "A couple of puzzle hints and solutions in ????? have been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Whale of a Time” post-completion dialogue now hints towards something.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed a bug where you could access ????? in ????? earlier than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue when viewing stat descriptions in the gear menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented one of the bottles in Claire’s Hair from being obtainable in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A couple of Claire NPCs were appearing during the late-game when they had no business doing so. Now they are not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that made Ian’s Cursed Slap deal damage twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused queued enemy encore skills to interrupt player performances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple of character animations that were not resetting properly during the late-game “C.H.A.M.P.” segment. (Did look funny though. Hate to see ‘em go.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused all three levels of the Bagparp & Dad-dance beats to deal different damage than what’s stated on their descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 47,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/5127964289171483456"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-17T03:49:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.536Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:12:48.840Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.0.3",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-12T07:43:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "FIELD ABILITIES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve received feedback regarding the difficulty in avoiding certain enemies in some of the LATER areas. While we do intend for these areas to be more threatening than earlier ones, we do recognize that due to the strict escape requirements in battle, field abilities should be more easy and reliable to use. To compensate, we’re increasing the effectiveness of both Ian and Briff’s field abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ian’s Trembling Shockwave",
+     "items": [
+      {
+       "text": "Enemy stun duration increased from 1.5 seconds to 2 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooldown increased from 2 seconds to 2.25 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Briff’s Slink on By",
+     "items": [
+      {
+       "text": "Failed slink cooldown reduced from 1 second to 0.75 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Successful slink duration increased from 2.5s to 3s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the visibility of a character’s stat changes when equipping a different class mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "ENEMIES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "K-Kwak in Claire’s Hair: HP reduced by 4%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "K-Kwak in Claire’s Hair: Reduced the frequency at which he applies K-Hype in his later phases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The encore action performed by a certain 4-piece band battle now only applies 2 measures of Contagion instead of 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUG FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the “Litter that Glitters” side-gig where you weren’t able to receive one of the rewards if you managed to find and redeem ALL codes prior to receipt of that prize.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "One of the rarer dialogue variants for the ending sequence was causing a softlock. Really unfortunate place to have something like that happen and if you are one of the unlucky few to have triggered this ending prior to this patch, VERY sorry about that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hoho Bocks dialogue fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where an enemy could paralyze your character on the same frame that your turn comes up, giving you the ability to act even while paralyzed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/5839532486217261644"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-12T07:43:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.535Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:48.839Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@1.0.2",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-11T07:37:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Keyboard Controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In light of recent feedback, we’ve decided to adjust the default keyboard controls to better suit a more modern, one-handed play style while we work on implementing key rebinding.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Interact: SPACEBAR. Enter is available as an alternate key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Field Ability: SHIFT.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Back/Cancel: ESC. Backspace is available as an alternate key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the change to field ability being SHIFT, please be aware that if you’re on Windows you may trigger the STICKY KEYS shortcut when dashing around with Faye. We highly recommend disabling this shortcut to save your sanity. Additionally, be mindful that any SHIFT-related hotkeys will cause your character to use their field ability.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We realize that some of you may have become familiar with SPACEBAR as field ability and we apologize for the SWITCH UP, but we feel this is best for the game until we’re able to offer rebindable keys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several patches have had their descriptions updated to reflect that they are band-wide effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the description for Jen & the Regens to show the correct lifesteal amount (20%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jen & the Regens always healed for 20% of damage dealt. The tooltip was INCORRECT. THIS IS NOT A NERF.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Mod) Weaver of Darkness’s melody stat has been reduced by 19%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Beat) Nauseating Belch Plus now correctly applies 1 random measure effect to the enemy’s bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare situation where multiple Ravestone enemies could paralyze your entire party within a single turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Kurtical Hit prevented recoil hits from firing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where K-Touk’s boombox would sound broken even if you reloaded from the previous save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several softlocks and various issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the volume of some music tracks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 1,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/5839532486213601314"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-11T07:37:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.534Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:48.819Z"
+  },
+  {
+   "id": "deathbulge-battle-of-the-bands-114778@post-2023-08-08",
+   "gameId": "deathbulge-battle-of-the-bands-114778",
+   "displayName": "French & German fix!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-08T20:33:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We noticed French & German users had bugged out menu text, very sorry about that. We had some localization prep work (but no translations done yet), and did not realize it would actually fire. Should be fixed now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1083790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1083790/view/5124585319868534887"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T20:33:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1083790",
+      "checkedAt": "2026-11-13T03:18:44.533Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:48.809Z"
+  }
+ ],
+ "issues": []
+}

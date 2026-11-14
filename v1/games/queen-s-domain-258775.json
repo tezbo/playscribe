@@ -1,0 +1,1109 @@
+{
+ "game": {
+  "id": "queen-s-domain-258775",
+  "igdbId": 258775,
+  "name": "Queen's Domain",
+  "cover": {
+   "imageId": "coda8t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coda8t.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4sr2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4sr2.jpg"
+  },
+  "ps5Release": "2026-10-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "queen-s-domain-258775@1.01.07",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Patch 1.01.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-14T09:01:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where collision would occasionally break down severely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the red rectangle on the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1849458702682813"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-14T09:01:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-14T12:24:10.290Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-14T09:01:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-14T12:24:10.293Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-14T09:01:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-14T12:24:10.293Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.01.06",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Patch 1.01.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-12T07:41:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for Flying Sword challenge getting stuck in incomplete state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Challenge data now works with Steam Cloud Save.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved error recovery when challenge save data is missing or corrupted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Save backup system is now more robust.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several graphical, audio, collision, and general bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some issues in the bestiary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with weapon evolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The boss of the Deimpo Mausoleum has been rebalanced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing a mid-game enemy to deal far more damage than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues causing bosses to disappear during fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Wodaso's Holy Lightning causing input issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing some weapons to mix up their secondary attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted behavior of a few late game enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a few more minor input issues with weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebalanced Dream Weaver's Colossal Syringe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue with some weapons interrupting the Holy Storm Ultra Attack animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues preventing several in-game guides from being granted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing some moving platforms to get out of sync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with enemies dying in midair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing Sipeha's Void Maul secondary attacks to fail to deal damage to certain enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some redundant checks for certain key items and world states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue rarely causing obstacles in the library to fail to be cleared. This fix is retroactive, and should grant any missing achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where pressing interact in certain dialogue boxes could cause major issues with game state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing a slow buildup of some screen effects, which would slow the game down over long play sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with weapon XP being granted to the wrong weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a pushback effect while larger bosses are dying to prevent the player from getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added input bindings for Bestiary, Challenges and Guide menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added input bindings to toggle the compass and the HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with the framerate limit option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 18,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1849192144181885"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T07:41:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T07:41:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.142Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-12T07:41:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.539Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.01.05",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Patch 1.01.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-06T23:02:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a late game enemy's attacks being invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a midgame weapon making a loud noise at incorrect times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Play time display no longer clips if above 99 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1848664643347686"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T23:02:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T23:02:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.142Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-06T23:02:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.538Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.01.04",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Patch 1.01.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-06T05:50:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed certain weapons counting towards Extensive Armaments challenge that were not supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing throwing weapon type: Grave Knife. Available in the open chest near the middle of the Tower of Knowledge. Fixed Ring of Wind counting towards Versatile Volley challenge when it was not supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made secret door that concealed the Pandora Blade count towards Concealed Passages challenge and added a hint for finding it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added options to make some late game puzzles less frustrating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated status effects guide with icons to make it easier to understand which status is which visually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several graphical, audio, collision, and general bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix getting stuck behind statue at queen's grave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix soft lock from resting multiple times in a row with specific timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed return point from falling into water on several moving objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Steam Cloud saves didn't restore properly when switching devices after a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated controls when scrolling a list using digital inputs: left/right inputs now scroll a full page at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to disable screenshake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for Herald of Okbujo death animation that made very difficult to talk to them after the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for talking to shopkeeper behind counter dialog getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Dagoom the Sea King poison ring remaining forever",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1848664643344301"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T05:50:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T05:50:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.141Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-06T05:50:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.538Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.01.03",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Patch 1.01.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-01T06:31:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjusted hit box on ground wave projectiles to hit more reliably but actually this time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed xp and resource generation on hempie SVT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed regen on b33 punch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Dagoom the Sea King death animation bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1847920302244222"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T06:31:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T06:31:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.140Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-01T06:31:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.537Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.01.02",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Patch 1.01.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-31T22:06:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added dx12 launch option",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix Dagoom the Sea King death while spinning bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few spots where you could get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted hit box on ground wave projectiles to hit more reliably",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fix accessory stat on load game bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix boss fight trigger for Black Skeletal Witch Husipo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1847920302243510"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-31T22:06:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-31T22:06:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.140Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-31T22:06:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.537Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.01.01",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Patch 1.01.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-31T04:13:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for soft lock in Pit of Despair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for freeze when weapons evolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Executioner door stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Mimic freeze bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for missing water return pits around Neasied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Star Lizard bags dropping stuck in mid air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1847920302241244"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-31T04:13:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-31T04:13:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.139Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-31T04:13:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.536Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.0.3",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-09T09:13:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug with language selection when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decreased minimum brightness value to prevent making the menu impossible to see",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Holding the run key while in the air no longer drains stamina",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed regen life point abilities not clearing the low life point screen effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minimum damage on hit to match the power bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1818118366184758"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-09T09:13:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.535Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.0.2",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-07T07:20:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where you could stuck on certain objects collisions very rarely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could be returned to the wrong position after falling into water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cleaned up handling of inputs on chargeable secondary attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1818118366180090"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-07T07:20:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.534Z"
+  },
+  {
+   "id": "queen-s-domain-258775@1.0.1",
+   "gameId": "queen-s-domain-258775",
+   "displayName": "Hotfix 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-05T10:30:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Huge thanks to everyone who tried out the demo yesterday, doing our best to fix the bugs you've found so far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused enemies killed before death to not respawn on continue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possible fixes for a crash bugs - we haven't been able to repro these locally but have tried a couple potential fixes based on crash logs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed life point display rounding error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in roasted ojum lizard item description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sticky sprint bug when falling in water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where description in bestiary couldn't be scrolled with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where life charm life point increase wasn't applied when loading a saved game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1799840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1799840/view/1818118366175795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-05T10:30:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1799840",
+      "checkedAt": "2026-11-13T03:28:41.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.534Z"
+  }
+ ],
+ "issues": []
+}

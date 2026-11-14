@@ -1,0 +1,959 @@
+{
+ "game": {
+  "id": "vernal-edge-138365",
+  "igdbId": 138365,
+  "name": "Vernal Edge",
+  "cover": {
+   "imageId": "co68k9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co68k9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1rkz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1rkz.jpg"
+  },
+  "ps5Release": "2023-03-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "vernal-edge-138365@post-2023-04-06",
+   "gameId": "vernal-edge-138365",
+   "displayName": "April 6 Flower Fix",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-06T16:15:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update to fix a regression introduced in the last patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix flower timer not updating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix tile mismatch in arena minimap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix softlock caused by returning to title during boss death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add checkpoints to mineshaft ride",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "add some more checks to avoid dying the same frame a boss does",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "make the \"quit minigame\" text more obvious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1546710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1546710/view/5121196841288901533"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T16:15:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.177Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T16:15:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.177Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-06T16:15:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:49.132Z"
+  },
+  {
+   "id": "vernal-edge-138365@post-2023-04-03",
+   "gameId": "vernal-edge-138365",
+   "displayName": "April 3 fixes - Memory Leaks + Changes to Lag Handling",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-03T13:44:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. We've got another patch with various bugfixes and tweaks for you today. The headline change is about how we handle lag and dropped frames. In short, if the game was running slowly it would attempt to \"skip\" up to 3 frames to compensate and to avoid slowdown. However, for many users this was causing instability and we decided that for now it wasn't working the way we had intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Therefore, we've limited the amount of skip to 1.2 frames, which should keep gameplay smooth for small framedrops down to about 50fps but any lower than that and the game will experience slowdown instead. Users on steam deck who set their refresh rate lower than 60hz will notice this slowdown as well, and we recommend playing the game at 60hz if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In addition to this however, we've also fixed a number of memory leaks that could cause slowdown during long play sessions of the game, so it should be easier than before to maintain a full 60fps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full patch notes",
+     "items": [
+      {
+       "text": "Limit \"raw\" delta time to 50-75 fps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix memory leaks caused by returning to the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix memory leak caused by not deleting minimap sprites on map transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clear particles more consistently between map transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Avoid creating surfaces unnecessarily during stoptime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add 4px forgiveness to landing on semisolids from below",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change the entrance of the Tower of Battle to make it more immediately clear you should come back if you are missing an ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix flawless pulse direction + bugginess",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Account for delta in semisolid collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show treasure in room as an icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerf reflection + minislash spam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a particle effect to a certain thing in Rosalis so that it is easier to find",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add menu to exit minigames early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make rook more resilient to the staff getting destroyed (prevent standing in t-pose bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent spikes from KOing player on any difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase block counterattack xscale by 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add emergency escape for Tower of Battle top floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Move trigger for poles tutorial to prevent triggering accidentally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make 'unblockable attack' outline more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a ceiling to the final boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1546710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1546710/view/6839319551996578304"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-03T13:44:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.176Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-03T13:44:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.176Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-03T13:44:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:49.132Z"
+  },
+  {
+   "id": "vernal-edge-138365@post-2023-03-23",
+   "gameId": "vernal-edge-138365",
+   "displayName": "March 23 fixes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-03-23T13:53:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another update for you today, mostly bugfixes with a few small balance changes as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everyone who played the game and reported issues. If you don't see your bug here, hold tight as there will be more on the way soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add swingpole to the end of mineshaft ride",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add checkpoints around crushing blocks in spore_left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove a glowshroom in spore_undercity_right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have cutscene vernal inherit hair colour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Give the right item as a reward at mineshaft end",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix pyramid timer and ship radar not resetting draw alpha",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix fight enemy OOB detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add respawn points to final boss fights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Block ceiling of finale_nature_1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy stoppers block shield guy projectile sword",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow shield guys to pick up the shield magically if they cant grab it for 7 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix crash due to destroyed proj_shieldthrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix crash with swordupper spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix crash when trying to reflect at nonexistant instance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix stinger bloom crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update cached foliage buffers to fix a visual error with floating small rocks getting stretched out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix parry damage not being dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rename 'hard mode' palette to 'vicious'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tone down saffron spear flashing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have certain special hurtboxes ignore swift slice e.g. mushrooms, levers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disable active frames on axeman triangles until they launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make saffron spear pre-stab more noticable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add light source to creeps so they are easier to spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add nan check to cap_magnitude (idk why this could happen but it did)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve visuals of baseball game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All deathplanes now deal poise damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add an option to display speedrun timer below healthbar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't reset speedrun time when continuing from a death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have pyramid place you outside instead of in the overworld after completing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make timebomb check for slopes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make player uncrushable during pyramid respawn + make respawn placement more aggressive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add failsafe timer to helm splitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase block snap distance for ledge grab by 1px",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix sporetown being assigned the wrong storm group in overworld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix mia fight opening prematurely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent simultaneous deaths for vernal and bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make airship small door hitbox wider to hopefully prevent clipping through unintentionally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent exceeding speed cap in stinger windup phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Separate the bindings for overworld controls to prevent issues from certain conflicts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timebomb mana cost 500 -> 800",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timebomb recast delay 80 -> 120",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Acid rain tick damage 20 -> 14",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add more particle effects to acid rain fight to make it clearer something is happening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Autopickup timer for shield guys 3s -> 7s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make axe guy triangles semi-transparent when in a non-damaging state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add an indicator for where to go with a certain hard-to-reach creature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 40,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1546710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1546710/view/5125698536879514123"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-23T13:53:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.175Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-23T13:53:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.175Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-23T13:53:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:49.131Z"
+  },
+  {
+   "id": "vernal-edge-138365@post-2023-03-20",
+   "gameId": "vernal-edge-138365",
+   "displayName": "March 20 bugfixes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-03-20T13:57:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A handful of bugfixes and QoL improvements for you today",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add steam screenshot functionality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mark solid elevators as moving for ledge grab so the player doesn't float in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent certain bosses from showing George sprites on defeat (Rook, Mia)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have arena director speak the \"no cheating line\" in Arena 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent a certain hidden collectible from adding to the treasure sense counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remember cursor position in memory/spell menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scroll map screen 2x as fast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update door visuals on Mossy Island to better communicate its intent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animate floating little rocks on Fallen Tower island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve tutorial message popups, fixing logic that could have some messages show at the wrong time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve bell detection by always checking the last N notes hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent solving bell puzzle by hitting 'clue' bells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Possible fix for an issue where the player could get stuck in a wall when beginning the final boss fight. no that still happens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent slowdown effects from persisting across map transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix fps drops causing overworld collisions to spiral out of control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Set the auto-skip text button to be unbound in the default controller scheme (keyboard is unchanged)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Handle saves from old versions of the game better when calculating profile completion percent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove debug features from the training dummy that were bound to numpad keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix the reward for completing the game on Vicious difficulty not being granted to players. For anyone who has already completed the game on Vicious, you will need to reach the credits sequence on your Vicious difficulty file to receive it. If you have a save near the end of the game, then beating the final boss again should suffice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1546710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1546710/view/5125698536868590013"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-20T13:57:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.175Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-20T13:57:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.175Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-20T13:57:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:49.130Z"
+  },
+  {
+   "id": "vernal-edge-138365@hotfix-2023-03-15",
+   "gameId": "vernal-edge-138365",
+   "displayName": "Title screen crash + controls loading hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-15T00:05:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix a crash where some users who had played the demo experience a crash on attempting to load the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a crash where some users who did not play the demo were unable to load their custom controls bindings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1546710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1546710/view/5125698536848261043"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-15T00:05:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.174Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-15T00:05:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1546710",
+      "checkedAt": "2026-11-13T03:35:31.174Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-15T00:05:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:49.130Z"
+  }
+ ],
+ "issues": []
+}

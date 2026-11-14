@@ -1,0 +1,512 @@
+{
+ "game": {
+  "id": "viewfinder-142549",
+  "igdbId": 142549,
+  "name": "Viewfinder",
+  "cover": {
+   "imageId": "coaev1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaev1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4zt9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4zt9.jpg"
+  },
+  "ps5Release": "2023-07-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "viewfinder-142549@1.1.4",
+   "gameId": "viewfinder-142549",
+   "displayName": "Patch 1.1.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-12T15:01:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small quality of life with a bunch of improvements to little details throughout the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical",
+     "items": [
+      {
+       "text": "Updated unity version to 2022.3.62f2 - This update fixes a security vulnerability found in the unity runtime (CVE-2025-59489)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "You can sit on the train seats now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"Motion Sickness Reduction\" setting that disables the bobbing on a held Camera / Photo while walking, which may help users that experience motion sickness while playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"Highlight photos\" setting which will add a shine effect to photos the player has not picked up to make them more obvious (defaults off)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added mouth animations to Cait while talking!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for Traditional Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Navigating back with a controller while a settings menu dropdown is open will now close the dropdown instead of the settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted timing & trigger conditions for a few voice lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved situations where some chairs would be sat on in uncomfortable ways",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved \"Photo Sensitivity\" mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved rewind icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the \"broken\" detection for teleporters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved rotating carried objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved display of text in some cases where it could be awkwardly wrapped / displayed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the transition when restarting a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved trigger conditions for the \"Nope Bridge\" achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved how photos mid-transition in the final level are shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made Chapter 3 Level 4.2 cloudier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Improved performance when taking & placing photos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Greatly improved taking & placing photo performance on the final level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance of transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance when carried objects are colliding with certain objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance of various shaders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved audio performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized how assets are loaded to lower RAM usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 23,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "You can sit on the train seats now!",
+     "Added mouth animations to Cait while talking!",
+     "Added support for Traditional Chinese"
+    ]
+   },
+   "sourceIds": [
+    "steam-1382070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1382070/view/1816215235353938"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-12T15:01:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1382070",
+      "checkedAt": "2026-11-13T03:35:32.795Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-12T15:01:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1382070",
+      "checkedAt": "2026-11-13T03:35:32.795Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-12T15:01:49.000Z"
+     }
+    }
+   ],
+   "revision": 4,
+   "updatedAt": "2026-11-13T03:35:32.795Z"
+  },
+  {
+   "id": "viewfinder-142549@1.0.6",
+   "gameId": "viewfinder-142549",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-08T14:20:33.000Z",
+   "notes": [
+    {
+     "title": "Hey adventurers,",
+     "items": [
+      {
+       "text": "We’ve just released version 1.0.6 of Viewfinder, in which we’ve fixed various bugs and issues as well as added a few small changes to make your experience better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Lowered minimum field of view from 90 to 70.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a count the collectibles popup, i.e. 2/4 when you've found two ducks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a ‘delete save slot’ button in the save slot menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an instance where additional film could become uncopyable after rewinding if a photo was placed overtop of the already picked up film.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an instance where the camera unusable if you rewinded too quickly after acquiring the camera unless the level was restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to take the train into levels with if you returned to the menu while riding the train.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get stuck falling through the floor in the final level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an audio clip from the ending of the game persisting when starting a new save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few instances where subtitles were attributed to the wrong speaker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor errors in the English & Arabic subtitle lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allowed <16:10 aspect ratios (i.e. 4:3) to function incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allow the incorrect slot data & nonfunctioning back button to be shown on <16:10 aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause progress to be lost when creating a new save slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the control mapper layout at ultrawide aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed non-functional duplicate crosshair setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed non-functional \"run\" option from the control remapping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of Jessie's lines for falling in the pit still being able to play after you've found the photo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge case that could cause the \"Hitching a ride\" achievement to trigger when the player wasn't actually hitching a ride.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a collider issue in Chapter 3, Level 5.4 to stop the player sitting on a stool with an audio log player on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Hub 3 where a the train was clipping through a pillar & rotated a stool so sitting on it doesn't make you stare at a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a collider issue in Chapter 4, Level 9.1 to fix an unintended solution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could exit a level to the last hub world you were in from a previous save slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the battery in Chapter 3, Level 6.3 disappearing or moving after placing a photo over it and then rewinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed losing the ability to interact with rewind if it is pressed twice after standing up from a chair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where you could be unable to discard changes when the prompt “Do you want to keep these changes?” appears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Sad Owl Studio team!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 22,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1382070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1382070/view/5124585319867589841"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T14:20:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1382070",
+      "checkedAt": "2026-11-13T03:35:32.793Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T14:20:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1382070",
+      "checkedAt": "2026-11-13T03:35:32.794Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-08T14:20:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:50.357Z"
+  }
+ ],
+ "issues": []
+}

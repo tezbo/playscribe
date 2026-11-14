@@ -1,0 +1,1428 @@
+{
+ "game": {
+  "id": "forspoken-134583",
+  "igdbId": 134583,
+  "name": "Forspoken",
+  "cover": {
+   "imageId": "co4u6r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4u6r.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3orj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3orj.jpg"
+  },
+  "ps5Release": "2023-01-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "forspoken-134583@1.23",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.23",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-13T07:12:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "On 11/10/2023 7:00 (UTC), the update patch 1.23 of Forspoken (main game, DLC and demo) has been released.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*This update only applies to the Steam version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*The updated version name will be displayed on the game's title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Fixed an issue where the game doesn't operate properly on Steam Deck™ in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5302486388011749690"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-13T07:12:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.440Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-13T07:12:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.440Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-13T07:12:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.328Z"
+  },
+  {
+   "id": "forspoken-134583@1.22",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.22",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-29T08:32:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Graphic Updates",
+     "items": [
+      {
+       "text": "・Implemented the needed updates required to have the game compatible to AMD's FidelityFX™ Super Resolution 3.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "*FidelityFX™ Super Resolution 3 combines temporal upscaling and frame generation to deliver significantly higher performance.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "*Frame generation is enabled separately from upscaling and is available when using AMD Radeon™ RX 5000 Series and higher, NVIDIA GeForce RTX™ 20 Series and higher, and Intel® Arc™ 7 Series and higher GPUs. (Upscaling is still available to use on GPUs lower that the products mentioned.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Added a new NativeAA quality mode option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Native AA mode does not apply upscaling but applies high-quality anti-aliasing and sharpening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "・Added Frame Generation entry to the Graphics section of the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Fixed an issue where the main game save data appears in the DLC's save data slot and the DLC save data appears in the main game's save data slot. (Steam version)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*This fix only applies to newly created save data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "・Low frame rates can be experienced on some 240Hz and higher refresh rate monitors, when FSR3 Frame Generation is set to ON and VSync is set to ON.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "*To remediate this issue, make sure you are using the latest drivers from your video card manufacturer. You can also set VSync to OFF, or set your monitor refresh rate to less than 240Hz.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5220291886489997482"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-29T08:32:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.439Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-29T08:32:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.440Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-29T08:32:32.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:21:12.439Z"
+  },
+  {
+   "id": "forspoken-134583@1.20",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.20",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-23T13:09:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feature Updates",
+     "items": [
+      {
+       "text": "・Adjusted the frequency and content of the banter between Frey and Cuff that plays during open world activities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Adjusted the pacing of certain event scenes in the earlier chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Adjusted the length of certain animations that play upon clearing quests or when Frey earns experience. Additionally, these animations can now be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added the Curiosity Shop as a fast travel destination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Adjusted the Support Spell icon in the magic HUD to show the charge state of each spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option where the players can customize the camera movement. When CUSTOM is set to ON, players may adjust the camera's \"Max Rotation Speed\", \"Camera Acceleration\", and \"Stick Response Curve\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option that enables the players to switch to the next attack or support spell by pressing instead of holding a button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option where the players can choose to hide all HUD elements (such as menus and gauges) during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added a feature where the befriended Tantas' Familiars will follow Frey on her journey and might deign to help her collect mana and items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*Players can disable this feature from the Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・New \"Cuff Crush\" attack. By pressing △ after leaping over an enemy with magic parkour, Frey will perform a powerful attack that consumes stamina.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*The damage and probability of knocking down the target enemy will increase based on the amount of stamina consumed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added the ability to use magic parkour while mid-air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・New \"Revivifier\" consumable. When possessing this item, players will be able to resuscitate Frey when she runs out of health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・New \"Stormshard\" consumable. By using this item in certain locations on the map, players can generate a Breakstorm and can battle against giant Nightmares.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・New \"Very Hard\" difficulty setting. Certain gameplay settings will be locked when set to this difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*Select \"Very Hard\" from the SETTINGS menu to change to this difficulty during your journey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*Select \"Ultimate Mode\" to play at this difficulty setting when starting a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "・Implemented certain features that are required to activate the story add-on \"Forspoken: In Tanta We Trust\", which will be released on 5/26/2023.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*You cannot play the add-on without updating the game to 1.20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Players who purchased the Digital Deluxe Edition or Digital Deluxe Upgrade possess the early access to the add-on. Those may download and play the game from 5/23/2023 1pm (UTC).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "・Adjusted the frequency and content of the banter between Frey and Cuff that plays during open world activities.",
+     "・Adjusted the pacing of certain event scenes in the earlier chapters.",
+     "・Added the Curiosity Shop as a fast travel destination."
+    ]
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5140340943323423110"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-23T13:09:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.438Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-23T13:09:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.438Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-23T13:09:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.324Z"
+  },
+  {
+   "id": "forspoken-134583@1.12",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-04T06:02:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feature Updates",
+     "items": [
+      {
+       "text": "・Adjusted the visual effects for Frey's Shot spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Changed the default Sprint button from \"L3\" to \"L3 or 〇\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*Existing save files will not be affected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Frey can now run in certain locations, such as Pilgrim's Refuges, the Archives, and the Mausoleum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*Running will remain disabled during certain event scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "・The touchpad controls for DualSense™ Wireless Controller (PlayStation®5) can now be used when the controller is paired by Bluetooth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "*Certain DualSense™ Wireless Controller features, such as the intergraded speaker or haptic feedbacks cannot be used by Bluetooth pairing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Updated the Intel XeSS version to 1.1.0 which can be used for Intel ARC and Iris Xe.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "*The driver must be updated to 31.0.101.4148 or a later version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 1,
+    "topNew": [
+     "・Adjusted the visual effects for Frey's Shot spell.",
+     "・Changed the default Sprint button from \"L3\" to \"L3 or 〇\".",
+     "*Existing save files will not be affected."
+    ]
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/6839319551999053611"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-04T06:02:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.437Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-04T06:02:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.437Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-04T06:02:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.323Z"
+  },
+  {
+   "id": "forspoken-134583@1.11",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-17T06:00:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Fixed an issue where the game crashes in certain scenes or by certain actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5125698536856452172"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-17T06:00:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.436Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-17T06:00:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.437Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-17T06:00:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.322Z"
+  },
+  {
+   "id": "forspoken-134583@1.10",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-10T06:02:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Fixed an issue where the screen unintentionally flickers when AMD's Radeon RX570 or RX580 is used. (PC version)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feature Updates",
+     "items": [
+      {
+       "text": "・Adjusted the explanatory text and default camera position for the tutorial of the Magic Parkour skill Zip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option where the players can choose to automatically switch to the last-viewed section when accessing a menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option where the players can choose to automatically point the camera to the targeted enemy when locking on an enemy during charging spells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option where the players can choose to automatically switch the lock-on target to a nearby enemy after defeating a locked-on enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option that enables the players to lock on to off-screen enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Added an option where the players can choose to prevent being staggered by the effects of Frey's own spells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Adjusted certain enemies' motions and behaviors upon taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・Adjusted Sila's Magic \"Slice\" to be unleashed to the direction Frey is facing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Graphical Adjustments",
+     "items": [
+      {
+       "text": "・Adjusted the lighting of certain areas in Cipal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "・Adjusted the camera effects that occur when framing bright objects such as the sun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "・Adjusted the texture and shading for certain objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "・Adjusted the number of polygons for certain background objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "・Improved the glare filter quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "・Updated the menu to display the required memory usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "・Updated the opening sequence to go through the Brightness Settings before starting the game for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "・Removed the VRS entry from the Graphics section of the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*The shader has been optimized to have the Variable Rate Shading (VRS) available for all hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Updated the DirectX 12 version to 1.606.4 from 1.4.10.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "・Reduced the processing load in certain areas. (The load has been reduced to approximately 70% in certain scenes.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Reduced the VRAM usage.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Minor optimization for certain features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 0,
+    "balance": 7,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "・Adjusted the explanatory text and default camera position for the tutorial of the Magic Parkour skill Zip.",
+     "・Added an option where the players can choose to automatically switch to the last-viewed section when accessing a menu.",
+     "・Added an option that enables the players to lock on to off-screen enemies."
+    ]
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5070528810294684249"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-10T06:02:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.436Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-10T06:02:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.436Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-10T06:02:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.322Z"
+  },
+  {
+   "id": "forspoken-134583@1.04",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-21T06:09:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Fixed an issue where the camera moves unintentionally when certain Ximput devises are used as the controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the FSR setting automatically changes to Normal upon restarting the game when the FSR, DLSS, and 3D Resolution are set to a certain setting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Fixed an issue where the game shows unintended behavior when PlayStation®5's DualSense Edge™ wireless controller is connected to the PC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "・Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feature Updates",
+     "items": [
+      {
+       "text": "・The text font for Traditional/Simplified Chinese has been changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・The system text that displays when certain items are unlocked have been updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・The system text accompanied with Patch 1.03's mouse config bug fix update will be now displayed in all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Minor optimization for certain features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 1,
+    "topNew": [
+     "・The text font for Traditional/Simplified Chinese has been changed.",
+     "・The system text that displays when certain items are unlocked have been updated.",
+     "・Minor optimization for certain features."
+    ]
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5059268099253556402"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-21T06:09:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.435Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-21T06:09:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.435Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-21T06:09:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.320Z"
+  },
+  {
+   "id": "forspoken-134583@1.03",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-07T06:09:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Issues",
+     "items": [
+      {
+       "text": "・Fixed an issue where the side button setting can't be deleted for the 5-button mouse config.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "*The system text accompanied with this update will only be displayed when the text language is set to English or Japanese. The system text for other languages will soon be implemented in an upcoming update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed a crash that can occur when using a specific GPU.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where screen flickers occur when using certain Intel GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an audio issue that caused unintended noise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・The UI display size has been adjusted for the Steam Deck when the resolution is set to 1280 x 800.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Graphical Adjustments",
+     "items": [
+      {
+       "text": "・Updated the graphical settings to cap the number of displayed NPCs when the Model Detail Level is set to Low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "・Updated certain objects' graphics that appear in the New York map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Feature Updates",
+     "items": [
+      {
+       "text": "・The system has been updated to accept the button inputs from the controller that is used even when multiple controllers are connected to the PC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・The patch version will be displayed on the game's title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "・The clickable area for each menu's entries has been widened for mouse inputs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5035622743897108074"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-07T06:09:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.434Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-07T06:09:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.434Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-07T06:09:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.319Z"
+  },
+  {
+   "id": "forspoken-134583@1.02",
+   "gameId": "forspoken-134583",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-31T06:05:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "・Adjustments have been made to HDR mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Localization and spelling fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Certain technical issues occurring on Steam Deck has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "・Performance and stability has been improved on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1680880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1680880/view/5035622109526454601"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-31T06:05:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.434Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-31T06:05:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1680880",
+      "checkedAt": "2026-11-13T03:21:12.434Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-31T06:05:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:37.318Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "4774cc36a64b",
+   "text": "*To remediate this issue, make sure you are using the latest drivers from your video card manufacturer. You can also set VSync to OFF, or set your monitor refresh rate to less than 240Hz.",
+   "status": "open",
+   "firstReleaseId": "forspoken-134583@1.22"
+  }
+ ]
+}

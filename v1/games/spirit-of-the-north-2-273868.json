@@ -1,0 +1,4075 @@
+{
+ "game": {
+  "id": "spirit-of-the-north-2-273868",
+  "igdbId": 273868,
+  "name": "Spirit of the North 2",
+  "cover": {
+   "imageId": "co7abv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7abv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2lmq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2lmq.jpg"
+  },
+  "ps5Release": "2025-05-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "spirit-of-the-north-2-273868@major-2026-07-24",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Performance Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-24T14:01:49.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians!",
+     "items": [
+      {
+       "text": "Jacob from Infuse Studio here, I hope everyone is having a wonderful summer! Over the last few months I have been working diligently on completely overhauling certain aspects of how our content is rendered in Spirit of the North 2. I will go into more depth on this in a press release in the coming weeks but for now, here are the patch notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/349b966039535816cabe071046c9fb12346d0477.jpg\"]Example of new visual quality on all high settings hitting 60fps at 4k 80% render quality! Previously this was completely unattainable and I could only get about 37fps on the launch version of the game, meaning a 75.8621% fps increase on my PC with a RTX 4090. I will go into other hardware scenario's I have tested in my press release.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "On Medium tier hardware can expect around a 30-40% increase over the launch version of the game on medium settings and a 13.33% over the previous version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lower end hardware gets huge wins with this update as I have added multiple new quality options that can be set for the game run better than ever before. Low end hardware loves the new GI OFF setting FoxTribe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: these are all approximations based on my own testing with the limited amount of hardware that I have on hand. Results may vary especially depending on what settings you are trying to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are now Steam Deck Verified!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Spirit of the North 2 on Steam Deck was pretty unplayable before, now players can expect a pretty solid 30fps!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/b9344cb7a19502341754e7101451f193fa809e08.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/07a3e64486c94dd3b69ea261e7ae8c473761b95d.png\"]Patch Notes",
+     "items": [
+      {
+       "text": "Quality of Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimum Spec Pop up, added a popup that will warn the user if their system specs doesn't meet the minimum requirements on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved legibility of button icons at lower resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed Post Processing so game looks less \"washed out\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full Opaque Nanite Overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New \"Off\" option for Global Illumination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New \"Very Low\" options for Post Processing and Reflections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Ocean Quality Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lumen scalability optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hair/Fur rendering optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better FPS in game menus from Fox Preview optimizations, this now includes consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled Various plugins to save on runtime costs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Volumetric Cloud Fog is no longer active on Medium Sky Quality saving rendering cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rain Drop VFX improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Deck Device Profile added, now sets correct settings when first launching on steam deck targeting 30fps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed Custom Depth Pass and reworked the effects that relied on it to save performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed MaxScreenPercentage on Performance Quality Mode on consoles from 100% to 80%, this helps minimize memory footprint fluctuations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed max roughness to trace for lumen reflections to 0.2 to reduce raytracing overhead when materials are wet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various VFX scalability added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Content Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hats no longer receive decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleansed Stag VFX no longer use the geode color the player is using",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vsync option no longer visible when not in fullscreen (it doesn't work in windowed or borderless)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Water VFX no longer emissive (for real this time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Material values overhauled on foliage like roughness and specular",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Basic foliage interaction displacement added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raven Boss (Memory) Level of detail fixes so he no longer looks like an N64 character at View Distance Quality Low",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shaman Materials reworked, not as washed out now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I wanted to give a huge shoutout to our dedicated community member Amber for helping test and verify all the changes that went into this update. I couldn't have done it without your help!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always thank you from - Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/07a3e64486c94dd3b69ea261e7ae8c473761b95d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3988930/Spirit_of_the_North_2_Turtle_Island_Home/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1839041357029671"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T14:01:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.101Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T14:01:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.102Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-24T14:01:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.598Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@10",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 10",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-20T14:03:46.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians!",
+     "items": [
+      {
+       "text": "The melody of the north is calling once more! Today we have something incredibly exciting to share with you... so without further ado:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Quest: Lost Melodies",
+     "items": [
+      {
+       "text": "We are incredibly excited to launch this update alongside the official release of the digital soundtrack on streaming music services! Since Spirit has no spoken dialogue, music is it's voice. During development, there were tracks we absolutely loved that never found a home in the main narrative. We held onto them, and wrote an entirely new story just for them <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/5a32fbb45c70a956b26d3ecbdf322a2cdc24f62b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Lost Melodies Side Story: Embark on a brand-new questline focusing on 10 never-before-heard bonus tracks from composer Pav Gekko. Discover these hidden fragments through the quest of the Bard-Shaman!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A New Home Feature: Once you've uncovered these Lost Melodies, you can listen to them anytime by interacting with the Bard spirit right at your home base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unlock the Full Soundtrack: The remaining 83 tracks from the digital score can be unlocked through normal gameplay. We've also added an in-game QR code so you can easily find and stream the soundtrack outside of the game! [img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/dfb5292fc171c941380d8120288478ac70a81dae.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "New Side Story, Rune, Location, Puzzles, Cosmetics, and all-new collectibles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Story & Gameplay",
+     "items": [
+      {
+       "text": "New Light Essence Cosmetic rewarded at end of game's main story. If you've already finished the story simply revisit Mount Aurora to claim your reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Light Essence are now awarded when cleansing guardians. Whichever is associated with them. Raven -Purple, Stag-Green, etc. (Light weaver also still sells Light Essence) If you've already cleansed the guardian simply return and open the newly added chest to receive your reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Secret room added beneath a certain statue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sunken Rune no longer awarded in various places throughout Stormvale. Now is obtained in new side story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements & Polish",
+     "items": [
+      {
+       "text": "Stacked Stone normal maps improved to retain the fidelity of the original high poly models. Lighting details on stacked stone assemblies will look much better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sound dampening and SFX when Submerged underwater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Material Quality now locked on high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lighting and material improvements to Glacial areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Material fix for sliding particle and other effects that were too emissive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shaman Spirit now have new body types (female shamans).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player Map updated so new additions to the landscape can be see in the render. Like the paths and landmarks for Tragedy of Veyska and other areas added post launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Collection tab now shows total for each sub category when selected. If you have Relics selected it'll just show total found for relics and not all collectibles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various scrolls modified slightly to maintain a consistent \"voice\" for characters. Specifically those related to the Bard characters in the update. ie Bato, Feon, and Eyma scrolls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rising and lower water pools now have SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Loot added after finishing stag to be consistent with other guardians.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Announcement banner in Main Menu now auto scrolls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fox no longer creates bubbles from mouth when standing in shallow water with Runes of the Drowned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shaman should now show up when reviving and when returning to spot they were revived. Still Testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rune carvings that glow when activated for puzzles now properly disable particle effects when deactivated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision fix for rubble pile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wisp Form fixes. Temporal Remnant(body) no longer has emissive markings when using Wisp Form.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hats stay on Temporal Remnant when player is in spirit form/wisp form. With exception to spirit antlers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Photomode icons are no longer slightly squished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing material fixes on a few rogue meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wisp lantern bug fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lighting fix post bear guardian encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Portal targets for bear encounter adjust to fix \"jitter-dance\" fox bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stag guardian animates properly in certain cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stag antlers particle effect no longer uses player Light Essence color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Code added to more thoroughly Instance all static meshes in world. (Mesh Pack Plugin).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Snow WPO removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fire particles that were missed now use scalability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc meshes converted to nanite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overlapping trees in forest thinned out. Very moderately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed falling rocks and breaking bridge in Dungeon. Was significantly expensive for a very small portion of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ice slide spline meshes reduce to single static mesh. To reduce hitching when they are loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LODs added to Red Death Trails, and other misc things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scalability fix for Obelisk and Home Fire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/192f6b77acd387ab2b2560a481b3e05f55b4f82b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After you've dived into the new story and gathered your melodies, we'd love to know what you think! Which of the 10 hidden tracks is your absolute favorite?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3988930/Spirit_of_the_North_2_Turtle_Island_Home/\"][dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 26,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1833334318566372"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T14:03:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.100Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T14:03:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.101Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-20T14:03:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.597Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@9",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 9",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-12T12:32:07.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians!",
+     "items": [
+      {
+       "text": "Time for an update! Our goal with this update was to tie up some loose ends so the game is in a really solid spot before adding anything further. So this is mostly bug fixes, performance improvements and quality of life additions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "March 2026 Update",
+     "items": [
+      {
+       "text": "[p align=\"start\"][img src=\"{STEAM_CLAN_IMAGE}/44719848/b369b178d4a588134ec6e398475983c110d287c1.jpg\"]Screenshot by \"smol birby\" on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes and improvements for all platforms",
+     "items": [
+      {
+       "text": "(Live on Steam, Coming Soon to all platforms)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Be yee warned it's a long list!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jump-scare\" bug fixed. When camera shortens instantly you no longer see the inside of the fox for a single frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hats now have their own slot in the character customization tab. (No longer share slot with head runes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hat materials, meshes, and textures optimized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hat now fade with character when camera is near.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player home portals no longer cost money to access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Raven Groom that caused it to be strangely shiny.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized many problematic textures that were taking up too much memory. -Optimized several meshes(like Grimnir corpse in cell) so they use less memory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized various SK Meshes with better LODs (things like portals, levers, guardians, etc) -Optimized Spyglass. -Added something secret... we'll never tell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wisp fix. Many wisps didn't follow their paths as intended. They now do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wisp Fix. Wisp sometimes used incorrect particle color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Massive optimization for structure assemblies in Stormvale and other parts of world. This improvement reduce the hitching that happens when new chunks of the world are streamed in when exploring. These hitches were most severe in Stormvale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game credit images optimized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading screen polished. Shader text now matches color, fades implemented. General clean up so it isn't blip-blooping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grimnir Ending Encounter handling changed to make crashes less likely. (Offloads world fully before loading next level)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Desert and Cinder Fox Skins now have glowing tails like all other foxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Items that shouldn't ignite no longer ignite. Such as the small stone statues, turtle, and metal relics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Items that do catch fire now ignite in the proper location and not in their center.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Splashes for breaching or submerging in ocean water now spawn at correct height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spirit Antlers now have near camera fade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimization for Raccoon Cleaners. Raccoon Cleaners no longer spawn when items are resetting IF the player is not near the item. In these case the item resets without the raccoon appearing. Raccoon Cleaners also properly destroy/unload themselves after hiding into the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Particle spawning on Grimnir now works as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bear Boss portals now teleport the player character slightly higher to avoid \"dancing bug\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Water height fog turned off due to some places underground being below sea level and it was causing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed up lighting Post Bear Boss (it was pitch dark before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stag now properly animates in end encounter cutscene for Grimnir",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many other small misc optimization that are too boring to list out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/b336259a0714d6deee119c854080d105871dbe2d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Screenshot by \"G.M.S\" on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Whats next?",
+     "items": [
+      {
+       "text": "We have more optimizations, quality of life and overall improvements in the works for Spirit of the North 2 and maybe some additional content?!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are dedicated to making to making the game the best it can possibly be as well as starting on some new projects in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Jacob Sutton (Co-Founder, Technical Director)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"{STEAM_CLAN_IMAGE}/44719848/71960fe0eb3ef1a814bdef9386e932c6bb718727.jpg\"]Screenshot by \"scc\" on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3988930/Spirit_of_the_North_2_Turtle_Island_Home/\"][dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 29,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1826992588592263"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-12T12:32:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.099Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-12T12:32:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.099Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-12T12:32:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.595Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@8",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-19T15:42:11.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians!",
+     "items": [
+      {
+       "text": "Unfortunately we introduced some bugs with our last update, but as always there's a fix for them! Some of these were pretty hard to track down, but we managed! A huge thank you to our Discord community for being so helpful with bug reporting and the amount of detailed feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hotfix #8 Stability improvements!",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/96a62f6f72c0059b8f293c13ad00c719a6c0aa49.png\"]Screenshot taken by Belstone on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes and improvements for all platforms",
+     "items": [
+      {
+       "text": "(Live on Steam, Coming Soon to all platforms)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New waterfalls have LODs. Related to game crashing around End Boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading Screen no longer enables improper controls for End Level (player was able to more than intended in final level. No spoilers.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Savegame Change to reduce hitching for autosaves: Reduced memory usage of map fog. File size now depends on the uncovered area of the map and how continuous it is. Should save >90% of storage in most cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Autosaves no long trigger during Shader Compilation. To prevent save data loss.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Map Fog Render Target handling changes to prevent map fog from getting wiped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Light Essence color now effect various rune effects color. Such as dash, air jump and spirit sprint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "War Paint style Light Essence no longer emit tail light embers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gold Light essence no longer turns black when character uses certain rune abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "River mesh LOD fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cave mesh missing material fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc environment misaligned meshes and map hole fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "WPO motion vector change, should propagate to TSR now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Draggable bags simulation in Mosswood Vaults and Sunfire Passage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Material Quality setting fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/62a5e6339cbfc882df3cdb17ad098d1394037ef2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Screenshot by G.M.S",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Whats next?",
+     "items": [
+      {
+       "text": "We still have a lot planned as far as performance and stability improvements in the coming months and maybe even some fresh new content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jacob Sutton (Co-Founder, Technical Director)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"{STEAM_CLAN_IMAGE}/44719848/e15c141e908fa1ef63eb777d588b67c3971233fd.jpg\"]Screenshot by Kathryn on Discord!!!!!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3988930/Spirit_of_the_North_2_Turtle_Island_Home/\"][dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1821922921821452"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T15:42:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.098Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T15:42:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.099Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-19T15:42:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.594Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@7",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-16T15:00:14.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians!",
+     "items": [
+      {
+       "text": "Hotfix #7 is officially here, bringing a bundle of polish, fixes, and improvements to keep your journey feeling smooth in this cool season! But that's not all, the Festive Trader is back, and with him a winter celebration!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/9d01c6f214ff7239ea14ba239f509ef3eca11992.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grab a warm drink, wrap up in something warm, and dive back into the frosted wilds with us. Wishing you all a warm, bright, and very festive holiday season! 🎄✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A free seasonal update. Live Dec, 19th - Jan, 16th",
+     "items": [
+      {
+       "text": "New Seasonal Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Seasonal decor around player homes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Trader visiting player homes with exclusive holiday themed cosmetics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/bd2ac84a1494612282f56730b4516a42e10a8ce1.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Free content for all. Now part of base game.",
+     "items": [
+      {
+       "text": "Sledding! - Located in the mountains year round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/286f35f8743a3bb3646fbbd81054f08dd6c411bf.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes and improvements for all platforms",
+     "items": [
+      {
+       "text": "Engine Update from UE5.4 to UE5.6 - Giving slight performance gains and stability improvements. Over 400 changelists were submitted for this update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shader Precaching Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Light Weaver now visits island for Saturday and Sunday. Location and inventory improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turtle Island Home no longer shows Locked Turtle Port locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mountain Raccoon Trader #1 move to Wolf Temple. No longer sell Air Jump(only obtainable from Glacier Raccoon Trader). Level Design change to prior trader location, New perk point obtainable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raven Temple Lighting Overhaul.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wisp Migration random event fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spirit Fox is no longer white for low and med material quality. This wasn't intentional.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reset Graphics button no longer makes unintended changes to settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lighting tweaks in dark dungeons in various parts of the world, mainly Ashlands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscenes and other camera switches now reset Niagara particles when finished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lightning VFX optimized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More chances to get cosmetic rewards in Misthaven and Mosswood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Snow now accumulates on Fox fur!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We know optimization is a big concern for many and the majority of our focus was on improving quality settings. Graphics settings should have more predictable results and FPS is all around more stable. Beta players have reported 3-5 extra frames, and in some cases 10 extra fps. Results will vary, but we hope our efforts allow a smoother experience for many.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/02646a8942f4e3cad78693932d16d896dae2616e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3988930/Spirit_of_the_North_2_Turtle_Island_Home/\"][dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 19,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1818752592136100"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T15:00:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.098Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T15:00:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.098Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-16T15:00:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.593Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@6",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-14T14:00:27.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians!",
+     "items": [
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix #6 is on the horizon! We hope everyone’s been having plenty of fun with their new colossal turtle friend! We’re curious… what did you name yours? 🐢",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"] [img src=\"{STEAM_CLAN_IMAGE}/44719848/e8de912b866b5480d32e4a1cd7c5d4d4ae2e4967.jpg\"]With spooky season upon us, let's take a look at all the new things coming your way in the latest update, as well as patch notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A free seasonal update. Live Oct 14th through Oct 31st",
+     "items": [
+      {
+       "text": "New Seasonal Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Seasonal decor around player homes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Trader visiting player homes with exclusive holiday themed cosmetics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/509f5887dc25683bab1c9c9c8ace85e3086e4404.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Free content for all. Now part of base game.",
+     "items": [
+      {
+       "text": "New \"Tragedy of Veyska\" side story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Including new relic, rune, and lore to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Begin the story near Misty Home after cleanse the Misthaven Guardian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/ca9486e21d5473eb7e031b762c13f8609d7789e2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes for all platforms",
+     "items": [
+      {
+       "text": "HLOD rebuild",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor translation changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lore Scroll UI Filter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Red Marble character Skin: Fixed Spirit Fox Material.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "TOD is now saved. Fast traveling, dying, or quiting/reloading won't reset Day-Night cycle. This bug was causing most eveyone to play the majority of their games during the day. Enjoy the night!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI fixes for Trader menus. Holding \"Buy\" now animates again. Buying an item no longer causes the menu to break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed floating Spyglasses in a few places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc environment fixes (map holes, floating and misaligned geometry, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pause Menu Async Load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI Customization Slider snapping fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed duplicate Eona Statue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI Lore Scroll \"ALL\" category added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Home Mirror resetting character customizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/7c7598520ef304b550004c4cfffb73d59a6d21fc.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"][img src=\"https://clan.fastly.steamstatic.com/images//44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/8fb9479c2e2fca03b850f376ea5fefaed67bd4b3.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3988930/Spirit_of_the_North_2_Turtle_Island_Home/\"][dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 19,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1813041031372965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T14:00:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.097Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T14:00:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.097Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-14T14:00:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.589Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@5",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-19T17:00:37.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians...",
+     "items": [
+      {
+       "text": "Hotfix #5 is here! Following this update, as our next announcement, we’ll be unveiling some exciting news we’ve been eager to share - something we think you’ll be just as thrilled about as we are. Although we cannot share what it is just yet, here's all the things that will be rolling out with the hotfix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"][img src=\"{STEAM_CLAN_IMAGE}/44719848/16f60813eb54ec8a60eeacb149da4d610e946af5.png\"]",
+     "items": [
+      {
+       "text": "By popular request, Procedurally Clams spawn more frequently. Visit sandy and graveling areas near ocean!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clam Crystals (Pearls) are worth much less.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small chance to find buried chest when digging up clams.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Red Fox Classic character skin can now be discovered in game. After completing small puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc Landscape sculpting fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc misaligned props and foliage fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Portal Menu UI hover effect fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By popular request, Map Fog is now completely removed if player unlocks all obelisks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "White Raven in player homes optimized. (Anim tick paused when out of range.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Accessibility Option. Camera Shake slider. Allows players to manually adjust Camera Shake intensity in game. Can be set to 0. WIP, does not yet effect all boss attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Characters that use common turtle class (Light Weaver and Loot Tortoise) optimization fixes. Should now pause anim tick, disable cast shadows, and disable movement when out of range. Logic is now shared between all common turtle sub classes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Credits Updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Character skin that was unintentionally in game removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trying to Hide Pins on Map no longer crashes game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added collision to a few props that were missing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game now performs audit of save data and will remove SaveAFox exclusive skins if player doesn't own this DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Target Jump no longer causes camera to extend and clip through walls and floors. This bug was introduced just before launch, terribly sorry!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Scroll Category for scrolls not belonging to any major tribe. For future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tooltip widget optimized and various other UI optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small cursor change to prevent it disappearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change to F11 behaviour to prevent it from causing cursor to be offset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F11 now uses Fullscreen Borderless",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Announcement Panel on main menu can now show multiple images in gallery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rollback Save feature now closes modules when executed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc Translation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hlods update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nav Mesh updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/67a210fa6a12f208f427a12dc73479adc78fd45d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Order Signature Edition here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 29,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1811138915431656"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-19T17:00:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.096Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-19T17:00:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.096Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-19T17:00:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.588Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@4",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-04T15:00:52.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians,",
+     "items": [
+      {
+       "text": "Today, we are introducing Hotfix #4. which brings with it a number of improvements, patches & bug fixes, details of which you can find below. But above all, this update introduces something far more important and close to our hearts: a permanent in-game memorial to Mikayla Raines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mikayla was the founder of SaveAFox Rescue, a passionate animal caretaker, and a gentle force for good in the lives of countless foxes, and people. We have had the opportunity to collaborate together on some upcoming news for Spirit Of The North 2, and we are fully committed to continue supporting SaveAFox in the coming months and years. We hope this memorial will be a place where you can peacefully, and respectfully remember Mikayla and her legacy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+     "items": [
+      {
+       "text": "A Place to Remember",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nestled in a quiet corner of Fox Village, you will now find a new area dedicated to Mikayla’s memory. At its centre stands a newly-implemented mural of Namara, a character from the world of Spirit of the North 2 inspired by Mikayla herself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/c7fdb743fe62ca81281be7fc2d0de4154bd47313.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Namara’s name means “No Sorrow” or “The One Who Dispels Sorrow.” In the game’s lore, she was a gentle caretaker of animals whose home was a flourishing garden full of life - especially foxes. Her kindness, and deep compassion made her beloved by all creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may also notice Finnegan, a small fox who hangs out near the mural, never straying far from Namara’s side. He is always there, resting by her side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although we never knew Mikayla personally, this is how we choose to remember her: as someone who left beauty and joy in her wake. This memorial is our small way of honouring her. We hope it brings warmth to those who knew her, followed her, or were touched by her spirit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for sharing this world with us. And thank you, Mikayla, for helping make it kinder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/8b53568c12ceeac13cac97e6c33f4ed82ac0fe76.jpg\"] [img src=\"{STEAM_CLAN_IMAGE}/44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "SaveAFox tribute area added to Fox Island. Featuring a memorial to Mikayla Raines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SaveAFox logo updated in credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SaveAFox Finnegan NPC added to tribute area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QOL UPDATES",
+     "items": [
+      {
+       "text": "Sprint Toggle can now be enabled in settings. When enabled, player can sprint by toggling sprint on and off rather than by holding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Water Rune Improvements. We felt the Water Rune was underwhelming and gave it a new fun mechanic. When rune is equipped the player character can jump while in water. Can be used for jumping across water surface or to more easily exit water. Jumping in water uses 1 spirit energy. Water rune swim speed buff decreased from x2 to x1.6. Water Geysers restore spirit energy(unchanged).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "40+ Statues of Eona added through out world in an effort to reduce time spent walking back to graves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vixen Skin added to game with small platforming challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY & UI BUG FIXES",
+     "items": [
+      {
+       "text": "Custom drop down menu added instead of menu anchors so scrolls boxes work properly within settings menu. In preparation to add more settings over the years.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player character can no longer bring lit torch into Stag Guardian Encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player character can no longer carry items into final Grimnir Encounter. Will auto drop when cutscene begins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Waypoint no longer spawns in ending level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various bug fixes for Palace of Peace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player can no longer enter Stag Temple from top to access Spirit Form rune early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loot Tortoise Improvements. Mushroom trails are not so far away, spawn on surfaces that can be reached, and mushrooms are evenly spaced along path to follow. Loot tortoise should now always spawn in Mushroom ring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Base Rejuvination (Regaining spirit energy) is now paused while using Spirit Form Abilities. This change also prevent buffs to rejuvenation from exceeding Spirit Energy drain from Spirit Form. No more infinite Spirit Form when comboing Spirit Form with Rune of Suffering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rotation bug after closing pause menu. Fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to Target Jump. Blocking volumes now more efficiently stop traces and no longer produce invalid targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Character friction settings are properly applied when moving from Ice to Grey Sand(Very specific I know... lets celebrate). Fixes issue where fox would continue to slide after exiting ice slides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spirit Form Bug Fix. When returning from spirit form to a \"ragdolled\" body (because of death or being struck by something) body will remain in ragdoll until recovery or respawn. Returning to dead body will no longer cause the body to play \"wake-up\" animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spirit Form Bug Fix. Controls are no longer locked when body is \"ragdolled\" while player is in spirit form.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spirit Form Bug Fix. Spirit form no longer experiences strange movement and rotation issues when body is \"ragdolled\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ram Boss melee attack range and melee trigger range are equal. Ram will no longer get stuck in endless melee attacks if player is nearby but out of damage range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stationary Stone Torches now properly deactivate Moon Runes when lit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed container that was missing loot. New drop location for Water Rune.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "OPTIMIZATIONS",
+     "items": [
+      {
+       "text": "Continued environment optimization. Removed foliage hidden under static meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebuilt HLODs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebuilt Nav mesh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ENVIRONMENT & LEVEL FIXES",
+     "items": [
+      {
+       "text": "Continued environment polish. Fixed various misalign geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision fixed for particular river.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced problematic cliff mesh throughout world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loot added to a few locations that were missing loot containers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More environment clean up. (floating rocks, misaligned cliff mesh edges, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jump Targets block around player home mirrors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Foxy Home doors now auto open from both sides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Free portals (like those in glacier tunnels) now handle more edge cases. Fixed bug that caused player to teleport to wrong location OOB if player target jumped through portal. Also added fade to black for smoother transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc Environment meshing fixes. Near Thief's Demise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decorative torches will now ignite flammable items(like held torches) but not player character. These torches are also no longer jump targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "VISUAL POLISH",
+     "items": [
+      {
+       "text": "Waterfalls no longer causes fox to bubble from mouth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crossfox skin color and saturation adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High Global Illumination now correctly impacts performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furless Fox Bug. Fixed issues that caused character fur to be hidden but skin visible when returning from Spirit Form while camera is close to character and materials are faded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc VFX optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "AUDIO POLISH",
+     "items": [
+      {
+       "text": "Optimization for footstep VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI Pause Menu Open SFX now aligns with player input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune Ability Wisp Form now has SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune Ability Wisp Form now allows player to \"chirp\" like a wisp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player Wisp Form chirp SFX updated. Now uses sound from SOTN1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player Wisp Form listener location updated(Can hear things near wisp instead of near fox.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MISC CHANGES",
+     "items": [
+      {
+       "text": "Updates to Announcement Panel in Main Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Framework for accessing announcement data from website (Work in Progress).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Framework for future DLC implementation completed (All platforms).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Credits removed from main menu in preparation for addition UI features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation changes for Sun Wolf name in several languages including English. Was Okama and now is Okamu. Many languages already used this alternative spelling to avoid association with a Japanese slur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Water Rune description updated for all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc typo fixes in various languages like Spanish and Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Translation for recent UI additions such as \"Enable Toggle Sprint\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CONSOLE UPDATES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coming very soon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you once more. With love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 27,
+    "balance": 0,
+    "other": 44,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1806698490814096"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T15:00:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.094Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T15:00:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.095Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-04T15:00:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:41.586Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@3",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-20T16:55:41.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Guardians,",
+     "items": [
+      {
+       "text": "Thank you for you patience and ongoing feedback. We’ve been listening closely, reading every report, and working hard behind the scenes to deliver a more stable, immersive, and beautifully optimized experience. Today, we’re rolling out Hotfix #3 the Month 1 Update - live now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here’s what’s included!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔄 SAVE SYSTEM UPDATES",
+     "items": [
+      {
+       "text": "Backup Save System: The game now automatically creates a backup save every 25 minutes (max 10 backups). You can rollback to these if your main save is corrupted or soft-locked. Access this via Manage Save Data menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save Game Naming: Simplified save file names (no special characters); Names are shorter to fix issues caused by file names becoming to long for some devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save Name Auditing: Long or invalid save names are now automatically corrected to conform to new system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save Copy Fixes: Copying an original save multiple times during different play sessions no long causes new copies to overwrite existing copies. New save names are now unique.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Offline Achievements: Now properly tracked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/09f2fbd6354ca8c9dda54f9492f31ff1ddeeb4a0.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "💆 QOL UPDATES",
+     "items": [
+      {
+       "text": "Keybinds on PC: \"M\" opens map, \"Esc\" opens Exit Menu. \"Tab\" still returns to your last visited tab.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Panning Map: Smoother and no longer clamped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🕹️ GAMEPLAY & UI BUG FIXES",
+     "items": [
+      {
+       "text": "D-Pad Input Adjustments: D-pad up/down are no longer zooms the camera as these inputs are mapped to Fat Travel Home and Photomode. Zooming remains a PC-only feature (mouse wheel).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Pressure Plate Fixes: Now reset properly if associated objects despawn or reset, fixing several soft-lock issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lava River Platforms: now spawn properly when you load game already in proximity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Destructible Ram Door: Now retains its broken state after being destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stormy Home Key Fix: No longer unlocked by unlocking Stormvale Portal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tomb of Heilda: Stone elevator fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ashlands Snake Shrine: puzzles fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Statue of Eona in Fox Island Cave: No longer overrides Home location when activated if main story is completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Map Waypoint Fix: Waypoints now correctly place on grave icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scroll Pop-up: Scroll count display fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🔧 OPTIMIZATIONS",
+     "items": [
+      {
+       "text": "Reflection Quality Fix (Low Settings): PC visuals now look as intended. Low settings can now enjoy better visuals with no performance impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust World Position Offset Disable Distance 100s of game actors (Hazel Bushes, various plague meshes, flags, etc). These actors would invalidate shadow cache a extreme distances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Static mobility now applied to non-moving components (chests base, door frames, standing stones, etc.). Prevents Shadow cache invalidation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Static mobility now applied to non-moving actors (Destructible pottery, Audio/trigger/blocking volumes, VFX, Spline paths (wisps, rivers, slides),Flag poles, hero skeletons, etc, etc). Actor that need mobility override this. Prevents Shadow cache invalidation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rogue and hidden foliage cleaned up to improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🌿 ENVIRONMENT & LEVEL FIXES",
+     "items": [
+      {
+       "text": "Trial of Elders, City of Mosswood, Ashlands Snake Shrine, Mulfara Falls, Fox Village, and more cleaned up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Glide Cavern: Collision and mesh fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pine Forest Rock and other Misc Meshes: Now has proper collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player home misc fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skylight and Dungeon Hole Fixes: Closed off areas accessible via late-game abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "✨ VISUAL POLISH",
+     "items": [
+      {
+       "text": "Unique NPC Foxes: No more unintended tail glow during the burning village scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grimnir Encounter Visuals: Light particles and FX improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spirit Antlers & Fox Tail Embers: Now match your Light Essence colour for better visual consistency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thorned Plague Vine Attacks: Now respond visually to Thorn Walker Rune.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎵 AUDIO POLISH",
+     "items": [
+      {
+       "text": "Various music stinger and layers that were broken on PC are fixed. This include \"Kulning\" vocals in Misthaven.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mossy Home Portal & Outro Music polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Volume Slider SFX: Now affects raccoon and tortoise sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Console Music Bug: Fixed audio cutting in and out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game Ending: Footstep SFX fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚔️ GRIMNIR ENCOUNTER BALANCING",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Grimnir's plague projectile cooldown increased (2.5s → 4s).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Knockback reduced by 50% and removed during dashes and targeted jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Ram Phase",
+     "items": [
+      {
+       "text": "Grimnir's Melee cooldown increased to 4s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lightning visuals now match Cleansed Ram.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grimnir's Plague \"Cage\" resized and given a visual upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sun Wolf Phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roots now deal only Thorn damage and no longer cause rapid multiple hits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Knockback behaviour adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moon Wolf Phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Platforms now appear when gliding or walking underneath with Sunken Rune.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bear Phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9 fireflies instead of 3. Platforming redesigned to be a recovery/breather phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐾 MISC CHANGES",
+     "items": [
+      {
+       "text": "Special Main Menu: Look for changes during the Light Weaver Event. 🦝",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stag Temple Gate: Spirit vines now activate after unlocking Spirit Form Rune. This help guide player to use Spirit Form and progress in this area before leaving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glide Cavern: Slight redesign to better guide player at start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Light Essence Icons & Descriptions: Updated to better reflect lore and Guardian themes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/3f382957d86fc9860dc5640c3cb81907887cedda.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44719848/51074ca09057090b08340356f0b7b33837bbc5c6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you'd like to participate and help this game continue to become better, please join our active community on Discord. Many thanks to everyone who’s sending in bug reports, sharing feedback, participating in discussions, and supporting our journey. Your continued love for Spirit of the North 2 helps us make the experience better for everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned for more updates; and we’ll see you in the glades, on the cliffs, and beneath the stars. 🦊✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infuse Studio & Silver Lining Interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Order Signature Edition here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1778840/Spirit_of_the_North_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 3,
+    "other": 43,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1802893906768026"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T16:55:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.093Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T16:55:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.093Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-20T16:55:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:25.272Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@2",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-23T12:24:49.000Z",
+   "notes": [
+    {
+     "title": "Greetings Guardians! 🦊",
+     "items": [
+      {
+       "text": "We’re excited to share that Hotfix #1.3, CL 12895, now live on PC, with the console update arriving in just a few days! This patch brings a host of important fixes, quality-of-life improvements, and community-requested changes. Let’s dive in:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔧List of fixes",
+     "items": [
+      {
+       "text": "Collection Removed At End Of Game. Fixed issue that caused players to lose their collection(Relics and Keys) after finishing game if they died before reaching a Statue of Eona.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save Game Repair. We implemented a script that audits and repairs your save file that runs automatically when you select a save game to play. Currently this includes fixes for those who's Relics and Keys were deleted at the end of their game. The game will re-add them when you relaunch your save game. This script also attempts to re-add your Raven companion if you have a Glide Rune but no Raven.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Landscape and Cliff meshing around Misthaven Northern gate. Waterfall and pond added to prevent players from accessing Highlands with a torch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jump Gate in North Misthaven now uses standing stone for activation(requires spirit form).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stag Temple now traps player inside to force them to use Spirit Form. Many players were obtaining Spirit Form and just leaving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Progress Lost issue #1. The Ram Encounter would continue to block autosave if the player abandoned it. This lead to player losing progress if they continued to play for a long time and then dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Progress Lost issues #2. Some puzzle involving hiding wisps and cutscenes would not stop blocking autosaves. This lead to player losing progress if they continued to play for a long time and then dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed rogue lever in front of Bear Guardian Temple.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes to Fox Island behavior and appearance when returning after end of game. ie Killbox under wooden bridge will not be present. Also plugged hole leading to portion of cave that is intended to be inaccessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lighting changes for Lumen on Xbox Series S",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Mosswood Foliage Cleanup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added ext triggers for some Stormvale structures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Internet Time Events now uses our own website. This should fix the issue of events like the Light Weaver not being blocked in countries like Russia. We will continue to test and work on this and thank you for you ongoing patience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Bear Roar SFX to end encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing lava SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc fixes for environment holes and and misaligned meshes.: Thank you all for your continued feedback and support for our small team. Your reports and suggestions help make Spirit Of The North 2 the best it can be. As always, we’ll be keeping an eye out for your thoughts and suggestions!: Infuse Studio & The Silver Lining Interactive Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1800357164438913"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T12:24:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.091Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T12:24:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.092Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-23T12:24:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:25.268Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@1.2",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 1.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-19T16:02:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfox 1.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Triggers that are only intended to trigger once now only trigger once(Broke on Hotfix 1.0). This applies to the cutscene where the fox goes across the bridge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Floating objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Jump target tag fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Filled all the roof holes in Mosswood vaults (If player returned with Air jump or Lift Glide they coul escape).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Landscape, meshing and misc environment bug fixes in various areas from Discord bug reports from players. (Thank you!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1799817379600769"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-19T16:02:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-19T16:02:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.072Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-19T16:02:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:25.267Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@1",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-16T20:14:23.000Z",
+   "notes": [
+    {
+     "title": "Greetings Guardians!",
+     "items": [
+      {
+       "text": "Thank you so much for all the support and kindness you've shown our small team in the first week of our game's launch - we're overwhelmed with the amount of support! You've been incredibly helpful by sharing the bugs and issues you've encountered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are still issues to address and it's likely others will pop up, the five of us are quickly looking to address what we can by importance and volume and we've been hard at work implementing a number of fixes to issues you, our community highlighted. These include;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay changes & fixes",
+     "items": [
+      {
+       "text": "We've added a Wisp after the glide cavern, to help guide the player towards Mosswood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the Sunfire passage, the door that requires pressure plates, now requires rope pulls to open it, allowing players to backtrack if they want",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Raven logic has been updated. Now, Thought the Raven will return to you even if you choose not to follow her directions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Murals now ignite regardless of Thought being with you or not. Now murals will always be lit, so you don't miss then on the change Thought has gone on her own little adventure..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaks to the Sunfire passage to make the area more consistent and streamlined",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Guardian Intro Cutscenes now only play once per gameplay session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an additional condition for Thought joining you, fixing for players who managed to miss her",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dropped Items now disappear after 3 minutes instead of 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Raccoon Cleanup Crew will hold items for a full 10 seconds before taking it (instead of 5), giving the player more time to react",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bite damage is no longer prevented by equipping the Thorn Walker Rune",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wisp form can no longer be used to bypass the Sea Monster, AKA Gerald",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wisp form can no longer be used to prevent damage to fox body",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to Ashlands Snake Shrine puzzle making it more consistent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Environment changes & fixes",
+     "items": [
+      {
+       "text": "Fixed trap holes in Stormvale Tower that players can fall down and get stuck inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ashland Racoon Grotto collision bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fox Island foliage bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raven Temple trap holes collision fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sign posts added before and after glide cavern to help guide player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tree trunk collisions updated, so foxes are no longer stuck in trees..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stormvale cliff meshing around Ram Temple updated to keep players from climbing up to the top before returning the Relics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We've added numerous blockers for player graves in dungeons, so that the graves will no longer spawn at the bottom of inaccessible pits and instead, close to the last spot they fell from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance Issues near player home mirrors fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Forest Tower collision fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blockers added to Misthaven to keep players from leaving before cleansing Memory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Re-exported Major Guardian cutscenes in better quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new sound effects to 'evil' associated puzzles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for Final guardian pre-fight music not triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Fox vocalizations not playing in corrupted zones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further memory optimization, more music now streams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Tribe layer of audio to Raven Temple and Seer’s Crypt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added SFX to burning trees in Ashland",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Vista music changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Puzzle Complete sound effects to all Biomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Guardian 3&4 Cutscene audio now plays correctly on multiple encounter attempts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glacier music now plays correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glacier sound effects tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Glide sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Whimper SFXs tweaked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Outro for final guardian Encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added SFX to a phase of the final guardian Encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Console Specific",
+     "items": [
+      {
+       "text": "*Console fixes will go live in the next 10 working days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Global Illumination issues have been addressed, resolving excessive darkness in underground areas. Lighting quality in these areas is now comparable to the PC version",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed camera jitter. Camera movement over uneven surfaces/collisions now matches PC behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Screenshot credits: KAT - go show them some love!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From us at Infuse and Silver Lining, thankyou so much again for your support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 27,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1799817379511194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T20:14:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.071Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T20:14:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.072Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-16T20:14:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:25.267Z"
+  },
+  {
+   "id": "spirit-of-the-north-2-273868@major-2025-05-02",
+   "gameId": "spirit-of-the-north-2-273868",
+   "displayName": "Spirit of the North 2 Development Update.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-02T17:18:24.000Z",
+   "notes": [
+    {
+     "title": "Hello folks,",
+     "items": [
+      {
+       "text": "Spirit of the North 2 is mere days away and we’re beyond excited for you to immerse yourselves in this atmospheric adventure about Fox and their Raven companion. As we near ever closer to SOTN2’s release we wanted to address the experiences many of you had with the demo that was released last year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off, we want to say a genuine and heartfelt thank you to everyone who shared their feedback and critiques. Not only was the feedback valid and invaluable, the sheer volume of separate Discussion threads and associated comments reiterated to us how much love you all have for our game and your anticipation for the next instalment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we didn’t respond to you all directly, the Infuse team did write about the SOTN 2’s demo, optimization, origins, impacts of using UE5 during its Beta phase while simultaneously developing a new game and the goals for SOTN 2 as a whole. All of which you can read here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To continue with our goal of transparent communication we want to give you more information and context about what the team at Infuse have been working on since the SOTN 2 demo originally launched and how this work will prevent many of the challenges you experienced in the demo happening in the full game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "The last months of 2024 were spent solely on optimisation. Everything from weather, the in-game day/night cycle to UI and menu performance, has all been looked at to try and squeeze every last frame out of the game to make it as smooth an experience as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Onboarding",
+     "items": [
+      {
+       "text": "There have been changes to the opening portions of the game when it comes to player onboarding. As a semi open world game with vast areas to explore, it was important to find the right balance between not showing players a dotted path in front to follow whilst also not making them feel lost with no sense of direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the help of things like Red Smoke trails guiding players to all major dungeon locations (a feature call-back to the original Spirit of the North), you are able to explore the beauty and wonder of the world until your hearts content knowing that all you need to do is look for these Red Smoke Trails to instantly get back on track. This, along with other tweaks in the opening level have been designed specifically to show mini examples of SOTN 2’s gameplay loop players will experience once they are let loose into the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story and Cutscenes",
+     "items": [
+      {
+       "text": "It's important to make players care about the journey they are undertaking and to care about the relationship between the fox and the raven as you help each other navigate a vast world. By far the most important way is to finalise and add in fully rendered in-engine cutscenes as well as beautifully hand drawn ones that appear during each Guardian encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "More Optimisation!",
+     "items": [
+      {
+       "text": "More recently we have done extensive compatibility testing to try and make sure we can recommend the minimum and also best suited specs for the game. As an Unreal Engine 5 title, it will need a powerful rig to see it in all its beauty but we've tried to make it as accessible as possible to players that don't have super up to date machines. There are extensive settings to tweak to your liking and even on low settings, still is a sight to behold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We understand that everyone may not have access to the hardware required to run this game. The minimum and recommended specifications are listed on SOTN 2’s store page and we’ve also included them below. We want to ensure as much as possible that everyone can make as much of an informed decision as possible when it comes to purchasing our game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minimum",
+     "items": [
+      {
+       "text": "Requires a 64-bit processor and operating system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OS: 64 bit Windows 10/11",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Processor: 12th Gen Intel Core i7-12700K or equivalent",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Memory: 16 GB RAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics: NVIDIA GeForce RTX 2080 / Radeon RX 6800",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DirectX: Version 12",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Storage: 25 GB available space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional Notes: Resolution: 1920x1080 Native, FPS: 30, Graphics Setting Preset: Low",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Recommended",
+     "items": [
+      {
+       "text": "Requires a 64-bit processor and operating system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OS: 64 bit Windows 10/11",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Processor: AMD Ryzen 7 5800X / Intel Core i7-12700K or equivalent",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Memory: 16 GB RAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics: NVIDIA GeForce RTX 4070 / Radeon RX 7800 XT",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DirectX: Version 12",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Storage: 25 GB available space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional Notes: Resolution: 1920x1080 Native, FPS: 60, Graphics Setting Preset: High",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope this information and context gives you some assurance to the quality of the game we’re making. Thank you so much to our community, old and new, for the level of support you’ve shown the developers, Infuse Studio and Spirit of the North 1 & 2. We’re humbled by your support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in the wilderness!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Silver Lining Int and Infuse Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1778840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1778840/view/1798454487643112"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-02T17:18:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1778840",
+      "checkedAt": "2026-11-13T03:31:22.070Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:25.265Z"
+  }
+ ],
+ "issues": []
+}

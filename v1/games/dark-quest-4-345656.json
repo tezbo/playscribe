@@ -1,0 +1,1572 @@
+{
+ "game": {
+  "id": "dark-quest-4-345656",
+  "igdbId": 345656,
+  "name": "Dark Quest 4",
+  "cover": {
+   "imageId": "coaten",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaten.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4mg7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4mg7.jpg"
+  },
+  "ps5Release": "2025-11-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dark-quest-4-345656@major-2026-11-12",
+   "gameId": "dark-quest-4-345656",
+   "displayName": "Dark Quest 4 — Major Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-12T20:39:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update addresses a large number of reported issues, including several that could cause the game to freeze during combat. We've also introduced faster movement, reworked hero fatigue, improved saving, and made several quality-of-life changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major Localization Overhaul",
+     "items": [
+      {
+       "text": "We've completed a major revision of the game's localizations, addressing many issues with the previous translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extensively revised and reworded existing translations across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected inaccurate, confusing, awkward, and poorly translated text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved wording, clarity, and consistency to make the game easier to understand in every supported language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated translations to cover all new features and gameplay changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the handling of missing translations, which now fall back to English instead of generating errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This is much more than a routine translation update. A substantial amount of existing text has been revisited and rewritten to deliver a significantly better experience for players using languages other than English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features & Improvements",
+     "items": [
+      {
+       "text": "Movement Speed: Added a new setting (Normal / Fast / Very Fast) that speeds up hero and monster movement, both in and out of combat. Multiplayer remains locked to Normal speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Hero Fatigue: The Elder now offers two fatigue settings",
+     "items": [
+      {
+       "text": "Rested (new default): Heroes receive the rest bonus without accumulating fatigue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harsh: Restores the original fatigue rules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death's Reprieve: The Gravedigger's card has been renamed and reworked. It now removes only the death penalty, with its price reduced from 45 to 35 coins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest Abandonment: Abandoning a quest now allows you to keep all coins collected. Fallen heroes will still return injured.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workshop Quests: Coins collected are now retained after defeat, matching campaign quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elder's Guidance: After a defeat or abandoned quest, the Elder will remind you that difficulty settings are available. This reminder appears up to three times, or until you visit his settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Winter Camp: The seasonal camp will now appear from December 1 to January 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major Stability Fixes",
+     "items": [
+      {
+       "text": "Resolved several issues that could cause combat or the game to freeze:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy attacks freezing the game when a hero's Defence exceeded 10, such as a Knight combining equipment with a Defence potion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy archers and monsters becoming stuck when they couldn't find a valid movement position, including situations where the party blocked a doorway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Split Shot allowing the next turn to begin before its arrows had finished travelling, and freezing combat when no arrows hit a target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Grand Mirror freezing when copying a monster recruited by the Prince or when no free space was available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed searching an already-open tomb freezing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed special chests without an assigned item causing a freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed jammed doors occasionally preventing the turn from progressing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tornado freezing combat if its caster died while the spell was still moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New turn recovery system: If the game becomes stuck during a turn, it now automatically attempts to recover after 3 seconds and records the cause in the log.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Fixes",
+     "items": [
+      {
+       "text": "Save vs Traps: Fixed the stat having no effect. Heroes can now avoid traps according to their Save vs Traps value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sanity: Fixed sanity checks incorrectly using Courage instead of Sanity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gravedigger: Fixed his extra-movement perk being applied to every hero without unlocking it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gravedigger Cards: Cards purchased after party selection now correctly apply to the current quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elder: Fixed the Hero Attack Bonus setting also increasing monster damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Damage Runes: Fixed Body Damage and Magic Damage runes providing no bonus and potentially stacking after Rebirth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Break Armor: Fixed the ability permanently increasing hero Defence after combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potion Effects: Fixed several potions leaving permanent bonuses, transferring effects to another hero, or leaving status icons behind when used multiple times in the same battle. Affected potions include Armor, Resistance, Stoneskin, Movement, Damage, Spell Power, and Max Incoming Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tombs & Chests: Fixed tombs and special chests being searchable multiple times, potentially granting duplicate loot, extra mummies, or duplicate keys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arrow Traps: Fixed remote arrow traps triggered by bookcases activating a second time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weakened Curse: Fixed the curse failing to reduce damage from weaker attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overwhelm: Fixed size-3 monsters, including the Bone Dragon, being immune to Overwhelm despite the tooltip stating otherwise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monster Spawners: Fixed large monsters spawning additional enemies with incorrect spacing or inside themselves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secret Doors: Fixed heroes occasionally being teleported twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss Dialogue: Fixed the half-health dialogue triggering at the wrong threshold or even after the boss had died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Backpack Rune: Fixed removing the rune occasionally leaving a hero with an extra potion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Workshop Quests: Fixed the tutorial appearing at the start of Workshop quests and incorrect ending cutscenes playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: Fixed abandoning a quest potentially crashing the game or injuring another player's heroes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: Fixed Wizard voice lines potentially causing dice rolls to become desynchronized between players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Saving & Coin Fixes",
+     "items": [
+      {
+       "text": "Safer Saving: Improved the save system to protect profiles from corruption caused by crashes or power interruptions during saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Profile Recovery: On PC, corrupted profile slots can now be restarted, while a backup of the damaged file is preserved.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Quest Abandonment: The game now saves immediately after abandoning a quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coin Pouch: Fixed several issues causing incorrect coin totals, including exceeding the pouch limit, coins continuing to arrive after purchases, and incorrect amounts after Abandon, Restart, or Workshop defeats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual & Interface Fixes",
+     "items": [
+      {
+       "text": "Fixed injury and Well Rested icons in camp not updating correctly while any hero remained locked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed destroyed barrels repeatedly generating errors in the log.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tornado visually jumping a tile on subsequent casts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the locked Gravedigger incorrectly animating the Wagon Merchant's icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Escape key not closing the Gravedigger screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the mechanical door spikes using an incorrect animation curve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Firewall generating errors when combat ended before its appearance animation completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Economy Balancing",
+     "items": [
+      {
+       "text": "Late-game prices have been increased to make coins more meaningful and improve progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Rune prices increased by approximately 50%",
+     "items": [
+      {
+       "text": "[table equalcells=\"1\" colwidth=\",,\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Old",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sacrifice / Sacrifice for Attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Backpack / Teleport",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "18",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "16",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "24",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Duplicate Card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lifesteal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "24",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "36",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lightning Orb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "38",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebirth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "28",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "42",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mirror",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Equipment",
+     "items": [
+      {
+       "text": "[table equalcells=\"1\" colwidth=\",,\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Old",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Body Damage / Health II / Magic Resistance / Summon Damage / Summon Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Immune to Overwhelm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Body Block / Save vs Death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Potions",
+     "items": [
+      {
+       "text": "[table equalcells=\"1\" colwidth=\",,\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Old",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Refresh Mind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greater Healing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max Incoming Damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "18",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gravedigger Cards",
+     "items": [
+      {
+       "text": "[table equalcells=\"1\" colwidth=\",,\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Old",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grave Walker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Life Bloom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death's Reprieve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "35",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who has reported bugs and shared feedback. Your reports have helped us identify and resolve many of these issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll continue improving Dark Quest 4 with further fixes and updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brain Seal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 40,
+    "balance": 1,
+    "other": 78,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2453840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2453840/view/1849192144184530"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T20:39:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.262Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T20:39:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.262Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-12T20:39:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:18:28.262Z"
+  },
+  {
+   "id": "dark-quest-4-345656@post-2026-01-14",
+   "gameId": "dark-quest-4-345656",
+   "displayName": "Winter tileset extension and bug fixes!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-14T17:45:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug with the archer that would crash the game in particular in the Legion Bone quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with superior healing potion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with wizard's hat not adding damage to firewall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When you abandon or defeated you get to keep all your coins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where 2 commanders that have the follow me card would ping pong you to infinity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a freezing crash when the commander would attack a 2x2 monster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Defense and Magic Resistance now use seeded magic numbers to over excessive randomness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Winter tileset extended until end of January.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some missing Japanese translation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2453840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2453840/view/1821922921811229"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-14T17:45:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.260Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-14T17:45:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.260Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-14T17:45:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.335Z"
+  },
+  {
+   "id": "dark-quest-4-345656@major-2025-12-17",
+   "gameId": "dark-quest-4-345656",
+   "displayName": "Winter Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-17T08:53:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings fans!! The winter update is here adding snow to the hero camp!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full list of changes",
+     "items": [
+      {
+       "text": "Added winter tileset for herocamp, it will be active until 7th January.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug with summons on traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug on world map unlocking the wrong quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added gravedigger npc at hero camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new upgrade on gravedigger: Remove fatigue and death penalty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new upgrade on gravedigger: Extra movement out of combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new upgrade on gravedigger: Extra health for all heroes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Helmet of Protection: +2 health on summoned units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added War Axe: +1 attack on summoned units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Broadsword!!!: +2 max damage on physical damage attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added War Horn: Cannot be overwhelmed/surrounded by enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new trigger in the creator: Speak, you can use it to make characters say something.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Backpack Rune now allows you to equip an extra hero card from the trainer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Death Rune: Upon killing an enemy heal by +1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Exiting a secret door should always find some space to place a hero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SkeletonWarBannerYellow (Skeleton Commander) Starting Health: 6-7 -> 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SkeletonChickenArmor (Armored Chicken) Magic resist: 20% -> 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SkeletonChickenExplosion (Explosive Chicken) Armor: 10% -> 0%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Butcher2 (Malgurath) Magic Resist: 0% -> 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ChestMonster (Chest Monster) Movement Speed: 4 -> 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ChestMonster (Chest Monster) Health: 4-6 -> 3-5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ChestMonster (Chest Monster) now has 10% magic and physical resist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barbarian: Throwing axe: Damage: 1 -> 1-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lancer: Sister: Starting Health: 7-8 -> 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved spawn portal with more parameters: Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 2,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2453840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2453840/view/1819386365085944"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T08:53:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.260Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T08:53:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.260Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-17T08:53:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.334Z"
+  },
+  {
+   "id": "dark-quest-4-345656@major-2025-11-21",
+   "gameId": "dark-quest-4-345656",
+   "displayName": "Update: Bugs and skull of fate",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-21T19:00:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added names for all prefabs in the creator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a crash with firewall against mummies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skull of fate now deals: 3 damage if you have 11 health and above, 2 damage if you have 7-10 health and 1 damage if you have 1-4 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skull of fate now heals: 3 points if you have 1-2 health, 2 points if you have 3-5 health and 1 point if you have 6 health and above",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lady: Fixed a bug with weaken that would prevent it from working properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2453840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2453840/view/1816849002015289"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T19:00:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.259Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T19:00:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.259Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-21T19:00:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.333Z"
+  },
+  {
+   "id": "dark-quest-4-345656@post-2025-11-16",
+   "gameId": "dark-quest-4-345656",
+   "displayName": "Bug Fixes and Shop Prices",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-16T11:21:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Runes are now more expensive as they are a more late game shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some items in the blacksmith shop are now more expensive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some hero cards are now more expensive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firebeast no longer takes damage from firewall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with pathfinding that could lock the game when a hero is invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The youtube link in the creator help screen now works properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some typos in english",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some minor adjustments to early levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Search Tiles and Secret Door: You now need to directly move on them in order to activate them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a lock issue with accidentally moving to a search tile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2453840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2453840/view/1816307528968140"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-16T11:21:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.258Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-16T11:21:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.259Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-16T11:21:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.333Z"
+  },
+  {
+   "id": "dark-quest-4-345656@major-2025-11-07",
+   "gameId": "dark-quest-4-345656",
+   "displayName": "Update Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-07T17:29:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some blur issues in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked Menacing Talons quest to be a little easier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed stairs graphics for the Into the Fray Quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gamepad users can now access the steamworks quests",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with some steamworks quest showing as empty.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2453840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2453840/view/1815580768300862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-07T17:29:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.258Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-07T17:29:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2453840",
+      "checkedAt": "2026-11-13T03:18:28.258Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-07T17:29:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:50.332Z"
+  }
+ ],
+ "issues": []
+}

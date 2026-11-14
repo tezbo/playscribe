@@ -1,0 +1,957 @@
+{
+ "game": {
+  "id": "maneater-46800",
+  "igdbId": 46800,
+  "name": "Maneater",
+  "cover": {
+   "imageId": "co1lx6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1lx6.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3s8w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3s8w.jpg"
+  },
+  "ps5Release": "2020-11-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "maneater-46800@3",
+   "gameId": "maneater-46800",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-08T16:05:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sharks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released a new hotfix to target a crash that the community has encountered while playing Maneater",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash that could occur on the Quest Log Panel. Would most likely occur when the player had 100% completed the game or during the tutorial for users who do not own Truth Quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your continued support! As always, be sure to join the conversation at the official forums and let us know what you want to see next in the waters of Maneater or report any issues you may be experiencing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-629820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/629820/view/4224936215405974825"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-08T16:05:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-08T16:05:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.580Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-08T16:05:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.194Z"
+  },
+  {
+   "id": "maneater-46800@1",
+   "gameId": "maneater-46800",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-17T16:11:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sharks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce the latest update to Maneater is here and ready to make a splash! This update has optimization improvements to increase stability and performance on all platforms as well as additional checks to make sure players receive the proper rewards for completing objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stability and Performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements made across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a performance loss issue that could occur during the Leviathan battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance adjustments with gore FX chunks not spawning all at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements with PFX for seagulls, fish school, and squids",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved memory handling for increased stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI/UX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made adjustments to how in game menus load. More information is loaded when opening the menu, this should decrease the amount of time needed when switching between menu tabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to UI elements to better fit UI text. This was resulting in some UI flickering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where pop ups on the Map menu would remain and display on re-entering the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text alignment on “New Aged Reached” screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Failure To Communicate tooltips appearing when player reloads save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an improper check related to evolutions dropping that allowed a 1/32767 fail rate per drop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "To help with this we added some retroactive unlocking that does require re-entering the map, Plover Island and Port Clovis, depending on where the drop is located",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with registering all elements of objective completion when in non-English languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a blue anti-shark shield would appear at the origin on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Scaly Pete’s boat would not appear after the base game was completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some of the lights were duplicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Leviathan could stop fighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Failure To Communicate objectives would not spawn all boats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if a helicopter was destroyed over land the health kit that would drop would fall through the terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where fins would not appear on certain wildlife",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue between Time Of Day and lights sometimes not matching up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a blend issues with Shadow Body visual FX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could stuck on a boat railing in Crawfish Bay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Chase Champion quest marker might not appear after fast travel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an audio issue where there would no impact audio for damaging Scaly Pete’s boat in the second battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where cutscene music would not resume if user pressed the Xbox home button and returned to the cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue during the Meet Pete cutscene with a shadow that would expand out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where torpedoes could go through parts of the Irradiated Bone Sperm Whale and Shadow Orca",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would allow the player to immediately break free from Leviathan’s thrash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player shark might not play the proper hit animation for subsequent hits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with fast traveling and unlocking collectibles in the region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your continued support! As always, be sure to join the conversation at the official forums and let us know what you want to see next in the waters of Maneater or report any issues you may be experiencing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 24,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-629820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/629820/view/4227186657137730966"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-17T16:11:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-17T16:11:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.579Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-17T16:11:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.194Z"
+  },
+  {
+   "id": "maneater-46800@2",
+   "gameId": "maneater-46800",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-12T16:07:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sharks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released a new hotfix to target several of the issues the community has encountered while playing Maneater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the \"Keep Out!\" gate in Fawtick Bayou being closed based on localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Expand out Entitlement changes across all platforms that were previously tested on one platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed VO issue with the Shannon Sims bounty hunter intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for progression blockers being affected by localization settings. Including around the Sonar or Later objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The team is continuing to investigate and work on several remaining issues including issues around unlockables. Thank you for your patience, and enjoy the water!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-629820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/629820/view/4069556867222932706"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-12T16:07:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-12T16:07:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.578Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-12T16:07:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.193Z"
+  },
+  {
+   "id": "maneater-46800@hotfix-2021-09-23",
+   "gameId": "maneater-46800",
+   "displayName": "Maneater: Truth Quest Hotfix Is Now Live",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-23T17:35:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sharks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce the latest update to Maneater is here and ready to make a splash! This update focuses on improving optimization to increase stability and performance on all platforms as well as additional checks to make sure players receive the proper rewards for completing objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Memory optimizations and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Included changes for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Evolution menu screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX optimizations around gore chunks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nutrient UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apex Predators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bounty Bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks to the NPC spawning system to ensure intended populations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu and UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to cursor snapping to icons on the overhead map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further checks for unlocking achievement/trophies. Ensuring the player is properly rewarded with having those achievements/trophies unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Questers would “bounce off” the shark when grabbed and eaten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed firefly FX that no longer matched with the Plover Island environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a crash that can occur during the Terranova battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix includes a fix to prevent the crash from occurring as well as fixing any save issues that were caused by the crash. Players will receive credit for the completion of the Terranova battle if they have reached a point that is past the battle's story point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor art changes to in game billboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with wave height in the Fawtick Bayou region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Entitlement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are actively looking into reports of players not having or losing ownership of Truth Quest. Unfortunately this is not something that we have been able to replicate completely in house, but we are still investigating and working with the community to resolve this problem. Thank you to those who have and continue to provide information to our community team on this topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Despite this we have been able to make some modifications for Hotfix 1(this update):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small improvements to entitlement for all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There were modifications to general entitlement checks throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those who have encountered this problem there are few items we can recommend to try, that have assisted other community members:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reinstalling the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time. Some have reported that eventually the purchase “went through”. With no additional changes or downloads occurring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued support! As always, be sure to join the conversation at the official forums and let us know what you want to see next in the waters of Maneater or report any issues you may be experiencing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-629820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/629820/view/3936699406870542642"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-23T17:35:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-23T17:35:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.577Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-23T17:35:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.192Z"
+  },
+  {
+   "id": "maneater-46800@major-2021-09-16",
+   "gameId": "maneater-46800",
+   "displayName": "Maneater Update Expected Next Week - Work In Progress Changlog",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-16T17:22:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sharks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce the latest update to Maneater is almost here and ready to make a splash! This update will focus on improving optimization to increase stability and performance on all platforms as well as additional checks to make sure players receive the proper rewards for completing objectives. You'll find the Work In Progress changelog listed below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Memory optimizations and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Included changes for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Evolution menu screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX optimizations around gore chunks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nutrient UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apex Predators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bounty Bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks to the NPC spawning system to ensure intended populations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu and UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to cursor snapping to icons on the overhead map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further checks for unlocking achievement/trophies. Ensuring the player is properly rewarded with having those achievements/trophies unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Questers would “bounce off” the shark when grabbed and eaten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed firefly FX that no longer matched with the Plover Island environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a crash that can occur during the Terranova battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix includes a fix to prevent the crash from occurring as well as fixing any save issues that were caused by the crash. Players will receive credit for the completion of the Terranova battle if they have reached a point that is past the battle's story point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor art changes to in game billboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with wave height in the Fawtick Bayou region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Entitlement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are actively looking into reports of players not having or losing ownership of Truth Quest. Unfortunately this is not something that we have been able to replicate completely in house, but we are still investigating and working with the community to resolve this problem. Thank you to those who have and continue to provide information to our community team on this topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued support! As always, be sure to join the conversation at the official forums and let us know what you want to see next in the waters of Maneater or report any issues you may be experiencing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-629820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/629820/view/5418383147736113382"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-16T17:22:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-16T17:22:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-629820",
+      "checkedAt": "2026-11-13T03:25:14.576Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-16T17:22:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.191Z"
+  }
+ ],
+ "issues": []
+}

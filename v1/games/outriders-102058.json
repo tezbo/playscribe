@@ -1,0 +1,3005 @@
+{
+ "game": {
+  "id": "outriders-102058",
+  "igdbId": 102058,
+  "name": "Outriders",
+  "cover": {
+   "imageId": "co2e4r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2e4r.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5s2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5s2.jpg"
+  },
+  "ps5Release": "2021-04-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "outriders-102058@25.08.2022",
+   "gameId": "outriders-102058",
+   "displayName": "Update 25.08.2022",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-25T15:50:14.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed a bug with the Technomancer's Grim Inventor Set that was causing the Set Bonus to stop working consistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a number of issues with the Apocalypse Tier System which either prevented players from progressing or led to other players instantly levelling up their tiers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Granted all character that had been missing an Ascension point their missing point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bug that caused this issue was fixed in a previous patch, but the work to grant the missing point had to be done separately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4514316500003078450"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-25T15:50:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.694Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-25T15:50:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.694Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-25T15:50:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:46.164Z"
+  },
+  {
+   "id": "outriders-102058@major-2021-11-16",
+   "gameId": "outriders-102058",
+   "displayName": "Outriders: New Horizon Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-16T16:10:53.000Z",
+   "notes": [
+    {
+     "title": "Welcome to the New Horizon update!",
+     "items": [
+      {
+       "text": "This free update is the culmination of months of hard work spent improving Outriders, addressing feedback, and making it the game you asked for.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This post will cover the highlights of the New Horizon Update, but do check out our mega-blog if you're interested in more specific details of everything or learning more about how much Outriders has changed since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We today also revealed our upcoming expansion: Worldslayer. We’ll share more about Worldslayer in Spring 2022, but today is dedicated to the New Horizon update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To celebrate the release of this update we have prepared a special New Horizon Celebration Package for all players, including new Demo players! Simply launch or download Outriders and start playing between November 16th, 3pm UTC / 8am PST and November 30th, 3pm UTC / 8am PST. You will then receive a free Legendary Armour item on your most experienced character’s inventory or your stash within 24 to 48 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you for playing the Outriders New Horizon update and we look forward to seeing you on Enoch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "HEADLINE CHANGES",
+     "items": [
+      {
+       "text": "For more details on each of these changes, please scroll down through the DETAILED CHANGES section. Bug Fixes can be found in the BUG FIXES section at the bottom of this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expedition Timers have been removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Four New Expeditions Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transmog System Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tiago’s Store has been Reworked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain Legendary Gear Sets have been Reworked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes and Buffs to certain Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes and buffs to certain Class Tree nodes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes and buffs to certain Skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GENERAL CHANGES",
+     "items": [
+      {
+       "text": "The video that plays when launching Outriders can now be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Eye of the Storm now includes a pick-and-choose Legendary item reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Quick Mark functionality to Vendors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the readability of Mod descriptions, especially when viewed on a large TV or Monitor. This change means that certain information is now viewed on the Details window rather than in the Quick View window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the volume of background audio of certain menu and loading screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a minimum damage limit for the Brood Mother’s “Perforate” ability. This will ensure the ability does not have too large of a disparity in its min/max damage output.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the Heir to the Desert configuration so that it now plays like an Assault Rifle (as intended and described) rather than a Submachine Gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "EXPEDITION TIMERS HAVE BEEN REMOVED",
+     "items": [
+      {
+       "text": "Expeditions are no longer time restricted and the timer has become optional.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this new system, finishing an expedition, regardless of how long it takes, will earn you the Expedition Reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more details please check out our mega-blog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FOUR NEW EXPEDITIONS ADDED",
+     "items": [
+      {
+       "text": "We’ve added four brand new and massive Expeditions, taking you to previously unexplored areas of Enoch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each Expedition features an exciting mini story, connecting you with characters and events experienced in the main campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Even new Expedition players will already have access to the first of the four fresh Expeditions, with the others unlocking at CT4, CT8 and CT12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Molten Depths will send you back to Eagle Peaks. When a drop pod signal activated, Dunham investigated and found a hidden power station. In order to take it back online, she wants you to clear out the station from any unwanted tenants, no matter the size, shape and form.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The City of Nomads will confront you with a character, who is haunted by the sins of his past. Very aware of his dark history, you decide to help him in protecting the old Pax village Uketu Atarah.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In The Marshal’s Complex, Corrigan, the great grand marshal himself asks you to reclaim a facility near Deadrock Pass, taken by insurgents. It won’t take you long to discover that this facility is anything but just another insurgent camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Wellspring. Tiago told you about the Pax legend of a sacred place called Atuma ih Taru, where pilgrims would take long travels to sacrifice their treasures into deep wells. You and your team are in search of those forgotten riches, if it wasn’t for this tremendous storm that seems to get stronger and stronger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For more details please check out our mega-blog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "TIAGO'S STORE HAS BEEN REWORKED",
+     "items": [
+      {
+       "text": "Tiago’s store has been overhauled. It still sells Legendary gear, but now offers two additional options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-roll the available Legendary gear on offer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Purchase a mystery Legendary gear piece.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both of these options will cost Drop Pod Resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more details please check out our mega-blog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TRANSMOG SYSTEM ADDED",
+     "items": [
+      {
+       "text": "We’ve added a brand new Transmogrification system to Outriders. This allows you to change the visual aspect of an item to that of another item, while maintaining the mods and stats of the original gear piece. For weapons, this will also include all sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transmogging is entirely free and can be done practically at any time. No convoluted systems, MTX or ingame resources required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For more details please check out our mega-blog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "CHANGES TO GEAR AND LEGENDARY SETS",
+     "items": [
+      {
+       "text": "TRICKSTER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trespasser Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new set bonus has been added to the existing bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The existing bonus is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Player characters inside Slow Trap cannot die”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The additional new set bonus is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Increase damage by 6% per enemy affected by a Deception skill. Additionally, Players can't die inside Slow Trap.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Deception Skills are: Slow Trap, Venator’s Knife, Time Rift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TECHNOMANCER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Torrential Downpour Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The extra cluster bombs spawned by the set bonus of the Torrential Downpour Set have had their deployment time reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bug that was preventing an extra mine’s deployment after a direct hit was also fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grim Inventor’s Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The set bonus of Grim Inventor set has been changed so that Tools of Destruction can be refilled multiple times during its duration:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The old set bonus was:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While Tool of Destruction is active, a confirmed hit with Pain Launcher refills 20% ammunition for both minigun and the RPG. This only happens once for each Tool of Destruction usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new set bonus is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While Tool of Destruction is active, a confirmed hit with Pain Launcher refills 20% of the ammunition for both Minigun and the RPG.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PYROMANCER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lava Lich Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The set bonus of the Lava Lich set has had the cooldown reduction it provides increased to 30% (Previously: 10%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reforged Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reforged was originally intended to be a Long Range Firepower set. However, players have mostly used it with Anomaly Power builds. We have therefore changed the attributes of this set to better support Anomaly Damage builds. The Long Range attributes on all set pieces have been changed for either a Cooldown Reduction or a Skill Leech attribute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Reforged Head Armour set piece, Cowl of the Reforged, has had its attributes swapped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Health attribute has been replaced with an Anomaly Power attribute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Long Range attribute has been replaced with either a Cooldown Reduction or a Skill Leech attribute",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This change makes the helmet more suitable to the sets new functionality of an Anomaly Power oriented build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Reforged Chest Armour set piece, Armor of the Reforged, has had its mod swapped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Bullet Absorption” mod has been replaced with the “Ash Grasp” mod, which inflicts Ash on all enemies in Thermal Bombs AOE range prior to its explosion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should make Thermal Bomb much easier to use as part of this set.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Reforged Lower Armour set piece, Waistcloth of the Reforged, has had its mod swapped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Wildfire” mod has been replaced with the “Fire Frenzy” mod, which provides an additional use of Thermal bomb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Reforged Feet Armour set piece, Boots of the Reforged, has had its mod swapped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Nova Master” mod has been replaced with the “Anomaly Hunger” mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By making this change, we expect the Feed the Flames skill to deal more damage, making it a better tool to detonate Thermal Bombs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The set bonus of the Reforged set has had its damage bonus increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using Thermal Bomb increases the next damage of Feed The Flames by 75% (Previously: 50%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using Feed The Flames increases damage of next Thermal Bomb by 75% (Previously: 50%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DEVASTATOR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deathproof",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new set bonus has been added to the existing bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The existing bonus is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Reduce the Cooldown of Boulderdash by 90%.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The additional new set bonus is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Reduce the Cooldown of Boulderdash by 90% and increase Firepower by 15% of Armor.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Deathproof Gloves Armour set piece, Deathproof Gauntlets, has had its mod swapped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “King Slayer” mod has been replaced with the “Death’s Door” mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marshal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The set bonus of the Marshal set has had its shared bonus derived from Anomaly Damage increased to 40% (Previously 10%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Marshal Gloves Armour set piece, Marshal’s Gauntlets, has had its mod swapped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Shattered Armour” mod has been replaced with the “Mosh Pit” mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Shattered Armor mod removed Armor from enemies, while the Mosh Pit mod applies the status effect Vulnerability. As the Marshal gear is more of a Anomaly Power set, we decided it was a better fit to increase damage from all sources instead of reducing enemy Armor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Statue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Statue set has had its attributes swapped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Skill Leech attribute has been replaced with a Close Range Damage attribute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CHANGES TO MODS",
+     "items": [
+      {
+       "text": "The mechanics of Fortress have been reworked. The new description and effect is now:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shots increase your current Armor and Resistance by 5%, stacking up to 3 times. At maximum stacks, the buff is doubled and additionally grants 30% damage increase for 10 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The cooldown between stacks is 0.2 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more information as to why this was done, please see our discussion thread about it here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that following community feedback, the amount of stacks (from 5 to 3) and the cooldown between stacks (from 1s to 0.2 seconds) have both been reduced since we previously announced the changes coming to Fortress. These changes mean that players will be able to proc. Fortress faster and that that all weapon types will be able to proc it as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cooldown Mechanics of all mods are now “universal cooldowns”. Cooldowns for mods are now set to “per character” rather than per “mod instance”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main effect of this change is that it is no longer possible to cycle through and trigger the same mod effect within a very short space of time. In order to compensate for potential damage reductions as a result of this change, the below mods have all been buffed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more information as to why this was done, please see our discussion thread about it here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moaning Winds has had its damage increased by 60% (From base 120 to 191)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Concentration Blast has had its explosion damage increased by 27% (From base 35 to 48.3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Concentration Blast has had its max targets reduced to 4 (Previously: 6)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultimate Bone Shrapnel has had its damage increased by 14% (From base 63 to 71.82)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bombs Ahead has had its damage increased by 14% (From base 62 to 71)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Legendary Minefield has had its damage increased by 11% (From base 20 to 22.3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kinetic Stomp has had its damage increased by 34% (From base 72 to 96.48)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weakness Trap has had its damage increased by 237% (From base 18 to 60.6)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandstorm has had its damage increased by 42% (From base 7.2 to 10.25)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wrath of Moloch has had its damage increased by 37% (From base 50 to 68.5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scrap Grenade has had its damage increased by 17% (From base 70 to 81.8)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deadly Disturbance has had its damage increased by 27% (From base 69 to 87.3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ravenous Locust has had its damage increased by 50% (From base DOT tick, per second, 4 to 6.66)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ravenous Locust has had its duration reduced by 4 seconds, down to 6 seconds (Previously 10 seconds)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radiation Splash has had its damage increased by 208% (From base 38 to 114)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The effect of the “Gunshield” mod has been changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It will now provide a 30% increase to Firepower, rather than a flat numerical increase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CHANGES TO CLASS TREES",
+     "items": [
+      {
+       "text": "ALL CLASSES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Class Skill nodes that grant an AP bonus have been increased to granting 10% AP (Previously 6%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TRICKSTER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disruption Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Shield provided by using DECEPTION skills has been increased from 20% to 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Profit Squared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Healing provided by this node has been increase from 5% to 10% per ammo pack picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TECHNOMANCER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sidearm Adept",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Weapon Damage Bonus provided by this node has been increased from 12% to 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PYROMANCER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steady Fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Weapon Recoil Reduction provided by this node has increased from 30% to 40%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sidearm Adept",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Weapon Damage Bonus provided by this node has been increased from 12% to 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DEVASTATOR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Profit Squared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Healing provided by this node has been increase from 5% to 10% per ammo pack picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steady Hands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Weapon Recoil Reduction provided by this node has been increased from 30% to 40%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CHANGES TO CLASS SKILLS",
+     "items": [
+      {
+       "text": "TRICKSTER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slow Trap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new effect for the “Speed Boost” mod has been added to the existing effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The existing effect is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allies within the sphere receive 0.2% movement speed bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The additional new effect is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed Boost will now reduce the duration of revives within the Slow Trap sphere by 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes General",
+     "items": [
+      {
+       "text": "Fixed a progress blocker in the “Mentor” main quest which would prevent a cutscene from triggering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause Alpha Perforo’s to break out of CC (such as the Frozen or Ash status effects) if they were staggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the “Heart of the Wild” Expedition from progressing if a Venomous Perforo was the last enemy to die during one of the battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the “Chem Plant” Expedition that could cause the the player’s primary weapon to use the mods of their secondary weapon if they changed weapons while activating the lever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the end of Expeditions summary screen to not display true values for the “Damage Blocked” stat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the FOV to reset itself under certain conditions on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Resolved issues related to ingame invites not being received under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other bug and crash fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes to Mods",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the “Moaning Winds” mod to deal different damage between Host and Client. It was previously triggering twice for Client players. The damage on Client will now match the damage on Host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would prevent mods inserted in armor from properly scaling with the armors level if the armor was upgraded through Zahedi. This bug would previously fix itself after an area transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the “Even Odds” mod to stack 5 times, instead of the stated 3 times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the “Armor Boost” mod so that it now scales to the armor item it is inserted into, rather than scaling with the player level and stopping at level 30.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the “Emergency Stance” mod to not trigger if the damage instance that proc’d the mod also inflicted “Knockback” on the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the “Anomaly Mutation” mod to not inflict the Burn or Slow status as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the “Bullet Absorption” mod to replenish 80% instead of it’s intended 40% of ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause frame (FPS) drops if the “Damage Link” mod was using in combination with the “Pain Transfer” mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes to Skills",
+     "items": [
+      {
+       "text": "The description for \"Endless Mass\" now also mentions the Slow status effect that it inflicts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would prevent the Technomancer “Cold Snap” skill from freezing enemies if it was triggered while the player rolled off an edge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause Technomancer Turrets to fall through the ground if they were thrown too low or too high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the icon for the “Cryo Turret” skill to the Technomancer’s “Engineer” and “Senior Engineer” class nodes. These nodes were already affecting the “Cryo Turret” skill anyway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes to Class Nodes",
+     "items": [
+      {
+       "text": "Fixed a bug that resulted in the Pyromancer “Gifted” class node not granting it’s bonuses properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you again for playing the New Horizon update. We'll see you on Enoch Outrider!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 21,
+    "balance": 1,
+    "other": 127,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4971406207537394624"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-16T16:10:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.693Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-16T16:10:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.693Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-16T16:10:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:46.162Z"
+  },
+  {
+   "id": "outriders-102058@post-2021-09-02",
+   "gameId": "outriders-102058",
+   "displayName": "Outriders – Mod Buffs and Latest News",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-09-02T15:01:58.000Z",
+   "notes": [
+    {
+     "title": "Index",
+     "items": [
+      {
+       "text": "General News",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapon Mods Buffed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Topic for Discussion: The Weapon Mod-Meta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch News",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General News",
+     "items": [
+      {
+       "text": "Our upcoming patch is unfortunately not ready for release – however, we have managed to bring forward and release a small number of buffs that were planned to be implemented later on as part of a wider rebalance. We have been able to make these changes today because they involve on backend balancing, rather than changes to game-code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The below buffs have been implemented as part of today’s maintenance event. No download is necessary for them to take effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weapon Mods Buffed",
+     "items": [
+      {
+       "text": "Winter Blast has had its AOE range increased to 5m (Previously: 4m)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultimate Anomaly Surge has had its damage increased by 37% (From base 25 to 34.25)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Claymore Torrent has had its explosion damage increased by 10% (From base 30.6 to 64.26)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultimate Storm Whip has had its damage increased by 40% (From base 23 to 32.2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strings of Gauss has had its damage increased by 62% (From base 24.5 to 64)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Topic for Discussion – The Weapon Mod Meta",
+     "items": [
+      {
+       "text": "You may notice that a few of the above mods falls within a very particular category of mods:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most of them are “single-target” or “cleave” mods, meaning that their damage potential is limited to a single enemy or a small group of linked enemies. For the purposes of this discussion, we’ll refer to these mods as ST Mods. This contrasts with “uncapped AOE” mods (such as Moaning Winds), which deal damage to an unlimited number of enemies in their respective (and usually larger) AOE radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The current mod-meta in Outriders currently centres around 3 “Pillars”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A) General AOE damage mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "B) Moaning Winds and the Quick-Cycling meta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "C) Fortress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today’s buffs are only our first steps towards addressing those aspects of the above mod-meta which we deem to be unhealthy for the development of fun and varied builds in Outriders. We will be making changes in future that will be aimed at disrupting the meta, but doing so in a way that opens up many more fun options and alternatives for players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below is an overview of how we see the current situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Pillar A: General AOE damage mods",
+     "items": [
+      {
+       "text": "According to our player data and community observations, there is currently an over-reliance on AOE damage mods, which is most likely the result of the way most enemy encounters in Expeditions are structured. Players usually face hordes of enemies against whom such AOE mods are the most efficient method of playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One vs one or smaller mob group encounters are rare enough for the AOE mods to still do enough DPS to overcome these encounters, even though ST Mods would likely be more effective here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This means that there is a strong under-reliance on ST Mods, which is further exacerbated by some of these ST mods generally under-performing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Storm Whip is an excellent example here, as its previous damage potential strongly under-performed, meaning few players chose this mod over other, better alternatives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While originally developing the OG Outriders mod experience, we had envisioned that players would ensure that both of their weapons have fundamentally different mods. These would allow them to deal with and tackle different scenarios and encounters using a variety of weapons and methods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This brings us to the next two Pillars, B and C. We believe (and think that you’ll agree) that the current meta that involves B and C has fundamentally stifled the need to run anything else. There is little incentive to experiment with other mods when these will always be more powerful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Pillar B: Moaning Winds and the Quick-Cycling meta",
+     "items": [
+      {
+       "text": "Moaning Winds is one of the most dominant “active” mods currently in use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For anyone unaware, one of the most potent mod set-ups in the game right now is to stack the Moaning Winds mod on multiple weapons and empty your magazines. Then run into a clump of enemies and cycle through your weapons, triggering this “on-reload” mod and its substantial damage multiple times in a very short space of time. Some players are able to trigger Moaning Winds three times in the space of a 2 second window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This combo is especially effective in single player, where enemies cluster around a single, rather than two or three players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: The above is over-simplified, but the intent is to mainly explain the concept.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moaning Winds is therefore vastly out-performing its intended potential, making it one of the best “active damage” mods in the game while also inviting a rather unorthodox playstyle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A single Moaning Winds mod by itself isn’t necessary a huge problem, it is mainly the double and triple stacking of it that is causing an unnatural shift in expected playstyles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall, Moaning Winds is a big topic and deserves its own discussion thread, which we will open in future, along with historical context about how Moaning Winds came to be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Pillar C: Fortress",
+     "items": [
+      {
+       "text": "The third and by far most problematic pillar is C: the Fortress mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The way Fortress currently works usually provides a passive and consistent 43% damage increase to damage the player inflicts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In essence, take your normal damage and apply the calculation of x 1.43 to it. That’s it – that’s the mod. No gameplay loop, kill or damage event or special situation required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the current DPS oriented endgame, all players will naturally be trying to maximise the damage they are able to output, so the existence of Fortress in its current form essentially blocks a mod-slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By not combining Fortress with your chosen primary mod, you may well be sacrificing DPS, which is a philosophical question we’re not comfortable with you needing to face. We want you to have a free choice of multiple different combinations, without feeling that you’re missing out because you didn’t choose Fortress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also continue to be very aware that a timer based Endgame is part of the problem in that it forces a DPS oriented build, rather than a survival or just pure “fun” build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are the current challenges that we believe the Outriders weapon mod-meta is facing today. Today’s Buffs are only the first steps to remedying the situation and we are starting with a partial look at Pillar A. We will discuss Pillars B and C and the best ways to tackle them in future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that we are also working on changes to certain under-utilized Legendary Armour Sets. However, as these changes will also required code-work, we'll talk more about them closer to their release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch News",
+     "items": [
+      {
+       "text": "Our latest patch is currently undergoing the usual test-cycle, but we wanted to share some highlights of the upcoming fixes and changes with you already today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please do bear in mind that our current testing is still validating the below fixes so some of them may not be 100% guaranteed for this patch. Also note that this is not an exhaustive list and is still subject to change as we pass through the testing phase. The final patch will include more fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further improved the visibility of the Brood Mothers Surge AOE skill limits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that was preventing players from reviving themselves and other players after using the Trickster's Borrowed Time skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue that could cause the game to stutter when engaging Crawlers in battle during Expeditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue that could cause players to stutter when entering the drained lake during the third enemy encounter in the Scorched Lands expedition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue that prevented secondary characters from picking up Journal Entries if they had already been collected on a different character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue that would force matchmaking privacy setting to default to \"Open\". The privacy setting should now remain \"Closed\" when set. This should help further reduce AFK matchmaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an AFK status for players on friends lists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the behaviour of the Devastator's Impale, so that the game will detect impaled enemies as dead even before they disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Devastator's \"Reflect Bullets\" skill will now protect from Sciathan projectile attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that could prevent Devastators from being able to consistently dodge if they had the Auto Reflect mod active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause client shots to sometimes deal no actual damage to enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the Technomancer's Plague Sower set bonus to not proc consistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the Plague Sower and the Cannonball Legendary Sets to not retain their set bonus after a transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause certain mods like \"Grand Opening\" to not proc if the player was on their last magazine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 47,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4020014099088509792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-02T15:01:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.691Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-02T15:01:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.691Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-02T15:01:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:46.160Z"
+  },
+  {
+   "id": "outriders-102058@03.06.2021",
+   "gameId": "outriders-102058",
+   "displayName": "Update 03.06.2021",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-03T15:28:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Implemented a block that prevents players from kicking other players towards the end of an Expeditions session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented Region Based Matchmaking to improve the quality of multiplayer connections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the login signing in text to better reflect the current signing in process step.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash and memory leak issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Full Patch Notes here: https://sqex.link/yrd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4093189347043281130"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-03T15:28:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.690Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-03T15:28:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.690Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-06-03T15:28:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:01.763Z"
+  },
+  {
+   "id": "outriders-102058@25.05.2021",
+   "gameId": "outriders-102058",
+   "displayName": "Update 25.05.2021",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-05-25T15:30:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that was causing armour values to not be calculated properly under certain circumstances, leading players to take unintended increased damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the damage behaviour of Brood Mother enemies to prevent them from one-hit killing players in under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue that could cause players to be unable to sign-in under certain circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4069544181446654890"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-25T15:30:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.689Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-25T15:30:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.689Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-05-25T15:30:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:01.762Z"
+  },
+  {
+   "id": "outriders-102058@major-2021-04-08",
+   "gameId": "outriders-102058",
+   "displayName": "Outriders - Post Launch Dev News Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-08T15:30:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would like to thank everyone in the Outriders community for your patience, support and assistance. Everyone on the Outriders team is continuing to work hard on improving the game and we'd like to share news about the things we are focusing on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please use CTRL + F to jump to the information that interests you the most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch News",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tl;dr*: Patches are inbound for crashes, matchmaking issues and more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Community Appreciation Package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tl;dr: Launch window players are getting a “thank you” package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inventory Wipes & Restoration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tl;dr: We’re working on restorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tl;dr: We’re rebalancing a handful of certain skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiplayer Stability and Connection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tl;dr: We’re continuing to work hard on improving this",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Connectivity Post-Mortem",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have been continuing to track and post known workarounds for encountered issues in our Launch Tracking Mega-Thread as well as our Steam forums, but our intention is of course that workarounds shouldn't be necessary. So here is our latest patch news:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "First Patch",
+     "items": [
+      {
+       "text": "This is our first big patch for the main Outriders game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As of today, the deployment of this patch is scheduled for next week, as we are using this week to identify as many severe issues as possible, fix them and then thoroughly test the changes across all platforms. Submission through platform holders adds on a little bit of time as well, which is why we are not able to deploy this patch any earlier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are doing our utmost to deliver you a stable patch as soon as possible and we are continually looking at ways to bring the patch release day earlier. This is why we are not yet committing to a patch release date, as we may still be able to release the patch before such a date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will let you know as soon as we have a confirmed release schedule, so please do keep an eye on our social channels and in particular our Twitter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "First Patch - Patch Notes",
+     "items": [
+      {
+       "text": "Will Fix a performance issue where GPU is not being fully utilized. This should help with stuttering and DX11/12 issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Once platforms have been updated to the same patch version, cross-play across platforms will become viable again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall stability improvements for the matchmaking service",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will Fix a multiplayer crash that could result in client players having their inventory wiped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will fix the crash when completing the \"A Bad Day\" side quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will fix the crash that occurs in No Man's Land when your language is set to Spanish (Yes, we know. Video game code is a magical thing).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will fix crash on launch issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will include many more \"random\" crash fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are confident that these fixes will address the majority of crashes reported, as there are only a handful of root causes but the crashes they generate appear in a number of places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will fix the HUD disappearing in certain cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will fix bugs that interfere with players re-spawning in multiplayer Expeditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will fix bugs with players getting stuck on geometry (including when using Gravity Leap) or falling out of the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will change the default matchmaking setting from \"Open\" to \"Closed\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will still be able to manually change this setting to \"Open\" through your game settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This change will prevent players from joining games where the host didn't intend to play in multiplayer. It will also cut down on AFK lobbies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will also help improve matchmaking times, as the queues will be less likely to be overwhelmed by the sheer volume of constant matchmaking requests generated by \"open\" games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many other minor fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional fixes and changes are being worked upon to be delivered via our later follow up patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Outriders Community Appreciation Package",
+     "items": [
+      {
+       "text": "After working on Outriders for more than five years, we were as disappointed as you that the launch weekend did not go as planned. We ran into connectivity issues, which we have explained in full further below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Throughout all of this we really appreciated all your messages of support and encouragement and they helped us power through and improve the situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would like to thank each and every one of you. Beyond just saying it, however, we would like to confirm that we are working on a small \"appreciation package\" for our launch window players. We are still working through the exact details of it, but our intentions are as follows:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All players who played between March 31st and April 11th (UTC timezones) are eligible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any players outside the above window, but for whom we will have performed an automatic inventory wipe restoration (LINK) are also eligible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your highest levelled character will receive:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A level appropriate Legendary Weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A level appropriate amount of Titanium",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The emote \"Frustration\", which is otherwise unobtainable at this moment in time. The irony here was not intentional but is fitting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are our intentions, but these details are subject to change based on what is technically feasible for us to do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still determining when the appreciation package will be delivered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Inventory Wipes & Restoration",
+     "items": [
+      {
+       "text": "We believe that the rate of this bug appearing should be greatly reduced once the upcoming patch has been published. With crash fixes in place, we intend to run a one-off mass restoration. Here are our intentions for this restoration:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restoration should take place on a specific day and should be a one-time event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The exact date is TBC but we’re hoping for this to occur in the coming week(s)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will update you when we have confirmation of date and timings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will only be able to restore the most valuable tiers of items lost, e.g. Epics and Legendaries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will be unlikely to restore an inventory full of blue gear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The restoration should be additive to your inventory. It should not replace your current inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored items may not be have the exact same stats as the lost items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that restoration will not be possible for items that were acquired but where the game connection was terminated before an autosave could complete as those items would never have made it into your server inventory/our logs. Such suspended autosaving is noticeable when the yellow autosave icon stays active for a longer period of time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For any individual restorations that were missed, or that occur in future, we plan to equip our teams to help on an ad hoc basis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that these are our intentions that we are providing here for transparency. While we will try our hardest to make things right, we unfortunately cannot make guarantees for the specifics of the above or the timeline of this, as we may run into technical difficulties that delay our work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Accolades Wipe issue is something we're again looking into whether we can run as part of such a one-off restoration or whether we will need to tackle these cases on a one-to-one basis. Accolades are a more complex piece of data per profile than a piece of equipment, so working through a solution here is taking a little more time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Re-balancing",
+     "items": [
+      {
+       "text": "This re-balancing work can be implemented through backend updates, does not require a patch, and will be run during today’s maintenance window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "IMPORTANT: Balancing is done by a separate team to those who are working hard on preparing the patches. Re-balancing does not impact our progress towards patches or reduce our ability to resolve bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "General Balance Notes",
+     "items": [
+      {
+       "text": "Historian, bounty hunt, and monster hunt quests no longer grant Legendary items for each subsequent completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "While rewarding players for completing all the Historian, bounty hunt, and monster hunt quests is still our intention, we did observe unintended results when players repeated this activity in combination with a specific multiplayer bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "With this rewards adjustment we want to eliminate this exploit behaviour while still making that quest line worth the effort.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Players who took advantage of this exploit will not be punished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted loot on specific enemies: Tooka Beast, Splittooth, Sandshifter and Coldclaw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "These particular beasts are being too generous considering the required effort to take them down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Chem Plant - Expedition time for Gold/Silver/Bronze adjusted to 650 / 1150 / 1500 seconds (Previously: 957 / 1303 / 1650)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Boom Town - Expedition time for Gold/Silver/Bronze adjusted to 390 / 589 / 776 seconds (Previously: 422 / 607 / 792)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Some Expeditions seem to be too generous in their required completion times when compared to others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We want to avoid such disproportionate discrepancies, as we believe making all expeditions viable leads to a more diverse and thus more interesting endgame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Crit Rating Damage Multiplier on Tactical Assault Rifle reduced to 165% (Previously: 175%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Critical Rating Damage Multiplier on Marksman Rifle reduced to 250% (Previously: 300%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Marksman Rifles with a 300% crit rate showed up to be dominating multiple crit builds. By making the modifier the same as for a Bolt Action Rifle, we want to offer players more options when choosing what gun to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Duration of the Massacre AP buff has been reduced to 3 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "This is a temporary measure until we have fixed an issue with the stacking cap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bullet abilities (Twisted Rounds, Blighted Rounds and Volcanic Rounds):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "While we fully intend to provide the overpowered feel for the best builds out there, we are also committed to making sure that there is build diversity in the top performing builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Late in the demo lifecycle, we discovered a bug with regards to the bullet augmentation abilities damage calculation formula. While we fixed this bug, some unforeseen imbalances were unfortunately introduced, which has led to bullet based abilities vastly outperforming other skills. The main problem with this is that such bullet based builds require much less investment to make them \"top tier\", compared to other builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "To achieve this, we have made a couple of adjustments for the Trickster and Technomancer classes, who benefit the most from their bullet abilities power. It's uncertain as to whether these changes will prove too strong or too weak, so please do consider this to be only the first step, as we will continue monitoring and adjusting them in the future. Just like you, we hope to see more inspiring and crazy combinations of Abilities and Mods!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The base cooldown of the Twisted Rounds skill has increased to 25 seconds (Previously: 16 seconds)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "While infinite uptime on bullets abilities was always our intention, it is intended to be high risk, high reward playstyle. However, given the current power of this skill, there is very little risk involved in this ability given its short cooldown, even when players fail to trigger ammo replenishment. Increasing its cooldown in combination with adjusting its damage should increase that risk and make this playstyle a more thrilling experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Trickster's Hero Tree nodes: - Disruptive Firepower, Scion of Power, Outrider Executioner - have had their power reduced to 35% (Previously: 50%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The combination of Twisted Rounds' increase of firepower on top of the multipliers provided by the class tree lead to huge increases of damage dealt by this ability. While we do understand the satisfaction this kind of power can bring, it is currently vastly outperforming our wildest expectations and we therefore need to bring it down a notch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "\"Vulnerable\" status - Power reduced to 15% (Previously: 25%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Technomancer Hero Tree node -\"Damage Against Poison\" - has had its power reduced to 15% (Previously: 30%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "While the Technomancer's Blighted Rounds do not provide any damage increase on their own other than ignoring armor as Anomaly Damage, they do provide an excellent tool for spreading the Vulnerable and Toxic statuses. which in turn can scale out of proportion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Pyromancer Hero Tree Node - \"Trial of Ashes\" - has been reduced 15% extra damage (Previously: 30%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer Stability and Connection",
+     "items": [
+      {
+       "text": "Co-op and multiplayer sessions are a separate matter from solo play connectivity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Launching a multiplayer session, requires multiple different partners and services. For example, matchmaking and queuing are hosted by one service partner, while the peer-to-peer relay is handled by another. Other components are hosted by other partners. This is a normal setup for multiplayer games but is important to mention because when we attempt to track multiplayer or co-op issues, knowing exactly what issue appears at what point is vital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The upcoming patches should help alleviate crashes in multiplayer as well as improve stability and speed. Because of the complexity of the multiple systems involved, we will continue to improve and iterate upon these systems in order to deliver you a better multiplayer experience. In most cases, this can and has already been done via the backend without patching the game, but it is something we are keeping a close eye on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Connectivity Post-Mortem",
+     "items": [
+      {
+       "text": "tl;dr: Our team worked throughout the Easter weekend and around the clock to resolve the server issues players were experiencing. We completely understand how frustrating this experience will have been especially given the huge amount of players eagerly anticipating the launch. We had enough server scaling capacity but our externally hosted database was seeing issues that only appeared at extreme loads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re committed to full transparency with you. Today, just as we have been over the past year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we won’t give you the expected “server demand was too much for us”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We were in fact debugging a complex issue with why some metric calls were bringing down our externally hosted database. We did not face this issue during the demo launch earlier this year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our database is used to hold onto everyone’s gear, legendaries, profile and progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tech-heavy insight",
+     "items": [
+      {
+       "text": "We managed to understand that many server calls were not being managed by RAM but were using an alternative data management method (\"swap disk\"), which is too slow for the flow of this amount of data. Once this data queued back too far, the service failed. Understanding why it was not using RAM was our key challenge and we worked with staff across multiple partners to troubleshoot this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We spent over two days and nights applying numerous changes and improvement attempts: we both doubled the database servers and vertically scaled them by approximately 50% (“scale-up and scale out”). We re-balanced user profiles and inventories to new servers. Subsequent to the scale-up and scale-out, we also increased disk IOPS on all servers by approximately 40%. We also increased the headroom on the database, multiplied the number of shards (not the Anomalous kind) and continued to do all we were able to in order to force data into RAM.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each of these steps helped us improve the resilience of the database when under extreme loads, but none of them were the \"fix\" we were looking for.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At this moment in time we are still waiting for a final Root Cause Analysis (RCA) from our partners, but ultimately what really helped resolve the overloading issue was configuring our database cache cleaning, which was being run every 60 seconds. At this frequency the database cache cleaning operation demanded too many resources which in turn led to the above mentioned RAM issues and a snowball effect that resulted in the connectivity issues seen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We reconfigured the database cache cleanup operations to run more often with fewer resources, which in turn had the desired result of everything generally running at a very comfortable capacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All of this has enabled the servers to recover and sustain significantly more concurrent user loads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 29,
+    "other": 71,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4117954072999148000"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-08T15:30:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.688Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-08T15:30:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.688Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-04-08T15:30:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:01.752Z"
+  },
+  {
+   "id": "outriders-102058@19.03.2021",
+   "gameId": "outriders-102058",
+   "displayName": "Update 19.03.2021",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-03-19T14:13:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We believe we have identified and now prevented the Inventory Wipe/Items Disappearing issue from occurring in the Outriders Demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We actually published the fix for this issue on Monday, but have been using the days since then to verify whether our resolution has been successful in order to not make any false promises. Today’s patch has added an extra safeguard against this issue occurring in future based on our findings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To that end, we would please ask any players who have had their inventory wiped on any of the following days to please let us know via the Steam forums:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuesday, March 16th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wednesday, March 17th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thursday, March 18th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today or any day after today (Friday, March 19th)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope that no inventory wipes should have occurred during these days, but we want to ensure that this issue has been resolved, so please do let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Restoration",
+     "items": [
+      {
+       "text": "Now that we believe that the issue has been prevented going forward, we can focus a bit more on how we plan to compensate affected players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We fully understand the disappointment of feeling like you have lost significant progress, items or time, and we would like to assure you that we are doing everything in our power to make things right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we are still working on the exact technicalities, below are our intentions for item restorations:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restoration should take place on a specific day and should be a one-time event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The exact date is TBC but we’re hoping for this to occur prior to the launch of Outriders on April 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will update you when we have confirmation of date and timings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will only be able to restore Legendary items that have been lost as a result of this bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will not be able to restore items of a rarity below Legendary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At this time you do not need to get in touch with us to report inventory disappearances that occurred prior to Monday March 15th.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that these are our intentions that we are providing here for transparency. While we will try our hardest to make things right, we unfortunately cannot make guarantees for the specifics of the above or the timeline of this, as we may run into technical difficulties that delay our work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Accolades",
+     "items": [
+      {
+       "text": "This appears to be a separate issue and we do still need to uncover the full extent of it in order to better tailor our resolution for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To that end, could anyone who has had their accolades wiped, please let us know in the Steam forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Understanding the numbers of players affected by this will help us greatly as we continue to investigate this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other things that we are investigating with a hope for improvements before launch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further optimizations to multiplayer connections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main game will also include a host of improvements and bug fixes that weren’t possible to be integrated into the demo at the time of demo release due to when we had to split the development builds. So even if there are things that we may not have directly addressed during these updates so far, there is a good chance that they will be resolved with the launch build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4048146376713896144"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-03-19T14:13:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.686Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:01.749Z"
+  },
+  {
+   "id": "outriders-102058@post-2021-03-12",
+   "gameId": "outriders-102058",
+   "displayName": "Outriders has been updated",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-03-12T14:05:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a Motion Blur Toggle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made minor tweaks to frame rate output for certain items in cutscenes. A more comprehensive fix is being worked on for the future",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Improvements to cut down on the time it takes to Matchmake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash that repeatedly occurred when opening the menu or inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that deletes player gear if their connection drops out during a transition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved subtitle display and synchronization during the “Bad Day” quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that caused a corrupted lobby to appears for a brief moment when joining a Host lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor improvements and fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/4058279008612803240"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-03-12T14:05:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.685Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:01.748Z"
+  },
+  {
+   "id": "outriders-102058@major-2020-10-01",
+   "gameId": "outriders-102058",
+   "displayName": "Hell's Rangers Bundle Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-01T17:15:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is an announcement directed to all customers who have already pre-ordered Outriders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we would like to thank you for your support from the bottom of our hearts. Your faith and trust in us isn't something we take for granted and we will do our utmost to ensure that Outriders lives up to your expectations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would like to inform you that we’ve made some amendments to simplify the Outriders product setup on Steam and this included some small adjustments to regional pricing. This new structure may mean pre-purchase customers in certain countries will have paid slightly more for their pre-order than the newly adjusted price.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can of course secure a refund for your current pre-purchase and re-purchase the updated OUTRIDERS package at the new price. Alternatively, if you would prefer not to cancel your pre-order, you’ll receive a free digital Art Book as a sign of our appreciation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would like to thank you for your patience and understanding and we can’t wait to share more about Outriders with you, before ultimately being able to place the game in your hands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-680420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/680420/view/3807188575849555378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-01T17:15:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-680420",
+      "checkedAt": "2026-11-13T03:27:31.684Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:01.732Z"
+  }
+ ],
+ "issues": []
+}

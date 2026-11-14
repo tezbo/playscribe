@@ -1,0 +1,950 @@
+{
+ "game": {
+  "id": "berry-bury-berry-381578",
+  "igdbId": 381578,
+  "name": "Berry Bury Berry",
+  "cover": {
+   "imageId": "cob1ie",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob1ie.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4w61",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4w61.jpg"
+  },
+  "ps5Release": "2026-08-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "berry-bury-berry-381578@post-2026-05-30",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "*FINALLY* actually fixed the blank text bug",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-05-30T03:55:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with some combinations of system languages and system region formatting that would break text in game. If you had blank text on the PC in game, this should finally be fixed.: This was genuinely the strangest and worst bug I've ever had to track down, so I appreciate everyone's patience!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1833968530892801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-30T03:55:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.430Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.430Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@hotfix-2026-05-22",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "Localization Hot-Fixes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-22T01:52:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed illegible text in certain languages. (let me know if you find any other weird ones!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Modified how the translation table gets loaded, hopefully fixing a rare issue where some players would see blank text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1833334318570506"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-22T01:52:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.429Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.429Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@post-2026-02-28",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "Alternate Puzzles + Bug Fixes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-02-28T02:09:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Back with another small update",
+     "items": [
+      {
+       "text": "🧩 Puzzle Changes 🧩",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a variant of one of the puzzles that would be difficult to solve for non-english speakers. (There is a setting in the options menu to toggle the alternative puzzle)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modified the radio puzzle to accept multiple solutions. (I'm being purposely vague here, but I removed the \"always add first\" message as this change makes it irrelevant.): 🍓 Made some changes to slightly reduce the loading times from the splash screen to main menu. (Unfortunately, I think the stutter is due to shader compilation and initializing the assets... not a lot I can do beyond this.): 🍓 Replaced the \"Force UI Scale\" setting to a \"UI Scale %\" option. You can now scale the HUD to your liking between 50%-100%: 🪱 Fixed an issue where holding down \"pick up\" would drop the object you had just picked up: 🪱 Fixed a crash when loading from splash screen to the main menu: Most of the work I've done in the last week has been preparing the game for localization (aka translating to other languages), so let me know if you find any weird text in the game that I may have goofed!: There's no official timeframe for additional language support, but it's in the works and I hope to have an announcement soon about it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1825727806712476"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-28T02:09:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.429Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.429Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@post-2026-02-19",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "Bug Fixes, Controller Improvements, Steamdeck fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-02-19T19:30:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Back again with another small patch, fixing up some Steamdeck and controller related quirks.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "After this update, the game can be considered to have full controller support. (which I will change on the Store Page as well)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "🍓 Increased the Vacuum airblast charge rate from .75f -> 1.35f. This should hopefully make using it quicker and less tedious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QOL Changes",
+     "items": [
+      {
+       "text": "🍓 Now checks for the \"all upgrades\" achievement after each upgrade is purchased, instead of when you leave shop. (buying all upgrades but clicking rewind would previously not unlock it - you had to click Wake Up)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🍓 Removed the hard-coded 'Enter' key for leaving shop, for those who want to bind 'Enter' to other things",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🍓 Added a force UI scale setting, hopefully will fix any remaining ui issues, regardless of resolution/setup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "🪱 Fixed some of the upgrades in the tree not being navigatable via controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🪱 Fixed the pesky Berry Buddy Upgrade Icon that would constantly be selected/jittering when on controller and Steamdeck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "🪱 Fixed the ability \"press to use\" UI not updating during the round if you changed input devices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, please let me know if you find any quirks or issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1825093633186083"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-19T19:30:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.428Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.428Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@post-2026-02-14",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "Small tweaks + bug fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-02-14T19:42:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another small update based on player feedback,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Big Deals",
+     "items": [
+      {
+       "text": "⭐ Wall rubble now has some explosive force, should help clear up the visual clutter better when breaking walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Each Vacuum capacity upgrade now also increases the vacuums firerate. Should help the vacuum feel more useful in the mid-late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Smaller Deals",
+     "items": [
+      {
+       "text": "🍓 Moved the ability \"button to use\" text, so they don't run off screen with longer controller binds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🍓 Added slight buffer after shooting the vacuum before the popgun can fire, only relevant when the auto pop gun setting is on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🍓 The hole level UI now says \"MAX\" when at max, instead of showing the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🍓 Added a \"select all\" button to the NG+ mods menu (hope this makes resetting speedruns less annoying!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪱 Fixed some collision layer issues with the outer walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪱 Fixed controllers not navigating the main menu UI when first loading the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪱 Fixed the resolution not setting properly if you were switching from a resolution with the same height or width as the new one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1824644522842336"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-14T19:42:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.428Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.428Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@patch-2026-02-11",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "\"Slidey\" player fix, Bugs/QOL/Accessibility Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-11T05:53:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Back with another update. I wanted to get this out last weekend, but there were a couple finicky issues that took longer than expected. I appreciate everyone's patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Big Deals",
+     "items": [
+      {
+       "text": "⭐ Reworked the player movement and drastically reduced the \"slidy-ness\" when turning. (this should also help players with motion sickness!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Added Safeguards for the save game system, this should resolve rare save game corruption issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Added rebinding for the movement keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ New Settings: Full-Auto Popgun (hold to fire), Always Sprint Toggle (hold Sprint to Walk), And Crosshair customization settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Reworked how the game detects new input devices, hopefully this fixes a myriad of issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Smaller Deals",
+     "items": [
+      {
+       "text": "⭐ Added 240 and 360 to the FPS limit settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Added optional hud displays (toggled in the options menu): a speedrun timer, and hole level progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Bibble tutorial sign now appears after rewind, similar to how the chainsaws does. (some players didn't buy the bibble until after the first rewind and didn't know how to use it!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Replaced the Vacuum count text with a series of lights on the Vacuum model to show how full it is. This is a first-pass thing, I will probably update it based on feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Added a small pop up after leaving shop to imply a loading/waiting screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm still totally blown away by the games reception. Thank you to all the players and content creators showing their love and support for the game. In less than a week and a half, we eclipsed the total number of reviews for my previous game, Wormtown - and that game has been out for 2 1/2 YEARS! Absolutely wild.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the player \"slideyness\" fixed, and the camera changes from the previous update, I'm really happy with where the game is at. I hope you enjoy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay safe out there, Sprouts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1824459501602745"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T05:53:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.427Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.427Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@hotfix-2026-02-06",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "Camera Jitter/Smoothness Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-06T05:21:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A handful of people were having extreme camera jitter issues, especially on higher refresh rate monitors. This should now be fixed! The camera should be noticeably smoother for all players as well!",
+     "items": [
+      {
+       "text": "I also had to tweak a few things because of this issue, include the vacuum/popgun camera movements - so please let me know if you find any weird issues with this patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I'm still working on a QOL and accessibility patch that I'm trying to have done this weekend, so keep an eye out for that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1823825466498635"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-06T05:21:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.426Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.426Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@patch-2026-02-05",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "Bug Fixes + QOL Patch & the future of BBB",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-05T03:10:16.000Z",
+   "notes": [
+    {
+     "title": "Another big THANK YOU is in order",
+     "items": [
+      {
+       "text": "First off, the enthusiasm and support everyone has shown the game has been INCREDIBLE. In less than a week, BBB has sold over 20,000 copies, we breezed past the 500 Steam review milestone (and earning the Overwhelmingly Positive title), and it hasn't left the new and trending list! It's genuinely overwhelming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I can't thank everyone of you enough! Thank you for playing this dumb little game of mine <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Future of BBB",
+     "items": [
+      {
+       "text": "Today's patch is mostly focused on bug fixes and a few quality-of-life issues based on your feedback. There are some more complicated (and confusing) bugs I still need to get fixed, but I'll need a little longer to do so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "My current plan",
+     "items": [
+      {
+       "text": "Smaller bug fix/QOL patch (Today's update!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A larger bug fix/QOL patch, including more accessibility features, fixes for vsync/high refresh stutter, and more controller remapping options (Coming soon!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An update focused on the Steamdeck, and getting that fully verified",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The game has been gaining a lot of traction internationally as well! I'm not sure the timeframe yet, but I am looking into localizing/translating the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've also been asked about content updates/DLC/sequels. I never planned on it! I enjoy that the game is a nice self contained package, but I'm not against the idea in the future! I wouldn't want to do it unless I had a solid, inspired idea for it - I wouldn't want to release just a random cash-grab. But it's honestly incredibly validating that so many of you want MORE! So thank you again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QOL Changes",
+     "items": [
+      {
+       "text": "Added hint text when aiming at the bed and radio buttons to indicate how to use them. (I'm looking at you, RCE.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a counter above the Vacuum, indicating how much stuff is in it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the rewind text to say retains \"banked star orbs\". (sorry to the few players who lost all their floating star orbs thinking they would save over :c )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can no longer use abilities at night, and thus waste them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the maximum FOV range in the options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Replaced the blueberry image on the first puzzle, as many players thought it could only be activated with blueberries, and not ANY berry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a platform under *something something puzzle spoiler* to help players not immediately falling down the hole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed a bug that could grant unlimited daytime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a *very easy* clip that could skip directly to one of the endings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the chainsaw and ambient nighttime volumes not matching the audio settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the abilities that would reset their duration, allowing non-stop usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fxied sum typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would tickdown daytime even when the unlimited daytime NG+ modifier was active: As always feel free to leave any feedback in the Discord.: Stay safe out there, sprouts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1823825466495440"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-05T03:10:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.426Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.426Z"
+  },
+  {
+   "id": "berry-bury-berry-381578@hotfix-2026-01-30",
+   "gameId": "berry-bury-berry-381578",
+   "displayName": "Tiny HotFix Patch - and Thank You for all the support!",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-30T20:33:09.000Z",
+   "notes": [
+    {
+     "title": "THANK YOU!",
+     "items": [
+      {
+       "text": "First off, THANK YOU to everyone who's been checking out the game and leaving such nice reviews. I'm so glad people are enjoying this weird little game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seeing the game sitting on the \"New and Trending\" tab was amazing and I'm still blown away by the support and kind messages from everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Super Tiny Hotfix Patch",
+     "items": [
+      {
+       "text": "Fixed the UI scaling on 16:10 and other resolutions (should fix issues with text running offscreen on the Steamdeck, as well)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added some missing collision in a certain area: As always, feel free to leave any feedback or bugs you may find in the Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3370870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3370870/view/1823191198606384"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-30T20:33:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-3370870",
+      "checkedAt": "2026-11-11T18:34:35.425Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:35.425Z"
+  }
+ ],
+ "issues": []
+}

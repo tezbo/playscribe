@@ -1,0 +1,2830 @@
+{
+ "game": {
+  "id": "quake-165247",
+  "igdbId": 165247,
+  "name": "Quake",
+  "cover": {
+   "imageId": "co9bga",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9bga.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar11kf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar11kf.jpg"
+  },
+  "ps5Release": "2021-10-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "quake-165247@major-2026-08-06",
+   "gameId": "quake-165247",
+   "displayName": "30th Anniversary Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-06T18:20:24.000Z",
+   "notes": [
+    {
+     "title": "Update as of 9.15.2026",
+     "items": [
+      {
+       "text": "Players can now be reported by highlighting their name on the scoreboard and selecting Report Player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed startup crash when using Vulkan renderer on Intel GPUs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cheats can now be used by the lobby host when playing cooperative matches in a private lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added extra cheats in Dawn of the Machine for granting upgrades, Bloody Nightmare, New Game+, the Super Axe, and the Bloody Shotgun/Super Shotgun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed missing shaders when running in Direct3D 11 mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note: Any workarounds that you may have applied to get around this problem can now be removed. We still recommend using Vulkan if at all possible, as Direct3D 11 is unsupported and may cause other issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "GOG and Epic Game Store are both updated to include Dawn of the Machine",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Dawn of the Machine QuakeC source has been released for modders on GitHub here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To celebrate the 30th Anniversary of Quake, we have collaborated with MachineGames to create a new episode, Dawn of the Machine, now available as a free update to Quake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕WHAT'S NEW",
+     "items": [
+      {
+       "text": "[img src=\"https://res.cloudinary.com/dewzjk72j/image/authenticated/s--6LdAOWXs--/c_lfill,w_640/f_auto:image,q_auto/v1/cms/Quake-DOTM_Boxart4Web_jdf7q4?__cld_token__=exp%3D1785439554%7Ehmac%3D168e6ec134ef5b11ed29903e15d277b5931dc55130d1b5256e52292eb381aca5\" style=\"--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; scrollbar-color: color-mix(in oklch, currentcolor 35%, transparent) transparent; display: block; vertical-align: middle; max-width: 100%; height: auto; width: 600px; object-fit: cover; --focal-direction-x: center; --focal-direction-y: center;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "⚙️DAWN OF THE MACHINE",
+     "items": [
+      {
+       "text": "[img src=\"https://res.cloudinary.com/dewzjk72j/image/authenticated/s--Tok-vjRJ--/c_lfill,w_640/f_auto:image,q_auto/v1/cms/DOTM_START_Vista_zbtorr?__cld_token__=exp%3D1785439554%7Ehmac%3D5ebd983d3568e4439dbc1f8e28dd2bf2a3abd85977288bcfae6384c9e40126e6\" style=\"--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; scrollbar-color: color-mix(in oklch, currentcolor 35%, transparent) transparent; display: block; vertical-align: middle; max-width: 100%; height: auto; width: 600px; object-fit: cover; --focal-direction-x: center; --focal-direction-y: center;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Celebrating 30 years of Quake, the award-winning team at MachineGames—in collaboration with id Software—returns with Dawn of the Machine, a brutal new episode building on their critically acclaimed work on Dimension of the Machine and Dimensions of the Past. Delivering ferocious combat, labyrinthine level design, and nightmarish realms that twist reality beyond recognition, it pushes the legacy of the genre-defining first-person shooter even further—honoring one of gaming’s most enduring icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🏃‍♂️‍➡️END THE NIGHTMARE. 😶‍🌫️ESCAPE THE ILLUSION.",
+     "items": [
+      {
+       "text": "[img src=\"https://res.cloudinary.com/dewzjk72j/image/authenticated/s--WGtbz22o--/c_lfill,w_640/f_auto:image,q_auto/v1/cms/DOTM_MAP8_Vista_c9mavi?__cld_token__=exp%3D1785439554%7Ehmac%3De91387bb10c3da76455c9c55eecf9a4305a28e3de9c816c0a9ee91526f6a165d\" style=\"--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; scrollbar-color: color-mix(in oklch, currentcolor 35%, transparent) transparent; display: block; vertical-align: middle; max-width: 100%; height: auto; width: 600px; object-fit: cover; --focal-direction-x: center; --focal-direction-y: center;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Ranger is trapped in a dimension of endless illusion—reliving the same violent cycles for what feels like lifetimes, dying thousands of times in a futile attempt to escape. Wearied but unbroken, he has heard rumor of The Nightmare Machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Beyond the hordes of monsters—twisted by an eternity in the Elder realms—lies the Machine. It is believed its destruction will shatter the illusion, finally breaking the loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆓FREE FOR QUAKE OWNERS",
+     "items": [
+      {
+       "text": "[img src=\"https://res.cloudinary.com/dewzjk72j/image/authenticated/s--MaONQXDn--/c_lfill,w_640/f_auto:image,q_auto/v1/cms/DOTM_HUB_Vista_xgmqcs?__cld_token__=exp%3D1785439555%7Ehmac%3Dc073676ec975ba8c0c7175f3936846b98ffb02970988427746cf260c5b12edcc\" style=\"--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; scrollbar-color: color-mix(in oklch, currentcolor 35%, transparent) transparent; display: block; vertical-align: middle; max-width: 100%; height: auto; width: 600px; object-fit: cover; --focal-direction-x: center; --focal-direction-y: center;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Dawn of the Machine is available as a free update for Quake owners on XBOX Series X/S, XBOX One, Microsoft PC Store, Game Pass, PC Game Pass, Steam, PlayStation 5, PlayStation 4, Nintendo Switch 2 (via backwards compatibility), and Nintendo Switch versions of Quake. This expansive new episode features 19 all-new maps across a cohesive campaign, alongside a brand-new soundtrack, hidden secrets, a dedicated episode hub, and an all-new deathmatch map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "👹NEW ENEMY AND ⚔️WEAPON VARIANTS",
+     "items": [
+      {
+       "text": "[img src=\"https://res.cloudinary.com/dewzjk72j/image/authenticated/s--azdRnJ3D--/c_lfill,w_640/f_auto:image,q_auto/v1/cms/DOTM_MAP2_SuperAxe_RocketOgre_q8tijh?__cld_token__=exp%3D1785439555%7Ehmac%3D5a334e5073b2ac54c335f3542187e06556a261e398b7f0fd4c10796df537442c\" style=\"--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; scrollbar-color: color-mix(in oklch, currentcolor 35%, transparent) transparent; display: block; vertical-align: middle; max-width: 100%; height: auto; width: 600px; object-fit: cover; --focal-direction-x: center; --focal-direction-y: center;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Face deadly new twists on familiar foes, including the Rocket Ogre, Demo Dog, Blood Shambler, and more. Each variant introduces lethal new behaviours—from overwhelming firepower to explosive death traps—forcing you to rethink every encounter. Expand your arsenal with brutal variants inspired by classic Quake expansions, including the Super Axe—unleashing lightning on successive strikes—and the Laser Cannon, firing ricocheting projectiles that tear through enemies from every angle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "♻️REPLAYABLE EPISODE LOOP",
+     "items": [
+      {
+       "text": "[img src=\"https://res.cloudinary.com/dewzjk72j/image/authenticated/s--NQdZBlMH--/c_lfill,w_640/f_auto:image,q_auto/v1/cms/DOTM_MAP5_Vista_tmhvzl?__cld_token__=exp%3D1785439555%7Ehmac%3Df49e0a73fa969a961de227b9f53529256a710915f4f9a812bcca65d828a1704a\" style=\"--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; scrollbar-color: color-mix(in oklch, currentcolor 35%, transparent) transparent; display: block; vertical-align: middle; max-width: 100%; height: auto; width: 600px; object-fit: cover; --focal-direction-x: center; --focal-direction-y: center;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Time folds back on itself in a unique looping structure, where each return reshapes the experience. Runes unlock previously sealed paths, drawing you back through familiar spaces now altered with new routes, encounters, and secrets waiting to be discovered. Persistent health and ammo upgrades found throughout the realm ensure each loop makes you stronger, introducing a new layer of progression to Quake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎭EXPECT THE UNEXPECTED",
+     "items": [
+      {
+       "text": "[img src=\"https://res.cloudinary.com/dewzjk72j/image/authenticated/s--SGwyJyCm--/c_lfill,w_640/f_auto:image,q_auto/v1/cms/DOTM_MAP3_LaserCannon_lp03wr?__cld_token__=exp%3D1785439555%7Ehmac%3D022810d6ea2f1c2d64284da88e0a5061056e0cbd34d3e1f98c26ebe8b3e39dae\" style=\"--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; scrollbar-color: color-mix(in oklch, currentcolor 35%, transparent) transparent; display: block; vertical-align: middle; max-width: 100%; height: auto; width: 600px; object-fit: cover; --focal-direction-x: center; --focal-direction-y: center;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Reality is never stable. Shift between dimensions to solve puzzles and navigate the world, or find hidden secrets scattered throughout the realms. Face enemies that rise again or transform after death, and experience encounters where the rules change without warning—forcing you to adapt or be overrun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔒id VAULT",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Browse a behind-the-scenes gallery of development assets and unused content. Explore playable maps, including some levels from the earliest stages of Quake’s development",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🏆NEW ACHEIVEMENTS",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Three new achievements are available to earn while playing Dawn of the Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🤫CHEATS MENU",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Access the new Cheats menu at any time in single player games to help you through a tough area or just explore levels without fear of enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️FIXES",
+     "items": [
+      {
+       "text": "Improved interpolation. This reduces input latency and lessens occurrences where the camera would visually fall behind your weapon and weapon effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the camera would interpolate between position changes that were too large to possibly be stairs (silent teleporters)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-added weapon bobbing effects when view bobbing is disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weapon bob can now be turned on or off separately from view bob",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed shadow casting from Hell Knight projectiles to improve visuals in its ranged attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shadow casting lights from enemies are now capped to improve performance in scenes with lots of Enforcers firing weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced memory usage from menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved font rendering when using the larger accessible typeface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "👷MODDING CHANGES",
+     "items": [
+      {
+       "text": "Localization strings are now stored in the Quake PAK, instead of outside the game data in the KPF file. Third party engines that previously read strings from the KPF file will need to be updated to read from the PAK file and should no longer need to load the KPF file at all",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mods can optionally add new mod-specific localization by overriding localization/loc_(language)_mod.txt in their PAK files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "❓FAQs",
+     "items": [
+      {
+       "text": "I already own Quake. How do I access the new episode, Dawn of the Machine?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you already own Quake, you’ll receive the new update automatically as a free download. Depending on your settings, the update may already be installed. Once updated, you can start a new game, select a level, or play cooperative multiplayer in Dawn of the Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Which platforms is Dawn of the Machine available in Quake?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dawn of the Machine is currently available on XBOX Series X/S, XBOX One, Microsoft PC Store, Game Pass, PC Game Pass, Steam, Nintendo Switch 2 (via backwards compatibility), Nintendo Switch, PlayStation 5 and PlayStation 4 versions of Quake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Is Dawn of the Machine available on the Epic Games Store or GOG versions of Quake?",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Dawn of the Machine is currently not available on the Epic Games Store or GOG versions of Quake",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I play Quake on GOG or the Epic Games Store. Why do I see a “Disconnected from servers” message when invited to play Dawn of the Machine maps with players on Steam or console?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you’re playing Quake on GOG or the Epic Games Store, you may see a “Disconnected from servers” message when accepting an invitation from a Steam or console player for Dawn of the Machine episode or maps. This message appears because the Dawn of the Machine update is currently available on supported platforms, while the GOG and Epic Games Store versions do not yet include this content. Your account has not been disconnected or penalized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]If you're still experiencing issues, please holler at our amazing Customer Service team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 9,
+    "balance": 0,
+    "other": 26,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/1840310314342808"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T18:20:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.934Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T18:20:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.934Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-06T18:20:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.052Z"
+  },
+  {
+   "id": "quake-165247@4.1",
+   "gameId": "quake-165247",
+   "displayName": "Update 4.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-29T16:44:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 4.1 for Quake includes an improved initial Accessibility options setup and a few other minor changes. Thanks to your feedback from the menu flow of Accessibility options we introduced in Update 4, we've improved the initial flow. On first startup, you will be presented with the following screen and have to choose one of the two options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choosing Disable all settings will disable all Accessibility options and return you to the main menu. Choosing Customize accessibility settings… will bring you into the Accessibility Menu to so you can access the full list of settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope this helps players who were confused in Update 4 by the high-contrast and alternate typeface options being enabled, but weren’t sure how to disable them, while allowing players looking to dive into our Accessibility options quicker access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "OTHER MINOR UPDATES",
+     "items": [
+      {
+       "text": "Level Select Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored missing level MGEND: Chthon's Vengeance to the Level Select menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add-ons Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add-ons menu selection images are now 16:9 aspect ratio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Threewave CTF",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored Threewave CTF spawns to original intended system: players will spawn for the first time in their own base, but afterwards will spawn randomly at deathmatch spawn points. This will prevent players from spawncamping a team inside their base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ICYMI - Read the full release notes from our last major release: Update 4 here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/4588629064111145583"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-29T16:44:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.932Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-29T16:44:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.932Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-29T16:44:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.050Z"
+  },
+  {
+   "id": "quake-165247@4",
+   "gameId": "quake-165247",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-18T15:56:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 4 for Quake includes the return of the legendary progenitor of team-based multiplayer: Threewave Capture the Flag! We have resurrected nine iconic levels from the original mod just in time for QuakeCon to bring you and seven of your closest frag friends back together again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "THREEWAVE CAPTURE THE FLAG (CTF)",
+     "items": [
+      {
+       "text": "The rules for Capture the Flag are similar to the backyard game: protect your flag, steal the enemy’s, and return it to your own flag to score a point. Threewave CTF comes with some extras to this basic formula by adding power-up runes for teams to fight over, and the famous grappling hook!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A BRIEF HISTORY",
+     "items": [
+      {
+       "text": "For all those scholarly Rangers out there, here's a brief history...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Threewave CTF was first released in October of 1996 by Zoid Kirsch. The mod back then was simple, and remixed existing game content to create something new. Matches took place on the single player levels modified to create bases. Keys were used in place of flags, and the grappling hook was an axe that fired a Vore ball. While a little bit of imagination was required, this didn’t hurt the mod’s reception at all. It caught on fire immediately and built a large fanbase of players looking for a deeper alternative to deathmatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Over the course of many updates, and eventually a QuakeWorld version, Threewave CTF would go on make Capture the Flag a household name in multiplayer game modes, and even spawn websites that exclusively covered Capture the Flag modes in games. Threewave CTF would be released officially as a part of Quake II, and the Quake III version of the mod would bring in new flag-based game modes and maps that would later make their way into Quake Live. Quake multiplayer and Threewave CTF have always been intertwined, and now the mod that started it all is now available for free in the enhanced Quake re-release",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW ENHANCEMENTS",
+     "items": [
+      {
+       "text": "This latest version of Quake has been enhanced, with an improved flag status display showing if your flag is safely in base, team scoring, and a modern interface. The maps included have been updated with improved lighting and fog effects. All of this is included free in Update 4, and requires no additional download",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "RUNES",
+     "items": [
+      {
+       "text": "Four power-up runes spawn randomly throughout the map at the start of the match. Teams will vie for control over them, as they bestow their holders great benefits, and will stay with them until death. They fly out of the player on death, so keep an eye out, and grab them as quickly as possible to posses their power. If nobody picks them up eventually, they'll respawn elsewhere. Holding these runes are key to giving your team the edge to win!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune of Earth Magic | Resistance - Take half damage from all weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune of Black Magic | Strength - All weapons deal double damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune of Hell Magic | Haste- Most weapons fire twice as fast, and nail projectile speed doubles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune of Elder Magic | Regeneration - Regenerate some lost health and armor every second, up to 150",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GRAPPLING HOOK",
+     "items": [
+      {
+       "text": "The grappling hook, accessed via the weapon wheel or by pressing the key bound to the Axe, is more utility than weapon than most options in your armory. Holding down the fire button will shoot the hook, where it will fly straight forward until it hits a wall. Once attached, the hook will pull you in at a very high speed. The hook can be attached to players to do a constant stream of damage; however this will leave you vulnerable to the player you are attached to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switching weapons while the hook is attached will allow you to hang off walls and fire, however you will be vulnerable as you will be unable to move, doing your best impression of a turret. Using this to ambush an attacker can be an effective tactic, however it should be used sparingly as ambushes only work if they are unexpected!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Advanced players can shoot the hook at the ground, and then immediately let go as soon as the hook starts to pull you. This lets you launch into a bunny hop at a very high speed, and makes you less predictable of a target as you weave your way around the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MAPS",
+     "items": [
+      {
+       "text": "Our update includes nine of the maps from the original mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF1: MCKINLEY BASE",
+     "items": [
+      {
+       "text": "Created by Zoid Kirsch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two bases connected by bridges, and an underwater route. An instant classic, and the most iconic map of the mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF2: MCKINLEY STATION",
+     "items": [
+      {
+       "text": "Created by Zoid Kirsch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The sequel to McKinley Base, with bigger bases, a bigger flag room, and more routes. A classic, refined",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF3: SPILL THE BLOOD",
+     "items": [
+      {
+       "text": "Created by Dale Bertheola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Catwalks and bridges hanging over lava and acid, with a wind tunnel into the flag room that provides ample opportunities to overwhelm the defense for some skeet shooting practice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF4: GLOOM CASTLES",
+     "items": [
+      {
+       "text": "Created by Tim Willits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A CTF version of the classic E1M5: Gloom Keep. Two Gloom Keeps, face to face. The front door is the shortest route, but also the riskiest. Lose the defense by taking the long way around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF5: CAPTUREPHOBOPOLIS",
+     "items": [
+      {
+       "text": "Created by American McGee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mouthful of a map returns, but now with flags! This time, the bases are stacked on top of each other: red team on top, and blue team below",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF6: VERTIGO",
+     "items": [
+      {
+       "text": "Created by Dale Bertheola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each flag is flanked by a hulking Quake Q, looking over three paths out of the flag room and one-way wind tunnels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF7: THE STRONGBOX",
+     "items": [
+      {
+       "text": "Created by Brent McLeod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With a warehouse at its center, elevators and trains between bases provide ample grapple opportunities into tight flag rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF8: CHTHON’S CAPTURE HOUSE",
+     "items": [
+      {
+       "text": "Created by Tim Willits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chthon’s hellish domain has been converted into a base in our smallest map of the set, providing intense combat with nowhere to hide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CTF9: DA ANCIENT WAR GROUNDS",
+     "items": [
+      {
+       "text": "Created by Matt Hooper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Catapult yourself over the moats into two traditional medieval castles and grab the flag from the throne room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed Fiend arm clipping into the floor at death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed auto aim debug variables that could be used to cheat in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading lightmaps in huge levels, such as when users side-loaded \"Tears of the False God\" in Arcane Dimensions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/4584121659781194965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-18T15:56:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.931Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-18T15:56:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.931Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-18T15:56:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.050Z"
+  },
+  {
+   "id": "quake-165247@3",
+   "gameId": "quake-165247",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-20T16:21:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Quake Update 3 includes new Accessibility features, three new Horde Mode maps from MachineGames, as well as QOL improvements, and bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW ACCESSIBILITY FEATURES",
+     "items": [
+      {
+       "text": "We are happy to add new accessibility features to Quake so that the gameplay experience can be enjoyed by even more players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessibility Options Notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After installing Update 3, you will be presented with an Accessibility Options notification. Read through the available options to make sure they are set to your preference. Once in-game, these options can be accessed from the Options/Accessibility sub-menu via the Main and Pause Menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Note: All Accessibility options default to ON during first launch after install - but can be easily toggled OFF/ON via Disable/Enable All Settings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessibility Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Read Chat Out Loud '*'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Converts incoming multiplayer text chat into a synthesized voice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transcribe Voice Chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Converts incoming voice chat to text in the multiplayer chat window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Speak For Me in Voice Chat '*'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Converts outgoing multiplayer text chat into a synthesized voice audible to other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "'*' Voice profiles can be selected from the Accessibility menu when connected to an online multiplayer session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "'*' Text-to-Speech menu narration is not supported",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Note: There are several Voice Profiles now available in Quake. The number available per language may vary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High Contrast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the default text field backgrounds to improve User Interface legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High Contrast OFF",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High Contrast ON",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Alternate Typeface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the original in-game font to a more modern one for improved legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Screen Flash Amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreases opacity of onscreen effects to reduce flash intensity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Center Message Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the display duration of center print HUD messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corner Message Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the display duration of corner print HUD messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Maximum Lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the maximum number of onscreen corner print HUD messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chat Message Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the display duration of multiplayer text chat messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "HORDE MODE",
+     "items": [
+      {
+       "text": "Three New Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy three new Horde Mode levels courtesy of our friends at MachineGames!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Trial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Tower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QUALITY OF LIFE IMPROVEMENTS",
+     "items": [
+      {
+       "text": "General Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to disable automatic weapon switching on pickup (Note: This may not work with certain Add-ons)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved spawn logic to avoid spawning enemies when the player is on a spawn point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Horde Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Skill selection balance adjustments",
+     "items": [
+      {
+       "text": "We’ve received community feedback that Horde Mode is too hard on Easy and too easy on the more difficult skill selections. To accommodate this feedback, we’ve made Horde Mode less difficult on Easy and more difficult on the Hard and Nightmare skill levels. We hope these balance changes are to your liking and look forward look forward to hearing from you on them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fewer enemies are spawned in each squad on Easy skill selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Boss enemies will start showing up in earlier waves on Hard and Nightmare skill selections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hard skill selection now starts with as many enemies as wave 3 had previously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nightmare skill selection now starts with as many enemies as wave 6 had previously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Additional balance adjustments:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ammo now respawns every 20 seconds instead of once per round",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemies are now more tenacious – they will now route around the map and obstacles to find you. No more hiding and safely picking off harmless monsters from a distance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Four player games will now spawn in double the enemies in each wave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed ability to enable cheats in public multiplayer matches (Note: Cheats can still be enabled from a PC host in private matches)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed color of enemy text chat from red to green for increased contrast and improved legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Online multiplayer text chat messages can now be sent via the Pause Menu (Note: Only PC versions support text entry from physical keyboards)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added option to toggle the scoreboard on/off with a button press instead of a button hold (in Gameplay Options)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Multiplayer Bots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Deathmatch bot support for all single player levels in the original campaign, courtesy of Jorge Martins (Check out their super useful guides made for community modders here)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bots now roam around if the current map doesn't have items, finding their own roam goals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bots now better handle maps with lots of air blasts that push them around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved bot navigation on MGDM1, and E1M2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bots now roam around if map doesn't have items, finding their own roam goals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bots now better handle maps with lots of air blasts that push them around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved bot navigation on MGDM1, and E1M2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "General Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which music was not playing correctly on certain Add-ons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced audio latency throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in which the House of Doom achievement was not unlocking when finding the secret level in Dimension of the Past",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue in which the Corner message would print the incorrect one for a single frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which menus would not scroll all the way to the top of the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved the issue where the text chat window was too small while playing at 4K resolution on supported platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Horde Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in which suicide in Horde Mode would not deduct points and immediately respawn you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue in which killing a teammate would incorrectly grant a frag and not end kill streaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the random offset from dropped powerups to prevent them from falling out of the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer Bots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which bots would sometimes miss shootable triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bots incorrectly using Mjolnir when they don’t have ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addresses the issue where bots wouldn’t chatter when killing an enemy, or if teamkilled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "MODDING IMPROVEMENTS FOR MODDERS",
+     "items": [
+      {
+       "text": "The following changes apply to users who may be developing Add-ons that work on the PC version of Quake",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "General Modding Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Our QuakeC source code is now available! This includes the QuakeC source for the base game, Scourge of Armagon, Dissolution of Eternity, and the new Dimension of the Machine, which includes Horde Mode. This code is released under the GPL license and can be obtained from the id Software GitHub here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "QuakeC built-ins that are unique to the rerelease are now looked up by name, rather than hardcoded builtin numbers which could interfere with other engines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with long centerprints disconnecting clients when sent, which could occur when using long custom intermission end texts in Copper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"walkpathtogoal\" QuakeC built-in. This can be used as a drop-in replacement for the existing AI movement to allow any entity to take advantage of bot pathfinding without needing them to be a bot client. Create a friendly dog that does your bidding, or haunted items that run away from the player to avoid being picked up. The world is your oyster!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New entities are available for ranged, flying, and boss spawn points. The horde spawning logic will use these points if available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Monster spawners can be controlled by using trigger_multitouch entities to enable or disable them as the player moves throughout the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiplayer Bots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"bot_movetopoint\" - new QuakeC built-in to give bots a high level command to move to a point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"bot_followentity\" - new QuakeC built-in to give bots a high level command to follow any entity that they are aware of",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Bot_PreThink - new QuakeC function that gets called before bots run their update logic in the engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Bot_PostThink - new QuakeC function that's called after bots run their update logic in the engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"objective\" flag to items.txt processing. This allows you to tag any item as an objective. Bots track these as a special case, but rely on you to tell them what to do about it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warn at startup if weapons are not correctly setup with a power of two number in QuakeC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add cvar \"bot_entityRespawnFunc\" to tell the bots which function in a QuakeC mod handles respawning items. Bots use this knowledge to understand when items like the MegaHealth will actually respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bots can receive and will react to two stuffcmds: “color” and “kill”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update monster teams regularly - allows mods to add/remove monsters from teams during the game, and have bots understand the change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support idea that monsters can \"belong\" to a player in DM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bot Navigation Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add cvar \"navEdit_removeNoclipOnExit\" to disable turning off noclip when exiting nav editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Expose bot pathfinding heuristic value to users in the nav editor, and save the heuristic into the nav file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rename cvar navEdit_waterLookPointDist to navEdit_inWaterLookPointDist for clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When underwater, place nav node centered on crosshair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix nav node placement in shallow water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add ability to clear start/goal nodes when testing paths in the editor by pressing F8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add ability to toggle seeing traversals when testing paths in the editor by pressing F5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add \"NoMonsters\" flag to nav nodes. Allows you to mark nodes that AI shouldn't use (eg. if the node is too close to a wall or obstacle that might get an AI stuck, but are not issues for bots)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 61,
+    "fixed": 15,
+    "balance": 22,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Accessibility Options Notification",
+     "Accessibility Options",
+     "Read Chat Out Loud '*'"
+    ]
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/4348797798072198303"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-20T16:21:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.929Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-20T16:21:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.930Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-04-20T16:21:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.049Z"
+  },
+  {
+   "id": "quake-165247@post-2022-02-09",
+   "gameId": "quake-165247",
+   "displayName": "Quake | Free Add-ons Available | Honey, Underdark Overbright & Copper",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-02-09T19:55:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Enjoy battling through new maps in Underdark Overbright as well as experience the original game with community-driven gameplay adjustments with a bonus to this Add-on, Copper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Underdark Overbright is an eight-level episode set in a mix of medieval architecture and overgrown environments, serving as a prime example of the modern Quake modding community. The new episode brings you through some unique moments such as an underwater gauntlet, a fight to survive on sinking lava platforms and single-player revisitations of Deathmatch classics. As a bonus, the original Quake episodes are available from the Underdark Overbright hub map as well as a whole new end level, so definitely check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UNDERDARK OVERBRIGHT & COPPER",
+     "items": [
+      {
+       "text": "Speaking of the original Quake, also included in this Add-on is Copper - a modification that slightly alters Quake’s gameplay! With adjusted behaviors for items, monsters and weaponry, Copper’s quality-of-life changes offer a new take on your next trip through the Slipgate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HONEY",
+     "items": [
+      {
+       "text": "Encounter waterlogged crypts and underground temples as you face the darkness, combating a deadly plague blighting the land. With expert use of fog effects and silhouettes, traversing through Honey’s maps are just as good at ambiance as they are obscuring the deadly threats you’ll face in this fan-favorite Add-on!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Download Honey, Underdark Overbright & Copper for free via the Add-on menu in Quake today! Learn more how Underdark Overbright & Copper were developed with our exclusive interview with the original creators, Lunaran and Scampie! And of course our exclusive interview with Honey creator and MachineGames alum, Christian Grawert!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/4235075565596472644"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-09T19:55:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.928Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-09T19:55:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.928Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-02-09T19:55:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.047Z"
+  },
+  {
+   "id": "quake-165247@2",
+   "gameId": "quake-165247",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-02T16:25:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 2 contains a brand-new Horde Mode made by MachineGames with 1-4 player co-op (including optional bots), new Add-on \"Honey\", some quality-of-life improvements, and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It also marks the Quake release on the Epic Games Store (for PC). With Horde Mode you can play solo, with bots, or friends, and face off against waves of enemies of increasing difficulty. Earn Silver Keys to unlock access to better weapons. Survive long enough and earn a Gold Key, which will allow you to escape, or stay behind and fight against the armies of Quake until you fall",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "HORDE MODE",
+     "items": [
+      {
+       "text": "Overview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All new multiplayer PvE experience designed by MachineGames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Supports 1 - 4 players or bots in local multiplayer and online modes (Custom matches only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Playable on all difficulty levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Includes 4 new maps specifically designed for Horde Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Score points by killing enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kill multiple enemies in quick succession for bonus points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your progression is reset after the last player dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Every 3rd wave has boss monsters but once you clear it, you get a Silver key to unlock more weapons and items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the 9th wave, you get a gold key to unlock the exit, or you can keep fighting as long as you are able",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters have a chance of dropping quad damage and the pentagram of protection (powerups last for 5 seconds once picked up and despawn if not picked up after 10 seconds)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW ADD-ON: HONEY",
+     "items": [
+      {
+       "text": "Expand your Quake experience with the free Honey Add-on and delve deep into the darkness to conquer a deadly plague infecting the land",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For a unique look behind the curtain, check out our Nods to Mods interview with the author of \"Honey\", MachineGames' own Senior Level Designer - Christian Grawer here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Read more about how to access Honey here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Improved auto aim to reduce amount of snapping and view locking onto enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crosshair color and type can now be changed from the Gameplay options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add-ons menu can now be used to play previously downloaded add-ons while offline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Text chat and push to talk voice chat are now available in pre-game lobbies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to invite friends across PC platforms using players on your Bethesda.net friends list (optional)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "RANGER SKINS IN QUAKE CHAMPIONS AND DOOM ETERNAL",
+     "items": [
+      {
+       "text": "Owners of our Quake re-release can log in with their Bethesda.net credentials in-game to earn the Ranger Slayer Skin for DOOM Eternal and the Quake Guy Ranger Skin with the Gladus Axe in Quake Champions! (NOTE: In addition to owning Quake, players must also own DOOM Eternal or Quake Champions to use their respective skins)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more info, click here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Nintendo Switch users can unlock the Ranger Slayer Skin in DOOM Eternal alongside Update 6.66 sometime in early 2022. Stay tuned to the Slayers Club for updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed Death Knight incorrectly referred to as Hell Knight in the main Quake campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bots now chat less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where texture borders were visible around certain HUD elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weapon firing immediately after respawning in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turning off Enable Microphone before connecting to online services now properly mutes the microphone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "MODDING IMPROVEMENTS",
+     "items": [
+      {
+       "text": "The following changes apply to users who may be developing add-ons that work on the PC version of Quake",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added new cvar navEdit_onlyTraceAgainstWorld to validate look position only against the world (skipping all other entities). This cvar is exposed as a user option in the nav editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new cvar navEdit_skipLookPointValidation which completely skips look point validation, allowing user to place nodes anywhere • Bots now understand Zombies are killed easier with explosives and will switch weapons if possible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Further improved bot control of powerups on the map in DM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bot characters are now reloaded when loading a new mod/Add-on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Make sure FL_ISBOT flag is set on the bot client when the bot calls \"ClientConnect\" and \"PutClientInServer\" inside QuakeC. This allows mods to run bot specific logic when a bot spawns in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bots trying to pick up weaker armors, when wearing a stronger set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added nav editor cvars that are handy when switching back and forth between editor and game for testing, navEdit_removeGodModeOnExit, and navEdit_removeNotargetOnExit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added g_removeAllAI to remove all AI that are on the map. Will check regularly for spawned AI to remove them as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added nav editor cvar navEdit_showLinkType. Useful for debugging pathing issues. Cycles between showing all links/nodes, only nodes with one way links, and only nodes with non-walk links",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 5,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/4224936215384179641"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-02T16:25:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.927Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-02T16:25:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.927Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-02T16:25:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.046Z"
+  },
+  {
+   "id": "quake-165247@1",
+   "gameId": "quake-165247",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-07T15:40:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 1 includes improvements to user controls, the addition of bot support to multiple Deathmatch maps, improvements to bot functionality and several notable bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved analog stick input on controllers – now more responsive by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added deadzone, aim acceleration, exponent and aim smoothing options to tweak gamepad input in the Input Options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Map Improvements: Dimension of the Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hell or Dark Water (MGE3M2): added checkpoint spawns in co-op after traps section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grave Machine (MGE4M1): added checkpoint spawns in co-op and fixed pain triggers around pentagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A Grave Mistake (MGE4M2): added checkpoint spawns in co-op and pain triggers to prevent falling through and skipping them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Save game process is faster on large levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hosts are now identified by an icon instead of a color to make it easier to distinguish for color blind players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weapon wheel HUD element is no longer cut off on local multiplayer vertical split-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Online Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed visible game limit in match browser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Scourge of Armagon client-side prediction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added bot support for the following levels",
+     "items": [
+      {
+       "text": "The Slipgate Complex (E1M1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Castle of the Damned (E1M2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The House of Chthon (E1M7)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Elder God Shrine (E4M3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shub-Niggurath's Pit (END)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Edge of Oblivion (HIPDM1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Pumping Station (HIP1M1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved bot melee attack, swimming and weapon selection behaviors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added text dialogues for when bots make kills or get killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved bot handling of elevators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved bot navigation on The Abandoned Base (DM3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Misc. Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added monitor select option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Control Updates",
+     "items": [
+      {
+       "text": "Added quick save and quick load key binds",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added default keyboard binds for the Laser Cannon, and Mjolnir in Scourge of Armagon",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Note: Users with existing save data may need to bind these manually from the Input Options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed backward movement speed accidentally being set to walk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game speed now correctly resets after using the Weapon Wheel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a bug that could result in the player getting stuck when jumping out of the water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turning off friendly fire no longer prevents self-damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare audio crash in Scourge of Armagon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue that caused excessive clipping when multiple sounds play simultaneously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue in which the wrong audio track was playing during the Scourge of Armagon demo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which Track 11 was playing instead of Track 10 on Gloom Keep (E1M5), The Wizard’s Manse (E2M5), The wind Tunnels (E3M5) and Hell’s Atrium (E4M5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Silver Key no longer shows up in Hell’s Atrium (E4M5) on Deathmatch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which some decals were oriented incorrectly in Scourge of Armagon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lighting bug in The Door to Chthon (E1M6) that caused the darkened path to be lit prematurely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Darkened lighting on the roof to restore the original visual effect on Shub-Niggurath's Pit (END)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Usernames with quotation marks now appear correctly in game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spanish episode end slate text is no longer cut off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Texture smoothing setting restores correctly after deactivating the Quake 64 add-on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which enhanced Ogre model would sink into ground plane after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue when sounds would drop and entities disappear or flicker during online play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue where bots would not grab needed pickups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bots should now see all triggers and doors as shootable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bots no longer linger in slime or lava for too long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Bot support on maps that lack waypoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in which bots tried to re-use single-use buttons and triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which the Max FPS option did not correctly display custom settings in drop down menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled GPU culling to improve performance in Dimension of the Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "MODDING IMPROVEMENTS",
+     "items": [
+      {
+       "text": "The following changes apply to users who may be developing add-ons that work on the PC version of Quake",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the pr_checkextension cvar and checkextension (\"QUAKE_EX\") function in QuakeC to detect if the mod is running under the updated Quake client",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the cl_nocsqc cvar (it is permanently set to 1 to indicate to modders that CSQC is not supported)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the -heapsize command line parameter. It is no longer used in favor of a dynamically sized heap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added FL_NO_BOTS edict flag (Instructs bots to ignore specified object(s) in QuakeC)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a QuakeC built-in for playing a sound on a client: void localsound( entity client, string sample ) = #80;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the following QuakeC built-in functions for drawing debug shapes on clients (these are intended to help mod authors visually debug logic in 3D space):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_point( vector point, float colormap, float lifetime, float depthtest ) = #81;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_line( vector start, vector end, float colormap, float lifetime, float depthtest ) = #82;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_arrow( vector start, vector end, float colormap, float size, float lifetime, float depthtest ) = #83;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_ray( vector start, vector direction, float length, float colormap, float size, float lifetime, float depthtest ) = #84;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_circle( vector origin, float radius, float colormap, float lifetime, float depthtest ) = #85;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_bounds( vector min, vector max, float colormap, float lifetime, float depthtest ) = #86;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_worldtext( string s, vector origin, float size, float lifetime, float depthtest ) = #87;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_sphere( vector origin, float radius, float colormap, float lifetime, float depthtest ) = #88;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "void draw_cylinder( vector origin, float halfHeight, float radius, float colormap, float lifetime, float depthtest ) = #89;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added logic that resets AI state to neutral when activating the bot navigation editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added bot nav editor fullbright toggle key bind to F2",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added \"CheckForFloor\" flag to nav nodes (this can be used for drawbridges, floor traps, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"CheckForSolid\" flag to nav nodes (this can be used for crushers, traps, movable walls, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to place nav nodes in shallow lava",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the following cvars to change nav editor window positions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "nav_properties_xpos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "nav_properties_ypos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "nav_legend_xpos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "nav_legend_ypos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added navEdit_defaultNodeRadius to set preferred default nav node radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to lock node height in place when moving nodes around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added navEdit_defaultNodeRadius to set preferred default nav node radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added navEdit_waterLookPointDist to control how far away nodes will be placed in front of player when in water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "MODDING FIXES",
+     "items": [
+      {
+       "text": "Fixed an issue in which the save command was appending an \"s\" to the beginning of filenames, resolving auto-save in mods like “Copper”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Alpha not being applied to brush models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored original behavior of centerprint, sprint, and bprint built-ins to fix issues with mods expecting arguments to concatenate instead of a string format",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 56,
+    "fixed": 34,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Controls",
+     "Improved analog stick input on controllers – now more responsive by default",
+     "Added deadzone, aim acceleration, exponent and aim smoothing options to tweak gamepad input in the Input Options menu"
+    ]
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/4069556867204660148"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-07T15:40:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.926Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.045Z"
+  },
+  {
+   "id": "quake-165247@major-2021-09-02",
+   "gameId": "quake-165247",
+   "displayName": "Quake | Minor Update Release Notes | September 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-02T14:30:51.000Z",
+   "notes": [
+    {
+     "title": "Multiplayer Update for All Platforms",
+     "items": [
+      {
+       "text": "This minor update fixes an issue that caused multiplayer lobby instability for some users",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2310/view/4020014099088431299"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-02T14:30:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2310",
+      "checkedAt": "2026-11-13T03:28:39.925Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.044Z"
+  }
+ ],
+ "issues": []
+}

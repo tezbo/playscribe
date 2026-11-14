@@ -1,0 +1,778 @@
+{
+ "game": {
+  "id": "chained-beasts-344588",
+  "igdbId": 344588,
+  "name": "Chained Beasts",
+  "cover": {
+   "imageId": "cod2kz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cod2kz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6vte",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6vte.jpg"
+  },
+  "ps5Release": "2026-10-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "chained-beasts-344588@1.0.3",
+   "gameId": "chained-beasts-344588",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-04T05:09:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45629220/30727a2845a3b634e4398f4a51dfa4666733b000.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To access the beta branch: Right click Chained Beasts in your Steam Library > Properties > Game Versions & Betas > Select beta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crossplay Compatibility Note",
+     "items": [
+      {
+       "text": "This beta is only available for Steam. To resume playing crossplay with other platforms, follow the above instructions and select Default Public Version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added the ability to pick up and throw a chained player's iron ball, or the wooden log when fighting the Goliath boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a purchase info bar to the pause menu showing all passive purchases for the current run, grouped by category.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance Changes",
+     "items": [
+      {
+       "text": "Tweaked throw velocity and throw windup times for Urns, Barrels and Heads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mighty Bear flail stun changed from applying on the first hit of a spin only, to applying on every hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Soak Up The Roar skill can now only stack 3 times, down from 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the cap on how many Netter Gladiators can spawn in a single wave in Rome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reckless Rhino thrown shields changed from breaking on impact, to landing as a pickup with 1 less durability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Picky Eater affliction no longer applies when the player also has the Color Blindness affliction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Surgeon's Lobotomy can no longer give back an affliction it is removing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Friendly-fire Owner job tweaks: enemies now get credit for setting other enemies on fire, knocking them into hazards, or throwing them, including kills that land shortly afterwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Friendly-fire Owner job is no longer offered on small fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Players carrying an object or enemy overhead can no longer pick up or grab anything else.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Starting money on lower difficulties now counts towards money earned, including money Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The final day of a higher difficulty run now receives the correct difficulty XP bonus (Previously it only gave base XP).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Skills which remove afflictions when acquired can no longer remove afflictions acquired through surgery, such as amputations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Desperate Ibex's low health Vigor not correctly triggering effects from Vigor-related skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error with skills that trigger effects on teammates not working correctly after that teammate leaves mid-run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed skills and afflictions being offered for the wrong player count after a player leaves a co-op run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rerolling a skill with the Monkey now correctly refreshes the Codex unacquired indicator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed poison bow arrows passing through the Rhino boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The explosive barrel now correctly explodes when performing an execution while holding it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Execution animation cancelling now works as intended. You can dodge away before the execution kills the downed enemy to cancel it, but once the kill completes, you are locked in for the rest of the animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Spear-wielding enemies' charge sometimes not moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed knockbacks pushing players inside walls. Knockbacks now stop at the wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which players could get stuck inside the Senate arena walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare camera issue when a co-op run drops to one player while the remaining player has the Infatuated affliction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Trainer XP bar and rep counter going out of sync between players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved reliability of speeding up training animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Character model changes from amputations will no longer remain visible when allies are invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI and Audio",
+     "items": [
+      {
+       "text": "Elite and Master enemy health bars are now larger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the targeting icon size on enemy health bars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made \"Reroll\" more visible when playing as Monkey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crit sounds tweaked to be easier to hear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an exhausted voice line when the Out Of Breath affliction stuns the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a coin popup above the player's health bar when money is earned in combat through certain skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 16,
+    "balance": 12,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3569420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3569420/view/1848557880477774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T05:09:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3569420",
+      "checkedAt": "2026-11-13T03:17:13.505Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:16.490Z"
+  },
+  {
+   "id": "chained-beasts-344588@1.0.2",
+   "gameId": "chained-beasts-344588",
+   "displayName": "Patch 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-22T03:45:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The first balance and bug fixes update for Chained Beasts is now live! Thank you to all gladiators who helped us test these changes on the Steam beta branch. For everyone else, here's an overview of what's new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're bringing the full training system into the first difficulty level because we think it's fun and want everyone to be able to have the full experience. It allows you to train more (at a cost) and have more powerful builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside this, in Pleb difficulty water now heals for a small amount to offset the injuries you may take through training.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overall the balance changes are designed to",
+     "items": [
+      {
+       "text": "Improve consistency between single player and multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Balance the challenge across all the days of a run rather than a single boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduce the occurrence of really giant waves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "There will be plenty more to come in terms of balance and bug fixes, so keep reporting any issues you find! We are also working on some big content updates for the near future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Crossplay Compatibility Note",
+     "items": [
+      {
+       "text": "The Nintendo Switch version of this update will need a couple more days before it goes live. If you wish to keep playing Crossplay multiplayer with Nintendo Switch, please use the crossplaycompatibility Steam branch. To access this branch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Click on Chained Beasts in your Steam Library > Properties > Game Versions & Betas > Select the crossplaycompatibility branch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TRAINING AND DIFFICULTY PROGRESSION",
+     "items": [
+      {
+       "text": "The full training system is now used in Tutorial and Pleb difficulty. For those difficulties, in Carthage you will still train as normal and earn a level up without any risk. Once you reach Germania, the full training system will be in use, in which you will need to balance lifting weights to level up, without overtraining and suffering an affliction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On Tutorial and Pleb difficulty, water now heals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Singleplayer difficulty has been slightly scaled down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rome in singleplayer has had further adjustments to scale down its difficulty removing the largest formation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Multiplayer difficulty has been balanced out across the whole run so it is less focused in the final boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "PLAYER, SKILLS AND AFFLICTIONS",
+     "items": [
+      {
+       "text": "Hulking Bear invulnerability and fury duration slightly reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Armoured Rhino damage reduction slightly reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Draw Fire skill now also reduces damage taken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage from the Sneaky skill slightly reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly reduced the negative effects of the following afflictions: Poor Balance; Broken Foot; Intoxication; Far Sighted; Butterfingers; Panic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Afflictions which use a timer no longer countdown during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stamina now regenerates during the execution animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Obsidian Harpoon now removes shields regardless of whether or not the target is blocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ENEMY AND BOSS BALANCE",
+     "items": [
+      {
+       "text": "Beastmaster Barca Rhino damage increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Being chain tripped by the Rhino now slightly damages players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Praefectus boss difficulty on Day IX has been scaled up in both singleplayer and multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the damage of the Praefectus sword spin attack during the Day X Senate battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Boss health increased on both Day IX and Day X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Sergeant enemy in Rome now throws 3 bombs instead of 2 in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the impact damage of Catapult projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the number of archers in the Ballista formation in Rome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the rotation speed of the Ballista during the Day IX boss battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ranged enemies will no longer spawn if the player is chained to the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed an issue that sometimes caused players to spawn on spike traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hitting multiple enemies in a line wouldn't cause damage to the closest enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Missing Lung affliction now correctly prevents stamina regeneration while moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further fixes for awarding achievements online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spiked Shield block kills now count towards Shield item kills in the Codex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get stuck after rolling through obstacles in Day IX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue in which input bindings would not save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that would occur if you killed an ally during the final Day X execution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Obsidian Pilum no longer breaks you have the Bullet Throws affliction but successfully pierced through an enemy when the spear is thrown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dodging no longer prevents damage when your chain is being dragged by the Rhino boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "CODEX",
+     "items": [
+      {
+       "text": "Fixed the wrong XP requirement for Level II Beasts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Beast losses being counted twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping models in the Opponents section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some enemies being incorrectly displayed in the Opponents section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Afflictions, Skills, and Shop Items will now show a \"!\" icon during a run if you have not yet acquired them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "VISUALS & AUDIO",
+     "items": [
+      {
+       "text": "New beast mask variants for each Beast level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Poison Bow and Explosive Bow models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated target markers and enemy health bars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted how frequently some status effect audio plays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "UI AND MENUS",
+     "items": [
+      {
+       "text": "Friendly Fire stat added to final stats list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right stick no longer navigates some UI in the Codex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed from software cursor to a hardware cursor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some issues related to UI navigation when running a Twitch poll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gender preference resetting when returning to the lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed health showing incorrectly on the results screen when healing from the Ravenous Wolf skill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the player name profanity filter less aggressive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 17,
+    "balance": 20,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3569420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3569420/view/1847286114031082"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-22T03:45:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-3569420",
+      "checkedAt": "2026-11-13T03:17:13.502Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-27T00:49:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3569420",
+      "checkedAt": "2026-11-13T03:17:13.504Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-27T00:49:29.000Z"
+     }
+    }
+   ],
+   "revision": 12,
+   "updatedAt": "2026-11-13T03:17:13.504Z"
+  }
+ ],
+ "issues": []
+}

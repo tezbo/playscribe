@@ -1,0 +1,4408 @@
+{
+ "game": {
+  "id": "sk-bma-snowfall-114724",
+  "igdbId": 114724,
+  "name": "Skábma: Snowfall",
+  "cover": {
+   "imageId": "co4cgi",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4cgi.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar59li",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar59li.jpg"
+  },
+  "ps5Release": "2023-08-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sk-bma-snowfall-114724@1.1.111",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.111",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-07T09:29:19.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes for 1.1.111",
+     "items": [
+      {
+       "text": "2025-10-07",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This hotfix addresses a recently reported Unity security vulnerability, with a few additional stability improvements thrown in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix for Unity security issue CVE-2025-59489",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issue where characters could be incorrectly positioned or teleported",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for potential issues with unloading certain characters or systems that track sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/1811772772633037"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T09:29:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.827Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T09:29:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.827Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-07T09:29:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.389Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.110",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.110",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-31T17:29:11.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes for 1.1.110",
+     "items": [
+      {
+       "text": "2023-10-31",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This release adds a couple of new optimizations to existing visuals, mostly reducing GPU load. Some less severe issues were found and fixes as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimize Smoke Pillar VFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize foliage rendering and culling distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix issues with blurry cameras and camera blends in some cinematics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some UI not getting hidden during Photopause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix name in credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix edge case during a late game encounter where saving the game can cause a soft lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/5229301621594967442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T17:29:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.827Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T17:29:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.827Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-31T17:29:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.388Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.109",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.109",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-03T19:06:30.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes for 1.1.109",
+     "items": [
+      {
+       "text": "2023-05-03",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Quality of Life improvements and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Show Shield input prompt when Aurora is about to hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "SpiritIcon overlay displays Skills instead of Attunement icons if holding both drumming buttons because this is the intended \"traversal mode\" to avoid accidentally attuning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Actor Conversation states did not always load correctly when loading savefiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Respawning to Checkpoint did not always restore full health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ChapterSelection widgets could be reclicked after starting to load, causing another load pop up to be shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tracking visited locations didn't work when Gameplay UI = Off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ChapterSelection could show wrong information in a specific situation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chapter Selection Chapter 10 sometimes showed \"task failed\" notification in an unintended way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chapter selection could show wrong chapter in the confirmation prompt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wandering Spirits weren't correctly counted when completing the game through Chapter Selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Show Shield input prompt when Aurora is about to hit"
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/5138087875076723525"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-03T19:06:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.387Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.108",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.108",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-01T18:31:54.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes for 1.1.108",
+     "items": [
+      {
+       "text": "2023-05-01",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Many quality of life improvements! It is well worth checking out the new features section, especially if you like to hunt achievements or want to know how complete your playthrough was. Some visual improvements in the form of far less visual pop-in due to model changes at varying distances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Chapter Selection added! When the game is completed once, the title screen will include a new menu that enables players to load different points in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Achievement hunting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Collectibles, viewed Cinematics, visited Yoik Spots and Locations and read Dialogue are saved globally. Players can use the Chapter Selection to return to specific points in the game to get what they missed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Collectibles available\" and “Dialogue read” are listed for chapters in Chapter Selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pause Menu now shows how many collectibles are available in the current location of the game. The menu only shows collectibles that can be reached at that point of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Map highlights Áilu’s location for easier awareness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Photopause” added to D-Pad left or P-key on keyboard. Feature intended for taking screenshots easier. Photopause will freeze time while allowing moving the camera and changing camera distance and orientation, the same way it works during normal gameplay. Note that it does NOT include features commonly seen in ”Photo Mode” such as a free camera, filters or color adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Recenter Camera to Checkpoint Orientation when loading a Save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI feedback / Flash Ability Icon on top of Attunement Icon when using Ability while drumming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Attunables (Bleeders) have an UI indication as to what attunements can be cast on them. The prompts can be set OFF in the Settings Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improvements to some tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoother model changes across distances when the LOD changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Spirit Icons getting stuck/greyed out after a cutscene transition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ailu’s LookAt could sometimes override interactable and lockable targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Certain enemies were acting less bright than intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/5133583642666498323"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-01T18:31:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.387Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.103",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.103",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-18T13:33:29.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This patch we've focused on the feedback about movement and character control; bugfixes, improvements and new UI feedback to clarify movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "UI Feedback for Skills and Attunement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Áilu's talking animation now uses FootIK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Separate volume setting for auto drumming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Animation optimizations for AI Actors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "When you do not have the drum, both ability UI and also health UI are hidden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make TargetingHighlightVFX transition speed to be faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make task failed notification longer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chain attuning is faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modify environment and lighting in Chapter 4 and Chapter 5 Great Caves area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set Bleeder knockback collider smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hide pointless warnings about unsaved progress in game completion menu where you no longer need to save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some movement abilities are now replenished when entering an Air Vortex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slow down Great Caves wind pulse rate to make the area a little easier to traverse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Drumming areas match targeting area better on Bleeder Links",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjust tree bridge collider near Trout Sieidi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attuning and Skill usage fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Russian localized AutoSave slot 1 title had bad layout/alignment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweak boss stun state transitions to be more smooth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Áilu not being able to dash when just starting or stopping running",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Conversation initialization issue introduced in 1.1.100, that was disrupting at least one NPC later in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to make Dash ability more consistent in a certain boss situation when Áilu is tossed into air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "UI Feedback for Skills and Attunement",
+     "Áilu's talking animation now uses FootIK",
+     "Separate volume setting for auto drumming"
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/6539831519503803199"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-18T13:33:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.386Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.100",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.100",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-06T19:46:44.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Quality of life improvements, optimization and bug fixing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "New VFX that visualizes what object Áilu is currently targeting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Drumming toggle setting => Choose whether drumming works by holding down the drum button, or whether it’s toggled on/off with the button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changed",
+     "items": [
+      {
+       "text": "Language and audio changes in settings menu are now immediate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Excluded some conversations from the Gossip & Drama achievement requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted sensitivity and acceleration settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Hide inner compass icons when Pause Menu is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Landing animation no longer prevents Dashing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enforce Dash working in some specific edge cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issue where opening the game sets all settings to defaults",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issue with specific case where player can’t jump while targeting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allow walking and drumming at the same time when Grounded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Fix unnecessary hitch during first conversation by preparing a global text animation database ahead of time during initial loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize performance by getting rid of memory allocations caused by targeting system and Conversation system interplay while conversable NPCs exist in Scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize targeting system performance in general",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/5121196841289436976"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T19:46:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.385Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.99c",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.99c",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-24T13:32:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2023-03-24",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Bugfixes, including a fix for systems on Turkish locales not seeing the character \"i\" in texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Add SFX when unlocking a new Achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix character \"i\" not displaying correctly on systems using Turkish locale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix potential issues if \"Return to Title\" was selected while a Quick-Time-Event was playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix potential issue in Save system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Sun Flares straying away from where intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Add SFX when unlocking a new Achievement"
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/5143713753732337948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-24T13:32:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.355Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.98",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.98",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-26T18:02:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2023-01-26",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text updates and fixes to various issues encountered by some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Added Vulkan as fallback API",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This is added as an experimental feature and is intended to only be used in the event that a player has issues with running DirectX 11.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can try this by right clicking the game in your library and choosing properties, under general tab add -force-vulkan in the launch options field.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Known Issues: Running in windowed mode may cause performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add Northern Sámi localization for tutorial texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add Ellen Oddveig Hætta to credits (Sámi localization)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix lens flare effect not aligning with the Sun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix text issues: typos, alignment in select languages, some texts being presented in English even when another language is selected and Chinese language missing a set of characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with a character’s physics based skirt getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempt to fix an issue where the ability to drum can get disabled after cinematics (fixed by restarting the game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/5035622109510043356"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-26T18:02:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.384Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.94",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Hotfix 1.1.94",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-05T23:59:48.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Hotfix for possible softlock issue in Chapter 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed possible softlock issue in Chapter 7 where environmental hazards could get reactivated after loading a save game prior to moving to a new area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/5035620387689453250"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-05T23:59:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.383Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.93",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.93",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-14T11:30:11.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes for 1.1.93",
+     "items": [
+      {
+       "text": "2022-12-14",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Hotfix right after 1.1.92 to correct a single gameplay issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix small targeting issue with a Bleeder in Bear Claw Mountain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix small animation glitch when petting reindeer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4991708208074339577"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-14T11:30:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.382Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.1.92",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.1.92",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-14T09:19:53.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes for 1.1.92",
+     "items": [
+      {
+       "text": "2022-12-13",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Multiple small fixes and quality of life improvements based on player feedback. Improved lighting, effects and guidance system!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Add Inner Compass (waypoint) system for better guidance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add Tutorials menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add animation to Loading texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add information about CPU and GPU costs to Graphics Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add interaction and looping idle sounds for certain new character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add missing Logos to Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add more platforms and bleeders to a late game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add multiple names in Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new Statistics in the Results screen at the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new Tutorials and Tips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new Visual Effects for select caves, angering a certain character and for drumming at one of the Sieidis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new texts and UI visuals to the start and end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add page count to collectibles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add setting for visibility and size of Subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add setting to disable controller vibration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add setting to hide Gameplay UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add settings for Shadows and Shadow Resolution for the Drum Light.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add special visuals/music to Title Screen after completing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add new details and gameplay elements in emptier areas in some locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust collectible notification UI animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow Shielding Aurora attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes in Level Design for a late game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve Lighting and Effects in Gameplay and Cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve the Targeting system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major functionality and Level Design changes in the Fox Encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor rendering setup optimization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More reliable cloth behavior in Cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove \"Delete\" option on AutoSaves to allow faster access to earlier manual saves in Save/Load menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update ControlLayout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various changes to UI text wrapping and placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix Chapter Notification layout breaking on some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Cinematics sometimes desynchronizing Drumming audio from the music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Location Notifications repeating unintentionally in certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Notification SFX not playing during Cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Reindeer calf to no longer launch Áilu into the stratosphere for a single frame when pet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Wind Pulses sometimes pushing the player even while Grounded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a certain Boss not leaving footprints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a reindeer at the start of the game sometimes starting to run before player sees it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix clipping Rune placements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix incorrect footstep sounds in a late-game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix incorrect text size in Loading tunnels in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with Autosaves sometimes getting corrupted after Cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with UI elements appearing too close to screen edges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with a certain soundscapes not triggering in a late game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with enemy pathfinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with some controller icons showing incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with starting a new game after game completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix one Examine showing the wrong text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix placement of some Task Completions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix positioning for some Audio objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix possible error when shielding projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix showing English translations for Location Notifications when playing in Northern Sámi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix size of the Map graphic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix small visual issues in Menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some Examine placements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some UI elements showing in incorrect places while playing in Super Widescreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some rivers and small bodies of water unintentionally killing the player, and sometimes preventing player from jumping out of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix various small visual bugs during Cinematics and Interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes on character textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make Grounding through Air Vortexes more reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Setup fully dedicated font atlases for all Asian languages. Fixes cases where one language may have used a glyph rendition of another language due to font fallbacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix game freezing when going to Quit Confirmation and back in Title Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix certain Achievement not unlocking if playing across multiple devices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 18,
+    "fixed": 33,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0,
+    "topNew": [
+     "Add Inner Compass (waypoint) system for better guidance.",
+     "Add Tutorials menu.",
+     "Add animation to Loading texts."
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4991708208074009265"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-14T09:19:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.382Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.74",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Hotfix 1.0.74",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-16T11:42:04.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Hotfix for rare scene load / save game issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed rare issue with autosave being created between a cutscene that ends in a level change resulting in a stuck save that cannot be loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/6258337460547059967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-16T11:42:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.381Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.73b",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.73b",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-13T08:04:54.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Minor hotfixes to previous overhaul of Spirit Worlds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed spirit worlds' task trigger locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weakened Bassi location's air vortexes so you cannot skip a segment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4606641560265849793"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-13T08:04:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.345Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.71b",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.71b",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-29T15:47:16.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Minor improvements and some graphics optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Graphics buffer improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscene polish: Focused cameras better in BassiReveal & EveryoneIsSick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix graphics issues that could result in black pixels invading the players screen unless they could escape them or had to restart the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed CutsceneConfigAsset for RiebanTheFox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4474904295752048664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-29T15:47:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.820Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.277Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.70b",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Hotfix 1.0.70b",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-27T15:35:30.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "A bunch of bugfixes and guidance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Cutscene polish: Focused cameras better in TheFallPart1, MeetingTheMentor, DamselInDistress and SuspiciousLookingStone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Hotfix WindPulseAttack effect visuals not always showing properly making a boss battle much harder than intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix PathGuideVFX effect flickering with some graphics settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disable SidePathGuideVFX after a treasure chest has been found",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added MainPathGuides for final end game area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some of the poles in Lake to improve camera behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4474904295744733249"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-27T15:35:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.820Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:13.379Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.68",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.68",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-07T11:41:14.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes for 1.0.68",
+     "items": [
+      {
+       "text": "2022-06-06",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Hotkey added for the map, if you have found the item and a settings option for UI-free screenshots! Also various animation/cutscene cleanups in this version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Add hotkey to open the Map collectible item once it's been found. Default binding on keyboard \"M\", \"D-pad down\" on gamepads",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Add \"Map\" hotkey to control layout UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add \"Credits\" submenu in the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add \"Hide gameplay UI\" option in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Replace certain collectible sounds with new versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make Ailu's baked dialog animations shorter (for smoother speech situations during gameplay dialog)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix other Actors mouths moving when it's Ailu's turn to talk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscenes: Add collider to Eira (to fix luhkka clipping through body)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscenes: Tweak Actor LookAt controls during various cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscenes: Fix a spirit having graphical issues with their eyes during a specific cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscenes: Make Ailu walk slightly further in AnotherDay cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscenes: Improve cloth resets in cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Add \"Map\" hotkey to control layout UI",
+     "Add \"Credits\" submenu in the title screen",
+     "Add \"Hide gameplay UI\" option in settings"
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4469272893510553279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-07T11:41:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.275Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.67",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.67",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-20T21:29:45.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Main focus is in the quality of life improvements such as new cameras in corridors between levels. Also included a bunch of bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Added cameras in corridors between levels for easier navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added pitch randomizations in Northern Lights attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added music to Stallu Hunt areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added “Heal” and “Camera Mode Switch” to Control Layout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed tar from last outlook situation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved fire so that a bunny collectible is accessible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes in Location Notification audio and Task Failed audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Northern Lights color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes in in-game credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor changes in cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Move “Player or Pawn?” achievement unlock place and minor changes to a cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed Áilu dying during respawn, resulting in zero health and Áilu not moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Ready for the Winter Village” achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cloth not resetting properly when actors are teleported",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Reindeer Calf sliding downwards if pet multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed floating or wrongly placed foliage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Corridor Camera setups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Invisible Wall placements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix floating rocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an important landmark missing later in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 9,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Added cameras in corridors between levels for easier navigation",
+     "Added pitch randomizations in Northern Lights attack",
+     "Added music to Stallu Hunt areas"
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4292505348830228423"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-20T21:29:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.274Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.65",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.65",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-18T09:36:30.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This patch contains some bugfixes along with with some performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Motive bleeder optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix TaskListSummary Gamepad Scrolling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More Cloth reliability fixes to ensure proper behavior when skipping cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remove using PlayerConstraintsNode in enemy actors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add NavMeshObstacles in Forest at Sunna-Gaisa lake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spirits walk glitchily when walking into TarPit source",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix hole in invisible walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix AirVortexes causing trails to teleport when changing attune targets of the same type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add extra collider to RockDoor puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4292505348821138500"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-18T09:36:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.271Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.64",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.64",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-11T16:52:02.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Smaller update somewhere between a patch and a hotfix, player could rarely get into a situation where they lost control of the character when attuning motive bleeders at exactly the right/wrong time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Motive bleeder performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the map collectible's art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix issue where Motive bleeder grabbing the player right as they were attuning it could cause loss of player control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the \"Return to Nana\" etc collectible related tasks at the end of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix examines floating in the air and unreachable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4288001105332895355"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-11T16:52:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.271Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@post-2022-05-10",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Steam Cloud saves are now supported",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-10T12:42:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Your save games can now be stored with Steam Cloud saves.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The save games are saved per windows user, in view of that it is not recommended to use steam cloud saves in situations where you play the game logged into a windows account that also plays Skábma but you do not wish to share saves with.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Doing so may cause newer saves replacing older ones for that windows user or your Steam Cloud.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348799082208394306"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-10T12:42:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.270Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@patch-2022-05-09",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "New Patch Noaidis!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-09T15:53:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Overview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch has bug fixes as the main focus, fixes for some level design issues and player guidance. Also included is some quality of life additions such as an end of cutscene autosave slot and looping sounds for collectibles to make them a bit easier for the player to find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "💾 New: Post-Cutscene Autosave Slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Collectibles now have looping sounds to attract the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add additional checkpoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix parent tasks not always being cleared out correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix AirTossVFX getting stuck on when traveling through AirVortex Bleeders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix PauseMenu post-processing being too dark",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Trigger for a LocationNotification accidentally set as Collider that can push player down through the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remove two duplicate Bleeders in the same spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Clothes being potentially left off after a cutscene skip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix hole in invisible walls during Chapter 1 and 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix checkpoint partially underground in Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix player being able to catch an NPC they are not meant to reach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a sequence break in Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix uneven terrain in GreatCaves and route to Swamp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix player getting locked up in a boss fight when being interacted with at the same time a cutscene begins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix invisible wall being able to block the route when player moves very slowly at two locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix floating foliage in multiple places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an Actor in Chapter 4 returning to the level when loading a save after a cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some issues of assets being loaded or unloaded at incorrect times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a puzzle object unintentionally blocking targeting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix rare occurrence of an issue where player could get stuck in an AirVortex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix wrong placement of flowers that guide to a collectible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix location where no ground exists under a body of water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some issues with too extreme post processing transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with an NPC being in the wrong location when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 22,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "💾 New: Post-Cutscene Autosave Slot",
+     "Collectibles now have looping sounds to attract the player"
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348799082205235397"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-09T15:53:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.270Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.63",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.63",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-09T08:25:44.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This patch has bug fixes as the main focus, fixes for some level design issues and player guidance. Also included is some quality of life additions such as an end of cutscene autosave slot and looping sounds for collectibles to make them a bit easier for the player to find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "💾 New: Post-Cutscene Autosave Slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Collectibles now have looping sounds to attract the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add additional checkpoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix parent tasks not always being cleared out correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix AirTossVFX getting stuck on when traveling through AirVortex Bleeders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix PauseMenu post-processing being too dark",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Trigger for a LocationNotification accidentally set as Collider that can push player down through the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remove two duplicate Bleeders in the same spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Clothes being potentially left off after a cutscene skip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix hole in invisible walls during Chapter 1 and 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix checkpoint partially underground in Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix player being able to catch an NPC they are not meant to reach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a sequence break in Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix uneven terrain in GreatCaves and route to Swamp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix player getting locked up in a boss fight when being interacted with at the same time a cutscene begins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix invisible wall being able to block the route when player moves very slowly at two locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix floating foliage in multiple places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an Actor in Chapter 4 returning to the level when loading a save after a cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some issues of assets being loaded or unloaded at incorrect times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a puzzle object unintentionally blocking targeting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix rare occurrence of an issue where player could get stuck in an AirVortex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix wrong placement of flowers that guide to a collectible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix location where no ground exists under a body of water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some issues with too extreme post processing transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with an NPC being in the wrong location when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 22,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "💾 New: Post-Cutscene Autosave Slot",
+     "Collectibles now have looping sounds to attract the player"
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348799082204101279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-09T08:25:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.269Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.60",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.60",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-05T10:42:13.000Z",
+   "notes": [
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Camera alignment toggle, allowing player to pick between left/center/right hover position for the camera, D-pad down / keyboard V for toggling.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Confirmation Dialog for Return to Title Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Confirmation Dialog for Saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Confirmation Dialog for Loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Collectible scribbling map has a new visual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Set detection radius for dialogue higher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional tutorials & lights to guide player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added visual blockers to late game Mountain level along the route to Tarpit for added visual interest & mood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improve NavMesh obstacles in VillageLocation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a couple tar roots to Mountain to Tarpit route for extra visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some invisible walls to Mountain and Outlook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweak audio for a cutscene related to a certain late-game character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak Aurora lights and a certain dark characters attack colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shorten TarMan’s wait times between actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a couple more death planes to Mountainlocation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaks to several cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make Healing Tutorial more clear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust collectible locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust default slowdown/timestop rates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a checkpoint before a blob chain to Mountain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add additional checkpoints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved tar jumping sequence in mid-game Outlook level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix Camera stuttering issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changing Slider value in settings by arrow keys or controller is very slow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix text fit for end-game statistics UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix text fit for Quit Confirmation dialog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix faraway mountains disappearing when moving away from them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor grammar & typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you die in swamp and last checkpoint is in another scene, Ailu will continue swamp walk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix potential issues with black pixels appearing on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix 0,0,0 checkpoint in OtherSideAngelica cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with Tasks not getting cleared once completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with a quest's progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AirVortex launch should only restrict player movement input while being pulled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Noaidi Apprentice and Family Tree achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make sure megafauna in Barbmu have colliders setup properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early game cutscene tweak. Ailu looks at reindeer again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix possible sequence break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some camera transitions that might warp weirdly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple fixes to environment to guide player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with invisible walls and other blockers allowing player to sequence break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Presentational fixes to a late game Spirit World",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added death planes to mountain's rivers and to the side of the mountain to ensure player dies if they get outside of the intended playable area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Air Vortexes having wrong height in reactive puzzles and showing through the platform they are lifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Floating Bridge and Floating Logs Puzzles wind lift forces being poorly set up resulting in far too much force or not enough force to be imparted on the player by the Air Vortexes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some actors dynamically animated bones behaving erratically during teleports in cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 24,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348799082189878075"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-05T10:42:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.815Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.268Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.58b",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Hotfix 1.0.58b",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-03T11:54:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "There was another scenario where layer could get stuck in an infinite respawn loop in Lake location by the river, after dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348798430292507815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-03T11:54:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.267Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@patch-2022-04-29",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "New patch for Skabma!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-29T09:20:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We got you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch fixes a Quest and its achievement being impossible in the previous version as well as addresses various unintended routes that could lead to softlocked game state as well as some more minor fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Add guidance footsteps to main routes in the Mountain area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add more decorations and some invisible walls at the edges of the Spirit World area to prevent player from getting stuck on sides of the area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Block off some routes in the Tar-Burning Pit area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio tweaks to one of Suonjar's cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak some bunny animation transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix music area shapes in \"Damsel in Distress\" Cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix music area priority issue within Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix music area size in Great Caves area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix floating river in Mountain area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various cutscene tweaks and fixes, like ensuring that an actor's feet don't clip into ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix animation twitch in Jean's conversation animation loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix \"Fallen Stars\" quest: it was previously impossible to get a key item at the end of the quest required to finish it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix sequence breaking route to a midgame area during early game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix multiple gaps in invisible walls (special thanks to Carrot Helper!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduce area where Reindeer can walk in the Reindeer Yard to avoid petting a reindeer causing player to fall through the walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix terrain showing sharp jaggies in multiple locations while playing with High Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add visual guides to help a certain collectible type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues where loading a save at a certain point can break progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348798430277549496"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-29T09:20:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.264Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.58",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.58",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-28T19:33:19.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This patch fixes a Quest and its achievement being impossible in the previous version as well as addresses various unintended routes that could lead to softlocked game state as well as some more minor fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Add guidance footsteps to main routes in the Mountain area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add more decorations and some invisible walls at the edges of the Spirit World area to prevent player from getting stuck on sides of the area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Block off some routes in the Tar-Burning Pit area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio tweaks to one of Suonjar's cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak some bunny animation transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix music area shapes in \"Damsel in Distress\" Cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix music area priority issue within Village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix music area size in Great Caves area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix floating river in Mountain area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various cutscene tweaks and fixes, like ensuring that an actor's feet don't clip into ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix animation twitch in Jean's conversation animation loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix \"Fallen Stars\" quest: it was previously impossible to get a key item at the end of the quest required to finish it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix sequence breaking route to a midgame area during early game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix multiple gaps in invisible walls (special thanks to Carrot Helper!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduce area where Reindeer can walk in the Reindeer Yard to avoid petting a reindeer causing player to fall through the walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix terrain showing sharp jaggies in multiple locations while playing with High Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add visual guides to help a certain collectible type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues where loading a save at a certain point can break progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348798430275458305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-28T19:33:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.263Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.57",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.57",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-27T19:16:58.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This patch again has bugfixes as the main focus, regarding issues such as Steam Input errors and aerial jump gameplay sequences having consistency issues with how to aim and arrive at desired end point.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Added missing threat placements in a late-game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add missing third party tooling to credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new glow visuals feature for Spirit Drum, highlighting spirit animals and rim when player is using abilities or drumming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Spirit World: add more trees and mountains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change visuals on a blocked path in Chapter 6/7 to more accurately look like the path is completely impassable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak task list positioning in pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "[Steam only] Error popup now silently ignores thought-to-be-harmless errors that some users have reported when using Steam Input (errors starting with \"\" or \"\" that did not prevent playing but kept triggering the error popup view). Unfortunately no proper fix could be found, but hopefully these errors are as harmless as reported and at least this'll allow uninterrupted play. Another workaround to avoid these RawInput errors is to use per-game overrides via Steam Library, right-clicking the game and selecting \"Properties…\", then \"CONTROLLER\" tab and try the setting \"Disable Steam Input\" for the per-game override. Of course this cannot be used if your controller is dependent on Steam Input controller remapping.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix Air Vortex flight paths to be more consistent: previous behaviour took some deviance from movement inputs, but now we ignore movement for a short moment during the launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Dynamic Resolution Scaling being overzealous during cutscenes and more or less always scaling down to minimum allowed scale. Cutscenes should therefore now have better visual quality for users that have Dynamic Resolution Scaling enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix gameplay statistics not tracking all successful Shield usages correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix campfire damage/hit volume staying active after putting out the campfire with water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix one location where Áilu looks at a lantern instead of the rune.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix dash/aerial launch VFX getting stuck when dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix blurry cinematics and some cutscene camera placements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix chapter/area that had an overall blurriness issue for visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix issues with Fallen Stars quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensure epilogue credits roll finishes fully.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscene audio volume and timing changes for a specific cutscene where timings were off and footsteps were too loud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix wrong color, shape and orientation in WindPulseSuccess effect played when player successfully passes through a WindPulse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Added missing threat placements in a late-game area.",
+     "Add missing third party tooling to credits."
+    ]
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348798430271774325"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-27T19:16:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.812Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.262Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@patch-2022-04-26",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "First Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-26T07:51:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Noaidis!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team has been hard at work!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've collected your feedback on the game and deployed a patch that is going to make your in game experience way better, amongn these changes, you will find:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add more visual guides for navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust hard to reach platforms and puzzle in BearCave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust hard to reach platforms and puzzle in Outlook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Low Health post processing effects toned down a lot, allowing the player to play the game better even when on low health: We'll keepo on listening to your feedback and work hard on the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348797798092760859"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-26T07:51:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.811Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:24:23.261Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@1.0.56",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Patch 1.0.56",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-25T22:28:05.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "This patch has bug-fixes as the main focus, regarding issues such as Settings not being applied correctly and missing walls and geometry in levels, as well as increasing player guidance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Depth of Field not being applied properly on first try when changing resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play sound when player heals by drumming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscene visual tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscene audio improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Myriad of general audio improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add more visual guides for navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some abrupt changes in lighting when moving about the levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Siedi Stones not knocking Ailu back when they are ********",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the final boss attacking player before the reveal cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve several examinable objects placement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved main progress blocker being visually more dense to ensure players realize it is intended to be fully impassable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjust hard to reach platforms and puzzle in BearCave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust hard to reach platforms and puzzle in Outlook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor camera quality of life improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Floaters have had their air vortex capture radius increased to make them a little bit easier to hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Ailu possibly floating after some specific cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quality of Life: Low Health post processing effects toned down a lot, allowing the player to play the game better even when on low health. (wink* : Ailu can heal by drumming a small while with a musical instrument)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348797798091334895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-25T22:28:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.811Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.260Z"
+  },
+  {
+   "id": "sk-bma-snowfall-114724@post-2022-04-22",
+   "gameId": "sk-bma-snowfall-114724",
+   "displayName": "Fix game breaking issue with checkpoint in Lake by the river.",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-04-22T17:40:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Player could get stuck in an infinite respawn loop in Lake location by the river, after dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1665280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1665280/view/4348797798079683381"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-22T17:40:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1665280",
+      "checkedAt": "2026-11-13T03:30:36.810Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:23.260Z"
+  }
+ ],
+ "issues": []
+}

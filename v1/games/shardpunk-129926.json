@@ -1,0 +1,1935 @@
+{
+ "game": {
+  "id": "shardpunk-129926",
+  "igdbId": 129926,
+  "name": "Shardpunk",
+  "cover": {
+   "imageId": "co7eqr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7eqr.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arf7b",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arf7b.jpg"
+  },
+  "ps5Release": "2026-03-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shardpunk-129926@1.1.10.3",
+   "gameId": "shardpunk-129926",
+   "displayName": "Patch 1.1.10.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-05T10:28:04.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Rat ogres now have less armor (5 -> 2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"Tactician\" trait description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few polish translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Winded\" trait now reduces movement range, not dashing range. As correctly pointed out, dashing range reduction was easily overridable by performing two separate moves 0_o.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/1845383656393088"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-05T10:28:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.218Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-05T10:28:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.218Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-05T10:28:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.154Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.10.2",
+   "gameId": "shardpunk-129926",
+   "displayName": "Patch 1.1.10.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-09T14:39:29.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Placing a trap on a tile that already has a trap now does not freeze the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/1826362059930389"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-09T14:39:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.217Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.153Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.10.1",
+   "gameId": "shardpunk-129926",
+   "displayName": "Patch 1.1.10.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-13T16:21:33.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Updated to latest Unity version to fix potential security issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Extra elite enemies that could appear in any mission are now not appearing until chapter 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/1816307528917965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-13T16:21:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.217Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.153Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.9.0",
+   "gameId": "shardpunk-129926",
+   "displayName": "Patch 1.1.9.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-01T10:10:03.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with overwatch tile indicator not showing if only a single-tile move is made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Armored enemies have more armor points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Armor shredding/piercing weapon upgrades grant better bonuses on 1st level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "QoL",
+     "items": [
+      {
+       "text": "Added a map mouse drag feature by holding MMB.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The overwatch action now does not disappear if the weapon is overheated (of course it is still unusable), and the reload action does not change its position if the weapon is overheated. This should prevent accidental overheated shooting in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Throw grenade\" action now always correctly shows armor shredding information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/1800991756404216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-01T10:10:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.216Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.152Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.8.5",
+   "gameId": "shardpunk-129926",
+   "displayName": "Patch 1.1.8.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-21T14:25:43.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "After the final Chapter 2 mission, downed survivors now become automatically revived and start the shelter phase with 1 HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Julius: adjusted the chances of finding scrap and grenades in the \"Search through scrap\" action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hector: greatly increased the damage of the \"Slice Them\" skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "QoL",
+     "items": [
+      {
+       "text": "Made some of the skill descriptions more clear when it comes who (enemies/all targets) will receive damage/become stunned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 2,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/1783872411983087"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-21T14:25:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.216Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.151Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.8.4",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.8.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-01T05:53:54.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed an issue that would display an invalid player profile in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6339469370199117191"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-01T05:53:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.215Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.151Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.8.3",
+   "gameId": "shardpunk-129926",
+   "displayName": "Patch 1.1.8.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-30T18:05:59.000Z",
+   "notes": [
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Rat shaman's War Cry ability now grants Stress points to player characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Julius: \"Go aggro\" skill lasts for 3 turns instead of 4 turns, but costs no AP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "QoL changes",
+     "items": [
+      {
+       "text": "Made the bars below the character pickers more readable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat Automaton now has access to the \"Overwatch all\" action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6339469370197325389"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-30T18:05:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.215Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.150Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.8.2",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.8.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-02T12:22:59.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed an issue where gamepad buttons could not be used in the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the movement range was not displayed during a specific point in the tutorial mission if the player had opened a codex entry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6240387642468791286"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-02T12:22:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.215Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.149Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.8",
+   "gameId": "shardpunk-129926",
+   "displayName": "Update 1.1.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-09T18:57:45.000Z",
+   "notes": [
+    {
+     "title": "QoL stuff",
+     "items": [
+      {
+       "text": "Increased the game speed by reducing the duration of some of the in-game pauses and transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Introduced the experimental game speed option, accessible from the gameplay settings menu, which allows to speed the combat gameplay up to 130%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Enemy reinforcements can now be split between different spawn points, meaning that one wave of reinforcements can now come from many directions at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the drop rates of items. Stimpaks and Grenades should be less common now, but there should be more resources to craft them in the shelter phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fiddled with reinforcements spawn rates, enemy pod sizes, and how they progress, to tackle the snowballing issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with rain/lightning bolts being displayed indoors in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the icon of the broadcast quest action in chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 4,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5756237364327227317"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-09T18:57:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.214Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.149Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.7.8",
+   "gameId": "shardpunk-129926",
+   "displayName": "Update 1.1.7.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-12T10:07:55.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with characters commenting about a loot being dropped, even if no loot was actually dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue with wrong movement range display when a character had a skill that increased their dashing range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the game demo; hopefully even more people will find it and decide to purchase the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5589599109279332712"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-12T10:07:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.214Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.148Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.7.7",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.7.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-12T10:43:12.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with unnecessary unit selection when the player clicked on a UI element.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6300039510122989298"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-12T10:43:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.214Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.147Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.7.6",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.7.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-10T17:21:37.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with language mods from Steam Workshop not being correctly loaded in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5395938616806006969"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-10T17:21:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.213Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:04.147Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.7.5",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.7.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-09T22:24:56.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with \"weapon hot\" text being displayed for bots that do not have weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed invisible walls from some map fragments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5395938616803130470"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-09T22:24:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.213Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.773Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.4.5",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.4.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-16T11:54:24.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed an issue that could break character details in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5127964289169065948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-16T11:54:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.213Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.771Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.2.2",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.2.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-17T18:14:45.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with rescuable characters being of the same type as characters in player's party. Note: this fix only affects new runs; the existing ones might still have it. If you encounter it, do contact me and I will fix the save file for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6079346804886955552"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-17T18:14:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.212Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.770Z"
+  },
+  {
+   "id": "shardpunk-129926@1.1.1.3",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.1.1.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-06T14:14:15.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the issue with regular reloads reducing the number of free reload charges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5124582150156445399"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-06T14:14:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.212Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.770Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.31.6",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.0.31.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-23T09:32:32.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed an issue that could randomly not spawn a loot point that was necessary for the tutorial level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5124581515257825571"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-23T09:32:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.211Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.769Z"
+  },
+  {
+   "id": "shardpunk-129926@major-2023-06-22",
+   "gameId": "shardpunk-129926",
+   "displayName": "Update: explosive barrels, Ironman mode and balance/skill changes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-22T11:18:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone! Let's get straight to the interesting part - here are the release notes for 1.0.31 version:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Difficulty/balancing",
+     "items": [
+      {
+       "text": "Added an Ironman mode, which prevents the players from reloading a mission. Actually, that was the default way the game was played until now, so maybe the correct way of saying should be \"added a non-Ironman mode\".: All existing saves are treated as Ironman modes. Non-ironman mode allows the player to restart any mission (except the tutorial one). Unlocks and achievement progress does not get rolled back though (as they are bound to a profile, not the current game-in-progress).: Ironman settings in the difficulty window. The window has been expanded, as more stuff will start to appear there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the number of enemies that can appear in chapters 2 and 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the base HP of chapter 2 boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "QoL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a numeric HP display in combat. It can be altered in the Gameplay Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Numeric HP display mode. Some might love it, some might hate it. Do let me know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added explosive barrels on maps. A map can spawn a random number of such barrels. Barrels will appear in existing saves as well from now on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "BANG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rose: “Salvage bandages” shelter action has been replaced with the “Heal everyone” shelter action, which allows to heal every character in a shelter. In existing saves, the old action has been replaced with the new one.: Stryk3r has fairly ranked Rose quite low in this awesome Guide to Characters, so maybe this will help making her better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rose: “Rush It!” action now simply grants a regular extra AP instead of adding that “non-movement AP” thing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hector: increased the amount of enemy misses in the “untouchable” skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Michael: “Clean weapon” skill now adds extra damage (it was extra max damage until now), but the bonus is reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Note to localization modders: when an action description changes, its translation key gets changed in the localization file. If the game does not find a matching key, it falls back to the English translation. Therefore, if there's no matching translation to, say, an updated skill description in the game, it will be displayed in English (instead of showing an outdated translation).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "As usual, thanks for playing Shardpunk! And do share all your thoughts/ideas on the game! Take care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 16,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5124581515254447093"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-22T11:18:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.211Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.768Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.29.7",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.0.29.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-01T14:42:06.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed an issue that could cause a Fusion Core not to appear in the player's inventory after a pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5151601211226302797"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-01T14:42:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.210Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.767Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.29.6",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.0.29.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-31T09:51:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi! This week I'm releasing a smaller hotfix, addressing some modding-related issues and few in-game bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "“All in” skill from Silas now correctly counts enemy kills (it was counting attacks before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rose’s “weak spot” skill does not deal 3 extra damage if it’s at level zero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Modding",
+     "items": [
+      {
+       "text": "Game now supports Japanese glyphs that can be used by the modders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made sure that character names get correctly refreshed after game's language is changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing translation keys and support for some existing translation keys. Details:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"characterDetails_teamSkillRemainingPoints\" key is now used in Team Skills button tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added \"combat_retaliation\" key for the \"Retaliation!\" text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added \"general_shelterAPCost\" key for the AP cost text in the shelter phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added \"achievement_progress\" key for the achievement progress box header",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5151601211221921967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-31T09:51:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.210Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.767Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.29",
+   "gameId": "shardpunk-129926",
+   "displayName": "Update 1.0.29",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-25T09:46:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi - here's another update, focused more on QoL and localization stuff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localisation/modding",
+     "items": [
+      {
+       "text": "Added the possibility to create custom translations/translation extensions using mods. Here are the first versions of guides related to that: Guide: creating language mods: Guide: loading language mods: This is my very first approach to introducing language mods to the game (well, this is my first game in general), so if you find inconveniences/issues or you have questions, do let me know - I'm eager to help.: (also I'm busy working on the Polish language version, more info soon).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Content",
+     "items": [
+      {
+       "text": "Added a Very Hard difficulty (more enemies, healthier enemies, more stress gain). This is but a prelude to real difficulty customization which I will add in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Rat shotgunner attacks now do not shred armor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "QoL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Free reload actions that come from skills/upgrades are now separate actions - meaning that the player can choose when to use them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an alternate font type support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Have a great day everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 5,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5151600576587531896"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-25T09:46:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.209Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.766Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.26",
+   "gameId": "shardpunk-129926",
+   "displayName": "Update 1.0.26",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-11T09:20:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi - Tacticon announcement/reveal for Shardpunk is just around the corner, and here's the latest game patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Probably fixed issues with the game not loading/not progressing to the shelter phase correctly. I'm not 100% sure about that as I did not manage to reproduce it, and I haven't received feedback on an experimental debug version that I sent to some of the players who reported the issue in the first place.: Note to every player experiencing this: reach out to me on Twitter or Discord, I am eager to help.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Codex entries are now not cropped in 16:10 aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"The last one left\" trait (applied when there is only one human character left) now does not prevent a character from losing stress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gunther's pistol overwatch action does not consume main weapon's heat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Content",
+     "items": [
+      {
+       "text": "Added new achievement: Katana Carnage: Kill five enemies with a katana in a single turn (not bound to a Steam/GOG achievement). I am aware that the total number of unlock points is bigger than the amount of stuff that is unlockable at the moment.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Gunter's \"loner\" trait is even more effective (increased damage and defence bonus).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hair trigger upgrade now refunds a single AP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Julius: removed the weapon heat cost from his melee attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Silas: stress cost of Push the Limit now stays at 4 on its max level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Silas: \"Gallows Humour\" skill now can be used multiple times in the shelter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Silas: Pat your gun increases damage in general, not just the max damage. Reduced the allies’ stress gain from that skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the number of free shots for Mycroft's heavy weapon boost action (2/4/6 => 2/3/4).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemies should now spawn slightly less often in the 1st mission if you are not playing the tutorial level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thanks for the great feedback everyone! Take care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 9,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6557848386940642393"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-11T09:20:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.209Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.765Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.24",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.0.24",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-21T11:55:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi - I've managed to identify and fix a potentially game-breaking bug. It should not happen often, but still.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.0.24 PATCH NOTES",
+     "items": [
+      {
+       "text": "Fixed an issue with the game behaving broken if somehow a character has entered the shelter while still being affected by the support bot's support aura. Prevented such a situation from happening from now on. The faulty game state will still have characters in combat showing the “affected by bot’s support mode” trait, but it will disappear after the next combat or after the next time they leave the bot’s aura.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/5133583099798896898"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-21T11:55:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.208Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.764Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.21",
+   "gameId": "shardpunk-129926",
+   "displayName": "Hotfix 1.0.21",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-17T14:30:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi! While I'm prepping an update with more changes, here's a 1.0.21 version with a hotfix that should make the game playable for the unlucky few who reported missing graphical assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Again, thanks everyone for the great reception and for fantastic feedback! I believe I will be able to make the game even more enjoyable with every next update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Shardpunk 1.0.21 PATCH NOTES",
+     "items": [
+      {
+       "text": "Bugfix: fixed an issue with missing graphical assets on machines that had Turkish set as their main language in the operating system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6539831519500298691"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-17T14:30:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.207Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.763Z"
+  },
+  {
+   "id": "shardpunk-129926@1.0.20",
+   "gameId": "shardpunk-129926",
+   "displayName": "Update 1.0.20",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-14T15:10:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Wow, the reception is great! I am very grateful for all the feedback and reviews!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And we've just deployed an updated version of the game that addresses some of the most important issues I've managed to fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Shardpunk 1.0.20 release notes",
+     "items": [
+      {
+       "text": "Fixed an issue with the inability to close the lore screen with the bridge image before the very first shelter phase when using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the inability to navigate using keyboard/arrow keys through all team skills.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made it possible to always see team skill details when on the mission summary screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the possibility to choose 16:10 and ultrawide resolutions.: Expect more game updates in the upcoming days! I am happy that you're having fun with the game! Take care!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1183800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1183800/view/6539831519489469105"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-14T15:10:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1183800",
+      "checkedAt": "2026-11-13T03:30:19.207Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:06.763Z"
+  }
+ ],
+ "issues": []
+}

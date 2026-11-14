@@ -1,0 +1,933 @@
+{
+ "game": {
+  "id": "serious-sam-shatterverse-396022",
+  "igdbId": 396022,
+  "name": "Serious Sam: Shatterverse",
+  "cover": {
+   "imageId": "cobw5w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobw5w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5lq6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5lq6.jpg"
+  },
+  "ps5Release": "2026-08-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "serious-sam-shatterverse-396022@major-2026-10-19",
+   "gameId": "serious-sam-shatterverse-396022",
+   "displayName": "Update Notes | Dec 19, 2026",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-19T16:14:39.000Z",
+   "notes": [
+    {
+     "title": "CHANGELOG",
+     "items": [
+      {
+       "text": "Health and armor pickups dropped by enemies in coop session are now consistently visible to all players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The challenge portal no longer states that there are enemies nearby despite none being alive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players are no longer able to make a Melee Bash at a greater distance than on the Melee Finisher Intel description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The portal in the Cathedral now disappears when entering the arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Sketchy Sam's ultimate no longer allows the player to phase through raising elevators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zombies are reacting sooner to the player’s presence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Reptiloid Spell Book will no longer turn invisible after being swapped while charging a Laser Pistol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlighting newly acquired trinkets no longer causes equipped trinket highlights to go away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigating through the Trinket equipment interface no longer causes the exclamation toast on the Trinket to move randomly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting any option using the Enter key in the “Settings” tab no longer automatically opens a window that allows Player to reassign a random key binding.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Alien Sam's Reptiloid Endurance now appears as a Boon instead of an Intel in the player's inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067210/view/1846651706691011"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-19T16:14:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.292Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-19T16:14:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.292Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-19T16:14:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:58.449Z"
+  },
+  {
+   "id": "serious-sam-shatterverse-396022@3",
+   "gameId": "serious-sam-shatterverse-396022",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-01T15:56:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi folks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We have a quick hotfix ready for you today. Changelog below",
+     "items": [
+      {
+       "text": "All pings done by others in multiplayer sessions would register as ping from the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Challenge Rooms could fail to load for clients in multiplayer sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons could reload multiples times in a row when coming out of Dual Wielding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A crash could occurs while fighting Inverse Sam and skipping his cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A UI element could show the wrong price when viewing Intel in the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067210/view/1845383656381975"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T15:56:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.291Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T15:56:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.291Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-01T15:56:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:58.448Z"
+  },
+  {
+   "id": "serious-sam-shatterverse-396022@major-2026-09-17",
+   "gameId": "serious-sam-shatterverse-396022",
+   "displayName": "Shatterverse Balance Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-17T11:55:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46055560/c859472f7f966c4bdc5df5ef3c86e2901e35abcc.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new Serious Sam: Shatterverse update is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This time around, we’ve focused heavily on making the early game smoother and getting you to the fun stuff faster. Difficulty now starts lower and ramps up more naturally, enemies and Elites have received some health adjustments, 2-player scaling has been eased up, and progression through the arsenal should feel much quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team has also made weapon drops more diverse, increased Catalyst Orb drops, lowered Armory prices, and made every Weapon and Intel available as a possible pre-boss shop purchase, even before you’ve unlocked it permanently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And because sometimes you just need a really big gun from the beginning: The Sniper Rifle is now unlocked by default!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On top of that, there’s a fix for a potential network crash, fewer repeated dialogue lines, Rogue Netricsa adjustments, Health drops from Elites, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full changelog",
+     "items": [
+      {
+       "text": "Gameplay & Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the starting difficulty of Mental and Shatterverse for a smoother difficulty curve. Runs now start easier and ramp up faster, while still reaching the same maximum difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the health of enemies, Elites, and bosses on Serious difficulty, making the first run more approachable and helping players unlock content faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Elite HP scaling to make Elites less bullet-spongy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced difficulty scaling when playing with 2 players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Health drops to Elites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased Rogue Netricsa's timer and extended her explosion animation, giving players a more generous final chance to take her down before she explodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Weapons & Progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced weapon type drops so random loot offers more variety.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Weapons can now appear earlier during a run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the Catalyst Orb cost of weapons in the Armory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased both the chance and amount of Catalyst Orbs dropped by regular enemies across all Acts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Sniper Rifle is now unlocked by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All Weapons and Intel can now appear in the pre-boss shop regardless of Armory unlocks, giving players a chance to try them before permanently unlocking them for future runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes & Quality of Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause a network crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the frequency of several dialogue lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Jump back into the Shatterverse and let us know how the changes feel!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 9,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067210/view/1844115010491797"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T11:55:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.290Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T11:55:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.290Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-17T11:55:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:58.447Z"
+  },
+  {
+   "id": "serious-sam-shatterverse-396022@1",
+   "gameId": "serious-sam-shatterverse-396022",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-09T17:05:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, Sams! A new Serious Sam: Shatterverse update is available now, bringing a round of fixes, quality of life improvements, and a little extra polish across the Shatterverse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s what’s changed",
+     "items": [
+      {
+       "text": "Gameplay & Quality of Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added a blend delay for the SOP38 Pistol when aiming for smoother transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Default Camera Smoothing is now off for mouse & keyboard and on for controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Fixed the weapon wheel getting stuck on screen when using the ping function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the weapon wheel getting stuck after clicking on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the Flying Razors Intel description, which previously made it look like the Intel got worse at higher ranks. The displayed percentage will now correctly increase with each rank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Small Lava Golems ignoring Retro Sam’s decoy clone after upgrading it with the Luring Intel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed several spots where standing on certain decorations could cause enemies to completely ignore the player. Nice try.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed weapons sometimes failing to spawn alongside the weapon chest in Clockwork Arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stability & Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a possible crash when defeating Rogue Netricsa in solo mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed unnecessary empty achievement updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And we’re not stopping here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team is also digging through your feedback and working on a larger balance update coming soon, with more adjustments based on what we’ve been seeing from players since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep the feedback coming. We’re reading it, discussing it, and using it to keep making Shatterverse better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now get back out there and keep breaking the multiverse!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067210/view/1843481262689910"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T17:05:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.289Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T17:05:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.289Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-09T17:05:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:58.446Z"
+  },
+  {
+   "id": "serious-sam-shatterverse-396022@major-2026-07-31",
+   "gameId": "serious-sam-shatterverse-396022",
+   "displayName": "Shatterverse Open Playtest Live Now – Development Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-31T15:46:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46055560/e8573f0f0897f4701a8d8dde0e13496c45f4501a.jpg\"]Hey, Sams!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, the Serious Sam: Shatterverse development team would like to send a huge thank-you to everyone who joined one of our previous playtests and an extra special thank-you to everyone who shared feedback through social media, Discord, and Reddit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have gone through everything you said, and your feedback has been incredibly valuable as we continue refining Shatterverse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the new playtest about to begin, we wanted to give you a closer look at what you can expect this time around, what has changed since the previous playtest, and what the team has been cooking up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay, Weapons, Intel & Balance",
+     "items": [
+      {
+       "text": "Each Sam now has a unique set of modifiers that further shapes how they play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cartoon Sam, for example, may move a little slower than the rest of the squad due to his little legs, but his Dash recharges faster to get him out of trouble and, being the lovable arsonist he is, his explosions are bigger by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You also felt like the different Intel didn’t pack enough of a punch, so we buffed them across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "We have also addressed several gameplay issues",
+     "items": [
+      {
+       "text": "Fixed the Difficulty Increase cue playing randomly when the difficulty was not actually increasing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Electric Affix not appearing during Runs. You can now zap Mental’s horde to your heart’s content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where SBC Cannon projectiles could bounce off Beheaded Rocketeer rockets. The cannon should beat the rockets obviously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the small, medium, and boss Lava Golems immune to fire because, well… they are made of lava.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that allowed some players to purchase Health only once from the shop during multiplayer Runs. The vending machine now has unlimited supplies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Weapon Rebalancing",
+     "items": [
+      {
+       "text": "Increased the range of the M1A2 Thompson.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed random base-stat generation, making Weapons of a similar Rank more consistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced the number of random Affixes rolled for each Weapon Rank. Higher-Rank Weapons will now consistently have an equal or greater number of Affixes than lower-Rank Weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved Affix scaling based on Weapon Rank, giving higher-Rank gear stronger bonuses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We have also rebalanced the Sams’ Ultimates to bring them closer together in overall power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Retro Sam's decoys now wait one second before exploding, giving them a little more time to draw enemies into the blast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enemies, AI, Animations & Bosses",
+     "items": [
+      {
+       "text": "You asked for tougher Kleers, so we made them harder to evade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Good luck out there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arachnoids were also a little too accurate, especially when attacking in groups. We have adjusted their aim to keep encounters challenging without making them feel unfair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lava Golem was wayyyyyyy overtuned and killed an absurd amount of players. We have reworked its health, breakable armor pieces, and visual cues to make the fight clearer and fairer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have also improved enemy navigation and spawning to reduce cases where enemies could become stuck, appear outside the playable area, or lose track of the Sams.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Levels, Environments & Encounters",
+     "items": [
+      {
+       "text": "Fixed several cases where doors failed to open or objectives did not trigger correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shortened several maps that were taking too long to complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoothed out unfair difficulty spikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the number of Harpies in certain encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Other Fixes",
+     "items": [
+      {
+       "text": "Long dialogue lines could sometimes restart before they had finished. Conversations between the Sams and Netty will now resume more naturally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We also fixed several issues with Invasion Portals that could cause the music to stop playing until the end of a map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And, of course, we destroyed a universe’s worth of other bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We hope you have a blast in the new playtest, and we cannot wait to hear what you think.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Share your feedback through YouTube, Twitch, Reddit, social media, or the Serious Sam and Croteam Discord servers. We read it all, and we use it to help make Shatterverse the best Serious Sam experience it can be at launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "See you in the Shatterverse!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Serious Sam: Shatterverse Development Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 6,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067210/view/1839676055888616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T15:46:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067210",
+      "checkedAt": "2026-11-13T03:30:11.288Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:58.445Z"
+  }
+ ],
+ "issues": []
+}

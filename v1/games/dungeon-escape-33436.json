@@ -1,0 +1,2213 @@
+{
+ "game": {
+  "id": "dungeon-escape-33436",
+  "igdbId": 33436,
+  "name": "Dungeon Escape",
+  "cover": {
+   "imageId": "co31ud",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co31ud.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arau3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arau3.jpg"
+  },
+  "ps5Release": "2021-10-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dungeon-escape-33436@major-2026-09-12",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Dungeon Escape — 10th Anniversary Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-12T11:13:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Engine updated to Unity 6000.0.83f1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Steamworks.NET to 2025.164.1, Steamworks SDK 1.64.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Native Linux build for SteamOS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Deck and Steam Machine Verified.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved main character physics and collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All text migrated to TextMesh Pro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing text in the Linux version for several languages.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated main menu with improved controller navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linear volume control.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On the first launch, the game language matches the Steam client language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux: Runtime environment switched to Steam Linux Runtime 4.0.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The game actually turned 10 back in May, but who cares? The game continues to get better. Thank you to everyone who has been along for the ride all these years!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/1843481262697295"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-12T11:13:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.358Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-12T11:13:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.358Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-12T11:13:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.671Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.7.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.7.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-04T08:16:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Unity updated to version 6.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Steamworks Net",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue CVE-2025-59489: Let me know if you have any problems after the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/1811772772535783"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T08:16:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.357Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T08:16:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.357Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-04T08:16:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.670Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.5.1",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.5.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-19T05:59:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "DualSense lighting support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update Steamworks SDK.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/6341720536501564655"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-19T05:59:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.357Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-19T05:59:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.357Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-19T05:59:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.669Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.4.1",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.4.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-29T17:38:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Improvements under the hood of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/4836332027674302283"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-29T17:38:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.356Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-29T17:38:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.357Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-29T17:38:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.668Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.4.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-15T12:28:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add increasing score effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some improvements under the hood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/6368680725439144771"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-15T12:28:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.356Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-15T12:28:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.356Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-15T12:28:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.668Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.3.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-26T06:06:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improved support for ultra-wide monitors",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The engine has been updated to Unity 2020",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mac: Added support for Apple Silicon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small Fixes: Let me know if you find any problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/4598755821882297616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-26T06:06:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.356Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-26T06:06:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.356Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-26T06:06:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.667Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.2.2",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.2.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-30T09:53:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix German localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update Engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/4224935490653421728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-30T09:53:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.355Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-30T09:53:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.355Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-30T09:53:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.666Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.1.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-01-12T10:29:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Added Dualsense support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased the number of added score",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Small fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/3942305442262626197"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-12T10:29:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.355Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.665Z"
+  },
+  {
+   "id": "dungeon-escape-33436@major-2020-12-27",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "New Trailer and Soundtrack Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-27T15:02:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The game has received an updated trailer. Trailer music added to soundtrack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/3917534300084450510"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-27T15:02:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.354Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.664Z"
+  },
+  {
+   "id": "dungeon-escape-33436@2.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-06T13:48:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Now the jump height depends on the duration of pressing jump button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved the mechanics of interacting with enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved the work of many traps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced hitboxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved music manager. At level 50, there is now a new track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased speed and other parameters of the character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Many levels have been slightly modified for new controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Game settings are now available in the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Slightly improved interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved gamepad controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added support for Switch Pro Controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added translation into Malay and Romanian languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated game engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And many more minor changes. Let me know if you have any problems after the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/3819571008267021266"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-06T13:48:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.354Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.663Z"
+  },
+  {
+   "id": "dungeon-escape-33436@major-2020-08-26",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Big update is coming!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-26T19:14:48.000Z",
+   "notes": [
+    {
+     "title": "Soon will be released a big update! The main changes",
+     "items": [
+      {
+       "text": "-Improved control, now the height of the jump will depend on the duration of pressing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved enemy, traps, and level design.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Better gamepad support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-More optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-All levels are rebuilt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also many other small improvements. The game will become even better and more fair to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/3788045105521109125"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-26T19:14:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.354Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.663Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.6.9",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.6.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-09-11T12:49:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Added Serbian Localization (Thanks Marko Josifović and Radoš Milićev)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Other uninteresting changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2408786008257652164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-11T12:49:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.353Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.662Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.6.2",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.6.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-02-11T17:21:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Added controller vibration. You can disable in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Down Button transition to the next level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Small optimization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2461683368399927676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-02-11T17:21:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.353Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.661Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.6.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.6.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-02-02T13:57:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Added full controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Above the door is displayed gamepad or keyboard button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Double jump works correctly after killing enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Now you do not need to release the walk key after death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated Engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Linux build now x86_64 (That's better? I do not know).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Other small fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Supported Steam Controller, Xbox One/360, Dualshock 4 and others gamepads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2462808987398690541"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-02-02T13:57:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.353Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.660Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.5.6",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.5.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-12-15T10:19:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Updated Engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed double jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added screen shake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Small fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please, let me know if you have found any problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/3244179105166677181"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-12-15T10:19:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.352Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.659Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.5.5",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.5.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-10-30T06:57:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fixed Achievements on Linux.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Small optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2403127338446164762"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-10-30T06:57:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.352Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:28.658Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.5.3",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.5.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-09-14T07:30:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Steam Cloud now supported.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Small Fixes and optimizations.: Unfortunately the old save data was easy to lose for example after reinstalling the system. If you have old save - just run the game and the save data will be automatically updated and sent to the Steam Сloud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2454914931401711451"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-09-14T07:30:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.351Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.980Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.5.1",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.5.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-06-27T11:24:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Better Settings UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2499943313651492676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-06-27T11:24:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.351Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.980Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.5.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.5.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-06-14T07:26:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Added Belarussian localization (thanks lex.by)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated Engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Better settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added support 21:9 monitors",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed some sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2842216343259011563"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-06-14T07:26:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.351Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.979Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.4.8",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.4.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-03-14T07:13:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2363700548698530948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-03-14T07:13:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.350Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.978Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.4.6",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.4.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-02-04T15:12:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated Engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Steamworks.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Achievements code is improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed stuck on some levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some levels are swapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Turkish localization (thanks onparalelkenarag).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better some particles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I forgot what else :/: Please, let me know if you have found any problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/2363696743810413040"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-02-04T15:12:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.350Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.977Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.2.4",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.2.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-04-06T13:21:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update Engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Steamworks.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Korean localization.: Please, let me know if you have found any problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/75840229401519718"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-04-06T13:21:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.349Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.976Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.2.3",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.2.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-02-16T09:04:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Korean localization. Thanks Dollppin!: Please, let me know if you have found any problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/75836429540419760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-02-16T09:04:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.348Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.975Z"
+  },
+  {
+   "id": "dungeon-escape-33436@post-2016-11-08",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Full Gamepad Support in Beta version",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2016-11-08T07:09:14.000Z",
+   "notes": [
+    {
+     "title": "Not all finalized but we can try.",
+     "items": [
+      {
+       "text": "Right Click on game in your Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Betas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A drop down menu will appear. Select \"test\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select close.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Supported Gamepads: Steam Controller, Xbox One, Xbox 360 and some others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/4249665521684303815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-11-08T07:09:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.347Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.975Z"
+  },
+  {
+   "id": "dungeon-escape-33436@major-2016-08-01",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Music Update Now Available",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-08-01T16:55:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update with new music + soundtrack now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/252584317737018224"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-08-01T16:55:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.347Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.974Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.1.0",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-17T11:45:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reduced hitboxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Corrections in the design levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/250328813699724763"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-17T11:45:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.346Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.972Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.0.7",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-01T09:29:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Italian localization. Thanks Hendul.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Polish localization. Thanks kanthall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed German localization. Thanks LastNonak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/249201544481205296"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-01T09:29:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.345Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.971Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.0.6",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-05-29T08:16:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-A bit simplified 36 and 48 levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you passed these levels earlier - you are mad!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-More difficult 20 level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Cursor hidded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Small fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/255956312809001427"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-05-29T08:16:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.344Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.970Z"
+  },
+  {
+   "id": "dungeon-escape-33436@1.0.3",
+   "gameId": "dungeon-escape-33436",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-05-29T08:12:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A bit simplified 36 and 48 levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you passed these levels earlier - you are mad!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-454100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/454100/view/255956312808992535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-05-29T08:12:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-454100",
+      "checkedAt": "2026-11-13T03:19:38.343Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:37.970Z"
+  }
+ ],
+ "issues": []
+}

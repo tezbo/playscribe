@@ -1,0 +1,1233 @@
+{
+ "game": {
+  "id": "evertried-142081",
+  "igdbId": 142081,
+  "name": "Evertried",
+  "cover": {
+   "imageId": "co3wxf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3wxf.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aryc3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aryc3.jpg"
+  },
+  "ps5Release": "2021-10-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "evertried-142081@1.2.2",
+   "gameId": "evertried-142081",
+   "displayName": "Hotfix 1.2.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-05T03:56:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey guys,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we have yet another hotfix from the Floor Builder Beta block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have received reports from you about softlocks when interacting with NPCs, and we managed to find the source of the issue thanks to you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Next up, some players found a problem when switching certain skills in the shop, so we are working on that fix next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4474904295772105868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-05T03:56:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.761Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-05T03:56:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.761Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-05T03:56:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:55.371Z"
+  },
+  {
+   "id": "evertried-142081@1.2.1.2",
+   "gameId": "evertried-142081",
+   "displayName": "Hotfix 1.2.1.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-08T18:02:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The new bug report seems to be working wonderfully, and thanks to all of you we are able to find some pesky issues and take care of them as soon as we can. With that said, you can expect a battery of hot fixes as we tackle the reports sent by all of you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please keep them coming! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where skill masteries were reverting to lv 1 when a custom floor is restarted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused skills to trigger their mastery evolution animation sequence every time they were cast during custom floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a work around to prevent players from interacting with buttons while they are still not showing, which caused some issues with dialog interactions before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Light Feet trying to store its effect while the effect was null.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved detection for the Shock modifier, so it does not trigger if enemies that could not receive stun or damage by any reason.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4480532526714836265"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-08T18:02:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.760Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-08T18:02:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.761Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-08T18:02:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:55.370Z"
+  },
+  {
+   "id": "evertried-142081@1.2.1.1",
+   "gameId": "evertried-142081",
+   "displayName": "Hotfix 1.2.1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-07T20:47:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue that was preventing proper communication between server-saved custom floors in the Floor Builder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4469272893511936299"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-07T20:47:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.760Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-07T20:47:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.760Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-07T20:47:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:55.369Z"
+  },
+  {
+   "id": "evertried-142081@1.2.1",
+   "gameId": "evertried-142081",
+   "displayName": "Update 1.2.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-07T15:03:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just yesterday we released our new bug reporting tool and we already got great feedback from the community, that not only send us logs with their discoveries, but also have written descriptions to the issues, which greatly helped us fixing them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an error that appeared when navigating through the Towerpedia while in an empty save slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The background of some enemies in the Towerpedia was solid white. Fixed to display the correct background image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Ekin (explosive) was not updating its explosive tiles after it was defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when visualizing Strong Breeze hazard in Towerpedia.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We will continue to fix the reported issues as they appear while we work on the updates for the Floor Builder patch. Thanks for the help and keep the reports coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Evertried Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4469272893511064032"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-07T15:03:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.759Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-07T15:03:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.760Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-07T15:03:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:55.369Z"
+  },
+  {
+   "id": "evertried-142081@major-2022-06-06",
+   "gameId": "evertried-142081",
+   "displayName": "NEW UPDATE: Floor Builder [Beta] is Live",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-06T17:16:11.000Z",
+   "notes": [
+    {
+     "title": "Floor Builder is LIVE!",
+     "items": [
+      {
+       "text": "Hey guys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have been working hard to bring the latest update of Evertried to all of you, and we could not be more excited to share the new feature with everyone: The FLOOR BUILDER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Create your own Trial/h2]",
+     "items": [
+      {
+       "text": "Through the Floor Builder option in the main menu, players can now access the Floor Editor mode, where they can create their own challenges by combining Enemies and Hazards and saving it to their own unique floors. Besides electing their enemies, players can also set the warrior's loadout and choose which skills and modifiers are equipped, how much health the warrior has and even how high the focus should start at!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Share Floors with Friends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new Floor Builder also comes with Friend Search options, to allow players to save and share their creations through the internet. Just search for a friend ID in the Friend Search menu to take a look at that player's gallery. You can even save their floors to your own gallery and edit it to your liking! We can't wait to see what you can come up with!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New reporting tools",
+     "items": [
+      {
+       "text": "Aside from the Floor Builder contents, we are also introducing a new reporting tool in the pause menu. We hope that through this new tool payers are able to send us reports directly when they see something odd. Just press [L shift] + in the pause menu to open the log report, and we'll get a copy of whatever went wrong inside the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We know that the Floor Builder is not yet finished, as some hazards are absent from selection, but we wanted to make sure to have everything working the best it could while we continue developing more content for the game. With that said, we are really looking forward to your feedback on the new features, and we hope you have a lot of fun with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "As usual, here are some of the bugs we tackled for this update too:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Created a work-around for complex teleporter triggers to prevent softlocks. This was believed to be the main issue that made softlocks in the last area more frequent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that was causing the poison trail in Avsladi fight to visually disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock trigger when pausing the game at the exact moment damage was taken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Next steps",
+     "items": [
+      {
+       "text": "We are working to have the Mac and Linux builds of the current patch ready asap. Following this release, we are going to include the localization files for the new Floor Builder update, as well as introduce more content to the Floor Builder, with these already planned:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Add the option to set paths for hazards like Conveyor Belts, Minecart and Lave River",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a \"choose BGM track\" option in Floor Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Include Falling Debris and Strong Breeze options in the Hazard menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We sincerely thank you all for the support, and we really hope you have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Evertried Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4469272893507758031"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-06T17:16:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.759Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:15.015Z"
+  },
+  {
+   "id": "evertried-142081@post-2022-02-18",
+   "gameId": "evertried-142081",
+   "displayName": "Updates notes for Feb 18th",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-02-18T22:51:21.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where players could move without being bound by turn rules if they mashed the DASH during special floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where Firewalk tiles would look like they are falling through Unstable Grounds, but were still active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where players became unable to purchase Ultimate Charges refills at shops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where the crosshair of Mark would get stuck during Avsladi fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Changes",
+     "items": [
+      {
+       "text": "The visuals for the following VFX were update to provide better clarity:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flamethrower Hazard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frostbite Hazard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spokin's poison trail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we thank you all for your feedback and we look forward to continue to provide fixes and adjustments as needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4246335198897528497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-18T22:51:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-18T22:51:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.758Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-02-18T22:51:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:55.366Z"
+  },
+  {
+   "id": "evertried-142081@1.1.1",
+   "gameId": "evertried-142081",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-19T22:40:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone, this is Pedro \"Myganic\" bringing you the patch notes for our latest update. This time, we focused mainly on fixing bugs and addressing unwanted behaviors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you still find a bug, weird scenario or have questions about the game, be sure to send us a message, join us on Discord, or send us a DM on Twitter @EvertriedGame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where Ruskins were sometime displaying their facing direction incorrectly before moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Towerpedia % completion was not being correctly displayed in the Load Data menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Avsladi would stop to spawn valid targets to hit when damaged by AoE skills, like Bomb and Curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game would softlock when stepping on a damaging tile while Ghost Walk was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where attempting to leave the shop floors too fast resulting in the player getting stuck in the shop floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the dialogue system where sometimes no button option appeared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was possible to move (and fall) into pitfalls by using the mouse cursor to move.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where getting an Ultimate through casting Wild Conjuration locked the Towerpedia menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some floors in Hard Mode would spawn with no enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the scenario where using Grappling Hook on a wall near the player would result in an auto-stun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some hazards could be pushed into an occupied tile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sudden Gale's banner would appear in the Towerpedia enemy displays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Thunder Orb did not spread damage to adjacent units in certain situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Focus Timer does not drop during Teleporter sequences, or while enemies are casting effects, anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Skipping a boss cutscene will no longer skip the animation of sub-subsequent boss cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We will continue to support the game with fixes and improvements, and we appreciate all the support and help we have been getting from the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 3,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4227186657145997903"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-19T22:40:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.757Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-19T22:40:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.757Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-19T22:40:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:55.365Z"
+  },
+  {
+   "id": "evertried-142081@1.1.0",
+   "gameId": "evertried-142081",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-29T04:38:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes: Version 1.1.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Halloween Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter the code \"trickortreat\" to unlock the \"Jack-o'-Warrior\" skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Save Point on Shop Floors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When exiting a shop floor, you will now have the option to suspend your run and get back to the main menu. This means that the shops now double as a checkpoint for you to exit the game and continue later on, so you don't have to beat the game in one sitting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added “Disable Focus Timer” Cheat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We heard you, and some players are feeling pressured to interact with the Focus Timer. We want you all to know that you don’t need to play with the Focus Timer in order to beat the game, alas, it is an important mechanic of the game and we don’t want other players to be turned away from experiencing it. So, in the Setting Menu you will find a new option to Enable or Disable the Focus Timer. We encourage you all to test it out if you want, but do try to play with this setting disabled to experience the full game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added “Change Starting Floor” Cheat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now change which floor to start from by inserting cheat codes. Remember: In order for the cheat code to work, you must have defeated that area’s boss. Here are the cheats to be inputted in the “Enter Code” option of the Main Menu, followed by their starting floor:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "avsladi - start on floor 11",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ilskgar - start on floor 21",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "forskydda - start on floor 31",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "wanderer - start on floor 41",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS: This is cheating, hahaha!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements are now Implemented on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Achievements can now be unlocked on Steam. Right now they are unlocked at the end of your play session, but we are working on the overlay function to improve on that.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Skill Balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disperse: Enemy stun duration increased to 2 turns at all levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Curse: Curse duration increased to 5 turns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tame: Effect duration increased to 5 turns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Divine Blade: Cost reduced to 3 at levels 1 and 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transmutation: Success chance increased to 80%. Cost increased to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss Balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Third boss energy consumptions were lower, and max energy was increased. This should make it harder to unintentionally trigger its “survival” win condition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of the more complex conveyor layouts were redesigned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roulette Lv2 now properly allows you to recast it for free if it kills an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed persistent SFX after defeating the third boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-implemented SFX for the 3rd boss conveyor belts moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Laden (NPC) display name to match how he introduces himself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crumbling Skies is now properly resetting between uses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Energy Mantle is now properly requiring 5 charges to trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mark’s crosshair is not appearing on unmarked enemies anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3rd Boss receptors are now playing their correct SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now properly block 2nd Boss’s axes with Ice Pillar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can no longer lock your game by isolating the 2nd boss around pitfalls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of Life Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player’s movement markers now disappear when you cannot make an action. We hope this serves as an additional visual feedback for when you can act or not, so you don’t need to keep button mashing your keys (you still can , though).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Healing VFX now plays every time your health recovers. We hope this helps to convey when you are healed by other sources, like after defeating a boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented FPS cap to the game to 360. We welcome feedback on this topic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We will continue to work on fixes and adjustments as long as there are things to adjust. We sincerely thank all that have been reporting issues and bugs to us, and we know there are still things to fix. Our goal is to do weekly updates on steam while we address those fixes (bi-monthly on consoles due to it taking longer to release a patch).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all, and we hope you enjoy the changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Evertried Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 1,
+    "balance": 0,
+    "other": 37,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1607040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1607040/view/4186652357026389694"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-29T04:38:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.756Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-29T04:38:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1607040",
+      "checkedAt": "2026-11-13T03:20:21.757Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-29T04:38:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:55.362Z"
+  }
+ ],
+ "issues": []
+}

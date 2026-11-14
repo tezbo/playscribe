@@ -1,0 +1,2929 @@
+{
+ "game": {
+  "id": "stay-out-of-the-house-109668",
+  "igdbId": 109668,
+  "name": "Stay Out of the House",
+  "cover": {
+   "imageId": "co5jad",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5jad.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1tea",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1tea.jpg"
+  },
+  "ps5Release": "2023-06-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "stay-out-of-the-house-109668@1.1.7",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.1.7",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-02T15:09:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Back with another update! In terms of the amount of fixes and adjustments, this might be one of our biggest patches yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We recruited the help of a fan and modder, Buttery Stancakes, to help us do some very extensive QA. Their knowledge of the game and attention to detail was extremely vital for helping us iron out a lot of remaining bugs and general polish issues with the game. There's a lot of stuff here that *most* people probably would not notice, but they make a big impact on the game's overall quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are more thorough notes on what's been fixed/changed",
+     "items": [
+      {
+       "text": "Bear traps should now disappear after you “escape” from them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with fog effect, where you could \"peak through the fog\" if you rotated the camera a certain way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where a specific destroyed camera could still detect the player after loading a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the \"ambient light\" would reset if you touched some specific triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the Revolver cylinder could go out of order if you shot continuously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled some useless items during a later section of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could reload the gun while swimming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Paperclip health would persist when starting a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where certain light sources did not correctly increase the player's illumination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could destroy some doorknobs during a segment you weren't meant to (sorry to any speedrunners)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where using the Hammer to destroy things wouldn't correctly alert the Butcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an animation issue that could occur when using the Hammer for a puzzle segment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a long-standing \"inventory\" bug where you could get an invisible duplicate item in your inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a NavMesh carver issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some audio ambience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added low pass filter to Radar item, so the high pitch sound should be less bothersome for players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Butcher costume changes slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where item illumination didn't correctly update when dropping items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with lock picking on keyboard, where you can *now* use both A and D to rotate the lockpick",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug where solving a specific puzzle would cause Granny to scream",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Health indicator so it makes more sense with the current damage values, and should better reflect how many hits are left before you die",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where photo mode movement speed was framerate dependent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted a \"blood\" texture on a couple specific models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with TV framerate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clock puzzle being framerate-dependant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some visual issues with swimming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some visual issues with the Oxygen Meter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where baby would ignore damage after retreating for first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple paperclips that were impossible to grab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where some items were incorrectly parents to cabinet doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor bug where a specific item did not have a \"visual flare\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Butcher AI related to seeing the player in vents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted behavior related to Butcher's \"flashlight\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues related to Bug Spray item particles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some \"reskin\" textures for specific items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using water canteen or candy bar while your stats are at 100% will now trigger the \"I don't need to use this\" text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some rotation + hand position values of specific items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue related to \"Chainsaw Damage\" being incorrect on some difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The first screwdriver has its position slightly changed so its more obvious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cabinet collision issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Got rid of some unnecessary \"bolt locks\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted position of exhaust fan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted a specific NPC's clothing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could interact with a specific puzzle from a very far distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where running out of Oxygen on Easy wouldn't kill you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can destroy TVs in 1 hit with the hammer now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A couple \"permanent\" lights were disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some characters were slower on Easy mode when they shouldn't have been",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted \"blood loss\" on Hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted door physics slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some Dog AI issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted issue related to Clock puzzle when you save + load a game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Stamina drain rate was incorrect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Victim could endlessly scream",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where documents could get duplicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue related to the lightbulbs in the basement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock that could happen if you interacted with a specific HVAC fan from a far enough distance away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple issues related to item spawn locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could drop items when they weren't mean to be dropped, which would lead to them falling out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where \"no longer needed\" items would drop during a puzzle segment, and then fall out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted minor camera movement when doing a specific puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with radar blips appearing outside of the radar screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where enemies could open a specific door when they walked by it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit during the \"final segment\" where the player could easily avoid damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug related to exiting water while their was still gas in the vents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Victims stand up when they are in the safe room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Properly gated off specific sections of the game during an \"escape sequence\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the Language Prompt would always appear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you FOV would reset after interacting with certain puzzles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where dying to Fall Damage during the \"final segment\" would not correctly reset the game state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where a specific survivor would repeat their dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted resolution options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the pause screen would bug out if you paused at just the right time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That should be it! Thanks everyone for your patience and support of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 73,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5124582150142007102"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-02T15:09:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.274Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-02T15:09:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.274Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-02T15:09:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.135Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.1.6",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.1.6",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-06-09T17:06:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Back with a small patch for some minor bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where \"Landing Sound\" would play when you gained control in the House section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjust text size on \"pause\" menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that could make the Language selection invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug related to the Butcher not chasing you right away if he was shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional misc. bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5129083846343225610"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-09T17:06:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.273Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.134Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.1.5",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-27T04:55:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some long lasting bugs/issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where a specific puzzle state would not save correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with water canteen and water buckets on Hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could load a game with an \"invisible gun\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue related to the Light Meter not spawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could read a document during a segment where it was unintended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some AI navigation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Dog AI behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some AI visual issues related to the elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues related to fall damage on hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue related to a specific ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted ambient audio levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue related to dropping item from inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Revolver document text display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed radar visual issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor text display issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the timing of a specific \"cutscene\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Additional misc. fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 3,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5151600576594084405"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-27T04:55:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.272Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.133Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@patch-2023-04-12",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "April 12th Patch - Performance improvements and French fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-12T16:21:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Back with an update, here's what you can expect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to French translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some misc. translation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the options/pause screen so text appears cleanly in all languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed softlock bug that could occur if you get the \"Sacrifice\" ending while in Explore mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some bugs related to Victims",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug related to trap alarm lights not stopping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of misc. bugs and issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5132456474583841664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-12T16:21:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.272Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.133Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@3",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-17T22:05:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, back with a quick update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the notes in certain languages would get cut off. We originally thought this was fixed, but were mistaken. Apologies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where hitting \"space\" while in the inventory screen did not equip the item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5125698536858892723"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-17T22:05:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.272Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.132Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@2",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-14T18:37:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Back again with another quick fix for localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We fixed the following for Spanish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu text got cut off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two documents (one in Night Shift, and another in Prologue) had incomplete translation. We currently updated these with a temporary translation, until we can get this adjusted properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A known issue we will be cleaning up is the different text sizes on menus when playing in non-English languages. This requires another pass with our translators, so it may take some time before this is properly addressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5070528810311172588"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-14T18:37:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.271Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.132Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.1.4",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Hotfix 1.1.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-14T02:54:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have a quick update that addresses some issues with the last major update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some issues where non-English languages would get cut off (especially noticeable in Russian)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where item description text was microscopic when playing in Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Russian text uses a VCR inspired font for menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where you could not command Victims to follow you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the Fuse Puzzle wouldn't correctly \"solve\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There will likely be continued updates regarding the game's localization, however this current update had some vital fixes included that we wanted to make sure got released ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5070528810308783234"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-14T02:54:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.271Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.131Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.1.2",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Patch 1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-18T21:53:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! Back with some bug fixes, and a redesign of the Document Viewer UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Document Viewer has been redesigned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some bugs related to the document viewer when looking at it during Night Shift have been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hammer attack range fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hammer rebalanced - it takes multiple hits to destroy objects, and it creates noise which may alert the butcher if he's nearby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where cart didn't have a collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where certain TVs would have their audio playing even after they were destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where sometimes players would get \"stuck\" while climbing a vent, or hiding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue related to PART 4 unlocking incorrectly on the New Game menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's it! Hope everyone enjoys the holidays coming up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/5623338145763000252"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-18T21:53:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.270Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.130Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.1.1",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-09T02:09:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! Back with another patch! Quality of Life and Bug Fixes! Here's what you can expect:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hammer can be used to smash TVs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A specific TV that could disappear after loading save, will now always be active (unless the player destroys it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the Hex Key (and other \"small\" items) would not correctly respawn in the death closet, but would instead spawn right where the player died",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where sometimes the mouse cursor would unlock and would prevent players from looking around or interacting with the game",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where shooting out a security camera would cause a bad framerate dip, and had the potential to move around some physics objects and items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with certain items \"overlapping\" each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where a beeping sound during the last puzzle in the game could be heard everywhere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with document viewer saving your read documents across save files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with a key item \"spinning\" strangely when you equipped it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When you use the Tape item, it will no longer be useable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where after an animal was killed, it would still make sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could see the baby in a spot you weren't supposed to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the \"Look\" prompt in the vent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where if you kept using the screwdriver on screws, the screwdriver would get larger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During the final sequence in the game, you can't go back into a vent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the Butcher would start \"chopping meat\" outside of the kitchen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can break the van windows with the gun or throwing rocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the water canteens spawned in a strange location on Hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some Butcher AI issues related to the elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4980448574110580315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-09T02:09:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.270Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.130Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@major-2022-11-30",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Content Update - Hard Mode, Explore Mode, and more changes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-30T14:17:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! I have a proper content update this time. Hope you all enjoy. Here's what you can expect:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hard Mode. You have additional \"survival mechanics\" to manage, like hunger, thirst, and bleeding. There are a couple new items/interactions to let you deal with these new systems. There's also fall damage on this mode, and the Butcher is a bit more aware of you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Explore Mode. You can now playthrough the game without having to deal with any hostile characters. Some scripted sequences involving hostile characters will still play out as normal though.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Document Viewer. Available from the Inventory screen, you can view any document you had seen before. Useful for tracking the investigator achievement, or for double checking a puzzle code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Hammer can now also be used as a defensive weapon. It's the slowest melee weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is a new secret achievement to unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Spray item can be used to make the Butcher retreat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can trap the Butcher and Dog in a specific room... if you're quick enough. Doing so can also skip an event with the Butcher near the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using the VHS or 16mm video setting with make the voice acting lo-fi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Text over FX\" setting lets any text and certain UI elements readable even if you have a video effect enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High Pitch Sounds setting lets you disable/enable any high pitched sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QoL and Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where you could take out the nails on a floor board from the wrong side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the player could double-back to the House after going through a scripted ending sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Control prompt appears when interacting with the Clock Puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain items (Drain Cleaner, Rubbing alcohol) become unusable once they served their purpose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can alternatively unlock the Hero achievement by leading a Victim through the front door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can kill Rats with the Knife",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You cannot use Bandages if you are already at full health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where victim's dead bodies could get frozen in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the ending hospital scene was too dark",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple cases where using \"RT\" on a controller would skip past dialogue too quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where picking up and dropping the wooden plank could sometimes make the wooden plank huge in scale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple buggy interactions with the Crippled Woman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where if you made the Butcher retreat while he was killing a victim, the victim's screams wouldn't stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue where a puzzle prompt didn't appear visible at first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Roxanne's voice was lower than it should've been",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where if you were crouched you wouldn't be able to stand, in a very specific location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some AI issues related to the Dog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple \"floating\" objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Butcher would walk through the Fridge in the Kitchen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some radar issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's it! Thanks for playing STAY OUT OF THE HOUSE!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4979322040013232119"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-30T14:17:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.269Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.129Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.0.20",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.0.20",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-11-11T23:18:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, I'm back with another patch. This time, we got a ton of bug fixes and little adjustments in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We still have some new content on the way, but this patch had some critical fixes in it, so we decided to release this ahead of the content update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that prevented player from interacting with items, if the game was left running for a long time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented the player from opening their inventory or the options screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Security cameras have a new visual for the \"sight cones\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to door physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some minor adjustments to various puzzles to make them a bit more clear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where certain moveable objects would have slow/floaty physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where if it was the first time you ever saved, you wouldn't be able to Load your game from the pause screen until you quit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where you could pick up a trap that the butcher was stuck in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the CRT would become active when you entered the game, even if you had turned it off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Inventory screen, so you can navigate through your inventory with the D-Pad on controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where you always had to crouch to pick up the Wooden Plank item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where if you died in a bear trap, the bear trap would still be around and bring up the \"Escape\" prompt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialogue issues in Night Shift, if you used a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"Safe\" Bear Trap now uses a different model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where Rock items were a bit too bright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Drawer texture issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where a couple notes didn't have text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typo in credits for Dave's animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where TVs weren't animating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Texture Stretching is off by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where using the gun could \"break\" the game, if you swapped items at the exact same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some Butcher AI behaviors when he uses the elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where if you were underwater, interacted with a locked door, then resurfaced, you'd hear the locked door sound effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Victims could open the doors to the cages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Victims are easier to move out of your way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where the FOV zoom would bug out if you interacted with the Fallout Keypad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue related to Fuse items physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed physics bug related to the dog cage door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where items on dinning room table would be floating even if Butcher flipped the table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where you could interact with cabinet drawers through a cage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where opening the elevator hatch could knock you out of bounds, depending on where you were standing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where you could use the peak mechanic to go through walls in Night Shift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where adjusting the Gamma on Night Shift made the UI pitch black",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a \"dialogue cutscene\" would repeat even after you saved / loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the Butcher could not attack you when you stood on top of a hatch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the state of the \"dying man\" wasn't saving properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the \"bugs\" were making sounds, even if they were gone after you saved / loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the Special Thanks in the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where climbable vents would display \"Can't reach\" when you were above them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 32,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/6368680725426215041"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-11T23:18:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.268Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.128Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@major-2022-10-29",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Stay out of the House Halloween Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-29T20:03:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "First of all I want to thank everyone for picking up the game. I hope you've enjoyed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay out of the House is in much better shape now. Lum and I have been working our asses off. The bugs are almost all fixed and things are pretty stable. If you had issues before, you should be safe giving it another shot this Halloween.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I apologize for the launch. It was a shame working on a game for almost 5 years and then botching the release in the worst way possible with multiple delays and then bugs. We actually did more testing than any other Puppet Combo game with 10 testers on the payroll. But the sandbox-y nature of everything hid some bugs we didn't expect once it hit the public. Not to mention some engine issues that were totally unexpected but bricked the game for a small number of gamers. I hope everyone feels satisfied with their purchase now or got a refund if you didn't want to wait for patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It hasn't done the great commercially with almost no media coverage or reviews but I'm confident the game's reputation will grow over time. Please leave a review if you have time, those really help!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But aside from the struggles, I'm proud of what was accomplished. The game has turned out exactly how I envisioned it. I know it's not a game for everyone but I think it's find it's audience over the years. Huge thanks to you guys for supporting it from the start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4706851091181446418"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-29T20:03:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.268Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.127Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.0.19b",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Hotfix 1.0.19b",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-29T00:51:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Well, just when I said we'd be slowing down patches... an immediate hotfix is uploaded!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was an error related to the gun which should now be resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4706851091178532942"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-29T00:51:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.267Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:48.043Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.0.19",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.0.19",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-28T23:49:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small bit of restored content, a new toggle in the options menu, and more fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully you aren't all tired of me saying this, but: thank you for sticking with us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Butcher has some new costume changes that happen when he reaches specific \"phases\"!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Affine Texture toggle is added to the Display Settings. This will let you disable texture stretching, as some users reported this as causing headaches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved ambient sounds in Night Shift - Outside, Inside, Refridgerators all have proper sound design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes to item physics - this should prevent issues where items would fall (or get knocked) out of bounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where dropping items in the barbed wire pit would mean they were gone forever. These items will immediately reset to the player's position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with cigarette pack in Night Shift, where it didn't have a model or item description in the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue related to the \"closet padlock\" where the camera would sometimes not line up, and you wouldn't be able to change the bottom 3 numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The framerate in the attic is greatly improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where you could solve the Clock puzzle earlier than intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As a heads up, we expect patches will be a bit slower from now on (unless an emergency comes up). We currently have a bigger update planned (some new content), which we think you will all appreciate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That being said, we've been working very hard on SOOTH the past month, and we need some time to rest and regroup. We think you will all really enjoy the next update we have planned, though!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4706851091178376153"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-28T23:49:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.267Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.126Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.0.18",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.0.18",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-26T20:21:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Back with more fixes. We've changed our work flow so patches should be much more stable than they were in the past. I can't say for certain we'll always be perfect, but things have been a lot better on our end after making these changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what's new",
+     "items": [
+      {
+       "text": "A new item (candy bar) has been added to the house, which can be given to a specific victim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can disarm bear traps when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional controller interactions fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can unlock the Easy achievement when beating it on Medium. If you've already completed the game on Medium, then you will unlock the Easy achievement when you boot up the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where the button prompt for commanding victims wasn't updating to your rebinded controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved issue where the Butcher could stack multiple bear traps on top of each other. During testing we saw this happen in one scenario, though it should be much less frequent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bug where dog did not react to you touching it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bug where you could still interact with a security camera after it was shot out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where stealing the Butcher's key while he was stuck in a trap lead to weird animation issues (it was fun while it lasted though)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PART 4 should no longer be unlocked by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Photo mode should correctly unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements to the audio occlusion system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional feedback added to an end-game puzzle, so it's easier to tell when you've entered the correct code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bug where you could get stuck between the 1st floor bathroom door and inside a cabinet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "On Easy mode, any Screws that were removed no longer have a shine on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some ambience/music to a specific secret room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the default volume levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some issues related to the prologue house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More fixes and adjustments are on the way. A few have been promised for a few days now, but have been difficult to replicate. We're doing our best to continue improving the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Still to do",
+     "items": [
+      {
+       "text": "victim dead bodies get stuck in the air under certain conditions (I know, I know... this one's been on the Coming Soon list for a while)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "being able to kill victims with the knife",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improvements to movable objects (chairs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improvement to framerate in attic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "A new item (candy bar) has been added to the house, which can be given to a specific victim",
+     "You can disarm bear traps when using a controller",
+     "Additional controller interactions fixed"
+    ]
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4706851091170556950"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-26T20:21:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.266Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.125Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.0.17",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.0.17",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-25T18:30:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks everyone for your patience with the game. We're working very hard to continue fixing bugs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.0.17",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Butcher's \"Frenzy\" state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Puppet Combo logo returned to game's intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The can in the kitchen was moved back onto the shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where Steam would (by default) detect a controller as Mouse+Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where a specific victim wasn't saying the correct dialogue after being saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Photo mode has been fixed, and the Smile achievement should correctly unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There were additional UI + controller display issues fixed for Photo mode as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Victim pathfinding AI fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where some red buttons were visible through walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where dying in the vents would cause the \"vent ambience\" to continue playing after respawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Butcher would \"rediscover\" the dead mother",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the fuse puzzle items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We have more fixes and adjustments coming soon, but they are still in the testing phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug where you can't disarm bear traps with a controller, and adjustments for other controller interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Victim bodies sometimes getting frozen in the air (still working on it... sorry!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes related to bear traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "...and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 1,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4714731755431226524"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-25T18:30:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.266Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.125Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@1.0.16",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Update 1.0.16",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-22T21:58:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I apologize for the launch bugs but the game keeps getting better and better. It should be a lot more stable now. I've been making subtitle optimizations, refining a few mechanics, and adding some quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.0.16",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "THE BITCH IS DEAD - Granny will stay dead now on your saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The dog and baby stay dead too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added now ambient audio to the house for more mood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The killer won't alert himself when he opens doors (getting stuck in doors)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can't see bullet flares through the drawers and cabinets anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed annoying FOV resets (let me know if any more remain that I missed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More feedback when you try to climb. The game will tell you if you can't reach something - you probably have to stand on a chair for ceiling vents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed passable food buckets in the bucket room and hopefully improved the framerate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a key outside for the barn door so you can't get softlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The butcher's alert should no longer play forever if he's chasing you and gets stuck in a bear trap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Opening doors should feel tighter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates that are coming",
+     "items": [
+      {
+       "text": "Fix issues with the victims dead bodies flying around the map or freezing in the air (even if it is funny)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add the puppet combo logo back to the game (if we can find a video format that doesn't explode unity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/4714731755420820167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-22T21:58:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.265Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:52.124Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@major-2019-07-15",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "SOOTH Update July",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-07-15T17:34:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hope you're having a great summer! Stay out of the House is content complete now. 0.7.2 is the latest version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's been added",
+     "items": [
+      {
+       "text": "A new prologue (so the title of the game is actually a plot point in the game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A alternative ending. So there are two routes to choose. Do you escape the house, or go deeper to uncover the butcher's dark secret.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New cutscenes and story events as you progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A dangerous new character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New fleshly props and human remains for a more lurid atmosphere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various bug fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The big question now is, what still needs to be added before I can release the game?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combining Night Shift, Stay out of the House and Nun Massacre into one executable, or splitting Nun Massacre into a separate title in your library (or free dlc?). The api is complicated and I still have trouble wrapping my head around it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Full controller support. The difficult part with controller support is making the Ui work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Save system or checkpoints. Another thing more difficult than it sounds because there are a lot of things in the game that need to be tracked and saved and I may need to recode a lot of things to make it work. I'm not totally sure yet. I'm optimistic I can accomplish this with minimal refactoring, but I won't know until I start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Options and menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam integrations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "So that's where the game is right now. I hope it will be done soon, but I can't accurately estimate when it will come out on steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "A new prologue (so the title of the game is actually a plot point in the game)",
+     "New cutscenes and story events as you progress.",
+     "A dangerous new character."
+    ]
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/2436927798963542956"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-15T17:34:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.264Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:48.021Z"
+  },
+  {
+   "id": "stay-out-of-the-house-109668@major-2018-11-25",
+   "gameId": "stay-out-of-the-house-109668",
+   "displayName": "Stay out of the House update - when is it coming out?",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-11-25T00:56:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hope you guys had a great Thanksgiving!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's a very late Stay out of the House update. As you guys know, I intended to have it out before Halloween, but I ran out of time and underestimated what it would take to finish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I take the Steam release very seriously and I want to make sure the game is 100% ready before I start selling it at full price. I think a perfect but delayed release is far better than rushed out and patched later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the story content will be finished this month and downloadable for anyone who has early access through a pre-order or my patreon. Meaning all the puzzles along with the endings.So the game will be fully playable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But a fully polished release requires more than that: controller support, configuration options, full optimization, achievements, trading cards. So I'm holding it back until that stuff is done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "My best estimate for release is after the holidays when things calm down a bit. Probably January. If you're dying to play it in the meantime, the DRM free early access version is on my website at 1/3 of the full release price. So don't hesitate to pick it up there if you can overlook some of the unpolished features. And you'll get the key when the full version comes out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ben",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-896520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/896520/view/2415514774177641463"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-11-25T00:56:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-896520",
+      "checkedAt": "2026-11-13T03:31:40.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:48.006Z"
+  }
+ ],
+ "issues": []
+}

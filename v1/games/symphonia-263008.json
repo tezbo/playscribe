@@ -1,0 +1,723 @@
+{
+ "game": {
+  "id": "symphonia-263008",
+  "igdbId": 263008,
+  "name": "Symphonia",
+  "cover": {
+   "imageId": "co6zic",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6zic.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2h9n",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2h9n.jpg"
+  },
+  "ps5Release": "2024-12-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "symphonia-263008@major-2025-10-06",
+   "gameId": "symphonia-263008",
+   "displayName": "❗Update Required❗",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-06T15:13:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44506357/baae466eb3bd5f5d9dd8705752f0e3111c29fd4f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey friends,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to let you know about an important update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A recently identified security vulnerability within Unity has been spotted, and while there is currently no evidence of impact on users, we’re taking all relevant steps to ensure you’re on the latest and safest version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To keep you safe, we’ve released a new patch that addresses the issue. Please update your game as soon as possible to stay protected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can read more about it here",
+     "items": [
+      {
+       "text": "As always, our priority will be on keeping our games as safe and enjoyable for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Headup Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1865960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1865960/view/1811772772609467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T15:13:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.722Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T15:13:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.722Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-06T15:13:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:09.087Z"
+  },
+  {
+   "id": "symphonia-263008@1.1.2",
+   "gameId": "symphonia-263008",
+   "displayName": "Patch 1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-12T10:35:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Symphonia 1.1.2 Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update will be fairly short. We've mainly fixed bugs that could hinder the game experience, while waiting for a new update for minor level design balancing. Some bugs may persist, while others are still in the process of being fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed a bug that can briefly lock the player into its bounce on a string animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the respawn sound to play in certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the room transitions to occur in some rooms (in Brass and Woodwinds)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added safety measures to avoid a rare bug where Philemon gets stuck in its playing the violin state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed Philemon to go under a horizontal string with the grappling bow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the Kinglet to appear in the machine at the end of the Brass Palace",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various sound issues around concerts and post concerts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor visual issues in the backgrounds in the Introduction area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We'd like to thank the GDQ Hotfix for the partnership we had with them last month. The runs shown were impressive and it gives us great pleasure as developers to see people pushing the game to its limits! If you can to catch it up, you can go on the GDQ Youtube channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If some bugs are persistent you can always report them in our Discord server. Thanks again for your feedback and for playing the game. See you for the next patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Musically yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sunny Peak 🌄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1865960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1865960/view/1791482680853785"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-12T10:35:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.721Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-12T10:35:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.722Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-12T10:35:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:09.087Z"
+  },
+  {
+   "id": "symphonia-263008@1.1.1",
+   "gameId": "symphonia-263008",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-06T10:29:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Symphonia 1.1.1 Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First, the whole Sunny Peak team wishes you all a happy new year! This patch mainly covers level design and camera tweaks, alongside light bug fixes. Other patches will be coming in early 2025 to add more level design tweaks and fix more bugs; some of them take some time to find and fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Design",
+     "items": [
+      {
+       "text": "S22: Moved up the collectible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "S23: Reduced the height of the central pillar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "S24: Removed a cushion on the top left and added a one-way platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "S30: Light killzone colliders rework in the collectible area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "S37: Simplified the transition to the first vertical string",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "S41: Moved the first checkpoint farther to the right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "S42: Removed spikes and a pillar in the second section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "B19: Adjusted the third pendulum timing to match with the rest of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "B29: Moved the bottom right bell farther to the left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "B36: Inverted rotating block faces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Camera",
+     "items": [
+      {
+       "text": "Tweaked camera movements to make them more fluid in those rooms : S7, S42, W31, B24",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed a bug that can softlock the player if they die at the very end of the escape sequence in Brass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that can softlock the player inside the Wayfarer Tune menu when dying while having it open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an animation bug that can lock Philemon when landing on a horizontal string with a double jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor audio and animation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other tiny modifications",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks again for your feedback and for playing the game. See you for the next patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Musically yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sunny Peak 🌄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1865960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1865960/view/1787858252839424"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-06T10:29:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.721Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-06T10:29:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.721Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-06T10:29:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:09.086Z"
+  },
+  {
+   "id": "symphonia-263008@1.1.0",
+   "gameId": "symphonia-263008",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-12T15:39:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello dear platforming lovers !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today sees the launch of our first patch since launch day… It is a pretty big one, as we tried to tackle some of the most important problems we have been seeing in this first week : confusions about some features, and some annoyingly common bugs. Thanks again to the Symphonia Discord members for sending us your bugs, that really helps fixing them faster !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Without waiting, here are the patch notes for Symphonia 1.1.0 (spoilers ahead !) :",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Reworked the settings menu to clarify the utility of gameplay variants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new warning popup, that appears if you enter secret areas without having the core abilities needed to complete the area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new achievement, related to aura shards !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new splash screen (Razer Interhaptics).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the credits to include new entries for Razer Interhaptics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the debug input for the camera movements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed a bug on the horizontal strings that allowed you to clip under when using the double jump on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that changed Philemon’s orientation when he died and stuck on a cushion at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that froze Philemon when using the grappling bow on a horizontal string.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused coins to instantly teleport if you died while collecting them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that displayed unwanted dust vfx when the player tried to move during one of the Trickster’s cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused Philemon to be unable to use the Wayfarer Tune in the Palace Jail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that made the catapult preview and grappling bow trail go behind the scenery sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused some animation issues when using alt+tab at specific moments.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that caused Philemon’s animation to be wrong when launching the cutscene in the second room of Palace Jail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that lowered the audio volume when dying while playing the Wayfarer Tune.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempt to fix the bug that causes some rooms to not load sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor issues in audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor animation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed many other tiny bugs and imprecise behaviors.: Thanks again for this awesome launch week and see you next week for another patch !: Musically yours,: Sunny Peak 🌄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 13,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Reworked the settings menu to clarify the utility of gameplay variants.",
+     "Added a new achievement, related to aura shards !",
+     "Added a new splash screen (Razer Interhaptics)."
+    ]
+   },
+   "sourceIds": [
+    "steam-1865960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1865960/view/1785774543528860"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T15:39:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.720Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T15:39:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1865960",
+      "checkedAt": "2026-11-13T03:32:21.720Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-12T15:39:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:09.085Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,4940 @@
+{
+ "game": {
+  "id": "heroine-anthem-zero-2-scalescars-oath-281100",
+  "igdbId": 281100,
+  "name": "Heroine Anthem Zero 2: Scalescars Oath",
+  "cover": {
+   "imageId": "co7k5t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7k5t.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2rmo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2rmo.jpg"
+  },
+  "ps5Release": "2024-02-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.94",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.94",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-03T03:49:41.000Z",
+   "notes": [
+    {
+     "title": "[Game mechanic Adjustments]",
+     "items": [
+      {
+       "text": "Adjusted the initial quantity of Guardian Owl, from 20 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the mission trigger locations and timing for CH3 \"A new threat?\", CH6 \"Source of the commotion\", and CH7 \"Defense of the West Tower\", ensuring smooth progression for subsequent missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Wanin in the party could still pick up puppet Wanin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where the quest \"Tools in the cave\" might not be completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the completion location for the achievement \"Silence & Fear\" to better align the achievement's unlock timing with the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "[Bugs Fixed]",
+     "items": [
+      {
+       "text": "Fixed the issue where switching to FullScreen mode in [Steam Deck] desktop mode caused display issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized the Save System when switching from the 1st save record to the 99th save record scroll method.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized interaction with campfire and NPCs in the 【Longhorn Crypt】 level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized certain exploration point to better align the Cuckoo's Exploration with the actual exploration point locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized camera glitches during cooking in certain levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the placement of reborn points and save points in certain levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized some merchant selling content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized translation of dialogue content in the lower-left corner in certain levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized monster attack behavior and sound effects in certain levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the \"NEW\" tag disappeared in the Save System for the latest save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Auto Save could not be selected when loading a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where switching Screen Resolutions could cause interface display problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Screen Resolutions AUTO function not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with incorrect descriptions in recipe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with incorrect level name displays in 【Mid Brambles Path】 and 【Riverside Bridge】 levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with incorrect maps in 【Maze Road】 and 【Grassland Cave II】 levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the tunnel near 【Uzato East Entrance】 would show the door as still closed after being opened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with flickering background lighting in the room of the 【East Entrance of Keeper Camp】.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shama would experience abnormal animations when entering an event while in a freezing state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the regenerate small amount of HP buff would disappear after Shama equipped the Maid Costume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where using the subattack [Glacier Engraving], [Inferno Engraving], [Hydro Barrier], and [Umbra Hydro Barrier] could fail to trigger effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shama would sometimes fall through the floor in certain scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed display issues in certain cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some interface options did not provide sound feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text descriptions for some skills and items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed special effect display issues for some skills and items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Wanin using special attacks could cause the game to crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[table noborder=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "★Follow Us",
+     "items": [
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Threads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PIXIV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 27,
+    "balance": 6,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/1784506359163463"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-03T03:49:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.307Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-03T03:49:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.307Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-03T03:49:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.251Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.93",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.93",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-13T11:05:18.000Z",
+   "notes": [
+    {
+     "title": "【Game mechanic Adjustments】",
+     "items": [
+      {
+       "text": "Health item recovery adjustments: ◆The health restoration for general items (e.g., Honey, Dark Rye Bread, Goat Milk, etc.) will change from a percentage-based recovery to a fixed point recovery. Therefore, the effectiveness of health restoration will decrease as the overall health of characters increases with their levels.: ◆Some dishes will still retain percentage-based recovery advantages.: ◆Adjustment of cool down time for HP recovery effect of Maid Costume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "【Optimize other system】",
+     "items": [
+      {
+       "text": "[Save System] Added more chapter images, which will change based on the current progress in the game.: (Adding new chapter images does not affect existing saves.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Map System] Updated background images for selecting map areas, making the geographical location of area options more related to the background image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[New voices] Added some system voices in Japanese and Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Forging system] For the forging system, adjustments and additions to crafting recipes: ◆Added recipes for Freeze Bottle No.3, Lightning Bottle No.3, and Cursed Bottle No.3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "◆Adjustment crafting recipes",
+     "items": [
+      {
+       "text": "[Lunch Box] Fine Silicon Sand reduced from 80 to 40. Kaolinite reduced from 80 to 40.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Black powder] Phosphorus powder reduced from 5 to 2. Fools' gold fragment from 5 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Refined Black Powder] Black powder reduced from 2 to 1. Phosphorus powder reduced from 5 to 2. Fools' gold fragment reduced from 10 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Stun Bomb No.3] Stun Bomb reduced from 2 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Poison Bottle No.3] Poison Bottle reduced from 2 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Flame Bottle No.3] Flame Bottle reduced from 2 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Acid Bottle No.3] Acid Bottle reduced from 2 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Slashing Bottle No.3] Slashing Bottle reduced from 2 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "【Skill Related Optimization】",
+     "items": [
+      {
+       "text": "Optimization of Shama and Wanin EX Act abilities; after using EX Act, a temporary immunity to all negative status will be obtained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization and damage increase for Mormolia skill, Phantom Combination Kick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "【Optimization】",
+     "items": [
+      {
+       "text": "Optimized triggering position for Chapter 3 quest \"Bibi! FLY!!!\" to ensure smooth progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted dialogue content with Haba after completing Chapter 9 quest \"A hatred called Roca.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted triggering position for Chapter 14 quest \"The Incident\" for more logical continuation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enhanced the experience between Chapter 15 mission \"Take a Detour\" and \"Find the brooch,\" with added mission information for better coherence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the timing for achieving achievements \"Ichthyosus Curse\" and \"The Heretic Assassin.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Timing optimization for dialogue content in the lower-left corner during Chapter 2 mission \"Enter the cave\" and adjusted triggering position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added dynamic expressions to Tangeshou merchants, making them more lively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corrected abnormal displays for some performance character animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grammar optimization for some performance mission explanations and lower-left dialog content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized camera angles displaying the forging interface in some stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization of save point locations in some stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization of camera and respawn point locations in some stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "【Bugs Fixed】",
+     "items": [
+      {
+       "text": "Fixed animation playback issues on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed occasional quest completion issues for Chapter 14 quest \"Part ways\" and side quest \"Ale as the reward.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Chapter 15 quest \"Find the brooch\" where Yaza soldiers could still discover the player, allowing them to enter the house boat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional abnormal actions for Shama during special operations and box pushing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Wanin's skill \"Spinning charge\" occasionally displaying abnormal effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abnormal death issues for Shama or Wanin in a stunned state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional freezing when switching companions during pet selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abnormal chest recovery in the \"Andoro Chamber\" stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed BGM playback failure in the \"Shepherd Grassland\" stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abnormal water effect displays in some scenes in the \"Forest Ruin Path\" and \"Tazarra Mun\" stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed errors in some lower-left dialog content and avatar displays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abnormal health display in some boss battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abnormal monster animations in some stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed discrepancies between displayed search points and actual locations after using the skill \"Cuckoo Exploration\" in some stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[table noborder=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "★Follow Us",
+     "items": [
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Threads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PIXIV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 15,
+    "balance": 12,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/5397065151385667271"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-13T11:05:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.306Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.250Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.92",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.92",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-10T10:18:24.000Z",
+   "notes": [
+    {
+     "title": "When Shama disguises itself as a barrel and attempts to push a box, it may experience abnormal movement issues.",
+     "items": [
+      {
+       "text": "Please update the game for the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table noborder=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "★Follow Us",
+     "items": [
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Threads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PIXIV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/5839532486210363781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T10:18:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.306Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.250Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.91",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.91",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-04T06:05:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the bug where the abnormal death of 'Shama' in the 'Special Form' state could result in a chance of preventing reborn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please update the game for the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table noborder=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "★Follow Us",
+     "items": [
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Threads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PIXIV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/5124585319851758537"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-04T06:05:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.305Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.249Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@major-2022-11-01",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Game Optimization ＆ Future Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-01T06:31:58.000Z",
+   "notes": [
+    {
+     "title": "『Optimization』",
+     "items": [
+      {
+       "text": "Fixed the problem that the NPCs in the Uzato Market could not talk to each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the camera problem when reviving in Path of Great Ice Wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the malfunction of Sunset Valley in the map.: (Reminder! You can switch between viewing the large map and the small map interface with Tab, or Y or ▲on the controller.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that the tracking darts of Shama would be blocked by the cheval de frise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the equipment UI freeze when switching quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the error pop-up when closing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "『Game Optimization』",
+     "items": [
+      {
+       "text": "Optimized and adjusted the plot for Anasul kidnapping in Chapters 2 to 3, as well as the plots related to the appearance of Meowgiko, Rubit, and Hammer Barbarian.: (Players who have surpassed this chapter are recommended to re-visit Chapter 2 Undergound Path to experience the new plot.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added two new achievements in Chapter 3, Owner of the brooch and Meowgiko Letter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Merchant Kurfa is now selling items from Chapters 9 to 15 in Uzato Market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merchant 小市 is now selling items from Chapters 16 to 20 in Uzato Market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heroine Anthem Zero2 Steam Guides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "『Future Update』",
+     "items": [
+      {
+       "text": "To add and optimize the story plot and some side quests in Chapter 15, increasing the thrilling experience of the gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a side story about the whereabouts of Meowgiko when going into the depths of the prairie cave in Chapter 17.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To add a hidden side story about bath tub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize the Map system: We plan on having a minor remodeling for the map system to enforce the main mission and allow players to better understand the locations for each quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize the Forging system: Making the forging process easier when choosing the equipment for Shama or Wanin, and enabling players to quickly switch the selection of weapons and armor types by Star Level or Enhance of the equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize the Cooking system: The tab classification is divided into five categories: All Item,Recover HP,Cures and immunity weakness, Increase attack, Other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Options for Kids Friendly: Add the option to turn on the Kids Friendly feature, making the content more live-stream-appropriate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More customization for the controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table noborder=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "★Follow Us",
+     "items": [
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PIXIV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4706851091190327119"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-01T06:31:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.241Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.85",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.85",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-28T10:50:59.000Z",
+   "notes": [
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Merchant: Merchant menu has been optimized for a better and more intuitive experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merchants in Galaxy Mountains, Galaxy Mountainside, Galaxy Mountains Saddle, and Galaxy Mountains Ridge now sell consumables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the animation scene in the mission Talk for the moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the combat animation, HP bar, and sound effects during the combat with Engl in Chapter 4 Hidden Moon Corridor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players must defeat Engl once to proceed with the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs Fixed",
+     "items": [
+      {
+       "text": "Fixed the bug for the status Frozen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wrong stat display of Goblet of Fatla",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the invisible wall problem in The Cemetery of Cilato.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the occasional movement glitching when switching characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the map of Puriform Blood River being unlocked prior to the actual arrival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Stats Adjustment",
+     "items": [
+      {
+       "text": "Increase the HP for the following bosses: Chapter: BOSS: CH3: Ancient Titan Butterfly Flower: CH11: Four-Legged Fish: CH15: Bado: CH17: Frozen Mountain Furs,Evil Spirits: CH18: Evil Ghosts,Ichthyopized Welly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[table noborder=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "★ Follow Us",
+     "items": [
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Guides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 2,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4588629064106607416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-28T10:50:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.240Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.84",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.84",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-07T11:51:25.000Z",
+   "notes": [
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Fixed the abnormal animation of some monsters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the malfunction when using wireless control mode on PS4, PS5, and Xbox One.: Note! Players who have previously adjusted the controller button configuration in the Steam controller option or in other ways, please reset the configuration to prevent the occurrence of malfunctions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[Please refer to the Reset Guide ]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimized",
+     "items": [
+      {
+       "text": "Optimized the performance of Engl after the Chapter 5 mission Hide-and-seek, for he can now be defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added trap door layout for the level of The Oblivion Aisle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized the drops for Chapter 15 Azaman Yaza.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for the Switch Pro controller: Note! Please connect the Switch Pro wirelessly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for the Xbox Series controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Note",
+     "items": [
+      {
+       "text": "a. Be sure to update the Windows system and Xbox firmware to the latest version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "b. If you use an external Bluetooth receiver, you must use the official Xbox wireless adapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4606641560244567283"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-07T11:51:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.239Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.83",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.83",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-25T09:02:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the Japanese and English display abnormally in Chapter 3, Meowgiko' s store is now in business.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please update the game for the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4514316500002045724"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-25T09:02:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.238Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.82",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.82",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-18T09:43:38.000Z",
+   "notes": [
+    {
+     "title": "Bugs Fixed",
+     "items": [
+      {
+       "text": "1. Fixed the quest prompt disappearance problem of the quest Njucha's Bully",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2. Fixed an issue where the content of the conversation was not updated when Wanin went to talk to Haba in chapter 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3. Fixed the disappearance of the female bodyguard in Chapter 15, Try to Fly Through",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "4. Fixed the abnormal movement caused when Wanin was affected by Clumps attack when pushing a crate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "5. Fixed an Cow Costume or Maid Costume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "6. Fixed the malfunction of contraptions bug during the dressing progress of Cow Costume or Maid Costume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "7. Fixed a bug that caused UI abnormality after revived from certain missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "8. Fixed the game crash after Reborn during the boss fight with Welly in Chapter 17.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "9. Fixed the issue that some monsters in Galaxy Hill Road displayed abnormally in Relax setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "10. Fixed the abnormal teleportation from Elm of Hill to Gate of Polar Night in Chapter 19.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "11. All task prompts can now display properly after the cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "12. Fixed the display malfunctions when launching special moves against a few specific monsters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "13. Fixed the task prompts of Chapter 14.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "14. Fixed an issue causing the character gets stuck when being attacked by monsters when talking to an NPC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "15. Fixed the cutscene malfunction in Chapter 18.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "16. Fixed the display error when Ahdurio joined the team in Chapter 19.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "17. Fixed an issue where the Seal of Holy Whirlpool could not be obtained after completing the Chapter 20 quest: We’ll always be partners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "18. Fixed the abnormal display of save files in Chapter 17.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Skill Related Optimization",
+     "items": [
+      {
+       "text": "1. Added the new + combo for Drop Attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Increased the attack power of Shama's secondary skills Gammon Engraving and Barrage Engraving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Momo's Phantom Combination Kick can now track all enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Momo's Ultimate Invincible Explosion now attacks straight upwards with increased power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Korrud 's Dance of Water Drake now fires cross-direction with increased power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Increase power for Korrud 's Quent Utas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Shama's maid outfit now provides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "0. HP Regeneration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Twice the final product when cooking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. The heavy attack has the effect of SA break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Shama's Cow Costume now provides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "0. Full resistance, suitable for escaping from the battlefield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Certain enemies will be friendly with Shama",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Increase Bibi 's flight time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Removed the ethereal form of the final boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10. Adjusted the percentage of enemy damage reduction in ethereal form",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11. Shama and 瓦因's resistant’s have been increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12. Shama can use Charge Attack at Lv.1, allowing more variations to the attack in the early game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance Optimization",
+     "items": [
+      {
+       "text": "1. Improved the overall loading speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Optimized the usage of memory card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Optimization",
+     "items": [
+      {
+       "text": "1. Optimized the difficulty and added hot springs, thorns, and cliffs in chapters 6 to 17",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Optimized the amount of obtained resources in chapters 14 to 20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Lowered the requirement for leveling from Lv55 to Lv85",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Easier to obtain Ancient Lockpick in chapters 3 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Optimized the stage of Night Antelope Alley.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Optimized the number of excavations at the same exploration point in the early game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Optimized the special effect, sound effect, and item drop for the hidden boss in Sorrowful Abyss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Optimize the movement of the summon and the task prompt during the boss fight with Snuffers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Optimize the abnormal movement and the disappearance of special effects of monsters on some levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10. Allowed the usage of Shama Bomb V2 to destroy bow turrets in mid-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11. Optimized the task prompt and guide to the Ancient Sewer in Chapter 16.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12. Optimized the resurrection process after being crushed by a box. You can use the Guardian Owl to be reborn immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "13. Optimized the overall lightning and the layout Galaxy Mountains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Item Adjustment",
+     "items": [
+      {
+       "text": "1. Optimized the maximum number and the effect of the HP recovery item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "a. Recovery percentage decreased: Goat Milk, Dark Rye Bread, Honey, Granny Smith, Black Pudding and Mealy Apple.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "b. The maximum number has been increased from 20 to 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "2. Increase the maximum number of medicinal herbs from 20 to 199.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Steam Achievements",
+     "items": [
+      {
+       "text": "1. Added two new achievements, Bustling Bar I and Bustling Bar II. Remember to put on your maid outfit!!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "UI optimization",
+     "items": [
+      {
+       "text": "1. Added illustrations in the skill table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Added Status Icon to the top left corner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Collectible Bonus Effects can be seen in the Character tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Optimized shopping UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Added images for DLC pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Optimized the display for enemy weaknesses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Optimize the icon of the No. 3 Throwing Bottle series and the icon of the main mission, which will be easier to distinguish between the two.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Added the switch in the Backpack and Equipment UI to make navigation easier. The keyboard shortcut is Ctrl and Alt, and the controller is L2 and R2.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "9. Added a shortcut to switch characters in the UI. Tab key on the keyboard, and ▲ for the controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "10. Optimized the effects when a teammate leaves the team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11. Optimized saving and loading function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I. The selection box will stay on the current save file when reading a save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12. Canceled the Skip function with the mouse to avoid the accidental touch of the mouse and the skipping of the animation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "13. New features: Fast Forward and Pause though cutscenes system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keyboard：Pause /Play 、Fast Forward [Left Ctrl]",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "XBOX : Pause /Play 、Fast Forward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "PS4、PS5 : Pause /Play 、Fast Forward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Tips",
+     "items": [
+      {
+       "text": "1. Note: Guardian Ow Ex can only be obtained after purchasing the DLC. It is treated as a separate item in the backpack but has the same functions as Guardian Ow. The combined number of both items will display upon death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Shama can walk up the wall directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Some items can treat Status Effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. It is relatively easy to find Crystal Marble through Explore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 4,
+    "other": 54,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4584121659780252205"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-18T09:43:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.302Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:49.238Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@post-2022-04-28",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Important Notice",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-04-28T11:09:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where the main mission [Find Cera] of CH16.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please play the game after the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry for any inconvenience caused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4348798430274183251"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-28T11:09:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.301Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:16:24.260Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.8",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-26T12:09:50.000Z",
+   "notes": [
+    {
+     "title": "Bugs fixed",
+     "items": [
+      {
+       "text": "Fixed the malfunction of the portal in Chapter 17.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the problem when player is removing the joystick, the UI icon of [GET NEW SKILL] in the upper left corner of the game screen does not switch to the corrcet icon for keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the main mission [Break through the siege] might not trigger in [Sacrifice Bridge II] of CH18.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the main mission [Just Run!] might not trigger in [The Ancient Road of Etamu] of CH19.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused animation problem during Shama's action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Addition and Optimization",
+     "items": [
+      {
+       "text": "Optimized the illustration of MEOWGIKO's friend ,Little Tub in CH2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized the image and monster level design of [Forest Ruin Path] in CH3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new tutorial in [SYSTEM UI] of [Joystick Setting] to assist players in reconfiguring the default setting on STEAM to solve the problem that sometimes the position of [LT(subattack)] & [RT(compet)] buttons are reversed for the XBOX controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Increased the number of & [Crystal Marble] obtained in the early game leveldesign. (CH2~CH4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the number of [Treasure chests] and [Exploration points] from Chapter 2 to Chapter 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted and reduced the number of \"thorns\" and \"enemies\" in stages CH2~CH14. (adjusted according to Difficulty)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the difficulties during the boss fight with , , and [Worry Snuffer] in CH4~5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimize the game leveldesign and maps from Chapter 10 to Chapter 13.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extended the time for dispatches to attack Shama , let her not face his hunt so soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized the speed when saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When players obtain [Crystal Marble] from treasure chests and exploration points, system will display the final credit amount of [Crystal Marble] in the upper right corner of the screen, now the message of quantity will also pop up at the bottom right corner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Allow all equipment to be and [Level up].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increase [Go! Bibi fly! Lv.1~3] flight time, allowing Shama to stay longer in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Solve the problem that the RAM cannot be unloaded due to some mechanisms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When the appears during the final BOSS battle, we added \"Attack hint\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mechanism adjustment",
+     "items": [
+      {
+       "text": "Restore the setting of Level Gap : When your level is lower than the enemy's, the player's attack damage receives a reduction of as much as 80%. (4% of damage reduction per level difference, 80% max)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lower the Cimu's price for [Guardian Owl]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The basic attack of Shama increased by 10% , and HP increased by 20%. (For Shama's attack shoots out multiple darts at once, thus the more apparent the adjustment.).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The basic attack of reduced by 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Game Tips",
+     "items": [
+      {
+       "text": "Use Shield to protect yourself when faced with multiple enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ Bibi : Air Shield (Obtained when at level 40)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ Mormolia : Air Shield (Obtained when at level 45)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ Korrud : Hydro Barrier (Obtained in Chapter 18)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Focus on the enemy's weak spot can deal critical damage",
+     "items": [
+      {
+       "text": "The enemy's weak point is unknown and displayed [?] icon at first. By using different kinds of throwing bottles on the enemy, once the weak points matches with the throwing bottles, an indicator will display the weak point of the enemy on the HP bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ Feed [Dragon Fruit] can temporarily increase the flight time for Bibi.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "￭ Shama's attack projectile",
+     "items": [
+      {
+       "text": "￭ Classic: A range-type attack on the enemy in front.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Best for enemies ahead or in groups, for multiple darts are shot at once.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ Reflection : As the darts shoot out front and back simultaneously, the projectiles would bounce twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Best used when in a narrow passage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Weakness: not practical in an open area)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ Chasing: The darts track the enemy and attack automatically .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(The darts can track the enemy on their own and focus on one enemy at a time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Weakness: when facing multiple enemies at once, the desired target might not be in focus, making it harder to fight in a group)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ Piercing: The darts ignore all obstacles in the scene and pierce through the enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(The darts can penetrate through objects)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Weakness: low overall damage dealt)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can customize the play style by mixing different such as , , , , , , and with various projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ When on fire, try jumping into the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "￭ When struck by lightning, stepping into the water will paralyze you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Water can conduct the lightning attack)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "( Lightning attack affects both the enemy and the player)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "￭ Level difference mechanism",
+     "items": [
+      {
+       "text": "When your level is lower than the enemy's, the player's attack damage receives a reduction of as much as 99%. (Each level reduce 5%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Future Optimizations",
+     "items": [
+      {
+       "text": "As of now, players can only see the debuff effect on the characters. We will incorporate a debuff status on the UI in the near updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust the difficulties from chapter 14 to 20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 4,
+    "balance": 4,
+    "other": 29,
+    "ps5": 0,
+    "topNew": [
+     "Optimized the illustration of MEOWGIKO's friend ,Little Tub in CH2.",
+     "Optimized the image and monster level design of [Forest Ruin Path] in CH3.",
+     "Increased the number of & [Crystal Marble] obtained in the early game leveldesign. (CH2~CH4)"
+    ]
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4348797798093413356"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-26T12:09:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.300Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.259Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.73",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.73",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-12T08:42:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix the issue that talking to NPC with Maid Costume would cause some animation problem.: Please update the game for the changes.: Thank you for your support and playing Heroine Anthem Zero2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4353300134242605276"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-12T08:42:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.300Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.258Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.72",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.72",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-08T12:21:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi guys, these are the correction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The black sceen problem in chapter 12 by chance , after doing [Watch after Bibi] in the end of CH11 in Prison Break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please update the game for the changes. Thank you for your support and playing Heroine Anthem Zero2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4353300134228592776"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-08T12:21:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.299Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.258Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.71",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.71",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-03T16:33:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the problem about Level cap system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sorry for the inconvenience caused to all players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "P.S. In addition, we will temporarily cancel the setting of the level gap, let the players whose level cannot be upgraded when they face higher-level enemies , their attack power will not be reduced, and make it easier to defeat the bosses and level up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still checking the Mission [Watch over Rolonrin...] that will be a chance to cause a shady situation after doing [Watch after Bibi] in the end of CH11. This problem is currently more difficult to reproduce the cause of the problem, and it will take more time to check and fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4347669995471699706"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-03T16:33:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.299Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.257Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@patch-2022-04-01",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch Note1.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-01T15:29:40.000Z",
+   "notes": [
+    {
+     "title": "Addition and Optimization",
+     "items": [
+      {
+       "text": "Optimized the loading efficiency of entering and leaving Sarem House and Father's Cellar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a function to change the listing order of the “Guideline”.: ( PC: F3 ) ( PlayStation: ロ ) ( XBox: X )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Sorting Arrange",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the option to adjust the speed of the teleportation point.: a.Default: b.Fast (Note! It's more likely to teleport by mistake when the speed is set to fast.): c.Very Fast (Note! It's more likely to teleport by mistake when the speed is set to fast.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Greatly reduced the price of all throwing bottles, so that Shama can use throwing bottles more often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Puppet Wanin and puppet Mormolia feel pretty lonely from time to time, so we made the path of finding them much easier in Chapters 10 Mentrol Fortress and Chapter 19 Etamu Tomb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized the contraption in Chapter 19 Etamu Tomb II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more respawn points after Chapter 17 thus reducing the walk time after respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added [campfire objects] in Chapter 18 Sacrifice Bridge II, so Shama can start a fire on the spot, making the rescue action more immediate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increase the skill damage for Mormolia.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increase the damage for the Engravings.: (Gammon Engraving/ AHDURIO/ WUPHAKA/ KORRUD)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs fixed",
+     "items": [
+      {
+       "text": "Fixed the issue where the protagonist would slide after the dialogue with the NPC ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation where the Buff Icon may remain at the bottom of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few cases where the dialogue in the lower-left corner would not be displayed in Japanese, English, Simplified Chinese mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some system UI control, so the Joystick and keyboard settings will be restored to default",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the problem about cooking Heart-Warming Soup in front of Njucha's House in CH14 by: campfire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game Tips",
+     "items": [
+      {
+       "text": "Make good use of Soul Freezer: • Without Soul Freezer, the attack damage on spirits is reduced by 80%.: • Be sure to use [Soul Freezer] to deal damage effectively to spirits.: A. Set up [Soul Freezer] as one of the hotkeys by holding the Use button.: B. After applying, the effect will last for 60 seconds. [Soul Freezer] increases all attacks toward spirits.: • [Soul Freezer] first to effectively deal with ghost enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How to set up [Throw bottle]: • Set up [Throw bottle]: Hold Sub Attack key: • Use: Press Sub Attack Key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How to set up [Shama Bomb V2]: • Set up [Shama Bomb V2]: Hold Sub Attack key: • Use: Press Sub Attack Key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When faced with a group of enemies, please make good use of [Inferno Engraving].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In cold areas, please prepare the dish [Land Sea Orchestra], which can resist the threat of freezing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 4,
+    "balance": 0,
+    "other": 9,
+    "ps5": 1,
+    "topNew": [
+     "Optimized the loading efficiency of entering and leaving Sarem House and Father's Cellar.",
+     "Added a function to change the listing order of the “Guideline”.: ( PC: F3 ) ( PlayStation: ロ ) ( XBox: X )",
+     "Sorting Arrange"
+    ]
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4347669995464254869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-01T15:29:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.298Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.257Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@patch-2022-03-25",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch Note1.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-25T14:43:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Players can now use items from the ‘’Hotkey’’, making it more convenient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Under costume (Cow Costume,Maid Costume,Barrels), players can open and customize subattacks in‘’Quick select menu of Subattack’’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Cannot execute other ‘’SubAttack’’ when in ‘’Cow Costume’’ and ‘’Maid Costume’’.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Optimize some task description text and task prompts to make the following clues clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Optimized the amount of Cimu and Crystal Marble gained in the game with the following adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a. Increased for overall quest rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "b. Increased for after defeating the boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "c. Decreased for some products at the store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "d. Decreased the price of armor and runestones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Optimized the guidance for chapter 2 ‘’Finding Welly’’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Added new route guide signs in the Grassland Cave and Nield Wharf.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Corrected chapter 4 ‘’My name is Shama!’’ that the main task is not checked immediately after it's completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Corrected the abnormal performance of the sound effect of the skill ‘’Ash Tank’’ .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "P.s. Ash Tank only can be activated on the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Fixed an issue where the game UI could not be opened after talking to an NPC in chapter 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10. Fixed the visual bug in ‘’Amber Caverns’’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11. Fixed the contraptions position in ‘’Galaxy Hill Road’’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12. Some main mission will reward ‘’Shama Bomb V2’’ after chapter 14.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "13. Increased the amount of ‘’Soul Freezer’’ gain through mission after chapter 17.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "14. Players can now view the Skill Table from the [Keyboard Setting] and [Joystick Setting] menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4258723269511942628"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-25T14:43:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.256Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.5",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-21T14:18:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new Portal mechanism: To prevent an accident, portals can only be accessed by long hold Up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjust the required recipes of \" Soul Freezer \" and \" Coagulating medicine\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the lagging and lighting problems in [Galaxy Mountains Ridge]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the problem of players getting lost in chapters 2 and 3 by re-routing the path of [The Oblivion Aisle ]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the wrongly placed diagram in the Hotkey settings for the Xbox controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed the issue problem of the achievement [Fateful Encounter?]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the speed of death during a false choice in the cut scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the quest name being left on-screen during [Try to catch up]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skip during cut scenes no longer needs a confirmation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4259848535842253298"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-21T14:18:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.255Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.4",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-11T15:06:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the quest name being left on-screen during [Try to catch up]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please play the game after the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry for any inconvenience caused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/5631194088562099035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-11T15:06:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.296Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.255Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.3",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-04T16:13:54.000Z",
+   "notes": [
+    {
+     "title": "We have made the following optimizations and corrections",
+     "items": [
+      {
+       "text": "Added the Switch Movement Control for the left analog stick in the customization menu. (Switch functions with D-pad, except L3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the customization of “Explore” for keymapping in “Keyboard setting” menu.: ◆ Notice! Must be in default Big Picture configuration.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Changed the function of Switch Character to L on the left analog stick/ [D-pad L]and Switch Partner is R on the left analog stick / [D-pad R].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the keymapping for “Dash” in the controller customization tab. Special Mode is now L3. There are two ways to Dash for a Joystick and keyboard.: ◆ Notice! When using the left analog stick to move, we recommend the players use Forward + R2(Hold) to Sprint. Forward + Forward(Hold) for the keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized “Keyboard setting” menu, and added Explore, Look Up, and Look Down to customize.: Page Up and Page Down are unavailable due to the additional use of the operating system, but the default functions of Look Up and Look Down are still maintained.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized the quest guiding messages: Chapter 2 during [Cuckoo Exploration Lv.1]: Chapter 2 during [Catch me up ff you can], prevent players from fighting the guards and captain SIGUD.: Chapter 3 during [Dungeon Exploration]: Chapter 6 during [Still alive!], indicate using Explore underwater: Chapter 10 during [Key to Insects Tomb], indicate using Explore in the room: Added more road signs in [Uzato Boulevard] and [Uzato Market] that leads to [Sacred Temple]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solve the problem that a certain boss in chapter 9 [Border Forest] can repeatedly farm treasures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solve the problem that a small cellar in chapter 10 [Lolona Mun] can run out of the map render.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solve the problem of incorrect save file during chapter 13 [Heart-Warming Soup for Meowhaco].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solve the problem that the props and achievements of chapter 13 [Shaman Sculpture] have not been achieved, and reissue them.(At present, there are still some cases where achievements cannot be completed, we will check again~~)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Save Points from chapters 1-13, 17-19",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Solved the localization bug in chapter 14.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solved the bug of missing the transition between \"Ahead\" and \"High Priestess\" in chapter 19.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Where the next step will be to optimize",
+     "items": [
+      {
+       "text": "We will continue to optimize the efficiency of loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since the function of \"press to enter the teleportation point\" is more prone to accidental touches, we will add and optimize this function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continue to achieve complete customization for the controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If there are any shortcomings, please continue to respond to us, and we will continue to optimize.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4247462367434561927"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-04T16:13:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.296Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.254Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.2",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-25T17:29:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi guys, these are the corrections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During Try to fly through in chapter 15, the loading problem when porting from Exhaust Lane to Nield Wharf.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The loading problem in chapter 15, after the transition in Prison Break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please update the game for the changes. Thank you for your support and playing Heroine Anthem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4246335832512416072"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-25T17:29:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.253Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.1",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-24T15:07:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Wanin's behavior During “Riposte stance”, which occasionally caused special effects to remain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some camera issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the problem that the mission description of “Sin and Punishment” in Simplified Chinese was mistakenly written in Japanese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the item discovery problem in “Marble Nest”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize the “Tub Secret Tunnel”, add the “Meowgiko's head” road sign prompt, and reduce the possibility of Meowgiko getting lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the abnormal problem that the quest chest in “Taza” was repeatedly opened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the movement issue of SubAttack “Wooden Barrels”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the problem that Bibi couldn't change the appearance in the early stage within the DLC packs. (Colorful Feather Pack II, Colorful Feather Pack III, Colorful Feather Pack IV)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Future Optimization",
+     "items": [
+      {
+       "text": "Thank you for your feedback and suggestions of Heroine Anthem ZERO II Scalescars Oath. These are some of the adjustments we are working on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keymapping for controllers: Movement Control can be altered from D-pad to analog stick in settings.: (It is still recommended to use the D-pad to operate, for it is easier to sprint during battle)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Explore function remapping: Reason: We changed from the right analog stick down arrow to the left analog stick is to suit the peaceful nature of Explore to the left analog stick, and leave all the combat-related actions to the right analog stick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are our upcoming adjustments for Explore function",
+     "items": [
+      {
+       "text": "a. Explore is Crouched + R3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "b. Role switching is Left of the left analog stick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "c. Com-Pet switch is Right of the left analog stick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We will adjust it for a short period of time, and you are welcome to give us your opinions. After the update in the future, the operation-related configuration will become the default state, which may cause trouble for everyone. Please bear with us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 8,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4246335832508413913"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-24T15:07:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.252Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@post-2022-02-23",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Important Notice !!!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-02-23T14:46:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix the problem of Game process from CH9 to CH10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please play the game after the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry for any inconvenience caused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/4246335832504719808"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-23T14:46:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.294Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.252Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@post-2020-12-24",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "Wishing you all a Merry Christmas and New Year!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-12-24T10:03:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Tonight is Christmas Eve and we're entering the new year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been cold lately, I don't know if it's going to snow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a congratulatory picture drawn by the intern girl,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we hope you will like it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, we have released new patch for the game , and fix the problem of OPENING MOVIE sound quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOCIAL MEDIA -: Facebook: Instagram: Twitter: Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/3917534300072783424"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-24T10:03:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.293Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.239Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.05",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "PATCH 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-09-02T03:09:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Everyone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is what we updated this time",
+     "items": [
+      {
+       "text": "1. Fixed the problem that Wain can use the special mode of [ repeated fast switching] to cause abnormal situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Shama can't use the special attack to throw (figure-shaped bomb) while the Bibi catch Shama during the flight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3.Wain is now unable to move when launching an [Absolute Defense.]\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4.Fixed an issue where players sometimes used throwing items but did not consume throwing items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5.The forging businessman Kerpha decided to change the business base to the iron room in the West Tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6.A little longer to extend the teaching tips the stay time , when the battle with the scale ghost .\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7.The performance description of the reply and gain items that become more clear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8.Fixed few problem where the mission was stuck after fighting with Boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9.Correct the problem that the original effect of the character will disappear after the performance of the story in a specific situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10.Under certain circumstances, after the performance of the story, the game may have an abnormal phenomenon such as an action jam or an UI disappearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11.Fixed the problem that the effect of the equipment on the body would disappear after loading the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12.Fixed the problem that the effect of the",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "would disappear after loading the save.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "13.After modifying the operation the shield mode , the rudder shield no longer automatically launches the counterattack technique,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "but can be combined with the light attack, heavy attack, and special attack combination keys to launch different Skills.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "14.Remove the scaled giant claw deer wolf from the West Tower Defence War.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "15.Fixed an issue where the player could not operate for a short period of time when the player was hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "16.Since some English-speaking players suggested that some English is not very fluent, from June of this year we started to find colleagues in the English-speaking countries to help optimize the English dialogue of the first part of the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "17.The skill table shows the damage type of the attack skill in more detail, and also the skill of the special mode is more detailed. Now it is no longer necessary to guess how some moves are pressed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "18.Fixed a problem where few point would have to explore and dig up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "19.Correcting the problem when get two items at the same time, will cause the some UI graphics display can not disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOCIAL MEDIA -: Facebook: Instagram: Twitter: Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/2415540140469237271"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-02T03:09:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.293Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.238Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.04",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "PATCH 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-07-04T08:00:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Everyone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is what we updated this time",
+     "items": [
+      {
+       "text": "1. Fixing the problem that the launching darts will get stuck on the frozen platform when Shama equips specific weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Correct the problem that the player will be canceled when using [ Go! Bibi!!Fly!! ] in the charging status.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed a system by which players might be transferred to different dimensions during the drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixing Wanin show an unreasonable and quick attack animation when player do the continuous operation \"cancel the light attack\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Adjust game balance and reduce the difference between the three types of damage, light, medium and heavy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Reduced the gap between the Damage of Wanin and Shama",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Optimize the combat experience of the West Tower defensive battles:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a. Reduce the collision box of the Horned Wolf and reduce the chance that the player will be pushed and pushed in the stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "b. The BOSS attacking the West Tower become more frequent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "c. Cancel the setting that hits the Boss Horned Wolf and will be hurt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "d. Fixed the problem that the Boss Horned Wolf turned around and cause its animation whole mess.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Adjust the list of weapons sold by merchants in [Endless Dark Valley]. It is recommended that anyone who has purchased , , or weapons , forgets that you have done this before, beg you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Fix the problem of the effects residue of the BOSS Butterfly Flower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10. Fix the problem that Bats sometimes can not be hurt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOCIAL MEDIA -: Facebook: Instagram: Twitter: Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/2436926440591417030"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-04T08:00:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.292Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.237Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.03",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "PATCH 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-27T08:58:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Everyone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is what we updated this time",
+     "items": [
+      {
+       "text": "1. Fix the problem that when Wanin switches to use shield during speical mode, the attack cannot be cancelled in time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Correcting the terrain ramp of the scene (Endless Dark Valley) causes an abnormal motion problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Polished the scene (Endless Dark Valley) mass monsters causes abnormal LAG problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Polish the issure that Shama has found Welly, but TIP message in the (Shepherd Grassland) still was to find out Welly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Increaing the dialogue performance at the last escape stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. FIX the Dialogue option of Mr. Meowgiko. (the option about Rentolus story)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOCIAL MEDIA -: Facebook: Instagram: Twitter: Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/2436926440566265382"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-27T08:58:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.291Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.227Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.02",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "PATCH 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-20T09:14:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Everyone in the world of HEROINE ANTHEM ZERO 2,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This week, we received a somewhat embarrassing question, why is it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because after our unremitting investigation, we found that it is known that only the [Piracy Software Victims] .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Only they have carefully completed the current version of the content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "will inadvertently trigger a situation of a spoiler level and derive follow-up questions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are very concerned about the experiences of these victims.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Therefore, in addition to the bug fixes and content adjustments,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we have prepared some content treatments for these victims.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope that they will like these stuff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is what we updated this time",
+     "items": [
+      {
+       "text": "1. When the player's character encounters a dead damage,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "it is impossible to carry out the death performance and cause subsequent abnormalities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For example, When Wanin is pinched by pushing box, but he does not succumb to death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2.Polish the Forge UI Performance, the screen will be more smooth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3.Polish the different heights of Shama and Wanin in the game, causing only the problem of Wanin being pinched in some occasions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4.Polish the special mode of Shama, the problem of heavy attack on the flat ground will be slippery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5.Polish the battle experience of and , their attack power and HP volume were moderately improved, and the combat mode became more challenging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6.For the Players who try to crack the DLC game, we prepare a fun stuff in game. Genuine supporters should not try to verify.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7.Fix the issure that after Loading, when the equipment taken off, and the Buff is still hanging on the Character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8.Fix the issure that When the game pause, Wanin throws out the shield that is still playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9.Fix the issure that There is no sound effect when using the Bag UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10.Fix the issure that after Taliking to NPC , the PC Buff will be disappeared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOCIAL MEDIA -: Facebook: Instagram: Twitter: Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/2415533798131199203"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-20T09:14:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.291Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.226Z"
+  },
+  {
+   "id": "heroine-anthem-zero-2-scalescars-oath-281100@1.01",
+   "gameId": "heroine-anthem-zero-2-scalescars-oath-281100",
+   "displayName": "PATCH 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-14T02:33:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you for your affirmation and encouragement. This week, we have collected a lot of game feedback and bug rerport, and we immediately started repairing. Some of the feedback about game balance issures, we needs more time to test.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plwase waiting for us, in this time the update, the main polish is focused on the fixing bugs, so the update is as follows:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Fix the problem of [Full of HP] when loading [save files].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. When the character rejoin the team, [HP volume] turned out to be [not filled]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Some special effects that are not used at the moment are now removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixed issue with skill list button failure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Fixing the ESC double-clicking on the DLC UI MENU will cause UI ICON problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Fixed an issue where tracking weapons could not be launched. (causing a lot of log and lag and animation problem)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Correct [PET Cuckoo] to detect the problem of exploration point anomalies in some areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Fix [Spore Jail] There is nothing wrong with the iron cage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Fixed an issue where Dialog hint occurred at the wrong time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10. Fixed some Dialog hint with wrong name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11. In [Forest WareHouse] under the bridge treasure chest replacement lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12. Fixed a problem where the effect of the liberated soul that did not appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "13. Fixed the problem that Shama could not change direction when [Air Attack].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "14. Fix the problem that Shama cancel the attacks when press .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "15. Fix the problem that BOSS’s skill [ghost effect] will suddenly disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "16. Fixed a problem that huge twin crabs FINAL BOSS could not be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "17. The huge twin crabs have become even more powerful. (Now it will heal itrself in the water, and the its ATK will increase when it leave the water, and it will really hurt you when it cross you on the floor.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "18. Corrected the problem that BOSS and were killed in dizziness, and the dizziness effect would remain on the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "19. Shama’s became more threatening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "20. Repair will record the file synchronization STEAM cloud function",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "21. The game Desktop Startup icon is changed to Bibi Image, Please pay attention to it, so as not to find the game!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOCIAL MEDIA -: Facebook: Instagram: Twitter: Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-787850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/787850/view/2408777766639372936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-14T02:33:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-787850",
+      "checkedAt": "2026-11-13T03:22:48.290Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:24.225Z"
+  }
+ ],
+ "issues": []
+}

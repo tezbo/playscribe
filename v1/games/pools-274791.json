@@ -1,0 +1,2841 @@
+{
+ "game": {
+  "id": "pools-274791",
+  "igdbId": 274791,
+  "name": "Pools",
+  "cover": {
+   "imageId": "co7vy3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7vy3.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2m18",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2m18.jpg"
+  },
+  "ps5Release": "2025-11-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "pools-274791@major-2025-12-19",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (19th December 2025)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-19T16:10:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, PC & PCVR players, you haven’t been forgotten! The VR experience has gotten a complete graphics overhaul. The new version of VR mode on PC is now much more performant so if you’ve had any issues running it before, now is a good time to give it a new try.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "On flatscreen mode we decided to roll back to using Unity’s own SSGI instead of the previously implemented GI solution. This leads to the lighting looking a bit different in some areas. The decision was made because of unsolved compatibility issues on some systems and to make the project easier to maintain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If any of you prefer the look or feel of the earlier version of POOLS either in flatscreen or VR, we will leave it up to be downloaded from Steam (instructions at the end of this message). Personally we prefer the look and performance of the latest update though!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "VR: Complete performance overhaul with URP rendering pipeline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated lighting to Unity’s SSGI instead of HTrace WSGI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Unity engine version (Fixes CVE-2025-59489 Unity Runtime Vulnerability)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added barefoot footstep sounds for all missing surface types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed dods diver achievement activating in a wrong spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chapter 0: Fixed a bug where VR player up direction would sometimes have unintentional rotation applied on startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 0: Fixed a bug where player could get stuck in a room with lots of chairs and a speaker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 0: Disabled auto save in few places in where you could get stuck by loading auto save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 0: Fixed level restart not working properly sometimes (fixes number of the beast achievement)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 2: Fixed several lighting artifacts on lowest lighting settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 3: Added invisible colliders to help prevent moving through some railing objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 3: Fixed pool glitching near start of ch3, if you go under the metal railing and walk the stairs down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 4: Updated materials to some objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 4: Fixed invisible water at the start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 5: Fixed footstep sounds when walking over glass windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 5: Fixed a bug where player would jerk upwards when stepping on the bottom part of a ladder in flatscreen mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 6: Updated audio for the hallway event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed audio volume setting not loaded correctly sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed water dripping sounds being dependant on frame rate and not working correctly with crouch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed black lines in duck texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "VR: Fixed a bug where snap and smooth turn rotation pivot position was not perfectly centered to the head position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Added more detailed colliders, and hand touch sounds for different materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixed a bug where an invisible teleport snap anchor would be created in the game world at position (0, 0, 0)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Added water dripping effects on camera lens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Added recovery logic for if a VR hand model gets stuck within the environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixed incorrect footstep sounds on glass floors (Ch2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixed footsteps sounds repeatedly playing when standing still on an escalator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixed a bug where crouching activated water dripping sound even on dry land",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR: Fixes to waterslides, to prevent getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How to access the previous version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right click the game in Steam and open the “Properties” window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open Betas-tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose \"pools-old\" from the dropdown menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam will now download an update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can switch between the versions from the “Beta participation” drop down menu whenever you like",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44728987/ddc503de6c4fd55126e06bdb4791f8ceffc19b84.png\"][img src=\"{STEAM_CLAN_IMAGE}/44728987/2c7b1fc42f674b9bd07ca36cbabe549c80bd609d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1819386365096066"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T16:10:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T16:10:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.170Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-19T16:10:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.717Z"
+  },
+  {
+   "id": "pools-274791@major-2025-06-03",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (4th June 2025)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-03T22:38:15.000Z",
+   "notes": [
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Chapter 0: Fixed hotel doors sometimes opening to wrong directions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"deletePlayerPref\" command to the developer console - Example: \"deletePlayerPref vr-tracking-origin-mode\" command restores the VR tracking mode back to seated mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(VR) Improved standing / roomscale VR tracking mode - reduces the chances of camera getting stuck on the floor when enabling the setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(VR) Fixed bugs related to water slide entering: players could get stuck inside the environment, players wouldn't be teleported to the exit position when the \"skip water slides\" setting was enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(VR) Added a tiny bit of smoothing to free movement to help eliminate judder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(VR) Optimized some volumetric effects in Chapter 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(VR) Added \"haptics intensity\" slider to gameplay setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(VR) Disabled transparent material screen space reflections because of compatibility issue with water surface shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are investigating and pursuing performance optimizations with the goal of switching the rendering mode to multi-pass rendering in the future. Screen space water reflections do not have the misalignment issue when using multi-pass rendering, but it does come with a larger performance overhead when compared to the currently active single-pass instanced mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you very much for the VR related feedback and every bit of support we've received thus far! We'll continue fixing bugs and working towards those performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also - VR support will be added to the Demo version hopefully tomorrow. We'll post an update about it once it is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1801617199339454"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-03T22:38:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.169Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.715Z"
+  },
+  {
+   "id": "pools-274791@hotfix-2025-04-26",
+   "gameId": "pools-274791",
+   "displayName": "Hotfix (26th Apr 2025)",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-26T09:01:31.000Z",
+   "notes": [
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Chapter 0: improved audio stability and performance - should fix most audio crackling issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 0: fixed missing audio clip variant for \"Laminate\" surface type footstep",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch is now out on Windows and Linux. Mac version will be updated as soon as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1797820624520422"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-26T09:01:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.169Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.715Z"
+  },
+  {
+   "id": "pools-274791@major-2025-04-25",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (25th Apr 2025)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-25T18:05:03.000Z",
+   "notes": [
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Chapter 0: Prevent getting stuck on concrete thing on water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 0: Add clock to one certain room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 0: Fixed missing ceilings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 0: improved audio stability and performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove small imperfections from shallow water footsteps such as metallic noise and hard wind noises",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add subtle underwater ladder sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add more barefoot sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 2: Added autosave support for Art Connoisseur achievement progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Applied a potential fix for Steam achievements not unlocking",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1797820624500430"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T18:05:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.168Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.714Z"
+  },
+  {
+   "id": "pools-274791@major-2025-03-25",
+   "gameId": "pools-274791",
+   "displayName": "Chapter 0 Beta update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-25T16:09:49.000Z",
+   "notes": [
+    {
+     "title": "The Chapter 0 Beta version is now updated!",
+     "items": [
+      {
+       "text": "Latest update includes new hidden areas and small changes to some old ones. The chapter is now also playable with the 'minimal' lighting setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feel free to give feedback and report all the remaining bugs as the beta testing will be extended until the official release on 21st of April! 🙏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to access the Chapter 0 beta",
+     "items": [
+      {
+       "text": "(Currently available for owners of the game here on Steam - Window or Linux - no VR support yet.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "1. Right click the game in Steam and open the Properties window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Open Betas-tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Type \"chapter0beta\" without the quotes into the text field and click the button next to it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Click “opt into chapter0beta”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Steam should then download the beta build of the game for you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. You can opt in & out of the beta version from the “Beta participation” drop down menu whenever you like",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1794830911037408"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-25T16:09:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.168Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.714Z"
+  },
+  {
+   "id": "pools-274791@major-2024-12-16",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (16th Dec 2024) - Fixes, settings and holidays",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-16T15:28:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Christmas just around the corner, it seems that someone inside POOLS has been feeling the holiday spirit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apart from decorations, it seems that the certain someone has also left a few gift boxes scattered around the levels. What’s inside? That we do not know (or maybe we don’t want to tell). You’ll need to go down and see what’s been left behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy the festive season in POOLS and we’ll see you all next year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Fix rare bug in chapter 3 where it was possible to get stuck to toilet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix light leaking at tunnel at the end of chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add right shift and right control as alternative keys for running / crouching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 2: adjusted the position of one missing art piece for better visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add input rebindings setting menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add optional winter holiday mode, available during december (only if game has been completed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1785774543657162"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T15:28:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.167Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.713Z"
+  },
+  {
+   "id": "pools-274791@major-2024-12-05",
+   "gameId": "pools-274791",
+   "displayName": "VR Beta update - all chapters now available for owners of the game",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-05T19:14:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're pleased to report that owners of the game now have access to every chapter in VR Beta!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full release of PC VR mode is scheduled for early 2025. If you want to jump in early, you can do so through our special VR testing branch on Steam. Thanks to everyone who has already tried the VR Beta and left us immensely valuable feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "How to access the VR beta in Steam",
+     "items": [
+      {
+       "text": "Right click the game in Steam and open the Properties window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open Betas-tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Type \"poolsvrpublicbeta\" without the quotes into the text field and click the button next to it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click “opt into vr-beta-public”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam should then download the VR beta build of the game for you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can opt in & out of the beta version from the “Beta participation” drop down menu whenever you like",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: VR is only available for Windows version at the moment. Unfortunately Unity game engine doesn't support building with OpenXR on Linux.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "VR Beta feedback, discussion and bug reports",
+     "items": [
+      {
+       "text": "Feel free to have VR mode related discussion, feedback and thoughts on Steam Forums.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you wish to leave feedback anonymously, we’ve created a Google Form where you can give your thoughts about the VR mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can also always contact us at our Discord-server or via e-mail at support(at)tensori.fi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're especially looking for feedback on how the VR mode works with different types of VR devices, such as Valve Index or Pico VR headsets. We’ve developed and tested the game using Meta Quest 2, 3 and a PlayStation VR2 headset on PC, so any comments about the play experience and SteamVR input rebind tool on different devices is incredibly helpful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "The VR mode has a suite of comfort and accessibility settings. We’d love to hear if you are able to find a combination of these settings that allows for a comfortable VR experience. If you’d like to see a new setting added to the VR mode, please let us know about it on this thread, feedback form, Discord-server, or e-mail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tensori",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 7,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1784506359251944"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T19:14:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.167Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.712Z"
+  },
+  {
+   "id": "pools-274791@major-2024-11-15",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (14th Nov 2024) - Fixes, tweaks and Steam Community Items",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-15T09:39:02.000Z",
+   "notes": [
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Fix issue with the lighting, where lighting looked bad especially from the distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix falling / ground hit sound constantly playing on stairs with high movement speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add missing electric/buzzing sounds to some lights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Steam Community Items (collect trading cards by playing, combine cards for profile images etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/1783238125241307"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-15T09:39:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.166Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.711Z"
+  },
+  {
+   "id": "pools-274791@major-2024-10-23",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (23rd Oct 2024) - Going underwater",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-23T15:05:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Apart from new settings and features, this update includes a lot of internal changes for VR, such as improving on how the game looks on lowest graphics settings and adding underwater effects for every pool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's now crouching (control key) so feel free to dive underwater where ever you see fit!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR-beta will begin later this week (hopefully) on our Discord server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Ensure cursor is always visible when its moved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add bubbles effect when going underwater",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add lens wet effects after exiting underwater",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mac: Fix issue with Steam achievements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix issue with alt-tab sometimes crashing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add new audio setting called footstep panning, to adjust distance of left/right footsteps from player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add console commands for manual saving: \"save\" and \"load\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automatically lower resolution and graphics quality if poor performance (for new installs only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add language selection to accessibility settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add \"move with mouse click\" setting",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Add crouching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add walking and running speed sliders to settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock post-processing effects to settings after completing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add \"delete\" console command to delete spawned objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add underwater view to every pool in game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix rare issue where achievements are not unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS. New chapter is progressing nicely, and will be likely released with VR later this year",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/6212245217911791721"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-23T15:05:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.166Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.710Z"
+  },
+  {
+   "id": "pools-274791@major-2024-06-14",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (14th Jun 2024) - the Steam Deck update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-14T12:52:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another batch of bug fixes and improvements is here! We recently got our hands on a Steam Deck and we have been testing and improving the play experience on the device.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Collaboration with UNIKAT",
+     "items": [
+      {
+       "text": "Added UNIKAT label as co-publisher to Steam page. UNIKAT is a collection of independent, unique, and minimal games. It's brand new venture from Michal Napora who has helped us in marketing. No changes to relationship, we will still operate as an indie company.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Added graphical presets dropdown to settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where chapter 6 autosave would not get deleted when finishing the chapter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted glass material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated localizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed controller trigger inputs from sprint action to camera zoom in/out actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added camera look sensitivity multiplier to zoom action. Zooming in reduces the look sensitivity linearly depending on the level of zoom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where settings menu dropdown elements would not scroll vertically when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where UI navigation would drop inputs when using a controller's directional pad at low frame rates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed positions of some spawned objects using \"spawn\" command from dev console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where water dripping got stuck in a loop when exiting water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading screen now automatically skips the play button after player has finished chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted camera behavior in water slides:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In bends, the camera now adapts more strongly to the shape of the slide and anticipates the player's future movement path. This improves the visual presentation of those spots where the camera would look straight ahead at a wall instead of the incoming path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added bloom lens dirt effect toggle to the graphics settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed incorrect controller button icons in settings menu when using certain Xbox controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed a bug where player could get stuck in air when walking on a ledge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck",
+     "items": [
+      {
+       "text": "Steam Deck has these custom graphical presets:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Performance (60fps)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Balanced (40fps)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Quality (30fps)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Steam Deck input icons to settings screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We are also now looking into performance optimizations for \"interactive water\" setting to allow Steam Deck users to enable it without tanking the performance.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Linux",
+     "items": [
+      {
+       "text": "Fixed missing audio output on some Linux devices",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed video file playback (.mp4 format was not supported)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 7,
+    "balance": 2,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/6890025005352511209"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-14T12:52:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.165Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:11.709Z"
+  },
+  {
+   "id": "pools-274791@major-2024-05-21",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (21st May 2024)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-21T14:12:53.000Z",
+   "notes": [
+    {
+     "title": "New additions",
+     "items": [
+      {
+       "text": "Rebuilt the settings menu with categories, reset to default functionality and more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a volume slider for player character's breathing sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a slider for player movement acceleration / smoothing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an experimental setting for barefoot footstep sounds - feedback is appreciated :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added toilet flush sound as a rare event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes and improvements",
+     "items": [
+      {
+       "text": "Adjusted lighting in chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where autosave would not load correctly in chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple issues with occlusion culling, mesh LODs and asset placement throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where player could get stuck on a chair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved chair enter / exit logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual glitch when sitting on some chairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where water splash effects would not trigger when entering a water body at a high speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a player gaze detection related bug in chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted player camera near clipping plane -> fixes a bug where players could see through geometry when playing with a high FOV or ultrawide aspect ratio",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Rebuilt the settings menu with categories, reset to default functionality and more",
+     "Added a volume slider for player character's breathing sounds",
+     "Added a slider for player movement acceleration / smoothing"
+    ]
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5747233970436893265"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-21T14:12:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.165Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.269Z"
+  },
+  {
+   "id": "pools-274791@major-2024-04-29",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (29th Apr 2024)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-29T17:34:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added dynamic ambient water surface movement / wave sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the activation conditions of some achievements making them less annoying to unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slight adjustments to audio mixing for some environmental sounds in chapter 2 and chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where saved screen resolution setting would not load correctly when starting the game application",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where screen resolution would change to the highest supported refresh rate of the selected resolution when loading into a chapter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in chapter 3 where the player could climb and get stuck on the slide at the start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in chapter 6 where the player could get stuck behind a safety railing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5759616966679801741"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-29T17:34:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.164Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.269Z"
+  },
+  {
+   "id": "pools-274791@major-2024-04-28",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (28th Apr 2024)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-28T08:16:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where \"Invert y-axis\" setting would be ignored when starting a new chapter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where frame rate limit selection would not be saved when modifying the setting from main menu screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in chapter 2 where players could walk up inside a yellow slide and get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enabled V-sync by default for new players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default lighting quality setting updated from \"High\" to \"Medium\" for new players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frame rate limit dropdown menu is now not interactable if V-sync is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted objects positions in chapter 6 to prevent clipping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Notes about V-sync and target frame rate",
+     "items": [
+      {
+       "text": "In main menu screen, V-sync is disabled by default and target frame is locked to 60. This is intended behavior to prevent unnecessary system load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In loading screens, V-sync is disabled by default and target frame is locked to 30.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If V-sync is enabled, the game's target frame rate is determined by the window mode setting and display resolution setting:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fullscreen: target frame rate is current display resolution selection's maximum refresh rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Borderless windowed and windowed: target frame rate is the maximum supported refresh rate of your display regardless of the resolution selection",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5759616966674745608"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-28T08:16:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.164Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.268Z"
+  },
+  {
+   "id": "pools-274791@major-2024-04-27",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (27th Apr 2024)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-27T08:31:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjusted German translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug where player could climb along the edge of the double spiral slide and get stuck in Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation where player would teleport back to a ladder after camera rewind sequence ends in Chapter 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a possible way to go out of bounds and get stuck in Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where \"Error In Production\" achievement was practically impossible to unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5759616966671138704"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-27T08:31:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.163Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.267Z"
+  },
+  {
+   "id": "pools-274791@hotfix-2024-04-26",
+   "gameId": "pools-274791",
+   "displayName": "Hotfix for Steam language selection",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-26T15:58:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed an issue where English language selection would be ignored and the game would default to system language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5759616966668626152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T15:58:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.163Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.267Z"
+  },
+  {
+   "id": "pools-274791@major-2024-04-26",
+   "gameId": "pools-274791",
+   "displayName": "Update notes (26th Apr 2024)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-26T15:34:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "removed one potential cause for false positives in malware detections - removed all Application.OpenURL calls from game code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed two locations in chapter 2 where the player could get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5759616966668563783"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T15:34:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.162Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.267Z"
+  },
+  {
+   "id": "pools-274791@major-2024-03-30",
+   "gameId": "pools-274791",
+   "displayName": "Update: Puddles, settings, tweaks and fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-30T05:43:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here are the changes from yesterdays update (and from 2 previous ones we forgot to mention here)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "March 29th Changelog",
+     "items": [
+      {
+       "text": "Added teaser video to Demo (spoilers from chapters 2-6)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player leaves puddles of water behind after exiting pool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dropping water makes sounds after exiting pool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slower movement speed on stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added subtle camera shaking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made head bobbing into a slider instead of toggle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added DLSS upscaling support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added collision audio to floating rubber ducks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added far depth of field distance dynamic adjustment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some translations to settings / credits menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated settings menu dropdown styling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "March 19th Changelog",
+     "items": [
+      {
+       "text": "Added \"route number signs\" around the level (we'd appreciate feedback on this)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where you could clip through map behind the red slide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added automatic rewind as a backup if player ever falls through map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed clipping through walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Limited framerate to 30 during MainMenu and LoadingScene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No footstep sounds / bobbing when moving against wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"None\" to lighting settings for very low end computers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled spawning exit signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "March 11st Changelog",
+     "items": [
+      {
+       "text": "interactable water (can be set off for performance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "brightness setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "chromatic aberration setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "lens distortion setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "vhs film grain setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "anti-aliasing setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ambient occlusion setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "lighting adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 2,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5749481331443113266"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-30T05:43:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.162Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.265Z"
+  },
+  {
+   "id": "pools-274791@major-2024-02-23",
+   "gameId": "pools-274791",
+   "displayName": "Update: Fixes and tweaks",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-23T05:22:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Yesterday we made a quick update, main reason was that it was possible to get stuck on some areas. It's frustrating to get stuck ːsteamfacepalmː This should hopefully fix it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed a bug where player can get stuck in the bottom of the large hole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add air vents around the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn exit signs after a while to help navigate if lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unusable ladders get visually broken now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ducks in labyrinth floating, previously stationary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"back\" button to in-game settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added colliders to prevent player from going out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5728086065184370405"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-23T05:22:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.161Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.265Z"
+  },
+  {
+   "id": "pools-274791@major-2024-02-16",
+   "gameId": "pools-274791",
+   "displayName": "Update: Chairs and Settings",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-16T20:36:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Chapters 1-4 are ready and Chapter 5 is nearing completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the full release we are still aiming for April 2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed VSYNC setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added camera bobbing setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added invert Y axis setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added FOV setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player can now sit on chairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/8033928544497251186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-16T20:36:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.161Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.264Z"
+  },
+  {
+   "id": "pools-274791@major-2024-01-23",
+   "gameId": "pools-274791",
+   "displayName": "Update: Devlog2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-23T15:27:29.000Z",
+   "notes": [
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "New audio system including dynamic reverb & sound occlusion: echoes are dependent on room size and sounds from other rooms: bounce realistically",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New footstep and water sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Water sounds are dependent on water depth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small updates to the demo level design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Character controller updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved stair mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added camera sway when player is running",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added camera & sound effects if player falls to ground or water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Completely new ladder climbing mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated main menu visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved main menu navigation with a gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added low / medium / high settings for lighting quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed known bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Devlog2",
+     "items": [
+      {
+       "text": "Chapters 2 and 3 are now fully complete. We are working on Chapter 4 at the moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are planning release on April 2024.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also includes footage from many systems we are working on to enhance immersion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5510784213116471143"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-23T15:27:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.160Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.264Z"
+  },
+  {
+   "id": "pools-274791@major-2023-12-16",
+   "gameId": "pools-274791",
+   "displayName": "Update: Fixes, tweaks and ladders",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-16T14:09:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Chapter 2 is ready and we are currently working on Chapter 3. Here is our latest devlog from 2 weeks ago (minor spoiler): https://www.youtube.com/watch?v=3LhD4lESI-8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the full release we are aiming for April 2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 1 / 10th November 2023",
+     "items": [
+      {
+       "text": "Added colliders to prevent player from falling in areas they can get stuck in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Menu & Settings brightness to be more readable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the Discord-invite link found in game to permanent one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 2 / 16th November 2023",
+     "items": [
+      {
+       "text": "Full gamepad support added (tested with Xbox One -controller on Windows 10)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Player can now fall in the large hole with a springboard in one of the rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved main menu & settings page readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Patch 3 / 20th November 2023",
+     "items": [
+      {
+       "text": "Updated Discord-invite link",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sound effects synchronized in the end of the demo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player can now climb the short ladders in one of the rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 4 / 16th December 2023",
+     "items": [
+      {
+       "text": "Now available on macOS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New graphics settings in the settings menu, including FSR which can improve performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted camera depth of field near walls to create camera focus effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted move speed based on camera direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If users language not english, remove english text from the end of the Level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated some ladders in Level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved misleading exit signs at the end",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug at the end of Level 1 which caused re-trigger of an certain event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor bug at the end of Level 1 that would occur if player would pause in the middle of the fall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Included version number",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 5 / 18th December 2023",
+     "items": [
+      {
+       "text": "Fixed some bugs that occurred after the last update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New \"rewind\" mechanic when player falls in the large hole mid level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player can now climb into any pool with ladders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New scary ladders effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 4,
+    "balance": 2,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2663530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2663530/view/5409450219980021868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-16T14:09:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2663530",
+      "checkedAt": "2026-11-13T03:28:15.159Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:55.263Z"
+  }
+ ],
+ "issues": []
+}

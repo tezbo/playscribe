@@ -1,0 +1,763 @@
+{
+ "game": {
+  "id": "romancelvania-141964",
+  "igdbId": 141964,
+  "name": "Romancelvania",
+  "cover": {
+   "imageId": "co5dzq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5dzq.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aryym",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aryym.jpg"
+  },
+  "ps5Release": "2023-03-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "romancelvania-141964@1.2.1",
+   "gameId": "romancelvania-141964",
+   "displayName": "Hotfix 1.2.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-07T23:51:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Includes a few minor camera adjustments in some rooms with the new Map feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1192810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1192810/view/5124582150161551585"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-07T23:51:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.424Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-07T23:51:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.424Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-07T23:51:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.336Z"
+  },
+  {
+   "id": "romancelvania-141964@1.2",
+   "gameId": "romancelvania-141964",
+   "displayName": "Patch 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-27T17:14:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi folks, 1.2 is out, which means it’s time for a new round of updates for Romancelvania, plus address any additional fixes that are next on our plate. We’re most excited to share with you that our navigation map feature is now available on Steam based on the given community feedback we’ve received over the last few months. You can now oversee a high-level map overview simply by pressing ‘M’ at any point (minus boss battles and cutscenes). We hope this may help clear up navigation issues and help you enjoy Romancelvania’s robust levels and extensive worldbuilding. And for the completionists out there, this should hopefully help you find that item that will get you to 100%.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "1.2 Update - Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated a new map feature that allows you to navigate across levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an additional Blood Pool save point before the end game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added warnings for places that do not allow you to return afterward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Retimed some confessional text displays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resized the text for Options to be more legible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated tutorial text pop-ups for additional clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made specific bosses immune to Headouken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated collision across enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed performance issues on the machines when fighting Gourd Tossers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated damage FX and enemy reactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Edited 11:48AM) Known issues which will be fixed in a future hotfix:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading an empty save load will ask you to choose another profile, but you cannot navigate the menu until you back out and re-enter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Booty Bay, Meatball Garden, De Nile, and Thundercrack Hollow might not pan or center correctly in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Illessa is shown as the default elimination choice after Episode 2's Black Rose Ceremony, despite who you choose. Player's can cancel and reattempt to select their elimination choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Flying Spaghetti Monster can be eliminated before the fight is triggered due to a chance of early collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Again, we can’t thank you enough for all of your patience and support! If you haven’t already, follow us over social media to get the latest updates from us firsthand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Social Media",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @TheDeepEndGames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram: @deependgames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook: TheDeepEndGames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TikTok: @TheDeepEndGames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until then, we want to extend our biggest THANKS to our community, and we hope you enjoy the new changes. Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bill, Amanda, Lindsay, and all of DEG 🖤",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1192810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1192810/view/5124581515273565250"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-27T17:14:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.423Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-27T17:14:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.423Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-27T17:14:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.335Z"
+  },
+  {
+   "id": "romancelvania-141964@1.1",
+   "gameId": "romancelvania-141964",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-06T02:42:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Play as a lovelorn, brooding Drac who, after a century of moping around post-heartbreak, is thrown into a monster reality-dating show, hosted by the Grim Reaper! Explore Transylvania’s perilous countryside as you slay absurd baddies on your hunt for the most eligible monsters. Will Drac find “Love at first Bite”, or will he discover “Love Sucks”?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1192810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1192810/view/5138087875085165640"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-06T02:42:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.423Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-06T02:42:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.423Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-06T02:42:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.334Z"
+  },
+  {
+   "id": "romancelvania-141964@1.0.3",
+   "gameId": "romancelvania-141964",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-12T23:35:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A few updates we weren't able to include in the previous updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the Sol and VH House Drama could fail to return control if triggered in certain regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vess now triggers the correct conversations if you complete her Quests but converse with her in different orders. This allows for easier access to her Bottle quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional safeguards to ensure control is returned to the player after all House Dramas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1192810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1192810/view/5070528810304636513"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-12T23:35:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.422Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-12T23:35:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.422Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-12T23:35:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.331Z"
+  },
+  {
+   "id": "romancelvania-141964@1.0.2",
+   "gameId": "romancelvania-141964",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-11T01:49:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The feedback has been great! Thank you all so much for sharing your thoughts. We were so energized by it that we couldn't help but send another update right away. Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where if you return to Fenton after getting Strength in Fiction Quest but before completing it, you get an empty conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where if you visit Medusa before yesterday’s hotfix AND return to her the gallery wall will block you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added indicators to date and gift selection screens to more clearly indicate you can scroll to see more characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an out of world bug where you can jump out of Sol’s area of the castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented players from leaving Hokkaido before Grim shows up to take you back to Drac’s Castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added two new Quests to clarify where to find Nefret – “Got the Power!” and “Electrified!” added to give a bit more guidance to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tuned the lightning in Thundercrack Hollow to be more forgiving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added in signage to help guide to Fenton and Lightning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an unreported bug in the Profile selection when attempting to creating a new game and backing out of a profile. It required you to back out a second time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tuned Pumpkink to be a bit less punishing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tuned physics on Rollkins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 3,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1192810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1192810/view/5070528810297689666"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-11T01:49:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-11T01:49:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.422Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-11T01:49:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.330Z"
+  },
+  {
+   "id": "romancelvania-141964@1.0.1",
+   "gameId": "romancelvania-141964",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-09T23:54:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes 1.0.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey everyone, 1.0.1 is out now and we’re looking to share some of the bugs we squashed, especially for our Steam Deck players, plus address any fixes that’s next on our plate.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a Steam Deck video codec issue that was causing empty white videos to loop indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where players would get stuck in Medusa’s area where you can’t leave her room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a training message to introduce The Impaler in the Retro Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added dialog between Drac and Bataboom to explain why the Van Helsings sound the way they do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Steam Cloud saves!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Things We’re Aware Of (And That We’re Addressing)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deluxe Edition OST - Aware some users are unable to access the OST. We are aware and have flagged this with Valve and should be fixed (fingers crossed!) within the next 48 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Deck - While the fix allows players to experience Romancelvania on the Steam Deck, we are still optimizing the experience and have not yet formally submitted for Steam Deck green check certification, so please play at your own risk! If you just can’t wait to try it out, we recommend switching your graphics settings from EPIC to HIGH for now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As a lean team with lots of love and ambition for our project, we want to make sure players are feeling heard (and continue to be heard) as we work on optimizing the game, so please keep the feedback coming. We’re looking to identify what’s most important for our players as we take in all the feedback, and plan to address what we can in future patches. It’s our goal to give you as much information as possible and be transparent about development on our backend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can send all of your lovely feedback to support@2124publishing.com.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Again, we can’t thank you enough for all of your patience and support! If you have any additional questions for us, shoot us a message on Discord: https://discord.gg/ytPd3vp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bill, Amanda, Lindsay, and all of DEG 🖤",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1192810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1192810/view/5070528810293751139"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-09T23:54:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-09T23:54:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1192810",
+      "checkedAt": "2026-11-13T03:29:27.421Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-09T23:54:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.329Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,740 @@
+{
+ "game": {
+  "id": "toem-2-325182",
+  "igdbId": 325182,
+  "name": "Toem 2",
+  "cover": {
+   "imageId": "cocn4a",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocn4a.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6e1y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6e1y.jpg"
+  },
+  "ps5Release": "2026-09-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "toem-2-325182@1.0.8",
+   "gameId": "toem-2-325182",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-07T08:23:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Music track \"A Milion Different Colours\" is added to inventory once player visits Whirlhill festival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of life tweak where the Compendium section is opened instead of album when Donkey Owner asks for a photo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tried our best to disable Unity Analytics based on this post",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Cloud not syncing properly between systems",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Escape Room light bulb disappearing, making the whole thing unsolvable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Landscape\" being misspelled inside Taletorp's region description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hikelady could play music over Whirlhill festival's special music if entered region with \"Repeat\" turned on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2900640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2900640/view/1846018067925359"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-07T08:23:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-07T08:23:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.233Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-07T08:23:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.871Z"
+  },
+  {
+   "id": "toem-2-325182@hotfix-2026-10-01",
+   "gameId": "toem-2-325182",
+   "displayName": "MacOS Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-01T20:32:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone, sorry that this happened to everyone but MacOS photo issues should now be fixed, please let us know if you're still experiencing issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45340599/dafeadd5459bd5ba25cd9abea11ea7054f5f1d48.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS - Photos are not saved to disk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS - Photos are not loading when loading save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS - Photos placed inside frames were never save/loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2900640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2900640/view/1845383656383935"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T20:32:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T20:32:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.232Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-01T20:32:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.870Z"
+  },
+  {
+   "id": "toem-2-325182@1.0.7",
+   "gameId": "toem-2-325182",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-01T13:07:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "\"Overworld\" camera is now being rotate by holding left click for consistency as reported here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability to swap Zoom & Pan input buttons inside the camera menu on request by user aranol as reported here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game locking up when choosing a photo (Solves infamous grandma \"dies\" bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rotating photo camera by dragging mouse & taking a photo softlocks input",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Game crashing when alt-tabbing while with \"Exclusive Fullscreen\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game becoming really dark while playing using \"Exclusive Fullscreen\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escape room's planks not rendering correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whirlhill's minimap being incorrect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal Cave's sight photo is only active while it's glowing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2900640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2900640/view/1845383656381217"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T13:07:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T13:07:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.232Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-01T13:07:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.869Z"
+  },
+  {
+   "id": "toem-2-325182@hotfix-2026-09-29",
+   "gameId": "toem-2-325182",
+   "displayName": "Deltburg Region Hotfixes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-29T21:26:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Business Art Imp being enabled after quest is completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Meditation Goat only responding to the \"Enter\" key and not \"E\" like the rest of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bench being stuck inside one of the aquarium's stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bean Slurp NPC having a photo indicator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escape Room Door not unlocking for some people",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2900640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2900640/view/1844751498235508"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T21:26:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.231Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T21:26:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.231Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-29T21:26:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.869Z"
+  },
+  {
+   "id": "toem-2-325182@post-2026-09-29",
+   "gameId": "toem-2-325182",
+   "displayName": "Fixed Steamdeck & Linux versions!",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-29T15:24:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sorry that this was broken earlier, it has now been fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry! ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "//SWM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2900640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2900640/view/1844751498234605"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T15:24:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.231Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T15:24:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.231Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-29T15:24:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.868Z"
+  },
+  {
+   "id": "toem-2-325182@2",
+   "gameId": "toem-2-325182",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-15T19:28:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If you have already played the demo you'll need to reapply your Camera Rotation Option as it's separated into two different options, sorry!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added / Improved",
+     "items": [
+      {
+       "text": "More stamp jingles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Main Menu music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved readability on pipes inside Fountain Maintenance room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Plum's Finale Cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Separated invert the option \"Invert Camera Rotation\" into two new options Overworld Camera Rotation and Photo mode camera rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rotation speed inside Options is not displayed as percentage instead of numbers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Steam not initializing properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settings not getting reverted when starting a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some trash pieces floating in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fish food pipe clipping into itself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stoves having incorrect material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Plum's finale not being saved sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soft lock due to saving taking place in the middle of dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Could not turn of Custom Mouse Cursor using the options menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Now don't you dare break more things you hear!! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "More stamp jingles!",
+     "New Main Menu music",
+     "Improved readability on pipes inside Fountain Maintenance room"
+    ]
+   },
+   "sourceIds": [
+    "steam-2900640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2900640/view/1835236783572033"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T19:28:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.230Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.866Z"
+  },
+  {
+   "id": "toem-2-325182@1",
+   "gameId": "toem-2-325182",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-06T17:36:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed game booting up to black screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2900640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2900640/view/1834602721194290"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-06T17:36:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2900640",
+      "checkedAt": "2026-11-13T03:34:24.229Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:20.866Z"
+  }
+ ],
+ "issues": []
+}

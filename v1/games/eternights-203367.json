@@ -1,0 +1,410 @@
+{
+ "game": {
+  "id": "eternights-203367",
+  "igdbId": 203367,
+  "name": "Eternights",
+  "cover": {
+   "imageId": "co4tg0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4tg0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4zcn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4zcn.jpg"
+  },
+  "ps5Release": "2023-09-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "eternights-203367@9.20.2023",
+   "gameId": "eternights-203367",
+   "displayName": "Patch 9.20.2023",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-20T19:42:11.000Z",
+   "notes": [
+    {
+     "title": "1) Fixed - Black screen issue on startup",
+     "items": [
+      {
+       "text": "The game won't corrupt the settings.sav anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please send me the log if you still find your self trouble in this issue - the logs can be found in: %localappdata%low\\Studio Sai\\Eternights\\Player.log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Workaround for people who currently has the black screen on startup / corrupted settings.sav:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "2) Fixed - Black screen issue on cutscene for some graphics card",
+     "items": [
+      {
+       "text": "In the Graphics option, turn on \"Video Playtype MP4\" for people who had issue with cutscene on June 15.: For others, turn on \"Video Playtype WEBM\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please if A) does not work, please toggle B) instead. if B) does not work, please toggle A) instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please send me(fkkcloud@studiosai.dev) the log if the issue persists.- the logs can be found in: %localappdata%low\\Studio Sai\\Eternights\\Player.log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "3) Polish - Save/Load UI, UX.",
+     "items": [
+      {
+       "text": "Save and Load UI is not visually distinct to each other to help people who accidentally loaded old progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "4) Polish - Platinum achievement unlock",
+     "items": [
+      {
+       "text": "Platinum achievement to be checked on every achievement unlock moment instead of trigging at the end of the game once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1402110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1402110/view/5219165352621084194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-20T19:42:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1402110",
+      "checkedAt": "2026-11-13T03:20:18.462Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-20T19:42:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1402110",
+      "checkedAt": "2026-11-13T03:20:18.462Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-20T19:42:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:53.558Z"
+  },
+  {
+   "id": "eternights-203367@post-2023-09-16",
+   "gameId": "eternights-203367",
+   "displayName": "Eternights - Minor Patch Note",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-16T09:13:37.000Z",
+   "notes": [
+    {
+     "title": "Eternights - Minor Patch Note",
+     "items": [
+      {
+       "text": "Sia's Bike Mission Difficulty adjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environment lights to be brighter for dark areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Japanese Only) Act 4 Kafka Lab - Sia Dungeon's Hint Wording Fix: ( Act 4 カフカ ラボ - シア ダンジョンのヒントの文言修正 )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Cloud save fixed (Steam Deck Desktop PC)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Minor polishes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1402110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1402110/view/5480373588789276223"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-16T09:13:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1402110",
+      "checkedAt": "2026-11-13T03:20:18.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-16T09:13:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1402110",
+      "checkedAt": "2026-11-13T03:20:18.461Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-16T09:13:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:53.557Z"
+  },
+  {
+   "id": "eternights-203367@post-2023-09-13",
+   "gameId": "eternights-203367",
+   "displayName": "Eternights Artbook \"How to access\" for Deluxe Edition",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-13T10:23:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "How to access",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eternights: Digital Artbook will be downloaded in the folder where the game is installed in your computer typically (Program Files (X86)\\Steam\\steamapps\\common\\Eternights).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you can't still find it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please send me your screenshot of Deluxe Edition in Steam to fkkcloud@studiosai.dev, I will send you the Artbook personally. ːsteamthumbsupː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1402110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1402110/view/5211283418277246091"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-13T10:23:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1402110",
+      "checkedAt": "2026-11-13T03:20:18.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-13T10:23:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1402110",
+      "checkedAt": "2026-11-13T03:20:18.461Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-13T10:23:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:53.556Z"
+  },
+  {
+   "id": "eternights-203367@major-2023-02-09",
+   "gameId": "eternights-203367",
+   "displayName": "Eternights Spring Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-09T16:38:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're delighted to share our brand new Spring Update video with you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since our June 2022 reveal, we've made a plethora of updates to Eternights. To name just a few, one of the the most important aspects we focused on was enhancing the overall gameplay flow and immersion, so players can truly lose themselves in the characters and story of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outside of that, we have really exciting news about the Japanese voice actors! In the near future, we will announce the Japanese voice actors that have agreed to lend their unique energy and talents to the game. We can’t say much, other than they are well known figures in the anime industry, who have already lent their voices to other beloved characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eternights is coming this summer, and we hope that you enjoyed the Spring Update video. The team has worked hard to create a unique and engaging world, and we can't wait for you to dive into the world of Eternights and experience it for yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1402110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1402110/view/5036749277230017491"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-09T16:38:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1402110",
+      "checkedAt": "2026-11-13T03:20:18.459Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:53.553Z"
+  }
+ ],
+ "issues": []
+}

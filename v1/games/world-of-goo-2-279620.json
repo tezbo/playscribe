@@ -1,0 +1,451 @@
+{
+ "game": {
+  "id": "world-of-goo-2-279620",
+  "igdbId": 279620,
+  "name": "World of Goo 2",
+  "cover": {
+   "imageId": "co8na2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8na2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar32mw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar32mw.jpg"
+  },
+  "ps5Release": "2025-04-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "world-of-goo-2-279620@patch-2025-06-03",
+   "gameId": "world-of-goo-2-279620",
+   "displayName": "Steam Deck editor patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-03T07:01:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New and Import level is now disabled on Steam Deck as the Editor doesn't support touch screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3385670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3385670/view/1800991756464967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-03T07:01:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-03T07:01:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.767Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-03T07:01:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:33.366Z"
+  },
+  {
+   "id": "world-of-goo-2-279620@post-2025-05-29",
+   "gameId": "world-of-goo-2-279620",
+   "displayName": "Level Editor with Steam Workshop integration",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-29T18:57:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've decided to release our in-house editor via Steam Workshop!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We built the editor just for us, and did not originally plan to share it. It's unpolished, unsupported, and gloriously unbeautiful - but it built all the levels in World of Goo 2 - and now it's publicly available for brave players to build and share their own levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3385670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3385670/view/1800991756319865"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-29T18:57:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-29T18:57:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.767Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-29T18:57:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:33.366Z"
+  },
+  {
+   "id": "world-of-goo-2-279620@1",
+   "gameId": "world-of-goo-2-279620",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-07T17:54:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Linux build of the game will still use X11 but will only show an error when X11 can't be initialized.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3385670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3385670/view/1799088287806785"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-07T17:54:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.766Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-07T17:54:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.766Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-07T17:54:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:33.365Z"
+  },
+  {
+   "id": "world-of-goo-2-279620@post-2025-05-07",
+   "gameId": "world-of-goo-2-279620",
+   "displayName": "World of Goo 2 bug fixes and Steam Deck compatibility improvements",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-07T17:07:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everybody!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We've released a new update this week that adds",
+     "items": [
+      {
+       "text": "offline mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam Deck improvements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "and various other bug fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Download it today and stay tuned for some more exciting World of Goo 2-related news later this month!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Our Steam launch has gone well thus far and we wanted to express our appreciation to everyone for playing and helping spread the good word. If you haven't yet, please consider leaving a review on the game's store page. Special thanks to the nearly 300 World of Goo 2 owners that have already done so!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "offline mode",
+     "and various other bug fixes!",
+     "Download it today and stay tuned for some more exciting World of Goo 2-related news later this month!"
+    ]
+   },
+   "sourceIds": [
+    "steam-3385670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3385670/view/1799088287805399"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-07T17:07:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.765Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-07T17:07:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.766Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-07T17:07:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:33.365Z"
+  },
+  {
+   "id": "world-of-goo-2-279620@major-2025-05-06",
+   "gameId": "world-of-goo-2-279620",
+   "displayName": "May update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-06T19:16:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Offline mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sound initialization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steamdeck fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Error display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3385670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3385670/view/1798454487772749"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-06T19:16:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.765Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-06T19:16:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3385670",
+      "checkedAt": "2026-11-13T03:36:28.765Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-06T19:16:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:33.364Z"
+  }
+ ],
+ "issues": []
+}

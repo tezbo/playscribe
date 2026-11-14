@@ -1,0 +1,1473 @@
+{
+ "game": {
+  "id": "the-occultist-306855",
+  "igdbId": 306855,
+  "name": "The Occultist",
+  "cover": {
+   "imageId": "coa9j6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa9j6.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3zvi",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3zvi.jpg"
+  },
+  "ps5Release": "2026-04-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-occultist-306855@1.0.2",
+   "gameId": "the-occultist-306855",
+   "displayName": "PATCH 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-27T15:00:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "PATCH - UPDATE NOTES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we want to thank everyone who has played the game, enjoyed it, and taken the time to be part of our community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is now live, featuring several technical adjustments and improvements. This patch focuses on refining gameplay systems to ensure a smoother and more stable experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll continue taking care of the forums to make sure everything is running smoothly. We appreciate your continued support as we work on further polishing the game. Below are the main changes included in this version:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Occultist - V.1.0.2.6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crash Fixes & Stability",
+     "items": [
+      {
+       "text": "Mansion Painting Room: Relocated the canvases within the room to prevent crashes and eliminate confusion regarding the purpose of free painting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Main Menu Stability: Fixed a crash that could occur when returning to the Main Menu immediately after picking up items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lighthouse Puzzle: Resolved specific crashes triggered by failing the Pressure Puzzle in the Lighthouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inventory & QTEs: Fixed a potential crash caused by opening the Inventory right before a Quick Time Event (QTE) triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Diary & Achievements",
+     "items": [
+      {
+       "text": "Fixed an issue that either prevented the \"Diary Investigation\" Achievement from unlocking or caused it to trigger prematurely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented players from opening the Diary twice in a row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a bug that could lock the \"Read\" action within the Diary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controls & Settings: Corrected the Crow's behavior when using the Invert X Look and Invert Y Look settings from the Options Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save State Consistency: The status of items in the Barn is now correctly saved at checkpoints after cutting Joseph’s rope.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sequence Breaking Prevention",
+     "items": [
+      {
+       "text": "Soft-locking out of various puzzles is now blocked once they are completed, ensuring players always receive their reward items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Pause Menu is now disabled during certain cinematics to prevent progression glitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled user input during the final cinematic to prevent overlapping dialogue with Alan's lines during the Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Credit Sequence: Fixed a potential bug that spawned multiple boats at the end of the Credits, or caused the boat Alan pushes to pop in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Boss Encounters",
+     "items": [
+      {
+       "text": "Modified a boss's attack animation to prevent them from clipping out of their designated NavMesh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added extra collision boxes during a specific boss encounter to prevent the enemy from getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a boss's aiming logic so they accurately target the player during battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added collisions to prevent the player from slipping behind the enemy during the final fight phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General AI: Resolved multiple bugs where various AI entities either failed to spawn or fell through the map geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Optimization",
+     "items": [
+      {
+       "text": "Lighting & Shadow Optimization: Adjusted lights, shadows, and PLAs in specific zones to significantly improve overall performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Particle Optimization: Removed collisions from falling leaves in the forest area to boost framerates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual Cleanup: Removed the PLA from the lions visible via Vera Visio in the Catacombs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Visual Polish",
+     "items": [
+      {
+       "text": "Quality of Life: Enhanced door behavior to prevent the player from getting trapped or pushed by doors closing dynamically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio & Visual Feedback: Added distinct captions and sound effects when attempting to use an incorrect item across several locations in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Puzzle Animations: Fixed an issue with the Whitney Codex puzzle where the completion animation could mistakenly play multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual Glitches: Fixed a visual artifact that occurred if Alan was hit while actively using Tempus Fugit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Collision Adjustments",
+     "items": [
+      {
+       "text": "Added collisions for the Crow to prevent issues when picking up the Yellow Ticket from the Carousel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the placement of benches at the Mansion entrance to prevent players from getting physically stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Localization: Corrected and polished several text lines and subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thank you for your continued feedback. If you encounter any further issues, please report them in our official Steam Discussion forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "DALOAR Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 5,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1833968530885659"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T15:00:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.886Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T15:00:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.886Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-27T15:00:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.423Z"
+  },
+  {
+   "id": "the-occultist-306855@1.0.1.5",
+   "gameId": "the-occultist-306855",
+   "displayName": "Hotfix 1.0.1.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-15T18:54:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New update is live now featuring several technical adjustments and improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "V.1.0.1.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Resolved a stability issue when pausing the game while using the pendulum's third ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where achievement components would fail to respawn after changing zones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where enemies could occasionally spawn through the floor geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted QTE input windows to ensure players have sufficient time to react before failing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the interaction system when picking up items located inside drawers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a crash that occurred in the Orphanage when a puzzle was saved with an incorrect item placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Technical & Performance",
+     "items": [
+      {
+       "text": "Enhanced the painting system mechanics within the Hospital area for better consistency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved overall camera and input stability during high-intensity combat situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Refined AI navigation logic to prevent clipping issues in various environments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Resolved Known Issues",
+     "items": [
+      {
+       "text": "Fixed the issue where controller users could temporarily lose character control after taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved the inconsistent behavior of the rat swarm during the final encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We'll continue taking care of the forums to make sure everything is running smoothly. We appreciate your continued support as we work on further polishing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DALOAR Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1830163047255781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-15T18:54:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.885Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-15T18:54:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.885Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-15T18:54:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.421Z"
+  },
+  {
+   "id": "the-occultist-306855@major-2026-04-14",
+   "gameId": "the-occultist-306855",
+   "displayName": "Deluxe Pack Update | SOUNDTRACK",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-14T18:42:37.000Z",
+   "notes": [
+    {
+     "title": "Deluxe Pack Issue Solved",
+     "items": [
+      {
+       "text": "Due to a previous issue, the soundtrack was not properly accessible for players who owned this edition. This has now been fully resolved, and you should be able to access it as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We sincerely apologize for the inconvenience and truly appreciate your patience while we worked on fixing this. Thank you for your continued support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy the soundtrack as much as we enjoyed creating it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DALOAR Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1829528821318692"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T18:42:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.885Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T18:42:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.885Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-14T18:42:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.421Z"
+  },
+  {
+   "id": "the-occultist-306855@1.0.1",
+   "gameId": "the-occultist-306855",
+   "displayName": "PATCH 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-13T20:36:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "PATCH - UPDATE NOTES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we want to thank everyone who has played the game, enjoyed it, and taken the time to be part of our community. Seeing you explore the city of Godstone and connect with it truly means a lot to us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is now live, featuring several technical adjustments and improvements. This patch focuses on refining gameplay systems to ensure a smoother and more stable experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll continue taking care of the forums to make sure everything is running smoothly. We appreciate your continued support as we work on further polishing the game. Below are the main changes included in this version:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Occultist - V.1.0.1.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Puzzles",
+     "items": [
+      {
+       "text": "Puzzle Optimization: Adjusted the speed of puzzle mechanics for better consistency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest Rewards: Fixed an issue where a reward item would remain floating after completing a quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solved an issue where some quest items were not granted after finishing its quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environment Clarity: Removed redundant dressing props to improve visual clarity in specific puzzle areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collectible Accessibility: Refined collision boxes to make certain collectibles easier to reach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy Spawners: Adjusted enemy spawn points and logic for improved balancing and bug fixing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solved an issue where the Circus Boss doesn't spawn after player's death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solved an issue where some Bosses were duplicated after player's death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QTE Balancing: Adjusted the difficulty of Quick Time Events for a fairer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical & Performance",
+     "items": [
+      {
+       "text": "System Stability: Improved overall stability of the painting system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Input: Enhanced camera rotation smoothness at low framerates when using Mouse or Controller via Steam Input.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Deck: Reduced default controller rotation sensitivity specifically for Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimization: Reduced the size of unnecessary textures to improve memory usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution Support (Experimental): Added support for new resolutions: 7680x4320 (8K, 16:9), 3840x1600 (UltraWide 4K, 21:9), and 5120x2160 (UltraWide 5K, 21:9).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Visuals & Localization",
+     "items": [
+      {
+       "text": "Graphics: Resolved texture issues on the hospital exterior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Character Visuals: Fixed visible texture seams on Alan’s hand and improve overall texture resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization: Corrected several typos and errors in game captions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio: Added music to certain areas to improve atmosphere and narrative impact (kept intentionally vague to avoid spoilers).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "We are aware of the following issues and are actively working on fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller Input: In some combat situations, players using a controller may temporarily lose control after taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final Battle: Rat behavior during the final encounter may not function as intended in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all for your patience, support, and for continuing to share your feedback with us. It truly helps us improve the experience. We’ll keep working hard to bring you more updates and polish in the near future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DALOAR Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1829528821316402"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-13T20:36:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.884Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-13T20:36:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.884Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-13T20:36:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.420Z"
+  },
+  {
+   "id": "the-occultist-306855@major-2026-04-11",
+   "gameId": "the-occultist-306855",
+   "displayName": "Quick Update: Fixes & Improvements in Progress",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-11T19:44:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, A huge thank you for your feedback! We are working hard to address the issues you’ve reported. A patch is currently in development, focusing on two of our top priorities:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deluxe Edition: We are aware of the issue regarding the missing soundtrack in the Deluxe Edition. The Soundtrack will appear in your library as soon as the fix is implemented. We apologize for the inconvenience. Additionally, we are working on a fix for the crash affecting the Deluxe Edition on Xbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Stability & Performance: We are optimizing memory usage and improving camera smoothness via Steam Input (including specific tweaks for Steam Deck)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Visual & Gameplay Fixes: We are actively investigating the boss spawning bugs and fixing the \"black lines\" on inspectable objects for PS5 Pro",
+       "ps5ProOnly": true,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "We're also refining puzzle mechanics and cleaning up environment clarity based on your suggestions as well as other general improvements on the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Found a bug? Please report it via Discord or the Steam forums. Your help is essential in making the game better for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DALOAR team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1829528821312771"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-11T19:44:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.882Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-11T19:44:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.882Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-11T19:44:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.419Z"
+  },
+  {
+   "id": "the-occultist-306855@major-2026-03-03",
+   "gameId": "the-occultist-306855",
+   "displayName": "The Occultist Demo Update Log #4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-03T13:30:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version: 133.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Implemented",
+     "items": [
+      {
+       "text": "Implemented Steam Input",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Occultist Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1825727806720230"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-03T13:30:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.882Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.417Z"
+  },
+  {
+   "id": "the-occultist-306855@major-2026-02-12",
+   "gameId": "the-occultist-306855",
+   "displayName": "The Occultist Demo Update Log #2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-12T09:25:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version: 130.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a collision outside the house where you can fall into the void",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Occultist Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1824459501606121"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T09:25:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.881Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.417Z"
+  },
+  {
+   "id": "the-occultist-306855@major-2026-01-15",
+   "gameId": "the-occultist-306855",
+   "displayName": "The Occultist Demo Update Log #1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-15T13:57:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version: 126.5.13358",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Adjusted the duration and difficulty of the balance on the river.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the time window of the QTE on the Barn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed poping animation in forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interactive icon position in different languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed roughness on some meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to changing graphic settings on the forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some flashlight and lights issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed texture popping on some important meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed XESS Mode implementation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed language with sub strings and fix over resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game blocker when opening the inventory while on a interactable object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Optimized culling on the ocean meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements on the general scalabilty of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Acknowledge",
+     "items": [
+      {
+       "text": "FSR3 not working correctly on AMD Graphic cards. We're working on a patch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With NIS upscaling method, using a Screen Percentage outside of the range it would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to the feedback from the posts on the disccussions, We are working on the compatibility with the Ultra-Wide Monitors (21:9). More improvements are going to be made during the week and applied to the final game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Occultist Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Optimized culling on the ocean meshes.",
+     "Improvements on the general scalabilty of the game."
+    ]
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1821922921813131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T13:57:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.881Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.416Z"
+  },
+  {
+   "id": "the-occultist-306855@major-2025-06-19",
+   "gameId": "the-occultist-306855",
+   "displayName": "JUNE UPDATE: The Power of Music in The Occultist",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-19T14:30:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "June 21st marks European Music Day, and we couldn’t imagine a better moment to unveil something we’ve been waiting to share with you: the main theme from the official trailer of The Occultist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎼 A Sound That Summons the Spirit of GodStone",
+     "items": [
+      {
+       "text": "Composed by the brilliant Pepe Herrero and recorded with a live orchestra, this piece sets the tone for everything The Occultist stands for:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A deep emotional current. A creeping sense of dread. And just a flicker of hope.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The theme was created hand-in-hand with the game’s narrative and worldbuilding, it’s not just music; it’s a mirror of the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎧 Listen to the trailer theme here",
+     "items": [
+      {
+       "text": "The music in The Occultist plays a critical role in creating tension, wonder, and emotional weight. This theme is just the first of many original pieces being composed for the game, each one tied to specific locations, events, or characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You’ll hear music shift as you uncover secrets, feel it pulse during crucial moments in the story, and fall silent in the moments where silence says everything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’d love to hear your thoughts! What feelings or images did this theme evoke for you? Let us know in the comments!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DALOAR Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2092840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2092840/view/1802893906731559"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-19T14:30:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2092840",
+      "checkedAt": "2026-11-13T03:33:46.880Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:00.415Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "f8e1f2a3a210",
+   "text": "We are aware of the following issues and are actively working on fixes:",
+   "status": "open",
+   "firstReleaseId": "the-occultist-306855@1.0.1"
+  },
+  {
+   "id": "69da61208642",
+   "text": "Controller Input: In some combat situations, players using a controller may temporarily lose control after taking damage.",
+   "status": "open",
+   "firstReleaseId": "the-occultist-306855@1.0.1"
+  },
+  {
+   "id": "647743295df8",
+   "text": "Final Battle: Rat behavior during the final encounter may not function as intended in certain cases.",
+   "status": "open",
+   "firstReleaseId": "the-occultist-306855@1.0.1"
+  },
+  {
+   "id": "acb67b722bcd",
+   "text": "Thank you all for your patience, support, and for continuing to share your feedback with us. It truly helps us improve the experience. We’ll keep working hard to bring you more updates and polish in the near future.",
+   "status": "open",
+   "firstReleaseId": "the-occultist-306855@1.0.1"
+  },
+  {
+   "id": "9df2b5cd8887",
+   "text": "DALOAR Team",
+   "status": "addressed",
+   "firstReleaseId": "the-occultist-306855@1.0.1",
+   "addressedBy": "the-occultist-306855@major-2026-04-14",
+   "addressedAt": "2026-04-14T18:42:37.000Z"
+  },
+  {
+   "id": "e68e865ca730",
+   "text": "Fixed the issue where controller users could temporarily lose character control after taking damage.",
+   "status": "open",
+   "firstReleaseId": "the-occultist-306855@1.0.1.5"
+  },
+  {
+   "id": "00cb3901e3cb",
+   "text": "Resolved the inconsistent behavior of the rat swarm during the final encounter.",
+   "status": "open",
+   "firstReleaseId": "the-occultist-306855@1.0.1.5"
+  },
+  {
+   "id": "1aed59ccecf2",
+   "text": "We'll continue taking care of the forums to make sure everything is running smoothly. We appreciate your continued support as we work on further polishing the game.",
+   "status": "addressed",
+   "firstReleaseId": "the-occultist-306855@1.0.1.5",
+   "addressedBy": "the-occultist-306855@1.0.2",
+   "addressedAt": "2026-05-27T15:00:03.000Z"
+  }
+ ]
+}

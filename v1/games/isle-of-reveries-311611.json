@@ -1,0 +1,2140 @@
+{
+ "game": {
+  "id": "isle-of-reveries-311611",
+  "igdbId": 311611,
+  "name": "Isle of Reveries",
+  "cover": {
+   "imageId": "coc3jx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc3jx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar32fh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar32fh.jpg"
+  },
+  "ps5Release": "2026-09-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "isle-of-reveries-311611@major-2026-10-09",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Small Warp update + more",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-09T01:01:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Save Statues in the overworld now give you an option to Warp to any of the others in the overworld you've interacted with. The item you get later for fast travel still works the same, it just becomes a more convenient version. All of the other portals in the overworld you can use to warp around to specific spots are untouched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the drop rate for powerups when you have the Magic Flower trinket equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added some additional hints that the Fortune Teller will give you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more rumors that Caco will give you. (are we talking to NPCs? They give you so many hints and rumors)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1846018067931824"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T01:01:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.751Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T01:01:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.751Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-09T01:01:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.641Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-10-04",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update: Map Screen Overhaul",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-04T08:07:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I've been working for the last two days on completely overhauling the overworld map screen... And that update is now live! Video demonstration at the end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Place pins (six types)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Move a cursor to view area and point of interest names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Zoom in to any room on the grid to view literal terrain (literally)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Toggle a legend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Akedo Phone locations tell you the number of Leaves you need on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Revealed Soil \\from Zelen's sidequest reward will auto-clear from the map\\",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Melodic Wells \\will disappear from the map after you get that melody (not retroactive; if you already have a few, you'll have to enter & exit the well if you want to clear it from the map. All future wells you get will auto-clear)\\",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ancient Tablet \\locations will disappear from the map after you translate them (not completely retroactive; if you already have some translated, the map will auto-clear those ones when you enter each overworld zone)\\",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Art Map & Cursor",
+     "items": [
+      {
+       "text": "You'll now see the full art of the map reveal itself as you enter rooms, and Lief's position will appear as a blinking green circle. This replaces the dungeon-style rooms the overworld map previously used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45102345/7070517de3d5879038e0b4079d3d7cd93124e08b.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can move a cursor around to see the different area names, along with names for various points of interest like Bug Houses, Melodic Wells, and so on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Place Pins",
+     "items": [
+      {
+       "text": "You can also place 6 different types of pins onto any room in the grid, including ones you haven't been to yet. You can toggle the legend to tell you what they are in case you forget. Scrolling over your pins with the cursor will also tell you what the pin is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45102345/06d6c37502b0986a8a5cc920fbda39cd0b246c1f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Zoom to See Terrain",
+     "items": [
+      {
+       "text": "Pressing the input button will allow you to zoom into whatever grid space you're on and view the literal terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On that view you can move the map around. Your placed pins will appear as well. Pressing Y (or whatever you have that set to) will snap the map back to Lief's position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45102345/458e1878cc84e929989b2149d19ddea19ad2ccd3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45102345/36767a23d8908cfddd861a0bc9af95f89a449692.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "Place pins (six types)",
+     "Move a cursor to view area and point of interest names",
+     "Zoom in to any room on the grid to view literal terrain (literally)"
+    ]
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1845383656390726"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-04T08:07:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.750Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-04T08:07:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.750Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-04T08:07:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.641Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@post-2026-10-03",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Coming Soon: World Map Screen Revamp",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-03T00:54:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I've been working all day on completely remaking the world map screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new map opens with a visual overview, the same as it currently works. However, rooms you haven't been to are hidden here. You'll have a cursor and can move it around the map, and the names for whole areas or points of interest appear at the top.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also Zoom into a specific screen on the grid to see the literal terrain, and then move that map around. There will be a button to snap the map back to your position in case you get lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's a preview (excuse the poor video quality...)",
+     "items": [
+      {
+       "text": "Goal is to have this done over the weekend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1845383656388120"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-03T00:54:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-03T00:54:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.750Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-03T00:54:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.640Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-10-01",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Oct 1 teeny tiny update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-01T10:17:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where rafts would stop moving partway through, but only when playing the game at a high framerate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1845383656380671"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T10:17:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-01T10:17:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.749Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-01T10:17:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.640Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-30",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update: Map screen soil icons",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-30T06:11:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Completing Zelen's sidequest in Verdant Valley will now reveal the locations of all unplanted Goddess Soil spots on the map screen. No action is needed if you already finished the quest, the new icons will be on your map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a legend to the world map screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1845383656376424"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-30T06:11:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-30T06:11:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.749Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-30T06:11:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.639Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-28",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Sep 28 update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-28T07:05:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a minor bug in Garden of Ambition that didn't allow you to use potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Dungeon 5 related bug fixes",
+     "items": [
+      {
+       "text": "Mirror blocks no longer reflect stuff when they're invisible (in lava, in a pit, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where a minecart will go past the track it's supposed to turn on (thank you OgPZelda!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Dungeon 5 related updates",
+     "items": [
+      {
+       "text": "Added three new lore / helper characters that add a little levity and give you hints without spoiling any of the actual puzzles: ----- Character 1: ----- Character 2: ----- Character 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed some lava from B3 so you don't have to backtrack for an ice block to get a specific key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1844751498230726"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-28T07:05:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-28T07:05:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.748Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-28T07:05:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.639Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-24",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Sep 23 small update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-24T04:24:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where the raft could get stuck against walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted object color-coding for interactible objects. They all had a light beige color to them (throwables, pushables, etc) to denote that they're interactible. Swapped that color for a lighter tone so it stands out a little more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the tile you push the color cubes onto to make it a little more clear (reminder from last update).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1844751498220232"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T04:24:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T04:24:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.748Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-24T04:24:22.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T07:24:17.628Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-22",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Sep 22 small update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-22T06:39:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added some additional hint dialogues as to the whereabouts of an optional item: the Power Pogo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For step 5 of the trading sequence, if you're holding the Letter for Clavius, you'll now run into him on the pathway to the Flooded Castle (along with his standard location in Weeping Wetlands). This is to increase the odds that you'll upgrade your sword before Dungeon 3 if you've been keeping up with the trade sequence to that point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plus some minor bug fixes here and there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1844115010503323"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T06:39:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T06:39:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.747Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-22T06:39:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.610Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@hotfix-2026-09-19",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Sep 19 - Menu hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-19T19:03:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with the menu where you're able to walk around with it still open by pressing certain buttons, bug was caused by fixing a different bug. I love when that happens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1844115010497730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T19:03:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T19:03:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.746Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-19T19:03:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.609Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@post-2026-09-19",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Jump Slash Updated",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-19T07:00:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45102345/7878e3171c2642b4cc2e46cd28616da99e704ee6.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Try it out! Lief's new jump slash works with any sword level. Since it's a powerful maneuver, it requires 1 magic to use, just like Lief's tools.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, a free content update is coming soon. I've been working on finishing a dungeon that was originally cut. It'll be added as an optional side dungeon with a powerful buff granted upon completion. More useful on a new playthrough or mid-playthrough, so if you've already finished the game you can play the dungeon for funsies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1844115010496736"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T07:00:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T07:00:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.746Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-19T07:00:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.609Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-16",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Sep 16 small update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-16T06:56:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Destroying rocks, pots, mushrooms, etc with an upgraded sword now has the possibility of dropping hearts. Forgot to add that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plus a handful of minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1844115010488284"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-16T06:56:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-16T06:56:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.745Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-16T06:56:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.608Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-14",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Sep 13 small update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-14T07:02:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Gated being able to build the Windmill to until it’s required for Zelen’s quest so that you don’t build it in the wrong spot before it’s needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded swords can now cut down mushrooms, pots, rocks, etc -- anything you can throw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some additional hint dialogues here and there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased jump distance a smidge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1843481262700876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T07:02:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T07:02:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.745Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-14T07:02:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.608Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-11",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update Notes for Sep 10, #2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-11T01:36:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a minor dialogue box visual glitch in the final scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock in Garden of Ambition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an additional hint for step 4 of the trading sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new shortcut in Weeping Wetlands that connects the left side and right side, unlock it with Dungeon 2’s item after you do the rafting sequence omn the left side, after exploring Upper City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some other little dialogue hints that a few characters give",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1843481262693840"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-11T01:36:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-11T01:36:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.745Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-11T01:36:41.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T07:24:17.598Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-10",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update: Warp Points",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-10T02:43:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a handful of signposts around the map to aid navigation in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed a phase from boss 2 that could occasionally get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a rare bug where a specific minecart in dungeon 5 can get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved the desert warp one screen to the right (see Warps Update for more): The following are spoilers for the game beyond Dungeon 2. Don't read on if you haven't gotten that far.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After beating Dungeon 2, Tyrus now leaves a letter for Lief outside the dungeon's entrance. It gives more of a direct hint for the next destination, so you don't just have to study the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional hints and rumors for a specific item The item: Seashell Ukulele and what it does: fast travel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you read what the item is: Reading Arthur's diary will now hint that it's kept in his igloo. When you get the Fairy Slinger, if you've read the diary, the fairy will remind you about the wall switch you can activate in Arthur's igloo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1843481262690880"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-10T02:43:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.743Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-10T02:43:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.744Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-10T02:43:03.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T07:24:17.596Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-09",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update Notes for Sep 9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-09T16:02:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the bug where rafts are able to move over land",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you have the Cheese trinket there’s now a little interaction with the rat in Dungeon 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During the approach to Dungeon 2, Tyrus now gives you a more detailed hint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Dungeon 2, moved the portal right outside the boss room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added character names to each dialogue box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a hint at the start of Garden of Ambition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Plus some minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1843481262689543"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T16:02:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.742Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T16:02:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.742Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-09T16:02:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.595Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-08",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update Notes for Sep 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-08T01:26:19.000Z",
+   "notes": [
+    {
+     "title": "Some small bug fixes, including",
+     "items": [
+      {
+       "text": "Getting the little sand dragon enemy appearing in your album after taking a picture of it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A menu bug in the Bazaar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1842846814454375"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-08T01:26:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.741Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-08T01:26:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.742Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-08T01:26:19.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:17:12.818Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-07",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update Notes for Sep 6, #2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-07T01:30:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Squashed some more minor bugs, including a bug that was created by fixing another bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1842846814451957"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-07T01:30:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.741Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-07T01:30:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.741Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-07T01:30:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:12.817Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-06",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update Notes for Sep 5 - Resizable Window, more",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-06T04:57:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added window resizing when setting the game to Windowed mode (in-game settings)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added some additional rafts in Weeping Wetlands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug with the potion shop when throwing a specific object in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1842846814450199"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-06T04:57:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.740Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-06T04:57:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.740Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-06T04:57:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:12.816Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2026-09-05",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Update Notes for 9/5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-05T07:15:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a potential softlock in Dungeon 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an erroneous popup/possible crash when exiting the co-op menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1842846814448551"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T07:15:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.739Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T07:15:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.739Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-05T07:15:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:12.814Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@hotfix-2026-09-05",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Hotfix 9/4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-05T02:12:22.000Z",
+   "notes": [
+    {
+     "title": "Small hotfix for",
+     "items": [
+      {
+       "text": "Keyboard glyphs displaying when using a community layout + setting the glyph type in-game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Achivements not activating on Steam Machine (if you have this issue, be sure to set your Steam Compatability to Steam Linux Runtime 1.0).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1842846814448287"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T02:12:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.738Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T02:12:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.739Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-05T02:12:22.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:17:12.816Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@post-2025-01-03",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Major Demo Updates, Kickstarter, & Progress",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-03T00:58:34.000Z",
+   "notes": [
+    {
+     "title": "🦉 Kickstarter Coming Soon!",
+     "items": [
+      {
+       "text": "A Kickstarter campaign for Isle of Reveries is set to launch in February/March 2025! Your support will let us fully realize the vision for Isle of Reveries, and include cool extras like mini-games, a Zelda 2 style dungeon, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Follow Isle of Reveries on Kickstarter by clicking here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Major Demo Updates!",
+     "items": [
+      {
+       "text": "Nintendo Switch Pro controllers are now compatible! I played through the demo both on a Windows PC and SteamDeck using an official Switch Pro Controller to confirm.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Pushing blocks has been revamped! You can now push a moveable block by walking into it like in GameBoy Zelda games -- no need to press the A button anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other fixes, including some bug fixes on the boss battle and when players spam many buttons at once...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📸 Progress Preview: Overgrown Shrine!",
+     "items": [
+      {
+       "text": "Please enjoy this gameplay preview of the game's second dungeon, the Overgrown Shrine. A preview of this dungeon will be playable for Kickstarter backers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Follow Isle of Reveries on Kickstarter by clicking here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1787858252731305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-03T00:58:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.738Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:12.813Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@major-2024-12-20",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Demo Tweaks and Previews | December Progress Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-20T21:48:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all for playing the Isle of Reveries demo and leaving feedback and reviews! A lot of progress was made on updating the demo and the full game:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🦉 Kickstarter Coming Soon!",
+     "items": [
+      {
+       "text": "A Kickstarter campaign for Isle of Reveries is set to launch in February 2025! Your support will let us fully realize the vision for Isle of Reveries, and include cool extras like mini-games, a Zelda 2 style dungeon, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Follow Isle of Reveries on Kickstarter by clicking here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Demo Updates & Tweaks",
+     "items": [
+      {
+       "text": "A number of updates to the demo version were pushed in December, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Map screen now shows if a room has a staircase in it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Water and pits are now more forgiving, letting you escape falling in during a brief 0.5s window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemies have a 0.5s buffer before they start moving and attacking when the player enters the sam grid as them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "📸 New Full Game Previews",
+     "items": [
+      {
+       "text": "Follow Isle of Reveries on Kickstarter by clicking here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 4,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Follow Isle of Reveries on Kickstarter by clicking here."
+    ]
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1786573930667862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T21:48:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.737Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:12.812Z"
+  },
+  {
+   "id": "isle-of-reveries-311611@11.19.24",
+   "gameId": "isle-of-reveries-311611",
+   "displayName": "Patch 11.19.24",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-19T07:06:48.000Z",
+   "notes": [
+    {
+     "title": "Added a little patch fixing the following",
+     "items": [
+      {
+       "text": "Added an 0.5s buffer period when entering a grid before enemies can move around/attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A couple of bugs with the boss that can occur between phases if specific actions are triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor layout adjustment in the dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreased volume for the opening jingle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I would like to improve the keyboard layout as well. If you have suggestions for a better keyboard layout, please post in the discussion board.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added an 0.5s buffer period when entering a grid before enemies can move around/attack.",
+     "A couple of bugs with the boss that can occur between phases if specific actions are triggered.",
+     "Minor layout adjustment in the dungeon."
+    ]
+   },
+   "sourceIds": [
+    "steam-3100970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3100970/view/1783238125366607"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T07:06:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-3100970",
+      "checkedAt": "2026-11-13T03:23:41.736Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:12.810Z"
+  }
+ ],
+ "issues": []
+}

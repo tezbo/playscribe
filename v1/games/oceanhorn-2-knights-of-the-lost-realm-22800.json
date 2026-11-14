@@ -1,0 +1,421 @@
+{
+ "game": {
+  "id": "oceanhorn-2-knights-of-the-lost-realm-22800",
+  "igdbId": 22800,
+  "name": "Oceanhorn 2: Knights of the Lost Realm",
+  "cover": {
+   "imageId": "coa67x",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa67x.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3w04",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3w04.jpg"
+  },
+  "ps5Release": "2023-08-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "oceanhorn-2-knights-of-the-lost-realm-22800@post-2023-09-27",
+   "gameId": "oceanhorn-2-knights-of-the-lost-realm-22800",
+   "displayName": "Build 12247281",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-27T14:35:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixes a crash when switching from Controls menu to Backups menu when no backup saves were available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622710/view/5220291886483624970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-27T14:35:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-27T14:35:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.188Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-27T14:35:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:32.145Z"
+  },
+  {
+   "id": "oceanhorn-2-knights-of-the-lost-realm-22800@post-2023-09-13",
+   "gameId": "oceanhorn-2-knights-of-the-lost-realm-22800",
+   "displayName": "Build 12130515",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-13T15:20:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixes a freeze that could happen when triggering the Lightning Spell tutorial simultaneously with solving the first puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes a crash when performing the special skill with a found weapon while being stripped of Hero's own equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622710/view/5211283418277998868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-13T15:20:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-13T15:20:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.188Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-13T15:20:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:32.145Z"
+  },
+  {
+   "id": "oceanhorn-2-knights-of-the-lost-realm-22800@post-2023-09-05",
+   "gameId": "oceanhorn-2-knights-of-the-lost-realm-22800",
+   "displayName": "Build 12021290",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-05T10:31:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Since some customers experienced trouble when encountering Lightning Spell puzzles for the first time, we added a new tutorial explaining the mechanics more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully, this helps avoiding confusion and you can enjoy the game even more. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622710/view/5141476355675425219"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-05T10:31:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.187Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-05T10:31:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.187Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-05T10:31:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:32.144Z"
+  },
+  {
+   "id": "oceanhorn-2-knights-of-the-lost-realm-22800@major-2023-08-10",
+   "gameId": "oceanhorn-2-knights-of-the-lost-realm-22800",
+   "displayName": "Update notes build 11885053",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-10T07:13:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The updated fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "an issue where controls stopped working properly when playing for a long time with high FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the game not pausing automatically when the Steam overlay gets opened",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "the game not being playable on super ultra wide monitors due to overlapping UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622710/view/5839532486209894979"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T07:13:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.187Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T07:13:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.187Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-10T07:13:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:32.144Z"
+  },
+  {
+   "id": "oceanhorn-2-knights-of-the-lost-realm-22800@major-2023-07-31",
+   "gameId": "oceanhorn-2-knights-of-the-lost-realm-22800",
+   "displayName": "Pre-Launch Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-31T13:29:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we're thrilled to release the game soon and can't wait to see Windows PC and Steam Deck players getting their hands on the game. Here's a quick tech update of what you can expect:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "FOV Slider",
+     "items": [
+      {
+       "text": "We implemented a FOV slider. Please let us know if you make use of this kind of feature often and if you like it in Oceanhorn 2. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck",
+     "items": [
+      {
+       "text": "We played the game entirely on Steam Deck and can confirm that it works from start to finish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622710/view/5124584686260693487"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-31T13:29:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622710",
+      "checkedAt": "2026-11-13T03:27:02.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:32.143Z"
+  }
+ ],
+ "issues": []
+}

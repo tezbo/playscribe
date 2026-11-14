@@ -1,0 +1,366 @@
+{
+ "game": {
+  "id": "the-thing-remastered-305004",
+  "igdbId": 305004,
+  "name": "The Thing: Remastered",
+  "cover": {
+   "imageId": "co8bjc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8bjc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2zi1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2zi1.jpg"
+  },
+  "ps5Release": "2024-12-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-thing-remastered-305004@1.1",
+   "gameId": "the-thing-remastered-305004",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-22T18:30:02.000Z",
+   "notes": [
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed the Conspiracy Theorist achievement. Old saved games are retroactively fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Colins Fate achievement description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a softlock where Stolls would stop running to the black tech lab door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash after detonating the C4 on the airstrip level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare intermittent crash when fighting Thing beasts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a \"Most Recent\" button to the load game menu, so it's easier to load your latest save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Autosaves now contain the name of the level they were saved on, instead of just \"Autosave\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where characters would sometimes become unable to step up onto higher surfaces after falling off of the curbs in the roadway tunnel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when quitting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where bindings would be missing from the input options on first launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash in Strata Medibay when Fisk dies before telling you the code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Blake's hand clipping with his sleeve in the first cutscene with Faraday.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the second camera angle would fail to activate during the weather station cutscene, allowing you to interrupt it and recruit yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance when querying dynamic game options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved the game version information to the options menu, off of the interstitial screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decreased the visibility of the game version information so it is less intrusive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reimplemented the pan upwards when the game over screen is visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for autoexec.cfg, allowing users to customize console variables not usually marked as saved to kexEngine.cfg.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed an oversight where weapon firing rates were not properly respected when mashing the fire button. Excluding the pistol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ammo and health dispensers now dispense fewer clips and medipacks depending on the difficulty. This can be changed at any time during game play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marked some grenades as \"volatile\" so that they explode when damaged, like the original game, to fix a quirk where grenades placed for cinematic purposes would not explode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the direction Blake faces after ending the cutscene in the weather station level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Levels",
+     "items": [
+      {
+       "text": "Fixed an oversight where an explosive barrel would explode when passing through the tripwire of an already exploded trip-mine charge in the penultimate level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hid the out of bounds \"Back Door Key\" item that looked like a document in the submersible level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inaccurate collision in the first level, where characters would appear to sink into the snow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision in the watchtower on the third level where you could get stuck in the handrail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Renamed Carter in the Strata Medibay level to Hawk, to utilize a set of unused voice lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the missing green light to a save terminal in the third level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed two computers in the weather station level that did not have an ID set for the Conspiracy Theorist achievement (given automatically to old saves).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shimmied a medipack dispenser down in the level following Strata Medibay that was WAY too high up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bad collision on the external stairs in the weather station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Flipped a few ammo boxes which were facing the wrong direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several collision bugs in the Norwegian outpost where you could fall off of the world and walk underneath the building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sounds across several levels that would duplicate forever, causing the game to eventually fall silent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Display",
+     "items": [
+      {
+       "text": "Fixed the depth of field effect sometimes creating bright flickering pixels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the glass on the doors in the submersible being opaque.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved normal maps on many posters and boards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gave Whitley new trousers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the on-screen watermark in the editor build, so it doesn't confuse people.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements when using the D3D11 renderer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sound",
+     "items": [
+      {
+       "text": "Fixed a bug where speech audio would sometimes not follow the speaker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck",
+     "items": [
+      {
+       "text": "Fixed the framerate being locked to half the screen refresh rate while using the Vulkan renderer, when launched outside of the Steam client.: Consoles fixes coming as soon as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 21,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2958970"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2958970/view/1789580505280584"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-22T18:30:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2958970",
+      "checkedAt": "2026-11-13T03:34:05.316Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-22T18:30:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2958970",
+      "checkedAt": "2026-11-13T03:38:29.306Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-22T18:30:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.306Z"
+  }
+ ],
+ "issues": []
+}

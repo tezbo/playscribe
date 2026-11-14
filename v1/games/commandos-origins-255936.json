@@ -1,0 +1,4119 @@
+{
+ "game": {
+  "id": "commandos-origins-255936",
+  "igdbId": 255936,
+  "name": "Commandos: Origins",
+  "cover": {
+   "imageId": "co856g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co856g.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2kc3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2kc3.jpg"
+  },
+  "ps5Release": "2025-04-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "commandos-origins-255936@1.7",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-01T12:20:25.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Update 1.7",
+     "items": [
+      {
+       "text": "Commandos,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released Update 1.7 for Commandos: Origins for all available platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update improves performance (notably related to viewcones via a new Graphics API option), and fixes multiple gameplay and AI issues, it also resolves various localization and UI bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more details, please check out the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Added a new \"Graphics API\" option in Video Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players experiencing performance drops when activating viewcones (especially on AMD GPUs) can now switch to DirectX 12 to improve framerate.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Enemy Behavior",
+     "items": [
+      {
+       "text": "Fixed an issue where knocked-out AI units would remain prone after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies failed to detect the player inside a full viewcone near the rifle clue in Operation Vulpes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the radio signal was not visually restored after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Additional Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where cutscene dialogue and audio did not trigger if a global alarm had already been activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where AI lights did not function correctly in Operation Vulpes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the knife kill stat was counted twice on the mission overview screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where disguise highlighting would reset after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera glitches in Command Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[“No Man Left Behind” DLC] Fixed a tree culling issue after loading saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could not navigate to the \"Open Shop\" button in the DLC ad window using a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed an issue where Sniper dialogue cut off and overlapped during the objective (Locate Agent Wake) in Operation Vulpes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected typos and grammatical errors in the \"Undercover Agents\" collectible during Operation Rooster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected an error in the Polish translation where \"water tank\" was incorrectly translated as \"war tank\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[“No Man Left Behind” DLC] Fixed inconsistent naming of Sapper and Sniper in the Japanese localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1836506165565241"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-01T12:20:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.769Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-01T12:20:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.769Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-01T12:20:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:23.441Z"
+  },
+  {
+   "id": "commandos-origins-255936@1.6",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-28T15:50:57.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Update 1.6",
+     "items": [
+      {
+       "text": "Commandos,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released Update 1.6 for Commandos: Origins for all available platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update introduces a new Story Mode difficulty, improves overall balance, and delivers a wide range of fixes across AI, multiplayer, and core gameplay systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more details, please check out the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story Mode (New Difficulty)",
+     "items": [
+      {
+       "text": "We’ve added a new Story Mode difficulty to let players experience the campaign and DLC missions without getting stuck on challenging encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "More ammunition and ability charges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Designed for a smoother, story-focused experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Also allows experimenting with equipment normally gated behind pickups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bonus Achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A Soldier’s Best Tool Since 1939",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Eliminate 3 enemies at once using an explosive barrel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Global Balancing Changes",
+     "items": [
+      {
+       "text": "Enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy health now varies based on unit type and difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Normal soldiers and workers are more vulnerable on higher difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "High-ranking officers are tougher on lower difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a short delay before enemies raise the alarm after spotting a commando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced damage when vehicles collide with obstacles at low speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Explosive trucks are now more durable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Explosive truck canisters now behave like standard explosive barrels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "SMGs and pistols deal more damage to vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Weapons & Abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased range of the M1911 pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Luger pistol: reduced ammo on higher difficulties, but can eliminate enemies in one shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "AT grenade: increased damage to vehicles and larger effective range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Landmines: larger trigger radius and reduced noise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ammo and ability charges rebalanced across all difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Command Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where commands were not executed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sniper Double Kill failures when using Command Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved reliability of movement to execution positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer & Co-op",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies could stand up incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple pointer placement issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved pointer accuracy on moving targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI & Enemy Behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inconsistencies in enemy behavior before and after loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI routines not executing correctly in certain situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General Fixes & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI lights now properly reveal the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sound Decoy can now be used from climbable positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players are no longer detected while on climbables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several AI sliding / stuttering issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed vehicle kills not counting toward stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved minimap responsiveness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor UI and stat screen improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI & Misc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DLC window now features a “Shop” button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added tutorial clarification in the Harbour mission (Marine objective)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 22,
+    "balance": 23,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1830797770245795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-28T15:50:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.768Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-28T15:50:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.768Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-28T15:50:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:23.440Z"
+  },
+  {
+   "id": "commandos-origins-255936@1.5.1",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.5.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-11T14:05:02.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Update 1.5.1",
+     "items": [
+      {
+       "text": "Commandos,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released an update that fixes some achievement-related issues and a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The changelog can be found below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[Shadows over Crete] Fixed an issue where some DLC achievements (“Ripe for Picking”, “Ghost of Crete”, “Island vacation”, \"Quite the Catch\" and “Crete Veterans”) did not always unlock correctly on certain platforms including Steam and Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where beating mission 1 of the base game (Operation Daybreak) did not always count for achievement progress until all 14 base game missions were finished and any mission was finished a second time. This affected multiple achievements, including “Knock Them Out With Kindness” and “Shadow Tactics”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash related to the view cone settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1818752592123752"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T14:05:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T14:05:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.767Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-11T14:05:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:23.438Z"
+  },
+  {
+   "id": "commandos-origins-255936@1.5",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-18T14:02:27.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Update 1.5",
+     "items": [
+      {
+       "text": "Commandos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released Update 1.5 for all available platforms, which includes a fix for invisible doors in specific missions, among various other fixes for mission-specific issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furthermore, Update 1.5 for Commandos: Origins includes various other fixes and adds 3 new achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, Commandos: Origins Shadows over Crete is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more details, please check out the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Consider it done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Table of Contents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1) Additions/Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2) Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3) Mission-Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4) UI/Settings Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5) Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6) Platform/Input Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7) Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1) Additions/Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added new achievements",
+     "items": [
+      {
+       "text": "Accidents Happen: Use environmental kills to kill 5 enemies in the same mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Farming Sim: Give back to nature by hiding 10 bodies in the same hiding spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ripe for the Picking: Shoot an enemy with a stationary gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2) Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a crash related to switching between windowed and full screen mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "3) Mission-Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Daybreak (1) – Fixed an issue where a specific bench did not have a collision hitbox, allowing Commandos to walk through it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Falchion (2) – Fixed a stretched texture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Falchion (2) – Fixed an issue where the radio tower did not have collision detection after saving and loading, allowing the Commandos to pass straight through it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Cleaver (4) – Fixed an issue where a door was invisible and would block Commandos but not block view cones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Rapture (5) – Fixed an issue where a wrong pick-up prompt would show close to the escape boat when there was nothing to pick up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Magpie (7) – Fixed an issue where enemies would sometimes not correctly react to the sound decoy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Magpie (7) – Fixed an issue where the sniper would sometimes not correctly disable the PaK as ordered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Trident (8) – Fixed an issue where a specific enemy would not return to his usual behaviour after getting knocked out and waking back up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed an issue where a door was invisible and would block Commandos but not block view cones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed an issue where a room in the ship was sometimes not accessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Wave Breaker (12) – Fixed an issue where Commandos sometimes weren’t counted correctly for the meeting the local agents objective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed an issue where the crane was not culling correctly when the roof was getting culled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed an issue where the Spy dialogue would repeat and the camera would reset to the starting location when saving and loading in a specific location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Reckoning (14) – Fixed an issue where double clicking the “Find Broch’s secret documents” objective would still make the camera pan to locations where the document was already picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Operation Reckoning (14) – Fixed an issue where entering the gondola room and triggering the cutscene while carrying a body would lead to the Commandos still being in the carrying position without carrying a body anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4) UI/Settings Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the kill count on the post mission overview screen would sometimes not include the Marine’s harpoon and throwing knife kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the description for “Active Character Highlight” would show the description text for “Disable Blood Effects”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\ Fixed an issue where buttons on the post mission overview screen were not accessible via keyboard, only with a mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "5) Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the view cone marker was not always reacting to enemy view cones when an object was in between the enemy and the marker without completely blocking the view cone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an edge case issue where following Commandos would get stuck when group selecting Commandos and ordering them to climb a pole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Patrol group soldiers would be slow in grouping up again if the group got disrupted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Enemy drivers would sometimes not correctly enter their vehicles and start to drive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where telling a Commando to lie down and pick up an enemy body in quick succession while already carrying a body would lead to him performing a small jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where a sniper shot in Command Mode would not correctly penetrate multiple enemies after saving and loading in between planning and executing the action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where a Commando would not always follow enemies correctly if an action was planned in command mode and the enemy moved out of range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[RTS Control Scheme] Fixed an issue where placing or picking up an item on top of another Commando would select this Commando.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "6) Platform/Input Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[PS5, PS4, Epic] Fixed an issue where the Achievements “Knock Them Out With Kindness” and “No Stone Left Unkilled” were being awarded without meeting all requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "\\ Fixed an issue where the player was unable to change stance with gamepad in Command Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "7) Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\[All languages] Fixed an issue where “Objective Marker” and “Mission Quick Start” were not being translated in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\ Fixed an issue where Western Arabic numbers or a missing icon were displayed instead of Eastern Arabic numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\\ Fixed an issue where some settings were not translated into Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 40,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1816307528973650"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T14:02:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.766Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T14:02:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.766Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-18T14:02:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:23.437Z"
+  },
+  {
+   "id": "commandos-origins-255936@1.4",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-17T12:22:51.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Update 1.4",
+     "items": [
+      {
+       "text": "Commandos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released Update 1.4 for all available platforms, which includes several improvements like performance optimization, additional stat tracking UI elements and the option to disable the white circle around the active Commando.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furthermore, Update 1.4 for Commandos: Origins includes many mission-specific fixes and further general bug fixes like VSync no longer causing screen tearing and motion blur settings now being applied correctly applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally we have fixed an issue where the achievement trackers for \"No Stone Left Unkilled\" and \"Knock Them Out With Kindness\" were not tracking correctly and were not being unlocked within the in-game mission display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, Commandos: Origins is now available on Xbox One and PlayStation®4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "For more details, please check out the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Consider it done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Table of Content",
+     "items": [
+      {
+       "text": "1) Additions/Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2) Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "3) Mission-Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4) Multiplayer Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "5) UI/Settings Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "6) Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "7) Platform/Input Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "8) Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "1) Additions/Adjustments",
+     "items": [
+      {
+       "text": "Miscellaneous performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[PS5/XboxSeries] Mouse & Keyboard support for consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Added an indicator when using a gun, that shows when enemies are hit. When using the sniper rifle, an indicator has been added that shows when multiple enemies (up to 2) are hit at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an option in the general settings to disable having to press `”continue” on loading screens (both the normal loading screen and the quick loading screen).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an option to disable quest objective markers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an option to disable the white circle that is displayed around the active commando.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added additional stat-tracking UI elements in the mission selection panels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "2) Crash Fixes",
+     "items": [
+      {
+       "text": "Fixed a random crash when saving & loading in a multiplayer session after opening the harbor gate in mission 9 - Operation Aries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "3) Mission-Specific Fixes",
+     "items": [
+      {
+       "text": "Operation Daybreak (1) – Fixed an issue where three sticks of remote explosives were being displayed, although only one is actually present.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Daybreak (1) – Fixed an issue where the overhead UI of the First Aid Kit was not being displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Daybreak (1) – Fixed an issue where the bolt cutter action hint did not disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Daybreak (1) – Fixed an issue where the possibility for the commando to get stuck if not killing any of the AI enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Falchion (2) – Fixed an issue where the objective “destroy or sabotage the measuring equipment” would revert back to “destroy the measuring equipment” after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS5: Operation Falchion (2) – Fixed an issue where the client player would lose access to weapons & abilities after the host died and a previous save is loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "PS5: Operation Falchion (2) – Fixed an issue where the measuring station table would still be highlighted after blowing up the measuring station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Operation Nightfall (3) – Fixed an issue where the client would not be able to interact with sabotage objectives within a cross-play multiplayer session, after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Nightfall (3) – Fixed an issue where optional objective markers would not be displayed and updated correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Nightfall (3) – Fixed a pathfinding issue at the western building, related to a door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Nightfall (3) – Added a missing image within the “Hostile Snipers” tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Nightfall (3) – Fixed an issue where allies were being counted as total enemies neutralized in the mission end statistic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Nightfall (3) – Updated the controls information for the interaction with stationary guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Blindfold (6) – Removed collision in between some rocks and the cliffs within the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Trident (8) – Fixed an issue where a door was marked as interactable even though it was not accessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Trident (8) – Fixed an issue where Fisherman NPCs were not dying after being hit with the harpoon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Trident (8) – Fixed an issue where a door on a different height level was being displayed and therefore appeared to be hovering in mid air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed an issue where further progression was blocked after destroying the naval guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed an issue where Soldiers below deck would get alarmed when killing an enemy on the top deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed an issue where the AI would get teleported into the water after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Harbinger (10) – Fixed an issue where the AI could see commando footprints which were not within their view cone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Reunite (11) – Fixed an issue where a pole asset was duplicated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Wave Breaker (12) – Fixed an issue where the subtitles were not correctly aligned with the background of the subtitle UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed an issue where a door was marked as interactable even though it was not accessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed pathing issues that sometimes blocked the way down or up from the viewing platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed an issue where enemies were able to pass through a specific closed door (near where the research documents are located).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "4) Multiplayer Fixes",
+     "items": [
+      {
+       "text": "Fixed a lag issue in cross-play multiplayer session, when the enemy AI is initializing a search for the commandos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where speech bubbles were not appearing for the client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where unit stances were not changeable during cross-play multiplayer sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ Fixed a desynchronization issue with commandos in cross-play multiplayer sessions, where commandos were visually offset from their actual position after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where commandos were unable to move after the client player controlled them via the gamepad after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where items could be picked up again when saving and loading while the item was being picked up, which created a duplicate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where displayed light sources sometimes differed between host and client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy view cone sizes not changing for the client after day/night cycles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Frag Grenade throws executed by the client were often not being processed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where harpoon charges disappeared after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in cross-play multiplayer sessions where the distract ability disappeared after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lag issue in cross-play multiplayer session, when the enemy AI is initializing a search for the commandos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ Fixed an issue where the client would sometimes be stuck permanently in the group selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where in a cross-play multiplayer session the abilities disappeared after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Commandos were invisible to the client after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "5) UI/Settings Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where NPC Icons and Commando names could cover the minimap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where icons and other UI elements could cover the abilities selection wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “Motion Blur” setting would not being applied when enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Pause Menu and Mission Failed UI screen were displayed simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the image of uncollected collectables was not greyed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “Unsaved Changes” message appeared when leaving the settings menu even though no changes were made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the UI indication of where a commando will move to for a ranged shot did not match the actual position he would go to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "6) Other Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where collectibles were sometimes not displayed within the collectables screen even though they were collected within the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where collectibles would sometimes get deleted after finishing a mission with a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where actions that were planned in Command Mode, but were currently out of range for the according commando, would not be executed. Now the commando will walk in range to do the planned action (like shooting an enemy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the achievement trackers for \"No Stone Left Unkilled\" and \"Knock Them Out With Kindness\" were not tracking correctly and were not being unlocked within the in-game mission display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the selection hitbox of dead enemies was too small and did not match their body shape when hovering over them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Vsync would cause screen tearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the alarm would not trigger even though the AI visually called for the alarm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with the display of ragdolls after incapacitated enemies were placed on objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Mechanics were unable to attack commandos after discovering them in bushes during searching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Enemies would get stuck searching bushes/hideaways indefinitely after the commando crawled out of the bush while the enemy was searching it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Smoke lures would land directly in front of the commando instead of being thrown correctly to the target location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Small Talk” ability button was not appearing immediately after the Spy picked up a disguise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the AI spotting commandos in vehicles was not calling the alarm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the manually toggled view cone would always take display priority even though the commando may walk into another view cone which is currently filling up with cautiousness and should have priority of being displayed instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the animation of some gates was snapping immediately to their open state if being damaged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: an issue where the Spy was not being able to distract enemies placed at stationary guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where incapacitated gun crew members were not being replaced by other soldiers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Commandos not being able to change their stance while executing an order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Sapper was not being able to enter certain vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where doors were needing 2 grenades instead of 1 to be destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the AI culling in buildings sometimes was not behaving as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where bullets from stationary guns were not reaching and not damaging commandos when they should be able to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "7) Platform/Input Specific Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the new game cutscene was not being skippable when playing with a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ Fixed an issue where killing with the knife ability was not working correctly after switching between close combat abilities while using a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "8) Localization Fixes",
+     "items": [
+      {
+       "text": "Fixed various typos, text inconsistencies and some options missing a description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the achievement description for \"Knock them out with kindness\" and \"No stone left unkilled\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 75,
+    "balance": 7,
+    "other": 7,
+    "ps5": 4,
+    "topNew": [
+     "1) Additions/Adjustments",
+     "2) Crash Fixes",
+     "3) Mission-Specific Fixes"
+    ]
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1811138915357943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-17T12:22:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.765Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-17T12:22:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.765Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-17T12:22:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:23.435Z"
+  },
+  {
+   "id": "commandos-origins-255936@1.3",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-26T14:12:36.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Update 1.3",
+     "items": [
+      {
+       "text": "Commandos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released Update 1.3 for PC (Steam/Epic/MS Store), which includes various fixes for reported mission-specific issues, gameplay issues and crashes. Other platforms will follow as soon as possible, please stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "For more details, please check out the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[EDIT: July 22nd 2025]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.3 is now also available for Xbox Series X|S and PlayStation 5 with the additional fix of the screen tearing issue on PlayStation 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Consider it done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Table of Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additions/Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission-Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiplayer Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI/Settings Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Platform/Input Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1) Additions/Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When shooting the pistol in free fire mode (CTRL), the Commando will no longer move in between shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2) Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An issue that could result in a crash for the host during multiplayer has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An issue that could lead to a crash for the joining player when the host uses the sapper to cut an electric fence has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An issue where the game could crash for the joining player when the host sabotages the water supply in Operation Nightfall has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3) Mission-Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Daybreak (1) – Fixed an issue where a crack in the door allowed enemies to spot Commandos when they should not be able to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Falchion (2) – Fixed an issue where some enemies sometimes did not follow a Commando when he runs into a house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Nightfall (3) – Fixed an issue where the water tank was still displayed after triggering the environmental kill with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Nightfall (3) – Fixed an issue where a crack in the door allowed enemies to spot Commandos when they should not be able to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Rapture (5) – Fixed an issue where some light sources did not impact enemy view cones correctly, which resulted in some puzzles being easier than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Blindfold (6) – Fixed an issue where the view cone was displayed to the player as being when it was not, leading to Commandos being detected unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Trident (8) – Adjusted some view cones reaching areas they should not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Trident (8) – Fixed a rare issue where the mission was failed if the Commandos arrived at the exfiltration location in a vehicle and the enemy destroyed the vehicle during the ending cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Trident (8) – Fixed an issue where a view cone got displayed as blocked when it was not, leading to Commandos being detected unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Aries (9) – Adjusted the hitbox of the submarine when exfiltrating so that the Commandos were able to stand anywhere on it in order to fulfill the exfiltration condition instead of having to stand on a very specific part of the submarine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed a rare issue that can lead to the crew of the Campbeltown not, creating a blocker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed an issue where a crane environmental kill was not displaying the trigger area correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Aries (9) – Fixed an issue where a view cone getting displayed as blocked when it was not, leading to Commandos being detected unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Reunite (11) – Fixed an issue where killing Officer Garven sometimes did not complete the objective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Reunite (11) – Fixed an issue where a door sometimes clipped into a statue when opened in a specific way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Wave Breaker (12) – Fixed an issue where a grenade loot was not accessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Wave Breaker (12) – Fixed an issue with specific textures on a building sometimes not being displayed correctly when viewed from very far away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Wave Breaker (12) – Fixed an issue where two enemies were missing icons above their heads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed a rare issue where Officer Felter’s view cone is shortened unintentionally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed an issue where a view cone got displayed as blocked when it is not, leading to the Commando getting detected unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Guardian (13) – Fixed an issue where a crack in the door allowed enemies to spot Commandos when they should not be able to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Reckoning (14) – Removed a puddle from underneath a carpet so that there are no more water noises when walking across it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Reckoning (14) – Streamlined the display of a roof that was not correctly getting culled every time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Reckoning (14) – Fixed an issue where a crack in the door allowed enemies to spot Commandos when they should not be able to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4) Multiplayer Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the joining player sometimes was not being able to hear German enemies talking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where the joining player trying to drive vehicles lead to the driving Commando not correctly entering the vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Splitscreen) Commandos selection wheel was displayed incorrectly when playing split-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5) UI/Settings Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where tank crosshairs sometimes showed the wrong colour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the DLSS and FSR options were missing the “please restart the game” prompt.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved the Camera Modifier section of the controls with additional information to make clear that a combination of buttons is required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the game asked if the player wants to discard changes when activating DLSS right after hitting Apply.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the dynamic loot icon above enemies were sometimes missing if the ‘Hide Icons’ option was set to off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Command Mode lead to first aid icons getting duplicated with a specific combination of controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where dead snipers sometimes still displayed loot icons when they had no more loot left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Scroll bar was sometimes missing in the collectibles overview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where saving/loading sometimes removed the stun timer of knocked out enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hitting the close button in the tutorial windows sometimes did not close the window correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the fastest completion time was not displayed correctly in mission selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "6) Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an edge case which led to the Commando flying in the air when climbing on a zip line while targeting an enemy with a knife attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the spy would not always upgrade to the guard uniform when he was previously wearing a soldier uniform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Commandos would sometimes not exit the Zodiac onto the pier as intended but jump into the sea instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the cartridge ability would sometimes not execute when planned via Command Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a Commando would sometimes not be able to access the driver seat anymore when entering the driver seat was previously planned via Command Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Pebble” ability sometimes broke (no more animation and UI stuck) after spamming abilities like the Harpoon Gun or throwing knives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Harpoon Gun ability counter sometimes still displayed 0 after picking the harpoon back up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge case that led to enemies ragdolling when being killed with the Bear Trap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where pressing space after group selecting multiple Commandos including the marine while he was swimming, would only make the whole group go prone but not make them stand up again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where entering an objective trigger location right before saving and loading sometimes led to the trigger not going off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where areas of impact for environmental kills had a permanent outline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies were sometimes not calling for an alarm when replacing dead stationary gun crewmen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge case that could lead to some enemies not reacting to the Commandos anymore after loading a save game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, whilst in patrols of two soldiers and an officer, one patrol soldier would sometimes get stuck in search mode when the other soldier was killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where knocked out enemies sometimes stayed immobile after being revived.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge case where the enemy death animation is not played out correctly when saving/loading shortly before the enemy walks into a trap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where crewmen would sometimes not remount a stationary gun correctly after seeing a Commando.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with stationary gun crewmen sometimes not detecting Commandos correctly if they were very close to the stationary gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where stationary gun crewmen would sometimes react differently to the same lure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where stationary gun crewmen would sometimes not react to a Commando anymore if the Commando ran in and out of his view cone too often while also running up to the stationary gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a vehicle sometimes got blocked from being accessed by the Commandos after an enemy got killed while driving the vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies sometimes shot at hiding locations even if there wasn’t a Commando hiding there anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies sometimes did not react immediately to a body if they were lured by the sound decoy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where saving/loading right after a global alarm finished sometimes led to a new global alarm getting triggered upon loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an occasional issue where the Achievement “If the world were a village” was not unlocking correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "7) Platform/Input Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Xbox Retail) Fixed an issue where the Deluxe Edition DLC was not accessible in some cases when buying the retail edition of Commandos on Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "\\PS5: Fixed screen tearing issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "8) Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various typos, text inconsistencies and some options missing a description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some voice-overs were sometimes not playing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 37,
+    "balance": 0,
+    "other": 53,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1803527891509142"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-26T14:12:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.763Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-26T14:12:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.763Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-26T14:12:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:23.433Z"
+  },
+  {
+   "id": "commandos-origins-255936@1.2",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-19T12:24:26.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins – Update 1.2",
+     "items": [
+      {
+       "text": "Commandos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released Update 1.2 for Steam and all available platforms, which includes many more fixes for reported mission-specific issues, gameplay issues and crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.2 for Commandos: Origins also contains some implemented feedback, like a new hotkey to select all Commandos and the option to turn off white movement lines for movement commands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.2 for PlayStation 5 will follow as soon as possible, please stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "For more details, please check out the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Consider it done!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Table of Content",
+     "items": [
+      {
+       "text": "1) Additions/Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2) Crash Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "3) Mission-Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4) Multiplayer Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "5) UI/Settings Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "6) Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "7) Platform/Input Specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "8) Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "1) Additions/Adjustments",
+     "items": [
+      {
+       "text": "Added: New Path Visualization setting – This setting allows you to turn off the white movement lines that appear after giving a movement command.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added: Achievements - New icons in Mission Selection Screen displaying if each mission was successfully finished by meeting the “Knock them out with kindness” and “No stone left unkilled” requirements. The tooltip also mentions that these requirements can only be met on Soldier and Veteran difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added: New Hotkey to select all Commandos which is customizable in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "2) Crash Fixes",
+     "items": [
+      {
+       "text": "Fixed: A random crash when moving 4 Commandos into a hiding location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A random crash when killing an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A random crash when performing a melee attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A random crash when an enemy is searching for his missing conversation partner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Crash – A crash in multiplayer in Operation Nightfall for the joining player when the host sabotages the water supply.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Crashes – 20 further rare cases of crashes reported by players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "3) Mission-Specific Fixes",
+     "items": [
+      {
+       "text": "Fixed: Operation Daybreak (Mission 1) – Optional objective of rescuing British soldiers sometimes displaying 5/3 instead of 3/3 upon completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Falchion (Mission 2) – White noise sound effect of radio equipment in barracks not disappearing when transmitter gets turned off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Nightfall (Mission 3) – Optional objectives “Sabotage the vehicles fleet” and “sabotage the MG nests” showing 1/2 instead of 2/2 upon completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Nightfall (Mission 3) – Optional objective “Sabotage the MG nests” only highlighting one of the two MGs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Cleaver (Mission 4) – Half of the danger zone on the bridge not getting displayed anymore when double-clicking the blow up bridge objective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Rapture (Mission 5) – Objective marker for turning off the lighthouse being misplayed underneath the lighthouse instead of in the lighthouse where the Commando should interact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Blindfold (Mission 6) – Cleared up the task structure to make clear that you need to destroy both radar stations OR 3 FLAKs in order to proceed with the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Blindfold (Mission 6) – Sometimes getting stuck after exiting truck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Blindfold (Mission 6) – Unable to use shovel in an area where it should be possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Blindfold (Mission 6) – Enemy clerk sometimes facing the wrong direction, making one of the puzzles a little easier than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Blindfold (Mission 6) – Some textures not loading correctly in the airstrike cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Blindfold (Mission 6) – A specific MG crew member reacting inconsistently to the same lure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Magpie (Mission 7) – Edge case where Driver was unable to leave MG after interacting with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Trident (Mission 8) – The objective marker for cut communications sometimes missing after loading a save game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Trident (Mission 8) – Not being able to exit zodiac anywhere you can enter it from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Trident (Mission 8) – Some boats not having collision boxes, allowing the zodiac to pass through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (Mission 9) – Crew of the HMS sometimes getting stuck, preventing the player from finishing the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (Mission 9) – Mission objective sometimes not updating correctly after destroying the naval gun, preventing the player from finishing the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (Mission 9) – New soldiers arriving after incoming ship cutscene not getting displayed on minimap until saving & loading once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (Mission 9) – Upper floor of an office building still getting displayed when it should not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (Mission 9) – The open gate and the crashed ship not being visible on minimap after the incoming ship cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (Mission 9) – A wall not being displayed as destroyed after the incoming ship cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Harbinger (Mission 10) – Hangar roof not disappearing automatically when approaching a specific side entrance door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Reunite (Mission 11) – Some upper-floor items flickering when moving up and down stairs in quick succession.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Reunite (Mission 11) – Fixed the displayed floor changing not always working correctly in one of the buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Wave Breaker (Mission 12) – Fixed a crane environmental kill raising alarm level which environmental kills should never do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Guardian (Mission 13) – Officer Felter sometimes moving upstairs onto the tribune before the rigged ammo test was triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Reckoning (Mission 14) – Mission Accomplished Screen displaying “Next mission” button even though it is the last mission of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "4) Multiplayer Fixes",
+     "items": [
+      {
+       "text": "Fixed: Multiplayer – Joining player not able to drive vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiplayer – For joining players, some view cones not automatically displaying upon being detected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiplayer – Some interactables requiring multiple clicks to activate for the joining player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiplayer – For joining player the host player carrying body looking misaligned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiplayer – Saving & loading while having the whistle selected leading to whistle noise range being stuck on screen when deselecting whistle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "5) UI/Settings Fixes",
+     "items": [
+      {
+       "text": "Fixed: Small gaps between UI elements allowing accidental clicks on the environment when trying to interact with the UI. These gaps do not allow accidental clicks anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Stationary guns (like MGs) sometimes not displaying a ranged indicator anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Credits not rolling after finishing the final mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Scroll bar sometimes missing in the Collectibles screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Mission Accomplished Screen – Completion time not calculating correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: View cone marker continuously overlapping with view cone of enemy can lead to white striped enemy view cone line disappearing until the view cone marker is placed again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: View cone marker breaking after saving & loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Alarm UI sometimes getting greyed out in the middle of an alarm when it should stay active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Minimap being active during intro cutscene leading to the starting camera being mispositioned after the cutscene if the player accidently clicked on minimap while skipping the cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Harpoon icon sometimes disappearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some players not being able to activate DLSS because the game does not register DLSS as activated when hitting apply.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "6) Other Fixes",
+     "items": [
+      {
+       "text": "Fixed: Killed enemies falling onto objectives reacting with rag dolling (convulsions), when they should not move at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some sound effects fading out too harshly when zooming out and others still being audible from too far away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Sound effect when the Green Beret’s sound decoy (radio) gets kicked being too quiet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some items getting stuck under movable objects like vehicles or certain environmental kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Several issues where items could glitch under the environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A very rare issue that made the bear trap disappear after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: An edge case breaking the sound decoy for the rest of the mission upon loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The marine being able to shoot his harpoon through walls when crawling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: An edge case where an enemy did not find a Commando when searching the hiding location with the Commando in it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: An edge case where enemies kept on shooting on empty hiding locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Patrol leaders sometimes keeping on searching when the other members of the patrol already moved back to their regular behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Knocked out enemies sometimes sliding back to their original position upon loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemy view cones sometimes being able to pass through the sides of certain closed doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A few inconsistencies with view cones, for example, a fence blocking the view cone when it should not or vice versa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Sapper sometimes getting stuck when dragging a body and encountering differences in height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Knocked-out enemies who get revived sometimes not resuming their regular behavior and remaining at the position where they got revived.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "7) Platform/Input Specific Fixes",
+     "items": [
+      {
+       "text": "(PC) Fixed: Tooltips not disappearing reliably when hovering over buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Fixed: Timer since last save not having a tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Fixed: Trees sometimes changing textures unexpectantly when scrolling over the map.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Fixed: Several issues with the “Commandos Classic” keyboard and mouse control scheme.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Fixed: DLSS option getting greyed out when trying to activate it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(WinStore + Controller) Fixed: Savegames getting deleted when saving and exiting the game with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Consoles) Fixed: Operation Wave Breaker (12) – Trees and rocks sometimes changing textures in cutscenes when playing in performance graphics mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Consoles) Fixed: Explosion visual effects like an exploding barrel sometimes not being displayed in performance graphics mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Controller) Fixed: First Aid Kit ability UI hint being out of bounds when selecting the ability and approaching an injured Commando.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Controller) Fixed: Mission Failed Screen – Savegames not being selected in the right order when scrolling down the list, making only some save games selectable from this screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Controller) Fixed: Command Mode – Picking up items like the harpoon with the command mode ghost could lead to items disappearing from the map. The ghost is no longer able to pick up items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Controller) Fixed: Closing tutorial windows sometimes also changing stance of Commando.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "8) Localization Fixes",
+     "items": [
+      {
+       "text": "Fixed: Arabic – Name of person currently speaking not on the right side of the sentence in the subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: French – Some voice lines playing in English when language setting is French.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Changed the falsely displayed age of the Green Beret and the Sniper to 31.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: FPS Limit setting not having a description in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some typos in various languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 77,
+    "balance": 3,
+    "other": 6,
+    "ps5": 1,
+    "topNew": [
+     "1) Additions/Adjustments",
+     "2) Crash Fixes",
+     "3) Mission-Specific Fixes"
+    ]
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1799817379595425"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-19T12:24:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.761Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-19T12:24:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:38:29.277Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-19T12:24:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.277Z"
+  },
+  {
+   "id": "commandos-origins-255936@1.1",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-16T16:07:02.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Update 1.1",
+     "items": [
+      {
+       "text": "Commandos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released Update 1.1 on all available platforms which includes various fixes for reported game and performance issues and crashes as well as some implemented feedback like a decreased size of the displayed version number.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more details, please check out the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1) Performance Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where Pine trees had a significant performance impact. Maps with many pine trees like Operation Blindfold will now have improved performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Big FPS drop in the mission accomplished cutscene of Operation Cleaver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "2) Crash Fixes",
+     "items": [
+      {
+       "text": "Fixed: A crash related to the frequent use of the Marine’s abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Rare Crash related to using command mode with multiple Commandos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Several other rare crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "3) Achievement Fixes",
+     "items": [
+      {
+       "text": "Fixed: Achievement “If The World Were A Village” not unlocking because it is not possible to trigger global alarms in Operation Daybreak. Operation Daybreak does no longer count for this achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Achievement “Knock them out with kindness” not unlocking because of the mandatory kill of the enemy sniper in Operation Nightfall. This kill does not count for the achievement anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Achievement “Shadow Tactics” not unlocking after completing Operation Reckoning without raising an alarm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "4) Mission-Specific Fixes",
+     "items": [
+      {
+       "text": "Fixed: Operation Daybreak (1) - Glitching into an otherwise inaccessible house when carrying an enemy’s body to close to a specific wall and interacting with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Daybreak (1) - Enemies sometimes detecting and shooting Commandos through walls in the last part of the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Falchion (2) - Commando and dead body getting teleported outside of a small building when closing door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Falchion (2) – An issue with the hitbox of a door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Nightfall (3) - Stationary gun tutorial not displaying button prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Cleaver (4) - Rare crash when triggering the outro cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Cleaver (4) - A door inside of the supply shipment warehouse that should be a ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Cleaver (4) - A specific soldier could sometimes get stuck after a conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Rapture (5) - A disappearing house floor texture after fully zooming out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Rapture (5) - Fixed lighthouse lights turning on again after loading when turned off before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Blindfold (6) - Fixed some textures not loading correctly during Airstrike cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Magpie (7) – Destroying stationary machine guns with remote explosives not counting as “sabotaged” for the objective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Trident (8) - Certain zodiac positioning allowing Commandos to jump on a pier that should be inaccessible because of railings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (9) - Not possible to use Zodiac on some of the wooden piers where you would expect it to be possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (9) - One of the pipes sometimes not being interactable, preventing an environmental kill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Aries (9) - Opened harbor gate rarely displaying holes instead of the correct asset after opening it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Guardian (13) - “Mission failed” screen getting displayed after mission completed cutscene played if Commandos get spotted and killed in infiltration zone after cutscene started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Operation Guardian (13) - “Use the Spy to schedule a test firing” task not disappearing when destroying the artillery piece manually, allowing the artillery piece to get destroyed twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "5) UI/Settings Fixes",
+     "items": [
+      {
+       "text": "Fixed: Mission Accomplished Screen - Display of wrong Commmandos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Mission Accomplished Screen - “Completion time” not calculated correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Mission Accomplished Screen – Map statistics not getting tracked correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Settings - Hud Scale option showing more than 100%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Settings - “Display control hints” not hiding all control hints when set to “off”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Settings - Portraits looking blurry when VFX graphics option is set to “low”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Settings - Options for “Display Indicators” being switched around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "6) Additions/Adjustments",
+     "items": [
+      {
+       "text": "Adjusted: Decreased the size of the displayed version number in the bottom right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added: Added some new enemy grunts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[PC only] Added: FPS Limit setting with the default value being set to 60 FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "7) Multiplayer Fixes",
+     "items": [
+      {
+       "text": "Fixed: Multiplayer – The joining player was not able to use pistol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiplayer - Saving while the joining player picks up an enemy could lead to the joining player not being able to pick up the body anymore after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiplayer - Lights not always working for the joining player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiplayer – Rare issue where the Zodiac was not always moving for the joining player when the host moves it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Splitscreen - Fixed a specific combination of inputs leading to the mouse input getting blocked completely.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "8) Localization Fixes",
+     "items": [
+      {
+       "text": "Fixed: Differences between spoken voice lines and displayed subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Displayed names above Commandos not localized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Adjusting language not always switching the language of the new game cutscene at first try.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some subtitles not localized in any other language, always being displayed in English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some Korean, Simplified Chinese and Traditional Chinese strings with better translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Japanese localization - Adjusted some text being out of bounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "9) Platform/Input Specific Fixes",
+     "items": [
+      {
+       "text": "Fixed: Unclear display of available actions when there are multiple actions possible in a small area of the map near a stationary gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Sometimes unable to enter Zodiac with group selected Commandos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Commando information tooltips getting displayed behind portraits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "10) Other Fixes",
+     "items": [
+      {
+       "text": "Fixed: Highlight mode not automatically getting toggled off anymore after specified time if “Highlight Mode Manual Toggle” was not set.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemies sometimes firing at hiding locations with Commandos in them before searching them first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Commandos sometimes disappear after loading if saved while entering a vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: AI returning to normal behavior upon loading a save game when they were still agitated when the save was created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemies on different floors sometimes getting displayed as if on the same floor when they are not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Commandos sometimes starting to float in the air while on poles when saving and loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Movement orders sometimes not selecting the shortest way, resulting in unreasonable path choices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Overhead icons reappearing after cutscene when “Hide Icons” option is set to “on”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Explosions unable to destroy machine guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Movement line getting displayed during cutscene if movement was triggered via command mode at the same time as the start of the cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A misplaced texture on a stone pedestal in a cutscene in Operation Guardian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Footprints sometimes being visible to enemies in the striped (far) section of their view cones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Stationary machine gun sometimes not doing damage to enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Melee attacking from a hiding location sometimes makes the Commando leave the hiding location completely first before engaging the enemy, giving the enemy time to react to the attack when he should have none.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemy snipers sometimes calling an alarm just because of seeing footprints, which should not happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Sapper’s bear trap getting stuck on metal staircases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some shadows cutting off view cones when they should not, leading to view cones with weird gaps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Commandos pathfinding near stationary guns not always choosing the direct path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Improved aiming accuracy with a PAK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Improved aiming accuracy with FLAK 88.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Missing details of the damaged state of stationary guns and some vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Allied characters having a red dot on the minimap as if they were the enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Mouse cursor misalignment on certain surfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed: Cleaned up some occurrences of view cones getting displayed where they should not, for example because there are assets in the way, blocking the view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some instances where the objective marker would be displayed after the objective was already completed when loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemy clerks sometimes searching a hiding location from too far away instead of walking close to it first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Rare instances of enemies carrying two rifles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Controllers falsely vibrating during certain cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Commandos sometimes moving on their own after loading when playing with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 74,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1797185861610407"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-16T16:07:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.760Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-16T16:07:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.760Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-16T16:07:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:44.785Z"
+  },
+  {
+   "id": "commandos-origins-255936@2",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-10T15:13:27.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins - Minor Hotfix #2",
+     "items": [
+      {
+       "text": "We just released a hotfix on Steam with fixes for a misaligned cursor and several crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a misaligned cursor issue related to the chosen game border settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash in multiplayer related to saving + loading while in range of an active sound decoy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several other rare crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1796631172248653"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-10T15:13:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-10T15:13:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.759Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-10T15:13:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:44.783Z"
+  },
+  {
+   "id": "commandos-origins-255936@hotfix-2025-04-09",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Missing Sound Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-09T17:17:30.000Z",
+   "notes": [
+    {
+     "title": "Missing Sound Hotfix",
+     "items": [
+      {
+       "text": "We just released a hotfix on Steam that fixes an issue where sound was missing for some players. Other platforms will follow as soon as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Removed \"Audio Output Device\" in-game option, to avoid conflicts with the preferred audio output device selected in the Windows settings. This conflict led to some players sometimes losing audio upon entering a mission or loading a savegame. The game will now refer to the Windows settings for choosing the audio output device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/1796551539192646"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-09T17:17:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:44.783Z"
+  },
+  {
+   "id": "commandos-origins-255936@major-2024-10-15",
+   "gameId": "commandos-origins-255936",
+   "displayName": "Commandos: Origins Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-15T16:22:47.000Z",
+   "notes": [
+    {
+     "title": "Commandos: Origins Demo Update",
+     "items": [
+      {
+       "text": "Commandos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released a small update for the Commandos: Origins demo, that addresses some feedback and bug reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have fixed an issue where key bindings were reset after loading a save game. Additionally, we've made several improvements, including simplifying the barrel-shooting mechanic, which no longer requires holding Ctrl.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can find the full list of changes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Adjusted explosive barrel shooting mechanic and tutorial hint.: Like enemies, barrels can now be shot with a simple click, holding down the key is no longer required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted picking up of sound decoy and tutorial hint.: Picking up sound decoy now works like picking up any other item by holding down the key and clicking .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added chain pick up tutorial hint.: Added a new tutorial hint explaining that you can hold down key while ordering a melee attack to have the Commando pick up the body automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added quicksave/quickload button tutorial hint.: Added tutorial hint that explains that you can quicksave with F5 and quickload with F8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug-Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that reset hit points to 3 after loading with 1 hit point left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed custom key bindings resetting after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash related to clicking “Default” and “Reset” buttons in the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed demo unrelated files from the folder structure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 4,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1479730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1479730/view/6211118320241993462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-15T16:22:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1479730",
+      "checkedAt": "2026-11-13T03:17:40.757Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:44.778Z"
+  }
+ ],
+ "issues": []
+}

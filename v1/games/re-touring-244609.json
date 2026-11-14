@@ -1,0 +1,556 @@
+{
+ "game": {
+  "id": "re-touring-244609",
+  "igdbId": 244609,
+  "name": "Re:Touring",
+  "cover": {
+   "imageId": "co6mcv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6mcv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar29e0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar29e0.jpg"
+  },
+  "ps5Release": "2024-03-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "re-touring-244609@25.3.1719156233",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 25.3.1719156233",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-19T23:07:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "* Added Czech localization (thanks to siSINka)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed a bug that caused the BGM to stop playing in rare cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/1794102528283031"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-19T23:07:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.305Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-19T23:07:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.305Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-19T23:07:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.927Z"
+  },
+  {
+   "id": "re-touring-244609@24.3.1225625600",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 24.3.1225625600",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-28T19:57:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Japanese localization (thanks to Hiroshi Ashida)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5749481331437986305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-28T19:57:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.926Z"
+  },
+  {
+   "id": "re-touring-244609@23.7.919576007",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 23.7.919576007",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-03T19:57:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Moved letter closer to the camera when inspecting to improve readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now also rotate objects with left analog stick when inspecting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default look sensibility for controllers increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased size of crosshair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Now drops inspected objects when pausing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5124582150146379728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-03T19:57:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.926Z"
+  },
+  {
+   "id": "re-touring-244609@23.6.889949124",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 23.6.889949124",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-06-06T10:09:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Possibly fixed an issue where the \"Acquired Taste\" achievement did not unlock when the can was dispensed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5151601211243836626"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-06T10:09:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.925Z"
+  },
+  {
+   "id": "re-touring-244609@23.5.860217023",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 23.5.860217023",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-08T16:17:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Machines will no longer apply the state of a rule when the rule causes the machine to stop as a result of invalid pointer movement. That's not really a gameplay change rather that a visual enhancement since machines sometimes showed the wrong state after they stopped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5138087875094514648"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-08T16:17:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.925Z"
+  },
+  {
+   "id": "re-touring-244609@23.5.857768809",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 23.5.857768809",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-06T20:58:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adds the possibility to reset the cube in level 20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A happy tune is now playing when solving the sakura machine in level 22",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5138087875087939315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-06T20:58:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.925Z"
+  },
+  {
+   "id": "re-touring-244609@23.5.855103755",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 23.5.855103755",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-02T20:47:13.000Z",
+   "notes": [
+    {
+     "title": "23.5.855103755: Memorize Machine",
+     "items": [
+      {
+       "text": "The state of the machine can now also be memorized like solution panels and other elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This does not apply to the very first machine of the game to not overwhelm players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5133583642670486149"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-02T20:47:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.924Z"
+  },
+  {
+   "id": "re-touring-244609@23.4.852626580",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 23.4.852626580",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-29T07:59:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Simplified level 22.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5133583642657609608"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-29T07:59:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.302Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.924Z"
+  },
+  {
+   "id": "re-touring-244609@23.4.852393156",
+   "gameId": "re-touring-244609",
+   "displayName": "Update 23.4.852393156",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-28T20:16:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added level numbers to level selection screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Level 17) Platform progress indicators now actually indicate the platform progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2318920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2318920/view/5133583642655830334"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-28T20:16:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2318920",
+      "checkedAt": "2026-11-13T03:28:55.302Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:35.923Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,564 @@
+{
+ "game": {
+  "id": "the-legend-of-heroes-trails-of-cold-steel-iv-78115",
+  "igdbId": 78115,
+  "name": "The Legend of Heroes: Trails of Cold Steel IV",
+  "cover": {
+   "imageId": "co31wc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co31wc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arcw3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arcw3.jpg"
+  },
+  "ps5Release": "2024-02-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iv-78115@1.2.2",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iv-78115",
+   "displayName": "Patch 1.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-09T16:52:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a patch for Trails of Cold Steel IV which improves how the game interacts with platform achievement APIs. This should prevent performance issues in some circumstances, specifically when a large number of achievements was already unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that this issue surfaced due to changes in how Steam deals with repeated achievement API calls, and this change affects many of our prior releases in similar ways. We are committed to patching all affected releases, but this has taken some time, especially for cases where we need to re-build games for which we already archived various development resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1198090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1198090/view/1785321795739469"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:52:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1198090",
+      "checkedAt": "2026-11-13T03:33:34.662Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:52:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1198090",
+      "checkedAt": "2026-11-13T03:33:34.662Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-09T16:52:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.482Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iv-78115@1.2.1",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iv-78115",
+   "displayName": "Patch 1.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-11T14:07:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a while, but we are providing a new update to Trails of Cold Steel IV today. This is primarily in response to some relatively recent changes in behaviour on a subset of systems with AMD GPUs, but we also sneaked in a few more fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix potential text-rendering-related performance issues which could occur on AMD GPU hardware on some systems.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix voice timings when using the \"Resume from the latest save\" option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent loading a save that contains unavailable DLCs, as that could cause the game to crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a few minor remaining translation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the rendering of godrays when running the game without ambient occlusion or with HBAO+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While we expect this patch to improve the situations for all users, with the great variety of hardware and software configurations available on PC this is not always guaranteed in all circumstances. As such, you can return to previous versions of the game by selecting the any of the public \"version_*\" branches on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1198090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1198090/view/5589599109276293257"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-11T14:07:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1198090",
+      "checkedAt": "2026-11-13T03:33:34.661Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.481Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iv-78115@1.2",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iv-78115",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-17T17:35:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we have fixed some reported bugs and also introduced two new features requested by fans. Here is a list of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a potential crash issue in very specific situations with some combinations of camera angles and field of view options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some more minor translation and typography issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Feature Add an option to disable the motion blur effect while running",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Feature Add the ability to select a specific target refresh rate in the launcher, instead of always defaulting to the highest available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improve crash dump generation to enable us to provide better support; crash dumps are stored in the windows temporary files folder (\"%TEMP%/ToCS4\") so as not to permanently occupy storage space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: If you still see intermittent stuttering issues on systems with generally good performance, they might be shader cache related. Please look here for instructions on how to resolve them.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "While we expect this patch to improve the situations for all users, with the great variety of hardware and software configurations available on PC this is not always guaranteed in all circumstances. As such, you can return to previous versions of the game by selecting the any of the public \"version_*\" branches on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1198090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1198090/view/4570566564999739850"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-17T17:35:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1198090",
+      "checkedAt": "2026-11-13T03:33:34.661Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.480Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iv-78115@1.1.1",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iv-78115",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-12T18:57:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "while it is great to hear that yesterday's 1.1 patch improved the game experience for a lot of people, it also introduced an audio regression for some. Also, the feature to disable dynamic button prompts was not fully working as expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This version 1.1.1 Hotfix should resolve these issues. Here is a list of changes since 1.1:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rewrite audio backend processing to eliminate artifacts and further improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix the \"disable dynamic button prompt\" feature not actually solving the performance issues it was designed to solve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note: If you still see intermittent stuttering issues on systems with generally good performance, they might be shader cache related. Please look here for instructions on how to resolve them.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "While we expect this patch to improve the situations for all users, with the great variety of hardware and software configurations available on PC this is not always guaranteed in all circumstances (as we saw with 1.1). As such, you can return to the release version of the game by selecting the public \"version_102\" branch in Steam, and to 1.1 by selecting the \"version_110\" branch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1198090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1198090/view/4117954073014223582"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-12T18:57:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1198090",
+      "checkedAt": "2026-11-13T03:33:34.660Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.479Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iv-78115@1.1",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iv-78115",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-11T19:53:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully you are enjoying Trails of Cold Steel IV!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have created a new version which fixes various issues pointed out by the community. Here is a list of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce the CPU usage of several threads, particularly in audio playback. These changes can greatly reduce overall CPU usage in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introduce additional caching to decrease load times, especially when revisiting previous maps and after battles. This will be particularly effective for longer play sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix save game thumbnails sporadically not showing up under specific circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjust overall loading behavior to be closer to Trails of Cold Steel 3, in order to mitigate issues on some systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent the game from taking abnormally long to close on some systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make left joystick and WASD (or alternative mapping) behavior consistent across all menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix button re-mapping involving X and O buttons along with displayed button prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some remaining minor translation issues in game and launcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Feature Add configuration tool option to disable dynamic button prompt switching (primarily for Steam Controller users)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Note: If you still see intermittent stuttering issues on systems with generally good performance, they might be shader cache related. Please look here for instructions on how to resolve them.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "While we expect this patch to improve the situations for all users, with the great variety of hardware and software configurations available on PC this is not always guaranteed in all circumstances. As such, you can return to the release version of the game by selecting the public \"version_102\" branch in Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1198090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1198090/view/4117954073010728429"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-11T19:53:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1198090",
+      "checkedAt": "2026-11-13T03:33:34.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.479Z"
+  }
+ ],
+ "issues": []
+}

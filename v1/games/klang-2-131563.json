@@ -1,0 +1,414 @@
+{
+ "game": {
+  "id": "klang-2-131563",
+  "igdbId": 131563,
+  "name": "Klang 2",
+  "cover": {
+   "imageId": "co3wdy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3wdy.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arshk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arshk.jpg"
+  },
+  "ps5Release": "2021-11-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "klang-2-131563@post-2023-08-26",
+   "gameId": "klang-2-131563",
+   "displayName": "Applied a change meant to fix a softlock in the demo.",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-26T09:54:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "There was an issue in the demo where the game could permanently softlock itself on the scoreboard screen if the level finished with very specific percentages. I already uploaded the patch for the demo, and am applying the same fix for the full game just in case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1111600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1111600/view/5141475722333893994"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-26T09:54:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.631Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-26T09:54:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.632Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-26T09:54:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:23.836Z"
+  },
+  {
+   "id": "klang-2-131563@post-2023-07-19",
+   "gameId": "klang-2-131563",
+   "displayName": "It should now be much easier to \"game capture\" Klang footage with OBS.",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-19T13:42:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As the title says. OBS should now have an easier time finding the game window for better recordings. Steam integration \"might\" be improved too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1111600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1111600/view/5124584051966225167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-19T13:42:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.631Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-19T13:42:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.631Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-19T13:42:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:23.836Z"
+  },
+  {
+   "id": "klang-2-131563@post-2022-03-08",
+   "gameId": "klang-2-131563",
+   "displayName": "Further enhancements for cloud save functionality!",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-03-08T20:43:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where the save file would increase in size over time, causing potential problems with cloud saving size limits (Engine bug, I swear!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The save file system has now been reworked to make a custom file designed for cloud saving. Detected legacy save files will automatically be converted into the new format. The transition to the new version should be seamless. Don't hesitate to reach out if you encounter further problems regarding saving files!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tinimations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1111600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1111600/view/4247462367449810313"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-08T20:43:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.630Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-08T20:43:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.631Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-08T20:43:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:23.835Z"
+  },
+  {
+   "id": "klang-2-131563@post-2022-03-07",
+   "gameId": "klang-2-131563",
+   "displayName": "Klang 2 - Cloud saving enabled!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-03-07T10:12:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Klang 2 should now support cloud saves. Crossing fingers it works well!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tinimations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1111600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1111600/view/4247462367444571400"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-07T10:12:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.630Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-07T10:12:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.630Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-07T10:12:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:23.835Z"
+  },
+  {
+   "id": "klang-2-131563@post-2021-11-01",
+   "gameId": "klang-2-131563",
+   "displayName": "Fixed a bug where dying at the very end of a level could crash the game.",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-01T12:13:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dying on the last couple of beats on a track could cause a very uncomfortable surge of very loud noise before crashing. This has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I must express my gratitude to the discord community, which not only found the bug but documented it in great detail as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1111600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1111600/view/4186652357038464450"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-01T12:13:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1111600",
+      "checkedAt": "2026-11-13T03:24:15.629Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:23.834Z"
+  }
+ ],
+ "issues": []
+}

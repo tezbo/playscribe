@@ -1,0 +1,2829 @@
+{
+ "game": {
+  "id": "sclash-143935",
+  "igdbId": 143935,
+  "name": "Sclash",
+  "cover": {
+   "imageId": "co40v4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co40v4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arkjd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arkjd.jpg"
+  },
+  "ps5Release": "2023-08-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sclash-143935@1.1.65",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.65",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-03T10:02:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The previous version of Unity we were using contained an exploitable breach for hackers to use the built app to be granted permissions. No evidence of it being used, but we encourage you to update the game to be sure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/1815034432997040"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-03T10:02:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.656Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-03T10:02:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.656Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-03T10:02:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.394Z"
+  },
+  {
+   "id": "sclash-143935@1.1.64",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.64",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-21T16:23:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As many of you requested it, online achievements now work in local duel mode. The servers can be a bit janky to say the least, so it should secure those achievements for you, completionists!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/1811138915494182"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-21T16:23:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.656Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-21T16:23:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.656Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-21T16:23:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.394Z"
+  },
+  {
+   "id": "sclash-143935@1.1.63",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.63",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-07-18T09:04:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "​Mostly fixes of bugs you reported!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed double tap dash not working online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when rebinding player 2 left dash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed video settings menu soft lock in story mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Discord invitation text in the online menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5969041959964162159"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-18T09:04:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.655Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-18T09:04:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.655Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-18T09:04:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.393Z"
+  },
+  {
+   "id": "sclash-143935@1.1.61",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.61",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-26T08:54:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Because of a few bugs, only temporary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5842939267305246214"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-26T08:54:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.655Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-26T08:54:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.655Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-26T08:54:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.392Z"
+  },
+  {
+   "id": "sclash-143935@1.1.62",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.62",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-18T15:18:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Various little fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online menu now remembers your region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Korean language (community translation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/6890025005367463206"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-18T15:18:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.655Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-18T15:18:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.655Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-18T15:18:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.391Z"
+  },
+  {
+   "id": "sclash-143935@1.1.59",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.59",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-15T10:43:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some of you have found some bugs with the player 2 rebinds, so we fixed them. Our bad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/7309977427438122082"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-15T10:43:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.654Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-15T10:43:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.654Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-15T10:43:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.390Z"
+  },
+  {
+   "id": "sclash-143935@1.1.58",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.58",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-29T19:36:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player 2 controller fixes for some inputs not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted parry kanas text to be more accurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hopefully fixed region selection problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5688680204371113116"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-29T19:36:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.654Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-29T19:36:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.654Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-29T19:36:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.389Z"
+  },
+  {
+   "id": "sclash-143935@1.1.57",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.57",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-20T01:23:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "You can now rebind to the mouse buttons",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/8033928544508911277"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-20T01:23:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.653Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-20T01:23:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.653Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-20T01:23:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.389Z"
+  },
+  {
+   "id": "sclash-143935@1.1.56",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.56",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-19T10:56:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The awaited \"next update\" is here with rebind functionality & more! Have a look",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CHANGES & ADDITIONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "REBINDS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Halved the chances of weather effects in the relevant stages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to disable weather effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a notification sound when someone joins an online room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set the thunder in Chapter 5 and Night Battlefield to be in the FX audio group so that the audio settings actually affect them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to turn off the camera shake: BALANCING",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sped up Izanagi perfect parry anim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Izanagi's charged attack range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Buffed Izanagi's attacks frame data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Buffed Susanoo's kick range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted how the pommel strike hitbox is calculated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased a bit Izanagi's pommel range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased a very tiny tad Masked Ronin's pommel range: BUG FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the fact that no matter what only the bridge would load on startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a sync issue for the stages in online mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing characters in Japanese text and changed its font weight for better readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the display of different languages in the Story mode menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made perfect parry achievement a bit easier to get",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed scarf & hair staying on stage in online mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled some cheats in online mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a typo in \"Fox Katana\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Platinum\" achievement not triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed settings menu not responding in Chapter 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed MaskedRonin story attack frame data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Izanagi attack animation active frame data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made \"Complete fighter\" achievement slightly easier to get, player can fail to meet one action requirement and still get it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the garden environment not loading in Chapter 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some missing localized texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed story Masked Ronin getting stuck in knocked-back animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 6,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/8033928544506716035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-19T10:56:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.653Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-19T10:56:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.653Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-19T10:56:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.388Z"
+  },
+  {
+   "id": "sclash-143935@1.1.54",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.54",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-02T19:15:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Tried fixing i-frames and their display in transparency online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted attack ping compensation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted clash detection online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Set pommel strike to automatically turn towards the opponent because there is 0 context in which this wouldn't make sense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5395937983669274861"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-02T19:15:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.651Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-02T19:15:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.651Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-02T19:15:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.135Z"
+  },
+  {
+   "id": "sclash-143935@1.1.53",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.53",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-02T04:07:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjusted Ronin's attack anims for online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tried fixing the lobbies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various online fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed \"festive\" success",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5395937983666977123"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-02T04:07:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.651Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-02T04:07:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.652Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-02T04:07:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.135Z"
+  },
+  {
+   "id": "sclash-143935@1.1.52",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.52",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-01T03:33:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changed attack netcode to improve parry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed parry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clash animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5395937983663243772"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-01T03:33:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.651Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-01T03:33:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.651Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-01T03:33:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.134Z"
+  },
+  {
+   "id": "sclash-143935@1.1.51",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.51",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-30T09:48:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed parry in online mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pommel strike in online mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some online lobby problems (not all)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Restart button not working in story mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5395937983660548429"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T09:48:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.650Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T09:48:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.650Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-30T09:48:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.134Z"
+  },
+  {
+   "id": "sclash-143935@1.1.5",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-27T09:39:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Following the feedback from the community we made a final balancing update to adjust what was needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reverted Jinmu's range to a more acceptable state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 1 frame of startup delay to every attack of Jinmu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased a bit the startup of Jinmu's pommel strike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reverted Stamina Break to affect 2 stamina bars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5382426458991117380"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-27T09:39:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.650Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-27T09:39:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.650Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-27T09:39:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.133Z"
+  },
+  {
+   "id": "sclash-143935@1.1.44",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.44",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-25T22:53:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, before bug fixes for the online mode and an upcoming tournament we wanted to update a bit of the game's balancing after the community's feedback and our feelings about the characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IZANAGI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased attack range a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased parry recovery speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made stomp anim faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased a bit stomp range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sped up a bit Perfect Parry anim: SUSANOO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased a bit invulnerability duration on dashes. i-frames also start earlier now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sped up a bit kick anim startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sped up a bit attack animations: JINMU",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed i-frames on his neutral attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced a bit light attack range: MASKED RONIN",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased a bit pommel strike range: OTHER STUFF",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed parry stamina recovery to be 3 bars instead of 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed stamina break to be 1 bar instead of 2: Hopefully, these will make the game feel more balanced and all options worth it. Let us know your thoughts when playing this new version, thanks !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 6,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5382426458985882932"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-25T22:53:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.649Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-25T22:53:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.649Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-25T22:53:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.133Z"
+  },
+  {
+   "id": "sclash-143935@1.1.43",
+   "gameId": "sclash-143935",
+   "displayName": "Hotfix 1.1.43",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-17T12:17:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed \"Not even a scratch\" achievement no triggering in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/6560117310267660221"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-17T12:17:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.649Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-17T12:17:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.649Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-17T12:17:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.132Z"
+  },
+  {
+   "id": "sclash-143935@1.1.42",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.42",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-14T08:46:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Pixel DLC detection for Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a tip that was wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tried a fix for the screen size and resolution for different screen configurations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5302486388015632869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-14T08:46:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.648Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-14T08:46:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.648Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-14T08:46:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.131Z"
+  },
+  {
+   "id": "sclash-143935@post-2023-11-07",
+   "gameId": "sclash-143935",
+   "displayName": "Online open beta 1 day before the release",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-07T12:00:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are opening the online mode one day early to collect eventual feedback on last minute bugs that maybe happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5288974951224566753"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-07T12:00:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.647Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-07T17:15:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.648Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-07T17:15:24.000Z"
+     }
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:30:00.648Z"
+  },
+  {
+   "id": "sclash-143935@post-2023-10-02",
+   "gameId": "sclash-143935",
+   "displayName": "Disabled public online mode access",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-02T12:51:00.000Z",
+   "notes": [],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5220291886501584566"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-02T12:51:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.647Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-02T12:51:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.647Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-02T12:51:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.128Z"
+  },
+  {
+   "id": "sclash-143935@1.1.33",
+   "gameId": "sclash-143935",
+   "displayName": "Hotfix 1.1.33",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-26T17:50:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Made region selector controller-friendly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5219165352642671000"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-26T17:50:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.646Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-26T17:50:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.646Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-26T17:50:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.127Z"
+  },
+  {
+   "id": "sclash-143935@1.1.31",
+   "gameId": "sclash-143935",
+   "displayName": "Hotfix 1.1.31",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-25T19:09:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added the beta mention to the online mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5219165352639225990"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T19:09:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.646Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T19:09:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.646Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-25T19:09:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.127Z"
+  },
+  {
+   "id": "sclash-143935@post-2023-09-25",
+   "gameId": "sclash-143935",
+   "displayName": "Released online mode for one week for test purposes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-25T15:49:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Released online mode for one week for test purposes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5219165352638719801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T15:49:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.646Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T15:49:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.646Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-25T15:49:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.126Z"
+  },
+  {
+   "id": "sclash-143935@1.1.1",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-23T16:19:30.000Z",
+   "notes": [
+    {
+     "title": "SAVE FILE CORRUPTED BUG ",
+     "items": [
+      {
+       "text": "Fixed! The game was not recognizing Chapter 5 save files because of some last-minute changes. The good news is that the save file is not deleted, unless you overwrote it by starting a new game you should be able to continue your playthrough normally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "OTHER STUFF ",
+     "items": [
+      {
+       "text": "Enforced 16:9 aspect ratio for wide screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set Akiko to not be here in Zen mode in Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted firewall distance for Ryuujin checkpoint in Chapter 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the speed of the Firewall visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlocked story achievements that did not trigger for some people, now if you completed the story mode you should have them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated credits to put some names that were missing from them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed active frames of Masked Ronin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added text indicator below the modes' names in the story menu to tell the player they will overwrite their current save file if they have one.: Thanks, everyone, for reporting bugs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5141475722323934090"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-23T16:19:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.645Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-23T16:19:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.645Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-23T16:19:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.125Z"
+  },
+  {
+   "id": "sclash-143935@major-2023-08-11",
+   "gameId": "sclash-143935",
+   "displayName": "Glitch DLC detection",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-11T18:34:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Glitch DLC should now work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5839532486215263841"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-11T18:34:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.644Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-11T18:34:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.644Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-11T18:34:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.124Z"
+  },
+  {
+   "id": "sclash-143935@1.0.8",
+   "gameId": "sclash-143935",
+   "displayName": "Update 1.0.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-10T14:32:14.000Z",
+   "notes": [
+    {
+     "title": "New quick update to fix various issues",
+     "items": [
+      {
+       "text": "Fixed archive texts & names that were not displaying properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some achievements' French text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed end of chapter 1 for relax mode not triggering the right cutscene. Also disabled Akiko at the end of Relax mode chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed End of your journey achievement not triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that made fully charged attacks not sound special",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5839532486211006715"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T14:32:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.644Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T14:32:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.644Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-10T14:32:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.124Z"
+  },
+  {
+   "id": "sclash-143935@1.0.7",
+   "gameId": "sclash-143935",
+   "displayName": "Hotfix 1.0.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-07T17:39:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there! Some quick fixes from bugs that were reported on the Discord server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a line of Jinmu in the 2ng fight against Susanoo in chapter 1 that was not appearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a short alternate ending when the player wins against Susanoo in the second fight against her in Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Capped FPS to 60 this should help with GPU load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Masked Ronin attack's lingering hitbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Glitch DLC not detected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ryuujin checkpoint's firewall distance in Chapter 4: That's all folks! 👋🏻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5124585319864447861"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-07T17:39:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.643Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-07T17:39:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.643Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-07T17:39:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.123Z"
+  },
+  {
+   "id": "sclash-143935@3.8.2",
+   "gameId": "sclash-143935",
+   "displayName": "Update 3.8.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-14T14:23:47.000Z",
+   "notes": [
+    {
+     "title": "New demo update",
+     "items": [
+      {
+       "text": "Fixed the issue that cosmetics had disappeared from the previous version, now they're back, different, new ones since we changed the system a lot and the unlockables since then.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various minor tweaks & bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked a bit the characters' frame data for balancing: That's all folks !: Enjoy the game ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Various minor tweaks & bug fixes",
+     "Tweaked a bit the characters' frame data for balancing: That's all folks !: Enjoy the game ;)"
+    ]
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/5070528810310528644"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-14T14:23:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.642Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.120Z"
+  },
+  {
+   "id": "sclash-143935@major-2022-10-07",
+   "gameId": "sclash-143935",
+   "displayName": "Community Challenge Update : Tier 3 reached",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-07T15:42:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "YOU ALREADY BEAT TIER 3 BEFORE EVEN THE WEEKEND !",
+     "items": [
+      {
+       "text": "How crazy is that? Thank you so much for the support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tier 1 : 200 wishlists : We're unlocking a brand new-hero Susanoo! Beaten on day one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tier 2 : 500 wishlists : We're adding cool cosmetics into the demo to personnalize our three heroes! Beaten before the tier 1 update...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tier 3 : 1000 wishlists : Story Mode Introduction. we unlock the beginning of the Story Mode (which is basically a tutorial), which means that you can play a part of the solo mode this week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "And you beat it !",
+     "items": [
+      {
+       "text": "Jump into the demo right now to enjoy these new contents!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please, continue to share the game, play with your friends locally or through Remote Play Together and wishlist the game, it helps us over the moon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't forget, we will also make a livestream a Q&A session on Friday 6PM CEST.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Sclash Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/4613399405944203879"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-07T15:42:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.642Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.119Z"
+  },
+  {
+   "id": "sclash-143935@major-2022-10-05",
+   "gameId": "sclash-143935",
+   "displayName": "Community Challenge Update !",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-05T16:07:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, sorry for the tech issues during our yesterday's plan livestream but...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "THANK YOU SO MUCH for reaching the first tier during the first day of Steam Next Fest!",
+     "items": [
+      {
+       "text": "We initially wanted to announce the content and objective for the tier 2 during the live, but we had another new problem...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "YOU ALREADY BEAT TIER 2 BEFORE WE EVEN ANNOUNCED IT!",
+     "items": [
+      {
+       "text": "How crazy is that? Thank you so much for the support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tier 1 : 200 wishlists : We're unlocking a brand new-hero Susanoo! Beaten on day one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tier 2 : 500 wishlists : We're adding cool cosmetics into the demo to personnalize our three heroes! Beaten before the tier 1 update...: Jump into the demo right now to enjoy these new contents!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tier 3 : 1000 wishlists : Story Mode Introduction. If this tier is beaten, we'll unlock the beginning of the Story Mode (which is basically a tutorial), which means that you can play a part of the solo mode this week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "EDIT : You've beaten Tier 3 of 1000 wishlists before the week end, thank you very much ! We are now unlocked the beginning of the story mode !",
+     "items": [
+      {
+       "text": "Please, continue to share the game, play with your friends locally or through Remote Play Together and wishlist the game, it helps us over the moon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't forget, we will also make a livestream a Q&A session on Friday 6PM CEST.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Sclash Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/4613399405936978703"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-05T16:07:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.118Z"
+  },
+  {
+   "id": "sclash-143935@3.6.2",
+   "gameId": "sclash-143935",
+   "displayName": "Update 3.6.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-04-27T15:52:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "​So just a new demo version, more optimized, bug corrections, etc... Nothing big this time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the lanterns in some stages to have an emissive material instead of a light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected some stages elements that were not behaving properly during dramatic screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected some layering issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized some scripts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/4348798430271256081"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-27T15:52:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.115Z"
+  },
+  {
+   "id": "sclash-143935@major-2021-01-04",
+   "gameId": "sclash-143935",
+   "displayName": "Christmas & slice update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-01-04T16:56:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone, we are releasing a new update for the demo of Sclash!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now enjoy a Christmas ambience in the game as long as January goes! (Sorry for the delay on this one)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can slice in half some parts of the environments!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 PLAYABLE CHARACTERS IN THE DEMO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall better looking and better optimized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1284130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1284130/view/3917534300113836790"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-04T16:56:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1284130",
+      "checkedAt": "2026-11-13T03:30:00.639Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:50.114Z"
+  }
+ ],
+ "issues": []
+}

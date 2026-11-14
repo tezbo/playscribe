@@ -1,0 +1,607 @@
+{
+ "game": {
+  "id": "caput-mortum-341136",
+  "igdbId": 341136,
+  "name": "Caput Mortum",
+  "cover": {
+   "imageId": "co9pgk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9pgk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3kt5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3kt5.jpg"
+  },
+  "ps5Release": "2025-12-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "caput-mortum-341136@1.2.2.0",
+   "gameId": "caput-mortum-341136",
+   "displayName": "Update 1.2.2.0",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-18T16:33:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This tiny patch aims to solve the loading issue some players experienced, specifically when loading back into the Tunnels. I changed how the checkpoints save the level data, so hopefully that'll fix the issue!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any weird bugs, please let us know in the forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3555980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3555980/view/1827626365750800"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-18T16:33:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.005Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-18T16:33:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.005Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-18T16:33:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:52.313Z"
+  },
+  {
+   "id": "caput-mortum-341136@1.2.1.0",
+   "gameId": "caput-mortum-341136",
+   "displayName": "Update 1.2.1.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-19T17:17:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here comes a small patch addressing a few things that were brought up to us:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a confirmation prompt in the main menu when you try to start a new game while already having a save file active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Spanish LATAM localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the number on the 7th door in the waterways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the enemy's behavior bug that would sometimes make them stand still, doing nothing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a check when picking up items to avoid related bugs when interacting and picking up things very quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Apologies if this patch took a while. We've been busy making progress on the demo for our next title, Fright Train! It's an action survival horror game, like RE4, and we think people are going to have a blast playing it. ːsteamhappyː I'll make sure to post an announcement here once the demo is live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also have a couple of Caput Mortum sticker packs left in our store, so go grab one if you like!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you, and let us know if you have questions or if you encounter any issues with the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gab,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WildArts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3555980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3555980/view/1821922921821737"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T17:17:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.004Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T17:17:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.005Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-19T17:17:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:52.312Z"
+  },
+  {
+   "id": "caput-mortum-341136@0.2.6.2",
+   "gameId": "caput-mortum-341136",
+   "displayName": "Update 0.2.6.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-11T21:11:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here are the changes in version 0.2.6.2!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Japanese has been added!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that removed player's input when timing an attack with the homunculus' dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved uncrouch detection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a display bug with the dropping item tutorial when triggered before the crouch tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Progress on the main game has been going very well and we're super excited to see people's reactions to the new areas and enemies >:) We've also made a good amount of polishing and minor bug fixes in the full version, but didn't include them in the demo since it would require a lot of unnecessary time. However, please let us know if you come face to face with a very nasty bug!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3555980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3555980/view/1804977324459643"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-11T21:11:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.004Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:52.310Z"
+  },
+  {
+   "id": "caput-mortum-341136@0.2.6.1",
+   "gameId": "caput-mortum-341136",
+   "displayName": "Update 0.2.6.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-12T00:27:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here are the changes in version 0.2.6.1!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW SETTING OPTIONS",
+     "items": [
+      {
+       "text": "If you are easily motion sick, you can now disable all camera shakes in the options menu!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The FOV can now be set from 80° to 110° in the options menu. We recommend keeping the default of 90° if you can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Moved a previously unreachable hiding spot for the homunculus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempted a fix for the rare occasion where dropping the cane in the Living Quarters would spam the notification sound effect. If you encounter this bug again, we would appreciate a detailed breakdown of how it occurred to you (control method, prior actions, hardware, etc.).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks a lot for the reviews and discussions you've all left! We are really proud of this project and we can't wait for you to experience the full thing later this summer ^u^",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "If you are easily motion sick, you can now disable all camera shakes in the options menu!",
+     "The FOV can now be set from 80° to 110° in the options menu. We recommend keeping the default of 90° if you can."
+    ]
+   },
+   "sourceIds": [
+    "steam-3555980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3555980/view/1802354289545480"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-12T00:27:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.003Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:52.308Z"
+  },
+  {
+   "id": "caput-mortum-341136@0.2.4",
+   "gameId": "caput-mortum-341136",
+   "displayName": "Update 0.2.4",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-01T19:57:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here are the changes in version 0.2.4!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the homunculus' hand game more forgiving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a caption when you're full on healing herbs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Game Over sting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New keyboard only option. Moved sheathe/unsheathe to R.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Rework of the control's code and the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks to the post-processing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a lighting issue in the Living Quarters.: I also updated the game's manual! You can download it from the store page :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3555980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3555980/view/1798454487613848"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-01T19:57:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.003Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:52.307Z"
+  },
+  {
+   "id": "caput-mortum-341136@0.2.3",
+   "gameId": "caput-mortum-341136",
+   "displayName": "Update 0.2.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-04-25T17:41:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Big thanks to the people who have shared the issues they encountered with us. If you enjoyed the demo, please write us a review on the demo page :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's what's been fixed and added in version 0.2.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled the item drop action while using a weapon or holding healing herbs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Homunculus now has more health and says, \"Copy my hand\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Homunculus now shoves the player away while giving the tutorial. Fixed a few other issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the game initialization process when resuming from a game over and/or from the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Normal doors don't play the web sound effect when attacked anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3555980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3555980/view/1797820624499968"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T17:41:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3555980",
+      "checkedAt": "2026-11-13T03:16:52.002Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:52.306Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1579 @@
+{
+ "game": {
+  "id": "order-of-the-sinking-star-381222",
+  "igdbId": 381222,
+  "name": "Order of the Sinking Star",
+  "cover": {
+   "imageId": "coc954",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc954.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6p16",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6p16.jpg"
+  },
+  "ps5Release": "2026-10-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-11-10",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Update Notes for November 10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-10T22:56:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This version revises a late game overworld screen to prevent a softlock. Due to this, you may find the gameplay objects for this screen missing, if so then just use the on-screen resetter to bring them back. It is also possible if you saved in a very specific spot on the overworld, that you may fall to your death immediately upon load. If this happens, then just undo to continue playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix that on Steam Deck if you quit the game using the \"Exit Game\" option in the Steam overlay this could lead to save file issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Fix a number of localization issues for non English languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a sign in the credits missing a line of text in Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the \"whirlpool\" voice line in the first Skipping Stones level replaying if you trigger it, undo back, then walk onto screen again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix subtitles overlapping text on a few specific signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a few incorrect messages in a few endgame levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix \"Took you some time\" dialogue triggering incorrectly in a late Beamcasters level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix not sending use_t to beam shaders, which prevented all use animations from playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug where gems in your backpack could also be in the world (Shroedinger's Gem)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cull procedurally animated entities in the overhead map view on the overworld for performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix goblin spamming attack animation when he had a hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix camera clipping through objects in the outro of a priestess level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix orthographic camera view in a late game level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix fog of war showing speckling and then not rendering when it should in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix objects around the screen's edges sometimes being missing in the overhead view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix performance drop when trying to walk off an edge when using the Priestess outfit in the overworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix mirror beams flashing across the entire screen immediately after using a mirror in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent an alternate solution to the final treasure section in Skipping Stones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent a disappointing alternate finale in Mirrors/Stones gold room level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some potential bad checkpoints on Bard+Endpoint level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add some initial roots to Trees in Druid+Water screen (you may see some erroneous roots here if you've already completed the screen)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a sequence break exploit in the second major Skipping Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix mismatch between collision and art in a Priestess/Two Warriors level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remove the programmer art 3D Hedron from end1. \"RIP 2026-2026, we barely knew ye\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implement several more pause menu backgrounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix exploits in several levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recapture level previews for some very late game levels that were never being updated due to a bad automated process",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some small holes in the art on the overworld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add a Rock to the \"checkerboard\" wall in an endgame Displacer Rod level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add 3 gem sockets to a late Beamcasters level to prevent softlocking yourself out of collecting 2 specific gems after touching a checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bake more lightmaps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 20,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1848664643361454"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T22:56:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T22:56:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.814Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-10T22:56:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:41.116Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@post-2026-10-17",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Updates notes for October 17 (r67271)",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-17T11:49:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Actually fix the missing lily in an end level (previous patch notes were mistaken, the fix for this hadn't happened yet...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some problems with transmutation and quitting/reentering levels leading to no longer being able to character swap. This was noticed in an end level but could happen anywhere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "KNOWN ISSUE: After the update yesterday we have had reports that reset fails to correctly reset the level. We are looking into this and will hopefully get a fix out soon. In the meantime you should be able to use undo to get back to the start of the level, at which point reset will start working correctly again. This is not so bad in most levels, but for longer levels can be quite annoying. Sorry for the inconvenience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Fix some audiolog placements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a potentially unplayable camera viewpoint when returning to a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More overworld ocean painting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional fast travel art fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1846651706684401"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-17T11:49:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-17T11:49:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.813Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-17T11:49:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:41.115Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-10-16",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Update notes for October 16 (r67255)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-16T22:31:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix being able to crash the game and or create giant save files by resetting many times after you pushed a rock or redirected a river.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hopefully fix the missing lily in an end level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Signs have their own unlock particles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a German translation error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update Japanese translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent an exploit drowning dragons in a Heroes+Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent a speedy exploit in Skipping Stones to Lonely Homes that could lead to a bad checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eliminate some rabbit trails on a Heroes+Mirrors level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix an overworld exploit which allowed skipping a large portion of an ending [patrick note: this is the same exploit area as from the prior changelog, but we missed a spot]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix exploits in various levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various art issues in ground fast travel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated placeholder sign graphics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get rid of some distracting light reflections in overworld mirrors area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix two skipping stones not having barnacles on the bottom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various small level art fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various small overworld art fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skipping_stones, make gold room island more visually connected to island on the right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1846651706683293"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T22:31:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T22:31:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.813Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-16T22:31:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:41.115Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-10-15",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Update notes for October 15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-15T19:58:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The previous patch (October 14, r67121) caused issues for anyone who had a partial save of the first Skipping Stones level. We have resolved this by bumping the level version of the level. However, this means that anyone with a partial save will now lose that progress within Skipping Stones. We are _very_ sorry about this, as losing progress is the worst and we try very hard to avoid this, but sadly it was necessary here to avoid problems that were even bigger. To be clear, this progress loss is limited to only this one level; other progress throughout the game is unaffected. On the bright side, it goes pretty fast once you've done it already. If you have already completed the first Skipping Stones level, or haven't played it yet, this will not affect you at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add initial support for Arm64 Windows, ie SnapdragonX CPU / Adreno GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix transmuted stuff being visible in end level if you leave the level and come back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an overworld exploit which allowed skipping a large portion of an ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Fix mismatch between voice and subtitles in audiolog near Lily Beam Rotation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music volume balancing for consistency across levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix black level previews (nexus shots) for a few levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make \"dirty\" gem flashing much more noticable in levels featuring gem flashing in the overhead map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix fog of war clearance sometimes not persisting into save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further improvements to endgame signs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent exploits in several levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent falling through the floor in a level by using Double Beam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent a Warrior jailbreak on the overworld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved various Overworld unlock particle effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Endpoint beam teleport failed particle effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bake lighting in various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish art in end games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix small art issues in various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1846651706679140"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T19:58:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.812Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T19:58:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.812Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-15T19:58:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:41.113Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-10-14",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Update notes for October 14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-14T21:16:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes for a number of jailbreaks on the overworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Add \"content\" to the two empty signs in the overworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new \"-graphics\" command line option to override the graphics mode set in the menu (in case it got set to a value that crashes on startup for some reason).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix particle prewarming - fixes particle systems in various levels, eg waterfalls no longer start with no water for some frames...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Revise strings in some end game signs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a missing audio file in an audiolog by Goblin Turning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix timing of subtitles to voices in all remaining audiologs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a number of typos, or mismatches between voice and subtitle in English subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music volume balance pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add missing trader companion to a mirror level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix time discontinuity in spotlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Never checkpoint a dead guy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent bad checkpointing in a Bard/Thief/Endpoint Beam level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bad checkpoint in second skipping stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an exploit in the third Skipping Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an exploit in an early Mirrors and Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent a cheesy solution from cascading into a bad checkpoint in Skipping Stones to Lonely Homes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many fixes to endgame levels to improve level readability and reduce visual noise and bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made unvisited level entry centers darker to be more identifiable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art, collision, or exploit fixes to various other levels and overworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1846651706675629"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T21:16:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.812Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T21:16:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.812Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-14T21:16:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:41.112Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-10-12",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Update notes for 12th October [1]",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-12T12:13:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix an issue stopping the final freezer not getting unlocked in and end level, preventing you completing it without exiting and re-entering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Award achievements on load if they haven't already been awarded, to fix demo players missing achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a wizard jailbreak in overworld - if you find yourself inside a wall due to this change, you can use undo to get back to a valid position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We believe we have found the \"E_INVALIDARG\" crash that proton players (Linux and Steam Deck/Machine) have been experiencing. The fix will be in the next update, hopefully later today!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Replace placeholder double beam blocked/ teleport failed particle effect with a proper one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Dragons continued to play sound after being transmuted by Druid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix voiceovers continuing to play when starting a new, or loading a different, campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix timing of subtitles to voices in all remaining character VO (some audiologs still to go).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix overworld area names rendering incorrectly if language changed from latin non-latin after the name is displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix minor memory leak in ocean drawing code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Water gridding pass across numerous levels and overworld screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix z fighting on vault of beamcasters screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix dropping an object through a river without diverting it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix skipping stone not landing correctly on object quickly moving under it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eliminate visual discontinuities when crossing the world wrap boundary in fast travel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent pushing Rocks or Guys out of bounds in some Heroes+Through beam levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve the readability of Crystals vs Mirages in some dark Heroes+Water levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve readability of Goblin transmuted to Crystal in final Heroes 3 level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce fringing around objects in front of clouds when MSAA is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish up art in a theif Heroes and Depth level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overworld, tinted large level entry star solved colors further towards white to avoid confusion about the level being solved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust camera to avoid seeing an out of bounds area in a Skipping Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a bad checkpoint in the third Skipping Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Jesse Seiterä's name in the credits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix character clips into Environment Art while falling in a Vertical Endpoints level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an exploit in a Heroes+Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an exploit and a bad checkpoint in Skipping Stones to Lonely Homes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix exploit in a Reflected Beams level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix exploit in a Stones Illuminated level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix exploit in a Heros and Stones level where you could outrun the stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add a Fence so you can't read the Mirror Isles sign when drowning in intro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lower falling speed in monster_drop from 0.65 to 0.6 to work around bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roll back a bad exploit fix to one Stones+Mirrors level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix small issues across many levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 19,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1846018067940757"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-12T12:13:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.810Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-12T12:13:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.811Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-12T12:13:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:41.111Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-10-09",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Update notes for October 9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-09T20:09:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Downgrade Steam SDK version the game uses to avoid the incompatibilities a lot of people were having. We now only require SteamClient021, or Proton v9 or above.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Various minor fixes including",
+     "items": [
+      {
+       "text": "Fix R2 to speed up time not working after your first puzzle solve if you do skipping_stones first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a spire remaining behind when the magistrate disappears after his monologue...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a camera issue with local area view and endpoint beams in wrapping levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix unlock and smash beam icons being visible in wrapping when they shouldn't be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix z-fighting issue in promesst2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix inability to undo while on a Rover sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some bad checkpointing in a few Skipping Stones level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix aspect ratio issues in a few levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small art fixes to a number of levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes that seem too spoilery to put in patch notes...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1846018067934563"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T20:09:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.809Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T20:09:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.810Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-09T20:09:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:41.110Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-07-10",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Technical Update on a Beta Branch",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-10T22:57:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have posted a TECHNICAL UPDATE for the demo, in a beta branch. To try it, you go to the Properties for the game, go to Game Versions & Betas, and pick public-testing (no password).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45891839/5e5bf8c7e40da8b1b69f1181a74605bcc9da7457.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Included in this version",
+     "items": [
+      {
+       "text": "Optimizations for faster frame rate, especially on lower-end devices! (60fps on most levels on Steam Deck)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A new, lower-profile graphics setting \"Very Performance\" that can be used on these platforms to achieve these frame rates (or better battery life).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased compatibility with older GPUs and systems with less RAM. (Still no shader model 6.5 support, but we are looking at this).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Separate volume controls for music, sound effects and character voice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Control vsync, frame rate cap, and antialiasing mode from the Graphics submenu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switch the text language dynamically from the menu without having to fiddle with Steam settings ..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "... And more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1837955055358198"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-10T22:57:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.809Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:49.998Z"
+  },
+  {
+   "id": "order-of-the-sinking-star-381222@major-2026-06-19",
+   "gameId": "order-of-the-sinking-star-381222",
+   "displayName": "Demo Content Update Now Live",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-19T16:00:31.000Z",
+   "notes": [
+    {
+     "title": "FIRST AND FOREMOST – THANK YOU!",
+     "items": [
+      {
+       "text": "First of all, we’d like to thank all of you who have played the Order of the Sinking Star Demo this week already. We’re incredibly grateful for your interest in the game, for your feedback on Discord and in the Steam reviews, and for catapulting Order of the Sinking Star into the Top 5 most-played single-player demos of Steam Next Fest: June 2026 Edition so far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are 3 days left to play the demo – as it will be available until Monday, June 22 at 10am PT – so if you haven’t already, jump into the demo and let us know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several of you already have completed all the available puzzles in the demo currently... well done! However, your adventure does not end here... we’ve just pushed a content update to the demo, which lets you explore Order of the Sinking Star even more. So, check out the list below for an overview, download the update, and see for yourself what’s new!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "DEMO UPDATE OVERVIEW: NEW HEROES TO MEET, MORE PUZZLES TO SOLVE, AND MORE TO EXPLORE",
+     "items": [
+      {
+       "text": "Today’s update (aka Demo Part 2, as Jonathan Blow’s called it!) brings plenty of new content to the Order of the Sinking Star Demo – from new heroes to meet to new mind-bending puzzles to solve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Below’s a quick overview of what today’s update introduces",
+     "items": [
+      {
+       "text": "New Heroes – The Bard & The Druid: As you solve the intricate puzzles within the demo and unlock new areas to explore, if you progress far enough, you’ll have the chance to meet and play as two new heroes: The Bard and The Druid! With the Bard, she has the ability to charm others and even has the power to move crystals while playing music. The Druid, on the other hand, accidentally transmutes his friends and objects in his path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A Slew of New Puzzles: For those who’ve finished the demo prior to this update, you know there were 75 puzzles in total. Well, with today’s update, even more puzzles have been added which will officially bring the demo to be over 100 puzzles! Take on the new brain-teasing puzzles – and with the new content, you’ll even have a chance to see what happens when the worlds start to collide...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Areas to Explore & New Lore to Uncover: With new puzzles comes new areas to explore and of course, new lore to find! Experience even more of the Overworld and uncover even more secrets within Order of the Sinking Star. Will you get one step closer to deciphering this epic tale?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Follow on X/Twitter: https://x.com/SinkingStarGame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subscribe on YouTube: https://www.youtube.com/@SinkingStarGame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Like/Follow on Facebook: https://www.facebook.com/SinkingStarGame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-499170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/499170/view/1835871199307603"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T16:00:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-499170",
+      "checkedAt": "2026-11-13T03:27:19.808Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:49.903Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "fe40a7ed1d28",
+   "text": "After the update yesterday we have had reports that reset fails to correctly reset the level. We are looking into this and will hopefully get a fix out soon. In the meantime you should be able to use undo to get back to the start of the level, at which point reset will start working correctly again. This is not so bad in most levels, but for longer levels can be quite annoying. Sorry for the inconvenience!",
+   "status": "open",
+   "firstReleaseId": "order-of-the-sinking-star-381222@post-2026-10-17"
+  }
+ ]
+}

@@ -1,0 +1,560 @@
+{
+ "game": {
+  "id": "winter-ember-124002",
+  "igdbId": 124002,
+  "name": "Winter Ember",
+  "cover": {
+   "imageId": "co3wqv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3wqv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aruc3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aruc3.jpg"
+  },
+  "ps5Release": "2022-04-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "winter-ember-124002@major-2022-07-07",
+   "gameId": "winter-ember-124002",
+   "displayName": "Major Patch Update - End of Community Test Branch",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-07T05:36:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After two weeks of testing and positive feedback from the loyal Winter Ember community, the Community Beta Branch is getting pushed LIVE on the Main branch! As a result of this change, we will be disabling the Community Beta Branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please head to this announcement to see the patch notes here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would like to express our deepest gratitude to those that stuck by us and gave us crucial feedback during the updating process. We hope you continue to voice your concerns and without any more fluff… ENJOY!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417880/view/4474904295779644622"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-07T05:36:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417880",
+      "checkedAt": "2026-11-13T03:36:20.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:26.078Z"
+  },
+  {
+   "id": "winter-ember-124002@1.5.7",
+   "gameId": "winter-ember-124002",
+   "displayName": "Patch 1.5.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-20T04:02:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch is an experimental build intended for the Community Beta Branch. It may be unstable or contain many new bugs. If you would like to learn more about our experimental process or how to opt in to our Community Beta Branch to access the experimental build, please see this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have spent a lot of time collecting feedback from you since Winter Ember’s launch. Much of the past several weeks was spent rebalancing and addressing the many concerns raised by the community. We hope that in this new experimental build, you will find many of those concerns dealt with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With that said, here are the patch notes! Brace yourselves, it’s going to be a long one :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saving",
+     "items": [
+      {
+       "text": "Quick save and quick load implemented",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Parry button moved from middle mouse button to V key",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enemies now have health bars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced enemy attack output",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed enemies hitting Arthur as they die",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player being able to hit guards on crates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced enemy arrow block chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Arthur’s attack output",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Arthur’s arrow draw speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased dog attack output and aggressiveness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemies can now get stealth-attacked while being smoked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Guard collars’ brightness to improve visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player can now aim directly after sprinting (and vice versa)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where player was able to pull sword out whilst crouched",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed circle block and added a block bar to player and NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified enemy block amount for rebalancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Poison now prevents enemy from blocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced heavy attack charge time from 1.25 to 1.00 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Dynamic skill icons now display on screen when using certain skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Full Moon Specter skill attributes - whenever player dies, skill will always activate allowing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arthur a second chance. Skill is on a cooldown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stealth attack now more responsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cover",
+     "items": [
+      {
+       "text": "Removed minimum cover range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snap to cover implemented",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exit cover now based on directional input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Movement is now directional depending on the camera’s angle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stealth attack from cover improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Experimental Smooth Frame Rate disabled - PC is no longer capped at 60fps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FOG optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Window and window flap mesh optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Breathing FX particle now only spawns on nearby characters to improve performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the general game performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Collision Fixes",
+     "items": [
+      {
+       "text": "Sewers area collision improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rope Anchor mesh collision improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled collision for the following: Lamp, Candle, Broom, Bucket, Pot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pipe not having static collision (for cover)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked Warehouse train track pawn collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed many collisions causing player to get stuck in Midgown and Oldworld Stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Nala the cat no longer collides with the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Completely new Japanese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Pulled camera distance back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved jump mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed warehouse issue where cart dropping barrels overlapped player, glitching movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Candle Wall Light no longer blocks characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Train level now has physics-enabled stools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cover icon no longer shows when carrying bodies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed glitching player cloak physics when manhole and carriage teleporting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ladder icon appearing when player is actually too far away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented a ‘recently crafted arrows’ list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed torch light shadow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Modified Warehouse level, opening more ways to travel to rooftop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased volume on broken glass to make it more obvious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Evening purge area has additional hiding spots and minor level changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Altered Midgown to include a secondary way for the player to enter Battista’s compound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added another electricity blueprint to Midgown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes to Greater Heaven HQ which were missed on release",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interactable books with physics flying upon reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player pulling sword while in vent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 28,
+    "balance": 7,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1417880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1417880/view/6214419350717519489"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-20T04:02:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1417880",
+      "checkedAt": "2026-11-13T03:36:20.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-20T04:02:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1417880",
+      "checkedAt": "2026-11-13T03:36:20.746Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-20T04:02:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:26.077Z"
+  }
+ ],
+ "issues": []
+}

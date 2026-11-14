@@ -1,0 +1,1768 @@
+{
+ "game": {
+  "id": "retrace-the-light-224693",
+  "igdbId": 224693,
+  "name": "Retrace the Light",
+  "cover": {
+   "imageId": "coawjn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coawjn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar38um",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar38um.jpg"
+  },
+  "ps5Release": "2026-07-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "retrace-the-light-224693@1.1.2710",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.1.2710",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-16T07:56:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.1.2710 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the dash判定 for certain Major Modules to prevent bugs where players could not exit the dash state under specific conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bugs where the distance limit for Pointer-Dash could fail and where it could trigger double cooldowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced the blind zone experience—clear prompts will now appear when Retrace anchor points are within blind zones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where Korean language localization detection could fail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the判定 timing for assisted dash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where assisted dash判定 could activate even when Retrace was unavailable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect health values during phase transitions in the Instructor Boss rematch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Instructor Boss's sword energy damage could be missing.: Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1821922921815243"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T07:56:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.093Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.093Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.1.2702",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.1.2702",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-12T13:17:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.1.2702 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced the numerical values in Boss Rematch mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the operations in the save/load interface; fixed a bug where some training items were not displayed in older save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed incorrect damage calculation for certain bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the mouse cursor might not display after key rebinding.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a black screen issue when selecting \"Format\" in front of Meta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where certain save files could incorrectly trigger endings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect sound effects when obtaining Computing Power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Gravity Trail could be used instantly after Retrace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed display issues with the quick map in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Thank you for purchasing and playing the official version of Retrace the Light. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1821288646585827"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-12T13:17:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.092Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.092Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.1.2686",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.1.2686",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-04T10:15:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.1.2686 【Major Update】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Content：",
+     "items": [
+      {
+       "text": "【Specialized Training】feature implemented, now accessible in the Training Area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "【Boss Rematch】feature implemented, now accessible in the Training Area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "【Reset Iteration System】feature implemented; node resets can now be performed in the Iteration System interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new Iteration Nodes 【Recycle】and 【Checkout】, replacing the original nodes 【Cancel】and 【Refresh】. The effects of the original nodes will now take effect as permanent initial effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations and Fixes",
+     "items": [
+      {
+       "text": "Added skip functionality to certain animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized ground detection for some skills (e.g., using Pointer-Dash on a submerged Black Deer will no longer cause the player to get stuck underground).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the UI display for the Light Trail ability could be missing during initialization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the placement of a specific ranged enemy in the tutorial level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the flow of the \"Return to Motherboard\" tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced the damage output of certain active modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the switching operations in the in-game main interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the selection operations in the save/load interface.: Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "【Specialized Training】feature implemented, now accessible in the Training Area.",
+     "【Boss Rematch】feature implemented, now accessible in the Training Area.",
+     "【Reset Iteration System】feature implemented; node resets can now be performed in the Iteration System interface."
+    ]
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1819386365121564"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-04T10:15:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.092Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.092Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2591",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2591",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-17T14:27:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2591 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the map operation logic—the map can now be zoomed even when a hover marker is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the display of area titles and interaction key prompts on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where entering the maintenance station could spawn multiple enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause an indefinite black screen during the key input segment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1819386365086839"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T14:27:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.091Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.091Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2583",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2583",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-16T13:37:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2583 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed positioning issues for Executor Jiu in certain camera angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized interactions between balls and catapult mechanisms, resolving bugs that could cause progression blocks in some Data Rifts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the operational logic of the start screen interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where PS5 controllers could not be recognized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed missing sound effects in certain cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the formatting ending to trigger even after defeating Qi.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where key inputs might fail to register.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where floor effects were not displaying during Meta Phase 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1818752592135871"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T13:37:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.091Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.091Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2577",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2577",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-15T16:20:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2577 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized certain collisions in Data Rifts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the counter display for the Deep Learning Minor Module; the current count is now visible in the equipment interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added save markers for key story progression nodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added save markers for Simulation Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that could cause save thumbnails to not match their corresponding area names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some dialogues were skipped at key story nodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a series of bugs in minor enemy encounters on the Motherboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Entries in the Load Game interface are now sorted in chronological order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1818752592133390"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-15T16:20:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.090Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.090Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2566",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2566",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-12T11:56:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2566 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the save system to avoid most bugs caused by save timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The protagonist's cloak in cutscenes will now change according to customized equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved character animations and cloth simulation for clothing in cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed rendering issues in certain cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the particle effect count in the Hui Ming Boss battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved certain collisions in Data Rifts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where using Retrace could cause ladders to become unusable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1818752592127294"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-12T11:56:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.090Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.090Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2554",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2554",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-09T15:32:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2554 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where using Retrace could cause players to exit combat areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized certain collisions in Data Rifts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug in Mirrormaze \"ONW-PBV3E\" (Depression Level) where mechanism light beams in a Data Rift were blocked by invisible walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the issue of UI text appearing too small on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enhanced the gameplay experience on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some UI overflow issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the Gravity Trail tutorial to become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1818118366185711"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-09T15:32:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.089Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.089Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2545",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2545",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-08T11:23:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2545 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized certain collisions in Data Rifts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug in Mirrormaze \"TDS-UY4GA\" (Weiqi Level) where a pathway in a Data Rift could not be opened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where conveyor belts could affect the movement of electric pillars during Volt Dash, preventing access to some areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where manual saves might fail to load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1818118366182286"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T11:23:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.089Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.089Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2537",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2537",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-05T12:11:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2537 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized certain collision issues in Mirrormaze \"TDS-UY4GA\" (City Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized some collision problems with the cube in Mirrormaze \"ONW-PBV3E\" (Depression Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the white border on the pause interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced the dream sequence performance inside a hibernation pod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added quick map controls: for controllers, long-press the right direction key on the left D-pad; for keyboard and mouse, long-press the M key by default.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved the display of the key binding interface by adding hints for long-press actions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized the minimap title display in the map interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1818118366176160"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-05T12:11:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.088Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.088Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2514",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2514",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-03T14:40:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2514 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the default overall graphics settings from \"Ultra High\" to \"High\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the UI operation logic on the start screen; the \"Continue Game\" button will now be automatically selected based on the situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the default difficulty to \"Semi-Auto Mode\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the order of pages in the game settings menu for new games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug where the module \"Retrace-Slash\" caused permanent invisibility for the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the second teleportation of the module \"Pointer-Dash\" caused incorrect character rotation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized rotation interpolation to ensure normal behavior of most rotations under different gravity directions, including but not limited to Jiu, the camera, directional markers, and idle swords following behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where \"Overload-type\" modules behaved incorrectly under unconventional gravity directions, potentially causing excessive displacement and bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the usage effect and blocking detection of the \"Pointer-Return\" module; it can now adapt to different gravity directions, and its return speed has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity transition staircases will no longer cut off the player's Light Trail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the visual appearance of particles in black mist and appropriately reduced their quantity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized certain falling hitboxes to prevent premature damage locking under specific conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collision issues in the \"Resistor-07\" boss battle scene that could cause Resistor-07 to get stuck in walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced the information display for Minor Modules; upgrade effects are now visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where canceling training in the Training Area could cause the menu interface to become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where canceling training at the start of module trials could leave module devices remaining.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "【Spoiler Warning】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where picking up a shadow too early during a specific skill of the boss \"BFF\" could cause the boss battle to become unable to continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where triangular floor panels were missing in Phase 2 of the Meta Boss battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 2,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1818118366170389"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T14:40:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.088Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.088Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2480",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2480",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-01T13:51:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2480 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where canceling during fast-travel on the map interface could cause the lock-on state to be lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the default FPS cap from unlimited to 90 FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the default graphics quality from \"Ultra High\" to \"High\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized UI operations in keyboard-only mode; the mouse cursor will now also be displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the game cursor might not appear for keyboard and mouse players.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the \"Apply\" button in the keybinding interface could not be triggered by keyboard input.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized the playback speed of content on the pre-game interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved certain collision issues in Mirrormaze \"TDS-UY4GA\" (City Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced some visual effects in Mirrormaze \"ONW-PBV3E\" (Depression Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the detection radius of certain revival points in Data Rifts and Simulated Mirrormazes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved collision issues in Simulated Mirrormazes and Mirrormaze \"ADZ-8K02L\" (Mine Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the stone-placing process for Yi-Jie to prevent the boss battle from failing to trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Yi-Jie's six-board attack could stack and activate simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempted to fix missing visual effects for triangular floor panels in the final chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1817483467045441"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-01T13:51:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.087Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.087Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2450",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2450",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-28T14:20:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2450 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in Mirrormaze \"ONW-PBV3E\" (Depression Level) where players could knock enemies out of bounds during a Data Rift combat encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Mirrormaze \"ONW-PBV3E\" (Depression Level) where players could get stuck between invisible paths and structures in a Data Rift.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the UI and interaction logic of the Major Module equipping interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved UI animations in the Minor Module equipping interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the timing of Jiu's appearance in the main hall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized scene performance costs in Mirrormaze \"ONW-PBV3E\" (Depression Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved certain collision issues in Mirrormaze \"TDS-UY4GA\" (Weiqi Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1817483467039410"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-28T14:20:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.087Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.087Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2405",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2405",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-25T15:14:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2405 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added bounce pads in Mirrormaze \"ONW-PBV3E\" (Depression Level), allowing players to return to the starting section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where map interface interactions could occasionally persist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added atmospheric fog effects when \"Resistor-07\" enters the mist during its second phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where \"Resistor-07\" could not shoot and destroy gas canisters during its second phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where data might not save properly after uninstalling Minor Modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the black mist effect of the \"Gaze of Scrutiny\" eyeballs was being culled within the camera view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the ultimate skill of \"Fireproof Matrix\" could not trigger an instant dash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced the visibility of the lever in the Data Rift \"3D Pinball.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a discrepancy between the instant door animation and its actual collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the camera perspective at the eastern production area entrance in Mirrormaze \"ADZ-8K02L\" (Mine Level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1816849002023816"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-25T15:14:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.086Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.086Z"
+  },
+  {
+   "id": "retrace-the-light-224693@1.0.2385",
+   "gameId": "retrace-the-light-224693",
+   "displayName": "Update 1.0.2385",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-24T14:40:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Official Version v1.0.2385 Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the display of Data Rifts for learning abilities on the map and added them to Data Rift statistics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where interacting with the electric pillar of the \"Crab Tank\" could cause it to sink into the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the \"Crab Tank\" dealt insufficient damage in some cases and reduced its \"allowable stopping angle.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug related to map entrance and exit connections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the UI interaction performance of the Iteration System button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a misalignment issue in the collection status display within the Mirrormaze Copy function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where controls were unresponsive after exiting the maintenance station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a UI logic issue in the save interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an abnormal map focus problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where large Data Rifts could not be fast-traveled to from the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI overlap caused by delays during MemoFragment pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the functional interface of the maintenance station, temporarily removing the personal terminal and fast-travel buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Attempted to fix a bug where the map interface and Iteration System interface overlapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug in Mirrormaze \"ADZ-8K02L\" (Mine Level) where alarms triggered despite MemoFragments not being fully collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in Mirrormaze \"ADZ-8K02L\" (Mine Level) where circuits could be opened prematurely, causing progression errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "【Spoiler Warning】Fixed a bug where saving at certain points during the battle with Qi prevented subsequent story triggers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for purchasing and playing the official version of *Retrace the Light*. If you enjoyed the experience after completing the game, we'd greatly appreciate a positive review! For any questions or suggestions, feel free to share them in the comments section or our QQ group.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2179370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2179370/view/1816849002020241"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-24T14:40:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2179370",
+      "checkedAt": "2026-11-12T09:24:43.085Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:43.085Z"
+  }
+ ],
+ "issues": []
+}

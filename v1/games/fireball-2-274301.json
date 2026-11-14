@@ -1,0 +1,392 @@
+{
+ "game": {
+  "id": "fireball-2-274301",
+  "igdbId": 274301,
+  "name": "FireBall 2",
+  "cover": {
+   "imageId": "co8vyp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8vyp.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2lqb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2lqb.jpg"
+  },
+  "ps5Release": "2025-05-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "fireball-2-274301@1.0.06",
+   "gameId": "fireball-2-274301",
+   "displayName": "Update 1.0.06",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-05T11:16:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Made enemy spawning location more obvious prior to spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some dark backgrounds to a couple UI elements (mode matrix and leaderboard)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased brightness of sliders in option menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made menu background not get quite so bright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated background/music flashing to ignore volume of music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated achievement destroyed count to count enemies being destroyed on wall deaths too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also added 3x bonus for killing enemies with bombs, 5x (+2x more) for kills that create a nova",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed arena size in very high waves (30+) being too tall vertically (enemies couldn't reach player)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2647800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2647800/view/1801617199389416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-05T11:16:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:20:56.912Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-05T11:16:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:20:56.912Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-05T11:16:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:24.466Z"
+  },
+  {
+   "id": "fireball-2-274301@1.0.0.5",
+   "gameId": "fireball-2-274301",
+   "displayName": "Update 1.0.0.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-13T15:42:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "* Fixed some issues with inputs, particularly with no controller plugged in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added support for WASD to control the Fireball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2647800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2647800/view/1799088287992864"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-13T15:42:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:20:56.912Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-13T15:42:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:20:56.912Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-13T15:42:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:24.465Z"
+  },
+  {
+   "id": "fireball-2-274301@1.0.0.4",
+   "gameId": "fireball-2-274301",
+   "displayName": "Update 1.0.0.4",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-08T23:07:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changed main menu particles logic so they are a lot faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked end of blackhole to slow down game a bit less.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Game Stats to the options menu (might move it later).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed (I think) Steam not connecting/working, aka achievements hopefully work now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2647800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2647800/view/1799088287846517"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T23:07:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:20:56.911Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T23:07:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:20:56.911Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-08T23:07:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:24.465Z"
+  },
+  {
+   "id": "fireball-2-274301@1.0.0.3",
+   "gameId": "fireball-2-274301",
+   "displayName": "Update 1.0.0.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-08T20:47:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimized the game a bunch, with one compromise as a result.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced max particles on non-Low GPU Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced linear color buffers from 64 to 32 bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made sure MSAA is disabled by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed distortion pass from enemies (only with MSAA and 64bit buffers): The distortion pass may come back at a later date, but console versions already don't have it due to performance. The overall performance improvement (2-3x in some cases) seems more important.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2647800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2647800/view/1799088287843395"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T20:47:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:20:56.910Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T20:47:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2647800",
+      "checkedAt": "2026-11-13T03:38:29.281Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-08T20:47:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.281Z"
+  }
+ ],
+ "issues": []
+}

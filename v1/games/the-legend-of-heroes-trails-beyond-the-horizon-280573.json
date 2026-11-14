@@ -1,0 +1,169 @@
+{
+ "game": {
+  "id": "the-legend-of-heroes-trails-beyond-the-horizon-280573",
+  "igdbId": 280573,
+  "name": "The Legend of Heroes: Trails Beyond the Horizon",
+  "cover": {
+   "imageId": "cobjgs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobjgs.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3n6d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3n6d.jpg"
+  },
+  "ps5Release": "2024-09-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-legend-of-heroes-trails-beyond-the-horizon-280573@1.0.6",
+   "gameId": "the-legend-of-heroes-trails-beyond-the-horizon-280573",
+   "displayName": "Update 1.0.6",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-19T21:10:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "this is a minor patch that we are releasing quickly to address a potential crash on saving that can happen in some circumstances (fortunately after the save was successfully written).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Changelog",
+     "items": [
+      {
+       "text": "Fix a potential (non-deterministically occurring) crash after saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a minor graphical issue with one particular effect object",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the \"Always show turn order\" option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix mouse wheel scrolling in shop menus with more than 8 party members",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Minor efficiency improvements when loading audio files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor localization text fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the unlikely event that this update causes any issues for you, you can revert to the previous version using the \"Game Versions & Betas\" feature on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I hope you are enjoying Trails Beyond the Horizon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, CTO, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3316940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3316940/view/1821922921822136"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T21:10:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3316940",
+      "checkedAt": "2026-11-13T03:33:32.863Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T21:10:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3316940",
+      "checkedAt": "2026-11-13T03:33:32.864Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-19T21:10:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:52.718Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,5591 @@
+{
+ "game": {
+  "id": "fabledom-231098",
+  "igdbId": 231098,
+  "name": "Fabledom",
+  "cover": {
+   "imageId": "co842c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co842c.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar23f3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar23f3.jpg"
+  },
+  "ps5Release": "2024-09-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "fabledom-231098@1.084",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix 1.084",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-07T15:37:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "first things first, we have fixed the issues that caused crashes on other languages since last patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are so sorry for taking so long to find it, it only appeared on very particular saves in specific languages, turned out there was a row in the localization document that missed a \"<\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please restart Steam to play the fixed version, we really hope this fixes the issue for everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1823825466501842"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-07T15:37:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.545Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-07T15:37:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.545Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-07T15:37:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:03.045Z"
+  },
+  {
+   "id": "fabledom-231098@1.083b",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix 1.083b",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-15T14:07:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just pushed a small hotfix to address a few critical bugs regarding unit behavior. Our main focus for this patch was ensuring your Fablings and Fairies remain active and productive!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "fixed several issues that could cause fablings and fairies to get stuck and being unresponsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1821922921813158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T14:07:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.545Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T14:07:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.545Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-15T14:07:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:03.044Z"
+  },
+  {
+   "id": "fabledom-231098@1.08",
+   "gameId": "fabledom-231098",
+   "displayName": "Update 1.08",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-02T13:03:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re happy to announce that Update 1.08 is now live in Beta! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We aim to release the patch publicly in the weeks to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It brings a selection of brand-new decorations created by Fabledom’s original artist, plus various quality-of-life improvements and fairy-related fixes. We’re putting the spotlight on these new decorations as the centerpiece of this update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table equalcells=\"1\" colwidth=\",\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/ac3961359771515e257e40964e0a7f74afa8f239.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/cdb83f8af7f4bacceae90d6ca5a0edd85a8d571c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/bb54e0240cb7569b34cd41eca7e164bc38d39f20.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/abfb753935520b3055ebb50f1d66d4ffb9002dec.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table equalcells=\"1\" colwidth=\",\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/2b141522bcd3dd1f6585476ae480f1505194b7c6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/42bd7cc05d48bd85dd403458cd5c06c7d52ea184.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/35a5c91fde130157d4a36d2b0705d04f7268304e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43475873/858ca5b1e5e1e07900920c2f0c40427e98b7b0ab.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📜 Patch Notes",
+     "items": [
+      {
+       "text": "🌸 30 New Decorations (11 types)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sir snout's triumph",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fountain of Burdens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hedge arch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flower hedge arch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stout potted flower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stout potted flower - white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stout potted flower - blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stout potted flower - pink",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tall potted flower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tall potted flower - blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tall potted flower - pink",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tall potted flower - white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potted flower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potted flower - blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potted flower - pink",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potted flower - white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Umbrella seating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Umbrella seating - green",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Umbrella seating - orange",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - double",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - double - blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - double - pink",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - double - white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - single",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - single - blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - single - pink",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flowers - single - white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flag resting area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanging flag - single",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Village center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚙️ Gameplay & UI Changes",
+     "items": [
+      {
+       "text": "Ban FoodXFood trades in travelling merchant - the travelling merchant will no longer offer same food trade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beauty doesn't cumulate in UI anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tooltip on global resources indicates how much unavailable of that resource is stored in houses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Realm name now appears in the save selection menu. Please note that it appears only when a new save has been named",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove smiley that triggers when a fairy is summoned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use of a different list of name that doesn't sound human when naming fairies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed smileys from fairy UI, so there is no confusion about mananging happiness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fairy tooltip reworked to better match other tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 53,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1811772772475893"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-02T13:03:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.543Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-16T14:45:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.544Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-16T14:45:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:18:34.205Z"
+  },
+  {
+   "id": "fabledom-231098@1.07",
+   "gameId": "fabledom-231098",
+   "displayName": "Patch 1.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-23T13:05:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just released a quick update to fix and improve building behavior related to pigsties. Thanks for all your reports and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed a bug that caused incorrect behavior when trying to build a pigsty while no more pigs are available. You should now not be able to click on Pigsty build option if no pigs are available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1797820624427044"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T13:05:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.542Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T13:05:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.543Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-23T13:05:31.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:20:34.542Z"
+  },
+  {
+   "id": "fabledom-231098@major-2025-04-17",
+   "gameId": "fabledom-231098",
+   "displayName": "🔮 Quality of Life Update Now Live - Fairies, New Buildings, and UI Scaling 🔮",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-17T13:04:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to start by thanking you for your patience while we've been working to deliver the best possible experience with Fabledom's Patch 1.07. We've taken the necessary time to release a Beta version to address some last-minute issues and ensure a smoother, more enjoyable experience for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A huge thank you as well to those who shared their save files during the Beta phase, your support has been invaluable in helping us fine-tune the game. Thank you again for your continued support and understanding. Now, let’s see the patch note and check out the exciting new changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Following the announcement of our Quality of Life update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re happy to announce a brand-new patch for Fabledom, packed with some fantastic quality-of-life improvements, including the addition of fairies to your kingdom, new buildings, and an option for UI scaling!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fairies",
+     "items": [
+      {
+       "text": "[table noborder=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fairies are now part of your kingdom's residents and can be summoned using Prismatic Liquid. Here's what’s new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Summoning Fairies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To summon your first fairy, you’ll need 30 Prismatic Liquid. Each subsequent fairy will cost 30 more Prismatic Liquid than the last.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Buildings",
+     "items": [
+      {
+       "text": "Fairy Tower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Construction Cost",
+     "items": [
+      {
+       "text": "800 Gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "100 Prismatic Liquid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "150 Planks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upkeep: 20 Gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Capacity: Houses up to 5 Fairies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlocks Fairies and allows the construction of Fairy Pillars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fairy Pillars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Construction Cost",
+     "items": [
+      {
+       "text": "400 Gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "50 Prismatic Liquid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "80 Planks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upkeep: 10 Gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allows summoning of more fairies and expands the operating radius of fairies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Destroying a Fairy Pillar will kill all housed fairies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI Scaling",
+     "items": [
+      {
+       "text": "We’re introducing a new option for UI scaling in the settings! You can now adjust the UI size from 0% (default Fabledom UI size) to +15%. Please note that due to varying monitor sizes and settings, some overlaps may occur. We will be monitoring your feedback and fine-tuning this feature in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A Huge Thank You!",
+     "items": [
+      {
+       "text": "We want to extend our heartfelt thanks to all 500,000 of our players for being part of the Fabledom community. Your support and feedback continue to inspire us as we work hard to make the game even better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned for more updates, and thanks again for playing! We can’t wait to hear your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0,
+    "topNew": [
+     "Fairy Tower"
+    ]
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1797185861638835"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T13:04:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.541Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T13:04:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.541Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-17T13:04:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:03.038Z"
+  },
+  {
+   "id": "fabledom-231098@major-2025-04-11",
+   "gameId": "fabledom-231098",
+   "displayName": "🧚‍♀️ Beta Patch Note – Fairies Update! 🛠️",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-11T14:40:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve got a brand new patch note for our Beta branch, and it’s all about making the kingdom a smoother, more magical place, especially for our tiny fairy friends! ✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠 Bug Fixes 🧚",
+     "items": [
+      {
+       "text": "Fairies will no longer count as unemployed and will not have an impact on events linked to employment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with storages that caused Fablings to get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Pumpkin\" tooltip wasn’t displaying the correct text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing stored resources in the kingdom to not display properly in the UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We appreciate everyone playing and testing the beta! Your feedback continues to help us bring more polish, charm, and fairy dust to Fabledom 🏰✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Let us know what you think of the update, and keep reporting anything odd you find. More magic is on the way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1796631172281017"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-11T14:40:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.541Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.905Z"
+  },
+  {
+   "id": "fabledom-231098@major-2025-04-08",
+   "gameId": "fabledom-231098",
+   "displayName": "Update Beta Phase Extended 📆",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-08T13:00:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Fabledom community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We wanted to let you know that the update we planned for April 8th will be delayed. While we were aiming for a release today, we’ve decided to extend the beta phase to ensure everything is in top shape for its public launch later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, we really need your help! If you’ve encountered any bugs during the beta, please send us your save files so we can fix them and improve the game. Your feedback is crucial in helping us deliver the best experience possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can find detailed instructions on how to send your save files, logs, and report a bug in the \"How to Send Your Save Files, Logs, and Report a Bug\" section inside the Steam thread.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The BETA branch is still available if you’d like to keep exploring, and we really appreciate everyone who’s already submitted their files. Thanks for being a part of making Fabledom the best it can be!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for your patience and continued support! 🙌",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1795917897486050"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-08T13:00:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.540Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.905Z"
+  },
+  {
+   "id": "fabledom-231098@major-2025-03-28",
+   "gameId": "fabledom-231098",
+   "displayName": "📢 Beta Access Announcement: Quality of Life Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-28T14:00:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Fabledom players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Following the recent delay of the Quality of Life Update, we have decided to launch the update in Beta first on 01/04, giving you the chance to try it out a week before the full release. The beta is set to run for one week, though it could be prolonged if necessary to guarantee the optimal conditions for a successful public release. We’re targeting a full public release on 08/04 and will keep you posted with any updates. This will help us ensure everything is running smoothly, while also allowing you to experience the improvements and fixes early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we’ve addressed the major bugs that were causing disruptions in the game, please keep in mind that the beta version may still contain some minor issues. We appreciate your understanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The beta is a great opportunity for those of you eager to test it before the full release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to Access the Beta",
+     "items": [
+      {
+       "text": "We’ll share more details on how to access the beta once it’s available, so stay tuned for that information!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you prefer to wait for the final release with guaranteed stability, we recommend holding off until the full update is launched to everyone. We appreciate your patience, and we can’t wait to get these improvements into your hands!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1795283637853710"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-28T14:00:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.540Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.904Z"
+  },
+  {
+   "id": "fabledom-231098@major-2025-03-20",
+   "gameId": "fabledom-231098",
+   "displayName": "🧚‍♀️ Quality of Life update - Fairies, New Buildings, and UI Scaling! 🔮",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-20T14:00:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Princesses & Princes, it's been a while since your Kingdoms have seen the light of an update but it's almost time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last July's 1.06 patch was supposed to be the last patch for Fabledom however… Your enthusiasm and love for the game made us reflect on our decision to stop post-release support and we have not one but two Quality of Life update coming up! While Grenaa Games oversaw their development, this would not have been possible without the help of Fabledom's Game Designer, Hippolyte Azalbert, and our friends at Celsius Online spearheading the development! So, without further ado, let's start with the first Quality of life update as more detail will be coming up later about the 2nd one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A magical new update will arrive in your kingdom on March 26th! Get ready for Fairies, UI scaling, and brand-new buildings to enhance your kingdom. Here’s what’s in store:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧚‍ UI Scaling",
+     "items": [
+      {
+       "text": "The long-awaited UI scaling feature is almost here! You will be able to adjust the user interface to perfectly fit larger screens, enhancing your Fabledom experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔮 New Inhabitants - Fairies!",
+     "items": [
+      {
+       "text": "Meet the Fairies, mystical creatures ready to transport goods across your realm! Unlike your Fablings, they don’t need food or sleep, making them incredibly efficient. But their magic comes at a price, they’ll only work for those who provide Prismatic Liquid and grand Fairy Towers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fairies are most useful in the late game, freeing up your Fablings to focus on other tasks, whether it’s working the fields or relaxing at home!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🧚‍ New Buildings: Fairy Tower & Fairy Pillars",
+     "items": [
+      {
+       "text": "Fairy Tower: The Fairy Tower is a unique building that can house up to 5 Fairies. It will help you transport resources within a radius around the tower. This building costs a large amount of Gold, Prismatic Liquid, Planks and requires upkeep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fairy Pillars: Smaller than the Fairy Tower, Fairy Pillars accommodate up to 2 additional Fairies. These can be placed anywhere and transport resources within their radius. This building costs about half as much as the Tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔮 Prismatic Liquid",
+     "items": [
+      {
+       "text": "To summon Fairies, you’ll need to gather Prismatic Liquid. Once you have enough, these magical creatures will be ready to streamline your resource transport and leave your Fablings to handle other tasks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Console Update Coming Soon",
+     "items": [
+      {
+       "text": "The patch will be coming to consoles later. More information will be available in the coming months!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you will enjoy these exciting new features and improvements in Fabledom. We can’t wait to see how the Fairies help shape your kingdom! Stay tuned for even more updates soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/1794102528303002"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-20T14:00:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.539Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-20T14:00:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:38:29.281Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-20T14:00:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.281Z"
+  },
+  {
+   "id": "fabledom-231098@1.06",
+   "gameId": "fabledom-231098",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-24T13:30:44.000Z",
+   "notes": [
+    {
+     "title": "📝 Dev Notes 📝",
+     "items": [
+      {
+       "text": "Patch 1.06 is expected to be the final patch for Fabledom. Thank you for your support from Early Access to the 1.0 release. We're happy to have you in our community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed bug where flag lines wouldn't spawn after construction completed and wouldn't play the placing animation if one of the connection points was marked as loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where loading a save would break flag lines' animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where relocating wouldn't reset flag lines properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some particle effects that were playing on load even though the game starts paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed construction progress shader not being affected by cloud shadows and appearing radioactive during winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some missions showing a negative relationship effect that shouldn't have.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed emissary gnomes event having strange option titles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where missions with no expiration would show a strange tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where locked resources would not be removed when a player throws a wedding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added restriction on mass destruction of palaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added flagline connection points to townhouse well and regular well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where prismatic liquid could sometimes be covered in grass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where buildings wouldn't display their effect range on placement begin, only after being moved by a certain amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the feedback button (For future bug issues, please write on Discord or in Steam discussions).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where musical garden ground wouldn't enable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where clock tower grass would clip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where decorations with foundations wouldn't be displayed before being constructed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lack of construction ground texture in:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stockpile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Market",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Barracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wood bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stone bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed banks, arc of pigs, flower queen, musical garden and ancient stone guardian using incorrect construction poles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed farm and hospital not having water drop effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where military overview UI of huge armies would overlap other panels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed windmill missing windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several models (added rain and frost effects).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed harvest guild decorations clipping through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sign post floating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Dark Knight's third date wouldn't update properly if fortification level was already at 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Ramone's third date would subtract too much happiness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed major issue with happiness where having trolls or dragon active while receiving other happiness bonuses would add their debuff one more time, stacking each time. This fix also addresses old saves affected by the bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Bob not being red.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Bob's branches being white.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed maze garden not having ground texture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed grass capturing issue on load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimisations",
+     "items": [
+      {
+       "text": "Fixed a memory leak related to grass around trees and accessing mesh data for construction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved memory access leaks associated with flag lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the rendering process for large amounts of areas simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heavily optimized the logic for drawing areas (preview area).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an area rendering issue that caused overdraw on map edges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized shadow casting for certain objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Added a setting to toggle muting audio on focus lost, addressing issues where players experienced no sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Notifications are now colour-coded for improved clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Grenaa Games Discord",
+     "items": [
+      {
+       "text": "Grenaa Games X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Newsletter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 40,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5963413094344657839"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-24T13:30:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.538Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.902Z"
+  },
+  {
+   "id": "fabledom-231098@1.05",
+   "gameId": "fabledom-231098",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-06T13:43:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.05 is available now. Feel free to check it out below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where the overview button could disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eric Jr. will no longer provide a buff until we find a way to fix this, but if you already have him roaming in your kingdom he will stick around, what are friends for?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where resource cart storage was randomly ignored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Fergus would not animate properly on mission over the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Fixed memory leak:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Related to grass, mesh slicing, rivers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Related to procedural grass borders on farm fields and between saves/main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed grass meshes would leak on quality change and ocean mesh would leak on start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "The Ministry of culture now rewards 5 bonus global happiness per noble instead, this is due to the Eric Jr. bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Grenaa Games Discord",
+     "items": [
+      {
+       "text": "Grenaa Games X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Newsletter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 1,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5746109972548943911"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-06T13:43:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.537Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.900Z"
+  },
+  {
+   "id": "fabledom-231098@1.04",
+   "gameId": "fabledom-231098",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-29T14:08:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "You can now move coffers and the resource cart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More important notifications are now shown for longer than lesser ones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now shows ruler titles instead of realm titles on active missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Several localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue causing walls to instance incorrectly during placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoke adjustments:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed summer smoke activation issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced bakery smoke with town house smoke and Fixed random delay on the Bakery when the smoke starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-worked season controller and other effects, which may affects flag, lights in winter and smoke",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for multiple smoke colours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added smoke to coal maker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed smoke would start with a random offset in buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed grass re-spawning in various scenarios:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Destroying on top of an area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Partially building and then destroying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Destroying decorations on roads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added animated fire to workplaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added fire to the coal maker and ensured it uses unscaled time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sparks FX and elixir resource not ignoring timescale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added smoke and fire to the blacksmith",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed broken-looking metal bar used by blacksmith workers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected particle effects that would load and remain active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed snow/rain not stopping to load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the red mesh appearing on wood gates and grass appearing underneath",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gaps on stone gates between towers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gaps on towers between tower and wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where relocating storage targeted by a worker to pick up resources could cause him/her to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs related to Giovanni's third date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the teaching tooltip triggered when placing a palace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Ministry of Philanthropy buff countdown display issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where if trading a locked resource would not decrease the resource amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the second Cyclops reward was not registering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug that allowed placing multiple beanstalks while holding the shift key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where reconstructing arena after defeating it would remove the statue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where The Dark Knight would gift prismatic elixir instead of prismatic liquid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed relocating issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After loading, caused the flag lines staying in the same place and hence the duplicated flags",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With different rotation would lead to floating flaglines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Removed unused light from coal maker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed memory leak related to light texture, swirly winds, border fog, territory drawer, flag lines generation & meshes leaking due to overview render",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized memory usage of world map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Fish respawn a bit faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sickness now always starts X days after hospital is available, even if you don't build it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Coal will consume slowly during winter, but also take equally more time to make.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Grenaa Games Discord",
+     "items": [
+      {
+       "text": "Grenaa Games X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Newsletter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 36,
+    "balance": 3,
+    "other": 12,
+    "ps5": 0,
+    "topNew": [
+     "You can now move coffers and the resource cart.",
+     "More important notifications are now shown for longer than lesser ones.",
+     "Now shows ruler titles instead of realm titles on active missions."
+    ]
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5742731639326567856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-29T14:08:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.536Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.899Z"
+  },
+  {
+   "id": "fabledom-231098@1.03",
+   "gameId": "fabledom-231098",
+   "displayName": "Patch 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-22T14:23:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed marketplace and dancing stage not having flaglines and winter lights; added flag connection points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bank not having flaglines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced flagline generation and added connections to the mall, café, embassy, bank, and clock tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added flaglines to grand theatre, hospital, palace wall tower, messenger's guild, stone gate, bakery, inn, horizontal gate, and diagonal gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where destroying buildings wouldn't destroy flaglines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Flaglines now spawn over longer distances (2 tiles).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added birds to messenger's guild and musical notes to musical garden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed messenger's guild not having decoration and windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hospital and messenger's guild not tinting on hover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hanging cloth not moving on hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed maiden's fountain not tinting on hover (water) and its particle system not stopping on pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mall placement arrows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated and improved embassy and hospital decorations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed water not receiving shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bob encounter trunk not affected by cloud shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed horizontal palace gate not having windows material.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed grass respawning on stone gate and wood gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ferris wheel appearing pure white during winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed harvest guild not being covered in snow during winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added decoration to windmill and forester.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bread dough in bakery using wrong material.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where relocating buildings didn't destroy or respawn flaglines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed low-quality/black forester nets not visible from inside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed butterflies and town well particle systems not stopping on pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Harvest guild can now be upgraded using crops and tulips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Build bar now closes with ESC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI issues with quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Territory button now appears during the tutorial upon reaching a small village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inhabitant overview now highlights workplaces with no workers in red text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where autosave would save the building currently being placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where carousel UI would show wrong information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Palace can no longer be destroyed with the mass destroy tool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where mission rewards for new fablings weren't shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After reaching a small town, commoners can still be accepted even if population decreases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where missions couldn't be started with just one swordsman.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mission nobility rewards not displaying everywhere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All ministry buffs now show current bonus values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ferris wheel and some building parts showing as constructed before completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed prismatic liquid parts would be visible before construction completes and not using the correct construction poles mesh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cliffs appearing red.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cobblestone roads now connect to terracotta ones, and vice versa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fog shader noise axis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for smoke color changes during seasons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added smoke to bakery, embassy, bank, and hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed smoke on town houses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where soldiers would resurrect underneath the map; soldiers lost due to this in previous saves should be restored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where missions couldn't be started with only a hero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Arena of Trials could load as incomplete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the camera couldn't zoom in fully at random times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where group units didn't die when they should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where units could be attacked while on missions in specific scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Giovanni's third date events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with upgrading wooden gates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with trolls not loading properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Saves prior to 1.0 can now court Farrah and Sir Payne.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eric Jr. can no longer spawn (until his issue is fixed).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mystic mine now behaves as intended when closing/opening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Fixed potential flaglines mesh leak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized particle systems handling during pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Increased marketplace storage capacity and reduced upkeep requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Grenaa Games Discord",
+     "items": [
+      {
+       "text": "Grenaa Games X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Newsletter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 59,
+    "balance": 1,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5741605105603789597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-22T14:23:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.535Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.898Z"
+  },
+  {
+   "id": "fabledom-231098@1.02",
+   "gameId": "fabledom-231098",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-15T14:03:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your love & support to Fabledom 1.0. Here are the patch notes 1.02.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed \"blob\" animation not applying to some objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading a save during winter would result in strange shadow colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some materials would get overridden when loading during winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some material would get wrong settings on start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed small/large stone deposit/ not getting covered in snow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ground tiles for plaza would have weird shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fog shader hole when opaques overlap the fog material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sometimes rain would never stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed beanstalk would look \"radioactive\" during winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wood poles construction would float on buildings like the lighthouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed maze garden using the wrong construction poles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where The Dark Knight's second date would give negative relationship effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where attacking dragon did no damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some missing text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fortification could go over 10 which caused several issues with troll camps (this fix will also fix saves that were broken by this)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Golden goose coop would not render positive area effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed so quest to unlock territories can't trigger during tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed trees not being affected by cloud shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bob encounter not using unscaled time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bob encounter not being affected by cloud shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where hero would fall below map and not return (also fixed for saves where this already happened)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with wicked witches' sister event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few issues that would freeze all workers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where defeating dragon would not remove the active event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Simplified world fog on low quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed variants from water shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved how some UI text is updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you and we wish you live happily ever after in the realm of Fabledom. 🏰",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Grenaa Games Discord",
+     "items": [
+      {
+       "text": "Grenaa Games X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Newsletter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 25,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5747233970414999120"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-15T14:03:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.534Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.897Z"
+  },
+  {
+   "id": "fabledom-231098@1.01",
+   "gameId": "fabledom-231098",
+   "displayName": "Patch 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-14T14:01:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your love & support to Fabledom 1.0. Here are the patch notes 1.01 which mainly focuses on fixing visual issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Can no longer use keyboard inputs during wedding video cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed all friends achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed so prismatic liquid now shows in production controls UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed achievement \"Popular\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Farrah's feast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wooden walls can be upgraded while mounted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed resurrecting soldiers counting as training soldiers in some quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tutorial text-boxes staying on screen in pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed quest \"Farrah's challenge\", now counts all buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Strategic council wouldn't work for newly spawned trolls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera flickering when moving with mouse outside map",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed balloons not being covered in snow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed/Updated water colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed waterfall would turn white on winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed iron deposit would turn white on winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where tutorial focus rings would not disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed references to early access from some localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the tutorial's circle indicating that player can buy territories wasn't removed: after completing the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Now allows peasants to work in prismatic liquid extractor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Embassy now lets you lock resources like in granary and stockpile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Health regen to trolls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Minor balancing to Military ranking world event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added grapes / juice to town shops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added extra storage amount to flower farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Noble world events will now trigger slightly more often",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a coin option to the wicked sisters world event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Small balancing of different hats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pawnbroker loan \"Family Money\" is now a bit less expensive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added rewards to Farrah's request quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Known issue",
+     "items": [
+      {
+       "text": "Trolls camps will be bugged when you reach a fortification level higher than 10. (it should be fixed in the upcoming patch)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you and we wish you live happily ever after in the realm of Fabledom. 🏰",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Grenaa Games Discord",
+     "items": [
+      {
+       "text": "Grenaa Games X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Newsletter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dear Villagers Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 11,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5768625435413964357"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-14T14:01:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.533Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.896Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2024-02-20",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-20T15:05:29.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed minor issue where the UI wouldn't be updated properly when destroying a building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor issue with loading unconfirmed buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the underlying issue to several rare and complex loading errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stonemason not having glass or wind effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You cannot move the Arena of trials until all waves are completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could block the entrance to fisherman's hut.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it much clearer that you can copy the seed inside the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the UI wouldn't update properly on workplaces that require full staff to work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where UI blur would not be transparent on certain quality settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you sometimes couldn't open the dropdown in the workplace overview menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Winifred's marriage. You now gain double XP with hero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added tooltip that shows how many % of feast supplies that are produced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added tutorial info that describes how Feast supplies and Feasts work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 11,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added tooltip that shows how many % of feast supplies that are produced.",
+     "Added tutorial info that describes how Feast supplies and Feasts work."
+    ]
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/8033928544510992290"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-20T15:05:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.532Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.894Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2024-02-09",
+   "gameId": "fabledom-231098",
+   "displayName": "Another Hotfix!",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-09T13:49:12.000Z",
+   "notes": [
+    {
+     "title": "Another quick hotfix!",
+     "items": [
+      {
+       "text": "Fixed issue that would make hedges impossible to place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that would make some decorations impossible to place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed iron looking \"radioactive\" during winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5589599109268957508"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-09T13:49:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.532Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.893Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2024-02-08",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-08T15:09:08.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed lighthouse alpha issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Fishermans Hut alpha issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Chicken Coop alpha issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some wedding feast quest now has to be with the courted ruler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you couldn't destroy unconfirmed foundations that covered trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed palace construction, very rare error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed palace pieces loading completely built when they are still being built",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed construction shader bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rivers parent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare null error that could occur in Shader Manager",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mesh Slicing issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ocean waves placement height bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rivers not flooding during rain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rivers not receiving shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed atlas shader not supporting texture alpha channel (would lead to black areas)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading issue during rain (would lead to inconsistent wetness values)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading issue that would lead to extremely foggy game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some materials not being affected by cloud shadows color for winter (radioactive blue shadows)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading messengers guild during construction would be invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some decals not being affected by cloud shadows color for winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted farm debris being too bright during winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved chicken coop sharpness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved fishing hut sharpness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where first date would start at same time as third date",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed messengers guild not loading correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed winter clouds shadows could lead to a bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced living quarters entrance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that hanging flags would be invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some buildings would go opaque during winter (chicken coop, fishing hut, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues that caused fablings to stop moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Ramone feast now only requires 90 happiness to receive a bonus noble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved system behind which food Heads of household decide to store, will now better make use of all food types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved system behind which food fablings decide to eat, will now better make use of all food types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added tutorial information for nobles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a followup quest when finished with the second date that lets you know that you need a palace to trigger the third date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New bank model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New growth stages for grapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New debris for grapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Optimized construction Shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 30,
+    "balance": 3,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added tutorial information for nobles.",
+     "New bank model",
+     "New growth stages for grapes"
+    ]
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5589599109265513869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-08T15:09:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.531Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.893Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2024-02-06",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-06T14:36:53.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Added LODs for palace pieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wind related bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed butterflies not going invisible on low quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frost being active through Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed god rays being active through Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bridge lamp posts not being glass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bridge lamp posts being always \"turned on\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted snow coverage on some models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cloud shadows in winter being too strong and wrong color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trees shader wind reaction changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rain stopping abruptly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rain not showing if camera moved too fast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fields now accumulate water during rain (Visual)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rain to Sunny transition changed to allow water to \"evaporate\" on the fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rain particles now adjust scale to makeup for fewer particles on lower quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rain wheat color being too strong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-worked fog calculations for butterflies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rain being jittering when moving or rotating camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Time Wind Support To Flag Lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for poop on drains to increase/decrease with rain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for height map to roads shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added rain accumulation to roads (Ultra-Quality only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Messengers Guild rotating part not being affected by wind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Windmill rotating parts not being affected by wind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Agnes feast now works properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Giovanni feast now has correct tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wooden bridge now has a proper description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stockpile now has correct icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grapes and Grape juice can now be stored in granaries built on old saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where feast UI wouldn't update properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where feast hall would operate without full staff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Winifred's third date being completed when triggered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fish on the edge of the hut's area would not be reachable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where soldiers would move to join their squad when finished training",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where workers could get stuck in front of Embassy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading game during rain would make grass display with strange color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed specular colors not loading/saving properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading saves during rain would lead to unloaded rain features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wetness would continue changing even on pause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading rain after it starts stopping to rain would lead to starting to rain again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rivers not having dynamic specular color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rivers not having water drops during rain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed forest bushes would appear through town well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few issues causing fablings to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grape juice now shows up in production controls menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ocean Shader not supporting water drops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now move/destroy material carts and coffers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted entrance to ministry of culture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled local avoidance for pathing agents to help reduce stuck issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exploit that let you place more than 1 of limited buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that prevented quests from repeating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where trees would not become visible again if you destroyed an unconfirmed foundation piece on top of the tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where placing harvest guild could break game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted waves placement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ocean shader normal (water drops) being too sharp during rain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Optimized interior mappings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added rain particle quality settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized wheat shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized river shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized Ocean Shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized ground shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 56,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5582843074959225068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-06T14:36:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.531Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.892Z"
+  },
+  {
+   "id": "fabledom-231098@major-2024-02-01",
+   "gameId": "fabledom-231098",
+   "displayName": "A Wedding in a Chateau Update is LIVE!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-01T14:00:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear princesses & princes,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The last major update of the Early Access before 1.0 update – A Wedding in a Chateau is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is our biggest patch yet and it has been a real challenge getting everything done on time, but we are quite proud of the state it's in now and we really hope you will enjoy it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are so many new buildings and features connected to courting, marriage and the palace. The way they all connect to each other is really fun and feels unique.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for your continued support during EA, and an extra thanks to our community on Discord who keeps making the game better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "[expand type=details]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several new world events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several new quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New resource: Grapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New resource: Grape juice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New resource: Feast supplies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Grape farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Juicery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Arena of trials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Pawn broker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Harvesting guild",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Arms dealer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Pawnbroker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Carousel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace main hall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace living quarters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace feast hall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace wedding hall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace ministry of aristocracy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace ministry of culture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace ministry of diplomacy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace ministry of nourishment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace ministry of parks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Palace ministry of philanthropy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Several palace decorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Several different types of river bridges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Several new decorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New building: Terracotta roads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: Marriage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: Feasts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: Third dates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New unit: Nobles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When prompted with an option to start a quest via a world event, you can now see the quest details before accepting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You now get a notification when a travelling encounter spawns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "[expand type=details]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Fablings would never pick up resources from the Marketplace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fablings will no longer interrupt resource transportation to handle hunger, instead they will finish transporting resources then handle hunger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where buildings gifted through world events could not be placed if a coin was missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing coal during winter now properly impacts happiness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wishing well reward now has correct text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Archer now has a bow in the mission over screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fablings could get stuck clearing debris",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Workers on missions no longer count as unemployed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues that could cause all fablings that could stop moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fishermen could get stuck on boat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where saves would sometimes not get named.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Will old saves work?",
+     "items": [
+      {
+       "text": "Old saves will work, but we recommend starting a new one for the best experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "And finally, another big announcement!",
+     "items": [
+      {
+       "text": "With love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grenaa Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 34,
+    "fixed": 12,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "[expand type=details]",
+     "Several new world events",
+     "Several new quests"
+    ]
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5582843074940905222"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-01T14:00:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.890Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2023-11-06",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix Patch",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-06T14:03:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another hotfix patch for today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Eric one-eye no longer blocks fablings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where moving the embassy would disable missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fablings would get stuck sitting at some decorations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where animations particles would not work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where chickens would not move with chicken coop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fishermen would sometimes get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Homestead fences when expanding from 3 to 5 plots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fish would respawn with 0 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where stone brick did not show up in production controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where production limits not populating properly on load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where swords and bows would sometimes go invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "See you soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5288974951221231089"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-06T14:03:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.887Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2023-10-25",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-25T12:41:42.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where fablings would get stuck on some of the benches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can no longer relocate lumber camp or fisherman's hut, can be exploited and lead to some issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fablings now get a proper speed boost on sharp cobble roads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fablings would get stuck in stockpiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can no longer be prompted with recruitment events when there is no capacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with flower farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where relocating embassy would disable missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Fish now take a bit longer to gather.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Re-worked production limit due to some confusion. Now the limit you set is the production \"goal\", and once that goal is reached, production will pause until more is needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5229301621572369535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-25T12:41:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.885Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2023-10-20",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix patch",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-20T09:12:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The previous hotfix had a big issue with relocation, where you would be able to relocate everything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is a possibility that if you relocated housing, workplaces with staff or buildings with attachments in your save, that save could be broken. It is possible that destroying the buildings you relocated this way could fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where fences would load incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where tulips would break in winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where an abandoned graveyard would take 200 coin from the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fablings could get stuck at street theatre.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where pigs would not follow when relocating pig farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you cannot type in the production limit boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could relocate buildings with attachments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where rotating an amenity would also rotate the area of all other amenities of the same type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could climb beanstalk infinite amount of times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with grass appearing to clip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bread blue texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed god rays not scaling with zoom in/out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "Can now relocate hubs as long as they have no active attachments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Selecting decoration now shows all beauty areas instead of just areas with the same ID.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can't relocate buildings attached to resources anymore, these should be investments and re-using them feels wrong.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Peasants can now work in golden goose coop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "With love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Can now relocate hubs as long as they have no active attachments",
+     "Selecting decoration now shows all beauty areas instead of just areas with the same ID.",
+     "Can't relocate buildings attached to resources anymore, these should be investments and re-using them feels wrong."
+    ]
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5218041989045989298"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-20T09:12:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.885Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2023-10-18",
+   "gameId": "fabledom-231098",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-18T14:48:07.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where autosave would break after talking to Eric one-eye.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some old saves would break due to out-dated world events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Everyone is welcome quest was only 10 days, it's now 90 as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where ground texture did not update when relocating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some textures didn't get covered in snow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Apple trees would not tint while placing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could relocate buildings that are being constructed, which caused a few other issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where relocating buildings would not cut down trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue when setting the speed to x3 some materials wouldn't move too much",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue when going to the menu some materials wouldn't re-set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that sometimes Specular would flicker during Winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where far away LODs wouldn't transition between seasons (foliage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed god rays no transitioning between seasons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now can't destroy hero camp while hero is alive, to avoid several edge case issues related to off-world missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed swirly winds not generating properly at start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed option to use nobility for magic bean world event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the magic bean event could trigger twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Log bench, Public outhouse, Tall arrow sign, Wooden barrier and Wooden spikes did not add Desirability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Optimized hanging flags shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized decal shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 19,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5218041989039549610"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-18T14:48:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.527Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.884Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2023-07-17",
+   "gameId": "fabledom-231098",
+   "displayName": "Small Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-17T14:52:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small hotfix today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed visual issue with tulips during rain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved grass visuals during rain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several small UI fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sewer drain construction can now be prioritized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eggs are now added to old saves after you build your first chicken coop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timescale is now paused when you get rewards from world events, to prevent placement of cofferts being cancelled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can no longer access all decorations during start of game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed travelling merchant world event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added ground textures to all resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Second dates no longer give negative reputation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a good day everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/6079346804886442043"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-17T14:52:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.882Z"
+  },
+  {
+   "id": "fabledom-231098@hotfix-2023-07-14",
+   "gameId": "fabledom-231098",
+   "displayName": "Small hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-14T14:53:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Minor hotfix focused on some issues that would block progress, a more complete hotfix will come on monday.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "Some structures are available too early when starting a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Traveling merchant can offer negative resources..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare issue with old saves where missions can complete and still not count towards quest progress.: Have a good weekend everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651560/view/5124583599318152633"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-14T14:53:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651560",
+      "checkedAt": "2026-11-13T03:20:34.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:24.881Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "230f2dbe8376",
+   "text": "Some structures are available too early when starting a new game.",
+   "status": "open",
+   "firstReleaseId": "fabledom-231098@hotfix-2023-07-14"
+  },
+  {
+   "id": "25a0f7994979",
+   "text": "Traveling merchant can offer negative resources..",
+   "status": "open",
+   "firstReleaseId": "fabledom-231098@hotfix-2023-07-14"
+  },
+  {
+   "id": "29ed7ef0ee52",
+   "text": "Rare issue with old saves where missions can complete and still not count towards quest progress.: Have a good weekend everyone!",
+   "status": "addressed",
+   "firstReleaseId": "fabledom-231098@hotfix-2023-07-14",
+   "addressedBy": "fabledom-231098@hotfix-2023-07-17",
+   "addressedAt": "2023-07-17T14:52:00.000Z"
+  },
+  {
+   "id": "bc1a3da47bda",
+   "text": "Trolls camps will be bugged when you reach a fortification level higher than 10. (it should be fixed in the upcoming patch)",
+   "status": "open",
+   "firstReleaseId": "fabledom-231098@1.01"
+  },
+  {
+   "id": "ae4038de2376",
+   "text": "Thank you and we wish you live happily ever after in the realm of Fabledom. 🏰",
+   "status": "addressed",
+   "firstReleaseId": "fabledom-231098@1.01",
+   "addressedBy": "fabledom-231098@1.02",
+   "addressedAt": "2024-05-15T14:03:49.000Z"
+  }
+ ]
+}

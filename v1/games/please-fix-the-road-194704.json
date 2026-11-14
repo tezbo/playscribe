@@ -1,0 +1,1228 @@
+{
+ "game": {
+  "id": "please-fix-the-road-194704",
+  "igdbId": 194704,
+  "name": "Please Fix the Road",
+  "cover": {
+   "imageId": "co4kvc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4kvc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1l19",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1l19.jpg"
+  },
+  "ps5Release": "2024-05-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "please-fix-the-road-194704@1.2.1",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-23T11:41:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added keybind list for gamepad and mouse+keyboard (for Samoth's birthday!).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed minor issue with one of the level switch animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/5382426458976965515"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-23T11:41:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.376Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.376Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.2",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-19T15:04:59.000Z",
+   "notes": [
+    {
+     "title": "macOS",
+     "items": [
+      {
+       "text": "Please Fix The Road was originally released for Windows and Linux and was quickly Steam Deck Verified (some say that our Lord Gabe Newell himself verified my game, but that's just a theory). Today, I am completing the platform collection and adding macOS support (both old Intel and new Apple silicon).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Update 1.2",
+     "items": [
+      {
+       "text": "I am currently working to deliver you the Switch, Xbox, and PlayStation ports of the game. I really wanted to fix all of the bugs I've discovered for these versions and bring these changes to PC as well. The game should perform even better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Updated the Unity engine to the latest LTS version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements for water, physics, and UI (you can thank the Switch port)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faster closing of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New particles and developer logo in the intro sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bugfix: Sometimes, the bottom UI doesn't show up mid-tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Rare crashes on less powerful machines or during heavy lag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Rare animation bugs on less powerful machines or during heavy lag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: It was possible to bug out the undo/redo feature with specific actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Missing script errors in the log file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: During very long play sessions, some level switch animations glitched a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Tile icons at the bottom UI are sometimes off-center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Arrghh!",
+     "items": [
+      {
+       "text": "On the game launch date, I released a special unlicensed version of the game on torrents as a sign of good faith to my \"unpaid clients\". From now on, you can enable this mode by adding a super-secret \"pirate\" command-line argument ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Future",
+     "items": [
+      {
+       "text": "If you enjoyed Please Fix The Road perhaps you could kindly join my Discord server as well? I'm currently working on my next title, and it's the best place to get more information about it sometime next year. Alternatively, you can join my mailing list that you can find it ony my website and I'll send you a lovely e-mail with chocolate and kisses... if you prefer that. Be patient, let me cook ːpftr_loveː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/6560117310275372589"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-19T15:04:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.376Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.376Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.7",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-19T18:07:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Implemented a possible workaround for a bug, where on a very rare occasion you wouldn't be able to use the current tool until you open and close the options menu when playing on a gamepad. This simple bug has been haunting me for a long time. Only saw it on Twitch streams a few times, and today I saw it again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue, where the readability grid would be rendered over the tool indicators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/6214419350716016435"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-19T18:07:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.375Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.375Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.6",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-19T16:08:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Exit to desktop button moved to a separate panel, has a red highlight and requires a confirmation to exit the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new popup will appear, that teaches you how to reset the current tool the first time you use the Copy Tool. Some players, even at 30+ levels didn't know, that they can right-click or press the east gamepad button for this. This will also appear for existing players, because I can't confirm if you already know about this (I didn't track resets before update).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now open the options menu at the very beginning of the game (before intro credits) and in the tutorial at level 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor issue with keyboard/gamepad navigation in options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/6214419350715714111"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-19T16:08:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.375Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.375Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.5",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-17T13:00:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The more levels you complete, the more levels you can skip ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting tutorials now have a very clear progress indicator. Some people got confused and stuck for a few moments, because they didn't use WASD/Left gamepad stick for long enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new popup tutorial will show the first time you use the Rotation Tool if you are using Mouse+Keyboard controls.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed some decoration on levels 11 and 20, that obstructed the view too much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 6 was moved to position 9 (nice).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/6214419130142571482"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-17T13:00:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.374Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.374Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.4",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-16T19:20:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a few visual issues of the new grid readability feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/6214419130139890339"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-16T19:20:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.374Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.374Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.3",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-16T10:51:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Simplified level 17 based on how players on YouTube or Twitch tried to solve it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/6214419130138601187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-16T10:51:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.374Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.374Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.2",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-16T09:20:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a black grid to the tiles that improves map readability. By default it's subtle, but you can adjust its power in the options to make it really strong or disable it completely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolution slider now filters out too big resolutions (bigger than your system resolution).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/6214419130138369527"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-16T09:20:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.373Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.373Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.1",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-15T10:59:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Resolution slider now filters out small resolutions (less than 1024px width).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to disable hints. The tutorial on the 3rd level will still force you to use one hint, button will still be visible, but disabled and a padlock icon will be displayed on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ads on billboards will now change every 2 minutes. I will add more of them in the future, currently there are 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version number is now displayed in the options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480533160882045351"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-15T10:59:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.373Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.373Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.1.0",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-14T08:22:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "10 new easy levels for beginner players that explain the game mechanics better. Trivial for puzzle enjoyers, but very needed for casual players. Now there are 160 levels in total.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified a few starting levels based on observations of how players play them on Twitch and YouTube. Don't worry, hard puzzles remain untouched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the level order a lot, there are more easier levels first and the harder one got pushed to the later stage of the game. This doesn't change the overall difficulty of them game, just eases the player into it better. Levels from 1 to 60 should be more approachable now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor visual error in one of the level switch animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed decorations on a few levels that obstructed the view too much",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug, where the game wouldn't switch to skipped levels after finishing the last level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug, where the interface would hide too late in the level switch animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please consider leaving a review for the game on Steam, either negative or positive. This help with the game discoverability. Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686365067454"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-14T08:22:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.372Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.372Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.0.8",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-13T18:20:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed accidental regression that broke level #60.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686362938066"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-13T18:20:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.372Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.372Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.0.7",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-13T14:56:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added screen resolution slider in options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added gamepad vibration slider in options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added decoration details slider in options (seperated from quality settings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed quality button to a quality slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game mutes when it is in the background/unfocused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686362420905"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-13T14:56:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.371Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.371Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.0.6",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-13T06:05:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changed level selector icon, should be clearer what it is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level unlock popup (+1, +2 puzzles) will make the level selector button blink more, so players will notice it more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default hotkey for hints is now F (H also works) instead of TAB, so the game will not give a hint when ALT+TAB'bing on Steam. Hint popup will appear once with the new keybind for existing players to inform you of the change.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Level selector tutorial popup will appear even if you don't use hints. New players will see it at level 4 and existing players will see it once on the start of a level, if they never seen the popup yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reminder popups for using hints and for level skips are shorter, will appear after a longer time and will stop appearing after seeing them 3 times each.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered hint cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made one of the starting level easier. I will add more easy levels in the first content update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686361076504"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-13T06:05:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.371Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.371Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.0.5",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-12T02:58:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Level #108 was impossible to solve, it is now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686356962654"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-12T02:58:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.371Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.371Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.0.4",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-11T17:23:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue where it's impossible to reach some options on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686355506422"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-11T17:23:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.370Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.370Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.0.3",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-11T15:01:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fullscreen toggle is now hidden on the Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where the Hint System would show invalid moves for the Push Tool when playing on gamepad / Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686355147819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-11T15:01:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.370Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.370Z"
+  },
+  {
+   "id": "please-fix-the-road-194704@1.0.2",
+   "gameId": "please-fix-the-road-194704",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-11T13:15:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "By accident, high quality setting had increased resolution scaling. This was changed back to a scale of 1. Your performance should increase... a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vsync enabled (may add a toggle button on a later patch)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1383250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1383250/view/4480532686354879080"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-11T13:15:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1383250",
+      "checkedAt": "2026-11-12T09:24:08.369Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.369Z"
+  }
+ ],
+ "issues": []
+}

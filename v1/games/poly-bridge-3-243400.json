@@ -1,0 +1,6174 @@
+{
+ "game": {
+  "id": "poly-bridge-3-243400",
+  "igdbId": 243400,
+  "name": "Poly Bridge 3",
+  "cover": {
+   "imageId": "co6bp4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6bp4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar28y1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar28y1.jpg"
+  },
+  "ps5Release": "2026-09-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "poly-bridge-3-243400@1.5.18",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.18",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-06T00:47:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small update to fix an old bug related to the in-game display for Achievements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with showing the \"Complete *********\" achievment in the Achievements UI before the Secret World gets unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1848664643343700"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T00:47:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.015Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T00:47:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.015Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-06T00:47:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.587Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.17",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-19T14:49:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Unfortunately the upgrade to Unity 6 resulted in some old solutions no longer solving correctly. Although we tested old solutions as part of the engine upgrade, we didn't catch some cases that our users have reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's more important for us to keep previous solutions working for our players than to upgrade the underlying engine (which was a nice-to-have, not a necessity). So we have rolled back to the older version of Unity, while still keeping the other improvements and fixes from 1.5.16.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry for any inconvenience, and thank you to our players for reporting this problem!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1841579228662849"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-19T14:49:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.015Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.586Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.16",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-18T22:53:36.000Z",
+   "notes": [
+    {
+     "title": "Poly Bridge 3 — Engine Upgrade & Fixes",
+     "items": [
+      {
+       "text": "We've just released an update for Poly Bridge 3. While most of it is under the hood, it's a big one: the game now runs on Unity 6, the latest version of the engine. This keeps PB3 on a modern, supported foundation and brings updated rendering internals along with it. You shouldn't notice anything different, just the same game on a healthier engine. This touches nearly every part of the game, so if anything looks off after the update, please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "When moving a node, highlight edges in red that constrain node movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The gamepad cursor no longer shimmers along its edges while moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Faster asset loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Mute and Mute In Background now take effect immediately when toggled with a keyboard or gamepad (previously they only applied when clicked with the mouse or after closing the menu)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Canceling the on-screen keyboard in Steam Big Picture / on Steam Deck no longer confirms the dialog with empty text",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix visual pop that occured when exiting to Main Menu with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cancel in-progress joint placement when opening Pause Menu with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix dev (help) solutions for RB-01 (Preplanned) and VT-13 (Near Miss)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "When moving a node, highlight edges in red that constrain node movement",
+     "The gamepad cursor no longer shimmers along its edges while moving",
+     "Performance optimizations"
+    ]
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1841579228661091"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-18T22:53:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.014Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.586Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.15",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-24T15:27:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Poly Bridge 3 Small Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitch Integration: The native Twitch integration feature has been retired. Due to low overall usage, the server infrastructure costs required to host and maintain this service are no longer sustainable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to thank the community members and streamers who engaged with this feature during its run!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1836506165546324"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-24T15:27:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.014Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.585Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.14",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-07T15:25:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This small patch fixes an issue with the Weekly Challenges thumbnail not appearing when in the last 24 hours of the countdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1834602721196124"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T15:25:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.014Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.585Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.13",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-25T06:12:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We had some additional unexpected problems with the switch to automated looping Weekly Challenges. This update addresses all known issues... thank you for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Looped Weekly Challenges will now",
+     "items": [
+      {
+       "text": "Use the same Gallery as the original Weekly Challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have their own unique save folder (not overlapping with the original Weekly Challenge)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Seasons dropdown menu in the Weekly Challenges UI now sorts seasons with most recent at the top (this is a bit more user friendly, especially as the number of seasons gets larger over time).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1833334318576525"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-25T06:12:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.013Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.585Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.12",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-25T00:44:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "There was a glitch in the matrix that was preventing Season 16 in the Weekly Challenges from starting. This has been fixed with this small update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1833334318576245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-25T00:44:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.013Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.584Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.11",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-20T16:52:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After 15 incredible seasons and 150 Weekly Challenges, we are introducing a new automated rotation. Moving forward, Poly Bridge 3 will cycle through these 150 classic challenges indefinitely, featuring a fresh leaderboard every time they return!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This update is perfect if you",
+     "items": [
+      {
+       "text": "Missed out on an older Weekly Challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Want another shot at reclaiming a top rank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Are brand new to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seasons will continue to march forward as before, with Season 16 up next. Rest assured, all previous Weekly Challenges and past leaderboards will remain fully accessible in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1833334318566812"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T16:52:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.012Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.584Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.10",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-18T13:12:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This regular update brings some Quality Of Life improvements and bug fixes. Thank you to the Poly Bridge 3 community for the continued feedback and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Show In Build Mode\" toggle for multi-selected Decor objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Undo step after changing \"Uniform Scale\" for Decor objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bug with vehicle labels showing in Decor Mode if previously hovering over vehicle in Build Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with selection sets not moving up/down when including boat locked to water line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Toxic landmass not displaying properly in Sandbox when 6.25m tall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Event Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Undo step after moving icons in Event Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Maintain scroll position in Event Editor when items get selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with scrollbars not hiding when Event Editor is collapsed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed orphan icons issue when deleting objects while dragging them in Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Custom Shapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with custom shape color being incorrectly set to white in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with being able to move or delete custom shape anchors and pivots from non-selected shapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Simulation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed small camera rotation in simulation when right-clicking in 2D mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed uncommon case of boats/planes not colliding with bridge pieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed T (stress vis) causing piston/spring tooltips to show up in simulation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed MOD Api not returning bridge edges for prebuilts in some campaign levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 10,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1816307528973566"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T13:12:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.012Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.583Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.9",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-05T12:41:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update rebuilds Poly Bridge 3 using the latest version of the Unity engine. It addresses underlying security vulnerabilities and ensures continued compatibility and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No gameplay or content changes are included in this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1811772772573827"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-05T12:41:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.011Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.583Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.8",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-10T13:02:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.5.8 is a small hotfix to fix a regression introduced in 1.5.7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use grey color to indicate disabled nodes and pistons in the Hydraulic Controller (was using green)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1807332909668093"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-10T13:02:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.011Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.582Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.7",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-06T02:24:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This small update brings some Quality Of Life improvements and bug fixes. Thank you to the Poly Bridge 3 community for the continued feedback and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Quicksave (F6) for saving bridges when playing Campaign or Workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When hovering over a vehicle, bring all vehicle checkpoint and flag labels to the foreground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better distinguish edge highlighting between selection and split joint hovering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make nudge for springs work in 10% increments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add workshop ID to copy-to-url output for Workshop Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed \"by:\" in copy-to-url output",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed gamepad legend height issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gamepad improvements for Sandbox Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added button to visit Steam Page for our upcoming new game Poly Bricks! (Press \"P\" to hide)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1807332909523074"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-06T02:24:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.011Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.582Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.6",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-08T23:17:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The 1.5.6 patch brings many Quality Of Life improvements and and bug fixes. Thank you to the Poly Bridge 3 community for the continued feedback and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Traditional Chinese language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Build Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 'Show Decorative Objects' icon for Sandbox, so decor can be visualized when in Blueprint Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support for Z-Axis movement/nudge for Decor and Custom Shapes (including multi-select)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a joint is selected, only show the split joint numbers for that node (even if hovering over other split joints)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Support for rotating clipboard by 90 or 0.1 degree increments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play \"over budget\" sound when going over budget. Can be turned off in Audio Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Draw First Break Indicator over trusses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make First Break Indicator length consistent for all materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 'Show First Break Indicator' to Game Options (Default = True)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Change water line from wavy to flat (more precise, and cheaper to draw)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with selected Sandbox items moving when moving cursor in input fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with level Title and Description sometimes not populating in the UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with UI sometimes showing the Bridge Cost from a previously loaded level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue when an anchor is dragged on top of a node to replace it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for nudging Custom Shapes, Z-Axis Vehicles, and Water Height",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added gamepad support for moving/deleting/duplicating all Sandbox items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Place Custom Shapes, Ramps, Platforms, Flying Objects, Build Zones and Pillars at center of screen when auto-placing after a click",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced minimum Custom Shape Mass from 1 Pg to 0.1 Pg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Played By Me\" workshop filter now shows the most recently played levels first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clear the Search field when selecting \"View All Workshop Levels By ...\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't reset Workshop State/Filter when returning to Workshop Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Refresh button to Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with invalid filename characters sometimes being stripped from workshop item descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with \"Play By Me\" filter not showing more than 3 pages of levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with sort filter for Workshop and Mods affecting each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All UI panels updated to use a resizable banner for their title",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Profile Edit UI flow (easier to change profile icon or name)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed overlap between material icons and Selection Panel UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Event Editor icons not masking when scrolling in Event Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Unlimited Budget/Material tooltip not showing correct info after playing level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steam Deck / Gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increase the size of the UI for Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed camera transition glitching between Build and Simulation after panning with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 'Lowest Budget (Unbreaking)' tooltip when using gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad button conflict between Cycle View and Move Selection in Decor Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with moving a selection in Sandbox when using DPAD in save/load dialog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Don't show Snap Node indicator when Hydraulic Controller is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved gamepad legend for Foundation selection and movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Show gamepad legend for Hydraulic Controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dismiss Timeline with Close gamepad button, rather than toggle stress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Reverse-PB3 Campaign not loading properly on Linux (due to case-sensitive file loading)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Don't allow Wood to draw over Road in the first tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't allow close of Hydraulic Controller using gamepad during tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed start-up issue due to corrupted files (rare)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with leaving 2D in transitions when lock2D is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with invalid characters being used in profile names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 17,
+    "balance": 1,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1801617199504379"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-08T23:17:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.010Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.581Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.5",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-03T20:32:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The 1.5.5 patch brings numerous Quality Of Life improvements and several bug fixes. Thank you to the Poly Bridge 3 community for their endless support that helps make the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added support for constraining node/foundation movement to X or Y axis. Default bindings are N (Constrain to X Axis) and M (Constrain to Y Axis)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Grid now draws in front of custom shapes and vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed hydraulics not working after cut and double undo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with clipboard changing in some undo cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with split joints not being reset when attached to prebuilds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with custom shape outline width changing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trace Tool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added 'Snap Tangents' option (default=U)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Change minimum length for Trace Fill to 0.5m (was 1m)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Draw traceline over vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Highlight tangent handles on hover",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Always allow Fill if traceline is visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Allow changing trace shape and tangents lock/snap when traceline not present",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added support for re-ordering checkpoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added support for converting an anchor to a node (\"Convert To Node\" button in anchor properties)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added skins for UFO vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with Quicksave (F6) for files in subdirectories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed UI overlap in Sandbox with Event Editor and Selection panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added \"Played by me\" filter for Workshop Levels and Campaigns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added ability to Search when filtering by \"Subscribed by me\", \"Favorited by me\" and \"Created by me\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added info icon for Workshop Item slots to provide author/date info on hover",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Number tutorials in Workshop Campaigns if there is more than one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with number of levels sometimes being incorrect for Workshop Campaigns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gallery",
+     "items": [
+      {
+       "text": "* Fixed issue with \"Include Cheats\" and \"Wins Only\" filters not always working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Don't change gallery filters when gallery invoked from Help Icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Remove pre-patch replay from Curated Gallery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Show Campaign Progress on Campaign UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Use YYYY-MM-DD date format for Japanese/Chinese/Korean languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issues with Replay popup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed artifact on rope/cable icons due to compression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Automatically download mods for Custom Shape Textures and Vehicle Skins when used by level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added Main Menu shortcuts (R = load last sandbox level, C = load last campaign level)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with zoom sometimes changing on Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simulation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added new split joint meshes (no longer using PB2-era split joint meshes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 42,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1790214123221811"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-03T20:32:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.009Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.580Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.4",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-20T14:21:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.5.4 adds UI scaling and a new hotkey to visualize tooltips from hydraulics, springs and foundations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added \"UI Scale Mode\" and \"UI Scale Factor\" to Graphics Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* New hotkey (default=T) will show tooltips for all on-screen hydraulics, springs and foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Trace tool UI/UX improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Hydraulics and springs can be adjusted continuously by holding down the nudge keys ([ and ]).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Shrink tooltip size if not running on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "* Added mod hooks to get the UI Scale Mode and UI Scale Factor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1786573930657373"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T14:21:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.009Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:10.580Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.3",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-17T17:59:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update adds quality of life improvements and fixes a few bugs. Thank you to the Poly Bridge 3 community for making suggestions and continuing to provide feedback that makes the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build Mode Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Clipboard no longer clears after undo/redo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added placement axes when placing or moving foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Show hydraulic and spring tooltips when show-all-split joints button is held down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Save 3-way split joint checkbox state (in bridge save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Clear traceline when trace tool is turned off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Disable trace tool when move or erase tool is activated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandbox Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* DPAD-style selection UI added for moving individual sandbox items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Pan keyboard shortcuts now move selected sandbox items",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "* Set minimum movement increment to 0.001 (was 0.25)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added Gallery button to the Campaign and Workshop Campaign UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Copy replay meta-data (e.g., level name, cost, author) to clipboard along with replay url",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Level Info banner now expands to accommodate longer text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added full gamepad controls to Workshop Campaign UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Miscellaneous Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Allow NumPad Enter to be used in all places Return gets used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Help hotkey (F1) now brings up Gallery in Workshop Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Set filters for Gallery when opening for help purposes (Wins only, No cheats)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed default zoom level for Roll Top Avenue and Faulty Drive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed hydraulic trusses overlapping other materials (visual bug only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with Gallery thumbnail sometimes being from a different video (rare)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed \"ghost\" material bug (rare)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed race condition that could result in replay uploading with wrong level ID (rare)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1785774543693503"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T17:59:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.008Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.263Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.2",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-01T15:55:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.5.2 adds Discord Rich Presence and fixes a few bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added Discord Rich Presence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with workshop replays not appearing after beating level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with clipboard having split joints modified (uncommon)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Only auto-adjust split joints after flip-paste if 2 edges are connected to split joint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1784506359114633"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-01T15:55:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.008Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.263Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.1",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.5.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-26T14:57:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.5.1 is a small update to address some issues and feedback from the Faulty Drive update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added Refresh button to My Rankings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with trace lock getting disabled when switching materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed nodes sometimes shifting when trying to move them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed missing Campaign subtitle for Workshop Campaigns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Improvements to ModApi related SetCamera functions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Replay camera performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1783872412145776"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-26T14:57:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.007Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.262Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.5.0",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Update 1.5.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-20T16:17:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Try out the new and exciting world, \"Faulty Drive\", a three-sheep difficulty world that takes place in cyberspace! Expect the unexpected in a world where anything can happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gamepad Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Enjoy Poly Bridge 3 with full gamepad support on a Steam Deck or on the couch in Steam Big Picture Mode!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "* New snap-to-node functionality (gamepad only) to make drawing easier!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Check out the new Gamepad options to customize controls to your liking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Curated Gallery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added a new \"Curated Gallery\" option to ensure replays are appropriate for all ages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Curated replays are hand-picked by the dev team and cover a wide range of solutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish and Bug Fixing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Lots of small polish and bug fixing across the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/1783872411952665"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-20T16:17:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.007Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.262Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.3.4",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.3.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-15T21:07:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.3.4 is a mini update to fix a few annoying bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with split joints not flashing yellow when connecting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with incorrect weekly sometimes being selected from dropdown menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Disable Vehicle Follow camera in tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/6300039510135502930"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-15T21:07:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.007Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.261Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.3.3",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.3.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-08T18:38:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.3.3 overhauls the Follow Camera along with other improvements and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Overhaul of Follow Vehicle camera mode to improve its function and ease of use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Support for automatically including active gameplay mods (that normally trigger cheat flag) in workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Only show world progress bars in Gold if all levels are beat under budget and unbreaking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Allow Pause during camera transition between Build and Simulation modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added button to copy replay video URL to clipboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Don't draw auto-triangulate lines when edge bisect will occur on placement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Unity engine upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed crash that could occur with levels containing UGC content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with incorrect collision for rotated UGC vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with Unlimited Budget/Material cheats not working for Workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed Undo issue with split joints and Hydraulic Controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with long timelines not showing horizontal scrollbar in Hydraulic Controller and Level Info UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Minor UI fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5410576585196391473"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-08T18:38:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.006Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.261Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.3.2",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.3.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-07T00:31:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small patch to address a couple of issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with physics warning continuing to show for updated autosaves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with one main menu level failing sim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5288974951222820648"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-07T00:31:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.006Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.260Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.3.1",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.3.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-01T14:01:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.3.1 release notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed custom shape acceleration issue in RMT-10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed RB-08 prebuilds not being in correct place for older saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added \"Custom Resolution\" option in Graphics. This allows the game resolution to be persistent after resizing the window using the mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "* Fixed issue with not being able to add more than 12 worlds in a workshop campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed UI issue when there are 16 levels in a workshop campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5288974951203001376"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-01T14:01:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.005Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.260Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.3.0",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Update 1.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-30T01:08:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Try out the new and exciting world, \"Roll Top Avenue\", a four-sheep difficulty world where things can get a little bit wacky. You will really need some out of the box thinking to beat this world!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Friction of bridge nodes refactored so they don't 'stick' to terrain edges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue that allowed many short parts connected together to stretch significantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed rare issue where vehicles can be jolted unexpectedly when a wheel aligns perfectly with the edge of a road or platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Set Cheat Flag when a car are thrown by falling roads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Set Cheat Flag when a massive forces break wheels off a car",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Updated behavior of 3-way split joints in rare cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Exclude prebuilt materials in non-buildable areas from contributing to max stress calculation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Material Masses Updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Base Node Mass: 0 => 0.0625 Pg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Road: 0.75 => 0.5 Pg/m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Wood: 0.05 => 0.1 Pg/m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Steel: 0.1 => 0.175 Pg/m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Hydraulic: 0.125 => 0.225 Pg/m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Rope: 0.025 => 0.075 Pg/m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Cable: 0.025 => 0.075 Pg/m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Spring: 0.05 => 0.1 Pg/m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leaderboard Reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Top 2.5% of scores for each level in the Overall and Unbreaking leaderboards are being reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We do everything we can to avoid resetting leaderboard scores. From our internal analysis getting scores in the top 2.5% often required abuse of physics exploits that are being patched. To encourage fair competition scores that are no longer possible after the physics update had to be removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Add support for setting unlimited budget and materials for solved weeklies and workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Show progress icons for workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Show level author name for workshop levels in the Level Info UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Don't allow invalid Campaign Mods to be uploaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed flip for UGC vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weekly Challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed Season 2 weekly challenge progress icons in level dropdown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issues related to reloading workshop levels with mod dependencies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Minor tweaks where an anchor or prebuild was moved a small fraction to align with grid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Base cost of Foundations reduced from $15,000 to $13,000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Allow game window to be resized when not running in fullscreen mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 36,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5229301621588837958"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-30T01:08:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.005Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.259Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.2.6",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.2.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-17T16:57:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.2.6 release notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added new Aliensrock themed vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added UFO \"vehicle\" which can be used as cargo that must reach a flag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed crash when switching a vehicle type to a UGC vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Remove image caching for local mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Localization for strings added since initial launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The next weekly challenge will showcase the new vehicles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5480373588794093521"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-17T16:57:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.004Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.258Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.2.5",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.2.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-11T20:04:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update expands Mod support and fixes some bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MyRankings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* The percentage shown on MyRankings now always matches the percentage shown in histograms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Rank is now formatted with commas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* When opening MyRankings, default World filter to be whatever was selected on the World Map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed bug with showing incorrect rope budget in the Level Info panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with custom shape pin sprites showing up in simulation for invisible shapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed text alignment issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Santize sprite paths",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Cache all textures created by mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "* Added Mod hooks",
+     "items": [
+      {
+       "text": "PlaceEdgeJointToJoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PlaceEdgeJointToPos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PlaceEdgePosToPos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IgnoreEdgePlacementRestrictions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PlaceEdgeJointToJointCheat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PlaceEdgeJointToPosCheat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PlaceEdgePosToPosCheat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "RunLuaDelayed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IsSimulating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GetMouseWorldPosition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "SetJointLegalPosition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "SetJointIsSplit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GetJointIsUnbuildable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UpdateButtonsAddHoverScale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UpdateButtonSetInteractable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GetNameOfKeyDownThisFrame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "SetIgnoreGameInputKey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "SetIgnoreGameInputKeycode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "SetGameInputActive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0,
+    "topNew": [
+     "PlaceEdgeJointToJoint",
+     "PlaceEdgeJointToPos",
+     "PlaceEdgePosToPos"
+    ]
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5159491482924547293"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-11T20:04:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.004Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.258Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.2.4",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.2.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-18T22:34:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small update, mainly to update a bug introduced in 1.2.3 related to Workshop Campaigns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with Workshop Campaign progress getting reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with replays sometimes not sharing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Show number of UpVotes and DownVotes instead of star rating for Workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Show Workshop level details when opening Workshop menu from a Workshop level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Add like and favorite buttons to Level Complete UI for Workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Mod text fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to the PB3 community for the continued bug reports and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5127964289177978457"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-18T22:34:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.003Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.257Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.2.3",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-16T14:53:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show material limits for Workshop levels and Weekly Challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show material limits on Level Info panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Gallery issue with incorrectly playing videos after rapid filter changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Workshop Campaign progress not being accurate if levels removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove requirement for at least one anchor for Workshop levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with prebuilt foundations counting against number of foundations available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Video and Audio settings saved separately and do not sync with Steam Cloud",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Remove force restart of game through Steam if launched directly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leaderboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High scores now have bridge saves sent to back end for validation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't allow empty mods to be submitted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EndLevelFail mod hook no longer tagged as affects gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added UI Mod Hooks:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UpdateTextSetBackgroundActive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateTextSetBackgroundColor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CreateSpriteObjec",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DestroySpriteObject",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateSpriteImage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateSpritePivot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateSpriteScreenPos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateSpriteColor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CreateButtonObject",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DestroyButtonObject",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonCallback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonText",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonImage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonPivot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonScreenPos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonColor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonTextColor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonTooltipText",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UpdateButtonSetOutlineActive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5127964289169519049"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-16T14:53:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.003Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.257Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.2.2",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-08T19:23:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small update to address some high priority issues the community found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with bridge saves not saving correctly if streaming for Twitch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when changing filters in Gallery during loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Weekly Challenge histogram not showing color until level played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Weekly Challenge author name sometimes not showing up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124585319868358145"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T19:23:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.002Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.256Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.2.1",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-27T13:21:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch adds some new Mod Hooks and fixes a few issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed level numbering for Workshop Campaigns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with changing World Map icons for Workshop Campaigns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with going to Workshop from Gallery (if Gallery invoked from Workshop Campaign)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Gallery sometimes not loading after extended paging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with rope and cable mod override colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Standardize Stress display to always use two decimal points of precision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show level ID for Workshop Levels if the DevShowLevelID mod is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New mod hooks added:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GetFoundationIdsSelected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetBridgeEdgeIdsSelected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetBridgeEdgeStressSigned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetPermanentEdgeColor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SetPermanentEdgeColor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetBridgeEdgeIsPrebuilt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetJointIdsSelected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetJointIsPrebuilt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SimulationStart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SimulationTogglePause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SimulationPause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SimulationUnpause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SimulationEnd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EndLevelSuccess",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EndLevelFail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetMaterialStrength",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetMaterialCost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GetMaterialMaxLength",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SetMaterialMaxLength",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124584686246096856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-27T13:21:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.001Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.256Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.2.0",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-26T15:53:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Workshop Campaigns are now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Be on the lookout for user created Campaigns in the new \"Campaigns\" section on the Workshop. There is already a Master Mode Workshop Campaign (created by community members)! Master Mode will challenge you with harder versions of every level from the Campaign!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is easy to create your own Workshop Campaign too, just visit the \"Created Mods\" tab and click on \"Create New Campaign Mod\". This will create a template mod for setting up your own campaign. You can use levels from other creators in your campaign if you like (the original author is shown on the Workshop Campaign UI).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added stress to the Gallery items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Show progress indicators (Season and Level) for Weekly Challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with histogram bars being greyscale if you didn't have a score",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with zooming while using scrollbar on Weekly Challenge UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Added bridge_import command, to load saved bridges into Sandbox (requires Console mod to access)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124584686242835631"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-26T15:53:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:13.000Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.255Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.1.1",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-11T19:28:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small patch to fix a few issues noticed after the Weekly Challenge update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with Other Player Solutions not loading after completing a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with dropdown menus not having a hitbox that covered entire UI element",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scroll offset to player score in Around You leaderboard view for Weekly Challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Weekly Challenge UI panel using wrong sound FX when closing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124582150175461126"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-11T19:28:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.999Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.254Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.1.0",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-09T16:00:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Weekly Challenges are now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Week #1 is live now and runs through the end of July 16 (UTC time).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New vehicle added -- Matt&Paddy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Leaderboards now show up to 100 scores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ranking percentile on histogram now matches ranking percentile seen in My Rankings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to filter Workshop Levels by \"allow featured\" tag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Rich Presence when playing Workshop or Weekly Challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed exploit issues related to foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with main menu camera sometimes being incorrect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with renaming bridge save slots with periods in the filename",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124582150167646706"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-09T16:00:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.999Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.254Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.17",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-06T23:39:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small patch to address some urgent issues related to foundations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with cheat flag being activated incorrectly due to foundations being used on prebuilt nodes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with with moving multiple foundations at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allow clipboard to flip horizontally when foundations are included",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to the community for continuing to provide valuable feedback and bug reports!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124582150157875686"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-06T23:39:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.998Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.253Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.16",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-02T20:23:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch fixes the determinism issues that have been reported by the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "And a few other fixes",
+     "items": [
+      {
+       "text": "Fixed issue with placing foundations in Waveform (RB-07)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with ambient volume not being applied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Linux-specific issue with loading UGC content",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed edge override color issue (for mods)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124582150142801732"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-02T20:23:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.998Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.253Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.15",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-24T02:44:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small update with a couple of fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash on Linux after subscribing to UGC content",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed material stretching issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you want early access to patches, opt into the public-test steam branch with password RxA6jwg9QxC6bfWb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124581515260438390"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-24T02:44:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.997Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.253Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.14",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-22T17:51:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue that could cause an anchor to disconnect from a foundation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that could cause a foundation to snap to a node and be in an illegal location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with Workshop SortBy filter resetting when returning to Workshop from Gallery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Return to last Workshop page when the Workshop UI is re-opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with all decor being highlighted when entering Decor Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with not being able to add verts to custom shapes with non-zero Z value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced thickness of Rope and Cable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue that could result in a Twitch bridge suggestion being discarded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you want early access to patches, opt into the public-test steam branch with password RxA6jwg9QxC6bfWb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124581515255444073"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-22T17:51:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.997Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.252Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.13",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-21T00:40:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another patch with bugs fixes and some quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with terrain not showing in Blueprint when marked as hidden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Custom Shapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with not being able to add verts to custom shapes if shifted on Z",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sort \"My Custom Shapes\" alphabetically",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue that could result in foundation anchor being deleted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with cheat flag not triggering when using more foundation than allowed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gallery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with gallery thumbnails not populating when cycling through videos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decor Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with decor de-selecting after panning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with decor not showing outline when selected after creation or duplication",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Show vehicles in Decor Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed remaining trash icons with stray pixel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with achievements not filtering by complete/incomplete when opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Select input field text on focus (so you can replace default bridge slot name without having to select it first)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow zero-width selection box to select edges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to the PB3 community for continuing to provide valuable feedback and bug reports!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want early access to patches, opt into the public-test steam branch with password RxA6jwg9QxC6bfWb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5124581515249187159"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-21T00:40:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.997Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.251Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.12",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-20T00:40:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed GetScreenResolution and GetMouseScreenPosition mod hooks not working when game is in windowed mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed OnUpdate and OnFixedUpdate not updating when mod is reloaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added error popup when a UGC asset conflicts with an in-game prefab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug with default replays path always being used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Simplified replay filenames. Instead of appending a timestamp, just append a number if needed for uniqueness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exit edit mode when duplicating a ramp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with custom shape Z position being set to 0 after editing verts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stray pixel on Trash icon in Blueprint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Custom Shapes and Dynamic Props with anchors are forced to Z=0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with 3-way split joints showing up in workshop level thumbnail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with level Description text shifting left when text wraps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Search filter bug in Workshop that could return Mods when on Levels tab and vice versa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with prebuilt foundations triggering cheat flag when outside of build zones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allow bridge parts to rotate in clipboard even if foundation present in clipboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mac CPU optimization: use ReplayFrames.noindex as replay frames folder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where files saved by game could become corrupted after a power failure or unexpected shutdown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Regenerate Steam ticket (used for auth purposes) every 30 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Debug Console improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want early access to patches, opt into the public-test steam branch with password RxA6jwg9QxC6bfWb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5896948309855735712"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-20T00:40:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.996Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.251Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.11",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-17T00:55:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update adds 67 new Mod Hooks and fixes several bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mod Hooks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Access and manipulate bridge pieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Access and manipulate vehicle properties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Access and manipulate camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Read keyboard and mouse input",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "UI functions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gallery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with Gallery search when both Unbreaking and Under Budget filters are enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make Gallery \"Sort By\" choice persistent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with switching tabs while Workshop search in progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Workshop UI not updating when viewing all items by an author",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with terrain shifting in simulation when adjacent to another terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with duplicated islands not shifting by the correct amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Water Line being at incorrect height when islands are pushed together",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with loading bridge saves with foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with being able to rotate foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UGC Vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with UGC vehicles and Stop Checkpoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with UGC vehicles not working with Follow Camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you want early access to patches, opt into the public-test steam branch with password RxA6jwg9QxC6bfWb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5896948309844842188"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-17T00:55:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.995Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.250Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.10",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-15T17:41:36.000Z",
+   "notes": [
+    {
+     "title": "We have added some new features to Gallery",
+     "items": [
+      {
+       "text": "Ability to sort by Budget from low-to-high OR high-to-low",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Filter to only view replays that are Under Budget",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Filter to only view replays that are Unbreaking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In addition there have been some optimizations for Gallery to improve its speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Ability to sort by Budget from low-to-high OR high-to-low",
+     "Filter to only view replays that are Under Budget",
+     "Filter to only view replays that are Unbreaking"
+    ]
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5896948309840108535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-15T17:41:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.995Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.244Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.9",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-12T23:02:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch is focused on improving the Gallery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faster video compression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Higher quality video for replays that are shared online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faster back-end for quicker video loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5129083846355059131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-12T23:02:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.995Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.244Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.8",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-10T17:13:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A tiny patch to address a couple of uncommon stability issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash issue when disabling SimSpeed mods and speed set to value outside default bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash issue if Replay folder cannot be created",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use Level Title in replay filename",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with two vehicles being named the same in Japanese (Monster Truck and Container Truck)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5129083846346886413"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-10T17:13:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.243Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.7",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-09T23:16:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small patch to address some rare stability issues, and fix a few bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A larger patch with mod hooks and gallery updates is coming soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some rare crash issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with customized Motor Acceleration Time not loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with water line not updating when water height changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with water line not showing hover/selection color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added ability to change water height by dragging water tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with terrain outlines changing when changing themes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue switching vehicles in Spanish version (due to duplicated name for Monster Truck and Monster Flipper)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Treat all split joints as 3-way split joints when 3-way split joints are enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Desert Springs main menu level that was breaking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you to the Poly Bridge 3 community for continuing to report issues and test driving patches before they go live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5129083846344161585"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-09T23:16:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.243Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.6",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-07T22:28:54.000Z",
+   "notes": [
+    {
+     "title": "Lots of fixes in this update",
+     "items": [
+      {
+       "text": "Optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed memory leak with mods using FixedUpdate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed memory leaks in Sandbox and Build modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Foundations disconnecting from springs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with land bracing on adjacent terrains (affected RB-08 and DS-12)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed going past last page on Gallery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with arrow hiding in Hydraulics Tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with not binding non-primary mouse button when over UI elements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug with water line drawing in Build Mode when level has no water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pyramids and Toxic terrain being slightly too tall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed z-fighting issues with placeable terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect size for Twisted Turnpike placeable terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with flag becoming disconnected from pole when height changed at an angle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed translation of Chopper (motorcycle) for all languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added export_bridge console command to export slot file from Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5129083846336750654"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-07T22:28:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.993Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.242Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.5",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-05T21:47:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small patch to address a couple of critical issues that have been found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critical Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed problems with foundations connecting/disconnecting to joints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed first tutorial soft lock (trying to draw with wood instead of road)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed anchor that started as a split anchor in TT-09 (Fetch Quest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed floating decor in TT-12 (Transfer of Power)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed decor rock missing in Build Mode in SC-02 (Double Back)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Twitch CTA (Call To Action) on Main Menu if streaming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cap stress at 99.99% if no breaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load profile and progress backup files if load fails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5151601211241958644"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-05T21:47:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.993Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.191Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.0.4",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-04T22:02:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We were going to wait until Monday for this patch, but the optimizations are so significant we are compelled to release it early!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "GPU optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced memory usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Workshop",
+     "items": [
+      {
+       "text": "Added \"Subscribed Levels\" tab in Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Play button to Workshop Thumbnails for subscribed levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to create a new workshop item when re-uploading an existing level or mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Default to \"Most Liked\" for sort order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Persist sort order across game sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue long Description text getting cut off for Workshop items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added scrolling to Description box for Workshop items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Renamed \"Active Mods\" to \"Subscribed Mods\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Levels",
+     "items": [
+      {
+       "text": "Fixed decor rock missing in RMT-12 (Scaled Up)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with being able to create split joints in RMT-12 (Scaled Up)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Fixed issue with Pirate Ship colliding with bridges too early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you are interested in getting early access to patches, you can opt into the public-test Steam branch. The password is: RxA6jwg9QxC6bfWb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes for the next patch will be made live in public-test before they get released to everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing Poly Bridge 3 -- we really appreciate the feedback and bug reports from the community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5151601211238350373"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-04T22:02:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.992Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.190Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.03",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-02T14:55:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another day, another hotfix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed mod related memory fixes (really this time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with foundations detaching from prebuilt materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fixed issue with too few workshop items showing when changing filters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A larger patch with other less-critical fixes and quality of life improvements will arrive Monday.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5151601211229983240"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-02T14:55:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.991Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.189Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.02",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-01T17:44:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Poly Bridge 3 players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Another hotfix to address some high priority issues",
+     "items": [
+      {
+       "text": "* Fix memory leaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Fix issue with not being able to page through all Workshop items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A larger patch with other less-critical fixes and quality of life improvements will arrive Monday.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5151601211226764552"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-01T17:44:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.991Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.189Z"
+  },
+  {
+   "id": "poly-bridge-3-243400@1.01",
+   "gameId": "poly-bridge-3-243400",
+   "displayName": "Patch 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-31T20:39:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Poly Bridge 3 players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This hotfix addresses a crash issue that can occur when using mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on a larger patch with other less-critical fixes and quality of life improvements that we hope to get out in a few days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1850160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1850160/view/5151601211223561462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-31T20:39:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1850160",
+      "checkedAt": "2026-11-13T03:28:12.990Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:53.188Z"
+  }
+ ],
+ "issues": []
+}

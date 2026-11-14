@@ -1,0 +1,249 @@
+{
+ "game": {
+  "id": "63-days-296541",
+  "igdbId": 296541,
+  "name": "63 Days",
+  "cover": {
+   "imageId": "co8222",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8222.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3t9p",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3t9p.jpg"
+  },
+  "ps5Release": "2024-09-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "63-days-296541@post-2024-10-15",
+   "gameId": "63-days-296541",
+   "displayName": "Patch Notes #11237",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-15T09:02:05.000Z",
+   "notes": [
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an issue where high FPS could cause audio to break;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where characters could get stuck while climbing through open windows;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when hosting or joining a game with player names containing special characters like `:` or `\\\\%`;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a hero would start climbing a ladder while aiming simultaneously;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, after killing a stunned enemy, the stun icon would reappear over the dead body following a save and full load;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with picking up collectibles while in a prone position;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved handling of stacked keys to prevent rare softlocks;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked vehicle behavior after save/load sequences to ensure proper movement;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a feature to limit FPS when the app is out of focus;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the visibility of online games on Steam;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Trading cards are available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter I",
+     "items": [
+      {
+       "text": "Patrol squads will now follow their routes, even if tutorials are turned off mid-level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter III",
+     "items": [
+      {
+       "text": "The tank and commander will no longer get stuck. Both will now complete their movement orders correctly, and the commander will always reach the regroup point;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed ledges to prevent Heniu from getting trapped;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The executioner squad will no longer be triggered by the sound of Youngster running in uniform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter V",
+     "items": [
+      {
+       "text": "Fixed an issue where tags were not cleared from Helga's wounded partisans, ensuring they follow orders correctly;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"Defeat enemies\" quest will no longer reset after a full load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "INFO REGARDING PRIOR SAVES ⚠️",
+     "items": [
+      {
+       "text": "Reminder: we’ve added a new public branch named ‘previous_build’ for 63 Days, which allows you to play the last game version, pre-patched. If you want to continue the game from a saved game state, please switch over to that branch, finish your current chapter, switch back to the ‘default’ branch and continue the journey with the latest fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How",
+     "items": [
+      {
+       "text": "Select the game from your Steam game library (not the store page);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click with the right mouse button on 63 Days and select ‘properties’;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In the settings, move to the right side or down – depending on your Steam version: Properties -> Beta -> Select Beta version, and choose the desired version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It will update the game (rollback to the previous version) of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2202120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2202120/view/6211118320240876938"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-15T09:02:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2202120",
+      "checkedAt": "2026-11-13T03:13:56.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-15T09:02:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2202120",
+      "checkedAt": "2026-11-13T03:13:56.806Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-15T09:02:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:27.330Z"
+  }
+ ],
+ "issues": []
+}

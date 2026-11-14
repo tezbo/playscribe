@@ -1,0 +1,4237 @@
+{
+ "game": {
+  "id": "blood-refreshed-supply-370701",
+  "igdbId": 370701,
+  "name": "Blood: Refreshed Supply",
+  "cover": {
+   "imageId": "coakxy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coakxy.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4bp7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4bp7.jpg"
+  },
+  "ps5Release": "2025-12-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "blood-refreshed-supply-370701@3.1.2",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 3.1.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-24T17:49:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/705ae5b8965f810506d410b00fd075e7e68d2c97.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 3.1.2 of Blood: Refreshed Supply is now live, bringing several adjustments to levels, gameplay, multiplayer, and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Multiplayer Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed incorrect killer name showing in killfeed under some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed changing team causing visual desync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added “/jointeam red” and “/jointeam blue” chat commands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PC) Added cvar “g_boldTeamColors” for using more saturated palettes in “Team” mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Added cvar “sv_flagsEnabled” for changing if flags spawn in “Team” mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Level-Specific Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Across multiple maps: Negligible wind values (speed=1) added to sectors where players are meant to move in step with sprites or fall when sprite platforms are removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE1M1: Dead of Winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted background trees/sectors so sprites aren’t cut off by walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE2M1: Armada",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Liquid hazard sectors have added sprites to match DWE1M2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE2M2: Out to Launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Liquid hazard sectors have added sprites to match DWE1M2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE3M3: Shadehaven",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gib FX for encounter near Fire Key tied to enemy position instead of player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE4M5: Beyond the Pale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Flamewind effect heightened at Gargoyle area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE4M9: Impure Imagination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sectors blocking off the Manager’s Office adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE4M7: Serving Mankind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjustments to event trigger timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE4M11: Meltdown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Safety-teleporter for multiplayer respawns disabled for single player mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PC Modding Changes",
+     "items": [
+      {
+       "text": "Added “blood_script_exportbindings” command to dump all functions/properties Kex Engine exposes to AngelScript.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added chat commands, which can be parsed by AngelScript on the server via “OnClientCommand”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added bidirectional AngelScript commands which can be sent via “SendCommandToClient” and “SendCommandToServer”, parsed via “OnClientCommand” and “OnServerCommand”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added “OnPlayerJoined” and “OnPlayerLeft” entrypoints for AngelScript.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Automatically network messages added via bloodPlayer.AddMessage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 20,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1839041357030315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T17:49:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.045Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T17:49:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.045Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-24T17:49:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.931Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@3.1.1",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 3.1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-04T16:04:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/705ae5b8965f810506d410b00fd075e7e68d2c97.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 3.1.1 of Blood: Refreshed Supply is now live, bringing several adjustments to levels, gameplay, multiplayer, and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Gameplay Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Adjusted the minimal HUD to clamp to a 16:9 aspect ratio, to improve readability in splitscreen and at ultrawide resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed being able to jump while crouched, to mirror original DOS behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored behavior allowing multiple weapons to be bound to the same button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On controllers, the in-game menu can now be closed by pressing the menu button again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Switch 1+2) Fixed a bug where video subtitles would desync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Switch 1+2) Fixed anti-aliasing options not being saved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Multiplayer Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed flag voice lines not playing in “Team” mode for clients in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inventory item buttons not working for clients in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crosshair not rendering for some clients in splitscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PC) Fixed several playback issues with experimental demo support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Fixed “playdemo” command not automatically specifying .kdem extension.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(Switch 1+2) Fixed a bug which made it inconvenient to start a singleplayer game after starting a splitscreen session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Switch 1+2) It is now possible to start a splitscreen session with players who do not have a local account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level-Specific Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "MRW2M11: Bedlam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that occurs when backtracking to a previously completed area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE1M4: The Abyss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raises the surface of the first water area so that jumping out onto land is possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE3M6: Last Resort",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added 2 breakable walls to the resort’s outdoor area. Does not affect achievement goal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE3M9: Nightmare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjustments made to several effects to accommodate sequence breaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual error caused by a wall overlap in White Flame Room #2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE4M7: Serving Mankind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "8th Secret included in counter + removed ability to trap yourself in its location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE4M8: Dead End",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed teleport marker bug located after boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a new level segment after the boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 25,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1834602721188019"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-04T16:04:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.044Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-04T16:04:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.044Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-04T16:04:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.930Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@3.1",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-12T16:09:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/705ae5b8965f810506d410b00fd075e7e68d2c97.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 3.1 of Blood: Refreshed Supply is now live bringing several adjustments to levels, gameplay, multiplayer, and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Gameplay Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed aim drifting during small view movements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a \"Speedometer\" setting in display options for showing current player speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a “Hitscan Only” setting for auto aiming in gameplay settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PC) Added cvar \"g_showSpeed\" for enabling the speedometer and selecting display units.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Added cvar \"g_weaponTransparent\" to make weapon view sprites translucent.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Added cvar \"g_weaponLower\" to make weapon view sprites appear lower on the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "General Multiplayer Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Added Lag Compensation in multiplayer, with \"All\", \"Hitscan Only\", or \"Off\" options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Completely reworked netcode to allow for more stable connections and lower latency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked client prediction to resolve many cases of desync with weapons and other player state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed announcer voicelines not being synced in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed announcer voicelines not playing when getting a kill in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed velocity when pushing Caleb in the \"Fatality\" state, as well as other pushable sprites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases of player animations desyncing in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ammo counts desyncing when shooting while picking up ammo in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Show Statistics\" in coop for clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ambient sounds desyncing in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Mute Player\" functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Voodoo Doll and Life Leech being unobtainable after use with weapon respawn set to \"Permanent\" in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pitchfork not being equipped when respawning in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Asbestos Armor hud overlay being stuck when respawning in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Reflective Shots audio effect being stuck when respawning in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with the Crystal Ball in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed delirium effect misbehaving in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed team chat in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hud scaling in certain splitscreen configurations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hud color palette not changing properly for clients in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various scripted sprite visuals desyncing in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed killfeed messages sometimes not showing when getting a kill soon after respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed explosions sometimes being predicted inappropriately in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various looping sound desyncs in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sector palettes not being synchronized in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some monster sounds only being played on the host in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mouse mode actions of all players affecting the host in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added prediction for bullet casings in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added latency display on \"Minimal\" hud style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PC) Added host cvar \"sv_allowExits\" to disable exit switches in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Added host cvar \"sv_antilag\" to adjust lag compensation in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Level-Specific Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Multiplayer item respawn status at checkpoints set to “Option” across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secret pickups unpaired from direct triggers so they can be set to respawn across multiple maps (otherwise the secret counter will continue to rise w/each pickup).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Geometry pinches removed across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Item locations on moving sectors adjusted for multiplayer across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted sprite placement (to account for voxels) across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Checkpoint, tome, and label message adjustments across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blocking walls modified to be 1-sided in the event of a wall clip across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PlayerSFX paired to enemies adjusted to use a 1-shot switch across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secret sector triggers and total-counters adjusted across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ceiling heights in sectors that are visible at the same time as parallax ceilings adjusted to not ascend above the parallax height across multiple maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Negligible) wind values added to floor-facing slide-marked and z-motion sprite sectors to pair marked-sprite and player movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE1M5: Dangerous Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Backup triggers added for disabling the bomb’s ambient sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secret Life Seed acquisition occurs at the teleport location (instead of the initial room) to avoid being locked out of the secret acquisition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE1M6: Thing of the Past",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sector overlap bugs removed at the long hallway inside the outpost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE1M9: Spooky World",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision and masked wall gib settings adjusted for the ballroom windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Second trigger for raising the Haunted House entrance platform removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE1M11: Shudder Island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Checkpoint teleporter added in spawn room for multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE2M3: Mothership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pod sector lighting phases matched up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated teleport on/off sequence for “space” area in Pod docking segment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Textures adjusted on rotating (decoration) sectors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE2M10: Crownfall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer teleporter relocated on the train to remove a ROR visual error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed floating sprites from text setup at lab depot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE2M12: Whisper Peak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pit sectors adjusted on the sides of the bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE3M1: Whisper Peak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Key requirement for back-gate switch in repair shop removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Passage from dark to light area in school now opens upon taking Dagger Key rather than being sector based (to avoid a lockout).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE3M2: The Tenant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mother Placard (explode object) unlocking sectors expanded to both car entrances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE3M10: Mourning Sickness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ROR clip disabled in arcade area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DWE4M2: The Horrible Tomb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing wall mask restored in Crypt area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 71,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1832065502824342"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-12T16:09:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.043Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-12T16:09:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.043Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-12T16:09:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.929Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@3.0.1",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 3.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-10T21:33:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/705ae5b8965f810506d410b00fd075e7e68d2c97.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cross-play issues between all versions of the game in online multiplayer have been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the weapon auto-switching hierarchy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the “Carried to the Grave” achievement failing to unlock after finding all the secret levels in the Death Wish addon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the alarm sound continues on for the client after the barrels have exploded in the trap room in DWE1M5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with 1-sided blocking walls in DWE3M8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with wall pinches across multiple Death Wish maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with sprite placement across multiple Death Wish maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sprites below floor height disappear under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Weapon Bindings failed to show the proper weapon name in the Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several audio/sound issues have been addressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several subtitle issues have been addressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several translation/localization issues have been addressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1829528821311278"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T21:33:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.042Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T21:33:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.042Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-10T21:33:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.928Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@3.0",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 3.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-19T16:56:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/705ae5b8965f810506d410b00fd075e7e68d2c97.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 3.0 of Blood: Refreshed Supply is now live. This now includes the new Death Wish campaign available free for all players and a number of fixes and adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you again to everyone for providing feedback and bug reports, we will continue to work to address these issues as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Death Wish scenario is now available. Players can access this campaign through New Game > Manage Addons in the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Never before seen prototype versions of the game are available to explore in the MS-DOS collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Gameplay Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Music has been added to the credits sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the title is missing main menu music when setting music format to SC-55.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple audio issues on the Nintendo Switch version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues where the audio would reset under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the audio for locked doors was not consistent with previously released editions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A “Show Statistics” button is now available in the Display settings with four options: “Never”, “Automap-Only”, “Hud-Only”, and “Always”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where mirror reflections were improperly displayed. They now have similar behavior to DOS and Fresh Supply versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the menu would appear while changing add-ons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the title crashes when pressing the \"ESC\" key while loading any addon in Manage Addons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the title crashes after pressing the quick save and quick load buttons in quick succession during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scrolling issues on various menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where spamming settings will cause the \"Select\" and \"Back\" buttons to be improperly displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where weapon ammo counter overlaps with weapon models when opening the weapon wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player was unable to move while the weapon wheel is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sprites could be culled when placed below floor level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where incorrect SFX was playing for locked doors in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is unable to activate gargoyle statues in multiple missions, making 100% completion impossible, such as E1M4: Dark Carnival and E4M6: The Ganglion Depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Gargoyle gibs were spawned after killing/gibing zombies when using the shotgun alt-fire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the voodoo doll's alternate attack SFX stops playing if the player jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the life leech primary attack SFX stops playing if the player jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where idle dialogue stops playing if the player jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the UI might be improperly displayed when diving into water under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game may crash when changing resolution while full-screened on the Epic Games version.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where shotgun shells transformed when moved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple miscellaneous stacked sector rendering issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed miscellaneous collision issues on multiple levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where corrupted textures briefly fill the screen when a map is started after a fresh launch on Xbox platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the “Such a Lovely Home” achievement was triggered when not meeting the full prerequisites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “Put him Down.. Again” achievement was triggered when not meeting the full prerequisites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level-Specific Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Blood Base Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E1M1: Cradle to Grave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the faucet is improperly placed and the player cannot interact with it above the sink in E1M1: Cradle To Grave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E1M3: Phantom Express",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where parts of the blue case are improperly rendered in E1M3: Phantom Express (sector overlap).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can fall inside a gap on the top floor of the train in E1M3: Phantom Express.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E1M4: Dark Carnival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can become stuck inside of a room if they press the lever to close the door before moving through it in E1M4: Dark Carnival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed misaligned textures displayed on the wooden pillars under the dock on E1M4: Dark Carnival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E1M5: Hallowed Grounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an improper cave texture was rendering in the final area of the E1M5: Hallowed Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where closed curtains flicker continuously when moving in E1M5: Hallowed Grounds (sector overlap).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can become stuck by reaching an area earlier than intended in E1M5: Hallowed Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the fire kills the player instantly in the secret area in E1M5: Hallowed Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E2M1: Shipwrecked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the crane sprites that hold a liftable crate are culled from short range distances in E2M1: Shipwrecked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player may die when walking into a corner of a desk in E2M1: Shipwrecked (pinch).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player may die when walking on the bed in the moon key room in E2M1: Shipwrecked (pinch).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was impossible to climb out of the water in E2M1: Shipwrecked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the white paper would flicker inside the Skull key room in E2M1: Shipwrecked (sprite overlap).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E2M4: The Overlooked Hotel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is able to crouch under the locked moon grate in E2M4: The Overlooked Hotel (depth floor).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the cabinet doors flicker continuously when moving in E2M4: The Overlooked Hotel (sector overlap).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E2M5: The Haunting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a door frame texture was rendered improperly when observed from inside the shack in E2M5: The Haunting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E2M6: The Cold Rush",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a floating flare gun bullets box was encountered in E2M6: The Cold Rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E2M7: Bowels of the Earth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the user might get stuck upon entering one of the floor cracks in E2M7: Bowels of the Earth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E3M1: Ghost Town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the secrets counter was increased each time the user interacts with the painting in E3M1: Ghost Town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the secret napalm launcher is placed slightly inside the ground in E3M1: Ghost Town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E3M2: The Siege",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player dies upon walking in the corner of the kitchen in E3M2: The Siege (pinch).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E3M3: Raw Sewage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the voodoo doll secret hatch button is incorrectly rendered in E3M3: Raw Sewage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the voodoo doll secret hatch can only be opened once in E3M3: Raw Sewage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E3M5: Spare Parts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could die upon jumping between two pipes in E3M5: Spare Parts (pinch from 1-way blocking wall).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E3M6: Monster Bait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the first elevator of the level can become stuck, in E3M6: Monster Bait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where tesla charges are floating above the ground in E3M6: Monster Bait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can skip the switch puzzle in E3M6: Monster Bait (co-op clip through z-motion sector).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E3M8: Catacombs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Skull door fails to re-open after opening it for the first time in E3M8: Catacombs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E4M1: Butchery Loves Company",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the voodoo doll secret location fails to be counted as a secret in E4M1: Butchery Loves Company.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E4M2: Breeding Grounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where fish can appear outside the pool in E4M2: Breeding Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E4M3: Charnel House",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the secret location is revealed only after moving to a certain point under the water in E4M3: Charnel House (trigger on-enter in sector stack).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E4M4: Crystal Lake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with missing TNT barrel collision in the first building of E4M4: Crystal Lake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E6M1: Welcome to Your Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the voice line triggered by killing a cultist can play twice in E6M1: Welcome to Your Life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E6M3: Public Storage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the breakable wall is missing collision inside a tunnel in E6M3: Public Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E6M4: Aqueducts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player does not receive damage from the electricity beams in E6M4: Aqueducts (damage remains sector-based; beam sprites cannot deliver damage themselves).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E6M5: The Ruined Temple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the outside environment was improperly rendered when walking/jumping around the lower floor of the first building in E6M5: The Ruined Temple (2 linked stack sectors were visible at once).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E6M7: The Dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the client is unable to see the changes made to the symbols on the 3 pillars in multiplayer in E6M7: The Dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the user can become stuck behind the rotating fire ball traps in E6M7: The Dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where decorations are assigned the incorrect gib data values in E6M7: The Dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "E6M8: Beauty and the Beast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the voodoo doll and napalm launcher float above the ground during E6M8: Beauty and the Beast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cryptic Passage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CP02: Old Opera House",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the clothes inside the cabinet clip into each other in the changing room in CP02: Old Opera House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the torch clips through the wall inside the secret room behind the green flag in CP02: Old Opera House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could clip through the window model of the moon key room found in CP02: Old Opera House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various corrupted textures in CP02: Old Opera House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where there were missing collisions for the multiple TNT barrels found in CP02: Old Opera House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CP04: Lost Monastery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where there were floating stalactites encountered inside the cave in CP04: Lost Monastery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get stuck behind the drawer in CP04: Lost Monastery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain fish were unable to swim towards the user in the large lake near the well in CP04: Lost Monastery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where tree textures were displayed improperly over the river in CP04: Lost Monastery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CP06: Graveyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock issue in the room with the Eye key in it in CP06: Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where screen corruption may occur when the player jumps on top of the concrete pillar in CP06: Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get stuck behind the wall in CP06: Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get stuck when trying to collect voodoo doll from inside the wall in CP06: Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player was unable to destroy the hanging corpses found inside the crypt in CP06: Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is unable to reach 100% kill count on CP06: Graveyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CP07: Mountain Pass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get stuck at the location of the giant spider in CP07: Mountain Pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CP08: Abysmal Mine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the secrets failed to be registered in CP08: Abysmal Mine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CP09: Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed screen flickering issues in CP09: Castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the door with the 4 buttons fails to open when the user presses one button twice on CP09: Castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the wrong number of total secrets were displayed on the Statistics and Level Stats from CP09: Castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is unable to progress further the level if they miss the mobile platform after passing through the portal in CP09: Castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the camera jitters while standing on the coffin inside the first secret area in CP09: Castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed corrupted textures encountered on the stone bridge in CP09: Castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CPSL: Boggy Creek",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is able to reach the last area of the level without using the skull switch in CPSL: Boggy Creek.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Marrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW02: Illicit Methods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the furnace edge texture fails to render properly from certain angles in MRW02: Illicit Methods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW03: Passing Through",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Extended the space between the building and the cliff wall in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the gate closing animation is missing upon pressing the wrong combination of Skull Switches in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an improper texture under the door in the red room in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an misplaced texture on top of the wooden box in the house near the end of MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one of the shadows fails to render its edge properly at the mansion entrance in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where part of the wall texture fails to align properly at the mansion entrance in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player might get killed at the eye door when walking behind the left pillar in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could get killed by the door inside the mansion in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player might become stuck in a crate found in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can trap themselves in the secret area with the tesla cannon in MRW03: Passing Through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW04: Treated Sewage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where there was a missing explosion when shooting the fire extinguisher near the fire key platforms in MRW04: Treated Sewage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW05: Only House on the Left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players are unable to take the spider key after another player dies in that room during multiplayer in MRW05: Only House on the Left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player gets stuck upon jumping over the gate at the end of MRW05: Only House on the Left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is unable to enter the location of the spider key more than once in MRW05: Only House on the Left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW06: Lateral Descent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can get stuck by falling off the back of the train in MRW06: Lateral Descent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issues in the first secret room in MRW06: Lateral Descent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW07: Murder on the Deliriant Express",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the box of shotgun shells spawns in the air when returning to the second wagon in MRW07: Murder on the Deliriant Express.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Barrel is missing collision in MRW07: Murder on the Deliriant Express.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW09: Allograft",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can die or remain stuck when jumping into the glass in MRW09: Allograft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW2M1: Ashes To Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed corrupted textures encountered on the morgue’s floor from MRW2M1: Ashes To Blood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW2M3: Phlebotomy Hotel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the gate failed to render when moving the camera at the edge of the screen in MRW2M3: Phlebotomy Hotel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player gets stuck in the Dagger Key location after they enter for the second time in MRW2M3: Phlebotomy Hotel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW2M4: Midnight Showing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is able to trap themselves inside the secret room with the eye key on MRW2M4: Midnight Showing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW2M6: Unsacred Heart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player might get stuck between an iron gate and a wooden barricade on MRW2M6: Unsacred Heart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW2M8: Unhallowed Grounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where three candle models floated above ground in the tunnel in MRW2M8: Unhallowed Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the doors or switches with the spider symbol are missing on MRW2M8: Unhallowed Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the wood texture fails to be consistently rotated in the same direction in the spiral staircase in MRW2M8: Unhallowed Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is unable to return to the second map to take the spider key from MRW2M8: Unhallowed Grounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MRW2M14: Going Home Again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is able to get stuck behind the iron fence in the room with the hand statue in MRW2M14: Going Home Again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could become trapped in the second building area after jumping into the hole behind the skull door in MRW2M14: Going Home Again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Multiplayer Adjustments/Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the title crashes when creating a local split-screen session while the user is already in a single player level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where only player 1's controller had working vibration in split-screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player spawned dead if they press the options button after the timer runs out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where subtitles were overlapped in certain areas in multiplayer games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the title crashes after entering an online room code while the user is already in a singleplayer level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where clients may get a red screen when spawning into any level during a multiplayer session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the chat message is sent upon closing the text window with the 'Cancel'/'Back' button on Playstation platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed an issue where UI text will overlap with HUD elements when players kill each other in split-screen multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various missing sounds experienced by clients in coop play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect team hud positioning in 4:3 resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues causing desyncs with interactable sprite objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sprite shading was not being networked to clients, resulting in incorrect lighting for some objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where dynamite explosion SFX is inconsistent in multiplayer lobbies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Caleb failed to play any scripted voice lines in a multiplayer session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where player SFX were inconsistently audible in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where voodoo doll failed to deal damage towards other players that got revived from fatality in multiplayer modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players are unable to start a new split-screen session with both a keyboard and a controller connected on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The FOV for all players in a multiplayer lobby now defaults to 90 in split-screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secret and enemy counters are now available in split-screen cooperative mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where creating a 3 player split-screen session after a 2 player split-screen session corrupted the unused parts of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There is now a separate “Show Scoreboard” keybind in the menus for co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the glass window breaking SFX was missing for clients in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the textures from a previous singleplayer session will remain displayed in the upper corners of a multiplayer split-screen session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the report player confirmation pop-up is missing after reporting a player in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where there was an infinite loading screen and a loss of functionality after failing to join a LAN Multiplayer session via the \"Enter Address” function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 196,
+    "balance": 0,
+    "other": 5,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1827626365754232"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T16:56:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.040Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T16:56:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.041Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-19T16:56:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.928Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@2.3",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 2.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-13T19:01:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/705ae5b8965f810506d410b00fd075e7e68d2c97.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The third hotfix for Blood: Refreshed Supply is now live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that this does not include content for Death Wish or Alpha / Beta DOS content. This will be available in a future major update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you again to everyone for providing feedback and bug reports, we will continue to work to address these issues as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood: Refreshed Supply - Patch 2.3 (Hotfix #3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed miscellaneous music issues. Fixed issues with internal caching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected cultists sight sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Nintendo Switch/PlayStation 4+5) Fixed an issue where certain sounds were not playing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Adding a fixed amount of time allowed between quicksaves and quickloads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1824644522840283"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-13T19:01:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.038Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-13T19:01:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.039Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-13T19:01:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.926Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@2.2",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 2.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-23T22:01:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/705ae5b8965f810506d410b00fd075e7e68d2c97.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second of multiple hotfixes for Blood: Refreshed Supply is now live, bringing with it a host of highly requested bug fixes and improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that this does not include content for Death Wish or Alpha / Beta DOS content. This will be available in a future major update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you again to everyone for providing feedback and bug reports, we will continue to work to address these issues as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood: Refreshed Supply - Patch 2.2 (Hotfix #2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed “Chosen-in-Regress” achievement not triggering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exploit by rapid firing akimbo napalm and tesla weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Fatality”/Dying state not being triggered in BloodBath.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed first-person burning animation becoming de-synced in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed walls and sectors not being interpolated in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various causes of rubber banding in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed elevators causing significant visual jitter in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed laggy clients causing general latency in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual glitches caused by opening a menu when the weapon wheel is visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dynamite “charge meter” on HUD remaining visible after dying in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Refactored game state updates to resolve some disconnects in \"Online\" mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to the main menu navigation functionality for gamepads and controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed locked door interaction playing improperly in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level messages not displaying for clients in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed moving sloped geometry desyncing in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed combination locks desyncing in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player pitch angle not being networked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various sound fixes for multiplayer, including stopping explosions from \"popping\" and going silent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced automap with scoreboard in BloodBath and Team multiplayer gamemodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Tchernobog’s projectile not being blue when exploding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Properly drop TNT bundle if charging the throw and make it detonate correctly after some time when dropping it after entering water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replicate classic collision behavior for missiles. Fixes the trap at the bank in E3M2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replicate box-collision for sprites. This allows enemy AI to fit in tightly packed corridors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Force audio to sample at 44100 and adjust pitch to match desired output for a played SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disable QOL fix for collision for sector slopes. Too many user maps relied on this bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inaccuracies with per-pixel hitscan detection on masked walls and sprites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed behavior with quake effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored bugged behavior with explosions where damage radius will fail to travel into the neighboring sector depending on how the sector was constructed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed behavior bug with path sector sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where sprites may get ejected into another sector while swimming to the surface, causing them to still be in the swimming state on land.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked the hud system to be aware of any kind of resolution setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed skies to be affected during the delirium state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better support for user mods (custom RFFs are now loaded automatically in the mods folder and will remain high priority over RFFs in add-ons).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored all of the logic for doppler effects for audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed looping sounds continuing to play endlessly when opening a menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “monsters” setting in multiplayer menus affecting an in-progress single player game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Default push-to-talk to “enabled” for PC platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various fixes & polish for Blood, Cryptic Passage, and Marrow campaign maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for flares being able to hit things behind walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected sector fx / phase behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed behavior for sprites with 8 rotations. Fixes Cerberus boss rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exposed \"fatality\" logic to scripts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored self-reviving during \"fatality\" state in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect camera angles when using the Crystal Ball as a client in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where multiplayer games would suffer increased latency with more clients, causing rubberbanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various weapon wheel tweaks for a more intuitive experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(PlayStation 4) Fixed an issue where the game crashes when trying to select add-ons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 28,
+    "balance": 1,
+    "other": 23,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1822556746163006"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T22:01:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.033Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T22:01:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.034Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-23T22:01:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.924Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@major-2026-01-16",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Blood: Refreshed Supply - Beta Update Notes (1/15/2026)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-16T00:38:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/3e959bcdf53f7c62cb5ce15535f3b71b490d6690.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood: Refreshed Supply - Beta Update Notes (1/15/2026)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for flares being able to hit things behind walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Be sure to load add-on dependency RFFs before invoking OnGameRestart delegate. Also clear QAV/SEQ cache as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected sector fx / phase behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed behavior for sprites with 8 rotations. Fixes Cerberus boss rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exposed \"fatality\" logic to scripts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored self-reviving during \"fatality\" state in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect camera angles when using the Crystal Ball as a client in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where multiplayer games would suffer increased latency with more clients, causing rubberbanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various weapon wheel tweaks for a more intuitive experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that these fixes may be adjusted before the time of official release for all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes and feedback from this beta release may be reflected in future updates. Thank you for your support and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1821922921814592"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T00:38:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.033Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:27.224Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@post-2026-01-08",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Blood: Refreshed Supply - Public Beta Announcement #3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-08T23:04:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/3e959bcdf53f7c62cb5ce15535f3b71b490d6690.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A public beta preview of some of the fixes planned for Hotfix #2 is now live on Steam! To participate, players will need to right-click the game in the Steam library and select Properties. In the Betas tab, choose \"Beta\" from the Dropdown list in the top left.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Features in the latest public beta preview for Blood: Refreshed Supply will include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Beta Update Notes (1/8/2026)",
+     "items": [
+      {
+       "text": "Fixed locked door interaction playing improperly in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level messages not displaying for clients in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed moving sloped geometry desyncing in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed combination locks desyncing in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player pitch angle not being networked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various sound fixes for multiplayer, including stopping explosions from \"popping\" and going silent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced automap with scoreboard in BloodBath and Team multiplayer gamemodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Only check if the palette value is non-zero during SEQ playback. Fixes Tchernobog’s projectile not being blue when exploding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Properly drop TNT bundle if charging the throw and make it detonate correctly after some time when dropping it after entering water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replicate classic collision behavior for missiles. Fixes the trap at the bank in E3M2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replicate box-collision for sprites. This allows enemy AI to fit in tightly packed corridors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Force audio to sample at 44100 and adjust pitch to match desired output for a played SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disable QOL fix for collision for sector slopes. Too many user maps relied on this bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inaccuracies with per-pixel hitscan detection on masked walls and sprites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed behavior with quake effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored bugged behavior with explosions where damage radius will fail to travel into the neighboring sector depending on how the sector was constructed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do not flag the state of a gib object on level load if the sprite’s sternum is not a thing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed behavior bug with path sector sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where sprites may get ejected into another sector while swimming to the surface, causing them to still be in the swimming state on land.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked the hud system to be aware of any kind of resolution setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed skies to be affected during the delirium state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better support for user mods (custom RFFs are now loaded automatically in the mods folder and will remain high priority over RFFs in add-ons).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored all of the logic for doppler effects for audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed looping sounds continuing to play endlessly when opening a menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “monsters” setting in multiplayer menus affecting an in-progress single player game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Default push-to-talk to “enabled” for PC platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various fixes & polish for Blood, Cryptic Passage, and Marrow campaign maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that these fixes may be adjusted before the time of official release for all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes and feedback from this beta release may be reflected in future updates. Thank you for your support and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 1,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1821288646579728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-08T23:04:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:27.222Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@post-2025-12-19",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Blood: Refreshed Supply - Public Beta Announcement #2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-19T00:01:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/3e959bcdf53f7c62cb5ce15535f3b71b490d6690.png\"]A public beta preview of some of the fixes planned for Hotfix #2 is now live on Steam! To participate, players will need to right-click the game in the Steam library and select Properties. In the Betas tab, choose \"Beta\" from the Dropdown list in the top left.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Features in the latest public beta preview for Blood: Refreshed Supply will include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Beta Update Notes (12/18/2025)",
+     "items": [
+      {
+       "text": "Fixed “Chosen-in-Regress” achievement not triggering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exploit by rapid firing akimbo napalm and tesla weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Fatality”/Dying state not being triggered in BloodBath.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed first-person burning animation becoming de-synced in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed walls and sectors not being interpolated in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various causes of rubber banding in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed elevators causing significant visual jitter in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed laggy clients causing general latency in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual glitches caused by opening a menu when the weapon wheel is visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dynamite “charge meter” on HUD remaining visible after dying in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Refactored game state updates to resolve some disconnects in \"Online\" mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to the main menu navigation functionality for gamepads and controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that these fixes may be adjusted before the time of official release for all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, multiplayer is private session only in the Beta branch; players will need room codes in order to join.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The next planned release hotfix for Blood: Refreshed Supply for all platforms is planned for early-January. Changes and feedback from this beta release may be reflected in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1819386365092899"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T00:01:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.031Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:27.222Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@2.1",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Patch 2.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-13T06:07:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/3e959bcdf53f7c62cb5ce15535f3b71b490d6690.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first of multiple hotfixes for Blood: Refreshed Supply is now live, bringing with it a host of highly requested bug fixes and improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional hotfixes for Blood: Refreshed Supply are planned for 2026.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you again to everyone for providing feedback and bug reports, we will continue to work to address these issues as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Blood: Refreshed Supply - Patch 2.1 (Hotfix #1)",
+     "items": [
+      {
+       "text": "Re-added classic cinematics as a toggleable option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option for emulating classic 2D audio panning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added skydome shader for full 3D look mode (for better viewing of the sky)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed SC-55 music track not playing on Switch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FOV on wide displays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FOV in splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed skies to render correctly in splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ambient sounds, now 20% quieter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player view not looking at the fragger/killer when killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where projectiles would target the player in error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dynamite clipping through sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Saving” screen, will no longer flash when quicksaving on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed clipping issues when running at 1600x1000 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed non-AI sprites not properly updating gravity/fall state (i.e. floating TNT, zombie heads in Marrow)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes and level adjustments for E1M1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs not playing sound effects at the beginning of E1M3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missiles getting stuck in walls in E4M6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fullscreen HUD alignment going off screen for non-common aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player explosion quips being interrupted in error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the player is still holding the Life Leech staff after dropping it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flee damage to no longer be converted to a fixed point, making flare damage more accurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sprite projection for pickups, will now render straight up instead of rotating when looking up and down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Beast stomp attack not hurting the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain ceiling/floors not rendering when viewing between stacked sectors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed impact effects for Bloated Butcher’s meat cleaver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs affecting flame lick effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound effects from sounding grainy or muffled by disabling low-pass filtering by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed damage for Cerberus and Tchernobog projectiles; Cerberus projectile attack now inflicts the correct damage type, Tchernobog's missile attack now inflicts the correct damage type, and inflicts the correct amount of damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brought back the original code for checking if a point is inside a sector, fixing several small regressions throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated to clear audio when loading save games, fixing random noise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked input system to allow more responsive mouse polling, added an option for mouse smoothing",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "To report bugs directly to our developers and moderating team, head over to our dedicated Discord channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 24,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1818752592129275"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-13T06:07:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.030Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T00:34:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.030Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-17T00:34:47.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T16:15:05.746Z"
+  },
+  {
+   "id": "blood-refreshed-supply-370701@hotfix-2025-12-09",
+   "gameId": "blood-refreshed-supply-370701",
+   "displayName": "Blood: Refreshed Supply - Hotfix Update",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-09T23:55:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45797145/3e959bcdf53f7c62cb5ce15535f3b71b490d6690.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are hard at work on multiple hotfixes for Blood: Refreshed Supply, with the first expected to release before the end of the year. We appreciate everyone for reporting bugs to us, and will continue to work to address these issues as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are some of the issues that will be addressed in Hotfix 1 (Patch 2.1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-added classic cinematics as a toggleable option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option for emulating classic 2D audio panning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added skydome shader for full 3D look mode (for better viewing of the sky)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed SC-55 music track not playing on Switch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FOV on wide displays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FOV in splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed skies to render correctly in splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ambient sounds, now 20% quieter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player view not looking at the fragger/killer when killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where projectiles would target the player in error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dynamite clipping through sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Saving” screen, will no longer flash when quicksaving on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed clipping issues when running at 1600x1000 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed non-AI sprites not properly updating gravity/fall state (i.e. floating TNT, zombie heads in Marrow)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes and level adjustments for E1M1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs not playing sound effects at the beginning of E1M3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missiles getting stuck in walls in E4M6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fullscreen HUD alignment going off screen for non-common aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player explosion quips being interrupted in error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the player is still holding the Life Leech staff after dropping it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flee damage to no longer be converted to a fixed point, making flare damage more accurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sprite projection for pickups, will now render straight up instead of rotating when looking up and down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Beast stomp attack not hurting the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain ceiling/floors not rendering when viewing between stacked sectors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed impact effects for Bloated Butcher’s meat cleaver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs affecting flame lick effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound effects from sounding grainy or muffled by disabling low-pass filtering by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed damage for Cerberus and Tchernobog projectiles; Cerberus projectile attack now inflicts the correct damage type, Tchernobog's missile attack now inflicts the correct damage type, and inflicts the correct amount of damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brought back the original code for checking if a point is inside a sector, fixing several small regressions throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated to clear audio when loading save games, fixing random noise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked input system to allow more responsive mouse polling, added an option for mouse smoothing",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We’re continuing to monitor the Steam forums, reviews, and our social channels for issues to address in upcoming hotfixes. To report bugs directly to our developers and moderating team, head over to our dedicated Discord channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 24,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3884520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3884520/view/1818752592119379"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-09T23:55:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.029Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-09T23:55:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3884520",
+      "checkedAt": "2026-11-13T03:16:19.029Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-09T23:55:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:49.920Z"
+  }
+ ],
+ "issues": []
+}

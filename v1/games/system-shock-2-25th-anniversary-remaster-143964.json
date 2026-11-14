@@ -1,0 +1,1784 @@
+{
+ "game": {
+  "id": "system-shock-2-25th-anniversary-remaster-143964",
+  "igdbId": 143964,
+  "name": "System Shock 2: 25th Anniversary Remaster",
+  "cover": {
+   "imageId": "co9hdg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9hdg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3sq0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3sq0.jpg"
+  },
+  "ps5Release": "2025-07-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "system-shock-2-25th-anniversary-remaster-143964@1.3",
+   "gameId": "system-shock-2-25th-anniversary-remaster-143964",
+   "displayName": "Patch 1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-18T22:42:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45515711/c72f762d7ad44be917a5994d40505ade8a61c689.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Brazilian Portuguese localization has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Completely rewritten network driver. Disconnects should be much less frequent now. If you are still experiencing frequent disconnects, please reach out to us on our Discord channel and we’ll try to get back to you requesting additional info.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added feedback for some network errors when they occur, instead of simply returning to the main menu without context.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The mouse cursor in the in-game inventory now respects the system mouse preferences.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a Quicksave button to the main menu when using gamepad input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The save button is now disabled when selecting the autosave slot in the save game menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support for Gyroscope controls on Steam Deck, improved Gyro support across supported platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the ability to swap the inventory and menu buttons for gamepads, for convenience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a reset all bindings button to the control options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented support for toggled textures on level geometry, which allows for monitors and screens in the world to be destroyed, matching the original game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an accessibility option to turn off screen flashes when taking damage or overloading psi, the setting is in the gameplay options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to disable the contextual help that appears when opening the inventory while using gamepad controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the photosensitivity screen by combining it with the company logos. It now adapts to your chosen in-game language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Atari logo has been added to the beginning of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added numbers to the main menu buttons, like the original game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General improvements to existing localised text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated to the latest version of the Kex Engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated to the latest versions of SDL, OpenAL and FMOD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many other under-the-hood improvements to Dark Engine compatibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed crashes that could occur when closing the game while a video was playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when ending the game while awaiting a QBR revival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a multiplayer crash when a player died whilst on earth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash which could happen when opening the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when loading a save after disabling remastered content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to re-bind the mouse wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a number of places throughout the menus where pressing cancel would, in fact, confirm the operation instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed surround sound not working properly when using the FMOD audio driver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some rare issues with music playback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where after playing for long enough, inventory graphics would become mismatched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where joining a multiplayer session would not restore collected audio logs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a variety of issues with held weapons after death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where it was possible to completely lose input focus on the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed numerous bugs and quirks with the collision and physics system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an oversight where some menus would use the incorrect set of sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Limited the max framerate to 500 fps, to prevent the game logic becoming unstable above this value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller vibration not functioning properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with dynamic lights on apparitions and explosions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added prevention for quicksaving whilst the player is dead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect distance sorting for transparent objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some bind names not properly describing their contextual functionalities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Keypads now always start with the number 5 selected when using gamepad input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The size of the keypad font now matches the original game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to close the weapon settings MFD panel after selecting the modify or repair button on a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed radioactive rooms ceasing to function after loading a saved game in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Maintenance Robots” causing huge bandwidth spikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several common instances of desync in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a mismash of issues that occurred in custom campaigns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several crashes reported to us by the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues that could appear when starting a multiplayer game twice in one session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which could lead to players having full movement speed on ladders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the “players” label in some menus being unlocalised.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where light textures would not change to their turned off variant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lipsync in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with Unlit models not being truly Unlit when they should be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dripping goo duplicating for each player present in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the map not showing trait-added icons in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Alpha transparency issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the texture not changing on the damaging floors in the final area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where broken weapons could be equipped when using gamepad input, making them disappear forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where receiving an item from another player in multiplayer would show the notification message in their language, instead of the local language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of multiplayer bugs related to the cutscene in engineering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a great number of under the hood issues with multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some menu UI SFX would stop playing when entering the Vault.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sammy the Grub in Hydroponics will no longer get stuck under crates when he appears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "Fixed a crash when minimising the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for custom resolutions when using exclusive fullscreen mode, this fixes an oversight where you were not able to set a resolution higher than the current desktop resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for ZIP files and loose folders for mods and fan missions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the load order of the default mods.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug in the TGA loader which was affecting textures in some fan missions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The mouse is now automatically centered on the screen when opening the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed loading of malformed model data, sometimes seen in old fan missions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the unlock_elevator (mid-game skip) cheat always complaining about cheats not being enabled, even when they are.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Pressing escape will no longer hide the mouse cursor in menus.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed current item not being updated when changing the mod order.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some menu backgrounds not displaying properly when using 4:3 resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added descriptions for all mods which didn’t have one prior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the confirm button being used in the keyboard and mouse bindings dialog, in place of the cancel button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed not being able to lean left and right while walking, and resolved issues with rebinding keys on non-QWERTY keyboard layouts. This may require a reset of your user.bnd file.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed corona rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes for the debug menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Many fixes for mods utilising NewDark features, particularly with the ShockOverlay scripting interface.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated the patch_ext mod.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated SHTUP to beta 4.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Team Nightdive",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 44,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Brazilian Portuguese localization has been added.",
+     "Added feedback for some network errors when they occur, instead of simply returning to the main menu without context.",
+     "Added a Quicksave button to the main menu when using gamepad input."
+    ]
+   },
+   "sourceIds": [
+    "steam-866570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/866570/view/1819386365092754"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T22:42:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-866570",
+      "checkedAt": "2026-11-13T03:32:23.007Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-26T17:20:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-866570",
+      "checkedAt": "2026-11-13T03:32:23.008Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-26T17:20:29.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T16:28:40.827Z"
+  },
+  {
+   "id": "system-shock-2-25th-anniversary-remaster-143964@1.2",
+   "gameId": "system-shock-2-25th-anniversary-remaster-143964",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-21T17:01:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45515711/b3658b37129125c72204398c28aa342f103ab6fd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.2 for System Shock 2: 25th Anniversary Remaster is now available on PC platforms, including Steam, GOG, Epic Games, and Humble Bundle, along with Xbox, PlayStation, and Nintendo Switch consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "MULTIPLAYER",
+     "items": [
+      {
+       "text": "Select multiplayer enemies will no longer become invincible under specific conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing or overlapped items in the player’s inventory upon loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted multiplayer behavior so that if a player disconnects from the game, everyone will return to the main menu. This is to prevent saving when players have left the session, altering the amount of players saved in that session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed cases of player script data disappearing when returning to a previous level after loading a save, causing O/S Upgrades to be locked incorrectly, among other issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash on the Recreation Deck caused by the spiders in the ceiling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases of script data piling up causing “infinite” load screens. Depending on the specific circumstance, a new session may be required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several AI-related crashes when saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiplayer to prevent team killing during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Added a separate save slot for quick saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed collision bugs where the player could randomly get stuck in geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an uncommon crash in the penultimate level when entering water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the “Advanced Ammo Usage” English text being incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed numerous ways of breaking the cutscene on the ops deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Marines Year 1 voice line not playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where players were not being pushed around properly by the steam vents in the penultimate level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved head tracking for enemies and multiplayer characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed head tracking on crew bodies, which was especially visible when in water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dropping armor and implants on gamepad not removing their bonuses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the sharpshooter trait incorrectly using the lethal weapon multiplier instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of the software shorthands reading RSRH for Research.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the direction of the mouse wheel being flipped.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for mouse wheel scrolling in the MFD panels.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the cyber interface only warning about toxic hazards upon opening the menu after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Marine’s Port MacArthur Weapons Range posting only granting +1 to Standard Weapons. It now correctly grants +2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash in the MFD golf code when going between levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed subtitles being incorrectly disabled when clicking reset in the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some XERXES subtitles using A instead of R when referring to some hacked turrets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "INPUT",
+     "items": [
+      {
+       "text": "Fixed custom binds not applying to inventory mode until the game was restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a joystick smoothing checkbox to the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "DISPLAY / UI",
+     "items": [
+      {
+       "text": "Fixed flickering objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bloom affecting full-screen flashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 3D objects in the MFD panels not properly updating the ambient light color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed psi invisibility not fading your weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the alignment of many buttons in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Focus now starts on the confirm button when saving the game, instead of the name text box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a dimming effect when depressing buttons with a mouse click.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed filtering of images in the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the “hold crouch” and “toggle crouch” text being swapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "AUDIO",
+     "items": [
+      {
+       "text": "Fixed audio looping when loading with the FMOD audio driver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "ASSETS",
+     "items": [
+      {
+       "text": "Fixed a banner in the Space Station having missing polygons on one side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a misaligned ceiling window in the Bonne Chance lounge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed misalignment of the tall windows in the Bonne Chance lounge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a misaligned window in the final level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated KEX Engine video.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new Vault content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "Added support for custom campaigns (fan missions).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Missing mods no longer prevent you from loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed certain patches not being applied to the original missions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enabled the \"enable_cheats\" console command, allowing players to use \"unlock_elevator\" to quickly skip to the mid-game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the following config variables, these may be set in the player's user.cfg file in the saved games folder, or using the developer console “set” command:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "“disable_flashes 1” allows photosensitive users to disable the red pain flashes and other full screen effects.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "“shock_no_help 1” lets players disable the gamepad help text when opening the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "“font_no_glyphs 1” lets players disable rendering of keys and buttons for in-game text.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "“num_save_slots_sp” lets players customize the number of save game slots in single-player.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "“num_save_slots_mp” is the same as the previous variable, but for multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Upgraded SDL to version 3.2.18.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "XBOX",
+     "items": [
+      {
+       "text": "Fixed a bug causing the game to crash when syncing settings between Xbox consoles of a different model.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed 18 of the achievements not being marked as unlocked when restarting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed a crash when playing back videos with no audio in the Vault.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed old 4:3 videos playing back stretched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "NINTENDO SWITCH",
+     "items": [
+      {
+       "text": "Enabled ad-hoc multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash when playing back videos with no audio in the Vault.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed ambient occlusion option due to performance concerns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MODS",
+     "items": [
+      {
+       "text": "Fixed wrong Relation IDs (and LinkIDs as well) when compared to NewDark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dbmod fingerprinting check.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Swapped weapon scripts to use a metaproperty for achievements, instead of taking up the second script slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional improvements to the underlying engine to give the game better compatibility with NewDark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been enjoying System Shock 2: 25th Anniversary Remaster and want to help support the team, consider leaving us a review on Steam letting us know what you love most about the game!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 41,
+    "balance": 1,
+    "other": 10,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-866570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/866570/view/1808601382450535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-21T17:01:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-866570",
+      "checkedAt": "2026-11-13T03:32:23.005Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-21T17:01:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-866570",
+      "checkedAt": "2026-11-13T03:32:23.006Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-21T17:01:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:10.529Z"
+  },
+  {
+   "id": "system-shock-2-25th-anniversary-remaster-143964@2",
+   "gameId": "system-shock-2-25th-anniversary-remaster-143964",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-10T15:22:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45515711/9f431b8f32aa26e0ce1357d10eb62a1b1aeb4ff4.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.0.1 for System Shock 2: 25th Anniversary Remaster went live on PC platforms, including Steam, GOG, Epic Games, and Humble Bundle, on June 27. Since then, our team has been hard at work on an additional patch that’s live now on PC and consoles, including Xbox One, Series X|S, PlayStation 4, and PlayStation 5. We're still waiting for patch approval from Nintendo, with the patch expected to roll out on Nintendo Switch in the coming weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HOTFIX (7.11.2025)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed HUD scaling incorrectly when reverting settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed saves sometimes failing to load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PC PATCH #2 / CONSOLE DAY ONE PATCH (1.1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed music not playing at all in certain levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added many more bindable actions on keyboard and controller, such as using more types of hypos and placing navigation markers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Players can now hotswap their positions in a lobby session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the options screen scrolling while using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gun muzzle flashes now appear correctly on the ends of guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raised maximum number of navigation markers from 1 to 12 per player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the multiplayer menu sometimes randomly opening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various animation and AI issues in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Lean Toggle” not working properly on keyboard. \"Lean Toggle\" is now unbound by default on keyboard to prevent confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increased the granularity and minimum range of the mouse sensitivity sliders.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed decals on windows in Hydroponics being drawn under other objects.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed transparency issues on the wormskin armor, and fixed light armor glowing in the dark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rendering of flat color polygons in static models.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mitigations for some uncommon crashes reported by players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some explosions showing black/pink borders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed music playback being delayed when using FMOD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the “Quit Game” entry in the keyboard bindings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "PC ONLY",
+     "items": [
+      {
+       "text": "Made the “unstick_player” console command available.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Restored Windows 7 compatibility to the best of our abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES",
+     "items": [
+      {
+       "text": "There is a bug that is causing players to get stuck on some corners. This will be fixed in the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Advanced Ammo Usage” help text is incorrect in English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are some quirks when using multi-monitor setups with at least one very high refresh rate monitor.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Customized bindings may be temporarily incorrect while the player’s inventory is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES (FOR MODDERS)",
+     "items": [
+      {
+       "text": "There is a bug that is causing wrong IDs (when compared to NewDark) assigned to relations. This will be fixed in the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is a bug that is causing fingerprinting checks to only succeed when all fingerprints match, instead of only one match being enough. This will be fixed in the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re continuing to monitor bug reports and aim to have another patch to address these and other issues released by the end of July. If you’re experiencing issues with the game that haven’t been resolved through our recent patches, please email our support team (nds-support@atari.com). Thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 1,
+    "other": 15,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-866570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/866570/view/1803527891964075"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-10T15:22:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-866570",
+      "checkedAt": "2026-11-13T03:32:23.004Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-10T15:22:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-866570",
+      "checkedAt": "2026-11-13T03:32:23.004Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-10T15:22:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:10.527Z"
+  },
+  {
+   "id": "system-shock-2-25th-anniversary-remaster-143964@1.0.1",
+   "gameId": "system-shock-2-25th-anniversary-remaster-143964",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-27T22:33:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.0.1 for System Shock 2: 25th Anniversary Remaster is live now on all PC platforms, including Steam, GOG, Epic Games, and Humble Bundle!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you’ve been enjoying System Shock 2: 25th Anniversary Remaster, consider leaving us a review on Steam and let us know what your favorite parts of the remaster have been!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "PATCH NOTES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed invincible enemies in co-op multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where analog sticks on secondary controllers would not work properly, this was seen particularly on Steam Deck with an external controller attached.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Autosaves in multiplayer will now save the session information, preventing multiplayer playthroughs from being lost when relying on autosaves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added analog stick edge acceleration for controllers which increases the speed you look around at when the stick reaches its maximum distance. Turning around quickly is now easier without compromising precise aiming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the default turning sensitivity on controllers from 1.0 to 1.5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the default deadzone on controllers from 0.1/0.1 to 0.24/0.265.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "General improvements to controller input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the “apply” button in the mods menu having no effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Keyboard and Mouse controls have been moved to the top of the Controls screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed flickering screens on some objects (fixes for other screens in-progress).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “the lights trying to talk” in Engineering B causing a crash for players with certain mods disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have been reading through all player comments and feedback, and are working to resolve reported bugs and issues as quickly as possible. We will have additional patches in the coming weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 2,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-866570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/866570/view/1803527891556321"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-27T22:33:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-866570",
+      "checkedAt": "2026-11-13T03:32:23.003Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:10.526Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "71a573249aaf",
+   "text": "There is a bug that is causing players to get stuck on some corners. This will be fixed in the next patch.",
+   "status": "open",
+   "firstReleaseId": "system-shock-2-25th-anniversary-remaster-143964@2"
+  },
+  {
+   "id": "fe7f4d3f508f",
+   "text": "The “Advanced Ammo Usage” help text is incorrect in English.",
+   "status": "addressed",
+   "firstReleaseId": "system-shock-2-25th-anniversary-remaster-143964@2",
+   "addressedBy": "system-shock-2-25th-anniversary-remaster-143964@1.2",
+   "addressedAt": "2025-08-21T17:01:49.000Z"
+  },
+  {
+   "id": "d2b9d4c2fb7a",
+   "text": "Customized bindings may be temporarily incorrect while the player’s inventory is open.",
+   "status": "open",
+   "firstReleaseId": "system-shock-2-25th-anniversary-remaster-143964@2"
+  },
+  {
+   "id": "35e03a496154",
+   "text": "There is a bug that is causing wrong IDs (when compared to NewDark) assigned to relations. This will be fixed in the next patch.",
+   "status": "open",
+   "firstReleaseId": "system-shock-2-25th-anniversary-remaster-143964@2"
+  },
+  {
+   "id": "468d28383611",
+   "text": "There is a bug that is causing fingerprinting checks to only succeed when all fingerprints match, instead of only one match being enough. This will be fixed in the next patch.",
+   "status": "open",
+   "firstReleaseId": "system-shock-2-25th-anniversary-remaster-143964@2"
+  },
+  {
+   "id": "c19f09066b38",
+   "text": "We’re continuing to monitor bug reports and aim to have another patch to address these and other issues released by the end of July. If you’re experiencing issues with the game that haven’t been resolved through our recent patches, please email our support team (nds-support@atari.com). Thank you!",
+   "status": "open",
+   "firstReleaseId": "system-shock-2-25th-anniversary-remaster-143964@2"
+  }
+ ]
+}

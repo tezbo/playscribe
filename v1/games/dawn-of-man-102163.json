@@ -1,0 +1,1252 @@
+{
+ "game": {
+  "id": "dawn-of-man-102163",
+  "igdbId": 102163,
+  "name": "Dawn of Man",
+  "cover": {
+   "imageId": "co1qv9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1qv9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6iw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6iw.jpg"
+  },
+  "ps5Release": "2024-11-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dawn-of-man-102163@1.8.1",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.8.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-14T09:28:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This changes the behavior for non-QWERTY keyboards so it makes more sense, in particular for french AZERTY, there are two options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a) If you set the windows keyboard language to English, the default configuration will just work (you will be able to use the right keys to move the camera around) but the prompts will be wrong.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "b) If you set the windows keyboard to French, the default configuration will be wrong, but you can remap the keys in the settings and then all the button prompts will be correct.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Martiño.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/5302486388015741079"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-14T09:28:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.457Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.458Z"
+  },
+  {
+   "id": "dawn-of-man-102163@post-2023-07-21",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Dawn of Man is now officially Playable on Steam Deck",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-21T07:39:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've recently uploaded an official Steam Deck configuration and resubmitted the game for testing, so it's now officially listed as playable on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Martiño.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/5124584051972597581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-21T07:39:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.457Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.457Z"
+  },
+  {
+   "id": "dawn-of-man-102163@1.7.1",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.7.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-12-04T10:58:38.000Z",
+   "notes": [
+    {
+     "title": "Maintenance update fixing a few issues discovered recently",
+     "items": [
+      {
+       "text": "Watchtower now requires the thatching tech to be built.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Storage filters are no longer visible if the structure is not operational.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with one of the Tin deposit variants not changing texture in winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer place plants outside of the playable game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/3856733878297920517"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-04T10:58:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.456Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.456Z"
+  },
+  {
+   "id": "dawn-of-man-102163@1.7",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-11-17T14:04:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In this update we are adding Cheesemaking, some improvements to animal trading and a bunch of other fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cheese",
+     "items": [
+      {
+       "text": "Cheese can now be made in the new Cheesemaker structure, from the Neolithic onward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheese lasts for longer than Milk, and can be traded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Trading",
+     "items": [
+      {
+       "text": "You can now sell animals to trader.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trader can now bring male and female animals at the same time, and you can choose which ones to purchase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trader animals are now visible and stay in village when purchased, or leave when sold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main trader that comes to village can now sometimes be an old person and companion trader can be of any age.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Male animals are now cheaper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "When double clicking on animals, only animals from the same team are selected (Trader or Player).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default resource limit for sickles is now 75% of adults.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Edit work area option doesn't appear when several Work Areas are selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When editing a work area, canceling caused the work area to be destroyed. Now, the work area will be restored to its original location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for issue that could potentially result in people being stuck after coming down from platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/3872494575605866791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-11-17T14:04:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.455Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.455Z"
+  },
+  {
+   "id": "dawn-of-man-102163@1.6.3",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.6.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-09-15T13:55:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a quick fix for an issue introduced in 1.6.2 that wouldn't allow you to right click on a young tameable animal (like an Ibex or Mouflon), in order to give a hunt order (before the relevant taming tech was unlocked).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/4249665521697399360"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-15T13:55:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.455Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.455Z"
+  },
+  {
+   "id": "dawn-of-man-102163@1.6.1",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.6.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-08-03T12:58:22.000Z",
+   "notes": [
+    {
+     "title": "This is a quick fix for two issues",
+     "items": [
+      {
+       "text": "Game can now tolerate broken translation workshop items better, instead of crashing (Russian workshop translation is causing the game to crash for anyone that has subscribed to it at the moment).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better error message for when the game can not load the Posix libraries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/3664193578974079777"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-03T12:58:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.454Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.454Z"
+  },
+  {
+   "id": "dawn-of-man-102163@1.6",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-07-27T09:04:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update focuses on some of the main feature requests from the community, which were Armor and combat improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Highlights",
+     "items": [
+      {
+       "text": "ARMOR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your people can now make armor, they will automatically equip it when you sound the alarm. Note that raiders will also wear armor, from the Bronze Age onward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Armor is made in the new Armorer structure, we've also moved shield production there (which was previously in the Workshop).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It comes in two variants, Leather Armor, available from the Bronze Age, and Mail Armor, available from the Iron Age.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GATE RALLY POINTS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now choose the position where your people gather when you trigger the alert.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GATES IN 8 DIRECTIONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now place gates in 8 directions, allowing for much more organic looking towns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "WALLS IN SHALLOW WATER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Walls can now be built in shallow water (and steeper slopes), this makes it possible to use lakes and rivers as defensive barriers. Raiders might end up swimming through them to attack you, but this would still allow you to shoot at them from a distance for a long time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Full Changelog",
+     "items": [
+      {
+       "text": "NEW RESOURCE: LEATHER ARMOR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made from leather, offers reasonable protection, available from the Bronze Age.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW RESOURCE: MAIL ARMOR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made from iron rings, offers very good protection, available in the Iron Age.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW STRUCTURE: ARMORER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Structure that produces Leather and Mail Armor, we've also moved the shield manufacturing here, which was in the Workshop previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW TECHS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New techs Armor, Mail and Reinforced Shields, required for Leather Armor, Mail Armor and Oval Shields.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "COMBAT IMPROVEMENTS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is now possible to edit the position at which people gather behind the gates when the alert is on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gates can now be build in 8 directions allowing for more organic wall designs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now build walls, watchtowers and platforms in shallow water, and in steeper slopes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Bronze and Iron Ages, raiders don't immediately acquire all techs in the era, but they do it progressively with each attack wave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is now an option in the defense panel to customize the amount of men and women that will use melee weapons in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "People will now upgrade their weapons from slings to bows if available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons that raiders drop when dead now have random condition instead of 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some old raiders, and slightly increased the proportion of males that come to attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clothing now decays when absorbing combat damage, the damage that is saved is instead taken by the clothing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stamina decay rate is now cut in half when the alert is on. This affects all humans, including raiders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slings can now be sold for their full value up to the Neolithic only (down from the Copper Age).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Making sure that people don't run to another gate after all raiders are dead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animals that have been butchered, even only partially, now decay a lot faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most defensive structures, like walls, gates and towers are now a bit more resistant.: NEW ADULT PERCENTAGE RESOURCE LIMITS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is now possible to set a resource limit to a percentage of the adults in the settlement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is now the default for tools, shields and armor, as children can not use them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved tooltips for all resource limits, to make everything more clear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 20% and 33% resource limits: IMPROVED HUNTING RESOURCE LIMITS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Butchering tasks for hunted or slaughtered animals will now only get auto-generated if any of Meat, Bone or Raw Skins are under the limits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In auto generated butchering tasks (after hunting or slaughtering), people will not extract resources that are over the limits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Meat limit is now set to 100 by default (it was 30 before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raw Skins limit is now set to 40 by default (it was 10 before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bones limit is now set to 20 by default (it was 10 before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These changes do not affect manual butcher tasks (created by right clicking or using the context actions), these always extract all resources from the animal.: IMPROVED COMBAT BEHAVIOUR: When a person is given a direct command to move somewhere (by right clicking on the ground), they will stay there and:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They won't go to their usual combat positions. This is useful when the enemies are attacking if you want to station a bunch of people somewhere instead of in the default positions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They won't wander around town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a while, they won't go and get any weapons or armor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a while, they won't go to rest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a while, they won't get assigned any tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a while, they won't go store any resources.: The idea behind these changes is that you get more control over what people do, but eventually they will do what they need to do to survive.: IMPROVED PATHFINDING",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Humans will retry with higher accuracy if they can't find a suitable path to the destination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beings prefer to walk on even terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beings try harder to cross by a nearby ford instead of swimming.: MISC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New loading screen for the Ancient Warriors scenario.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ancient Warriors tech cost has now been slightly reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased population limit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Domestic Animals will now prefer to wander around stables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "People now prefer to wear outfits that are in better condition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workload calculations now count kids as half an adult.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now select a loaded person and right click on a storage structure to tell them to unload there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Elasmotherium, Hyena, long haired woman and old man to intro screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Carts, Sledges and Plows can now be built by two people simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 0,
+    "balance": 0,
+    "other": 42,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/3978319116850093314"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-07-27T09:04:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.453Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.453Z"
+  },
+  {
+   "id": "dawn-of-man-102163@1.5",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-04-06T08:53:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This version add the Plow, which makes planting crops faster and without penalty to morale from the Bronze Age onward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also made several improvements to transports, including the new Transport Post structure, which allows to strategically distribute them across the settlement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a bonus feature, we've included some new appearances for the villagers also, 12 in total.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More frequent updates in our twitter devlog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Plow",
+     "items": [
+      {
+       "text": "This is a new implement that can be used to plant crops a lot faster and without penalty to morale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Has to be pulled by either Cattle or Horses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Transport Post",
+     "items": [
+      {
+       "text": "This new structure allows you to park Sledges/Carts/Plows in it, improving the organization of your settlement and opening new ways of optimizing work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New appearances for people",
+     "items": [
+      {
+       "text": "We are adding an extra human appearance per Gender/Age/Era, 12 in total.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Modding updates",
+     "items": [
+      {
+       "text": "It is now possible to precisely alter the distribution of trees, deposits, details and objects in custom Environments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Workshop Uploader integrated in the game, that makes the process of uploading scenarios and translations a lot simpler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ConditionEntityNearMarker action in scenarios now works with any type of entity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue causing traders not to bring techs costing over 20 knowledge points if changed tech cost multiplier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new CurrentGameMode, CurrentStartMode and CurrentEnvironment values for ConditionValueEquals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other features",
+     "items": [
+      {
+       "text": "Farming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Plowing technology.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Plant and harvest tasks are now generated in rows, with the closest plants to town going first.: Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI SFX volume reduced slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added panic sounds for humans.: Gameplay changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Only adult domestic animals can now be used to pull Carts or Plows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Only adult Goats or Cattle now produce Milk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Milk production time reduced from 0.2 years to 0.18 years.: IA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better usage of transports overall.: Misc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the way transports and animals follow humans, this also reduces clipping against structures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New larger and more visible mouse pointer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved Leather and Tanning icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Raiders now ignore megaliths and mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Performance optimizations in combat code, which should make mods with a ton of raiders run more smoothly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed most artifacts in tinted models.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with river sound not updating it's volume properly when game paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Load is now centered when just one object is being carried on sledge or cart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some more syllables for random names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed typo in burials text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed selection box on bridges under construction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 22,
+    "fixed": 1,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "We are adding an extra human appearance per Gender/Age/Era, 12 in total.",
+     "Farming",
+     "New Plowing technology."
+    ]
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/2978509755359278588"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-04-06T08:53:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.451Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.452Z"
+  },
+  {
+   "id": "dawn-of-man-102163@1.4.2",
+   "gameId": "dawn-of-man-102163",
+   "displayName": "Update 1.4.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-01-09T09:31:57.000Z",
+   "notes": [
+    {
+     "title": "This is a patch for a couple of issues we found",
+     "items": [
+      {
+       "text": "Fixed problem with traders not selling animals if all Stables were upgraded to Stone Stables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong trader animal tooltips in French.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858810/view/2600199781639485889"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-01-09T09:31:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-858810",
+      "checkedAt": "2026-11-11T21:58:53.450Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:53.451Z"
+  }
+ ],
+ "issues": []
+}

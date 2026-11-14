@@ -1,0 +1,113 @@
+{
+ "game": {
+  "id": "fantavision-202x-229133",
+  "igdbId": 229133,
+  "name": "Fantavision 202X",
+  "cover": {
+   "imageId": "co65so",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co65so.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4nhs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4nhs.jpg"
+  },
+  "ps5Release": "2023-02-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "fantavision-202x-229133@major-2023-05-10",
+   "gameId": "fantavision-202x-229133",
+   "displayName": "May 10, 2023 Corrected update release notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-10T03:37:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. MainMenu : \"EXIT\" → Renamed to \"RETURN TO TITLE \"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Added \"CLOSE APPLICATION\" menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Added keyboard operation explanation menu \"KEYBOARD CONTROLS’ EXPLANATIONS\" to \"How to play\" (WEB link).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "4. Balanced the upper limit of the frame rate to 60 frames for the monitor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2353280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2353280/view/5140340308864455801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-10T03:37:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2353280",
+      "checkedAt": "2026-11-13T03:20:40.096Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-10T03:37:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2353280",
+      "checkedAt": "2026-11-13T03:20:40.096Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-10T03:37:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:07.958Z"
+  }
+ ],
+ "issues": []
+}

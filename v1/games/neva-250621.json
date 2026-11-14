@@ -1,0 +1,597 @@
+{
+ "game": {
+  "id": "neva-250621",
+  "igdbId": 250621,
+  "name": "Neva",
+  "cover": {
+   "imageId": "co8x5c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8x5c.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2c1l",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2c1l.jpg"
+  },
+  "ps5Release": "2024-10-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "neva-250621@major-2024-12-18",
+   "gameId": "neva-250621",
+   "displayName": "NEVA - Accessibility Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-18T18:04:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re happy to share that we’re releasing a major update for NEVA, featuring several fixes, changes, and new accessibility-focused features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update, we address several issues players have been reporting, which should improve the game’s overall quality of life. These improvements include the ability to skip the three chase sequences in Story Mode, easier platform mechanics, high-contrast menus, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out the new accessibility features in the video below",
+     "items": [
+      {
+       "text": "We hope this update improves your experience with NEVA!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Input plugin updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add dual sense features to PC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change chapter selection menu: Total collectibles will be visible only when you have reached the last part of the chapter. Otherwise, a ? is shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a climb tutorial movement, as some people didn’t know you can climb up. It waits a bit before showing in case you don’t need it. It’s located right after the climb tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Chapter 3 Part 1, if you first go to the right, complete the area, and head to the ruins area, the black wolf will go towards the direction of the next goal instead of going back to the center. Before it was going in the opposite direction and could be confusing for players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Chapter 3 Part 1, after unlocking the totem, the wolf will Bark to the ghost enemy and both Tackle and Call Neva will be blocked, showing that the only way to advance is by hitting the enemy with the sword.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fix issue at the beginning of Chapter 2 Part 1 where the wolf could get stuck doing an interaction. This could happen also in the interaction on the right where the wolf drinks water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Move respawn point in Final Birds Arena just before lotus in Chapter 2 Part 1, to avoid tricky respawn glitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Move respawn point at Chapter 2 Part 2 so we don’t respawn invisible inside the fog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix two suns showing up before the deer battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix small controller rumble when loading Chapter 3 Part 1 that shouldnt be there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix boulder enemy not resetting the block orientation on flinch when doing a hammer attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add some movement when the boulder enemy is grabbed by the wolf, before it was playing the animation in place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Neva popping instead of fading in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Move respawn point of right collectible Arena in 3A so it’s closer to the encounter if you die",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix camera in encounter in lake area, Chapter 3 Part 1, where player was not visible in the reflection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve Collider shape in ruins Chapter 3 Part 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix collision next to reach collectible in Chapter 3 Part 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add some assets to 3B after queen elevator to mark the path to the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New features - Accessibility",
+     "items": [
+      {
+       "text": "In Story Mode only, you can skip the three chase sequences from the pause menu:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 1, Part 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The end of Chapter 2, Part 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ride chase sequence at the end of Chapter 3, Part 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Graphics Menu Updates:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to adjust grain intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessibility Menu Options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Language Selection: Change the language from an in-game menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High-Contrast Tutorials: Features less transparency, with larger and bold font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wolf Bark Indicator: Shows both on-screen and off-screen when the wolf is barking, helpful for players with hearing impairments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player Always Visible: Alba will always remain visible (with slight transparency) to ensure players don’t lose sight of her.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessible Platform Mechanics:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 2, Part 2: Flowers will stay open longer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 3, Part 1:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Invisible platforms that appear upon landing will now always be slightly visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ghost enemy after the totem will propel you higher when defeated, making the platforming section easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 13,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "We hope this update improves your experience with NEVA!",
+     "In Story Mode only, you can skip the three chase sequences from the pause menu:",
+     "Chapter 1, Part 2"
+    ]
+   },
+   "sourceIds": [
+    "steam-2420660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2420660/view/1786409468849933"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-18T18:04:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.144Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-18T18:04:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.144Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-18T18:04:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:18.041Z"
+  },
+  {
+   "id": "neva-250621@1.03",
+   "gameId": "neva-250621",
+   "displayName": "Patch 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-25T18:45:03.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone, here is a bugfix for the keyboard rebinding issue!",
+     "items": [
+      {
+       "text": "Fixed an issue where rebinding keys caused a non-responsive state in Autumn's dark room",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "General bug fixing and polish",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2420660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2420660/view/6212245217911863636"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T18:45:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T18:45:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.143Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-25T18:45:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:18.039Z"
+  },
+  {
+   "id": "neva-250621@1.02",
+   "gameId": "neva-250621",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-22T16:13:46.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone, here is another patch addressing some bugs!",
+     "items": [
+      {
+       "text": "Fixed physics and animation issues when playing at very high framerates due to vsync being ignored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the resolution selection menu not changing resolution, or showing all available resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tree chase sequence at the end of Fall Part 1 that caused the player to climb in the air and prevented the sequence from being completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2420660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2420660/view/6212244583194561991"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-22T16:13:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-22T16:13:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.143Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-22T16:13:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:18.039Z"
+  },
+  {
+   "id": "neva-250621@1.01",
+   "gameId": "neva-250621",
+   "displayName": "Patch 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-17T14:48:11.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone! This is just a small patch to resolve the controller issue some players encountered.",
+     "items": [
+      {
+       "text": "Fixed an issue where controllers would not work if the player swapped between bluetooth and wire connection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game did not respond to controller inputs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Big thank you from the whole team for playing Neva, and all the feedback we got!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug squashing and fixing continues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2420660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2420660/view/6212244583176118174"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T14:48:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T14:48:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2420660",
+      "checkedAt": "2026-11-13T03:26:41.142Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-17T14:48:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:18.038Z"
+  }
+ ],
+ "issues": []
+}

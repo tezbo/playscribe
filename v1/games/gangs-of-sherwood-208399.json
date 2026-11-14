@@ -1,0 +1,731 @@
+{
+ "game": {
+  "id": "gangs-of-sherwood-208399",
+  "igdbId": 208399,
+  "name": "Gangs of Sherwood",
+  "cover": {
+   "imageId": "co6z4e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6z4e.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1q0o",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1q0o.jpg"
+  },
+  "ps5Release": "2023-11-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "gangs-of-sherwood-208399@patch-2023-11-30",
+   "gameId": "gangs-of-sherwood-208399",
+   "displayName": "Gangs of Sherwood | First Patch!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-30T15:37:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please find below a list of changes that will be already applied when you will start the game on PC:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue when the Ping command would be displayed on Little John",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved some visuals in the Fall of Locksley and in Sherwood Forest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that could make a hero stuck onto a vaulting object",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Marian can now shoot a dagger automatically at shootable ladders and grappling points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Heroe's reactions when hit in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebalanced player's shield resistance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue with additional enemies sometimes not spawning correctly during a bos fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tuck's shield not reducing correctly when getting hit while charging attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the client's gang level not being correct when playing bonus levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Ram's health now scales correctly based on the difficulty level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several issues when pickup up and throwing enemies with Little John and Friar Tuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added more details to the session view screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additionally, we are actively working on the keybinding options, enabling players to customize their controls according to their preferences. This feature will be included in an upcoming patch soon!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1351000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1351000/view/5395937983661431414"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T15:37:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1351000",
+      "checkedAt": "2026-11-13T03:21:31.911Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T15:37:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1351000",
+      "checkedAt": "2026-11-13T03:21:31.912Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-30T15:37:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:53.220Z"
+  },
+  {
+   "id": "gangs-of-sherwood-208399@major-2023-11-06",
+   "gameId": "gangs-of-sherwood-208399",
+   "displayName": "Beta update change log",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-06T13:30:26.000Z",
+   "notes": [
+    {
+     "title": "Here is the full list of fixes",
+     "items": [
+      {
+       "text": "Fix potential crash when quitting the mission while being in agony",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the visual FX of traps being destroyed and not appearing on other clients' screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the health/shield gauges appearing over the heads of bosses and mini-bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor issues with Shards' combinations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with target lock and enemies that jump out of the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced price 0 with FREE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Robin's Drill Arrow would scale up on other clients' screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to the character move list UI and Techniques vendor UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Alan-a-Dale's animation loop and collision at the end of the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would allow players to join each other with the same Hero selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would award players with a lower encounter rank when ending the encounter with a Takedown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed melee aim assist to prevent taking targets behind the camera if there is an available target in front",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Red Roger's healing smoke VFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the golden circle still being active when going back to the lobby from a mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the high five emote VFX not playing for clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue making Berserkers continuously switch aggro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Tuck's Taunt ability not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would remove the selected outfit from a character when accessing the vendor's detail tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved gold display in mission evaluation screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Tuck's gravity ball leaving a trail after disappearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some skinning issues on Tuck default and additional skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the impaled-on-hook animation not playing for certain enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issues on Alan-a-Dale in the lobby and in the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the trap activation prompts not being visible by some clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor tweaks on Little John's moves freeze frames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash happening when quitting to Major Oak while in agony state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Enforcer's helmets being empty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed encounter involving 2 or more Ferrum Coil Bearers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tuck's Mace being wrongly positioned during the tutorial cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character audio being active during the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the score calculation at the end of each mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the mission selection screen would go automatically from the map to the mission detail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with stacking notification windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed beggar hands to avoid confusion for players trying to interact with them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sounds playing while on a loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a longer delay after the Success UI in lessons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with carrots not having a texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Tuck's Gravity Surge shard not being replicated correctly to clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when combining Tuck's 3 Kings shard with the Shine Ball shard would not shoot three projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased lock-on deactivation distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved health drop sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved readability and ease of pulling archer's towers. Also improved VFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Offline players now see their character name instead of the user session name in the HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential loss of focus in the trophy room UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved visuals and readability of artifact swap UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved end-of-level evaluation UI visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented players from falling into the agony state within Major Oak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved readability of left and right mouse button icons",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed 2 duplicates in the character's move list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked encounter balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the mini-boss health bar sometimes not being attached to the correct enemy in the arena'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug that could see Little John stay stuck inside a Ferrum Coil Tower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor graphical issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made more arena props not affect the camera and/or fade out when the camera is' between it and the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed menu credits song sometimes not playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated DLSS plugin to the latest version, now supporting TLAA",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tweaked Comet arrow visuals for more clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Follow us",
+     "items": [
+      {
+       "text": "on Twitter on Facebook and on TikTok!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 56,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1351000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1351000/view/5288974951221147921"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-06T13:30:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1351000",
+      "checkedAt": "2026-11-13T03:21:31.911Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:53.218Z"
+  },
+  {
+   "id": "gangs-of-sherwood-208399@major-2023-10-11",
+   "gameId": "gangs-of-sherwood-208399",
+   "displayName": "Beta Update - List of improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-11T15:24:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We just operated an update to apply the following changes",
+     "items": [
+      {
+       "text": "Added health drops from destructible items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Marian sometimes not triggering Flux Thrusts on the host whereas it does client-side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated DLSS plugin to the latest version, now supporting TLAA",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tweaked Comet arrow visuals for more clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made some solid objects not affect the camera to reduce unexpected camera movements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some minor graphical issues in Kirklees Keep",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with the Comet arrow shard interacting with other shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Little John's EWGF Shard FX not playing on clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tuck's whirlwind FX not being interrupted on clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an inconsistency where going back to Mission Selection screen after completing a mission would indicate the wrong difficulty setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved some Shards-related sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Finisher moves cameras sometimes not playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Robin's Heavy Attacks: when performing the heavy attacks and walking backward, Robin would face the camera away from his target: We hope you are having fun playing Gangs of Sherwood and that these changes will make the experience even better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1351000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1351000/view/5246188851834668045"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-11T15:24:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1351000",
+      "checkedAt": "2026-11-13T03:21:31.910Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:53.215Z"
+  }
+ ],
+ "issues": []
+}

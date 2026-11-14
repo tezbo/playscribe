@@ -1,0 +1,4352 @@
+{
+ "game": {
+  "id": "arcadian-atlas-18868",
+  "igdbId": 18868,
+  "name": "Arcadian Atlas",
+  "cover": {
+   "imageId": "co2o8h",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2o8h.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2edr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2edr.jpg"
+  },
+  "ps5Release": "2023-11-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "arcadian-atlas-18868@1.04",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Update 1.04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-28T16:59:28.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Shrapnel Shot - no longer may choose between targeting units and tiles. The skill will always target units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Smoke Screen - reduced EVA bonus from previous +50 to +25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "End Times - reduced DMG dealt from 80% to 40%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mission “A Second Divorce” now features a new map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Improved key rebinding in the Options Menu, allowing for shared keys between Menu Navigation and Movement Navigation. Additionally, the Escape key now allows you to back out of the rebinding process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Script",
+     "items": [
+      {
+       "text": "Japanese: an entirely new localization has replaced the old one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed typo in the mission description for “A Final Warning.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved formatting for the contract mission details in “Five Goons Walk Into a Bar.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted Item Shop UI loading timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved Recruiter guest loading & animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed rare issue in which tile highlight graphics were conflicting with traps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Act Menu exploit for projectile-based skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Title Screen song transition responsiveness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved font atlas resolution for fonts in various languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 5,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5749481331437534419"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-28T16:59:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.704Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-28T16:59:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.704Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-28T16:59:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.079Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@1.0.3",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-22T18:01:05.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Removed equipment requirements for One-Handed Training and Two-Handed Training",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[One-Handed Training] - level 2 now bestows +2 ATK and +5 Critical Chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Two-Handed Training] - level 2 now bestows +2 ATK and +5% Critical DMG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Localization text now reflects these changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "- level 2 now bestows +1 MOV and +1 SPD instead of +2 MOV to better balance Cav's new mobility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Skill Height Tolerance Changes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced height tolerance for certain Ranger, Monk, Cavalier, and Sorcerer Skills so they no longer can be used with vast height differences between attacker and defender",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Skills affected: Sorcerer [Withering Touch, Lightning Touch, Frost Touch, Flame Touch], Monk [Martyr, Innumerable Blows, Blinding Spin], Cavalier [Sword Bash, Shield Triage, Shield Bash, Rend Armor, Quick Attack, Body Rush, Low Sweep, Adrenaline Strike], Ranger [Crossbow Attack, Bow Attack]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[Unit HP Buff]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All units have received a ~15-25% HP increase depending on level, with additional HP increases for certain boss units and monster units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[End Times] - Reduced End Times damage from 100% to 80% to account for it hitting all units on the battlefield regardless of Shaman position (but still can only be used once per battle and has high SP cost)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added language support for Simplified Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for Non-Pixel Fonts (Latin script languages only) - toggleable through accessibility settings in Options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to see skill descriptions from Core Class skills after advancing class in the Skill: Equip submenu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Escape to Tile” missions and contracts now are considered victories when killing all enemies on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Script",
+     "items": [
+      {
+       "text": "The Japanese description of the Hunter’s Fire Trap should now list an accurate range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The English description of Rank 3 Ice Shard now correctly reads 115% instead of 15%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue in which the UI localization for Russian was incorrect on the Overworld screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Added additional check for “Crowning a New Ruler” achievement while loading the Title Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Polished and improved the text layout of UI elements all across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added animation polish to most standard UI boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Streamlined menu flow in the Troop Manager > Contracts screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ability to see HP and SP above the heads of all units on the battlefield has been added. Hold down “Switch: Right” (on gamepad, right trigger) during most battle phases to access it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The turn order overlay (accessed via “Help,” on gamepad the Select button) can now be triggered from more battle phases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed screen tearing issues for high refresh rate monitors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Units dying from status effects like Burning and Noxious now correctly flinch before dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which the unit information panel would still remain going into the victory/defeat screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue with the turn order overlay interacting unexpectedly with the Right Mouse button has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue in which the UI would not correctly refresh the battle objectives and Action Menu after changing a language mid-battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the chance of turning oneself Undead as an Inquisitor with Shield Triage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Target Unit” skill targeting type no longer mistakenly targets tiles under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare instance of Delayed Area-of-Effect skills failing to inflict the full zone of damage when the main target dies prematurely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in which cutscenes could not progress when skipping through them too quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 9,
+    "balance": 11,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Added language support for Simplified Chinese.",
+     "Added support for Non-Pixel Fonts (Latin script languages only) - toggleable through accessibility settings in Options.",
+     "Added ability to see skill descriptions from Core Class skills after advancing class in the Skill: Equip submenu."
+    ]
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5219165352628119505"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-22T18:01:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.703Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.078Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@1.02",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-10T00:19:21.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Reduced monetary rewards across all story and contract battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Additionally: included difficulty modifiers for money, bestowing only 80% monetary rewards for Harder, 100% for Standard, 120% for Relaxed, and 140% for Story",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "(Updated text to reflect this change in Options screen with the HELP button)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "No more dragons sitting on their hoards of gold!: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rangers/Hunters/Reavers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerf: Reduced Bow Attack DMG by 15%, affecting all skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerf: Reduced Crossbow Attack DMG by 15%, affecting all skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated item descriptions for all Bows and Crossbows to reflect this change across all languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ranger - increased EVA for LVL 1 to +5 EVA, and LVL 2 to +10 EVA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ranger [Equipment Limited Skills] - removed all Equipment Requirements for Ranger Skills (and their bonuses and usage are now completely equipment agnostic and apply to all advanced classes fully)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated all skill descriptions to reflect this change - Be free! Choose your own character adventure!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ranger [Bow Training] - altered LVL 2 to be +2 ATK, +5 EVA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ranger [Crossbow Training] - altered LVL 2 to be +2 ATK, +1 SPD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reaver [Elite Evade] - increased EVA for LVL 1 to +15 EVA, and LVL 2 to +20 EVA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hunter [Projectile Guard] - increased EVA for LVL 1 to +15 EVA, and LVL 2 to +20 EVA: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Warmancer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerf: Reduced Spell DMG for Warmancers, Druids, and Sorcerers by 15%, affecting all skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Standardized SP cost across all levels of Fire Ball (5SP), Lightning Bolt (5SP), Ice Shard (5SP), Flame Wall (7SP), Freezing Cone (7SP), and Shatter Bolt (6SP): ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cavalier/Inquisitor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Buff: Buffed all Shield EVA bonuses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cavalier [Equipment Limited Skills] - removed all Equipment Requirements for Cavalier Skills (and their bonuses and usage are now completely equipment agnostic and apply to all advanced classes fully)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated all skill descriptions to reflect this change - Be free! Choose your own character adventure!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Inquisitor - reduced damage dealt at both levels to 100%, reduced stun chance at LVL 1 to 15%, at LVL 2 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Inquisitor [Silencing Ray] - reduced damage dealt at all levels, to 10% DMG at LVL 1, 25% DMG at LVL 2, and 40% DMG at LVL 3. Reduced range of skill to 3 tiles from Inquisitor instead of previous 4.: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased base EVA bonuses for all Light, Medium, and Mage armor classes: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased HP on certain bosses throughout the story: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy & Ally Level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased LVL of all enemies and allies in chapter 2 by +1, and in chapter 3 by +2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam Cloud Saves are now available!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please back up your save files on your primary device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In order for Steam Cloud Saves to work correctly, boot up the game on your primary device and then exit before attempting to play the game on a secondary device. This will ensure that Steam has a proper record of your save files!: ##",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Flank / Back Attack Crit Bonus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Attacking a unit's back now bestows a +30% chance to critical, and attacking their flank has a +10% change to critical",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated text to reflect this change in Tutorial screen for entry on Facing Direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Target of Delayed Skills in HELP Turn Order Details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now view the target name (unless an empty tile is being targeted) for any delayed skills in the Turn Order Details HELP overlay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Art",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More expressive flinching animations for all units, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All apothecaries, shamans, monks, cavaliers, inquisitors, ronins, warmancers, druids, sorcerers, rangers, reavers, and hunters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All monsters: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More expressive attack animations for sword strikes for all units, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All uniques (Desmond, Vashti, Eda, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All cavaliers, ronins, and inquisitors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All monsters that use swords: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More expressive attack animations for bow shots for all units, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All uniques (Desmond, Vashti, Eda, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All rangers and hunters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All monsters that use bows: ##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More expressive cast animations for magic classes, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All druids, shamans, sorcerers, and warmancers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Script",
+     "items": [
+      {
+       "text": "Altered wording of Flame Mastery, Ice Mastery, and Lightning Mastery (Warmancer) skill descriptions to clarify the increase is 5%, 10%, and 15% per level for their elemental DMG increases - altered across all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed typo in chapter 1 script where quickly was missing the \"l.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Input",
+     "items": [
+      {
+       "text": "Increased polling rate on gamepad to make controls more responsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Loading",
+     "items": [
+      {
+       "text": "“Press to Continue” after loading screens has been removed. Loading screens automatically continue to the next screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load times have been slightly improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Localization has been added for all Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Book Worm” Achievement should now properly unlock when all chatter items have been read",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players with the chatter count hanging may need to read through all Chatter once more to trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Two for One Deal” Achievement should now only unlock via player-controlled units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed height tolerance not working for certain basic melee attack skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "So Cavaliers can no longer attack units on above a sheer cliffside above them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed attack announcement box not appearing during enemy skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Steam Deck appearance for certain screens being cut-off due to 16:10 aspect ratio.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with Ronin animations not displaying correctly while using shield skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 5,
+    "balance": 31,
+    "other": 22,
+    "ps5": 0,
+    "topNew": [
+     "##",
+     "Please back up your save files on your primary device.",
+     "Flank / Back Attack Crit Bonus"
+    ]
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5839532486208847608"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T00:19:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.702Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.076Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@1.01",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Update 1.01",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-29T02:01:59.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Cavalier - increased HP bonus from 7HP to +14HP for LVL 1, and LVL 2 from 14HP to +28HP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cavalier - altered bonus from SPD to MOV, so LVL 1 is +1 MOV, LVL 2 is + 2 MOV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ronin - increased HP bonus from +28 to +38 HP for LVL 1, and from +38 to +50HP for LVL 2: This should help Cavalier have more movement options and be a more viable front-line defender/powerhouse as intended (and like their mamma raised them to be)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Art",
+     "items": [
+      {
+       "text": "More expressive flinching animations for select units:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All uniques (Desmond, Vashti, Poncho, Eda, Lucretia, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that prevented alternating of battle music tracks for certain users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 3,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5124584686251666914"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-29T02:01:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.702Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.075Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2023-06-05",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "June 2023 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-05T11:33:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Welcome back to another Arcadian Atlas update as we creep ever closer to release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This month we have a sneak peak at our final advanced class: Reaver, along with some of the finishing touches as we draw closer to our Gold build!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Squashing Bugs and Picking Fonts",
+     "items": [
+      {
+       "text": "As we near gold, we're doing some of the final stage polish and bug squishing, putting a fine sheen on everything and seeing it come to vivid life! A few of the highlights:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "We're now up to 270 bugs squashed just in the last 2 months alone - Paddy has been fixing them as quickly as we can find them. A huge thanks to everyone who play tested builds at GDC, Pax East, and Steam Fest - your bug reports have been invaluable to finding and squishing those quickly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "we've begun testing out some lovely fonts for Japanese, Chinese, and Russian fonts, as well as adding specialized characters to all our current fonts to ensure accent marks and other special characters are fully supported!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "We've completed testing of achievement unlocks for all 40 unlockable achievements to ensure their triggers are all in place and functioning properly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Polish",
+     "items": [
+      {
+       "text": "And last but certainly not least, we've refined many aspects of the game including a revamp of the Title Screen and logos, with 29 tutorials, over 30 tavern chatter entries, over 80 cutscenes, and over 40 compendium entries - this is well and truly a labor of love come to life!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Reaver",
+     "items": [
+      {
+       "text": "The Reaver lives their life in the shadows, mastering the art of one-on-one combat and quickly slinking back into stealth to survive another day. Those studied in the Dagger Arts tree have honed their reflexes with tiny blades, delivering a flurry of blows to deal status effects with every strike, while those of the Hired Assassin tree favor critical backstabs and recruiting the shadows to fight for them, leaving their foes broken both physically and mentally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Delaying Strike",
+     "items": [
+      {
+       "text": "Need to push a unit further back in the turn order to perfectly time a delayed skill? Delaying Strike does just that, while also dealing damage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Heart Stop",
+     "items": [
+      {
+       "text": "While it doesn't deal much damage, Heart Stop is guaranteed to inflict Stun Status on a foe, ensuring they miss their next turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Smoke Screen",
+     "items": [
+      {
+       "text": "Not all traps are bad! The Reaver's Smoke Screen actually bestows a huge bonus to EVADE on any friendly units ending their turn in its radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Backstab",
+     "items": [
+      {
+       "text": "While the SP cost is high, Backstab is a hugely powerful skill guaranteed to critical against the Reaver's target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Find the Latest on our Socials!",
+     "items": [
+      {
+       "text": "And don't forget to check out our socials for all the latest information, gifs, videos, and sneak peaks:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram: @arcadianatlasgame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @ArcadianAtlas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.gg/qtwN6Ve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Website: www.arcadianatlas.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: https://store.steampowered.com/app/691790/Arcadian_Atlas/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're nearing that shiny, shiny gold status and very excited to share even more as we get closer to that point. Stay tuned for more as we can reveal it, and thanks so much for following us on this journey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Taylor Bair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5151601211240404198"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-05T11:33:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.701Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.074Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2023-05-03",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "May 2023 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-03T16:40:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(apologies for the slight delay, I lost track of time! - Becca)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's that time again! Welcome to another monthly Arcadian Update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This month we've got a new advanced class to show off in the Ronin, along with news on achievements and localization - so get your katanas at the ready and let's dive right in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements & Localization",
+     "items": [
+      {
+       "text": "As we near completion on the gold build of Arcadian Atlas, we've turned our eye to all the bells and whistles that come along with game development.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "We've begun our localization search for the perfect translators to the Arcadian Atlas script - which is huge, running the gamut from cutscene dialogue, skill & item descriptions, tavern contracts, chatter, compendium entries, and tutorials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll keep you all posted as we secure additional language translators so we can see the full spectrum of languages available upon launch - so stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Who doesn't love a little recognition for their hard work!? That's why we're chipping away at some of the creatively implemented achievements to make sure not just story progress but also mastery of the skill and battle systems are rewarded. Find a sneak peak of some of the achievements below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "\"No Think, Only Smash\"",
+     "items": [
+      {
+       "text": "Inflict Rage on a single unit in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "\"Jack of All Trades\"",
+     "items": [
+      {
+       "text": "Learn all skills in a single skill tree in one playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "\"Created In Our Image\"",
+     "items": [
+      {
+       "text": "Respec any unique unit (Desmond, Vashti, Eda) using CMD Point rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Ronin",
+     "items": [
+      {
+       "text": "The Ronin is wholly aligned with honorable warriors of the past, harnessing their spirits in the Wandering Soul tree to bestow healing on allies and cripple foes while channeling the unrelenting rage of their time on the battlefield in their Battle Trance tree, losing all control for huge bonuses to ATK, Criticals, and self-preservation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Possessing Spirit",
+     "items": [
+      {
+       "text": "Possessing Spirit is one of the few skills that inflicts Charm Status on a foe, turning them to your side for a brief period of time, while leaving the Ronin weakened as a trade-off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Blade Blossom",
+     "items": [
+      {
+       "text": "A versatile class, the Ronin's Blade Blossom heals and bestows Regen Status on all allies in a radius emanating from the Ronin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Battle Trance",
+     "items": [
+      {
+       "text": "The bread and butter of the Ronin's Battle Trance tree, this skill inflicts a rage on the Ronin, restricting all skills for 3 turns to Basic Attacks, while bestowing huge bonuses to Critical Chance, Critical Power, and Attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enraging Field",
+     "items": [
+      {
+       "text": "A powerful trap skill, Enraging Field lays down a 3 tile square that inflicts Rage Status (preventing all but Basic Attacks) to those ending their turn within it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Find the Latest on our Socials!",
+     "items": [
+      {
+       "text": "And don't forget to check out our socials for all the latest information, gifs, videos, and sneak peaks:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram: @arcadianatlasgame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @ArcadianAtlas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.gg/qtwN6Ve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Website: www.arcadianatlas.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: https://store.steampowered.com/app/691790/Arcadian_Atlas/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expect even more exciting news about advanced classes, localization, porting platforms, trailers, and a release timeline in the coming months!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thanks for following our passion project and we'll see you next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Taylor Bair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5138087875076353771"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-03T16:40:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.700Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.074Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2023-03-31",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "April 2023 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-31T18:12:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again to the wonderful world of Arcadian Atlas updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's a new month which means a new Arcadian Update, where we share new features, skills, maps, and everything Arcadian Atlas from the Twin Otter team! But we've got a lot of fun Pax East updates and new class skills to show off - so off we go!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PAX East Updates",
+     "items": [
+      {
+       "text": "We wanted to extend another giant thank you to everyone who played the newest Arcadian Atlas demo at PAX East! We had a blast seeing all the cool cosplay and gained even more feedback and bug reports!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll share a few of our favorite pictures below, and stay posted for future shows you can find the game at as we near our summer release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We think you'll notice the gorgeous new art from Jasmin Darnell - find her on instagram @ya.hime , and we hope everyone who had a chance to come by the booth had a blast!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Hunter",
+     "items": [
+      {
+       "text": "The Hunter knows that man’s greatest foe is one that strikes from above, catching them unawares. With their Death From Above tree, the Hunter and their Animal Companion rain deadly strikes from the skies, while the Guerrilla Tactics tree turns the battlefield into a minefield, laying traps and making foes regret ever stepping foot into Hunter territory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Explosion Shot",
+     "items": [
+      {
+       "text": "Explosion Shot sends a flame-tipped arrow at a main target that explodes, impacting foes around them with splash Fire Element damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Slumber Trap",
+     "items": [
+      {
+       "text": "Slumber Trap lays a 3 radius trap that causes all foes within its range to fall asleep, and affects any enemies entering the trap for the next 3 turns. Just don't attack them or they'll wake up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fire Trap",
+     "items": [
+      {
+       "text": "The Hunter sends their companion to lay flaming traps on the battlefield in a 3 tile radius that burns all within, and inflicts Burn Status on any entering the trap afterwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Find the Latest on our Socials!",
+     "items": [
+      {
+       "text": "And don't forget to check out our socials for all the latest information, gifs, videos, and sneak peaks:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram: @arcadianatlasgame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @ArcadianAtlas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.gg/qtwN6Ve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Website: ArcadianAtlas.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: https://store.steampowered.com/app/691790/Arcadian_Atlas/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expect even more exciting news about localization languages, porting platforms, events, and a flood of information in the coming months!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thanks for following our passion project and we'll see you next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Taylor Bair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/6839319551986326505"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-31T18:12:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.699Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.073Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2023-02-28",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "March 2023 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-28T20:45:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy once again you gorgeous people!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's a new month which means a new Arcadian Update, where we share new features, skills, maps, and everything Arcadian Atlas from the Twin Otter team!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But let's not wait - we're diving on in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Next Fest Improvements",
+     "items": [
+      {
+       "text": "We wanted to extend a huge thank you to everyone who played the Arcadian Atlas demo for Steam Next Fest and provided a wealth of improvement ideas and bug reports!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It was truly a humbling experience seeing the outpouring of support from fans and newcomers alike, and we've been working away at all the feedback to ensure the game is even better! A sneak peak at what's in the works below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The Heavens Roll In",
+     "items": [
+      {
+       "text": "Many of you wanted to see a more vibrant, active world map - so we've listened! Now you'll find billowy clouds rolling in and a gentle breeze blowing across Arcadia!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Button Prompts",
+     "items": [
+      {
+       "text": "Want to know when more information is available on options, items, unit promotions and when you can undo movement? Look no further! We've been adding additional callouts for Undo Movement and More Info Boxes on top of existing skill tooltips to put more features at your fingertips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes Galore",
+     "items": [
+      {
+       "text": "We've gathered all the detailed bug reports from the countless demo players and already gotten to work squashing those pesky guys - a huge thanks to everyone who documented bugs for us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Key Art",
+     "items": [
+      {
+       "text": "We commissioned the extremely talented artist Jasmin Darnell to hand-craft some lovely new key art for the game. You’ll see this art on Steam and other sites as our MAIN advertising illustration from here on out.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We’re extremely excited to present to you….",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Catch us online with this new advertising artwork from here on out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The Monk",
+     "items": [
+      {
+       "text": "The Monk, one of Apothecary's advanced jobs, has spent years rigorously training their body and pouring over books of the arcane, using their Furious Blows tree to strike so quickly and so often that they bypass DEF, only considering the MDEF of their foes and attempting to chain their skills endlessly one into another, while those of the Arcane Energies tree channel that energy into powerful bolts to heal or harm and alter time itself to haste allies or slow their foes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arcane Bolts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arcane Bolts sends 4 bolts of pure, element-free energy towards the target, not only damaging them but guaranteed to inflict Slow Status, ensuring their turn is delayed in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blinding Spin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blinding Spin is an invaluable AoE skill for damaging units directly around the Monk while also making it more difficult to hit them by inflicting the Blind Status effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Martyr",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Monk's last - and most powerful - resort, Martyr deals the full Max HP value of the Monk to their foes, but leaves the monk completely drained, with only 1 HP and 1 SP remaining.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Social!",
+     "items": [
+      {
+       "text": "And for all of those who want the latest videos and info, we've got a brand new Instagram to add to the usual socials. Find us at:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam: Steam Wishlist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Instagram: @arcadianatlasgame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Twitter: @ArcadianAtlas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Discord: https://discord.gg/qtwN6Ve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Website: www.arcadianatlas.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stay tuned for more in the coming months as we get ever closer to that Summer 2023 release - everything from contracts, secrets, more advanced classes, story sneak peaks and improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "by Taylor Bair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 1,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0,
+    "topNew": [
+     "We’re extremely excited to present to you….",
+     "Catch us online with this new advertising artwork from here on out!",
+     "Steam: Steam Wishlist"
+    ]
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5059268543376251972"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-28T20:45:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.698Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.072Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2023-02-03",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "ARCA January 2023 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-03T21:35:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heya, folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to Arcadian Updates, where we share exciting tidbits about Arcadian Atlas that the Twin Otter team is working on, including new maps, classes, mechanics, and much more! Continue to tune in for further goodies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Next Fest",
+     "items": [
+      {
+       "text": "Ask and you shall receive!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arcadian Atlas is participating in Steam Next Fest (February 6th - 13th) where you’ll be able to play our demo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, we're a smidge early to the party....",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just couldn’t wait any longer for everyone to get a taste of Arcadian Atlas, so we are making the demo live today!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Opening Cinematic",
+     "items": [
+      {
+       "text": "Enjoy the game’s opening cinematic to get an idea of the history and turmoil that fill the land of Arcadia. The opening sets the scene for Arcadian Atlas’ story, preparing you for the many trials to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Inside the Throne Room",
+     "items": [
+      {
+       "text": "Lucretia is caught by Wulff while attempting to sneak into the castle to prove the King, her father, is being poisoned. After a brief exchange of not-so-pleasantries, Lucretia slips away while her guards buy her time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Throne Room Battle",
+     "items": [
+      {
+       "text": "Taking control of Vashti, Desmond, and Eda, fight against Lucretia’s secret guards and defend Queen Venezia. Experience the basics of battle in Arcadian Atlas as you bloody the halls of the castle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "If you’ve played any of our previous demos and provided us with feedback, you might notice we’ve made some improvements based on your suggestions. We are most excited about the skill tooltips we’ve implemented, so keep an eye out for the Skill Info Box and Skill Range and let us know what you think! There are tons of other Quality Of Life improvements and tweaks we've made based on your suggestions, so please continue to help us make this game the absolute best it can be!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Play It for Yourself",
+     "items": [
+      {
+       "text": "We don’t want to give away everything now, so go experience the demo for yourself!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feel free to stream/record your playthrough, you might even get a shout-out from us & our fans sent your way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We’d Love Your Honest Feedback",
+     "items": [
+      {
+       "text": "Once you get your hands on the demo, we’d love to know what you think! We are nearing the end of development on Arcadian Atlas and this will likely be the last chance for us to implement player feedback into the final game. Comment your thoughts about the demo on this update, tag us on social media, and feel free to stream your playthrough (we’ll be dropping by streams to see your reactions). Pop into our Discord and share your feedback in the #support channel, the team is looking forward to hearing from ya!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We can't wait to show off more Arcadian Atlas content in February! Stay tuned for more on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "by Luke Rica (add'tl notes by Becca Bair)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5035622743884873617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-03T21:35:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.698Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.071Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-12-31",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas December 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-31T18:10:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Inquisitor",
+     "items": [
+      {
+       "text": "The Inquisitor is a mage killer. They sacrifice DEF to gain additional MDEF, getting in close to mages as quickly as possible and attempting to turn foes Undead, dispatching them with Holy Element damage and SP crippling skills while bestowing huge bonuses to their allies through Grand Auras. The Inquisitor uses the strength of their faith to fight back the darkness in the world. A true shining light, perfect for this holiday season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Silencing Ray",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Silencing Ray deals damage and inflicts Silence. As a mage-killer, inflicting Silence and preventing magic use is a crucial tactic for the Inquisitor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smiting Blow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This skill deals a large amount of HP Damage, but also damages a target's SP based on the Inquisitor's MDEF stat, helping to cripple magic users in two ways. The Inquisitor has many different ways of disarming magic users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grand Aura",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grand Aura increases both the MDEF and DEF stat of all friendly units within the trap area, and this effect persists for 2 turns and can be further modified by other skills to bestow even more benefits. In addition to crippling enemy mages, Inquisitors can also shield their party from enemy magic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Happy New Year!",
+     "items": [
+      {
+       "text": "We hope everyone had a happy holiday season and we are wishing everyone a safe and successful new year! We deeply appreciate all of your support throughout Arcadian Atlas’ development and to celebrate the start of 2023 (our release year) we have a bonus skill and a nice surprise to show off as a special treat!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rapture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Drop holy wrath on a foe to deal 110% Holy Element DMG with a 30% chance to inflict Stun Status. Cleanse the battlefield of your vile foes with this powerful Holy attack!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skill Tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You might have already caught a glimpse of this new UI addition in the gifs included in this update, but we have added skill tooltips! Thanks to all of the valuable feedback we received from our PAX West demo, we have implemented a Skill Info Box that appears in the top left corner of the screen to describe what a skill does, along with a Skill Range display which will show you the range of a skill on the battlefield as you hover over it in the Action List.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We can't wait to show off more Arcadian Atlas content in 2023! Stay tuned for more on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/5000716037475937856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-31T18:10:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.697Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.071Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-11-30",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas November 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-30T17:53:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Druid",
+     "items": [
+      {
+       "text": "The Druid has become so enmeshed with the natural elements only dreamt of in their Warmancer days that they’re able to create phenomena from nothing. With the ability to harness the power of Ice, Fire, Lightning, and Earth to their benefit, let’s dive deeper into the Druid’s skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blinding Light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This skill deals a large amount of Holy Element damage and is guaranteed to Blind the selected target. Pack a punch and gain a tactical advantage over your enemy all in one move!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blizzard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blizzard deals a medium amount of Ice Element damage to all units in a large radius with a chance to Slow and Freeze all caught within its blast. This is a moderately powerful AoE attack that can also slow your enemies’ attack, buying your units extra time on the battlefield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prepare Casting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A self buff usable once per battle, Prepare Casting gives the Druid drastically faster cast speed for five full turns - a perfect intro move before unleashing a wave of elemental spells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Earthquake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Similar to Blizzard, this skill deals a medium amount of Earth Element damage over a large radius with a chance to Stun all enemies within the blast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Forest Spirit",
+     "items": [
+      {
+       "text": "The Forest Spirit is a powerful, ethereal being without known origin that weighs the actions of humans and passes judgment on those attempting to harm the one who summons it. Also, if your Thanksgiving turkey looked like this, it was probably overcooked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We can't wait to show off more Arcadian Atlas content in December! Stay tuned for more on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4979322040013780129"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-30T17:53:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.696Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.070Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-11-01",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas October 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-01T22:15:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Our Scariest Update Yet",
+     "items": [
+      {
+       "text": "In honor of Spooky Season, this month’s update will focus on some of the more supernatural and sinister skills included in Arcadian Atlas! Prepare yourselves for some ghoulish sneak peeks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Shaman",
+     "items": [
+      {
+       "text": "The Shaman dabbled too long on the fringes and dark recesses of science, learning to manipulate the powers of life and death sometimes for good, and sometimes to the horror of all who witnessed. We already introduced the Shaman class back in February, but we didn’t touch on any of their advanced skills. Let’s take a look at their supernatural abilities below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nightmarish Vision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This skill puts a target to sleep and inflicts a myriad of negative Status Effects such as Wet, Limp, Fracture, and Blind. Pray that the Shaman is fighting on your side, as this skill is truly the stuff of nightmares for the Shaman’s enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unholy Revival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once per battle, this skill allows the Shaman to revive all unconscious allies with a small amount of HP, but completely drained of SP and Undead, meaning normal healing harms them. Raising allies as undead is both spooky and convenient!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood Puppet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This skill allows the Shaman to control a target's bloodstream, inflicting Charm for 2 turns, while the Shaman has Stop Status and 60% DEF & MDEF for 2 turns. Turn enemies into allies against their will with this sinister skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "End Times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once per battle, this skill grants the Shaman the ability to rain down hellish fire and brimstone upon the entire battlefield, damaging foes and halving their SP. If this fiery skill doesn’t kill your enemies, it will at the very least severely injure them, making them easy pickings for your allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We can't wait to show off more Arcadian Atlas content in November! Stay tuned for more on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4706851091192715685"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-01T22:15:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.695Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.069Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-09-30",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas September 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-30T19:03:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank You!",
+     "items": [
+      {
+       "text": "Before we jump into all the good stuff, we just wanted to thank everyone who came out to PAX West and played the Arcadian Atlas demo! We have been reviewing all of the player feedback and are working on making every possible improvement to the game as we approach our Summer 2023 release date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Advanced Skills",
+     "items": [
+      {
+       "text": "Fire Trap (Hunter Skill)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fire Trap skill is reserved for the Hunter Class. Using your owl companion, lay flame traps on the battlefield that persist for 3 turns, burning foes and allies that stop or start their turn on them. Additionally, the Hunter’s owl companion attacks an enemy whenever the Hunter attacks, making them both cute AND deadly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second Skin (Reaver Skill)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Reaver has the ability to generate a Second Skin. Create a shadowy skin for yourself, bestowing temporary HP for 5 turns that absorbs blows until depleted. This is a great defensive skill that can extend a Reaver’s time on the battlefield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blade Blossom (Ronin Skill)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Ronin has skills that are deadly and others that are restorative, like Blade Blossom. Cherry blossoms blanket the battlefield, bestowing Regen status on all allies and healing them a small amount while delivering slow healing over time for 3 turns. This skill is perfect when you find yourself in a pinch and your allies are low on health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skill Tree (Ronin)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each Advanced Class will have two branching skill trees to allow for increased strategic customization of units. The Ronin features the Wandering Soul tree and the Trance Arts tree. Under the Wandering Soul tree, Ronin units can harness the spirits of their warrior ancestors and bestow healing on their allies while crippling their foes. The Trance Arts tree focuses the rage of fallen warriors into powerful attacks and modifiers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We can't wait to show off more Arcadian Atlas content in October! Stay tuned for more on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4588629064115142275"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-30T19:03:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.695Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.069Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-08-30",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas August 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-30T19:57:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PAX West 2022",
+     "items": [
+      {
+       "text": "Arcadian Atlas will be playable at PAX West! Stop by the Serenity Forge booth (757) to check out our demo. If you can’t make it to PAX, we’ve got you covered! In this month’s update we will break down the demo and its features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The demo includes two battles, the first of which takes place at Waite Ruins (pictured above). Vashti, Desmond, and Eda have a brief run in with Fennic before Poncho joins their team and they find themselves fighting off a group of Warmancer thugs. Test your strategic skills as you select your units and enter combat with both melee and ranged tactics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outside of battle, you can visit town to recruit new units and build out your party. You can also upgrade your units or buy stronger equipment to unlock their full potential on the battlefield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second battle occurs in the town of Amblemere. Vashti, Desmond, Eda, Poncho, and Annalise once again encounter Fennic. This time he has run into Lucretian soldiers who would like to forcibly conscript him into their army (pictured above). Once your party has dispatched the Lucretian soldiers, you are faced with a major decision that will shape the game’s story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As one final bonus, we will have an exclusive goodie available for those that will be attending PAX West. If you fill out a short feedback form after completing the demo, you will receive a PAX-exclusive Arcadian Atlas sticker featuring Poncho & Lefty! (pictured below)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We look forward to seeing the feedback from those of you who will play our demo at PAX West, as it will be crucial in these final stages of development. Stay tuned for more monthly updates as we continue to approach our Summer 2023 release. Next month we will be taking a deeper look at the advanced classes in Arcadian Atlas!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4514316500021917074"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-30T19:57:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.694Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.642Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-07-29",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas July 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-29T18:22:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Darmouthe Bridge",
+     "items": [
+      {
+       "text": "Once a main thoroughfare for Dantalion troops against foreign invaders, those wars have been long forgotten alongside Darmouthe Bridge. Overgrown and barely traveled except by brigands and mages fleeing persecution, the bridge is now a haunt as much as the fortresses it once connected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But when Lucretia's rising army begins searching for new places to recruit, those fortresses just might gain new uses - and Darmouthe Bridge may hear the clatter of swords and shields once more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Included in the below screenshot of a battle on Darmouthe Bridge is a sneak peek at water traversal. Adding an entirely new dimension to the battlefield, water traversal allows you to expand your strategy and engage enemies from unique angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story Cutscenes",
+     "items": [
+      {
+       "text": "As we mentioned in the June Update, we are nearing completion of the story cutscenes. Featuring over 1000 custom character animations, the drama and humor facing Arcadia is brimming with life. We have added hundreds of additional VFX to flesh out the intricate story of political turmoil and arcane forces. Dynamically scripted music has also been added to cutscenes, perfectly synced with dramatic or humorous story moments to enhance the atmosphere and strong character motifs. Arcadian Atlas takes place across a great variety of environments and locations, including snow-laden fields, busy taverns, weathered bridges, desert encampments, and secluded monasteries (some of which can be seen in the below screenshots).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We can't wait to show off more Arcadian Atlas content in August! Stay tuned for more on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4587497456685206187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-29T18:22:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.693Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.641Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-07-01",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas June 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-01T19:37:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Gameplay Trailer",
+     "items": [
+      {
+       "text": "ICYMI: Earlier this month we revealed a brand new gameplay trailer for Arcadian Atlas! Get a better look at the game’s mechanics, characters, and story (and Poncho!) in our latest sneak preview. We also announced the release window for Arcadian Atlas: Summer 2023! While it's a slight delay, it's allowed our team time to deliver one of the biggest fan requests below! We thank our passionate community for their love, support, and feedback throughout the development process and look forward to sharing even more about the game as we near release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "War has begun. To save Arcadia will require perfect strategy, the latest gear, and friends at your side. The time to gather your perfect team is now. The Atlas is about to awaken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mouse Control",
+     "items": [
+      {
+       "text": "You've spoken, and we've listened! The Twin Otter team has spent the last two months lovingly crafting FULL MOUSE CONTROL on Arcadian Atlas. Behold the mouse-y goodness throughout cutscenes, the overworld, battles, and while managing all your troops for the first time ever. Mouse is now fully supported (and our new favorite way to play!) across the entire game, so now you can experience the deep tactical battles, riveting story, and lovable characters of Arcadian Atlas from the comfort of your gaming chair!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We're insanely excited as the story cutscenes near completion, with all your favorites like Poncho, Lucretia, Fennic, and of course Vashti getting hundreds of custom animations to bring them to life! Advanced Class Skill implementation is nearly complete, along with some strategically crazy abilities mixing up the battlefield and laying deadly traps. We're nearing the time when Arcadian Atlas is finally in everyone's hands!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We can't wait to show off more as we enter July! Stay tuned for more on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4474904295759917117"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-01T19:37:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.693Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.641Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-05-31",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas May 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-31T17:56:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sub-Class Spotlight: The Hunter",
+     "items": [
+      {
+       "text": "Today, we're sharing a very first look into one of the sub-classes of Arcadian Atlas: The Hunter! Master the art of stealth, lay traps on the battlefield, and rain arrows on your enemies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Hunter knows that man’s greatest foe is one that strikes from above, catching them unawares. With their Death From Above tree, the Hunter and their Animal Companion rain deadly strikes from the skies, while the Guerrilla Tactics tree turns the battlefield into a minefield, laying traps and making foes regret ever stepping foot into Hunter territory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Hunter sticks to the shadows, preferring Guerilla Tactics over direct conflict. Use Reconnaissance to gain a better vantage of the battlefield before laying any manner of elemental trap on the battlefield. Let loose your arrows to rain death from above with Comet Shot, striking up to three enemies at once. Maximize pain at nerve centers in order to increase Critical Damage, allowing for fatal blows. Equip a bow or crossbow for varying levels of damage and strike fear in the hearts of your opponents from the shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lundum Hills",
+     "items": [
+      {
+       "text": "Not all is right with the world, and less so in recent memory. Crazed soldiers often return home and speak of ghastly creatures yet unheard of in Arcadia. Beasts of incredible power, the dead rising from their graves, terrible monstrosities in the skies. Dire tales of this land spread on hushed whispers, sowing fear and skepticism among all whose ears they reach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They're too ridiculous to be believed, and yet, curiosity surrounding the mystery of this place enchants brave adventurers and meek souls alike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lundum Hills has a dark story all its own to tell, and as the rain gently falls on what remains of a grisly battle, Vashti and Desmond will learn that some stories have a grain of truth in them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4437747060845428572"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-31T17:56:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.692Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.640Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2022-04-28",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas April 2022 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-28T18:58:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, folks! Welcome to Arcadian Updates, where we share super cool updates for Arcadian Atlas that the Twin Otter team are working on, including new maps, classes, mechanics, and much more! We'll have more to share as time goes on, so follow along and check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sub-Class Spotlight: The Ronin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we're sharing a very first look into one of the sub-classes of Arcadian Atlas: The Ronin! Honor past warriors, channel their rage, and unleash the strength of their spirits upon your enemies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Ronin is wholly aligned with honorable warriors of the past, harnessing their spirits in the Wandering Soul tree to bestow healing on allies and cripple foes while channeling the unrelenting rage of their time on the battlefield in their Battle Trance tree, losing all control for huge bonuses to ATK, Criticals, and self-preservation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Ronin specializes in healing and combat, making it an excellent choice for players that are seeking a well-balanced class. Use the Blade Blossom attack to restore health by calling upon regenerative cherry blossoms to cover the field of battle. Summon malevolent spirits to deal damage from a distance and avoid frontal conflict. Get up close and personal: enter a Battle Trance to focus untold rage and cut down enemies with your katana or magic swords. Become an honorable master of the battlefield as the Ronin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Putrid Fields",
+     "items": [
+      {
+       "text": "Not all of Arcadia's three countries were blessed with fertile fields. The southern tip of Lethe Island is said to have been stripped bare by dark magics, an ancient site of terraforming arts gone terribly wrong - it now bubbles over with noxious fumes and puddles of poison, filling the air with an acrid scent so powerful the lungs themselves boil.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Few survive a trek through Putrid Fields long enough to share the tale, perhaps why Lethe has become a favorite prison for the same dark magics that created it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4348798430275371038"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-28T18:58:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.691Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.639Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@major-2021-08-18",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Arcadian Atlas Publishing Update & Gamescom Activities",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-18T15:06:47.000Z",
+   "notes": [
+    {
+     "title": "Arcadian Atlas is being published by Serenity Forge!",
+     "items": [
+      {
+       "text": "Arcadian Atlas is an incredibly special project that Twin Otter have poured their hearts and souls into, and we couldn't be prouder to support them on their development journey. As massive fans of turn-based tactics ourselves, we're more than just a little excited to show you more along the way! Speaking of that, we've got more to show you in due time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On a final note, we're grateful for the feedback we've received from players as the team works to refine and build on the game. We've seen a lot of positivity and support from the community, and we're actively working with the Twin Otter team to bring you all an amazing experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "P.S. Poncho best boi.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Serenity Forge Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twin Otter",
+     "items": [
+      {
+       "text": "Game Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serenity Forge",
+     "items": [
+      {
+       "text": "Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/4022264629307960793"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-18T15:06:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.690Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.637Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@13",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Update 13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-08-17T19:09:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Welcome back adventurers! We've got some awesome news this go-round for not just backers, but creators, so keep your eyes peeled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But before we jump in, if you've ever wanted to see the artistry behind Arcadian Atlas live, soon you can! Becca and I have worked to get a Twitch stream set up where you can watch her live-stream art creation, from maptiles, character design, animation work, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Give her a follow and keep your eyes peeled for her first live stream announcement. For more info & polls on things like preferred stream times, check out her twitter page here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Introducing: The BITE Engine",
+     "items": [
+      {
+       "text": "Way back when we jumped from RPG Maker to the more expansive world of Unity, we had a vision for not just our dream game, but for a creation tool so user-friendly it could be given to anyone who wanted to make a tactical RPG (one of the most notoriously difficult genres to create).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "That dream is beginning to become a reality concurrently with the creation of Arcadian Atlas. Patrick has been hard-at-work on the foundation for what we are dubbing the BITE engine enhancement - an add-on that utilizes Odin Inspector's tools to create easily-modifiable units, scenarios, skills, items, weapons, and scenes. The best part: this tool is being developed in conjunction with Atlas, meaning every benefit to the system is a benefit to the game, which includes the following:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More Power to the Game Designer - A large portion of a game designer's life is turning knobs and whistles to balance values and to create the best possible experience for the player. You've all probably played RPGs with horrid difficulty spikes, or gotten bored going hours without a challenge. BITE allows us to easily and quickly implement your feedback when it comes beta time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BITE Engine's Weapon Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Smaller File and Patch Sizes - To get Arcadian Atlas' prototype off the ground, we initially utilized Unity Prefabs. Moving to a new different segmented form of data means we can be much more efficient with the size of the game, as well as any patches we make on Steam (and elsewhere). We know some of you backers have internet data caps, so we want to keep file sizes as user-friendly as possible!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Advanced Cutscenes and Scenarios - We've forged a giant pyramid of stats, classes, status effects, and skills out of the prototype's design work so far. Cutscenes and scenarios (missions) rely on pretty much everything, so being clean and organized with those building blocks allows us to quickly create, reorder, and modify events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BITE Engine's Core Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Plug & Play Capabilities - We've re-structured the logic and data to separate it from the graphics, which is a fancy way of saying Arcadian Atlas and future tactical RPGs using BITE will require far less digging into code-bases to create and play!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Effortless Changes - With BITE's data-driven design, we can remove, add, and change everything from units, status effects, skills, missions, locations, cutscenes (or most anything else) effortlessly midway through development based on new needs and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BITE Engine's Unit Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Iconic",
+     "items": [
+      {
+       "text": "To celebrate BITE, we wanted to show off some of the graphics we're paring with Patrick's data-driven systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu and Stat Icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iconography is an integral part of the user experience, and serves both as localization tool (because images require no translation) and ease of navigation. We love the design challenge of creating icons for our stats, items, text boxes, and menus that are at the same time simple, clean, and communicate efficiently. See below just a handful of those we've cooked up for our items:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item Icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interior Designs & Graphics Galore",
+     "items": [
+      {
+       "text": "And of course behind the scenes we've been hard at work on all the graphics, from animations, items, and some drool-worthy interiors. You'll show yourself outside? Why not show yourself INSIDE you reckless warriors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This go round Becca has been working up some graphics for house interiors and our Recruitment Centers throughout Arcadia. You can see a few of these below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recruiter Maptiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And if we zoom in a bit you can see some light pouring through new windows, and bench for troops to sit and wait (because isn't a Recruitment Center just a glorified waiting room) , and a fancy desk for processing new troops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interior Details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of course, when you're not waiting, you're training with some quality practice dummies and an assortment of weaponry for our discerning warriors:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interior Details Cont'd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And when you're ready to lay your sweet head to rest, we've got a deluxe bed you could probably cram a couple of people in (uncomfortably, but this isn't a charity!) and some barrels full of wine to help the long hours seem short.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oh, and not zoomed in on is that lil' cactus. Because we might be thrifty interior designers, but we're not animals. Get some greenery in there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crossbow Animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're also putting finishing touches on our primary attack animations, ensuring all eight frames front and back are as smooth as possible. From the heavy crossbow toting Ranger above, to the gargantuan hammer our Apothecary is dragging around below, we're nearly done with all our CORE classes and their various fightin' styles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hammer Animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And of course a whole slew of new items for our re-vamped BITE enabled item editors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Next Time",
+     "items": [
+      {
+       "text": "We're excited to show off some of the interior maps we're working up with these shiny new graphics, the expanded Skill sections of BITE, and lots more art next time! Be sure to check out Becca's Twitch streams and our twitter pages for up-to-the-moment previews and sneak-peaks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until then, keep your controllers warm and your bodies cool as we end out this record-setting summer heat!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~Taylor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/2444779293766332187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-08-17T19:09:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.689Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.635Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@12",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Update 12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-05-25T23:21:04.000Z",
+   "notes": [
+    {
+     "title": "Update 12: Anatomy of Animation, Map Efficiency, and More!",
+     "items": [
+      {
+       "text": "Welcome all you wonderful folks to another action-packed episode of Arcadian Atlas! This time around we've got tons of details from all across the game development spectrum. Whether it be animation, portraits, map-tunage, music, or behind-the-scenes on programming - you're in the right place!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So dive on in. The waters are warm and cozy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Anatomy of Animation",
+     "items": [
+      {
+       "text": "Artistically, animation is the most pain-staking process of game development. It's a multilayered art, both literally and figuratively, and we wanted to give you a peak behind that process in more depth as we finalize the animations for our core classes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each core class has a list of essential battle animations, arranged in a sheet, that are consistent across classes. What's not consistent across classes? Attacks & Skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So when making new animations, we start with real-world examples and build keyframes from them. In the case of the above Apothecary Bottle Throw animation, I used myself as a base and built from it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New animations typically work in stages",
+     "items": [
+      {
+       "text": "Raw Footage - a video or gif of real-world people performing the action to be animated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skeleton - the basic shapes of an animation, typically very rough. This is used to ensure the flow of the animation looks correct before detail is added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Naked Base - the naked form all classes can use before hair, clothes, and other details are added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clothed - usually the final stage where all class-specific content is added to the naked base and added to that core classes' sprite sheet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "So in essence, any new animation we create is actually 3 animations, and from start to finish with the Apothecary Bottle Throw it looks like the example below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And that's just the specialized animations! We've got a whole slew of basic movements and actions to tackle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Back to Basics",
+     "items": [
+      {
+       "text": "Ah, the essentials of a fight. We've got our Idling, Walking, Injured, Charging, Jumping, Flying, Landing, Death animations, and the list goes on! And remember, that's for front views, back views, male, and female troops. 48+ unique frames per class, 2 genders, 4 classes - that's 384+ unique frames just for basic animations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Over the last few months we've been steadily chipping away at them, and we're happy to say we've not only finalized the designs for our male/female Apothecary and male/female Warmancer - but we've even knocked out all of their core animations! Yep, all 384+ of them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And now we move on to the specialized attacks for each class, one of which Becca's been hard at work on below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serving Fierce Face",
+     "items": [
+      {
+       "text": "Let's face it (see what I did there?): little Apothecary and Warmancer sprites are super cute, but sometimes we need to look a person square in the high-detailed eye and give them a good talkin' to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So Becca and I have been hard at work on portraits to go with our sprites. Because there's nothing sadder than walking into a tavern and the tavern-master won't even look you in the face. That's enough reason to brawl right then and there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements Abound with Odin",
+     "items": [
+      {
+       "text": "And as pretty as these lil' dudes are walking, slapping, and smashing about - a video game has to be as efficient as possible. Patrick recently upgraded our Unity build with Odin Inspector, a powerful tool that's allowed him to streamline how maps, cutscenes, and menus save data and juggle database information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've gone from complicated and rather ugly excel files for items to completely in-engine databases with images and separate, easy-to-read and alter fields like this:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "But it's not just for databases! Odin has far-reaching implications for space saving, with the potential to reduce both disk and RAM space requirements by upwards of 90%! That's huge for download size and run speed! In fact, we're already applying it to how maps are constructed and saved:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "So while we absolutely adore the animations and art side of Arcadian Atlas, this is easily what is making us most happy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Oh, but we forgot that we're even improving how animations are handled in the background ; ). Blend Trees will allow us to better organize all of our isometric animations within Unity so that we can finish hooking it up to our unique characters and classes faster! Possibly 75% faster! NUMBERS! BIG NUMBERS EVERYWHERE!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Tavern Tunes",
+     "items": [
+      {
+       "text": "But wait, there's more! We wanted to serenade you out with the latest tune Moritz is working up for our tavern patrons. Because if there's one thing you want while getting a bit tipsy (or enjoying a nice virgin piña colada perhaps?) it's some jazzy tunes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tavern Theme Song",
+     "items": [
+      {
+       "text": "Oh, and why not grab a contract to smash some more things while you're at it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Speeding Into Summer",
+     "items": [
+      {
+       "text": "That's it for now, but keep your eyes peeled on our twitter page for glimpses of what's coming up in the Arcadian Atlas pipeline as we get closer to beta!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arcadian Atlas Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And we'll see all you crazy kids next time with juicy details of skills, fighting' poses, menus, and all the clockwork that makes this beauty tick!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/2394106369049855600"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-05-25T23:21:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.688Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.634Z"
+  },
+  {
+   "id": "arcadian-atlas-18868@11",
+   "gameId": "arcadian-atlas-18868",
+   "displayName": "Update 11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-02-19T16:45:05.000Z",
+   "notes": [
+    {
+     "title": "Kickstarter Update 11: How the Sausage Gets Made",
+     "items": [
+      {
+       "text": "New Kickstarter update is LIVE!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-691790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/691790/view/3263292409707592121"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-02-19T16:45:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-691790",
+      "checkedAt": "2026-11-13T03:14:59.687Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:13.633Z"
+  }
+ ],
+ "issues": []
+}

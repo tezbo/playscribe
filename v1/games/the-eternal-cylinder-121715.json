@@ -1,0 +1,577 @@
+{
+ "game": {
+  "id": "the-eternal-cylinder-121715",
+  "igdbId": 121715,
+  "name": "The Eternal Cylinder",
+  "cover": {
+   "imageId": "co1omg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1omg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar63j",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar63j.jpg"
+  },
+  "ps5Release": "2022-10-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-eternal-cylinder-121715@3",
+   "gameId": "the-eternal-cylinder-121715",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-31T17:01:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! Patch #3 is now live, check out the details below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes and fixes for Hot Fix 3 (aka Patch 3)",
+     "items": [
+      {
+       "text": "A progression bug that could manifest in several different ways is now fixed. The bug could cause non-progression at the end of chapter 2, and several barriers should have been red to present as blue instead, letting you pass through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In addition to the original bug being fixed, existing save games that have been affected by the bug are also repaired, but for the repair process to occur correctly, you need to load your game, save manually, and then load again from that save. You only need to do this is you were unable to progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The green fog around certain plants in the tundra was made too bright by a change from Patch 2, this has now been corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The volume of the sound effects for the Buddugh Gropp has been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game's custom Near Depth Of Field effect can now be turned off from the game's ini files. You can set r.DepthOfFieldQuality=0 in the section of Engine.ini",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you'd like to support the game and team, please consider leaving a positive review on Steam. Thanks for all the love!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-865680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/865680/view/4706851091188276512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-31T17:01:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.594Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-31T17:01:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.594Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-31T17:01:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:41.902Z"
+  },
+  {
+   "id": "the-eternal-cylinder-121715@2",
+   "gameId": "the-eternal-cylinder-121715",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-20T21:52:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! We continue to listen to your feedback and make improvements to the game. Huge thanks to you, our Community, who continue to share your experiences, talk about your fun adventures, and let us know your thoughts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes and fixes for Hot Fix 2 (aka Patch 2)",
+     "items": [
+      {
+       "text": "The high-quality skylight has been reimplemented to have minimal overhead. The option to toggle it has been removed as there were no noticeable differences in performance during testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game now falls back automatically to DirectX11 when DirectX12 is not available (note: this does not fix the startup crash on systems incompatible with FSR2.0)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you'd like to support the game and team, please consider leaving a positive review on Steam. It means the world to us and helps others get an understanding of what The Eternal Cylinder world is like.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-865680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/865680/view/4714731755413515477"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-20T21:52:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.594Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-20T21:52:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.594Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-20T21:52:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:41.901Z"
+  },
+  {
+   "id": "the-eternal-cylinder-121715@1",
+   "gameId": "the-eternal-cylinder-121715",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-17T22:57:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! Thanks for your warm welcome on Steam and for all your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Patch notes and fixes for Hot Fix 1 (aka Patch 1)",
+     "items": [
+      {
+       "text": "Optimized Raytracing profiles configuration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when playing with PS4 and PS5 Controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed Hand of Fate and Liberator destructibles popping out of scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential loading of incorrect Elder Cave during progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mouse controls in Mutation Tree",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increased new creature spawn rate in Chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some randomly spawning destructibles at coordinates 0,0,0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gas bombs no longer kill the player so easily.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Demo progress now auto-rolls over. Please note: if you played the demo and beat the demo, and then didn't have your progress roll over/started a new file, your game will revert to your demo progress. To maintain your current progress, you will need to delete the SavedData_Steam.sav file from your local files and leave only the SavedData.sav.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Please Note",
+     "items": [
+      {
+       "text": "We are still investigating the stuttering issue with the High-Quality Sky Light. Global illumination changed between Unreal 4.24 (old engine) and 4.27 (current). For the time being it is disabled by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you'll enjoy the improved experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-865680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/865680/view/6402455182520623602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-17T22:57:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.593Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-17T22:57:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.593Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-17T22:57:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:41.901Z"
+  },
+  {
+   "id": "the-eternal-cylinder-121715@major-2022-10-13",
+   "gameId": "the-eternal-cylinder-121715",
+   "displayName": "The Eternal Cylinder Anniversary Update - Available Now on Steam!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-13T16:53:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The time has finally come!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Eternal Cylinder is now AVAILABLE ON STEAM",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Anniversary Update is live and included in the Steam version!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this launch, a whole new audience of players who have never had the chance to adventure with us will be able to experience one of the most unforgettable worlds in gaming: a vast, open world that contains four unique biomes, each filled with extraordinary flora and strange fauna.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are some details about what to expect from the Anniversary Update.",
+     "items": [
+      {
+       "text": "Two new creatures: the Buddugh Gropp (Tundra Biome) and the Gharukuk (Desert Biome)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Pyrogenic Trunk Mutation: you will now be able to set things on fire to deter hostile creatures from messing with your trebhum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "An incredible graphics revamp: Steam players will be able to enjoy the game in 4K resolution @60fps with Ray Tracing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-865680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/865680/view/6402455182505128582"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-13T16:53:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.592Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-13T16:53:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.593Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-13T16:53:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:41.899Z"
+  },
+  {
+   "id": "the-eternal-cylinder-121715@major-2022-08-18",
+   "gameId": "the-eternal-cylinder-121715",
+   "displayName": "The Eternal Cylinder Anniversary Update launches October 13th!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-18T16:00:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re thrilled to be sharing some exciting news with you all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On October 13th, The Eternal Cylinder is coming to Steam as we celebrate our 1-year anniversary! We would love for you to share this news with all your friends and consider wishlisting it if you haven’t already. There's a lot of love from our community who've already played, and we would love for you to be a member of our herd!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Anniversary Update introduces two new creatures coming soon to this breathtaking world. Meet the Buddugh Gropp (Urozoon actinostomus)...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "...and the Gharukuk (Opisthopithecus ctenophorus). Fearsome, aren’t they?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re also adding some ferocity to the pyrogenic trunk! Now, it has the capability of setting things on fire to deter creatures from messing with your Trebhum tribe. In addition to these new creatures and mutation change, Steam players will have the ability to enjoy up to an eye-watering 4K resolution @60fps with Ray Tracing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-865680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/865680/view/4584121659781205931"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-18T16:00:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-865680",
+      "checkedAt": "2026-11-13T03:33:13.592Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:41.897Z"
+  }
+ ],
+ "issues": []
+}

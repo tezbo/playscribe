@@ -1,0 +1,5398 @@
+{
+ "game": {
+  "id": "the-lord-of-the-rings-return-to-moria-204460",
+  "igdbId": 204460,
+  "name": "The Lord of the Rings: Return to Moria",
+  "cover": {
+   "imageId": "co7a7g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7a7g.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1z3c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1z3c.jpg"
+  },
+  "ps5Release": "2023-12-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.6.7",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Patch 1.6.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-12T17:36:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After the release of Durin’s Folk, the team has been working on addressing critical bugs and feedback from the community. While this patch has several highly requested changes, it mainly focuses on performance and stability throughout Return to Moria.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensure you have the correct build number on the main menu. You must complete the update before playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.6.6.218163 \\[net.18.10.8.8ba6da] to 1.6.7.219072 \\[net.19.10.8.8ba6da]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Servers: 1.6.6.218164 \\[net.18.10.8.8ba6da] to 1.6.7.219072 \\[net.19.10.8.8ba6da]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can also find these notes on our website",
+     "items": [
+      {
+       "text": "Thank you again to everyone who took the time to log tickets, alert us to issues and help each other out in the meantime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We genuinely appreciate your patience and support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.6.7 Release Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance and Stability Changes in this release",
+     "items": [
+      {
+       "text": "To improve performance on Dedicated Servers we increased worker CPU threads from 1 to 4 by default. This should decrease loading times, to about 75% of time before, and in a smaller way speed up other tasks that game can do in parallel like pathfinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you are running DS locally, you will likely want to use the full 4 worker threads when needed. You can adjust this number by providing a command line argument to MoriaServer.exe, \"-NumServerWorkerThreads=4\". Range is from 1 to 4, although actual number could be lower than 4 if your CPU has less threads available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note: Third party hosting services will provide their own value, or leave default, so please contact your provider to learn more about their solution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that was spawning multiples of the placeholder “citizen Dwarf” and reducing performance throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved an issue with the voxel engine that led to low framerate, lag spikes and high loading times for clients joining old or “mined-out” world areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused a lag spike when equipping an item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where loading into a new area could have resulted in very long waiting times. This was most commonly seen when playing on Dedicated Server and teleporting into a distant new location with a mapstone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Firing arrows no longer triggers the navmesh to rebuild, improving lag spikes and FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several improvements that should reduce the instances of long loading walls and long loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A package of improvements to performance for very large “megabases”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed several log spams that could happen due to data corruption or in special cases, which could decrease performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Experience and Tuning Changes in this release",
+     "items": [
+      {
+       "text": "Fixed an issue that was erroneously showing the “Buy Durin’s Folk” message every time the player launched the game or visited the main menu. It should now only appear a few times then never again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The notification that an Earthquake occurred no longer appears after returning from every expedition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed several scenarios where players could get stuck in story Expeditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed instances where Vror would not appear in story Expeditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed several scenarios where players would fall through the world after returning from an expedition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where some clients would see the names of all locations repeatedly, when entering a new area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Package of tuning updates to the cost and payoff for traders has been delivered, to reduce the overall grind of trade goods and the trading economy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Trade Order recipes now stay unlocked once discovered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The new tribe of Orc that appears during the expansion will no longer appear during sieges and hordes after the completion of the story. They are still available in the highest difficulty of Expeditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a rare issue where getting knocked back in the base game’s final boss fight would deactivate some controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed remaining issues where the Expansion’s boss would appear untextured.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lord of Moria Banner and Moria Company Shield are now available in Sandbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "NPC-related Changes in this release",
+     "items": [
+      {
+       "text": "Work to improve several instances where NPCs were getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that was limiting what Salvager would collect to an extremely limited set of items. Salvagers should now collect most things on the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several instances of NPCs disappearing from a delving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved cases of enemies being able to walk through walls and closed doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several issues that left the Cook and Brewmaster NPCs idle when they should be working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decreased the amount of materials needed for crafting NPC hats and outfits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the radius that Miners use to find ore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where NPCs will craft using materials from pallets and other locations they should not have access to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Salvagers would duplicate materials they collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 17,
+    "balance": 13,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1824459501607567"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T17:36:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.243Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T17:36:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.244Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-12T17:36:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:55.830Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.6.6",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Hotfix 1.6.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-18T17:23:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This small patch is meant to address high severity issues as reported by the community. While we understand there are more issues than this patch fixes, we wanted to get something out before the holiday as fast as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensure you have the correct build number on the main menu. You must complete the update before playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.6.5.218041 \\[net.18.10.8.8ba6da] to 1.6.6.218163 \\[net.18.10.8.8ba6da]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Servers: 1.6.5.218038 \\[net.18.10.8.8ba6da] to 1.6.6.218164 \\[net.18.10.8.8ba6da]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes in this release",
+     "items": [
+      {
+       "text": "Fixed an issue where duplicate NPC dwarves would appear in their original spawn location in the world after being dismissed from a delving. This would cause several issues including performance problems and unusable NPC recruits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved various performance issues that caused framerates to be low in many instances caused by duplicate citizen dwarves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved issues that caused loading walls between areas to persist for long periods of time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where using a mapstone to fast travel would sometimes cause long loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a PS5 issue where Gulrun’s textures wouldn’t properly load, causing the beast to appear white, and devoid of color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Note: In order to improve the performance drops seen in the last release, we made a difficult decision to roll back some of the improvements to NPC pathing. This means players will again see some previously fixed issues with NPC’s choice of path or falling through floors. We believe these will still be more rare than before but the trade off was the right decision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dedicated Server users, please remember to always restart your server after a patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you to everyone who submitted tickets, logs and saves as well as answered the team's Qs about your experiences with the above issues. Please keep an eye on the dev-updates channel in our Discord for any further information from the Team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1819386365091616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T17:23:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.243Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T17:23:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.243Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-18T17:23:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:55.829Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.6.5",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Patch 1.6.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-15T20:12:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all and Happy Yule-tide!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Patch 1.6.5 has rolled out across all platforms. The update to the Yule-tide DLC Pack has also rolled out alongside 1.6.5. Please ensure you’ve updated fully to the latest version to avoid any multiplayer and crossplay compatibility issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam",
+     "items": [
+      {
+       "text": "[p align=\"start\"]1.6.4.217573 \\[net.16.9.8.a9fb8f] to 1.6.5.218011 \\[net.18.10.8.8ba6da]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dedicated Servers",
+     "items": [
+      {
+       "text": "[p align=\"start\"]1.6.4.217315 \\[net.16.9.8.a9fb8f] to 1.6.5.218038 \\[net.18.10.8.8ba6da]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Release notes can be found on our website here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]And will be cross posted to the ⁠📜release-notes channel of our discord shortly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Important note with regards to NPC bug fixes: In some cases where NPCs are stuck, lost or not behaving as intended: if the NPC remains in that state after the patch then you may need to first withdraw them from your Delving and then bring them back. This is to ensure that any fix will apply to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1818752592133909"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-15T20:12:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.242Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-15T20:12:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.242Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-15T20:12:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:55.828Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@major-2025-12-11",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Yule-tide Pack to Receive Content Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-11T21:45:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "From our blog: Yule-tide Pack to Receive Content Update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turugnî hisgin!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greetings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The festive season is upon us, and Dwarves across Middle-earth are pulling out decorations and getting Moria prepared for another Yule-tide!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This year the Yule-tide pack is receiving an update, with extra decorations and cosmetics themed around the story of Kabrûn the Bell-dragger (see below), everyone who already owns the Yule-tide pack will automatically unlock all of these new recipes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don’t own the Yule-tide pack yet? Worry not! Whether you pick it up before the update, or after, you’ll gain access to the original and new Yule-tide content along with everyone else!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45038987/f647ed8b50cf904c4bab85d2450ffc32b2b2f874.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some Dwarves wait in anticipation, to see if they’ll be visited by Kabrûn the Bell-dragger this year…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Dwarven tradition, Kabrûn is a cautionary figure from the depths — a corrupted Dwarf who broke the most sacred oaths: he was lazy at the forge, abandoned his brothers in the deep mines, and crafted shoddy work that brought shame to his hall. As punishment, he was cast into the deepest, darkest shafts of the mountain, where he became something twisted and grim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But the curse that binds him also compels him: he must forever walk the halls during Khufur-nagim-ul, a solemn ritual performed by Dwarves every winter solstice. During this ritual, they allow the Forge to go cold, the Furnace is reduced to embers and workshops fall silent. It is through this quiet darkness that the Dwarves are reminded of the sacred purpose given to them by Aulë: to bring light to the dark places of the world through honest work and quality craft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During this ritual, it is said that Kabrûn comes, bearing witness to the work of young Dwarves. In his torment, he has learned the value of what he scorned, and now he both punishes the lazy (as he once was) and rewards the hardworking (as he should have been).So, young Dwarf, did you work hard at the Forge this year? I hope so…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45038987/1ad1b80d0b81a044b5de00976e2956043037963b.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Walking among the cold forges judging the year's work, the sound of bells and dragging chains announces his approach through the darkened halls. He is covered in stone dust and wrapped in chains and bells, his beard matted with cave mud, eyes glowing like dying embers and cursed horns grown from his head.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Young Dwarves who worked diligently find gifts by their bedside: well-forged tools, quality materials, polished stones, or honest metal. The lazy find only coal dust on their pillow, broken chain links, scratches on their doors, or dulled tools. At first light, the oldest smith strikes the first spark and the forges rekindle across the mountain, with young Dwarves who received gifts helping to restore the light.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Such is the tale of Kabrûn the Bell-dragger and Khufur-nagim-ul.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New items coming to the Yule-tide pack include…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Kabrûn Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kabrûn Mask Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kabrûn Boots Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kabrûn Gloves Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kabrûn Backpack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plantable Holly Tree Cuttings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lit Holly Tree Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lit Holly Decorative Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decorative Snow Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snow-covered Present Pile Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Present Box Storage Container Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Along with the original Yule-tide pack contents…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mulled Cider Brew Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yule-tide Feast Meal Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yule Fruit Crust-cake Ration Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Present Pile Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yule-tide Hearth Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Celebration Meal Table Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "String of Lights Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chain of Lights Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simple Candelabra Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Candelabra Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elaborate Candelabra Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Skins unlock for All Dwarves. They are cosmetic only.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Other recipes become available when the player acquires appropriate resources.*‍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Yule-tide pack is available now on Steam, Epic, PS5 and Xbox, with the free update coming alongside patch 1.6.5 on 2025/12/15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "We loved seeing how everyone decorates their bases in Moria each year for Yule-tide, as well as what you use throughout the year and can’t wait to see what festive scenes you create with the new items. Don’t forget to tag us on socials and share what you create in the RtM Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep an eye on the dev-updates section of our Discord, as well as our socials for more info and release notes for 1.6.5, coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45038987/4f1a2464827e94a351eda6e641db477d7bd7b581.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "‍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 45,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1818752592125070"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T21:45:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.241Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T21:45:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.241Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-11T21:45:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:55.827Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.6",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Expansion 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-18T17:40:24.000Z",
+   "notes": [
+    {
+     "title": "The Lord of the Rings: Return to Moria™ TU6 + Durin’s Folk Release Notes",
+     "items": [
+      {
+       "text": "Dâmat uz-âthar uz-sên marbû hakhrûn. Na zil-adbal tahba?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "‘And now I think I am quite ready to go on another journey. Are you coming?’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Dimrill Gate opens and a new chapter of Return to Moria begins! Don't be fooled by the brevity of these patch notes, this is our largest update yet! If we listed everything it would spoil the fun. This update brings gameplay improvements and bugfixes to the core game as well as enables the new Durin’s Folk Expansion. These notes will be split between changes for the core game update and a summary of changes included in the Expansion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensure you have the correct build number on the main menu. You must complete the update before playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epic: 1.6.2.217277 \\[net.14.4.8.1d225a] to 1.6.4.217558 \\[net.16.9.8.a9fb8f]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.6.2.217289 \\[net.14.4.8.1d225a] to 1.6.4 217572 \\[net.16.9.8.a9fb8f]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS5: 1.6.2.217283 \\[net.14.4.8.1d225a] to 1.6.4.217559 \\[net.16.9.8.a9fb8f]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Xbox X|S: 1.6.2.217280 \\[net.16.9.8.a9fb8f] to 1.6.4.217573 \\[net.16.9.8.a9fb8f]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Dedicated Servers: 1.6.2.217315 \\[net.14.4.8.1d225a] to 1.6.4.1.6.2.217315 \\[net.16.9.8.a9fb8f]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "All-new Revamp of the Map",
+     "items": [
+      {
+       "text": "Our single largest QoL update yet is a whole new way to visualize the inside of Moria. In this version the map is now projected into an isometric view with layers that better show the verticality of the game world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "World Map is now split into layers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When two areas are connected vertically it is marked with a vertical dotted line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can switch between available layers for the current section of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "On consoles, or when using a controller, there is now a virtual cursor, enabling easier selection of waypoints!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Simplified UX for enabling waypoints to appear in the game world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay and Content Improvements",
+     "items": [
+      {
+       "text": "Four new Beards and one new hair included for everyone in the Dwarf Creator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dwarves can now sit! Approach any existing player buildable seat and watch how your Dwarf… just… relaxes… and sits… and wait a minute, there is work to be done. Get up get up.. Moria isn’t gonna return itself!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The environment art in two major landmarks have been completely revamped to be more destroyable and better able to be restored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dirt piles and other various environmental ornamentation can be destroyed with a pickaxe or cleaned up by building a hearth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Greater variety among Orcs in terms of appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Poison areas are now more visible and better represent the danger area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Poison mushrooms can now be easily destroyed - no need to avoid specific areas or have the perfect build space ruined by an unwanted mushroom!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Building Menu re-organized to better reflect play patterns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dedicated servers have been updated to support the expansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Hotfix 1.6.4 Inclusions",
+     "items": [
+      {
+       "text": "Fixed a crash when approaching bedrolls while having the “Show Custom Text” setting enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where two story Expedition icons can appear at the Expedition map at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where in some cases an important story Expedition icon was not appearing on the Expedition map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where story Expeditions were not generating correctly if two players were interacting with the Expedition map at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other Bugs and Fixes",
+     "items": [
+      {
+       "text": "Iolite now drops when mining Star Metal Ore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that was caused by players building multiple hearths too near one another",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where defeating an enemy with a weapon imbued with Yarog-luthnul rune caused them to incorrectly drop Ironwood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated descriptions of several player items that incorrectly stated non-existent gameplay effects. Sorry Blue Mountains Dwarves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hearth lighting no longer discolors nearby water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player Dwarf would unnaturally slide when swinging a repair hammer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player Dwarf would be teleported out of bounds when traveling to a map stone in a late game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player Dwarf’s hair would clip into the clothing when wearing the DLC Beorn Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players were unable to fast travel to areas discovered by other party members",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where statues would occasionally be built sunk into the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where occasionally a Great Forge would appear active before repairing them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various typos in item descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[dynamiclink href=\"https://www.youtube.com/watch?v=wCBN_yN2lyg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Included in the Durin’s Folk Expansion",
+     "items": [
+      {
+       "text": "The following is a high level listing of the expansion’s major additions. Some very light spoilers may follow. Unless otherwise noted all features unlock after the concluding cinematic in both Campaign and Sandbox worlds. In Campaign worlds, many features unlock as the story progresses. Also note this is not a comprehensive list of all features or content (we wanted to leave a few surprises!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Available before reaching the Dimrill Gate",
+     "items": [
+      {
+       "text": "Find up to four Survivors of Gimli’s Company, rally them together and build a small company of your own as you face the long dark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solve the mystery of the Endless Stairs and unlock Durin’s Tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Five new songs were added: some are in the tavern song rotation, and some during story moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated servers have been updated to support the expansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Available after the Dimrill Gate",
+     "items": [
+      {
+       "text": "Open a camp for NPC where potential recruits can apply to join your Company of Moria",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build Delvings to manage where the NPCs live and give them jobs that help you thrive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build Great Monuments to advance the Company level and unlock more Delvings and upgrade existing Delvings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open a trading camp and exchange trade goods for unique resources, building recipes, meal recipes and crafting recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All new Sandstone and Marble building sets available to unlock via trading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build an Expedition Table and go on short expeditions to newly generated areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discover new story enemies and how to defeat them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New cosmetic items rewarded for completing the Expansion story",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cosmetic and Equippable outfits and hats for NPCs and Players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The following are known issues and the team is working on addressing these for future patches. If you encounter these please feel free to submit a support ticket to us via our Support Page with as much information about your experience as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tinted armor is shown as default color when given to an NPC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items offered by the traders can remain highlighted, even when they aren’t purchasable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooks can travel back and forth between multiple cooking stations when there aren’t any materials available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reviving a fallen NPC can cause them to display the incorrect status briefly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain NPC outfits and hats are not retaining their tints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using a mapstone to travel to the Dimrill Dale causes stamina to deplete briefly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC interact prompts are visible from far distances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aric’s in-world waypoint can be visible indefinitely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs don’t always face the player when singing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In rare instances, building a hearth doesn’t remove all nearby grass or rocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Singing while standing on stairs can cause minor animation issues for the Dwarf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In rare instances, the minimap outline may be visible on the loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Durin’s Axe fragment search area Audio and Visual cues are missing in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Wanderer NPC can sometimes be missing from his assigned Delving, but this does not block progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In rare instances NPCs can appear below the floor or be missing and marked ‘lost’ - in most cases this recovers by withdrawing the NPC from a delving and then reassigning them. It may also be solved by closing and loading the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In some cases NPCs will say they are blocked from their destination. It may be necessary to destroy and rebuild items like beds and crafting stations to better enable their routing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all for your ongoing support of Return to Moria! We're so excited to release TU6 and Durin's Folk for players, and can't wait to hear what you think. If you have any feedback or issues to report, please let our Support Team know via our Support Page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can purchase Durin's Folk Now on Steam,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Join our Discord to share your adventures and keep up to date on all the latest from the team in the dev-updates channel!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 17,
+    "balance": 0,
+    "other": 41,
+    "ps5": 1,
+    "topNew": [
+     "World Map is now split into layers",
+     "When two areas are connected vertically it is marked with a vertical dotted line",
+     "Players can switch between available layers for the current section of the game"
+    ]
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1816307528974350"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T17:40:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.240Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T17:40:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.240Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-18T17:40:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:55.825Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@major-2025-11-11",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Coming Nov 18th - New Map Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-11T14:30:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Title Update 6 releases for everyone alongside Durin's Folk on Nov 18th, and with it comes a free update to the in-game map! Check out the preview from Game Director, Jon-Paul Dumont, below: [dynamiclink href=\"https://www.youtube.com/watch?v=ooydov9DBSw\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wishlist Durin's Folk Now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3874660/The_Lord_of_the_Rings_Return_to_Moria_Durins_Folk_Expansion/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1815580768426505"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-11T14:30:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.238Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T23:59:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.238Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-18T23:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.317Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.5.3",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Patch 1.5.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-24T18:03:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Rukhs ufrikh agdâ, rukhs akhmun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "–The only good orc is a dead one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On the heels of our 1.5.2 Patch and the release of the Orc Hunter Pack we have an even smaller patch to address a handful of issues we didn't want to linger over the summer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.5.2.206356 \\[net.13.4.7.1d225a] to 1.5.3.209076 \\[net.14.4.8.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epic: 1.5.2.206356 \\[net.13.4.7.1d225a] to 1.5.3.209110 \\[net.14.4.8.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS5: 1.5.2.206356 \\[net.13.4.7.1d225a] to 1.5.3.209110 \\[net.14.4.8.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Xbox X/S: 1.5.2.206356 \\[net.13.4.7.1d225a] to 1.5.3.209077 \\[net.14.4.8.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Dedicated Server: 1.5.2.206356 \\[net.13.4.7.1d225a] to 1.5.3.209086 \\[net.14.4.8.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Bug Fixes",
+     "items": [
+      {
+       "text": "Additional work to improve the finding of the Fourth Fragment of Durin’s Axe in Campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when the host has the Orc Hunter DLC and has built the Troll Hide furniture, but at least one joining player does not own the DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash in rare instances when a player joins a host game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated non-english text that was incorrectly listing the Beorn’s Lodge DLC content instead of the Orc Hunter DLC content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed wood loot that was incorrectly dropping when attacking enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Known Issue to be addressed in a future patch: Ironwood is still incorrectly dropping when attacking enemies. Get that free ironwood while you can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1802893906898248"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-24T18:03:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-24T18:03:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.237Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-24T18:03:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.386Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@major-2025-06-07",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Take the Oath! Orc Hunter DLC Live Now! (Patch Notes)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-07T21:03:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The most grim oath a Dwarf can swear is to become one of the Ukhnashûn, a Frightener. These renowned orc hunters exact vengeance for all the ages of evil done to their kin. Relentless in the hunt, they take on the raiment of fear, blurring the shadow of their prey and what is in their hearts. As they collect trophies from the dead they invoke.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "râma izkun mashruzu - “for the memory of the burned.” Craft the new battleaxe, or engrave the new Ritual trophy hunting rune on any weapon to collect skulls, heads and bones from the fallen. With enough trophies you can craft a new set of decorations - warn foes away from you base, or bring a trophy room to life, its up to you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45038987/d3d6ff684e4120a2537eeba31204273cda53faed.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's included",
+     "items": [
+      {
+       "text": "Orc Hunter’s Mantle Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orc Hunter’s Galea Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orc Hunter’s Gloves Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orc Hunter’s Boots Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frightener’s Battleaxe Crafting Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Darkeye Stout Brew Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orc Skull Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warghide Rug Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mounted Drake Skeleton Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fell Beast Trophy Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Troll Hide Furniture Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45038987/ba8c3c093a3becbafc391e8b62cd317da98a9fd4.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Lord of the Rings: Return to Moria™ TU 1.5.2 Patch Notes",
+     "items": [
+      {
+       "text": "Râma izkun mashruzu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "–for the memory of the Burned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As summer approaches we have another small update with our newest content DLC and a package of bug fixes. Keep your eye on the official Discord for more about upcoming updates and content! Ensure you have the correct build number on the main menu. You must complete the update before playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table equalcells=\"1\" colwidth=\"116,\"][td colwidth=\"116\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.5.1.197821 \\[net.10.4.7.fb726c] to 1.5.2.206356 \\[net.13.4.7.1d225a",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[td colwidth=\"116\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.5.1.197822 \\[net.10.4.7.fb726c] to 1.5.2.206356 \\[net.13.4.7.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[td colwidth=\"116\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "1.5.1.197824 \\[net.10.4.7.fb726c] to 1.5.2.206356 \\[net.13.4.7.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[td colwidth=\"116\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "XBOX X|S",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "1.5.1.197825 \\[net.10.4.7.fb726c] to 1.5.2.206356 \\[net.13.4.7.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[td colwidth=\"116\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.5.1.197815 \\[net.10.4.7.fb726c] to 1.5.2.206356 \\[net.13.4.7.1d225a]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Orc Hunter Pack",
+     "items": [
+      {
+       "text": "Stalk the evil of the mountain and craft trophies of their bones with The Orc Hunter pack! Includes a fearsome cosmetic armor, weapon, and brew. Engrave the new trophy hunting rune to collect skulls, heads and bones from the fallen and build a grim set of new decorations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This Paid Content DLC includes",
+     "items": [
+      {
+       "text": "Orc Hunter’s Mantle Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Orc Hunter’s Galea Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Orc Hunter’s Gloves Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Orc Hunter’s Boots Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Frightener’s Battleaxe Crafting Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Orc Skull Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warghide Rug Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mounted Drake Skeleton Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fell Beast Trophy Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Troll Hide Furniture Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Darkeye Stout Brew Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Trophy Hunting Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other Quality of Life Changes & General Bug Fixes",
+     "items": [
+      {
+       "text": "This is a list of bug fixes and improvements that apply to all RtM games unless it is called out for a specific platform, dedicated server or regular P2P server/client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented players from finding the 4th fragment of Durin’s Axe. All worlds, including existing worlds, should now have a more-easily findable 4th fragment. If you had issues with this please download the patch and try again. Thank you to all the Discord players that helped the community report this issue. And thank you to the Muthzak who put time into assisting anyone who needed help finding this fragment!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tuned rewards in valuable chests in the Dwarrowdelf zone. Now they will contain appropriate materials and items, not only tree cuttings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed recipe of Miruvor brew. Now it requires Elbereth’s Blessing as mentioned in the description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the health of the large trees in the Elven Quarter. Now it’s very hard to destroy them accidentally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed situations where a Dwarf can get stuck on ladder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Entwood material now is mentioned in Appendices together with all other materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved interactions between Bears and trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new VFX - needles falling from trees when hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trees shake when hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with Resource Cache containers spawning in inaccessible places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with that persisted Orc-town style lighting even after killing the Warchief.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Orcbane weapons. Now it glows only when orcs are near as stated in its description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with collision of vine-covered construction. Now collision suits the model much better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing texture for egg dropped on the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with wrong Dwarf’s pose after interacting with Ink Grinder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed unnecessary flame from Miner’s Helmet and Longbottom Hat when on Armor Stand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed destruction meshes for the following constructions: Ceiling Corner, Adorned Door, Stout Door, Brazier, Crystal Lamps, Standing torch, Granite column, Polished Stairs Segment, Crude Farm Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved decals visualization in Lower Deeps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare issues when players cannot join some particular worlds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with mining/repairing crosshair. Previously Host’s crosshair was displayed for Clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Significantly improved fast traveling location calculation. Now the situation when players spawn away from Map Stone after teleportation should be very rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare issue when player could see other players in T-pose after fast traveling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dedicated Server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed situation when password for Dedicated Server was not saving in session history",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug when Dedicated Server was saving backups even when there were no players connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with stair pieces snapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Significantly improved snapping of floor building pieces to each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision of Rohirrim Banner and Rohirrim Flag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Long Bannister” recipe. Now it requires Ubasam wood as it should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Farming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed trees growing in unloaded locations. They could grow a bit even when growth was blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visual effect which indicates that plants passed to the next growing stage now not played every time when loading location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI/UX and QoL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An informative popup now appears upon first entry into a world when they have purchased/installed a new entitlement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare situation when Host could see boss health bar in unexpected moments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare issue with missing farming light indicator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI of farm patches in Ranger Camps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with fast traveling to Map Stones located at the junction between two locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed situations when total number of resources in inventory was missing in UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed non-functional button \\[Deposit Similar] when interacting with backpacks placed on Wall Display. Now the button works properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unified icon size for items that have black/white/gold variants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug when two different musics could play at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing sound effect of draining Brew Tank for Clients. Previously it was audible only for Host",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing sound effect of taking a mug or filling brewskin for Clients. Previously this action was audible only for Host",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing sound effect of honoring statues for Clients. Previously it was audible only for Host",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with missing prompt to start mining song in some situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed unavailability of DLC content in offline on PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 54,
+    "balance": 0,
+    "other": 34,
+    "ps5": 3,
+    "topNew": [
+     "Orc Hunter’s Mantle Cosmetic Skin",
+     "Orc Hunter’s Galea Cosmetic Skin",
+     "Orc Hunter’s Gloves Cosmetic Skin"
+    ]
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1801617199469120"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-07T21:03:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-07T21:03:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.237Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-07T21:03:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.385Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.5.1",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Patch 1.5.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-08T16:27:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small update to address a few pressing issues surfaced with Title Update 1.5. As always, we appreciate the community feedback and investment with each release. The work continues at the Forge!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensure you have the correct build number on the main menu. You must complete the update before playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.5.0.194801 [net.10.4.7.fb726c] to 1.5.1.197821 [net.10.4.7.fb726c]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epic: 1.5.0.194506 [net.10.4.7.fb726c] to 1.5.1.197822 [net.10.4.7.fb726c]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS5: 1.5.0.194507 [net.10.4.7.fb726c] to 1.5.1.197824 [net.10.4.7.fb726c]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Xbox X|S: 1.5.0.194746 [net.10.4.7.fb726c] to 1.5.1.197825 [net.10.4.7.fb726c]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Dedicated Server: 1.5.0.194497 [net.10.4.7.fb726c] to 1.5.1.197815 [net.10.4.7.fb726c]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the updates",
+     "items": [
+      {
+       "text": "We have fixed an issue in large player construction bases where enemies could spawn mid-air and descend in the middle of a base. Sieges should occur more naturally now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was an issue where player planted trees would revert to a previous growth stage if lighting conditions changed. After a save/load, this could leave the trees in a broken state. The problem has been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, we have resolved an older issue where customized dwarf physique like shoulders, waist, chest, belly adjustments would revert to default settings after equipping armor. This bug became more prevalent with the introduction of Cosmetic armor through the Wardrobe. Your chosen Dwarf body types should remain now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know via Support if you've experienced any issues and join our Discord to keep an eye on the #dev-updates channel for more info about upcoming patches and updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1795917897491012"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-08T16:27:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-08T16:27:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.235Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-08T16:27:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.384Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.5",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-26T17:42:33.000Z",
+   "notes": [
+    {
+     "title": "Lîmîn ilshû, lîmîn higbil",
+     "items": [
+      {
+       "text": "Time for beauty, Time for growth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spring is almost here and with it our second feature update of 2025! Get planting, growing and taking better screenshots. We won’t tell the Elves that we broke their monopoly on the color green!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensure you have the correct build number on the main menu. You must complete the update before playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.4.3.186305 [net.10.4.6.b0e951] to 1.5.0.194801 [net.10.4.7.fb726c]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Server: 1.4.3.186308 [net.10.4.6.b0e951] to 1.5.0.194497 [net.10.4.7.fb726c]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Farming Improvements",
+     "items": [
+      {
+       "text": "We're making several targeted changes to improve farming and make it accessible earlier in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Farming Unlocks Earlier",
+     "items": [
+      {
+       "text": "Created a New farm plot that can be built with stone and not granite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bat droppings can be collected from the ground and not just from bats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bat droppings are found earlier in the progression and are more abundant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked bat populations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fieldpost, a Farm-specific 'Hearth'",
+     "items": [
+      {
+       "text": "Our very first \"hearth-extender\" construction is the Fieldpost. Resembling a Dwarven scarecrow, this construction acts like a hearth in that it can create a new base or extend an existing hearth's range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates to Crop Visuals",
+     "items": [
+      {
+       "text": "Updated sound and visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visible growth stages so you can track your crops' progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crops now have Clear Growth Stages",
+     "items": [
+      {
+       "text": "Along with adjusting growth times to be slow, medium or long, all farm plots now follow this progression when growing:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Empty: A crop can be planted in this plot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sprouting: A crop has been planted. Can be uprooted but the seed/plant is lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Growing: A crop is in progress and can be collected for less than the maximum amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ready: The crop is done growing and can be fully harvested.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Planting Trees & The Berêk Rune",
+     "items": [
+      {
+       "text": "We've added a new Rune to the game: Berêk, which unlocks when finding Emeralds in the mid-game progression. When this rune is applied to a weapon and used against a tree it will drop the new Tree Cuttings resource. Tree cuttings can be used to plant new trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new Tree Bed player construction. Cuttings can be planted in the Tree bed and will grow both Elven and Ubâsam trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All wild trees in the world should now be harvestable and regrow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grabapples are now farmable in regular farm plots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cosmetics Updates",
+     "items": [
+      {
+       "text": "We have two major changes to help fulfill the vision of the cosmetics wardrobes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Endgame Cosmetics",
+     "items": [
+      {
+       "text": "When you beat the game and watch the endgame cinematic, you unlock a new outfit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you've already progressed past that point in your game, simply rewatch (and skip) the endgame cutscene to unlock it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Cleaning up Existing Cosmetic Unlocks",
+     "items": [
+      {
+       "text": "The Gold, White and Black armor variants were created before we released the Cosmetic Wardrobe. We love the way they look but don't love how busy they make every forge's crafting screen. To better reflect their original, cosmetic-only intentions we are converting them to be Cosmetics. See below for more details. We hope that by preserving already unlocked recipes and items we will make this transition painless.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Newly created worlds will no longer unlock crafting recipes for these as equipable armors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dwarves in these newly created worlds will see these variants appear in the \"Available to Unlock\" section of the wardrobe when the base armor item is in their inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any world that had previously unlocked the crafting recipes will retain those recipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any previously-crafted armor items using their recipes will remain and will not be taken away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Related, we've re-tuned the cost to unlock the game's available cosmetics to reflect that they are unlocked for all Dwarves this player ever creates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Retuning Shields and Helmets",
+     "items": [
+      {
+       "text": "When the game launched both Shields and Helmets were intended as a form of expression. So they did not inherit the same power ramp that weapons and armor have. With the release of the Cosmetic Wardrobe they no longer have to bear that aesthetic responsibility. We have now retuned shields and helmets to closer match their corresponding sets and costs. Three shields that previously only unlocked in Sandbox now also unlock in Campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Ent-craft Pack, Now on Sale",
+     "items": [
+      {
+       "text": "We're excited to also release our second premium DLC content pack. Along with a new cosmetic skin it also supplements the changes to farming and includes new building options. Purchase the pack and gain access to these new items:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skinbark Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ironbough Greatsword",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ent-craft Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wellingspring Construction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Entwood Resource",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vine-Covered Trellis Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tree Planter Set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fangorn Draught Brew",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decorative Plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make sure to click the \"Add-ons & Dlc\" option on the main menu!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Use Free Cam to show off your world",
+     "items": [
+      {
+       "text": "Now you can capture that perfect screenshot or video without the UI or Dwarf in the way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table equalcells=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse and Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Move Forward/Back/Left/Right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WASD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Left Stick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Look Direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Mouse Button (Hold)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Right Stick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Move Up/Down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q/E",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "D-Pad Up/Down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust Field of View",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "U/I",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Left Shoulder/Right Shoulder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust Depth of Field",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "J/K",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Left Trigger/Right Trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust Focal Point Out/In",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "N/M",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "D-Pad Left/Right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table equalcells=1]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse and Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggle HUD Visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Face Button Left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggle Dwarf Visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "R",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Face Button Top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pause/Resume Simulation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "T",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Face Button Bottom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exit Free Cam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Face Button Right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter Free Cam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "O (remappable)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "N/A",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Quality of Life Changes & General Bug Fixes",
+     "items": [
+      {
+       "text": "This is a list of bug fixes and improvements that apply to all RtM games unless it is called out for a specific platform, dedicated server or regular P2P server/client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI and QoL",
+     "items": [
+      {
+       "text": "Added ladder sprint while climbing or descending ladders to improve the player experience. This uses the same button as sprinting when walking - on keyboard, [LeftStick / L3] on gamepad/controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved building placement, especially for wall-anchored objects like torches, banners and signs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Braziers now use less-valuable fuel by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the crafting progress bar drops from full to empty while crafting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the item pickup notification feed where picking up many items at once could create multiple notifications instead of updating a single existing notification with a new item count.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed maximum resource count on item pickup notifications to 999+ to keep the UI readable when the value is very high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved item pickup notification to show both the amount picked up and the total amount in the player's inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the 'Drop' function in the inventory stops working if the player hovers an item over the armor slots and then sorts the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The names of brews will now display in the Action Bar when Wanderkeg and Brewskins are equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can no longer store items in Ornate Chests found in-world. This is to prevent the loss of player items if in-world objects move or change following an update / earthquake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where some loading screens were displaying an oversized loading icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shields should now have the correct tint in the crafting UI even if the shield is not equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where preplaced mapstones were not updating in the Mapstone Travel List, regardless of their actual position on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player-built Mapstones no longer need to be activated to be used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players must now be closer to a crafting station to see the station status UI, reducing visual clutter on screen when a lot of crafting station status widgets are on screen at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Callout Screen automatically closes every time the player takes damage from environmental effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a UI issue where sometimes the DLCs & Add-on page appears empty if closed and opened too quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Text and Localization",
+     "items": [
+      {
+       "text": "The Custom Text setting should now work to enable or disable naming of signs and chests on all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Open Store Page\" button is now translated for supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inconsistent use of roman numerals among different tools and weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various misspellings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Aberrant Cavecap mushrooms are now called Cavecap mushrooms and have a partially restorative effect when eaten. But be careful of too much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grabapple's base should no longer be destroyed alongside its tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dwarves in rare cases no longer respawn with Shadow Curse after being killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second Breakfast buff has been tuned to require two full meals not just rations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with Backpacks getting stuck and having non-functional interactions when mounted as wall displays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where dropping and picking up a masterwork item causes it to be displayed in default color until equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed case where Aric's shadow remains and animates in place after performing a save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where active Durin's Lamps would reset after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where \"The Eastern Stairs\" challenge would be incomplete after doing a save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some items unlocked midway through singing but now unlock at the end of the song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some melee weapons had inconsistent hit boxes which have now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved cases where range attacks on the head/neck of certain enemies would not count as a hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Siege Enemy AI not spawning during siege in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few issues with pre-placed walls and misaligned tomes in the Build-lore Case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where a Dwarf's arm may remain stuck in throwing animation after throwing a mug while performing Tavern Song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing animation for \"focused\" personality type when creating a Dwarf.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "VFX and Lighting",
+     "items": [
+      {
+       "text": "The Zarok Torch has been updated to reduce the harsh effect of its shadow in the direction the Dwarf is facing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Waterfalls now have accurate lighting based on the time of day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where horde lighting persists after the horde ends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues of VFX desync between server and client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases where VFX plays again after fast travel or save/load. There are still known instances of this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed VFX delay when a big building gets destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where VFX or lighting is missing or persists after an item is gone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where previously lit Braziers appear unlit in some areas after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "One of the Monuments was incorrectly emitting light before it had been activated by singing and not when it was active. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a series of issues where brews had incorrect coloring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Improved audio attenuation on equipping armor and footstep SFX that were audible to all players even at a great distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue at the Elven Forge in Sandbox mode where both roaming and forge activation music may be heard simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rendering issues with certain loading walls and dirt plugs in the Lower Deeps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Dedicated Server",
+     "items": [
+      {
+       "text": "The status.json file should now update during sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with username handling where the same player could be blocked and unblocked repeatedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the flow for joining a world and re-entering password with Advanced Join.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the error message when an invalid invite code is entered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 28,
+    "balance": 0,
+    "other": 97,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1795283637793098"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-26T17:42:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.234Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-26T17:42:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.234Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-26T17:42:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.383Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.4.3",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Patch 1.4.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-14T01:00:21.000Z",
+   "notes": [
+    {
+     "title": "Shuruz khahmûr yâ-dilâ dâmat.",
+     "items": [
+      {
+       "text": "The forge's fire is no longer cold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello Return to Moria Community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are excited to finally release Dedicated Servers for our players and interested hosting providers! The alpha test went well and we highlighted several areas where the server experience can be improved. We are very grateful to everyone who helped us with bug fixes and suggestions, many of which have made it into the release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those of you who are just here for the Dedicated Servers- click here to get the full guide:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Servers Guide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is the full release of Dedicated Servers for everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hugely appreciate your participation, feedback, and bugs reported on the Dedicated Server Alpha.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensure you have the correct build number on the main menu. You must complete the update before playing.‍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.4.2. [net.8.4.6.b0e951] to 1.4.3.186305 [net.10.4.6.b0e951]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Servers: 1.4.2. [net.8.4.6.b0e951] to 1.4.3.186308 [net.10.4.6.b0e951]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To view our full patch notes please click through here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes: 1.4.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1791580425980395"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-14T01:00:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-14T01:00:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.232Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-14T01:00:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.381Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.4",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-12T20:44:06.000Z",
+   "notes": [
+    {
+     "title": "Lîmîn dâlul hîhî",
+     "items": [
+      {
+       "text": "Winter is here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Winter Update is here! It is a time to celebrate and give thanks to our great community. Our best gift? Our fourth major title update with two of our most requested features: Dedicated Servers and Cosmetics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We can’t say thank you enough times to the over 1 million players who have delved with us into the Mines of Moria. Cheers for a great 2024 and we can’t wait to see you in 2025!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This title update provides bug fixes, gameplay additions and infrastructure to enable new downloadable content (DLC) including free and paid content packs. It also offers an early release of Dedicated Servers as a limited alpha. Please see below for more details on how to apply to be one of our first Alpha Testers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes for Title Update 4",
+     "items": [
+      {
+       "text": "Please ensure you have the correct build number on the main menu. You must complete the update before playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epic: 1.4.1 [net.8.4.6.boe951]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam: 1.4.1 [net.8.4.6.boe951]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS5: 1.4.0 [net.8.4.6.boe951]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Xbox X|S: 1.4.0 [net.8.4.6.boe951]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Xbox and PS5 update from version 1.3.4 to 1.4.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Steam and Epic update form version 1.3.4 to 1.4.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cosmetic Armor Skins",
+     "items": [
+      {
+       "text": "This update has a new cosmetic armor skins feature: the ability to add helmet, chest, glove, boots and origin outfits as cosmetic items via the new Wardrobe screen, accessible in the menu. Once cosmetic items are added to the wardrobe, they are available to be applied to all dwarves associated with your account. Applying these new cosmetic items will override the equipped armor visuals while keeping the stats of the armor you have equipped. Wardrobe Skins also come with all of their tints for free!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "‍New Downloadable Content (DLC) Support",
+     "items": [
+      {
+       "text": "On the main menu of the game is now an Add-On and DLC screen that shows what is available and what you have already purchased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "‍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The Yule-tide Pack",
+     "items": [
+      {
+       "text": "We have created a free Holiday Yule-tide Pack that includes new festive food, decoration and lighting options as a gift for the community! Decorate your base, invite some friends over, and enjoy the holidays!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The full list of what is included",
+     "items": [
+      {
+       "text": "Mulled Cider Brew Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yule-tide Feast Meal Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yule Fruit Crust-cake Ration Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Present Pile Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yule-tide Hearth Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Celebration Meal Table Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "String of Lights Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chain of Lights Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simple Candelabra Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Candelabra Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elaborate Candelabra Building Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "‍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Rohan Pack",
+     "items": [
+      {
+       "text": "Our first premium content pack is inspired by the Horse Lords of Rohan, and the friendship forged by Lord Gimli with King Eomer of Rohan. Check out our trailer and join the Yerêg Guard today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The full list of what is included",
+     "items": [
+      {
+       "text": "Rohan Helmet Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rohan Armor Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rohan Gauntlets Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rohan Boots Cosmetic Skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rohirrim Spear Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rohirrim Shield Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rohirrim Banner & Flag Building Recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rohan Yerêg Stew Meal Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoked Mead Brew Recipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Skins unlock for All Dwarves. They are cosmetic only. Weapon, Shield, Brew, Meal, and Building Recipes will be available when the appropriate resources are available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dedicated Servers Alpha Playtest",
+     "items": [
+      {
+       "text": "Refer to The Lord of the Rings: Return to Moria™: Dedicated Servers Guide (Alpha) on the website and the \"ds-info\" channel in our Discord for more information. And look for the full, open release early in 2025.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Improvements",
+     "items": [
+      {
+       "text": "Treasure Pile management. Players may now see what is in a Treasure Pile, same as other forms of visual storage. No more losing where you put those Black Diamonds!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Renamable Storage. Players can now edit the display names of chest and tavern signs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added controller sensitivity sliders for looking and while aiming with ranged weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trees and Ubasam mushrooms now regrow after a number of sleeps. They will not regrow within a hearth radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can now plant Cranberries into Farm Patches and Boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a player-buildable version of the Statue of Elbereth that unlocks late in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the of Durin’s Axe to in a much way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Dwarf Select screen now shows the currently equipped armor look.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements to gamepad navigation in chest and inventory slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added recipes to craft iron ore from scrap metal, and craft ironwood from scrap metal and wood scraps, both unlocked at late-game forges. Yes it's good to craft Ironwood, but it's even better to get rid of those pallets of abundant early game resources!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "‍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Fixed platform specific crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed desyncs of certain items in multiplayer where an item may appear floating in mid air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where attempting to pick up items with a full inventory caused their VFX to disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with saving of dropped items while level is loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Wanderkeg is empty after singing a tavern song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased interaction radius of death chests to fix issues where they may be inaccessible by the player and items could not be picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed silent sound effects when rebuilding Great Forges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a Dwarf is not prompted to sing when mining certain deposits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Small Crystal Lamps still spawn after being deconstructed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some worlds being generated without certain items needed to progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where player could not drop items from Inventory and Action Bar with Gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing UI action for right-mouse-button to aim on bow and crossbows.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed inability to equip Mahal’s Gift from the action bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text for mislabeled items and misspellings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several icons that were offset incorrectly or were using the wrong image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When aiming with the Quarrymaster, players will swing instead of kick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "‍",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The following issues are known and will be addressed in a future patch. If you encounter these please feel free to submit a support ticket here with any information that will help us resolve the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cosmetic Armor Skins that have been added to the player’s Wardrobe while online will not appear while playing Offline. Skins added when playing offline do not appear while playing online. We apologize for the inconvenience this issue may cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Purchased DLC may not be available while playing offline. This behaviour is dependent on which platform you are playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In multiplayer games, dwarves may sometimes enter the world in the wrong location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In multiplayer games with a large number of players, there can be issues with fast travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are known issues with the Dedicated Server Alpha’s CPU usage and performance. You may experience longer load times and more frequent dot walls than we consider acceptable. We will be working on this before the full release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocking players on Dedicated Servers currently only works when the player-to-be-blocked is online.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is a rare occurrence of the Steam Deck on certain versions of the OS showing issues with the keyboard, as well as quitting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 16,
+    "balance": 0,
+    "other": 44,
+    "ps5": 2,
+    "topNew": [
+     "‍",
+     "Renamable Storage. Players can now edit the display names of chest and tavern signs.",
+     "Added controller sensitivity sliders for looking and while aiming with ranged weapons"
+    ]
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1785774543535820"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T20:44:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.231Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T20:44:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.232Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-12T20:44:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.378Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@major-2024-11-27",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Return to Moria Winter Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-27T19:19:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ihraz dâ-khalash akdashûnu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"The mountain smiles on us today!\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game Director Jon-Paul Dumont guides us through some of what’s in store for Title Update 4 - The Winter Update - for The Lord of the Rings: Return to Moria.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From Cosmetics, DLC packs and Regrowing Trees, to Quality of Life updates, Labelling Chests and Farming Cranberries - There’s lots packed into this update, coming this December.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Without further ado, here is the link to our latest Update video, https://www.youtube.com/watch?v=vu1cSCkQs841 Oh, and one extra big surprise too, so be sure to watch to the end!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep an eye on our Discord and on our website for all the latest news and updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/1784506358987647"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-27T19:19:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.230Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-27T19:19:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.230Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-27T19:19:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.376Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.3.4",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Patch 1.3.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-17T16:57:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Turugnî hisgin!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greetings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a smaller patch to address issues that were reported in version 1.3.3. Thank you to everyone who reported issues, shared saves and provided feedback. This has helped us in resolving issues and getting this patch out to you asap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please ensure you have the correct build number on the main menu before playing. You must complete the update before playing. Steam: 1.3.4.166483 [net.8.4.5.6.eaaa2]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All platforms update from version 1.3.3 to 1.3.4. Here are the fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Building and Stability",
+     "items": [
+      {
+       "text": "This patch addresses cases where parts of large player construction would be destroyed after saving and loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have also fixed the cause of some spontaneous destruction of building pieces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have improved and tested stability in typical building scenarios and in large saves provided by the community. However, it is worth noting that the more complex constructions do stress the limits of the system and may still have unexpected results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We will continue to tackle those issues as they occur. Please keep sending those support tickets and save files! They were instrumental in helping us with this round of fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Fixes",
+     "items": [
+      {
+       "text": "We have fixed a bug where players might encounter an infinite load when attempting to fast travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sieges have been fixed and re-tuned and should not occur with the same frequency, nor should they be triggered as often when players fast travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue affecting the Ink Grinder’s ability to dye Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare issue where Armor Stands built with Build-lore buff providing free construction would not allow any Armor to be placed in them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The team continues to investigate solutions for known issues listed in Patch 1.3.3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/6212244583176446204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T16:57:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.229Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T16:57:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.229Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-17T16:57:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.376Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@1.3.3",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Update 1.3.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-03T15:50:49.000Z",
+   "notes": [
+    {
+     "title": "Grab a mug of your favorite brew and make sure those axes are sharp, as Durin’s Day is soon to be upon us!",
+     "items": [
+      {
+       "text": "Kadish Durinul Khalash!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This Thursday the 3rd of Oct - Durin’s Day - through to the 6th of Oct, Return to Moria is celebrating this famed Dwarven holiday. Celebrations include…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thursday morning Patch Release!",
+     "items": [
+      {
+       "text": "This Patch will contain fixes to issues reported by players as well as improvements to the lighting system (especially for bigger bases). This patch is due to release on Thursday the 3rd of October",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Streamers and Content Creators!",
+     "items": [
+      {
+       "text": "We’ll be showcasing some streamers with an all-weekend Broadcast on Steam, plus others will be live on your favorite streaming platforms, or posting Durin’s Day themed videos and clips. Keep an eye out as some will have keys for the game, artbook and/or soundtrack to give away too!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Durin’s Day Celebration Bundle",
+     "items": [
+      {
+       "text": "Been waiting to purchase RtM or have friends who’ve been waiting to pick it up? The Durin’s Day Bundle will be available on Steam during the celebrations with a hefty discount to swing your hammer at!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Forge Talk",
+     "items": [
+      {
+       "text": "Friday the 4th we’ll have a Forge Talk in the Discord discussing the patch, A year (almost) in review since initial 2023 launch, recent community challenges and the dev team will be answering some questions too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join in the Fun!",
+     "items": [
+      {
+       "text": "Want to join in the festivities? We’ve got some Durin’s Day and RtM themed icons, and thumbnails for you to use on your socials and videos. Cruise over to Discord to check that out, and If you post anything, don’t forget to @ us on Twitter / X for a chance of a reshare!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whether you’re going to be delving into Moria to check out the new patch and pouring yourself a brew, or supporting the streams and creations of fellow community members, we hope you have fun celebrating Durin’s Day 2024 with The Lord of the Rings: Return to Moria!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/6350729003494602399"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T15:50:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.229Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T15:50:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.229Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-03T15:50:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.375Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@major-2024-09-26",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "UPDATE: Networking Issues Have Been Resolved!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-26T00:45:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all and thank you for your patience - we are sorry for the recent issues with Online worlds, but we can confirm that online multiplayer is back and running properly for all users who have been affected!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What happened?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We started receiving reports of players being unable to connect to multiplayer as early as Sunday night, most commonly with the \"Connection to Online Services was Interrupted\" message. This happened in Steam and crossplay games, but seemed to happen mostly in some areas of the USA and Canada.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to the support tickets that you all have sent, we were able to use the logs from these sessions to uncover the core issue that was affecting our peer-to-peer networking and connectivity between hosts and joiners. If you tried to connect from anywhere else, you also may have encountered this issue if one or more players was in this affected region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As of 4pm PST on 9/25, we have confirmed that games are functioning normally once again on Steam, as well as cross-play worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We apologize again for this and hopefully you're all back to enjoying your adventures in Moria! If you see any further issues or cannot connect, please reach out to our support team here: Customer Support and we will try to help promptly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The RTM Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/6339469370180108053"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-26T00:45:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.228Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-26T00:45:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.228Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-26T00:45:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.374Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@patch-2024-09-14",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "RTM Devs demo the game and preview new patch!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-14T18:31:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As we close in on the 2-week mark of being live on Steam, we sat down with the team to finalize our upcoming patch. And we recorded a play session so you could see first hand what we're doing with player feedback, fixing bugs, and more cool updates! Please enjoy and watch for the devs messing with each other while they check out the fixes to AI and lighting!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "The upcoming patch will include this and more",
+     "items": [
+      {
+       "text": "Improved lighting, especially for bigger bases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ability to mount epic items like the Zarok Torch and Wanderkeg onto the wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to reduce enemy patrols in your base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to reduce enemy animation issues in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better combat and ranged combat enemy behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved crossbow experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed white screen issues for some cinematics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Orctown is now easier to find",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Networking and crash fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Singing should no longer switch your voice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more Mithril weapons to campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/6250522009521242375"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-14T18:31:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.227Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.373Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@major-2024-08-26",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Return to Moria on Steamdeck - update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-26T21:48:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all - we're happy to report that we've been hard at work on testing all of our compatibility and working with Steam on verification. Wanted to give you all an update, as we have just received an upgrade to \"Playable\" status!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automatic controller support out of the box, no need to goto Settings first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Runs really smooth in solo play, and launches to your Steam Deck resolutions (such as 1280x800)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Once installed, Return to Moria is fully capable of offline play if you're on the go!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Due to memory constraints hosting on multiplayer may affect load times and frame rate, (your mileage may vary.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve worked on the little things like proper font support, handling of the in-game keyboard and text entry via controllers, so you don’t have to break immersion in the game",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Built in Proton",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Uses our Xbox-style iconography for all button input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Updated: All in-game links should now properly open browser windows on device (such as Terms of Service)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we hope all the Steam Deck fans enjoy it, and please let us know if you have any questions!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We also have been looking to collect any helpful guides for the Steamdeck, so please share those and we'll try to highlight them if we see them!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/5875595438704076426"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-26T21:48:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.226Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-26T21:48:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.226Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-26T21:48:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:47.372Z"
+  },
+  {
+   "id": "the-lord-of-the-rings-return-to-moria-204460@major-2024-08-22",
+   "gameId": "the-lord-of-the-rings-return-to-moria-204460",
+   "displayName": "Return to Moria - Forge Talk # 6 - The Golden Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-22T15:47:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are almost there, just about 5 days from Launch!! So we want to share more more more with you and let you get insight and more details in what we've been promising with this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Without further ado, \"hey folks please check out this video!\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More to follow this week as we drop last-minute updates, top secret reveals, and start sharing info on exactly what time you can download Return to Moria for yourselves!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2933130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2933130/view/5875595438688582525"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-22T15:47:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.225Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-22T15:47:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2933130",
+      "checkedAt": "2026-11-13T03:33:41.226Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-22T15:47:28.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T16:29:47.371Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "1ddde09f31f6",
+   "text": "The team continues to investigate solutions for known issues listed in Patch 1.3.3.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.3.4"
+  },
+  {
+   "id": "221d561371de",
+   "text": "The following issues are known and will be addressed in a future patch. If you encounter these please feel free to submit a support ticket here with any information that will help us resolve the issue.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.4"
+  },
+  {
+   "id": "891cb4ed5aaf",
+   "text": "Cosmetic Armor Skins that have been added to the player’s Wardrobe while online will not appear while playing Offline. Skins added when playing offline do not appear while playing online. We apologize for the inconvenience this issue may cause.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.4"
+  },
+  {
+   "id": "eb058ef33aac",
+   "text": "Purchased DLC may not be available while playing offline. This behaviour is dependent on which platform you are playing.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.4"
+  },
+  {
+   "id": "7ad3f38e86b8",
+   "text": "In multiplayer games, dwarves may sometimes enter the world in the wrong location.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.4"
+  },
+  {
+   "id": "87d0d52dd371",
+   "text": "In multiplayer games with a large number of players, there can be issues with fast travel.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.4"
+  },
+  {
+   "id": "cf31d9e350f6",
+   "text": "There are known issues with the Dedicated Server Alpha’s CPU usage and performance. You may experience longer load times and more frequent dot walls than we consider acceptable. We will be working on this before the full release.",
+   "status": "addressed",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.4",
+   "addressedBy": "the-lord-of-the-rings-return-to-moria-204460@major-2025-06-07",
+   "addressedAt": "2025-06-07T21:03:31.000Z"
+  },
+  {
+   "id": "24d1d020a68c",
+   "text": "Blocking players on Dedicated Servers currently only works when the player-to-be-blocked is online.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.4"
+  },
+  {
+   "id": "9a10a029c446",
+   "text": "The following are known issues and the team is working on addressing these for future patches. If you encounter these please feel free to submit a support ticket to us via our Support Page with as much information about your experience as possible.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "5ac9185bf766",
+   "text": "Tinted armor is shown as default color when given to an NPC",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "426cfeb0e90a",
+   "text": "Items offered by the traders can remain highlighted, even when they aren’t purchasable",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "9f9fc677a691",
+   "text": "Cooks can travel back and forth between multiple cooking stations when there aren’t any materials available",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "b42da13d32dc",
+   "text": "Reviving a fallen NPC can cause them to display the incorrect status briefly",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "d9ee635567ba",
+   "text": "Certain NPC outfits and hats are not retaining their tints",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "6f16872ab2b3",
+   "text": "Using a mapstone to travel to the Dimrill Dale causes stamina to deplete briefly",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "561870cb3be3",
+   "text": "NPC interact prompts are visible from far distances",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "2ec15634800f",
+   "text": "Aric’s in-world waypoint can be visible indefinitely",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "55fae8bff0fe",
+   "text": "NPCs don’t always face the player when singing",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "b6dc49016e5f",
+   "text": "In rare instances, building a hearth doesn’t remove all nearby grass or rocks",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "810b5003d6d6",
+   "text": "Singing while standing on stairs can cause minor animation issues for the Dwarf",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "17cdb70f7aa0",
+   "text": "In rare instances, the minimap outline may be visible on the loading screen",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "b866445421b0",
+   "text": "Durin’s Axe fragment search area Audio and Visual cues are missing in multiplayer",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "2b4b809d1490",
+   "text": "The Wanderer NPC can sometimes be missing from his assigned Delving, but this does not block progression",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "9e4e71b35e42",
+   "text": "In rare instances NPCs can appear below the floor or be missing and marked ‘lost’ - in most cases this recovers by withdrawing the NPC from a delving and then reassigning them. It may also be solved by closing and loading the world.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "2cce4acf1c49",
+   "text": "In some cases NPCs will say they are blocked from their destination. It may be necessary to destroy and rebuild items like beds and crafting stations to better enable their routing.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "4c2276052a1e",
+   "text": "Thank you all for your ongoing support of Return to Moria! We're so excited to release TU6 and Durin's Folk for players, and can't wait to hear what you think. If you have any feedback or issues to report, please let our Support Team know via our Support Page.",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  },
+  {
+   "id": "7b4bf4e02ae4",
+   "text": "Join our Discord to share your adventures and keep up to date on all the latest from the team in the dev-updates channel!",
+   "status": "open",
+   "firstReleaseId": "the-lord-of-the-rings-return-to-moria-204460@1.6"
+  }
+ ]
+}

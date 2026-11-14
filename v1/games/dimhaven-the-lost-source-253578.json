@@ -1,0 +1,359 @@
+{
+ "game": {
+  "id": "dimhaven-the-lost-source-253578",
+  "igdbId": 253578,
+  "name": "Dimhaven: The Lost Source",
+  "cover": {
+   "imageId": "cod5kb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cod5kb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5y6u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5y6u.jpg"
+  },
+  "ps5Release": "2026-06-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dimhaven-the-lost-source-253578@1.12",
+   "gameId": "dimhaven-the-lost-source-253578",
+   "displayName": "Patch 1.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-31T10:15:33.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed a case where interacting with an in-world item or opening inventory while a transition was happening could trap you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where if you walked away from the Survey Machine in the beginning could cause it to break. For real, this time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where you could softlock yourself by traveling through a gate mid-closing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We added an extra phone call in the middle to help with the pacing of the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused the player to lose a very important puzzle item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There was a softlock that prevented progress after the Kitchen area if the player messed with the power before entering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a case where a particular puzzle on the kitchen table was skippable by reloading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Swapped the phone call in the Landing Bay to a more mysterious one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The interactive ladder climbing in the station was weird, swapped it to an uninteractive one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a case where trying to go back in the (cave) after crossing it resulted in strange behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Playing on low framerate could cause the player to teleport into a softlocked state on the station. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Synced the on-off state of a particular secret lever with its corresponding secret door's open-closed state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a dial that could visually skip around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some timings so the visual feedback better matches the player interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated some of the vaguer hints to better guide the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some new hints for missed obtainable items in the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some collision artifacts that could cause the player to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where you could click through windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where playing without Steam running could cause the game to hang before the ending cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where controllers would not stop vibrating after interacting with specific levers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Lowered the power of some of the lights that could cause hints to be too bright.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a case where a buoy could stop rendering while clearly visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where reloading the game could cause one of the power generators to look offline (when it was online).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various inspectable objects' default rotation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text formatting on various hint objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where pasta and rice were stored in invisible jars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where a specific cable was not visually plugged in after reloading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed a bug where reverb zones stayed active after loading a game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated audio feedback of various interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed subtitle timing of various voicelines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed mouseover and click audio from unactive buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We found some audio clips that tended to not play. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added audio feedback to some puzzle solutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Finetuned cable car audio when operated remotely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music during conversations is lower now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Visual fixes for the credits and title scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Larger GUI scale could cause some UI elements to scale out of the screen. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Larger GUI scale could cause some UI elements to overlap. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some cases where translated text elements too long for their bounding box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where UI texts and buttons could stay on the screen when they shouldn't have.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Re)added text colorization of different speakers to the intro conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We weren't saving the player's \"Don't ask me again\" preference when deleting a photo. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a case where you couldn't drag your photos around while drawing on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 22,
+    "balance": 2,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2458980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2458980/view/1839676055887731"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T10:15:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2458980",
+      "checkedAt": "2026-11-13T03:19:02.970Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T10:15:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2458980",
+      "checkedAt": "2026-11-13T03:19:02.970Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-31T10:15:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:02.402Z"
+  }
+ ],
+ "issues": []
+}

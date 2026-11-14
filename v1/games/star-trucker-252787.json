@@ -1,0 +1,6233 @@
+{
+ "game": {
+  "id": "star-trucker-252787",
+  "igdbId": 252787,
+  "name": "Star Trucker",
+  "cover": {
+   "imageId": "co6lv0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6lv0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2cja",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2cja.jpg"
+  },
+  "ps5Release": "2025-06-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "star-trucker-252787@1.75.2",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.75.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-21T11:06:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.75.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This hotfix update resolves two issues that could prevent game progression alongside some other important fixes. We thank you for your patience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dave & Dan ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue with a soft-lock during auto-save that could occur due to Lost Mail jobs being available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with player truck being unable to detach from docking bays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with debris initialization potentially causing collisions during warp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with location indicators enabling too early during “Junk in the Trunk”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with cargo capsules not appearing inside diamond frame trailers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with a small number of drop zones not being large enough for eco trailers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some dash items being removed when reloading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with upcoming seasonal hologram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Below are some issues we are currently investigating for future updates…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Space Station POIs not inheriting Courier Job names when active - FIX IN PROGRESS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some trade items not appearing as frequently as expected in shops - FIX IN PROGRESS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Courier POIs can occasionally vanish until you reload or re-enter a sector - FIX IN PROGRESS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some peripheral setups being incompatible with the game - INVESTIGATIONS ONGOING",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1844115010501075"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T11:06:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.323Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T11:06:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.323Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-21T11:06:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.733Z"
+  },
+  {
+   "id": "star-trucker-252787@major-2026-09-01",
+   "gameId": "star-trucker-252787",
+   "displayName": "DevBlog #26 - Plants & Post Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-01T13:53:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re celebrating 2 incredible years of Star Truckin’ with a chunky new update! Check out the mini-trailer below for a quick preview!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a no-frills list of changes, head on over to the latest changelog. Otherwise read on for a more detailed summary of what you can find in the Plants & Post update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Plants & Post",
+     "items": [
+      {
+       "text": "Let’s jump straight in with the important stuff. Alongside a smorgasbord of tweaks and improvements this update also features TWO new business ventures for you to unlock and enjoy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SPECIALIST COURIER is a FREE unlock and introduces a range of jobs themed around mail alongside a range of fantastic new customization rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CULTIVATION EXPERT is a PREMIUM venture that can be unlocked as part of the new Cultivation Content Pack. This DLC unlocks a new set of jobs, rewards PLUS unique new trailers and cargo to haul.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Read on for a full rundown of new content alongside a ton of images taken directly from the update 📸",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/08553679b947d06344ac8d6623108323c51469eb.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Specialist Courier",
+     "items": [
+      {
+       "text": "Once you have the update, the new postal themed business venture can be accessed shortly after unlocking Zone 2 or 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s worth noting that you’ll need to wait 1h of in-game time ( or jump to a nearby sector ) to trigger the first interaction but then you’ll be good to go!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/849500df32bf72a9acf68b68ad8230e18599bc28.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once unlocked you’ll be contacted by Ricardo from the Galactic Postal Service. He’s a fellow courier, voiced by the talented Dre Ayala, and will provide audio cues for different jobs while keeping you updated (whether you like it or not) on his chosen career path…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As with the Galactic Handyman you’ll start with 1 job slot that can be upgraded by purchasing venture boosts using in-game currency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The available jobs include…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DELIVERY ROUND",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collect mail from a collection point and deliver it to multiple mailboxes within the sector. Mail includes bundles of letters, magazines and newspapers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/87e70262c21b3b2f9fdf78c2461ae4a5780af158.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LOST & FOUND",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Head the last known location of a missing mail pod. Collect the mail sacks and deliver them to a nearby drop-off point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/0cdedde97423533a2075e5bc319859aafcf81a35.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SPECIAL DELIVERY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collect a package from a collection point and deliver it to another sector. These items might have special conditions such as being fragile, perishable, sensitive to electric storms or oversized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/1244bd58e1248f48212848a72cac796eadafaea1.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RESTOCK REQUEST",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fulfill a request to deliver goods to a specified location. Players will need to gather these items ( via salvage or purchasing them at shops ) and take them to the specified delivery bay. Upon completion you will be reimbursed and paid a nice bonus!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/314d1804e46d0342c2c7f658b5e4f414cebf8022.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s also worth noting that courier jobs have been designed to complement your travels while hauling and encourage a little bit of item hoarding. To account for that we’ve made sure the relevant jobs award a chunk more VXP than those in the Handyman venture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UNLOCKABLE CAB CUSTOMIZATIONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As with all business ventures, we’ve curated a large number of rewards for you to unlock as you progress through the ranks. Check out the image below for the entire collection in all its glory!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/deee7eb6e11fea671071f05b2f8996e514ea1b06.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cultivation Content Pack",
+     "items": [
+      {
+       "text": "As mentioned earlier we’ve also brought together a premium pack of great value content as part of this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This DLC unlocks unique freight, trailers and corporations alongside a brand new business venture led by horticultural specialist Ada Greenway. It’s also packed with exclusive new cab customizations for you to unlock as you play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Let’s take a look at all the cool content you get with this pack…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Freight",
+     "items": [
+      {
+       "text": "As part of this pack we’ve included a range of new freight for you to haul…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x3 Corporations - Fully branded companies tied in with the cultivation theme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x4 Trailer Types - New trailers for hauling a variety of cargo types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x10 Cargo Visuals - These are unique assets you’ll see in conjunction with the new trailers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "X40 Cargo Contracts - These are effectively the types of cargo you haul (e.g. seeds are transported within a cargo pod or drum)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/0ba30e1c7da089ac895e8c821514c80289ee2206.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Once unlocked the new trailers and cargo will be gradually added to the pool of available freight jobs. They can be easily spotted by their unique icon and colouring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Keep in mind that, as with the base game, all new cargo has a variety of certifications requirements. The more certification skills you unlock the more cargo variety you will see!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/9491be2d13cde5942ac5df1c94c1adc1f5eee072.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Venture",
+     "items": [
+      {
+       "text": "The Cultivation business venture will unlock shortly after you’ve gained access to the Handyman venture and performed some basic onboarding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ada Greenway, voiced by the wonderful Hannah Hebblethwaite, will then get in touch via the CB, offering a variety of contract work while she’s busy dealing with admin…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PRESSURE PURGE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ada’s sensors sometimes indicate atmospheric issues with nearby biomes. You’ll need to head over and perform a manual purge to rebalance the dome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/2ba7983e17f09a9d7db9de1e6a9fda129f7d422a.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "SHORT SURVEY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sometimes real eyes are needed on a haul of crops. In these instances you’ll need to personally swing by and check domes for infestations, mould and other potential issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/7657b37b801d5cdfc6055c50d257b9806eba4c60.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "TEMPORARY TAPE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If a nearby biome is leaking atmosphere you’ll need to grab a roll of Flux Tape, head to the designated location and patch any cracks you can find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/0566a73b48d89559a4f43b39710ae53b18270343.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BIOME BOOST",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You might also receive a request to replace a dead Nutrient Canister at a nearby dome. Take a replacement and swap it out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/d86b4eeb928d2a7063d36898a6008c4b8f8f9f0d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It’s also worth noting that as part of this update both Flux Tape and Nutrient Canisters are now available to purchase at most shops and garages around the galaxy. So if you plan to take on a lot of Cultivation jobs it’s a good idea to stock up whenever you get the chance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Rewards",
+     "items": [
+      {
+       "text": "As with the other ventures we have a whole set of themed cab customizations for you to unlock as you progress through your Cultivation Venture ranks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Click the image below to view the entire set of rewards that are available as part of this pack…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/81f9c7c8ea3b0dbbd98886864dc3fbc3446b26bc.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Available NOW!",
+     "items": [
+      {
+       "text": "If you hadn’t guessed it, the Cultivation Content Pack is available right now and every sale helps support the continued development* of Star Trucker…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3617450\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Bobble heads ain't cheap! - Dave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bonus Bits",
+     "items": [
+      {
+       "text": "We covered some of this in our previous Dev Blog, but as a recap here’s some of the other bits n pieces you’ll find in this update…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dock Shocks - Electrical storms will no longer affect your truck while docked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switchin’ Up - New light switches allow you to toggle lights without the need to sit down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zoom Toggle - We’ve added an option to allow players to toggle cab zoom on and off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Haunted Holo - A new seasonal hologram has been added for October",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big Drops - Extra locations added for picking up & delivering oversized freight across the galaxy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Venture Bonuses - Players are now reimbursed if a Venture job requires an item for completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radio Skits - x3 new in-world advertisement skits added to our pool of radio ads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/62da1e05206ede3fcdcdb98a0aab0f85834b140f.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Support Portal",
+     "items": [
+      {
+       "text": "This has become a bit of a regular section for most Dev Blogs but for those new to Star Trucker we want you to know that you can submit feedback and report problems via the Raw Fury Support Portal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This makes for happier Monsters as it allows us to easily collate community notes which in turn helps us fix issues faster, hopefully resulting in happier star truckers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/556b8e0c695300c046055ea7babe7f25199ba48e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's Next...",
+     "items": [
+      {
+       "text": "Firstly, we're gonna take a little break to recharge (it's been a fairly hot and hectic few months!) and then we're going to continue working on a quality of life update. This will include further adjustments to the job generator, balance tweaks, ux improvements, bug fixes and plenty of other goodies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until then, we hope you enjoy this update, and as always, thanks for supporting Star Trucker and taking the time to read another one of our rambling dev blogs ♥️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dave & Dan ( aka Monster & Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 30,
+    "fixed": 0,
+    "balance": 0,
+    "other": 48,
+    "ps5": 0,
+    "topNew": [
+     "As mentioned earlier we’ve also brought together a premium pack of great value content as part of this update.",
+     "Let’s take a look at all the cool content you get with this pack…",
+     "As part of this pack we’ve included a range of new freight for you to haul…"
+    ]
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1842212951313467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-01T13:53:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.322Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-01T13:53:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.322Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-01T13:53:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.732Z"
+  },
+  {
+   "id": "star-trucker-252787@1.75",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.75",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-01T13:53:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.75",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update adds a FREE new business venture alongside our first PREMIUM content pack, filled with new rewards, jobs and trailers to tow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you’re looking for pretty pictures and a word from us Monsters, check out the new dev blog : Venture Update #2 - Plants & Post",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a more detailed breakdown of new content, features, refinements and bug fixes then check the change log below…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Specialist Courier Venture",
+     "items": [
+      {
+       "text": "This postal themed business venture can be accessed shortly after unlocking Zone 2 or 3. You will need to wait 1h of in-game time or jump to a nearby sector to trigger your first interaction with Ricardo from the Galactic Postal Service.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "x4 Job Types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Delivery Round - Collect and deliver the local mail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Special Delivery - Courier an item across the galaxy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restock Request - Resupply stations with goods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lost & Found - Search for missing post",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "x64 Progression Rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interior customization options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tradeable items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "x10 New Trade / Job Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Large Packages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Electrical Sensitive Package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Temperature Sensitive Package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Priority Package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fragile Package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gifts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mail Sack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cultivation Content Pack",
+     "items": [
+      {
+       "text": "This premium pack unlocks unique freight trailers, cargo and corporations alongside a brand new business venture led by horticultural specialist Ada Greenway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Once unlocked any new trailers and cargo will be added to the pool of available freight jobs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Cultivation business venture will unlock shortly after unlocking the Handyman venture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x4 Cultivation Jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Precision Vent Jobs - Release excess atmosphere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resupply Jobs - Replace nutrient canisters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Temporary Tape Jobs - Tape up minor cracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Survey Jobs - Check the status of grow domes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x65 Progression Rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Interior customization options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tradeable items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x3 Corporations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "SeedShield Systems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GrowTek Dynamics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Intercrop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x4 New Trailer Types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Eco Dome Frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grow Dome Frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Diamond Frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Triangle Frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x10 Cargo Visuals for Trailers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Saplings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mushrooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shrubs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tropical CES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Semi-Arid CES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wetland CES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transport Drums",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transport Pod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transport Capsules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Light Bars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x40 Cargo Contracts for Freight Jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Organic Compost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Synthetic Manure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Low Yield Nutrients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nutrient Solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pre-Soak Solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bioinoculants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Perlite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vermiculite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Growstone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Artificial Biochar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Coco Coir",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sphagnum Moss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Peat Pellets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rock Wool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Humic Acid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fulvic Acid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nitrilotriacetic Acid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Manganese Gluconate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Amino Acid Chelates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aloe Vera Cuttings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Arabidopsis Seeds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quinoa Grains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bamboo Root Balls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Saplings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mushrooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shrubs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tropical CES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Semi-Arid CES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wetland CES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reverse Osmosis Filters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Electrochemical Sensors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dripping System",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Circulation Components",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hydroponic Modules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hydro Towers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Faulty Hydro Towers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grow Lamps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Broken Grow Lamps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Retired Grow Frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Empty Eco Frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The following trade items and customization will also be available to ALL players…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trade Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nutrient Canister",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Flux Tape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seed Pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fertilizer Sack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Interior Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vera Plant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed clipping issues from holding various trade items while wearing the space suit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed colliders on the Dragonfly hood ornament",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with wall panels not applying materials correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some UI sounds would not play on the Venture screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some POI markers being misaligned alongside some minor optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some typos in the User Manual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect localization of “FREE” when labelling the freecam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could result in the main menu truck loading incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other Changes",
+     "items": [
+      {
+       "text": "Added x3 new Cultivation themed adverts to Gold Rock Radio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra locations for picking up and delivering oversized freight across the galaxy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new light switches to the cab, allowing players to toggle the mezzanine & lower cab lights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added cab zoom toggle to the Controls option screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Off - Currently functionality ( zoom is enabled while button or key is held )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On - Tap button or key to toggle the zoom mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Auto - Tap and hold for longer than 1.5 seconds and the zoom will lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new seasonal cab hologram for Halloween",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can be activated between 1st - 31st October",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new light to the airlock to help visibility of item drops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated drones to have flickering, low power, lights during Dead Drone jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Electrical storms no longer affect your truck while docked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shield charge is reset and does not increase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Shock Pods can no longer be sold for their full price at shops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the Downloadable Content screen with a new layout and attract sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor adjustments to the cost of some trade item to help balance Courier Restock jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased probability of some trade items to help balance Courier Restock jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Players are now reimbursed if a Venture job requires an item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fuel Assist ( Fuel canister )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Biome Boost ( Nutrient Canister)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Temporary Tape (Flux Tape)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restock ( Base rate for required Trade Items )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Below are some issues we are currently investigating. In some instances we have already resolved the issue with the fixes ready for the next update..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Venture job info panels are not showing required items - In Progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Space Station POIs are not inheriting Courier Job names when active - In Progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monitor Cameras can misbehave while docked during Courier Jobs - Investigating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Asteroids collisions during warp - Investigating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some trade items not appearing as frequently as expected in shops - Investigating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some peripheral setups are incompatible - Ongoing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Junk in the Trunk shows quest markers too early - Done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you can see this update includes A LOT of new content and despite best efforts you may encounter the occasional issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To that extent we’d like to remind you that if you stumble on a particularly bad bug (or you just want to send some feedback) please use the Raw Fury Support Desk to submit a ticket. It makes it a lot easier for us to track and resolve issues this way. Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 86,
+    "fixed": 8,
+    "balance": 1,
+    "other": 47,
+    "ps5": 0,
+    "topNew": [
+     "Once unlocked any new trailers and cargo will be added to the pool of available freight jobs.",
+     "The Cultivation business venture will unlock shortly after unlocking the Handyman venture.",
+     "x4 Cultivation Jobs"
+    ]
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1842212951313466"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-01T13:53:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.320Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-01T13:53:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.320Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-01T13:53:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.730Z"
+  },
+  {
+   "id": "star-trucker-252787@1.73.2",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.73.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-06T13:01:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "OVERVIEW",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix for a couple of notable issues occurring in the latest update, alongside a little surprise 🦆",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUG FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where shops would refuse to buy your valuable ingots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a Broken Light job in Reaper’s Bluff, causing issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Venture Screen occasionally misloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Dead Weight freight job not appearing until the Long Haul skill is unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where side job progression could stall if tutorial steps are skipped early on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MISC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a FREE trucker duck dashboard accessory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "KNOWN ISSUES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For visibility, we have listed some of the issues we are currently tracking below. We will continue to work towards fixes for these in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Job Generator does not always provide a suitable selection of jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The menu system freaks out when certain peripherals are connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wall Panels don’t immediately apply materials when customizing the cab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A small number of players are experiencing unusual performance issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As previously mentioned, the recent update touched on almost every element of the game and although we spent a lot of time, energy, and dollars testing, there are bound to be some niggles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you stumble on a particularly bad bug (or you just want to send some feedback), please head over to the Raw Fury Support Desk and submit a ticket. It makes it a lot easier for us to track and resolve issues this way. Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1832065502808823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T13:01:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.319Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T13:01:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.319Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-06T13:01:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.729Z"
+  },
+  {
+   "id": "star-trucker-252787@major-2026-04-22",
+   "gameId": "star-trucker-252787",
+   "displayName": "DevBlog #24 - Ventures Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-22T14:19:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy Star Truckers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re back with a chunky dev blog to coincide with our largest update yet! There’s plenty to cover so let’s hit the gas and drive into things…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Launch Trailer",
+     "items": [
+      {
+       "text": "First up, our publisher Raw Fury has created a lovely little video for this update. Check it out below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Home Improvements",
+     "items": [
+      {
+       "text": "Secondly, interior customizations are finally here! You can now overhaul your cab interior with a range of options including new color schemes, dashboard items, wall panels and star strips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can access this menu by heading down to the lower workbench and interacting with the new board artwork.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The primary way to unlock customizations is by levelling up a Business Venture. However, we’ve also included a selection of items you can obtain via cash earned from hauling freight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As more ventures come online, new rewards should always be within reach as you bounce between side jobs, freight hauls and helping out our new NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/536ae4c29830a76f59bfbb1124ba7735b74bfc14.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Here’s the current list of stuff you can modify within your cab…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bedding - Different styles of bed and bedding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cab Trim - Material used for paneling found inside the cab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Color Palettes - Colour themes that adjust the metals, plastics and other elements inside the cab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dash Lighting - Glowing elements such as neon strips and bulbs that fit around the front of the cab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Maglock Toppers - These attach to the maglock lever and come in a variety of shapes and styles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Star Strips - Decals that run along the top of the windscreen (both inside and out)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Space Suits - A variety of different outfits that have unique colours and patterns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wall Panels - Changes the large panels found on the mezzanine and inside the airlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dash Accessories - We have two types of accessories. Dashboard items that can be placed in any (or all) of the four positions on the cab dash and Blower items that can be placed on either of the small vents. Some of these dash items are interactive and some blower items will animate at different speeds based on the blower power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/f19c130c6f7195ae71a862a558e3b00a4c5d5ac1.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Business Ventures",
+     "items": [
+      {
+       "text": "We spoke a bit about Business Ventures in our previous blog post HERE but for those who want a general overview without dippin’ out of this post we’ve got you covered with a general overview below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock a Venture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Meet the requirements and you’ll get a holler from a new NPC and gain access to a unique set of jobs relating to that venture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Complete Venture Jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Completing venture jobs will earn you VXP and level up the business.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Earn Rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For every level you complete you’ll earn new rewards! From colorful cab palettes and dashboard accessories to valuable items you can horde or sell to nearby traders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/0765b14b8e7979064f9a073be3764597e5879af7.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Purchase Boosts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To aid progression, you can spend in-world cash on boosts to unlock extra job slots and increase the amount of VXP earned per job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clear Prestige Gates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Every 10 levels you’ll encounter prestige gates. Invest in the business to unlock these gates. Doing so will give you a bit more insight into the NPC you’re working with and allow you to continue taking jobs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max out your Venture Level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There’s plenty of levels to clear and 3 prestige gates to unlock. Clearing all of these is your primary goal for a Business Venture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Venture Titles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After maxing out a Venture you have the opportunity to unlock a time limited title for bragging rights. This timer can be extended by continuing to take and complete venture jobs beyond the max level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/91abff3a399d05694f79fe309341f585fdb92e3e.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s also worth noting that you can access the Venture screen at ANY TIME via a new tab in the game menu. Here you can take and cancel jobs or check progress towards your next goal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We recommend taking Venture Jobs alongside freight hauls to maximize efficiency when navigating the galaxy. In fact this is part of the reason why job cooldowns and venture gates exist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Venture jobs are intended to compliment the core gameplay loop and not supersede them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hop-timized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update also rolls out improvements to the freight job generator. This includes…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faster and more optimized job generation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More freight jobs visible on job boards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixing an issue with long distance jobs not always generating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Generally this should make the job boards feel a bit more reliable while also squashing some unwanted performance issues that could occur when hopping from sector to sector.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In future updates we’ll be looking to increase the number of local jobs, tweak XP payouts and hopefully inject some new job templates and cargo to help things feel a bit more varied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Height Advantage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another VERY important feature tucked away in this update is seat controls! Yes, that’s right, you can now adjust the height and position of your seat!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/385f81367a2aaa6b7cabbbb784b12f25835c9501.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can access these controls via the new buttons located on either side of the cab seats arm rests. Oh and we’ve also added these controls to the custom bindings screen. Handy for those who want to adjust their seat via a hot key!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s also worth noting that your seat position is saved per session so you’ll need to re-adjust if you start a new game or switch playthroughs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/8140e3b9d245cb8b8a33dd2b3c1466702d8e1d4a.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "^ Here you can see the difference between positions and the affect it has on your forward view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Crushing",
+     "items": [
+      {
+       "text": "Lastly we also squashed a couple of long standing big ticket bugs as part of this update…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rogue asteroids should no longer appear during warp preventing unexpected collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Your truck should no longer drift out of position when at a complete stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for your patience while we dealt with these, both were quite difficult to reproduce and fix but should now be a thing of the past!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Support Tickets",
+     "items": [
+      {
+       "text": "As you can imagine this update touches on almost every element of the game and although we’ve spent a lot of time, energy and dollar testing it there’s bound to be some niggles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To that extent we’d like to remind you that if you stumble on a particularly bad bug (or you just want to send some feedback) please head over to the Raw Fury Support Portal and submit a ticker. It makes it a lot easier for us to track and resolve issues this way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/556b8e0c695300c046055ea7babe7f25199ba48e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Credits Due",
+     "items": [
+      {
+       "text": "We’d also like to take a moment to thank those who helped contribute to this update. Without them we’d likely have taken many more months completing a fairly epic task list…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alex P for dealing with all our 3D art demands. He’s made some awesome new artwork and has a ton of incredibly cool new stuff rolling out in the next couple of updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/f707531f4771bb80e91966e809aa189dcfa5eeb2.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Darbotron for diving deep into the code base - squashing bugs and expanding our customization system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nessa for the top notch new NPC dialogue (We’ll chat more on this in a future dev blog!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Panda for developing a bunch of fictional graffiti artists alongside a stellar set of tags and dubs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/ab8a411fdd49cce1d2d4f249c1bae62d7ea2fdd6.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hanja and Dubravko at Fury Studios for their work on the new billboard designs and UI elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ross for taking on the gruelling task of chopping up hours of VO sessions and labelling hundreds of audio files correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’d also like to give a special shoutout to our friend Kate! You don’t get too many opportunities to work with fabric designers when developing video games but she did a fantastic job on many of the bed patterns you’ll see in this and future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44232392/3d8b45ac5c434c50b139eae810f17cb00c467c0c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lastly, a big thanks to all of you who’ve stuck around, providing feedback and sending us your support. It means the world to us and it’s the reason we do what we do ♥️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Venturing Beyond",
+     "items": [
+      {
+       "text": "Rounding up this lengthy dev blog we wanted to let you know that we’ve got a great slate of ventures in the pipeline that we plan to roll out over the year. Each of these will feature a new character, jobs and variety of rewards. Maybe a handful of other surprises too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll be sure to talk more about all of those soon but in the meantime we hope you enjoy this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10-10 ‘til next we blog again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dave & Dan ( aka Monster & Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 4,
+    "balance": 0,
+    "other": 58,
+    "ps5": 0,
+    "topNew": [
+     "You can access this menu by heading down to the lower workbench and interacting with the new board artwork.",
+     "[img src=\"{STEAM_CLAN_IMAGE}/44232392/536ae4c29830a76f59bfbb1124ba7735b74bfc14.jpg\"]",
+     "Here’s the current list of stuff you can modify within your cab…"
+    ]
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1830797770230829"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-22T14:19:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.318Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-22T14:19:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.318Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-22T14:19:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.727Z"
+  },
+  {
+   "id": "star-trucker-252787@1.73",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.73",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-22T14:11:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.73",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update adds two major features - Business Ventures and Interior Customization. It also includes fixes for some long standing bugs alongside job generation improvements and other QoL adjustments, optimizations and fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "For more information check out the following dev blogs",
+     "items": [
+      {
+       "text": "Dev Blog - Ventures Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Blog - Business Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s also worth noting that we’ve adjusted our version stamps to better accommodate multi-platform builds and hot fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Business Ventures",
+     "items": [
+      {
+       "text": "A new system that allows players to unlock “Ventures”. Each venture provides a set of procedurally generated jobs and gifts the player a range of rewards for progressing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Handyman Venture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "x5 Job Types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paste Jobs - Replace billboard artwork",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Light Fix Jobs - Fix broken light units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graffiti Cleanup Jobs - Remove unwanted graffiti",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dead Drone Jobs - Refuel drones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sleepy Trucker Jobs - Wake up truckers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "x30 Progression Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Progress via VXP earned from Handyman jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beyond Lv.30 you can earn a Venture title",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Venture title can be kept alive by continuing to level up (infinite levelling loop)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "x65 Rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combination of customizations and grabbable items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "x6 Boosts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Help speed up Venture progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Three job slot boosts to unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Three VXP boosts to unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ventures tab added to game menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ventures screen shows available jobs, boosts and upcoming rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Onboarding triggers shortly after completing your first side-job or starting Freeplay mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interior Cab Customization",
+     "items": [
+      {
+       "text": "We’ve updated the Star Truck to allow a variety of interior customizations. This feature can be accessed via the new artwork found above the workbench.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interact with workbench board to open the interior customization screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pinned quest for interacting with customization board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Variety of new interior cab customization options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bed styles and patterns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dashboard Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dashboard Blower Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dashboard Lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cab Color Palettes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cab Trim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wall Panels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Space Suits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Star Strips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maglock Toppers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If required items show progress towards unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjustable Cab Seat",
+     "items": [
+      {
+       "text": "Players can now use buttons on the arm rests to adjust the height and position of their seat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seat position is saved per save slot rather than globally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom bindings can be set for adjusting height and position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Job Generator Improvement",
+     "items": [
+      {
+       "text": "Optimizations \"should\" mean less / no stutter on warp exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Job board should show more freight from around the galaxy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issues with XP calculations being wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where asteroids could occasionally appear during warp causing unexpected collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes issue where your truck could drift out of position when it should be stationary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where queued shop items would never spawn after reloading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with large pipe artwork used in some sectors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the incorrect spelling of Techtrove Electronics signage in Darkside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some missing strings on the custom binding pop-ups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Game menu tab options have been reordered to accommodate Ventures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Truck interior has had a lot of adjustments and updates to account for interior customizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you can imagine this update touches on almost every element of the game and although we’ve spent a lot of time, energy and dollar testing it there’s bound to be some niggles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To that extent we’d like to remind you that if you stumble on a particularly bad bug (or you just want to send some feedback) please head over to the Raw Fury Support Desk and submit a ticket. It makes it a lot easier for us to track and resolve issues this way. Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 6,
+    "balance": 0,
+    "other": 48,
+    "ps5": 0,
+    "topNew": [
+     "Optimizations \"should\" mean less / no stutter on warp exit",
+     "Job board should show more freight from around the galaxy",
+     "Fixed issues with XP calculations being wrong"
+    ]
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1830797770230795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-22T14:11:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.316Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-22T14:11:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.316Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-22T14:11:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.726Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.72.2",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.72.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-29T13:02:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.0.72.2. This hotfix update resolves an issue that was causing major performance issues for some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HOTFIX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue with fuel signage generating excessive error logs that lead to performance issues on some device setups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NOTES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This issue should not have affected those playing in locales that use decimal points for fractional values (such as the US, UK and China).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’d like to apologise to those affected by this issue and thank you for your patience while we resolved the issue. If you find any further issues or oddities please let us know via the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1814942955100692"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-29T13:02:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.315Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-29T13:02:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.315Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-29T13:02:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.724Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.72.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.72.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-23T11:07:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.0.72.0. This update improves UI legibility for PC and handhelds (such as Steam Deck) while also addressing some quest bugs and other minor issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "UI Scaling",
+     "items": [
+      {
+       "text": "We now detect if Star Trucker is running on a Steam Deck and some other handheld devices",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If a handheld is detected we enable Big HUD UI scaling by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scale boost to in-game UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scale boost to in-world POI markers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scale boost to pop-ups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced POI visibility angle when seated in cab to reduce POI label clutter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Big HUD toggle option has been added to Game Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will be set to “ON” if playing for first time on a known handheld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will be set to “OFF” if not playing on a known handheld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This allows non-handheld devices to enable larger UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This allows handheld devices to disable larger UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI scaling option is saved per device",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you decide to play on Steam Deck the game should still default to Big HUD even if you’ve previously played on desktop with the same account / save file",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted pop-up font scales for legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted various menu font scales for legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted map screen layout to accommodate larger font and tweaked font sizes for legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased POI marker texture resolution for sharper Big HUD (and 4K+) visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Quest Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue in Dead Weight that could prevent progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Cash Grab where a missing data relay could prevent progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Junk for the Junk where waypoints would vanish if you leave the sector without collecting all shock pods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where very long CB Radio player responses could spill outside the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the Task Panel background showing artefacts and stretching when scaled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where under rare circumstances, duplicate objects could block saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some error logging could cause performance issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Applied game engine patch to address security vulnerability CVE-2025-59489",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that various peripheral issues are still being investigated. To help us improve compatibility and built-in presets please submit peripheral information via our special Google submission form HERE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For any other issues or oddities you encounter please send a message to the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 5,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1814309641437970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-23T11:07:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.315Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-23T11:07:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.315Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-23T11:07:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.723Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.70.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.70.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-03T13:04:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.0.70.0. This update introduces peripheral support on PC, speed traps and a whole bunch of other tweaks, treats and optimizations…",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Peripheral Support",
+     "items": [
+      {
+       "text": "Updated the game to recognise multiple connected peripherals on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Peripheral bindings presets are automatically assigned if a peripheral is recognised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If no preset is present Button 1 is assigned to select and Button 2 is assigned to back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Control Settings Screen shows option for Peripheral Settings if a peripheral is connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Binding Screen now shows an extra column if a peripheral is connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to export / import custom peripheral bindings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Peripheral Settings Screen and implemented various options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Non-linearity Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Axis Range Toggles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peripheral Deadzone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to view basic information for connected peripherals via Peripheral Settings Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "For more information please see the following links",
+     "items": [
+      {
+       "text": "Star Trucker - Peripheral Guide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Star Trucker - Peripheral FAQ",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Star Trucker - Peripheral Tracking Sheet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Speed Checks",
+     "items": [
+      {
+       "text": "Fines are issued if you are over the noted speed limit for the road at the point of speed check",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed camera flashes and plays sfx if over the speed limit for road at point of speed check",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed camera does not flash and plays short alert sfx if under speed limit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed check signage shows speed you were travelling as you pass camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added x2 new liveries and a new challenge to unlock each of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trigger x100 speed checks to unlock “Smokey Style”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trigger a speed check while travelling at 200kmph or more to unlock “Hot Pursuit”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to disable Speed Checks via Custom Game Settings and Difficulty Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Speed Checks tutorial to the User Manual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Corporations, Trailers & Cargo",
+     "items": [
+      {
+       "text": "Updated Moon Man Dairies trailers with new livery and colours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added EHT Milk as a new trailer cargo type for Moon Man Dairies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Cosmotic trailers with livery and colours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tanker and Powered Trailer damage maps now more consistent with the Standard trailer damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Holo Projector",
+     "items": [
+      {
+       "text": "Added anniversary cake hologram to projector system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated projector to handle multiple holograms without manual updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Projector interaction only available during specific dates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anniversary hologram available between - 01/09 and 30/09",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Winter hologram available between - 01/12 and 31/12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated projector to dynamically load appropriate hologram and set a light projection texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Added a new free anniversary hood ornament “Number One” to Body Shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Spanish string improvements around airlock and certifications",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC trucks will now occasionally adjust speed while travelling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where skill descriptions were not displaying correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Various audio file optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the size of some overly large textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cleaned up redundant mesh data on various objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified the collisions on the standard dot matrix billboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll be looking to improve our peripheral compatibility list and built-in presets so if you have a custom binding setup you think is suitable please submit it via our special Google submission form HERE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For any other issues or oddities you encounter please send a message to the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 1,
+    "balance": 1,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1809869180000678"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-03T13:04:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.314Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-03T13:04:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.314Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-03T13:04:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:47.722Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.67.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.67.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-17T11:29:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.0.67.0. This update introduces the ability to change galaxy (difficulty) settings mid-session, making it easier to tailor the gameplay to your preferences without starting a new save slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Session Difficulty Settings",
+     "items": [
+      {
+       "text": "Difficulty option added to the “Options” screen when game is paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Difficulty screen allows you to modify most custom game settings mid-session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added alert pop-up to let players know changes will be applied when exiting screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added alert pop-up to let players know if changes might not take immediate effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added pop-up to tell players they can change difficulty - triggers shortly after User Manual pop-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "You can now view previous patch notes via the update pop-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added tutorial marker to cab stairs when gravity breaks for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue with not being able to paginate backwards on tutorial pop-ups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with pop-ups vanishing before they can be seen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Update pop-up re-triggering when returning to the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with oxygen usage not updating correctly on monitor after setting change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with shop prices and indicators not updating correctly after setting change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with audio glitches occurring when closing pop-ups and exiting menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It’s also worth noting here that v1.0.64.0 was a hot-fix to specifically address issues with the Heavy Duty UCCs vanishing when reloading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As usual, please report any issues and oddities you encounter to the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 5,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1805431065334199"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-17T11:29:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.313Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-17T11:29:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.313Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-17T11:29:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.876Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.63.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.63.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-10T13:03:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Star Trucker has been updated to v1.0.63.0. This update focuses on job rewards and difficulty balance while adding a host of new features and improvements…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Job Rewards",
+     "items": [
+      {
+       "text": "We’ve adjusted various payouts to help with cash-flow when starting out and XP progression towards the end-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased base cash reward for all jobs by $200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased cash bonus for Multi-trailer certifications from 5% → 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased XP bonus for Multi-trailer certifications from 10% → 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased XP bonus for Tier 1 certifications from 5% → 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased XP bonus for Tier 2 certifications from 10% → 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased XP bonus for Tier 3 certifications from 20% → 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where long distance bonuses were not always awarded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where multi-trailer certifications did not match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Job board now shows estimated XP rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Job board can now filter jobs by XP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Damage",
+     "items": [
+      {
+       "text": "Collision calculations have been overhauled to provide fairer and more consistent damage reporting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New collision calculations and improved impact recognition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced damage received from small debris and glancing blows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated the mass values ranges of debris, asteroids and props to better reflect their scale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multi-Trailers no longer cause collision damage with themselves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with damage occasionally being applied multiple times on initial impact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some asteroids misreporting their mass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with monitors showing incorrect trailer damage values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Resting Up",
+     "items": [
+      {
+       "text": "You can now use your cab’s bed to skip time. Just be careful not to miss your delivery window!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use your cab’s bed to rest for up to 4 hours of in-game time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Truck systems will continue to drain while you rest unless parked at a station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Risk of parking tickets when resting in sectors with restricted parking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use designated parking bays to avoid tickets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stations allow free parking for a set number of hours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rest period will automatically end if a serious incident occurs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "50% less oxygen is consumed in the cab while resting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "License Plates",
+     "items": [
+      {
+       "text": "Choose from a variety of vanity plates and display your handle loud and proud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New option to equip a license plate added to the body shops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Customize your registration label from the License Plate screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock new plates via cash or challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equip special collaborative license plates from our friends at Raw Fury",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Free Play Mode",
+     "items": [
+      {
+       "text": "A new mode for those who want to haul instead of holla.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Free Play replaces Hardcore mode on the New Game screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starts the game with the entire galaxy unlocked and all truck features enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disables Convoy side jobs and related achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Options",
+     "items": [
+      {
+       "text": "Extra settings to help improve accessibility and allow a greater range of custom shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added lots of new shortcuts for cab interactions to custom binding screen - PC ONLY",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added quick look shortcut feature - PC Only",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added option to toggle quick look re-centering method - PC ONLY",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added option to reduce or disable seated camera momentum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to reduce or disable external camera momentum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to disable the brake cut-off feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to auto-center the cab view after a short delay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to enable CB mic auto-press during NPC interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Photo Mode",
+     "items": [
+      {
+       "text": "Take great snapshots as you cruise the galaxy! For more information on how to get the most from this feature be sure to check out our handy Photo Mode Guide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Photo Mode option to Pause Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Multiple camera modes and filters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ability to save screenshots to your PC or Console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UCCs",
+     "items": [
+      {
+       "text": "Balance tweaks for the standard UCC alongside a new longer lasting variant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Heavy Duty UCC with increased hitpoints and robustness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Heavy Duty UCCs added to shops and salvage generator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Standard UCC fragility by 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced EMP discharge damage by 17%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced electrical storm damage rate by 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "UI will now alert player when a new customization item has been unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced how long warnings and alerts appear on cab monitor screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved NPC damage materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new User Manual options for Resting, Parking and Docked Perks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "DLC / Add-On screen now lists pack contents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue with New Aspen having unavoidable debris when arriving from Crossvale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various trailer UV mapping issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with longer than expected pauses while listening to GRR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where collected cone POIs would reappear using scanner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some trailer bounding boxes were misaligned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where stacked pop-ups could lose input focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Side Job Fixes",
+     "items": [
+      {
+       "text": "Fixed issue when spawning the damaged reactor in “Meltdown”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with maglink visuals during “Full Throttle”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the “Bear Contingency” quest vanishing under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Once again we thank you for your patience as we continue to work hard to improve and expand your star truckin’ experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As usual, please report any issues and oddities you encounter to the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 17,
+    "balance": 11,
+    "other": 29,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1801617199557054"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-10T13:03:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.312Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-10T13:03:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.312Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-10T13:03:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.875Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.51.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.51.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-25T14:03:05.000Z",
+   "notes": [
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Added a new \"Dillon\" hood ornament for purchase with in-game currency",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hi-fi will now revert to default station if there is an error selecting a custom station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Fixed issue with incorrect temperature format shown on map screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with DualShock glyphs being too small when injected into strings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where external zoom controls were not working as intended on some platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with the Silent Spark paint job having unwanted visual artefacts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with incorrect German string for \"pick-up\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some strings not localizing correctly on map screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where under specific circumstances multi-trailers could be partially destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where under specific circumstances spawned cargo was not showing a POI marker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quest Fixes",
+     "items": [
+      {
+       "text": "Game will attempt to resolve progression blockers if a quest has been completed but not acknowledged",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where quest cargo could vanish under specific circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that could result in quest cargo spawning multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Ghost Gold\" failing to trigger correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Deep Sweep\" failing to end correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Deep Sweep\" failing to show beacons after player recovery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Fragile Ego\" where Red Eddie would comment on non-quest trailers taking damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Cache Grab\" getting stuck if tasks are completed out of order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Cache Grab\" final task completing out of order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Charmed Relief\" cargo combining early and blocking progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with \"Charmed Relief\" cargo not spawning under specific circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Fragile Ego\" will attempt to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Perfect Timing\" will attempt to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Job Hunt\" will attempt to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Dead Weight\" will attempt to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Charmed Relief\" will attempt to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Green for Green\" will attempt to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Shady Business\" will attempt to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Meltdown\" will try to recover cargo if accidentally destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balance tweaks and job refinements continue with the hope of making it into the next update. We thank you for your patience as our tiny team continues to work hard on improving your Star Truckin’ experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As usual, please report any issues and oddities you encounter to the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 30,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1792116353358028"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-25T14:03:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.311Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.873Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.49.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.49.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-14T10:12:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The game has been updated to v1.0.49.0. This is a fairly minor update that resolves various issues for both new and old players and removes the authentication requirement for accessing the custom radio feature on supported platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "User Manual can now be accessed from the Pause Menu - Items unlock based on progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Radio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Radio feature is now always enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Radio feature no longer needs to authenticate with Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player will be shown an alert if there are issues trying to play a stream ( e.g. no internet )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with projector holograms interfering with object outlines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the game could get stuck on a black screen during the recovery sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where cultures that do not use the Gregorian calendar (e.g. Saudi Arabia) could cause the game to freeze when generating jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that could cause a save state to not load after updating the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with the Hi-Fi ticker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with an incorrect side job description being shown during the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with the credit sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have more quest fixes, balance tweaks and job refinements in the pipeline. These are currently being tested and tweaked and will roll out over the next few months. We thank you for your patience as our tiny team continues to work hard on improving your Star Truckin’ experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, please continue to report issues and oddities to the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10-10 ‘til we patch again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1788311419172596"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-14T10:12:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.310Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.872Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.47.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.47.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-11T14:03:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Holo projector with Christmas tree active until Jan 7th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new “Star Sight” hood ornament to unlock through play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Activated Heavy Duty Customization Pack and related assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Radio Stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now switch radio channel via the Hi-Fi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Streamer Warning Pop-up on first interaction of a session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select from a pre-defined list of streaming radio stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Generates an editable my_stations.txt in a Documents/StarTrucker/Radio folder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Information Pop-up available to explain how a player can customize stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plays compatible custom audio streams added to my_stations.txt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warns player if there is a problem with a custom station ( Catches \"most\" cases )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-generates my_stations.txt if the file is not present",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hi-Fi LCD screen will attempt to scroll current station and track information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New toggle in Audio Options to disable the diegetic filters on custom stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with DualShock control glyphs not showing correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with incorrect TAB glyph padding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with paint job previews not resetting correctly on the Main Menu screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please be aware that quest fixes, balance tweaks and job refinements are still ongoing and improvements are planned for the new year..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, please continue to report issues and oddities to the Raw Fury Support Desk and be sure to check the Latest News page for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1785774543493439"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-11T14:03:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.309Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.871Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.46.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.46.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-27T14:05:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SteelSeries Promotional Pack is now live and available for FREE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now access patch notes / latest news from the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now view and preview truck customization packs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now customize chrome & chassis colour across ALL paint jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Control Mapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom inputs no longer switch places with an existing input ( except for analogue sticks )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players are now warned if they have duplicate inputs assigned within a mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Preview Game Modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to preview game mode settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game will highlight which settings differ from default for the selected mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game will highlight which settings the player has modified from the selected mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified modes will be considered as \"Custom\" games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starter Truck Theme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to start a new game with a truck customization pack active (via game mode settings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where interact prompts didn't update custom input glyphs correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor texture issues with the truck roof",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a damage map on the “Encore” sensor manifold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple issues present on the credits screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a mesh issue with the truck cab exterior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please be aware that quest fixes, balance tweaks and job refinements are still ongoing and improvements should begin rolling out in subsequent updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, please continue to report issues and oddities to the Raw Fury Support Desk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10-10 ‘til we patch again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1784506358979260"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-27T14:05:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.308Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.870Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.43.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.43.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-14T14:07:31.000Z",
+   "notes": [
+    {
+     "title": "Custom Control Mapping",
+     "items": [
+      {
+       "text": "A new “Customize Control Bindings” option can now be found in the Controls option screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customize inputs for keyboard, mouse and controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can use this system to switch the left and right analogue sticks on controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Supports US QWERTY glyphs ( extended keyboard support to follow in future updates )",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Dropzones are now a little more forgiving when delivering large asteroids",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue with “Red Tape and Rockets” showing an incorrect string",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where locked gate VO would spam you while delivering cargo to Emerald Junction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with security barriers using an incorrect collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with texture inconsistencies across bulk (triangle) trailer LODs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes an issue with “Flap Jack” livery thumbnail not reflecting base livery colour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Trailers now use fewer draw calls at lower LODs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Security barrier LODs are more efficient",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wrapping Up",
+     "items": [
+      {
+       "text": "Please continue to report issues and oddities to the Raw Fury Support Desk https://rawfury.atlassian.net/servicedesk/customer/portal/1 and be sure to check the Latest News page https://star-trucker.com/latest-news for information on future patches and developer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10-10 ‘til we patch again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/1783238125214471"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-14T14:07:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.308Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.869Z"
+  },
+  {
+   "id": "star-trucker-252787@1.0.41.0",
+   "gameId": "star-trucker-252787",
+   "displayName": "Update 1.0.41.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-24T13:00:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Star Truckers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game has been updated to v1.0.41.0 bringing with it a range of bug fixes & balance tweaks. These should help provide a fairer and more consistent experience as you haul cargo across the stars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Need to Know",
+     "items": [
+      {
+       "text": "Firstly we should mention that some of these fixes will only start to resolve themselves as you play. As existing jobs and cargo time out, newly generated jobs should behave as expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will also notice that green and gold power cells that already exist in your cab will keep their existing charge despite an increase in capacity. However, any new power cells you find or buy will start at their new maximum capacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The last thing to note is that by fixing a bug in the reward calculations you will now receive higher cash payouts but less XP. We’ll keep an eye on how this plays out and if required work on a more nuanced economy and progression pass for a future update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Power Cells are now better value for money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced fines for abandoning most jobs to 50% of job value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Kept fines for abandoning valuable jobs at 200% of job value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Essential items, such as Power Cells and Air Filters, now spawn more often in regular shops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Jobs now correctly calculate rewards which results in more pay but less xp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased maximum charge for green and gold power cells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Side Job Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where “Junk in the Trunk” could get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with “Rendezvous” sometimes not starting correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with “Perfect Timing” showing an incorrect destination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with “Hit and Run” failing to redirect players back to Vexmont",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some side jobs didn’t show \"Wait for CB Call\" prompt on the Convoy screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Sector Fixes",
+     "items": [
+      {
+       "text": "Fixed issue preventing access to two dropzones in Darkside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue preventing access to a weigh station in Enigma Belt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where reloading a save in Haze Way would disconnect multi-trailers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where job rewards were not calculating correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the job board was not showing the correct reward values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with weigh stations ignoring your cargo capacity skill level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some jobs giving you trailers too big for a dropzone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue preventing saving after dying during warp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue preventing warp gates from working after a recovery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with some asteroids having larger collision areas than intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where under some circumstances items vanish from containers on reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with recovery services not repairing the truck to 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with map not showing a black market location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various string and localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with oversized Panel Trailers generating in multi-trailer jobs resulting in some drop zone deliveries being impossible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "Electrical and Atmospheric Cloud optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spark City Station and Tommy T Diner optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various platform and girder LOD optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Updated Power Cell labels to reflect their quality ( e.g. Power Cell ++ )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked wording on the New Game screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a spooky season surprise!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Wrapping Up",
+     "items": [
+      {
+       "text": "As mentioned in a recent blog post, some of these issues have only been found thanks to the keen eyes of the community. So please continue to report issues and oddities to the Raw Fury Support Desk so we can keep squashing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lastly we'd like to take a moment to thank you all for the continued support and patience during our first weeks out in the wild. We hope you'll stick with us as we work on further refinements, content and new features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10-10 'til we do it again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dan & Dave ( aka Monster and Monster )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 20,
+    "balance": 6,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/6341720536520855259"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-24T13:00:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.306Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.867Z"
+  },
+  {
+   "id": "star-trucker-252787@major-2024-09-11",
+   "gameId": "star-trucker-252787",
+   "displayName": "DevBlog #11 - One Week Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-11T12:54:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It’s been a week since launch and we just wanted to say thank you again for all the support and feedback we’ve been receiving from the Star Trucker community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I know we talked a bit about priorities in the previous post but I thought it was worth diving a little deeper into what’s been going on and what the future holds for Star Trucker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So I’m going to split this post into two parts. Firstly we’ll provide an overview of how we’re treating ongoing work and then I’ll go into a bit more detail regarding the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Phasing",
+     "items": [
+      {
+       "text": "As you already know, we’re a super small team ( Currently 2.5 of us! ). We’re planning to ramp up by bringing on board some extra code support to help Dan but it will take time to finalize so we have to be super careful how we prioritise current and future work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Knowing this we’ve tried to plan out some phases. We can’t give solid estimates but it should give you an idea of how we’ll tackle things going forwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s also worth noting that there might be multiple updates during a phase and some tasks could move around due to complexity and time scales.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Phase 1",
+     "items": [
+      {
+       "text": "Critical fixes (see the “Bugs” section below)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty tweaks - Focusing on essential items like power cells / air filters and revisiting fines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom key bindings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Phase 2",
+     "items": [
+      {
+       "text": "Extended controller support ( e.g. HOTAS )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance refinements - Focusing on economy, sector hazards and upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sector optimizations and updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Phase 3",
+     "items": [
+      {
+       "text": "Online radio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corporation and cargo updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extended CB system (e.g. send out a recover SOS / ask for gossip)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also have a couple of cosmetic packs already in the pipeline. These don’t require code support so shouldn’t delay new features / balance tasks but they are pretty cool ( I would say that though... ) and every sale will help fund future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beyond these phases we’ll begin work towards a longer roadmap with some more substantial feature / content work. Once we’ve locked down a plan we’ll be sure to update you all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Progress Tracking",
+     "items": [
+      {
+       "text": "In the name of transparency we want to give you a slightly more detailed update on what’s been going on since launch / what we’re up to this week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s kinda hard to break it down properly but hopefully this will give you an idea of where we are with the next update and the issues we’re currently trying to address.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of these have only been found thanks to the keen eyes of the community so please continue to report bugs to the Raw Fury Support Desk so that we can keep squashing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Many of these fixes should be in the next patch but a couple might slip to a subsequent update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Done",
+     "items": [
+      {
+       "text": "✅ Fixed an issue preventing saving after dying during warp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed an issue preventing warp gates working after a recovery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed an issue preventing access to x2 dropzones in Darkside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed an issue preventing access to a weigh station in Enigma Belt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed an issue where under some circumstances items vanish from containers on reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed an issue with weigh stations ignoring your cargo capacity skill level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed various string issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed an issue where some side jobs were not showing \"Wait for CB Call\" prompt on the Convoy screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Fixed issue with oversized Panel Trailers generating in multi-trailer jobs resulting in some drop zone deliveries being impossible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To Do / In Progress",
+     "items": [
+      {
+       "text": "➡️ Fix an issue where the job board is not showing the correct reward values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➡️ Fix an issue where job rewards are not calculating correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➡️ Fix an issue with some dropzones thinking you can deliver oversized trailers to them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➡️ Fix an issue where under some circumstances the job board freezes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➡️ Fix an issue where reloading a save sometimes unhitches your trailers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➡️ Fix an issue where under specific conditions the mileage counter shows an incorrect value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "We’re working on some initial balance adjustments to help make the game fairer and more consistent. A future update will focus on a more robust balance pass once we’ve collated more data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Done",
+     "items": [
+      {
+       "text": "✅ Increased frequency of essential items in shops ( e.g. power cells and air filters )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Adjusted Power Cell costs and maximum charge levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To Do / In Progress",
+     "items": [
+      {
+       "text": "➡️ Adjust recovery penalties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➡️ Adjust abandoned job penalties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➡️ Adjust repair costs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Where possible we’ve also been chipping away at some other bits n pieces. Some of these are listed below…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Done",
+     "items": [
+      {
+       "text": "✅ Electrical and Atmospheric Cloud optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Spark City Station and Tommy T Diner optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Various platform and girder LOD optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Updated Power Cell labels to reflect their quality ( e.g. Power Cell ++ )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Roundup",
+     "items": [
+      {
+       "text": "So that’s the current situation! As you can see we’re working hard to improve player experience and address various issues. Not only that but an update is imminent, our team is expanding and we’re planning a LOT of great new stuff for the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So once again, thank you for your support and patience. We hope you’ll stick with us as we find a sustainable cadence for updates and begin working on new features and content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peace out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monster Dave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 48,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2380050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2380050/view/6250522009509452663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-11T12:54:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2380050",
+      "checkedAt": "2026-11-13T03:31:32.305Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:40.866Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "4873061b28ed",
+   "text": "Below are some issues we are currently investigating. In some instances we have already resolved the issue with the fixes ready for the next update..",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "e67713bad2b5",
+   "text": "Venture job info panels are not showing required items - In Progress",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "c1b112bc369c",
+   "text": "Space Station POIs are not inheriting Courier Job names when active - In Progress",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "f0128804105b",
+   "text": "Monitor Cameras can misbehave while docked during Courier Jobs - Investigating",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "5b52240add60",
+   "text": "Asteroids collisions during warp - Investigating",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "35fd145e7971",
+   "text": "Some trade items not appearing as frequently as expected in shops - Investigating",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "85f92bf5df96",
+   "text": "Some peripheral setups are incompatible - Ongoing",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "a29af558b98f",
+   "text": "Junk in the Trunk shows quest markers too early - Done",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "bd3cc8bdf3eb",
+   "text": "As you can see this update includes A LOT of new content and despite best efforts you may encounter the occasional issue.",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "b3c335ca6ba9",
+   "text": "To that extent we’d like to remind you that if you stumble on a particularly bad bug (or you just want to send some feedback) please use the Raw Fury Support Desk to submit a ticket. It makes it a lot easier for us to track and resolve issues this way. Thanks!",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75"
+  },
+  {
+   "id": "62e889b842df",
+   "text": "Dan & Dave ( aka Monster and Monster )",
+   "status": "addressed",
+   "firstReleaseId": "star-trucker-252787@1.75",
+   "addressedBy": "star-trucker-252787@major-2026-09-01",
+   "addressedAt": "2026-09-01T13:53:29.000Z"
+  },
+  {
+   "id": "cb8096e5d4e7",
+   "text": "Below are some issues we are currently investigating for future updates…",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75.2"
+  },
+  {
+   "id": "60f44e7918c8",
+   "text": "Space Station POIs not inheriting Courier Job names when active - FIX IN PROGRESS",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75.2"
+  },
+  {
+   "id": "7eef57eb9bca",
+   "text": "Some trade items not appearing as frequently as expected in shops - FIX IN PROGRESS",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75.2"
+  },
+  {
+   "id": "b31e6b4d5a1f",
+   "text": "Courier POIs can occasionally vanish until you reload or re-enter a sector - FIX IN PROGRESS",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75.2"
+  },
+  {
+   "id": "3a86e179412a",
+   "text": "Some peripheral setups being incompatible with the game - INVESTIGATIONS ONGOING",
+   "status": "open",
+   "firstReleaseId": "star-trucker-252787@1.75.2"
+  }
+ ]
+}

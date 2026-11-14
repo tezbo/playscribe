@@ -1,0 +1,1255 @@
+{
+ "game": {
+  "id": "supraland-six-inches-under-172903",
+  "igdbId": 172903,
+  "name": "Supraland: Six Inches Under",
+  "cover": {
+   "imageId": "co4ctz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4ctz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar14tn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar14tn.jpg"
+  },
+  "ps5Release": "2023-05-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "supraland-six-inches-under-172903@1.2.3347",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.2.3347",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-03T10:41:54.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Made finding the \"last chest\" much less frustrating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Purchased upgrades and abilities no longer forgotten when going to main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transball Hungry NPC should now show up correctly after being fed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No longer able to be stuck in jail forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed ability to magnet-fly with pink pipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Force beam now correctly upgrades with gold beam improvement while beam is equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Matches now easier to light when using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Castle area lava now hot enough to recharge fire gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Teleport pipes now resistant to teleporting pink-pipes and rocks and will no longer break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Campfires now constantly deal damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Razor blades sharp edge will now correctly hurt the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keys now respawn in their original color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Parasol sometimes not having collision when put in stand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies now break translocator balls when standing on them instead of spinning uncontrollably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fire pipe in bank-area now starts and stops fire correctly when attaching a pink-pipe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Baron will now constantly try to kick away the forcecube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Baron will now not disappear after creating a real \"trickle down economy\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss health bar no longer persists after defeat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bushes now sound like bushes when hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flowers are no longer immune to lava.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Fixed multiple methods of getting out of bounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple areas where the player was able to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple instances of terrain clipping through objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple low resolution textures around the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple invisible collisions box placements to not block player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple objects collision profiles to have better collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple places where objects and npcs would float above the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player now unable to push their head through the main pipes in cage town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pipes in starting town given better collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Demo is now up to date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed and improved many sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Easter easter egg in main menu now happens every year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FPS choices no longer showing up off-screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution wording shortened to fit textbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu textboxes lengthen to prevent overlapping other options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Setting a game speed now persists through saving and loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No longer contains Epic Online Service binaries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/5766372999946871048"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-03T10:41:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-03T10:41:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.082Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-03T10:41:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.835Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.1.6072",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.1.6072",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-19T18:20:54.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Localization Updated 💬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added menu Easter eggs for more holidays 🥚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed enemy spawners from completion percentage 💯",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the way Metal ball is picked up. No more flinging around ⚫",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Quest showing when toggling with F10 🟧",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Purchasable title display performance improved and no longer player-editable ⌨️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed upgrade not spawning in the proper location in certain cases ✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Invisible walls removed from bottom of the fall 🪟",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added checkpoint when buying wooden pickaxe to prevent getting stuck if resetting checkpoint after the earthquake 🏁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ensure Industrial travel pipe opens even if you sequence break 🏭",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rob Boss now will spawn chest after reload if you didn't pick it up before 🖌️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clean up collision in Banking District to prevent getting stuck 💰",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open FireGun door when finished 🔥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug with cooled lava 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Force-cube should no longer be kicked by an invisible Baron 🟪",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rainbowtown updated: Boundaries, patch holes, and prevent some puzzle skipping 🌈: + other small details •••",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4292505348826108211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-19T18:20:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.834Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.1.5585",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.1.5585",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-05T17:50:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Act 1 & 2 on screen 💬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Rainbowtown boundaries a lot & removed many invisible walls 🌈 🪟",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed gaining control of the character too early when starting the game :controller:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft-lock on the way to bunker that prevented the shopkeeper from falling 🔒 :coin:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft-lock in post-game fight where key sometimes didn't spawn 🔒 🔑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4235074931855069782"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-05T17:50:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.834Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.1.5485",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.1.5485",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-31T23:38:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "There's a lot of new stuff in here by request from players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added text speed option (speech bubbles can now be quicker or slower) 💬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added difficulty setting (besides the normal setting, you can make enemies not damage you at all, damage you very little or damage you twice as much) 👾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added skip option to credits scene if you've seen it before (Jump) ⏩",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added dual-input-support option to key bindings options (allows you to use keyboard and controller at the same time) 🕹️",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added new puzzle and cave to endgame area ➕",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added two new major upgrades to the endgame area (one in a previously out of bounds area where you couldn't find anything, one in the new cave) 🌟",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added hint speaker to 3-purple-rings puzzle and improved puzzle geometry 🟣",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the way the elastic beam works (not requiring stomp anymore; holding crouch button while landing on it prevents bouncing)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some invisible wall situations in endgame area 🪟 🧱",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hot metal ball damaging enemies properly ⚪:hot:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of softlocks 🔒",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed color rings to work properly with low FPS 👍🏻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed upgrade pickups to no longer tank FPS when they are on screen 🎞️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 'TAB' button disabling your movement controls ⌨️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed two achievements not always triggering (Battery and Play With Fire) 🔋 🔥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Detectors will now be less confusing (people thought they had the chest detector but didn't really: + A whole lot of other little fixes and improvements everywhere ❤️: This is the last planned major update for Six Inches Under.: We'll still be doing hot-fixes if/when important bugs show up.: Supra development is switching over to Supraworld today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4237326104335644480"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-31T23:38:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.833Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.0.5433",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.0.5433",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-21T17:52:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Localization Updated 💬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some music triggers not working properly 🎶",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some achievements not unlocking :Star:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No longer showing remaining secrets in stats (only chests etc) :Chest:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speech Bubble font looks better in Russian 🇷🇺",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Bug where people would load into 0,0,-20k room. If it does happen, it now has a more helpful message 🪟",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hot Balls are no longer OP :hot:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Part of Cagetown reveal cutscene by moving it to a slightly different location 🎬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Welcome to Cagetown cutscene 🎬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Talk noise in Cagetown reduced 🔇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Match & Beam connecting when not supposed to ːpaintgunː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No more magnet flying with battery bug 🛸",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Racing made easier 🏎️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First throwable pickaxe puzzle cannot be cheesed anymore ⛏️ 🧀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bomb throwing enemy shouldn't throw over your head as much ːstickyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved puzzle in bank break room 💰",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved some tutorialization in Banking area in regards to the gold module and electricity 🪙",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Zappy Gun no longer has visual bug 👁️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential softlock in upper Beach area (and others) 🔃🔒",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Puzzle improvement in Beach area 🏖️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Baron's ghost can no longer kick cube off button 👻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Closing doors crush matches and blow up batteries quicker than before 🔋",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss castle doors no longer open when reloading save ːfloppybirdː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rainbow town no longer vanishes ☁️: + More small and weird to describe things ːtgrinː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 5,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4237325463675622622"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-21T17:52:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.832Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.0.5384b",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.0.5384b",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-17T14:30:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed a few files taking up more space than required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game is back to 5gb instead of 8gb!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4224939931842668300"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-17T14:30:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.832Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.0.5384",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.0.5384",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-16T23:15:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed lots of softlocks, holes and other problems you reported",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new expensive upgrade in endgame area (trophy room)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4224939931840357283"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-16T23:15:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.831Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.0.5375",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.0.5375",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-16T05:39:49.000Z",
+   "notes": [
+    {
+     "title": "Version 1.0.5375",
+     "items": [
+      {
+       "text": "Fixed softlock at Beach 🏖️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Patched holes in world 🕳️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed broken elevator 🛗",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed respawning issue when loading from menu ⏸️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ramp to Beach fixed ⚡",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shield Enemy in vault no longer gets stuck as unstunable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bath guy should REALLY REALLY no longer give you infinite health (maybe) 🛀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed race timer ⏲️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Om volume lowered 👂 🕉️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold Nuggets can be colored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Back of Water & Lava Area, no longer accessible the easy way 🚰",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization updates 💬: + miscellaneous other things",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4224939931837687078"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-16T05:39:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.831Z"
+  },
+  {
+   "id": "supraland-six-inches-under-172903@1.0.5344",
+   "gameId": "supraland-six-inches-under-172903",
+   "displayName": "Update 1.0.5344",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-15T13:36:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.0.5344",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed hardlock in front of bank and softlock in vault",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization fixes + updates 💬",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller Key bindings arrow symbols fixed ◀️ ▶️",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Debug Display defaults to off now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QUEST TEXT now always Uppercase regardless of language 💌",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added warning for very high resolution scale settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Real Floating Man Quest saves properly now :save:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Factory pipe puzzle sometimes breaking 🥢",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed holes where you can fall out of the world 🕳️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved gameplay of a puzzle in Industrial Area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed broken collision of secret window in boss castle blocking you 🏰",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some more softlocks where you had to reset to last checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game no longer runs as demo if it can't connect to Steam to verify ownership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc. other changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1522870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1522870/view/4224939931835252073"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-15T13:36:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1522870",
+      "checkedAt": "2026-11-13T03:32:14.076Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:03.830Z"
+  }
+ ],
+ "issues": []
+}

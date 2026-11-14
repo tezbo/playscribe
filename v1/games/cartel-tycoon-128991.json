@@ -1,0 +1,2472 @@
+{
+ "game": {
+  "id": "cartel-tycoon-128991",
+  "igdbId": 128991,
+  "name": "Cartel Tycoon",
+  "cover": {
+   "imageId": "co97wp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co97wp.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar38xj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar38xj.jpg"
+  },
+  "ps5Release": "2024-03-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cartel-tycoon-128991@1.0.9.6356",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Patch 1.0.9.6356",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-15T16:07:24.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Some animations for Ferry Station ferries were missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Missing visuals when selecting a target for some of the Lieutenant Abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: It was possible to kill Miguel early on in the ‘Needs and Fears’ campaign, locking the storyline. (thanks, Wouter Koek)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Demolishing the Paranoic Residence could crash the game in some instances (thanks, Spreck2022)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Quest ‘Send Them Off II’ couldn’t be completed in the ‘That Sinking Feeling’ campaign. (You need to start the game from the save made before acquiring this quest for the fix to work).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: WASD, QE, and Space buttons didn’t work while the mouse cursor was over a Lieutenant or Building window.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Incorrect region mentioned in the description for the ‘The Path of Humility’ event on the San Rafaela map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The penalty for failing the ‘United By A Ball’ quest doesn’t disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A marker for an allied gang that is no longer on the map can appear sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest-Event ‘Industrial Action’ in the ‘That Sinking Feeling’ campaign doesn’t count the number of cartel members correctly and can’t be successfully completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Terror doesn’t increase during combat encounters on Ferry Stations (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy Gang event ‘Hire a New Lieutenant’ could trigger if the Cartel is full. (Alejandro_Dai, TacticalFaux)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5322753221338784880"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-15T16:07:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.139Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@1.0.9.6307",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Patch 1.0.9.6307",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-31T17:18:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated the Soil Quality Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Plantations to expand the number of spaces where it can be placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting a Lieutenant through the Lieutenant List will now open their action menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Optimized models for Transport Company I, II, and III.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized models for Workshop I and II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized models for Food Factory II and III.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new animations to Ferry movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized Soil Quality placement to not obstruct roads, buildings, and cities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Multiple localization and technical text issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Camera could zoom in and out when scrolling the Lieutenant and Building Menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: It’s impossible to complete the ‘Crashing the System’ campaign if the player destroys all the Enemy Gangs early in the storyline. (thanks, LORSOLT)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Missing description for the \"Riverside Storage\" bonus in the Research Tree. (thanks, bananatree123)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect location mentioned in the 'Reprogram II' Quest description. (thanks, Cantora)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Missing Spanish translation in one of the Mayor dialogues. (thanks, SANCRUBOT)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Quest Markers for the beginning of the ‘Lambs to the Slaughter’ campaign could be missing in some instances. (thanks, CTY)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Quest Markers for the ending of the ‘Lambs to the Slaughter’ campaign could be missing in some instances. (thanks, Maks Wenger)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moving Lieutenants out of the River Pier while the building upgrade is in process can cause them to continue delivering even when they’re away. (thanks, sirjean04)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemy Gangs could telepathically kill or kidnap a lieutenant who left the building they’re attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A wild Government Forces icon can appear outside of roads and disappear during the ‘Crashing the System’ campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Weapons delivered using Transport Companies didn’t count for the quest goal in the ‘Roberto’s Request' Quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: An allied Gang can become a target in the ‘Urban Guerrillas’ quest ('Crashing the System' campaign).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some non-DLC Liutenants can’t be recruited on the San Rafaela map in Sandbox Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Hotels and Residencies don’t collect money from the Guerrillas. (cantora_)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Marker for the ‘Urban Guerrillas’ Quest doesn’t disappear if there are no Enemy Gangs left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Some localization and technical text issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missing visuals when selecting a target for some of the Lieutenant Abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy Gang event ‘Hire a New Lieutenant’ could trigger if the Cartel is full. (Alejandro_Dai, TacticalFaux)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: Cars can go sicko mode on some of the roads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missing sound effects for the Castle Residence helicopter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ‘rotten money’ effect in Caches is displayed incorrectly after reloading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pre-built Residence and Cache in Costa Blanca can be bought out even if the player doesn’t own the region (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 16,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5229301621594940386"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T17:18:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.139Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@1.0.9.6208",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Patch 1.0.9.6208",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-05T15:11:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added better tooltips to ‘Crashing the System’ Global Unlocks that give hints on how to unlock them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added better tooltips and quest descriptions to some branching ‘Crashing the System’ quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Optimized the Chemical Plant model.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added mist to fountains on the San Rafaela map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Multiple localization, technical text, and spelling issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Infinite loading issue during a deal with Raul in the ‘Crashing the System’ campaign (thanks, Abhijot_Singh, SANCRUBOT, Eskild)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Missing dialogue choices with Camila in the ‘Campaign Trail II’ quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: When connecting two Ferry Stations there’s no visual indication when selecting a connection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The quest ‘Roberto's Request' behaves incorrectly if the player ends the Alliance with an Enemy Gang and brings weapons to fight them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The Costa Blanca region can't be captured when starting a Sandbox game without pre-built buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The number of attackers doubles when reloading a save during the 'Manifesto: Absolution' Quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A wild cordon can appear instead of an Aerodrome when starting a Sandbox game without pre-built buildings on the Republic of De Ojeda.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The ‘Research’ Global Goal doesn’t count in some instances on the Republic of De Ojeda (thanks, Pizzafront , alexitopop)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The Prison border with Teguan is colored incorrectly (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The ‘Hold the press’ Quest is missing a region in the dialogue and a description (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Missing localization and localization mistakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An allied Gang can become a target in the ‘Urban Guerrillas’ quest ('Crashing the System' campaign).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: Cars can go sicko mode on some of the roads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moving Lieutenants out of the River Pier when the building upgrade is in process can cause them to continue delivering even when they’re away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pre-built Residence and Cache in Costa Blanca can be bought out even if the player doesn’t own the region (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy Gangs can telepathically kill a lieutenant who left the building they’re attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A wild Government Forces icon can appear outside of roads and disappear during the ‘Crashing the System’ campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Global Goals cinematics are not playing on some Steam Decks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some non-DLC Liutenants can’t be recruited on the San Rafaela map in Sandbox Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 11,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5220292521180958099"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-05T15:11:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.137Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.137Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@1.0.9.6163",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Patch 1.0.9.6163",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-28T14:55:19.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Increased the time limit for highest-level deals with Enemy Gangs from 18 to 25 days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased storage capacity for River Pier III and Aerodrome III.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased base Power level for all Lieutenants with desired Terror Levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Optimized the model of the Airport building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Different previews for the San Rafaela map on different screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect tooltip displayed when canceling some of the Lieutenant actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The map overview camera on the San Rafaela map is placed incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect camera behavior in northern regions of the San Rafaela map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The ‘Purchase’ button appears active but doesn’t work in the ‘Downloadable Content’ menu on bought DLCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Quests of the ‘Crashing the System’ storyline reactivate when loading a save made after completing the campaign (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Pre-built buildings near the Reservation were missing a region in some menus (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Airport and River Piers disappear after starting a Sandbox game with no pre-built buildings (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The location of the quest item was missing in the ‘Deliverance’ quest description in the ‘Crashing the System’ campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The objective of the ‘United by a ball’ quest appeared blank on the San Rafaela map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Transport Companies don’t deliver Weapons to buildings that were turned off before a Combat Encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Roberto Gallardo inhaled some helium and sounded too young (San Rafaela).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could build Ferry Stations without needed research in the ‘Crashing the System’ campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Camila Cervantes (Earliest Access reward) can't be selected as a Starting Capo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The ‘Buried’ quest had an incomplete description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect log message after using the ‘Interview’ Lieutenant ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect log message after using the ‘Party' Lieutenant ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: In some instances, the soil quality remains on the screen after leaving the ‘Soil Quality’ Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Models for the Area Depot were displayed incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect ‘Narco-Cassetes’ Expiring Event description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "San Rafaela: Several localization and text issues (will be fixed shortly).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: Cars can go sicko mode on some of the roads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: The Prison border with Teguan is colored incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The quest ‘Roberto's Request' behaves incorrectly if the player ends the Alliance with an Enemy Gang and brings weapons to fight them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: The ‘Hold the press’ Quest is missing a region in the dialogue and a description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: When connecting two Ferry Stations there’s no visual indication when selecting a connection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Camera zooms in and out when scrolling through the Building and Lieutenant menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Water ripples and smoke for the Rvier Pier III vessels disappear when reloading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "De Ojeda: A wild cordon can appear instead of an Aerodrome when starting a Sandbox game without pre-built buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Costa Blanca region can't be captured when starting a Sandbox game without pre-built buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Global Goals cinematics are not playing on some Steam Decks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 20,
+    "balance": 3,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5220291886487321391"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-28T14:55:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.136Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.136Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@patch-2023-09-22",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Cartel Tycoon: San Rafaela - Available Now (+ Balance Patch!)",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-22T17:01:15.000Z",
+   "notes": [
+    {
+     "title": "Updates & Changes",
+     "items": [
+      {
+       "text": "Optimization: Drastically reduced the number of places where a game could freeze or lag and further improved performance in the end game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two new Enemy Gang Leaders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Laundering Modes to all Laundering Buildings and increased their output after the playtest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed notifications about overflowing buildings from the log.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added subtitles to the Tutorial Intro Cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Close hints by clicking them with the Right Mouse Button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added ability to transport Weapons to combat encounters using Transport Companies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Hotel to the Research Tree, removed Hotel building limit, and improved bonuses after the playtest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Lowered the price of the Hotels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered the duration of Combat Encounters in Cities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered the Terror gain of overflowing buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the storage capacity for weapons in Cities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The amount of Terror generated by moving illegal products through Cities now depends on a product.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the duration of Weapons in Combat Encounters by 2x.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered the resupply time for new Weapons in the Military Base, Area Depot, and Guerrillas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the amount of Weapons players can get from the Military Base, Area Depot, and Guerrillas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the amount of places the Aerodrome can be built at. Increased the price of Aerodrome II and III.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Visual & UI",
+     "items": [
+      {
+       "text": "Improved Soil Quality visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ‘Downloadable Content’ menu for easier access to DLCs in-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Government Forces could attack Enemy Gangs instead of the Cartel during quests that require a government forces combat encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could talk to Enemy Gang Leaders during a combat encounter in Cities (they should be too busy with shooting).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: During an Enemy Gang encounter with the US Army, Expiring Events from this Gang could appear (they should be too busy with shooting).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The ‘Bane of Bandits’ Ability appeared active outside of a Combat Encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A dialogue with an Enemy Gang leader could trigger if they’re attacked by the government forces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: In the ‘That Sinking Feeling’ campaign, a product type is missing in one of the quest descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Located the missing ‘S' letter for one of the Gang Leader dialogues. She’s safe at home now, thank you, Zaimine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could potentially get access to transforming tools for some UI elements. Not anymore!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Camila Cervantes (Earliest Access reward) can't be selected as a Starting Capo for a new save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: Some Quest descriptions have mentions of the Republic of De Ojeda regions. Quests can still be completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: Cars can go sicko mode on some of the roads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "San Rafaela: Several localization and text issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The soil quality remains on the screen after leaving the ‘Soil Quality’ Mode in some instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Global Goals cinematics are not playing on some Steam Decks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 8,
+    "balance": 9,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5219165352627967940"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-22T17:01:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.135Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.135Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@major-2023-07-26",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Anniversary Update // Devlog + Patch Notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-26T14:59:42.000Z",
+   "notes": [
+    {
+     "title": "Devlog script",
+     "items": [
+      {
+       "text": "[expand type=details]Hola Capos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "My name is Andrey, and I’m the community manager of Cartel Tycoon. We have a huge date this week - July 26 will mark one year since the 1,0 Release. Since then, we have had a lot of updates: we introduced multiple new mechanics, balanced existing ones, made new Lieutenants, and, of course, listened closely to your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to celebrate one year anniversary of Cartel Tycoon leaving Early Access with an update and with some goodies for all of you! Let’s get right into it! If you’re watching this before July 28, you can playtest the San Rafaela map on Steam! Leave a like on this video if you want a vacation there…",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "So, it’s been one year since we left Early Access. Since then, we’ve published four major updates to the game and are working on another one right now, not including the San Rafaela DLC. The update we’re publishing today is a tad smaller, but it is still very important because we’ve wanted to focus on your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off, optimization. It’s been quite some time since we optimized the game, so we wanted to push the optimization further with this update. In particular, we’ve focused on the late game. Some of you know that when you build A LOT of buildings, the FPS takes a major hit. Or used to take it. Now, where you used to get 18 fps, you can get 50! Our internal tests were very promising, so we hope that you’ll feel these changes and they will lead to a much more comfortable experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Secondly, balance. The introduction of the Combat System, in some cases, made the game harder than we expected, especially for new players, so we wanted to address the issue with this update further. Firstly, we wanted to address Terror and the situations when defending your building from an Enemy Gang would lead to activating the Attention Star, and defending your building from the Police would activate another, and you would be stuck in the loop of everyone constantly attacking you. Now, fights in buildings generate Terror at a much slower rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another issue with Terror was Guerrillas and Allied Gangs generating it for you even if your LTs left the fight leading to cases when your allies were responsible for your downfall. In this update, Guerrillas and Allied Gangs will leave the encounter if there are no player Liutenants in the fight AND if their Power is lower than the Power of your Enemy. We’ve also made Guerrilla convoys stronger - they now have 8 power instead of 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also upped the Allegiance of Enemy Gangs at the start of the game, so they won’t start to attack you when you’re just building your first production chain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another thing we’ve changed with the update is the Evacuation. Now, if you decide to leave your injured Lieutenant in the fight, you’ll be able to evacuate them for free after the fight ends - a reward for taking a risk!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also changed Area Depots. This building used to be very powerful from the get-go, so we initially nerfed it a bit but also added it to the Research Tree so that you can upgrade as your Empire and your needs grow!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are smaller changes and, of course, bug fixes in the update, and you can read the full list in the Patch Notes that will be published with the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another thing we’ve added with the update are shine new Anniversary Emblems for your Cartel! You can select them at the start of your run, and they are available to everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After this release, we’ll be taking a small break in August - we’ve been working non-stop since last summer and want to refill our Endurance meter with a small vacation. But we’ll be back in the second half of August to continue our work on the San Rafaela DLC!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And we don’t want to leave you only with this update, so on July 28, this Friday, we’ll announce a contest that will let you not only win a free copy of San Rafaela DLC and get it on release but also will let you be a part of the DLC. Excited? Leave a comment if you are!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates & changes",
+     "items": [
+      {
+       "text": "Optimization. Optimized the building markers to improve performance drastically. Optimized Cartel Tycoon log file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anniversary Cartel Emblems. Added 6 new Cartel Emblems to celebrate the anniversary of the 1.0 Release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guerrillas and Alliend Gangs leave the fight if their power is lower than Enemy Power and no Lieutenants are present.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Decreased the amount of Terror gained for fights in Buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased starting Enemy Gang Allegiance. (Disaffected to Dedicated)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the Power of Guerrillas convoy (5 to 8).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made Evacuation of Injured Lieutenants free after the fight ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the Paranoic Residence Power bonus duration to 14 days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Area Depot to the Research Tree and nerfed the initial stats of the building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Upkeep and Cargo Filters to Area Depot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Normalized the volume of all the music tracks in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "A lot of localization and technical text fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enforcers spawn can spawn at sea if no Enemy Gangs are left on the map (thanks, @burgunfaust).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Allied Gangs convoys can sometimes spawn at sea. (thanks, @Yuufiri)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: US Army attack on the Enemy Gang stops if you make a deal with this Gang through an Expiring Event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Caches can’t be built if you have less money than their Maximum Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Lieutenant can’t get to their destination in some instances (thanks, @floravida).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect text present in the ‘Suppression Fire’ menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Infinite encounter between US Army and Enemy Gang if their Power levels are the same. (thanks, @lol111bot)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Injured Lieutenants stop healing after turning Residency off and back on during a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Money storage sometimes obstructs other UI elements in Area Depots. (thanks, @Asgaard)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Lieutenants Power tooltip is missing in the Building menu during an encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Guerrilla convoys sometimes get stuck in front of non-city buildings (thanks, @floravida).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Bugs",
+     "items": [
+      {
+       "text": "Some localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Incorrect Quest objective in the ‘Dirty Money II’ Tutorial mission (thanks, Crow).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FPS drops in the ‘Road Construction’ mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy Gang Power Level in their City doesn’t increase when their convoy gets back after trying to kill your Lieutenant through an Expiring Event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy Gang Marker disappears from the encounter bar if you move your Lieutenants from the encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 21,
+    "balance": 7,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5124584686242700066"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-26T14:59:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.133Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.133Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@1.0.9.5637",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Patch 1.0.9.5637",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-10T14:55:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changed the ‘Find Your Lieutenants' marker to 'Hunting Your Lieutenants’ during a CIA encounter in a City.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Incorrect Power level displayed when selecting multiple Lieutenants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A rare crash could happen during a combat encounter involving Guerrillas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect tooltip description for the Extradition III quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect colors are present in the description of Enforcer convoys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Text obstructions in the Area Depot UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Guerrilla trucks remain in front of non-city buildings after the end of an encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Multiple Localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5124582150171125243"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-10T14:55:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.131Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@major-2023-06-29",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "Gangs of De Ojeda Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-29T14:54:21.000Z",
+   "notes": [
+    {
+     "title": "Hola, Capos!",
+     "items": [
+      {
+       "text": "The Gangs of De Ojeda Update is here! The citizens of República De Ojeda are fed up with all the criminal activity! Enforcers are more ruthless, and the criminal underworld needs to fight back!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Find new ways to grow your empire! Maybe your enemies can become your friends? For a while... ːcartel_nothing_personalː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major Changes",
+     "items": [
+      {
+       "text": "ːcartel_nothing_personalː Gang Alliances. Convince Enemy Gangs to enter into an Alliance with your Cartel! They will provide firepower in combat, won’t attack you, and even let you use buildings in their region! But be cautious. You’re not the only one that can break off an Alliance…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ːcartel_nothing_personalː Enforcers vs. Enemy Gangs. Why should you be the only one that gets blamed for everything? Now when Terror rises, Enemy Gangs, their cities, and their buildings will also become a target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ːcartel_nothing_personalː Updated Tutorial. We’ve expanded the Tutorial to add missions about Gang interactions and combat!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ːcartel_nothing_personalː Gang Agreement UI. It’s no longer a dialogue! Conduct your trades in a new window that will make the process easier and smoother!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Updates & Changes",
+     "items": [
+      {
+       "text": "Enemy Gang City loses power when their convoy is out of it. Use new combat mechanics to attack the Enemy Gang City when they least expect it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Global Unlocks Menu. Added different categories for easier navigation, added cinematic category.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ignore Expiring Events. Simply press the expiring event phone marker with your RMB to ignore the event!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added informational Expiring Event about Enemy Gangs. When you’re attacked by an Enemy Gang for the first time, an informational event is triggered, which will explain how to deal with Enemy Gang attacks and what triggers them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked attack with weapons. If at least one of your characters is in the building containing Weapons, when you send them to the Enemy location, you can select “Attack with weapons”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "(Playtest) Updated the Gang Agreement Menu to include checkmarks under unlocked Agreement levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added detailed tooltips to the Event Log.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Decreased the amount of Allegiance players get from small talks with Enemy Gang Leaders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "(Playtest) Players now need to have more than 1/2 of the Enemy Gang’s power to ally it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "(Playtest) Decreased combat encounter cooldown for Allied Gangs from 30 to 21 days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "(Playtest) Slightly decreased the chance of Enforcers attacking Enemy Gangs instead of the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the power of the Hospital from 0 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Visual & Audio",
+     "items": [
+      {
+       "text": "Updated Cache models for all levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added audio cue when the player is nearing defeat in a combat encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added phone call sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Playtest) Removed audio cue when Enforcers attack Enemy Gangs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Playtest) Removed audio cue when Enemy Gangs move to defend their property from Enforcers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Playtest) Changed the color of some Allied Gang markers from red to white.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "(Potentially) Fixed: Mouse Cursor doesn’t align with the menu buttons on some resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Multiple localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Playtest) Players were able to ally with Enemy Gangs at the start of the ‘Needs and Fears’ campaign without completing a loyalty check.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Playtest) Fixed: Enemy Gangs weren’t engaging in combat with Enforcers that were stronger than the Enemy Gang.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Playtest) Fixed: The game didn’t pause in the Gang Agreement Menu,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Playtest) Fixed: Allying with an Enemy Gang would trigger an event about capturing Enemy Gang buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players were able to demolish a building during a CIA combat encounter in it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Equipped character and building skins disabled after reloading the game,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Volatile Lieutenants displayed incorrect destinations in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Tutorial subtitles were obstructed in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect Cache marker was displayed when it was in a construction queue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemy Gang Cities sometimes disappeared from the Warehouse ‘Connection’ list during an Agreement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Random Gang Agreement Event didn’t start if the Gang Agreement was on a cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Planes were stuck in mid-air if an aerodrome ran out of upkeep money during a sale cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some events displayed Incorrect resource prices in tooltips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some event markers were displayed over Prison even if the Lieutenant was already out of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The ‘Bury the Money’ Event didn’t complete if the player was using a Rathole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: 'Endurance' level was obstructing some parts of the interface in Lieutenant Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Injured Lieutenants couldn’t be evacuated after reloading an autosave in some instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The event to hire a Lieutenant wouldn’t disappear if the player hired a Lieutenant in the last remaining Cartel slot before accepting the event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Achievement ‘Bite The Blow’ would be awarded for buying Weapons in an Area Depot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Quest remained on the screen after completing all of the objectives in rare instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Demolishing of Caches can’t be canceled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "A rare crash can happen in a very specific scenario (will be fixed soon).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization is missing in some places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect localization is present in the Gang Alliances tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect tooltip description for the Extradition III quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect colors are present in the description of Enforcer convoys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Obstructions in the Area Depot UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guerrilla trucks remain in front of non-city buildings after the end of an encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 22,
+    "balance": 6,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5124582150131033616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-29T14:54:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.130Z"
+  },
+  {
+   "id": "cartel-tycoon-128991@major-2023-06-26",
+   "gameId": "cartel-tycoon-128991",
+   "displayName": "June Update this week!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-26T15:28:59.000Z",
+   "notes": [
+    {
+     "title": "Hola Capos!",
+     "items": [
+      {
+       "text": "Our June Update is coming this week, and it brings new gameplay mechanics, Balance and UI changes, and bug fixes! We’ve also made some adjustments after our Steam Weekend Playtest, so stick around even if you played it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "First off, Gang Alliances!",
+     "items": [
+      {
+       "text": "Alliance is a powerful tool that can be used for protection and for strategic advancement. After our Combat Update, we’ve heard you loud and clear that Enemy Gangs could become unreasonably annoying in early and mid-game, so we’ve not only made balance changes but are introducing Gang Alliances that should help with that matter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gang Alliance means that your Allied Gang will stop attacking you, their buildings (including Smuggling Points!) will become available to you, and they even will help you out during Combat! There’s a list of things you need to achieve before being able to strike an Alliance, and you’ll need to keep a close eye on your new friends because, in the world of Cartel Tycoon, they can become enemies really fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the playtest, we’ve adjusted some things to make achieving an Alliance a bit harder but also made Alliend Gang convoys faster to redeploy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Second, Enforcers vs. Enemy Gangs!",
+     "items": [
+      {
+       "text": "Now Terror affects not only your Cartel but Enemy Gangs too! Enforcers have a chance to attack your enemies instead of you on each trigger of an Attention Star! You can use that to your advantage and capture Enemy buildings while they’re busy with the officials!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And if the enforcers win the fight - Enemy Gangs will lose power, making it easier for you to make an Alliance or destroy them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the playtest, we’ve made some adjustments to this mechanic and Enemy Gang’s behavior in general!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Third, New Gang Agreement UI!",
+     "items": [
+      {
+       "text": "Gang Agreements are no longer a dialogue - it’s an easy-to-read menu!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After the playtest, we’ve made some small adjustments to the menu, so it will be more clear when a new level of Agreement opens to you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other Changes",
+     "items": [
+      {
+       "text": "We’ve reworked how you can attack with weapons! Now, if your lieutenant is in a building that has weapons inside, the game will automatically offer to take weapons if you send them to attack an enemy! It works even when you select multiple LTs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also expanded the Tutorial! Get ready for more missions that will explain combat and Enemy Gang relations better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Global Unlocks Menu is now easier to navigate! Your unlocks will now be in different categories, so you don’t always have to scroll the full list if you want to change a skin for your character! And now you can watch unlocked cinematics again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve made smaller adjustments to new mechanics and squished some nasty bugs! The update is coming soon, and we’ll provide the patch notes with all the changes, as usual!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for participating in the playtest and providing your feedback! ːcartel_loveː",
+     "items": [
+      {
+       "text": "See you soon, Capos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1220140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1220140/view/5124581515269653594"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-26T15:28:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1220140",
+      "checkedAt": "2026-11-11T21:57:56.129Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:56.129Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "5bf71e5b7a71",
+   "text": "A rare crash can happen in a very specific scenario (will be fixed soon).",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-06-29"
+  },
+  {
+   "id": "acc732d1534f",
+   "text": "Localization is missing in some places.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-06-29"
+  },
+  {
+   "id": "b9a130d82aa0",
+   "text": "Incorrect localization is present in the Gang Alliances tooltip.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-06-29"
+  },
+  {
+   "id": "02cccbaea2da",
+   "text": "Incorrect tooltip description for the Extradition III quest.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-06-29",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.5637",
+   "addressedAt": "2023-07-10T14:55:52.000Z"
+  },
+  {
+   "id": "eeb9f8e7db81",
+   "text": "Incorrect colors are present in the description of Enforcer convoys.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-06-29",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.5637",
+   "addressedAt": "2023-07-10T14:55:52.000Z"
+  },
+  {
+   "id": "5552896fcc23",
+   "text": "Obstructions in the Area Depot UI",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-06-29",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.5637",
+   "addressedAt": "2023-07-10T14:55:52.000Z"
+  },
+  {
+   "id": "0a495e0acb03",
+   "text": "Guerrilla trucks remain in front of non-city buildings after the end of an encounter.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-06-29",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.5637",
+   "addressedAt": "2023-07-10T14:55:52.000Z"
+  },
+  {
+   "id": "11966d6b21b6",
+   "text": "Some localization issues.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "0b3f27621e47",
+   "text": "Incorrect Quest objective in the ‘Dirty Money II’ Tutorial mission (thanks, Crow).",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "4684daaf540c",
+   "text": "FPS drops in the ‘Road Construction’ mode.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "26cacebce894",
+   "text": "Enemy Gang Power Level in their City doesn’t increase when their convoy gets back after trying to kill your Lieutenant through an Expiring Event.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "70bcb0f9fcb9",
+   "text": "Enemy Gang Marker disappears from the encounter bar if you move your Lieutenants from the encounter.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "4f0591f4fb51",
+   "text": "Discord",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "55380c431042",
+   "text": "Twitter",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "2f003ee4c8f8",
+   "text": "Facebook",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "6524714d20e9",
+   "text": "Instagram",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@major-2023-07-26"
+  },
+  {
+   "id": "34eeb80bd59e",
+   "text": "Camila Cervantes (Earliest Access reward) can't be selected as a Starting Capo for a new save.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@patch-2023-09-22",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedAt": "2023-09-28T14:55:19.000Z"
+  },
+  {
+   "id": "70741b6aeebd",
+   "text": "San Rafaela: Some Quest descriptions have mentions of the Republic of De Ojeda regions. Quests can still be completed.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@patch-2023-09-22"
+  },
+  {
+   "id": "5f95e9edae59",
+   "text": "San Rafaela: Cars can go sicko mode on some of the roads.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@patch-2023-09-22"
+  },
+  {
+   "id": "93c52620a1f6",
+   "text": "San Rafaela: Several localization and text issues.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@patch-2023-09-22"
+  },
+  {
+   "id": "cdcbef3f0a6e",
+   "text": "The soil quality remains on the screen after leaving the ‘Soil Quality’ Mode in some instances.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@patch-2023-09-22",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedAt": "2023-09-28T14:55:19.000Z"
+  },
+  {
+   "id": "746f66fb9812",
+   "text": "Global Goals cinematics are not playing on some Steam Decks.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@patch-2023-09-22"
+  },
+  {
+   "id": "7ebd44b2ac6d",
+   "text": "San Rafaela: Several localization and text issues (will be fixed shortly).",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163"
+  },
+  {
+   "id": "09628012874e",
+   "text": "San Rafaela: The Prison border with Teguan is colored incorrectly.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedAt": "2023-10-05T15:11:55.000Z"
+  },
+  {
+   "id": "aab4b3ce5eb0",
+   "text": "The quest ‘Roberto's Request' behaves incorrectly if the player ends the Alliance with an Enemy Gang and brings weapons to fight them.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedAt": "2023-10-05T15:11:55.000Z"
+  },
+  {
+   "id": "2e5c0ad93ec9",
+   "text": "San Rafaela: The ‘Hold the press’ Quest is missing a region in the dialogue and a description.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedAt": "2023-10-05T15:11:55.000Z"
+  },
+  {
+   "id": "a397e87c1709",
+   "text": "San Rafaela: When connecting two Ferry Stations there’s no visual indication when selecting a connection.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedAt": "2023-10-05T15:11:55.000Z"
+  },
+  {
+   "id": "b42fc143e34e",
+   "text": "The Camera zooms in and out when scrolling through the Building and Lieutenant menus.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6307",
+   "addressedAt": "2023-10-31T17:18:36.000Z"
+  },
+  {
+   "id": "f2e2e14ff975",
+   "text": "Water ripples and smoke for the Rvier Pier III vessels disappear when reloading a save.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163"
+  },
+  {
+   "id": "2d2a051b104e",
+   "text": "De Ojeda: A wild cordon can appear instead of an Aerodrome when starting a Sandbox game without pre-built buildings.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedAt": "2023-10-05T15:11:55.000Z"
+  },
+  {
+   "id": "5adb0c119096",
+   "text": "The Costa Blanca region can't be captured when starting a Sandbox game without pre-built buildings.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6163",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedAt": "2023-10-05T15:11:55.000Z"
+  },
+  {
+   "id": "72f1c287df9e",
+   "text": "Missing localization and localization mistakes.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6208"
+  },
+  {
+   "id": "0ba51373cb94",
+   "text": "An allied Gang can become a target in the ‘Urban Guerrillas’ quest ('Crashing the System' campaign).",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6307",
+   "addressedAt": "2023-10-31T17:18:36.000Z"
+  },
+  {
+   "id": "9b2fc387a228",
+   "text": "Moving Lieutenants out of the River Pier when the building upgrade is in process can cause them to continue delivering even when they’re away.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6307",
+   "addressedAt": "2023-10-31T17:18:36.000Z"
+  },
+  {
+   "id": "f147a728daab",
+   "text": "Pre-built Residence and Cache in Costa Blanca can be bought out even if the player doesn’t own the region (San Rafaela).",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6208"
+  },
+  {
+   "id": "29e4a0bc8621",
+   "text": "Enemy Gangs can telepathically kill a lieutenant who left the building they’re attacking.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6307",
+   "addressedAt": "2023-10-31T17:18:36.000Z"
+  },
+  {
+   "id": "26060ebfc4b2",
+   "text": "A wild Government Forces icon can appear outside of roads and disappear during the ‘Crashing the System’ campaign.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6307",
+   "addressedAt": "2023-10-31T17:18:36.000Z"
+  },
+  {
+   "id": "e4069db3dcbc",
+   "text": "Some non-DLC Liutenants can’t be recruited on the San Rafaela map in Sandbox Mode.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6208",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6307",
+   "addressedAt": "2023-10-31T17:18:36.000Z"
+  },
+  {
+   "id": "10e3374e5d75",
+   "text": "Some localization and technical text issues.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6307"
+  },
+  {
+   "id": "2d5ce7064f21",
+   "text": "Missing visuals when selecting a target for some of the Lieutenant Abilities.",
+   "status": "addressed",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6307",
+   "addressedBy": "cartel-tycoon-128991@1.0.9.6356",
+   "addressedAt": "2023-11-15T16:07:24.000Z"
+  },
+  {
+   "id": "5187d0b7fcc1",
+   "text": "Enemy Gang event ‘Hire a New Lieutenant’ could trigger if the Cartel is full. (Alejandro_Dai, TacticalFaux)",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6307"
+  },
+  {
+   "id": "3b5037a9d361",
+   "text": "Missing sound effects for the Castle Residence helicopter.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6307"
+  },
+  {
+   "id": "f5d2a37e8c69",
+   "text": "The ‘rotten money’ effect in Caches is displayed incorrectly after reloading a save.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6307"
+  },
+  {
+   "id": "0f67b1891a1d",
+   "text": "Incorrect region mentioned in the description for the ‘The Path of Humility’ event on the San Rafaela map.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6356"
+  },
+  {
+   "id": "788ada2af202",
+   "text": "The penalty for failing the ‘United By A Ball’ quest doesn’t disappear.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6356"
+  },
+  {
+   "id": "eb7e6386b3b1",
+   "text": "A marker for an allied gang that is no longer on the map can appear sometimes.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6356"
+  },
+  {
+   "id": "f8b73fb1fbc1",
+   "text": "Quest-Event ‘Industrial Action’ in the ‘That Sinking Feeling’ campaign doesn’t count the number of cartel members correctly and can’t be successfully completed.",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6356"
+  },
+  {
+   "id": "16dad6af17ef",
+   "text": "Terror doesn’t increase during combat encounters on Ferry Stations (San Rafaela).",
+   "status": "open",
+   "firstReleaseId": "cartel-tycoon-128991@1.0.9.6356"
+  }
+ ]
+}

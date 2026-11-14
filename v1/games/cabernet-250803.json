@@ -1,0 +1,2310 @@
+{
+ "game": {
+  "id": "cabernet-250803",
+  "igdbId": 250803,
+  "name": "Cabernet",
+  "cover": {
+   "imageId": "co6x36",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6x36.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2bpz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2bpz.jpg"
+  },
+  "ps5Release": "2025-02-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cabernet-250803@major-2025-10-22",
+   "gameId": "cabernet-250803",
+   "displayName": "Japanese Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-22T16:33:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released a new patch which adds Japanese (as a part of our physical release in Asia!), allows easier bonding with Kirill, fixes a few edge-case bugs, and more. You can read the full patch notes below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44086748/e0dcaad8f68127511227557cc32a18b37d07534c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Japanese language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easier bonding with Kirill upon completion of his tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Edge-case Chapter 4 freeze after meeting the revolutionaries at the vodka bar fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Edge-case inability to leave the card game in Chapter 2 fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues, please report them here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1814309641415442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-22T16:33:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.571Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-22T16:33:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.571Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-22T16:33:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:46.331Z"
+  },
+  {
+   "id": "cabernet-250803@1.1.19",
+   "gameId": "cabernet-250803",
+   "displayName": "Update 1.1.19",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-04T23:04:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, fellow vampires! 🦇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we are releasing a new update for Cabernet (v 1.1.19), but unlike our previous patches that mostly targeted bugs and edge-case fixes, this one is a little bit different... On top of some minor bug fixes, we would like to introduce 2 new features:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1) \"On Hold\" quest marker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you know, the lives (or un-lives) of our characters often intertwine, which means that sometimes their storylines conflict with each other. To deal with those conflicts, internally the game pauses certain quests till the conflict disappears or often till the next game day when the quest resumes itself automatically. This took care of many of those problems, but since this was done \"under the hood\", sometimes players would not be able to complete a task without explicitly knowing the reason.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For example, when Kirill gives Liza a task, but there is a main story quest in the vodka bar that day, his quest gets temporarily paused, and the player wouldn't know about that other than from their inability to perform said task. That is... until now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44086748/060619a373fd2f9d1a9505c14442bec0f86a0ecc.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update we are trying out a new feature that will add an \"On Hold\" marker in the quest log by the quests that are temporarily unavailable. This way the player will know that the tasks in that list may not be possible to complete yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please keep in mind that due to the custom nature of the quest logic and storyline intersection, there might be some exceptions to this rule, but we really hope that this will be a helpful feature for the side quest fiends out there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2) Extra save slots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one is pretty straightforward - by popular demand we added 3 extra manual save slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you very much for your undying support. We hope you enjoy!🍷🖤",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eternally yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Party for Introverts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1806698490825225"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T23:04:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.570Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T23:04:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.571Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-04T23:04:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:46.330Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.18",
+   "gameId": "cabernet-250803",
+   "displayName": "Patch 1.0.18",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-03T17:17:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Dear Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a new patch that fixes additional quest logic issues, edge-case conflicts, general minor bugs, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But before we dive into it, we want to give you a heads up that this might be the last patch for a little while. Since release, the two of us have been working nonstop to keep improving the game, but that being said, even vampires need a little slumber. We have some incredibly important personal and professional stuff coming up that we need to focus on, but don’t worry! We will still be receiving your bug reports and will be back at it soon enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, thank you so much for your patience and understanding. We don’t take for granted the endless support and passion of this community. 💜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All our undying love and appreciation,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Party for Introverts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes 1.0.18",
+     "items": [
+      {
+       "text": "More Anastasia quest bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed ability to use vampire wheel in transitions to avoid possible conflicts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added invisibility removal upon entering a new room to avoid possible conflicts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Anastasia hostess gift/entry edge-case fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted colliders in the manor forest to stop the possibility of landing in front of Trofim in Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a number of conflicts with Anastasia and Kirill and a potential error on the Ousted function for Anastasia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge-case Chapter 3 save/load issue that skips Roman bookstore task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed ability to use lantern during drinking cabernet in Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the edge-case of talking twice with the Doctor during the Faina scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an edge-case skip of a key sequence and a potential soft lock in Chapter 7 corridor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge-case lack of action points in the final part of Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any bugs please report them in the Cabernet Bug Report Form!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 1,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1800991756479433"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-03T17:17:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.570Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-03T17:17:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.570Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-03T17:17:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:46.328Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.16",
+   "gameId": "cabernet-250803",
+   "displayName": "Patch 1.0.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-07T22:37:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released a new patch which added an extra day of Marusia in the bookstore after her mushroom side quest, chapter 8 optimization, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to read the full patch notes I’ll list them below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Added an extra day of Marusia in the bookstore after her mushroom side quest to provide an additional opportunity for the player to give her a violin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To improve player experience, Hookah bar entrance is now \"locked\" when it isn't available during Alisa's ritual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed more conflicts between Alisa/Hussar/Petya's side quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed edge-cases of worn dresses not saving into the next chapter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More Evgeny/Anastasia epilogue edge-case fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 8 optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare inconsistency in tutorial save system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential incorrect glossary highlight on autoplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1799088287813068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-07T22:37:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.569Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-07T22:37:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.569Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-07T22:37:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:46.327Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.15",
+   "gameId": "cabernet-250803",
+   "displayName": "Patch 1.0.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-23T16:08:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have another patch (1.0.15) for those playing on PC which fixes more chapter 3 bunny feeding issues, edge-case issues, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes 1.0.15",
+     "items": [
+      {
+       "text": "Fixed more Chapter 3 bunny feeding issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a blinking arrow symbol at the end of character lines for Non-English languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed edge-cases of Kolya lying down during certain Chapter 7 sequences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed edge-case Alisa epilogue logic inconsistency",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor logic bug fixes when reloading in the Mayor's office in Chapter 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the interaction with the envelope found in Chapter 2 and breaking its seal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed accidental skips for town gossip in Autoplay mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Edge-case fix for Liza's movement issue when the duel is scheduled on the day before Kupala Night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any bugs please report them in the Cabernet Bug Report Form!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1797820624431410"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T16:08:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.568Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T16:08:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.568Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-23T16:08:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:46.325Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.14",
+   "gameId": "cabernet-250803",
+   "displayName": "Patch 1.0.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-09T15:55:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We have just released a new patch (1.0.14)",
+     "items": [
+      {
+       "text": "This update includes fixing the possibility of \"dead\" characters appearing at the duel, edge-case incorrect dress loading in chapter 7, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can read the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes 1.0.14",
+     "items": [
+      {
+       "text": "Fixed the possibility of \"dead\" characters appearing at the duel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed more Faina quest edge-cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed edge-case incorrect dress loading in Chapter 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensured that reloading the game in later parts of Chapter 2 doesn't unintentionally unlock blocked paths",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed an unnecessary blocker for Rusalka's quest in Chapter 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an unreachable dialogue option for the Doctor in Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Another attempted fix for the rare Chapter 4 freeze after the Vodka bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential wrong text in Rusalka's bio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further optimization in Chapter 8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1796551539190666"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-09T15:55:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.568Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-09T15:55:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.568Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-09T15:55:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.410Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.13",
+   "gameId": "cabernet-250803",
+   "displayName": "Patch 1.0.13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-27T16:10:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We released a new patch for Cabernet on PC which fixes the Petya doll kit edge-case, makes it easier to increase relationships points with Dragomir, and more!",
+     "items": [
+      {
+       "text": "If you would like to investigate the full patch notes, you can read them below!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Petya doll kit edge-case loading logic fix",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Attempted fix for Petya's letter interfering with saving ability",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Pausing auto play while the Journal Hub is on and fixing the resulting menu/interaction glitch",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made it easier to increase relationship with Dragomir",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed incorrect \"Dusk\" action point label upon loading a save file with no action points left",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted more edge-case Anastasia/Evgeny potential epilogue conflicts",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the ability to forage upon saving once unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed \"infinite\" cat feeding",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed minor issues in the Nikolina's scene",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed possible indoor rain upon reentering the manor in Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed blood meter loss after you refuse a drink with Trofim",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed edge-case of Evgeny possibly reappearing after his potential death on Kupala Night",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted colliders in Liza's bedroom to avoid potential fall-throughs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Attempted fix for a rare Chapter 4 freeze after the vodka bar scene",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an edge-case non-crossed off task for one of Kirill's side quests",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an edge-case conflict between Kirill's and Rusalka's quest in the Town Hall",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed shop sell/buy situations when there is no more applicable inventory",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Minor improvements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1795283637823642"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-27T16:10:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.567Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-27T16:10:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.567Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-27T16:10:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.410Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.12",
+   "gameId": "cabernet-250803",
+   "displayName": "Hotfix 1.0.12",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-12T23:38:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released a hotfix (1.0.12) on PC which fixes saves being corrupted in the office in chapter 7 and 8. Apologies for anyone who was affected by this. You should be able to continue your save if you ran into this issue before the patch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1794102528054736"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-12T23:38:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.567Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-12T23:38:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.567Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-12T23:38:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.409Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.11",
+   "gameId": "cabernet-250803",
+   "displayName": "Update 1.0.11",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-12T01:30:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released a new patch which fixes Bookstore quest conflicts / object interaction blockers, more Alisa/Hussar quest conflicts, and much more. Thank you again for reporting these bugs and sending your save files to us so we can investigate and fix them! You can read the full patch notes here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Note",
+     "items": [
+      {
+       "text": "Bookstore quest conflict fix (Rusalka book + Roman + object interaction blockers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More Alisa/Hussar quest conflict fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a failsafe for a rare candle blocker in Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an extra hint before hold button interaction with Hussar in Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed an edge case lockout of Liza's room in Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed “invisible” Trofim interacting with Marta in Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gosia's incorrect relationship drop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed more minor Epilogue outcome options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the ability to re-enter the manor before heading to Town in Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed locked door in Faina's final optional quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Returned Arban to regular state after quest completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an edge case save/load inconsistency in the end of Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "VO lines clean-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1794014851373823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-12T01:30:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.566Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-12T01:30:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.566Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-12T01:30:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.409Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.10",
+   "gameId": "cabernet-250803",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-03T19:29:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We have released a new massive patch for Cabernet",
+     "items": [
+      {
+       "text": "This patch fixes blockers, such as the inability to interact with objects in chapter 5 and 6, getting stuck in the vodka bar, low relationship points with Kirill, and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you’d like to read all the fixes, they’ll be listed below! There is a lot to bite into!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed an edge case blocker from interacting with objects in the beginning of Chapters 5 and 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential progression blocker for Petya after reloading a save post receiving a Cerulean silk dress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed edge cases stopping from interacting with the chimney in Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck in the vodka bar after Evgeny's card game in Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed task for giving Marusia the book not crossing off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed infinite resell of Marusia's book possibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allowed a potential extra day to give Marusia gifts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a failsafe to not access Hussar's quest while you are at the graveyard entrance with Roman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed repeated notifications for Roman's gifted book unlocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed changing relationships after purchases if the vendor is dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the ability to discard Faina's plant by accident",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some bio items for Rusalka and Petya",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More edge case Iskra logic fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a painting in Town Hall VO line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"Ousted\" achievement trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Excluded the possibility of accidentally pressing a UI item outside of the Hub when it's open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced a special missing symbol in one of the text strings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed more Alisa/Hussar conflict edge cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hookah bar customers' occasional animation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some bio items for Kolya and Anastasia/Evgeny edge cases in Epilogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it a little easier to get a higher relationship with Kirill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential inability to complete Roman's ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some Faina edge cases that can get Liza stuck outside of her apartment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the non-functional discount option for the General Store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the collider on the left side of the Town Hall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an edge case nihilism loss in Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glossary category details font increase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased font size for inventory item names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the size of the Action Points clock (time of day on main HUD)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 17,
+    "balance": 2,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1792751526148150"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-03T19:29:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.565Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-03T19:29:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.565Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-03T19:29:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.408Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.9",
+   "gameId": "cabernet-250803",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-25T22:53:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off, thank you to everyone who has been reporting bugs to us! These reports have been super helpful in diagnosing and fixing them. We have released a new patch on PC which fixes a ton of bugs like the Vodka Bar backroom lock, getting stuck in Evgeny’s study, Faina’s story progression issue, and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We will be continually working on more fixes in the upcoming days and weeks to make the game the best it can be for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the full patch notes",
+     "items": [
+      {
+       "text": "Fixed Faina's quest not failing after you kill her and reappearing alive afterwards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the secret vodka bar shop content being empty in Chapter 2 (should not be available at all till Chapter 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the trigger area for level up buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the issue of possible loss of level up points after loading the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional repeated lines in Dialogue Autoplay mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it not possible to trigger lamp before you pick it up now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it easier to find the bowl of porridge in the Bookstore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 4 intro failsafe for movement re-enabling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faina save/load logic fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed being locked in the vodka bar backroom post conversation with Iskra and potential parts of your conversations showing up after going to sleep",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it impossible to turn into a bat in the Salon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed being stuck in Evgeny's study in Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clipping through geometry on the left of the Hookah Bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the potential Anastasia roof quest lock after the duel if Kirill is dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential of both characters getting enchanted at the end of Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved bushes by the Salon's road to stop them from floating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed not being able to interact with the shopkeeper's assistant after Oleg's potential death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Cat trigger colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Trofim/Driver conflict right after Trofim's lake conversation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Edge case blocking Chapter 5 progression fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Nikolina some visual glitches and ability to go to a house call more than once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Doctor's repeated conversation about the first kill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved trigger colliders in the Doctor's room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the issue with the money envelope from Anastasia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made stat bonus from Emerald dress consistent with the shop listing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a minor bug for certain scenarios not letting to cross off Evgeny's final task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed more edge case conflicts for using mail for Petya's quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Evgeny showing up after he left town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential unprompted dress change in Chapter 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Showing a hint for using a lantern in Chapter 3 forest location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to sell mushrooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed inconsistency in Demyan's ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential inconsistency in Trofim's log after enchantment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge case load issue with the bat unable to turn human",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a potential freeze with Luka in Chapter 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for an edge case lock in the bookstore with Rusalka's quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Petya's cross-chapter edge case fix (vanity_line storage issue)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Journal conversations happening in case you killed Evgeny",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Failsafe for Hussar's procedure potentially being stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the woman's position in the Hookah Bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for possible bunny hunting freeze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small portion of the dialogue with the Countess inconsistent with the results of Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempted fix for Alisa/Hussar quest conflicts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feeding on Oleg before it is appropriate fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 27,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1792116353370374"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-25T22:53:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.564Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-25T22:53:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.565Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-25T22:53:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.407Z"
+  },
+  {
+   "id": "cabernet-250803@1.0.8",
+   "gameId": "cabernet-250803",
+   "displayName": "Hotfix 1.0.8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-20T23:39:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released a hotfix which fixes not letting you into Skvortsovas house after being invited by Anastasia or Evengy. You will need to meet them both in order to progress!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully this fix will also help those who are already stuck at this point as well as the new players. Apology for the inconvenience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remember if you run into any issues please report it here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1792116353208645"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-20T23:39:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-20T23:39:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.564Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-20T23:39:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.406Z"
+  },
+  {
+   "id": "cabernet-250803@patch-2025-01-10",
+   "gameId": "cabernet-250803",
+   "displayName": "Cabernet Appeared on Patch Magazine Cover",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-10T00:33:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Vampires,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you had a good holiday season and the new year is treating you well. Party for Introverts has been hard at work developing Cabernet even as the snow falls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cabernet was the front cover of the December edition of Patch Magazine where Party for Introverts were interviewed! Patch Magazine is a publication with the focus of indie games!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team has been very focused on development and we can't wait for you to direct Liza through her perilous journey as a new vampire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2401410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2401410/view/1788311419031261"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-10T00:33:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2401410",
+      "checkedAt": "2026-11-13T03:16:46.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:52.405Z"
+  }
+ ],
+ "issues": []
+}

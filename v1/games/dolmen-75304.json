@@ -1,0 +1,1001 @@
+{
+ "game": {
+  "id": "dolmen-75304",
+  "igdbId": 75304,
+  "name": "Dolmen",
+  "cover": {
+   "imageId": "co3a3h",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3a3h.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arllb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arllb.jpg"
+  },
+  "ps5Release": "2022-05-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dolmen-75304@post-2022-07-08",
+   "gameId": "dolmen-75304",
+   "displayName": "PATCH NOTES JULY 08 2022",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-07-08T16:07:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Commanders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New fixes and balances are being taken to improve the game based on the community feedback and reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "It's not possible to skip cutscenes while still loading the game anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss Zallan Kheep’s rewards will be properly shown after defeating him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rewards for Boss Ferronightmare are now given after its cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visibility for the Great Swords were fixed (if running when using a large armor at some camera angles the weapon was being made invisible).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Finding one driller will not trigger all the other driller achievements anymore (Steam only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reward screen for the Boss General Vesib respawn option is now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player loading the game in the wrong place in case of shut down while in the middle of a respawn boss from the ship is now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When dying after respawning a boss, the player will be taken to the respawn terminal instead of the last interacted beacon, as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shield Stability Description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer Fixes",
+     "items": [
+      {
+       "text": "Rolling while the shield is open for clients will not lock them in that animation anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other players' health will be properly replicated now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Server's screen will update the number of players correctly now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A teleportation portal was added before each boss during multiplayer, in case players are outside of the arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss General Vesib’s health bar is now replicating correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the cutscene for Boss Dementula was improperly playing on clients after its defeat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where clients were not spending stamina while running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscene for the Boss Ferronightmare will be properly shown after its first defeat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Countdown for a match being closed will not get in front of subtitles anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crates will no longer spawn loot in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players are no longer able to try to join a full match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss Tharvus Kheep last cutscene will be properly visible for host and clients now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Boss Tharvus Kheep's last video was being skipped to credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where clients were not able to consume battery after aiming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few problems with meshes in the Boss General Vesib’s cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The message “Threat destroyed” will be shown only after killing the second Ancient in the Ancient Twins boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Boss Ferronightmare was becoming invisible during the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where clients were not receiving the reward for killing the Boss Queen Caniptei if that was their first try.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ranged weapon animations will be correctly played for the clients now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss Queen Caniptei cutscene and cinematic will be played properly for the clients now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Zoan Rifle Heavy shot was not disappearing after kicking a player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Every Boss should now be giving their proper rewards for hosts and clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where host players were being able to duplicate XP by retrieving loot from other player bodies that didn’t get their timeline back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dolmen Crystals are no longer needed for joining matches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It’s not possible to join a session while the Boss fight has already started anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where an error warning was being shown when returning back to the ship after a session being closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Boss General Vesib was becoming invisible in the middle of the fight for the clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DISCORD: http://discord.gg/dolmengame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "TWITTER: https://twitter.com/DolmenGame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FACEBOOK: https://www.facebook.com/DolmenGame/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "INSTAGRAM: https://www.instagram.com/dolmengame/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 40,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-831050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/831050/view/4539082035563201139"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-08T16:07:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.770Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-08T16:07:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.770Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-08T16:07:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:10.487Z"
+  },
+  {
+   "id": "dolmen-75304@post-2022-06-03",
+   "gameId": "dolmen-75304",
+   "displayName": "PATCH NOTES JUNE 03 2022",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-06-03T19:05:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working hard to make your gameplay experience in Dolmen even better. Here are our first set of changes and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Respawning bosses and skipping cutscenes were making the character meshes to disappear, rendering the character invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faster loading of pre-order armor on the select class screen, which was taking time (compiling in the menus)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sometimes when the player died while attacking, he could have his trail particle on until he made another attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disable Steam VR plugin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed cinematic quality from settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Killing the queen Caniptei and Zallan Kheep as hosts in multiplayer was blocking the game from progressing (we also added an interactable at their arenas for players who have already killed her to be able to progress)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rewards for killing the bosses were not being given properly to the game host",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI fix for a specific Cutlower which was not moving after being shot at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skip cutscene widget was not vanishing in a few cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvement on performance of Driller VIP cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FOV for ultra-wide and other non-standard screen resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Using batteries while ”no pain no gain” ability was active was not restoring energy as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pre-order weapon was being lost after reloading the game or going to the ship (it was also fixed for players who had already created a game previously)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scenario collision fix on the biosphere which was making players to fall due to level design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple places where the player was not being able to go up by walking, only rolling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elevator near Queen Caniptei where the player could get stuck near their bars if dodging at the right moment while interacting with the elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several fixes (5-7) places where the player could getstuck into geometry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision on stairs near giant worm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please notice there is still a lot to go through, especially in multiplayer, but we wanted to address some issues faster, especially the one blocking progress from players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements based on feedback",
+     "items": [
+      {
+       "text": "No requirement of dolmen crystals for joining multiplayer sessions (this is also going to help us on XR 064 for the XBOX)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "While looking for sessions the player will keep looking until he presses to cancel the search",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed confirmation of customization done inside the ship (not on the character creation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed detail slide bar from customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several balancing changes to common enemies stagger ability (improving the hit feedback from the players)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved shields stability (so they can be more effective late game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced stamina cost to run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly increased stamina regeneration speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Special Thanks sections to the credits including our Kickstarter backers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "DISCORD: http://discord.gg/dolmengame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "TWITTER: https://twitter.com/DolmenGame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FACEBOOK: https://www.facebook.com/DolmenGame/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "INSTAGRAM: https://www.instagram.com/dolmengame/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 18,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "While looking for sessions the player will keep looking until he presses to cancel the search",
+     "Removed confirmation of customization done inside the ship (not on the character creation)",
+     "Removed detail slide bar from customization"
+    ]
+   },
+   "sourceIds": [
+    "steam-831050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/831050/view/4469272893497109529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-03T19:05:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.769Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-03T19:05:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.769Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-03T19:05:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:10.485Z"
+  },
+  {
+   "id": "dolmen-75304@major-2022-04-06",
+   "gameId": "dolmen-75304",
+   "displayName": "📡 Incoming Transmission: April Update & Event presence",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-06T16:28:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re a little under two months away from release, and we’re so excited to welcome you to your doom- we mean, our beautiful planet, Revion Prime. The game will be releasing on the 20th of May, 2022, and if you haven’t seen it already, we launched a new trailer a few weeks ago >",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll also be showing Dolmen at PAX East and WASD, so if you’re there, come say hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Intel XeSS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Our friends over at Intel have also released a brand new video in which they show off how well Dolmen works with their latest solution, Xe Super Sampling. XeSS takes your gaming experience to the next level with AI-enhanced upscaling, and Dolmen looks mighty fine with it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Read more about Intel XeSS here > intel.com/xess",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "And check out what that looks like for Dolmen > https://www.youtube.com/watch?v=B0tOOlr6H74",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But that’s not all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll also be showing off some gameplay over on our publishers Twitch page, twitch.tv/primemattergg, on April the 7th at 4pm CET. Come tune in to see Dolmen’s hostile planet live in action – the death counter is ticking…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Follow Dolmen",
+     "items": [
+      {
+       "text": "TWITTER: @dolmengame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FACEBOOK: https://www.facebook.com/DolmenGame/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "INSTAGRAM: https://www.instagram.com/dolmengame/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-831050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/831050/view/4353300134221932628"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-06T16:28:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.768Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:10.482Z"
+  },
+  {
+   "id": "dolmen-75304@major-2020-10-01",
+   "gameId": "dolmen-75304",
+   "displayName": "State of the Game Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-01T13:32:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello DOLMEN fans!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been a little while since we last updated you with the progress of the game and we wanted to apologise for the long periods in between each update phase, We want you to know that the team is hard at work to bring you an amazing game and whilst we have some really exciting news to unveil later this year, we wanted to let you know that we are still here and working on bringing DOLMEN to you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whilst we can’t unveil too much right now we wanted to share some screen shots of the some of latest progress we have made and to also share a message with you from the team:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The planet Revion Prime is under attack by the interdimensional invaders Nikiderma, and your help is needed. We, the Massive Work Studio team, are building an entire universe of horror and adventure only for the bravest of warriors. We are so excited to share with you a little bit about our work. We are adding a bunch of extra cool content to the game and working extra hard to exceed expectations and deliver a great experience. Here's a little sample of what we're cooking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-831050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/831050/view/3807188575848994642"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-01T13:32:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.768Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:16.188Z"
+  },
+  {
+   "id": "dolmen-75304@major-2018-08-28",
+   "gameId": "dolmen-75304",
+   "displayName": "Kickstarter Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-08-28T18:15:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Kickstarter Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of you may have noticed that the Kickstarter hasn’t gone live yet… we apologize for that, there has been a delay with our verification and as such has pushed back our date to go live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We aim to go live within the next 48 hours, and as things progress, we’ll keep you updated. We appreciate your patience in advance as we get the final bits ready for you all. We have amazing stuff to show you all and look forward to a great Kickstarter with everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-831050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/831050/view/2444779293805948267"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-08-28T18:15:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:16.187Z"
+  },
+  {
+   "id": "dolmen-75304@major-2018-08-27",
+   "gameId": "dolmen-75304",
+   "displayName": "Kickstarter Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-08-27T12:45:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In less than 24 hours the Dolmen Kickstarter will go live!!! We are all very excited to be taking this next part of Dolmens journey with you all. We look forward to seeing you all on the other side of this countdown. Follow this link to get to our new Kickstarter page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-831050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/831050/view/2444779293801506362"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-08-27T12:45:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.766Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:16.186Z"
+  },
+  {
+   "id": "dolmen-75304@major-2018-08-24",
+   "gameId": "dolmen-75304",
+   "displayName": "Kickstarter Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-08-24T18:08:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The date is set and we are nearly ready for round 2 to begin! August 28 will see the next Dolmen Kickstarter go live! We hope you are as excited as we are about this next stage in Dolmen's life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-831050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/831050/view/2444779293791475126"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-08-24T18:08:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-831050",
+      "checkedAt": "2026-11-13T03:19:13.766Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:16.139Z"
+  }
+ ],
+ "issues": []
+}

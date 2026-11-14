@@ -1,0 +1,6790 @@
+{
+ "game": {
+  "id": "norse-oath-of-blood-336868",
+  "igdbId": 336868,
+  "name": "Norse: Oath of Blood",
+  "cover": {
+   "imageId": "co9y71",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9y71.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5hzs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5hzs.jpg"
+  },
+  "ps5Release": "2026-06-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "norse-oath-of-blood-336868@1.0.7.7",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Hotfix 1.0.7.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-03T15:10:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skirmish Mission Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on community feedback (A big thank you to our community!) We’ve added new randomized rewards when repeating missions. Awards are granted based on a budget that scales with the number of units and their rank in relation to the mission rank, granting more rewards when using less hirdmen and when ranked lower, over-ranked hirdmen reduces the reward budget.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed an issue where you would get stuck on your next turn after using the Mushroom utility item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the logic when picking unit to auto select on open turns, so it doesn’t select units who will end turn upon selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Save system",
+     "items": [
+      {
+       "text": "Whether you gained a status effect on your own turn (determining when it ends) is now stored and correctly reapplied when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Fixed all stats being 0 when displaying new hirdmen recruits on mission Victory Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the unit select indicator would be missing after finishing deployment phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Trade",
+     "items": [
+      {
+       "text": "Trinkets can now be traded!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the logic that calculated the value of items based on the resources used to craft it, before it just counted the resources now it multiplies each resource with its value. As a consequence of this most item prices have shifted a bit, but should be within the same ballpark as before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the crafting price of some items to make the trade price fit in more in comparison to other items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Fixed an issue with Troll's Toe ability repairing 3 armor instead of 1 when entering defensive stance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Missions",
+     "items": [
+      {
+       "text": "Longshot for a Longship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tracks are now left in the snow when moving in deep snow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1842846814443696"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-03T15:10:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.463Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-03T15:10:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.463Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-03T15:10:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.412Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.7.6",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.7.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-20T18:45:27.000Z",
+   "notes": [
+    {
+     "title": "Skirmish Mission Changes",
+     "items": [
+      {
+       "text": "After Skirmish Missions were made repeatable, there was an unintended impact on the village economy. As such, there will now be some new restrictions added to these missions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission rewards are granted only the first time Skirmish missions are completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missions are available to play only once per turn; they return when progressing turns on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "items": [
+      {
+       "text": "The level of detail system evaluation has been optimized to reduce hitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized how the face level of detail is changed to significantly reduce frame rate hitching during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/082026/norse%20compare.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "The hirdmen assigned when departing for missions are now based on the most recent selection made by the player from the previous mission. Thank you to the community for surfacing this request.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You are no longer prevented from sending injured hirdmen into missions, but doing so will result in them starting the mission with Injured status effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Fixed an issue where using the ‘Retry Mission’ option on a repeatable skirmish mission that has been completed before would result in the mission failing immediately sending you back to the ‘game over’ screen blocking progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue on the character screen where the Armor stat was not updated when switching to a unit with 0 armor, and would instead display the armor of the previously selected unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wrong loading screen being used when repeating Skirmish missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hirdmen slots displayed incorrect data on the Mission Departure Screen when the slots starts with no hirdman assigned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Save System",
+     "items": [
+      {
+       "text": "Fixed an issue where you don’t lose the game when Hallbjorn gets killed when loading either \"Sons Of The Wolf\" or \"No Lamb For The Lazy Wolf\" missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where arms would be incorrectly colored for some clothing during mission when loading a mission save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bad autosaves at the start of encounters that was present in the following missions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settling In",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Little Magpie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Karl Comes Begging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iron Will",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stealing The Show",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Long Shot for a Longship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Utlagi Camp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Animations",
+     "items": [
+      {
+       "text": "The Meat Shield idle animation is now kept in sync between the units more reliably",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed Meat Shield not working if the player unit has no armor equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Missions",
+     "items": [
+      {
+       "text": "Battle of the Borg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Ragnhild was hidden during the hostage fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved synchronization of the struggle animation between Haukr and Ragnhild",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A Karl Comes Begging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where enemies would teleport on top of a tree while running past the tree. Now, the enemy should run along the ground as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed a bad entry for Jorunn in the Polish translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Translated repeatable icon tooltip on Skirmish missions for all languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1841579228666559"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-20T18:45:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.462Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-20T18:45:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.462Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-20T18:45:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.411Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.7.5",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Patch 1.0.7.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-20T14:33:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45076955/bca09d76eda40ede289e2ffd76f8004c01f08414.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions",
+     "items": [
+      {
+       "text": "Skirmish missions are now repeatable!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Battle of the Borg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash when killing Haukr's bodyguards via Rampage during the final combat encounter in Battle of the Borg.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abnormal AI behavior during the final Battle of the Borg encounter, where Jarl Haukr could be attacked prematurely and his bodyguards moved to unintended locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where interactable items (chests, runestones, objects to investigate, lootable corpses) were not highlighted during inspection mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lootable corpses highlighting during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added highlight refresh for interactable objects when moving in inspection mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Various minor fixes to the Polish translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1838407329265661"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T14:33:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T14:33:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.461Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-20T14:33:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.410Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.7.4",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Hotfix 1.0.7.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-07T14:50:51.000Z",
+   "notes": [
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed issue where Rampage ability would only strike once when there are more units around the unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rampage ability now displays the damage it causes correctly in tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved how animation looks when executing Rampage ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Fixed bad looking LOD on \"Common Borg\" clothing worn by enemy units (Farspear Hersir, Thorvald Eriksson and some Spearman units and Gripr units) as well as the default clothing for Havardr Hirdman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1836506165578240"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-07T14:50:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-07T14:50:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.461Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-07T14:50:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.410Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.7.3",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.7.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-01T17:21:10.000Z",
+   "notes": [
+    {
+     "title": "[img src=\"https://media.tripwirecdn.com/062526/Main170316_9.jpg\"]",
+     "items": [
+      {
+       "text": "NEW Content! (Skirmish Missions & Maps)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A new set of missions have been added to the game via Skirmish maps! These are smaller, optional combat-focused missions that appear throughout the game that have no deadline; these new missions will allow you to further level up any characters of your choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skirmish missions can be encountered like any other missions, by unlocking them on the map. By progressing through turns on the map via either new or pre-existing save(s), mission markers will periodically drop onto the map and the player can then launch into them at any point during the campaign. A new game is not needed to access these missions, unless it's a late-game save, since there would not be enough turns before A Debt of Blood to access Skirmish mission(s).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Please note, these new missions are not repeatable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The new maps/missions names are the following",
+     "items": [
+      {
+       "text": "The Wolf Wood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Silver and Shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blood Soaked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Beast Men",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Eagle's Challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Greybeards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "An example of what this new mission marker looks like can be seen below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/062526/norse173.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localization (Additional Language)",
+     "items": [
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/062526/polish.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By popular demand, NORSE: Oath of Blood has been translated to Polish (Text only) a big shoutout to DrSkillzDeficit for his contribution in this endeavour!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PLEASE NOTE: Steam, Epic, and GOG achievements have not yet been translated \\ Polish Achievements are now translated. No client update was needed for this. Thank you for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Additional Localization",
+     "items": [
+      {
+       "text": "Fixed formatting mistake in the crafting entry in the points list of changes for Huntsman worksite construction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 'At the Gates' state being written as one word in the tutorial explanation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text not being localized on some project complete sequences (Ritual Circle, Makeshift Camp, Master Loomhall, Lumber Camp)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Improved enemy highlighting when hovering mouse over enemy alert tiles, now all enemies that cover that specific tile will get highlighted",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Alert tiles will now be displayed for enemies that start the encounter with alert active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlights on units now clear reliably when you stop hovering the mouse over units",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated description on Glima and Sound of Death abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved tooltip when targeting units that are out of range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved info text above ability bar when hovering units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tutorials can no longer be triggered while screen is black",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the game could get stuck if mission is restarted just when a tutorial starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added notifications message about not enough AP to do action or move, and notification about not being able to switch to other player units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed tooltip on Wolf Fang ability displaying incorrect number",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tooltip for explanation when lacking AP, which used the incorrect term",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed damage preview not taking armor piercing into account",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hovering units in the turn order now behave the same as hovering the unit in the scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where you were unable to select unit by clicking on them when standing outside combat areas outside of combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed how Turn Slots look when selecting a unit for open slots to indicate that the unit's turn has not started yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added New Turn Start announcement when the turn starts to clarify when this happens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The turn order slot now displays a flash animation when a unit starts its turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the mission difficulty icon more high quality and look consistent between the different screens that uses it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where ability tooltip did not update properly when inspecting passive abilities retaining the range and cooldown information, this is now cleared when displaying passive abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Trade Item slot price layout issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Save System",
+     "items": [
+      {
+       "text": "When save file types exceed the limit, it now deletes the oldest file instead of the newest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save files that are automatically generated no longer reuse files that don't follow the naming convention if the save file got renamed at some point and will instead delete the file and make a new one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where village events that are meant to trigger during turn progression would trigger early if loading a save made after the event was queued to execute on next turn progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dead enemies now keep the elevation they were saved at when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Adjusted optimization logic to not interfere with primary cutscene characters, fixing cloth animation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed some redundant enemy AI calculations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Fixed an issue where the \"No Escape, No Mercy\" achievement would not be granted when killing a unit held via Meat Shield ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made \"The Warlord's Sight\" achievement increment every time the Vulnerable status effect is inflicted on any enemy by any hirdman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made \"Rend and Ruin\" now only trigger when attacking people and animals, not inanimate objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made achievements not count individually for each Hirdman, but instead use the sum of all of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements that have been changed will convert the data from individual to shared amount on load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enemy AI Improvements",
+     "items": [
+      {
+       "text": "AI now handles abilities that combine push with other forms of damage better, as it won't avoid performing attacks that also pushes if it isn't colliding with anything",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed AI actions for Outcast Shieldbearer and Svein Bloodhammer so they don't engage already",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "engaged units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "The Great Market project now actually reduces the price of trading once completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now send less units than there are slots available if you so choose as empty slots won't be filled up automatically once mission starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ingebjorn no longer have the Bruiser trait and have his initial rank reduced from 3 to 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ability Changes",
+     "items": [
+      {
+       "text": "Wolf Fang now inflicts 1 Rend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Made Rend status effect work the way it was intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed flee status effect so it behaves as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Death's Kiss ability now only resets the cooldown when an enemy is killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where Warden status effect would trigger a counterattack, even when the attacker was out of range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with fleeing status effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player actions are now blocked while performing delayed abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When player knocks enemy into ally with active alert, they now targets the enemy correctly when performing the combo attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where in some particular circumstances, the player's turn could end when an turn enemy begins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where sometimes you would be unable to move the unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock when there are multiple player units available but all of them have a charged delayed ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where player would be unable to perform actions when starting the turn of a unit with a delayed ability active that couldn't be performed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Injured status effect which is now inflicted when health reaches the injury threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This effect has two levels, when you reach At The Gates the level increases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the lowest level it blocks the health from going past 50% and at the highest it blocks it at 33%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where you would start in the same area regardless of where you approached the encounter that was intended to have multiple options, you now get different starting area on supported encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Charge ability is now interrupted if killed or somehow gain the special effect where you can't move during a charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with charge that would sometimes result in units ending on top of each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where On New Turn events would sometimes trigger on incorrect unit when using fixed player turns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where turn would lock when unit is selected if you had cripple status effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ram ability is now restricted from targeting units at different elevation than yourself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with Wild Boar which had a range of 0 preventing it from performing attacks, this is now set to 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Enrage ability where two units could end up on the same grid position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where boars would face the wrong direction when striking after the charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Boar's Charge ability - now boar can't use charge ability when it is in engagement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed glitching issues during movement which in some cases when moving down from high ground could cause issues where the unit disappears and can't be used anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare cases where units are inexplicably unable to move during combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Alert is now interrupted if the unit is constrained by a status effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High ground tiles now blocks line of sight when standing at non high ground tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High ground now cause full cover on all non high ground neighboring tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where units not yet spawned would occupy tiles within combat area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed issue where soundscape volume did not activate if camera starts inside the volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Updated the physics colliders for Arn's cape so it follows his body better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed deforming mesh issue on the legs on Wildborn Coat model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Animation",
+     "items": [
+      {
+       "text": "Tuned animation settings on all basic attacks, dodges, and hits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tuned animation settings on knockbacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tuned all ability animation settings to make them blend better and be more responsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted some animations when needed to play well with the adjusted settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed shield flipping issue on one of the Ram attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where movement animation would interfere with attack animation when attacking diagonally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated particle effects and animation speed on Hail of Arrows animations so the actions and outcome seems more plausible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted arrow shoot and attach logic to be able to handle multiple shots (as well as none) in a single animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where if a unit was prone while at the gates he would stand up when prone buff ended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animation issue when animals are targeted by Enrage ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for playing additive animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made additive animations for Take Hit and Dodge that is played when alert attack deals damage or misses while the target moves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where Berserkr enemies would slide towards the target when using charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where unit held by Meat Shield could change animation pose when inflicted with prone, now the unit remains in the meat shield animation until released",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Missions",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where you would not receive any items or resources after a mission if you had failed the mission and complete it after choosing the retry mission option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the game would get into a bad state if you retry mission after losing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the size of the deployment area in appropriate encounters in Battle of the Borg, Blood in the Water, Tides of War, Into the Lair of the Beast and Iron Will",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Battle of the Borg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed last stand cutscene where Arn was invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The mission will now end if Ivarr Whalerider falls in battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wild Hunt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed runestone not activating the first time you click it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed behavior of the Alpha Wolf in the wolf encounter, now it waits until the second turn before moving down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Night Terrors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mission will now end if Karl Gudmundson falls in battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Utlagi Camp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a fallen tree that was laying unnaturally on the ground and moved a nearby one to make it lay more naturally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 18,
+    "fixed": 42,
+    "balance": 7,
+    "other": 47,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1836506165566036"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-01T17:21:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.460Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-01T17:21:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.460Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-01T17:21:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.409Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.07.2",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Hotfix 1.07.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-19T18:17:59.000Z",
+   "notes": [
+    {
+     "title": "Save System",
+     "items": [
+      {
+       "text": "Fixed issue where difficulty setting was not changed to the setting saved when loading a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Open turn is now saved so when saving after starting an open turn you will now be able to switch unit after loading that game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the incorrect combat area outlines could display when loading a game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "The system that adds footprints in the snow is now only being processed during the winter season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enemy AI Improvements",
+     "items": [
+      {
+       "text": "AI is now able to judge the outcome of pushing targets and will aim to push units into walls or allied targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI is now able to detect that pushing someone off from high ground or into fire cause damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI now penalizes pushing units needlessly and recognizes that pushing unit against combat area border doesn't cause damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI now avoids just pushing units to a different tile without hitting something or pushing them off high ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where sometimes the AI would not evaluate all options and miss out on possible actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now, AI is able to use Alert actively based on the situation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the maximum range AI considers enemies relevant for alert on ranged units from 6 to 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Abilities that affect units along its path is now taking those effects into consideration when AI estimates the outcome of abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Attacks that damage allies is now considered enemy damage when AI estimate ability outcomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy damage now reduce the ability estimate rating properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where healing allies was interpreted as causing harm by the AI rating calculation, now is adds to benefit instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When calculating rating for healing abilities the AI now rounds to closest whole instead of always down when healing by percentage amount so it matches the actual outcome when the ability is used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI now culls away all actions that have a negative rating on the action itself (disregarding positioning) so it doesn't perform idiotic actions just to do something",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where AI failed to detect that ability would end turn and end up trying to use abilities it in wrong order resulting in turn ending before it could use the last ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI is now able to judge if engaging would benefit it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI now takes into account that engaged target reflex is nullified when calculating attack rating, making it realize it is more likely to deal damage to engaged targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI now correctly disregards dead units and no longer avoid moving to tiles of dead units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed issue where sometimes unit would be placed outside the combat area when released from Meat Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to switch units during locked turns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that could occur if the last enemy unit dies during their turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed reinforcements not arriving if last enemy dies from bleed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The camera no longer changes zoom when deploying units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Rend status effect so it works as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed turn getting skipped if you use Trance ability and end your previous turn with 0 AP while having a buff that is removed when the turn ends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Enemy Ability Changes",
+     "items": [
+      {
+       "text": "The following list of enemy types have been given the abilities listed under each",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Spearman/Seasoned Spearman",
+     "items": [
+      {
+       "text": "Bandage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Starved Wolf-Hood/Ulfhedinn/Berserkr",
+     "items": [
+      {
+       "text": "Alert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Seasoned Archer",
+     "items": [
+      {
+       "text": "Mighty Shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Shieldman/Seasoned Shieldman/Duelist",
+     "items": [
+      {
+       "text": "Shield Slam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wolf Hood Alpha",
+     "items": [
+      {
+       "text": "Chopper (passive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Outcast Shieldbearer/Holdman",
+     "items": [
+      {
+       "text": "Bandage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shield Slam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wolf-Hood Bloodletter",
+     "items": [
+      {
+       "text": "Bandage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Skyti",
+     "items": [
+      {
+       "text": "Blood Seeker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gnawing Wounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bonebreaker/Warrior/Seasoned Warrior",
+     "items": [
+      {
+       "text": "Bandage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Defend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Viking Spearman",
+     "items": [
+      {
+       "text": "Bandage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Defend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skullsplitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Embolden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expose Weakness (passive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Holmgangr",
+     "items": [
+      {
+       "text": "Alert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Defend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dead Leg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brawler (passive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Balance",
+     "items": [
+      {
+       "text": "Fixed the Wolf-Hood Pelter to not have their AP reduced to 2 on story mode difficulty which caused them to not afford any ability and therefore couldn't do anything besides moving\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the difficulty modification for basic units that reduced skill by 10 on hard difficulty vs normal, now it is increased by 10 instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Arch Type was removed from SoTW Djarfr and SoTW Ulfhednar allied units so they don't get nerfed/boosted based on difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Story mode has had the stats of many enemy arch types adjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Armor Tank",
+     "items": [
+      {
+       "text": "Added Health -25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Reflex -20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Critical hit chance -100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Basic",
+     "items": [
+      {
+       "text": "Changed Health from -1 to -25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kept Reflex at -20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Critical hit chance -100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Boss",
+     "items": [
+      {
+       "text": "Changed Health from -2 to -25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kept Reflex at -20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Critical hit chance -100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Dodge",
+     "items": [
+      {
+       "text": "Added Health -25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed Reflex from -20 to -50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Critical hit chance -100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Health Tank",
+     "items": [
+      {
+       "text": "Changed Health from -20% to -25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Reflex at -20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Critical hit chance -100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Fixed a few instances where lootable corpses would fail to display the sheen effect on the face",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Added new camera shake effect that occurs when taking damage, this can be turned off in the game options if it is not to your liking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/051926/norse%20camera%20shake%20options.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critical Hit Chance is now displayed in the attack preview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the Hit Announcements Look and feel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Low health red vignette indicator now has been refined and flashes when taking damage in addition to displaying when low on health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now Status Effects that are replaced don't show a remove indicator and the buff icon in the unit list show an animation to indicate that it was updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where using highlighting feature within a combat encounter would highlight units outside of that encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed unintended dark gradient from Guard icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Hide Screen Messages from Interface Options as this is not usable in release builds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions",
+     "items": [
+      {
+       "text": "Borre",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where you could end up in a bad state and get stuck during the combat tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Night Terrors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where intro sequence played when loading a save made during the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tides of War",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where loading the mission's first autosave caused the first combat encounter to be skipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Debt of Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocked navigation on the left side so units can't move past the shield wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/051926/norse%20navagation%20battle%20dob.jpeg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the No Movement setup on the shield wall in the first encounter so they start moving if attacked or they attack you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a combat event when player moves past the shield wall that remove the AI logic that makes them stationary from all enemy units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the turn order of the first encounter to give an archer the turn earlier so it signals to the player that they can't just remain passive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made archers on first encounter able to use attack so they aren't forced to hurt the shield wall to damage the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 28,
+    "fixed": 13,
+    "balance": 6,
+    "other": 48,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1832700592801668"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-19T18:17:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.458Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.407Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.7.1",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Hotfix 1.0.7.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-06T16:00:17.000Z",
+   "notes": [
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed an issue where the alert indicator for players disappeared when set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1832065502809420"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T16:00:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.457Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.407Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.7",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-04T19:04:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45076955/fadb819ba29536b4b25c46efdf10ca51eec803bb.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Decreased hitching when enemies spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "AI Improvements",
+     "items": [
+      {
+       "text": "Enemy AI no longer move away when using an ability other than attacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy AI units will now avoid moving into bog tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy AI for defensive archers are now much less defensive and won’t just move away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Enemies that start with alert enabled now have the affected tiles marked when you enter combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When hovering alert tiles, all enemies that are targeting that tile now get highlighted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled feature that would sometimes block unit placement based on where other units were already placed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where combat encounters got additional empty slots when an allied team was the active team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would sometimes cause auto-deployment to fail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could sometimes happen when a status effect ends and the unit changes idle animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the unit orientation was not updated during deployment initialization, which lead to various elements displaying incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Loading",
+     "items": [
+      {
+       "text": "Fixed a rare crash that could occur during loading of missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Fixed Steinarr Warrior enemy type sometimes missing a head model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Fixed an issue where a previously highlighted unit would remain highlighted when changing to hover a different unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the layout on Mission end screen, so the height of graphical element stays consistent when earning medals or losing hirdmen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Medals now display a tooltip when hovered over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version number is now displayed on save slots created in version 1.0.7 or newer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed spelling errors (The Little Magpie message and Hammer Time mission objectives)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed <> from Utlagi Camp title in french translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed from Map tutorial text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed duplicated words in Utlagi Camp message",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed “under attack” dialog in No Lamb for Lazy Wolf mission not being translated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Runestone tooltip in Hammer Time mission now displays the correct translated description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A Karl Comes Begging",
+     "items": [
+      {
+       "text": "Increased deployment area size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Debt of Blood",
+     "items": [
+      {
+       "text": "The enemies in tower encounter no longer remain passive during their first turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can no longer see dead bodies on the ground during the a late game cinematic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "No Lamb for the Lazy Wolf",
+     "items": [
+      {
+       "text": "Updated the cinematic sequence to better match the final deploy locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tides of War",
+     "items": [
+      {
+       "text": "Made Svala Short-Tongue wait until next turn before escaping the second encounter to better communicate what is happening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thanks for your continued support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 9,
+    "balance": 2,
+    "other": 15,
+    "ps5": 0,
+    "topNew": [
+     "Enemy AI no longer move away when using an ability other than attacking",
+     "Enemy AI units will now avoid moving into bog tiles",
+     "Enemy AI for defensive archers are now much less defensive and won’t just move away"
+    ]
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1831432155578433"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-04T19:04:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.457Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.406Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.6",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-23T14:47:59.000Z",
+   "notes": [
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/45076955/3fae46f43a760145fc3b7b45f7f15bf2262367ae.png\"]",
+     "items": [
+      {
+       "text": "Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced hitching during deployment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced hitching when loading combat idle animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced hitching during AI calculations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced hitching when unit reaches its destination when moving during combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced hitching when changing hovered grid tile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced hitching when hovering units during combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed an issue where triggering the ‘Frustration’ status effect ability from Frida's Club would crash the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recovering AP/MP on executions is now limited to once per turn via Adrenaline Rush Status effect to prevent endless execution chains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabled alert attacks during charge abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Shield Slam from all AI units. This is a temporary measure until AI fixes allow them to use it more intelligently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "War Cry",
+     "items": [
+      {
+       "text": "Increased range from 1 to 2 and now get extended range (+3) when on high ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Sound of Death",
+     "items": [
+      {
+       "text": "Increased range from 2 to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Strong as Oaks",
+     "items": [
+      {
+       "text": "Increased range from 1 to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Fixed bald player units after loading saves in missions that use default clothing, such as \"Ullr's Arrow\" and \"No Lamb For The Lazy Wolf”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where player units would wear helmets during some cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Fixed high ground tooltip showing incorrect numbers and missing a letter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Updated all languages to reflect changes applied to the game since release",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "Equipment worn by hirdmen who fall in battle is now returned to the village",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ulfsgap settlement no longer appears on the map until after Into the Lair of the Beast has been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Sacrifice requirement from Freysblot project",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hammer Time",
+     "items": [
+      {
+       "text": "Fixed an issue that prevented saving the game in this mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Debt of Blood",
+     "items": [
+      {
+       "text": "Buffed allied Sons of the Wolf units across the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Longshot for a Longship",
+     "items": [
+      {
+       "text": "Fixed issue where you could end up stuck on the roof if leaping inside the warehouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced mission party size from 6 to 5 as the mission only uses 5 units from the village",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reinforcements for warehouse encounter is no longer standing outside before the fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Baldur now joins your village if freed in the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Settling In",
+     "items": [
+      {
+       "text": "Removed a horn from held by one of the nithing warriors in the pre-boss cutscene as it caused the character to be offset from the tile center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Woodcarver's Chisel",
+     "items": [
+      {
+       "text": "Removed passive behavior from reinforcement axemen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Credits",
+     "items": [
+      {
+       "text": "The credits section has been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thanks for your continued support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 11,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1830797770233378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-23T14:47:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.456Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.406Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.5.1",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Hotfix 1.0.5.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-09T14:10:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue that would cause a crash during AI turn calculations in certain scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This should address the most common crash users have reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The development team will continue to monitor for feedback from the community on this issue. As always, please report on the forums and in a support ticket if you are still experiencing this issue with as much detail as possible, including crash zips and game save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1829528821306840"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-09T14:10:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.455Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.405Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.5",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-01T16:18:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/040126/norseversion16x9.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "With patch 1.0.5 comes some significant optimizations (Up to 38% performance improvements under certain conditions) for both gameplay, combat and cinematics. Players can expect a lot less hitching/stuttering overall, along with frame rate increases across the board. This of course comes from data from internal testing on various hardware configurations, so the team will continue to monitor player feedback to ensure the community is seeing similar results. Optimization work will continue with future updates, as needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized animations during cinematics and gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized movement calculations during combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the facial animation system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed stalls that happened when switching between units during combat which got worse the more units had been moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "View distance optimizations are now more aggressively applied to dead enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled facial animations for characters looking away from the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made adjustments to AI calculations to minimize framerate impact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saving & Loading",
+     "items": [
+      {
+       "text": "Animations are now synchronized when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pre-mission autosaves are no longer made for missions that automatically start which made saves that, when loaded, would leave the game in a bad state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed a crash that could occur during combat. Players experiencing this would receive a ‘Fatal Error’ message.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash at the beginning of deployment on some maps after the first encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where alert would fail to trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed alert indicator marking tiles outside the actual range diagonally, leading to ineffective tiles being indicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed alert range sometimes not taking passive abilities into account",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Units using the Meat Shield ability now turn towards approaching enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death animations from the meat shield ability are no longer played twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed attack animations not playing when performed right after a missed attack or an execution animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Status effects now get checked for condition changes after performing actions as well as during movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added fail safe when reinforcement fails to move into position, it will teleport to destination if not making any progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Ability and Status Effects",
+     "items": [
+      {
+       "text": "Fixed Piercing Shot ability sometimes failing to damage all units in its path and not applying bleed like it should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Night Terrors",
+     "items": [
+      {
+       "text": "Removed Shield Slam ability from allied Drengr in the first encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Battle Of The Borg",
+     "items": [
+      {
+       "text": "Made changes to the level to improve character pathfinding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized collision in the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set up a fade effect for all buildings that the camera may intersect with while exploring the environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Longshot for a Longship",
+     "items": [
+      {
+       "text": "Fixed Baldur model breaking when loading a game save made during mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Stealing the show",
+     "items": [
+      {
+       "text": "Fixed bad spawn point placement on the reinforcement group entering the gate at final encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tides of War",
+     "items": [
+      {
+       "text": "Fixed so intro sequence doesn't play when loading a save made during the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed navigation being allowed too close to the climbable stone building in the final encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "There is now a camera pan sequence shown after completing village expansion projects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Options",
+     "items": [
+      {
+       "text": "Save Issues Fixes (Many of the in-game options would not save properly. These have been addressed):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ‘Upscaler Type’ Intel XeSS is now saved correctly when selected",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The chosen ‘Upscaler Quality’ option is now saved correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The chosen ‘Motion Blur’ option is now saved correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The chosen ‘Cover Indicator’ option is now saved correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The chosen ‘Play Audio in Background’ option is now saved correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ‘Frame Rate Limiter’ option is now saved correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the selected ‘Upscaler Quality’ option would not appear in the selection box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the ‘Full Screen’ option not working correctly at game startup when disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The ‘Combat Animation Speed’ option has been removed, as it was never functional. The development team is reviewing whether this will make a return in a future update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have removed the ‘Hardware’ Ray Tracing setting for the moment as it was a source of crashes. For now, the game will utilize ‘Software’ Ray Tracing by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Item listings no longer gets reduced when out of action points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed unassigned skills notifier. Now, it is correctly shown on the village from the start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where highlighted ability rank would sometimes display incorrectly when switching between units on the Hirdmen screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controller",
+     "items": [
+      {
+       "text": "Added support for scrolling while hovering over clickable items inside the scroll area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The cursor now appears while the ‘Unit Details’ screen is open when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ‘Unit Details’ screen now allows for turning the character around using the right analog stick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tides of War",
+     "items": [
+      {
+       "text": "Removed vignette from post-process",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Debt of Blood",
+     "items": [
+      {
+       "text": "Added missing background elements to final cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Sword Brothers",
+     "items": [
+      {
+       "text": "Fixed issue where there were two sets of faces on the village workers, causing issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an issue where characters in cutscenes could sometimes jitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Added missing cutscene translations and various small fixes to translations for several languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 18,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1828894815555344"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-01T16:18:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.455Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.404Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.4",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-17T18:16:45.000Z",
+   "notes": [
+    {
+     "title": "[img src=\"https://media.tripwirecdn.com/031726/norseupdate104169.jpg\"]",
+     "items": [
+      {
+       "text": "Save & Load System",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where saving the game would be blocked after interacting with a health interactable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong amount of attack hits after loading a game during a mission - the bug was present only when a unit had identical weapons in both hands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Removed hitching when targeting enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PLEASE NOTE: We are actively working on improving performance in the game and will continue this going forward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Ranged AI units now knows it has additional skill and range while in high ground and attacking targets not in high ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where AI would not get all valid options when targeting specific targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where AI would fail to use push abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hirdmen that join during a mission can now be injured during that same mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hirdmen that join during a mission will now gain experience during that same mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All abilities that don't require selecting a target can now be used by double clicking the ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pushing a unit within an alert area now triggers an attack of opportunity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ability and Status Effects",
+     "items": [
+      {
+       "text": "Guardian - This ability sometimes did not negate incoming damage correctly, this is now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Odin's Chosen - This now allows you to redeploy units correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whirlwind - AP cost in description of ability now reflect its correct cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shield Wall - Added filter to shield wall ability so it can't affect units already affected by meat shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Battle of the Borg",
+     "items": [
+      {
+       "text": "Fixed some tiles being inaccessible during the battle on the bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Blood in the Water",
+     "items": [
+      {
+       "text": "Moved boss shield wall ability to start of encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Iron Will",
+     "items": [
+      {
+       "text": "The party will no longer automatically heal after finishing encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Night Terrors",
+     "items": [
+      {
+       "text": "Blocked area between bridges that should be possible to walk in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Woodcarver's Chisel",
+     "items": [
+      {
+       "text": "Fixed rare bug with wrong behavior of Woodcarver Chisel deployment, where it sometimes started a manual deployment instead of the intended auto deployment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "Fixed an issue where some items that were crafted by the Seamstress, Blacksmith, and Huntsman were duplicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the completion sequences for Northern, Western, and Eastern Reach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Fixed a small gap on Gunnar's armor caused by wrong armor mask settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Trade",
+     "items": [
+      {
+       "text": "Fixed a bug with the resource list occasionally getting filled with items instead of resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Added support for different keyboard layouts (Azerty, Dvorak, etc.). The keyboard layout is detected automatically",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mission count and kill count now apply for hirdmen. These counts will not update retroactively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where you were unable to confirm an untargeted ability using a controller while the cursor was positioned on a different tile than the selected unit was located in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Options",
+     "items": [
+      {
+       "text": "Fixed a problem with the Overall Quality setting in the video options menu, when clicking very fast made a button caption desync from the actual game setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed problems with changing resolution and Full Screen in the video option menu. Now when switching the screen mode the game selects the closest resolution to current scale or it will scale to current resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cinematics",
+     "items": [
+      {
+       "text": "A Land of Men and Gods - Fixed lighting glitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1826992588604850"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T18:16:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.454Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.404Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.3.1",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Hotfix 1.0.3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-09T18:05:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue that would cause some AI to have more attacks than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1826362059931100"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-09T18:05:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.453Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.403Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.3",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-06T18:02:20.000Z",
+   "notes": [
+    {
+     "title": "Save & Load",
+     "items": [
+      {
+       "text": "Saving is now blocked while actions triggered by interactions is carried out to prevent issues that could occur if loading a save made during the activities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed wrong blocker in Borre when player save and load during ability tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where engagement indicators remain stuck after loading a save during combat with engaged units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed A Debt Of Blood bug when Volva's party is replaced with the main party after loading the first autosave made during the first mission cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Replaced all smoke effects with an optimized version in Borre",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision optimizations in Borre",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision optimizations in Stealing the Show",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LOD Bias updates on several assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PLEASE NOTE: We are actively working on improving performance in the game and will continue this going forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Removed underutilized feature of deployment, where placing a Hirdman would block earlier available tiles used for deployment. You can now freely place Hirdmen in the deployment grid without any restrictions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A character will now transition properly when leaping between different elevations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where game crashes when changing level while doing certain actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Second Wind ability not removing negative status effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added check during Ram ability that interrupts it if your unit is unable to move up to the target after pushing it backwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where Odin's Chosen ability did not display the deployment visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you would be unable to move after ending Meat Shield ability by selecting the unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pushing a unit within an alert area now triggers attack of opportunity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where end turn triggered twice when using the keyboard shortcut which would skip your extra turn when using Trance ability.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Turn order entry: Fixed RMB (right mouse button) targeting not working",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added check during Ram ability that interrupts it if your unit is unable to move up to the target after pushing it backwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Bogmathr execution animation and fixed bow mesh UVs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Ability and Status Effects",
+     "items": [
+      {
+       "text": "Drunk: Now being applied correctly at the start of combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ran's Wave: Are now correctly set as a delayed ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Engage: Added disengage and rotation before engaging to make sure the characters face each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Engage anim: Added EngageAttack_owner animation, with a unique variation of the spear attack to better fit other engage animation and fixed the spear engage animation not being timed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grit: Changed from being temporary armor to armor stat change and added \"At the gates\" to the list of trigger buffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gjallarhorn: Fixed heal amount adding the intended 25% heal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death's kiss: Reduced damage from 200% to 150%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wrath: Fixed lifetime not accumulating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ullr's arrow: Reduced damage from 400% to 300%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cat's Tail: Fixed so the \"Swift\" effect are not being removed immediately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Borre",
+     "items": [
+      {
+       "text": "Fixed an issue where under some circumstances the mission wouldn't end once you reached the boat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game would freeze if paused shortly after the longhouse video sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor navigation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced all smoke effects with an optimized versions in Borre (Also listed under Optimization)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision optimizations in Borre (Also listed under Optimization)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lighting pass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wild Hunt",
+     "items": [
+      {
+       "text": "Fixed boar boss starting out the fight too passively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "A Karl Comes Begging",
+     "items": [
+      {
+       "text": "made sure the reinforcement archer keeps their position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ullr’s Arrow",
+     "items": [
+      {
+       "text": "Fixed positions of some ground decals that were projecting on characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sigrid's duplicate bow in a cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ulfhedinn reinforcement now skips his first turn as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hammer Time",
+     "items": [
+      {
+       "text": "It is no longer possible to deploy on the high ground area in the first encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed reinforcements not joining if you kill all the enemies before reinforcements arrive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Woodcarver’s Chisel",
+     "items": [
+      {
+       "text": "Collision optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some navigation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Battle of the Borg",
+     "items": [
+      {
+       "text": "Fixed softlock when reinforcements arrived in last encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some ground decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unit that was mistakenly lootable despite not having any loot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a unit that dropped the wrong item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional invisible walls on the sides of the bridge so enemies don't walk, charge or get pushed off it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed cutscene not appearing after loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "The Little Magpie",
+     "items": [
+      {
+       "text": "Fixed so the intro camera pan don’t block input and it can now be skipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Into The Lair Of The Beast",
+     "items": [
+      {
+       "text": "Fixed navigation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor bugs with foliage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eliminated more hidden underground navmesh areas that caused issues when playing with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Debt of Blood",
+     "items": [
+      {
+       "text": "Turn order disappearing in some instances is now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polished transitions when switching teams and areas throughout the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed transitions at the gate after the second and fourth encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug when Steinarr uses enrage on Hardsteinn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Longshot for a Longship",
+     "items": [
+      {
+       "text": "Changed the turn order insertion method on second encounter from \"Deployment\" to \"Every turn\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stealing the Show",
+     "items": [
+      {
+       "text": "Fixed positions of some NPCs that were misplaced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision optimization (Also listed under Optimization)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tides Of War",
+     "items": [
+      {
+       "text": "Fixed some collisions that were blocking a pass to healing resources near the final encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Night Terrors",
+     "items": [
+      {
+       "text": "Fixed some errors on some units in 2nd and 3rd encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "Fixed a blocker after completing Large Dock project",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Modified the events for Volva's Den so the project starts automatically after the Lair of the Beast mission, granted that you have created the project before the cutscene where Gunnar visits the Volva",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Uncraftable items will no longer appear in the itemlist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When acquiring Masterwork items via trade that can't be unlocked you are able to craft them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drakkrship is now added as \"New Village Standing\", not \"New Project\" as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added lighting to Blacksmith 1 Upgrade phase when in process of building Master Smithy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed a Blacksmith light from Village correctly placed it in Master Smithy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where camera clips through Shipbuilder building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an issue where the game would crash when retrying a mission, returning to the title screen or loading a save while certain actions are taking place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Boar Horn: Fixed wrong icon on effect for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune-etched drinking horn: Fixed knockback effect not being applied consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fenrir Tunic: Fixed graphical issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Armor Display: Added an update event for buff change to compensate for \"armor changed\" not being called in every instance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability preview: Hit chance is now hidden when target is invalid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Action Point Tooltip: Made it more visually in-line with the rest of the tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the pause logic in Tutorial was running even when the tutorial window wasn't open, resulting in time being slowed down leading to practical soft locks when time (almost) stops. Now it only runs the logic while the tutorial is visible so this doesn't happen anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Options",
+     "items": [
+      {
+       "text": "Help: Fixed empty entries (they were gathering description from the wrong place)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Video: Added gamma slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Video: Added gamma name and description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hirdmen",
+     "items": [
+      {
+       "text": "Hirdman presentation: Added fade out for \"New Hirdman Text\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Added relevant soundscapes for the weather early in the level of a Longshot for a Longship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made the weather audio in the covered section attenuate more consistently when the camera moves under cover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several audio tweaks within the village",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sword Brothers",
+     "items": [
+      {
+       "text": "Adjusted level visibility tracks in Sequencer to stop incorrect levels being show",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "A Promise Of Slaughter",
+     "items": [
+      {
+       "text": "Lighting pass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 31,
+    "balance": 1,
+    "other": 50,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1826362059925208"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-06T18:02:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.452Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.402Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.0.2",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-27T19:50:08.000Z",
+   "notes": [
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Fixed an issue where Dual Shock controller detection caused major hitches in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PLEASE NOTE: We continue to actively work on improving performance in the game and appreciate everyone’s continued feedback on this topic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam & GOG",
+     "items": [
+      {
+       "text": "Fixed detection of DLC. Now, the game is able to detect whether or not it is enabled in store settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Loading and Saving",
+     "items": [
+      {
+       "text": "Added further changes to increase the robustness of the loading system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players experiencing loading into ‘black screens’ has been greatly reduced based on internal testing. The team will continue to monitor community feedback on this topic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the loading screen showed that it had completed immediately and wouldn't start the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading screens have seen improvements where it won’t end prematurely allowing the player to begin interacting with the game before it is ready and potentially causing issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the save button wasn't blocked during events when saving isn't supported, such as during cutscenes and combat moves. Saves made during these kinds of events are likely to run into issues when loaded and it is therefore important to be prevented from being made",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sometimes characters end up invisible after loading a save during a mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where movement events failed to trigger when loading a save during a mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game would start without any unit placeable if loading a save made during deployment with no unit placed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where multiple copies of units where visible when loading a save made during deployment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Added a ‘Reset Ability’ button. You can now reset abilities on your Hirdmen at no cost and as often as you’d like!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/022526/norseresetabilities.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cycling units during deployment now skips already placed units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where two units could end up occupying the same tile after being pushed when one of the units were in a prone state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made vaulting over obstacles follow the movement path more closely preventing units from ending up at unintended locations at the end of the vault and sometimes even outside the combat area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions",
+     "items": [
+      {
+       "text": "Fixed an issue where missions would stop becoming available on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fail safe system that adds back missions that have somehow gone past the deadline and gotten removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Hammer Time",
+     "items": [
+      {
+       "text": "Removed the reinforcement event during the second encounter. Additionally, we have removed the accompanying reinforcement horn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is no longer possible to deploy on the high ground area in the first encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the game could soft lock on second encounter waiting for reinforcement that never came",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the second encounter would not end after killing all enemies, soft locking the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Wild Hunt",
+     "items": [
+      {
+       "text": "Fixed a bug where some boars became invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Battle of the borg",
+     "items": [
+      {
+       "text": "Fixed cutscene not appearing after loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "Fixed an issue where Village UI elements would sometimes disappear after playing cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed empty wait time between events while progressing to next turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Fixed Einherjar row not flashing when level is reached and path is not yet selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Added localization for the newly added \"Reset abilities\" button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A Message for Content Creators Streaming or Recording Content for NORSE: Oath of Blood:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are aware of an issue affecting a small subset of creators where the game's music is improperly triggering YouTube's ContentID system on behalf of Tunecore, causing videos to be demonetized. We have identified why this is happening and are working to correct it. If you plan to create YouTube content for NORSE, the ContentID flag can be avoided by utilizing the volume slider within the game's settings to turn the music volume down. We apologize for any inconvenience this may cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your video has been demonetized by Tunecore, please contact Tripwire on social media or Discord so we can gather information and resolve the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 15,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1825727806711881"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T19:50:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.451Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.401Z"
+  },
+  {
+   "id": "norse-oath-of-blood-336868@1.01",
+   "gameId": "norse-oath-of-blood-336868",
+   "displayName": "Update 1.01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-20T19:17:17.000Z",
+   "notes": [
+    {
+     "title": "Summarized Changelog",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance & Stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized texture memory and Level of Detail (LOD) settings across multiple environment, character, and lighting assets to improve overall performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabled Nanite rendering for specific weapon types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed multiple crashes and soft-locks associated with loading save files, particularly in \"A Debt Of Blood\" and \"Battle of the Borg\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Introduced a dedicated Pre-Mission Save system that triggers upon deployment and will not be overwritten by standard auto-saves or quick saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled the ability to save during video playback to prevent file corruption and progression blockers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat & Abilities",
+     "items": [
+      {
+       "text": "Rebalanced damage, action point (AP) costs, and cooldowns for several abilities (including Bear Swipe, Death's Kiss, and Ullr's Arrow)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the ability paths and loadouts for Gunnar and Sigrid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where identical utility items or abilities would incorrectly share a cooldown and be consumed simultaneously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the calculation and display of Momentum and Action Point (AP) previews during combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Refined the \"At The Gates\" mechanic to prevent targeting errors, unintended double-tapping, and animation glitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated and motion-captured several combat animations to prevent clipping and improve visual fidelity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions & Encounters",
+     "items": [
+      {
+       "text": "Improved enemy AI behavior, targeting, and encounter pacing across multiple missions (including \"Training With a View\", \"Into the Lair of the Beast\", and \"Battle of the Borg\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolved various navigation mesh and collision issues that caused units to float, clip through terrain, or move outside the intended grid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed encounter triggers and objective states that previously led to progression blockers or missing enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoothed transitions between gameplay, real-time cutscenes, and pre-rendered videos to improve mission flow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Village & Progression",
+     "items": [
+      {
+       "text": "Adjusted village economy balancing: Adjusted specific worksite resource requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed pathing and clipping issues within the village hub, specifically around the docks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added and refined idle animations for characters at various village worksites (e.g., Blacksmith, Seamstress)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI & Localization",
+     "items": [
+      {
+       "text": "Fixed a logic error in the tutorial that caused the game time to slow down or soft-lock when the tutorial window was closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where graphics settings (like gore preferences) were not saving correctly upon startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cleaned up UI tooltips, ability previews, and button prompts for both mouse/keyboard and controller inputs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Applied widespread localization fixes, translating missing text strings and correcting inconsistencies in German and Norwegian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio & Visuals",
+     "items": [
+      {
+       "text": "Rebalanced audio mixing across several missions, adjusting the volume of environmental effects (wind, water, weather) relative to dialogue and music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added missing audio triggers for combat actions, cutscene events, and environmental interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished lighting, camera angles, and depth of field in multiple cinematics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted cutscene animations to ensure the correct player-selected weapons are displayed visually",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fixed wrongly displayed value on the unit health bar during “At The Gates”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash that could occur if loading a different map during camera transition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong move AP preview after hovering a unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked spearman animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-baked several animations to help counter some glitching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Fenrir Tunic stretching while using “Body Slam”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed identical abilities sharing cooldown, as an example if a Hirdman had two throwing axe utility items equipped both were consumed on one use. Now they should work as intended where you use one at a time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AtTheGates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed double tap protection as it was causing issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved target selection for voice line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added temporary \"CantBeTargeted\" effect to prevent double tap when units enter at the gates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a problem where units would stand up when being missed by an attack while “At The Gates”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added trigger for AllyAtTheGates audio event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Armor display and Ability Preview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inconsistent armor gathering method",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clamped hit chance calculation reflex to 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Ability Preview showing up unintended sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed icon so it's no longer a duplicate of \"Hawk's Eye\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boar passive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed small boar passive missing name/description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Momentum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made a fix where momentum bar wasn’t resetting on new deployment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed momentum not being saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bersekr",
+     "items": [
+      {
+       "text": "Bear Swipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated to match being an einherjar ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage increased from 50% to 150%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ap cost increased from 4 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooldown increased from 4 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Ferocity being removed early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bogmathr",
+     "items": [
+      {
+       "text": "Bloodseeker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed additional damage not being multiplied with status effect lifetime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Death's kiss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced damage from 300% to 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ullr's arrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased damage from 300% to 400%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Drengr",
+     "items": [
+      {
+       "text": "Trading Blows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing audio event trigger for OrderAllySwap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Meat Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated supported abilities to only include damaging single target attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added proper cooldown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now changes weapon visibility of target on start and end to prevent clipping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thor's Roar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced shaken turns inflicted from 2 to 1 (previously compensated for status effect countdown)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Included origin when inflicting focus status effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved timing of effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Hersir",
+     "items": [
+      {
+       "text": "Tactical exchange",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced animation with motion captured version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Audio event trigger for OrderAlly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Flyting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed unintended single target configuration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Order Attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced animation with motion captured version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Audio event trigger for OrderAlly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warcry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inflict status effect applying different settings on the owner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ferocity status effect not being added for the intended amount of turns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "VIP Specific",
+     "items": [
+      {
+       "text": "Gunnar - Prowman Path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bondi ability changed to \"Trading Blows\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raider ability changed to “Glima”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Housecarl ability changed to “Ram”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gunnar - Leader Path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Housecarl ability changed from \"Chopper\" to \"Brawler\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sigrid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swapped \"Death's kiss\" and \"Blood seeker\" (from trickster to sharpeyed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced duplicate \"Death's kiss\" with Ullr's arrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steinarr Drengr status effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed stability (was meant for rekkr status effect)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Improved Lighting on the Hirdman Screen after a mission ends so it’s in line with the other End Screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced the button shown for highlighting interactables to be the Highlight Interactible button instead of Show Details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Options Tab: Fixed gore setting being unchecked on startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial: Changed the button icon in interactable tutorial from ShowDetails button to HighlightTargets button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the pause logic in Tutorial was run even when the tutorial window wasn't open resulting in time being slowed down leading to practical soft locks when time (almost) stops. Now it only runs the logic while the tutorial is visible so this doesn't happen anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blocker button: Fixed progression animation not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed wrong highlighted interactables during combat. Now players in combat can not highlight interactables from exploration mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Combat HUD: Fixed wrong button prompt for inspection mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission preparation: Fixed back button being unusable during mission deadline while using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability preview: Changed sort order so this is always shown on top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission end screen: Added failsafe for transform policy failing on title",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability Tooltip: Added failsafe for transform policy failing on title",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Armor Keyword: Added icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General Tooltip: Added override when used on map so it still triggers the extended tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stopped the input action from consuming lower level inputs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated ability listings to use the ability tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Enabled nanite for axes and spears",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Reduced excessively high texture resolutions",
+     "items": [
+      {
+       "text": "Food items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Farmer, Fisherman and Sons of The Wolf Drums",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ground, Ground cover, Roads,Mountains and surfaces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Docks and Drapes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking and Corpses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carpets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blacksmith and Tools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mushrooms, Bones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boots and bracers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Structures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All armor textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Containers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modular Assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Banners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some Modular assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PLEASE NOTE: We are actively working on improving performance in the game and will continue this going forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Save System",
+     "items": [
+      {
+       "text": "[p align=\"center\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://media.tripwirecdn.com/022026/norseretry.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"center\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Retry Mission button to the pause menu during combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where you got stuck when loading saves made during combat in A Debt Of Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A Debt Of Blood blocker - Fixed a bug where players were unable to progress after the first turn when loading a save that was made in the final encounter of the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug when a player is able to save game during a soft cut scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash that could happen when loading a save made during a mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when reinforcements arrived in last encounter in Iron Will",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong hirdman data sometimes being loaded after restarting a mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where retrying mission on the second part of a multilevel mission it would reset progress data from first part of the mission, now it returns to the state you were in at the beginning of the second part",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You are now blocked from saving during video cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added pre mission save that is triggered when departing for a mission. This save is a separate type and will not be overwritten by auto or quick saves. It gets overwritten when departing to a different mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modified loading system to prevent loading complete triggering early which can lead to issues when the player starts performing actions in the game and triggering events before everything is ready",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hirdmen",
+     "items": [
+      {
+       "text": "Updated Arnsteinn Profile Picture to match his current Haircolor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a minor typo (Birgr and Birgir)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Profiles fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced some hirdmen profiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deleted an NPC armor that used an old Hersir armor with a false description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Training With a View",
+     "items": [
+      {
+       "text": "Fixed missing Gunnar bracers in cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Borre (Escaping Borre)",
+     "items": [
+      {
+       "text": "Added slight delay to Alert tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed broken burning haypile, should now inflict burning as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some of Steinarr's reinforcement units being controllable by the player in the final encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Modified AI behaviour of allied units in final encounter to make sure they stay aggressive and moved their starting positions so they are a bit more centered in the encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Settling In",
+     "items": [
+      {
+       "text": "Increased the accuracy of the boat interaction area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Ullrs Arrow",
+     "items": [
+      {
+       "text": "Increased interactivity range on runestone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Iron Will",
+     "items": [
+      {
+       "text": "Removed superfluous encounter triggers for encounter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forced second encounter to require enemies to be active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleaned up unused events and simplified setup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the autosave would fire before last objective was complete, but after the encounter, causing a blocked state when loading that autosave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Debt of Blood",
+     "items": [
+      {
+       "text": "Polished transitions when switching teams and areas throughout the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unnecessary level streaming before final cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed some assets that were floating in the air when the longhouse wall fades during final combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing dialogue to final encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enabled missing archer in final encounter that had negative consequences for the encounter's balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added - Destructible combat barricade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed turn order, and replaced barricades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed evac point for 1st encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Into the Lair of the Beast",
+     "items": [
+      {
+       "text": "Fixed minor navigation bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unit that seemingly had no movement restrictions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rock thrower that only wanted to retreat and use defensive stance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wolf warriors using alert every turn for too many rounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some underground navmeshes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made sure it's not possible to walk off the rock bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grounded characters that were floating on the bridge at the start of the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eliminated underground NavMesh that seemed to cause issues for navigation, particularly for controllers / WASD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Longshot for A Longship",
+     "items": [
+      {
+       "text": "Fixed second encounter being invisible after loading a save before the encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Expanded fading wall collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Battle of the Borg",
+     "items": [
+      {
+       "text": "Updated enemy enemy formations and status effect timings on the bridge so they join the fight much quicker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed enemy types on the bridge to adjust difficulty of the encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made change to enemy alert timing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switched out archer that was unable to shoot past obstructions with a spearman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved flanking berserker enemy closer in first encounter so he can reach a target easier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restricted navigation on parts of the bridge to avoid AI units going outside of the grid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Utlagi Camp",
+     "items": [
+      {
+       "text": "Removed empty interactable volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new camera to boss intro level sequence, Ambush pathway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Wild Hunt",
+     "items": [
+      {
+       "text": "Added activity to move navigation volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added collision to the jarl and guard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update navigation near the longhouse to avoid characters going through the stones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Health decrease displayed as Gunnar equips the boar spear over the shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Karl Comes Begging",
+     "items": [
+      {
+       "text": "Replaced an archer that spawned too far away with an outcast spearman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the correct campfire combat actor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Village",
+     "items": [
+      {
+       "text": "Fixed and flattened a departing area in the docks to prevent units from clipping into the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you would get stuck if clicking on the blocker button to start mission preparation from the map screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Fixed a wrong input context after timeline progress is ended - probably it could block a player from progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mission info not displaying difficulty consistently between map and mission preparation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Higher provision consumption, 2->3 pr hirdman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Higher tier 2 project costs + more spend of riches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sigrid is hunter instead of seamstress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "No key item for docks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "No key item for makeshift camp (hirdmen can be injured)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Drakkrship higher woodworker cost 1 -> 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Jol, instead of +1, outdoor worksites receive -2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Higher cost of housing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Worksites",
+     "items": [
+      {
+       "text": "Added idles for Blacksmith and Seamstress when state machine starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Localization fixes",
+     "items": [
+      {
+       "text": "Applied widespread localization fixes, translating missing text strings and correcting inconsistencies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed duplicate mention of leather in the resources tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "German",
+     "items": [
+      {
+       "text": "Updated Character Bio text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing German Translation for No Lamb for the Lazy Wolf cinematic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rewrite of all loading screen text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several flavor quotes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some translation inconsistencies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Norwegian",
+     "items": [
+      {
+       "text": "Additional fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Concurrency tweak to menu components that may stop a bug, soundset update for menu components that may fix another",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Unit Component so it is compatible with saves made in Norse 1.0.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resave of core audio components controlling menu sounds as these are different in the build to the editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interactions",
+     "items": [
+      {
+       "text": "Added sound for untying prisoner to the animations used for these",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Assigned physics materials to wooden bridge components so correct footsteps play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Music",
+     "items": [
+      {
+       "text": "Borre",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed redundant music triggers in Training section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cutscenes",
+     "items": [
+      {
+       "text": "Into the Lair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added audio to Grimlingr in his first appearance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Beginning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed a bit of the dialogue lane to stop the ducking compressor blowing a music crescendo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Promise of Slaughter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set the correct mix control on the cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brothers Again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated atmosphere stem to add the fire properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swapped the control mix for the sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Reinstated the audio for Drengr blocking arrows with a deflected condition attached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added audio for opening gates to the BP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combat Voice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced DissJorunn voice select lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Altered Berserkr charge ability so charge doesn't play off the target and it has some audio for impact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settling In: Swapped one of the prisoner poles to the correct voice on freeing them (Hardsteinn's)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Mastering",
+     "items": [
+      {
+       "text": "Stealing The Show",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced level env vs music, added a proper treescape, removed some things that were a bit odd, added several missing details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Iron Will",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the river audio coverage less omnipresent and aggressive, and more in keeping with what the water now looks like",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a number of general environmental audio issues, overbearing windage etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balanced out Bog Lord's dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced the music for combat better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Into The Lair Exterior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced out the rain sound, sorted out weirdness with water audio, set physics components on the wooden bridges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No Lamb for the Lazy Wolf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialogue stem for prerendered section for sub/loc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hammer Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deactivated dynamic weather audio, balanced environment out a little better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Karl Comes Begging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced explore music vs weather, deactivated dynamic weather audio component as this is unnecessary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Night Terrors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environment: calmed the wind audio down, switched off weather sound from dynamic weather audio as this is unnecessary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cinematics and Lighting",
+     "items": [
+      {
+       "text": "A Debt of Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for last cutscene inside Longhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated longhouse interior lighting to improve readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated cutscene lighting to reflect new changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera polish on Debt Of Blood 02",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted fire VFX for the close up shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Extended duration of firelight to cover end credits roll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Promise Of Slaughter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lighting pass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Village - Fisherman Worksite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted position of Fisherman Worksite actor so that the character is standing in a better position for the shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted position of Camera_Fisherman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added lights to Camera_Fisherman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Training With A View, Little Magpie 2, Ullr's Arrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polished camera and made adjustments to depth of field",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed frame boundary issues causing lighting glitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Longhot for a Longship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The animations were reworked to ensure that all possible weapons selected by the player appear correctly in the cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blacksmith - Master Smithy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted camera and blacksmith position in master smithy to be consistent with other worksites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated lighting in master smithy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some users are experiencing a black screen on loading a previous save. If this happens to you, as a work around please try the following:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you're in the first mission (training with a view), you can quit that game and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load the save you want to resume your campaign on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 29,
+    "fixed": 55,
+    "balance": 24,
+    "other": 173,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3054690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3054690/view/1825093633188812"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-20T19:17:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-3054690",
+      "checkedAt": "2026-11-13T03:26:58.450Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.400Z"
+  }
+ ],
+ "issues": []
+}

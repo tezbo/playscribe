@@ -1,0 +1,760 @@
+{
+ "game": {
+  "id": "chip-n-clawz-vs-the-brainioids-333089",
+  "igdbId": 333089,
+  "name": "Chip ‘n Clawz vs. The Brainioids",
+  "cover": {
+   "imageId": "co9s6l",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9s6l.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar437k",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar437k.jpg"
+  },
+  "ps5Release": "2025-08-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "chip-n-clawz-vs-the-brainioids-333089@hotfix-2025-11-21",
+   "gameId": "chip-n-clawz-vs-the-brainioids-333089",
+   "displayName": "Hotfix Notes 11/21",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-21T09:00:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone! This is a quick patch to fix the kill zone in certain levels, which blocks players from getting all collectibles. Squishini-squishooni.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Much bigger stuff is in the works, so stay tuned for future updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1332430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1332430/view/1816849002013195"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T09:00:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T09:00:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.186Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-21T09:00:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:09.556Z"
+  },
+  {
+   "id": "chip-n-clawz-vs-the-brainioids-333089@major-2025-11-11",
+   "gameId": "chip-n-clawz-vs-the-brainioids-333089",
+   "displayName": "Area Control Update Now Live – Patch Notes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-11T17:01:27.000Z",
+   "notes": [
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "New multiplayer map with a brand-new mode - Area Control.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reach the victory point goal before your opponent does to snatch the win!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Available in PvP and Skirmish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skirmish Map Pack 2 is added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All multiplayer maps now have a Skirmish variant. Go win them all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Intel XeSS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Quality profiles are now properly applied when using XeSS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Integrated Intel® XeSS Frame Generation (XeSS-FG)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Integrated Intel® Xe Low Latency (XeLL)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Tweaks and fixes",
+     "items": [
+      {
+       "text": "Skirmish rebalance - we did some fine-tuning thanks to your feedback and amplified the opposite difficulties. Easier difficulties are now easier, and harder difficulties hit even harder!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Panic music now plays correctly when the Brainioids press the Panic button in Skirmish battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where the camera could get stuck inside the hero character when starting a level. Yikes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue (we’re talking really rare!) where the Pause Menu does not show correctly when pausing/unpausing quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wireless DualSense controllers are now detected correctly. No need for chords anymore!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "New multiplayer map with a brand-new mode - Area Control.",
+     "Reach the victory point goal before your opponent does to snatch the win!",
+     "Available in PvP and Skirmish."
+    ]
+   },
+   "sourceIds": [
+    "steam-1332430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1332430/view/1815580768430243"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-11T17:01:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.185Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-11T17:01:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.185Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-11T17:01:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:09.555Z"
+  },
+  {
+   "id": "chip-n-clawz-vs-the-brainioids-333089@major-2025-11-05",
+   "gameId": "chip-n-clawz-vs-the-brainioids-333089",
+   "displayName": "The Area Control update is almost here!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-05T19:33:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello brain-squishers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know it’s been a while, but the next update is around the corner! It will bring some bug fixes, Skirmish Pack 2 with a difficulty rebalance, and a brand-new Area Control multiplayer map. We just need a few more days to resolve all technical issues on our side, since this is a simultaneous cross-platform update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new Area Control map is out of control! It’s very cool, we are playing it every day and are having a blast. Skirmish on the hardest difficulties here is a real brain-melter, and we can’t wait to do the update for you to try it. For those of you who’re not looking for the toughest challenge on the Mothership, Skirmish’s easier difficulties are more relaxed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for all the feedback in Discord, too! If you haven’t already, consider joining there and don’t hesitate to send an invite for a game or two! Here’s a small sneak peek at Minda’s Retreat:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45434129/eb3ae3125b96e91666c4e68a8ed85016e79d1d6b.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HQ is landing very soon! Stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Snapshot Games team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1332430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1332430/view/1815580768237548"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-05T19:33:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.185Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-05T19:33:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.185Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-05T19:33:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:09.554Z"
+  },
+  {
+   "id": "chip-n-clawz-vs-the-brainioids-333089@post-2025-09-29",
+   "gameId": "chip-n-clawz-vs-the-brainioids-333089",
+   "displayName": "New Skirmish Mode Now Live – Patch Notes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-29T16:05:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have just added the brand-new Skirmish Mode to Chip ‘n Clawz vs. The Brainioids - for FREE! This game mode introduces new multiplayer maps with AI opponents. Now you and a friend can squish even more Brainioids together! Skirmish Mode is available for solo, online co-op and split-screen play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out the full patch notes below, including new Friend’s Pass features. We’ll see you in-game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "Skirmish mode is added to the game! Pack 1 is now available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Play battles against AI-controlled Brainioids.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Choose between 5 difficulties ranging from casual to unfair!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pack 1 comes with 3 maps: Brainioid Central, Commanding Heights, and Secret Base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Play solo, or invite friends in online or split-screen Skirmish co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Friend’s Pass - 2 PvP maps now available for free!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Friend’s Pass players can now host public and private PvP games on the maps “Commanding Heights” and “Brainioid Central” for free!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Tweaks and fixes",
+     "items": [
+      {
+       "text": "Fixed missing Railgun VFX. Sniping the bad guys is flashy once again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The “For Whom the Brain Tolls” achievement now works properly. If completed, simply opening up the game will trigger it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Like us: https://www.facebook.com/ArcGames/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Watch us: [dynamiclink href=\"https://www.youtube.com/@ArcGames\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Join us: https://discord.gg/2DEGRggKA2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Skirmish mode is added to the game! Pack 1 is now available.",
+     "Play battles against AI-controlled Brainioids.",
+     "Choose between 5 difficulties ranging from casual to unfair!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1332430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1332430/view/1811772772378792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T16:05:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.184Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T16:05:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.184Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-29T16:05:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:09.553Z"
+  },
+  {
+   "id": "chip-n-clawz-vs-the-brainioids-333089@post-2025-09-09",
+   "gameId": "chip-n-clawz-vs-the-brainioids-333089",
+   "displayName": "Patch Notes September 9",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-09T09:03:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version Number: 23185",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major fix",
+     "items": [
+      {
+       "text": "Fixed an issue causing the game to crash when placing buildings on missions with pre-placed Gun Turrets (“Guns Blazing” and “Stating the Blobb-vious”).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tweaks and fixes",
+     "items": [
+      {
+       "text": "Gun Turrets now properly target General Blobbius and all of his cronies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A small rework of the mission “Stating the Blobb-vious” improves visuals and gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Artillery now properly targets high-ranking Brainioids in the mission “We’re in Big B Trouble”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Janitors now properly yell when hurt, or if their doom is imminent. Poor things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small tutorial tweak in the mission \"Guns Blazing\" now properly highlights Chip's Overdrive ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few typos were corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The “IDKFA” achievement now works properly. If completed, reloading your save will trigger it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A mysterious sphere named “Alien Cat Spawner” was removed from the game. Or was it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1332430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1332430/view/1809869180190976"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-09T09:03:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.183Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-09T09:03:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.183Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-09T09:03:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:09.552Z"
+  },
+  {
+   "id": "chip-n-clawz-vs-the-brainioids-333089@patch-2025-02-25",
+   "gameId": "chip-n-clawz-vs-the-brainioids-333089",
+   "displayName": "Known Issues with Steam Next Fest Demo & Upcoming Demo Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-25T01:21:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Earthlings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks so much to everyone who's played the Steam Next Fest demo so far! It's incredible to see you all enjoying the demo and of course, showing those pesky Brainioids who's boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We wanted to give a quick update on Known Issues we've spotted (see below). We plan to go out with a patch tomorrow to fix the issues mentioned in the Levels section -- stay tuned for updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Co-op",
+     "items": [
+      {
+       "text": "Sometimes accepting a Steam invitation through Steam's \"Friend Invite\" feature does not work the first time, then accepting a second invitation works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Levels",
+     "items": [
+      {
+       "text": "Toxic Pond Level (The 5th Challenge Level) - Watchtower's collider does not work and cannot be destroyed by Shooters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commanding Heights (PvP Map) - miners may get stuck and not mine one of the central Brainium crystals correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1332430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1332430/view/1792116353340423"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-25T01:21:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1332430",
+      "checkedAt": "2026-11-13T03:17:20.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:23.025Z"
+  }
+ ],
+ "issues": []
+}

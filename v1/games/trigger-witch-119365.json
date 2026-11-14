@@ -1,0 +1,92 @@
+{
+ "game": {
+  "id": "trigger-witch-119365",
+  "igdbId": 119365,
+  "name": "Trigger Witch",
+  "cover": {
+   "imageId": "co3gik",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3gik.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arvd1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arvd1.jpg"
+  },
+  "ps5Release": "2021-07-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "trigger-witch-119365@patch-2022-05-31",
+   "gameId": "trigger-witch-119365",
+   "displayName": "Small frame rate patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-31T09:48:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small patch to help with some minor frame rate issues. The v-sync setting should now be working as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880230/view/4437747060844193529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-31T09:48:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880230",
+      "checkedAt": "2026-11-13T03:34:50.247Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-31T09:48:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1880230",
+      "checkedAt": "2026-11-13T03:34:50.248Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-31T09:48:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.281Z"
+  }
+ ],
+ "issues": []
+}

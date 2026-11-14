@@ -1,0 +1,98 @@
+{
+ "game": {
+  "id": "whacking-hell-282223",
+  "igdbId": 282223,
+  "name": "Whacking Hell!",
+  "cover": {
+   "imageId": "co8dym",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8dym.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2p0l",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2p0l.jpg"
+  },
+  "ps5Release": "2024-06-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "whacking-hell-282223@post-2024-11-14",
+   "gameId": "whacking-hell-282223",
+   "displayName": "Fix for achievement issues (November 14)",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-14T11:22:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In some cases the \"Construction Site\" achievement was not unlocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This has been fixed, and the conditions to unlock all achievements are double-checked when launching the game, to allow retroactive unlocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2616090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2616090/view/1783238125210561"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-14T11:22:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2616090",
+      "checkedAt": "2026-11-13T03:36:05.511Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-14T11:22:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2616090",
+      "checkedAt": "2026-11-13T03:36:05.511Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-14T11:22:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:13.851Z"
+  }
+ ],
+ "issues": []
+}

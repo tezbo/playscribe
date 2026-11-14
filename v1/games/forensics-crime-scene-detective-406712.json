@@ -1,0 +1,1977 @@
+{
+ "game": {
+  "id": "forensics-crime-scene-detective-406712",
+  "igdbId": 406712,
+  "name": "Forensics: Crime Scene Detective",
+  "cover": {
+   "imageId": "coc941",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc941.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar635c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar635c.jpg"
+  },
+  "ps5Release": "2026-07-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "forensics-crime-scene-detective-406712@hotfix-2026-11-02",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Hotfix | Fixes & Improvements",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-02T15:46:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/0ae0033d53457ec9e7750c59acf01f74e71030b2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello Investigators! Unity recently shared a couple of security advisories, and we did what a responsible game studio should do: we checked our games and applied the necessary fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The issues involve some technical parts of the Unity engine, including security certificates and data handling. Nothing particularly exciting from a player's perspective, but still worth taking care of.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are mostly small, behind-the-scenes fixes. We also took the opportunity to include a few minor bug fixes we had already prepared for our next major patch, based on issues you reported here on Discord, such as a bug with language selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No new content, just some maintenance and a few small improvements. Let's dive into the details:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Added a message when the player solves all cases displaying all scores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed a case where it was impossible to remove vertically placed evidence markers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Added a message when the player solves all cases displaying all scores"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1847920302248658"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-02T15:46:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-02T15:46:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.188Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-02T15:46:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.131Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@9",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-18T14:10:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/0354f717836c44e14d6bb3198f027ce5c86afd7c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello Investigators!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have made another batch of fixes and improvements. We also focused on more compatability with Steam Deck and Steam Machine mostly readability issues. Let's dive into the details:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🆕New Features & Improvements",
+     "items": [
+      {
+       "text": "Added controller dead zones to movement and look sticks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added visual and audio feedback to desoldering when you heat up the chip too much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased font sizes in settings & notifications for better readability on Steam Deck and Steam Machine.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Steam Deck specific controller glyphs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added an option in control settings to override which button icons are used when using a controller (PC only)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed logos in credits flashing for a single frame when entering the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the digital alarm clocks to show the time from the case intro and not the local machine time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Markers showing a wrong number for a single frame in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed trajectory laser dotted line appearing for a single frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation for the 3rd run slot to behave as expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Added a flag to auto release evidences when leaving a station if the evidences are not in use by a process. Used for digital analysis stations as they had conflicts over ownership of an evidence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Correctly detect loose chips and block decryption in the analysis station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Important Info",
+     "items": [
+      {
+       "text": "Additionally, we’ve decided to take the demo offline for the time being, as it no longer represents the current state of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’d like to thank everyone who tried the demo, shared their feedback, and enjoyed playing it. The feedback we’ve received has helped us tremendously throughout development and continues to do so!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Added controller dead zones to movement and look sticks.",
+     "Added visual and audio feedback to desoldering when you heat up the chip too much."
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1844115010494942"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T14:10:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.187Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T14:10:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.188Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-18T14:10:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.129Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@8",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-31T09:53:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/a58894ead0a3b709b204914f7764509a9a01fd88.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello Investigators. Just some minor fixes today which gives us a bit of time to breath while we prepare for additional languages and more content. Let's dive into the details:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Streamlined UI exit button is always left, and used explicit navigation for all buttons: exitbackskip in analysis stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixing Station's SelectionPicker for controller and keyboard to jump to the last element as expected when navigating up from the exit-button (not to the middle of the list) when displaying scroll views",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where DNA-Profile-Station does not show correctly the result-folders and flasks after reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where DNA-Profile-Station would display the wrong icon when a sample is inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed setting navigation for in game settings menu with a PS or XBOX controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed a button icon being displayed incorrectly with a PS or XBOX controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed mail content being cut of on long mails in defferent laguages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1839676055887671"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T09:53:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T09:53:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.186Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-31T09:53:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.127Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@major-2026-07-29",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Content Update | A New Case Is Now Available!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-29T13:36:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/f68b04a426109c0345f99b2729fba243370e491f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello Investigators. We've got another update ready for you. This patch introduces a brand new case to investigate, along with a wide range of fixes, gameplay improvements, and quality of life updates based on your feedback. Let's dive into the details:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "New case: \"The First Stone\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a photo gallery to the evidence and tripod cameras to watch already taken pictures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add default deadzone to UI thumbstick navigation with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed a rare issue where the camera would get stuck in Tutorial 4 when looking at the wall with the bullet hole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an incorrect label on the whiteboard for case \"Barrel Secrets\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where movement would get stuck with controller when watching the alarmclocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cleaned up the finished game text on the whiteboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a fingerprint mixup in the evidence of \"Parking Lot Retribution\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed witness statement configuration in \"Barrel Secrets\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing event handling for music to trigger after loading in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Added bathroom utensils to the cabinet in case \"Breaking and Entering\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved phones in case \"Whiskey and Gunfire at the Pool Bar\" to make it easier to take photos of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replace \"Pool Bar District\" with \"City Center\" in intro text of \"Whiskey and Gunfire at the Pool Bar\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "New case: \"The First Stone\"",
+     "Added a photo gallery to the evidence and tripod cameras to watch already taken pictures",
+     "Add default deadzone to UI thumbstick navigation with controller"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1839676055882570"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-29T13:36:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.185Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-29T13:36:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.185Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-29T13:36:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.126Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@7",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-23T15:01:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/84f7325850d999e0f312a6672359051b09450010.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello Investigators. We’ve released another patch to fix an issue affecting some of the evidence in \"Coin Trail\" and \"Blood Ties at the Poolbar.\" For almost everyone nothing should change and you can continue. Those of you who picked up evidence in these two cases and have an active save in those cases and have not completed the associated investigation, you might have to restart the case. On Restarting, the game will fix your run file and you should not encounter more problems with your save. We really want to give all of you a smooth experience which is why we are doing this as soon as it got reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Continue is now auto selected when you start up the game and you have an existing run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted leaning behavior to reduce unexpected movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added slow movement also to desoldering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed a rare issue with some evidences causing broken saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the send mail UI on ultra wide screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a very rare issue on falling through the floor when selecting a case. This was already not an issue because a guard system put you right back in the lab but it looked bad for a frame or two",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Markus Feldmann's fingerprint missing one specific minutia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to reveal a fingerprint through an object such as a table in several cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Removed input hint setting because it was deprecated anyway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Continue is now auto selected when you start up the game and you have an existing run",
+     "Adjusted leaning behavior to reduce unexpected movement",
+     "Added slow movement also to desoldering"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1839041357026962"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-23T15:01:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.184Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-23T15:01:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.185Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-23T15:01:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.125Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@6",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-21T16:08:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/cee220e6f246a1c5f4f10bb33fad4374fd03e43f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello Investigators! Today is a very small patch with just a few issues that kept bugging some players. We will prepare a bigger content patch coming soon so this one might be the last for this weeks if nothing breaking pops up. We feel that we are very stable now, and your feedback indicates that we are on the right track. Thanks to everyone who submitted bugs, shared their save file or participated in the discussions about the cases and the future of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Add hook for analysis stations to reset themselves when the current case is changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where a Portuguese tutorial would display in Turkish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of typos in other languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"First Name\" translated in some languages to just \"Name\" causing confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fingerprint in \"Barrel Secret\" getting wrong person information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an rare issue where the DNA analysis station was stuck in the processing state after switching the active case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some achievements not triggering in edge cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a text shader having problems in some cases on world placed objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Renamed \"Another Robbery\" to \"Hotel Burglary\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed mention of Stefan Meier from \"Smash and Grab\" because he has nothing to do with this case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the rating calculation in \"Barrel Secret\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Add hook for analysis stations to reset themselves when the current case is changed"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1838407329269396"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T16:08:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.184Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T16:08:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.184Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-21T16:08:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.124Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@5",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-20T16:01:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/962d6d998156364c121ad0db456c3a19054d6866.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ah Monday. Let's start this week off with our first patch for this week. A lot of little things you reported over the weekend. Thanks to everyone for sending us save files or reporting an issue. Keep investigating!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://cdn.discordapp.com/emojis/1479432016721350717.webp?size=160\" style=\"border: 0px; font-family: \\\"gg sans\\\", \\\"Noto Sans\\\", \\\"Helvetica Neue\\\", Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; margin: 0px; padding: 0px; vertical-align: bottom; height: 48px; object-fit: contain; width: 48px; text-indent: -9999px; min-height: 48px; color: oklab(0.952614 0.000793397 -0.00253761); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: break-spaces; background-color: oklab(0.219499 0.00211129 -0.00744916); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Removed grey notification bar on the left side. It was confusing for some players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mails now display evidence attachments so it is clearer where evidences come from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More fluff mails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added fine Movement to DNA Collection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️Fixes",
+     "items": [
+      {
+       "text": "Fixed several localization issues in Spanish, French, Italian, Portuguese and simplified Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed floating handgun in \"Blood Ties at the Pool Bar\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shower collision in \"Coin Trail\" and \"Misfire and Misdirection\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ultra Wide problem in Mail UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Steam Cloud Issue. Safes should now sync without problem",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Tool Case Lids needing a double interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🕵️ Gameplay Changes",
+     "items": [
+      {
+       "text": "Adjusted fingerprint Minutiae for Tom Berger and Patrick Vogel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fine movement in analyse station is even slower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more tutorial texts in crime scene onvoarding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 5,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Removed grey notification bar on the left side. It was confusing for some players",
+     "Mails now display evidence attachments so it is clearer where evidences come from",
+     "More fluff mails"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1838407329265906"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T16:01:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.183Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T16:01:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.183Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-20T16:01:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.123Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@4",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-17T14:36:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/9ffae830b21ea4ffe5e6ce0ae3f47c6e9bc5d82f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last patch before the weekend. We have the feeling everything runs much smoother now. We also have more QoL changes for you, and of course, many more bugs were squashed. Happy weekend and keep investigating!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Extended the DNA and bullet comparison UI with the checkmark and X icons like in fingerprint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added fine tuning controls for bullet comparison (controller & keyboard)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved controller input for bullet comparison",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added keyboard-only controls for DNA profiling station (WASD & Arrow keys for moving & scaling)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added fine tuning to DNA profling station (keyboard input only)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted fingerprint tape visuals to increase visibility in some lighting conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed rating expecting the player to capture more than three projectile trajectories in \"Parking Lot Retribution\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enable localization fallback to English to avoid missing localization messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected some text positioning on LKA posters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed glow effect from LKA posters (Text and Images)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed glow effect from password post-its",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed glow effect from evidence boxes and paper bags",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed glow effect from lab room signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crime scene resets after loading a run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing tools on resetting cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed doors being open on resetting cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing words in case \"Smash and Grab\" mail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed title of earlier case being wrong when referenced in later case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed evidence marker colliders being too large, clipping through fridge door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fingerprint tape being hard to see in some lighting conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mismatch between visual powder application and resulting quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 15,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Extended the DNA and bullet comparison UI with the checkmark and X icons like in fingerprint",
+     "Improved controller input for bullet comparison",
+     "Adjusted fingerprint tape visuals to increase visibility in some lighting conditions"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1838407329259716"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T14:36:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T14:36:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.182Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-17T14:36:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.122Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@3",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-16T14:38:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/8fb523088508fa8bdc4f19eb25d7167fb9995de8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You keep reporting we keep fixing!",
+     "items": [
+      {
+       "text": "Another batch of fixes and improvements for our game. We again improved the onboarding with info graphics in the lab. This is the extension of the poster idea we started to introduce in the last patch. And like always a lot of small fixes to make everything more stable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Added a dot to markers 6 and 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added mail sending animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more emails that have nothing to do with cases but with the everyday life inside the police",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new poster content to help with onboarding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed a rare issue where controls are stuck with controller when watching a poster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being teleported when entering the toilets in \"Blood Ties at the Pool Bar\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Savefiles having no additional info with no active case in loading menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual box size of collected evidence to make to boxes more believable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed awkward marker attachment at rainwater tank in case \"Barrel Secrets\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to get the smartphone of fingerprints inside the locked safe in \"Coin Trails\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing Chinese Localization in Fingerprint analysis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing localization for all languages for \"open Box\" in \"Barrel Secrets\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Precision in Projectile Analysis now affects scoring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it a bit more forgiving to reach 100% analysis quality in projectile comparison",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Added a dot to markers 6 and 9",
+     "Added mail sending animation",
+     "Added more emails that have nothing to do with cases but with the everyday life inside the police"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1838407329256871"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T14:38:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.181Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-16T14:38:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.182Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-16T14:38:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.120Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@2",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-15T15:55:44.000Z",
+   "notes": [
+    {
+     "title": "Improvements and Fixes",
+     "items": [
+      {
+       "text": "After the first patch and the progression issue under control we focused our work on the first batch of improvements and of course more bug fixes. The Biggest things are holograms of the locked cases to have an indicator what is to come. We also added a better zoom control for the DNA comparison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is just the first batch more is to come. Let's dive into the details:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "We improved the skybox in Shooting Mishap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Hologram Cases to drawer for locked cases to indicate how many there are",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Scaling the DNA comparison profile now has its origin on the bottom left of the profile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved visibility of fingerprints when using the UV-light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added in-world police posters procedure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better Mail UI for clarification on what is read and what is unread",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where you would fall out of the world when picking a case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with opening the system menu while in intro screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added case-solve console command to manually fix save games without wiping the score",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong evidence amount in Tutorial 2 summary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text overflow in polish on case score UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Mousepad Maniac\" achievement trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spawn location sometimes being in another place than expected on loading save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few cases of tools not being in their cases in loading and case retry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Fingerprint collision preventing a foto in \"Barrel Secrets\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "We reduce the \"case closed \" pop up time to avoid confusion when a case is solved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spoiler Added more flavor texts to phones found in \"Whisky and Gunfire\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spoiler Removed Conclusions from Phone analysis and added them to response email for clarity in \"Whisky and Gunfire\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spoiler Added two new texts for the lost and found phones in \"Whisky and Gunfire\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Laptop decryption texts in \"Blood ties at the Poolbar\" for more suspense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed wording for tutorials case summaries to make them feel like part of the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Projectile comparison precision is now factored into the case scoring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now use the tripod camera with the spray can in hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 11,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "We improved the skybox in Shooting Mishap",
+     "Added Hologram Cases to drawer for locked cases to indicate how many there are",
+     "Scaling the DNA comparison profile now has its origin on the bottom left of the profile"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1838407329254597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T15:55:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.181Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T15:55:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.187Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-15T15:55:44.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:21:08.186Z"
+  },
+  {
+   "id": "forensics-crime-scene-detective-406712@1",
+   "gameId": "forensics-crime-scene-detective-406712",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-14T09:34:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46019280/9f90364e15b889865310da313d8b303a16efc51c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Progression Bug Fix and Onboarding Improvements",
+     "items": [
+      {
+       "text": "We noticed that a few people have trouble unlocking cases. We found a bug preventing progression in some cases. This patch fixes most issues with that. We will monitor the situation and will react fast with further fixes if needed. All of you should now be able to experience the 4 tutorials and 14 cases we made for the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This Patch also introduces the first batch of onboarding changes, more to come. Let's dive into the details:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🆕 New Features & Improvements",
+     "items": [
+      {
+       "text": "Added Video Tutorials for Analysis Stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tutorial case summaries now list the evidence to secure (and note that real cases won't provide these lists)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a status icon and color to the tripod photography UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a shadow to the vacuum pipette in desoldering analysis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Fixes",
+     "items": [
+      {
+       "text": "Fixed the analysis quality average incorrectly counting non-matching evidence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaying a case no longer affects the unlocked-cases list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrectly assigned bullet information in case 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the digital analysis results page not fitting all content in case 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mismatch of conclusion/solving in tutorial 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed nested pack IDs in the case 10 evidence trajectory prefab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fingerprint analysis is now more accessible",
+     "items": [
+      {
+       "text": "Fingerprint quality no longer blocks matching Minutiae",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nearby minutiae are considered when placing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cases closed without being solved are now marked as \"Abandoned\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Added Video Tutorials for Analysis Stations",
+     "Tutorial case summaries now list the evidence to secure (and note that real cases won't provide these lists)",
+     "Added a status icon and color to the tripod photography UI"
+    ]
+   },
+   "sourceIds": [
+    "steam-3765010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3765010/view/1837955055365602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-14T09:34:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.180Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-14T09:34:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3765010",
+      "checkedAt": "2026-11-13T03:21:08.180Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-14T09:34:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:34.116Z"
+  }
+ ],
+ "issues": []
+}

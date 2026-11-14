@@ -1,0 +1,4046 @@
+{
+ "game": {
+  "id": "subwaysim-2-314444",
+  "igdbId": 314444,
+  "name": "SubwaySim 2",
+  "cover": {
+   "imageId": "co9rxr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9rxr.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar33fu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar33fu.jpg"
+  },
+  "ps5Release": "2025-04-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "subwaysim-2-314444@major-2026-08-21",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "SubwaySim 2 - Modding SDK Update jetzt verfügbar!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-21T08:22:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new version of the SubwaySim 2 Modding SDK is now available on GitHub!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update, we are improving the existing modding workflow and introducing new tools directly inside the Unreal Editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Important for Update 10: Since Update 10 requires the new version of the Modding SDK, you can now rebuild your existing mods with the updated SDK and use them again with Update 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Build Mods Directly in the Unreal Editor",
+     "items": [
+      {
+       "text": "The previous workflow using ''BuildMod.bat'' is no longer required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mods can now be built directly through the new Modding Tools window inside the Unreal Editor. There, you can configure the plugin name, optionally specify the level path, choose whether the NavMesh should be rebuilt, and start the complete build process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/b5702d006a6b3db41995afcb7ed8dec983cb9800.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Experimental Access to Basegame Assets",
+     "items": [
+      {
+       "text": "With this update, we are also introducing the first experimental version of Basegame Asset Access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After linking your SubwaySim 2 installation, the Unreal Editor can read content from the basegame .pak files and display it inside the Content Drawer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this feature, we want to give the modding community better insight into:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the asset and file paths used by the basegame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the structure of existing game content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "references used throughout SubwaySim 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the future use of existing basegame assets on custom maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚠️ Important: This feature is currently still experimental.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Opening or accessing certain content from the .pak files may currently cause the Unreal Editor to become unstable or crash. Not all assets are fully compatible with the Modding SDK yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are making this feature available at an early stage to give the modding community a first look at where SubwaySim 2 modding is heading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/b5702d006a6b3db41995afcb7ed8dec983cb9800.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Documentation Updated",
+     "items": [
+      {
+       "text": "The Modding Wiki has also been expanded and now includes instructions for the new build workflow as well as the experimental access to basegame assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Accessing Basegame Assets: https://wiki.subwaysim.com/doku.php?id=manual:subwaysim:map_construction:accessing_basegame_assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build a Mod: https://wiki.subwaysim.com/doku.php?id=manual:subwaysim:map_construction:build_mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new SubwaySim 2 Modding SDK update is available now on GitHub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re looking forward to seeing what you create with it! 🚇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1841579228667913",
+    "ps5Page": "https://wiki.subwaysim.com/doku.php?id=manual:subwaysim:map_construction:accessing_basegame_assets"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-21T08:22:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.322Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-21T08:22:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.322Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-21T08:22:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:47.539Z"
+  },
+  {
+   "id": "subwaysim-2-314444@major-2026-05-15",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "SubwaySim 2 | New Game Update Available",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-15T17:52:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A few days after the release of the GI/1E (“Gisela”), it’s time for the next larger game update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this patch, our focus once again is on bug fixes, stability improvements, and smaller adjustments across the entire game. Alongside various lighting and visual improvements, several operational issues and vehicle-related bugs have also been addressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, an updated version of the Modding SDK for Unreal Engine 5.7 is now available on GitHub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Adjusted sunlight intensity once again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nights are slightly brighter again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Station Bt: Track 4 should no longer be occupied in scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daisy display fixes for incorrect rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Gisela door sound source on B cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Waiting times should now display correctly in seconds/minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Betriebsfahrt” is now available on the ELA under number “0015”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted daylight cycle for platform lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed HK B-car door meshes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hamburg train stop system and AL1 “Release” button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ghost GÜ triggers in Hamburg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Landscape fix for Hamburg (tunnel holes restored)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Modding SDK Update",
+     "items": [
+      {
+       "text": "For modders, the updated Modding SDK based on Unreal Engine 5.7 is now also available on GitHub: Click here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚠️ Please continue to note",
+     "items": [
+      {
+       "text": "Mods created for older Unreal Engine versions are not compatible with the current game version and may cause crashes. Please make sure to use updated versions of your mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For users who want to continue using mods based on Unreal Engine 5.4.4, an additional public branch called “ue_5.4” is available on Steam. You can find it under the game’s Properties → Betas section.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you once again for all your feedback and reports following the release of the Gisela. 🚇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About the GI/1E (Gisela) DLC",
+     "items": [
+      {
+       "text": "The GI/1E (Gisela) DLC is now available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, Epic Games Store and 3DZug Shop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3405560/SubwaySim_2__Berlin_Vehicle_DLC_Gisela_GI1E/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 2,
+    "other": 14,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1832700592792813"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-15T17:52:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.319Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-15T17:52:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.319Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-15T17:52:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.330Z"
+  },
+  {
+   "id": "subwaysim-2-314444@5.7.3",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 5.7.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-26T13:54:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A public beta version is now available on Steam, allowing us to test the transition to a new engine version together with you.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As part of this update, we are moving from Unreal Engine 5.4.4 to Unreal Engine 5.7.3. This is an important step in the technical evolution of the game and lays the foundation for future improvements in performance, stability, and overall system quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since engine-level changes can affect systems differently depending on hardware, drivers, and individual configurations, we want to test this version under real-world conditions. The goal of this public beta is to gather as much feedback as possible from the community and identify potential issues early on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your feedback will help us further optimize the new version and ensure a stable experience for as many players as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/6479839fe42d4c725063924ed1099aa30b7f3133.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What to expect",
+     "items": [
+      {
+       "text": "A test version based on Unreal Engine 5.7.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ongoing optimizations based on your feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to access the beta",
+     "items": [
+      {
+       "text": "Open your Steam Library, right-click SubwaySim 2 and select Properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then go to the “Betas” tab and choose the public beta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The beta will download automatically after selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/9508250293712cb2d35107848020e59f0185b945.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the current beta, you may experience heavy mesh flickering on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on our current findings, this is often caused by outdated graphics drivers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "👉 Please make sure your GPU drivers are up to date.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Additionally, the game may crash on startup if outdated mods (.pak files) are present in the mod folder and were created for earlier engine versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👉 If you encounter a crash on launch, please check your mod folder and remove any mods that are not compatible with the current engine version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Important Notes",
+     "items": [
+      {
+       "text": "The beta version is under active development and may contain bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance and stability may change between updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Progress, settings, or content may be reset during the beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelogs & Feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All updates and changes for the beta will be shared on our community Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also use it to provide feedback, report issues, and share your experience with us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who takes the time to test the beta and support us during this transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your feedback is a crucial part of the development process!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1827626365770569"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-26T13:54:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.318Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.328Z"
+  },
+  {
+   "id": "subwaysim-2-314444@major-2026-02-20",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "DevLog: Development Status Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-20T11:56:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "over the past few weeks, you may have noticed that things have been a bit quieter than usual when it comes to our Weekly DevLogs. There’s a simple – and good – reason for that: a lot of work is currently happening behind the scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/0577a2cfe55d454187d35f4e83c95a5bbe67e979.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A large part of our team is deeply involved in developing new content for upcoming expansions for SubwaySim 2. At the same time, work on Update 10 is continuing at full speed. Many of these tasks are very time-consuming, require a lot of coordination, and can’t always be broken down into small, weekly DevLog updates in a meaningful way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "That’s why we want to be open with you",
+     "items": [
+      {
+       "text": "Over the coming period, DevLogs will be a bit less frequent. This does not mean that development has slowed down or stopped – quite the opposite. We’re currently investing that time directly into development, fine-tuning, and new features to make sure that what eventually reaches you truly meets our quality standards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s important to us to remain transparent and to keep taking you along on this journey. Even if we don’t post an update every single week, a lot of work is happening in the background: testing, improving, and polishing. Some things simply need more time – and that’s exactly what we’re giving them right now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "So look forward to the coming weeks and months",
+     "items": [
+      {
+       "text": "We have some really exciting things in the pipeline, and we’re confident they’ll be worth the wait. As soon as the time is right, we’ll of course share more details with you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1825093633187594"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-20T11:56:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.317Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-20T11:56:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.317Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-20T11:56:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.326Z"
+  },
+  {
+   "id": "subwaysim-2-314444@10",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-31T18:47:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The time has come: Update 10 for SubwaySim 2 is now available! 🚇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After many weeks of development, testing, and polishing, we're excited to bring you one of the biggest free updates SubwaySim 2 has received so far.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Update 10, we've worked on many different areas of the game. Alongside numerous bug fixes and stability improvements, you can expect new gameplay options, changes to Berlin and Hamburg, many vehicle improvements, and of course a feature that many of you have been waiting for: switch crossing sounds!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of these changes are a direct result of your feedback over the past few months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/9c290b630b0bfa146fa81db9c4f4ae0a543cb9bb.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability & Performance",
+     "items": [
+      {
+       "text": "Crashes caused by incompatible .pak files have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Incompatible or faulty .pak files are now detected when starting the game. You'll receive a notification and the affected files will not be loaded, preventing them from causing a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overall game stability has been further improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional performance optimizations, particularly on the Berlin map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Console only: Random crashes/freezes on the Berlin map have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Passengers",
+     "items": [
+      {
+       "text": "Passengers now react more dynamically to trains. If they are further away, they may occasionally run towards the train or move faster to try and catch it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn preparation time in Career Mode has been slightly increased to reduce delays at the beginning of a service.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When seamless timetable transitions are enabled, there is no longer a fade-out/fade-in. You can now continue driving directly without a visible transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tasks can now largely be disabled. Essential tasks such as \"Stop at platform XY\" will remain active. This allows experienced players to drive with significantly fewer instructions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Settings",
+     "items": [
+      {
+       "text": "The Gameplay menu has also been reorganized and expanded with several new options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disable AI trains: AI trains can now be completely disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More AI passengers: The number of AI passengers can now be significantly increased if desired. Please keep in mind that very high passenger numbers may affect performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modular in-game HUD: Individual HUD elements can now be enabled or disabled separately in the Gameplay settings, allowing you to decide exactly which information you want to see while driving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Preparation time in Timetable Mode: The time between spawning and the scheduled departure can now be set between 1 and 5 minutes. If you prefer having more time to prepare your train before departure, you can adjust this accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Console only – Crash Log: A new option has been added to the System Settings on consoles that can display a log following a crash. This information will help us identify potential issues more quickly and provide better support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "A lot has changed across the vehicle fleet as well",
+     "items": [
+      {
+       "text": "All vehicles now feature switch crossing sounds when passing over switches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All vehicles now have functional door close buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brake squeal can now also be heard on player-controlled vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various issues with incorrect door status indications have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Berlin",
+     "items": [
+      {
+       "text": "The Berlin map and its vehicles have also received numerous changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"After the Storm\" scenario can now be completed again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted sounds for the HK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Revised driving and braking behavior for the HK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revised MMS font for the HK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HK AFB buttons now have separate sounds for pressing and releasing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HK prototypes now feature their own unique sounds, including different door sounds and departure signals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sound adjustments for the A3L92.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor adjustments to the radio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The A3L92 door buttons now illuminate slightly when door preselection is active while driving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HK now requires the controller to return to neutral if movement authority is granted after a movement command has already been given.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sound adjustments for the GI/1E.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The AI-controlled GI/1E now also spawns on consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/ca1f796843681bb523c7001fe6e0202124fb8078.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hamburg has also received a number of improvements",
+     "items": [
+      {
+       "text": "The \"Cleaning Up the Depot\" scenario has been fixed. The train used in the scenario was previously too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All speed monitoring systems (GÜs) have been reviewed, adjusted, and tested again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Incorrect GÜ activations have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The DT5 once again has a key event for the train stop override.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The DT5 sound has been revised and converted to stereo, providing a more spatial and authentic sound experience, especially inside the driver's cab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The AL1 has also received updated stereo sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/1008e5027f6426806566cc283385e64bc6e6f0d0.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for your support!",
+     "items": [
+      {
+       "text": "Update 10 is the result of many weeks of work and includes not only the major visible additions, but also numerous smaller adjustments and fixes behind the scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A huge thank you goes out to our community and especially to all of our testers who supported us with bug reports, feedback, and extensive testing. Many of the changes included in this update were made possible thanks to your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 10 is available for SubwaySim 2 starting today. The download should start automatically on your platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And of course, development doesn't stop here. We still have plenty planned for SubwaySim 2 and will share more with you when the time is right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For now, we hope you have a great time exploring Update 10 and, as always, enjoy the ride! 🚇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 5,
+    "balance": 1,
+    "other": 33,
+    "ps5": 1,
+    "topNew": [
+     "The Gameplay menu has also been reorganized and expanded with several new options:",
+     "Disable AI trains: AI trains can now be completely disabled.",
+     "The \"Cleaning Up the Depot\" scenario has been fixed. The train used in the scenario was previously too long."
+    ]
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1839676055891019"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-01T16:23:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.320Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-12T23:59:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.320Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-12T23:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T16:28:18.325Z"
+  },
+  {
+   "id": "subwaysim-2-314444@9",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-18T13:59:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With this update we’ve fixed several issues and made targeted improvements across General systems as well as the Berlin and Hamburg networks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/063e0028b0d9a22617a707dbc9b48c045a06030e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Above-ground stations: Station lights are now only active during nighttime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI trains: Fixed an issue where trains could get stuck at signals that only displayed red or no aspect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berlin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chaos Weather: This scenario can now be completed again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A3L92: ELA login steps updated – they now work as in real life. The sequence has been adjusted accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A3L92: Fixed mesh issues with the drive/brake selector and the drive button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daisy displays now show delay information only when the delay exceeds 5 minutes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect text on information signs at Warschauer Straße station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mirrors at Dahlem-Dorf and Onkel-Toms-Hütte stations are now better aligned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hamburg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LSA locomotive shed performance improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hamburg Barmbek: Added career spawn points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AL1: UV map adjustments for improved repaint compatibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AL1: Added missing localization for disabling the automatic brake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed switch levers and switch lanterns in the LSA area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a building intersecting the elevated railway between BA and DE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ceiling issues at the BT tunnel entrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a duplicate sun blind in the DT5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The reliability of the power supply for DT5.1 and DT5.2 has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1819386365089880"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T13:59:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.315Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T13:59:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.315Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-18T13:59:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.324Z"
+  },
+  {
+   "id": "subwaysim-2-314444@8",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-20T14:37:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 8 is here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update brings a wide range of improvements, increased stability, and many bug fixes. We’ve refined various gameplay details and technical systems to make the overall experience smoother and more reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45159567/e90f05511a64cb5a32ef6054577161d8546caf7e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here you can find the complete changelog with all highlights and new features:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an issue where the game would freeze when derailing on a switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Berlin",
+     "items": [
+      {
+       "text": "Adjusted the mirror at Kurfürstenstraße. It no longer points toward the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a floating distant signal at the station entrance of Kurfürstenstraße.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Hamburg",
+     "items": [
+      {
+       "text": "Fixed the DT5.2 pantograph bug (no power) on the Hamburg map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DT5 DMI: The powered-down display now correctly shows the state of the pantograph.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the DT5 pantograph animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the coupling distance for the AI BR474.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Akkulok AL1",
+     "items": [
+      {
+       "text": "Fixed an AL1 timetable issue that incorrectly sent you from Berliner Tor to Hauptbahnhof on track 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reordered AL1x1 and LB6x2 to make more sense for a Hamburg ring drive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun exploring and trying things out — and as always, we look forward to your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is now available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 2,
+    "other": 9,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1816849002010950"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-20T14:37:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.314Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-20T14:37:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.314Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-20T14:37:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.322Z"
+  },
+  {
+   "id": "subwaysim-2-314444@7",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-12T14:56:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 7 is here – bringing numerous bug fixes and many improvements for an even better gameplay experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A special highlight of this update",
+     "items": [
+      {
+       "text": "The Akkulok AL1 is now operating as an AI locomotive in Hamburg!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can spot it both day and night in action – towing broken-down trains, heading to construction sites, or performing inspection runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stay tuned for more exciting news about the AL1 coming very soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"https://clan.akamai.steamstatic.com/images//45159567/4bed89dc67fa6f1da2ba390be8395e3fc5d9875a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Here you can find the complete changelog with all highlights and new features:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "The Battery Locomotive AL1 can now be spottes as an AI train in Hamburg — during the day or at night — on its way to construction sites, towing operations, or performing inspection runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If a selected train does not have specific timetables, all available timetables are now displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scenarios featuring passenger trains once again instruct the player to open and close the doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where windscreen water droplets appeared on the wrong side of the wiping area when wipers were active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some AI passenger vehicles with automatic interior lighting failed to turn on the lights, leaving passengers in the dark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the texture size of new station assets and certain train modifications in Berlin and Hamburg to improve overall performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Berlin",
+     "items": [
+      {
+       "text": "Fixed the Spichernstraße GÜ speed limit (increased from 40 km/h to 50 km/h).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Daisy displays no longer show fallback content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the door buttons on the A3L92.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where A3L92 warning lights remained constantly illuminated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a shading issue on the A3L92 throttle and brake levers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the landscape clipping into the track near Oskar-Helene-Heim station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Hamburg",
+     "items": [
+      {
+       "text": "Improved switch levers in the LSA area with proper base structures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where a spraycan in the locomotive shed appeared to float.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have fun exploring and testing – and as always, we look forward to your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is now available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 8,
+    "balance": 1,
+    "other": 7,
+    "ps5": 1,
+    "topNew": [
+     "The Akkulok AL1 is now operating as an AI locomotive in Hamburg!",
+     "Stay tuned for more exciting news about the AL1 coming very soon!",
+     "[img src=\"https://clan.akamai.steamstatic.com/images//45159567/4bed89dc67fa6f1da2ba390be8395e3fc5d9875a.png\"]"
+    ]
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1816215235353892"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-12T14:56:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.313Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-12T14:56:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.313Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-12T14:56:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.321Z"
+  },
+  {
+   "id": "subwaysim-2-314444@6.1",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 6.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-31T15:31:46.000Z",
+   "notes": [
+    {
+     "title": "Hotfix 6.1 is now available!",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just released a small Hotfix for SubwaySim 2, addressing several issues that appeared with Update 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/8b30d7c2bca62f6510022ce0cf5155031389736e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Changes in Update 6.1",
+     "items": [
+      {
+       "text": "Fixed: An issue in Career Mode where the task “Contact Control Center” was repeatedly added to the player’s objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A problem in the Berlin Scenarios that prevented them from starting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A deadzone issue on the A3L92, where the brake lever could get stuck between Release and E1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A big thank you to everyone who reported these issues! 🙏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy your rides through the tunnels! 🚇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1815034432907549"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T15:31:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.312Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T15:31:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.312Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-31T15:31:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.320Z"
+  },
+  {
+   "id": "subwaysim-2-314444@major-2025-10-31",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Weekly DevLog: Halloween Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-31T13:18:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As the leaves fall outside and darkness settles over the tunnels, it’s time for a small but exciting DevLog Halloween update! 🦇🚇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we’re taking a look at a feature many of you have been curious about: coupling with the Battery Locomotive AL1! ⚡",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/463ec36253936a34be3658cb0af7fa19c68f8397.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The AL1 is equipped with a Scharfenberg coupler, which makes coupling in-game pleasantly simple.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just slowly drive up to the desired vehicle – for example, the LB6 wagon – and the connection will automatically lock into place. The system engages on its own, just like in real life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/47921fb2fc11d2428ec76e5f9a1a162148d6626c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To supply power to the LB6, you’ll need to manually attach a power cable between the AL1 and the wagon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This cable transfers electricity so the wagons can be properly powered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s a classic touch of realism – you’ll need to connect it yourself to complete the setup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/9d9b1b98df4239e2741b58ae7500cedf445fea17.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you want to uncouple the locomotive, the process is just as realistic:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inside the cab, there’s a button to release the coupling mechanism.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After that, simply disconnect the power cable to fully separate the locomotive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Only then is the AL1 ready for its next task – whether it’s shunting duties or coupling to another vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/eba86f6fbbd0304d1bc24d7ffce750089a2824af.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This feature offers a first glimpse into the level of detail and mechanics behind the upcoming Battery Locomotive AL1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More exciting functions will be added in future updates – so stay tuned for new information about the AL1 and its role in the game! ⚡",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until then, we wish you a spooktacular Halloween and lots of fun exploring the tunnels…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Who knows what might be lurking down there in the dark... 👀🎃",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is now available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1815034432904607"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T13:18:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.312Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T13:18:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.312Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-31T13:18:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.319Z"
+  },
+  {
+   "id": "subwaysim-2-314444@6",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-30T14:59:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Community,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "today is a very special day for all fans of SubwaySim 2",
+     "items": [
+      {
+       "text": "The biggest update in the history of the game is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weeks of intensive work, numerous community requests, and extensive technical improvements have come together to take SubwaySim 2 to a whole new level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope this update excites you and provides long-lasting enjoyment!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here you can find the complete changelog with all highlights and new features:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Completely new lighting system: new light colors, more realistic sunlight, and fully reworked lighting on all stations, streets, and vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated DLSS version: fixes distorted screen issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved AI: no more AI trains stuck in traffic jams.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Signals: much brighter signal lights, clearly visible from a distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pantographs: fully functional on all vehicles and routes, now influencing driving physics (also for multiple units like the HK).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New compatibility mode via Steam: can be selected on startup and fixes crashes related to DirectX 12.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/428d597e7f241a0edd8e2ad3d869eda0a69a5164.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Berlin",
+     "items": [
+      {
+       "text": "Fully functional radio for Berlin vehicles, affecting the route display on the front of the train.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A3L92: completely redesigned driver’s cab and new ELA mesh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HK: reworked driver’s cab and new headlights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "G1E now occasionally runs on the U1 and U3 lines (community request).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "G1E now features a rollsign and realistic sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "All tunnel elements rebuilt with",
+     "items": [
+      {
+       "text": "Emergency exits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Section-based controllable tunnel lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rollsigns with glow effects for realistic background illumination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New station equipment: emergency and info columns, emergency signal switches, fire extinguisher boxes, ticket machines, and validators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Flexity",
+     "items": [
+      {
+       "text": "Passenger compartment lighting as well as front and rear lights implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flexity trams now use the turnaround at Warschauer Straße.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daisy display completely rebuilt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hamburg",
+     "items": [
+      {
+       "text": "DT5: new headlights and corrected exterior mesh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New emergency and info columns throughout the line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Track signs adjusted in size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Track alignment errors fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passenger information screens: brightness optimized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bsa and Lsa (Saarlandstraße track workshop) added – fully detailed and explorable (preparation for the “Battery Locomotive AL1” DLC).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update lays the foundation for many more features and improvements to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun exploring and testing – and as always, we look forward to your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is now available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 29,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1815034432873465"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T14:59:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.311Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T14:59:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.311Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-30T14:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.318Z"
+  },
+  {
+   "id": "subwaysim-2-314444@major-2025-10-24",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Weekly DevLog: A Major Update Is Coming!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-24T11:57:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Next week on Thursday, October 30, 2025, the time has finally come: Update 6 will be officially released. You have been waiting a long time, you have shared countless requests, and we are excited to now announce that the release is just around the corner. It is especially important to us to emphasize that the update will launch simultaneously on all platforms, PC, PlayStation 5 und Xbox Series X/S. No one will have to wait – everyone will be able to jump in at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45159567/4702a102bb8f1c7c4de754104d0512168507ab48.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the central highlights of this update is the brand-new graphics overhaul. We didn’t just improve individual elements—we started completely from scratch. The entire graphical foundation has been rebuilt to not only significantly improve performance but also to deliver a truly natural and realistic lighting experience at every time of day. As a result, the game doesn’t just look more modern—it feels entirely new and atmospheric in a way that transforms the overall experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45159567/8a84dbfe107f65d42ef7efdd894ec38cc7273686.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also major improvements to gameplay. In Berlin, the radio system is now fully functional, enabling realistic operational procedures for the first time. At the same time, in Hamburg, players can now explore the new BSA and LSA areas introduced in preparation for the upcoming Akkulok AL1 DLC. These areas were previously unused but are now coming to life. You can already walk around, explore, and familiarize yourself with the environment to be ready when the DLC launches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45159567/7c8f5297d22638348d82a2c53fa25600b6665f70.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another major focus of this update is the overhaul of Berlin’s tunnel network. All tunnel sections have been fundamentally redesigned both visually and technically to meet modern standards. In addition, a dynamic tunnel lighting system has been implemented that randomly illuminates or darkens tunnel segments. This creates a unique atmosphere on every journey and delivers the authentic feeling of real underground railway operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45159567/87dacfef7141eba7ec3d8b64e82b42ac56f1370b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of course, no major update would be complete without improvements to the trains themselves. All vehicles have been thoroughly reworked: bugs have been fixed, sounds have been redesigned for greater authenticity, interior lighting has been adjusted, and headlights now function correctly according to real-world standards. A special highlight is the G1E series—also known as “Gisela.” Previously limited to the U2 line, it can now occasionally be encountered on the U1 or U3 as well. The Gisela features its own unique sound profile, a fully functioning destination rollsign, and realistic headlights, earning its rightful place within the Berlin network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45159567/e4d8d46c52d6fabee835fd8876469fff0286c66a.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you are just as excited as we are. Update 6 is the biggest update in the development history of SubwaySim 2 and marks a true milestone that elevates the entire gameplay experience to a new level. With the combination of new graphics, redesigned routes, dynamic systems, and improved vehicle technology, the game now feels fresher, more realistic, and more alive than ever before. We cannot wait to see you driving with all the new features starting next week and we are looking forward to your reactions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About SubwaySim 2",
+     "items": [
+      {
+       "text": "SubwaySim 2 is now available on PC, PlayStation 5, and Xbox Series X/S. We’d love to hear your thoughts in the Steam Discussions, on our Discord server, or via Instagram. Also check out the game on the PlayStation Store, Xbox Store, or Epic Games Store!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2707070/SubwaySim_2/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1814309641472408"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-24T11:57:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.309Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T23:59:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.310Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-30T23:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:48:22.512Z"
+  },
+  {
+   "id": "subwaysim-2-314444@5.1",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 5.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-31T10:11:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re excited to present a new Modding Support Update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ What’s New for Modding?",
+     "items": [
+      {
+       "text": "A Mods folder is now automatically created when launching the game for the first time – making mod installation easier than ever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All detected mods are now listed in the log.txt for better transparency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If a level fails to load, you’ll now see a clear error message via popup instead of falling endlessly through the void.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mods can no longer overwrite each other – mod conflicts like this should be a thing of the past.: The newest Modding SDK can be found here: \\(https://github.com/SimuverseInteractive/SubwaySim2-ModdingSDK)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Heads-up",
+     "items": [
+      {
+       "text": "If your mods include custom classes (e.g. Signals, DataTables, etc.), you may need to make some small adjustments in Blueprints to ensure they work correctly after this update. More details can be found on Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/1a703b70984cdcf3a15b0d60fe22af3775de8825.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎉 U-Bahn Sim Berlin – Update",
+     "items": [
+      {
+       "text": "Alongside this update, a new sneak-peek version of U-Bahn Sim Berlin is being released. Thanks to thorough testing and great teamwork, we were able to fix additional bugs, making the modding experience even smoother. Be sure to check out this fantastic project!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚠️ Known Issue",
+     "items": [
+      {
+       "text": "Mods currently don’t work with the Epic Games version of SubwaySim 2 and will cause the game to crash. We're actively working on a fix and appreciate your patience in the meantime.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1806698490677787"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-31T10:11:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.308Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-31T10:11:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.308Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-31T10:11:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.315Z"
+  },
+  {
+   "id": "subwaysim-2-314444@5",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-11T13:11:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released a new update for SubwaySim 2! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch includes a variety of improvements to vehicle logic, weather effects, and lighting – including fixes for DT5 train behavior, tunnel environments, and several station details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can find the full list of changes below in the changelog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for your continued support and feedback – enjoy the ride! 🚇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔧 Update 5 – Full Patch Notes 🔧",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/d224a51b25839a85759c827da9c2e9a59fc758f9.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌟 Highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧩 Adjusted shadow settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ May improve performance on many systems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌩️ Lightning and thunder now blocked in tunnels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Weather effects now react realistically to tunnels for improved immersion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚆 Vehicles",
+     "items": [
+      {
+       "text": "🚪 DT5 – Automatic door closing fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Doors now close as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💡 DT5 – Passenger area lighting improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Interior lighting now responds dynamically to environmental conditions (e.g., entering tunnels), using track data – more accurate and efficient",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌧️ All vehicles – Weather effects now use track data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Effects like wetness, lighting changes, and sound now react more precisely to tunnel and weather conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧼 DT5 DMI – Wiper mode renamed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ “Automatic” is now called “Interval” for clearer function description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚪 HK & A3L92 – Cabin door animation glitch fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Fixed an issue where the last frame of the animation briefly appeared when opening/closing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🌆 Environment & Effects",
+     "items": [
+      {
+       "text": "🌫️ Tunnel lighting at Krumme Lanke fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Tunnel at the end of the turnaround area was too bright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌩️ Lightning effects blocked in tunnels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ No visible or audible lightning/thunder inside tunnels anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌧️ Rain sounds removed in tunnels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ When the vehicle is fully inside a tunnel, rain sounds are no longer audible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧩 Improved shadow rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ General settings revised for better performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚉 Stations",
+     "items": [
+      {
+       "text": "🏙️ Mönckebergstraße – Lighting and billboard fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Improved general station lighting and fixed stretched advertisement textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪜 Uhlandstraße – Ladder positioning corrected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ Fixed the position of a misaligned ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👤 Hauptbahnhof Süd – NPC platform fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "➜ NPCs no longer fall through platform sections – improved collision handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💡 Update now and experience the improvements yourself!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 37,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1804977324448407"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-11T13:11:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.307Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-11T13:11:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.308Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-11T13:11:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.314Z"
+  },
+  {
+   "id": "subwaysim-2-314444@4",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-13T11:33:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45159567/c8283e625ffd8fefb96b884bdd797fe7d0ba2971.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is now available for SubwaySim 2, bringing a variety of quality-of-life improvements, bug fixes, and enhancements to gameplay, sound and visuals. Highlights include the option to skip siding track wait times, more accurate HUD distance display, new brake sounds for HK and A3L92. Timetable services now support depot runs, and multiple visual and sound glitches have been addressed to improve immersion and realism.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to skip waiting times on siding tracks in both Career and Scenario mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Objective list now updates correctly when continuing after the debriefing screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HK trains no longer prompt for IBIS code entry within the same station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HK trains will now correctly prompt for IBIS entry on service runs (\"Z6NE\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The displayed distance in the HUD now reflects actual distance along the rail tracks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Signals towards Uhlandstraße siding tracks now correctly display Hp4 instead of Hp3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Night Owl\" and \"Early Bird\" achievements can now be triggered as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When selecting services in timetable mode, the corresponding depot runs are now included.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An icon has been added to indicate if a service starts or ends in the depot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game no longer prompts to deactivate the cab before the debriefing if it will need to be re-activated immediately after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timetable mode shifts can now be continued after restoring from a savegame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved detection of turnarounds at the start of scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sound & Visual Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed cut-off door sounds for DT5, HK, and A3L92 trains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added spring brake sounds for HK and A3L92.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added electro-pneumatic brake sounds for HK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed HK LOD models – approaching vehicles now display correct meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DT5 IBIS buttons now dim when pressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved flickering glass effects on DT5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased brightness of passenger lights, cab screens, and cab buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "BR 474 color correction applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed flipped interior decals in HK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing decal for A3L92.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect female career rank localization in German.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scenarios & Services",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berlin Weather Chaos scenario no longer requires a login at the final passenger stop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing timetables for Warschauer Straße on Sunday evenings. Environment & Infrastructure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Reduced flickering on",
+     "items": [
+      {
+       "text": "Ballastless track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Superstructure fences,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sleepers (via new LODs),",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed normals on road junctions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed road spline issues – vehicles should no longer stutter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed road vehicle collision issues on bridges (vehicles no longer interfere with those beneath).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance of road traffic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted speed limit near Berliner Tor (coming from Lübecker Straße) from 50 km/h to 30 km/h.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Berliner Tor siding tracks 11–14 are now labeled 41–44.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved signal near Wittenbergplatz that was previously stuck inside a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy Update 4 and have a great weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 8,
+    "balance": 2,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1802354289593474"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-13T11:33:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.306Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-13T11:33:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.307Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-13T11:33:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.312Z"
+  },
+  {
+   "id": "subwaysim-2-314444@3",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-22T11:00:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new update is available for you, bringing several Quality of Life improvements, including enhanced tunnel lighting and reduced environmental flickering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tunnels are no longer affected by external lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved light reflections on windshields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "DLSS support has been implemented (for NVIDIA RTX 20/30/40/50) – improves frame rate and significantly reduces flickering effects",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "General & Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attempts to reduce visible flickering on some bridges in Berlin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flickering pantograph in the depot at Warschauer Straße has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The statistics now show the player's total career experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Numerical values in the statistics have been formatted for better clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scenarios now show an icon if they have been completed at least once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The station selection now responds reliably, even with very long repaint compositions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A potential bug, where audio could cut out during gameplay, has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The positions of individual signs on Saarlandstraße have been corrected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A faulty track behind the \"T21 BA\" signal in Barmbek has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles & Technology",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interactive sunshades added for the vehicle types HK and A3L92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The issue with incorrect direction or missing weather effects on some vehicle windows has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bench in the HK (B/C car) was using the wrong light channel – now corrected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wiper sounds have been equipped with spatial audio playback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wiper switch positions have been correctly labeled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IBIS table in the DT5 driver's cab has been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The electric brake of the DT5 has been adjusted – braking distance is now about 20% shorter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Technology & Graphics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DirectX 11 is now recommended via a startup window for certain AMD GPUs to avoid potential crashes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A new sharpness option is available in the graphics settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Higher settings for \"Foliage Quality\" now increase the render range of trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Field of View and Motion Blur can now be adjusted on consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now use a keyboard in the menu on consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1800357164403939"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-22T11:00:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.305Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-22T11:00:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.305Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-22T11:00:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.311Z"
+  },
+  {
+   "id": "subwaysim-2-314444@patch-2025-05-08",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "SubwaySim 2 | Second Patch | Available Now",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-08T13:46:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time for another update – but first, a huge thank you to all of you! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On release day, an incredible 1,191 people were in the game at the same time – insane! 🥳 We see every day how much fun you’re having with the game. Really cool – this wouldn’t have been possible without you. Thank you for that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your amazing feedback! We’ll be implementing many of your suggestions in the upcoming updates. 💪",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Performance & Graphics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more max framerate options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Framerate Off\" now fully unlocks the framerate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "River visuals improved on medium settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Career Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save files now show as \"Career\" saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Predicted playtime now matches actual duration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sessions can end at any station with takeovers; player walks to despawn point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interactables can be used until the train departs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Train & Station Logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI trains no longer take passengers into sidings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Depot doors now block the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ELA request for automatic announcements triggers only at platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HK can now unlock doors in B and C coaches above 40 km/h.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed broken track at Uhlandstraße Track 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted door audio for Berlin vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "▶️ Signaling & Infrastructure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Signal Gleisdreieck R2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected Daisy configuration at Uhlandstraße and Kurfürstendamm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aligned Fahrsperre with sleepers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shortened third rail at Nollendorfplatz.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Visuals & Meshes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed culling issue on BR474.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A3L92 mesh fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Möckernbrücke station adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "▶️ Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing translations for track plans in Chinese, Spanish, French, Italian, Polish, and Portuguese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 1,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1799088287833437"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T13:46:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T13:46:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.304Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-08T13:46:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.309Z"
+  },
+  {
+   "id": "subwaysim-2-314444@patch-2025-04-30",
+   "gameId": "subwaysim-2-314444",
+   "displayName": "SubwaySim 2 | First Patch | Available Now",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-30T13:48:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After the successful launch of SubwaySim 2, we're excited to release our first patch, addressing some of the valuable feedback we've already received from the community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're enjoying the game, we’d really appreciate it if you took a moment to leave a review on Steam. Your feedback not only means a lot to us, but it also helps us continue improving the game for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here's the changelog",
+     "items": [
+      {
+       "text": "Added horn functionality for HK and A3L92 vehicles: Players can now activate the horn via the standard control keybinding.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HK: Fixed non-functional wiper in the D coach: The wiper now animates correctly and responds to weather changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A3L92: Corrected misaligned couplings between cars: Couplings now connect seamlessly and maintain proper visual alignment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2707070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2707070/view/1798454487572124"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-30T13:48:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-30T13:48:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2707070",
+      "checkedAt": "2026-11-13T03:31:59.303Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-30T13:48:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:18.308Z"
+  }
+ ],
+ "issues": []
+}

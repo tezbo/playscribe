@@ -1,0 +1,1877 @@
+{
+ "game": {
+  "id": "gungrave-g-o-r-e-78113",
+  "igdbId": 78113,
+  "name": "Gungrave G.O.R.E",
+  "cover": {
+   "imageId": "co6vn2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6vn2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5v9w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5v9w.jpg"
+  },
+  "ps5Release": "2022-11-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "gungrave-g-o-r-e-78113@1.05",
+   "gameId": "gungrave-g-o-r-e-78113",
+   "displayName": "PATCH 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-05T11:51:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.05 was released earlier today on all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where specific trophies could not be unlocked (\"Completed body\", \"Completed firearm\" and \"Completed grave\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1630110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1630110/view/5138087875082912014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-05T11:51:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.781Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-05T11:51:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.781Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-05T11:51:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:33.272Z"
+  },
+  {
+   "id": "gungrave-g-o-r-e-78113@1.04",
+   "gameId": "gungrave-g-o-r-e-78113",
+   "displayName": "PATCH 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-14T08:45:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Gunslingers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Patch Notes 1.04 are ready!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Polished Brandon Heat’s motion",
+     "items": [
+      {
+       "text": "Polished 8 direction moving animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed value of blending and speed of montage & blend space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Animation added to a gem of the clothes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that animation being awkward by instantaneous operation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that animation stuttering when operation is done while shooting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Seed Refinery Area2: fixed an issue where the player falling after getting hit by an obstacle while boarding a lift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that Fury Mode turning off after a cutscene is triggered while on Fury Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that controller’s vibration is output differently for each platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that button input being operated when entering a stage while on single fire mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that firing not being canceled when trying to dodge or jump after a fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bunji: Fixed an issue that a bullet flying awkwardly when jumped while on Full Auto Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grave: Fixed an issue that throwing animation being canceled when he throws an enemy while he’s shooting with holding an enemy on Full Auto mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quartz: Fixed an issue that her abnormal animation is operated according to where she’s looking when she’s hit by an abnormal causing attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quartz: Fixed an issue that her demolition shot is not being executed while she’s operating melee attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brandon Heat: Fixed an issue that sometimes other actions were not canceled while using Storm Barrage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Adjustment",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted her Seed Shot to be executed faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shortened her execution time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted her landing delay to be equal with other characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shortened her delay after Rising Kick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shortened her delay after using Chasing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted her Seed Shot and jump being able to execute while using melee attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted that him be able to use execution while using Burst Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "For more info, exclusivities and updates, you can also follow Gungrave G.O.R.E on Twitter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 10,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1630110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1630110/view/6539831519488495014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-14T08:45:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.780Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-14T08:45:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.780Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-14T08:45:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:33.271Z"
+  },
+  {
+   "id": "gungrave-g-o-r-e-78113@1.03",
+   "gameId": "gungrave-g-o-r-e-78113",
+   "displayName": "PATCH 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-24T13:00:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Gunslingers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Patch Notes 1.03 are ready. The patch will be live on February 24th, at 14:00 CET/8:00 ET, and the O.D. Grave and Death Ronin pre-order skins are now available on all platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvement",
+     "items": [
+      {
+       "text": "Improved Seed Fall’s camera presentation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved sustain typed demolition shots by letting them able to aim any direction with left analogue stick after operated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Charge Shot – added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Charge Shot – Slow effect added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Japanese translation of Quartz’ diary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that the character being able to use quick turn while jumping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that Storm barrage: Jump being canceled when holding the shoot button while on Full Auto Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that actions being canceled after using a dodge while holding the shoot button on Full Auto Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that actions being canceled after using a Burst Mode while holding the shoot button on Full Auto Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that actions being canceled after jumping while holding the shoot button on Full Auto Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the dodge shot being canceled because a normal shot is being executed while on dodge shot when on Full Auto Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the Chase is being canceled while holding the fire button on Full Auto Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the motion of grab being awkward when used with holding shooting button on Full Auto Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the Fury Mode being canceled while on landing motion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that charging not being canceled when using Storm Barrage: Dodge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the motion of shooting being awkward when used right after dodging while holding the shooting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed issue that the motion of shooting being awkward when shooting and lock on buttons are pressed simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed issue that diagonal dodge executed in different direction from intended direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed issue that the motion of jumping being awkward when used while in the middle of landing motion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the guns are looking awkward when the landing motion is done on high ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the execution of Storm Barrage: Jump being canceled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that rate of fire being faster after Graveyard is ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that vibration on controller not being executed when shooting Charge Shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the transition form end of the Storm Barrage motion to the point of being able to move too slow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of enemies being stuck on walls when the Grab is being used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of character’s rotating speed does not catch up with the rotating speed of the camera when using quick turn while on Burst Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that when using a grab while on Fury Mode, derivative actions of Grab being canceled and Fury Mode end motion is being executed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the Fury Mode duration being reset when jumping right before the Fury Mode is ended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the vibration of controller is not being executed when shooting while on Grab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that enemies being shrunk down when hit by Grab or Shoot Up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the afterimage of Fury Mode effect being left after the Fury Mode is ended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the vibration of controller not being executed when the character got knock backed or knock downed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the shield of enemies not being destroyed when the demolition shot is used right after shooting a gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the vibration of controller not being executed when shooting a Charge Shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the vibration of controller not being executed when shooting a Charge Shot while on dodging or jumping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the Burst Mode is being executed after canceling throwing animation after Grab,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the throwing animation is being canceled when used while using Grab shooting on Full Auto Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the jump action and other actions are input at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the enemies are being stuck on the wall while being grabbed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "[Brandon Heat]",
+     "items": [
+      {
+       "text": "Fixed issue that the jump action and other actions are input at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the transition form end of the Storm Barrage motion to the point of being able to move too slow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of character’s rotating speed does not catch up with the rotating speed of the camera when using quick turn while on Burst Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue that the vibration of controller not being executed when the character got knock backed or knock downed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the camera is rotating around when counterattack is used while using lock on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the Chase is not being executed properly when used with certain direction is input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hong Kong – Fixed issue that the progress is being stuck when jumping in certain spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scumland Outer – Fixed issue of Inside of Seed Refinery area 1 that the wall in the place where Orgman is being spawned being cracked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Malaysia – Fixed issue of Summit level where Character falls down when moving to certain point of the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Malaysia – Fixed issue of Summit where Big-Wushen Standard is being disappeared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the attack pattern of enemies spawned in Vietnam Area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue that the UI effect of Full Auto Mode transition not being operated properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vietnam – Fixed issue that the idle motion is being operated at the start sequence of the Vietnam Cave level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue that the NPCs glitching when killed while on air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For more info, exclusivities and updates, you can also follow Gungrave G.O.R.E on Twitter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 45,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "Improved Seed Fall’s camera presentation",
+     "Improved Charge Shot – added",
+     "Improved Charge Shot – Slow effect added"
+    ]
+   },
+   "sourceIds": [
+    "steam-1630110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1630110/view/5059268543360498714"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-24T13:00:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.779Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-24T13:00:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.779Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-24T13:00:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:33.270Z"
+  },
+  {
+   "id": "gungrave-g-o-r-e-78113@1.02",
+   "gameId": "gungrave-g-o-r-e-78113",
+   "displayName": "PATCH 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-27T10:05:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Gunslingers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Patch Notes 1.02 are ready!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bunji is now playable in every stage (You can unlock it by purchasing it with DNA at the lab)",
+     "items": [
+      {
+       "text": "Added Charge Shot for Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Upgrades for Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Demolition Shot for Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ranged execution move for Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added shield destruction functionality on Shoot up move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Jump Shot for Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished Bunji’s basic movement about canceling other motions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Dodge Shot for Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bunji unlock is now available on Lab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added achievement trophies for Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improvement on presentation of Demolition shots",
+     "items": [
+      {
+       "text": "Camera changes for controllable skills like Hell hound, Hellfire, and Death Sentence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added camera presentation for some Demolition shots like Raging Inferno",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "System Improvement",
+     "items": [
+      {
+       "text": "Gimmicks that were against players removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished Dodge with stronger dodging mechanic and polished animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished Charging to be chained from various actions fluently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shooting will be executed on pressing the button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grave’s Charge Shot has 4 levels now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Dodge Charge Shot and Jump Charge Shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can now change difficulty at Continue screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Deleted auto target disabled state in smoke & deleted tutorial on the smoke",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dodge shot shoots 6 bullets instead of 4 bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added UI effect for changing to full auto shooting mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished Boss NPCs’ attack speed and damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made lock-on functionality more fluent while using certain skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished Idle motion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Quick turn functionality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved parts when skills not being canceled while using them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved range and hit effect of mines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved PC reaction when exploding objects are exploding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Grave’s moving speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved shooting functions to work when executed while shooting in full auto mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Added glasses on Classic Grave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that invincibility function not working after using skills: Bunji, Quartz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that Fury mode being activated infinitely when Bunji uses Burst mode while on Full Auto mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that Bunji not having height limits in his close combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that Shots not being canceled when dodge is used while shooting: Grave, Bunji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that NPCs shrinking down when hit by Bunji’s Shoot Up skill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that some of the animations for Idle motion not being executed properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the time between activating burst mode on a shot in full auto mode not matching the description in the burst mode tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that cartoon mode not being applied to New Orgmen that were summoned by Big-Wushen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that cartoon mode not being applied to Brandon Heat when he’s using his Brotherhood Demolition Shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that NPCs not reacting when hit by Demolition Shot, Hell Hound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that the projectiles of Hell Hound not flying to the crosshair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For more info, exclusivities and updates, you can also follow Gungrave G.O.R.E on Twitter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 29,
+    "fixed": 13,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Camera changes for controllable skills like Hell hound, Hellfire, and Death Sentence",
+     "Added camera presentation for some Demolition shots like Raging Inferno",
+     "Gimmicks that were against players removed"
+    ]
+   },
+   "sourceIds": [
+    "steam-1630110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1630110/view/5035622109512480550"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-27T10:05:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.778Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-27T10:05:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.778Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-27T10:05:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:33.269Z"
+  },
+  {
+   "id": "gungrave-g-o-r-e-78113@1.01",
+   "gameId": "gungrave-g-o-r-e-78113",
+   "displayName": "PATCH 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-16T16:01:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Gunslingers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the Patch Notes 1.01, bringing new content and minor bug fixes along with a free \"Cel-Shaded Mode\"!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW ADDED SYSTEM",
+     "items": [
+      {
+       "text": "Cel-Shaded Mode added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Idle Motion added (If you stay as idle for more than 10 seconds, one out of three animations will play randomly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Invincible while using demolition shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed issue of Burst mode being activated when FULL AUTO mode is activated and holding R2 while using Blood Cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of Bunji activating Burst Mode when FULL AUTO mode is activated and holding R2 while using Shoot Up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of Bunji being able to use Demolition Shots while grabbing an enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of Death Spear not being activated when player used dodge roll more than twice while charging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of AUTO FIRE function not working when the played save file is from before the Day One version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of NPCs still moving before Graveyard is fully activated in certain situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of Ballad Bird Lee and Bear Walken AI stopping when a Demolition Shot is used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of Ganpo's attack not giving any damage to Grave when standing on certain area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed icon shown in Windows Task bar as defult icon of Unreal Engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Experimental Cave level's changed jump platform level design is not implemented on map select image",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grave not getting hit by Ganpro Superior when he used certain attack and camera is looking at the same direction as Ganpo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of thrown enemies moving while using Demolition Shots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grave teleporting to somewhere when getting out of Ganpo Superior's Grab attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Polished animation of Ganpo Superior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the death sentence looked like it is dragged out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "CHANGED SYSTEM",
+     "items": [
+      {
+       "text": "Grave's melee attack will not cancel it's own animaiton anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Demolition Shot's damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Demolition gauge gains more per shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Graved Yard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Demolition Shots' production added – Doom’s Rain, Death Drive, and Executioner’s Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved hit detection of Funeral Strke",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Parring detection so it is easier to parry those projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted balance of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed HP and damage of enemies in Easy and Normal difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack motion changed for Ligabu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed animation of Bhrbau",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Who-Knows-Who's floor explotingm attack will be smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ganpo Standard’s attacking range has been polished",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When Ganpo Superior gets into phase 2, his 3-way laser attack motion has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blending has been done for Ganpo Superior’s animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Quartz, her demolition point increased by 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you restart or continue at the map you previously played, the earned demolition points stay still",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added delay and effect when Ligabu, Zell Condorbrave, and Brhbau prepare to attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made getting out of stun easier against bosses(you will have to shake stick left and right much less now)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crosshair now appears when hell hound or hell fire is being used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Destructible objects have been added to Infected Sewers, Grave’s Base, and Harbinger’s Pit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "OTHER CHANGES",
+     "items": [
+      {
+       "text": "Polishing Autofire HUD UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Autofire UI save system(Maintaining last selected option)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished Demolition Shot video in Lab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jump Storm Barrage can break shields now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death Tornado’s tutorial explanation has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added effect for Ligabu's Leaping attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can also find us on Twitter and check our website!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 16,
+    "balance": 1,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1630110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1630110/view/5623338145754824426"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-16T16:01:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.777Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-16T16:01:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.777Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-12-16T16:01:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:33.268Z"
+  },
+  {
+   "id": "gungrave-g-o-r-e-78113@1.0",
+   "gameId": "gungrave-g-o-r-e-78113",
+   "displayName": "PATCH 1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-02T15:31:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Gunslingers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Patch Notes 1.0 are ready!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Auto",
+     "items": [
+      {
+       "text": "PC: Pressing while playing the game will toggle Normal/FULL AUTO mode. When using FULL AUTO mode, you cannot use Death Spear, But if you toggle back to Normal mode, you can use Death Spear again. Use whatever mode when the situation requires you to use it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Activates Burst mode when using FULL AUTO while standing still",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added parring and missile reflection in Funeral Strike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added shield-breaking function in Executioner’s Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When Grave/Bunji/Quartz knocks down, they'll stay invulnerable for a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed an issue where Bunji is not getting Art Score when executing an enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the controller kept vibrating when the player uses Death Spear after holding the trigger button while using jump shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a stage was not cleared when the player reaches the stage clear point without killing all the enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where charging turns off when the player passes through certain areas while charging, in Hong Kong Rooftop level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of Who Knows Who's spawning indication appearing in the wrong location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Who Know Who's ending cutscene was not played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of Grave not dying when hit by a tunnel while holding any enemies. He will die after getting crashed by a tunnel whether he grabs an enemy or not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of Grave getting stuck on a map object after getting caught by Brhatu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Brandon Heat/Bunji's firing speed slows down while playing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the controller’s vibration was not working when Who Knows Who shoots projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a progression issue in the Ship’s Core level (Scumland) center being blocked due to certain enemies standing still",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of shield damage not showing properly when getting hit by certain skills after the boss battle in the Harbinger’s Pit level (Scumland Center)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of the Secret Laboratory level (Vietnam) boss not attacking Grave when the player is standing still in a certain area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of the Infected Sewer level boss getting stuck on the wall when standing too close to it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of boss tooltips not showing up after the player dies and restart while having a boss battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue of shadows not appearing properly in the Skyline level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed holes and floating objects in certain levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue when Grave falls out of the train after getting hit by the mine and get stuck on a block instead of dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "CHANGED SYSTEMS",
+     "items": [
+      {
+       "text": "Demolition shots are now able to break shields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhanced Grab Smash now gives knockback to enemies 360 degrees around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Attack damage increased when playing as Bunji/Quartz in Hard difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Close combat damage increased when playing as Bunji/Quartz in Hard difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grave/Bunji's Burst mode damage increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grave's close combat will not cut off when hit by enemies while using it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Storm Barrage will not cut off when hit by enemies while the player has a shield left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Grave/Bunji's movement speed while shooting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shield of Shielded enemy has less HP so it will break easier in close combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser-shooting enemies will shoot their laser less due to the 2-second delay in-between",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missile-shooting enemies will not shoot another missile until their previous missile is blown up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level design of the Freight Train/Experiment Cave has been improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made deadly pits of Hong Kong Back Alley levels darker so they look more dangerous to fall off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage of Laser in Laser Area at Turonty HQ level has decreased majorly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "OTHER CHANGES",
+     "items": [
+      {
+       "text": "Tutorial on FULL AUTO has been added / Tutorial appearing area and description have been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pop-ups on FULL AUTO have been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mafias' voice-over will be more diverse. (English/Korean)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The options menu has been fixed for the Auto Target toggle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI for Brandon Heat has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 18,
+    "balance": 1,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1630110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1630110/view/4979322040020711188"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-02T15:31:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.776Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-02T15:31:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1630110",
+      "checkedAt": "2026-11-13T03:22:15.776Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-12-02T15:31:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:33.267Z"
+  }
+ ],
+ "issues": []
+}

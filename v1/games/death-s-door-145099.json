@@ -1,0 +1,1071 @@
+{
+ "game": {
+  "id": "death-s-door-145099",
+  "igdbId": 145099,
+  "name": "Death's Door",
+  "cover": {
+   "imageId": "co45xc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co45xc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar17wk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar17wk.jpg"
+  },
+  "ps5Release": "2021-11-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "death-s-door-145099@post-2021-10-05",
+   "gameId": "death-s-door-145099",
+   "displayName": "Minor Fixes - Oct 5th",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-05T10:26:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Guardian of the Door material cracks not showing as it took damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some unused files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some minor collision issues in some levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential to soft-lock the game in some specific cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/3938951840897937635"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-05T10:26:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.609Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.609Z"
+  },
+  {
+   "id": "death-s-door-145099@post-2021-09-15",
+   "gameId": "death-s-door-145099",
+   "displayName": "Rumble, options changes, and general fixes - 15 September",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-09-15T09:30:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Upgraded Controller plugin to fix issue with Dualsense controllers and bluetooth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added rumble to supported XInput controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to menu to disable Native Input for controllers which have issues, some PS Controller drivers work better with this option off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Split options menu into sub menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added chromatic aberration toggle to graphics options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added blood toggle in accessibility options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added enemy flashing toggle in accessibility options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added fullscreen flash effects toggle in accessibility options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor optimisations throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed player interpolation methods to give a smoother movement to the crow character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed interpolations on some other NPCs to give smoother movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added backup deathplanes to some scenes where in rare instances players could glitch through walls and get out of bounds softlocking the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added further backup respawns to fix situations where players could get their respawn point set to the scene origin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the save file system to write a temporary file before overwriting previous saves, hopefully avoiding any crashes corrupting save files. The game still also stores up to 20 backup saves that can be manually used by a player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved mouse aiming for heavy attacks so it doesnt follow player movement direction.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where hammer heavy charge impacts were mis-aligned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI optimisations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When erasing a save file \"No\" is now selected by default in the popup window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug with some endgame content spawning the player at the wrong door in the forest scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed positional sounds on nocturnal avian creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased some timings on the Ice Canyon challenge (still exercise caution).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some occasional falling animations at the top of ladders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added trowel glow to some scenes where a neighbouring area without a door contains a seed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added behaviour fallback to the spear-wielding enemy AI that would sometimes get stuck in an incorrect state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Separated menu Confirm and Back in key binds so they are no longer assosiated with attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 4,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/3936698772940656461"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-15T09:30:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.609Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.609Z"
+  },
+  {
+   "id": "death-s-door-145099@hotfix-2021-08-06",
+   "gameId": "death-s-door-145099",
+   "displayName": "Hotfix - August 6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-06T12:42:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where the game sees multiple controllers but didn't handle them correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4032396530944247638"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-06T12:42:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.608Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.608Z"
+  },
+  {
+   "id": "death-s-door-145099@post-2021-08-06",
+   "gameId": "death-s-door-145099",
+   "displayName": "Optimisations and minor bug fixes - 6 August",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-08-06T08:43:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Tweaked controller configuration in game to allow DS4Windows to work correctly with Playstation controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Added \"uinput\" flag to config file, may allow some users to have native controller support over Bluetooth when using Dualsense controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some general code optimisation for UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some lag spikes in some AI pathfinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimised some ray cast checks for moving platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed some characters' animated interpolation to be smoother at higher framerates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabled Graphics Jobs in Unity, should allow more code to run spread over separate CPU cores while preparing for rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed order of saving on scene loads to prevent a potential rare crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Playstation Controllers Bluetooth support",
+     "items": [
+      {
+       "text": "We tweaked controller configuration which should now allow Dualshock 4 controllers to be used with Bluetooth for players using DS4Windows drivers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Added a workaround for players using Dualsense controllers with bluetooth and native drivers - open the config.xml file at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "%USERPROFILE%\\AppData\\LocalLow\\Acid Nerve\\DeathsDoor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "and set 'uinput' to 'true' before booting the game. This will turn off direct input drivers and revert to Unity input systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Note that without DS4Windows or changing the config file, all playstation controllers are supported when wired, or when Steam Input is enabled (though this will show Xbox buttons).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 10,
+    "ps5": 6
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4032396530943642231"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-06T08:43:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.607Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.608Z"
+  },
+  {
+   "id": "death-s-door-145099@hotfix-2021-08-02",
+   "gameId": "death-s-door-145099",
+   "displayName": "Hotfix - 2 August",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-02T11:30:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed left over debug script.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4038025597325906724"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-02T11:30:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.606Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.607Z"
+  },
+  {
+   "id": "death-s-door-145099@major-2021-08-02",
+   "gameId": "death-s-door-145099",
+   "displayName": "Controller update and bug fixes - 2 August",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-02T09:48:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Controller input switched to native input, changes from the controller beta moved to main branch - this should fix most issues with controller compatibility including allowing players to use Steam Input.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed screenshake and wait frames from fire DoT ticks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor collision softlock in mansion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bat AI that would cause issues in rare circumstances in the Avarice fight meaning it would never complete the battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential similar AI issue on spear enemies that may cause them to just run off or stand still.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for people affected by a previous ghost save issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock returning to a night shrine with jefferson for a second time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed friction bug on pot mimics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added silent servant completion to end game door glow checks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed rare bug where end game boss door would not spawn after a premature game exit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where travelling with the gondola in certain circumstances can cause you to spawn at the wrong location and lock the camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra backup saves and a readable JSON file dump for assistance debugging future save issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rolling out controller changes from the beta branch to main. Switching from Unity input to direct/native input and allowing supported devices to use Xinput. Also added checks to ignore signals sent by phantom controllers that some people's drivers were doing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If this patch changes/breaks controller input for you please get in touch here or email me at contact@acidnerve.com letting me know what controller you have, and emailing me log files if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4038025597325648981"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-02T09:48:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.605Z"
+  },
+  {
+   "id": "death-s-door-145099@post-2021-07-28",
+   "gameId": "death-s-door-145099",
+   "displayName": "Bug Fixes - July 28",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-07-28T08:52:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed bug where you could move through some Avarice doors without unlocking them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where leaving a ladder could give you infinite mass and also break interactions with ram platforms in grandma's basement level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where you would no longer gain any souls until reloading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exploit in final boss room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with ghosts not counting to an endgame counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added backup code for people affected by a previous bug, if you are stuck on 99.5% completion interact with the Shrine in the Camp of the Free Crows and this will be corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more checks to saving to prevent a rare save file corruption, also added crash logging here to help me find any causes if it happens to anyone. Reminder backup saves were added in the last patch in case anyone does have that issue!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Game Save files can be found here",
+     "items": [
+      {
+       "text": "%USERPROFILE%\\AppData\\LocalLow\\Acid Nerve\\DeathsDoor\\SAVEDATA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm still looking into controller issues, but have some leads now - if anyone has controller issues with the game the beta branch may fix it for them, right click the game in steam library, properties, betas and password is: controllercr0w",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If anyone uses that beta please send log files to contact@acidnerve.com even if you've sent them before, I've added more logging there which may help me to crack the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4038025325468613242"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-28T08:52:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.605Z"
+  },
+  {
+   "id": "death-s-door-145099@post-2021-07-26",
+   "gameId": "death-s-door-145099",
+   "displayName": "Bug fixes - July 26",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-07-26T13:44:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Save files now save backups each time a successful save occurs. These are in the same folder as other saves. If anyone has issues with corrupted save files they can now use a backup by renaming them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue in one log file in Japanese which repeated a line over and over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Final boss fight now forces save spots in the scene to stop the issue that some people had of being re-spawned at an out-of-bounds door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more logging around controller information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some minor spelling errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed purchasing upgrades not saving under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some world/collision issues fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your controller is not working please get in touch and send your Player.log and Player-prev.log files to use at contact@acidnerve.com, files can be found here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "%USERPROFILE%\\AppData\\LocalLow\\Acid Nerve\\DeathsDoor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is also a beta branch you can try to see if that helps as we continue to test potential fixes for some controller issues a small number of people are having. Right click the game in your steam library, go to betas and enter the code: controllercr0w",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are also continuing to look into the stuttering issue some people experience, we will have more info and test builds for that in the coming weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4038024692300699056"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-26T13:44:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.604Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:59.604Z"
+  },
+  {
+   "id": "death-s-door-145099@post-2021-07-24",
+   "gameId": "death-s-door-145099",
+   "displayName": "Controller Input - July 24",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-07-24T08:13:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reverted last patch which fixed controller issues for some users but presented different issues for others, working on a patch to make controllers usable for all users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have controller issues you can opt into the beta branch while we investigate, right click the game in your steam library, properties, betas and enter the code: controllercr0w",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4038024692292584070"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-24T08:13:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.603Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-11T21:58:59.603Z"
+  },
+  {
+   "id": "death-s-door-145099@post-2021-07-23",
+   "gameId": "death-s-door-145099",
+   "displayName": "Bugfixes - 23 July",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-07-23T14:53:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Vsync in options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Readable Signs no longer hookshot-able",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed softlock from sequence break in forest dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly moved some typewriters on the floor of Hall of Doors to stop the player landing between them and getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the movement force of heavy and rolling attacks for daggers by 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed missing deathplane in one part of Castle Lockstone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock when spamming buttons during bard interactions and yes/no prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing wall collider in Grove of Spirits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Ancient Doors could be triggered without freeing all crow souls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where player could get trapped in furnaces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bard bug in forest where old dialogue would re-appear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-894020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/894020/view/4038024692289954704"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-23T14:53:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-894020",
+      "checkedAt": "2026-11-11T21:58:59.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-11T21:58:59.602Z"
+  }
+ ],
+ "issues": []
+}

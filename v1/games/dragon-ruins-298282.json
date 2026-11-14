@@ -1,0 +1,754 @@
+{
+ "game": {
+  "id": "dragon-ruins-298282",
+  "igdbId": 298282,
+  "name": "Dragon Ruins",
+  "cover": {
+   "imageId": "co8ua7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8ua7.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2wul",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2wul.jpg"
+  },
+  "ps5Release": "2025-09-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dragon-ruins-298282@2.0",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update 2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-06T13:54:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Remix mode. This mode features a dungeon from the original jam version with minor adjustments and a different final boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 4 new enemy types to spice up the exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 4 new player classes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Expanded the in-game soundtrack with suitable tracks from DR2 and DR2A.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor adjustments to game balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor fixes and adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/1818118366179097"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-06T13:54:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.663Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-06T13:54:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.663Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-06T13:54:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.001Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-09-05",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for September 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-05T18:36:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjusted monster data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed resource usage if VSync was force-disabled via driver settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor text overflow issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/6242640076597546752"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-05T18:36:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.662Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.000Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-06-18",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for June 18, Part Deux: Electric Boogaloo -- Final",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-18T04:51:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a long-standing bug that could softlock the game if the player died while moving through doors or between battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I apologize for the long delay with this issue. This bug was difficult to track down since it required almost frame-perfect precision and hundreds of attempts to reproduce, fix, and confirm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On another note, you can press ESC+D to generate a dump file (gamestate.dmp) if you encounter a game-breaking issue. The file will be located at c:\\Users\\user\\AppData\\LocalLow\\Graverobber Foundation\\Dragon Ruins\\, next to the logs and save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you provide a dump along with the logs, this will make troubleshooting a lot easier in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/6890025005365874081"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-18T04:51:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.662Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.999Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-06-17",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for June 18",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-17T22:56:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed minor control issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game will now autosave when you enter the maze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/6890025005364977044"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-17T22:56:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.662Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.998Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-06-09",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for June 9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-09T17:50:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed town and status menu overlapping and bugging the game under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5746109972560505013"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-09T17:50:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.661Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.997Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-05-29",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for May 29",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-29T00:05:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improved stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted Japanese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5742731639324432719"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-29T00:05:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.661Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.997Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-05-21",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for May 21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-21T05:38:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Japanese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big thanks to Izumi Thorn for handling the Japanese localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5747233970435589806"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-21T05:38:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.660Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.996Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-05-14",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for May 14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-14T19:42:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a few typos and wording in Ukrainian localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5768625435414829783"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-14T19:42:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.660Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.995Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-05-13",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for May 13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-13T00:18:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed typos and missing lines in Ukrainian localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5768625435408236766"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T00:18:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.994Z"
+  },
+  {
+   "id": "dragon-ruins-298282@major-2024-05-12",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Update Notes for May 12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-12T04:41:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added extra precautions against conflicting events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Ukrainian localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5768625435405257218"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-12T04:41:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.994Z"
+  },
+  {
+   "id": "dragon-ruins-298282@2",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-04T11:38:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added extra precautions to prevent conflicting events, which could softlock the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5766372999950660093"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-04T11:38:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.993Z"
+  },
+  {
+   "id": "dragon-ruins-298282@hotfix-2024-04-30",
+   "gameId": "dragon-ruins-298282",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-30T18:31:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Potential fix for a soft lock caused by going through the door with a dying party.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2929540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2929540/view/5759616966683592559"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-30T18:31:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2929540",
+      "checkedAt": "2026-11-13T03:19:24.658Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:18.992Z"
+  }
+ ],
+ "issues": []
+}

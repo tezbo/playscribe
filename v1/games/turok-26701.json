@@ -1,0 +1,1559 @@
+{
+ "game": {
+  "id": "turok-26701",
+  "igdbId": 26701,
+  "name": "Turok",
+  "cover": {
+   "imageId": "co2699",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2699.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar813",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar813.jpg"
+  },
+  "ps5Release": "2025-02-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "turok-26701@3.2",
+   "gameId": "turok-26701",
+   "displayName": "Patch 3.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-16T19:22:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/11181789/1abea8598ea6e0e783983e90f7da6a647e034dea.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 3.2 for Turok is now live on all platforms, and includes the following hotfixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When loading a game, the remainingKeys is now correct.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the spawning warp portals not returning the player to the last map in the right direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the catacomb water that drains not being set to the correct initial position when the map begins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor model geometry fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-405820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/405820/view/1818752592136946"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T19:22:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T19:22:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.078Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-16T19:22:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:21.084Z"
+  },
+  {
+   "id": "turok-26701@major-2025-04-23",
+   "gameId": "turok-26701",
+   "displayName": "Update Notes for 23rd April",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-23T16:13:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a new update available now for Turok that addresses issues brought to us by the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PC Changelog",
+     "items": [
+      {
+       "text": "New option added to adjust automap line thickness. Automap lines are now rendered as quads, allowing the line thickness option to affect direct x and xbox platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Use correct output channels for xaudio2. Fixes reverb sounds using 2 channels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Entering or exiting a level will now set a checkpoint for the player and checkpoints will not show text or play a sound in boss maps, matching the original behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Vulkan syncing issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improvements to game logic ticker to mitigate stuttering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rendering is disabled when the window is unfocused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a map fails to load it will now fall back to the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several Interpolation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All particle and wave files are now precached",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to the sun's lens flare for it to be blocked by all objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turok will no longer make underwater hurt sounds when taking damage in an antigravity area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The current FOV value in the options menu will now be auto selected and an FOV of 100 was added as an additional option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several issues with dying during the start of the Mantis and T-Rex fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Reset Bindings from resetting other menu options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Steam) Fixed the steam workshop map selection menu. It should now show all maps in user loaded mods only.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Gallery and Credits cheats are now disabled when you’re not on the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed cheats not being unlocked properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localized text for weapon binds and cheat messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with particles not being setup correctly when spawned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Particle decals will now be correctly oriented on top of the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased damage of the Alien Weapon from 15 to 25 and explosive damage from 0-20 to 25(no falloff) with a radius of 20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Quad Rocket Launcher now does radius damage when impacting default surfaces such as most floors in the game. And 1 of the 4 rockets had a larger radius than it should have.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The damage the player does to enemies is now more accurate to the original on hard and hardcore difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Credits will no longer fade out from button presses at the start of the credits. You can also speed up the credits by holding down: right click, space bar or the left face button on your controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thunder can now be damaged during his roaring animation matching the original game. When respawning he will run after you immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bosses no longer receive knockback force.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored Campaigners shield behavior. The shield's total health is 1500 and absorbs damage from explosive and energy based weapons. Other weapons still deal direct damage to the campaigner. The shield will change colors when damaged and will disappear when destroyed. All weapons will then hurt the Campaigner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Footstep sounds will now fade out when obstructed from the player correctly. Sounds with the fadeIfObstructed flag were improved to work with any number of actors and will do less raycasting checks. This flag was also set for the raptor and purlin footsteps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turok’s landing sound is no longer played when landing on a warp sector.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fly mode cheat code in the cheat menu will now allow you to go through level geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Giblets can no longer spam sounds on every frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player viewHeight corrected from 51.2 to 55.296",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed big head scales on raptor, alien, and T-Rex. Leaper now has headtracking and big head mode now works on him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tiny enemies and big head cheats now work in the Gallery for the Bosses and Turok.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dropped and spawned pickups will now cast a simple shadow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to sounds with a very low pitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player will now rotate when on spinning platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turrets don't lower when frozen by shockwave weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check for non solid actors in KnockbackTarget and KnifeAttack functions (swinging sacks hitting pickups)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interpolation when zooming the automap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many fixes and additions for modding scripts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy the update! Please let us know how you get on with it in the forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daniel G, Nightdive Studios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 1,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-405820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/405820/view/1797820624431844"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T16:13:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.076Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T16:13:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.076Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-23T16:13:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:21.083Z"
+  },
+  {
+   "id": "turok-26701@post-2025-02-28",
+   "gameId": "turok-26701",
+   "displayName": "Turok has been upgraded to the Kex4 engine!",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-02-28T20:55:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Dinosaur Hunters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a brand new update for Turok available now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "```New Features",
+     "items": [
+      {
+       "text": "Support for high refresh rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved controller functionality and vibration support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Localized Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Brachiosaurus from a Turok beta rom has been found and recovered. You’ll find these dinos stomping around in the Treetops level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now swap ammo types for the Tek Bow and Shotgun whenever you want, just like Turok 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Run/Walk toggle button has been added from the original game. By moving at walking speeds on the ground, you can get closer to enemies from behind before they notice you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now bind multiple weapons to the same button to cycle between them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored the High Priests homing blue magic attack and the Purlins unused leap smash melee attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored the Gallery cheat code with the addition of viewing the Bosses and Turok. You can also preview animations on each of the enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Menu Options",
+     "items": [
+      {
+       "text": "You can reset menu options to default with the \"Reset to Defaults\" menu option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Input Bindings menus now shows icons instead of text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added binds in Action Bindings menu for Changing Ammo Type and Walk Toggle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controller Options: Look Smoothing, SouthPaw (Swap Sticks), Enable Vibration and Intensity, DeadZones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gameplay Options: Radial Fog, Player Shadow, Enable Walk Toggle, Enable Change Ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Head Bobbing Options: Added strafe and jump bobbing options and you can now adjust the scale of how much the screen is tilted for each bobbing option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "HUD Options: Automap Show Player, Automap Show Compass, Show All Health Stats (Shows health when you have Armor), Show Alt Ammo, Flash Intensity, Shake Intensity, Horizontal Positioning of the HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Graphic Options: Always Show Lens Flares, Antialiasing: SMAA, FXAA, FXAA Fast, Off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Audio Options: Master Volume, Audio Output, Low-Pass Filtering, Enable Underwater Music, Ambient Environment Sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Save file level names are now localized. The most recent save file is marked in green. The date displayed is now in the format yyyy/mm/dd hhmmss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Improvements to the font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animated textures skipping the first frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies that have been blown up into air are now able to fall off cliffs and float/sink in water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the red and orange Attack Robots from having a huge melee hit radius and removed their random explosion effect being spawned during certain animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the frequency enemies will teleport and their animation is updated right away while teleporting in so you won't see them pop in for a frame at the start of their animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies that are waiting to be triggered can no longer be damaged or killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to enemy headtracking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Simple shadows take into account the fog when they are drawn. Fixed shadows appearing briefly at the start of enemies dropping from the sky. Fixed shadows drawing on top of other shadows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Purlins melee attacks no longer play ambient bird sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies no longer stutter in place when they're in their initial animation and transition to a root motion animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies are no longer removed from the map if they can respawn when the player moves far away from them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy grenades can impact more surface types instead of just disappearing on impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bosses are now affected by the difficulty setting and have a modifier for the damage they receive similar to regular enemies, to match the original version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Humvee can no longer be knocked back when damaged and will restore its death state animation correctly when respawning in the arena. The Humvee can be knifed again allowing (glitchless) knife only playthroughs. The wheels no longer spin forever when destroyed and certain sound file paths have been fixed with underscores instead of single quotes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Longhunter from being damaged during his non fight states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored Campaigners original behavior with the weapons that can damage him and what weapons get removed from the player. Additionally you will now see your weapons get taken from you and destroyed.: Plus more fixes: Due to the nature of the update change, we do regret that old save files will no longer work with the updated engine. You can go back to the Legacy version by opting into the Kex3 branch on Steam. However Steam Cloud has been disabled for the old version.: We hope you enjoy the update!: Daniel G.: Nightdive Studios",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 15,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Support for high refresh rates.",
+     "Improved controller functionality and vibration support.",
+     "Localized Achievements."
+    ]
+   },
+   "sourceIds": [
+    "steam-405820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/405820/view/1792751526053138"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-28T20:55:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.075Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-28T20:55:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.075Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-28T20:55:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:21.082Z"
+  },
+  {
+   "id": "turok-26701@major-2016-06-21",
+   "gameId": "turok-26701",
+   "displayName": "Small update is available now.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-21T02:54:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A small update for Turok is now available. It should resolve the crashing experienced in the Mac OS when encountering the first \"Purlin\" monster in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The error wasn't causing the Windows version to crash but we fixed it anyway!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Daniel,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Night Dive Studios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-405820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/405820/view/4249665521683280248"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-21T02:54:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.074Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:21.080Z"
+  },
+  {
+   "id": "turok-26701@3",
+   "gameId": "turok-26701",
+   "displayName": "Update 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2016-02-23T20:32:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/11181789/d272d2f268640dd4bdfbf4e804a77aa034216d7f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turok has been updated on all platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 3 Notes",
+     "items": [
+      {
+       "text": "Added Atari intro video. Updated Kex and Nightdive videos. Removed Acclaim intro cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Save menu will now update the save slot text when all save slots are used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed cheat text localization when entering in a cheat code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a much-requested gameplay option to toggle respawning enemies off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a gameplay option for enemies to always drop items no matter what the difficulty is set to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crosshair now scales with the size of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trails: are smoother, no longer disappear when the enemies change animations, and their performance has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When firing the Rocket Launcher the trails no longer stop spawning smoke particles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crawling now uses the weapons walk animation instead of the run animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Particles now fade in correctly with the intended alpha values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sounds pause and resume when opening and closing menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered volume of explosion sounds during the end game escape cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Maximum active sounds increased from 64 to 128.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When the music changes there’s a quick fade out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with some enemies showing the wrong blood colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sandworms can no longer be shot when they have died and are under the floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Knife makes metal impact sounds when hitting metal enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The arrow head on the Bow now flashes briefly for a better indicator of the Bow's super shot timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After beating the Longhunter and the dam opens, water sounds now play. Removed shadow flags on 2 of the dam doors. Removed unused switch sectors from beta version only seen on the automap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Level 5 a shortcut from the beta version was added in, going from the outside area with the key to back inside to the catacomb hallways. The unique model used for the shortcut entrance was never correctly modeled, and it has now been fixed up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added in the missing startup elevator sound for tech platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sky speed now changes based on the sector properties. In Level 7, for example, the sky moves a little faster than the other levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed walk speed value when moving diagonally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies not respawning when they’re in water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interpolation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor model geometry fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Switch) You can now select up to an FOV of 120 on Nintendo Switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(PC) Rendering fixes when window focuses/unfocuses.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Using mods no longer prevents achievements which was the original remaster behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC) Modding additions and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 1,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-405820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/405820/view/295354025643127668"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-02-23T20:32:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.073Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 4,
+   "updatedAt": "2026-11-13T03:34:57.077Z"
+  },
+  {
+   "id": "turok-26701@2",
+   "gameId": "turok-26701",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2016-01-05T20:53:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello to all you Turok fans out there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have set Update #2 live on Steam now! It contains the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "ChangeList (1.4.6 Patch #2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed random sounds mysteriously relocating/repitching sfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Emulate the ceiling glide glitch found in original game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced all sounds of the game with the N64 version of the game. Quality is actually significantly better than the original 1997 PC port",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix back/exit button on joystick menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization for hub key plaque messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a fatal error call preventing crash for missing vertex attribute array support common to Win 8.1-10 default WDDM drivers missing OpenGL 2.0 support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies can now be blown away while in the death state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use generic spark for metal (robot) grunt subtypes when hit by knife",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Green blood and non-blood support (toggled in violence options)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localize extra life string",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GPU memory optimizations and cleaner implementation of Bloom post process",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed light scatter post process for intel chipsets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possible fix for multiple weapons showing at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed memory leak and flooding of nested kexParsers due to level scripts not being properly closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Refactor cheats and add unlock of infinite lives when you get max lives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Support for hud opacity cvar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do not allow picking up backpacks when you already have one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More fixes for preventing player from getting ejected into a room below him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't holster weapon when entering anti-gravity areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Possible fixes to Mantis script logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a problem where campaigner will not stun if he is locked in a melee cycle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Special case checks for dealing with looping sounds played by sources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warp hum and waterfall sounds now loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow birds and monkeys be killed by particle accelerator because why not?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make some wind sounds loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix minigun/accelerator loop sound lock when holdstering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix particles randomly becoming black",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing tek arrow models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please let us know how we are doing with these patches in the forums. Your feedback is very important to us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Daniel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Night Dive Studios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-405820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/405820/view/341510664159992934"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-01-05T20:53:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:21.078Z"
+  },
+  {
+   "id": "turok-26701@1",
+   "gameId": "turok-26701",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2015-12-19T03:01:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An update for Turok is available now. It contains the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelist for 12/18/2015",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Safeguard checks for initializing video. Will fall back to starting the game in windowed mode if it is unable to create a window for fullscreen mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Head bobbing options implemented",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Possible fix for a crash when loading a level or loading from a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tremor effects no longer affects the player's velocity (won't be doing short hops)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animation speeds for AI on Hard and Hardcore difficulties have been toned way down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing the difficulty in the gameplay menu now automatically updates all active AI, where before they would change their behavior only after revisiting the level (which was a bug).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash with moving platforms in level 8 bonus stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several minor updates to levels (wood pillars in Jungle all moves down rather than moving up. Looks silly with extended draw distance enabled as they all look like they're floating).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clamped XY coordinates in light scatter shader. This fixes very bad rendering artifacts caused by the shader in certain graphics drivers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Head Bobbing Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This menu can be found in Options->Gameplay->Head Bobbing Options. The following options are:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Head Bobbing - Toggles all bobbing while walking/running on ground and jumping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turn Bobbing - Toggles the rolling of the view camera when turning (on land and in water).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust View To Slopes - Toggles your view being aligned to the floor surface that you're standing on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Underwater Bobbing - Toggles all bobbing related to being on water and underwater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The timing on how long it takes for AI to respawn has been heavily re-factored now. It will take roughly 15-30 seconds for them to begin fading out and another 10-15 seconds for them to begin respawning. Its still randomized but there should be a longer delay before they start respawning though it really depends on their configuration in the levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The speeds of the AI has been lowered for the harder difficulties and they will be instantly updated if the difficulty option has been changed in the gameplay menu. The issue with them not updating until that level was revisited has led to a lot of confusion regarding to the broken nature of the AI and speed of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everyone at Night Dive Studios appreciates your patience while we track down and solve these issues. Enjoy the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-405820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/405820/view/377538916268168972"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-12-19T03:01:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-405820",
+      "checkedAt": "2026-11-13T03:34:57.071Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:21.076Z"
+  }
+ ],
+ "issues": []
+}

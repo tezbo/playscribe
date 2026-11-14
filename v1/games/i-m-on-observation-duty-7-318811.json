@@ -1,0 +1,168 @@
+{
+ "game": {
+  "id": "i-m-on-observation-duty-7-318811",
+  "igdbId": 318811,
+  "name": "I'm on Observation Duty 7",
+  "cover": {
+   "imageId": "coaiu8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaiu8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar35js",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar35js.jpg"
+  },
+  "ps5Release": "2025-08-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "i-m-on-observation-duty-7-318811@post-2025-09-24",
+   "gameId": "i-m-on-observation-duty-7-318811",
+   "displayName": "Fixed issues related to displaying dynamic text.",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-24T14:47:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Previously, playing with some languages could result in a crash at the end-of-level scene on some hardware. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, user interface text was overlapping for some languages, and this has also been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2462520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2462520/view/1811772772213266"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T14:47:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2462520",
+      "checkedAt": "2026-11-13T03:23:22.145Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T14:47:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2462520",
+      "checkedAt": "2026-11-13T03:23:22.145Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-24T14:47:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:07.806Z"
+  },
+  {
+   "id": "i-m-on-observation-duty-7-318811@post-2024-11-15",
+   "gameId": "i-m-on-observation-duty-7-318811",
+   "displayName": "Small difficulty adjustments",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-15T11:52:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Few difficult anomalies that were previously present in both difficulty modes have been made hard-mode-only.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some clutter has been removed from the Apartment Building and Gas Station levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are minor changes that make some of the earlier levels a bit more unforgiving on normal difficulty without affecting the overall difficulty too much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2462520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2462520/view/1783238125244679"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-15T11:52:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2462520",
+      "checkedAt": "2026-11-13T03:23:22.145Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:07.806Z"
+  }
+ ],
+ "issues": []
+}

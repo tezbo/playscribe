@@ -1,0 +1,2939 @@
+{
+ "game": {
+  "id": "autonauts-54736",
+  "igdbId": 54736,
+  "name": "Autonauts",
+  "cover": {
+   "imageId": "co7ewv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7ewv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar7ub",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar7ub.jpg"
+  },
+  "ps5Release": "2022-06-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "autonauts-54736@140.2",
+   "gameId": "autonauts-54736",
+   "displayName": "Update 140.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-03-06T08:00:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "V140.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone! We've just pushed a new v140.2 build to fix some essential and not-so-essential bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Mods : Custom objects were inappropriately flagged as causing infinite recursion. Thanks, Egan!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : The tutorial step \"select the tab to open your bot tracker\" wouldn't complete if the bot list was already open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : An error would appear when the mouse hovered over some Cut Grass while the player was engaged with a Wheelbarrow holding a Pitchfork. Yeah. I know.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed : Using Undo after deleting a Blueprint would reinstate the Blueprint but also show it as completed. This could lead to a corrupted save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : when adding an upgrade to a bot with upgrade of the same type, holding ctrl on a bot would result in old upgrade still being highlighted. Thanks, Koloxlo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : A building couldn't be flipped without first moving it. Thanks, Koloxlo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : A flipped Spaceport had both its inputs and outputs on the same place. Thanks, Koloxlo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Save file names could go over 50 characters in length and they shouldn't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : A bot taught to load a Carriage using a Cart could sometimes get stuck not Finding any Carriages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/5070528176575921515"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-06T08:00:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-06T08:00:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.131Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-06T08:00:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:18.482Z"
+  },
+  {
+   "id": "autonauts-54736@140.1",
+   "gameId": "autonauts-54736",
+   "displayName": "Update 140.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-11-26T04:47:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. Looks like the last release has held up pretty well and it's great to see some new players enjoying Autonauts. There's now a small V140.1 update to fix some important issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Flipping a pallet and putting it on top of an un-flipped palette would cause the bottom palette to have 2 different access tiles instead of 2 the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Cereal grow time was set to 18 seconds and it should have been 180.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Some Chinese, Korean and Japanese characters were missing from the font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/4836332027661418837"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-26T04:47:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-26T04:47:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.131Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-26T04:47:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:18.481Z"
+  },
+  {
+   "id": "autonauts-54736@post-2022-08-26",
+   "gameId": "autonauts-54736",
+   "displayName": "AUTONAUTS QOLVOLUTION PART 2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-26T16:03:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ooh, do we have an update for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside loads of lovely QoLs (Change Log HERE), we have a juicy surprise: 'Settlement' - the special new mode made for the console versions of Autonauts - is now on PC! If you ever struggled with the original 'Colonisation' (now rebranded 'Enlightenment'), Settlement could be right up your street. Why, it's refined enough that it seems like Autonauts 1.5!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In terms of overall feel, Enlightenment is more like a 'hardcore mode', partly because its structure is so loose, but mainly because information is limited and you have to figure out - well, pretty much everything! Settlement is streamlined to ensure a more satisfying, focused experience, especially in the earlier game. There are two new Badges to earn, too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The implicit goal in Enlightenment is to meet Folk needs to reach enlightenment. In Settlement, the aim is explicit and tangible: create and evolve a settlement. There are fewer plans to complete, but these are far more guided and purposeful; they’re also more organised in obvious sections with a more convenient and satisfying linear flow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Research in Settlement is organised according to its relevance to each game stage and unlocked through a more obvious direct route (completing a stage). All essential research in Settlement is directly linked to the Academy plans, making it obvious what needs to be completed when.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Enlightenment, OTTO-0 welcomes you and that's it: you have to figure out the rest. In Settlement, OTTO-0 provides commentary throughout the game; there are more details about what to do, and plans are automatically pinned as necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new Autonauts is still only available in Open Beta until we feel comfortable that it's robust enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do let us know how you get on with the updates and keep the feedback coming. Remember to check out Trello and vote on your fave ideas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beep! Bleep bloop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Garbot and Aarbot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/4514316500006754823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-26T16:03:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-26T16:03:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.130Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-26T16:03:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:18.480Z"
+  },
+  {
+   "id": "autonauts-54736@major-2022-04-26",
+   "gameId": "autonauts-54736",
+   "displayName": "Important Survival Mode Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-26T14:00:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ahoy, me hearties! Thanks so much for all your support and patience while Aaron and I have been swabbing the poop deck and rigging the masts of the good ship Autonauts. It's almost time for us to weigh anchor, hoist the mainsail, and begin exploring the Bot Seas once again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been quiet lately… too quiet, we know. BUT! There's been lots going on behind the scenes we can't share until everything's finalised for fear of jinxing it. We're not quite ready to announce everything we have coming up just yet, but what we can say is that 2022 is shaping up to be a big year for fans of Autonauts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, ahead of all the good news we'll be announcing later on we felt it was important to update everyone about what's happening with the “Survival Mode” we promised as a free update for Autonauts a while back. The good news is that we have been working hard on it and it will be coming out soon, but the bad news is it isn’t going to be free.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Why's that? Well, in truth we didn't think this through. We expected to be spending a few months making it, but it's ended up taking us almost two years to finish. What started as \"just an extra mode\" for Autonauts has grown into an entirely new Autonauts experience of its own, because Aaron and I wanted to create the absolute best game we possibly could. At times it felt like we'd never finish it, but at last we see the end in sight. Now we're just a few more months away from finishing. We're both REALLY pleased with what we've made, and we're even more excited to share it with you all so you can enjoy playing it after waiting patiently for so long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of course, we do understand how deeply disappointed some of you will be that we won’t be able to bring new free content to the original Autonauts game for now, and we are genuinely sorry about that. It's not a decision we've taken lightly, but there really is just the two of us making Autonauts and we miscalculated how much extra work it would take to create “Survival” mode. All our energy has gone into this new version, so we hope you understand and will continue to give us your support as we do our best to deliver the most amazing Autonauts experiences that the two of us possibly can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This has been a labour of love for our tiny team and we can't wait to share it with you all in just a few more short months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/4348797798093692619"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-26T14:00:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.129Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.545Z"
+  },
+  {
+   "id": "autonauts-54736@major-2021-02-11",
+   "gameId": "autonauts-54736",
+   "displayName": "STEAM TRADING CARDS AND SURVIVAL MODE STATUS UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-02-11T17:59:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "PLEASE NOTE: This news post is outdated and Survival Mode has now changed, please see this post for more details: https://store.steampowered.com/news/app/979120/view/3180113694795024770",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Meanwhile, Aaron and I are still working hard on finishing off Survival Mode. It's fair to say there's more to do than we expected: a lot of unexciting but essential things like the presentation of information, but mainly resolving many niggling design issues and side effects. The main thing is, we're getting there :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This week we added the first of the five 'boss' characters, namely 'Long Bot Silver'. To meet (and hopefully defeat) this ruby-eyed cutlass-rattling bag o' bones, you first need get them out of their hideaway (an old lighthouse), which means overthrowing relentless mechanical minions - and demolishing Pirate Barracks to halt production of said relentless mechanical minions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Long Bot Silver controls a Twine Factory, which doesn't sound particularly exciting until you realise it's the only place to get essential string-making technology to manufacture slings and unlock ranged weapons. Without those, your units won't be taking out any flying Pirates any time soon, that's for sure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Indispensable defence technology hoarded by the later bosses includes pitch (surprisingly useful sticky properties) and ultimately the game-changing combo of pesticide, fertiliser and charcoal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The free Survival Mode expansion (which, TBH, is feeling more and more like 'Conquer Mode' every day) will be released... Well, as soon as we can possibly manage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay safe! Stay Autonauty!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gary and Aaron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "My team of Serfbots and Warriorbots are launching an automated attack on Long Bot Silver's Twine Factory. I'm on the left, at the back, holding a Banner and following my sledgehammer-wielding Sapperbots (blue), ready to demolish the outpost's barriers and take out the Barracks creating more Pirates inside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Avast, ye scurvy 'naut! Prepare to feel the wrath of the ruby-eyed cutlass-rattling Long Bot Silver, keeper of the key ingredient to ranged weapons, locked away in their lighthouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beware of ballooning Space Pirates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/4703417046200234972"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-02-11T17:59:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.128Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.541Z"
+  },
+  {
+   "id": "autonauts-54736@major-2020-11-05",
+   "gameId": "autonauts-54736",
+   "displayName": "AUTONAUTS COLLECTIBLES COMPO UPDATE: VOTING OPEN!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-11-05T10:39:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With thrillicious Automerch up for grabs, we challenged you to make an Autonauts mod, upload it to the Steam Workshop and tag it 'Halloweencompo'. Hearty gratitudination to all who made their mark!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Now it's time for you, Autonauts Community, to do your part and vote for your favourite 'Halloweencompo' mod. Remember: not only does the author of the winning mod get an exclusive Autonauts Clockwork Collectible AND Limited Edition Beverage Encasement Module, so too does one lucky voter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The entries are HERE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And the voting booth is HERE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Voting will remain open until midnight on Sunday the 8th of November. We'll announce the two winners the following day!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BTW, if you use one of your saved games to test out these mods, be careful that you don't inadvertently save over them with any changes made :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oh! Almost forgot to mention: Autonauts has been updated to v137.14.9 with all the latest mod features required to use these new mods. The change log is HERE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/3887130640392442282"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-11-05T10:39:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.128Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.540Z"
+  },
+  {
+   "id": "autonauts-54736@5",
+   "gameId": "autonauts-54736",
+   "displayName": "Update 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-04-07T14:59:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Behold, ‘Aquanauts’! This month's Autonauts update sees the addition of even more bene-fish-ial updates to make automation even more e-fish-ient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off, our bots have had a little makeover. Old upgrades are now automatically removed once a newer one is implemented. Very handy. Plus, now much easier to work within the script limit when programming your bot, meaning your little team can be much more efficient. We've expanded the coding system, allowing not only the traditional REPEAT functions, but also brand new condition statements - including IF, IF/ELSE and EXIT REPEAT functions - giving you even more flexibility to code however you like.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside improved bots are a bevy of new clothes, fishing updates and a beautiful new aquarium to top it all off. Take a peek at our latest trailer to see what else is on offer:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2978509755363809606"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-04-07T14:59:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.127Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.539Z"
+  },
+  {
+   "id": "autonauts-54736@135",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 135",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-10T17:00:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Shut the front door! It’s update number 4!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been a little while since we unveiled our amazing Industrial Revolution update, which brought modding support, train networks and colonist evolution into the world of Autonauts. This update marks the start of our concerted push to make Autonauts easier to play, for seasoned and green players alike. It adds in loads of extra content such as new clothing and recipes. Plus a massive bunch of Quality of Life tweaks that help with planning, scripting and general botitude.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our latest trailer should give you a good idea of what to expect!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s a full rundown of what’s on offer",
+     "items": [
+      {
+       "text": "Food!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recipe Variants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apple-Berry Pie (Kitchen Table; Good Oven)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pumpkin-Mushroom Pie (Kitchen Table; Good Oven)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clothing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hats x 3 (Hat-Making Bench)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horned Helmet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fox Kigurumi Hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dinosaur Kigurumi Hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tops x 2 (Sewing Station)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fox Kigurumi Top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dinosaur Kigurumi Top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decoration!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Garden Gnome #4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Variant Blueprint x 1 (Worker Mk 3 Variant 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tools!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Besom Broom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Good Blade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Structures!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Good Mortar Maker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Planning Mode!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Planning Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Block-Out Areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EZ-Move Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better Botitude!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bot Database Update: Remote Load/Save Bot Scripts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Search Update: Teams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EZ-Move Bots Feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Scripting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Copy/Paste Instructions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EZ-Loop Feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Modding Features!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Customise Keys to Trigger Events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automate Object Movement from Event Triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Import Your Own Models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play Your Own Sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make New Food and Structures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak Too Many Variables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tell all your friends! And if they aren't your friends, befriend them! And then tell them! The world could always do with more friendship :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 41,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2579938650942073124"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-10T17:00:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.126Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.538Z"
+  },
+  {
+   "id": "autonauts-54736@major-2020-02-06",
+   "gameId": "autonauts-54736",
+   "displayName": "Autonauts enters the Industrial Age with a massive free update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-06T14:00:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today Denki and Curve Digital are set to launch their biggest update to date for their acclaimed coding and colonisation game, Autonauts. The free expansion, titled ‘The Industrial Revolution’, shifts the automation emphasis to mechanise the mining of coal and metal resources to build and fuel steam-powered worlds using potent new Mk 3 Bots. Players can now create advanced railroad networks with fully-functioning trains and add their own cheats, scripts and content to the game for the world to enjoy via Steam Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "To see all the new content in this expansion, check out the fancy new trailer here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Autonauts challenges players to colonise fertile alien worlds for the benefit of humanity with an array of robot helpers at their disposal. Utilising a visual programming language inspired by Scratch, players can playfully program their helpers to perform basic tasks like chopping down trees to more complicated duties like baking pies, fishing, powering-up other robots and lots more - all with the aim of satisfying colonists arriving from the homeworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Modding Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can now upload and download custom scripts, upgrades, buildings and other content to the game via Steam Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New Train Networks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For the first time players can build advanced rail networks and infrastructure to ferry goods and resources around their expanding colonies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "20 different new structures and 4 new core vehicles including Train Engine and multiple freight options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Colonist Evolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Expand the evolution of your colonists with the addition of two entirely new categories on the in-game ‘Pyramid to Transcendance’: Health and Education. Make use of leeches and flowers to dispense medicinal aid to sick colonists and ensure they continue generating Wuv, and raise their undernourished intellect with books.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Tools & Upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam Hammer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jacquard Power Loom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Super Backpack to store more items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Memory Upgrade so bots can perform more advanced routines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Printing Press",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paper Mill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Housing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Two-Storey Brick House and Mansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suitably Dickensian attire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shirt and Tie, Coat and Scarf, Blazer and Cravat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Toys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Horse and Carriage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dollhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2582187916835395716"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-06T14:00:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.537Z"
+  },
+  {
+   "id": "autonauts-54736@133",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 133",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-12-19T13:20:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we're pleased to give you the second of our free updates: Xmasnauts. This one features even more joyous Autonewness than before, with new farming structures, new flora and fauna, new recipes, new clothing, new bot variants, a new garden gnome statue - and a little seasonal weather for good measure :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out the roadmap on the news post here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the immortal words of Bill S Preston, Esquire and Ted Theodore Logan: \"Be excellent to each other.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aaron and Gary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New : Animal Breeding Station and Plant Breeding Station added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Animal Breeding and Plant Breeding Research added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Milking Station and Shearing Station added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Hay Baler and Trough added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Highland Cows and Alpacas added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Coconut and Coconut tree added (no recipes yet)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Carrots and carrot recipes added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Carrot Certificate added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Naan added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Santa, Wally, Party and Antlers added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Santa, Wally and TShirt2 tops added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Bot Mk1 Variant 4, Mk2 Variant 4 and Gnome 2 added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Snow! Use Settings->Weather to toggle it on/off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated : Filling Shallow Water will change surrounding Deep Water into Shallow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Deep Water can no longer be used with Buckets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Bridge now requires two more Square Frames instead of two Triangle Frames to make it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Seedling, Hay Bale and Dough can now go into the Compost Bin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Watery Porridge, Crude Bread and Good Bread weights reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Thresher conversion time is now halved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Crude Pot conversion time increased slightly. Cauldron conversion time decreased slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Pitchforks now wear out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Butter Churn Making sound added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Big memory leak fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes bots wouldn't give clothing to a Colonist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Using a Bucket on Tilled Soil wouldn't fill it up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : A bot throwing objects to another bot over large distances could be exploited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Adding an Upgrade to a Bot that's using a Wheelbarrow/Cart would make the bot unusable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : A bot using a Wheelbarrow/Cart wouldn't respond to the \"To Me!\" button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots wouldn't follow while learning when the Player was using a Wheelbarrow/Cart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Trees chopped near the edge of the map could crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Animals could become \"locked\" and unusable if a Bot had a bad script.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Until Backpack Full would not detect filling with Square Frames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes an object could exist on the ground and as a bot upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Player would keep an object reserved if it failed to use it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes new hedges would be angled badly in the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots couldn't dig up Hedges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Walls above a Block Door would be taller than other walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Walls were allowed above arches (and they shouldn't be).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes the tops of stacked walls aren't always the same height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Swamp couldn't be filled with Soil/Sand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Catapulted objects could land inside buildings if the building was built after the Catapult target was chosen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Waterwheel rollover would show a windmill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes paths would go transparent or red when placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes bots would get stuck (on loading) if an autosave occurred when it picked up an object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Highlighting a stacked wall while it was being built would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Tops didn't always go up a level when they required another top.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 24,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2592316573847378186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-12-19T13:20:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.536Z"
+  },
+  {
+   "id": "autonauts-54736@132",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 132",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-21T14:01:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, fellow Autonauts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today marks the first of six free updates we’re bringing to the game over the next six months. Check out the roadmap on the news post here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dubbed 'Autumnauts,' this new collection includes fresh features to enrich your colonisation efforts, from tops and hats, to porridge recipes, bot variants, garden gnome statues and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’d like to take this opportunity to thank each and every one of you, both here on Steam and on our Discord, for supporting us throughout the launch of Autonauts and beyond!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Stay 'nauty!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thar it be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For thee.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New : Block Door and Stone Arch Door added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Mad Hatter, Cloche and Acorn hats added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Clown Dungarees, Jumper 2 and Apron added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Bot Mk1 Variant 3 and Mk2 Variant 3 parts added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Milk, Berry and Honey Porridge added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Decorative Gnomes added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Forestry 3 and Fruit Farming Certificates added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Pattern Types added to search areas (only applies to Bots doing actions on ground tiles): Using Pattern Types you now can create fancy strips and checkers for all your gardening needs. These can't be used on Signs so Soil digging Bots that use a Sign will need to have their area manually fixed if you want them to keep digging in the same pattern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Bees now indicate if they don't have any flowers to go to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Dredged tiles can now be filled in with buckets of Soil/Sand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated : Tree Top and Mac are now both Level 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Cooking Pot make time changed from 4 seconds to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Fishing Rod now has 40 durability instead of 20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Autosaves are now only shown when loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Rich deposits no longer get used up/respawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Bots will now fuel the emptiest converter needing fuel rather than the nearest converter needing any fuel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Stacks are now limited to 500 objects high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Walls no longer need to be the same type to count as \"Walled\" when surrounding animals or buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Bricks are now unlocked with Construction Technology research.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Fez can now be made in the Hat-Making Bench.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : In Trade, dragging an upgrade off of a bot while a Backpack upgrade was being applied by another bot would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : It was possible to edit a Sign's area while teaching a bot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Script modification could lead to a crash using Use Held Item on a Blueprint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Colonists that didn't need Clothes/Toys would wear them out anyway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Chopped Trees could fall onto buildings or out of the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots would stop building Multi-stage buildings after each stage was completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : The name of an object in a converter rollover could be too small to read (see \"Good Bot Energy Efficiency Upgrade\" in French).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Autosaves were being performed when outside the Normal GameState.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Moving a Storage while a bot is adding something to it could cause the Storage to be stuck, possibly leading to an error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Moving a building while it's being upgraded could crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Moving a house while a bot is adding a Colonist could crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Lumberjack tops and Dungarees were too light.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Some key binding text would be too small for the button they were on.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed : A half filled bucket of soil couldn't be topped up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Chickens were despawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : The game would crash if the player tried to dig a stump just as a bot finished digging it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Clicking on Rough Stone Block->Hard Rock Mass would go to a bad object screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : The Shout instruction wouldn't work for Bots using a Wheelbarrow/Cart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 19,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2468465044716456074"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-21T14:01:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.124Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.535Z"
+  },
+  {
+   "id": "autonauts-54736@131",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 131",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-12T12:33:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "\"A wild V131 has appeared\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not much in the way of new things to play with, but lots of bug fixes. Some people have been experiencing nasty lag/delays when autosave does its thing. We've added a new Setting which lets you control or disable the autosave frequency. Use this with caution! It's not fun to lose hours of work because you forgot to save. There's also a new Quick Save using F5 to go with it. In the longer term we'll be improving the saving so that you won't notice it happening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New : Autosave setting added. Use with caution!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Quick Save added using F5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated : Folk will now change level to whatever house they're in. This means they can be downsized if needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Chicken Coops would sometimes contain the same Chook more than once, meaning a save couldn't be loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Vehicles would despawn if there were too many of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : After deleting some storages and placing them again it wasn't possible to stack new blueprints on top.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Cereal Seed could be put into a Sand Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : \"Until Worker Assembler Full\" would exit if the bot on the output was being recharged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Upgraded buildings would be lost when deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Deleting part-finished Sandy Tracks would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes the player would be unresponsive after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Partially filled Buckets couldn't get more Fresh Water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots would attempt to add turf to soil covered by buildings/flooring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Moving and rotating some buildings out of the world would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bees could sometimes leave the world after an autosave and crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bees could disappear from a Skep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Using WASD while autosaving could cause a large jump in camera movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Some objects could be put into Fertiliser Storage but not make any Fertiliser.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Chooks would stop using Hen Houses when the maximum of 100 was reached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes a converter would be stuck with full ingredients but not produce anything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Adding a blueprint to the top of a Barrel while a Bot added water to it would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Adding a blueprint to the top of a Small Silo while a Bot added sand to it would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Definitely fixed this time : Sometimes a Seedling Tray would show negative Tree Seeds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We didn't have time to add the proposed Search Area setting this time. It will have to be V132! Speaking of which V132 will include a handful of new shiny things for you to play with, so please look forward to it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 19,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2448197582036987412"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-12T12:33:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.122Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.534Z"
+  },
+  {
+   "id": "autonauts-54736@130",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 130",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-03T11:05:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A hot, steaming V130 is fresh out the oven for you to try! The big new toy to play with is the Shout/Hear instructions. Press Z to show a bot how to shout. Then another bot can use \"Until Hear\" to wait until they hear the first bot \"shout\". Fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New : Shout/Hear instructions added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Enable/disable option for Day/Night added to Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Enable/disable option for Weather added to Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated : Pumpkin Pie to need 2 Pumpkin Stew instead of 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Apple Pie to need 3 Apple Jam and 3 Pastry instead of 1 and 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Dragging an object in Trade while the bot is being upgraded would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Area selecting a building that's being upgraded would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Moving a building while it's upgrading could crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes when a bot used a Rocking Chair it would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : When using a Sign to search for Blueprints the instruction would incorrectly say \"Find Nearest Sign\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes taking an object from a bot in Trade would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes Chooks get stuck in Hen Houses or can crash when loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Repurposed feeding bots would sometimes not find Colonists in houses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes bots would stop working or wander off to the edge of the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes a bot would get stuck looking for a blueprint when it was already standing on one. Silly ol' bot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Maybe Fixed : Sometimes scything Cereal Crops or flailing Cereal will crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the next version I'm hoping to have a new feature that allows you to choose what kind of \"Find Nearest\" pattern you want. Every tile, every even tile, vertical strips or horizontal strips. This will solve the \"my bot won't dig these tiles\" problem but should also allow you to do some interesting things (like rows of tilled soil for your vegetables instance).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 10,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2451574645868482283"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-03T11:05:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.122Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.533Z"
+  },
+  {
+   "id": "autonauts-54736@129",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 129",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-30T11:02:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please see below the Patch Notes for Version 129 of Autonauts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this version we have a couple of new things to play with along with the usual slew of fixes. We've also moved one of the Researches from level 3 to 4 because the things it unlocked required other level 4 research, and it wasn't particularly useful at level 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New : \"To Me!\" and \"Drop All\" buttons added to the Brain panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : \"Pause All\" added to Bot Group panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : Tree Stumps can now be dug up specifically, instead of coincidentally when digging holes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New : A setting has been added that allows the flashing lights and lightning to be turned off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated : Drop All buttons now also drops inventory contents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Pressing M or Delete will now enter Edit Mode directly, instead of having to press E first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Skeps and Hives can now be deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Pottery Technology moved from Level 3 research to Level 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Since 127 some people have been experiencing that their bots either stopped or wandered off (or other crazy stuff) when they load their map. 129 should now fix this. You'll need to stop/start the problem bots the first time you load up but once you save again it should be all good after that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots sometimes couldn't be Whistle selected when using a Wheelbarrow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots using Wheelbarrows wouldn't move after loading a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : When a bot was told to Move To x,y and the target was covered by a building, it wouldn't move. Now it will move if it can get within 5 tiles of the target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Stacked storages would have their contents doubled when moved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes stacked storage wouldn't change contents when a bot added/removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Converters would sometimes get stuck making an object forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : While placing and holding a line of blueprints, a bot would attempt to build them and crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Deleting an area of buildings while a bot was building one of them could crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes blueprints couldn't be deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Depleted Stone Resources now regenerate after 10 minutes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Clicking the Desktop button could sometimes minimise the game so that it couldn't be shown again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes a Seedling Tray would show negative Tree Seeds, allowing infinite seedlings to be made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes a workbench would accept more ingredients than were required, stopping it from working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 14,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2451574645854020375"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-30T11:02:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.121Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.530Z"
+  },
+  {
+   "id": "autonauts-54736@128",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 128",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-26T14:42:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please see below the Patch Notes for Version 128 of Autonauts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This release has the first big research changes in it to help evolve Colonists from Level 3 to Level 4 more easily (sorry to all those valiantly struggling to do this). This involved moving a few researches around, changing some of their Wuv requirements as well as moving which objects are unlocked on which research. We've tried to be careful not to break anything. It may be that you were halfway through researching something but when you load up your level, it's already completed. This is normal as the thing you were researching probably now requires less Wuv. With all that said, here is the list:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Crude Toy Station no longer needs power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Crude Toy Station no longer needs Box Frame to build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Changed ingredients of Cauldron from Crude Metal Plate to Metal Ore, Clay and Crude Torch (and Sticks).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Moved Crude Data Storage to first Robotics research (from second) and it's now made on Crude Workbench (as well as Good Workbench).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : A bot was able to change a workbench recipe when there were ingredients on it, and it shouldn't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Mousing over a converter while a bot changed the recipe would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometime loading a level would result in \"item with save key already added -1\" error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Clicking Max Area when adjusting a Sign's area didn't work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : A Direction Sign's area couldn't be changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Adding a Bee Nest to a Skep and moving it would leave an invisible bee behind that blocked building editing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bees going to a Flower pot would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Watering Cans can't take/add from a Barrel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots could sometimes not find objects or tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Phew! Still plenty of bugs to go but we're getting there :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2504491307411008678"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-26T14:42:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.120Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.530Z"
+  },
+  {
+   "id": "autonauts-54736@127",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 127",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-23T15:36:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please see below the Patch Notes for Version 127 of Autonauts, lots of fixes for bugs as well as some minor QoL things!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New : Badges Button added to Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated : Show Autosaves toggle is now on by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : \"Show Autosaves\" is now more obvious and visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : ToolPickStone AND ToolAxeStone updated to better emphasise visible differences at a distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Flash rate on ! icons reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated : Mushrooms dug will always yield 2 now instead of 1-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Hovering cursor over mortar while using a Wheelbarrow would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes and error would occur with TrailMaker.Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Highlighting a building as it's being built by a bot would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Highlighting a blueprint, wait for it to be built by a bot, then move it would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Finishing the first half of Mining Lesson, quitting the lesson then restarting, the lesson could not be completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Pressing Stop wouldn't count as Bot Taught in the Robotics Certificate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes recharging a bot would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Dragging something on the Inventory screen would reveal the Tutorial panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes using a Rocking Chair would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Accessing a storage just after going into Edit Mode would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : It was possible to open the Wardrobe as something else was happening like completing research, making the game lock up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes levels won't load because \"UID already exists\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Bots sometimes get stuck after being given a new tool when one breaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Script abuse results in a bot attempting to take something from an unknown object causing a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of other mysterious crashes with speculative fixes. Nice!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everyone for your patience with this, sorry there isn't much interesting new stuff. There's been more than average bugs encountered and we're trying to deal with them as fast of possible. But keep the reports coming in! We'll get to the lovely stuff soon, promise!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 14,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2504491307400302770"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-23T15:36:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.120Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.529Z"
+  },
+  {
+   "id": "autonauts-54736@126",
+   "gameId": "autonauts-54736",
+   "displayName": "Patch 126",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-22T11:22:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firstly, a big thank you to everyone who has been actively reporting issues and also sharing in our Discord channel! It helps us a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From now on we're going to post news updates of patch notes moving forward so that we can keep everyone informed. Yesterday we launched V126 for Autonauts which fixed a lot of crash bugs that you were all experiencing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed : Editing bot names or group names would sometimes crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Sometimes the Berries/Mushrooms tutorial would crash on the Objects screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Teaching a bot to milk a cow and then giving it something other than a bucket would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Closing the inventory would sometimes crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Moving buildings could sometimes crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Teaching a bot to water Cereal with a bucket then giving it a Watering Can would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : RMB on a Cereal Crop with an empty bucket would crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : The Colonist Seed Dispenser Complete ceremony crashed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Crash when moving a Research Station or completing a Research.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Moving a sign and seeing it in Inventory would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed : Script abuse when applying a bot upgrade would crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of other mysterious crashes with speculative fixes :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 127 is coming within the next day or two, so please keep on the lookout for that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-979120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/979120/view/2404285581878556567"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-22T11:22:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-979120",
+      "checkedAt": "2026-11-13T03:15:27.119Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:37.528Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,6267 @@
+{
+ "game": {
+  "id": "runescape-dragonwilds-337712",
+  "igdbId": 337712,
+  "name": "RuneScape: Dragonwilds",
+  "cover": {
+   "imageId": "cocaxf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocaxf.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6n8h",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6n8h.jpg"
+  },
+  "ps5Release": "2026-09-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "runescape-dragonwilds-337712@1.0.2.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 1.0.2.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-11-12T15:06:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "CL260223 - Amazing-Emu is live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Servers will need to be restarted to apply this hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update removes the Photo Mode option from the in-game settings menu which was causing UI errors for users. It’ll be reinstated in a later update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1849192144183306"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T15:06:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.307Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T15:06:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.307Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-12T15:06:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.764Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@1.0.1.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 1.0.1.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-23T10:38:34.000Z",
+   "notes": [
+    {
+     "title": "Dedicated Servers will need to be restarted to apply the hotfix.",
+     "items": [
+      {
+       "text": "Fix for the Air Magic Staff Attack Combo's 4th hit not dealing damage or applying on-hit effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Splitting stacks with a controller when the item in the chest no longer causes a hitch where the controller becomes unresponsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for Runecrafting values being defaulted to 1/50 whenever an amulet or ring degraded or lost durability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for XBOX Series X hosted worlds not being able to support more than one XBOX Client joining the world at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Additional fixes for Kuldra Skips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where users would lose progress when players with the same display name would try (and fail) to log in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Dragon Scimitar would not allow users to Jump Attack in certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for \"Silent\" quests where the Quest UI would show them incorrectly, including calling missing objective text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Linux-based Dedicated Servers crashing when teleporting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thanks for your patience with us on this one. We'll be in touch very soon with the latest updates on all things 1.0.2 and what's to come next month! Until then, be good, and we'll see you in Ashenfall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1847286114035869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T10:38:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.307Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T10:38:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.307Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T10:38:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.581Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@1.0.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-14T10:03:17.000Z",
+   "notes": [
+    {
+     "title": "Save Fixes",
+     "items": [
+      {
+       "text": "The big headline for this one is a range of fixes targeting the disappearing world saves we've seen reported, as well as a catch-up mechanic for corrupted character saves that will let you drop in with aggregated stats and Tier 4 gear to get you back in the fight. Hop in and give those a try, but we're aware there may still be the occasional player affected by other, extraneous instances of save issues that we're still collecting data on. We're talking about very, very small numbers of affected players, but it matters all the same. Beyond that, let's get into what else is coming in 1.0.1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "What goes up...",
+     "items": [
+      {
+       "text": "Introducing... the Jump Attack. It does exactly what you think it does.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock the Skill Tree perk \"Death From Above!\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any time you are slightly above the max height of the double jump's arc from the ground, inputting an attack will plunge you downward to slam into unfortunate victims below. Damage scales with the weapon you have equipped, so make sure you're holding something hefty before you leap. And yes, Windstep counts here. What goes up, must come crashing down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "I've Got Shooters",
+     "items": [
+      {
+       "text": "Added the Ranged skill perk - Ammo Recovery, and it's Greater version later in the Skill Tree - Greater Ammo Recovery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adds a chance to recover arrows from the bodies of slain enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ranged weapon subclasses are receiving their own special attack variants to make them feel more aligned with the fantasy of using the Shortbow, Longbow or Crossbow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shortbow: Rapid Fire - Hop backwards and fire off three arrows in quick succession. The target can be switched between this volley of shots to spread the damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longbow: Power Shot - take a knee to draw an arrow at full strength. Let fly to loose a staggering, enormously powerful shot at great distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crossbow: Heavy Bolt - rack a bolt and let it fly after a short charge. Hits like Asgarnian Ale on an empty stomach, and applies Enchanted effects on-hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introduced the Low Blow Skill Perk: Ranged attacks that hit the enemy in the legs (lower third of the body or their legs) applies \"Hamstrung\" which reduces enemy movement speed for a short while. Tiny and Colossal Enemies are immune.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "...And The Rest",
+     "items": [
+      {
+       "text": "Increased inventory space from 32 to 40.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a toggle for the Visceral Attack Camera change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45564297/dcc0ae363f139cbef8c1b6618c63f587d028bf79.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where users on mounts could not open the map correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Obstacles and Enemies now respawn in the Scorned Wildnerness Raid on reset/next run-through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced aggro range for enemies across the game to prevent forming a bit of a follow-train like a Fally Drop Party.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy mob respawn timers extended so they stay dead for longer as you clear areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where users on controller were unable to sort chests with L3/LS correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Polish pass on Mining nodes across the world to ensure they're all above ground and can be mined.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Goblin \"barks\" (ambient noises they make) should now sound less like they've just seen you and are yelling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements on the Sort functionality - Weight, Type and Latest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weight: Cumulative Stack Weight, Heaviest First.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Type: Categories of item, alphabetically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Latest: The most recently picked up items first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adding a dedicated Ring AND Amulet slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Amulet of Glory was providing additional bonuses above what was initially intended, so we're tapping those numbers back down to better align with what we wanted it to be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're adding the Ultra Compost Bin - because \"Super\" just wasn't cutting it anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adding the Large Compost Bucket, which has a larger capacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now stop asking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adding a Completed Quests tab including a short summary of the outcome of the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45564297/22ea138ad3d82090764d5ed65ea9c05e3ee97cde.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overdrive can now be cast on the Advanced Spinning Wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune Arrows and Bolts now do more damage than Adamant. 4.9x versus 4.2x.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fishing Cape now correctly displays the Skillcape Perk - You have a small chance to instantly catch a fish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the ability to rebind keybinds for settings that could soft lock the player in certain instances:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove Spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cancel Building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick Interact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting Tab Left/Right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest Dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continue Conversation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cancel Conversation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Answer 1/2/3/4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where users could clip through the floor when teleporting to Cataclysm Keep from Commander Zilyana.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where PS5 users were unable to see the assigned Sort button on chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Resolved an issue where Players who had acquired Quest Items early (through multiplayer sessions) would be unable to progress to the next region. E.g. Imaru's Head prevented the player from entering Fellhollow, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where users could crash when selecting Online play while being Offline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Rain would cause visual effects to be visible inside player housing at any graphical setting. It no longer rains indoors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Sanguine Urns within the radius of the Scorned Wilderness were not displaying correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the Skills Page description states Magic Focus can be crafted at the Crafting Table instead of the Blacksmith's Bench.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where images in the Journal could scale incorrectly. Begone, giant Bandos symbol!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Hosts would unlock achivements triggered by a player in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a bug causing Ascension Cores to not drop from Kuldra in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where users with Emojis in their name on PC would not be able to join PS5 or XBOX player hosted worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed the Dragon Med Helm icon to be the right shade of red. So, so sorry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All platforms can now access the UI Scaling option as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Special Attacks from Ranged will now trigger gamepad vibration as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Maple Sap would not be removed from the inventory on death. Sticky stuff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the VFX on the title screen was offset incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where D-pad Navigation in the Chest Inventory UI would not work in certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Map Fog would not be cleared when entering a new area after being on an Agility Course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where HP would fail to regen at the stated rate in certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where users were unable to navigate the Skills menu via mouse clicks the first time in a session.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Resolved an issue where users could hear Kuldra from the Saradomin Temple, if another player was in the raid. She's loud, but not that loud... right?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Reward Chests would play default open SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Titan's Wrath would set the player on fire if the Special Attack was used in rapid succession.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Fuzan would become passive if a player died in certain circumstances, essentially becoming invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incomplete Waterfall VFX in the Fractured Plains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Inventory being open would not show tooltips on XBOX or PC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed inconsistent Cursor Navigation within the Building UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where users on Dedicated Servers could not place Foundation or floor pieces if one had been previously destroyed there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Gilded Gyrhawk Amulet would not unlock upon completion of all gold times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Keyboards would freeze after any form of teleport - Vault entry or exit, Lodestone or Kebbit Burrow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an Epic Games Store issue where users would not be able to view Dedicated Servers - even if they had connected to them previously.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Emote and Spellwheel would briefly flash up when opening the spellbook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a short freeze when unmounting for the first time after launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Regicide achievement which would not unlock after killing Kuldra under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Scorch and Wither HUD icons being misaligned, and Scorch displaying 999 after restarting the game with it maxed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for audio not triggering Combat music in Dowdun Reach when fighting \"normal\" enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Terrorbird's death audio would play too late.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Jagex Launcher users could claim multiple beds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a spot in Emberwood in Fellhollow where players could get stuck between two rocks and fall indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where freshly used Kebbit Burrow holes would appear uncleared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where when opening the Map, the \"Map Open\" SFX would get cut off before playing in full, and then would not play on subsequent opens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where players would not be able to open the build menu while the building information pop up was still visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the Enfeeble spell would not effectively reduce damage across all enemy types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where becoming withered in Fellhollow would cause foliage to move very quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where placing the Personal Chest item around specific items would cause a large game hitch/freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Wither Curse would apply in inaccurate locations within Hope's Fall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Scorned Wilderness, Dowdun Reach and Umbral Sands journal entries in Journal > Knowledge > Places weren't showing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where users on a Dedicated Server would not register properly if another client had been reset by position or death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Divine Rock cooldown is incorrectly set to 1500 seconds instead of 1800 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Superheat would display placeholder text when used without a valid target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Water Magic Wand projectiles would not be visible on multiplayer worlds unless very close.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Air magic attacks visually travel further than their effective range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Dowdun Reach Nexus would have flickering VFX when viewed from outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Clients on older worlds see the Sanguine Urn in Fenkenstrain's Castle in a different place and may not be able to interact with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where attempting to use multiple consumable items simultaneously would trigger a constant item cooldown overlay on the item toolbar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Rune Spade so it isn't upside-down in the weapons rack. Ah, that's better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Zogre lock-on point was too high on the model so the camera was unwieldy in melee range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Artisan and Construction Cape's effects were not triggering on use - repairing and building, respectively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kebbit Burrows should now be correctly labelled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Green Dragons could get caught on the edge of the Alcarrid Oasis instanced area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overall polish pass on Green Dragons after reports of stuttering/clipping at certain angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the Kuldra (ahem) Interior section would prevent users from using Camera Lock On on targets within.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where In Alcarrid's camp, reputation was not gradually progressing but rather would jump to level 4 once all quests were completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where sorting Servers would return inconsistent results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Potted Plant decorations would move when walked over when on placed terrain, and would move with the wind when placed outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Agility Courses were always discovered with the map region - the icons for the courses will now appear on the map when a player gets close to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where some food had power levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level up VFX/Sparkles no longer decouple from the player if you level up while running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Humidify can now hit the same amount of Yew Plots as other farming plots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Sworn Servant Special Attack on the Pharoah's Sceptre did not show its cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Blue Dragon would take inaccurate damage when fought from different heights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where luring the Black Dragon to a safespot would cause performance drops on some hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Velgar's Poison Breath attack had misaligned VFX on PS5 systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed an issue where light was emitted from the final puzzle before Kuldra as if they were active when they weren't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which caused some enemies to be unaffected by the Enchanted Iron Bolt effect when hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the background of the Runecrafting minigame would distort on Switch 2 systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Processing Station tooltip would be cut off if the HUD Scaling was set to 1.25x on Switch 2 systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ores would respawn instantly when teleporting in the Scorned Wilderness raid. Nice try.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue which caused repeatedly feathering block and attack to spam attacks before unlocking the Level 23 Attack perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where adding multiple items to a crafting station would force the user to re-navigate to the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several Windstep-related skips in the Scorned Wilderness Raid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the ingredient requirements would not reset to default when less than the designated amount was available during bulk-crafting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where clients in a multiplayer world wouldn't be able to see the host holding a Pharoah's Sceptre.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Axtral Projection would only highlight the first tree in range when playing on a Dedicated Server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the Strike True Achievement would not trigger in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Fuzan would briefly appear to get back up before dying for real this time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where pausing and tabbing out of the game in Dowdun Reach would cause ambient noise to grow louder over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where controller action direction fails to affect blocking input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Abyssal Snare attack would immediately explode when used on built floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Black Knight Titan's Barrier in Dowdun Reach was permeable to magic attacks in both directions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue affecting Bow drawing animations when crouched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the Tannery could contain three slots if removing and adding Tanners Kit while the Tannery is full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if the player exits to menu during the Velgar boss fight, the Dragonkin Altar would reset to original position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Our commitment to you is clear: Dragonwilds is the third pillar of the RuneScape series, and one we will continue to support throughout the years to come. The roadmap we have for 2027, and the Blood Crystal Saga, is one we're deeply proud of and one that we're excited to build with you, update after update.",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45564297/0b4ea4a52fef611db07a47e20aef9dd1db57431d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For now, be good - and we'll see you in Ashenfall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 94,
+    "balance": 2,
+    "other": 39,
+    "ps5": 3
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1846651706673783"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T10:03:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.306Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T10:03:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.306Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-14T10:03:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.580Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@1.0.0.8",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Patch 1.0.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-08T14:47:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.0.0.8 update is now live on XBOX, PS5, EGS, Steam, Jagex Launcher and Nintendo Switch 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Dedicated Servers will need to be restarted to apply the hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.0.0.8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for an issue which would cause World Saves to disappear under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Worlds that have previously disappeared will still not be visible - until 1.0.1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A range of content updates and fixes, as well as",
+     "items": [
+      {
+       "text": "World saves that have disappeared should hopefully be restored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Characters that have been corrupted are once again able to join worlds, and have been given items and skill levels in compensation for the loss of progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you're using a dedicated server, we've been made aware of an ongoing issue where SteamCMD updates pulling the patch into Dedicated Servers are being rate limited. We're working with our partners at Shockbyte to continue to investigate a more permanent fix for this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1846018067929978"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T14:47:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.299Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T14:47:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.299Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-08T14:47:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.578Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@1.0.0.6",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 1.0.0.6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-29T10:11:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Epic Games Store players are now back online and can enjoy Crossplay again!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Resolved an issue where users could quit the Edit Appearance menu before the Character Save had completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is a preventative measure - work towards currently affected \"corrupted\" saves is still ongoing. We'll share an update later today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue on PC where incorrect filenames would be accepted as Character files.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Some corrupted World Saves were no longer visible in the menu for players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For some users, this save may also let you rejoin the world - but we are not considering this a comprehensive fix. Some users may still not be able to access their world after this fix, but the visibility of the world in the list was the core target of this step in our process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where some users would crash when selecting \"Online\" play while being offline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1844751498233777"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T10:11:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.298Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T10:11:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.299Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-29T10:11:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.576Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@1.0.0.5",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Patch 1.0.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-23T14:00:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We’re targeting this hotfix to go live on Friday.",
+     "items": [
+      {
+       "text": "We’re sharing the notes with you today so you’re aware of where we’re at, and we’ll be submitting it the consoles with the expectation that this verification will take several days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is based on your feedback around the updates knocking crossplay offline – we hear you, and we’re trying to avoid a weekend of disrupted gameplay for Nintendo Switch 2 players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The big topic of conversation is: we’re investigating the fixes about Save Corruption – world and character. We’re testing methods that will, hopefully, restore your missing saves. We need longer to investigate these solutions and the potential recovery options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re removing the most common cause, to mitigate impact for further people: the Edit Appearance button is going to disappear until we’ve resolved the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restoring some saves has meant that the world has been reset to default settings – which means that Custom or Creative worlds will have been reverted to Normal worlds. These might be in your Normal save lists!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s what we’re targeting a fix with 1.0.0.5 on Friday",
+     "items": [
+      {
+       "text": "Users no longer fail to connect to Multiplayer servers with more than 2 players present",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This also specifically resolves multiplayer clients on XBOX being unable to connect if 2 users are already in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "AI will now respawn as intended on starting the second Scorned Wilderness Raid attempt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing an issue where joining a modded Dedicated Server from consoles would corrupt a player save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Primordial Hearts, Imbued Granite Maul Heads and Chinchompa Skulls can now all be destroyed or stored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dying in the Scorned Wilderness Raid will no longer skip a respawn point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Abyssal Whip Recipe now unlocks for users with existing character saves as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Sworn Servant could not be cast in Multiplayer/Dedicated Servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hud Scale options are now correctly labelled on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Players with Privacy and Safety Settings on XBOX will be notified when a conflicting privacy setting prevents them from going online.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "On controller, Processing Stations will now highlight the button where the players cursor is located.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolving an issue where Dedicated Server owners could not edit their dedicated server worlds on consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Server search bar has an added tooltip to specify that it is Case Sensitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Switch 2 Video Capture is now working as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolving a bug where PS5 users could trigger a crash when creating a crossplay world with a password in certain instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "“Self-hosted Server” button in Steam will now navigate the player to the hosting Tools.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Luminite ore can now be crafted into Divine Rocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DLSS and FSR upscaling are now available in the Video Settings for Windows/XBOX Game Pass versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Summon Shelter will be able to be used in the Scorned Wilderness hub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "On our radar",
+     "items": [
+      {
+       "text": "We’re aware of an issue where if you disconnect from your internet/wifi and try and select Play Online, the game will instead crash. Targeting a fix in 1.0.1 for this!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve got a few keybinds that can be currently re-bound that aren’t intended to be remapped. We’ll be resetting these to default binds with the 1.0.1 update too!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you for your continued patience, support and feedback. We’re very excited to keep polishing, refining and growing RuneScape: Dragonwilds for years to come. Next weekend, at RuneFest, we’ll be showing our roadmap in more detail and we’re looking forward to sharing more about 1.0.1, October’s update, very soon too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1844751498218499"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-23T14:00:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.298Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-23T14:00:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.298Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-23T14:00:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.575Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@1.0.0.4",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Patch 1.0.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-18T19:58:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello adventurers! Firstly, we want to thank you for your enthusiasm, passion and support for our 1.0 release. It's been truly humbling and exhilarating seeing you all take on Kuldra, and we're already hard at work reviewing the data, assessing feedback and making plans. For now, though, we're pleased to be deploying a hotfix to tackle several issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have applied a fix affecting World Saves becoming corrupted when exiting a game session!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where casting a Fishing Rod at a player-made structure crashed the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where adjusting some parts of the settings will cause a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're still investigating an additional issue reported where some users have found that worlds in their world list have gone missing/turned invisible. We're in active conversation with the platform teams from each console to better understand the situation, with the aim of helping players recover these worlds and have them reappear in a future patch. This will require additional testing to verify.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The process for deploying this patch does, however, mean that Nintendo Switch 2 and Jagex Launcher systems will no longer be able to crossplay until the patch has been processed on their respective platforms. We'll update in the comments when these have been processed and the platforms allow you to dive back into Crossplay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1844115010495925"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T19:58:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T19:58:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.297Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-18T19:58:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.574Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.1.3",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.1.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-31T23:16:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dedicated Servers will need to be restarted to sync updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "0.12.1.3 - Bombastic-Aardvark is Live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's what we're resolving in this hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where users would take excessive fall damage when jumping over any height when mounted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where users would be unable to respawn on agility courses, requiring a game restart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1839676055889536"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T23:16:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.296Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.573Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.1.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.1.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-31T15:40:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dedicated Servers will need to be restarted to sync updates. Here's what we're fixing in this hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where users couldn't use Mounts after completing an Agility Course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with shadows not showing correctly on Grass at certain times of day/lighting conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Traditional Chinese wasn't available as an in-game language option in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're still testing a potential fix for the issue affecting users encountering a freeze when failing an agility course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1839676055888596"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T15:40:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.296Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.572Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.1.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.1.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-30T16:08:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dedicated Servers will need to be restarted to sync updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's what we're fixing in this hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue affecting the Great Body Robbery where players could soft-lock themselves out of dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Agility Completion Times now persist between sessions on both Dedicated Servers and Hosted Worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where TokTz Ket Xil shield vestige would not drop in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1839676055885748"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-30T16:08:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:35.571Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.0.8",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.0.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-01T09:26:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heads up adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll be shipping another hotfix this morning - your dedicated servers will need to be restarted to apply the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kharidian Flax and Redberry Floor Pieces will no longer cause a crash if you log out standing on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fuzan can no longer follow the player out of Umbral Sands if you teleport away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat Music now correctly resolves in Umbral Sands. Anxiety begone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also still give us your feedback in the survey here, so get involved!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1836506165564830"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-01T09:26:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.734Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.0.7",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.0.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-27T02:52:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This resolves an issue where users with the Fire Cape were prompted with an error message preventing sign-ins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1836506165555717"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-27T02:52:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.294Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.733Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.0.5",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.0.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-25T21:03:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dedicated Servers will need to be restarted to apply the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1836506165551847"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-25T21:03:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.294Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.732Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.0.4",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.0.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-25T15:02:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Resolved an issue where various fishing locations were unusable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adamant Bolts can now be created without needing to first crafting Adamant Arrows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tok-Xil enemies now correctly drop items on death as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the old \"Hard Leather\" entities were being found in Umbral Sands chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wading into quicksand and then into any water no longer shows the Sand VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Users who can craft the Fire Cape cannot give the cape to unworthy recipients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting a skillcape for a skill should now trigger the Achievement for reaching level 99 in a skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1836506165549680"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-25T15:02:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.293Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.732Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.0.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.0.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-24T14:08:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello 'Scapers, we're back at it. Another scorching day under the sun, and Umbral Sands is pretty toasty too! Last night we deployed 0.12.0.2 - This patch re-enables localisation support for Steam Clients - the language your Steam Client is in will now automatically inform the game what language to start in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A quick update from us about what we're investigating, fixing and deploying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what we're also looking into, with the aim of hotfixing as soon as we have a resolution.",
+     "items": [
+      {
+       "text": "Big headline is the visual issues around Trees, and by extension HLODs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're aware of Yew Plots not snapping correctly as other Farming plots do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team are continually investigating this, and your reports have been super helpful. Thank you! Targeting a hotfix this week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are looking at a fix to allow users to earn the achievements for 99s by crafting a skill cape, OR by reaching the required level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should only affect folks who don't already have it, but just a way to guarantee that everyone can achieve it moving forwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're investigating the Splinter crash on Dedicated Servers - it's not just Willow as we previously highlighted in the blog post below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Targeting a hotfix this week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're checking an issue where Status effects remain on screen after the bar has emptied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some crafting/processing stations are disappearing on Dedicated Servers but still leave invisible blocking behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Targeting a hotfix this week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "As for actions - we're looking to deploy 0.12.0.3, our next patch, today.",
+     "items": [
+      {
+       "text": "Here's what we're targeting for a hotfix as soon as possible:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fuel Pellet Journal Entry incorrectly states where you craft it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue affecting Death Exchange or Evil Emporium vendors requiring reputation from Umbral Sands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Notification showing incorrect value of inventory items' stacks at Umbral Sands' Merchants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Garou Chit values are incorrectly displayed on inventory items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Food healing values were incorrectly halved on localised text strings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quantities in the UI popup on the left are doubling up on Dedicated Servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain Terrorbird variant consumables unlock the same variants, preventing others from being used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Contact!\" and \"Mapping the Sands I\" show the player receiving two named rewards on the UI instead of one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what we're targeting for this week (0.12.0.4+ - these might not all be in the same hotfix.)",
+     "items": [
+      {
+       "text": "Fishing Locations in Fellhollow and Brynmoor are reporting that they cannot be fished in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adamant Bolts require users to have crafted Adamant Arrows first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tok-Xil enemies are not dropping items on death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Servers: Crafting Stations disappear if the server is restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dedicated Servers: Crashes when using the Splinter Skill Spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wading into Quicksand, and then into water, shows the sand VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We appreciate everyone's patience as we're tracking down causes and fixes as we go. As always, we're checking Reddit, Discord and Steam. Thanks to all of you for being patient, thorough in your reporting and giving us great feedback. We'll be in touch again soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1836506165546112"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-24T14:08:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.292Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.731Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.12.0.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.12.0.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-23T16:15:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This fix resolves issues where achievements were not unlocking correctly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1835871199316043"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T16:15:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.292Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.730Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.2.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 0.11.2.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-27T10:11:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Resolved an issue where the Fishing Frenzy and Fishnado spells were not working properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Runecrafting Anima Siphoning perks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebalanced the XP granted by bonus runes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1833968530884975"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T10:11:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.291Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.728Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.1.5",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.1.5",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-30T09:47:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The input to summon Mounts has been reverted from 2 seconds to 0.25 seconds. Tap and mount away!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1831432155567467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-30T09:47:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.291Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.727Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.10",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.10",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-13T12:03:08.000Z",
+   "notes": [
+    {
+     "title": "An update will be going live. To protect save file integrity, users on Dedicated Servers are encouraged to collect any belongings from gravestones and rest at beds before forcing restarts of servers to apply this fix.",
+     "items": [
+      {
+       "text": "Resolved an issue where users could equip Skillcapes without the required level in the skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where gravestones were missing after deaths in the Fractured Plains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Map markers should no longer guide you to the wrong location on respawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1829528821315278"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-13T12:03:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.290Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.727Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.9",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.9",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-09T15:32:30.000Z",
+   "notes": [
+    {
+     "title": "An update will be going live. To protect save file integrity, users on Dedicated Servers are encouraged to collect any belongings from gravestones and rest at beds before forcing restarts of servers to apply this fix.",
+     "items": [
+      {
+       "text": "Minor skill tree perk passives no longer break under certain circumstances when players would die.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This also resolved an issue where food would burn at an unreasonable rate regardless of Cooking Skill Level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a boulder that obstructed a cave entrance below the Cathedral in Dowdun Reach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There's a joke in there about Easter but we're a bit late.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Abraxus' Ring and the Shroud of Noggin recipes are now accessible at the Jeweler's bench as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smelting gives correct XP as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Acolyte Wizard's lifesteal attack no longer continues to deal damage after being killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the Crystal Bow and Abyssal Whip Special Attacks would fire due East regardless of player direction in dedicated servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Not a sentence I ever expected to type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1829528821307119"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-09T15:32:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.290Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.725Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.8",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-07T15:27:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're back from an Easter weekend vacation for the team, and we've got another fix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players connecting to a dedicated server should not experience rollbacks on progress from previous sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where config files were overwritten on server shutdown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Patched a hole under water where players could fall through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1828894815567736"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-07T15:27:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.289Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.725Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.7",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-04T19:47:54.000Z",
+   "notes": [
+    {
+     "title": "0.11.0.7 is now live! The hotfix contains the following",
+     "items": [
+      {
+       "text": "Resolved an issue where audio from various biomes would overlap even when leaving the region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue affecting the fixed-location Lodestone that is found in Dowdun Reach Approach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dedicated Servers WILL require a restart to apply this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1828894815562836"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-04T19:47:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.289Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.724Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.6",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-02T22:37:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Getting attacked in Runecrafting Attunement no longer stops the ability to sprint and attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Greater Health Potion (T3) is now unlockable as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1828894815558834"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-02T22:37:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.289Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.723Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.5",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-02T22:35:47.000Z",
+   "notes": [
+    {
+     "title": "The update contains the following fixes",
+     "items": [
+      {
+       "text": "Spells removed from the spell wheel no longer leave ghost icons in active gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the Dreamstone Shard in the Crypt could fail to spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sorry B0aty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where graves could get stuck in the doorway to Imaru's arena before breaking the seals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This also applies to some vaults!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where users could get stuck in bed after respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Honestly, same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spellwheels no longer reset after rejoining worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where rune essences could fail to respawn correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1828894815558830"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-02T22:35:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.288Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.723Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.4",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-01T20:51:06.000Z",
+   "notes": [
+    {
+     "title": "This update adds an additional interface when connecting to a Dedicated Server on the same Local Network as you. You will now need to enter the local IP address of the server you are joining in the in-game text box.",
+     "items": [
+      {
+       "text": "This is a minor fix that will only affect a small number of Dedicated Server users but we want to be sure we're signposting this!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1828894815555916"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-01T20:51:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.288Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.722Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.3",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-01T00:01:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've applied a hotfix to rebalance xp values from levels 92-99. The XP required to reach Level 99 is now over double the original value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have not already reached the new upper limit of 99, your skill level will be changed to reflect the new curve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The skillcape perk becomes locked again if you are now below level 99.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you had a skillcape equipped prior to the update and the hotfix goes live, you will still have it equipped:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will NOT be able to unequip it by RIGHT CLICKING.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You CAN replace the cape by right clicking another cape to equip it instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you try and RE-EQUIP a skill cape after the change, you will not be able to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you place the cape on an armour mannequin, you will be able to leave the cape on the mannequin even when swapping armours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can take the cape OFF the mannequin by dragging it to your inventory, but it will not let you equip it until you reach 99 again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dedicated Servers WILL require a restart to apply this patch.",
+     "items": [
+      {
+       "text": "We STRONGLY ADVISE that you patch as soon as the update is live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1828894815553256"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-01T00:01:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.287Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.721Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.11.0.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.11.0.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-31T23:56:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're deploying a hotfix for the Humidify Skill Spell causing a crash in some instances. With that in mind, we're going to be applying the fix to both standard live games and Dedicated Servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You'll be delighted to hear that Runes now attune from Rune Essence at a ratio of 10:1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're returned to values expected from before Dowdun Reach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dedicated Servers WILL require a restart to apply this patch.",
+     "items": [
+      {
+       "text": "We STRONGLY ADVISE that you patch as soon as the update is live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy Runecrafting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1828894815553249"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-31T23:56:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.287Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.720Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.10.2.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 0.10.2.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-02T14:10:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes to the Dorgeshuun Crossbow Texture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix to Ulv's Longbow socketing to allow it to be placed on the weapon rack correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where Abraxas' Ring required a gemstone not currently available in-game to craft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Abraxas' ring destroys itself when it reached 0 durability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing localisation text strings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1825727806717632"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-02T14:10:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.286Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.704Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.10.1.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 0.10.1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-16T15:41:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Chests are back! We've resolved an issue where chests across the game were no longer spawning in the intended locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue affecting crafting amulets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Note",
+     "items": [
+      {
+       "text": "We're still investigating the source of the issue affecting crafting station sliders and we'll deploy a fix as soon as we have it - either today or Monday.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1821922921816283"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T15:41:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.286Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.703Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.10.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.10.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-15T12:10:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Helloooooooo Adventurers! Introducing our first Minor Update of 2026! Wowee, what a day!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These updates are designed to target feedback and bug fixes, while also adding extra side quests and activities to complete to help fill out the continent of Ashenfall. You'll be able to see these stacking up over time and enjoy more rewards and pieces coming in as we continue to deliver more of these Minor Updates throughout Kuldra's Saga. Big shout out to the Quests and Activities team who have joined the Dragonwilds team to help make more of these updates possible!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Added two new gameplay quest: \"Doric's Quest\" and \"Things That Go Boom in the Night\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new rewards for completion of activities including the Chinchompa Cape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added three new activities to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As a reminder, these are smaller standalone gameplay moments that we'll continue to expand on, but they aren't replacing our major updates every quarter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spectral Platforming: Soul-Rift and get jumping to find rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spectral Birds have started appearing in the Fellhollow region. Hunt them down for Soul Fragments!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buried Treasure has emerged - relax, clue chasers, not like that. Look for patches of disturbed ground. Dig them up, and find hidden chests!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Tooltip Descriptions for Status Effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new craftable decorations/furniture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Let's talk about Ranged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mod Pointy here, Lead Designer for Player Gameplay on Dragonwilds. I wanted to share some context around the ranged balance changes in Fellhollow, why they happened, and what we’re doing about them in this patch.As part of the Fellhollow update, ranged damage was reduced across the board by a significant amount. This change wasn’t because we intended to nerf the playstyle heavily, instead it was because we uncovered a deeper issue in how ranged damage was being calculated. Between ammo base values, Power Level scaling, and multiple damage multipliers all stacking together, ranged damage was increasing far more aggressively than we intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This wasn’t obvious early on, but by late Ghornfell, players were crushing bosses like Velgar in record time using Ranged Weapons, and by Fellhollow it was clear that the damage numbers had gone off the rails.To address this, we changed how ranged damage is calculated, which has given us much more consistent results and far clearer data to balance around going forward. However, adjusting the system in this way meant rebalancing ranged damage from scratch, and while the goal was to stop ranged from trivialising encounters, we pushed things too far in the opposite direction. The end result was ranged being far weaker than it should have been.We’ve been closely monitoring your feedback and gameplay data since, and it’s been clear that we needed to course-correct.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What we’re doing now",
+     "items": [
+      {
+       "text": "The good news: Mod Arclaw and I have been hard at work bringing Ranged Damage back up to where it should be, plus a couple extras! Based directly on your feedback, he’s made the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the damage of Ranged projectiles (bolts and arrows). These are specific number changes (e.g. 17 → 24) but these then form the basis of damage calculations, so here's the percentages you'll see, and hopefully feel, going live:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "+41% on Longbow full-draw shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+40% on Shortbow full-draw shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+25% on Shortbow quickshots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+29% on Crossbows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the draw time of Longbows from 2.25s to 2.05s. (9% decrease)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the draw time of the Crystal Bow from 2.0s to 1.65s (18% decrease)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the Crystal Bow's basic attack damage bringing it in line with other PL3 bows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Trick-shots for the Crystal Bow will now deal the intended amount of damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Power Level 5 bows are out there in Fellhollow if you want to ramp up and deal even more damage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ammo & Crafting Costs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting Crossbow Bolts now produces 33 Bolts per Craft (up from 15)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arrows no longer require a region-specific wood to craft. Ash wood, feathers and a metal of choice will suffice!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Ash wood + feathers + metal of choice is enough!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ammo recovery chance from ranged perks has more than doubled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At higher levels, you’ll recover a meaningful amount of arrows and bolts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moving your character no longer cancels Hunter’s Sense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What’s next?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our internal playtests show these changes feel strong and much closer to where ranged should be, but we'll continue to monitor feedback and data and make further adjustments if needed, so please keep your feedback coming in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, I want to personally thank everyone who shared feedback with us on this, especially those who brought numbers, examples, and detailed breakdowns with it. We know how frustrating it is to see your favourite playstyle weakened heavily, and your input was crucial in helping us understand exactly what went wrong here. Your patience and trust with us has been very much appreciated. Your feedback didn’t just help towards fixing Ranged damage, it also highlighted other issues, like ammo recovery and bolt crafting costs. The changes you’re seeing now are a direct result of that collaboration between yourselves and us, and are a prime example of the community we wanted to create.Happy Hunting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Mod Pointy & Mod Arclaw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Improved dismount SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Audio iteration pass on Terrorbirds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mixing for Sprint SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vocalisation and footstep improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional SFX to the Imaru boss encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Velgar will no longer randomly appear once he has been defeated in your world at least once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trees no longer grow back through your base's foundations in Fellhollow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some Willow tree variants no longer drop ash logs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thorny Irit Seeds will correctly yield seeds when harvested.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added accessibility option to disable controller vibration under Settings->Controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added accessibility option to disable screen shake under Settings->Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the composter UI would grey out items that were valid to compost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved crafting on gamepad by making it a two-step process that first allows players to select desired quantity before crafting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Split stacks UI can now be controlled with D-Pad on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Build menu tooltips now anchor to the left of the menu so they do not overlap the icons on gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Status effect names are now displayed alongside their icons when the inventory is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Panel navigation has been streamlined. Switching panels in instances where the inventory and another window panel is open (such as crafting) is now handled with a click of the right stick only.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where chest name and private/linked fields could be accessed while moving items within a chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved cases where some input tooltips were incorrectly indicating that the input was a “hold” type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Zone-level information (visible in the inventory) can now be accessed using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localised versions of our latest Roadmap are now accesible in game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 16,
+    "balance": 4,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1821922921812637"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T12:10:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.285Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.702Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.10.0.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.10.0.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-18T16:03:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Adventurers, we're deploying a hotfix today with some bugfixes, but we first wanted to talk about feedback we've been hearing from across our community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ranged Damage",
+     "items": [
+      {
+       "text": "Ranged weaponry is performing noticeably worse than melee and magic, compounded by the relatively high upkeep costs. Previous multipliers were, invariably, an issue that we needed to resolve in order to prevent players from one-shotting Lesser Green Dragons with a longbow. That sounds cool, but would become an incredibly frustrating design problem as we continued to scale up the power levels and grow the game. That said, we hear you: the current damage output feels underwhelming, and you're feeling like you can't live out the fantasy of being a ranger, by sheer necessity. We're taking this into consideration, and we're aiming to have our next minor update, 0.10.1 come out with some adjustments to get us to a better place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Trinket Durability",
+     "items": [
+      {
+       "text": "We've identified a bug in the logic of certain trinkets that caused durability to drop faster than intended. We've resolved the issue affecting durability draining incorrectly, but to be safe, we'll be going over all of the trinkets and reviewing their durability values and what drains them, to ensure that it feels fair, and not too fast. We want to be thorough on this, so this may be coming in the 0.10.2 update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both of these changes will be coming in future updates, but we wanted to check-in and be clear that we're hearing you. With that in mind, here's what's coming out today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Building from linked chests now works correctly with Eye of Oculus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"Y\" Controller Input is no longer bound to two different inputs on the composter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Composter UI prompts were not showing correctly using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tombstones are now no longer able to be locked inside withered vines or around Purifying Pools.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Super Composter UI Icons are greyed out until you move the items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where the Wintumber Tree was not accessible to some players in Creative Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue with terrain by the final door in Skekven Kara vault.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preventing the player from going out of bounds in the Skekven Kara vault to reach the boss room without opening the door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved the quest marker for the Wise Old Man remaining after entering Fellhollow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Amulet of Defence requires an unobtainable material to craft - the recipe will be adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1819386365090323"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T16:03:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.284Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.700Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.9.3.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 0.9.3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-14T10:54:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Resolved an issue where the Space Bar and the C buttons were not moving the camera up and down in the Eye of Oculus Skill Spell (Construction Level 11).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1816307528943258"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-14T10:54:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.283Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.698Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.9.3",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.9.3",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-11T12:05:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "0.9.3 has arrived! We’re finally here, our last stop before Fellhollow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re really excited to tidy up and set the foundations (Relax, data miners!) for what this is shaping up to be an area expansion to die for. Righto, pardon our dust while we get stuck into this. Here’s our changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controller Improvements",
+     "items": [
+      {
+       "text": "Improved visuals around crafting panels to clearly distinguish what they are viewing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed building widget from side of building menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Repair/Delete mode is now highlighting the piece you want to delete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved spellwheel + spell panel sensitivity/stickiness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hotbar – Dpad Icons added to indicate equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Spellwheel/Spell Panel – button to remove spells/clear slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Emotes moved to the spellbook page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Hold Y) glyph shown in the toolbar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added notification error message is the player wants to back out of character create",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed processing stations not functioning on the first interact whilst using controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved player dialogue options, adding dead stop for option choices along with improved controller layout for dialogue choices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players are now taken back to world select when backing out instead of going to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved controller tooltips, anchored to right side of screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated controller mapping for improved building navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated controller mapping for improved in-game menu navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated controller mapping for improved in-game crafting interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated controller mapping for improved in-game character creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated controller mapping for improved main menu navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lock-on functionality – updated bones used for enemy targeting for accuracy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented a finalised Lock-On Reticule.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "QOL",
+     "items": [
+      {
+       "text": "Chairs are now functional within you base and will help in reducing hunger/thirst/fatigue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yes, that means you can sit in them. You’re welcome!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spellwheel – Added Keybinding for keyboard to be able to remove spells from the spellwheel",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ghornfell moments of respite – improved accessibility into Ghornfell region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced spawners around Ghornfell region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Controller glyphs missing for \"Transfer\" and \"Destroy\" when in a processing station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"View in map\" UI is showing the keybind for the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Issue when tracking secondary quest with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Font Size cannot be made active while in a world, Language will be made active instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some UI elements do not distinguish between holding an input and tapping it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pressing A when attempting to craft an item will briefly show the pop-up of the previously created item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI of previously crafted item will flash on screen when moving to another crafting station when using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick access rebinded keys are not reflected in the hotbar UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where the right and left trigger keybind icons are deformed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Oak table and chairs are now available to build in normal game modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking Range now has an unlock requirement of interacting with the Campfire at least once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First you get the fire, then you get the cooking, then you get the range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All Iconic Meals have an additional and unlisted food buff when consumed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controller",
+     "items": [
+      {
+       "text": "Fixed an issue where the Right Stick cannot be used to navigate the Crafting Bench Interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with cycle snapping using the Right D-Pad and not Right Stick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the player could not use the D-Pad to navigate the Build Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the A button could infrequently lose functionality in certain interfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unable to switch away from Public world selection when any other main menu screen has been opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue affecting controller connectivity when joining a game via steam invite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pause menu issue when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When using build mode with an X-Input controller, the Dpad function was duplicated on the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glyph for emotes is missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialogue choice cases now present visible prompts for confirming a choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrading a Tannery or Loom while a valid input is present will cause the content to not be selectable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue affecting scrolling in Journal entries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There is no 'Swap' input for the Armour Mannequin when using a Controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where Crafting stations did not have a left bumper input when repairing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Personal Logging & Mining hitsplats are no longer visible to other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Building Unlocked notification no longer appears every time the player enters a world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 7,
+    "balance": 1,
+    "other": 25,
+    "ps5": 0,
+    "topNew": [
+     "Improved visuals around crafting panels to clearly distinguish what they are viewing",
+     "Removed building widget from side of building menu",
+     "Repair/Delete mode is now highlighting the piece you want to delete"
+    ]
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1815580768423267"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-11T12:05:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.283Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.697Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@major-2025-11-06",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Fellhollow First Look | Major Update Coming December 15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-06T12:07:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fellhollow is coming on December 15th as a free update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1815580768259527"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-06T12:07:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.282Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.696Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.9.2.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 0.9.2.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-28T14:56:21.000Z",
+   "notes": [
+    {
+     "title": "This hotfix addresses the following issues",
+     "items": [
+      {
+       "text": "Fix for slicing of environment component that led to players gaining a burn or poison status in locations that should not be possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Though confident this should solve the issue, this is fixing an issue that QA could never reproduce during any of their tests. Please raise a bug through Customer support or the RuneScape Dragonwilds Discord if you see a similar issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mod Bakes and the RuneScape Dragonwilds Team!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1814309641609665"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T14:56:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.281Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.694Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.9.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.9.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-21T12:08:21.000Z",
+   "notes": [
+    {
+     "title": "Quality of Life Changes",
+     "items": [
+      {
+       "text": "RuneScape Dragonwilds version 0.9.2 introduces new quality of life changes whilst being heavily focused on fixing some of our older bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "When selecting a skill, it should automatically take you to the current level",
+     "items": [
+      {
+       "text": "Navigating the skills menu, scrolling to level 50… Still scrolling… Give your scroll wheel a rest as clicking on any skill will take the menu to your current level! How was this not always the case?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "AI changes throughout the Ghornfell Region",
+     "items": [
+      {
+       "text": "We found some players are having a brutal and frustrating time navigating the Tier 3 content, so we made some initial changes to how AI are working in combat throughout the regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rangers swap their rapid-fire bows for a more predictable and engaging rate of fire. They also took the scopes off the bows and have a slightly higher chance to miss their shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rangers have reduced accuracy when the player is engaged in melee combat with other AI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berserkers have less forward momentum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wolves attack less frequently and have been slightly nerfed in their damage output.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Druids will do reduced poison damage as well as their Nature Fang attack having reduced range, damage and poison application.: More changes to come in future updates!: If you want a more challenging time instead you always have those custom world sliders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Allow players to Roll when wading through water",
+     "items": [
+      {
+       "text": "Sick of being chased by Goblins through the swampy waters? Tired of spamming jump whilst wading through the shallow waters of the village? Well save that space bar, try rolling through the water!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Introduced a Delay/Grace Period After Respawn to Stop World Events, Base Raids & Hunted Events from Occurring",
+     "items": [
+      {
+       "text": "Goblins and Garou need sleep too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Using more than 1 Spellbook page will cause attempts to overwrite a filled in spell slot to pick a random spell instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Building totems no longer lose functionally for clients if placed in a solo world and then opened to public.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Highland Vault & Bloodblight Swamp Vault no longer remain sealed if the user leaves between Lever pulls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Characters can now be created when invited via Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New building or spell notification no longer persists even when read (You can stop reporting it now).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tier 2 45 degree roof support now unlocked after meeting prerequisites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mining nodes no longer use bloody hitsplats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hitsplats now show \"Bleed\" status effect proc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Burnt food descriptions added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Host can't see client hitsplats any more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crash and Stability fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enjoy Adventures,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mod Bakes and the RuneScape Dragonwilds Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Goblins and Garou need sleep too!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1813674389099088"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-21T12:08:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.281Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.694Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.9.0.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 0.9.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-22T15:30:16.000Z",
+   "notes": [
+    {
+     "title": "This hotfix addresses the following issues",
+     "items": [
+      {
+       "text": "Resolved an issue affecting Levers in the Bloodblight Swamp and Highland Swamp Vaults when players left the Vault instance between pulling levers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Building Protection Totems will now take effect if placed in a single player world that is made into a multiplayer world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where EOS Users who click continue with Epic whilst offline will be unable to progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mod Bakes & The RuneScape Dragonwilds Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1811138915525426"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-22T15:30:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.280Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.692Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.9.0.1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 0.9.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-12T17:03:48.000Z",
+   "notes": [
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "New players will be able to load into game correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enchanted bolts will unlock at the expected point in progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "We are aware of the following issues and are investigating fixes",
+     "items": [
+      {
+       "text": "Building protection totems currently do not take effect if placed in a single player world which is then made a multiplayer world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Levers within the Highland and Bloodblight Swamp vaults currently do not function if the player leaves the vault between pulling levers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "While we've got your attention",
+     "items": [
+      {
+       "text": "Players who are encountering issues with Privacy Settings not applying to chests should delete and replace the chests in the world. We're unable to retroactively apply the privacy settings to existing chests so you'll need to replace the chests to access the new feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1810503566455876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-12T17:03:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.280Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.691Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.9",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-10T09:24:41.000Z",
+   "notes": [
+    {
+     "title": "The Ranged Skill has arrived!",
+     "items": [
+      {
+       "text": "Skill up to Level 50 and enjoy a slate of new Spells, a fletching table for the new sets of arrows, and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stop your foes in their tracks with the new Snare ability (which is later upgraded to Venomous Trapper!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use the new Ability Hunter Sense to gain awareness of nearby foes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enchant your bow with Astral Magic, allowing arrows to pierce multiple enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Archery target buildable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1-Handed Crossbows are here! Now! Along with that, plenty of new bolts to unlock and use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tons of other abilities are there to be unlocked, so have a look!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more information around the ranged skill, check out our blog post \"Introducing the Ranged Skill!\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Creative Mode is now available!",
+     "items": [
+      {
+       "text": "You will need to create a new \"Creative Mode\" character to access worlds that are Creative Mode enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those that just want a relaxing, chill and build experience. Check out our blog \"Introducing Creative Mode!\" with Mod Deluxe for more details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Custom World Settings",
+     "items": [
+      {
+       "text": "You will need to create a new \"Custom World\" character to access worlds that are using Custom World settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When creating a Custom World, click on Advanced in the upper left to access the World Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Over 40 settings are exposed, from damage, thirst, hunger, to XP rates and processing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controller Support (Alpha State)",
+     "items": [
+      {
+       "text": "As mentioned in our blog post last month, \"The Road to Fellhollow: A Check-In form our Product Director\" with Mod bitf0x, controller support is being updated however we believe it still needs polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players will be able to lock onto enemies, navigate through menus, and we've refreshed / reoptimized input bindings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll be keeping you updated on when we'll be releasing the next round of polish to make these feel good on the sticks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Functional Keyboard Rebinding implemented",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New multiplayer protections have been added",
+     "items": [
+      {
+       "text": "Gravestone Protection: A new option in gameplay settings so that other players will not be able to loot your gravestone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Build Protection Totem: We have added totems with a sphere around them that will prevent other players from building within that area. You will have 8 to place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chest Privacy: Chests can now be locked by the owner. Just open the chest and check the box labeled Private.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Character and World List UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As part of adding Custom Worlds and Creative mode, new icons have been added on character selection and the world selection screens to denote the type of world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character Slots increased from 4 to 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Antipoison potions have been updated",
+     "items": [
+      {
+       "text": "Antipoison now uses Marentill rather than Haarlander",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Antipoison now resists poison buildup, rather than fully preventing it. This effect stacks with the fungal fortitude buff from certain foods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"fungal fortitude\" buff from food now fully prevents buildup of poison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional Fixes",
+     "items": [
+      {
+       "text": "Status effects will now persist correctly on reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to places where players or AI could get out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Floating Rune Essence will be appropriately damaged by secondary staff attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clock widget will now display night correctly for clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to desync in AI combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ranged projectiles should display correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "SFX added in multiple places where it was missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple UI and icon display fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Text updates for some incorrect information in quests and the journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Abyssal Whip special attack will now damage Velgar as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI will no longer attack through Palisade Walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clouds are more visible when it is raining",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player waypoints will appear on the compass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many fixes to foliage clipping through terrain throughout the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some improvements to unnatural animations and poses in specific scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various performance and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Controller Support still needs work to get it feeling how we want it to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom World Setting values displayed are not always fully accurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are tracking the specific settings that are acting up and will hot fix them in the coming weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Host & Clients' weather state may not be in sync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A restart may be needed immediately on launch, particularly with AMD GPUs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Temporary Freeze when the Protection Totem is first placed in the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock notifications will incorrectly display for building pieces in Creative Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 16,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1810503566378401"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-10T09:24:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.277Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:23:27.689Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.8.3",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.8.3",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-19T12:34:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again, adventurers. We're closing in on the release of 0.9 on September 9th (0.9 on 9/9!), which includes the Ranged Skill Tree, Creative Mode, Custom World Settings, and some optimisations to a range of features, to boot. For now, we've got a list of lovely fixes and improvements we know you've been asking for, so let's get into those.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crafting and Building from Chests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An oft-requested feature from our community is here! You can now craft and build using nearby chests' contents without requiring the materials in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quest Inventory Update",
+     "items": [
+      {
+       "text": "Garou King's Tokens are now stackable up to 99, and can be destroyed. Special thank-you to u/Narmoth on Reddit who reported this one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue causing the day/night widget to desync when in multiplayer worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional work to make the compass more readable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The compass will now showcase player positions in multiplayer worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Clock Widget would display the wrong time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where AMD GPU driver crash may randomly occur when interacting with out of game windows.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where users who did not have the Fire Magic Perk unlocked could still use Fire magic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1808061939501306"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-19T12:34:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.277Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:27.687Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.8.2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.8.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-30T14:11:10.000Z",
+   "notes": [
+    {
+     "title": "Community Requested Features",
+     "items": [
+      {
+       "text": "Picking up items from the ground is now easier. The clickbox for items on the ground is now taller and more generous. No more having to precisely cursor over logs on the floor to start crafting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Interiors are now vastly improved against Velgar's scorn - Dragonbreath and Meteors will now be blocked inside caverns, for example. Unnaturally powerful dragons blocked by natural formations. Naturally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "The clock widget will now show nighttime correctly. Old character saves will still experience this bug - new characters will no longer encounter this issue!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cabbage and Dwellberries, and Raw Bird Meat and Potato, can be cooked together. Excellent pairings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Garou Tents no longer highlight as if they are interactible. They're not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players will not get stuck in the block potision when equipping a Bow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue which caused a crash when placing Tier 2 Palisade Walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A handful of terrain fixes where players could get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some out-of-place Marrentill that were incorrectly placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1806698490650277"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-30T14:11:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.276Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:26:14.104Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@0.8",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Update 0.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-10T09:38:17.000Z",
+   "notes": [
+    {
+     "title": "Are you excited? We're excited!",
+     "items": [
+      {
+       "text": "RuneScape: Dragonwilds 0.8 update will go live on June 17th!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out this video to find out more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1801617199552109"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-10T09:38:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.274Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:26:14.101Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@3",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-17T19:40:33.000Z",
+   "notes": [
+    {
+     "title": "We're deploying three fixes this evening",
+     "items": [
+      {
+       "text": "We've fixed an issue where the Wise Old Man was wandering off between important quest moments. He'll temporarily be in two places at once. He's been doing this for ages, but nobody's been in two places at the same time to witness it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We've fixed an issue where gem drop frequency was hampered by you actually being too good at mining when reloading into a world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We've resolved a crash in the spells UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As a reminder, we're out until Tuesday. See the news post for more details!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1797185861648353"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T19:40:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.273Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:26:14.098Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@2",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-16T16:05:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Cloud Save functionality has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Velgar meteor attacks now are blocked by player built roofing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better fix for completing quests with a full inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No more chucking your materials before talking to Zanik!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Goblin in the Vertentis Kara Vault will be more noticeable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I know that Goblins aren't famously talkative but Spitfoot is important, so we can't have you missing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI Status Effect immunities have all been checked & should be working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for ash log duplication in the Shattered Plains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Whenever you see something like this, a wizard did it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to a few areas in the world where players can get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to reduce client desync which means that ranged combat in multiplayer worlds should feel extra nice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Respawned bloodwood sap can now be gathered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one's got us feeling all sappy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller - \"LB\" works correctly in the crafting menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continued localisation fixes for missing translations and cut-off text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A couple of typo fixes in quests and journal entries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chests you are interacting with when you die are no longer locked forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Listen, we know that Death has agreed to overlook your mortality while you're here, but there's clearly some things we didn't iron out with Ol' Boney first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "XP balancing for Splinter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We saw some hair-raising numbers coming through from usage on this so we're tweaking to bring this down to a more reasonable place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beards no longer clip through helmets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turns out our helmets can contain the mightiest beard!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood VFX will be in the right place on smaller AI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kebbits may seem cute but their teleporting blood was a little offputting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your own gravestone VFX should be a different colour to everyone else's.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More crash fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1797185861610403"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-16T16:05:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.272Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 4,
+   "updatedAt": "2026-11-13T03:29:39.274Z"
+  },
+  {
+   "id": "runescape-dragonwilds-337712@1",
+   "gameId": "runescape-dragonwilds-337712",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-15T20:28:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've adjusted a range of \"Events\", namely Being Hunted, Warbands Raiding and Velgar Attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghornfell Raids (Goblin Raid Parties)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooldown increased from 2 in-game days to 4 days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's actually a handful of these raids with different raid party compositions, but they average out to to 4 days now. Half as commonplace now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghornfell Base Raids",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grace Period increased from 9 in-game days to 12 in-game days before the raid can happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chance to occur decreased from 10% to 5%, every event tick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooldown increased from 2 days to 3.75 days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghornfell Hunted Events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chance to occur decreased from 10% to 5%, every event tick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooldown increased from 1 day to 2.25 days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Velgar Events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Velgar Meteor Barrages reduced from 5 to 2 per meteor event, addressing the drift towards tedium as this event outstays its welcome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Poison Breath\" event is now only poison breath strafing runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also included...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved desync issues for clients when performing combat or gathering actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced frequency and intensity of Velgar events, and multiple events should not trigger simultaneously any more. Velgar and His Goblin Companions should give you some breathing room now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Quests awarding non-quest items can now be properly completed even if your inventory is full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World fixes to some geometry and LODs that weren't looking quite right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A couple of missing SFX issues resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All spells should now have a description within the spell wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat fixes where actions could happen without their representative animation playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bedroll no longer glints as though it is a resource. Bed is a treasure, but it shouldn't shimmer like one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hostile AI is no longer immune to Bleed... (Except for Vault Guardians who can't bleed because... well... what would they bleed? Blood runes?)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple Crash fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've adjusted XP balancing around purifying water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many Localisation improvements for unlocalised strings, text cut-offs and overlaps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A range of UI bugs have been fixed including some errors and inconsistencies with item names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bunch of fixes around crashes and general stability. (Not building stability)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1374490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1374490/view/1796631172417591"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-15T20:28:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1374490",
+      "checkedAt": "2026-11-13T03:29:39.271Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:29:39.275Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "ab57a53ae965",
+   "text": "Controller Support still needs work to get it feeling how we want it to",
+   "status": "open",
+   "firstReleaseId": "runescape-dragonwilds-337712@0.9"
+  },
+  {
+   "id": "45f889de51f6",
+   "text": "Custom World Setting values displayed are not always fully accurate",
+   "status": "open",
+   "firstReleaseId": "runescape-dragonwilds-337712@0.9"
+  },
+  {
+   "id": "5660ff26783a",
+   "text": "We are tracking the specific settings that are acting up and will hot fix them in the coming weeks.",
+   "status": "open",
+   "firstReleaseId": "runescape-dragonwilds-337712@0.9"
+  },
+  {
+   "id": "d0403cd889c8",
+   "text": "Host & Clients' weather state may not be in sync",
+   "status": "open",
+   "firstReleaseId": "runescape-dragonwilds-337712@0.9"
+  },
+  {
+   "id": "d8b5d27b60aa",
+   "text": "Temporary Freeze when the Protection Totem is first placed in the world",
+   "status": "open",
+   "firstReleaseId": "runescape-dragonwilds-337712@0.9"
+  },
+  {
+   "id": "5a09c603cefa",
+   "text": "Unlock notifications will incorrectly display for building pieces in Creative Mode",
+   "status": "open",
+   "firstReleaseId": "runescape-dragonwilds-337712@0.9"
+  }
+ ]
+}

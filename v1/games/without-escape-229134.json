@@ -1,0 +1,223 @@
+{
+ "game": {
+  "id": "without-escape-229134",
+  "igdbId": 229134,
+  "name": "Without Escape",
+  "cover": {
+   "imageId": "co66ta",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co66ta.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar278e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar278e.jpg"
+  },
+  "ps5Release": "2021-10-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "without-escape-229134@1.1.1",
+   "gameId": "without-escape-229134",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-07T15:36:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As people say, if something works, don't touch it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the last update I broke one small thing: window resolutions would always be forced to 16:9, ignoring some of the resolutions that are selectable in the settings menu. That has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also I did some small adjustments to the leaderboards menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also the new MacOS build supports both Intel and Apple Silicon. However, Apple Silicon has not been tested, as I lack the means to test it. Please let me know if something is not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-720730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/720730/view/1811772772641663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T15:36:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-720730",
+      "checkedAt": "2026-11-13T03:36:22.773Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T15:36:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-720730",
+      "checkedAt": "2026-11-13T03:36:22.773Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-07T15:36:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:29.149Z"
+  },
+  {
+   "id": "without-escape-229134@major-2025-10-07",
+   "gameId": "without-escape-229134",
+   "displayName": "An update? At this time of year, at this time of day, localized here on Steam?",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-07T02:59:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "*Cough* *Cough* ... *COUGH*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After so many years since the game's release, I had to dust off the game... The game doesn't have any known bugs, and it contains all the intended features, so... why this update out of nowhere?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Well, the game is done with Unity, and recently a severe vulnerability has been discovered in the engine that affects many versions of it, from 2017 up until now (https://unity.com/security/sept-2025-01). And Without Escape uses a Unity version affected by this issue. So I decided to update the game to a more recent and unaffected version, to prevent any potential issues that could affect the players of my game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While I was updating the game, I also decided to update some small things. After so many years, there have been some advancements in the engine. One of them is the new InputSystem (or not that new anymore), which helps implementing input on more platforms and support more gamepads. It has many advantages compared to the old system, which was horrible, let's be honest. So I rewrote my input handling to use this new InputSystem. Now you can use more types of gamepads, and all of them should support vibration. PlayStation pads also have a custom light color depending on whether you have finished the game or not. And this is supported on Windows, Linux and Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "I also did some changes to the leaderboards UI. Originally I took the lazy route of opening the Steam overlay to show the leaderboards. Now I did a custom UI to show the leaderboards in-game. Also you can select any leaderboard entry and the profile of that person will be shown.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This update also has a small disadvantage. Unity deprecated 32bit support on some platforms, so this new version of Without Escape is not compatible with 32bit OSes anymore. But hopefully most people should have a 64bit OS by now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So that's pretty much it. If there's anyone still playing this, I hope they can enjoy it with the relief that the vulnerability has been fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-720730"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/720730/view/1811772772625013"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T02:59:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-720730",
+      "checkedAt": "2026-11-13T03:36:22.772Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T02:59:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-720730",
+      "checkedAt": "2026-11-13T03:36:22.773Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-07T02:59:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:29.148Z"
+  }
+ ],
+ "issues": []
+}

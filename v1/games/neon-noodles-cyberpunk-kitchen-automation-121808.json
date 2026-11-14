@@ -1,0 +1,2385 @@
+{
+ "game": {
+  "id": "neon-noodles-cyberpunk-kitchen-automation-121808",
+  "igdbId": 121808,
+  "name": "Neon Noodles: Cyberpunk Kitchen Automation",
+  "cover": {
+   "imageId": "co6t77",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6t77.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6pdc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6pdc.jpg"
+  },
+  "ps5Release": "2025-07-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@hotfix-2025-10-14",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Hotfix for engine bug",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-14T01:02:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for Unity bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/1813041031354840"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T01:02:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.955Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T01:02:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.955Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-14T01:02:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.801Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2024-04-25",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Minor bugfix update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-25T02:39:47.000Z",
+   "notes": [
+    {
+     "title": "This update addresses",
+     "items": [
+      {
+       "text": "drone move bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "loop marker insert/delete auto-adjust",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "last level menu (rotate/move)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5759616966662957129"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-25T02:39:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.955Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.799Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@1.2",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-18T22:26:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This update contains a bunch of fixes/tweaks, mostly around",
+     "items": [
+      {
+       "text": "video playback fixes/optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "timeline drag clamping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "loop marker code editing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "drone landing delete hack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "yakitori bot deletion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "area of no bot programs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "avocado level metrics shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "sum metric behind histogram end level window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "companion histogram numbers and line indicators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "sliced pineapple -1 bot area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "keyboard layouts shortcuts and display",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "translation updates for newer items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Happy cooking! 🥑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5218041989040710743"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-18T22:26:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.954Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.799Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@1.1.0.125",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 1.1.0.125",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-17T16:44:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Lots of changes in this update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's a list of the more important ones",
+     "items": [
+      {
+       "text": "Run to cursor with Alt-click",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relaxed item constraints on some of the levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed learderboards bug where failed request results would get cached, and further tweaked throttling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flipped endings bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slowed down playback speeds a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New video tutorials for timeline mouse controls (drag/scroll), run to mouse cursor, recycling",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Step forward/backward now always at slower speed, regardless of which loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed code editing for single robot with auto-pad off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Timeline caret gets properly hidden when navigating timeline with arrow keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Red error indicator in timeline now gets properly cleared upon certain actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Generated instructions now properly greyed out (for auto-padded waits and linked programs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more ways to dismiss the video help window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Video tutorials only for mouse or controller only show when using the specific input method",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed localized labels for some languages in the layout menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bot colors during editing/blinking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sizing of videos window in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed undo bug for replace, then undo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual positioning of conveyor belts chevrons after stopping playback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed playback while moving not saving bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated back button indicator for controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rogue highlight in layout menu for keyboard/controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Happy cooking! 🥑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5127964289173445638"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-17T16:44:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.954Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.798Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@1.0.3.115",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 1.0.3.115",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-11T17:14:05.000Z",
+   "notes": [
+    {
+     "title": "This update addresses the following",
+     "items": [
+      {
+       "text": "Major usability improvement for large programs (stay-in-place after playback)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed tooltip issues (not clearing properly, showing whent it shouldn't)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Simplified Fried Rice level (this breaks old saves for Fried Rice)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual fixes (timeline, bot numbers, exceeded stations in layout menu)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed delete all, then redo timeline bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed move then play bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with recipe-after-recipe ingredients (like shrimp, potato)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "and a bunch of other smaller fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy noodling! 🍜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5839532486215061224"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-11T17:14:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.953Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.798Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@1.0.2.117",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 1.0.2.117",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-08T02:46:56.000Z",
+   "notes": [
+    {
+     "title": "This update has fixes for",
+     "items": [
+      {
+       "text": "replaced the garbage station with the thematically appropriate recycling station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed move bug where stations could end up overlapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed move + undo/redo combo bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "histograms now show white lines for the best score from all your save files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "histograms now properly update the white line when editing completed solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed audio cutting issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "controller/keyboard works again for changing settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "video tab in companion only shows after a video is unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "histograms now show up in companion right after completing a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "in-level video help popup now correctly shows every time for the last unlocked level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed greyed out indicator in layout menu to only appear when no items left available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More coming soon. Drop a line in the bug thread if you run into anything :) Happy cooking 🍣",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5124585319865833919"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T02:46:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.952Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.797Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@1.0.1.836",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 1.0.1.836",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-06T05:45:46.000Z",
+   "notes": [
+    {
+     "title": "This update addresses the following",
+     "items": [
+      {
+       "text": "introducing save games earlier in the game (as soon as histograms are available)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "showing quick mousewheel/controller rotate video earlier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixing an issue where moving items was laggy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy cooking 🥑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5124585319858997567"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-06T05:45:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.952Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.797Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@hotfix-2023-08-05",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Video crash hot fix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-05T22:36:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hot fix for an intermittent issue crashing the game when playing videos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5124585319857912840"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-05T22:36:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.951Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.796Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2023-03-01",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Neon Noodles #16 - The Nearly Well-Done Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-01T19:14:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update is content and feature complete!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what's in this update",
+     "items": [
+      {
+       "text": "Steam friends' scores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam achivements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tooltips mode for keyboard/controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "additional aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "full story integration (including endings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "localization support (translations not in yet)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "more tutorial videos added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixes across the board (tooltips, scanline transition, timeline icons, colors)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "various quality of life fixes, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "timeline error indicator after failure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "home/end keys navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "timeline jump to other bot's program",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, feedback here or in the discord is always welcome. For more details on what's left to do, check out the pinned roadmap page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5070528176559406432"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-01T19:14:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.950Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.795Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2023-01-16",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Neon Noodles #15 - The Metrics Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-16T22:26:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Getting quite close to finalizing all the companion functionality (Steam friends' scores is the only major item left to implement).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what's in this update",
+     "items": [
+      {
+       "text": "story tiers/tabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fourth metric (sum)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "metrics improvements - icons, visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "save file metrics details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "save file actions - create/copy/rename/delete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "new histograms visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "histograms in companion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "selection fixes in companion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "scrolling fixes for levels/tips/saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "proper ending for demo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "layout menu labels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "performance pass (companion)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you enjoy it :) As always, feedback here or in the discord is always welcome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5035620840547024445"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-16T22:26:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.950Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.795Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2022-11-17",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Neon Noodles #14 - The Charred Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-17T06:18:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As the name suggests, this is a \"burn everything\" kind of update, lots of big changes!! Unfortunately, it's also a complete score-wipe, save-reset, progression-clean kind of update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The big news here is that this makes Neon Noodles complete \"content-wise\" (though not quite \"feature-wise\" yet). Read on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the levels, mechanics, tools, and the story (missing the end for now) are now in the game. Everything else that remains is tagged under Quality of Life (see Roadmap Steam post for more details).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's everything that changed",
+     "items": [
+      {
+       "text": "breaking changes progression/saves/metrics/recipes, so complete scores/saves/progression wipe!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "finalized level progression, lots more levels, easily 2x play time compared to before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "many more yummy foods from everywhere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "story (without ending)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated Steam page description to be in line with the story",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "teleport tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "station priority/double use error improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "video tutorials for mouse/controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "portraits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "icons refresh, and lot more icons for all the new foods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "behind-the-scenes housekeeping (saves/validation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "larger play area mid-late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "proper story-only entries in the companion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "an assortment of bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "optional auto-padding in late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "drag to move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "finalized metrics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "greatly expanded automated test coverage, especially around double use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you enjoy it :) As always, feedback here or in the discord is always welcome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/4789043687473005687"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-17T06:18:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.950Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.794Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2022-07-28",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Neon Noodles #13 - The Neon Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-28T01:18:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Beta branch has now been retired, as the new tutorial is fully functional.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major update covering the following",
+     "items": [
+      {
+       "text": "Neon-ification pass - for companion and all 5 locations:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New tutorial implemented with proper videos up until level 10, more coming soon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New multi-input (of the same kind) and multi-output recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New conveyor belt mechanics - auto-feed and filtering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visual fixes/consolidation, shadows, backgrounds revisit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfixes, including rogue tooltip bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/4587497456679021297"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-28T01:18:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.949Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.793Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2022-05-17",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Neon Noodles #12 - The Timeline Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-17T14:42:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Important: this update is currently on the beta branch only!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is quite a significant update, but some things are not finalized, so it only goes into the beta branch on Steam for now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here are the major changes",
+     "items": [
+      {
+       "text": "Completely new implementation of the Instructions Timeline:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual changes (fits with the rest of the UI)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infinite timeline during playback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Universal (*) action get displayed and resolved differently during playback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Consistent performance regardless of program size, and a significant improvement to overall performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved display of linked bot details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New visuals and layout changes for the layout menu (placing down bots and stations) - bot icons are placeholder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed recipe window icons to match new timeline approach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New wireframe during level transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New font and UI pass to accommodate it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New companion tab icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Here's how the \"scanline\" transition looks now with the wireframe:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And a few screenshots showing the new timeline, layout menu, recipes window changes and the new font:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/5849624375836592317"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-17T14:42:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.949Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.793Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2022-04-05",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Neon Noodles #11 - The Companion Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-05T22:49:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Important: this update is currently on the beta branch only!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is quite a significant update, but some things are not finalized, so it only goes into the beta branch on Steam for now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here are the major changes",
+     "items": [
+      {
+       "text": "Completely new Companion - this covers all the \"non-game\" part of the game, and it sets the stage for how the story will be delivered too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full mouse, controller and keyboard support for the companion",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Dynamic color change based on level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New tutorial - this is a video-based approach, vaguely inspired by Frostpunk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New levels/introduction to key concepts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A read/unread flag for all of the tutorial entries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial entries available for later viewing in the Companion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level start transitions - a \"scanline\" approach to fading the levels in that provides depth, while being very performance focused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements - some of this was for the new stuff, but lots of work went into performance. Timeline performance still needs addressing, but that's a bigger piece for a future update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some UI/look changes and working towards eventual consistency and what buttons are and how they behave across the entire game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All music is now back into the game (currently just randomized, not location-specific)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of other small changes, including shadows/lighting improvements, bugfixes, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's an example on how the \"scanline\" transition looks for the Asian location:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And a poorly compressed gif of the companion showing the perspective and color change:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/4347669995479934289"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-05T22:49:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.948Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.792Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@patch-2021-10-01",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Small bugfixes patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-01T21:10:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A few tweaks and bugfixes around level selection and the tutorial. Also updated a few of the similarly looking icons to be less confusing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/3938951840885002887"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-01T21:10:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.948Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.792Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@post-2021-09-04",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "timeline bug quickfix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-09-04T05:13:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixing silly bug that affected the timeline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/4020014099094302058"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-04T05:13:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.947Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.791Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@10",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-03T14:42:46.000Z",
+   "notes": [
+    {
+     "title": "Hello there, robot chef caretakers!",
+     "items": [
+      {
+       "text": "Welcome to the Ramen Update! From now on, Neon Noodles updates will be named after foods in the game :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This update contains some tasty new content",
+     "items": [
+      {
+       "text": "Red Location - this location used Egypt as a reference and will be used for dishes from Africa and Middle East",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Green Location - inspired by South America, it will cover foods from the whole area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Soundtrack update - near final version of all the music tracks in the game. Sid once again outdid himself, some amazing tracks in there - here is a sample: https://soundcloud.com/sidbarnhoorn/neon-noodles-i",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Histogram visual update - now clearer what scores the buckets contain. More changes are coming here, including starting the histograms from zero, as other games in the genre do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Timeline fixes - some bug fixes that prevented the entire timeline from being visible in certain cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Here are a couple of screenshots of the new locations",
+     "items": [
+      {
+       "text": "A few more things in the oven for upcoming updates, including a whole new tutorial approach (shamelessly inspired by Frostpunk)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Radu: PS: Neon Noodles has been busy on the festival front, so I updated the laurels on the Steam page - you'll notice that it was accepted into the prestigious PAX 10, so if you're in Seattle, come say hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/4020014099092101620"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-03T14:42:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.947Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:15.791Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@major-2021-09-03",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "The Ramen Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-03T14:41:41.000Z",
+   "notes": [
+    {
+     "title": "Hello there, robot chef caretakers!",
+     "items": [
+      {
+       "text": "Welcome to the Ramen Update! From now on, Neon Noodles updates will be named after foods in the game :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This update contains some tasty new content",
+     "items": [
+      {
+       "text": "Red Location - this location used Egypt as a reference and will be used for dishes from Africa and Middle East",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Green Location - inspired by South America, it will cover foods from the whole area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Soundtrack update - near final version of all the music tracks in the game. Sid once again outdid himself, some amazing tracks in there - here is a sample: https://soundcloud.com/sidbarnhoorn/neon-noodles-i",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Histogram visual update - now clearer what scores the buckets contain. More changes are coming here, including starting the histograms from zero, as other games in the genre do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Timeline fixes - some bug fixes that prevented the entire timeline from being visible in certain cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Here are a couple of screenshots of the new locations",
+     "items": [
+      {
+       "text": "A few more things in the oven for upcoming updates, including a whole new tutorial approach (shamelessly inspired by Frostpunk)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Radu: PS: Neon Noodles has been busy on the festival front, so I updated the laurels on the Steam page - you'll notice that it was accepted into the prestigious PAX 10, so if you're in Seattle, come say hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/4020014099092098895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-03T14:41:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.946Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:00.256Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@4",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-29T16:44:42.000Z",
+   "notes": [
+    {
+     "title": "Hey chefs!",
+     "items": [
+      {
+       "text": "This is a rather small update but it fixes all the bugs we've discovered thanks to your help since the last update and brings some visual improvement:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main menu/Options menu/navigation revamp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various bugfixes (keyboard layouts, loop start and more)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to see how the pro players optimize the levels of Neon Noodles, you should head over to our Discord! It's truly fascinating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(gif by @PentaPig)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/2578812118960479092"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-29T16:44:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.946Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:00.255Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@3",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-10T16:14:38.000Z",
+   "notes": [
+    {
+     "title": "Hey chefs!",
+     "items": [
+      {
+       "text": "The update you have long waited for is here! Multiple Saves per level! Now you can start optimizing your solutions! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also changed our Discord server so you can better discuss and share you solutions. Check it out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionaly, Neon Noodles now also has a proper level selection. Nothing new, but visually more appealing. ^^",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/2582187916850186241"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-10T16:14:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.945Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:00.255Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@2",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-12-30T23:19:16.000Z",
+   "notes": [
+    {
+     "title": "Hey chefs!",
+     "items": [
+      {
+       "text": "Our second Early Access Update is all about quality-of-life improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This builds upon our previous update, improving things like",
+     "items": [
+      {
+       "text": "More tooltips support - using proper names, custom tooltips for recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New tutorial improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General UI layout/color tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor quality of life changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's how the new recipe tooltips look now",
+     "items": [
+      {
+       "text": "This is still an ongoing endeavour so please head over to our Discord and let us know if you have any feedback :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Radu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/2592316573888629793"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-12-30T23:19:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.945Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:00.254Z"
+  },
+  {
+   "id": "neon-noodles-cyberpunk-kitchen-automation-121808@1",
+   "gameId": "neon-noodles-cyberpunk-kitchen-automation-121808",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-12-19T19:56:51.000Z",
+   "notes": [
+    {
+     "title": "Hey chefs!",
+     "items": [
+      {
+       "text": "Thank you to everyone who left a review already and especially to City who was our number 10! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our very first Early Access Update revolves all around mouse controls, as promised before in the Community Update #3. So here comes the first iteration of:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\"what if you'd only want to play Neon Noodles with the mouse?\"",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This update does not only include mechanical changes but also some visual updates like the much requested tooltips:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Without further ado, here is the full list of all the new stuff:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revamped mouse controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Completely new tutorial, focusing on mouse input",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Visual improvements to all the locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New and improved controls window (with fully functional buttons)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various other gameplay improvements and bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is an ongoing endeavour so please head over to our Discord and let us know how you like these new features. =)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patrick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-990900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/990900/view/2592316573848372403"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-12-19T19:56:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-990900",
+      "checkedAt": "2026-11-13T03:26:37.944Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:00.253Z"
+  }
+ ],
+ "issues": []
+}

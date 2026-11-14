@@ -1,0 +1,455 @@
+{
+ "game": {
+  "id": "ys-vs-trails-in-the-sky-alternative-saga-326629",
+  "igdbId": 326629,
+  "name": "Ys vs. Trails in the Sky: Alternative Saga",
+  "cover": {
+   "imageId": "co9s7g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9s7g.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3943",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3943.jpg"
+  },
+  "ps5Release": "2025-10-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ys-vs-trails-in-the-sky-alternative-saga-326629@1.0.7",
+   "gameId": "ys-vs-trails-in-the-sky-alternative-saga-326629",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-06T11:12:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]we're making the 1.0.7 update available which contains the following changes and bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Fixed a bug where the duration of the items \"Critical Strike Gloves\" and \"Awakening Puppet\" was not properly set.: Fixed some effects not covering the entire screen when playing on ultrawide and narrow screens.: Fixed a message during online play that wasn't properly centered when playing on ultrawide and narrow screens.: Fixed some item names that contained garbage characters in the Japanese version.: Fixed typos on the Japanese version of the tutorial menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]Furthermore, Community Items are now available! Players who've already played for a while should have received a few trading cards. Once you craft a badge with them, you'll receive various items such as Profile Backgrounds and Emoticons to decorate your profile with ːVsMonaː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1794880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1794880/view/1819386365125361"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-06T11:12:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.513Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-06T11:12:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.513Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-06T11:12:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:48.661Z"
+  },
+  {
+   "id": "ys-vs-trails-in-the-sky-alternative-saga-326629@1.0.6",
+   "gameId": "ys-vs-trails-in-the-sky-alternative-saga-326629",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-26T13:55:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we're making the 1.0.6 update available which contains the following changes and bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved rollback drift handling to improve situations where one player might experience more rollback than the other when playing online.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where the Master Volume setting used the setting for SE Volume instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed menu inputs registering twice on rare occasions when performance drops or there are external FPS limiters active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Tita's 4th outfit colors used colors from the 3rd outfit instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented LAN Mode from working when multiple copies of the game are running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs that occurred when the User Folder contained non-ASCII characters, causing potential issues with saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented fallback crash handling implementation for debugging of issues when the automatic crash report option is not initialized (e.g. early during game initialization or when automated crash reporting is disabled).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed loading screen rendering displaying stretched by mistake on certain resolutions after gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With this update, Ys vs. Trails in the Sky: Alternative Saga is officially Steam Deck verified! We already put some effort in features, specially arbitrary resolution and aspect ratio support, which lets the game occupy the whole 1280x800 screen during gameplay, so we're glad to receive the Verified status officially!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We're keeping an eye out for other ongoing issues such as desynchronization during certain skills, start-up issues on PC, and misbehaving accessories, and we hope to have more to share soon.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1794880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1794880/view/1817483467033587"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T13:55:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.512Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T13:55:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.513Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-26T13:55:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:48.660Z"
+  },
+  {
+   "id": "ys-vs-trails-in-the-sky-alternative-saga-326629@1.0.5",
+   "gameId": "ys-vs-trails-in-the-sky-alternative-saga-326629",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-28T13:23:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we're making the 1.0.5 update available which contains the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted an animation for the skill Draguna Edge (Agate).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some flickering effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some connection inconsistencies on LAN Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused wallpapers to be rendered incorrectly on certain resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're still keeping an eye out for other ongoing issues such as rollback rift and misbehaving accessories and we hope to have more to share soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1794880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1794880/view/1814309641607719"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T13:23:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.512Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T13:23:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.512Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-28T13:23:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:48.659Z"
+  },
+  {
+   "id": "ys-vs-trails-in-the-sky-alternative-saga-326629@1.0.4",
+   "gameId": "ys-vs-trails-in-the-sky-alternative-saga-326629",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-12T23:37:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, we're making a small 1.0.4 update to address some ongoing issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show more detailed errors when launching the game fails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect default display settings generation which prevented the game from launching in some configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented a safe mode launch option to help players impacted by the previous bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We're keeping an eye out for other ongoing issues and will be providing further patches in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1794880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1794880/view/1813041031319052"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-12T23:37:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.511Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-12T23:37:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1794880",
+      "checkedAt": "2026-11-13T03:36:49.511Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-12T23:37:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:48.658Z"
+  }
+ ],
+ "issues": []
+}

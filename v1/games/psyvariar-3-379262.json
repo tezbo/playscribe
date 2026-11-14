@@ -1,0 +1,340 @@
+{
+ "game": {
+  "id": "psyvariar-3-379262",
+  "igdbId": 379262,
+  "name": "Psyvariar 3",
+  "cover": {
+   "imageId": "cob9ov",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob9ov.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar532v",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar532v.jpg"
+  },
+  "ps5Release": "2026-05-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "psyvariar-3-379262@2",
+   "gameId": "psyvariar-3-379262",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-23T11:44:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are continuing our efforts to stabilize and fix the remaining issues reported by the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is a list of the last changes that have been made",
+     "items": [
+      {
+       "text": "Fixed an issue with the display of certain Japanese and Chinese characters in the online leaderboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a display issue in the online leaderboard that limited the number of scores shown to a maximum of 22 per character and game mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the buzz would trigger for no apparent reason",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that occurred when the player used Cotton's dragon bomb during the Zone 5 boss battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that did not award the correct number of bombs at the end of a zone: Bombs are awarded to the next zone with each level-up, based on the destruction rate of the previous zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flickering textures on VMO in Adaptation Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Infinite Mode: Fixed a memory leak that could cause a crash over time: Thank you for your continued support of the game, and above all, have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4019130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4019130/view/1835871199315322"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T11:44:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-4019130",
+      "checkedAt": "2026-11-13T03:28:34.201Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T11:44:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4019130",
+      "checkedAt": "2026-11-13T03:28:34.201Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-23T11:44:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:23.801Z"
+  },
+  {
+   "id": "psyvariar-3-379262@1",
+   "gameId": "psyvariar-3-379262",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-03T12:24:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have just finalized and published the first patch for Psyvariar 3, which will improve the player experience based on the initial feedback we have received.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the list of changes that have been made",
+     "items": [
+      {
+       "text": "Endless mode: Added a limit of 12 enemies on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted ship speed. All characters move faster!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Minor difficulty adjustments for the bosses in area 01, 04, and 05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the sound level of explosions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an “extra gauge” option that displays neutrinos in the background, similar to Psyvariar Delta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added controller vibration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vibration can be disabled in the game menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that made the player invincible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The ship's hitbox is always displayed above bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The shield is always displayed above bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reset of online and offline leaderboards for the new version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is still possible to view the old online and offline leaderboards if the game is not updated. However, scores will not be submitted in the new version!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with zone display in the “Nearby” and “Friends” online leaderboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that occurred when the player tried to view the online leaderboard while offline and a score was pending submission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that canceled the roll when changing direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the network error from appearing when the player tried to access the leaderboard without an internet connection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the player from gaining bonus speed when leveling up and rolling at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the “show fps” and “pause on death” settings not being saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that reset the difficulty level in training mode after a quick restart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in the English description of the \"arrange\" mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can go directly to the last option in the pause menu and submenu by moving the cursor up when it is on the first option. Conversely, you can also go to the first option by moving the cursor down when it is on the last option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 2,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4019130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4019130/view/1834602721184681"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-03T12:24:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-4019130",
+      "checkedAt": "2026-11-13T03:28:34.200Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-03T12:24:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4019130",
+      "checkedAt": "2026-11-13T03:28:34.201Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-03T12:24:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:23.801Z"
+  }
+ ],
+ "issues": []
+}

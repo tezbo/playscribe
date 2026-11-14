@@ -1,0 +1,263 @@
+{
+ "game": {
+  "id": "dandy-randy-dx-193624",
+  "igdbId": 193624,
+  "name": "Dandy & Randy DX",
+  "cover": {
+   "imageId": "co5cxw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5cxw.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1i9r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1i9r.jpg"
+  },
+  "ps5Release": "2022-04-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dandy-randy-dx-193624@post-2025-02-25",
+   "gameId": "dandy-randy-dx-193624",
+   "displayName": "Dandy & Randy DX Changelog Feb 24 2025",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-02-25T18:09:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Along with Asteristic Game Studio we have prepared a new build that addressed the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where if player 1 died at the last boss, the final cutscene would hang",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the final cutscene wouldn't go past the sentence \"6 months later\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the last boss's laser wouldn't pick the right player to shoot (both lasers should always only pick one player)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651030/view/1792116353364000"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-25T18:09:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651030",
+      "checkedAt": "2026-11-13T03:18:23.637Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-25T18:09:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651030",
+      "checkedAt": "2026-11-13T03:18:23.637Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-25T18:09:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:48.569Z"
+  },
+  {
+   "id": "dandy-randy-dx-193624@major-2022-05-06",
+   "gameId": "dandy-randy-dx-193624",
+   "displayName": "New Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-06T16:18:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "For this update we focused on fixing bugs and performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a new Electron version which should run ways better than the old version, but please keep in mind that we could not bring saves over to this version!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we decided to make it an option when you launch the game - if you pick the Electron version you'll have performance improvements + other bug fixes, and if you pick the NWjs you still get the bug fixes, but without the performance improvement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unfortunately this is the only way we could bring improvements to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We strongly advise on starting the game over for the performance, even if you already have a savegame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog for v1.1",
+     "items": [
+      {
+       "text": "Fixed a bug where the countdown in Azure Mountains wouldn't reset after dying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the player from running away after the boss in Azure Mountains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it so the countdown after the Azure Mountain's boss doesn't appear in practice mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a pause related bugs where sprites would continue to spawn while the game is paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where items spawned by rocks would sometimes go inside walls and getting impossible to collect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where level titles wouldn't appear fully in some languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where frog enemies sometimes couldn't be killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added windowed support (press F2 or Right Alt + Enter to toggle between fullscreen and windowed modes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Exported a new version using Electron, should improve performance a ton compared to the old NWjs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1651030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1651030/view/4348799082194371273"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-06T16:18:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1651030",
+      "checkedAt": "2026-11-13T03:18:23.636Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-06T16:18:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1651030",
+      "checkedAt": "2026-11-13T03:18:23.636Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-06T16:18:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:48.568Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,945 @@
+{
+ "game": {
+  "id": "shoot-the-wall-340791",
+  "igdbId": 340791,
+  "name": "Shoot the Wall",
+  "cover": {
+   "imageId": "co9owx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9owx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3g46",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3g46.jpg"
+  },
+  "ps5Release": "2026-06-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shoot-the-wall-340791@1.3",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-14T03:21:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update was intended as a bug fix update but I decided to add a few extra features which I hope you will all love.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Shoot the Ball!",
+     "items": [
+      {
+       "text": "A new sandbox mode where you shoot a ball instead of a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This started as a test for features to include in the next game but I thought it would be fun to include in STW, we have big plans for a potential sequel and hope you will all stick around to see what we do with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Works similarly to the generator mode in that it has it's own standalone save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ball has a multiplier, the more you hit it while airborne the more money you will get per hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The more damage you deal the higher the ball will be launched per bullet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You gain Exp per bullet hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is a button to reset the position of the ball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I am open to feedback on this mode, so leave your thoughts in the discussions section if you would like to see any features added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crouching",
+     "items": [
+      {
+       "text": "One thing I intended to add for the launch was the ability to crouch, not sure why it took me so long to implement this but you can now crouch in shoot the wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Moving & Camera Animations",
+     "items": [
+      {
+       "text": "The gun used to be in a static position in the screen permanently with a simple idle animation for each weapon, this now moves a bit more dynamically when the player character is moving or looking around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also when jumping and landing the guns move to give a better indication of when you're in the air and grounded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Jumping",
+     "items": [
+      {
+       "text": "Jumping was kind of an afterthought for the initial release and I didn't put much time into making it feel good, I have adjusted how jumping works, so it feels more in line with other games, it is a bit more \"floaty\" than before but I hope this feels nicer when playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where UI sounds would still play after exiting a menu if you were using Keyboard and Mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where sometimes the wall wouldn't load (might still not be entirely fixed as there may be other causes but I fixed it in the cases I could produce)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed money not showing the correct value when loading in from a save, it was still storing the correct amount but would not update straight away when the game loads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1840944183778475"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T03:21:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.619Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T03:21:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.619Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-14T03:21:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.158Z"
+  },
+  {
+   "id": "shoot-the-wall-340791@major-2026-07-13",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "Shoot the Wall Rebalance Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-13T14:18:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks again for everyone playing Shoot the Wall, below are the changes for this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Be sure to leave feedback in the discussions and let us know if anything is not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Pistol",
+     "items": [
+      {
+       "text": "Added additional damage upgrade for 5 additional damage cost 1000.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added additional magazine size upgrade for 53 additional bullets per mag costing 500.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Assault Rifle",
+     "items": [
+      {
+       "text": "Base range increased to 25m.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional damage upgrade for 6 additional damage cost 500.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 3 extra fire rate upgrades -0.00625/-0.00625/-0.0125 costing 20/50/250 making the overall fire rate go down to 0.0125 (still higher than SMG).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked mag size upgrades increasing by 10 per upgrade instead of 5, added 3 new upgrades 10/30/50 costing 200/500/1000 making the max magazine size 250.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added 2 extra max ammo upgrades 170/200 costing 500/1000 making the new max capacity 1000.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Shotgun",
+     "items": [
+      {
+       "text": "Added 2 new damage upgrades 2/5 costing 500/2500 making the new max damage 25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Range reworked from 0.25 per level to 2.5 (I think this is what I mean to do but forgot to check it) making the total effective range 25m making the shotgun more effective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 3 new mag size upgrades 2/2/2 costing 100/100/150 making the maximum mag size 30.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Sniper Rifle",
+     "items": [
+      {
+       "text": "Base range increased to 30m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the damage upgrade scaling, it maxes out at 50 with the upgrades then has a final 25 damage upgrade costing 1000 bringing the total damage to 75.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added extra bullet penetration upgrade of 8 costing 2500.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra max ammo upgrade 10 costing 400.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Submachine Gun",
+     "items": [
+      {
+       "text": "Added 2 mag size upgrades 35/100 costing 250/1000.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra max ammo upgrade 60 costing 450.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Options screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the options screen starting on video and not changing until you select video. (this bug showed up last patch, I forgot to turn off the video menu after testing)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other small fixes which will hopefully reduce crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 3,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1837955055363574"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T14:18:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.618Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T14:18:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.618Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-13T14:18:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.158Z"
+  },
+  {
+   "id": "shoot-the-wall-340791@major-2026-07-02",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "Shoot the Wall Resolution Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-02T03:08:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Everyone, thank you all for playing Shoot the Wall!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have had a few requests to fix resolution issues on some lesser used aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are a few other minor changes but this should mean that the game is accessible on any resolution, please leave any feedback in reviews or in the discussion section on the steam community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shoot the Wall has also been released on consoles, so check it out on Xbox and PlayStation if you get the chance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dexter & Travis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1836506165566928"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T03:08:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.617Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T03:08:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.618Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-02T03:08:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.157Z"
+  },
+  {
+   "id": "shoot-the-wall-340791@major-2025-10-03",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "Unity Security Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-03T20:15:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Posting an updated build of the game due to Unity recommending all unity applications be rebuilt due to a potential security exploit in the engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Travis & Dexter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1811772772519660"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-03T20:15:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.617Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.156Z"
+  },
+  {
+   "id": "shoot-the-wall-340791@1.2",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-04T02:15:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Time Trial mode is finally here, race to complete the levels as quickly as possible in this new mode and top the leaderboards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "Added Time Trial mode where you can play through the story levels against the clock, you cannot save in this mode but pausing will pause the timer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added leaderboard for total Time Trial levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the Submachine gun as a new weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Brightness slider has been added to the video menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sliders now use an increment value instead of being weird and using seemingly random numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes have been made to the story screen; there is a new button which will act as a load button and a continue story button (there is still a load button for if you save in an already beaten act).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Global stats such as blocks destroyed, money earned are saved upon exit even if you don’t save your progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor interface tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed the start dialogue for generator mode as it wasn’t playing before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some menus not fully working with controller inputs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgrade pills no longer spawn on load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weapons not matching the player level on loading into generator mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Added leaderboard for total Time Trial levels.",
+     "Added the Submachine gun as a new weapon.",
+     "Brightness slider has been added to the video menu."
+    ]
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1798454487686308"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-04T02:15:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.616Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.155Z"
+  },
+  {
+   "id": "shoot-the-wall-340791@1.1a",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "Patch 1.1a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-25T21:03:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some added functionality and fixes to the leader board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a reset button to the Generator page, this resets your data if you save, so if you press it by accident you can quit the game and reopen the game to restore your data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Made pickup collision for money pickup not interact with player collider, should ensure money can still be collected and won't push you into the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the game was loading your story weapon levels in the generator mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Apologies to anyone affected by the bugs, keep us updated with any new bugs you come across and we will try to address them in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Also, a very big thank you to everyone who has played the game and continue to do so, you're all great!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1797820624504584"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T21:03:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.616Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.155Z"
+  },
+  {
+   "id": "shoot-the-wall-340791@1.1",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "Hotfix 1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-23T02:14:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some players were having issues with not being able to access the new mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I found out by using an old save that some data wasn't being initialised and have put a failsafe in place, please let me know if there are any additional issues with the new update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1797820624412279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T02:14:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.615Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.154Z"
+  },
+  {
+   "id": "shoot-the-wall-340791@major-2025-04-18",
+   "gameId": "shoot-the-wall-340791",
+   "displayName": "First update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-18T17:58:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that would cause the game to crash or softlock when you hit level 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "sorry if this affected you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3544500"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3544500/view/1797185861678358"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-18T17:58:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-3544500",
+      "checkedAt": "2026-11-13T03:30:26.615Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.153Z"
+  }
+ ],
+ "issues": []
+}

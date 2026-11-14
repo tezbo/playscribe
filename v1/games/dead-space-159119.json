@@ -1,0 +1,137 @@
+{
+ "game": {
+  "id": "dead-space-159119",
+  "igdbId": 159119,
+  "name": "Dead Space",
+  "cover": {
+   "imageId": "cobkv5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobkv5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arxuo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arxuo.jpg"
+  },
+  "ps5Release": "2023-01-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dead-space-159119@post-2023-02-17",
+   "gameId": "dead-space-159119",
+   "displayName": "Patch Notes!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-17T22:34:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, sharing some details on the latest update that you should all be seeing roll out around now. I will update this post with other fixes as they come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Deck Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The game will now recognise if the player has collected the Crew Quarters key card before reaching Chapter 10 and getting the objective 'Find the Crew Deck key'. —-> If you’re loading a save where you were already in this state and the game doesn't update, travel away from the area (60 seconds approx.) and return, the game should then update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The door to the security station will properly unlock after the call from Daniels ends during the objective 'Locate the source of the broadcast. —-> If upon loading a save the door is still in standby, ride the tram to another station and back, wait 30 seconds and the door will unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will no longer be able to launch the asteroid without first destroying the gravity tethers, preventing them from getting stuck. —-> If upon loading a game where you are already stuck, the game will update if the player has destroyed the mining tethers. If you have not destroyed the mining tethers, you should do this, then the game will update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Dr. Kyne not spawning inside Chief Steward’s office. —-> Will be fixed if the current objective is scrambled with unitologist symbols. Go back to the Cantina, then come back to Hunter fight room. This should trigger the proper quest flow. Then follow the quest markers until you reach Kyne's sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We now allow for the previous suit visual to be equipped —-> Previously acquired suit visuals are available in Storage and can be equipped by selecting them and choosing the \"Equip\" action. To remove a cosmetic, choose the currently equipped cosmetic suit, from the Storage, and select the \"Unequip\" option. Changing the cosmetic aspect of a suit does not impact the upgrades you have acquired. Suits are granted as such: Purchase level 2 -> Acquire level 1 cosmetic, Purchase level 3 -> Acquire level 2 cosmetic, etc... For saves where you’ve already acquired specific suit upgrades, the player will be automatically awarded the cosmetics in his Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few other fixes that may help overall, keep us posted here once you’ve updated your game and spent some time with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1693980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1693980/view/5059268099241476272"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-17T22:34:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1693980",
+      "checkedAt": "2026-11-13T03:18:38.353Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-17T22:34:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1693980",
+      "checkedAt": "2026-11-13T03:18:38.353Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-17T22:34:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:56.639Z"
+  }
+ ],
+ "issues": []
+}

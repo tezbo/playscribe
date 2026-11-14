@@ -1,0 +1,1172 @@
+{
+ "game": {
+  "id": "denshattack-361826",
+  "igdbId": 361826,
+  "name": "Denshattack!",
+  "cover": {
+   "imageId": "coaawz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaawz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6bcw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6bcw.jpg"
+  },
+  "ps5Release": "2026-07-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "denshattack-361826@1.4.1.3g",
+   "gameId": "denshattack-361826",
+   "displayName": "Patch 1.4.1.3g",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-11T10:54:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Minor stability fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new boot option targeting low-spec hardware (Steam Deck, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1849192144178208"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-11T10:54:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.200Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-11T10:54:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.200Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-11T10:54:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:01.071Z"
+  },
+  {
+   "id": "denshattack-361826@1.4.1.2g",
+   "gameId": "denshattack-361826",
+   "displayName": "Patch 1.4.1.2g",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-15T10:02:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented players from completing the \"Hardcore trick on the satellite\" dare in level 9-2-B, \"To the Moon\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1846651706677025"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T10:02:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.199Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T10:02:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.199Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-15T10:02:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:01.070Z"
+  },
+  {
+   "id": "denshattack-361826@1.4.1.1g",
+   "gameId": "denshattack-361826",
+   "displayName": "Patch 1.4.1.1g",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-18T13:33:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Racing Level UI overlapping with millisecond timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed creator skins having misassigned icons in the garage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed creator skins being incorrectly displayed in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1844115010494803"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T13:33:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.199Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T13:33:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.199Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-18T13:33:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:01.066Z"
+  },
+  {
+   "id": "denshattack-361826@major-2026-09-17",
+   "gameId": "denshattack-361826",
+   "displayName": "Leaderboard Update + Train Colours and Skins! 🎨",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-17T12:59:52.000Z",
+   "notes": [
+    {
+     "title": "Hi Denshattackers! 😁",
+     "items": [
+      {
+       "text": "We’re here to give you the latest exciting updates! First we want to shout out that we’re at the Tokyo Game Show. If you’re around come find us at Hall 4, C08!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/2b7b24295b6876edb97fb4b369cc6071cc012ff5.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🥇Online Leaderboards (PC)",
+     "items": [
+      {
+       "text": "We have the most heavily requested feature from the community added to Denshattack! Online Leaderboards on PC, accessible from:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "World Map",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Pause Menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "End Level Screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/ce174fa474265e609b21a9a011c96e1844212e43.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Select any stage from the World Map and hit Y to open up a rankings list, where you can compete for supremacy in a few different categories.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Score: Highest Points on a Run (Uncapped)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Time: Fastest Completion (Uncapped)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Gold Time Score: This board only takes your highest score that ALSO qualifies for a Gold medal time - so no loops or infinite exploits here, just pure 100% execution. Unlike the other two (which will upload your highest existing results automatically), this one only counts runs from this patch onwards.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This is our first iteration of Leaderboards so we are expecting to deploy patches fixing any potential exploits or bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎨More Train Colours",
+     "items": [
+      {
+       "text": "Your trains can be customised EVEN MORE with extra colour palettes across all trains in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/2716a2b7a5b0c858ffbe9f7b205c4bc01e2c5174.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚅New Streamer Skins",
+     "items": [
+      {
+       "text": "We’ve got even more ways to ride your train in style, with new Streamer Skins available to unlock! Keep an eye on their socials and streams to find out the code!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/df3471cd21d36fabea94e636f6d1faf0088ecd2f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[table equalcells=\"1\" colwidth=\",\"][p align=\"center\"]❤️Creators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"center\"]📽️Stream Channel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Zentreya ⚡🐲⚔️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Twitch Channel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mint Fantome 👻✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Victoria Roman 👁️🌂",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Phoebe Chan 🐝🌸",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mint YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Victoria YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Phoebe Twitch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "MysticLight🌙✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Twitch Channel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🗼Tokyo Game Show Event Skin Pack",
+     "items": [
+      {
+       "text": "And to celebrate TGS, we've added a brand new event skin pack, available now to unlock from any castle! Unlock code: ⬅️⬆️➡️⬇️⬇️➡️⬆️⬅️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/b3214e730c03efeb7d817bde6ef5f6ba7191b4fa.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⏱️Millisecond Timer",
+     "items": [
+      {
+       "text": "For the speed runners and time-attack enthusiasts (we see you): a new millisecond-precision timer is now available as a settings option, for when tenths of a second just isn't enough. 😉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By activating the Detailed Timer option in the Settings menu, you'll be able to see your time up to the millisecond during gameplay and on the different menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/7c513e68396773d899c5c18a44580279a82ae7fd.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for the continued love and hype for Denshattack! Please do share your thoughts, fan art, comments or feedback in our Discord (listed below) and tag us on social media! 😁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📢 Keep up to date with the Latest News!",
+     "items": [
+      {
+       "text": "Join the rebels on TikTok, X, BlueSky and Reddit!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sign up to our Newsletter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for riding with us and catch you on the rails (if we’re fast enough!) 😁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/45746608/df3471cd21d36fabea94e636f6d1faf0088ecd2f.png\"]",
+     "[table equalcells=\"1\" colwidth=\",\"][p align=\"center\"]❤️Creators",
+     "[p align=\"center\"]📽️Stream Channel"
+    ]
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1844115010491957"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T12:59:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.198Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T12:59:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.198Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-17T12:59:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:10.074Z"
+  },
+  {
+   "id": "denshattack-361826@major-2026-08-20",
+   "gameId": "denshattack-361826",
+   "displayName": "The Platinum Update - Out Now! 🎖️",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-20T13:50:32.000Z",
+   "notes": [
+    {
+     "title": "Konnichiwa(こんにちは) Denshattackers!",
+     "items": [
+      {
+       "text": "A small but fun update has JUST pulled into the station on all platforms, and is bringing you some fresh new ways to show off those skills of yours. Here’s the breakdown of the update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🏆Platinum Medals",
+     "items": [
+      {
+       "text": "Have you mastered every level? Now’s your chance to go even further with Platinum Medals. They are now available on each level for you to unlock and mark the true grit of your reputation as the best Denshattacker! This is for those of you who wish to push beyond Gold & chase completion on every track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/12b72b287c8a11063f42012653caad025cf28652.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚆New Unlockable Train",
+     "items": [
+      {
+       "text": "Go Platinum with every single level and you’ll unlock a brand-new train as your reward. A great way to showcase that you have conquered the tracks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🎬Cutscene Rewatch",
+     "items": [
+      {
+       "text": "Missed a story beat or just want to relive your favourite moments with Emi and the crew without scouring the map? You’ll now be able to rewatch any cutscene you’ve unlocked, straight from the game screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/a5e27662f36c28ad7e582eb1ef47b6c4da9922ce.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "💛A Huge Thank You!",
+     "items": [
+      {
+       "text": "Thank you so much for ALL of your amazing support since we launched, we have been blown away by your love for Denshattack!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "98% Overwhelmingly Positive on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "88 on Metacritic!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Absolutely speechless! And if you are at Gamescom next week, Denshattack! will be there too so please find us and say hi! 👋🏻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Always feel free drop our thoughts, fan art, comments or feedback in our Discord (listed below) and tag us on any social media as we L O V E hearing from you. 😁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make sure to keep an eye out for more updates coming down the line...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📢 Keep up to date with the Latest News!",
+     "items": [
+      {
+       "text": "Join the rebels on TikTok, X, BlueSky and Reddit!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sign up to our Newsletter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1841579228665652"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-20T13:50:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.197Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-20T13:50:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.197Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-20T13:50:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:10.073Z"
+  },
+  {
+   "id": "denshattack-361826@1.3.0.1g",
+   "gameId": "denshattack-361826",
+   "displayName": "Patch 1.3.0.1g",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-20T12:53:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Platinum Medals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Cutscene Selector (accessible from World Map)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added unlockable train when all Platinum Medals are achieved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spelling mistakes in French, Catalan, and Brazilian Portuguese localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various corrections to credits roll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1841579228665412"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-20T12:53:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.196Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-20T12:53:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.196Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-20T12:53:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:01.059Z"
+  },
+  {
+   "id": "denshattack-361826@1.2.2.5g",
+   "gameId": "denshattack-361826",
+   "displayName": "Patch 1.2.2.5g",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-27T14:52:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue that generated soft-locks when unlocking new levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Air Stomp tutorial in Korean, which showed “e” instead of “공중 급강하 “",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an incorrect line break in Catalan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a dare in level 9-1-1 that said “medusas” instead of “Jellyfish”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the train to lock on air in 6-3-2 Gifu Trickpark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the song in 4-1-2 as it was incorrectly using the same as 8-2-1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed ending on 6-3-1 sometimes not being detected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1839041357035874"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-27T14:52:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.196Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-27T14:52:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.196Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-27T14:52:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:01.054Z"
+  },
+  {
+   "id": "denshattack-361826@major-2026-06-04",
+   "gameId": "denshattack-361826",
+   "displayName": "Launch Date Update + Japanese Voice Acting Reveal!🎙️",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-04T14:59:59.000Z",
+   "notes": [
+    {
+     "title": "Hello Denshattackers!",
+     "items": [
+      {
+       "text": "We’re bringing you some news about our launch; we’re moving our launch date from 17th of June to 15th of July. Whilst we pride ourselves on being the “only” trains that are on time, sometimes delays can happen so we appreciate your patience and continued support and hype around Denshattack!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That being said, this delay allows us to focus on a couple of things that matter to you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎯What we’re focusing on",
+     "items": [
+      {
+       "text": "Bug Fixing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During development sometimes more bugs may appear and we want to dedicate time to really squash these before you get your hands on the game. This ensures that you have the smoothest and best experience possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stable Framerate Work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to make sure both Steam Deck and Console players get the best experience and that’s why we are taking time to strive for 60 FPS across all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎙️Full Japanese Voice Acting",
+     "items": [
+      {
+       "text": "We're really excited to share that Denshattack! will have Japanese voice over! You'll also be able to play in with your preferred language subtitles with Japanese dub, and you can switch between voice over at any point throughout the game! We know this was a heavily requested feature, so we're really pleased to be able to include this in Denshattack!.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Meet three of our Japanese voice actors",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/20f211f078f4ce4818266d9a312320a9196580cc.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/eda249a9dd089b9895ab9d4c08431a609c546339.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45746608/c32b0cded9c227aa7013b126d408f4e6dec6224e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "👋🏻That’s all folks!",
+     "items": [
+      {
+       "text": "In case you missed it, we have a list of improvements in one of our recent news posts to see some of the work we’re busy implementing behind the scenes to bring you a great gameplay experience at the new launch date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A reminder again that launch is 15th of July, 2026. We will come back to share the full launch timing details and more information closer to launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📢 Keep up to date with the Latest News!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Join the rebels on TikTok, X, BlueSky and Reddit!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sign up to our Newsletter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mata ne/またね,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚅 The Denshattack! Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2524850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2524850/view/1834602721187784"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-04T14:59:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2524850",
+      "checkedAt": "2026-11-13T03:18:58.195Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:10.069Z"
+  }
+ ],
+ "issues": []
+}

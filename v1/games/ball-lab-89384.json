@@ -1,0 +1,570 @@
+{
+ "game": {
+  "id": "ball-lab-89384",
+  "igdbId": 89384,
+  "name": "Ball laB",
+  "cover": {
+   "imageId": "co28v1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co28v1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1c44",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1c44.jpg"
+  },
+  "ps5Release": "2021-12-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ball-lab-89384@patch-2025-10-04",
+   "gameId": "ball-lab-89384",
+   "displayName": "Unity CVE Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-04T06:16:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated UnityPlayer.dll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/1811772772533131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T06:16:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T06:16:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.581Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-04T06:16:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:25.095Z"
+  },
+  {
+   "id": "ball-lab-89384@1.4.7",
+   "gameId": "ball-lab-89384",
+   "displayName": "UPDATE 1.4.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-05T09:48:02.000Z",
+   "notes": [],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/5070528176572551208"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-05T09:48:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-05T09:48:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.580Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-05T09:48:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:25.094Z"
+  },
+  {
+   "id": "ball-lab-89384@1.4.5",
+   "gameId": "ball-lab-89384",
+   "displayName": "Update 1.4.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-29T20:44:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed effect of death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed display of the inscription \"LOL\" at levels 16-20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the visibility of the trap \"piston/press\" through the wall at levels 50-60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed spikes shift on the \"piston/press\" trap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed spikes hitbox on trap \"piston/press\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "reduced death hitbox on a moving platform: Report errors in the thread on the forum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/2436926440575264690"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-29T20:44:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:25.093Z"
+  },
+  {
+   "id": "ball-lab-89384@1.4",
+   "gameId": "ball-lab-89384",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-05-23T18:46:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "changed the physics of the jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added ball speed boost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "after death level completely reboots (previously there was a respawn point)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased platform speed in the level selection menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixes at levels 26,27,28,29: Report errors in the thread on the forum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/2408775863519962962"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-05-23T18:46:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:25.092Z"
+  },
+  {
+   "id": "ball-lab-89384@1.3",
+   "gameId": "ball-lab-89384",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-05-22T22:01:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "slightly changed the physics of the jump;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added end level display;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added level selection (available after ending the game);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "changed the corners of the walls;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed the size and color of spikes (for better visibility);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "small changes on main menu;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "small changes on 10 and 11 levels.: Report errors in the thread on the forum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/2408775863516839160"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-05-22T22:01:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:25.091Z"
+  },
+  {
+   "id": "ball-lab-89384@1.2.1",
+   "gameId": "ball-lab-89384",
+   "displayName": "Update 1.2.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-05-21T20:26:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "level 10 has been simplified",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/2905297189266683418"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-05-21T20:26:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:25.091Z"
+  },
+  {
+   "id": "ball-lab-89384@1.2",
+   "gameId": "ball-lab-89384",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-03-11T12:50:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added \"Partial controller support\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "minor fixes at level 7 and 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/2363699913381679543"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-03-11T12:50:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:25.089Z"
+  },
+  {
+   "id": "ball-lab-89384@1.1",
+   "gameId": "ball-lab-89384",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-03-10T22:44:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "simplified jump through spikes at levels from 5 to 22 (even children can pass ːsteamhappyː)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed levels: 23,48,56,57,58",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed volume slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-780800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/780800/view/2363699913379555866"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-03-10T22:44:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-780800",
+      "checkedAt": "2026-11-13T03:15:37.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:47.004Z"
+  }
+ ],
+ "issues": []
+}

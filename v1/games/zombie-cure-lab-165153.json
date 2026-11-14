@@ -1,0 +1,4184 @@
+{
+ "game": {
+  "id": "zombie-cure-lab-165153",
+  "igdbId": 165153,
+  "name": "Zombie Cure Lab",
+  "cover": {
+   "imageId": "co9u8q",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9u8q.jpg"
+  },
+  "squareCover": null,
+  "artwork": null,
+  "ps5Release": "2025-05-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "zombie-cure-lab-165153@1.01",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 1.01",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-07T16:34:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41120532/5e6b2a3539e81141a750ce858da83f7bf2bedfd1.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Hotkeys",
+     "items": [
+      {
+       "text": "You can now press a hotkey to easily assign workers to buildings, this works independent from which tab is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Press Y to assign one human worker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Press CTRL + Y to unassign one human worker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Press ALT + Y to assign maximum human workers for the building (Handy for main storage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Press U to unassign all workers from the building (humans and humbies)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41120532/21c4b3fbfe59af021134c34adbdc29c83b0b1677.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NOTE: You can change hotkey mappings in the game settings anytime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NOTE: The worker types are assigned hotkeys Y, X, C, V for scientists to the different humbie types. You probably want to change the Y to Z for english layout keyboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Default hotkey for layout menu was changed to L from Y and now B for the build menu from X",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Press O to open all doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "WARNING: Due to the newly added hotkeys you need to reset the mappings to default in the game settings IF you made any changes previously. If not you should have the new default mappings assigned directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41120532/af092638bca9bc2005e3188a8fd079d379d745ff.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Sending worker types away reward balance was reworked, in general you get a bit less research points for sending workers away, but way more in comparison for cured humans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Support points and cure rewards were also slightly less balanced, to make frozen zombie away sending a bit more interesting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Change Log",
+     "items": [
+      {
+       "text": "New hotkeys added for worker type assignment and unassignment at buildings, also general hotkeys to unassign all workers from a building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wiki entries for navigation controls and camera adjusted the gamepad description, was an old oversight. Translated to german, french and simplified chinese as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed destroyed power poles are not emerging power grids again when they are repaired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(This was leading to snow shooters or other electricity building showing to be out of power even though they seem connected to the whole grid)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Helicopter now waits 3 min instead of 2 mins when arriving for trade and waiting for frozen zombies and humbies .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hauling post job to transport frozen zombies to arrived helicopter for trade now is automatically highest prio job. This + the longer waiting time improves how well frozen zombies are transported off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed that sent away humbies for trade get properly unassigned, important that they get quickly onboard and not decide to do something else instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that tutorial 02 had a potential \"leak\" at the left side of the fence if a rock was mined, letting zombies in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad cursor not moving preview objects sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an expectation in worker chasing and fleeing logic that could potential lead to a stuck worker in a very specific situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ui navigation problems with gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed another ui nav problem with gamepad regarding main HUD access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that frozen zombies were counting towards send X humans away achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping loading screen music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased size of tutorial popup for some text display problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some widescreen ui overlaps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frozen zombie storage T2 freeze damage being 10 times to low then intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tree nursery T4 automation upgrade now being in upgrade chain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed balancing values for send away characters and trade rewards, cured humans having some too low values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Credits and logo updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 13,
+    "balance": 3,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "You can now press a hotkey to easily assign workers to buildings, this works independent from which tab is selected.",
+     "Press Y to assign one human worker",
+     "Press CTRL + Y to unassign one human worker"
+    ]
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/1801617199463249"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-07T16:34:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.843Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-07T16:34:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.843Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-07T16:34:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:52.586Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@major-2025-05-16",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Zombie Cure Lab | Major content update dropping on May 27",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-16T13:05:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🧪 Zombie Cure Lab launches on May 27 for PS5 and Xbox Series X|S!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "But that’s not all: PC players can also look forward to a major content update dropping at the same time, packed with new features that make the gameplay even deeper and more exciting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Brain munching zombies rule the world. After years of research brave scientists have finally found an antidote that reverses the zombification progress, creating zombie-human hybrids. Find the final cure for humanity and build the perfect zombie curing facility.🧟‍♂️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Join the mission to save humanity – soon also on console!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔗https://zombiecurelab.aerosoft.com/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/1799817379501309"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T13:05:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.843Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:52.585Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.21.5",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 0.21.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-02T13:56:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey zombie curing scientists, we are back with another update for the experimental branch, continuing our efforts to get Zombie Cure Lab into release shape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This time we also have some smaller features and a bit of content to spice up some things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Worker and Building Type Cycler",
+     "items": [
+      {
+       "text": "You can now cycle through existing workers or buildings of the same type at the top of the open info box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This gets introduced mainly to improve gamepad usability, but is also helpful for keyboard and mouse controls.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "It also shows the total amount of the building type, which can be quite useful to get an idea how many resource camps you have scattered across the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Inactive Tabs Shortcuts",
+     "items": [
+      {
+       "text": "To make the tabs UI system a bit better to handle with keyboard and mouse controls, you can now trigger the shorcuts of inactive tabs. This is mainly useful to click a building and hit DEL or 7, 8, 9 and 0 for the respective actions of deleting the building, changing their priorities or disabling/ enabling it. Before, you had to switch the tab for the shortcuts to work.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Alternate Ice Pack and Grilled Meat Production",
+     "items": [
+      {
+       "text": "In the tech tree are two new buildings available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grilled Meat Printer - Food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An indoor meat printer that can only be operated by Humbie Level 2 and only requires chemicals to directly print grilled meat. As Humbie Level 2 requires a sustain grilled meat production, this essentially skips some production chains and can allow you to to go for a different economy strategy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berry Freezer - Production",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An outdoor ice pack producer that requires Humbie Level 3. It only requires glowberries and a higher energy consumption to output a steadiy supply of ice packs, which can be interesting to reduce the chemical needs of your lab which would be necessary with the classical ice packer building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Those two buildings might require further balancing adjustments, but we are curious for you to try them out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Repair Cost Info",
+     "items": [
+      {
+       "text": "The info box now has a new segment that displays the repair cost of damaged buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Changelog",
+     "items": [
+      {
+       "text": "Tutorial fixes (objectives, loca)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repair cost info of damaged buildings in info box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In general a more final proof read english localization (Other languages might be quite outdated, this will change soon)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Frozen Zombies that missed their flight are ice sculptures for eternity bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Worker and build type cycler/ object swapping - Also works for missions on the worldmap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now trigger \"Send Helicopter\" in Trade Screen by pressing (Y) on the gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Layout\" tab was removed from build menu - This only means the jump to icons at the top, the separate layout menu still exists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotkeys for controls hidden in non-active tabs are working now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Tutorial Popup can now be accessed using the (Y) gamepad button while in the upper hud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"There was a problem with your savegame\" popup will never appear anymore now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some minor visual issues with gamepad vs. mouse highlighting fixed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added grilled meat printer for T2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added berry freezer for T3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved employment screen for gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved character overview window for gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General structural improvements for the three tutorial missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "There seems to be a newly introduced problem with scrollbars and mouse wheel input. We will fix that soon, but did not want to withhold the new stuff for experimental.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Unsure how the new tech tree buildings grilled meat printer and berry freezer will affect savegames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 1,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/1798454487638146"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-02T13:56:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.842Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:52.584Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.21.4",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.21.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-04T12:50:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, thanks to your feedback and reports we could continue to fix some stuff on the experimental branch and continue to push forward towards the 1.0 release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "0.21.4 Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorials split in three for better pacing and learning the concepts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial changes to improve onboarding experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wiki fully available with proof read english language (You currently have to play through the tutorials to unlock all entries)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Western mission correctly playable now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor balancing changes, tech tier main storage research - Some costs reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UX quick fade in when infobox appears",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better worker selection for shifts - Changing shifts should now better pick available workers with the specific shift missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a specific save game related multi threading issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Disabled waves being shown in timeline (Elite and boss waves were shown, but did not spawn when disabled)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed objectives not shown after loading a savegame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ui issues, overlapping elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/1795917897357756"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-04T12:50:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.841Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:52.584Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.12",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.12",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-21T12:42:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's been a while! We took our time to test the latest update and ensure that the biggest bugs really have been fixed and that this updates ensures a boost in playability of the game over all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updates are slow as we are in parallel preparing bigger changes for the game. More about this in another upcoming post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "0.20.12 Patch Notes",
+     "items": [
+      {
+       "text": "fixed an issue causing workers being stuck in a loop trying to do repair jobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue causing frozen zombies/humbies not be picked up for treatment/storage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed haulers dropping ore when trying to refill furnace",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed buildings requiring power not displaying proper status after being upgraded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed buildings sometimes permanently displaying unreachable status",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue when loading a save game with an ongoing frozen character transport job",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed multiple issues resulting in left over power cables floating in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with guards being stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where gatherables inside a room would not be removed when merging rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an multithreading issue when assigning workers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where upgrading objects sometimes would not work (leftover, unupgradable roads)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue where zombies could get stuck in place when trying to leave at break of dawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "minor change to where saplings can spawn: they can no longer spawn right next to player buildings to prevent blocking narrow pathways",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reworked loading issue popup: when a problem occurs while loading a saved game sending a report is now optional",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5747233970436663933"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-21T12:42:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.840Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:52.582Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.10",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.10",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-28T17:29:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed feeding piles not refilled anymore after job cancelation due to lack of meat (Problem applied to many buildings and caused lots of buildings not being refilled like potentially treatment chambers, research tables and possibly everything that produces and requires resources.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cold weapons (Snow canons) now have correct ice pack consumption rates, before they consumed zero (Freezing zombies is not free anymore)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cold weapons tooltip shows correct fire rate (cooldown) with two decimals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a safety check for potential stuck humbies: Known Problems: We still have some reports regarding stuck characters, wich is hard to reproduce for us, but we are trying to figure out how severe this problem prevails after this new patch.: Further fixes include",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed treatment chamber triggern missing resources status correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frozen zombies not hauled due to a multi threating problem",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frozen zombie storages not being refilled by haulers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Savegame Compatibility",
+     "items": [
+      {
+       "text": "If you are continuing a save from a previous version that had refill bugs, you might have to disable buildings once and enable them again, afterwards the refill bug should never appear again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5688680204367145681"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-28T17:29:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.839Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:52.581Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.8",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 0.20.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-12T16:03:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Its been a while, but we fixed some annoying problems!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed calming station could not be properly build bug that lead to many other problems with stuck workers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed very annoying blizzard contraption 2 sound loop bug, attack sound starts and ends correctly now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed very annoying greenhouse air pull effect bug getting insanely huge over time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where time progression was stuck when loading a save game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Humbie 2 yellow helmet goo not blinking anymore, improved wobble",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed freeze progress ui attack meter at nightly zombie attacks sometimes not showing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blueprint fences missing resource status not updated when building gate on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that camera bounds could be offseted in one direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Freeze trap now only triggers for hostile zombies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frozen or currently treated humbies are not selected for another treatment anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When focusing an object or character, the camera doesn't teleport to that location anymore but moves smoothly there now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Problems",
+     "items": [
+      {
+       "text": "Frozen Zombie storage seems still go get stuck after a frozen Zombie is transported to treatment. Disabling and enabling can be used as a workaround for now. We will address this soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5589599109280234586"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-12T16:03:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.839Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.839Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.7",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-24T14:34:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We finally addressed the main issue since the last bigger update 0.20.0, it seems that freezes that also ultimately crashed the game are gone now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: Some players encountered freezes of the game. They are gone now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Zombies that are stuck at a corner of an obstacle will find a way around it after some time now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Blizzard Contrpations stop their sound when they are in standby now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Haulers don't walk on the spot anymore when they pickup or drop off resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The annoying blizzard contraption sound bug is not fully gone, but it appears less now. We will try to fix with the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5382426458981013440"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-24T14:34:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.838Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.838Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.6",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-21T16:29:44.000Z",
+   "notes": [
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "FIX: haulers stop moving several times before reaching their destination (or even don't do anything anymore)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Access Points where all visible after loading a savegame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many little UI improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5382426458970415443"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-21T16:29:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.837Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.837Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.5",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-16T16:49:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This build contains invisible changes which helps us to better understand what is happening in bug reports. (Savegames will be attached in reports again)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many stability fixes of some errors found in log files that might or might not fix actual bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/6560117310264703416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-16T16:49:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.837Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.837Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.4",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-07T13:48:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes 0.20.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is our third hotfix since the Major Update 4 to improve stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed two more important all worker doing nothing anymore bug (Should happen way less now)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Autosaves fixed, did not show up in loading screen anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hiding Locker moved to science category to not add a layouting category the build menu (Was confusing as we have a layouting menu and a building menu): Known Problems: Savegames in bug reports won't be attached even though you checked the box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5288974951224838131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-07T13:48:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.836Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.3",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-31T21:26:35.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Further fixes for the all workers stuck problem, should occur less. (Not garuanteed to be completely gone sadly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DockingHero can be opened from the game again, linking was broken since 0.20.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further expection fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Autosave seems to be broken, we recommend to turn it completely off in the options for now until we fixed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Freezes. Not really crashes, but the game freezes completely. We investigated it since the 0.20.0 update, but could not reproduce it internally. It happens to a smaller fraction of the player base, but in general makes the current version of the game more unstable.: IF THIS HAPPENS TO YOU: Please send us your log file, wich you can find here: \"C:\\Users\\YOURUSERNAME\\AppData\\LocalLow\\Thera Bytes\\Zombie Cure Lab\": Player.log: You can send it to us via our discord channel or contact us via steam forums.: It would help us greatly to understand when and why freezes can occur.: Until then you can switch to the beta branch \"previous_version\" to play a more stable freeze free Zombie Cure Lab version.: We are sorry for the inconvencies, thank you for your support. We will get things working again soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5229301621595568545"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T21:26:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.836Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.20.2",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.20.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-27T15:43:24.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "With our recent Halloween update 0.20.0 we sadly added new problems to the game, wich originate from bigger technical reworks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Major problem with all workers stopped working adressed with multiple fixes. (This maybe also adresses the workers not shooting at towers problem)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Calming escorting bug fixed where multiple haulers tried to get the same frozen humbie, which led to the humbie being stuck at a calming station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential savegame related problem with worker gadgets (hand attachments like weapons/ pickaxe etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After loading savegame from within the game, some a.i. logic activities were broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Problems",
+     "items": [
+      {
+       "text": "We went through the automatically send crash reports, but we could not reproduce any crashes on several machines. The crash reports were also inconclusive, but hinted towards old hardware being a potential problem (15 year old graphics cards etc.).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are sorry for the new stability problems and this patch only addresses the most critical problems we could identify. Our focus at the moment is to ensure technical stability and eliminate new bugs to ensure that our recent technical changes work well and do not cause more unplayability. So we change our mode to be more responsive to new bugs and improve the current state steadily.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5229301621580121042"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-27T15:43:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.835Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.835Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@4",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-25T15:30:07.000Z",
+   "notes": [
+    {
+     "title": "Performance improvements",
+     "items": [
+      {
+       "text": "Engine version updated (smaller performance boost)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Job system multi-threaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many smaller performance improvements (See detailed patch notes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Memory leak fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Content/ Features",
+     "items": [
+      {
+       "text": "Zombies wearing pumpkin hats (Very scary)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pumpkin decoration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seasonal halloween content (Will automatically switch on from now on between 24.10 and 06.11)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gameplay hints in loading screen (And an actual loading screen where you can see progress and such!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Tutorial easier, steps to avoid some frustration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Very easy mission actually very easy now; Zombies deal almost no damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Difficult mission less difficult. (Elite Zombies were almost unbeatable)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "New loading screen with loading bar and gameplay hints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Treatment chamber now shows status that resources are missing for treatment (Previously only showed when inputs were empty, but requires full inputs to operate)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seasonal content, for the time of 24.10. to 06.11 the game will show Halloween content with Zombies wearing pumpkin hats and more to discover!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New pumpkin deco assets (permanently)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Research tables, data simulators and T4 fridges now show a floating text with what resource they just produced to give better feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When placing a building in invalid location it now creates a floating text explaining why placement was invalid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Difficult mission decreased Zombie damage, more nights without zombies and less damage for elite Zombies to make the mission beatable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tutorial smaller changes to reduce frustration and improve onboarding. Also changed Zombie reduced zombie damage to dealing almost none, to better guarantee that you can’t lose the tutorial. Zombie waves also only start when player has built defenses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Scientists turned into Zombies now carry a lesser weapon to deal less damage (Also affected tutorial difficulty)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "No more boss zombie in tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Snowball shooter T2 and T3 deals a little more damage to tackle high health Zombies that can appear relatively quick in higher difficulty missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Damage effects of Zombies attacking buildings increased in size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced chase speed of Zombies (Was off the charts for some reason)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Very easy mission zombies almost do no damage now, very small decrease left with high threat levels, should now be actually very easy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes/ Improvements",
+     "items": [
+      {
+       "text": "The new engine version, multi-threading and performance improvements were major changes for the game and took quite a while and required lots of testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated engine version which should already improve performance a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Job system now works with multi-threading, reducing CPU bottleneck performance problems. Big bases with lots of workers should see larger performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a memory leak regarding power pole placement, potentially reducing problems with the app occupying to much RAM.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small performance improvements (Reduced number of implicit casts, less character checks, smarter temperature visualization updates, health bars optimized, other)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lazy loading for menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Iron Ore/ Resource pick up problem fixed with resources sometimes not being picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved distance weighing for resource pick up drop off points, choices were to bring gathered resources are weight better with smaller distances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Big music notes bug fixed, reduced scale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem with tree nursery deletion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cure progress option now hidden when antidote progress reached maximum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues/ Problems",
+     "items": [
+      {
+       "text": "We made lots of changes to the technical core of the game, testing the game in every possible way to ensure everything runs stable costs lots of time and there are changes that instability problems will manifest in the late game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PERFORMANCE: Depending on what your bottleneck is, performance might only slightly improve as we mainly tackled CPU and not GPU. Meaning if your graphic card can't handle Zombie Cure Lab, it probably still can't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading old savegames from 0.19.4 is not garuanteed to work, we changed to much logic in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But let us know! We are still in early access and every input helps, savegames and logs fuels our bug solving engine. Write us here in the comments, open a discussion in the steam forums, write an ingame bug report (Good to send savegames and logs and yes we read all of them) or join our discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for hanging around and thanks for any effort you took or will take to help us make Zombie Cure Lab a better game experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 11,
+    "balance": 11,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Engine version updated (smaller performance boost)",
+     "Job system multi-threaded",
+     "Many smaller performance improvements (See detailed patch notes)"
+    ]
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5229301621572795965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-25T15:30:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.835Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.835Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.19.4",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 0.19.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-24T14:30:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sorry for the wait! Here is a new update that tries to fix most annoying problems at the moment in the game. Regarding performance we are first fixing bugs that were also affecting performance before optimizing systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Image: Here are the Zombies eagerly fixing all those bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay/ Balance",
+     "items": [
+      {
+       "text": "Fixed tutorial balancing issues were slower players could face zombies with weapons to early, letting them fail the tutorial potentially. Threat level now reduced to ensure that no zombie weapons can come so quickly anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Angry Humbie level 1 and level 2 no longer mark zones as unsafe as they pose no threat to other workers. This will reduce chaos when alarm is activated and areas are safe for longer, keeping workers at their work stations and towers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced needs and moods of all workers to counter mood downwards spiral when you have food problems. Low needs cause less mood penalty and give you more time before humbies turn angry. Needs that are in the yellow also give less mood penalty, that other low needs still in the green give a small mood boost in total.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Zombies will now move through frozen zombies like workers already did, this will make it easier for Zombies to attack your fence. (It was pretty buggy before with Zombie pathing not handling frozen Zombies very well and being constantly stuck. This change may make some waves harder to deal with)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Humbies now keep their name during treatment. (Zombie spawns with a random name, through all treatments name will be kept now, when you rename the character the new name will be kept)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved a.i. pathing logic eliminating the chance that characters teleport through fences on low frame rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved worker overshooting their path problem (On high game speed and fast paths, characters would shoot out of paths and get stuck on walls temporarily).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved gate placement, can place them more freely and also partially on fence corners. Fixed blueprint placement issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved wall and general upgrade logic and fixed an issue (Issuing delete, cancels upgrade and vice versa and other smaller changes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game now tells you when it is still saving and thereby hinders players to quit to quickly before saving was finished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a prominent time freeze bug that happend for some players more frequently and could make the game unplayable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Iron veins and stone quarry spots can no longer be blocked from other hills in front, spawning changed to guarantee that all iron mine and stone quarry slots at map border stay free and cannot be blocked anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed annoying gigantic greenhouse II air effect and potentially the same for a music effect bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Melted frozen zombies properly attack again and do not run against walls in cold storage rooms anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential issues with snowball shooters and targeting to ensure they don't get stuck and stop shooting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sleeping pods and calming stations (need satisfiers) now interrupt workers using them when they do not have power anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Destroyed hiding lockers now properly release workers (not stuck anymore) and have been balanced to cost less and have way more health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential memory leak with tree spawning effects (May caused lag for some players)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Base threat level now saves correctly, could lead to different threat levels after loading a savegame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an potential issue with towers causing errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can place fishbowl decoration now, before made worker stuck due to missing materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with flower decorations and rubble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Guards won’t respond anymore if all marked hostiles are unreachable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed loading screen temporarily without roadmap (see discord announcement) and a static gameplay hint, we already reworked loading entirely which will change the screen again in a future update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "A memory leak regarding power pole placement can cause severe performance issues, we already fixed it for a future version, but it is still present in this one. It is caused by being In power pole placement mode and having objects that require energy, constantly increasing your ram. Restarting the application and loading a savegame should help to reduce the problem until we deploy the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Future Updates",
+     "items": [
+      {
+       "text": "In this annoucements we were talking about the state of the project, Discord Annoucement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Summarized, we work with less people on the project now and are developing a console port that will in parallel improve PC version onboarding and mainly performance. Our goal is to keep the core experience of Zombie Cure Lab and just make it bug free, performant and more friendly for new players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we are far from dead, we are just slower, thanks for sticking around so far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 14,
+    "balance": 4,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5141475722327302803"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-24T14:30:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.833Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.833Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@3",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-05T10:31:46.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Build four different type of roads: Roads modify the movement speed of your workers and are good to improve the efficiency of your economy and optimize the pathways, workers will prefer to walk on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Experience a reworked endgame with new mutated Zombie types: After threat level 50 new Zombie types appear that are very hard to freeze, but mainly get superior weapons that are able to crush your tech four gates. This will make your goal to cure humans a bit more interesting and mainly extends how long you can play the game before you face the strongest Zombies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decorative Items for the outdoors of your lab: Just a little treat to invest time in making your lab look nice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Version 0.19.2",
+     "items": [
+      {
+       "text": "Roads! You can now build four different path ways, one for each tier level.: Paths can be drawn like fences, they give your workers bonus movement speed and will be preferred by them to walk on. Use paths to build connections to further away resource harvesting spots and optimize your layout.: Paths can not be clicked once build, delete them with the delete tool. Drawing a higher level path over an existing lower level one counts as an upgrade.: Paths can be build on walkable areas, meaning through gates and through the main storage middle path, so you can build them closer to objects and have more freedom for placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The whole endgame has been rebalanced and five new mutated Zombies with new weapons will spawn past threat level 50 to make the last part of the game more interesting and give Zombies a chances to breach through your ten times layered tier four gates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outdoor decoration assets have been added that look nice together with your roads. (The street lamps will light red with the lab alarm)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new hunter boss has been added for normal and hard difficulty. At night 15 a hunter boss appears that is very fast and will hunt down Humbie Level 1s. He quickly can make it through weak gates and workers cant escape a fight with him unharmed. (Hunter has placeholder art at the moment and is only playable in the normal and hard mission.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refill threshold are now respected in all scenarios, an ice pack press close to a freezer tower will only be emptied to refill the freezer tower when it has producer over its take out thresholds. (This was not the case before and could lead to defense towers being constantly refilled with only 1 ice pack).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now have additional objectives to send back x cured humans to “win” a mission. A base threat value is added once you cure your first human, which brings you into the endgame, facing more difficult zombies in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10+ new Zombie weapons added. Where the strongest possible Zombie weapon to spawn could deal 800 damage, the now strongest weapon can deal 10000 damage, giving the Zombies room to grow stronger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced economy, build costs, resource gather rates and tier 4 research costs to counter various problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vegetable patches contain half vegetables, Meat growers require more vegetables to grow meat, greenhouses and planters produce less vegetables. Make it harder to sustain worker population with food only affecting vegetable resource type, not necessarily harder to make meat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most tier 4 objects research costs increased by ~50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various build costs increased, mainly T4 objects, endgame objects require more metal and tech.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Research Tier 2 walls, gates and fences now costs more stone (300 each). Stone costs was increased in general for some buildings, especially tier 3 fences and gates and starting furnaces to make stone crusher a less feasible option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Treatment across all treatment chambers more expensive, takes partially a bit longer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Especially treatment 1 for Humbie Level 1 now costs 40 glowberries instead of 10, making it way more costly to get lots of Humbies. A focused berry production or gather expeditions are necessary to ramp up your worker population.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lab Size threat generation a bit more over 2000 lab size, all missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An extra normal mission elite wave added, little less monotonous zombie wave spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some need satisfying objects now consume power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PCs need satisfier statistics rebalanced, should be more useful now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better need satisfier objects, higher tiers way more expensive to build (It is a bit harder now to supply your workers with the best equipment for sleeping, training, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slight footprint changes for T3 Humbie 3 treatment, better to place next to wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tank Boss now has way less health and little more damage, making it a bit more offense instead of a damage sponge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the endgame the zombie wave damage increases quicker, past threat 50, making it harder in the endgame to defend against the new mutant Zombies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harvest speed decreased by ~30-40% for all resources. It now is slower to gain lumber from trees, stone from rocks etc. This is mainly done to counter the huge humbie 1 workforces player can have in tier 2, tier 3 combined with harvest amount boni and Humbie Level 1 not needing to return at night.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zombie chasing and fighting workers overhauled. In general zombies are a bit more responsive and can jump quicker from fight to fight, creating new Zombies. Humbies have a higher chance to escape fights unharmed then humans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting from Artic Zombies (~Threat 40), zombies have a different behavior, starting to hunt Humbie Level 1 again, able to quickly create new Zombies. This is to change the endgame difficulty and make Humbie Level 1 less powerful in the end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zombies spawned from workers (Humbie Zombies) now have weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guards from Tier 2 now do double damage, else they have no chance against Zombies past threat 15, which also makes it now easier to contain frozen Zombies escaping from their storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frozen Zombie storage footprint changed to a general 2x2, one wall side was removed. You can now upgrade from the first storage to the last.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Power cables won't stay in the air anymore after deleting/ moving/ repairing power poles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A bug fixed where landing zone was not buildable at the start of the game anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game over state works again, was broken could not lose anymore. Only lose game option is now that main storage gets destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Humbie3 Zombie version, fixed backpack material missing in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ice hockey Zombie scaling, was smaller then intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Humbie 1 now has correct sleeping pod sleep animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Kown Issues",
+     "items": [
+      {
+       "text": "WARNING: YOUR OLD SAVE GAMES WILL LIKELY BE CORRUPTED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The sum of the changes will make it probably impossible to load old savegames and even if it works, they probably be corrupted. We will set the 0.18.0 Version as its own beta branch that you can continue to play the old version if preferred.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On high gamespeeds and latest paths workers can slide out of curves, which requires them to make path connections, making them inefficient in reaching their target again. We are on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In regards to performance optimization we want to dig deep into the game and will soon right an bigger news post about what our plans are.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 1,
+    "other": 34,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5138087875082709045"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-05T10:31:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.832Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.832Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.17.8",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.17.8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-24T20:09:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With 0.17.7 we accidentally added the new community translated languages, but something was stlll broke, so we decided to quickly fix that and give you three new languages for our game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to our hardworking community that is using Crowdin (Check our discord to learn how to help translate our game) we now have added Thai, Japanese and Hungarian wich you can choose in the settings and change anytime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Those languages are partially translated and by picking them in the settings a warning appears that some parts might still be missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Japanese is almost fully translated, closely followed by Hungarian and Thai.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5059268543361583498"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-24T20:09:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.830Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.830Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.17.7",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Patch 0.17.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-24T13:49:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have a longer list of small balance improvements and few important bug fixes for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In parallel we are working on the next major update, stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing/ Tweaks",
+     "items": [
+      {
+       "text": "Early zombies have less health, takes more time until higher health Zombies appear. Balanced for all missions. Takes a bit higher threat levels until the late zombie types appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Humbie Level 1 do not flee from Zombies anymore and do not get attacked. Gives you new possibilities to utilize them. Humbie Level 2 also do not get attacked, but flee from Zombies. We are curious about your feedback here, felt very good while testing and opened up lots of possbilities.: We had the problem that Zombies within your base are painful to handle and the fleeing behavior they trigger can get your lab to a stand still, this problem grew with the added frozen zombie storages and unfrozen Zombies now in your base, having Humbie Level 1 do repairs and still able to interact helps a lot to counteract those problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Humbie Level 3 attacking doors changed to deal 1000 extra damage instead of instantly opening doors and giving them the broken state flag. Makes high tier doors more valueable against angry humbie level 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tank boss now uses zombie attack behavior, making it more reliable that he attacks at the same front as the other zombies. Has less chance to attack the main storage and attacks gates for longer before choosing a new target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A more stepless smoother camera zoom without a threshold to overcome for that final zoom out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Camera field of view stays at 53 now instead ranging from 52 to 100.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Resource camps give less lumber harvesting bonus on later levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fences and walls do not have broken status icons anymore. Trees and gatherables do not have can't be accessed status icons anymore. Reduces object status icon spam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Furnace I and II +20% metal output to make early metal production a bit easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Humbie Level 1 get hungry a little slower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Meat Grower I now produces one meat every 50 seconds instead of 75, which roughly translates into 18 meat per day instead of 10, accounting for down times. Necessary change to make Humbie Level 1 operated meat grower with less output more feasible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Grills now require lumber to produce grilled meat, at least for tier 2 and 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed can't save problem in late game, fixing a problem with resource tracking data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chemical Extractor footprint fixed, there was a hole were workers could get stuck at",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Main storage I footprint now matches other storage tier footprints, may reduce worker at main storage stuck problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing references bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading a savegame exceptions bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 12,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5059268543360623118"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-24T13:49:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.829Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.830Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@major-2023-02-13",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Docking Hero | Status Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-13T13:30:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks to your participation in Docking Hero, the first data set is already 90% complete with 1,652,018 calculations. It will be made available to the university shortly. Thank you all very much! 💛",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The next data set will increase the accuracy with more calculations in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of course, thanks to your support, a lot of in-game content has already been unlocked for all players as well, including the decorative objects \"Cat Wall Picture\", \"Sunflower\", \"Cactus\" and \"Decorative Lava Lamp Table\", the mission \"Impossible Defense\" and the \"Stone Crusher\" machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outlook: The \"Wreckage Only\" and \"Lone Survivor\" bonus missions are currently half unlocked - so keep calculating! 💪",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5036749277244121568"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-13T13:30:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.829Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.829Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.17.6",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.17.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-03T16:39:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 0.17.6 is live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you have a real alternative to your ice pack production with some cool new freezers spawning over all tech-tiers. We also fixed some bugs and worked on various balancing topics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features/ Content",
+     "items": [
+      {
+       "text": "Added missing freezer upgrade chain that produces ice packs for tier two, three and extra tier four upgrade where the resources directly go into your global pool without requiring a hauler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tooltips of buildings now show their hitpoints to make them easier comparable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Boss damage dampener added that lets his damage grow slower relative to the threat value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Missions build up less ~20% less threat over time by duration to slow down threat growth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Walls more hitpoints then fences now, but still more expensive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Frost nova damage increased for tier upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Humbie Level 2 and Level 3 production and defence ability reduced to counter too quick end game economy growth. (Humbie 2 150% -> 125%; Humbie 3 200% -> 150% production bonus)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Sound issues fixed, no more annoying upgrade sound for fences. Blizzard contraption II should no longer constantly play its attack sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Freeze Traps effect only triggered by hostiles, not workers anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss is not getting hauled anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Research objectives in tutorial shows in which category it can be found",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Air Conditioners, frozen zombie storages and guards buffed in damage to make it possible to deal with zombie outbreaks in cooling chambers and keep them more easily frozen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 5,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5035622743884124087"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-03T16:39:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.828Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.17.3",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Hotfix 0.17.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-23T21:14:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The recently added boss could lead to very difficult and unexpected situations were his AOE damage quickly destroyed defences, especially on easier missions he was still to hard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss zombie difficulty reduced. Does not spawn on very easy mission anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage and health scaling greatly reduced, more than 50% reduced. Different settings for each difficulty mission. Is in general way easier to deal with, but has a few zombies coming with him to keep the boss waves interesting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss appears every 20 nights on easy mission instead of previous 18.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Melt speed increased greatly, before he could take multiple days to melt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the mission info texts accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tower health greatly increased to avoid on hit destruction, especially freeze towers are really bulky now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss can not be put into frozen zombie storage anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using tools to draw areas include the starting tile now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automatic smeltery missing material lead to not buildable bug is fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5035621474426777549"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-23T21:14:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.828Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@post-2022-12-22",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Quickfix Hard Mission",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-12-22T17:04:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A typo for the hard mission lead to the appearance of 200 zombies, should now be fixed to the intended 20 at that point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5000716037442977923"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-22T17:04:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.826Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.15.19",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 0.15.19",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-12-22T15:31:05.000Z",
+   "notes": [
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "All towers buffed by roughly ~50% damage to make it easier to freeze Zombies again, requires less towers again to deal with zombie waves. Since patch 0.15.14 the towers have been buffed twice to account for recent changes, also with focus on the multi target towers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All missions have more weak zombie waves, those have more zombies but lower health to make easy to freeze rounds and gain workers quickly if well prepared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All mission threat gain by mission duration, reduced by ~20%, the spikes with 50 days + even more reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Humbie Level 1s do not cause other workers to flee anymore, this helps greatly to deal with constant outbreaks, because now your workers do not constantly abort important jobs like repairing caused by fleeing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Zombie day behavior, less attacks on objects before rethinking what they do, making them more reactive to opened gates and they should leave quicker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Wreckage Only reward mission that can be unlocked via the worldmap was rebalanced completely, should be a fun twist how to play ZCL. No trees and food, just car wrecks to start with, from the start low health, but max damage Zombies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Threat level was increasing at constant pace similar for each worker type, added that after 40 workers for each type, threat increases quicker. This is a temporary solution to slow down population increase for high population, brining in stronger Zombie waves if greedy with workers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Newly balanced sandbox mission got own waves that have no large zombie waves attacking. If you want a relaxed ZCL experience, the sandbox mission is your place to be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Grilled meat on pile looked to big, fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where time was stuck and not progressing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance bug fixed (Stuck Zombies causing very low performance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 8,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5000716037442741452"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-22T15:31:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.824Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@0.15.14",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Patch 0.15.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-21T14:47:11.000Z",
+   "notes": [
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Zombies can take way more hits now, health range times ten to make room for more towers and new damage balancing. Goal is that players need to build more towers early on and it gets a bit harder to freeze lots of Zombies or complete waves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Humbie Level 1 and Level 2 can now use defenses, Level 1 humbie dealing only 75% damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Threat value more mission duration and lab size dependent, especially in normal and hard mission. Will be way harder to reach day 50, 60 and beyond. Worker population have a fix threat gain value per worker. Every 10 days threat levels spike even more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Easy and very easy mission threat grows way slower to give room for slower play style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You can play the sandbox mission now to have a relaxed ZCL experience where the zombie damage does not really grow much and the threat value neither.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "FASTER GAME SPEEDS, can be set up to 3x instead of previously 2x",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Workers move ~30% faster, goal was to change game pacing especially for the early phase, overall you should be able to progress quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Missing production buildings like grill and meat growers now also have the storage tags, their input and output storage will be accounted for by nearby producers. In other words, produced meat would directly go to the grill and not the main storage first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Science room machines moved to science tech-tree category",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a T1 fridge that produces ice packs very slowly for electricity as an alternate ice pack production to play around with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bellow Breezer produces little more ice packs per hour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Feeding pile 1 and 2 have more capacity for meat, stacks may look a bit nicer now. (Please report if this creates savegame problems)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Default auto repair threshold increased from 70% to 90%, important for new players that do not now of this feature, you can change this value however you like.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Repair cost even further reduced from 25% to 15% that players with large destruction have a better chance to recover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sleeping Pod T3 a bit better, minor value tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Treatment training requirement for humbie levels unified to three. Humbie Level 3 only needs to train three times instead of five, greatly reduced the time until he is ready for treatment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Ui/ Feature",
+     "items": [
+      {
+       "text": "Nicer storage amount ui in info boxes, sliders for refill/ take out thresholds more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved look of resource icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Easier savegame deletion in save screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Worked on final CrowdIn integration (see localization channels)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Queued need jobs fix where workers sometimes would not abort jobs for needs (Mainly wood cutting)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Humbies at feeding piles would cancel before finish eating leading too satisfiying less then 30% and making it difficult to produce enough meat for humbies especially when there is already none and their needs are vey low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Worldmap even reward sunflowers bug fixed, can now be researched after unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Sound",
+     "items": [
+      {
+       "text": "Fixed sound bugs, many tweaks and new sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Game speed tooltip still shows slower speeds, but it is actually 3x speed on highest now believe me!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grilled meat on feeding piles looks bigger then raw meat on other feeding piles (What really matters)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 16,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Nicer storage amount ui in info boxes, sliders for refill/ take out thresholds more visible",
+     "Improved look of resource icons",
+     "Easier savegame deletion in save screen"
+    ]
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/5000716037438984471"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-21T14:47:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:54.824Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@2",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-16T19:15:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We just released Version 0.15.14 on the beta branch as a larger balancing update. 3x highest game speed instead of the previous 2x, workers move faster, all humbies can use defense towers, a new fridge that produces ice packs ad much more to improve the pacing of the earlier phases of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If that is not enough we are currently working on a cooling chamber as a new room type with frozen zombie storage ❄️ units and adding the mines and quarries as a larger next update. So stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The beta branch is accessible to anyone and helps us test an update before we make it an official update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you don't know how to switch branches in Steam at all, do the following:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right-click on the game in your library, and click Properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select the Betas tab, and select the branch you want to switch to. Then click OK.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Zombies can take way more hits now, health range times ten to make room for more towers and new damage balancing. The goal is that players need to build more towers early on and it gets a bit harder to freeze lots of Zombies or complete waves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Humbie Level 1 and Level 2 can now use defenses, Level 1 humbie dealing only 75% damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Threat value is more mission duration and lab size dependent, especially in normal and hard missions. Will be way harder to reach day 50, 60 and beyond. The worker population has a fix threat gain value per worker. Every 10 days threat levels spike even more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Easy and very easy mission threat grows way slower to give room for a slower play style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You can play the sandbox mission now to have a relaxed ZCL experience where the zombie damage does not really grow much and the threat value neither.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "FASTER GAME SPEEDS, can be set up to 3x instead of previously 2x",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Workers move ~30% faster, goal was to change game pacing, especially for the early phase, overall you should be able to progress quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Missing production buildings like grill and meat growers now also have storage tags, their input and output storage will be accounted for by nearby producers. In other words, produced meat would directly go to the grill and not the main storage first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Science room machines moved to the science tech tree category",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a T1 fridge that produces ice packs very slowly for electricity as an alternate ice pack production to play around with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bellow Breezer produces little more ice packs per hour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Feeding piles 1 and 2 have more capacity for meat, stacks may look a bit nicer now. (Please report if this creates savegame problems)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Default auto repair threshold increased from 70% to 90%, important for new players that do not know of this feature, you can change this value however you like.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Repair costs are even further reduced from 25% to 15% and players with large destruction have a better chance to recover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sleeping Pod T3 a bit better, minor value tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Treatment training requirement for humbie levels unified to three. Humbie Level 3 only needs to train three times instead of five, which greatly reduced the time until he is ready for treatment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Ui/ Feature",
+     "items": [
+      {
+       "text": "Nicer storage amount UI in info boxes, sliders for refill/ take out thresholds more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved look of resource icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Easier savegame deletion in the save screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Worked on final CrowdIn integration (see localization channels)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Queued need jobs fix where workers sometimes would not abort jobs for needs (Mainly wood cutting)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Humbies at feeding piles would cancel before finishing eating leading to satisfying less than 30% and making it difficult to produce enough meat for humbies especially when there is already none and their needs are very low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Worldmap even reward sunflowers bug fixed, can now be researched after unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Sound",
+     "items": [
+      {
+       "text": "Fixed sound bugs, many tweaks and new sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Game speed tooltip still shows slower speeds, but it is actually 3x speed on highest now believe me!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grilled meat on feeding piles looks bigger than raw meat on other feeding piles (What really matters)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 16,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Nicer storage amount UI in info boxes, sliders for refill/ take out thresholds more visible",
+     "Improved look of resource icons",
+     "Easier savegame deletion in the save screen"
+    ]
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/1794830911035842"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-25T14:59:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.841Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-13T03:36:54.823Z"
+  },
+  {
+   "id": "zombie-cure-lab-165153@1",
+   "gameId": "zombie-cure-lab-165153",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-09T20:07:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Major Update 1 is online! Look forward to a new mutated tank boss zombie, main storage novas to quickly help you get out of dicey situations and upgraded resource camp tools. Enjoy playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss zombie attacks, can you survive his mighty splash damage?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resource tracking and statistics screen, analyze how much your workers eat and your machines produce!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rename your workers and buildings (Small pencil icon top right when something is selected)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main Storage nova ability, charge mighty novas that freeze lots of zombies at once, repair most of your base or make your workers temporarly happy. Upgrades with each tech tier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Input settings, setup your hotkeys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooling chamber, store your frozen Zombies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infinite iron ore and stone at tier 4 with mine and quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resource camp upgrades cool new tools that make resource gathering faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Predecessor zombies, if your workers get eaten, you can see that the new zombies were your workers!: Detailed Patch Notes: 0.15.2 to 0.17.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Tank Boss added to all missions besides sandbox mission. Appears every 10 to 30 nights depending on selected difficulty mission. Tank boss deals AOE damage with each attack, can’t be treated and not be target by Guards. A wave freeze status shows up at the top showing your total freeze progress of the current attack wave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The boss spawns in a specific tunnel (New train tunnel asset), a icon top of the tunnel and a cooldown shows from where he appears. Two days ahead an boss icon appears at the timeline warning you of his appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Main storage has nova abilities, a cooldown charges the abilities over the course of several days. The cooldown can be shortened with a boost that costs additional electricity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decide between one of the three nova abilities, frost nova, repair nova or mood nova. The nova spreads from the main storage in a certain radius with a maximum range and hits targets along its way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The frost nova freezes hostiles, the repair nova restores your damaged buildings, the mood nova makes your workers happy again and even replenishes your needs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "With each tech tier research the nova become stronger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resource camps upgrades lets your workers use better tools that improve their harvest abilities, good for far away resource camps to quickly get resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resources are tracked now, and you can see where they went, where they came from and how many are where. The system differentiate between main storage, interim storage, on the ground and carried. You can see those storages in the resource tooltips and the new statistics screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In the statistics screen you can choose the time frame you want to look at and check how much food got eaten, how much wood was spent on building, how much is laying on the ground etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can see trends how your resources are changing, giving you hints that meat is slowly running out or that you are actually producing good quantities of ice packs in the last x hours/ days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "WIP: The statistics screen is fairly new and we are still adding things to it like graphs and more detailed information. A productivity rating for buildings is planned as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Renaming workers and buildings, little pencil icon top right in the info boxes of selected objects and characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Predecessors zombies, a humbie attacked by a zombie, becoming a zombie now looks like a zombie that was a humbie. Confusing but makes sense when you see it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The mines and quarries from beta are now improved and added. Endless iron ore and stone at tier 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The cooling chamber introduces frozen zombie storages that basically work like towers, they apply damage to the stored frozen zombie brought by haulers. Weaker zombies have low melt speeds and can be kept frozen infinitely or longer, build better storages to keep strong frozen zombies frozen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weak attack waves appear more frequent and have more zombies, but lower health to give you changes to store lots of frozen zombies and keep them for bad times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Air conditioners can be placed in cooling chambers to prolong the cooling effect, they only require electricity to freeze. (Don’t mind the 0 ice pack cost tooltip)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing/ Improvements",
+     "items": [
+      {
+       "text": "Tutorial smaller text changes to explain some important features a bit more clearly, mainly visible in englisch loca now until translated into other languages (Join our crowdin loca team if you want to help with that)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Balancing changes mainly revolving around new boss and cooling chamber features, like mentioned with the weak attack waves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a humbie only sniper tower, has a longe range and needs to be refilled after one shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Things mainly behind fences and walls should be a bit easier to select now, match colliders for selection with visual mesh for some objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "No more sound explosion when loading games (Tech-tree initial unlocked research triggered lots of sfx previously)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moving blueprint doors do not cause gaps in the walls anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many bug fixes related to the new features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some time freeze/ won’t progress bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Guards have faces again after loading a savegame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ice hockey zombie and in general zombies with high melt speeds should not continue to melt during a paused game anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Zombies targeted during the day won’t warm up/ recover hp for 10 seconds, meaning you can more easily freeze zombies with guards and in general during the day, before you had to freeze against their hp regeneration rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many visual bugs addressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few sound bugs fixed, off synch effects with higher new gamespeed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Frozen zombies teleporting away when placed in frozen zombie storage or treatment chamber was fixed (from beta)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Timeline events icon disappear fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unlocked reward mission have proper description now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "It can rarely happen that by moving the resource camps workers to not harvest anymore resources, if that happens move the resource camp again that should usually fix it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 12,
+    "balance": 4,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1620290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1620290/view/4980448574113308606"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-09T20:07:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1620290",
+      "checkedAt": "2026-11-13T03:36:54.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-13T03:36:54.827Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "8ed098bc55cb",
+   "text": "It can rarely happen that by moving the resource camps workers to not harvest anymore resources, if that happens move the resource camp again that should usually fix it",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@1"
+  },
+  {
+   "id": "80f07086f97a",
+   "text": "Game speed tooltip still shows slower speeds, but it is actually 3x speed on highest now believe me!",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@2"
+  },
+  {
+   "id": "6a914a692c58",
+   "text": "Grilled meat on feeding piles looks bigger than raw meat on other feeding piles (What really matters)",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@2"
+  },
+  {
+   "id": "1e295463677c",
+   "text": "Grilled meat on feeding piles looks bigger then raw meat on other feeding piles (What really matters)",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.15.14"
+  },
+  {
+   "id": "3393fc13462a",
+   "text": "A memory leak regarding power pole placement can cause severe performance issues, we already fixed it for a future version, but it is still present in this one. It is caused by being In power pole placement mode and having objects that require energy, constantly increasing your ram. Restarting the application and loading a savegame should help to reduce the problem until we deploy the next update.",
+   "status": "addressed",
+   "firstReleaseId": "zombie-cure-lab-165153@0.19.4",
+   "addressedBy": "zombie-cure-lab-165153@4",
+   "addressedAt": "2023-10-25T15:30:07.000Z"
+  },
+  {
+   "id": "13e6b873caa4",
+   "text": "We made lots of changes to the technical core of the game, testing the game in every possible way to ensure everything runs stable costs lots of time and there are changes that instability problems will manifest in the late game.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@4"
+  },
+  {
+   "id": "55dad128ca9d",
+   "text": "PERFORMANCE: Depending on what your bottleneck is, performance might only slightly improve as we mainly tackled CPU and not GPU. Meaning if your graphic card can't handle Zombie Cure Lab, it probably still can't.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@4"
+  },
+  {
+   "id": "52112cd240f2",
+   "text": "Loading old savegames from 0.19.4 is not garuanteed to work, we changed to much logic in the game.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@4"
+  },
+  {
+   "id": "523fdc92ef3e",
+   "text": "But let us know! We are still in early access and every input helps, savegames and logs fuels our bug solving engine. Write us here in the comments, open a discussion in the steam forums, write an ingame bug report (Good to send savegames and logs and yes we read all of them) or join our discord!",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@4"
+  },
+  {
+   "id": "1fa910afd44e",
+   "text": "Thanks for hanging around and thanks for any effort you took or will take to help us make Zombie Cure Lab a better game experience!",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@4"
+  },
+  {
+   "id": "81a31b00d2f7",
+   "text": "We went through the automatically send crash reports, but we could not reproduce any crashes on several machines. The crash reports were also inconclusive, but hinted towards old hardware being a potential problem (15 year old graphics cards etc.).",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.20.2"
+  },
+  {
+   "id": "fa09e112d320",
+   "text": "We are sorry for the new stability problems and this patch only addresses the most critical problems we could identify. Our focus at the moment is to ensure technical stability and eliminate new bugs to ensure that our recent technical changes work well and do not cause more unplayability. So we change our mode to be more responsive to new bugs and improve the current state steadily.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.20.2"
+  },
+  {
+   "id": "14981a1a676e",
+   "text": "Autosave seems to be broken, we recommend to turn it completely off in the options for now until we fixed it.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.20.3"
+  },
+  {
+   "id": "64db9a18cf82",
+   "text": "Freezes. Not really crashes, but the game freezes completely. We investigated it since the 0.20.0 update, but could not reproduce it internally. It happens to a smaller fraction of the player base, but in general makes the current version of the game more unstable.: IF THIS HAPPENS TO YOU: Please send us your log file, wich you can find here: \"C:\\Users\\YOURUSERNAME\\AppData\\LocalLow\\Thera Bytes\\Zombie Cure Lab\": Player.log: You can send it to us via our discord channel or contact us via steam forums.: It would help us greatly to understand when and why freezes can occur.: Until then you can switch to the beta branch \"previous_version\" to play a more stable freeze free Zombie Cure Lab version.: We are sorry for the inconvencies, thank you for your support. We will get things working again soon.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.20.3"
+  },
+  {
+   "id": "065f0023b298",
+   "text": "The annoying blizzard contraption sound bug is not fully gone, but it appears less now. We will try to fix with the next update.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.20.7"
+  },
+  {
+   "id": "855b9291c0ca",
+   "text": "Frozen Zombie storage seems still go get stuck after a frozen Zombie is transported to treatment. Disabling and enabling can be used as a workaround for now. We will address this soon.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.20.8"
+  },
+  {
+   "id": "519f541789c9",
+   "text": "Unsure how the new tech tree buildings grilled meat printer and berry freezer will affect savegames.",
+   "status": "open",
+   "firstReleaseId": "zombie-cure-lab-165153@0.21.5"
+  }
+ ]
+}

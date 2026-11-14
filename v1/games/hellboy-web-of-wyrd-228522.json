@@ -1,0 +1,351 @@
+{
+ "game": {
+  "id": "hellboy-web-of-wyrd-228522",
+  "igdbId": 228522,
+  "name": "Hellboy: Web of Wyrd",
+  "cover": {
+   "imageId": "co5va2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5va2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar21rq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar21rq.jpg"
+  },
+  "ps5Release": "2023-10-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hellboy-web-of-wyrd-228522@1.0.5",
+   "gameId": "hellboy-web-of-wyrd-228522",
+   "displayName": "Update 1.0.5",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-02T16:54:13.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Boss blessings now unlock when reaching a level rather than completing it, giving more build variety earlier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "QoL",
+     "items": [
+      {
+       "text": "Upgrade menu text has been made more readable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prompts now display for longer (unless dismissed) to give more reading time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Enemy's sometimes taking damage while blocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrectly positioned enemy pre-attack warning effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor graphical glitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple locking room issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy animation issue causing them to sometimes slide when blocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2160480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2160480/view/5288974951207084963"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-02T16:54:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2160480",
+      "checkedAt": "2026-11-13T03:22:41.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-02T16:54:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2160480",
+      "checkedAt": "2026-11-13T03:22:41.600Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-02T16:54:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.099Z"
+  },
+  {
+   "id": "hellboy-web-of-wyrd-228522@1.0.4",
+   "gameId": "hellboy-web-of-wyrd-228522",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-26T16:28:16.000Z",
+   "notes": [
+    {
+     "title": "1.0.4 Patch Notes",
+     "items": [
+      {
+       "text": "Update default key bindings for mouse and keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Making sure new keybindings save properly between game sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Changing lock-on camera sensitivity for mouse and keyboard players to decrease accidental target switching, now proportional to mouse sensitivity.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Decreasing input buffer from 0.5 seconds to 0.3seconds to reduce lag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabling Steam Cloud Sync for save files.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixing enemy spawn issue with walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adding an enable/disable toggle for Hellboy's stylized walk cycle animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other bugs relating to lock on and animation clean ups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to Knife charm's teleportation distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for menu navigation with \"Game Options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Certain enemy special attacks now break lock on as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can hold 2 big keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional safety checks in procedural generation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes to increase the overall difficulty curve",
+     "items": [
+      {
+       "text": "Heavy attack & Breakable Damage Increased for Act 2 and 3 enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cooldown decreased for Intermediate, Advance & Expert Big Bads to make them more active while in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Behaviour Tree Update - Cooldown starts at the end of the attack state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cheap attack have been made quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bat Swarm and Toxic Attack does more Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cheap Attacks have been rolled into Big Bad attack combos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New Combo Attack variants have been added to some Big Bads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Health, Toughness and Stun adjusted for some Big Bads (Spike Boar, Fox, Swarming Bat, Albino Bat, Flying Bat and Crawler)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 8,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2160480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2160480/view/5229301621576588400"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T16:28:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2160480",
+      "checkedAt": "2026-11-13T03:22:41.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T16:28:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2160480",
+      "checkedAt": "2026-11-13T03:22:41.600Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-26T16:28:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.098Z"
+  }
+ ],
+ "issues": []
+}

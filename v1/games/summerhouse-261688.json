@@ -1,0 +1,225 @@
+{
+ "game": {
+  "id": "summerhouse-261688",
+  "igdbId": 261688,
+  "name": "Summerhouse",
+  "cover": {
+   "imageId": "co7ws1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7ws1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2gmv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2gmv.jpg"
+  },
+  "ps5Release": "2026-05-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "summerhouse-261688@hotfix-2024-03-09",
+   "gameId": "summerhouse-261688",
+   "displayName": "Hotfix for resolution bug",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-09T23:08:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "There was a bug that caused the game to switch to an unplayable 1x1px resolution on changing any settings. This should fix it. Please let me know if the issue persists for anyone! Thanks for your support and being patient!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2533960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2533960/view/5679673637660960474"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-09T23:08:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-2533960",
+      "checkedAt": "2026-11-12T15:39:52.100Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:52.100Z"
+  },
+  {
+   "id": "summerhouse-261688@major-2023-12-20",
+   "gameId": "summerhouse-261688",
+   "displayName": "Thank You & Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-20T11:40:13.000Z",
+   "notes": [
+    {
+     "title": "Hello there, fellow architects!",
+     "items": [
+      {
+       "text": "First of all: Thank you so much for the amazing response to this demo so far. I'm overwhelmed by how many of you have shared their amazing creations with me and have taken time to write feedback and suggestions. Honestly: Thank you so much, you make this whole process worth all the effort!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm excited to share with you the first major update for the SUMMERHOUSE demo! This update is a blend of your suggestions and some bug fixes, that will hopefully make your time with SUMMERHOUSE even more enjoyable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Eye-dropper tool: Press \"i\" or hold \"alt\" or \"shift\" on your keyboard to quickly pick a building block that you've placed before.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reworked Placement Gridl: Many of you have asked for the ability to place smaller objects in finer increments. I've reworked the placement system to allow for exactly that: the smaller an object is, that finer the grid you place it on. Those annoying mailboxes should be a lot more fun to place now <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life Improvements",
+     "items": [
+      {
+       "text": "Flip Shortcut: Press \"F\" to flip blocks horizontally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolution Confirm Check: Added a safety check when resolution is changed in the settings to ensure the game doesn't get stuck in a non-supported resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Error Log Button: Added button to the settings menu that opens the local directory of the game's error log which is very useful when reporting bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Toggle for Draggable Camera: A lot of you have reported that the draggable camera gets in your way more than it helps. So it's now toggled off by default and you can only move the camera with WASD or the arrow keys. For those who enjoyed it, there's a toggle in the settings to turn it back on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Resolution Fixes: There are some problems with the game's resolution picking dialog. I've fixed an issue where the dialog was displaying unsupported resolutions and ordering them in the wrong way. Still working on other issues that have been reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reset Settings: Pressing the \"Reset Settings\" button in the settings menu would in some cases not reset them properly, that should be fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scroll Wheel Speed: Fixed slow scroll wheel speed on Windows.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Keep building and sharing those dreamy summer retreats, it's been so exciting to see them! And please keep the suggestions, feedback and bug reports coming, I'm working hard to make the game the best it can be for the full release and every bit of feedback is very valuable to me.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Friedemann",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2533960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2533960/view/5410576585126081971"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-20T11:40:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2533960",
+      "checkedAt": "2026-11-12T15:39:52.099Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:52.099Z"
+  }
+ ],
+ "issues": []
+}

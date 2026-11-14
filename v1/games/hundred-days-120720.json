@@ -1,0 +1,3296 @@
+{
+ "game": {
+  "id": "hundred-days-120720",
+  "igdbId": 120720,
+  "name": "Hundred Days",
+  "cover": {
+   "imageId": "co5yvh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5yvh.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arjbd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arjbd.jpg"
+  },
+  "ps5Release": "2022-03-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hundred-days-120720@1.8.4",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.8.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-29T13:53:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow winemakers! 🍇",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We needed a bit of time (and a lot of deep testing) after porting Hundred Days – Winemaking Simulator to Unity 6!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This upgrade was crucial to address important security concerns and to ensure we can continue supporting the game in the long run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Over the past month we’ve stress-tested the build extensively, but as always, real-world usage is the ultimate test.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any stability issues, crashes, or unexpected behavior, please let us know — your feedback is invaluable in helping us keep the experience smooth and enjoyable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your patience and continued support! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy winemaking! 🍷",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35414373/ea219b8e2fb109afb6861848e1d709adce9d1fb5.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/1817483467041433"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T13:53:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T13:53:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.605Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-29T13:53:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.645Z"
+  },
+  {
+   "id": "hundred-days-120720@1.5.2",
+   "gameId": "hundred-days-120720",
+   "displayName": "Update 1.5.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-11T09:25:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellows Winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm so sorry that this little update is coming late, it was supposed to come out last week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update we gonna address some big game braking/save braking bugs:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX Workshop grapes import during a game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Workshop load and play with an edited custom grape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Black screen during turn change when missed press value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Loading a save game when missing vineyard density value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX NaN value and 2 billions cash error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you want to play with custom Workshop grapes on an already begun game you can import them here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settings-> Gameplay -> Import",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As alway stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4613399405957824881"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-11T09:25:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.604Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-11T09:25:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.605Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-11T09:25:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.644Z"
+  },
+  {
+   "id": "hundred-days-120720@major-2022-09-13",
+   "gameId": "hundred-days-120720",
+   "displayName": "September is here with a BIG update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-13T14:06:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Fellow winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's a long time we haven't updated the game, but we needed some time off to cure our vines and be sure to be ready for the harvest...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SPOILER: The Barbera harvest 2022 is going super!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To celebrate our come back updates we wanna start with a super important game changer... We are opening the Steam Workshop for Hundred Days - Winemaking Simulator!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "STEAM WORKSHOP",
+     "items": [
+      {
+       "text": "Now you can share and play with custom grapes directly from Steam Workshop!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Once you subscribe to a custom made grape you will find it here, in the endless mode selection \"WORKSHOP\" tab:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you want upload a custom made grape to the workshop instead, you need to make your grape in the Grape Lab free DLC and then upload it by clicking the following button:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I hope you like this is new feature, on top of that there is some other changes, here the full list:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "ADDED WorkShop integration [Steam only]",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "ADDED “easy” seed ( courtesy of AnimeDev from Discord server)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FIX Major bug fix on save file problems",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FIX it’s not possible to buy land before you receive the second letter in story mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FIX Missing label fix",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FIX Major and minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We have also received a lot of request to help translate the game in other languages, we have open a Crowd Sourced localization project in Crowdin:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reach out in case you are interested :)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As alway stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4606641560266765194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-13T14:06:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.604Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-13T14:06:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.604Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-13T14:06:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.643Z"
+  },
+  {
+   "id": "hundred-days-120720@1.5.0",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.5.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-13T14:00:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Fellow winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We reached one year mark from the original release!!!! THANK YOU SO MUCH from the entire team for your amazing support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To celebrate we thought to make a bigger update with some new content and a lot of polish and request we collected during this months!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW AGING OPTION",
+     "items": [
+      {
+       "text": "Batonnage joined the fight against the boredom of aging in wood casks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NO MORE CLEANING!",
+     "items": [
+      {
+       "text": "Finally we have trained employees to carefully clean and repair equipment now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MORE STUFF!",
+     "items": [
+      {
+       "text": "New grapes, new label design, new challenge, new option, new development team! ( the old one jumped out of the windows during the kick off meeting of the 1.5.0 update)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW CLIENT SYSTEM, NOW WITH SOULS!",
+     "items": [
+      {
+       "text": "Now clients have something to say, sometimes, somewhere, somehow...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "and the most requested feature ever! in Napa Valley DLC...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full list",
+     "items": [
+      {
+       "text": "- ADDED Chanin Blance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED Erba Luce",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED 4 new flavors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED New bottle label designs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED A new challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED Endless custom data: 1 milion added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED Employees can now work in the tool shack and winery to clean and repair equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED Employees badge at the top of the screen to know what they’re up to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED Batonnage to aging card configuration (operation that gives extra body to the wine)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED Client message system in sell orders panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED New images for diary notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- ADDED A much requested feature in the Napa region (hint: check the deers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Bottling -10% bottle bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Money preview when an employee has a card that cannot be played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Shield icons for treatments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Diseases icons for treatments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Graphic for building update tab with 80% UI scaling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Label error in wine list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Highest filter ordering in sell orders panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Structures shortcuts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Gamepad navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Various graphical glitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Performance improvements on all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Platform-specific changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Paper Label in Bottling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Fog Disabled [PS5-MAC]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "- FIX Dual Sense support PC:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX R2/L2 overlap between tabs and tile rotation in structures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Better scrolls on card information panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Some event panels can't be closed when using gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Cursor stuck on tech or balance when pressing fame or money shortcut with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Order queue now scrolls correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- FIX Technology focus using gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now i gonna pur my a MEGA PINT OF WINE to celebrate this milestone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 39,
+    "ps5": 1,
+    "topNew": [
+     "Batonnage joined the fight against the boredom of aging in wood casks!",
+     "Now clients have something to say, sometimes, somewhere, somehow...",
+     "and the most requested feature ever! in Napa Valley DLC..."
+    ]
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/5849624375821917153"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-13T14:00:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.603Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-13T14:00:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.603Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-13T14:00:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.642Z"
+  },
+  {
+   "id": "hundred-days-120720@1.3.6",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.3.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-28T17:13:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow Winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small BUT super important update with a lot of fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full change log here",
+     "items": [
+      {
+       "text": "FIX bug in special orders panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX various gamepad navigation bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX structure board controller navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX game configuration panel gamepad vertical scroll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX gamepad tool rotation inside structures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Riesling stats PART 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX MAC crash when clicking on owned vineyards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As alway stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4258723269523247292"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-28T17:13:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-28T17:13:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.602Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-28T17:13:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.641Z"
+  },
+  {
+   "id": "hundred-days-120720@1.3.5",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.3.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-18T14:34:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow Winemakers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry for the long wait but there's alot going on here at Broken Arms Games and we are trying to keep up with everything ːHD_Duckː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are approaching the one year mark of the game so we are working on a juicier 1.5.0 update with some special treats to tank all of you for the amazing support! ( But i will not spoiler it here and now :P )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lets circle back to the 1.3.5 update with some quality of life changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ADDED bottle aging button in wine tasting panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED 1 million starting money in endless game mode configuration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED tech price multiplier in endless game mode configuration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED wine quality in order queue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FIX low frame rate during grape inspection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX some scroll views that don't scroll all the way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX player can open journal during credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX strange button behavior in auction panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX sort orders by price does not use the right value when a wine is trending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX wrong bottling card turn duration when moving around more than one on the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX korean Localization “trimming” = “다듬기”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX GRAPE LAB highlight in new grape/load grape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "BALANCE display wine perfect acidity star in vine inspection panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are also blown away from all the amazing positive review support we are receiving in the last weeks ːHD_Grapeː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As alway stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4259848535831370961"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-18T14:34:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-18T14:34:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.602Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-18T14:34:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.641Z"
+  },
+  {
+   "id": "hundred-days-120720@1.3.3",
+   "gameId": "hundred-days-120720",
+   "displayName": "Update 1.3.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-18T15:02:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow Winemakers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we have a small update, BUT a super important one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hundred Days now supports 100% the controller! Why is this important? Because Steam Big picture and Steam Deck off course!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Along this we have other changes that are super requested, like Cards that use tools now select the best and most repaired one first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And finnaly the game is available for Nvidia Geforce Now Streaming!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Full change log",
+     "items": [
+      {
+       "text": "ADDED Full controller compatibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Cabernet Sauvignon “cabernetsauvignon” perfect terroir seed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Nvidia Geforce Now compatibility",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FIX Cards that use tools now select the best and most repaired one first (Example: harvest with tractors)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Employees no longer use the same tool until it’s broken even if there is another available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Sauvignon Blanc special orders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On top of that we are so grateful to all of you that are helping us with a good review, you have no idea how much this helps ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As alway stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4246335198896343066"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-18T15:02:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.601Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.640Z"
+  },
+  {
+   "id": "hundred-days-120720@1.3.1",
+   "gameId": "hundred-days-120720",
+   "displayName": "Hotfix 1.3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-22T14:34:08.000Z",
+   "notes": [
+    {
+     "title": "A little hotfix",
+     "items": [
+      {
+       "text": "FIX napa save game problem",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Napa fully localized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Vsync setting: Thank you so much for the amazing support ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4224938027295963162"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-22T14:34:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.601Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.639Z"
+  },
+  {
+   "id": "hundred-days-120720@1.2.7",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.2.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-22T12:44:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi fellow winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update we have fix and implemented a lot of localization changes based on your feedbacks and a deep LQA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We fixed stuff in every supported language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know if we are heading in the right direction ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4103335143109209215"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-22T12:44:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.638Z"
+  },
+  {
+   "id": "hundred-days-120720@1.2.4",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.2.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-24T13:48:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working full speed on Napa Valley, but we found time to roll out an update ːlunar2019coolpigː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sneak peak of the upcoming Grape harvester",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full Change-log",
+     "items": [
+      {
+       "text": "ADDED Turn cost in the Loan panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "CHANGED Performance mode will also deactivated fog particle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX Special order now displays correct amount of revenue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Trend icon when no trend is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX various UI glitch and overlap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX improved performance in office scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX vine pause button when an employees is working on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX various sell orders price display problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug and localization fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As alway stay awesome ːHD_Grapeː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/3936699406873610740"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-24T13:48:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.704Z"
+  },
+  {
+   "id": "hundred-days-120720@1.2.3",
+   "gameId": "hundred-days-120720",
+   "displayName": "Update 1.2.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-17T13:54:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We bring you 2 amazing news! It's friday and we have a new update with some surprise for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Card Design",
+     "items": [
+      {
+       "text": "We redesigned the card to avoid overlapping problem and be more readable, we hope you like this changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Building Navigation",
+     "items": [
+      {
+       "text": "A big quality of life change is the introduction of buttons in the build view that let you jump directly to another building without passing by the main board view!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Vineyard production pause setting",
+     "items": [
+      {
+       "text": "And now a late gameplay changer! You can pause a vineyard production!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you disable a vineyard you will no longer receive cards from that vineyards as long you don't reactivate the vineyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full Change-log",
+     "items": [
+      {
+       "text": "ADDED vineyard pause (you will no longer receive cards from a vineyard if you pause it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED buttons to navigate between structures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "CHANGED improved card design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX improved Special Orders in “King of red wines” and “King of white wines”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX added icon the wine trend event is active in wine orders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX wine name length in wine orders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Japanese and Italian localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX tree shaking animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX now Steam will register the game closing on quitting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX calendar icon in Wine list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug and performance fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As alway stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 7,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/5418383147739226953"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-17T13:54:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.599Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.703Z"
+  },
+  {
+   "id": "hundred-days-120720@1.1.2",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-09T12:37:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellows Winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WE HEARD YOU ːlunar2019grinningpigː in this patch we have reworked the wear/dirt/broken state of the tools and machinery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now the dirt and broken state don't occur randomly, instead the tool becomes dirty after 30% of wear and it break if you neglect the dirt state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And for quality of life you will get automatically the cleaning card if a tool enter the dirty state, no more navigate through the building menu to search which tool become dirty!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The cleaning card will stay in the hand for 3 turns, the repair card stays forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The complete change-log",
+     "items": [
+      {
+       "text": "ːHD_Grapeː ADDED all missing label localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ːHD_Grapeː BALANCE cleaning and repair cards are given automatically",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ːHD_Grapeː BALANCE Agata special order in story mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ːHD_Grapeː BALANCE Wine Awards requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ːHD_Grapeː FIX removed empty game settings page from Main menu settings panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now we are working full speed on the first free DLC, the Grape lab, we will share more information next week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always stay awesome!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4036897704055359697"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-09T12:37:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.598Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.702Z"
+  },
+  {
+   "id": "hundred-days-120720@1.1.0",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-25T12:50:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellows Winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally the MEGA patch 1.1.0 is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you can select gameplay configuration options before you start an Endless run!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are a ton of options to configure that can make your game easier or harder, as you like!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full patch note for the 1.1.0 update, enjoy",
+     "items": [
+      {
+       "text": "ADDED endless mode configuration options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED VSync option in Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BALANCE Challenge “Master Winemaker”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX aging card resets settings when is picked up and placed again on the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX accepting selling orders now refreshes card’s playability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX graphic problem when planting a new vineyard with the controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX 3D tile in the office scene will not turn red when player can not place the card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX vines can no longer get infected by 2 different diseases if they trigger on the same turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Better Gamepad navigation in Tech and Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for your amazing support and if you want to talk, discuss and taste wine, this discord is the place to be:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4032392655067331943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-25T12:50:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.598Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.677Z"
+  },
+  {
+   "id": "hundred-days-120720@1.0.9",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-18T13:51:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellows winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This week we have a small but very important update for Hundred Days!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all because we gonna finally address some issues you have reported and we gonna prepare the game to receive a BIG update for next week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "let's jump straight into the change log",
+     "items": [
+      {
+       "text": "ADDED ingame achievements panel and animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "CHANGED vine terroir indicators always displayed in vine panels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BALANCE lowered quality value to achieve wine quirk \"good terroir\" (makes it easier to achieve)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX vine ph and altitude values were wrongfully added twice in wine quirk \"good terroir\" calculation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX cards in hand because an employee isn’t working on it do not disappear anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX vine terroir values changed on old saves after the addition of “grignolino” grape variety, sorry for this it should not happen anymore in future updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX \"excellent\" quality now is displayed correctly in press wizard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX all employees use the same tractor when there are others available ːsteamthumbsupː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Next week we will also release a news where we gonna show a little bit of road map for the game and on what you can expect in the near future ːlunar2019grinningpigː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you so much for your amazing support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Arms Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4056035920058541963"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-18T13:51:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.597Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.677Z"
+  },
+  {
+   "id": "hundred-days-120720@1.0.8",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-11T13:03:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellows winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the 1.0.8 update we added some sweet new content! Let's jump right in to it:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ADDED new grape variety: Grignolino",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED more shop auto-sell options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Character’s name during dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "CHANGED telling an employee to not work a card will give you that card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BALANCE Tool Shed repair cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX bottling machine rinsing module now correctly prevents TCA and oxidation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX wrong total bottles quantity displayed in warehouse and wine log panels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX wrong structures maintenance cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX various controllers issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX tutorial triggered by save file input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.1.0 is approaching fast! we have some nice stuff planned for the first big milestone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you so much for your amazing support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Arms Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/5019805792164676044"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-11T13:03:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.597Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.676Z"
+  },
+  {
+   "id": "hundred-days-120720@1.0.7",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-04T11:52:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellows winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's Friday again and you know what that means!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ADDED a new Challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED logo scale slider for bottle label",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED logo scale slider for winery profile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED black paper in label design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED button to delete old wine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED sold all wine notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED shop panels now displays amount of tools owned by player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED challenge completed are now displayed in Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED new achievements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "CHANGED casks order and bonus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BALANCED longer wine names, from 16 to 24 characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX saving file with a dot inside prevents it from showing in the loading files list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX uprooting and replanting a vine doesn’t change it’s native yeast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX vine icons rendered behind card’s info",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Spanish label overlapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX improved performance for Sell Order buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX sell orders filter for Plant Type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX sell orders lost on game loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Russian “щ” character rendered as a square",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you next week and stay awesome!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Arms Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "__",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.com/invite/jr3DwU3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 8,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4093189347046373477"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-04T11:52:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.596Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.675Z"
+  },
+  {
+   "id": "hundred-days-120720@1.0.6",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-28T14:15:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellows winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Like every Friday, here is the new patch with goodies, let's jump right into it:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ADDED tutorial messages in story and endless modes, you can disable them from the settings menu (English only for now sorry, we need some time to translate it to other languages)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED third tier shelf in warehouse!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Various Sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Better Ui Icons for treatment and disease in the Treatments Wizard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Preventive treatments now have a shield icon showed over the vine and a dedicated badge with the number of turns in which they are effective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Bottle quantity label added in Wine List and Warehouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Performance Mode for older PC and MAC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BALANCED Warehouse Rooms price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BALANCED Income from Guided Tours and Merchandising",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX Various labels localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Guided Tours requirement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX The Upgrade Popup now show correct sell order value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX “A big garage” and “a lot of space” achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Translation errors in Special Orders requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Next week we will have some nice surprises for you all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you next week and stay awesome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Arms Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "__",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.com/invite/jr3DwU3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 5,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4069544815360078055"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-28T14:15:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.596Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.675Z"
+  },
+  {
+   "id": "hundred-days-120720@1.0.4",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-20T13:55:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi fellow winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More than 10.000 winemakers in less than a week",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The entire team at Broken Arms Games is blown away from your amazing support and we are reading the feedback you are giving us! Your passion is unbelievable!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the biggest changelog so far",
+     "items": [
+      {
+       "text": "ADDED shortcut key ‘spacebar’ for next turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED shortcut key ‘spacebar’ exits structure panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED shortcut key ‘R’ rotates card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED shortcut keys numbers from 1 to 6 open management menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED vine planting panel now shows result of quality and quantity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED Upgrading a Structure now show a Popup with more informations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BALANCED cheapest vines are more suitable for chardonnay and nebbiolo in endless mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BALANCED all-snowy winter should no longer be possible (please report as bug if it happens)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BALANCED vine disease prevention treatments last 1 year instead of 1 season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX automatic sell now accepts orders from low discount to high discount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX no one wants to buy the last bottle of a wine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX marketing use button with joypad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX black screen on next turn caused by a \"press\" panel error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX yeast card cannot be clicked if it was moved on the board while placing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX performance drop after many years into the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX deleted a game file that was causing issues related to the path length",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX multiple bottling machines cannot be used at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX “Knight of Langhe” achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Some letters in Journal now trigger with the properly dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Audio missing from some buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Getting a loan doesn’t refresh available cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Online Orders now show the correct icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Ui changes for Sell Special Orders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now that some nasty bug are out of the way we can finally work on expanding the game and increase the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you next week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Arms Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "__",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.com/invite/jr3DwU3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 14,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4069544181428222166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-20T13:55:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.595Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.674Z"
+  },
+  {
+   "id": "hundred-days-120720@1.0.3",
+   "gameId": "hundred-days-120720",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-14T15:31:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Good Morning fellow winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We wanted to start by sharing a giant THANK YOU! Everyone at Broken Arms Games has really been appreciating all the messages, love, questions and thoughts from all of you, so please keep them coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is our first patch note",
+     "items": [
+      {
+       "text": "ADDED purchasable vines have random terroir values in endless mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED structure enter animation can be disabled from settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "ADDED 15 new achievements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FIX unresponsive buttons in wine orders panel and structure panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX having a demo save file locks the game on startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX terroir calculation for wine defect \"bad terroir\" and quirk \"good terroir\" now also uses terrain ph and altitude",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX \"press\" card could be used without the \"press\" tool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Challenge parameters in Journal recap page are now displayed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX tools could become broken without any wear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX English localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Korean localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX Missing localization in Marketing Online panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "BALANCED weather related events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "minor bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Much more balacing will come in the following week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Arms Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "__",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.com/invite/jr3DwU3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 9,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/4767601588114572159"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-14T15:31:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.594Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.673Z"
+  },
+  {
+   "id": "hundred-days-120720@major-2020-12-11",
+   "gameId": "hundred-days-120720",
+   "displayName": "Dev Blog 04 - Audio update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-11T16:05:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Winemakers community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all we are really sorry for not sharing any update in the last 6 months ... we have been really busy with the development of the game, everyone of the team is doing fine, working remotely from their homes and we hope you and all your loved one are doing great too 💖",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hundred Days is finally feature complete 🥳 during the first few months of 2021 we will reveal the release date, keep following the game page and our social media channels for news 📰",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the last few weeks we have been working with the incredible team of Tumult Kollektiv to give the game the best atmosphere possible through amazing audio and high quality sounds effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We focused a lot on creating the most relaxed, peaceful and carefree experience even on the sound aspect of the game, we believe that the audio is really ASMR and sometimes we would love reality to have these extraordinary soft sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But, because we always have fun while working, Tumult Kollektiv team created a funny and ironic preview video for all of you to enjoy, check out the video here below ⬇️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Backstage footage of the audio team grabbing SFX live in the vineyards last September:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Making a game about wine they said, it will be fun they said ...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Get in touch with us",
+     "items": [
+      {
+       "text": "If you are interested to connect with us and other people from Hundred Days community, we have created a Discord server where you can join this growing community and keep up to date with the development of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/3879252510635279109"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-11T16:05:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.594Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.672Z"
+  },
+  {
+   "id": "hundred-days-120720@major-2020-05-06",
+   "gameId": "hundred-days-120720",
+   "displayName": "Quick Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-05-06T15:53:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Winemakers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we would like to thank you all for wishlisting Hundred Days! Your interest in our game and your fantastic feedbacks so far are absolutely mindblowing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been a while since we shared an update: we have been a little bit silent in the last few weeks after Spring Game Festival mainly due to Covid-19 pandemic worldwide situation but we have been really busy digging through all the survey entries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to reassure you that the development is still moving forward, a little bit slower than usual, but still going strong.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A lot of good ideas came up by all of you playing the demo, in case you missed it, you can download it here: https://brokenarmsgames.itch.io/hundred-days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are interested to connect with us and other people from Hundred Days community, we have created a Discord server where you can join this growing community and keep up to date with the development of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1042380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1042380/view/3110243214552371772"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-05-06T15:53:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1042380",
+      "checkedAt": "2026-11-13T03:23:14.593Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:47.670Z"
+  }
+ ],
+ "issues": []
+}

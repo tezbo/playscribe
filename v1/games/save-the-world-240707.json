@@ -1,0 +1,92 @@
+{
+ "game": {
+  "id": "save-the-world-240707",
+  "igdbId": 240707,
+  "name": "Save the World",
+  "cover": {
+   "imageId": "co6rob",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6rob.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar27rk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar27rk.jpg"
+  },
+  "ps5Release": "2023-12-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "save-the-world-240707@1.0.1",
+   "gameId": "save-the-world-240707",
+   "displayName": "Update 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-18T06:37:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated the game to latest Ren'Py version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2280370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280370/view/1835871199303068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T06:37:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280370",
+      "checkedAt": "2026-11-13T03:29:56.097Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T06:37:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2280370",
+      "checkedAt": "2026-11-13T03:29:56.098Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-18T06:37:19.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:29:56.098Z"
+  }
+ ],
+ "issues": []
+}

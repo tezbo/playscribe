@@ -1,0 +1,957 @@
+{
+ "game": {
+  "id": "dosa-divas-305023",
+  "igdbId": 305023,
+  "name": "Dosa Divas",
+  "cover": {
+   "imageId": "co9xj1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9xj1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2zhx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2zhx.jpg"
+  },
+  "ps5Release": "2026-04-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dosa-divas-305023@post-2026-09-17",
+   "gameId": "dosa-divas-305023",
+   "displayName": "Softlock Bug Fix - W3.41180",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-17T19:28:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update addresses a soft lock caused by getting stuck on certain objects in the lower-left-hand section in Port Zest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2950710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2950710/view/1844115010493092"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T19:28:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T19:28:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.642Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-17T19:28:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.369Z"
+  },
+  {
+   "id": "dosa-divas-305023@major-2026-09-14",
+   "gameId": "dosa-divas-305023",
+   "displayName": "Dosa Divas: The Family Dinner Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-14T14:11:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "What’s cooking!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to serve up the first major Dosa Divas update. We’ve prepared changes to improve the cooking experience, explore villager musings while satisfying their cravings, and add more variety to exploring the Meyndish Isle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Entreé - Feeding and Orders",
+     "items": [
+      {
+       "text": "The meat and potatoes of this update are the changes we’ve made to feeding the residents of the Meyndish Isle. There are now more recurring villagers with new dialogue and unique speech bubbles, as well as personal order notes. Fulfilling orders now grants 60% more town affinity points, making it easier to increase your town rank and earn rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Amuse-bouche - Cooking Quality of Life",
+     "items": [
+      {
+       "text": "We’ve spiced up the cooking process to reduce friction. Ingredient auto-fill has been disabled for villager orders to give you more control over the ingredients you want to use. To make ingredient selection even more frictionless, the ingredients are sorted by flavor profile in the selection menu. The cooking minigames have been updated with new UI elements and updated camera angles for variety.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45050844/458e1d0428a2d1cf06408151a9e6503416aa9fff.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Desert - Exploration and Environment",
+     "items": [
+      {
+       "text": "To add more variety to ingredient selection, alternate ingredient pickup methods have been added to some ingredients in Canopea and Port Zest. Buroth won’t go hungry, though, as scrap caches can now be found around the village.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Port Zest has undergone changes to improve pacing during the second visit. The “Impress Mom’s assistant” objective now grants some of the necessary ingredients to complete the requests from Mom’s assistant. While the “Impress Mom’s assistant” objective is in progress, Kabi can be found at the base of the tower to reduce backtracking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45050844/c2cd428d251bcd5acca88a4ca9343850a0853036.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "As a last little snack, we’ve got some minor improvements",
+     "items": [
+      {
+       "text": "Updated upgrade graph icons with character portraits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Port Zest tower traversal changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Canopea community area staging improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "and bug fixes",
+     "items": [
+      {
+       "text": "Fixed a softlock caused by falling through the map screen without being properly grounded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock caused by getting caught behind a fence in Port Zest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Finally, Dosa Divas is currently at its biggest discount price yet — 30% off. If you haven’t already gotten a taste, we encourage you to dive in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Let us know what you think on Bluesky, TikTok, and Instagram!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Outerloop Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Updated upgrade graph icons with character portraits.",
+     "Port Zest tower traversal changes.",
+     "Canopea community area staging improvements."
+    ]
+   },
+   "sourceIds": [
+    "steam-2950710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2950710/view/1843481262701791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T14:11:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T14:11:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.641Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-14T14:11:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.368Z"
+  },
+  {
+   "id": "dosa-divas-305023@post-2026-04-23",
+   "gameId": "dosa-divas-305023",
+   "displayName": "Small softlock bug fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-23T02:32:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix softlock issue with confused status and the Hinti tutorial in Yomi battle. This would fix other instances of being in a status while a Hinti message coming up at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2950710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2950710/view/1830797770232055"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-23T02:32:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-23T02:32:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.640Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-23T02:32:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.366Z"
+  },
+  {
+   "id": "dosa-divas-305023@major-2026-04-01",
+   "gameId": "dosa-divas-305023",
+   "displayName": "Honk, Cook, Deliver Gameplay in Dosa Divas and Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-01T22:53:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're getting close to release of Dosa Divas on April 14th! It's a narrative turn-based combat RPG all about cooking delicious meals, reconciling with loved ones, and rebuilding communities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can play the demo which is the first hour and a half of the game and SAVE file will carry on over to the full game when it comes out. We're still polishing and fixing bugs and adjusting things as we see them. Demo has been updated to include some text size adjustments for better Steam Deck comfort as well as some other bug fixes and better usability tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Here's a video showing how Goddess the sentient mech can honk their horn to take food orders from hungry villagers, find ingredients in the world, barter with Kabi the traveling merchant, or recover some ingredients from battles against Lina's goons who are out to banish home cooking and take over the world with more convenient and bland food in tubes called LinaMeals. Yuck!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full patch notes",
+     "items": [
+      {
+       "text": "Update UT navmesh jump links to fix Ebri soft lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Center align buff tooltip text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check mark on/off for Ingredient hints to make it more readable for what ingredients you have",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "text size and variant size with some padding on the scalable background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text size on block instruction bar, the 'ALL' item filter, remove a text size override in BuffListTooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "text sizing on status tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase topbar text size, rebuild to be a proper UI element, and set it to expand upwards if needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "text sizing on Item collected HUD flyouts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boost text scaling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text size on Ultimate bar text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust skill tutorial skill list element text size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Village status menu text enlargification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stats menu text sizes updated, except for the encounter menu item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store item text sizing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking Order List item text sizing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking menu and ingredient text sizing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overhauled encounter submenu item so it can be enlarged for bigger text. It isn't completely fixed for top-level adjustments (some things probably still use rect transform scaling, have bad pivot/anchor/position setups, etc), but can at least be adjusted vertically now to some extent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shorter descriptions for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Banana Blitz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crab Yangon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mango Dosa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Veg cutlet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Veg sando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spirit bun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Meat soup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Noodle bowl",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Noodle fish bowl",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rice meat bowl",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lobster bowl: Handle reset inventory description field transitioning from ingredients on food item to unlock selection: Adjust text on inventory screen: Adjust text sizes in body shop: Hide seam on \\ fireball effect: Adjust text sizes on pause task screen: Update names/descriptions for \\ Ultimates: Changed keyboard Menu Confirm Secondary to 'F': Boost tutorial used wrong actions in the tutorial text.: Set hard restart on \\ battle and adjust the behavior tree to lock later ults and unlock the current ult: fix floating Miner3 in Ch5 Undertown: fix floating Kabi for reals reals on Lina tower: added fall trigger and adjusted wall run collider + slide tag on it to prevent players from jumping off the end of wallrun on Lina tower: Set level up stat bonus buttons SelectOnHover to IMMEDIATE instead of NONE: Remove extra space from BLOCK_INSTRUCTIONS string: Add MenuCancel conflict suppressor for loot box popup list: Remove break triggers from random battler at Lina Tower: List LinaLoot in battle rewards, move scrap reward to LinaLoot: Exclude healing from the difficulty damage multiplier",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Eka",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game Director",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2950710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2950710/view/1828894815556054"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-01T22:53:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.365Z"
+  },
+  {
+   "id": "dosa-divas-305023@3",
+   "gameId": "dosa-divas-305023",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-20T08:52:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45050844/03edeca71e919f6b8af614f821e363a926232d61.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dog petting was hold button to pet forever which it still is but we saw that most players were just hitting the Pet button so decided to make the default pet duration from 1 second to 3 seconds. You can still HOLD pet button to pet indefinitely if that's your thing. Why shouldn't be your thing, Machan the dog is adorable!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Why don't we just had a Hold to Pet text instead? You are sharp, that is a great question. It's because we didn't implement it that way and sometimes in gamedev (ok most times) we do things a certain way and it's too late to change it in case we break something else which happens more often then not. Also, not much space and then we'd have to add a feature for the text to hide while petting cause the text would cover the dog WHICH is the focus of the whole petting thing in the first place. So there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aachi's got a harpoon, I mean she talks about it enough we thought we should probably add one on her so we did.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an Uncle Hinti about Tooltips during battle. We remind you a couple of times during the demo. The HOLD button to Tooltips gives you not only health info but status effects, buffs, debuffs, it's kind of useful if you're into that kind of thing in an turn-based combat RPG so you can plan your next set of moves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Lock icon to indicate that story progression is required for certain Village Status levels. You'll be revisiting this and other villages so don't stress too much about doing all the things now, cause you can't. It's fine, you'll be able to later, we promise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a reminder that Game Difficulty can be changed anytime from the Options > Gameplay menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more controller rumble to battles most notably to when enemies get Stuffed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decluttered some of the map icons. There's a lot and even though we added filters, players want to just glance at the map and get a sense for where things are so we want to make sure the common use case is handled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue on respawn timers for plants and ingredients in the world. This is one of those dreaded sometimes bug that only happens sometimes on the Steam build. Gamedevs hate the sometimes bug, it's the worst because you can't predictably reproduce it with steps so it happens all the time so we can fix it. All the time bugs are our favorite kind of bugs to fix. Well no bugs at all are our favorite but when you make games with complex systems that can overlap there's bound to be some bugs on someone's machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the intro cutscene not handing off control to the player. This was a weird one but we think we got it. The mech jumping down cutscene has a give control to player that happens over a number of frames at the end of the cutscene but depending on the player's machine, performance, random luck, it could skip those frames and be stuck for AWHILE! Like too long where you'd think the game froze but eventually recovered. Anyways, not a great experience but this is one of those SOMETIMES bugs that doesn't happen to all players. Did we mention sometimes bugs are our least favorite? No? Read the previous paragraph.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a tutorial set of images being blocked by other images. This is embarrasing. Somehow things got out of order so the SKILLS tutorial had just a purple box. There's nothing wrong with a purple box but we'd prefer to show you something more meaningful during the tutorial. If you miss the purple box, please let us know and we'll take it under consideration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the selector turning on too early during Level UP screen before it was ready. It felt bad where you could see the preview of point allotment but you couldn't actually do anything about it. So now the selector doesn't turn on until you can select and make a choice. The delay is there on purpose because earlier on we had players that would accidentally click through without realizing they were making a selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the camera hint when you meet Merchant Kabi for the first time in a long time and Samara says \"Oh no\" like she REALLY doesn't want to see him in front of her sister. She doesn't want to have to explain to Amani that she's seen Kabi someone recently. Anyways the hint is there for you the player so you walk over to Kabi to get ingredients you might need for cooking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue with Kabi's store UI not opening if you were standing in front of him after talking to him which does happen 100% of the time and those ALWAYS bugs we love so much to fix. It's fixed. Yay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Suppressed flyout reward list while map is open. This was getting in the way while looking at the map so now it doesn't. Yay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to menus to work better in different aspect ratios from ultra wide to 16:9 to 16:10 etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bunch of spelling fixes and some label adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some text overflowing in dialogue boxes by breaking up the really long lines into several lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues in the cooking prep and multi ingredient selection UI when opening and loading recipes that looked glitchy along with some scrolling issues when you have a lot of ingredients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 7,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2950710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2950710/view/1827626365756825"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-20T08:52:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.639Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.363Z"
+  },
+  {
+   "id": "dosa-divas-305023@major-2026-02-25",
+   "gameId": "dosa-divas-305023",
+   "displayName": "Dosa Divas Demo Update! Perfect Blocks, Hard Mode, Features and Bug Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-25T19:59:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks for checking out the demo and the feedback. We're glad you're enjoying it and the feedback helps us improve the demo and full game as we get closer to release on April 14h.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reminder that Save games will carry over from demo to full game if you choose to continue from where you left off in the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perfect Blocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We changed the wording around Perfect Blocks and how to achieve them more often. The previous wording on the demo described watching for the STAR icon during an enemy attack. The STAR was there to show the timing window when you can block and not the timing for PERFECT BLOCKS. Blocking during the time the STAR icon is on screen will get you a Partial Block and take partial damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The updated wording is Press (Key/Button) just before an enemy attack makes contact for a PERFECT BLOCK and take no damage. Depending on enemy and their animation, that contact could be an object they throw or it could be a punch or a kick. The important part is to watch the animation timing and press Block button right before contact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45050844/3cec7750b67e995d6c7a1b31373dcef94ab35a69.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope this clarifies Blocking and there's also reminder during an attack as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45050844/ffeaae0ed91ac08aad89ad54bae9b6724fc00420.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new cooking dialogue that changes depending on dish and flavors used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "adjusted camera on some attacks for better Healthbar visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the amount of in-world ingredient spawns for better balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated balance on Hard Difficulty to be more challenging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Objectives and description text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Issue in Audio Settings for better volume controls including Horn Volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Samara portrait missing a proper Surprise expression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with NPC thought bubbles to make room for longer names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with when feeding NPCS the food item was not removed from inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with rotating Goddess in Body Shop also going into Cooking mode when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We'll continue to look at feedback and adjust.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outerloop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2950710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2950710/view/1825727806705825"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-25T19:59:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2950710",
+      "checkedAt": "2026-11-13T03:19:17.638Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.362Z"
+  }
+ ],
+ "issues": []
+}

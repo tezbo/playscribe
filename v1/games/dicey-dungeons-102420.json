@@ -1,0 +1,826 @@
+{
+ "game": {
+  "id": "dicey-dungeons-102420",
+  "igdbId": 102420,
+  "name": "Dicey Dungeons",
+  "cover": {
+   "imageId": "co2h3y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2h3y.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "araxw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/araxw.jpg"
+  },
+  "ps5Release": "2023-02-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dicey-dungeons-102420@2.0.1",
+   "gameId": "dicey-dungeons-102420",
+   "displayName": "Update 2.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-15T20:18:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all! This is a minor patch to fix a few issues that have cropped up with the new DLC. Seems like Reunion has been going down really well this past week, thanks for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where some players could not start Reunion or Halloween Special (the \"dicey_mods.json\" bug).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash bug that could occur for some players in Jester Reunion in the floor 4 trading post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you have multiple copies of upgraded Equipment? cards in the Jester Reunion episode, all of them will start in your hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent certain broken cards from appearing in Jester and Inventor episodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Halloween Special boss music is now restored (it was playing the floor combat track instead).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First time episode complete cutscenes now play correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tackle- no longer returns a dice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boom and Bust- is now the correct size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent glitchy/crashy behavior if you try to transform into two different things at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent a possible softlock if Sorceress gains access to Re-Equip Next through Deck of Wonder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor localisation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-861540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/861540/view/4937651144689986828"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-15T20:18:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-861540",
+      "checkedAt": "2026-11-12T02:59:00.465Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:00.465Z"
+  },
+  {
+   "id": "dicey-dungeons-102420@1.11.1",
+   "gameId": "dicey-dungeons-102420",
+   "displayName": "Update 1.11.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-17T08:47:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, this is just a tiny update to fix a few minor bugs. Bigger updates coming in the near future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential mod security issue. We had a report that it might be possible to create a mod that can do bad things, so just to be on the safe side, we've made some changes to how scripting works internally. This is why we're putting out a minor patch now instead of waiting for the next big update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some category bugs with Judgement cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Super Magician HP modifier was missing for Frog rule.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Rusty Sword should change colour when HP falls *below* 50%, not when it reaches it. Script for damage and colour changes were inconsistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exclude Aurora from Jester 1, 4 and 6 (Call for Backup Thief could lead to a situation where Aurora only has Mood Change, which cannot be stolen, and therefore doesn't have any cards to steal).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-861540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/861540/view/4767601588124466035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-17T08:47:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-861540",
+      "checkedAt": "2026-11-12T02:59:00.463Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:00.463Z"
+  },
+  {
+   "id": "dicey-dungeons-102420@1.3",
+   "gameId": "dicey-dungeons-102420",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-29T00:03:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Wow! Has it really been two weeks? I hope you've all enjoyed being turned into walking dice and cursed to fight in Lady Luck's dungeons forever!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Got a new update today, v1.3! This is a big one! As usual, I'll post the full changelog below, but here are the highlights:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've added Steam Cloud save support! Your progress and saves should now be synced across all of your devices!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I've made a number of balance changes in today's update, but the most significant for most players are probably the nerfs to Aoife and Kraken, and an increased number of health pickups in Witch episodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Aoife, I've reduced her health - as a shield focused boss, she essentially had way more health than the other bosses - this should help even things out. (I'm considering other changes too, but let's start with that and see how it goes. Don't wanna make her too easy, now.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kraken's overwhelm attack was tuned a little bit too high too, I think - I've reduced the number of times they can use it each turn, which makes them more in line with other level 4 enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And as for the Witch change, I've been watching a lot of people play over the last two weeks, and I think this distribution just makes more sense.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've fixed a number of bugs with Bonus Round rules - in particular, Hothead, Cowboy and Handyman should now work correctly. More importantly, though, I've made a few changes to the distribution of rule changes in these episodes, which I think feels much better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've got two new translations, Turkish and Russian! We've also some updates to Chinese, French, Italian and Brazilian Portuguese. More coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New and updated",
+     "items": [
+      {
+       "text": "Added Steam Cloud save support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Russian translation! (beta)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Turkish translation! (beta)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updates to Chinese, French, Italian and Brazilian Portuguese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed mis-spelt French VICTIORE sign, replaced with English \"YOU WIN!\" for now. (Doh, sorry, we're re-doing it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made some small changes to how episode availability is presented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that was rearranging the inventory between the backpack and combat screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the downgraded versions of several pieces of equipment: Moonlight Spear, Ray Gun, Hacksaw, Singularity, Bee Sting, Backstab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the upgraded versions of Plaster, Lantern, Two Handed Sword and Four Handed Sword.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a glitch that allowed you to reuse a copy station over and over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash bug that could happen if you tried to use Counter Spell against Scathach (she's immune, but the game crashed if you tried it anyway).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash bug that happened if Copycat tried to use Backstab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a save bug that could potentially cause a crash in the Final episode (if you saved and resumed right before the last battle).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the damage display on Particle Accelerator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Copycat now correctly uses once per battle equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aurora, Sorceress, and Mimic now use upgraded equipment on Elimination Rounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the upgraded and downgraded versions of Aurora's weather spells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Handyman rule on Bonus Rounds now correctly only affects the player, not enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Cowboy rule on Bonus Rounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Hothead rule on Bonus Rounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skeleton Key- now correctly changes dice to 2 instead of 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Even if you manage to grab a burning dice before it ignites, it now applies burn damage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cannot use equipment until status effects like Weaken and Shock have been applied to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lojinx.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few other small misc fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Improved the distribution of Bonus Round remix rules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Overwhelm is now 2 uses per turn instead of 3. Overwhelm+ is now 3 uses per turn instead of unlimited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a small number of extra health pickups to Witch runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed Bronze Cauldron from Witch's Bonus Round initial equipment choices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced Aoife's health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gave Wicker Man an extra dice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed a dice from Copycat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On Elimination Rounds, Copycat now gets upgraded equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Aurora's weather spells do slightly less damage on normal modes...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "...but she gets an extra dice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed Boxing Gloves from ODD to MAX5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Things we're currently working on, and hope to have ready soon:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Steam achievements! This is my main focus for v1.4.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "More translations! (Irish, Japanese, Portuguese, Polish, Dutch, and Traditional Chinese are in the works and still to come.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "More and more bug fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 19,
+    "balance": 14,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Added Russian translation! (beta)",
+     "Added Turkish translation! (beta)",
+     "Updates to Chinese, French, Italian and Brazilian Portuguese."
+    ]
+   },
+   "sourceIds": [
+    "steam-861540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/861540/view/2415540140454315808"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-29T00:03:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-861540",
+      "checkedAt": "2026-11-12T02:59:00.460Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:00.460Z"
+  },
+  {
+   "id": "dicey-dungeons-102420@1.2",
+   "gameId": "dicey-dungeons-102420",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-21T21:49:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi again everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yesterday marked the end of our first week on steam, and oh my gosh, we're still reeling from it. We're so grateful to everyone who bought our game - it really means a lot to us. Thank you so much <3",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We have a new update! v1.2 of Dicey Dungeons is now live! For this patch, we prioritised improving performance for Chinese and Korean players, but we've also made a couple of important bug fixes, UI improvements, and balance tweaks. I'll post the full changelog below, but here are the highlights:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've changed how we're rendering text in the game. Now, instead of our old rendertexture based method, we're using SDF fonts. This should mean faster, smoother text rendering for everyone! In particular, if you're playing in Chinese or Korean, this should significantly optimise things. (The theory behind all this is pretty cool, by the way! Read all about it here, if you're interested.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have lots of localisation updates! First of all, we've added Spanish, and have a beta translation for Brazilian Portuguese! Also, the French translation is now complete, cutscenes and all! We've also got updates and fixes for Chinese and German.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have lots of little fixes to UI issues that were reported, including things like not being able to pick up dice if they were on top of the Flee, Enemy Moves or End Turn buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made a small, but important balance change to Robot's Elimination Round episode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full changelog is here (warning, contains some spoilers):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Spanish localisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "French localisation is now complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added beta Brazilian Portuguese localisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updates to Chinese localisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updates to German localisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switched to SDF fonts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent Bump from appearing as a random spell in Witch episode 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start Robot Elimination Round with a Ray Gun instead of a Pea Shooter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved some of the longer Witch Voiceover lines from action to emote. (Hocus Rocus!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drake now longer appears as a boss on Warrior episode 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(secret) can access the backpack when upgrading equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can no longer add dice to equipment that's still animating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where dice would sometimes not \"attach\" to cards correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clicking on a dice that's positioned over a card will no longer place that dice in the card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled tap behaviour on dice for now (We'll re-add this once it's been implemented correctly.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented spamming the (secret) button when playing as character six.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Flee, Enemy Moves and End Turn buttons no longer activate when there's a dice on top of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Things we're currently working on, and hope to have ready soon:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More translations! (Irish, Japanese, Portuguese, Polish, Russian, Turkish, Dutch, and Traditional Chinese are in the works and still to come.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam cloud saving!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam achievements!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "More and more bug fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-861540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/861540/view/2416665403767283139"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-21T21:49:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-861540",
+      "checkedAt": "2026-11-12T02:59:00.459Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:00.459Z"
+  }
+ ],
+ "issues": []
+}

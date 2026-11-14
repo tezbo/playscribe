@@ -1,0 +1,2524 @@
+{
+ "game": {
+  "id": "cuisineer-211330",
+  "igdbId": 211330,
+  "name": "Cuisineer",
+  "cover": {
+   "imageId": "co5dai",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5dai.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1r6m",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1r6m.jpg"
+  },
+  "ps5Release": "2025-01-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cuisineer-211330@1.3",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-10T15:15:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're popping in to post some minor updates as we're working on some fixes for future stuff!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's a list of the minor updates which are mainly optimization and bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unity Engine Security Vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The unity engine had a security vulnerability which required developers to update and patch their games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monster spawn sound effects were playing even if they were spawning out of the player's sight (from a far distance) - we've cleaned this up to cut down too many sounds being played at one time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now more accurately detect hazard positions and will be less likely to perish before you see them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Food cooked in the restaurant now spawns on the closest counter to the cooking tool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Objects/walls in dungeon that were using the wrong material when turning transparent are now using the right material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new (invisible) headpiece attachment was created each time Pom wakes up in the bedroom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slight optimization of pathfinding execution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/1813041031243913"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T15:15:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.595Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T15:15:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.595Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-10T15:15:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.230Z"
+  },
+  {
+   "id": "cuisineer-211330@1.29",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.29",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-03T16:40:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch has gone live now that should resolve the infinite loading issue some players are having. Thank you to everyone that has sent files in and helped us isolate the problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, an update was issued this morning, so those that were having problems with achievements should see them working now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/1790214123216130"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-03T16:40:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.594Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-03T16:40:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.595Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-03T16:40:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.229Z"
+  },
+  {
+   "id": "cuisineer-211330@major-2025-01-28",
+   "gameId": "cuisineer-211330",
+   "displayName": "Fresh Features Update available now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-28T14:03:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re so happy to bring all the new features to Steam at the same time as our console launch! There are plenty of fun additions that we hope you enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fresh Features Update brings in a scrumptious new wardrobe feature, year-round festivals, and additional sizzling weapons and boosts that are sure to spice things up. We've done a deep-dive of the new features in November at the MIX so if you want to see more before you jump back in, head here to watch the video:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've got also got a detailed breakdown of today's update for you:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GRAMOPHONE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new special item is now purchasable at Alder’s shop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Placing the gramophone in the restaurant or bedroom will allow you to play custom music in their individual rooms! Unlock all the original music by visiting all the dungeons and battling the bosses!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FOOD BUFFS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Need a little boost? Pom can now eat food to buff herself during every journey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eating a dish will override any previous dish’s buff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WARDROBE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dress up for the occasion, or just for fun! Pastel is now selling clothes and headwear! Pop by her caravan when she’s in town and get fashionable!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EVENTS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The town of Paell brings you festivities with new interactions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unique clothing and furniture themed after each festival to purchase!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW WEAPONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’ve added two new weapons that pack a punch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Salt ‘n’ Pepper Shakers will add flavour to your punches! Become a seasoned adventurer with these weapons!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Konpeito Fists might be colourful, but they deal some pretty sharp damage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QoL & Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Calendars will now display the current and next season to help players plan for the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading time between restaurant, town and dungeons should be greatly reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug where players fall through the ground in the dungeon is fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/1789580505469434"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-28T14:03:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.594Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-28T14:03:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.594Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-28T14:03:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.229Z"
+  },
+  {
+   "id": "cuisineer-211330@1.10",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-19T06:37:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We realised that there were missing translations for our new features and have patched the game to ensure that the text in your gaming language is in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5762994032393509071"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-19T06:37:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.593Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.228Z"
+  },
+  {
+   "id": "cuisineer-211330@1.09",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.09",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-15T06:05:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will be the last major patch update in a while! We will still look into bugs and minor fixes but we thank you for your understanding as we focus on the future of Cuisineer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW GAME SETTINGS SELECTION MENU",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’ve added a list of settings for you to select once you start a new game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This includes difficulty selection and a few selection preferences to improve your game experience from the get go!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SELLING ITEMS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now sell your furniture and equipment!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alder at the Carpenter shop will now buy any furniture at ⅕ its original price.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Briquette at the Blacksmith shop will now buy any equipment at a minimum of ⅕ the base equipment price. Mods and weapon level might affect the final purchasing price!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QoL UPDATES AND MINOR FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tooltips in the inventory are no longer cut off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cheelee in town has a new special effect when petted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor model and texture fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased debuff VFX size for the Crabs, Sugakane, and Sporest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Reload\" text that appears under a ranged weapon when opening inventory should no longer appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking Arena timer now waits for all enemies to die (including minibosses/bosses). This prevents a new wave from spawning if a miniboss/boss is still alive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equipment can now be picked up and automatically equipped with a full bag if there is an available equipment slot for that equipment!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/6474562312194641624"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-15T06:05:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.593Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.227Z"
+  },
+  {
+   "id": "cuisineer-211330@1.08",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.08",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-05T05:47:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you're all having a lovely day~ This is a small update for two bugs that we've found!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was a bug where players would fall through the ground, the chances of it happens has been greatly reduced! Hopefully it does not happen anymore!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously the oustanding payment would not decrease if players paid partially. With this fix, the debt payment UI should be fully functional when players pay their Cuisineer League fees, regardless if they paid partially or in full!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5688680204387240243"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-05T05:47:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.591Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.226Z"
+  },
+  {
+   "id": "cuisineer-211330@1.07",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-26T10:23:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Amongst other things, we did a bit of balancing this month to make your experience more enjoyable. Hope you enjoy this month’s patch updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UPDATED LOOT DROPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potchers now have a chance of dropping gear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loot drops are now fixed so that there is a chance all weapon types are dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loot drops have been re-balanced so that there is a chance higher-tier mods are dropped (it is now possible to find gear with tier 3 mods)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As players proceed deeper into the dungeon, there is a higher chance of higher-tier mods being dropped (boss chests have the highest chance).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUBBLE TEA EFFECTS INCREASED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Effects for the following Bubble Tea (and their upgraded versions) have been boosted to be more powerful in healing and/or damage: Berry Fruit Tea, Masala Chai, Leafy Matcha Tea, Sparkling Bubble Tea, Brown Sugar Sea Salt Milk Tea and Lemon Bubble Tea.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A MORE FLEXIBLE PAYMENT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve redesigned the debt payment UI to be more flexible by implementing a number pad for easy input of specific amounts you want to give the tax collector!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GUILIKIT CONTROLLER TESTED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been testing the game with a Gulikit Controller. Everything seems fine, but we hope players who use this controller can update us if there are any issues. Thank you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QoL UPDATES AND MINOR FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where having the confirmation popup appear and close within the Inventory UI causes time to pass again even though the option to pause time in town is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added animation to dustbin and trash when the player is trying to discard food in the restaurant or throw away items from inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor VFX and sprite fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Look forward to next month and we hope you’re still enjoying Cuisineer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5728086065196067695"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-26T10:23:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.591Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.226Z"
+  },
+  {
+   "id": "cuisineer-211330@1.06",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-31T09:31:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been a month since the year has started and we’re back with a small patch update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GREATER NOBLES PAY THEIR DUES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Mayor of Paell has decreed that all customers have to pay for what they have eaten, even if their entire order has not been served.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the past, greater nobles ordering two dishes but only eating one would leave the restaurant without paying for anything if the restaurant was closing. Now, they will pay for dishes they have eaten, even if they were not served the other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC SPAWN POINTS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve made quest NPCs spawn more regularly so it’s easier for players to find them and complete their quests!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FONT FIX FOR CHINESE AND JAPANESE LANGUAGES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where text would display in the smallest possible font size (which was most obvious in the Journal Townsfolk description).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "SOFTLOCK IN DUNGEON",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bug occurred where if the player died beside the dungeon's exit, they would be able to interact with it and “leave” the dungeon even after the death screen had appeared. This would cause a softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players should no longer be able to interact with fountains, shrines, chests and entrances/exits in the dungeon once they have died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QoL UPDATES AND MINOR FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization of more assets to decrease memory footprint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor fix to Pom's waking up animation to prevent it clipping regardless of where her bed is placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated boss animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Texture fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WIKI IS OPEN TO PUBLIC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now access the Official Cuisineer Wiki!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although the wiki page is in its beginning stages, we hope to leave it in the trustworthy hands of our lovely community (we'll still update pages occasionally!)~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re currently working on more things and hope to come back with an update of what we’re planning soon! Thank you for all the support you’ve given us so far, it’s not the end!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5582843074936575216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-31T09:31:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.590Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.225Z"
+  },
+  {
+   "id": "cuisineer-211330@1.05",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-15T04:16:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings to our lovely players~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As the year is coming to an end, we are grateful for all the love and support you have shown us. The team will be taking a short break to enjoy the holidays with their loved ones and rest before coming back to work next year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As such this is our last patch update of the year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MAXIMUM FRIDGE SIZE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase ability to expand fridge to 80 slots (max previously is 60)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OPTION TO PAUSE TIME IN TOWN",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An option in Settings to pause time while UI is open in Town has been added!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UPDATES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Briquette and Ankhiluun will have an overhead indicator to notify you if a piece of equipment is ready for collection!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We now have directional guides on screen to show current available quests and equipment collection from shops!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A visual prompt in the shop to collect your equipment from Briquette and Ankhiluun has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CALENDAR IN BEDROOM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Calendar which originally was only available in town is now purchasable as a furniture item in Alder’s shop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RESTAURANT/CUSTOMERS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More customers will be visiting during teatime!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5409450219974875838"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-15T04:16:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.589Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.224Z"
+  },
+  {
+   "id": "cuisineer-211330@1.04",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-07T09:27:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are back with another short patch update! This round we’ve added a few important features~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FRAMERATE SETTINGS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve added framerate settings!: (Note: As this option is overridden by VSync, you will need to uncheck VSync to use it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ATTACK DIRECTION OPTION",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggleable option in Settings for players to choose if they want to attack in the direction Pom is facing or from the mouse cursor position!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DUNGEON",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Entrance rooms will no longer connect to exit rooms if they are adjacent to each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pathfinding optimizations which will help improve FPS in dungeons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QoL UPDATES and MINOR FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shop UI animation update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All resources that the player is lacking to purchase/upgrade with will vibrate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Claim button will vibrate when the player attempts to claim equipment but does not have space in their inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade button will vibrate if the player is lacking all required resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Texture updates and optimization on more models!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Umami effect VFX and material colours have been tweaked so they're more obvious in Frozen Fjord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss name will change to the correct font according to the language selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When spending resources, they are taken from the last slot instead of the first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5395938616793870847"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-07T09:27:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.588Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.223Z"
+  },
+  {
+   "id": "cuisineer-211330@1.03",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-27T10:45:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! We’re still hard at work, fixing up different parts of the game, but we’ve come back with another minor patch update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GRAPHICS SETTINGS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implementation of VSync. This will help with screen stuttering and tearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implementation of Windowed Mode & Borderless Full Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "UI/UX IMPROVEMENTS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked how the date is visualized:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Date now represents the current date of the season and not the overall days passed (you can still see that in your save file).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All icons for days of the week are shown, the current day is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the seasons from icons to text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LOADING SCREEN",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve added a new loading screen as a visual update between game scenes! You will still see the previous loading screen when you travel between the town and dungeons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "COMBAT FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rice sprites, Pewtatos and Tommays are now weakened thanks to the power of balancing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The projectiles that split from the initial projectile from Pewtatoes now deal less damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LOCALIZATION FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller Disconnected localization is now properly implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-game text that was missing should now be included.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MORE TIME BEFORE BED WHEN RETURNING FROM DUNGEONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players will now return home from the dungeons at 10pm instead of 11pm, so you have more time to complete quests and do other stuff!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UNSEASONED DIFFICULTY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select this brand new easy mode to have Pom take 80% less damage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CUSTOMER PREFERENCES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've seen your feedback regarding customers ordering mainly pizzas and any other dishes that use fatty/tough meat, cheese, and flour after having upgraded your restaurants. We've therefore done a bit of balancing to ensure customers will order more types of dishes~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX UPDATES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX for breakable props have an added active sparkle, hopefully making what is breakable clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization for more VFX textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Colour tints for different flavours (mod effects) have been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Throwing plates and Dad VFX improvement and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the mean time, while we’re working on fixing even more stuff up, we hope you’ll consider us for a STEAM Awards nomination!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 29,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5382426458991284294"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-27T10:45:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.588Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.223Z"
+  },
+  {
+   "id": "cuisineer-211330@1.02",
+   "gameId": "cuisineer-211330",
+   "displayName": "Patch 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-17T14:13:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone! The first week patch is finally up and running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are the things that have been fixed and tweaked in this week's patch, but we are still working on other parts of the game as previously mentioned in Update #1 - Flavoursome Fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AUDIO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can toggle on/off eating sounds in restaurant in Options Menu!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ambient volumes and loot collection audio have been tweaked based off player feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "INVENTORY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All materials and ingredients now stack up to 30! You can collect more during your dungeon runs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CONTROLLER DISCONNECT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game should now automatically pause when controller is disconnected! Just plug it back in or hit a key on the keyboard to return to game!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "SAVING & PLAYTIME",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play hours in UI screens that pause time should now be tracked by the save file!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save game files will make a backup of themselves before attempting a new save, to prevent progress loss. (In case of critical failure only 1 day progress should be lost)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CRAVING DAYS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A clear buff has been tweaked to ensure that customers are actually craving dishes requiring the ingredient craving! (Buff has been increased from 10% to 50%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BREWER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brewing your weapons for new mods now start from 100 coins (500 previously).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The increasing cost for constantly re-brewing your weapon also grows slower, and will cap at 3k coins (which takes about 50 brews to reach that cost).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "COMBAT/DUNGEON",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've buffed up Bitter and Toasty stacks, and the sweetened defense buff!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bitter stacks buff (Buffed to 10 stacks, from 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sweetened defense buff (10% to 30% as a base status)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toasty stacks buff (Buffed to 5 stacks, from 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There have been a few minor tweaks with Alpha Bullie and Clawber for a fairer fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When dashing, you will not be affected by environment hazard damage (looking at you, mala).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "KEYBIND ISSUES",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Keybind blacklist keys are bigger now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "LT/RT keybind issues have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Bug where movement and dash is unusable if binded to mouse has been fixed.: (if an action or key does not seem to work, do try resetting all the keybinds to default.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "UI navigation is now rebindable to help with AZERTY keyboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug when players bound inventory open/close to mouse but were not able to close the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "INVENTORY/FRIDGE/CHEST FORCEFULLY CLOSING ISSUE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will not be automatically kicked out of your inventory/fridge/chest once the clock hits midnight. (However, do note that time is still running.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OTHER BUG FIXES AND OPTIMIZATION",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've fixed a bug where the restaurant reputation bar infinitely loads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invalid buff icons which were showing up on boss health bars have been fixed and removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Shield Crab shield FX should now be properly played to allow players to react accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor animation and graphic issues in game have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Models have been optimized further, hopefully this will help improve game performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No more clipping UI when you switch from a wider to narrower resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CUISINEER WIKI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are currently setting up the base of the wiki, we apologize as this is taking a little longer than we expected. Hopefully we can come back with a separate update for this!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You might read this and wonder: why are there certain fixes faster than others?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some issues unfortunately take more time to fix and test to ensure no new bugs pop up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall, we thank you for your understanding that we are a small team of developers who are doing our best on our first PC game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will continue to keep working on the game and fixing all that we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope to come back with more updates in the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 43,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/6560117310267954625"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-17T14:13:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.587Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.222Z"
+  },
+  {
+   "id": "cuisineer-211330@1",
+   "gameId": "cuisineer-211330",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-14T11:39:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, it's our first time writing a proper post on our STEAM page as the developers! Phew~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you've been having fun playing Cuisineer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just wanna say we've definitely been reading the comments, and we're really thankful for all the love and support shown to us so far. We hear your concerns and are working on what we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a busy weekend for us here as well ^^;;;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALRIGHT~ We're here to update you that we're planning a small patch by this weekend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Week 1 Patch",
+     "items": [
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can toggle on/off eating sounds in restaurant in Options Menu. Hope this helps for those with Misophonia :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've noted that the item pickup audio might be a bit shrill, so it's undergoing some EQ work to be toned down a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Ingredients and Materials will now stack up to 30 in your inventory! Now you can collect more during your dungeon runs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Playtime Tracking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously, the in-game time did not include when you've paused the game, but now it has been changed to include your paused time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller Issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game should now automatically pause when controller is disconnected!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Craving Days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've noted that customers coming in on craving days did not crave the mentioned ingredient, as such we've buffed it from 10% to 50%!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brewing Costs Reduced greatly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ankhiluun has heard the outcry and will reduce their prices greatly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brewing your weapons for new mods now start from 100 coins (500 previously).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The cost for constantly re-brewing your weapon is now at a slower increment, and will cap at 3k coins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Itemization Issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gear mods are designed to be very impactful to your playstyle, but we've noticed that as some of the mods were undertuned, they felt weak to some of the players. As such we will be implementing the following buffs:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bitter stacks buff (Buffed to 10 stacks, from 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sweetened defense buff (10% to 30% as a base status)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toasty stacks buff (Buffed to 5 stacks, from 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note on Toasty: This isn't the end of Toasty buffs, we hope to add a further direct damage component, probably on application, but we hope you can give us some time to work on that properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note on combat related issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Throughout the weekend, a consistent theme from feedback was that weapon damage upgrades felt pitiful (only going up by 1 damage) as well as enemies feeling too damage spongey. While a general pass on balance and enemy health is being looked into, in the meantime we plan to have a more in-depth dev blog to provide some insight into why certain systems are the way they are, what we think the problems are and how we intend to change them both in the near future, so do look out for that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Possible In-game Communication Issues / Advice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we attempt to make things clearer in game, we are currently working on a Cuisineer Wiki and will update you soon on that! Some of the stuff that will be included in the Wiki (amongst other things):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The rates for Brewing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The kinds of mods that each dish can possible provide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you think that you've lost your weapon, do pop by Briquette (Upgrade option) or Ankhiluun (Brew option) to check if they are holding onto them for safe keeping!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-----------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "First Month Patch",
+     "items": [
+      {
+       "text": "We're also looking at a patch sometime before Christmas~ And hopefully can push some of these issues earlier (but no promises!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(If we can squeeze this in earlier we'll try)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implementation of Vsync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windowed Mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Memory Leak Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're aware of a memory leak... somewhere, especially when there are a huge number of mobs during the Boss battles. We're currently looking into it, and hope to have it resolved soon *fingers crossed*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Getting kicked out of your inventory at midnight can be jarring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're currently looking into this, but as implementation to fix this might cause more bugs, we hope for patience to ensure we can ensure it doesn't affect other features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pausing time when in Inventory in town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We understand that it might be frustrating for some players who want to spend time to re-arrange their inventory or read through the items. We'll be making a toggle option in the Settings Menu to allow players to have the decision as to whether time still runs while you're looking in the inventory... IN TOWN.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Please note that looking at your inventory in the dungeons will still be dangerous so make sure to stop in a safe place.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition we're currently looking into these few other QoLs and fixes after the Week 1 Patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Design an FX to notify players of where their weapons are after upgrade/brew",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs to have an overhead indicator if a piece of Gear / Weapon is ready for collection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toasty Buff gets its direct damage component",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redesign debt payment UI to be more flexible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add levels to fridge so that it can hit the max of 2 pages of inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking tool upgrade button should always glow; pulse if upgradeable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Accessibility for keyboard only players: combat in the direction of character facing, will be be a toggle option in Settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-----------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll continue to work on the game, and we hope this clarifies some of your questions and makes the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy adventuring and cooking!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlebrew Productions (and Pom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 57,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5302486388016072254"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-14T11:39:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.586Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.221Z"
+  },
+  {
+   "id": "cuisineer-211330@1.01",
+   "gameId": "cuisineer-211330",
+   "displayName": "Update 1.01",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-11T05:50:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for games that are not loading due to specific regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1963570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1963570/view/5302486388004255765"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-11T05:50:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1963570",
+      "checkedAt": "2026-11-13T03:18:14.585Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.219Z"
+  }
+ ],
+ "issues": []
+}

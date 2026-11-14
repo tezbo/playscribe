@@ -1,0 +1,1013 @@
+{
+ "game": {
+  "id": "hidden-cats-in-tokyo-318961",
+  "igdbId": 318961,
+  "name": "Hidden Cats in Tokyo",
+  "cover": {
+   "imageId": "co8wlp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8wlp.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar359v",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar359v.jpg"
+  },
+  "ps5Release": "2025-09-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hidden-cats-in-tokyo-318961@major-2025-10-10",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Game Security Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-10T19:37:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! This is a quick update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recently there was a security issue related to Unity's game engine world wide, for this reason we have updated the game to a new version that is free from this problem. We will be doing this update with the rest of our games as well to ensure no issues occur!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1813041031250134"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T19:37:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.807Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T19:37:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.807Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-10T19:37:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:52.029Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@post-2025-07-08",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "UI and Hint system Fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-08T15:17:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! We'd like to update you in regard to some bugs we've been made aware of, we have fixed the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Hint message not detecting anything, forcing the player to leave and return to the game to make it work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Clicking on a person not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Steam deck's resolution's fixes (Text alignement and credits slightly offset)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-In-game card having \"hide\" symbol despite not supporting background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may now return to experiencing the game as it was intended, happy finding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1803527891899414"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-08T15:17:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.807Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:52.027Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@post-2025-05-16",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Memory Leak Issue Fixed",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-16T14:04:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! We come with great news!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have recently fixed an issue regarding a Memory Leak happening in the Ancient Village level that would make the game crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game should now be working as intended! Let us know if everything works on your end! Happy finding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1799817379502713"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T14:04:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:52.027Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@major-2025-03-29",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Level Skipping Update:",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-29T14:18:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After careful analysis, In this latest update we are happy to announce we have implemented a change to the level progression of the game! The following isometric levels containing 100 human characters, the \"Cosplay Festival\" and \"Video Game Museum\", are now able to be skipped at any point!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So if you are feeling stuck, worry not! You are free to go straight to the next level, no questions asked! We won't judge! What matters is that you have fun however you want in the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy this update, happy finding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1795283637886692"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-29T14:18:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:52.026Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@post-2025-03-11",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Video Game Conference Level Bug Fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-11T18:53:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! Quick update! We've fixed a few issues with the Video Game Conference Level, these being:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The character's panels not updating correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Level's achievement not showing when completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Hints not being given/shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But worry not! These issues are now fixed! And also, we've increased the hints of Cosplay Festival and Video Game Conference level to 10 hints! This will surely hep you all with finding Hidden Objects much quicker! We hope you enjoy this change alongside the fixes, let us know if everything runs smoothly on your end, happy finding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1793384379542807"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-11T18:53:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.805Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:52.026Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@major-2025-03-07",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Languages and Bug Fixing Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-07T14:05:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hidden Cats in Tokyo is our biggest and most challenging hidden object game yet! Our talented artists have put in countless hours of research and illustration work, maintaining our well-established art style while incorporating elements of Japanese manga and anime. And yes—everything is 100% hand-crafted by our amazing team!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our designers and programmers have also worked hard to implement new features and improve many aspects of the game. And, of course, we have to mention YOU, our players! Your valuable feedback keeps us motivated and inspires us to continue this journey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nukearts is incredibly grateful for your support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, onto the exciting news!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "More people around the world can now enjoy the game—especially those who appreciate its little story! Many parents play our games with their children, and we want to provide the best experience for players of all ages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We currently support the following languages",
+     "items": [
+      {
+       "text": "Brazilian Portuguese, French, German, and Japanese!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope to add even more languages in the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enhanced Camera",
+     "items": [
+      {
+       "text": "We’ve completely reworked the camera system, allowing you to fully appreciate the art as it was meant to be seen!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Community Items!",
+     "items": [
+      {
+       "text": "That’s right! Trading cards will now be dropped as you play. Get ready to collect them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minor Updates",
+     "items": [
+      {
+       "text": "Updated Controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SFX Fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Maneki Neko QTE Achievement being skippable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the hint system functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented a skip all cutscenes option in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other Minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And there’s more to come in the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With all that said, we hope you continue to enjoy the game! Let us know if everything is running smoothly on your end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy finding! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1793384379407197"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-07T14:05:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.805Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:52.025Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@major-2024-12-27",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Small Card Collection Fixes Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-27T23:31:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends, we hope you enjoyed the holidays! In this small update we have fixed the arrows in the card collection screen, they now appear slightly transparent when they are not meant to lead to any other cards, and we have also corrected the title of the Tower Scratcher card that was was missing a \"C\"(Oops!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We still have in mind more updates, so stay tunned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1786573930892109"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-27T23:31:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.804Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:52.024Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@major-2024-12-23",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Radar update + Small Adjustments",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-23T21:32:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Implemented a pause feature on the Quick Time Events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a pointer to the radar system to make it easier to be understood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the size of some cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some audio issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With that in mind, let us know how things work on your end, we will keep you all updated on the next fixes soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1786573930762843"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-23T21:32:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.804Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:29.317Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@major-2024-12-21",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Bugs Fixing and Slight Changes Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-21T02:36:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! We've heard you! We are aware that missing on a cat item/monster, having to restart to find them, wasn't the ideal way to do so, but worry not! We've decided to make them now part of the experience! Now they are required to complete a level, and even come with their own counter and preview, letting you know how many there are left to find in a level!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not only that, in case you'd like to see the cutscenes, while playing the game normaly, they are also available at their start, being able to skipped if you want to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have also noticed and heard some issues that we've just fixed in this update, some of these include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Colorblind mode not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a non-essential slider from the sound settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keyboard commands not working.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Exiting level not bringing you to level select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Card text fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not being able to navigate a completed level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level people not being clickable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radar not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radar accelerating pulse when timer runs out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pause menu not stopping clicks from going through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a random SFX that played when starting a cutscene/level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text was overlapping in some cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are a few things we'd still like to update in the game, so stay tunned and look forward to it! More fixes to come!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1786573930674074"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-21T02:36:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.803Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:29.317Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@post-2024-12-14",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Fix - Reset and Exit Buttons Not Working For Some Players",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-14T16:48:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! We are aware some players are still experiencing issues with the Exit and Reset button on a level's screen, this update should have fixed the issue, let us know in your end if it did!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1785774543595431"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-14T16:48:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.803Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:29.316Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@major-2024-12-13",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "Vsync and Demo Save Data Fixes Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-13T14:36:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! We are happy to announce we have fixed the Vsync issue alongside the issue of save data of the demo conflicting with the complete game's correct functionality, making player stuck or unable to reset. Let us know if it works now on your end!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1785774543560495"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-13T14:36:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.802Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:29.315Z"
+  },
+  {
+   "id": "hidden-cats-in-tokyo-318961@post-2024-12-13",
+   "gameId": "hidden-cats-in-tokyo-318961",
+   "displayName": "\"Restart\" and \"Exit\" button fixed",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-13T13:14:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends! We are currently investigating and fixing some issues found within the game. This is a quick update of a bug where clicking the \"Restart\" or \"Exit\" button within the level wouldn't work, stay tuned for more fixes today, we are doing our best to ensure your experience is the best!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2671320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2671320/view/1785774543558579"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-13T13:14:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2671320",
+      "checkedAt": "2026-11-13T03:22:53.802Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:29.315Z"
+  }
+ ],
+ "issues": []
+}

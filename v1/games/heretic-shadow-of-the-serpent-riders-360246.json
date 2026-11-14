@@ -1,0 +1,833 @@
+{
+ "game": {
+  "id": "heretic-shadow-of-the-serpent-riders-360246",
+  "igdbId": 360246,
+  "name": "Heretic: Shadow of the Serpent Riders",
+  "cover": {
+   "imageId": "coa8z3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa8z3.jpg"
+  },
+  "squareCover": null,
+  "artwork": null,
+  "ps5Release": "2025-08-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "heretic-shadow-of-the-serpent-riders-360246@2",
+   "gameId": "heretic-shadow-of-the-serpent-riders-360246",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-04T18:27:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heretic + Hexen Update 2 introduces new additions to Raven Vault, gameplay improvements, bug fixes, and modding enhancements. Now available on all platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "✨New Features",
+     "items": [
+      {
+       "text": "We have updated the Raven Vault with a new batch of development materials found shortly before we released the game in August. Be sure to go through the sections and check everything out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Keys will no longer reset when respawning in cooperative mode when modern cooperative is disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some rare crashes around changing music when navigating through the Raven Vault",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sky drawing no longer repeats when looking straight up with the fullscreen HUD enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Heretic",
+     "items": [
+      {
+       "text": "Improved physics when walking over explosive pods, making them harder to accidentally slip off now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tomed Dragon Claw sub-projectiles will no longer immediately explode when firing at the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hexen",
+     "items": [
+      {
+       "text": "Enemies can no longer see or use melee attacks on you through polygonal objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Class selection now works properly when changing class in split screen multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled difficulty modifiers from incorrectly showing up when changing class",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing sprites in Mage's Arc of Death attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🧑‍🏭🖥️PC Fixes",
+     "items": [
+      {
+       "text": "Vibration settings are now set correctly per player in split screen modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🛠️🔀Modding Changes",
+     "items": [
+      {
+       "text": "Additional textures and flats from the Raven Vault added to HERETIC.WAD for use in mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to override built-in state jumps in action functions via custom state labels, similar to community source ports",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "EXDEFS and ANIMDEFS lumps are now loaded 'cumulatively', i.e. all lumps of the same name will be loaded, instead of only the 'last' one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXDEFS: Added ability for actors to define a custom spawn ID for use in ACS scripts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXDEFS: Added ability to assign custom terrain definitions (e.g. water splashes, lava, ice) to floor textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXDEFS: Added ability to add & replace strings (text) for all supported languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXDEFS: Added ability to define custom switch textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXDEFS: Added support for MBF21 functions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GAMECONF: Added ability for a mod to override Enhancement options (e.g. force enhanced enemies/weapons/items on or off)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GAMECONF: Added a new \"gamedefaults\" section which allows for customizing many previously-hardcoded values that differ per-game (e.g. menu sounds, falling damage, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3286930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3286930/view/1815034433041603"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-04T18:27:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-3286930",
+      "checkedAt": "2026-11-13T03:22:45.757Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-04T18:27:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3286930",
+      "checkedAt": "2026-11-13T03:22:45.757Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-04T18:27:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:47.639Z"
+  },
+  {
+   "id": "heretic-shadow-of-the-serpent-riders-360246@1",
+   "gameId": "heretic-shadow-of-the-serpent-riders-360246",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-26T16:01:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 1 introduces a variety of new features, gameplay changes, fixes, and modding improvements and is available on all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "✨New Features",
+     "items": [
+      {
+       "text": "Heretic: Added original game's Firemace placement randomization (albeit with 100% spawn chance instead of the original's 75%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to disable cutscene subtitles in Accessibility menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to restore original two-button press behavior when selecting inventory items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to restore original behavior where flying forward or backward will keep you at the same height, regardless of looking up or down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to disable weapon animation smoothing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 'look up', 'look down', and 'center view' key bindings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Allow use of more buttons to advance through intermission text screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gameplay Modifiers menu is now accessible from episode and player class screens, instead of just difficulty selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔀Changes",
+     "items": [
+      {
+       "text": "Hexen: Buffed Bloodscourge damage and adjusted autoaim behavior to work better with large crowds of enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hexen: Slightly increased attack speed of Timon's Axe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hexen: Decreased Quietus mana usage from 14 of each type to 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hexen: Slightly increased Wraithverge mana usage from 18 to 20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hexen: Improved smoothness of weapon attack animations for the weapons: Timon's Axe, Hammer of Retribution, Mace of Contrition, Wraithverge, Sapphire Wand, and Bloodscourge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved smoothness of weapon raise and lower animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disable menu ambience if music soundtrack is set to None",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧑‍🏭Fixes",
+     "items": [
+      {
+       "text": "Automap now scrolls at a consistent speed regardless of screen resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Automap now zooms more quickly when using a mouse wheel",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Strafe left and right keys will now cancel each other out to match original game behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monsters can no longer be pushed off ledges by player weapon attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Triggers can no longer be skipped in certain circumstances when sliding along walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy missiles will no longer fire slightly downward, preventing incorrectly exploding on certain windowsills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monster melee attacks no longer have infinite height",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer scoreboards will no longer show zeroed out stats in certain cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where disabling viewbob would cause weapon sprites to offset incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Locked door messages will no longer print if door is activated from back side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed strafe modifier key not working for mouse or controller movement",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed missing accented glyphs in supported languages when using Classic typeface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented messages at the top of the screen from being stuck after loading certain save games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: The Chaos Serpent in Faith Renewed will no longer shoot fireballs over the player’s head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: Gauntlets will no longer push enemies backward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: Fixed status bar not redrawing correctly on level transition if crossfade option is disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: Shadowspheres will now correctly penalize enemy aiming at the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: Fix black box on Firemace sprite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hexen: Fixed cases where weapon sprites for certain melee weapons (e.g. Cleric Mace) would occasionally jitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hexen: Fixed explosions having infinite height",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hexen: Messages for switch sequences in Deathkings will now print properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🗺️🔀🧑‍🏭Level Changes & Fixes",
+     "items": [
+      {
+       "text": "Heretic: Fixed inconsistent blood floor texture behavior; blood floors will no longer deal damage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: Fixed inconsistencies between types of locked door textures to be consistent with original game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E1M6: Fixed an instance of overlapping monsters on Hard difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E2M1: Removed a few Weredragons in singleplayer, for a bit less grind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E2M2: Remove mid-air floating stalactite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E2M5: Fixed non-damaging lava sector around yellow key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E2M7: Remove unreachable enemies from disabled green key track on easier difficulty modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E3M5: Fixed gargoyles getting randomly stuck on hanging corpses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E3M6: Remove out-of-bounds Quartz Flask which caused 100% items being unobtainable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E4M2: Fixed softlock caused by skipping triggers for lowering the yellow key pyramid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E5M1: Fixed unobtainable secrets; add additional Tome of Power to maze area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E5M2: Fixed missing texture on waterfall steps after blue door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E5M3: \"Pod-walk\" and \"Barrel-walk\" sections are no longer required to reach the non-secret exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E5M5: Fixed unobtainable secrets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heretic: E5M6: Fixed sky-pillar cutoff when viewing the starting area from the secret ledge outdoors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faith Renewed: E5M1: Fixed unobtainable secret",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faith Renewed: E1M3: Fixed softlock caused by progressing beyond the green doors without a green key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faith Renewed: E1M6: Fixed non-lava damaging floor sector",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faith Renewed: E1M7: Fixed unintended skip to yellow key and softlock caused by leaping into firepits near start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faith Renewed: E1M9: Fixed being able to escape beyond the playable bounds of the map in certain areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vestiges of Grandeur: Serpent Temple: Fixed portals to Garden of Medea and Korax's Domain only being usable one time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vestiges of Grandeur: Korax's Domain: Fixed softlock when choosing incorrectly for the final puzzle switch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vestiges of Grandeur: Korax's Domain: Fixed co-op shortcut teleporter only being usable one time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]————————————————————————————————————————————————————",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "✨New Features",
+     "items": [
+      {
+       "text": "Added support for using the Windows virtual keyboard for text inputs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔀Changes",
+     "items": [
+      {
+       "text": "Removed option for exclusive fullscreen to fix some issues with Game Bar overlays and to allow virtual keyboard to work",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]————————————————————————————————————————————————————",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️🔀Modding Changes",
+     "items": [
+      {
+       "text": "Added warning that the mod uploader is not available when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Heretic: Added a new non-randomized Firemace actor that can be placed in custom maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heretic: Resolved issue where wand start option was not available when launching Heretic mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heretic: Removed ambient sound limit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heretic: Removed D'Sparil boss teleport spot limit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heretic: Sector type 4 will now visually scroll again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added WF_AUTOAIMFARTHEST flag for weapons; instructs weapon to priortize the furthest available target for autoaim, rather than the nearest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added A_MStaffAttackEX (customizable Bloodscourge attack) codepointer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix issue when setting playerclass flags in EXDEFS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A_RadiusDamage now has flags for customizing behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 'endpalette' and 'enddemon' UMAPINFO keys, allowing arbitrary maps to use finales for Heretic Episodes 2 and 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix crash when loading certain old mods that utilize custom textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated order of graphic lumps in IWADs to match the originals, to fix potential HUD display issues in community source ports",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved UMAPINFO lump for Heretic to heretic_ex.wad, for better compatibility with community source ports",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Only evaluate the -warp commandline option on first launch, not when switching games in the game selection screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 45,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3286930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3286930/view/1811772772281717"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-26T16:01:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3286930",
+      "checkedAt": "2026-11-13T03:22:45.756Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-26T16:01:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3286930",
+      "checkedAt": "2026-11-13T03:22:45.756Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-26T16:01:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:47.638Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,659 @@
+{
+ "game": {
+  "id": "shadow-tactics-blades-of-the-shogun-19085",
+  "igdbId": 19085,
+  "name": "Shadow Tactics: Blades of the Shogun",
+  "cover": {
+   "imageId": "co1r8c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1r8c.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5ii",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ii.jpg"
+  },
+  "ps5Release": "2025-10-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shadow-tactics-blades-of-the-shogun-19085@2.2.10",
+   "gameId": "shadow-tactics-blades-of-the-shogun-19085",
+   "displayName": "Patch 2.2.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2018-06-06T11:38:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Honored Ninjas & Kunoichis,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shadow Tactics Patch v2.2.2 (v2.2.6 für Linux) should actually have been our last patch for the game, so the whole Mimimi team can focus on the new title \"Codename Kartoffel\". Unfortunately, the patch had inconvenient issues for some players, mainly losing savegames when reverting to older versions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "So we tackled these issues and present to you Shadow Tactics Patch v2.2.10. We hope this fixed most of the problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We'd also like to invite you to our channels",
+     "items": [
+      {
+       "text": "Discord: https://discord.gg/uytjwD8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reddit: https://www.reddit.com/r/MimimiReddit/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mailing List: http://signup.mimimi.games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kindest regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Mimimis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS: It shouldn't be much longer until we can tell you more about our new Real Time Tactics game <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Savegames won't break anymore when switching back from v2.2.x to v1.4.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greenscreen fix for Ubuntu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed mouse cursor issues with special input devices (e.g. Microsoft Surface Pen)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Turkish loca UI text bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Purple / Pink Screen on game start appears on some systems with DirectX 10/11 graphics cards (system erroneously initialises DirectX 9 instead of DX10/11). Check here for possible solution: https://steamcommunity.com/app/418240/discussions/0/1697168437864531490/",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[Windows 10] If DPI scale is set to anything higher than 100%, the game window itself will also increase in height and length",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Cloud Saves don't sync properly for quicksaves if the game is uninstalled and re-installed again",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Game always starts with Gamma set to 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3x Achievements in mission \"Osaka Castle\" won't unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-418240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/418240/view/2431262152930934386"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-06-06T11:38:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-418240",
+      "checkedAt": "2026-11-12T10:24:00.723Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:00.723Z"
+  },
+  {
+   "id": "shadow-tactics-blades-of-the-shogun-19085@2.2",
+   "gameId": "shadow-tactics-blades-of-the-shogun-19085",
+   "displayName": "Patch 2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2018-02-20T14:00:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Ninjas & Kunoichis,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we are very happy to finally release our latest Shadow Tactics Patch v2.2 with a significant improvement of the loading times as well as some other fixes for the game. This time for real.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A great thanks goes out to our Steam community who helped us test the patch before rolling it out to the whole wide world. We love you. Really. No, there are no DLCs coming right now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The total patch size is approximately 2 GB.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The patch will also come to GOG, unfortunately with a little delay.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We also applied the patch to the Demo (currently only updated for PC only, Mac/Linux to follow a bit later), so this may be the right time to shove Shadow Tactics in your friends' face - again.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We would also like to invite you to our Discord server, which is another way of giving us your feedback in general - and definitely the best place to be amongst the first to get any glimpse of our upcoming project Codename Kartoffel:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also just opened our own subreddit, not that anybody asked:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And just in case you really don't want to miss anything about Mimimi, here's the link to our exclusive mailing list:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Mimimis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Version 2.2.2 includes the following changes",
+     "items": [
+      {
+       "text": "Major performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced saving and loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced mission loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Minor bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 2.2.2 beinhaltet die folgenden Änderungen",
+     "items": [
+      {
+       "text": "Wichtige Performance-Verbesserungen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Verringerte Speicher- und Ladezeiten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Verringerte Missionsladezeiten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kleinere Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "补丁2.2.2包括以下更改：",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "主要性能改进",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "减小了保存和加载时间",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "减少了任务加载时间",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "小的错误修正",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "パッチ 2.2.2の変更点：",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "主なパフォーマンスの改善",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "セーブ時間、ロード時間の短縮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ミッションロード時間の短縮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "小さな不具合の修正",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Обновление 2.2.2 включает в себя следующие изменения",
+     "items": [
+      {
+       "text": "Значительно улучшена производительность",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Сохранения и загрузки происходят быстрее",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Задания загружаются быстрее",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Устранены незначительные ошибки",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "패치 2.2.2에는 다음 변경 사항이 포함되어 있습니다.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "주요 성능 개선",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "저장 및 로딩 시간 단축",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "미션 로딩 시간 단축",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "기타 버그 수정",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "La mise à jour 2.2.2 inclut les changements suivants",
+     "items": [
+      {
+       "text": "Nette amélioration des performances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Réduction des temps de sauvegarde et de chargement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Réduction des temps de chargement des missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Diverses corrections de bugs mineurs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "El parche 2.2.2 incluye los siguientes cambios",
+     "items": [
+      {
+       "text": "Mejoras de rendimiento principales",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Se han reducido los tiempos de carga y de guardado",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Se han reducido los tiempos de carga de las misiones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrección de errores menores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[BRAZIL. PORTUGUESE]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "O patch 2.2.2 introduz as seguintes mudanças",
+     "items": [
+      {
+       "text": "Melhorias de desempenho significativas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redução no tempo que leva para salvar e carregar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redução no tempo que leva para carregar missões",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Correções de bugs pequenos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Aktualizacja 2.2.2 wprowadza następujące zmiany",
+     "items": [
+      {
+       "text": "Znacząca poprawa wydajności",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skrócone czasy zapisu i wczytywania",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skrócone czasy wczytywanie misji",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drobne poprawki błędów",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "La patch 2.2.2 include le seguenti modifiche",
+     "items": [
+      {
+       "text": "Grossi miglioramenti di performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tempi di caricamento e salvataggio ridotti",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tempi di caricamento delle missioni ridotti",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix minori",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 2,
+    "other": 54,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-418240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/418240/view/3263292409710794002"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-02-20T14:00:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-418240",
+      "checkedAt": "2026-11-12T10:24:00.720Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T10:24:00.721Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "1228e08be26d",
+   "text": "Game always starts with Gamma set to 100%",
+   "status": "open",
+   "firstReleaseId": "shadow-tactics-blades-of-the-shogun-19085@2.2.10"
+  },
+  {
+   "id": "bfde00fa8ed0",
+   "text": "3x Achievements in mission \"Osaka Castle\" won't unlock",
+   "status": "open",
+   "firstReleaseId": "shadow-tactics-blades-of-the-shogun-19085@2.2.10"
+  }
+ ]
+}

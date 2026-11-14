@@ -1,0 +1,4282 @@
+{
+ "game": {
+  "id": "big-hops-217390",
+  "igdbId": 217390,
+  "name": "Big Hops",
+  "cover": {
+   "imageId": "co9uqe",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9uqe.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1v9b",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1v9b.jpg"
+  },
+  "ps5Release": "2026-01-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "big-hops-217390@1.2.2",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.2.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-12T07:17:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes softlocks and other jankness when multiple players use the same interaction at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes objects sometimes disappearing when spawned by an NPC during dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes objects sometimes disappearing when spawned by item spawners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes some cannon launched Goo Balls lasting way longer than intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hide collected flowers from compass when loading into scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lets players on tightropes grab objects and other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When multiple players are on tightropes sag based on local player position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes tightropes being spawned in for late joining players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes tightropes being spawned in for players in other scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1846018067940194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-12T07:17:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.834Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-12T07:17:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.834Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-12T07:17:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.018Z"
+  },
+  {
+   "id": "big-hops-217390@1.2.1",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.2.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-11T22:29:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes Minecarts and some other items sometimes spawning at a weird position when players hit buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Minecarts getting destroyed instead of connecting to tracks sometimes: Thanks for the bug reports, keep them coming and I'll keep fixing stuff!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chris",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1846018067939516"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-11T22:29:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.833Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-11T22:29:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.833Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-11T22:29:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.018Z"
+  },
+  {
+   "id": "big-hops-217390@1.2.0",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.2.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-08T22:01:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks, Chris here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch notes are below, but first I want to thank everyone who has left a Steam forum post, review, and shared your bugs and logs with us on Discord. Please consider joining to help us keep improving the game:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you haven't already, also PLEASE consider leaving a review for BIG HOPS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now that the game has been out a while, people finding it decide to buy based on the general sentiment from reviews and you can really help us out there. Because it's a long game played over multiple sessions we don't get as many reviews even though a lot of people have bought and are enjoying the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, onto the update! This is our biggest patch yet with a handful of highly requested features and a ton of fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Higher framerates are now supported with consistent game feel at different FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes bug causing certain audio to cut out during long playsessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes jitter when swimming near the Ocean surface before and after unlocking good swimming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes bug where Player sometimes get yanked towards a Grapple Swing when first connecting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusts rocks in Mine Entrance to prevent early elevator access",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusts Mines Entrance around upper elevator to prevent falling down to Deep Mines early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improves walking over very steep slopes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved startup time by a few seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes occlusion related popping in Mountain Entrance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes occlusion related shadow flicker in Bubble Challenge Room, Void 3, Void Finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Wett projectiles using the wrong material in Rig Main cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes invisible diving board base in Void 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes bug where Voxel Shapes disabled collision when offscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Sponge Fruit being dropped in weird direction at various points in Rebel Cove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Limits Players to being damaged only once per 0.3 seconds. Gulley Basement electric boogaloo is fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Remy not wanting to talk after Shattered Mountain finale until you snub her",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Boneyard issue where Remy intro could trigger after getting all 3 Teeth and soft lock you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes issue where Apples were occaisonally hitting walls and being snapped to world origin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Player physics jitter when climbing on certain moving objects and ledge grabbing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Treasure Chests and Lockers spawning their contents at weird angles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Copper referring to the Airship Parts by the wrong name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes visual clipping of rotating pieces on Rig Main Drill platforming beat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remy now plays an animation when falling into Treasure Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Hop sinking into the ground and facing wrong direction in Dye Station and Closet interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Player getting warped when finishing Light Drip collection sequences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Online",
+     "items": [
+      {
+       "text": "Adds Room Codes and ability to join a game through entering Room Code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Room Codes are displayed in the settings menu and Player List",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes issue where players couldn't rejoin online games after quitting to the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player List and Compass will update to match player's to their current skin color more consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player List will show more accurate location of other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes desyncs related to Coin Stacks, Bubbles, and Bobbers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds aggressive protection to prevent the local player from getting destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Tightropes sometimes not being visible after firing Ballistae",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Whether Players are grabbable or swingable is now more consistent with their current state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Joining games through Steam menu before the app is open should work more consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Birds fleeing with a weird orientation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds localization for new online menus- sorry for doing this so late!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Boneyard breakable graves not syncing in online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tick Player stamina when being held underwater",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes a bug where changing TimeScale to near zero when pausing caused sync issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes bug where Player could snap to weird positions when standing on Junktown boats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes bug where NetworkSetup scene could be written to save as previous scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enables Fusion Release mode DLLs, which speeds up all Network related code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Void 3 switches on flipping ground platform not working consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 27,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1846018067931528"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T22:01:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.833Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T22:01:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.833Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-08T22:01:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.017Z"
+  },
+  {
+   "id": "big-hops-217390@1.1.2",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-31T23:04:36.000Z",
+   "notes": [
+    {
+     "title": "general",
+     "items": [
+      {
+       "text": "Fixes broken Simplified Chinese language support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaks some gravity zone priorities and layers in Void 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't break out of barrel state if colliding on way into barrel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix floating lantern in Deep Mines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for base version of trinket not getting unequipped before equipping upgraded version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clear more minecart tracks when hitting grapple button in various mine scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds another scene door to escape sinkhole after beating world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Switch to using empty black scene for network setup instead of Bug Shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes missing Bubbles in mac build",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "multiplayer",
+     "items": [
+      {
+       "text": "fixes Gulley Basement gate before Camera intro being closed by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1842212951311650"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-31T23:04:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.832Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-31T23:04:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.832Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-31T23:04:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.016Z"
+  },
+  {
+   "id": "big-hops-217390@1.1.1",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.1.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-24T21:24:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for Gulley Basement Lockpick Doors not being open after reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1841579228676674"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-24T21:24:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.831Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-24T21:24:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.831Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-24T21:24:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.016Z"
+  },
+  {
+   "id": "big-hops-217390@1.1.0",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-24T20:53:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixes Dark Bits in some Void worlds not counting as collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "app startup time should be a bit faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reading and loading into saves should be a lot faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improved placement of held objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "adds a safety check to not write save if Player is missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixes common bug where stacked Minecart could get stuck after jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Completion Tablet shows levels as incomplete if not seen Cappler spots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Completion Tablet shows Firefly in Greasy June's Bodega",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixes Junktown bug where trash would fall onto Rusty's collection machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes Bubbles colliding on spawn with spawner pipes in one challenge room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes floating shadow near end of Minecart Finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix to dash / hide sequence sometimes starting during dialogue in Wett boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix coin not spawning from Trash Barge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes wiggle text everywhere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix pop in post minecart finale haven scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "set dressing fixes in Mountain Entrance, Mineshaft B, Sewer Entrance, Boneyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixes some weirdness with menu cursor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes wiggly text not working and showing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "removes development build and console: Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "network bug discover lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix error spam when picking up and dropping bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "removes backup saves from build",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixes blocker issue in Desert boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes sandwich / switch floor tiles not getting networked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix voxel blocks not being destroyed for late joiners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes issues with flux launching springshots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes issues with flux launching springshots on minecart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ensures fade ends after multiplayer game ends: Thanks to everyone who has left a Steam forum post, review, or joined the Big Hops discord to share bugs and logs. Please consider joining to help us keep improving the game: https://discord.gg/ccvEqMynf7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 17,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1841579228676626"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-24T20:53:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.831Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-24T20:53:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.831Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-24T20:53:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.016Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.9",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.9",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-14T01:55:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removes player Tied Up state if loading into a scene outside the Desert just in case you manage to tie yourself up somehow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840944183778340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T01:55:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.830Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T01:55:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.830Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-14T01:55:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.015Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.8",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-13T08:29:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Grow vines over time instead of instantly for clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebake all network prefabs and scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If held player connects to a grapple swing force them released",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Always open Rebel Cove door after reading note regardless of progression state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix player warping to origin when object they're standing becomes inactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug where Diss is still around after endgame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840944183776115"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-13T08:29:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.830Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-13T08:29:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.830Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-13T08:29:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.015Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.7",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-12T05:54:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If accidentally losing a cool Gadget off a ledge they will warp to the nearest checkpoint instead of being destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes null ref picking up second Tooth in Boneyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840944183773069"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-12T05:54:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.829Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-12T05:54:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.829Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-12T05:54:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.014Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.6",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-11T19:27:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes NPC held items sticking around when changing scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make sure Haven tongue door to challenge room stays open when coming back to scene or reloading save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Topper animation after burning the tumbleweed tower then changing scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds collider to skylights used in Sewers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes exploit where you could jump infinite times while holding Drill Gadget",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840310314354967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T19:27:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.829Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T19:27:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.829Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-11T19:27:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.014Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.5",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-11T00:51:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a way to get out of jail if locked in after Mountain Finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't allow Items to attach to other Grabbables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840310314352858"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T00:51:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T00:51:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.829Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-11T00:51:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.013Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.4",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-11T00:07:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes issue where it was possible to get stuck inside grapple door in Mineshaft C and Deep Mines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Much smaller network footprint for syncing progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840310314352812"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T00:07:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T00:07:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.828Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-11T00:07:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.013Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.3",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-10T22:19:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Better syncing of Wett's Airship and Cannons in Ocean Finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes extra Health Upgrade spawned in Drilson's Depot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes network players sometimes getting damaged when existing Drilson's Depot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes issues where projectiles weren't causing damage when playing online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Cappler's Chemical Dump quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes player launch when attached to Green Apple on a Balloon when it pops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raspberry fan no longer pushes player when on Tightropes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840310314352687"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T22:19:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T22:19:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.828Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-10T22:19:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.013Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.2",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-09T20:37:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for some Endless Bushes not respawning veggies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840310314349882"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-09T20:37:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.827Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-09T20:37:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.827Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-09T20:37:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.012Z"
+  },
+  {
+   "id": "big-hops-217390@1.0.1",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-09T13:20:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Disables cheats / dev console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes issue making compass trinkets invisible on HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes app name of BIG HOPS to BIG HOPS TOGETHER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840310314349245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-09T13:20:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.827Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-09T13:20:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.827Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-09T13:20:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.011Z"
+  },
+  {
+   "id": "big-hops-217390@1.0",
+   "gameId": "big-hops-217390",
+   "displayName": "Update 1.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-09T06:12:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "You can now access PLAY ONLINE through the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is no matchmaking planned. You can join a friend through the Steam overlay.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The full game is now playable with up to 8 players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note there is only 1 person still working on BIG HOPS and this is a big update that has affected all parts of the game. I (Chris) would really appreciate your understanding, patience, and help resolving remaining issues.: Find a group to play with and PLEASE report issues on the BIG HOPS discord here: https://discord.gg/7RBxa4vH8N: BIG HOPS FOREVER!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1840310314348720"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-09T06:12:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-09T06:12:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.826Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-09T06:12:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:41.011Z"
+  },
+  {
+   "id": "big-hops-217390@major-2026-03-28",
+   "gameId": "big-hops-217390",
+   "displayName": "Cappler's Conspiracy Update - March 28th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-28T15:26:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Cappler’s Conspiracy is a new 2+ hour photography game hidden inside BIG HOPS. You’ll meet a conspiracy theorist Owl named Cappler who needs your help exploring some weird ideas. He’ll send you on jobs to prove (or disprove) the existence of Aliens, Ghosts, Mole People, and more. For your efforts you’ll be rewarded with dozens of new camera filters, lenses, and a special Sky Shifter gadget. To find Cappler and get to work, keep an eye out for Cappler’s special symbol hidden throughout the many worlds in BIG HOPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Read more here: https://steamcommunity.com/games/1221480/partnerevents/preview/519741583516501840",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1828441623106758"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-28T15:26:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-28T15:26:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.826Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-28T15:26:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.451Z"
+  },
+  {
+   "id": "big-hops-217390@hotfix-2026-03-20",
+   "gameId": "big-hops-217390",
+   "displayName": "March 20 Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-20T20:43:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes black screen issue in some regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1827626365758952"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-20T20:43:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-20T20:43:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.825Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-20T20:43:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.450Z"
+  },
+  {
+   "id": "big-hops-217390@major-2026-03-19",
+   "gameId": "big-hops-217390",
+   "displayName": "Quality of Life Update - March 19th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-19T20:31:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, Chris here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everyone out there who has played BIG HOPS and especially those who have given us feedback. We appreciate everyone taking the time to review the game! We take all the criticism really seriously and are committed to improving the game as much as possible. Today we're taking a BIG STEP in that direction with the QOL Update. Here's the big stuff:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Completionist Tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you successfully rebuild the Airship and go inside, you'll find a new gadget that will help find the rest of those collectibles you're missing out on. Thanks for your patience on this- being totally honest we were surprised just how much players have connected with BIG HOPS as a collect-a-thon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41450754/0656fef574458ce0bde279fad70ecff1daa0aaca.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keyboard Rebinds",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This was the biggest missing feature at launch in my opinion. We had some negative reviews focused on this and they were fair. There's a new button in the settings menu to let you rebind your keyboard input. For controllers we're still relying on Steam Input and recommend you use Steam's workflow.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41450754/d9d3dce40f6b576e43a32fd4898228f6fb57b2ec.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hold to Skip Dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our speedrunners were loud and clear that mashing buttons to get through dialogue quickly was threatening to give them a RSI. We want speedrunning Hops to be fun and only slightly painful so we've added a new settings menu option to allow holding down a button to skip dialogue. Note this will only appear after you've beaten the game on any save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You'll notice there are a handful of new Trinkets in the rotation now. Pretend you don't see those for now as they're meant to be a part of our upcoming free Photography DLC. As far as QOL features go there is one new Trinket focused on that: 'Hat Stays On' makes it so your hat won't fall off when bonking into walls. Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41450754/92f219830a509fe2373b1d77dd1be0cfa76f8ed8.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-----------------------------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last thing I'll mention: we're hard at working on Uncapped Framerate! Progress is going well, but we're still figuring out how to make this change without impacting our console versions. Expect that update in the next month.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chris Wade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Director @ Luckshot Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1827626365755638"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T20:31:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T20:31:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.825Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-19T20:31:34.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:10:12.449Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-03-02",
+   "gameId": "big-hops-217390",
+   "displayName": "March 1st Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-02T05:01:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes semi-common Minecart related crash on fail or death in Treasure Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes bug where costume, trinkets, and backpack contents from last save are brought into challenge room levels when accessed from title screen (note, we will be resetting the leaderboards)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Piston Launchers in Forest Shrine sometimes not releasing the player after exiting their triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disallow taking damage during loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rework of how save data is written to make save files much smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowers total runtime memory usage by 150mb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduces max memory usage during spikes during scene loads and when saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removes all per frame memory allocations so should see better frame pacing and fewer hitches, especially on low end devices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NavMesh tweak to help Hydro Plant Caterpillar not get stuck under the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes floating Otters in Rig Main",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaking some Dark Bit positions to not be intersecting ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds individual translators to credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes placement of bubble spawners in Hydro Plant and Junktown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removes broken material fish school in Ocean Island Intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfs speed and following of finale projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes title menu button sizes so centered mouse position doesn't highlight them",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes Hops placement when loading into scene in all challenge rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Hops placement when loading to Mines Entrance, each Mineshaft, Airship, Duster Bluffs, Desert Canyon, etc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Screen fade behaves more consistently during low framerate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screen fade will keep consistent fade color instead of sometimes popping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes rare one-frame popping to random camera view during loads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Extends distance attenuation for bug sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes line causing confusion about Junior's relationship to Jackson",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds missing Hop vocalization when using Grapple Barrel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adds missing sounds on Boneyard stone movers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Audio mix changes for music, title UI, challenge room countdown, bonepile footsteps, bug facts, forest ambience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better bedbug sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 9,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1825727806716462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-02T05:01:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-02T05:01:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.823Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-02T05:01:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.448Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-02-12",
+   "gameId": "big-hops-217390",
+   "displayName": "February 12 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-12T22:06:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reworks item collision ignore system to be more consistent and avoid soft locks better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show roll jump button guides in particular zones as added tutorialization in intro and wall run challenge rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevents some possible soft locks and improves stability of Minecart finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Armor Cart upgrade in Minecart Finale flipping you around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removes one frame pop when loading to title screen and into main game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Void Berry breaking when throwing it at Items outside the Void",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Bubble Fruit breaking when broken by something other than collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Crabs intersecting floor in Hydro Plant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds a handful of safety checks to WaterZone logic for checking if a position is underwater",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes several errors coming from hitting Diss with veggies and other interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds safeguard against Audio event queue getting clogged up forever and causing a memory leak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Fire Voxels challenge room not dropping fire in later beats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes cases where respawn position after hitting Fail Zones could be wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes brief moment after entering Lockpick Minigame where you can still run around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes how playtime is tracked (sorry if your save was started before this, your playtime will be reset to zero)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Flux sounds for low quality audio setups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Hop starting in the air in some Challenge Rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lower memory usage for NPC LODs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes some PathShape gaps in Rebel Cove upper level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes incorrect material on Treasure Room sonar drill machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes error when setting up a Goo Ball launcher just before switching scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Tightrope launch looping audio staying on forever in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Goo Balls projectiles now disappear after 20 seconds instead of lasting forever",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turns off Trinket Trunk handle when hidden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes bug where you could wear multiple Hats at once after reloading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes some PFX that weren't being pooled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix null ref when dropping Swim Scooter while using it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 17,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1824459501608179"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T22:06:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T22:06:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.823Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-12T22:06:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.447Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-31",
+   "gameId": "big-hops-217390",
+   "displayName": "January 31 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-31T16:08:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes regression that kept Backpack and Teeth from being collected if touching while in certain states",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1823191198607648"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-31T16:08:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-31T16:08:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.822Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-31T16:08:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.446Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-30",
+   "gameId": "big-hops-217390",
+   "displayName": "January 30 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-30T22:52:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Better fix for long toe / short leg / leaning torso category of bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now exit Graffiti Minigame by retracting all the way and hitting Cancel button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusts Graffiti Minigame targets to be more clear about Tongue Waypoints being gameplay objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collecting the first JumpStar in the finale now shows text explaining that they give you extra jumps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds button prompt to use JumpStars when in the air when you have 1 or more JumpStars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Hops tongue not syncing with mouth or grapple target position in some situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds cursor when choosing dialogue options to better signal that you're making a choice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes missable Dark Bits in Duster Bluffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevents some soft locks with Hop breaking out of NavTo state after 10 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Pokie being invisible in Duster Bluffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disallow hookshotting back to Minecarts when jumping off them in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusts song fade time so changing tracks in Boombox / Mixtape Player is more clear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hop no longer gets headphones when listening to music through Boombox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes bug where using Barrel Cannon blocked Hop's head from looking at things forever",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaks to Challenge Room audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kitty Hood chest in Duster Bluffs doesn't save being opened so can get it there if not appearing in closet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix regression of hearts being rotated weirdly after scene load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1823191198606617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-30T22:52:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-30T22:52:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.821Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-30T22:52:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.446Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-27",
+   "gameId": "big-hops-217390",
+   "displayName": "January 27 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-27T19:08:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes camera weirdness when hookshotting to Green Apple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cactus Fruit will launch perpendicular ropes from more slanted surfaces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes ladder slide down sound playing forever if you jump off mid-slide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes ladder jitter when getting on near the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Pokie's mouth not being visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1822556746169840"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-27T19:08:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-27T19:08:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.821Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-27T19:08:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.445Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-25",
+   "gameId": "big-hops-217390",
+   "displayName": "January 25 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-25T17:23:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Mouse input now works on Main Menu, Challenges, Settings screens",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Should be much harder to fall through the floor now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes case where you can get stuck in Void2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes how bug audio events play to be better optimized for CPU and memory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forces elevator door in Duster Bluffs open after boss fight even if you haven't opened it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saves decks flipping down in Desert Plains tumbleweed hallway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1822556746165578"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-25T17:23:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.820Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-25T17:23:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.820Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-25T17:23:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.436Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-23",
+   "gameId": "big-hops-217390",
+   "displayName": "January 22nd Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-23T07:33:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes sometimes long hang when unlocking Slingshots in Desert Plains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better safety and logging for GoalManager / PlatformServices / PlayerManager callbacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Gulley Penthouse and Duster Bluffs doors not staying open (for real this time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Void2 ending portal not appearing when revisiting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Covers some cases where NAN values could be sent to FMOD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes accidental Terrain shader downgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes VO lines from Sandcastle kid and Player line at start of Void1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes missing Geyser sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Makes buzzing bugs easier to hear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes missing door sounds in Rig Main, Rig Alpha, Rig Bravo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes initialization order issue where OverlayHUD might not be set up correctly when scene loads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes sounds and collision materials on Ocean Rig machinery prefabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Desert Race hoop sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1822556746160876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T07:33:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.820Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T07:33:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.820Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-23T07:33:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.436Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-22",
+   "gameId": "big-hops-217390",
+   "displayName": "January 21 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-22T01:38:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Can now back out of Lockpick Minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplifies Jolene logic in Penthouse so she'll kick you out if reloading that scene after taking the required Evidence photo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes weird situation where you can miss the Airship intro cutscene taking you to the Void Finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds safety and logging to potentially bad collision ignores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adds safety and logging around potential infinite loops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Hat not save / loading correctly when wearing Cactus shirt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Dark Drip countdown in Void Finale showing negative number if you're too good",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Duster Bluffs door not staying open in some situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Underwater Grind Rails drain your Stamina and cause Drowning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes missing Crane SFF",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds missing SFX to Elevator Rail Grapple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't allow climbing on underwater walls if Deep Swimming isn't unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydro Plant and Penthouse Lockpick Minigames save completion state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes invisible Real Sandwich",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Mom's animation in Forest Ending after seeing ending cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1822556746157933"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-22T01:38:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-22T01:38:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.819Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-22T01:38:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.435Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-21",
+   "gameId": "big-hops-217390",
+   "displayName": "January 20 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-21T05:50:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This one is smaller because I focused on submitting a Switch patch today. Note if you're also playing over there, or know anyone who is, all the fixes I've been making here have been submitted for approval.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Today's patch",
+     "items": [
+      {
+       "text": "Changes how Static Shadowmap are rendered to be less likely to crash GPUs after long play sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduces memory footprint of the game by 300mb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds extra logging to help debug FlowGraph issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Speedrun widget master time newlining if your playtime is very long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds some missing names to the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1822556746155965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-21T05:50:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-21T05:50:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.819Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-21T05:50:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.435Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-20",
+   "gameId": "big-hops-217390",
+   "displayName": "January 19 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-20T04:48:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Disallow pause menu while fading in / out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove colliders from sky void orbs in Shattered Mountain Endgame to prevent infinite respawning projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Haven Lockup crate respawning even after goal is complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Bud accepting non-stamina juice to proceed brothers quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent opening menu and taking out Camera / Walkman from menu while in Vent states",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improves Slingshot distance settings for hidden canyon sequence in Desert Plains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1821922921822634"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-20T04:48:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-20T04:48:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.818Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-20T04:48:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.434Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-19",
+   "gameId": "big-hops-217390",
+   "displayName": "January 18th Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-19T05:50:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Turn off 'Help I'm Stuck' button when playing Challenge from Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowers difficulty of Wall Run 2 Challenge Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allows redeeming Bit meter for Dark Drips after all Trinkets are unlocked, but without offering Trinket Trunk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Backpack Colors not having cost or being saved as unlocked when accessed in Odette's Outfitters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Kitty Hood not re-appearing in Closets in either Odette's Outfitters and Hop's room in the Airship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaks navmesh in Deep Mines for less weird respawning after making it across the big gap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't hide Finale Void portal in Forest Ending after seeing All Drips ending to make it still possible to get 100% achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disallow pausing while loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1821922921820453"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T05:50:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T05:50:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.818Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-19T05:50:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.433Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-18",
+   "gameId": "big-hops-217390",
+   "displayName": "January 17 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-18T05:37:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Saves before and after loading scenes to make sure progress is saved in rare case of crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Vegetarian and Speedrun achievements proc'ing when re-entering save game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Inventor's mouth in Mineshaft B",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Railgun not showing up on save slot in main menu once unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Void Costume is unlocked when beating the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds respawn checkpoint at start of Forest Intro to not allow skipping with 'Help I'm Stuck' button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Make sure dumpster and bin family are hidden during Void Finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks Junktown Bodega entrance door color to be more obvious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusts logo placement on title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes some names in the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1821922921819063"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-18T05:37:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-18T05:37:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.817Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-18T05:37:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.433Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-16",
+   "gameId": "big-hops-217390",
+   "displayName": "January 16 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-16T23:19:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes for tunneling through the floor when going fast and especially when Diving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes occasional 'Out of Memory' crash when leaving scenes where fire is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes being able to redeem Drips when no Trinkets / Slots remain to be unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Trinket Trunk soft locking you when no Trinkets / Slots remain to be unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Bug Shop Hearts and Veggie Shop 3rd Heart not giving extra Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes extra Heart coloring to distinguish bonus Hearts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saving Lockpick progess in Gulley Basement, Gulley Penthouse, Hydro Plant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saving door opening progress in Hydro Plant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes issue where flip door into Bubblerator room from outside was hidden after seeing Wett cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes gap in set dressing in Rig Outpost B",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1821922921817268"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T23:19:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T23:19:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.816Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-16T23:19:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.432Z"
+  },
+  {
+   "id": "big-hops-217390@post-2026-01-16",
+   "gameId": "big-hops-217390",
+   "displayName": "Patch Notes for January 15",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-16T02:07:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes regression where it was easy to get stuck spinning around Oil Balls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes regression with Haven Lockup vent entrance not being re-enterable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can pause during many Hookshot to help you get out of soft locks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will exit to Air State if Hookshot pull lasts longer than 3 seconds to further avoid soft locks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes Voxel Shapes warping you if looking away from them while standing on top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes infinite pepper burn piles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds respawn checkpoints in Haven Lockup to fix possible issues with the new 'Help I'm Stuck' button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusts 'Help I'm Stuck' button positioning to place you on the ground instead of inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes false negatives when throwing Peppers at things",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempt fix for freeze when exiting Fire Voxels Challenge Room to Duster Bluffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds more Trinket Sounds + UI sound balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jackson music in town hall louder to compensate for cutscene music ducking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes jank slant on some dunes in Desert Canyon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1821922921814689"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T02:07:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T02:07:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.816Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-16T02:07:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.432Z"
+  },
+  {
+   "id": "big-hops-217390@patch-2026-01-15",
+   "gameId": "big-hops-217390",
+   "displayName": "January 15 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-15T07:03:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changes name of 'Quit to Title' button to 'Save and Quit' to better signal saves happen on quit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds 'Help I'm Stuck' button which returns players to last checkpoint (or start of scene if they haven't touched a checkpoint)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reorganizes settings menu so Languages / Text Size / Save and Quit / Help I'm Stuck buttons are at top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes horizontal swing poles sometimes ignoring Hop after first jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes some bad respawn areas in Boneyard, Void1, and ChallengRoom_Sponge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes issue where backing out of Grapple Barrel repeatedly could turn you invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Camera and Mixtape Player now worth zero coins and don't give health when eaten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes logic of secret debug menu so it's harder to access for keyboard players",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes hookshot related soft lock in HavenLockup after beating ShatteredMountain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Ocean music layers for above and below water desyncing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removes unreachable Dark Bits in Void1 and MineshaftC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removes holes and weird collision under flip docks in Desert Canyon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bushes pulled out of the ground now respawn Veggies infinitely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep 2 Haven guards around after finishing Shattered Mountain to make NPC achievement unmissable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Makes a couple Goo Ball moments easier in Sewer Exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds Potato Beetle and Grasshopper somewhere to be found in Shattered Mountain and Ocean, respectively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes Gut Bomb Mixtape Achievement not proc'ing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Challenge Room Achievement not proc'ing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes rare soft lock caused by missing renderers on Hop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adds FOV push and screenshake when boosting in minecarts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Remakes all checkpoints and respawn navmesh in Void3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adds screenshake and audio to rotating island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221480/view/1821922921812141"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T07:03:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.815Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T07:03:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221480",
+      "checkedAt": "2026-11-13T03:16:03.815Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-15T07:03:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:12.431Z"
+  }
+ ],
+ "issues": []
+}

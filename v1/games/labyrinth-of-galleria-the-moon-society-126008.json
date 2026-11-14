@@ -1,0 +1,265 @@
+{
+ "game": {
+  "id": "labyrinth-of-galleria-the-moon-society-126008",
+  "igdbId": 126008,
+  "name": "Labyrinth of Galleria: The Moon Society",
+  "cover": {
+   "imageId": "co68ur",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co68ur.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar11bs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar11bs.jpg"
+  },
+  "ps5Release": "2023-02-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "labyrinth-of-galleria-the-moon-society-126008@major-2023-03-21",
+   "gameId": "labyrinth-of-galleria-the-moon-society-126008",
+   "displayName": "Update - 2023-03-21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-21T23:43:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've got a small update for you today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes various text issues, especially with skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes an error where suspending in a certain location under certain conditions causes an unintended randomization when resuming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1998340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1998340/view/5125698536873717865"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-21T23:43:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1998340",
+      "checkedAt": "2026-11-13T03:24:26.575Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-21T23:43:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1998340",
+      "checkedAt": "2026-11-13T03:24:26.575Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-21T23:43:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.398Z"
+  },
+  {
+   "id": "labyrinth-of-galleria-the-moon-society-126008@major-2023-03-03",
+   "gameId": "labyrinth-of-galleria-the-moon-society-126008",
+   "displayName": "Update - 2023-03-03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-03T23:01:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we have a new minor update to address stability issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what we've addressed since launch",
+     "items": [
+      {
+       "text": "Fix for no audio for some players. Game should properly use xaudio2_9redist.dll on systems on older Windows 10/11 releases.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for the game selecting an unexpected GPU by default for some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On Windows 10 1803 and later, the game should select the GPU in this order:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "external GPUs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "discrete GPUs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "internal GPUs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For older versions, the game should select the GPU by the one with the highest amount of dedicated RAM.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In any other case, it will fall back to the original method, based on default initialization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes for crashes related to Alt+Tab and other scenarios in or related to Full Screen mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please report any issues in our Troubleshooting forum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1998340"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1998340/view/5070528176567272904"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-03T23:01:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1998340",
+      "checkedAt": "2026-11-13T03:24:26.574Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-03T23:01:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1998340",
+      "checkedAt": "2026-11-13T03:24:26.574Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-03T23:01:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.396Z"
+  }
+ ],
+ "issues": []
+}

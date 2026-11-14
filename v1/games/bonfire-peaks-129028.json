@@ -1,0 +1,1648 @@
+{
+ "game": {
+  "id": "bonfire-peaks-129028",
+  "igdbId": 129028,
+  "name": "Bonfire Peaks",
+  "cover": {
+   "imageId": "co2i5d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2i5d.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arp66",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arp66.jpg"
+  },
+  "ps5Release": "2021-09-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bonfire-peaks-129028@1.3.25.10",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.3.25.10",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-06T17:14:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixes Unity security vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixes a bug where you could make crates clip into each other https://steamcommunity.com/app/1147890/discussions/0/604169272337420478/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/1811772772612461"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T17:14:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.088Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T17:14:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.088Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-06T17:14:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:29.527Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.3.25.9",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.3.25.9",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-02T18:09:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Design: prevented unintended solution for Visions from the Abyss (DLC3) reported here https://steamcommunity.com/app/1147890/discussions/0/604162514919452106/?tscn=1753359079",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance: general optimizations for smoother sailing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Accessibility: added framerate settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: some crates ended up in walls in DLC2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: this bug in level Dig Deep (DLC3) https://steamcommunity.com/app/1147890/discussions/2/604163526655937326/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: DLC2 ending bugginess described here https://steamcommunity.com/app/1147890/discussions/2/604158477795860160/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: pushing crates upward diagonally when it shouldnt be possible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: minor changes to controller vibration (e.g. vibe when rotating is less strong)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visual: minor art tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/1809235871756112"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T18:09:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.086Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T18:09:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.087Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-02T18:09:01.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-11T21:57:29.525Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.2.23.05",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.2.23.05",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-17T17:22:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Prevent unintended solution to level Drop Box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a startup state that triggered a new game even if save data existed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix determinism issue when arrows collide with crates in mid-air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a few edge cases where crates joined by arrows would behave unexpectedly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for an edge case where the player could both climb onto and lift a multi-crate structure in 1 move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/5140340943302200345"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-17T17:22:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.085Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-17T17:22:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.086Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-17T17:22:56.000Z"
+     }
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:16:24.086Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.2.23.03",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Patch 1.2.23.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-13T19:04:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed unintended solution for level 'Sushi Belt'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "improve in-puzzle camera feel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "disable support for portrait aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a bug where you couldnt remove a crate mounted to an arrow trap, if it was also joined to a separate crate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed two scenarios where arrows would snap when they shouldnt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/5070528810307595418"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-13T19:04:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.085Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-13T19:04:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.085Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-13T19:04:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.212Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.1.1",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.1.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-07-08T22:51:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've just pushed a new patch of bug fixes. Nothing too glamorous, just more stability. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also ICYMI - the first chapter of \"Lost Memories\" DLC is coming soon, wishlist here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.1.1 Patch Notes",
+     "items": [
+      {
+       "text": "Fixed many situations where moves were incorrectly disallowed / allowed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a handful of frame-specific undo/reset bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few bugs where crates joined by arrows could disconnect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few bugs where crumble blocks didn't crumble when they should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few bugs where crates didn't get impaled on spikes when they should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few bugs where crates could intersect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few bugs where arrows snapped when they shouldn't and vice versa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved logic around when crates get pushed by a rotation vs when they get carried",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bunch of bugs where crates that are carried by a rotation could do spooky things",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock (seen in \"Bodyguard\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disallow queueing of repeated \"grab\" action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed 2x2x1 shape with joined arrows could float",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crate incorrectly falling when a crate it's joined to is supported by a crumble block: Fixed bugs where, under very specific circumstances, ...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player could walk through crates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flying crate doesn't fire when it should (seen in \"Bodyguard\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Climbing into a stack of crates pushes them too far",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wall spikes push crates by 2 tiles rather than 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crate on head while climbing causes ghost pushing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Movement incorrectly allowed while an arrow was mid-air (seen in \"Turning The Corner\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4539082035564221391"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-08T22:51:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.084Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-08T22:51:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.084Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-08T22:51:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.211Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.27",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Patch 1.0.27",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-18T17:21:28.000Z",
+   "notes": [
+    {
+     "title": "In the meantime, here's some patch notes for some issues I fixed in v1.0.27, live now",
+     "items": [
+      {
+       "text": "Controller mapping is now displayed properly, but still not remappable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made snowy ground tiles easier to read",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced polycount on some models to improve performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where arrows can be pushed/pulled sideways into/out of arrow traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where walking on a supported 2x1 that's above a crate that's above spikes incorrectly impales the crate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few bugs where crates weren't being carried when they should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mouse click in pause menu no longer deselects the active button",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed overworld lighting not updating after undoing an overworld reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Walking on a 2x1 supported by both a crate and a crumbling block no longer crumbles the block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Undo state wasnt being tracked if you pivot without holding something, now it is",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where collisions werent being checked if you quickly changed directions mid-move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could clip arrow-joined crates through solid objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few bugs where you could separate two crates joined by an arrow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a handful of edge cases where you could get stuck at a 45° angle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a \"pulling a crate out of an arrow trap while it was trying to fire\" bug found in Bodyguard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that was possible in level Bodyguard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4259848535831793161"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-18T17:21:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-18T17:21:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.084Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-18T17:21:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.198Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.26b",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Patch 1.0.26b",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-10T15:40:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added support for ultrawide monitors",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4224939386891165481"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-10T15:40:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-10T15:40:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.083Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-01-10T15:40:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.197Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.26",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.26",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-30T22:49:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed one more edge case where the \"Infinite Loop\" achievement triggered erroneously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some bugs related to collision with crumbley blocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crate thud sound now plays equally in left and right audio channels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4224938027326344338"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-30T22:49:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-30T22:49:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.083Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-30T22:49:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.197Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.25c",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.25c",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-07T16:58:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix for a multi-arrow trap regression found on level Chain Reaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a bug where you could separate two crates that were joined by an arrow by pushing them upward diagonally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4224936215402467609"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-07T16:58:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-07T16:58:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.082Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-07T16:58:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.196Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.25b",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.25b",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-06T00:47:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix for late game softlock in level Into the Ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4224936215396371358"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-06T00:47:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-06T00:47:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.082Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-06T00:47:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.195Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.25",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.25",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-03T20:39:55.000Z",
+   "notes": [
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Edge case crash found in level \"Maximalist\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A dozen cases where arrows should snap but don't and vice versa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pressing escape key twice leads to weirdness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buggy behaviour if you reset the overworld while holding a crate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Infinite Loop achievement (hopefully for the last time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arrows can fire indefinitely if you're fully zoomed in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some timing/gravity bugs related to spikes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4224936215388464229"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-03T20:39:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-03T20:39:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.081Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-03T20:39:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.195Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.24",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.24",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-07T22:19:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed: a dozen edge cases where crates joined by an arrow would separate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: new save games were occasionally loading previous game states",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: arrows joined to flying crates now snap when they should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: a water current bug (reproducible in \"Reverse Osmosis\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made a deterministic rule for 2x1s that are being pushed in 2 different directions by water currents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the rule is: if a 2x1 is on multiple currents, and one is pointing at the other, make that one take precedence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4186653398782325227"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-07T22:19:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-07T22:19:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.081Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-07T22:19:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.194Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.23b",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.23b",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-26T20:19:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix for a regression that caused 2x1s to fall through wall spikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4103335143124923979"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-26T20:19:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-26T20:19:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.080Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-26T20:19:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.193Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.23",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.23",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-26T15:04:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Mechanics spoilers ahead!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor lighting improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where you could push a 2x1 through a wall and intersect some crates (found in Crate Expectations)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where joined crates sitting on spikes would separate for no apparent reason",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where an arrow inside a charred 2x1 would inexplicably swap positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a flying crate would move one extra tile even if the crate below it (supporting it) was unable to move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that was possible in Trench Run, among other places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that was possible in To Infinity, among other places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could die, reset, then undo, and circumvent the death state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock possibility in the end sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other stability fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4103335143124128428"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-26T15:04:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-26T15:04:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.080Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-26T15:04:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.193Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.22b",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.22b",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-22T13:21:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix -",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where If you used your mouse to delete a save file, it deletes the one whose button is currently selected (very possibly not the same save!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4103335143109301653"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-22T13:21:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-22T13:21:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.079Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-22T13:21:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.192Z"
+  },
+  {
+   "id": "bonfire-peaks-129028@1.0.22",
+   "gameId": "bonfire-peaks-129028",
+   "displayName": "Update 1.0.22",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-14T16:35:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed: can't drop a 2x1 with crates on top of it partially over a ledge in the overworld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: collision is off by one tile in part of the overworld village",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Infinite Loop achievement shouldnt trigger erroneously anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level Design: Prevent some unintended solutions in the overworld end sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level Design: Prevent unintended solution to 'Out of the Way'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1147890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1147890/view/4698935641755725007"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-14T16:35:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-14T16:35:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1147890",
+      "checkedAt": "2026-11-13T03:16:24.078Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-14T16:35:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:32.192Z"
+  }
+ ],
+ "issues": []
+}

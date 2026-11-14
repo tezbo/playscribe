@@ -1,0 +1,256 @@
+{
+ "game": {
+  "id": "while-we-wait-here-238675",
+  "igdbId": 238675,
+  "name": "While We Wait Here",
+  "cover": {
+   "imageId": "co8aj7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8aj7.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar270o",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar270o.jpg"
+  },
+  "ps5Release": "2024-10-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "while-we-wait-here-238675@post-2024-12-05",
+   "gameId": "while-we-wait-here-238675",
+   "displayName": "Bug fixes 03",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-05T10:10:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed two English typos in the text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a russian translator in the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2213120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2213120/view/1784506359238310"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T10:10:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2213120",
+      "checkedAt": "2026-11-13T03:36:07.870Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T10:10:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2213120",
+      "checkedAt": "2026-11-13T03:36:07.870Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-05T10:10:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:16.919Z"
+  },
+  {
+   "id": "while-we-wait-here-238675@post-2024-10-27",
+   "gameId": "while-we-wait-here-238675",
+   "displayName": "Bug fixes 02",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-27T13:55:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Vertex wobble slider is now saved correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The subtitle name for Cliff is now displayed correctly in scene 09.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alex's dialogue in scene 05 now proceeds regardless if you serve her the same food twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2213120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2213120/view/6212245217911920416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-27T13:55:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2213120",
+      "checkedAt": "2026-11-13T03:36:07.869Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-27T13:55:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2213120",
+      "checkedAt": "2026-11-13T03:36:07.869Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-27T13:55:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:16.918Z"
+  },
+  {
+   "id": "while-we-wait-here-238675@post-2024-10-24",
+   "gameId": "while-we-wait-here-238675",
+   "displayName": "Bug fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-24T08:53:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where the milk bottle couldn't be picked up before taking Eddie's order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to the Turkish language localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2213120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2213120/view/6212245217911815641"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-24T08:53:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2213120",
+      "checkedAt": "2026-11-13T03:36:07.869Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-24T08:53:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2213120",
+      "checkedAt": "2026-11-13T03:36:07.869Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-24T08:53:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:16.918Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,2734 @@
+{
+ "game": {
+  "id": "terrinoth-heroes-of-descent-389109",
+  "igdbId": 389109,
+  "name": "Terrinoth: Heroes of Descent",
+  "cover": {
+   "imageId": "cobhdc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobhdc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar592j",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar592j.jpg"
+  },
+  "ps5Release": "2026-06-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "terrinoth-heroes-of-descent-389109@1.05",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-09T12:37:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Heroes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is now available! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.05 focuses heavily on multiplayer stability, with numerous fixes for softlocks, desynchronization issues and exploration interactions. It also addresses several progression blockers, including the infinite black screens that could occur in Below Skydown and The Artificer's Workshop, alongside fixes for Skills, Items, localization and performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "✨ Highlights",
+     "items": [
+      {
+       "text": "🤝 Numerous multiplayer stability improvements, including fixes for several softlocks related to initiative reordering, narrative events and cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🛠️ Fixed infinite black screens that could occur while solving puzzles in Below Skydown and The Artificer's Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🔄 Fixed additional multiplayer rollback and desynchronization issues during exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "⚔️ Fixed several issues affecting Hero Skills, perks and combat effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🛡️ Fixed multiple Item effects not behaving as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🌐 Various localization fixes, minor bug fixes and performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🤝 Multiplayer",
+     "items": [
+      {
+       "text": "Fixed a softlock when a player triggered a cutscene while another player was reordering the initiative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when the host reordered the initiative during the deployment phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when a player used a Skill during exploration while the host was reordering the initiative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when Aurta's Helka's Thunderwave hit only one enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when a cutscene and a narrative point were triggered at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when the host loaded a save during an enemy turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock during narrative points when guests repeatedly sent suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where the host could start a fight before guests were ready, which could lead to a softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a desynchronization that could occur when a guest triggered combat while moving up or down a ramp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional cases where guests had difficulty interacting with elements during exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional cases of rollback when interacting with objects during exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed guests being able to take a Hero's turn when that Hero was last in the initiative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Heroes automatically ending their turn in initiative clusters in specific situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to change a Hero's position during the deployment phase after selecting Ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple minor multiplayer issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🎮 General",
+     "items": [
+      {
+       "text": "Fixed a softlock when activating levers with Electric Skills if doing so also triggered a move action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This notably fixes the infinite black screens that could occur while solving puzzles in Below Skydown and The Artificer's Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that could leave the game permanently in slow motion when Myria's Leaping Slash was used inside an Overwatch area and killed an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to obtain the second half of the key in the Looking Pond when replaying the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Below Skydown secondary quest not starting when replaying the mission after previously abandoning it once the secondary quest had been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to kill certain NPCs inside dungeons, which could potentially lead to softlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed permanent immunities being lost when a temporary immunity of the same type expired.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies occasionally being invisible during certain fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Frostbite dealing more damage than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several Hero level-up perks not working as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ignore Protection effects now only apply to Protection values above 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Arlo",
+     "items": [
+      {
+       "text": "Fixed Freezefire Precipitate's second patch not granting enough charges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Alchemical Panacea's second patch not applying Slow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Aurta",
+     "items": [
+      {
+       "text": "Fixed Icicle Armor's second patch applying Frostbite to Dazed allies when equipped with an Amaranthine or Radiant Permafrost Wand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the range displayed in the Lightning Bolt tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cedwin",
+     "items": [
+      {
+       "text": "Fixed Grasping Hook doing nothing when used on allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tethercoil Shot's third patch not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Myria",
+     "items": [
+      {
+       "text": "Fixed Crescent Feint not triggering Frostbite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Viper Fang's first patch activating when the target had fewer than 3 Negative States.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Nomharr",
+     "items": [
+      {
+       "text": "Fixed Frenzied Assault blocking inputs during exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Savor the Kill not healing Nomharr when the target was killed by the Skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Veshi",
+     "items": [
+      {
+       "text": "Fixed the explosion granted by Bright Detonation remaining permanently available as a Skill for the Hero carrying the state after abandoning a mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Flame Shield's first patch Burning the caster instead of the target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🛡️ Items",
+     "items": [
+      {
+       "text": "Amaranthine/Radiant Quicksilver Greaves: Fixed the items not granting immunity to Cold Surfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Executioner's Edge: Fixed the bonus damage always being applied to Bleeding targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moonveil Stinger: Fixed its effect triggering on all kills instead of only kills against isolated targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moonveil Stinger: Fixed its debuff being stackable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your reports help us track down these issues and continue improving Terrinoth®: Heroes of Descent. Please keep sharing anything unusual you encounter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in Terrinoth! ⚔️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 38,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0,
+    "topNew": [
+     "🛠️ Fixed infinite black screens that could occur while solving puzzles in Below Skydown and The Artificer's Workshop.",
+     "🔄 Fixed additional multiplayer rollback and desynchronization issues during exploration.",
+     "⚔️ Fixed several issues affecting Hero Skills, perks and combat effects."
+    ]
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1843481262688908"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T12:37:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.944Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T12:37:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.946Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-09T12:37:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:23.920Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@1.04",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-10T13:05:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Heroes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is now available on all platforms! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch brings major multiplayer improvements, a complete rework of the combat camera, numerous quality-of-life improvements, a large balance pass across Heroes and Items, and plenty of bug fixes and optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "✨ Highlights",
+     "items": [
+      {
+       "text": "• 🎮 Guests can respec their assigned Heroes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 🤝 Major multiplayer stability improvements and numerous co-op bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 📷 Reworked combat camera with new customization options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 💰 Hero respec is now completely free.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• ⚔️ Extensive balance changes for Heroes and Items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 🛠️ Numerous bug fixes, AI improvements, localization updates and performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "For Guests",
+     "items": [
+      {
+       "text": "• Guests now unlock the same achievements as the host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Guests can now respec their assigned Heroes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes for Host and Guest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed an infinite black screen at the end of dungeons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed cases of rollback when interacting with objects during exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Work is still ongoing on this feature. However, unless you enjoy spam-clicking everything, rollback issues should now be largely resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a softlock during the final fight in the Magician's Lair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a potential softlock when a guest makes choices during narrative events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed deployment zones being reset for guests joining during the deployment phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed guests joining one after the other while in combat or deployment phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed retreat areas not appearing for guests joining after deployment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Supply Stash not affecting guests' consumables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Damage over Time effects not being applied in some cases to guests' Heroes inside clusters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed host's not getting the voices back if a dialog is triggered while browsing the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed spawn animations not playing on the guest's side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed retreat icons remaining visible for guests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Rallying Areas remaining visible after being used on guests' side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed guests hearing every previously played sound when joining an ongoing dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed controller auto-targeting inside clusters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed softlock if all players had the \"Automatic End Turn\" disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a desync where the host change its hero's skill/item while the client is in the shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed an issue where an item is displayed in the skill section of a hero in the compendium.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Camera",
+     "items": [
+      {
+       "text": "• Reworked the free camera system during combat: a dedicated input now toggles between automatically or manually handled camera in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's the only way to access the free camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This change will be the default choice for new games, but won't be activated on already existing games as you might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "be used to the current system. If you want to try it out, deactivate the \"Legacy Camera System (pre 1.04)\" option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added an option to center the camera during enemy turns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When deactivated, the camera will stay at the same place until the enemy figured what its next action is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added option to tweak Camera Translation Speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added option to tweak Camera Translation Damping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added option to tweak Camera Rotation Speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added option to tweak Camera Rotation Damping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added option to activate/deactivate camera pan with mouse on screen border.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "• Hero respec is now free of charge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added option to show/hide the HUD during AI Turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• While in menus, mouse cursor is no longer locked to the game window.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Tooltips of hovered entities can now be viewed during AI and other players' turns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Automatically Continue Dialogues can now be toggled on and off during conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Opening the map doesn't cancel the heroes movement anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "• Interactable objects that deal damage (such as explosive barrels) now deal damage based on a percentage of maximum health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Frozen interactable objects now thaw when exposed to fire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed frozen objects never thawing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Arlo level 10 perk not refilling consumable charges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Veshi losing her burn immunity with the item \"High Priestess Tunic\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed input being taken into account when the player is in the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "• Fixed Healthy spirit in a healthy body and Fleet of foot achievements not being unlockable if you restarted the mission after failing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note: This fix is not retroactive. If you were affected, you'll need to complete the mission and restart it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Healthy spirit in a healthy body and Fleet of foot achievements being unlocked if you met the conditions but lost the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Squeaky Clean achievement being unlocked of a Hero fell unconscious due to demon blight stacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "• Various AI improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Various localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Numerous minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localisation",
+     "items": [
+      {
+       "text": "• Fixed a loc issue where burn immunity in Spanish & Japanese display the bleed immunity text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Arlo",
+     "items": [
+      {
+       "text": "• Fire Wall now has 4 charges (up from 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Freezefire second patch now grants +2 charges (up from +1) and removes the cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Heartbreaker third patch now reduces the target's Protection while standing on a surface instead of removing positive states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Aurta",
+     "items": [
+      {
+       "text": "• Chain Lightning can no longer target allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Chain Lightning first patch now slows enemies hit instead of removing Barrier before dealing damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Helka's Thunderwave no longer triggers allies' weaknesses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Icicle Armor no longer triggers allies' weaknesses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Frostfall now has 4 charges (up from 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Lightning Bolt second patch now completely prevents damage to allies instead of simply reducing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Static Ward first patch now roots enemies in the center for 1 round instead of buffing allies' resistances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Storm Call now has 4 charges (up from 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cedwin",
+     "items": [
+      {
+       "text": "• Bullseye cooldown reduced to 1 round (down from 2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Grasping Hook third patch now reduces the target's Protection instead of empowering Cedwin's next skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Shock Arrow no longer removes Unstable from the target, but now deals +50% additional damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Stopping Power first patch now deals Area Damage instead of double damage when the target is Unstable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Finniel",
+     "items": [
+      {
+       "text": "• Patient Bloom now has 4 charges (up from 3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Spore Infection second patch now increases Poison stacks instead of Poison duration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Kharaz",
+     "items": [
+      {
+       "text": "• Into the Fray first patch now also grants Kharaz +50% damage until the end of the turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Rupture second patch now also reduces the skill's cooldown by 1 round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Myria",
+     "items": [
+      {
+       "text": "• Crescent Feint cooldown is now displayed correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Viper's Fang third patch now applies 4 Bleeding stacks (up from 1).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Nomharr",
+     "items": [
+      {
+       "text": "• Brutal Smashdown first and third patches have been swapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Chosen Prey first and third patches have been swapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Frenzied Assault second patch now also reduces the skill's cooldown by 1 round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Maiming Strike cooldown reduced to 1 round (down from 2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Reckless Outburst first and third patches have been swapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Savor the Kill cooldown reduced to 1 round (down from 2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Wild Bloodlust second and third patches have been swapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Veshi",
+     "items": [
+      {
+       "text": "• Cleansing Fire third patch now grants +8 Protection (up from +4).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Dancing Blaze cooldown reduced to 1 round (down from 2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Dancing Blaze third patch now also removes the cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fire Storm second and third patches have been swapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Scorched Earth first patch now also grants +1 charge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛡️ Items",
+     "items": [
+      {
+       "text": "• Altruistic Blade: Added +0/35/50/75% damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Blade of Vitality: Added +0/35/50/75% damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Dragonheart Ornament: Activation threshold increased to -/50/75/75% (previously -/50/50/50%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Dread Mace: Fixed the Exsanguination tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Ember Ward: The Radiant version now triggers on all Damage over Time effects instead of only Burning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Gustforce Chime: Added +0/35/50/75% damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Magdust Canister: The Marked effect now grants 1 Action Point to every Hero on kill instead of a random Hero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Mistweaver's Wand: Bonus healing increased to +10/15/20/25% (previously +10/10/15/25%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Patient Avenger: Added +0/35/50/75% damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Permafrost Wand: Added +0/0/6/10 Fire and Frost Resistance, and +0/0/0/5 Protection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Prism Shield: Fixed the Radiant version's resistance aura so it now matches the range of the Amaranthine version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Rot Ridden Iron: Fixed the Amaranthine and Radiant tooltips. They now correctly state that their effects also apply to Physical skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Safekeeper's Locket: Added +0/0/10 Decay and Lightning Resistance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Siryasan Sun Scimitar: Tooltip now correctly states that the Critical Chance bonus lasts until the end of the next turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Stormbringer Garment (Amaranthine): Now grants immunity to Dazed instead of Stun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Stormbringer Garment (Radiant): Now grants immunity to all Crowd Control effects instead of only Stun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• True Silver Heads: No longer removes Unstable on critical hits. Instead, it now triggers Unstable with any damaging skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Undying Will: Fixed an issue where the automatic revive would not trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Unstoppable Carapace: Health threshold increased to 90% (up from 75%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Windblade Veil: Health threshold adjusted to 50/50/75% (previously 30/50/50%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Every bug report and suggestion helps us improve Terrinoth: Heroes of Descent, and we hope you enjoy this latest update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in Terrinoth! ⚔️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 1,
+    "balance": 0,
+    "other": 105,
+    "ps5": 0,
+    "topNew": [
+     "• 🎮 Guests can respec their assigned Heroes.",
+     "• 🤝 Major multiplayer stability improvements and numerous co-op bug fixes.",
+     "• 📷 Reworked combat camera with new customization options."
+    ]
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1840310314351494"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T13:05:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.943Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T13:05:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.944Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-10T13:05:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:23.919Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@1.03",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Patch 1.03",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-02T15:02:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, thank you once again for your patience, your support, and for all the feedback you've shared with us over the past few weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today's update continues our work on improving Terrinoth: Heroes of Descent, with a strong focus on co-op stability, gameplay fixes, quality-of-life improvements, and balancing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Guests can now access and view the Collection (Shop and forge).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that only the host can spend resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several synchronization issues that could cause the host and guests to see different states of the environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an infinite black screen when accepting a multiplayer invitation while the game wasn't already running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that could occur when a guest used the Rallying skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a desynchronization that could occur when a guest spent Action Points on multiple heroes within the same initiative cluster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed guests seeing incorrect hero levels and being unable to level up their assigned heroes during Team Creation in the camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed guest’s followers not following the guest's leader.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Synergy Skills being available only to the host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed guests not seeing aura effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed guests' skills sometimes disappearing after loading into a dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some lags and teleportations in exploration. This is still work in progress and you'll still see teleportations, notably while interacting with environment elements after issuing a move command.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Improvements",
+     "items": [
+      {
+       "text": "Added a Help section to the Pause Menu, allowing you to revisit any tutorials you've already unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bosses are now immune to Frozen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Zagyar's behavior in The Tower of Fang Peak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Selghar's behavior in The Vault of the Elder Kings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the final encounter in Mennara's Teeth. The round limit is now correctly removed once all Dark Vines have been destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the dungeon layout in A Prison of Ice. This resolves the issue where Nomharr could jump across the chasm, start combat, and leave the rest of the party permanently trapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed potions sometimes appearing in skill slots. As we didn't have consistent reproduction steps for this issue, there may still be some edge cases. If you encounter it again, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a softlock during the first fight of The Cave of Wonders when only one enemy remained alive at the end of Round 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Mizrael's Unbearable Corruption not knocking heroes unconscious when the Blight threshold was reached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Soulbiter not removing blight applied to heroes while in the aura.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Aim Penalty floating text appearing too many times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the Squeaky Clean achievement not always unlocking when conditions were met.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the Healthy Spirit in a Healthy Body achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the readability of Barrier stack removal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved wording in some tutorials and combat objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the cost of the Radiant Shard upgrade from 10,000 Gold to 3,000 Gold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed multiple minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed missing characters in polish font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various optimization improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've continued working on GPU usage, particularly in the Main Menu. While we've made improvements, we know some players are still experiencing high GPU usage, and we'll continue monitoring your feedback while investigating additional optimization opportunities wherever possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Skills",
+     "items": [
+      {
+       "text": "Fixed Aurta's Winter's Ire causing a softlock when killing a Frozen enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cedwin's Shock Arrow third upgrade not applying Stun when the conditions were met.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Finniel's Regrowth second upgrade not increasing healing when the conditions were met.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Finniel's Spore Infection not spreading Poison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Myria's Guard Break first upgrade not working correctly when the third upgrade was also activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Nomharr's Frenzied Assault second upgrade causing him to charge twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Nomharr's Brutal Smashdown third upgrade damaging also Nomharr himself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Fixed the Duality Talisman losing its damage bonus after the first fight in a dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Adventurer's Ring and Quicksilver Greaves losing their Speed bonus after the first fight in a dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Veshi's High Priestess Tunic, Finniel's Bloodthicket Diadem, and several other items losing their immunity effects after the wearer became unconscious.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced Unstoppable Carapace Protection bonus from +4 to +2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Radiant Arrow of Kurnos damage bonus from +35% to +50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "What's Next?",
+     "items": [
+      {
+       "text": "We'll continue monitoring your feedback as we work on improving Terrinoth: Heroes of Descent. Every report helps us identify new issues and prioritize future improvements, so if you encounter a bug, please don't hesitate to let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what we're currently working on",
+     "items": [
+      {
+       "text": "Improving the combat camera to make sure you don't miss the action and have better visibility of what's happening when it's not your turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalancing combat interactables (such as explosive barrels) so they scale more naturally throughout the adventure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continuing to fine-tune the game's overall balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Investigating the cause of long loading times experienced on some hardware configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you for your continued support and feedback. We'll keep sharing updates as development progresses!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you soon in the lands of Terrinoth!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 20,
+    "balance": 2,
+    "other": 12,
+    "ps5": 0,
+    "topNew": [
+     "Added a Help section to the Pause Menu, allowing you to revisit any tutorials you've already unlocked.",
+     "Bosses are now immune to Frozen.",
+     "Improved Zagyar's behavior in The Tower of Fang Peak."
+    ]
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1836506165568296"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T15:02:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.941Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T15:02:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.942Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-02T15:02:11.000Z"
+     }
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:32:45.942Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@1.02",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-19T14:53:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we're releasing Patch 1.02 8620 48150",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our development team continues to work hard on addressing reported issues and improving the overall experience. As always, we're carefully reviewing your feedback and reports, which help us prioritize our work and identify areas for improvement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update includes significant multiplayer improvements, numerous bug fixes and optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Improved synchronization between hosts and guests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This update introduces a new approach to multiplayer synchronization that significantly improves overall stability and should drastically reduce synchronization-related issues during co-op sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we're very happy with the results so far, we'll continue monitoring player feedback and making further improvements where needed. This work is still ongoing, and some visual inconsistencies may remain. If you encounter any multiplayer issues, please continue to let us know - your reports are invaluable in helping us refine the experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Rallying incorrectly appearing in guests' skill bars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed guest Action Points being displayed incorrectly on the host's screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the \"Miss\" floating text not appearing for guests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed the target framerate being uncapped on the first launch of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gold, experience, and skill points being retained after abandoning a dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed The Lair of the Beast displaying 6 rewards instead of 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed damage previews not appearing when the target was standing on a pressure plate or within a Rallying area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Finniel's Guardian Spirit not being correctly applied to unconscious heroes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lord Quillan's target remaining permanently stunned if he died from an Overwatch attack while starting Exsanguination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock in The Artificer's Workshop when Aurta's Helka's Thunderwave activated multiple levers simultaneously during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several passive effects triggering more often than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various localization and translation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Option",
+     "items": [
+      {
+       "text": "Added a Shader Quality setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This option defaults to High on all graphics presets except Low and Medium, which use their corresponding shader quality levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various optimization improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We're committed to improving Terrinoth: Heroes of Descent and will continue working on fixes in the weeks ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This update has now been deployed on PC / Mac! The patch will be available on consoles later this month.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "See you on the lands of Terrinoth!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 13,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Added a Shader Quality setting.",
+     "Performance",
+     "Various optimization improvements."
+    ]
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1835871199307397"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T14:53:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.940Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T14:53:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:38:29.305Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-19T14:53:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.305Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@8614.48050",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Hotfix 8614.48050",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-16T15:25:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we'd like to thank you for your continued support, patience, and feedback. The reports and detailed information you've shared with us have been extremely valuable in helping us identify and resolve issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we're releasing a new hotfix that addresses several issues reported by the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Fixed a desynchronization issue that could occur when reloading a save file during certain fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a desynchronization issue that could occur when a guest joined an ongoing mission during combat under specific conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an infinite loading screen that could occur when joining a dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This issue was caused by Kharaz's Cyclone Stance and Arlo's Caustic Barrage being added to the skill bar and then removed during the Team Creation phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This fix is not retroactive. If your save file is already affected, please follow these steps:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Add Kharaz, Arlo, or both to your team (depending on your situation).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Equip Cyclone Stance (Kharaz) and/or Caustic Barrage (Arlo).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Replace the affected skill with another skill in the skill bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. The issue should now be resolved, and you'll be free to assemble your dream team for your next adventure!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The entire development team remains fully committed to improving Terrinoth: Heroes of Descent. We are actively working on additional fixes, multiplayer improvements, and quality-of-life updates, and we continue to carefully review your reports and suggestions as we move forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that this hotfix has now been deployed on PC, PlayStation, and Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 11,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1835236783574728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T15:25:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.939Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T15:25:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.939Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-16T15:25:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:23.914Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@1.0",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Patch 1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-12T13:46:34.000Z",
+   "notes": [
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Fixed a desync occurring when Lord Quillan destroys the lit braziers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an infinite loading screen for guests when the host leaves during a loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an infinite loading screen for guests when accepting an invitation while the game was closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock after loading a save during the deployment phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lag on other heroes' movements. Note: lag issues persist in some other cases (e.g. using a skill in exploration) — we're actively working on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Kharaz' Cyclone Stance breaking multiplayer loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the map sometimes not updating correctly on the guest's side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"A Prison of Ice\" post-fight cinematic not playing on the guest's side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an environmental lore point not being interactable in \"The Temple of the Wealdcallers\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Great Tomb\" narrative point becoming inaccessible after discovering its secret",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several narrative points not granting XP correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Veshi's Scorched Earth hitting large enemies twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Minimum percent HP on revival\" now applies to all heals, not only the revive interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various translation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple minor bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1835236783563526"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T13:46:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.938Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T13:46:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.939Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-12T13:46:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:23.913Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@hotfix-2026-06-10",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Hotfix v. 8599 47900",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-10T12:14:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're closely monitoring your feedback and actively working to address remaining issues. Keep the reports coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed a softlock occurring during the Troll encounter. Please note this fix is not retroactive, saves where the Troll was already healed during combat will not be affected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock occurring when Cedwin dies during the first skirmish in Crypts of Aerendor (game over was not triggering correctly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Forge being accessible immediately when the tutorial was disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed status effects displaying infinitely, and occasionally on the wrong character, after combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Fixed an infinite loading screen for guests when joining a session started from a demo save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock triggered when a guest leaves the lobby after clicking \"Ready\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're currently working on fixes for the remaining multiplayer issues. A first patch is on its way soon. Stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1835236783557360"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T12:14:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.938Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T12:14:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.938Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-10T12:14:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:23.912Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@post-2026-06-07",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Demo - Patch notes (June 2026)",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-07T19:10:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Heroes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Countless of you have already explored what the lands of Terrinoth® could offer so far and we wanted to thank you for playing and giving us so much quality feedback! This allowed us to improve parts of our tutorial and the first dungeon. The demo has just received a new update so, without further ado, let’s deep dive!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a tutorial for equiping items/skills while in dungeon. This feature was largely ignored and the added tutorial should make it more visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We noticed that the \"stress\" induced by the ambush made people miss the tutorials on this fight. We changed things to make sure that the initiative shuffle and initiative cluster features are correctly understood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a quest step after the undead fight in order to finish the dungeon. This will allow players who trigger the final fight to explore the dungeon after it if they want to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added multiple call to action to ease the understanding of what's expected of the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the way to access the collection, and added messages to remind the players who missed it of it's existence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added vines in the Crypts of Aerandor to make sure the player understood interactions with the environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, we would love to hear your feedback, feel free to share them on Discord or down below, and let us know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feel free to have another go at the demo, or dive straight into the full game now! Buy Terrinoth®: Heroes of Descent on PC and consoles to take on new challenges and uncover the full story!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1834602721196718"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T19:10:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.937Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-07T19:10:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.937Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-07T19:10:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:23.911Z"
+  },
+  {
+   "id": "terrinoth-heroes-of-descent-389109@post-2026-04-20",
+   "gameId": "terrinoth-heroes-of-descent-389109",
+   "displayName": "Terrinoth®: Heroes of Descent - Demo - Patch notes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-20T11:09:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Heroes,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for your feedback and support since we announced the demo! It has helped us fine-tune and balance the game, improve it, and better understand your needs. While the team is still hard at work developing a rich, vivid, and captivating experience in the world of Terrinoth® for the game’s release, we’re happy to share a patch for the current demo, available now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45981194/25e65593db8e536a7ef288ae24318a803e36f639.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Localization: Simplified & Traditional Chinese are now available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization: Issues identified in Russian, Korean, Japanese, and Polish have been fixed, and strings should now display properly in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finniel’s placeholder voice has been replaced with the final version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Camera rotation speed fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Narrative points are now displayed correctly in non-Latin languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During the enemy turn, you can now re-center the action on the active character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pushing a hero on stairs no longer causes a softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We hope you enjoy these changes! As always, we’re listening, and all constructive feedback is welcome here, on Discord, and across our social channels. If these fixes resolved issues you previously encountered, we’d really appreciate your review of the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Share your thoughts in the comments, on our Discord, and add Terrinoth®: Heroes of Descent to your wishlist to be notified when it launches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "See you in the depths of Terrinoth®!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— The Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3929630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3929630/view/1830163047265705"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-20T11:09:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-3929630",
+      "checkedAt": "2026-11-13T03:32:45.936Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:23.910Z"
+  }
+ ],
+ "issues": []
+}

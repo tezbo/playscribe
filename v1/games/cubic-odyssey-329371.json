@@ -1,0 +1,6265 @@
+{
+ "game": {
+  "id": "cubic-odyssey-329371",
+  "igdbId": 329371,
+  "name": "Cubic Odyssey",
+  "cover": {
+   "imageId": "co9tlk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9tlk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3n26",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3n26.jpg"
+  },
+  "ps5Release": "2025-05-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cubic-odyssey-329371@1.4.0.3",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.4.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-26T15:09:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Pick a spot in open space and build your own station! Start with a small platform, expand it block by block, and add equipment. Switch gravity on or off inside your station, and use the portal network to travel between your station and planets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update also improves NPC and creature behavior, multiplayer synchronization, and save reliability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Important for multiplayer: both the game and dedicated servers must be updated. Older versions are incompatible with the new version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/623d2ab6558a59ffa14a7b4e5b6f1b1d5ccc94c3.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New: Player Space Stations",
+     "items": [
+      {
+       "text": "Added the Station Core, a new craftable device. Deploy it anywhere in open space to establish your own space station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Station Core anchors your station in place and comes with a small starter platform to build out from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can build with blocks and place objects and structures on stations, just as you can on ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gravity can be toggled on or off inside your station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player stations are connected to the planet portal network, allowing you to travel between your station and planets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player space stations are supported on dedicated servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Pinned recipes now update their ingredient costs to reflect your difficulty setting and class crafting bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ingredient quantities displayed for tasks now scale correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed task scaling on crafting consoles for rescued knights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where mining tools equipped with mining bonus mods did not provide the correct bonus yield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed doors being placed with the wrong orientation inside ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where projectiles passed through some characters without registering a hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where some characters could become permanently unhittable and burrowing creatures could lose collision after re-emerging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrupted creatures no longer spawn from danger events on the starting planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed respawning after dying in space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit that allowed players to restore their pre-death inventory by quitting the game while dead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Creatures & AI",
+     "items": [
+      {
+       "text": "NPCs now react within a fraction of a second when terrain along their path is mined or built on, rather than walking into newly dug holes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pathfinding is now much faster when many NPCs are active, and long routes now complete properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flying companions no longer ignore targets more than about 31 blocks away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced erratic target switching and improved melee line-of-sight checks and stuck detection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Creatures now retain their health, level, and elite status after saving and reloading. Previously, reloading restored their health and removed their elite status.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced brief freezes during enemy spawning caused by perception checks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer & Dedicated Servers",
+     "items": [
+      {
+       "text": "World changes are now synchronized more reliably from the server to clients when they join.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creature appearance, level, and elite status are now consistent between the host and connected players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that prevented online players from interacting with some ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ship chests losing their contents after a warp on dedicated servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed transferring a client's ship from another star system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ships no longer appear in teleport lists when they are in a different location from their owner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed voxel mining issues on dedicated servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dedicated servers no longer reset their difficulty settings on startup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed server deadlocks and improved stability on long-running servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved connection reliability for dedicated servers with very large worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that caused clients to send excessive skill updates to the server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed discrepancies in generated content between servers and clients, including corruption spots, speeder towns, and ship templates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player list overlapping the difficulty panel on the session screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Server administrators: added the kick console command, a heartbeat file, and a watchdog script for automatic restarts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saves & Stability",
+     "items": [
+      {
+       "text": "Saves are now written atomically, with verification and backup rotation, greatly reducing the risk of corruption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrupted saves are now detected and quarantined rather than deleted. The game falls back to the most recent valid backup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue after ship travel that could cause collected loot to remain in the world and the game to hang when quitting to the menu. Saves made while this issue was active may still contain leftover loot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when saving twice in a row with objects attached to a ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where blocks placed during a ship autosave were not included in the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could erase terrain edits if a save occurred before the planet finished loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where autosaving one ship froze building on other ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several crashes and rare freezes related to threading, physics, and loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Graphics",
+     "items": [
+      {
+       "text": "Fixed DirectX 12 crashes caused by running out of memory.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a memory leak caused by painting ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized shadow rendering for planted seeds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship autosaves are now significantly faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Block destruction events are processed faster, reducing delays during heavy mining or explosions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Improved the sound system for weapons, rockets, speeders, and power sources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localization & Other",
+     "items": [
+      {
+       "text": "Added translations for new text and fixed duplicate strings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the privacy agreement text in all supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 24,
+    "balance": 2,
+    "other": 20,
+    "ps5": 0,
+    "topNew": [
+     "Added the Station Core, a new craftable device. Deploy it anywhere in open space to establish your own space station.",
+     "The Station Core anchors your station in place and comes with a small starter platform to build out from.",
+     "You can build with blocks and place objects and structures on stations, just as you can on ships."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1847286114045261"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T15:09:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.192Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T15:09:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.192Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-26T15:09:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.993Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.3.1.0",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.3.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-08T09:12:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/fb92888d032d808315cae4f0cad7d143a85f1f05.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pets! You can now tame and befriend all animals which are not plagued by corruption. Furthermore, you can crossbreed them in a special device to obtain more exotic DNA structures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A special “capture” grenade is now available. When hitting with it, a creature will get captured inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can then release this creature back into the wild as your pet using that filled grenade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creatures have a hunger bar indicator which depletes slowly. When reaching zero, the creature will turn back into a wild animal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A creature mixer appliance has been added where two compatible captured creatures can be merged into another one inheriting traits from both parents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Spaceships",
+     "items": [
+      {
+       "text": "Changed the aim-assist logic for ships and they now lead the fire a lot more correctly and hit their target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship doors and hatches can now be placed horizontally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a couple of issues causing black screens for ship passengers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed many issues related to resetting and repairing ships on dedicated server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing player ships to be reset on dedicated servers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The warp-travel UI no longer computes travel paths as it was creating confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue blocking interaction with newly purchased ships",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Fixed stacking of batteries of different charge levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the continuous “backspace” press to clear input and chat boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Objects on the space station now get saved, leaving stuff there will no longer end up in losing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug related to the “Split” action on stacks of resources inside the Darkness Purifier UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the jetpack sound to trigger without the jetpack being active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies will now spawn with an active attack cooldown so freshly created enemies don’t hit you the very same moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Created a new sound slider for combat sounds level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the UI count of secondary craft items in the crafting panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the host of a multiplayer match to be invisible to the clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the Network state on PS5 – disconnection should trigger less often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 0,
+    "other": 12,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1836506165580053"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-08T09:12:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.191Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-08T09:12:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.191Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-08T09:12:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.991Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.2.5.5",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.2.5.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-14T10:05:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Build your own planet! The latest patch adds the ability to create and customize your starting planet for Adventure and Creative game mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new button has been added to the character setup which lets you tune your starting planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/4bd245e12181c88a352e3ea61464dd4f167dc3b9.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45439812/0fae1dba9fffacd6e718a9d5df6e6a33c7ca2e18.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45439812/cca9468d495d4474e9b61e880ea88be494408305.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45439812/b58fccca7ac04dd5e307f7e75f09d7877c71266f.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45439812/bb332de62ca30d46acd702a4411943531ccd57bf.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45439812/a697276587dca929f1c3d65f88844927038b84b8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The PS5 version now supports mouse and keyboard input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Getting the villagers aggressive with you by attacking them will now trigger an in-game message and a warning displayed for the duration of the penalty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Some flickering issues have been fixed for the stars search box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of UI overlaps when using the maximum UI & Text scale options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing passengers on ships to be disembarked when landing on planets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situations causing the Quberion space rays to be present for online clients after the planets where cleansed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a sync issue related to ship weapons overhead over multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing ghost lobbies to show up sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the grenades to explode infinitely if thrown from very high up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the missing controller navigation towards the inventory in the trading screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the server’s ship changes to not sync properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an UI issue related to the count of needed quest items already present in the player’s inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 5,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1832700592788602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-14T10:05:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.190Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-14T10:05:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.190Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-14T10:05:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.990Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.2.5.0",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.2.5.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-24T11:16:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/6b657ae3c9f1ca57877e23f14083ac0f053274c6.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main theme of this update is Agriculture. Players can now plow soil cubes and sow them with seeds. Plants will grow and produce fruit. A plethora of seeds and plants has been added to the game. Some NPCs will have quests requesting these items; others will just buy them. All farming is done with the Farm-Tool gun, which plows soil and can fertilize plants to speed up their growth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other fixes",
+     "items": [
+      {
+       "text": "Fixed minor UI issues in the planet information window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing furniture to become invisible to the online game host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed situations in which ship appliances would become invisible while connected to an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing speeders to continue gathering if summoned between saving and loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the game host to be unable to craft using items from their chests when other players created bases nearby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with ship furniture synchronization on dedicated servers when applying Steam Workshop skins.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue causing all NPCs in a city to turn on their flashlights during daytime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing crafting consoles to duplicate and show an incorrect quest objective location for the knight’s material request quest steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues causing certain items not to appear in the HUD loot indicator and to be improperly scaled in the quick actions wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a set of optimizations to object physics that should reduce CPU load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where secondary fire would be triggered while moving an object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing undeployed ship appliances (after a reset or from a Workshop skin) to be visible to other online players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing some objects to transfer ownership to online clients, blocking access for the host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Gaijin Legal Note has been updated; agreement is required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1827626365765418"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T11:16:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.189Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T11:16:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.189Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-24T11:16:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.989Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.2.4.0",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.2.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-04T12:23:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The host no longer loses access to the ship’s passenger seat, and players no longer get stuck on the respawn screen after dying in open space. We’ve also made a number of improvements to online sessions and fixed several critical bugs and crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online Improvements",
+     "items": [
+      {
+       "text": "Fixed a situation where a passenger seat used by the host would not be usable by clients after the host left it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a situation where a player connected to an online session could get stuck on the respawn screen if they suffocated in space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where text on holographic screens inside ships was not being broadcast to players connected to an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Holographic screens with text can now be locked against interaction from other players, like chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed numerous UI element overlaps related to the text scale option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Abandon Quest button appearing when no quest is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a warning when a star cannot be reached with the current warp drive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes and Improvements",
+     "items": [
+      {
+       "text": "Fixed the names of some items for consistency across all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The difficulty setting that affects item prices now applies to both the Sell and Buy tabs on the commodities market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reward statues now level the surrounding terrain to ensure the chest is never inside a mountain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing lights from another ship to appear in the editor when changing ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where low-level pirates would spawn without weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The enemy count in enemy bases now differentiates between pirate bases and Darkness outposts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation where a ship dealer would also sell speeders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio and video desync caused by excessively high frame rates during cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the first-person camera inside speeders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing enemies carrying explosive bombs not to die from the explosion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some crashes and improved overall stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 13,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1826362059918039"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-04T12:23:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-04T12:23:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.189Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-04T12:23:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.987Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.2.3.0",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.2.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-18T11:39:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A highly requested feature has been added. Now ships can be shared between players. Also, a passenger seat has been added to the game and other players can be brought along for voyages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Ships can now be opened to control to other players. Like chest, they have a lock button to toggle the access of other players to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ships which were taken away to other systems by other players can now be summoned back using the usual teleporting to ship UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Passengers seats can now be placed in ships. Passengers will get transported along the ship pilot wherever they go",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ship inventory and appliances in ships are now available to other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes & improvements",
+     "items": [
+      {
+       "text": "Rendering of stars in space has been fixed to no longer overlap with other objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing ship objects to get saved outside the ship and seem disappeared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The rendering of glass has been improved during night-time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the companion QB-1 attacking too far away objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Difficulty scaling now affects all quest steps correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Displaying of ships which were designed asymmetrically has been fixed in the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the FPS affecting the camera movement speed in ship and blueprint editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved network synchronization affecting ships, characters and laser turrets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ship hatches are now fully synchronized across network",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players joining a session will no longer spawn above a pirate base if the host was in that area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple UI fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A handful of crashes were addressed and fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 12,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1825093633181959"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-18T11:39:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-18T11:39:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.188Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-18T11:39:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.986Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.2.2.1",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.2.2.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-26T13:13:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The combat system has been reworked, weapon and enemy stats have been adjusted, the interface has been improved, extensive difficulty settings for dedicated servers have been added, and bugs have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "All weapons, enemies and combat have been rebalanced. Weapons now have various recoils, better aiming and different attributes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The level of enemies now has a direct impact on their health pool, which is indicated in the health bar through the number of segments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The damage numbers on screen indicate various information through their color: Red – a critical headshot, Blue: the hit was absorbed by the shield, and Gray: the damage had a drop-off penalty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiple difficulty settings have been added to both the game and the dedicated server. You can now scale up or down various damages and crafting costs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiple recipes can now be pinned, they can be seen in the inventory screen near the tasks area and hovering over the ingredients will show their name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The F5 and F9 keys are no longer bound to quick save and quick load respectively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controller-based cursor control for UI interactions has been added to Consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "The player’s skill level now affects weapon overheating in space combat and the number of blocks obtained when using the workbench.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Darkness purifiers now have stat tooltips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each secondary quest type now has its own icon to know which location on the map is for which quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sounds for weapons have been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a situation causing lighting in cities to become duplicated for dedicated servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed small UI issues affecting the health and shield bar of the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mining from a speeder now works correctly for online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the speed of day-night time passing on dedicated servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some flickers from some 1st person animations have been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1822556746166934"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-26T13:13:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.187Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-26T13:13:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.187Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-26T13:13:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.985Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.2.0.1",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.2.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-18T10:06:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We improved the interface and the AI of some creatures, made warp jumps more convenient, and fixed a number of bugs related to both the game itself and Steam Workshop integration.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "The flamethrower now has its stats displayed in the tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The details panel will display the attached mods of any item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The task tracker on HUD now properly displays glowing ores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The held explosive is now displayed in a nicer way, you can tell what it is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiple AI fixes and improvements for the flying and swimming creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warping is no longer stopped when facing a planet and no longer consuming a warp cell without the jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Steam Workshop fixes",
+     "items": [
+      {
+       "text": "Unsubscribing from a ship design will no longer revert the ship which had it applied to the default design.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bunch of sizing issues with the Hologram Screen when having a lot of text inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the network sync of hologram screen of no-ASCII texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the destruction of some blocks which were supposed to be invulnerable (like the temple) by explosives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the damage coming from corrupted blocks while players were loading in a dedicated server session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some zero priced repair prices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wrong UI value report of some stats bonuses from mods like fire rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the speeders to be pulled to the ground at very high altitudes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue affecting the placement of tall windows in a rotation position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing the crafting of the grenade launcher to turn the stack of the first ingredient into grenade launchers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a multiplayer issue causing clients to report cleared pirate bases when landing on a new planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple HUD and UI fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 11,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "The flamethrower now has its stats displayed in the tooltip.",
+     "The details panel will display the attached mods of any item.",
+     "The task tracker on HUD now properly displays glowing ores."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1819386365089228"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T10:06:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T10:06:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.186Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-18T10:06:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.984Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.2.0.0",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.2.0.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-26T11:34:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/22b4334451b948c4c83f8237b41aa06d2b24f540.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you one of the biggest updates yet for Cubic Odyssey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now supports full Steam Workshop integration. You can share blueprints of your own structures and ships, and download other players’ creations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In the blueprint info window, there’s a new “Share” button, and any blueprints you subscribe to are marked with a special icon in your collection. As for ships, the shipyard interface now features a “Workshop” button—use it to upload your own designs or grab models made by other players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "A character appearance customization bench has been added. It can be crafted, and it will allow you to change any aspect of the character when interacting with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A search functionality has been added to the galaxy map to allow searching star systems by name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "completing the game will reward the player with a brand-new ship and speeder. They will get awarded to players who have already completed the main quest too upon loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The signs now support Unicode characters both from keyboard and clipboard paste.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The PC version has received a simple in-game chat. Pressing Enter activated the chat UI. A profanity filter toggle can be disabled in the gameplay options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Banks are now available on planets which are not overrun with pirates. Here you can deposit your currency, so the respawn cost is only applied on what you are currently holding on yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inventory sorting will now also auto-stack possible items and compact everything nicely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bunch of new hair and beard styles have been added for the character customization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An option to disable the rendering of your helmet has been added to gameplay options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1817483467033234"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T11:34:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.183Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T11:34:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.183Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-26T11:34:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.983Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.1.2.4",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.1.2.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-10T09:51:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve added holograms that let you leave text messages on walls or on the ground! We’ve also introduced the long-awaited “Mirror Mode” in the ship editor, saving you tons of time when building your own shuttle. Plus, we’ve fixed a number of bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay additions",
+     "items": [
+      {
+       "text": "Signs have been added to the game. They are holograms on which the player can choose a text to be displayed. Helps to sort chests but also works as a nice welcome home mat. There’s a sign on a stick for the ground and a screen which can be placed on any surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ship landing beacon can now be crafted and placed by players in their bases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "А much requested “Mirror Mode” added to the ship edit mode. It allows you to create symmetrical structures on both sides of the ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Ship components will no longer duplicate if you remove them and save/load the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the Halloween themed box to erase neighbor blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing lightning in outposts to not turn on and off properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situations causing overlapped NPC spawns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the constant regeneration of some pirate bases after cleaning them and reloading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the ship camera to not revert to its original state after resetting the ship structure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing constant spawning o darkness enemies around darkness cores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing some systems to have very little things to buy or sell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situations when an online P2P client would have one of the story NPCs stuck in a darkness prison cell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the online session “locked chests” bug, which did not allow hosts to interact with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secondary quests completion issues and duplication glitches have been resolved for Dedicated Server sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The empty space points of interest will no longer show up on players scanners in online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1815580768386301"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-10T09:51:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-10T09:51:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.183Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-10T09:51:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:41.982Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@major-2025-11-03",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update is out 🚀",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-03T10:57:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/1704bb481c0b7907ba7fc7939ca51bba5e7f85e5.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚀 Update: We've fixed an issue where some planets kept their shields after destroying all shield generators in space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔥 The patch is now live! 🔥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1815034432998000"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-03T10:57:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-03T10:57:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.182Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-03T10:57:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.068Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@major-2025-10-28",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Halloween 2025 and the Festive Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-28T10:28:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/0ca5b829a3b1cb1093ad24bede95c53588e57f99.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Halloween just around the corner, we’ve released a special holiday update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can dress QB-1 in an adorably spooky costume, enjoy holiday-themed skins on a variety of items, and even take to the skies on a broom like a night witch—thanks to a new Speeder that’ll send shivers down everyone’s spine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also squashed a number of bugs and boosted overall performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not a fan of Halloween? Just switch off the themed changes in your game settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Halloween 2025",
+     "items": [
+      {
+       "text": "QB-1 has a special outfit, there’s a new broom speeder, and some appliances have different appearances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The theme can be disabled from settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dedicated Servers",
+     "items": [
+      {
+       "text": "Configuration settings of the dedicated servers were reset and need to be changed. Players’ save files are intact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an unintended password field size limit for joining dedicated servers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spawning will favor your ship position if were near it when joining a dedicated server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing dedicated servers to spawn speeders a bit underground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a dedicated server crash occurring when players were selling their ships",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "A lot of memory optimizations, lowering the required CPU and GPU memory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some FX from sources on different planets showing up on all of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some hangs and freezes happening when using the Warp Gate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ship structures now load a lot faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a UI issue reporting the wrong ore richness for some planets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The spawn of some temples above the building limits has been resolved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Star systems now reflect the correct range of technology from their planets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using planet portals during online session will teleport you to the correct target portal now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some UI crashes related to duplicating items from some interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the player’s ship and it’s appliances to be removed when it was above a captured pirate base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situation which blocked the controller UI navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The base attack warning now triggers correctly for players in online sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The pirate base takeover message now is displayed for players in online sessions too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some exploits allowing the duplication of items in online sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the scene not being properly drawn when using the two quick selection wheels (inventory & chat)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The camera orbit button (middle mouse) can now be bound in the key mapping panel",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some bugs causing items to be lost during backpack changes while in an online session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing loot to gather at the feet of other players in online sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the laser turrets to not attack electric plant enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues causing NPC double spawn in online sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled the controller movement for ships during exit stabilization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 23,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1814309641603403"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T10:28:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.181Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T10:28:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.181Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-28T10:28:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.068Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.1.1.0",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-20T10:12:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a number of bugs, object duplication issues, and the inability to complete some of the quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the completion of secondary quests on player hosted sessions for clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation which ended with the ship weapons being destroyed while connected to a dedicated server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to the online session failing to be created",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the starting ship to be spawned twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue which could cause doubling of some main quest NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Placing multiple blocks at once now works properly underwater and replaces water cubes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the missing meteor shower warning from online sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue related to movement of one battery over a stack, which would destroy the stack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the ability to purify a planet after destroying a darkness walker as the last dark entity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple fixes to the landing beacons in the online environment to address multiple locks and jitters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing doubled objects in cities for online clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the appearance of visual effects from different planets on a client’s planet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with outpost naming starting straight with outpost #2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1813674389063743"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-20T10:12:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.180Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-20T10:12:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.180Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-20T10:12:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.067Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.1.0.3",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-15T15:11:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the loss of chest contents when they were placed on the ship in dedicated server sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some item duplication glitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the warp effect to get stuck in new or loaded games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue affecting the final steps of the main quest when connecting to a P2P server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue making the death animation to not be displayed properly for the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1813674388907581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-15T15:11:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.180Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-15T15:11:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.180Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-15T15:11:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.066Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.1.0.2",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-14T13:04:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Crash fixes related to dedicated server connectivity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the password field character limit to 32 for dedicated server connection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a small issue affecting the recoloring of captured pirate towers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with repairing the crashed story ship in online sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue allowing dedicated servers to be started in story game modes (these are not currently supported)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the speeder jittering when connected to an online session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused planet types to appear scrambled — they are now restored to their proper types from before the dedicated server update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where jetpack sounds could be triggered by various UI interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with counting crafting items when multiple players deployed them in the same base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1813041031371932"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T13:04:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.179Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T13:04:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.179Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-14T13:04:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.066Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.3.4",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.3.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-15T14:41:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/d512ed82cb25ab19645674dbc46bdc366ae6ecb4.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Friendly ships no longer damage your team, you can now kick unwanted players from your online session, and a random name generator is now available during character creation. Plus, there are several other improvements and fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online Improvements",
+     "items": [
+      {
+       "text": "Fixed an issue where ships would get stuck during their destruction animation in online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug in online sessions that caused a player's ship to lose all its appliances and furniture when edited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where certain quest items would be missing if the connecting player and the host were at different stages of a quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A kick button has been added to the current session panel for each connected player, allowing the host to remove unwanted players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The location of each player is now displayed in online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that caused some ships to damage their own allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that caused a space station's barrier to disappear for a connecting player in a remote system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where users who had left the server would not disappear from the interface for some connected players, causing the list to accumulate over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that caused the map to function incorrectly if a player disconnected while using the system or galaxy map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the player's ship to teleport to the center of the star system when using the editor at a space station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused teleportation to be too loud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a series of errors that would occur if the player died while the map or ship editor was open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Liberated pirate outposts now inherit the name of the pirate base and correctly display notifications when entering/exiting the zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A \"Random name” button has been added to the character customization menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When splitting a stack of colored blocks, their customization is now preserved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Knights who are part of story quests no longer change their appearance when transitioning to another planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Fixed an issue where ships would get stuck during their destruction animation in online sessions.",
+     "Fixed a bug in online sessions that caused a player's ship to lose all its appliances and furniture when edited.",
+     "The location of each player is now displayed in online sessions."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1810503566548724"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-15T14:41:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.179Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-15T14:41:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.179Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-15T14:41:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.063Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.3.2",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.3.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-08T11:17:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/9f2072a098ac9de53004da4bfd22ac2ae7985806.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve improved random-seed generation, added several multiplayer tweaks, fixed a number of pesky bugs, and more. Plus, you can now sell off every ship in your fleet except for one that you choose to keep!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Random seeding fixes",
+     "items": [
+      {
+       "text": "Generation of random seed planets has been further refined to make caves more elaborate and interesting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue where points of interest of the same type could spawn on top of one another during the initial creation of random seed planets has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Online improvements",
+     "items": [
+      {
+       "text": "Fixed a multiplayer issue where some appliances became permanently locked and could not be interacted with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with item mods not updating correctly when transferred to another player in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare issue where the pilot could spawn outside of their ship when joining an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other fixes and changes",
+     "items": [
+      {
+       "text": "Players can now sell their ships, leaving only one final chosen ship. This function is available at any ship editor terminal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skin tone can now be customized for new characters. We plan to add an item that will allow appearance customization for existing saves as well in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The planet map interface now shows the levels of available ore on that planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue related to the “auto step” feature, which blocked movement through some 2-block high arches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The target dummy has received an updated system for displaying damage dealt and damage per second (DPS).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Structures built from blueprints will now appear on the scanner, as they were previously impossible to find after being placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to the graphics API on Steam Deck and PS5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the disappearance of the UI element that allows for rotating cubes during placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trading resources from nearby chests now works correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fences and railings have been moved to a separate crafting tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused light sources to turn on every time the game was loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused an incorrect outpost name to be displayed when entering or exiting a zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the player's rocket projectiles to collide with each other and explode in mid-air near the ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed instances where a sound would get stuck looping in one place during transitions between planets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 16,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1,
+    "topNew": [
+     "Fixed a multiplayer issue where some appliances became permanently locked and could not be interacted with.",
+     "Fixed an issue with item mods not updating correctly when transferred to another player in multiplayer.",
+     "Fixed a rare issue where the pilot could spawn outside of their ship when joining an online session."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1809869180161225"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T11:17:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.178Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T11:17:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.178Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-08T11:17:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.062Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.3.1",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.3.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-02T09:47:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/37ab2a14f65cd5a15e4aa456ffbb0594ac73bb0a.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve prepared something special for you! Random galaxy seeds are here! Start a new game in Adventure mode and make the galaxy unique—every planet and star system is shifted to a new location, keeping things fresh even for the most experienced players. This update also brings numerous balance and gameplay tweaks, UI improvements, multiplayer polish and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adventure mode",
+     "items": [
+      {
+       "text": "You can start Adventure mode games with random Galaxy seeds, which change the galaxy completely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adventure mode will now start players with Tier 1 gear, a ship and a speeder on a random planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Only the same game-mode characters can join online sessions now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Older adventure mode saves which don’t have a ship will be awarded the ship and speeder at the first load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online improvements",
+     "items": [
+      {
+       "text": "Online clients are now spawned flying their ships when joining a session in space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Online clients will be spawned in their ship if they join a session on a planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the multiplayer ship sync logic – they will look smoother now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Doors and elevators now properly sync over the network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The server’s warp and portal locations are now completely synced with the clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Painting events with the paint gun are now synced across the network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Refinery and Recycler now work better over network, no longer duplicating items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue causing certain locked chests to appear unlocked to some clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue causing network grenades to explode twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pirate base enemy count is now displayed for online clients too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issues causing the amount of darkness on a planet to be different between server and clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "One can no longer place cubes on other player’s ships or the ones for sale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay and balance changes",
+     "items": [
+      {
+       "text": "A setting to enable “one cube” stepping has been added. This setting can be restricted to “only while sprinting” too, so you won’t have to jump everytime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cleansed planet rewards now work properly, one player can receive the bonus each hour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The outpost establishment and ranged have been refined to a smaller starting area but expanding by placing objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Neutral NPCs will react to high damage shots similar to more smaller shots and become defensive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The players will no longer be allowed to repair speeders they already have in their collection and lose the resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mimic creatures will show their true shape when getting hit – sometimes you killed one and never knew it was there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & changes",
+     "items": [
+      {
+       "text": "The health hearts bar will now become a two line bar when you unlock more than 16 temples.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the missing speeders from the trader list when one had multiple speeders for sale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ships going underwater in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the UI to count small temples as big temples on the planet map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI overlap of a focused ship and creature at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where opening a second ship in the editor resulted in incomplete physics, preventing you from making changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The repair button has been removed from the Cargo section of the ship editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple UI overlap fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing some Speeder to be loaded under the textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue blocking the hover mode in Creative mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues related to player ship deaths which caused ship to become invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the fire rate bonus indicator (it was showing as multiplied, but it’s just additive).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Planet portals will now place players in a nicer position and orientation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Numerous crash fixes and other minor performance and stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 14,
+    "balance": 6,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Online clients are now spawned flying their ships when joining a session in space.",
+     "Online clients will be spawned in their ship if they join a session on a planet.",
+     "Improved the multiplayer ship sync logic – they will look smoother now."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1809235871744165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T09:47:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.177Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T09:47:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.177Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-02T09:47:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.061Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.14",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-12T10:32:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/f15357c60995f5d043bf3ba93e1e2fe333e61f38.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your spaceship will no longer go into space without you, if your character dies during takeoff! We’ve improved online, fixed a number of bugs, and made block removal in the ship editor much easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online improvements",
+     "items": [
+      {
+       "text": "Fixed the two death overlap in some scenarios for online clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue causing items to get their durability reset when discarding them during online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the initial portals list available from a server to its clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Travel portal discovery now propagates to everyone in the session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Respawn positions for online clients will now favor their ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Using the ship editor as a client will change the current ship in the online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue duplicating the generation of planet content when a client saved a remote online session’s world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the link between speeders and their traders not showing up always in online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes to the way a planet’s current corruption value got synchronized across network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a situation when a planet state would not get saved if a client was disconnected from it and the host was in a different area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the UI for the recycler for clients not always syncing properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the mining ray of the extractor positioning for clients on the server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a set of issues related to client’s speeders: not getting removed when the client left, they are summoning back if another player used them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clients will auto-embark their speeders when summoning them in online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue causing online clients not to receive XP for the piloting skill when destroying pirates in space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The galaxy map will now display the host’s current warp gates discoveries, not the clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some rare occasions when a client would use a portal to another planet and end up spawned in lava.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The appearance of all quest related NPCs is no longer random for each player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The host’s starting broken speeder can no longer be repaired and stolen by other players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Ships and speeders",
+     "items": [
+      {
+       "text": "\\ The Ship editor on the space station now allows for removal of “mass volumes” Just like the multitube placement the “left click” action hold will create a deletion volume which will remove all blocks in that section (assuming the player has space for them in their inventory).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with pirate ship sounds like they were player controlled and having an invalid volume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue sending the ship into space and respawning the player on the planet if he died during the take-off sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quests and achievements",
+     "items": [
+      {
+       "text": "Fixed an issue causing some NPCs and Quest items to show up doubled in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situations when a quest marker for a location on a planet will keep showing on different planets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unlocking of missed achievements/trophies by checking on game load and granting any that meet all the requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other fixes",
+     "items": [
+      {
+       "text": "A “hover mode” key has been added for the creative mode. It can also be triggered by double-jumping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the missing gear stats update for some bonuses (like sprint speed) after a fresh load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Appliances which will not result in a lootable disassembly have the disassembly effect red.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the trading menu not having the proper level requirement displayed when only one item was available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the rotation action for some objects, which ended up with them inside the voxel supporting them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some AI positioning issues for some creature that have ranged attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing items duplication when leaving and rejoining a session in fast succession.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 12,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Fixed the two death overlap in some scenarios for online clients.",
+     "Fixed an issue causing items to get their durability reset when discarding them during online sessions.",
+     "Fixed the initial portals list available from a server to its clients."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1807332909728838"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-12T10:32:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.176Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-12T10:32:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.176Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-12T10:32:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.060Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.13",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-04T10:53:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/21edbd97812fe641ef9348b84d3d9d150c1ed63a.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Story NPCs no longer throw themselves recklessly into danger! We’ve fixed the “Jack of All Trades” achievement, made a number of graphical improvements, refined the UI, and also fixed several bugs related to online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online improvements",
+     "items": [
+      {
+       "text": "Fixed an issue which did not allow clients to purchase or interact with ships for sale in certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Joining an online session in space will start with the player controlling his ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Loot shared in online session between players will no longer reset its durability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a lot of the ship’s incorrect behavior when syncing over network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The current online session info will be displayed in the pause screen instead of the controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The online connection screen looks better now, it has a background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Graphic and UI improvements",
+     "items": [
+      {
+       "text": "Fixed a graphics issue with the player helmet being drawn during the game pause in first person.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some UI overlaps have been addressed. Addressed a number of minor UI issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The save indicator is now displayed while the ship is being saved too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other ships in space are now valid cruise targets, both enemies and other players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes & other improvements",
+     "items": [
+      {
+       "text": "Certain main quest steps have been added safety checks. Quest NPCs are no longer allowed to be underground, for example (Casascutum really liked to go mining under the enemy base).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The “Jack of all trades” achievement has it’s on-load trigger fixed, should pop up for a lot of people when just opening the game if they ever had the 4 classes at least level 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to the fireflies visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The continuous fire after respawn was fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The paint gun will no longer paint the ship while it’s being internally processed, and those changes would end up lost. A warning is displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The teleport inside ship and leaving the driving seat positions have been refined to fix moving into the ship’s walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lot of memory leaks, a handful of them were related to ship editing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When teleporting trough planet portals, the player will no longer be placed on the highest block in the area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some physics issues with the speeders, which did not allow connected players to interact with them in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation when the last change to a ship edit was lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More auto-saves are performed, especially for a server when another player disconnects while on a far away planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Fixed an issue which did not allow clients to purchase or interact with ships for sale in certain conditions.",
+     "Joining an online session in space will start with the player controlling his ship.",
+     "Loot shared in online session between players will no longer reset its durability."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1806698490808413"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T10:53:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.175Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T10:53:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.175Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-04T10:53:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.059Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.12",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-28T14:22:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/9e0eab25648e21c3ff063f453fbd14678f79ede2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve fixed a number of bugs and critical issues in online. Low-tier loot will no longer disappear, blueprints won’t request more materials than needed, and you don’t have to worry about deadlocks during online sessions anymore!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that caused the game to completely freeze during online sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue making low tier spawned loot disappear as it was spawned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the blueprint yard to consume extra stacks of material when filling the needed blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue which saved and rewarded all server’s vehicles to the clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the spaceship sliding away from below the player when connected to an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a controls issue with the speeders and vehicles when pausing the game with controls active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the interaction indicator for online clients with pirate ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the missing HUD markers of pirate ships for online clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the FOW and Markers of a planet to show up for another planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1806064758740543"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-28T14:22:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.174Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-28T14:22:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.174Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-28T14:22:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.057Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.10",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-22T10:50:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Online sessions are now more stable, and many gameplay mechanics synchronize properly between the host and the client. We also have improved the speeders hovering system, fixed several bugs related to spaceships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/ac8a85282a6d2059aa22bea8f6e89fe4db6af62c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online improvements",
+     "items": [
+      {
+       "text": "Fixed looting of space chests as an online client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a situation in which a client could not summon its speeder anymore after leaving it on some other planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ship position and orientation sync over network has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NPC appearance is now properly synced across network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Derelict and for-sale ships now spawn correctly with their doors and driving seats for online clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some quest steps will complete now for the host when a client performs them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue which caused locked ship controls when joining an online session from a space station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Spaceship and vehicle improvements",
+     "items": [
+      {
+       "text": "Fixed more occasions which would reset a ship's design when repairing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaks to the planet vehicles hovering system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After unlocking the mobile planet purifier, the final step of purifying can be triggered from the player’s UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue causing multiple first broken speeders to spawn on the first planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a situation in which a ship's damage FX would remain in the scene even after the ship would be removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some issues with the range from which a player could teleport back to his ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When replacing a ship’s battery, the HUD message now correctly reports the number of remaining batteries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes & other improvements",
+     "items": [
+      {
+       "text": "Some safeguards have been put in place now to not allow certain actions like repairing or modyfing a ship while it’s been processed by the game engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the quest markers for the towers on Quberion to disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation which would have a temple spawn without its decorations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the stuck player’s firing of weapons during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation in which space darkness generators would respawn on load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Planet portals UI will show only properly activated portals now (they used to show all discovered ones, even powered down ones).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The UI and Text scale options are not available on consoles too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The reward chest from clearing a planet now spawns correctly at the base of the statue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple crash fixes and other tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 9,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Fixed looting of space chests as an online client.",
+     "Fixed a situation in which a client could not summon its speeder anymore after leaving it on some other planet.",
+     "Ship position and orientation sync over network has been improved."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1805431065494379"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-22T10:50:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.174Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-22T10:50:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.174Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-22T10:50:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.056Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.7",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-14T10:46:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/5dd8cc36eef700c893f55bf762cfe84b1c1688c4.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pirates no longer carry grenade launchers or spawn near players! We’ve also made several balance changes and added some handy new features, including a chat wheel!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "PC players can now use Shift and Ctrl(default mapping) for quickly transferring 1 item or the full stack of an object in the inventory UI.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A chat wheel has been added (Z key on PC and right shoulder while in the item selection wheel with a controller) to send a set of 10 predefined phrases to the online players.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Online Improvements",
+     "items": [
+      {
+       "text": "Online clients auto save their current state like in offline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The online weather system is now synced for planets, the host tended to overwrite all the galaxy with his weather.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the invulnerable pirates spawning only for a joined client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed online gear colors not getting properly synced sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy turrets now synchronize properly even when the server is not around them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some situations in which a temple portal would not properly activate for online clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Locked chests are no longer used for pooled crafting by online clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Meteor crash sites now get marked on the HUD for online clients too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the NPCs spawning in the floor of the space station for some clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a quick save button to the pause menu which works in Online Mode too to save the character, inventory and ship status.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes and gameplay improvements",
+     "items": [
+      {
+       "text": "Spawned pirates no longer have grenade launchers, Your structures are no longer threatened by large-scale destruction. Not just on PC, but across all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Re-balanced the weapon aiming sway for snipers and removed it completely for the other weapon types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Elevators can now be mined back, and its behavior has been improved to stop at detected floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The radial quick wheel has received some usability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All players will no longer be automatically teleported after placing a portal on the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed the missing health bars of enemies on some occasions .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing pirates to spawn very close to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the incorrect time zone for the save timestamp and wrong screenshots created during the quit to menu save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 3,
+    "balance": 5,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Online clients auto save their current state like in offline.",
+     "The online weather system is now synced for planets, the host tended to overwrite all the galaxy with his weather.",
+     "Fixed the invulnerable pirates spawning only for a joined client."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1805065414329374"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-14T10:46:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.173Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-14T10:46:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.173Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-14T10:46:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.055Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.5",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-07T09:28:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/37f8485ecd160ec6f32587e2d41226fa3096cf28.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve improved online session stability, resolved some issues with controls on PC and consoles, and fixed a number of minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Spawned pirates no longer have grenade launchers, Your structures are no longer threatened by large-scale destruction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Online servers have their game mode marked with icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crafted items will have mods of their tier if such mods exist for that object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now destroy mods installed on items to free that slot for another mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Captured pirated bases become travel points for online clients as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Creative mode sessions are now allowed only for creative characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed the secondary quests the online clients could not turn in for completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some control locking issues happening when the quick slots selector was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the quick wheel not always selecting properly when activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some controller input issues when rotating or moving objects in an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More small bug fixes and crash fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Spawned pirates no longer have grenade launchers, Your structures are no longer threatened by large-scale destruction.",
+     "Online servers have their game mode marked with icons.",
+     "Crafted items will have mods of their tier if such mods exist for that object."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1803527891859043"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-07T09:28:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.172Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-07T09:28:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.172Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-07T09:28:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.055Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.3",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-30T15:12:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/dd6fa37dc8897567e68ed0ab659b075b7fa72d85.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now the story progress will be smoother! In this update, we have fixed several bugs that caused some players to lose progress or get stuck on a storyline mission. Additionally, you can look forward to numerous improvements to the online mode and space travel!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed the reward of freeing Helioctus not triggering always.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situations where the darkness walker would not take damage in the static phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to transferring ship batteries from secondary cargo tabs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed items getting damaged more then they should have been when the player died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some situations in which the main quest line would get locked with Nexus related tasks after returning from there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash occurring when returning to a system with mined asteroids.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the PS5 and Xbox Series X/S save locks blocking the saving of the game altogether.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Added two game launch parameters for Steam: Vulkan and DX12 to force the game to start on that respective graphics API.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Online Improvements",
+     "items": [
+      {
+       "text": "Fixed the removal of the prison holding Helioctus not always happening for a connected client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the inability of players to fix some broken ships in space when connected to a session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue preventing online clients to move and disassemble the appliances they placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue locking the quick-wheel radial menu from showing up if a client would get disconnected when it was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some occasions when the client’s state would not get saved when getting disconnected from a server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: The appliances on the Mobile Light Strike ship were not visible for online clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Joining a session right from the first tutorial screen it will skip the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some situations in which online clients could not repair their first ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Spaceships fixes",
+     "items": [
+      {
+       "text": "Fixed a naming error in the Fighter class ship components.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Normalized ship lasers volume (we had reports they were louder then other sounds).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some occasions in which a player’s ship would run off in the distance after leaving the driving seat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the ship HP getting reset and hindering structure repairs after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ships will no longer take structure damage through their shields.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Completely repaired ships now instead of a Repair button have a Reset one in the ship editor. This button reset the design/appearance of the ship to the default. This is mostly for players who got their damaged ships registered as “designs”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 13,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1,
+    "topNew": [
+     "Fixed the removal of the prison holding Helioctus not always happening for a connected client.",
+     "Fixed the inability of players to fix some broken ships in space when connected to a session.",
+     "Fixed an issue preventing online clients to move and disassemble the appliances they placed."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1803527891641738"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-30T15:12:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.171Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-30T15:12:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.172Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-30T15:12:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.054Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2.2",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-20T14:21:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re continuing to work on various bug fixes and crash issues. In addition, we’ve made pirates weaker to make them easier to deal with!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/744256477f763b44350d7e431d4c0b79deccc45e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed flying creatures passing through the ship and not colliding properly with the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the sometimes missing quest markers for the final 4 dark key holders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where colored glass cubes could not be mined, leading to crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some of the spawning of invincible enemies for online clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pirate’s shield recharge rate and delay have been increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that prevented players from mining resources from an asteroid using the extractor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1802893906764077"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T14:21:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.171Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T14:21:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.171Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-20T14:21:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.053Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.2",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-18T15:09:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Long-awaited co-op improvements are here! Now you can enjoy Cubic Odyssey with your friends in story mode — repair ships and speeders, close chests from other players and a much more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also fixed some bugs and crashes, and improved the saving system!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/9d0b084cf25b8be77a94efa33e583a252673cb7e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online Improvements",
+     "items": [
+      {
+       "text": "Online sessions have been restored for the Story mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Network clients will progress their main quest and retain that progress upon leaving the online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clients can now repair and purchase ships and speeders while connected to an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A lock button has been added to chests to allow or block the access of other players to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the loss of chests placed in the ship while connected to an online session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the endless spawn of network explosions occurring in some instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Tree growth is now properly synchronized over the network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash from having an open chest during a client multiplayer disconnect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The character’s weapon projectile interaction with ships has been refined - no more bullets stopping in empty space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the skill progress icon would be drawn in certain UI scale values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The “Jack of all trades” achievement will now trigger when starting the game, if you have the needed requirement class levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the broken naming of the ship components crafting tabs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with traders not properly resetting their stock over in-game time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the ship collider boxes being too large and stopping player projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a client would interact with a box and result in the contents being reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the recipe for The Hoarder backpack as it was using more components than allowed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There will be no visual artifacts associated with landing and passing through the geometry of planets anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that was removing player hearts when unlocking new temples.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Save Game Improvements",
+     "items": [
+      {
+       "text": "Added delete buttons to save slots to allow cleanup of saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auto saves created by the game are now marked with the “Auto-save” label.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A button to save a remote world from an online session and overwrite your local one has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changing the color of a ship is now saved in the same way as deleting or adding cubes in the editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Basic Mod Support",
+     "items": [
+      {
+       "text": "Mods on PC no longer need to overwrite the original game files — they now create copies in a separate folder.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 12,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Online sessions have been restored for the Story mode.",
+     "Network clients will progress their main quest and retain that progress upon leaving the online session.",
+     "Clients can now repair and purchase ships and speeders while connected to an online session."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1802893906699613"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T15:09:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T15:09:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.170Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-18T15:09:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.052Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.1.32",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.1.32",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-06T10:03:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45439812/2a84cbc4b7de09209bd9f586f8e09a223df8aab7.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While the programmers are fixing the coop, our art team is also not standing aside, but is making new content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve added 5 new high-level ships, a variety of additional furniture items, and fixed numerous bugs and crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements and New Features",
+     "items": [
+      {
+       "text": "Added 5 more high-end ships: Argonaut, Vespira, Neutron, Planet Biter, Leviatan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A lot of furniture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI for objects inside of the ship has been improved to allow the extra slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an interaction resulting in the duplication of backpacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation where the flashlight would become very narrow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash from joining a multiplayer session just after creating a new character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missiles not damaging pirate ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where blueprints stored a damaged ship design, resulting in missing blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the character could stand on a flying creature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a building with some odd positioned doors as decorum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the loss of batteries when crafting them with a full inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Gun of Etherion not functioning properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue resulting in halved sized hit-boxes for ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 10,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Added 5 more high-end ships: Argonaut, Vespira, Neutron, Planet Biter, Leviatan.",
+     "A lot of furniture.",
+     "UI for objects inside of the ship has been improved to allow the extra slots."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1801617199421091"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-06T10:03:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.169Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-06T10:03:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.169Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-06T10:03:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.051Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.1.28",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.1.28",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-30T10:25:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Pirates no longer attack unmanned ships, the recycler no longer clones batteries, and several crash issues — including those when exiting the game, landing on planets, and some other cases — have been fixed. We’ve added cargo sorting for ship inventories and color customization for ramps, stairs, and railings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements and New Features",
+     "items": [
+      {
+       "text": "Added item sorting to ship cargo tabs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pirates no longer attack ships without a pilot, including doors and placed modules. Previously, even empty ships would get damaged, but now these targets are ignored by the AI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ramps, stairs, and railings can now be painted in different colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Lowered VRAM usage on Steam Deck — this should fix crashes near pirate bases.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash that could occur when landing on certain planets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where exiting the game could trigger a false crash report.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where transferring one battery to a slot would erase the whole stack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a duplication bug with energy cells in the recycler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the main quest to get blocked at the \"Free the Queen\" step",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Progress and Quests",
+     "items": [
+      {
+       "text": "You can now abandon quests again in Adventure Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a progression blocker that asked players to re-purify Fintan 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could block progression if pirate bases were cleared before the relevant quest was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Added item sorting to ship cargo tabs.",
+     "Ramps, stairs, and railings can now be painted in different colors."
+    ]
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1800991756340665"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-30T10:25:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.169Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-30T10:25:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.169Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-30T10:25:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.050Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.1.22",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.1.22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-23T10:55:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We continue fixing issues related to space exploration, resolving crashes, and improving balance and combat systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Batteries for gear and ships can now be stacked up to 100 in your inventory!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pirates have been tamed: they won’t be attacking empty ships and speeders anymore, and destroying their ships no longer causes crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crash fixes & improvements",
+     "items": [
+      {
+       "text": "Pirate ship crash finally fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Vulkan as graphics API - dedicated to people who see the Fatal Out of Video Memory crash. Make sure to restart the game once the API has been changed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash related to the damage numbers and some resolution changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation where the quest step of reaching the settlement would not trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored crafting consoles from the Knight’s requests when missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the current quest marker not showing up in the galactic map for some tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed railing not adjusting properly to some placing layouts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Ships & Space Travel",
+     "items": [
+      {
+       "text": "Batteries now stack to 100 in the inventory, the gear slots can house only one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Same goes for ship batteries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inaccessible systems like Tartaglione",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a space crash triggered by odd planets positioning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crashed ships will be present on planets of technology level 1 too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the situation in which a ship with very low damage could not be repaired and modified",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which caused ship batteries to disappear from cargo when the ship was going out of energy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Combat & Balancing",
+     "items": [
+      {
+       "text": "Pirates will no longer attack ships and speeders without a pilot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the turrets not fully aiming up or down towards their targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Batteries no longer take damage when the player dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed aggressive events and attack on player from creative mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Fixed the D-Pad selection of quick-slots in the ship editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation in the ship appliances transfer interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Invert pitch setting for character affects the ship editor too now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 4,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1800357164436943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T10:55:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.168Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T10:55:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.168Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-23T10:55:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.046Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.1.20",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.1.20",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-21T08:16:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ship structures now save correctly after repairs, and hidden damage no longer blocks restoration. We’re continuing to refine control settings and address crash-related issues for a smoother gameplay experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ships & Building",
+     "items": [
+      {
+       "text": "Fixed an issue where ship structure changes were not saved in the shipyard, for example after repairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a problem where “invisible” ship damage wasn’t being registered — you can now repair and restore your ship as expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Resetting input settings now correctly applies to controller mappings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s now possible to assign the same key or button to multiple actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crashes & Stability",
+     "items": [
+      {
+       "text": "Fixed crashes that could occur when completing pirate bounty quests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash caused by rockets hitting crashing pirate ships.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Combat & Balancing",
+     "items": [
+      {
+       "text": "Shields now absorb all incoming damage, even when depleted in a single hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tweaked overlapping damage logic to prevent unexpected one-shots from pirate rocket launchers and shotguns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Red Darkness Walkers now stay vulnerable for longer, and their defense recovers gradually — giving you more time to retreat safely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 3,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1800357164367371"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-21T08:16:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.167Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-21T08:16:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.167Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-21T08:16:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.045Z"
+  },
+  {
+   "id": "cubic-odyssey-329371@1.0.1.19",
+   "gameId": "cubic-odyssey-329371",
+   "displayName": "Update 1.0.1.19",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-20T08:14:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update focuses on improving game stability and refining controller support. Here’s what has been addressed:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controls & UI",
+     "items": [
+      {
+       "text": "Added dead zone settings for left and right controller sticks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the “swap left/right joysticks” setting not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved controller UI navigation — some previously unreachable buttons are now accessible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a crash when navigating menus with a controller and quitting to the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Online & Save Stability",
+     "items": [
+      {
+       "text": "Fixed an issue that caused excessive network message spam, which could lead to lag and desynchronization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a bug that could corrupt your save after leaving an online session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Crashes & Bugs",
+     "items": [
+      {
+       "text": "Fixed a crash related to the QB-1’s target being destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes when interacting with the smuggler on a certain space station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes caused by modded items in the player’s inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes caused by explosions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash occurring from destroying certain types of pirate ships",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed certain platform stats tracking that could cause instability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3400000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3400000/view/1799817379622358"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-20T08:14:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.166Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-20T08:14:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3400000",
+      "checkedAt": "2026-11-13T03:18:14.166Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-20T08:14:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:18.044Z"
+  }
+ ],
+ "issues": []
+}

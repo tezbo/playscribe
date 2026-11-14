@@ -1,0 +1,867 @@
+{
+ "game": {
+  "id": "the-legend-of-heroes-trails-into-reverie-136673",
+  "igdbId": 136673,
+  "name": "The Legend of Heroes: Trails into Reverie",
+  "cover": {
+   "imageId": "co3bb2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3bb2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4q74",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4q74.jpg"
+  },
+  "ps5Release": "2023-07-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-legend-of-heroes-trails-into-reverie-136673@1.1.5",
+   "gameId": "the-legend-of-heroes-trails-into-reverie-136673",
+   "displayName": "Update 1.1.5",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-09T16:54:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a patch for Trails into Reverie which improves how the game interacts with platform achievement APIs. This should prevent performance issues in some circumstances, specifically when a large number of achievements was already unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that this issue surfaced due to changes in how Steam deals with repeated achievement API calls, and this change affects many of our prior releases in similar ways. We are committed to patching all affected releases, but this has taken some time, especially for cases where we need to re-build games for which we already archived various development resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668540/view/1785321795739476"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:54:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:54:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.849Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-09T16:54:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.051Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-into-reverie-136673@1.1.4",
+   "gameId": "the-legend-of-heroes-trails-into-reverie-136673",
+   "displayName": "Update 1.1.4",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-26T17:01:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "it's here! This update includes all the localization improvements which are also available for other platform versions of the game, and we took this opportunity to improve the encoding quality of all English and Japanese voice files on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Update English text, images and all other assets with various localization fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-balance English voice lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve encoding quality of all Japanese and English voice lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve support for Steam Dynamic Cloud Sync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that, primarily due to the increase in audio quality, this update increases the storage requirements of the game by roughly 2 GB.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we expect this patch to improve the situations for all users, with the great variety of hardware and software configurations available on PC this is not always guaranteed in all circumstances. As such, you can return to previous versions of the game by selecting the any of the public \"version_*\" branches on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668540/view/5686430301736771119"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-26T17:01:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-26T17:01:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.849Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-26T17:01:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.050Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-into-reverie-136673@1.0.8",
+   "gameId": "the-legend-of-heroes-trails-into-reverie-136673",
+   "displayName": "Update 1.0.8",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-06T18:02:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "this small update includes fixes for two different issues which can cause crashes in specific, rare circumstances:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a potential crash during the main scenario's final boss sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a potential crash in one specific event after a character cut-in is displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Since one of the first questions in the comments in patch notes for Reverie is frequently concerning fixes to various text issues which are not PC-specific, I'd like to note here that these are still being worked on for all versions of the game. We will of course integrate these fixes as soon as they are available.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "And of course, in the unexpected case that this patch breaks anything on your particular PC, note that you can always revert to earlier versions of the game by selecting them in the Steam \"Beta\" menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668540/view/5220292521185035065"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T18:02:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.848Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T18:02:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.848Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-06T18:02:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.049Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-into-reverie-136673@1.0.7",
+   "gameId": "the-legend-of-heroes-trails-into-reverie-136673",
+   "displayName": "Update 1.0.7",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-28T15:11:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "this update fixes a rare condition which could lead to black screens on scene changes, as well as several other smaller issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the full patch notes",
+     "items": [
+      {
+       "text": "Fix a deadlock which could occur on some systems in rare circumstances, leading to the game becoming stuck on a black screen during loading / scene transitions.: Sorry to those that were affected that it took until now to resolve this -- we were unable to reproduce it on any of our internal or external test systems until now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a softlock issue in a small subset of battles, where very high frametime spikes (i.e. when performing an elaborate craft or art on a slower system) could lead to characters falling through the floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve vertical culling of objects on an interior map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix the alignment of the battle turn counter in ultrawide aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix a specific late-game button prompt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the \"Millennial Trove\" shop name in its header.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replace some mentions of \"trophies\" with \"achievements\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since one of the first questions in the comments in patch notes for Reverie is frequently concerning fixes to various text issues which are not PC-specific, I'd like to note here that these are being worked on for all versions of the game. We will of course integrate these fixes as soon as they are available.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "And of course, in the unexpected case that this patch breaks anything on your particular PC, note that you can always revert to earlier versions of the game by selecting them in the Steam \"Beta\" menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668540/view/5141475722341983263"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-28T15:11:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.848Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-28T15:11:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.848Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-28T15:11:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.049Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-into-reverie-136673@1.0.6",
+   "gameId": "the-legend-of-heroes-trails-into-reverie-136673",
+   "displayName": "Update 1.0.6",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-09T16:22:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "this is another small update which primarily fixes a very specific crash which could sporadically occur on some systems:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a potential crash which could happen at some framerates during a specific cutscene in \"A Maiden's Melancholy\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some button prompts in a few help notes not correctly reflecting control re-bindings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note that you can always revert to earlier versions of the game by selecting them in the Steam \"Beta\" menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668540/view/5124585954863620516"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-09T16:22:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.847Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-09T16:22:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.847Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-09T16:22:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.048Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-into-reverie-136673@1.0.5",
+   "gameId": "the-legend-of-heroes-trails-into-reverie-136673",
+   "displayName": "Update 1.0.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-19T12:46:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "we've resolved a few more issues in this update",
+     "items": [
+      {
+       "text": "Fixed a short sequence during the ending scene playing with EN voices despite JP voice language being selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game now correctly uses the button rebindings selected for battle attack and battle move actions in all relevant circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a legacy script issue in the \"Intimate Moments\" minigame that prevented interaction during one particular question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some stretching issues with ultrawide aspect ratio support in the \"Horror Coaster\" minigame",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the background of the battle target info screen being stretched in non-16:9 aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a possible brief flicker when entering the gamepad rebinding menu from the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note that you can always revert to earlier versions of the game by selecting them in the Steam \"Beta\" menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668540/view/5124584051966084656"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-19T12:46:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.846Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-19T12:46:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.846Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-19T12:46:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.047Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-into-reverie-136673@1.0.4",
+   "gameId": "the-legend-of-heroes-trails-into-reverie-136673",
+   "displayName": "Update 1.0.4",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-12T18:35:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "this is a quick patch as a follow-up to 1.0.3. It addresses the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a regression related to some aspects of ultrawide aspect ratio handling in cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix an error which would occur after a specific interaction in the VR minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note that you can always revert to earlier versions of the game by selecting them in the Steam \"Beta\" menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668540"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668540/view/5124582150178971034"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-12T18:35:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.846Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-12T18:35:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668540",
+      "checkedAt": "2026-11-13T03:33:33.846Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-12T18:35:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.047Z"
+  }
+ ],
+ "issues": []
+}

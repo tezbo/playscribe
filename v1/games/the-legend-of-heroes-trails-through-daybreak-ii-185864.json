@@ -1,0 +1,878 @@
+{
+ "game": {
+  "id": "the-legend-of-heroes-trails-through-daybreak-ii-185864",
+  "igdbId": 185864,
+  "name": "The Legend of Heroes: Trails Through Daybreak II",
+  "cover": {
+   "imageId": "co8l3f",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8l3f.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar22pq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar22pq.jpg"
+  },
+  "ps5Release": "2022-09-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-ii-185864@1.2.19",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-ii-185864",
+   "displayName": "Patch 1.2.19",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-10T22:19:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we are releasing an update which includes the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix motion blur that got broken with the introduction of motion-vector-based AA (e.g. DLAA).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix application of camera jitter for motion-vector-based AA (e.g. DLAA).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug that could cause the whole screen to go black when using TAA (especially during battle animations).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix temporal AA/upsampling issues on map geometry in a few specific maps which loop around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix possible problems in animation bone handling for motion vector computation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix scaling/aspect ratio of the expanded minimap for narrow/wide resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix potential crash after saving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix possible overwrite of Daybreak 1's system save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Along with some minor improvements/fixes",
+     "items": [
+      {
+       "text": "Fix swapped L/R 4/5 button assignment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve behavior upon loading of corrupted saves (that were corrupted by e.g. filesystem issues, we do not have any known save corruption bugs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Healing Arts button binding description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix alignment of Close button prompt on item-get screen in quest report UI for narrow resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix placement of legend and key help of expanded map for narrow/wide resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make Craft List prompt on member change screen in battle clickable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize p3a archive loading and path lookup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve Japanese strings in button binding menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decrease field fade-in time to what is used in Daybreak 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the unlikely event that this update causes any new issues for you, you can revert to the previous \"version_1.2.15\" branch on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2668430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2668430/view/1848664643361354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T22:19:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.751Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T22:19:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.752Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-10T22:19:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.771Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-ii-185864@1.2.15",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-ii-185864",
+   "displayName": "Update 1.2.15",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-29T20:57:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a minor update for Trails through Daybreak II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This patch includes the following changes",
+     "items": [
+      {
+       "text": "Integrate a variety of localization improvements and fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly improve GPU-bound performance on Intel GPUs when using XeSS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix wrong button prompts being displayed in the fishing bait item description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix minimap icons disappearing in some circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Apply the light distance setting to spot lights as well (it erroneously applied only to all other, more common, light types before)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make the \"Ultra\" SSR setting behave as intended in all circumstances (previously, it would not actually apply the intended quality after a game restart)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you want to revert to the previous version for any reason, you can do so using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, CTO, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2668430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2668430/view/1806064758782480"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-29T20:57:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.751Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-29T20:57:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.751Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-29T20:57:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.770Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-ii-185864@1.1.8",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-ii-185864",
+   "displayName": "Update 1.1.8",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-02T15:33:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we just released an update for Trails through Daybreak II with the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize loading time performance by reducing file metadata lookups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix basketball minigame ball motion FPS dependence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some specific scripted animations being locked to 30 FPS (sitar player, falling armor).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve performance in the Marduk Support Shop in the Märchen Garten.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Force black bars during movie playback at aspect ratios where this is required when idle on the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent direct shortcut menu actions from triggering while in turn battles or during the drone minigames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix button prompts when applying Droplets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Offer the choice to have Steam verify the game's integrity when a crash occurs while running with Steam enabled. We've noticed that several reported crashes are caused by corrupted game content, this should make verifying that easier for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2668430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2668430/view/1792751526109564"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-02T15:33:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.750Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-02T15:33:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.750Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-02T15:33:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.769Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-ii-185864@1.1.7",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-ii-185864",
+   "displayName": "Update 1.1.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-02-20T18:04:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we just released another update for Trails through Daybreak II with the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ": Add Steam Timeline markers when a new BGM track is played, if BGM information is enabled. This e.g. allows you to quickly check the name of a music track that started playing recently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a rare potential soft-lock in battle when an enemy interrupts themselves during casting an art with an S-Break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix mouse scrolling in shop menus with more than 8 party members.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix mouse menu navigation in exchange menus for all kinds of Sepith.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix alignment of Camp/Tactics menu for wide aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix dynamic button prompt for scrolling displayed in shop menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix handling of cinematic bars when entering the Märchen Garten.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Correctly update Sepith/EP when opening orbment slots with mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Check for direct field shortcuts only when the shortcut menu is closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2668430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2668430/view/1792116353200973"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-20T18:04:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.750Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-20T18:04:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.750Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-20T18:04:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.769Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-ii-185864@1.1.5",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-ii-185864",
+   "displayName": "Update 1.1.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-02-17T17:53:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we just released an update for Trails through Daybreak II with the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solve an issue which prevented the creation of game saves on some configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent the first auto save and system save of Trails through Daybreak I being written after choosing to load a clear save from that game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some other, less important fixes are still coming up, but we wanted to resolve these issues as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2668430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2668430/view/1791580426099845"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-17T17:53:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-17T17:53:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.749Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-17T17:53:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.768Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-ii-185864@1.1.3",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-ii-185864",
+   "displayName": "Update 1.1.3",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-02-15T17:40:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we just released an update for Trails through Daybreak II with the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent startup crashes on systems with very unusual number formatting locale settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implement mouse wheel zoom for the camp/costume menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "No longer display the BGM information for \"pinch\" battle music every turn when in the pinch state in a command battle and \"Always\" is selected as the BGM information mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix light probes on one specific map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add a space between item descriptions and counts in the in-game achievements rewards display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: if you previously downloaded the workaround mod for a startup issue which I posted yesterday, make sure to delete it, otherwise your game will not launch after the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2668430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2668430/view/1791580426035637"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-15T17:40:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-15T17:40:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2668430",
+      "checkedAt": "2026-11-13T03:33:35.748Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-15T17:40:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.767Z"
+  }
+ ],
+ "issues": []
+}

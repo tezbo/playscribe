@@ -1,0 +1,1562 @@
+{
+ "game": {
+  "id": "the-talos-principle-reawakened-324927",
+  "igdbId": 324927,
+  "name": "The Talos Principle: Reawakened",
+  "cover": {
+   "imageId": "co94rr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co94rr.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar37w0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar37w0.jpg"
+  },
+  "ps5Release": "2025-04-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-talos-principle-reawakened-324927@1.02",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-25T11:06:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45339004/1dd6d13c66f97c33086b016c98d031f8ff958fee.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey folks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to share that Patch 1.02 is now out of open beta and officially live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A huge thank you to our community for all the support, feedback, and testing along the way. Your help has been invaluable and we appreciate it greatly. Now, back to solving puzzles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated AMD FSR, NVIDIA DLSS, and Intel XeSS upscalers and frame generation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved performance auto-detect algorithms to achieve a better quality/performance balance across different hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for setting a custom image as the episode preview in the Community Puzzles menu. This custom image will also be used as the Workshop item preview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If no custom image is used, episode previews will continue showing multiple level screenshots, and Workshop uploads will use the first level screenshot as the preview image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refined the design of publish options in the Community Puzzles menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choosing not to upload an episode image in the Community Puzzles menu now also prevents level preview images from being uploaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved controller navigation in the Community Puzzles menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized episode and thumbnail loading in the Community Puzzles menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where using auto-detect in the video options menu would reset the upscaling method/preset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that could occur during a specific terminal conversation in Gehenna.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where QR codes could still be painted on certain secret signs that should not support painting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing translations in several places, including Journal entries, the Message Selection screen, and Tombstone epitaphs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Plasma Wall hit sound could be spammed at an uncomfortable rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Messengers would wake up lying displaced from the center.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where “Hold X to Reset” could be triggered during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where NPCs could glitch out when Photomode was opened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where destroyable objects allowed laser beams to pass through before being destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a specific Roman-style wall could sometimes let a laser beam pass through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where picking up a fan cover while inside a fan stream could lock the player in place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Gehenna 3 – BFF where a mine-carrying cube could get stuck beneath an arch when entering a fan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Axe/Crowbar could be dropped through certain fences and become unretrievable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various bugs with floating objects and missing collisions across multiple levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved physics stability for puzzle items and resolved related bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where pressing the default Back key in the “Stop Game” prompt would trigger Exit to Desktop instead of Cancel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “Left Hand” gamepad control preset caused conflicting key bindings, leading to gameplay issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed various controller navigation issues (missing stick deadzones, double inputs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Rewind key sometimes failed to work on gamepad after dying to a Mine or Turret.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the gamepad’s Left Trigger could stop working after exiting a Terminal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Reset Value button in Photomode stopped working on most options after closing and reopening Photomode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a Switch in Community Puzzles would not refresh its visual state after using Gameplay Rewind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Puzzle Editor where Receivers/Emitters placed on walls had sideways dirt decals instead of flowing downward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 22,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1811772772241460"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-25T11:06:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.866Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-25T11:06:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.866Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-25T11:06:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:09.136Z"
+  },
+  {
+   "id": "the-talos-principle-reawakened-324927@1.01b",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Update 1.01b",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-30T08:57:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks, we've deployed a small hotfix update focused on bug fixes for painting mechanics, dialogue progression, graphics rendering, and gamepad inputs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed an issue where the hand holding the Paint Bucket would sometimes remain in the “holding” state after painting a message.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed messages to be painted on surfaces where it should not be possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain dialogue with administrators in Gehenna would not progress under specific conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a graphical bug that caused flashing polygons on water surfaces when using certain AMD graphics cards.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed various issues with gamepad key icons appearing incorrectly in input prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several sensitivity issues when navigating menus and settings using a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple issues related to Chinese, Japanese and Korean font rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1798454487564743"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-30T08:57:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.865Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-30T08:57:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.865Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-30T08:57:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:09.134Z"
+  },
+  {
+   "id": "the-talos-principle-reawakened-324927@1.01",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Update 1.01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-17T14:18:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heya folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been exactly one week since the release of Reawakened, and we’ve been reading through all your feedback and taking notes. Today, we’re excited to roll out our first update, which addresses several major issues you’ve reported, along with some cool new additions to the level editor!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you, as always, for your continued support and for being so active with your feedback. We truly appreciate it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated DLSS to the latest version and added an option to select the upscaling model (CNN/Transformer).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The key for stopping a developer comment must now be held for 1 second, rather than just pressed once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the “Press the Serpent” achievement would not be awarded. If you have already met the conditions to obtain it, it will now be retroactively granted upon loading your save game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the music would start glitching after spending a long time in a single level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where NPC robot names would often not appear when looking at them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the ItB intro cutscene would not progress if the text language was set to Japanese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the sequence for collecting the B7 purple sigil.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where a mine that was already jammed could not be jammed by another jammer if a Plasma Door was behind it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where avatars on tombstones would sometimes not appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where dev comments were not being stopped when the player reached the game’s ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the terminal cursor sound was audible during the credits sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a certain credits sequence after a specific ending was not functioning properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where already collected Messenger Tokens would continue to produce sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where skipping the “In the Beginning” intro cutscene behaved differently from how intro cutscenes for other game types are skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various visual and collision bugs across levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various localization bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Puzzle Editor",
+     "items": [
+      {
+       "text": "Added the “Terminal Swapper” actor, which allows creators to swap the contents of two terminals upon activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an “Enable Sun” checkbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to place Purple Sigils and use them in Arrangers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled the redundant auto-rotation of wire tips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the Jammer could jam items through the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the “Draw Plasma Door” tool sometimes created gaps between the Plasma Door and nearby walls or columns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a conflict between the “Toggle Grid” and “Toggle Group” hotkeys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 16,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1797185861640779"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T14:18:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.864Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T14:18:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.864Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-17T14:18:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:09.134Z"
+  },
+  {
+   "id": "the-talos-principle-reawakened-324927@5",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Update 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-27T15:25:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're just two weeks away from the release of The Talos Principle: Reawakened! But that doesn’t mean we’re done updating the demo, there’s always room for more improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we’re rolling out another update focused on the Puzzle Editor. Check out the changelog below for all the details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned, and thanks for your support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Wire Markers. No more steel tubes/plasma door wiring!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lights Control – Lights can now be toggled on/off by activating devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Decorative Meshes – Decorative ladders have been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unread Terminal Indicator – Introduced a blinking eye animation for unread terminals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mine Customization – Added an option to specify the initial wait time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where dying while using a terminal would cause the game to crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where anti-stuck mechanisms teleported the player to an incorrect location in custom puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where dying inside a Tetromino Arranger left the mouse cursor on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where items launched by fans onto a player carrying a platform did not snap onto the platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the terminal reprinted the content of the current page before displaying the selected document.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where fan streams were not being blocked by plasma doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where cubes did not fully fall after a player dropped a platform carrying them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted collision on the Window Frame mesh to close gaps that allowed mines to kill players through a window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the End Game message appeared on level startup due to stars with the \"End Game\" option already being picked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where collision on meshes was sometimes missing after stopping a playtest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where random models would occasionally receive unusual coloring in editing mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where actor indices incremented when loading a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where spacebar navigation broke after using the \"Focus view\" command.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing actor links after redoing the \"Clone\" command.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1795283637822660"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-27T15:25:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.863Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:06.856Z"
+  },
+  {
+   "id": "the-talos-principle-reawakened-324927@4",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-20T15:28:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, folks! We have prepared another update for our Talos Principle Reawakened demo, focusing on the Puzzle Editor. The main goal of this update is to add highly requested features such as invisible walls, a death area, a water actor, guided jumps, and an end-game option for the portal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you once again for your feedback! We plan to continue these updates and keep improving the editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Puzzle Editor",
+     "items": [
+      {
+       "text": "Added the ability to add documents to the terminals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an “Invisible Wall” actor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a “Death Area” actor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a “Water” actor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a “Guided Jump” actor. Link guided jump areas together to set up custom guided jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the “End Game” option to the portal actor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various editor input fields now remember their values after stopping a playtest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed a bug that prevented standing on top of a platform held by a recorder clone when entering a vertical fan stream.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the fan could push objects through various barriers when stacking cubes in the fan stream.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Puzzle Editor",
+     "items": [
+      {
+       "text": "Fixed a bug where allowing a Mine to enter a fan stream would cause the game to crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where random models in Community Puzzles would sometimes receive unusual coloring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where passing through a Plasma Barrier would sometimes cause the item the player was carrying to drop onto a roof above the barrier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1794102528305334"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-20T15:28:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.863Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:06.855Z"
+  },
+  {
+   "id": "the-talos-principle-reawakened-324927@3",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-13T16:58:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks! We've prepared another update for the demo just in time for the weekend. This update includes many of your requested features for the editor, such as light sources, auto-save, a checkpoint system, and various other improvements. Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "The state of the \"Enable Developer Console\" gameplay option is now saved between game sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Recorder Clone Jammer would sometimes lose its target after using Gameplay Rewind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Puzzle Editor",
+     "items": [
+      {
+       "text": "Fixed a bug where the player could not use devices after exiting a playtest during the death screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the freeroam camera could get stuck moving in one direction without player input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where actors intersecting with the ground were sometimes unselectable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the \"Auto Decorate\" feature did not work inside the bounding box of a large background mesh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the QR code arrow was visible on thumbnails created in-editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where an on-screen message would remain visible after stopping a playtest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where ladders could be placed in rotations other than \"upright,\" causing issues when trying to use them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where loading into a level containing a previously collected Tetromino or Star marked as \"End Game\" would immediately end the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed certain meshes from the list that were not loading properly from the list of meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Puzzle Editor",
+     "items": [
+      {
+       "text": "Added \"Light\" to the list of Devices. Increasing the Light’s radius or enabling \"Cast Shadows\" may negatively impact performance, so be mindful of these parameters and their placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Checkpoint\" to the list of Devices. Checkpoints allow players to save their progress at any location and can also be targeted by Portals in other levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an Auto-Save feature, configurable in Editor Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to toggle fan vertical oscillation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added horizontal fences to the list of meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Search bars and the Mesh Selection tab now remember the last entered text and selected categories.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved selection of meshes located inside other meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance when resetting the level after stopping a playtest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreased the file size of custom levels on disk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 9,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1794102528078869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T16:58:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.862Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:06.854Z"
+  },
+  {
+   "id": "the-talos-principle-reawakened-324927@major-2025-03-08",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Reawakened Puzzle Jam Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-08T18:30:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heya folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you already know The Puzzle Jam submission period has officially ended! We received over 180 puzzle submissions, which is ten times more than we expected! We’re incredibly grateful to all of you who took the time to create a puzzle for the contest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Due to the overwhelming number of submissions, we’re extending both the voting period and the winner announcement to give everyone more time to play and vote.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updated Timeline",
+     "items": [
+      {
+       "text": "Voting Period: March 8th–March 21s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Winner Announcement (Community Choice & Croteam Choice): March 24th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This extension ensures that everyone has enough time to try as many puzzles as possible on the Workshop and cast their votes, whether positive or negative. But remember, the real victory in The Puzzle Jam is the friends we made along the way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1793384379445213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-08T18:30:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.861Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:06.853Z"
+  },
+  {
+   "id": "the-talos-principle-reawakened-324927@2",
+   "gameId": "the-talos-principle-reawakened-324927",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-07T11:29:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off, a huge shoutout to everyone participating in the Puzzle Jam or just experimenting with the editor for fun! The Reawakened workshop already has more submissions than The Talos Principle Classic did in an entire decade, and Reawakened isn’t even out yet!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been receiving your bug reports and are working hard to address them as quickly as possible. With that in mind, we’ve prepared another patch. Here are the changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed various crashes related to using the Gameplay Rewind feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where entering and exiting Photomode while moving through the air (falling or being moved by a Fan) would make the player lose all velocity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where an item could start uncontrollably rotating and moving around after being dropped from a Platform on which they were carried.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where it was possible to Use various items (Terminals, Switches) through Fences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where it was possible to jam devices through fences and doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where the Mine would sometimes be placed at an incorrect location after using Gameplay Rewind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where using Gameplay Rewind after resetting the level in a puzzle could sometimes cause disorienting camera movements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Hexahedron would not activate a Pressure Plate when dropped onto it from a height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Tetrominos to the list of Devices. Tetrominos can perform most of the same functions as Stars, including being used in Arrangers, displayed on signs, and triggering events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to scale placed meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to play the current \"Level Music\" while editing a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to adjust \"Camera Sensitivity\" while editing a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to preview the currently edited Terminal page contents. The preview displays text with all styling tags and most text events applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a button to the Pause menu that opens the Workshop page of the episode you are currently playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to switch between vector values using the Tab key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Crashes",
+     "items": [
+      {
+       "text": "We’re actively working on fixing crashes in the Puzzle Editor, but some of the solutions aren’t quite ready yet. In the meantime, if you’re experiencing freezes or crashes while using the editor, the following workaround may help alleviate the issue until we release a proper fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "You can use either of the two methods below",
+     "items": [
+      {
+       "text": "Go to Gameplay Settings and set “Enable Developer Console” to “On”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the Developer Console by pressing the tilde (~) key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter the following command and press Enter: r.AsyncCacheMeshDrawCommands 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second Method",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Close the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right-click the game in Steam, then open Properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Launch Options, add the following string: -ExecCmds=\"r.AsyncCacheMeshDrawCommands 0\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed various focus issues in the Puzzle Editor UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where spawning inside water would not properly activate the death sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where setting Plasma Barriers' height to 1.0 would reset its size after finishing a playtest..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where triggering multiple \"On Screen Message\" triggers would display all messages at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a Mine would sometimes fail to blow up an Auto-Turret if multiple turrets were within its detection range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Terminal: Fixed Glitch events (%g0 - %g5) not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Terminal: Fixed an issue where Terminal text would turn white after using the Clear event (%c).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Terminal: Fixed incorrect text behavior when using style tags (e.g., text).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Terminal: Fixed incorrect text behavior when a line break occurred within a styled text piece.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 18,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2806640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2806640/view/1793384379403224"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-07T11:29:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2806640",
+      "checkedAt": "2026-11-13T03:34:03.860Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:06.853Z"
+  }
+ ],
+ "issues": []
+}

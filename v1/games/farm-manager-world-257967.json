@@ -1,0 +1,6529 @@
+{
+ "game": {
+  "id": "farm-manager-world-257967",
+  "igdbId": 257967,
+  "name": "Farm Manager World",
+  "cover": {
+   "imageId": "co78hr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co78hr.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2emn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2emn.jpg"
+  },
+  "ps5Release": "2026-03-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "farm-manager-world-257967@major-2026-10-30",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Major update with game issues fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-30T06:32:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed fields getting stuck in pH adjustment or nitrogen fertilization when the target soil conditions had already been reached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crop rotation retaining the previous crop’s plants when switching species after perennial hibernation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed regrowing crops on joined fields being partially skipped during subsequent harvests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed feed quality being calculated from remaining supplies instead of the food actually consumed. Eating the last available portion now contributes correctly to meal quality for livestock and working animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added checks for missing parking, livestock trailers, and compatible attachment points before livestock transport begins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed unused resource reservations remaining locked after certain delivery tasks ended or were canceled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mixed-resource deliveries stopping loading before reaching the vehicle’s capacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a reservation calculation that could exceed the transport load limit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected season detection on African maps, where African seasons could be incorrectly treated as spring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed harvest timing checks incorrectly blocking watering, spraying, and ongoing crop care on tropical maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected handling of perennial crops in Africa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed manual baling incorrectly requiring permission to operate machinery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed newly joined field sections receiving incorrect soil moisture values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping collection tasks counting the same bale more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added protection against collecting the same hay pile more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved bale collection stability when previously selected bale objects have been removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed animal animation controllers not switching correctly when young animals become adults.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved model visibility updates when animals transition to adulthood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Prevented missing animal models or trailer display points from interrupting livestock deliveries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added cleanup for abandoned trader visits with missing buyers or vehicles, allowing subsequent automatic trade visits to proceed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed deliveries ignoring additional storage space provided by warehouse capacity upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved resource reservation ownership so one task cannot collect or release goods reserved for another task.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed reservation totals being calculated from only the largest batch instead of all reserved batches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved reservation cleanup across warehouses, production storage, and central storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Prevented field-task cleanup from removing reservations belonging to active deliveries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed automatic warehouse sales taking more stock than requested or continuing after the requested sale had been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed warehouse sales potentially skipping available stock spread across multiple batches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animal-powered mills becoming unable to assign working animals after loading a save with no animals assigned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved loading of animal-powered buildings with missing animals, duplicate animal references, or fewer assigned workers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed animal-powered buildings losing production recipes, progress, and settings when saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved trader cleanup following interrupted visits or errors during travel and trading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed older saves failing to initialize missing market entries for newly added resources and animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sorting by demand leaving resource lists empty when demand information was missing, including the multiplayer manager.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the Medium Shed to the African campaign’s building availability lists. Its training requirement remains in place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enabled the organic sugar refinery recipe, producing organic white sugar and organic molasses from organic sugarcane.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed warehouse warnings being cleared for the wrong product or unrelated buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed warehouse warnings remaining active despite sufficient space in a suitable nearby warehouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved warehouse warnings to retain the required storage amount and display the suggested warehouse type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed transformer connections disagreeing with the displayed coverage area on slopes and at the edge of their range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected several Spanish tutorial messages that displayed text belonging to different objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added automatic retries for Steam achievement unlocks when Steam is not ready or an unlock submission fails.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added account-specific storage for pending achievement unlocks so they can be retried after restarting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 28,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1847920302237409"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T06:32:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.531Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T06:32:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.531Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-30T06:32:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.111Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2026.05.29",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Update 2026.05.29",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-29T10:56:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added 16 new languages: Bulgarian, Czech, Danish, Finnish, Greek, Spanish (Latin Americas), Dutch, Indonesian, Norwegian, Portuguese, Romanian, Swedish, Thai, Ukrainian, Vietnamese, Hungarian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Farm Owner's House will now properly unassign all workers automatically when assigning workers to Logistic Building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Porter's Hut logistics should now correctly guide pack animals to get resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Working Pack Animals should now be able to die",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Staff Manager should now show correct values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Production Manager should now show correct values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animal Manager should now show correct values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save names no longer support special keyboard characters",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed tooltip being hidden behind cursor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Donkeys could use machines not designed for them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where non-manual field work could be completed in incorrect season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Pack Animals were not transported to their respective production buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pack Animals getting stuck in certain situations (death/sell/work/moving)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Field Works related to Greenhouses, Chaff and Hay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Animal Manager, Animal List - Health Bar could be interacted with",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where animals could walk out of transporting vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with incorrect showing of Products in Production Manager",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Staff skills and warehouse capacity in Production Manager",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where changing language would not change some of UI elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where some of text in some languages on autotrade menu were overlapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Resource Order warning, required amount could not update properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect cat animation (running backwards)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 14,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1833968530890676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-29T10:56:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-29T10:56:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.530Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-29T10:56:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.109Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2026.04.2021",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 2026.04.2021",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-21T11:12:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added possibility to replace roads by other types of roads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some changes and additions to help center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with burning fields (stuck workers, black plants, burned colors not returning to normal)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In game mod editor should now work on new productions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 'Close panel' icon to Available Parking List panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where market orders could take wrong amounts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where autotrade with empty animal building would save incorrect animal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where autotrade could order double amount of animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Slaughterhouse forgetting orders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted buildings projections on grid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where Ox could not be used properly in Logistic Building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fertilizing pH could block future field work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blocker in Africa campaign related to not being able to buy more terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect Spanish translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that caused machine panels at Field modal to not show tooltips and lead to machine market if pressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where task related to having baby animals wouldn't count in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where moving Vet or Repair Shop (Mechanic) buildings would not move their vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Vet could visit same building second time for the same reason even after his work was completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where moving buildings didn't properly update their positions (vehicles traveling to old positions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 14,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1830163047268231"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-21T11:12:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-21T11:12:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.530Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-21T11:12:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.108Z"
+  },
+  {
+   "id": "farm-manager-world-257967@23.03.2026",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 23.03.2026",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-23T18:14:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimized size of updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added information when Decoration Category is empty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some fixes related to market and contracts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with Decoration Building panels duplicating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where staff in animals building would walk through walls when called for resource delivery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Perennial and Multi Harvest Plats should now have proper Growth after planting for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues where demolishing parking could cause errors with machine purchase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with double f$ sign on Build Warehouse button text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Highlights for Camera icon in Europe Campaign Tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added tooltip (logistics-required) to Give Resources task in Africa campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Textile Factory and Composting Facility should be in every campaign now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where player region in multiplayer would change on its own",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Malva pudding missing translation in one of Africa campaign text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed default Display Mode graphics setting from Fullscreen to Windowed borderless",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved text for one of Europe campaign tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with contracts in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where game disconnecting in multiplayer caused one of players to be unable to manipulate game time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where machine panels would not show on Field Modal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where delivery text would not show up on 4K resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where delivering ordered resources would not be completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mods now have updated ProductionBuilding recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1827626365764248"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-23T18:14:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.529Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.107Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.1.20251205",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.1.20251205",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-05T15:18:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed broken autotrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiplayer availability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1818118366176698"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-05T15:18:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.529Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.106Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.1.20251203",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.1.20251203",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-03T21:58:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Selling products in market and in autotrade is now allowed also from warehouses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1818118366171436"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T21:58:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.105Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.1.20251130.509",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.1.20251130.509",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-30T21:01:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added moving existing buildings feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More fertilizer available in the market",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for proper handling field size in case of bio contamination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for proper handling nori rotation size in case of bio contamination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored tobaco seeds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added checking for crop rotation for plants leaving straw fo bales",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decorations are now sorted with new categories tabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some icons and previews for decorations in Build menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Allowing to build on decorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed placing narrow decorations on lands borders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for lvl3 central america owners building wrong collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1817483467043774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-30T21:01:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.105Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2025.09.15",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Hotfix 2025.09.15",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-15T18:17:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issues resulting in input loss or crashes during connecting and demolishing fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed duplication of animal delivery truck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted display of outlines for selected or ghost (during placement) buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added missing tab hierarchy switching in multiplayer menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1810503566553775"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-15T18:17:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.527Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.103Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.1.20250825.474",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.1.20250825.474",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-25T13:48:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the empty budget window druging skip winter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with 'Continue' hover being displayed when the mouse was away,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with Production Buildings showing outlines on warehouses not included in the production process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where changing the temperature in settings would not update in-game properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some text information in the plant compendium.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1808601382576738"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-25T13:48:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.527Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.102Z"
+  },
+  {
+   "id": "farm-manager-world-257967@major-2025-07-15",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "➡️First content update is here⬅️",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-15T13:31:32.000Z",
+   "notes": [
+    {
+     "title": "📢 Hello Farm Managers! 🚜",
+     "items": [
+      {
+       "text": "➡️First content update is here⬅️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We bring to you 7 new resources",
+     "items": [
+      {
+       "text": "Waste",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Compost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Linen Fabric",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cotton Fabric",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jute Fabric",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wool felt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Alpaca wool flannel: Your spoiled crops change now into Waste, which can be processed into our first new building!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Composting Facility",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44300664/0b848d79ec2aec18c3750bcf8952f330c279277f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allows you to create Compost, a new type of fertilizer. And of course, you can use it on your fields or sell it to other farmers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can unlock it by completing the “Nothing Goes to Waste” Training.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can check when your crops will change into Waste in the Plant Compendium under Product expires.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose up to 5 different fabrics to create in your own",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Textile Factory",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44300664/5b7cfcb3236797a1d7cd9e912f85438dd9a8141f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You're just one Training (“Light Industry”) away from being able to create beautiful textiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flax ➡️ Linen Fabric",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cotton ➡️Cotton Fabric",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jute ➡️ Jute Fabric",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sheep Wool ➡️ Wool felt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alpaca Wool ➡️Alpaca wool flannel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To hone your skills, we created two scenarios focused on new buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Promised Land",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44300664/87e491d75e48a4c17ace8fac59758fb6a8da6b88.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nothing dies, everything returns[img src=\"{STEAM_CLAN_IMAGE}/44300664/1beb6f7f52a7c9d99f80b176b2d080a9eee221a9.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After completing them, you’ll earn two new Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We warmly invite you to play, review, stream, and share your videos using #farmmanagerworld #TimeToFarm🌾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Besides that, we are consistently listening to your feedback on our Discord and Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the list of Fixes and Adjustments that we made besides the new content:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted America's small Warehouse to fit the grid better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added panel to Field Modal to inform about seasonal staff join during work mechanic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new label to save to mark it as multiplayer host/client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiplayer Client saves can no longer be loaded as single player saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed translations for Earn Money scenario condition to have \"Earn X\" instead of \"Have X\" in its Header in order to be more precise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed translations for Advanced Glasshouse training regarding having seeded plants inside glasshouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue that caused 'Purchased All Vehicles' achievement to not trigger after last vehicle purchase (had to wait for next day).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Skip tutorial\" button in Europe Campaign should now skip more steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated animals conditions (and their translations) in scenarios to be more precise with \"Have\" or \"Buy/Breed\" tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where production buildings would sometimes take more resources than necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Back to menu button will now show different message than to \"quit\" the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Quit Game\" panel should now have centered text instead of left-aligned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed 'Water' resource from market, warehouse manager, supply demand and - buildings (resource had no purpose).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where bought machines could be offset from parking spaces and nothing could be done about them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trying to destroy electric pole from Europe's Campaign step too soon, will now have message.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted some tutorial highlights in campaigns (Hiring Seasonal Staff, Glasshouse temperature, Training Manager).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where Item & Animal Autotrade buttons worked if autotrade options were not selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in Europe Campaign where all of Staff would have only Shipping ability even after completing task with assigning to Owner's House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New bundle: [dynamiclink href=\"https://store.steampowered.com/bundle/56420/Sim_Farm_Bundle/\"][dynamiclink href=\"https://store.steampowered.com/bundle/56613/Cleversan_Games_Bundle/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 5,
+    "balance": 2,
+    "other": 31,
+    "ps5": 0,
+    "topNew": [
+     "Waste",
+     "Compost",
+     "Linen Fabric"
+    ]
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1805065414366380"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-15T13:31:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.101Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250606.447",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250606.447",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-06T20:40:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Layers Tab will now remember chosen option when switching to field creation/survey tools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Staff that ran from house fire should now return to it after its renovation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gas Station should now order amount of missing fuel set by slider value (instead of set 500 units)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled loading game in multiplayer while games is already active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Production Buildings now show only one product even if there are multiple recipes for it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SkipWinter should now properly update growth of plants planted inside greenhouses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing icons for every item in in-game mod editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing Russian language translation (HR training requirement)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed animal autotrade breaking up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with fern not being removed when placing fields/buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues regarding choosing options in Layers Tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where fertilizing field would start with less resources than required by the field",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where doors would remain open after staff member left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that caused staff to go homes with harvested plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with big cultivator and plow animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1801617199436273"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-06T20:40:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:10.099Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250514.439",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250514.439",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-14T18:23:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue that caused perennial plants to yield no harvest after 1st harvest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that disabled seasonal/permanent toggle in staff manager if staff list was empty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Seasonal/permanent view in staff manager will be saved after closing window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1799722702501311"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-14T18:23:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.456Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250514.437",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250514.437",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-14T09:12:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Animal autotrade now refreshes \"Animal Building Manage\" panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where animal autotrade would autotrade first animal instead of selected one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where animal autotrade would order additional animals before already ordered arrived",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where having connected fields would make crop non organic,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adult alpaca animation fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted fern distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1799722702488396"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-14T09:12:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.455Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250512.435",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250512.435",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-12T16:05:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Contracts can now be completed using resources from warehouses if there are enough resources at farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where animals auto trade would take more money than it should when auto buying animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1799088287961996"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-12T16:05:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.524Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.455Z"
+  },
+  {
+   "id": "farm-manager-world-257967@hotfix-2025-05-10",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-10T18:43:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix for minimal amount of staff for field and some cases of starting works during winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1799088287905284"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-10T18:43:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.524Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.454Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250510.432",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250510.432",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-10T11:16:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for clearing contracts in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Client now can't press \"Skip Winter\" button in multiplayer (button had no function previously for client, it did nothing)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skip winter panel now should always have loaded values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bio products that required non-bio products should now count towards skip winter funds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for winter bar not appearing on field panel when it was already winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for staff travelling to field in straight line, while doing work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for staff teleporting out of field if moving from field to road was too long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for cultivation machines not playing any animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for when some of staff clothes appeared white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Call Vet\" Button now shows $0 when vet building is on farm while trying to breed a new animal (it was $0 before in logic but button showed value as if building was not on farm)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1799088287894935"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-10T11:16:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.523Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.454Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250425.424",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250425.424",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-25T08:12:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for moving produced resources from manufactures to warehouses (i.e. Strawberry Jam)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1797820624486192"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T08:12:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.523Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.453Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250424.422",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250424.422",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-24T13:14:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small fix for autoselling animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for achievement for Asia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Showing difficulty on scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1797820624460342"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-24T13:14:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.523Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.453Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250423.420",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250423.420",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-23T12:50:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes for autotrade animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for not allowing transfering animals into building during demolish process",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for finishing Asia campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for some issues with saving and loading multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1797820624427014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-23T12:50:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.522Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.452Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0.20250422.418",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0.20250422.418",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-22T13:29:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for infinite cash for spamming sell order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for high powered machines requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some localization mistakes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added sugestion to start from Europe campaign which contains tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1797185861799385"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-22T13:29:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.522Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.452Z"
+  },
+  {
+   "id": "farm-manager-world-257967@1.0",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-21T13:13:43.000Z",
+   "notes": [
+    {
+     "title": "📢 Hello Farm Managers! 🚜",
+     "items": [
+      {
+       "text": "After nearly a year of hard work 👩‍💻🧑‍💻👨‍💻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "➡️The 1.0 patch for Farm Manager World is now live!⬅️",
+     "items": [
+      {
+       "text": "But that’s not all — we’re not stopping here! We are preparing new content, including new machines and other surprises! 🎁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We warmly invite you to play, review, stream, and share your videos using #farmmanagerworld #TimeToFarm🌾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What will you find new in Farm Manager Word that wasn't in Farm Manager 2021?",
+     "items": [
+      {
+       "text": "• 3 new Campaigns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 8 new scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• 3 multiplayer scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Regions of the world (Europe, Central America, Asia)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Various climate, terrain, vegetation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Changed some buildings look based on region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Fields and work in the fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> More metrics for fields: soil class, pH, nitrogen levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Crop rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Connecting/disconnecting fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Possibility of automatic mechanical/manual operation or independent selection of vehicles and workers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Ability to add workers to ongoing field work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Crops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> 80 crop species (32 new)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Plants compedium",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Cyclic ordering/selling of animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Young animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> 20 species of animals (3 new +2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Distinguishing between laying and meat hens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-->Distinguishing between dairy and meat cows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> 35 refreshed vehicles and machines (new orchard tractor)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Fuel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Manufacturing plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> New processing plants including biorefinery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Many new product types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Ability to create more production lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Exchange of products and machines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Collaborative completion of scenario objectives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Shared free game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Employees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Changed skills system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> New look",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "--> Choosing if employee can be a driver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Mods support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Planning mode for creating farm layout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Trading Contracts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• More leasing options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Help Center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Logistic system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Resource orders in warehouses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• New trainings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Refreshed and expanded interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Improved graphics and optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 46,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "• 3 new Campaigns",
+     "• 8 new scenarios",
+     "• 3 multiplayer scenarios"
+    ]
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1797185861766691"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-21T13:13:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.521Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.451Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2025.02.17",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 2025.02.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-16T23:15:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for some cases of stuck ligstic building and owners building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1791580426074315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-16T23:15:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.521Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.450Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2025.02.14",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 2025.02.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-14T20:55:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Logistic buildings performance improvements and fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option for autobuying organic chemicals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes in priorities for warehouses and logistic buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changes amount of seeds of pear and sunflower required for a fied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes and improvements for calculating skip winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buffed rice flour price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Small localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual fixes for some orchard trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for displaying proper plants options for combines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1791580426008094"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-14T20:55:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.520Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.450Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2025.01.29",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 2025.01.29",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-29T13:42:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "changed several conditions in Campaigns from \"Building X of Building\" to \"Have X of Building\" to avoid issues with building unnecessary ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed text clipping in Multiplayer section of MainMenu in Ultra Wide resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added label when selecting machine in Machine Market to display minimal staff cout to use it (for example: Combines/Reapers require 2 staff as one is needed for Combine and one for Tractor)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed Client with several mods active being allowed to join lobby where Host did not have any mods active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1790214123050493"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-29T13:42:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.520Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.449Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2025.01.23",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 2025.01.23",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-23T13:40:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "contracts will now finalize and move to history contracts upon sending all resources, both in singleplayer and multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased not produced resource contract duration range from 8 - 28 days to 27 - 47",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "additionally increased not produced foliage resource contract duration range to 27-47 days plus Plant GrowthTime in days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Campaign Dialog window will now hide empty space if there is no button to be pressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased clickable area for Work Toggles in Staff List view in Staff Manager",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed sold resources being saved, allowing for infinite money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "start and end date input fields in Seasonal Staff Building are now using DD.MM format regardless of Language/Culture of the System",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed perrenial plants like Grass or Prickly Pear having their growth restarted after falling into hibernation if field has more then 1 Plant set in Crop Rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed wrong message in Portuguese asking player to call veterinarian instead of \"Need X more space in warehouse\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 2,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1789580505306409"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-23T13:40:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.519Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.448Z"
+  },
+  {
+   "id": "farm-manager-world-257967@20215.01.20",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Hotfix 20215.01.20",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-20T13:58:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "reveted \"fixed completed sell contracts not being moved to History Contracts section in Multiplayer, resulting in money being paid out endlessly\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1789039014466278"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-20T13:58:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.519Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.448Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20250117.399",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20250117.399",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-17T17:56:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added ability to upload new version of mod. You need to be subscribed to your own mod, place new version of mod into local \"mods\" folder (done automatically if mod was compiled via Unity Editor) and click \"Update\" button to update your mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "increased base initial cooldown between fires on fields from 30 days to 90 days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "cooldown between fires now lowers linearly with each new field back to 30 days at 20 fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed \"Soil parameters\" toggle being squished on Ultra Wide resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed hired seasonal staff tooltip over house displaying wrong number in Asia campaign (it displayed 12 instead of 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Achievements in Scenarios sometimes not unlocking when selecting one of the options. It will now give Achievement when ending scren is shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed \"Not Growing\" field state being displayed as \"Raked\" when selected Plant was Grass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Two-Lane road being free if it crossed at last one Road piece",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "increased first Two-Lane road piece cost from 200 to 400",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "changed misleading price of Two-Lane road from 200 to 400. When placing Two-Lane roads, cost was incremented by 400, not by 200.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed \"Mateusz Kupiec\" with blank face appearing in Field Modal when Seasonal Staff working on field were past their end hire date",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sugarcane is now perrenial plant to compensate for long growing time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed error message related to selected animal food appearing in \"Taco Restaurant\" scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed being able to place buildings and roads inside few hills in Europe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed \"add suggested products\" button appearing even after buying them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed sent money amount to another Player not being updated every time amount is changed through Input Field (you had to unfocus Input Field for it to work or press Enter)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed completed sell contracts not being moved to History Contracts section in Multiplayer, resulting in money being paid out endlessly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "switched blocked buildings around in \"Organic Business\" Multiplayer Scenario, now Host cannot produce seeds and Client cannot build Animal Buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Host in \"Organic Business\" Multiplayer Scenario now has blocked \"Seeds and Seedling Production\" Building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed softblock \"Organic Business\" Multiplayer Scenario when Player could not produce organic meat (Player now starts with \"Organic Farm Certificate\" training)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Field Modal not showing progress during any Call",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1789039014374639"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-17T17:56:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.518Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.447Z"
+  },
+  {
+   "id": "farm-manager-world-257967@post-2024-11-17",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Another small logistic fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-17T16:20:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another small logistic fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/1783238125314347"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-17T16:20:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.518Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.446Z"
+  },
+  {
+   "id": "farm-manager-world-257967@post-2024-11-11",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patchnotes 2024-11-11",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-11T19:37:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small hotfix with few fixes for logistic center trucks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/6148070194801733203"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-11T19:37:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.517Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.446Z"
+  },
+  {
+   "id": "farm-manager-world-257967@major-2024-11-08",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Animals update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-08T16:03:10.000Z",
+   "notes": [
+    {
+     "title": "In today's update, your farms will be joined by....",
+     "items": [
+      {
+       "text": "cute, adorable, charming young animals!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope that these fluffy little creatures will add some sunshine to the current autumn aura outside the windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You'll find the full changelog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added young animal variants for every animal with visible adult model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed several plants, including Black Currant, Gooseberry and Strawberry, not being planted correctly in Glasshouse, reverting Field to Plowing stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "reduced soil survey cost per tile from 250 to 25. This experimental change has been made to encourage its use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "staff will now ignore how many abilities they have when calculating base wage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are not slowing down and are already preparing more updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our warmest hugs,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleversan Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/6148070194801632971"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-08T16:03:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.517Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.445Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20241102.369",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20241102.369",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-05T16:26:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Apiary is now available in the Asia Campaign (Chapter 1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased capacity in Logistics Building from 25000 to 50000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Staff working in the Logistics building will move their inventory through teleportation to it when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed tooltip showing blockers in Multiplayer scenarios being visible after selecting one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed resources being sometimes visible in Market for sale when amount was 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed few decorations having holes when displayed in Preview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added new Warning: \"Not enough space in logistics\". It will appear over Owner's House when available capacity is less than 10% of maximum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "reduced days to expire from 1825 to 90 for manure and liquid manure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Manure and Liquid Manure are now exempted from \"Resources in building expire soon\" warning.: Manure being low price resource, produced in large quantities, often clogged logistics. Those changes are trying to address that issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/6146943657174066801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-05T16:26:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.516Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.443Z"
+  },
+  {
+   "id": "farm-manager-world-257967@2024.11.02",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 2024.11.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-02T21:16:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for some cases of delivery truck stuck in logistic building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for lower amout of harvested grass on each harvested",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased pineapple juice price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/6146943657173977323"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-02T21:16:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.516Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.442Z"
+  },
+  {
+   "id": "farm-manager-world-257967@major-2024-10-31",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Major Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-31T14:01:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Farm Manager Enjoyers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released a major game update. Update your game, and you will find the following new features:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a new Region: Asia – high temperatures, higher rainfall and even higher opportunities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a new Campaign: Asia – a traditional farm in a remote province… As a financial crisis looms, scale up and stay afloat, allying with local farmers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vietnamese Pot-Bellied Pigs, Bamboo farming, and Bamboo processed food added to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "new Achievements. Unlock them when progressing the Asia Campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "new Trading Partners, specific to Asia.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cleversan Games Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7 new Avatars for Steam community (Steam will randomly pick 5 for you to choose from).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a new orange Creature that enjoys walking on keyboardsjlkjionhuoiphuihnuip;nhe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "improved the tooltip in MainMenu when selecting a multiplayer Scenario to provide information about tasks and blocked features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improved Staff behaviour during manual fertilizing. If a worker runs out of fertilizer, they will take more fertilizer as needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improved how Machines (particularly Tractors) are selected for Field work. Now Orchard Tractor can be selected if it meets the power requirement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Soil Layer will now be automatically enabled when placing a Glasshouse (note that Soil Class still does not affect it).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated the Help Center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed how the selected food in Animal Buildings is saved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Due to potential compatbility issues, you will see a one-time warning when loading a save, informing about this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, some food will be selected to reduce the danger of animal starvation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed the coverage of \"Select trading partner\" button to include the \"Selected partner\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed Bread to be counted in as units instead of in weight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed Bakery price from 408 000 to 120 000.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed machines used in Red Beans harvest due to the removal of multiharvest property.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed some textures in both crates and Chest Trailers when transporting plant resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased harvest yields on all plants to make them more profitable. (The change has been made to make plant based farms more competetive in comparison to mass animal husbandry. New values are subject to change if logistic issues start to crop up.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "changed Delivery Truck capacity from 10000 to 15000 (affects the Logistic Building).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased the harvest multiplier from Orchard and Plants abilities from 125% to 150%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "increased the Seasonal Staff multiplier from 75% to 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduced base Seasonal Staff wage to 600 from 1200. (Seasonal Staff were underutilised due to having lower efficiency than Machine farming. This change aims to reduce cost of running farms using larger workforce with lower Machine count.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "changed Wage multiplier on difficulty settings from 75% (Easy), 150% (Hard) and 200% (Extreme) to 80% (Easy), 125% (Hard), 150% (Extreme).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed Fuel multiplier on difficulty settings from 120% (Hard) and 150% (Extreme) to 133% (Hard) and 200% (Extreme).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed both Yield size and Price of products multiplier on difficulty settings from 85% (Hard) and 70% (Extreme) to 90% (Hard) and 80% (Extreme). (Due to multiplicative nature, old values caused income from fields to be 72% (Hard) and 49% (Extreme) of Normal difficulty income (100%). Current values are 81% (Hard) and 64% (Extreme). Those changes were made to make Extreme more manageable while still providing challenge. We are considering adding the ability to customize those values by players in the future. Send comments on Steam Forum if you would like to see such an addition.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "changed prices on several products.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "when selecting crop rotation on a Field, Organic (BIO) checkbox will be on if Field is currently Organic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "removed unnecessary warning when demolishing a Pump that maintains irrigation on a Field if that Field has another Pump in range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "removed the requirement for unlocking Middle America Campaign, you can now access it even if you have not finished the European Campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "fixed Staff and Machines being stuck in the Owner's House due to floating point error when retrieving Resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Staff being stuck on Field after finishing harvest. Error would occur on Fields with crop rotation after switching to Plant that produces Hay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed CampaignInfoPanel (where Tom or Miguel resides) covering too much of the Field Modal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the Gas Station paying for 1 unit of Fuel when ordering lagre amounts of fuel instead, ripping the fuel vendor off in the proccess.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed \"No resource order\" warning lingering after deleting a building that created this warning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed sometimes not being able to start manual fertilizing through Field Work Modal, even if free Staff number was equal to the number of Staff needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some Production Resources not being visible in the \"Produces\" section when hovering on Production Buildings in the Build Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Grass not being visible in a Self-Loading Trailer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed \"Available in later part of campaign\" message not being visible on the Start Training Button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed several texts being blurry in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed demand indicators in the lower left corner showing resources from the incorrect pool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "other smaller fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "updated localization files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Get in the tractor, take a Vietnamese Pot-Bellied Pig with you and join us as our Farm Manager World journey contiunes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More updates coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cleversan Games Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 17,
+    "balance": 4,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/6146943657173901585"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-31T14:01:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.515Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.442Z"
+  },
+  {
+   "id": "farm-manager-world-257967@major-2024-10-25",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "We know the publication date of the big update! - October 31st, 2024",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-25T14:36:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We know the publication date of the big update! - October 31st, 2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/6212245217911857788"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T14:36:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.515Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.441Z"
+  },
+  {
+   "id": "farm-manager-world-257967@patch-2024-10-03",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Major patch upcoming",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-03T10:43:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear FMW community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on a major update, which we will publish this month. More details in the next post - publishing the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relentless in our efforts,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleversan Games Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/6350729003493822503"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T10:43:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.514Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.440Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240626.341",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240626.341",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-26T20:56:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for animals - reproducing and proper age",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5842939267307075525"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-26T20:56:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.514Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.440Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240624.338",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240624.338",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-24T12:29:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "adjusted outlines on trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "added missing message at the beginning of the campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added tooltips at UI elements in Trade tab of Market with description of mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "increased visibility of several texts that appear when View is empty (Trade tab at Market modal and several Managers modals)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "changed staff and vehicle target destination when moving to field to reduce moving through buildings (previously staff would search for closest road node to field, now they will pick closest road node to center of the field)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed step in Europe campaign to show pointers on all \"Hire\" buttons instead of first to reduce confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed training UI elements \"blinking\" when opening window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed phantom resources being left at warehouses after end of field calls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5759622039990665067"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-24T12:29:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.513Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.439Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240605.333",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240605.333",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-05T20:53:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added No Road warning to Fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added tooltips in Multiplayer Scenario Chooser outlining details about conditions and blocked objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added highlight on Field is being Contaminated button in Field Modal (\"{N} days left\") to reduce confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added tooltip on Field is being Contaminated button in Field Modal explaining what is happening to reduce confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added custom ending messages to Scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "changed \"buy or breed\" organic Pigs and Chickens conditions in Campaign Europe to include those already present before the step",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed Expiration Dates on Juice resources to 60 days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed Scenario Condition in multiplayer being shown in wrong categories (as of right now, they should only be visible if either first or last toggle is on)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5746109972546387409"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-05T20:53:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.513Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.439Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240602.330",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240602.330",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-02T19:55:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for some cases of machine stuck close to a parking or logistic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5742731639342024656"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-02T19:55:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.513Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.438Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240531.328",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240531.328",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-31T10:26:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Coffe Break scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "increased Frozen Food Factory capacity from 1000 to 20000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed rendering glitch if radius projector overlayed decorative trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Logistic Building Modal stretching outside screen if Delivery Trucks move too many different resources at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5742731639333296668"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-31T10:26:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.512Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.438Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240528.326",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240528.326",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-28T20:51:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed production cycles not being deterministic, causing production cycles to have varying, usually longer then intended durations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "changed default production cycle duration to 3 days when building is fully staffed by employees without Factory skill and 2 days if Factory skill is maxed out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed Happiness Bonus reducing resource amount taken during production",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "halved Production Lenght Multiplier on Non Bio to Bio seeds and saplings production (if fully manned with no Factory skill, it will take 6 days to complete cycle)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Production Buildings storage is now treated as if it has Cold Storage uprade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated building sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased Expiration Date on every Resource to 30 days if given Resource has less then it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "removed requirement, reduced price and cost for \"Bank offer\" training (Loans and Lease)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed Dates having DD.MM.YYYY format instead of MM/DD/YYYY in several places if \"Fahrenheit\" option is selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed second production line not being shown in Production Manager",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "removed Plant Factory from blocked building list for second player in \"Organic business\" Multiplayer Scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed Plant not changing on second field if Field Modal with first was not fully closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "[undocumented changes from 0.8.20240526.324]",
+     "items": [
+      {
+       "text": "fixed issue with when Produced Resource is not found, causing animal production breaking (mainly affecting Turkey)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed animal count being greater then maximum space for animals in buying/selling/moving view if new animal is born",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed trees not being hidden when Layers are active (follow up to grass)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "disabled beig visible outline on trees, causing weird glitchy effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added more variety for seedling and saplings in Tree Planter and Transplanter (Bush seedling, Cactus seedling, Coconut seedling, Tree seedling)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "updated localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5741605105626642815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-28T20:51:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.512Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.428Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240526.324",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240526.324",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-26T18:12:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes and improvemenets for breaking and fixing machines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5741605105618950514"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-26T18:12:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.511Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.428Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240522.321",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240522.321",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-22T19:54:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added color indication and tooltip to UI elements if Player cannot afford training",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed Sown Field requirement not updating after Field Call is finished, preventing Player from unlocking Irrigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Orchard Sprayers having wrong path while working on the Field",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added Engineering outfits for Staff working on constructions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed potential blocker in second campaign involving prematurely upgrading to Large Farm Owner's House",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "updated several plant materials used in storage and kistens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added greater variation to Staff headwear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5741605105604626689"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-22T19:54:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.511Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.427Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240521.319",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240521.319",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-21T14:56:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added ability to produce Biofuel from Organic Corn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "extended several seed and sapling expiration dates to 100 (minimal expiration date for Seed and Seedling)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reduced needed amount of Soy to produce Soy Seed from 120 to 100",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduced Pea Seed buy price to 11$",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduced Sweet Potato Seedling buy price per unit to 6$",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduced Peanut Seedling buy price per unit to 11$",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "increased Pear Seedling buy price per unit to 30$",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "increased Sunflower Seed buy price per unit to 30$",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed levitating tree stump in Europe region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed grass being shown when Layer overlay was active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "changed \"Fix\" button only adding Resource Order to smallest Silo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed temperature in Weather Panel not updating to Fahrenheit after changing settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed temperature in Weather Panel not showing temperatures in regions different then Europe if Fahrenheit was chosen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed grass fields having wrong harvest amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "included description for \"Not enough space in warehouse\" warning in Field Modal to reduce confusion about needed space in warehouses (most notably when harvesting grass)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for trainings achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 6,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5747233970437002430"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-21T14:56:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.510Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.427Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240517.317",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240517.317",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-17T13:45:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed Resources harvested with machines not counting towards goal in Scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added ability to fertilize with nitrogen and pH fertilizers when Plant is growing once per \"cycle\" (change aimed at perennial and multiharvest plants)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed Achievement for completing Scenario/Campaign not unlocking when pressing \"Continue\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Field switching Plants instantly without need to cultivate it if change happened during active Field Call",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Plants harvested by Potato Harvester being dropped off in only one Warehouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "smaller accessibility changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "updated localization in several places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5747233970422245087"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T13:45:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.510Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.426Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240514.314",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240514.314",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-14T21:14:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Completed Russian translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for demolish decoration trees with demolition tools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for stuck tractor with chesttrailer after harvesting chaff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "limited produced resources trips in Animal and Production Buildings to 5 per resource to avoid starvation of animals and shortage of needed resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more Owner's building employees sockets after upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435415062020"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-14T21:14:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.510Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.426Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240513.313",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240513.313",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-13T13:25:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed perennial plants in greenhouse going into hibernation after harvesting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed Campaign panel covering watched resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added ability to disable Soil Class, pH and Nitrogen in calculations in Free play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed resource check for field to all warehouses in range instead only closest one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed for ordering resources for field if resource is available in logistic hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435410228324"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T13:25:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.509Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.425Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240512.310",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240512.310",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-12T16:35:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for campaign condition with having buildings with second production line (changed to count absolute number of such buildings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed italian name of fertilise spreader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for stop damaging phantom building plan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for restoring resource orders from savegame for manure storage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Another fix for broken building crane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435407064198"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-12T16:35:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.508Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.425Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240510.309",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240510.309",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-10T09:54:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for game not loading for save files with many decoration fences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435398760081"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-10T09:54:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.507Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.424Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240509.308",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240509.308",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-09T21:20:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for not showing more orchard trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435396850650"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-09T21:20:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.507Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.424Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240509.307",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240509.307",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-09T20:45:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "0.8.20240509.306",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435396763226"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-09T20:45:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.507Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.423Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240509.306",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240509.306",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-09T15:57:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added option to complete disable trainings in free mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for scenario target for \"have\" instead of \"buy or bread\" 65 turkeys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed unnecesary no warehouse (barn) on baling crops call",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for happiness bonus refresh on moving staff to another house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for parking slots on 3rd level of Owner building in Central America",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for negative values of fertilizers and spraying in warehouses (and selling them)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for earning money for ordering ferilizers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for displaying pH and nitrogen on Fields Layer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fir for hibernating pitaya",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for chopper combain pathfinding issue on the end od work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Russian translations of HUD (Still waiting for campaigns translations)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435396032770"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-09T15:57:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.506Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.423Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240508.305",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240508.305",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-08T13:22:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes for American campaign steps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for displaying employees in slaughterhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for pruducing resources without resources on second production line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added option for choosing same production on second line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for perennial plants to not hibernate in glasshouses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5768625435391995521"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-08T13:22:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.506Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.422Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240507.304",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240507.304",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-07T14:52:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes for American campaign steps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance improvements for Daily stats computing and contracts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999962084616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-07T14:52:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.505Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.422Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240506.303",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240506.303",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-06T14:36:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for showing expiry resource in warehouse without such resource",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some fixes for using manure stored on farm instead of buing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for not showing max field size on 1ha fierld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for Japaneese translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for polish name of garages tab at action tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for displaing proper greenhouse field class in fields manager",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for delivering resources from logistic hub to warehouses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for American campaign with Beef cows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999958398674"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-06T14:36:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.505Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.421Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240505.302",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240505.302",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-05T20:21:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for proper state set during loading field which was saved in bad planting state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for summing storage capacity from logistic hubs with owner's building (+ fix for buying more resources than owner's building capacity while having logistic hubs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for not showing onion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Stea auto cloud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999955626885"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-05T20:21:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.504Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.421Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240505.301",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240505.301",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-05T19:16:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some fixes of bugs encountered by lack of translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for starting planting on fields even if there's no chance to harvest by winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999955461912"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-05T19:16:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.504Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.420Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240504.300",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240504.300",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-04T20:49:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for 2 x warehouse training requirements not setting as done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for campaign step condition requiring havin employees with selected skill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999952054438"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-04T20:49:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.503Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.420Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240504.299",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240504.299",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-04T14:50:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for showing trees in some windows regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix gor hidding skip winter button during other seasons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999951145145"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-04T14:50:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.503Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.419Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240504.297",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240504.297",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-04T09:54:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Proper waterpump usage with electricity turned off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enviro and foliage performance improvemenets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999950395529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-04T09:54:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.503Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.419Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240502.287",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240502.287",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-02T21:38:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes with nitrogen and Ph fertilizer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed order of fertilizing Nitrogen and Ph",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix skip winter in glasshouses - plants are not dying anymore by skipping winter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix allowing to buy organic agrochemicals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pak Choi translation fixes in german",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chickencoop building name fix in german",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frozen carrots added to frozen food factory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longer apple juice expiration date",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999944886896"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T21:38:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.502Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.419Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240502.286",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240502.286",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-02T13:34:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for American Campaign - Step with harvesting organic corn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999943662196"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T13:34:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.502Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.418Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240502.285",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240502.285",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-02T11:42:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed checking on finished Europe Campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999943377163"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T11:42:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.501Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.418Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240501.283",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240501.283",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-01T11:25:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for warning about lack of warehouse for collecting straw bales and raked grass from big fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased expiration date for some seeds and samplings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999939689954"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-01T11:25:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.501Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.417Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240501.281",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240501.281",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-30T22:37:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed availability of \"Dairy and Meat Industry\" training on campaign step requiring finishing of it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5766372999937744822"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-30T22:37:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.500Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.417Z"
+  },
+  {
+   "id": "farm-manager-world-257967@0.8.20240430.280",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "Patch 0.8.20240430.280",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-30T20:16:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for campaign task with having building with production lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shorter breaks for logistics employees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5759616966683857560"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-30T20:16:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.500Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.416Z"
+  },
+  {
+   "id": "farm-manager-world-257967@patch-2024-04-30",
+   "gameId": "farm-manager-world-257967",
+   "displayName": "First patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-30T15:05:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Base Logistics worker delay has been decreased from 5 to 2 sec.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect higher-level purchase contracts have been disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warning messages in the building window are now displayed automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Fix” button added to the warning message when setting up production or animal food with a missing Resource Order from nearby warehouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logistics Building price has been lowered to 75 000.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Market view now displays the resources that have to be transferred from warehouses to Farm Owner’s House or Logistic Building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Planning tool is available for buildings you can't afford.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for some modals not showing up in Japaneese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2206350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2206350/view/5759616966683069862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-30T15:05:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2206350",
+      "checkedAt": "2026-11-13T03:20:42.499Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:31.416Z"
+  }
+ ],
+ "issues": []
+}

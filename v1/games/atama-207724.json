@@ -1,0 +1,1237 @@
+{
+ "game": {
+  "id": "atama-207724",
+  "igdbId": 207724,
+  "name": "Atama",
+  "cover": {
+   "imageId": "co592p",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co592p.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1pm8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1pm8.jpg"
+  },
+  "ps5Release": "2024-09-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "atama-207724@1.7.5",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.7.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-07T05:00:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Unity detected a security issue in all versions of the Unity editor, so they released new versions of all historical builds and asked developers to re-build their games on the new version, so this is just that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/1811772772627617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T05:00:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.010Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T05:00:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.011Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-07T05:00:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.787Z"
+  },
+  {
+   "id": "atama-207724@1.7.4",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.7.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-18T09:38:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "For a long time we wanted to commission new artwork to replace the old ones for the journal backgrounds and some of the items in the game. With this update we brought on a new artist to create these assets and got them added. Currently not released on Mac at the time of this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42538207/948f6e1ac600dac285b1f71be4baf9cfdb0a3654.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/1808061939464614"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-18T09:38:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.010Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-18T09:38:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.010Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-18T09:38:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.786Z"
+  },
+  {
+   "id": "atama-207724@1.7.3",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.7.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-10T21:44:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A very minor fix in 1.7.2 accidentally introduced an error where the Title Screen wouldn't initially be in correct language if you switched it and Settings button on Title Screen wouldn't work until you toggled language. Reverted to resolve this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/1790848102762305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-10T21:44:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.009Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-10T21:44:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.010Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-10T21:44:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.786Z"
+  },
+  {
+   "id": "atama-207724@1.7.2",
+   "gameId": "atama-207724",
+   "displayName": "Update 1.7.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-25T02:47:38.000Z",
+   "notes": [
+    {
+     "title": "This is just a minor update with a few small fixes",
+     "items": [
+      {
+       "text": "Fix a bug where crouching in the mines when leaving a light sources could in certain circumstances erroneously mark you as still \"in the light\" for enemies to be able to detect you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug where some settings buttons were louder due to doubling up on the selection sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue on title screen settings where you could see the settings change from default to your saved settings upon opening settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add a dynamic extra tip to help onboard players to the fact that they can look through multiple views.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/1786573930801781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-25T02:47:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.009Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-25T02:47:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.009Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-25T02:47:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.786Z"
+  },
+  {
+   "id": "atama-207724@1.7.1",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.7.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-27T01:22:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.7.1 brings with it major improvements to Atama's performance especially in the first area of the game as well as an overall reduction in file size for the game. If you experienced frame drops in the first area of the game please consider trying the game again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minor fixes",
+     "items": [
+      {
+       "text": "-Fix a keyboard/controller menu navigation bug with the controls rebind page.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fix a possible audio bug in the intro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fix a bug where player movement audio could continue while on the ladder if you held down a movement button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fix a bug where you could trigger the shrine door opening multiple times by spam clicking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/5842939267307748058"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T01:22:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.009Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.785Z"
+  },
+  {
+   "id": "atama-207724@1.7.0",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.7.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-11T17:05:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Japanese localization is out now! (Dev Commentary mode is still only English, but everything else is fully translated.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix an issue where the audio of the Journal Archive would erroneously double, triple, quadruple, etc. up for each time that you viewed it and reloaded an area either by dying or any other way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where an enemy could see through a window in Residential District and fly up into the wall and get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where the \"It's too risky to touch the bell again\" message would erroneously appear when the enemy was chasing you instead of just when it is already distracted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where you could click the ladder before Residential multiple times and trigger the climb event multiple times in a row which could cause the game to lockup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/5679673637667330935"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-11T17:05:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.008Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.785Z"
+  },
+  {
+   "id": "atama-207724@1.06.4",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.06.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-26T14:15:56.000Z",
+   "notes": [
+    {
+     "title": "Bigger changes",
+     "items": [
+      {
+       "text": "Improve 3D Audio in the game to fix some audio issues and make it more clear where sounds are coming from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few more changes to make the first area of the game more clear (another hint about where to use key, make the second gate a little more obvious by adding a gap between the doors, and add an extra checkpoint in case the player died after thinking they needed to re-traverse the factory district).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Small fixes",
+     "items": [
+      {
+       "text": "Fix a bug where you could re-trigger the earlier checkpoint in Old Town after dying and re-loading at the shrine checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve some enemy collision in Factory District and Shanty Courtyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add an extra folding screen in a house in Residential District to make it so one patrolling enemy can't see you if you are hiding behind it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a situation where the Overseer would occasionally repeat the same taunt in one scenario.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug where RNG audio triggers (like bell 'dings') weren't playing while remote viewing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/5151600576591857723"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-26T14:15:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.008Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.785Z"
+  },
+  {
+   "id": "atama-207724@1.06.3",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.06.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-13T21:56:15.000Z",
+   "notes": [
+    {
+     "title": "Bigger changes",
+     "items": [
+      {
+       "text": "Refactored save system to allow for Cloud Saving support which is now live! Your save file should seamlessly update to the new save system, but if you experience any save-related issues please let us know and we will try our best to resolve your situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase hitbox of colliders for most items and journal entries so that they are easier to select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Small fixes",
+     "items": [
+      {
+       "text": "Fix a bug where hitting 'J' after dying would still bring up journal and could cause various issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly increase the threshold for triggering the \"low FPS\" warning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make it so you can't interrupt/repeat the sound of the large gate in Factory District while it is still playing its sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where the first enemy in the game could consistently do odd pathing if detected in a certain location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Move the spawn point in mine back so that the first enemy can't see you when you respawn (It was previously in this area but a small change unintentionally affected it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/6539831519486851950"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-13T21:56:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.007Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.784Z"
+  },
+  {
+   "id": "atama-207724@1.06.2",
+   "gameId": "atama-207724",
+   "displayName": "Update 1.06.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-17T02:20:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Atama v. 1.06.2 is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major changes",
+     "items": [
+      {
+       "text": "Controls can now be remapped in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer commentary now has optional subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When poor performance is detected, a tip pointing to the draw distance setting is displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other fixes",
+     "items": [
+      {
+       "text": "The 'inn' in Residential District was playing default footstep noises instead of wood/tatami mat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some small issues with flickering textures and holes in environment in Servants' Quarters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make the large gate by the padlock key inspectable to give hint to players that they need to use the key elsewhere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The item descriptions for coins 2 and 4 were backwards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Very minor audio bug in dev commentary mode when in the final cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/5059268099238403479"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-17T02:20:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.007Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.784Z"
+  },
+  {
+   "id": "atama-207724@1.06.1",
+   "gameId": "atama-207724",
+   "displayName": "Update 1.06.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-11-27T06:53:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Atama 1.06.1 is a bug fix release addressing several minor issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelist",
+     "items": [
+      {
+       "text": "Fix a bug where Kaede's death scream on story and dev commentary mode would sometimes awkwardly play after the full death animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Kaede's crouch animation hovering a little over the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug where random sound effects (most notably the crows in Manor) would still play while gazing through enemies not in the area where the sound effect originates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a small issue where the player could clip/see into into the giant stone head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a small story/dev comm bug where remote viewing ambient sounds would continue if you died while viewing the last remaining enemy in an area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix minor visual issues in Servants' Quarters along with an issue that would sometimes make you return from crouching to standing in certain places in Servants' Quarters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where for some monitors, the proper resolution options would not be listed on settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/4836332027665382539"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-27T06:53:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.006Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.783Z"
+  },
+  {
+   "id": "atama-207724@post-2022-11-01",
+   "gameId": "atama-207724",
+   "displayName": "Soundtrack now available!",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-11-01T01:21:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Atama Soundtrack by Jonny McBane is now available to purchase on Steam! In addition to all the music featured in the game, the soundtrack also contains 11 bonus tracks featuring prototype versions of many of the game's tracks.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We've also set up a bundle for the game and its soundtrack for a small discount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/4706851091189541526"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-01T01:21:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.005Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.783Z"
+  },
+  {
+   "id": "atama-207724@1.06.0",
+   "gameId": "atama-207724",
+   "displayName": "Update 1.06.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-31T00:27:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.06.0 introduces a few additional settings including the ability to reduce flashing from the remote viewing \"eyeball\" animation for those who found this bothersome, the ability to reduce the draw distance which should help performance issues on some computers in outside areas of the game, and several small fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelist",
+     "items": [
+      {
+       "text": "Added a setting to change the view distance. Set it to a lower quality to improve performance on low-spec machines, this should be especially effective for people who had performance issues on the outdoor segments of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a setting to reduce flashing graphical effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a setting to inverse vertical mouse input",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enemies can now be distracted in any state as long as they aren't already distracted or actively chasing (so, if they are returning, readjusting, or searching last known area they can be distracted)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minor Fixes/Changes",
+     "items": [
+      {
+       "text": "Turn down volume on some additional sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better placement on the number key gazing tip trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a situation in Tower where a head could get caught in an aggro-loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug where an enemy would clip through a building if you kited it back from Manor Exterior to Residential",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix ability to go out of bounds in rooftop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix possible storymode softlock in Residential",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small improvements to first scene for performance, add obstacles blocking the inaccessible stairs in Residential",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make it so if you attempt to open Tower door with Servants' Quarters Key it specifies that your key doesn't fit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make it so Metal Buuku in Servants' Quarters won't clip through the doors with the back side of his head.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update Missing Statue Head image in inventory screen to be accurate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other extremely minor tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/4706851091185758065"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-31T00:27:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.004Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.782Z"
+  },
+  {
+   "id": "atama-207724@1.5.03",
+   "gameId": "atama-207724",
+   "displayName": "Patch 1.5.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-14T01:37:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Reduce volume on a few sound effects that were a bit too loud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/6402455182506453617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-14T01:37:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.003Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.782Z"
+  },
+  {
+   "id": "atama-207724@1.5.02",
+   "gameId": "atama-207724",
+   "displayName": "Update 1.5.02",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-13T20:51:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix a possible softlock in Residential District",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Issue where a pile of bones would sometimes get culled out inappropriately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-A few minor LOD issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-A few minor terrain improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2019840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2019840/view/6402455182505730311"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-13T20:51:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2019840",
+      "checkedAt": "2026-11-13T03:15:19.003Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:14.781Z"
+  }
+ ],
+ "issues": []
+}

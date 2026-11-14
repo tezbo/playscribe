@@ -1,0 +1,1941 @@
+{
+ "game": {
+  "id": "the-legend-of-heroes-trails-through-daybreak-141833",
+  "igdbId": 141833,
+  "name": "The Legend of Heroes: Trails Through Daybreak",
+  "cover": {
+   "imageId": "cobjpy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobjpy.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2fpu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2fpu.jpg"
+  },
+  "ps5Release": "2022-07-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.4.4",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.4.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-10T21:40:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a minor update that includes a few improvements and fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix motion blur that got broken with the introduction of motion-vector-based AA (e.g. DLAA).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix temporal AA/upsampling issues on map geometry in a few specific maps which loop around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix scaling/aspect ratio of the expanded minimap for narrow/wide resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix background of battle member change screen for ultrawide resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix swapped L/R 4/5 button assignment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve behavior upon loading of corrupted saves (that were corrupted by e.g. filesystem issues, we do not have any known save corruption bugs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix potential crash after saving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve Japanese strings in button binding menu: Optimize p3a archive loading and path lookup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the unlikely event that this update causes any new issues for you, you can revert to the previous \"version_1.4.0\" branch on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/1848664643361265"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T21:40:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.333Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T21:40:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.333Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-10T21:40:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.598Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.4.0",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.4.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-15T16:56:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update introduces various temporal anti-aliasing and upscaling technologies in Trails Through Daybreak. For more in-depth information about these features, read the corresponding patch notes for Trails Through Daybreak II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also a variety of other updates and fixes in this build, including many graphical, input and QoL improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Graphics & UI",
+     "items": [
+      {
+       "text": "Add DLSS, XeSS and TAA settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Add new \"Color Precision\" setting to improve rendering performance for a slight reduction in color precision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a new \"HQ postprocessing\" setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add new setting for map icon and text size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Render expanded map at 100% scale even if the render scale is below 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Render 3D UI at 100% scale even if the render scale is below 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use slightly improved shadow sampling for \"Everything SGSSAA\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve cloud rendering and fix MSAA/SGSSAA integration with cloud rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve automatic detection of optimization settings on AMD iGPUs and Intel dGPUs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Input",
+     "items": [
+      {
+       "text": "Use SDL2 rather than plain XInput for controller input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This enables automatic controller button prompts, which is now the default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add support for touchpad as a fully usable button for DualShock/Sense controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add support for L4, R4, L5, R5 as fully usable buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter new controller input issues in this update, you can revert to the old behaviour by setting use_xinput_instead_of_sdl2 to true in settings.yaml",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a feature to alternate displaying primary and secondary button prompts for actions with more than one binding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ignore gamepad input when not in focus (this can be disabled via the allow_input_while_inactive setting)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greatly improve performance when lots of raw input messages are generated (e.g. when using a mouse with a high polling rate)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Implement mouse wheel zoom for expanded minimap",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "QoL",
+     "items": [
+      {
+       "text": "Add Steam timeline markers for BGM changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add support for source display in BGM info",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Offer the choice to have Steam verify the game's integrity when we crash while running with Steam enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disable screen savers / turning off the screen while the game is running (this can be disabled via the prevent_screen_off setting)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load save/load dialog thumbnails asynchronously (improves performance with many saves)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load the default graphics preset on game start if no settings file is present",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fix rendering of some specific crafts at non-100% renderscale (e.g. Elaine's Sword Ortas)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix disappearing minimap icons in specific cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some enemy targeting issues in Free Look battle camera mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor improvements in EN dialog message when quitting the game from the system menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make active voice delays depend on text language rather than voice language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes to in-game text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Don't unlock the same achievement multiple times (this did not functionally change the behaviour, but could introduce performance issues)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix camera control with camp/equip/costume menu open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Don't allow NewGame+ after loading an auto-save without actually having clear saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix minor PCSS sampling artifacts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix depth issues with Transparency AA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix mesh part draw order (Elaine's bracer costume)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ignore save folders with the wrong naming scheme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix title screen idle movie playback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix potential resource leak when reloading models after changing the water rendering setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No longer display the BGM information for \"pinch\" battle music every turn when in the pinch state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix loss of background blur in settings menu upon changing some graphics settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix SSR initialization with High/Ultra setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always for our releases, in the unlikely case that you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 20,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/1813674388910166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-15T16:56:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.332Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-15T16:56:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.332Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-15T16:56:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.597Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.3.5",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.3.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-16T10:36:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a few weeks ago Valve announced the Steam Game Recording feature, which is currently available in the Steam Beta,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Introducing Steam Recording Timeline Support",
+     "items": [
+      {
+       "text": "While basic recording works automatically, this also comes with a very cool timeline interface that allows games to programmatically add more information to the recorded timeline. And with this update Trails through Daybreak becomes one of the first large-scale games outside Valve to actively support this timeline API.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "It works like this",
+     "items": [
+      {
+       "text": "The timeline mode (which affects its color/shading) is set according to whether you are in a battle, in menus, loading, or playing the game normally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The timeline description is derived from the current area name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A number of different events are marked, including the start and end of battles, interactions like talking to characters and shopping, opening treasure, S-Breaks and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy this new feature!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Further Changelog",
+     "items": [
+      {
+       "text": "In addition to timeline support, version 1.3.5 also makes the following changes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make the caching of assets in GPU memory safer across a wider variety of hardware and software configurations. This should solve some crashing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unify how mouse interactions work with some popup messages. This should now always allow you to dismiss such popups with the mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improve the material setting for some reflective materials in the Weston Department Store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix the Japanese description of the shadow caching option, and improve a few other Japanese PC menu translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implement some additional error logging to allow us to more accurately identify reported issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in the unlikely case that you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/6000566704283529694"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T10:36:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.331Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T10:36:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.331Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-16T10:36:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.596Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.3.4",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.3.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-11T15:06:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing an update which includes the following new features and bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a new setting to customize text reveal speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve the safety of the \"asset caching\" feature across different hardware configurations, and make changes to it apply while the game is running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix mouse menu navigation when a script is waiting for a prompt or a button upon displaying a help message.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Disable camp menu shortcuts when text messages or help notes are open, to prevent getting into an unexpected state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix an issue with saving that could lead to instability over long play sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Extend error logging in some cases to allow us to more efficiently investigate bug reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in the unlikely case that you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/5842939267360870886"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-11T15:06:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.330Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-11T15:06:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.331Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-11T15:06:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.595Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@post-2024-07-04",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Special Patch Notes - The English Release And So Much More",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-07-04T17:00:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "*The English language support update is scheduled for July 5, 2024, at 10 am PDT.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "with Kuro no Kiseki turning into Trails through Daybreak, we are also happy to release all the improvements we made to the PC version while the localization was in development. We might have gone a bit overboard with this, so the full list is... sizeable. As such, we've extracted some highlights to talk about in more depth -- you can find the full unfiltered list towards the end of this post.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Improvements to Previously Discussed Features",
+     "items": [
+      {
+       "text": "As you might know, Trails through Daybreak has been out on Steam for quite a while now in Japanese. Back when we released this port, I posted about various features of the PC version here.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This included things like arbitrary resolution and aspect ratio support, support for high frame rates up to 360 FPS, a field of view setting, and various new graphics options for things like increased draw distance, shadow quality and resolution, volumetrics, screen-space reflections and so on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For the current release, we've further improved the arbitrary aspect ratio support, fixing quite a few corner cases, and also made physically-based animations at high framerates act much closer to the 60 FPS baseline. You can find the full details towards the end of this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Further Graphics Improvements",
+     "items": [
+      {
+       "text": "On top of everything we included in the Japanese PC release, we've added quite a few new graphical features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improved Shadow Caching",
+     "items": [
+      {
+       "text": "Let's start with something that benefits everyone, and not just those with GPU power to spare. In this version of the game, with the new default shadow caching setting, you'll see improved shadow quality at no performance cost (or, potentially, even slightly better performance).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This image actually shows the same shadow resolution (and performance) on both sides, with the old behaviour on the left and the new one on the right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MSAA and SGSSAA Anti-aliasing Options",
+     "items": [
+      {
+       "text": "One issue with the previous release (and all versions of Trails through Daybreak, really) is that there is no effective way to combat some of the specular aliasing in the game, especially in motion. We've implemented MSAA and, in particular, SGSSAA in order to change this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While these settings require significant GPU performance, they do a very good job in greatly improving image quality and stability in motion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The difference is much more extreme in motion than it is in a still image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that I believe that Trails through Daybreak might be the first full game ever to actually offer a hardware SGSSAA option. (Do let me know if I missed something!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improved Static Reflections",
+     "items": [
+      {
+       "text": "The game features two types of reflections: dynamic screen-space reflections (for which we already offered several quality options in the original release), and static reflections based on cubemaps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For this release, all the latter were recreated at much higher quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This results in higher quality even at the new baseline setting, and there is a further improved option available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Better UI Rendering Quality at Low Resolution",
+     "items": [
+      {
+       "text": "This one is especially useful to people playing the game on the Steam Deck or other relatively low-resolution handhelds. UI text is now much more readable on these devices. The improvements also do carry over to other resolutions, but they are basically unnoticeable there.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "HDR Support",
+     "items": [
+      {
+       "text": "We added native HDR support to the game. Note that of course the content was not authored for HDR, but this allows you to use HDR without any hacks, to set the maximum brightness, and to control the brightness of UI elements independently of the game's overall brightness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BGM Info Display Option",
+     "items": [
+      {
+       "text": "A fan favourite returns with the BGM Info display option. This allows you to have the game display the name of a BGM track whenever a new one is played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New in this iteration is the option to only show this information once per unique track played in each game session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There's more that deserves some spotlight, but I'll stop here and move on to the shorter patch note format.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the (reasonably) complete patch notes",
+     "items": [
+      {
+       "text": "Miscellaneous fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "English localization, of course",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a potential crash in camp menu when rapidly using direct shortcuts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent possible crash when switching the volumetric light option from \"off\" to another setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve auto message advance behavior, and add an option to control the delay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implement default language auto-detection from the platform (Steam, GOG, Windows)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Use Steam Dynamic Cloud Sync API",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modify physics at higher framerates to be closer to the reference behavior at 60 FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a compatibility warning if the mod \"ENGPATCH.p3a\" is loaded (This is obviously no longer necessary, but might lead to subtle issues when playing the game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow mouse camera movement in some specific situations where it was previously disabled",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Be more resilient when users decide to remove the .dlls for any platform (Steam, GoG, EGS); the game will now continue to work, and just disable the respective integrations",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Slightly improve the I/O behavior of the game when looking up assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't use scan-code lookup for extended keys; this could cause issues when trying to do things like binding an action to \"volume up\" (please don't)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix BGM stopping in specific circumstances in one event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clear gamepad input upon controller disconnect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics-related fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implement MSAA, SGSSAA, and transparency MSAA, and add options for all of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implement HDR display support, including separate 3D and UI brightness options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New UI texture filtering implementation for sharper and higher quality UI/fonts, especially at low resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Change shadow caching behavior, significantly increasing shadow quality; also add a setting to control its behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved baseline quality of static reflections (cubemaps), and also offer a higher quality version of them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix the light culling compute shader on AMD GPUs (and improve performance due to less lights being considered)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Add an option to switch between the old (PS4-style) and new (updated PS5-style) water shading pipeline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Scale more 3D UI effect internal rendering resolutions according to the display size and portrait supersampling setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a rare issue that could lead to sporadic black pixels on water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Use high-quality resampling for resolution scale (very minor quality improvement)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a 3D scene in the game which had minor missing geometry (glass panes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unlock a small number of animations that were previously limited to 30 FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix display mode changes leading to stars on night maps being lost until the next area load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overhaul all the graphics presets, and add a new \"Console\" preset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI-related fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add BGM info display feature and an option to control it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add option to always show the turn order in battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use a separate page for autosaves in the load menu to improve navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shorten save titles for better readability in save/load menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apply the font size setting more consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix button prompts to show message backlog during dialog option selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix draw order of close button prompt on alignment result screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix button prompt spacing in help message when unlocking voice DLCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Revamp the settings menu and categories to better accommodate new settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix button prompt label alignment in orbment/equip screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix date format, change character list and add more vertical space in save details in save/load menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve mouse handling in the settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Allow mouse hovering over guest members in camp/status and shop",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Make button prompts on event pause screen clickable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play tab change sound when switching tabs in notebook using the mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Aspect-ratio-related fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix alignment of character name introduction in ultrawide",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix alignment of message backlog button help in ultrawide",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix alignment/background of connection effects screen in ultrawide",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix alignment of message log components in ultrawide",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enable black bars for game-over screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix \"Arc Dominator\", \"Pandemonium Ruler\" and \"Twilight Kiss\" craft scaling at non-16:9 aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note that, due to the various increases in asset quality as well as the inclusion of the English translation, the game's storage requirements increased to ~17 GB.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are extremely proud of the current PC version of this game, and hope that everyone enjoys it!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 11,
+    "balance": 0,
+    "other": 45,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/5842939267335643412"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-04T17:00:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.330Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-05T23:59:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.330Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-05T23:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.317Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.1.4",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.1.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-06T18:05:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing an update which includes the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved a subset of map textures with new, higher-quality sources. Note that this increases the game's storage requirements by ~1 GB.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improve the shutdown behaviour of the game in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some unexpected cursor behavior in camp/tactics menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the \"At Bonus\" alignment for non-16:9 aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increase the safety margin for the \"auto\" p3a caching option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/5220292521185042342"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T18:05:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.328Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T18:05:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.329Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-06T18:05:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.592Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.1.2",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-13T20:04:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a minor update for Kuro no Kiseki, in order to solve an issue introduced in 1.1.1 which affected the handling of \"clear saves\", preventing them from being visible in some saving and loading UIs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/5070528810307747652"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-13T20:04:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.328Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-13T20:04:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.328Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-13T20:04:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.591Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.1.1",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-10T13:58:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing an update for Kuro no Kiseki with the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a select few instances of animations in scripted scenes not playing back correctly at high framerates. Yume can now hug Van just as well at 200 FPS as she can at 60 FPS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the very first frame the game ever renders during initial loading being gray instead of black.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve the Japanese descriptions for some game settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add an indication of the actual render resolution to the graphics settings menu render scale selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Focus on the most recently manually created save in the loading dialog even if a newer autosave exists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Colorize the PlayStation-style controller button prompt face button glyphs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Automatically load \"*.p3a\" files found in the \"mods\" subdirectory.: [expand type=details]More precisely, the game will load the content of all p3a archives in the \"mods\" subdirectory (if such a directory exists), after loading the essential archives shipped with the game. The archives will be loaded in lexicographical order, with files from subsequent archives taking precedence. As such, it would probably be a good idea for mod authors to prefix their files with a numeric code, e.g. \"13_bla.p3a\".: Note that we cannot officially offer any support for modded games. Please cleanly uninstall all mods before reporting a bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 9,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/5070528810295888028"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-10T13:58:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.327Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-10T13:58:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.327Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-10T13:58:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.591Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-through-daybreak-141833@1.0.1",
+   "gameId": "the-legend-of-heroes-trails-through-daybreak-141833",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-05T08:12:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing an update for Kuro no Kiseki with the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a special feature to (optionally) handle GPU data transfers differently. We have observed this to significantly improve performance on some systems with AMD GPUs. See below for more details.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix fade effect not spanning the whole screen in non-16:9 aspect ratios when skipping events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjust chapter start screens for non-16:9 aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regarding the GPU data transfer change, in our testing this improved performance by a significant degree on some AMD systems, but was neutral or slightly negative in its performance impact on other systems.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As such, by default we enable this behavior only on systems with an AMD GPU and disable it on others.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If, for any reason, you want to override this automatic selection, you can do so by changing the \"extra_host_write_buffering\" setting in the game's \"settings.yaml\" file found in \"%LOCALAPPDATA%/Falcom/Kuro\". This setting will show up in the file after launching the new version once and accessing its settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The default is \"Auto\" and selects the behaviour based on the GPU vendor. \"Never\" forces the prior behaviour even on AMD. \"Always\" uses the extra buffering even on NV and Intel GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We do not recommend changing the default behaviour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2138610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2138610/view/5070528176572310316"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-05T08:12:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.327Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-05T08:12:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2138610",
+      "checkedAt": "2026-11-13T03:33:35.327Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-05T08:12:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.590Z"
+  }
+ ],
+ "issues": []
+}

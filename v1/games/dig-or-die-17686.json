@@ -1,0 +1,1333 @@
+{
+ "game": {
+  "id": "dig-or-die-17686",
+  "igdbId": 17686,
+  "name": "Dig or Die",
+  "cover": {
+   "imageId": "co1mn0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1mn0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aro07",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aro07.jpg"
+  },
+  "ps5Release": "2024-06-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dig-or-die-17686@1.11",
+   "gameId": "dig-or-die-17686",
+   "displayName": "Update 1.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-22T08:31:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here is a small update I just released, mostly to fix a few issues. Thanks again to all of you for your support and appreciation of my game :-)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now I go back to work on my new project!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.11 (Build 858)",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added recipes for crafting Stone, Granite and Lightweight Rock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed ingame discord links to the language-specific discord channels when appropriate: Bug Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that prevented client to place a backwall over an item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that paused the organic rock during 10s after a reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"/find\" to avoid returning positions outside of the visible world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed <1% lava quantity that didn't burnt wall (but damaged player)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lava plants that could burn when in fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "/killme now works on clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Explosive screen shaking now on clients too: Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added flashlight in creative/epilogue mode: Minor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated \"/clearkills\" help",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-315460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/315460/view/2543878145174649521"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-22T08:31:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-315460",
+      "checkedAt": "2026-11-12T02:59:01.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.747Z"
+  },
+  {
+   "id": "dig-or-die-17686@1.1",
+   "gameId": "dig-or-die-17686",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-01-04T15:05:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update brings new arts and animations for all monsters, new items, various tools and commands for map edition, and a lot of bug fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New edition tools are detailed in this wiki page: https://digordie.gamepedia.com/Modding_and_Mapping. Don't hesitate to complete it, or post a link to your own custom maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I'll now start working on a new game, and stop updating Dig or Die but for bug fixes or minor improvements. I'm not sure yet what I'll do next with Dig or Die as there are so much to do... hire a developer to work on it? find a partnership with another studio to continue it and port it to consoles (if you are one, contact me!)? Wait for some hypothetical Dig or Die 2 in order to change the game features in depth? I don't know yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As for my next game, it will be totally different from Dig or Die. I can't be sure if I'll manage to do something great, but I do think you'll find it very interesting, and really worth to work on it! I'll post something about it when it's time, but if you want to be sure not to miss it, register to my little mailing list (no spam, something like 1 mail per year): http://eepurl.com/cIQ0VD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.1 (Build 854)",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New arts and anims for monsters and bosses (almost all, not yet complete)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New item: Alarm. Flashing light with sound, when powered with a signal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New item: Distance Sensor. Detect units around it (3 modes: green for players, red for monsters, blue for both). Added those 3 modes to the proximity sensor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New item: Composite Door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New item: Mega Health Potion. Heal 100% of HP, cooldown 15s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New item: Pheromones Potion. Attract monsters from further away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New item: Invisibility Potion. Canceled if shoot or use item. Visually, player is almost invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New item: Ultimate Rebreather",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Item modification: Stealth Bracelet, changed from previous Invisibility Bracelet. Player is half-transparent. Monsters have more difficulty to find player (during the day): distance to detect, and to lose track, is reduced (half). Cancels only if shooting (player can dig). Usage 30s, cooldown 60s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drone: it now stays in inventory, is called when you activate it. Recipe modified so they now are updates. Added transparency to AI speech bubble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimap: button to toggle a x2 zoom, and display the % of exploration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu \"CUSTOM GAMES\" renamed into \"OTHER WORLDS\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve monthers pathfinding, to climb (especially platforms)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add localization in Traditional Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update localization in Simplified Chinese, Dutch, French, German, Italian, Korean, Polish, Brazilian, Russian, Spanish, Japanese: Map edition tools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an empty map in local files /DigOrDie_Data/SteamingAssets/Empty World. Work In Progress, various things left to do: manage monsters areas, bosses, strange rocks, minimap clearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clock day/night areas display now dynamic whatever the day/night durations, perfect precision now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Delete\" key to remove items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made strange rock area dynamic, build those rocks anywhere with the Creative Brush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Organic rock heart is now dynamic too ; it regens a bit differently, player can \"move\" it. It can also be healed once killed with the Brush tool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you spawn a boss with the Monster Gun, in Dev Mode (m_devMode=true in Creative Mode), it will set its lair/respawn area at this new position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automatic character skin reset (open character window) if change of host (if map shared to someone else, even in solo)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F4 debug : display the currently (daily) spawn monster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add basic rifle to recipes (useful for map edition)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Scrap Metals recipe to ultimate autobuilder (useful for map edition)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adds an Auto-Builder Ultimate when activating the Dev Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New param: m_checkMinerals. Add some minerals (gold, etc.) at loading if not enough found (if players dug everything). True by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New param: Dev Mode (m_devMode). Give invincibility, fast travel/fly/noclip with numeric keypad arrows, time change with PageUp/PageDown/Home/End keys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New param: m_dynamicSpawn. To make monsters spawn depending of the surrounding blocks & background (example: if crytals, spawn ants) like in Terraria (see wiki for more info).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New param: m_rainY. Set rain/cloud altitude (880 in main world)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New param: m_fastEvaporationYMax. Water evaporates very fast below (280 in main world).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New params: m_sunLightYMin & m_sunLightYMax. Altitude where sky become caverns (no more sun light). Useful for map edition, as it changes some of the spawns. 600 & 665 in main world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New param: m_lavaPressureBottomCycle. Lava altitude at the lowest point of its cycle. 2 in main world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New command: /clearminimap. Clear Minimap (for map edition)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New command: /clearbosses. To kill all bosses and delete their lair/respawn area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New command: /clearminimapfog to clear the minimap fog (useful for map edition)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New command: /clearkills to clear the killed monsters list (keep firefly & hounds) (useful for map edition)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New command: /cleardaycounter to reset the day counter.: Bug Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Prevent getting several similiar Hazardous Events following each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Meteor Shower and Earthquake for clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed monsters spawning from altitude (and crashing stupidly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ultimate Autobuilder don't consume items anymore when they are available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimap : fixed bug when near map borders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed sync of blocks destroyed by grenade launcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed other players name highlight (now only if item is beinbg dragged)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that let projectiles go through walls when quick saving (+ other collisions issues when quick saving)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some texts not updating when changing language (game creation & lobbies screen)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monster Gun: bosses spawn with right clic are now aggressive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monster Gun: Spawn monsters with Monster Gun are not killed anymore at loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug (at loading) with lava cycle skip & organic rock kill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the input field while saving game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented infiltration when water pressure was > 83: Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potion regen: +150% instead of +200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potion armor (-30% damages ) applied before armor (so more effective)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critics damage : x3 instead of x2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plasma Sniper: 35 damages instead of 45, but 25% of critics chance instead of 5%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Armor Potion now reduce damage by 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Precision Potion: 20% more chance instead of 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased drowing monster damage (2+ 5% of max HP)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fishes damages in air are now the same as drowning monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Under The Sea mode: modify shape of the bottom of the sea to let player go closer to the gas rock islands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Under The Sea mode: MadCrab easier to find (bigger lair)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Under the Sea: spawning zone for T3 monster a bit higher so players can reach the cavern ceiling more easily.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Default mode: granit caverns a bit longer, more connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Base Defense mode: move all bosses (now better hidden)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Demon aim better when player is running",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regeneration Potion ticks duration changed. One tick every 1.6s (still 150% of hp healed over 60s - so heal ticks of 1/2/3/4 hp depending of difficulty)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grenade Launcher cannot damage T4 & T5 rocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All electric components recipes produce 2 instead of 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HP Regen Potion cost modified (3 blue flower instead of 4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Precision Potion cost modified (7 High Radioactive Blood instead of 10)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Armor Potion cost modified (7 High Radioactive blood instead of 10, no more dead plants)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed Potion cost modified (now 3 Deep Cave Tree Seeds and 7 Highly Radioactive Blood)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invisibility potion recipe change (deadly blood)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mega potion recipe change (build 1 instead of 3 - change for big potions too)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sapphire emit a bit of light: Minor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Command: /killme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crafting group: \"minerals / materials\" now together",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add contrast & modify colors of steel platforms and composite walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI: improve bubbles colors to be more readable at day & night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI message when near a rare mineral",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI message to explain there is no normal loot at night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Help: says we can place dirt but not rock; and that we can drag&drop items onto the other players names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update english localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 25,
+    "fixed": 9,
+    "balance": 1,
+    "other": 54,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-315460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/315460/view/2417770561714519085"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-01-04T15:05:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-315460",
+      "checkedAt": "2026-11-12T02:59:01.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.746Z"
+  },
+  {
+   "id": "dig-or-die-17686@1.03",
+   "gameId": "dig-or-die-17686",
+   "displayName": "Update 1.03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-09-25T08:48:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update should improve your experience in multiplayer: for late-joining clients (they will get same weapons & devices than host) and for better managing bad behaviors (easy kick & ban, and if banned host get its inventory). It should also improve low-framerate experience with the volcano lava cycle & eruption and jumping down platforms bug fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, Base Defense mode is now really (really) challenging in late game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'll now start working on the v1.1 update. More news about it soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And remember about the Eiffel Tower Building Contest, it ends tomorrow!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.03 (Build 814)",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Joining clients (first-time) automatically get the host devices & weapons (param m_clientGetHostItems)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Banned players give all their item to host (param m_banGiveLootToHost)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kick & Ban buttons in the players list window, for host. Add a \"players\" button to open this window (Tab key shortcut).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Volcano: skip a lava up/down cycle if lava didn't have time to go away when cycle should start. An \"*\" is then written next to the lava pressure in the F4 debug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dynamic balance of the volcan eruption \"lava volume\", in order to avoid mass lava flooding & ocean drying, and lava not coming out: * reduce the eruption duration (600s=>500s): * extends its duration dynamically if lava didn't rich the top (up to 800s). Add two params for that.: * modification of the layout of the bottom-side chimneys, to make the lava coming out slowlier (on new worlds): * modification of the layout of the top-side chimneys, to make less rain entering the boss lair (on new worlds): Bug Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug with teleporter UI (when removing an active teleporter)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix \"load\" button in main menu locked in some situation (if no multi (or custom) save, and quitting a multi (or custom) game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented to jump down from a platform when very low framerate: Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Base Defense mode: after 33 nights, when there is no more monsters to spawn, monsters gain 10% of HP & damage every night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "particle turrets projectiles don't go through (that was never intended)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance: Flame-thrower turrets more resistant (400 hp instead of 250)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plasma Sniper Rifle damage increased from 35 to 45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ZF-0 gun unlocks target if fired with shift key pressed: Minor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update items description and help (no need for devices to be placed in the items bar)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add params m_speedSimu and m_speedSimuWorld to modify the simulation & world (liquids) simulation speeds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve/fix fps debug: show framerate, then the ratio between the game time speed and the real time speed, and then the ratio between the world simulation (especially liquids) time speed and the game time speed. Add a param to lock the game/world ratio (if low framerate, the framerate will be even lower, but liquids will run at the normal speed compared to the player movement and day duration).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-315460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/315460/view/2450411965569312774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-09-25T08:48:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-315460",
+      "checkedAt": "2026-11-12T02:59:01.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.744Z"
+  },
+  {
+   "id": "dig-or-die-17686@1.02",
+   "gameId": "dig-or-die-17686",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-08-24T21:14:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update is now live! Most interesting change is the hydroelectric generators: their power limit has been increased from 5kw to 50kw! If you can manage to get enough water pressure, you'll be able to produce much more electricity than before with one single generator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another thing is the Sun Lamp, which has a far greater range than before. So don't hesitate to use it to create large plants farms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here you an do a generator producing 14kW",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I also did a lot of balancing. Most important is the weapon heating: your firerate will drop more now if you heat your weapons too much ; by firing constantly. The heating feedback on cursor is more visible now. This way player should be able to better understand the system and actually improve their DPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also some changes on Metal Detector (range x2 !), zf-0 (use it!), flamethrower (burn them all!), plasma gatling, and on various recipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you like the building physics, be sure to check the next announcement (probably tomorrow) as I'll launch a little Eiffel Tower building contest :-)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.02 (Build 803)",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydroelectricity Generators: generate up to 50kW (with very high pressure of water). Generators start working with a lower delta pressure (2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sun lamps: far, far greater range (1 lamp every 22 horizontal spaces if lamp is at a height of 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add traditional Chinese localization: Bug Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed respawn position bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pumps & generator, they don't transform lava into water anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix non-go-through bullets that were hitting several monsters (if hit in same frame)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed passive items that were all toggle on at player respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cheat on multiplayer with clients recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed chat that opened when pressing enter from pause menus: Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increase max heating of weapons from 1.2 to 2 (less efficient if player never let them cool off). Heating more visible in cursor (1 circle from 0 to 1 heating, 2nd circle from 1 to 2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change Heating for weapons (no more maximum, but prevent shooting if heating > 1.6). Heating cursor reskin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Metal detector: detector at a distance of 100 instead of 50",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ZF0: don't hit other monsters when a target is locked (don't change target)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plasma Machine Gun cooldown reduced from 1.2 to 1.1, priced reduced (3 => 2 light gems)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase flame damages to monsters (10 instead of 6, every 0.7s). Lava damages too (30 if little lava, 50 if a lot)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "flamethrower damage from 10 to 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death Pulse Turret range area narrower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Electrified Spiked price reduced: Radioactive Blood x20 => x10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lighting mine price reduced: Aluminum x3 => x2, Coal x8 => x5, Radioactive Blood x20 => x10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Effeil Glasses cost reduced: 3 aluminum and 3 light gems => 3 iron and 2 bat sonars, and in Tier 2 instead of Tier 3 (so it can be used to build the bridge)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimapper cost slightly modified: Bat Sonar x3 and Rad. Blood x10 => Bat sonar x2 and Light Gem x1: Minor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mineral recipes : add Iron & Gas Rock ; all plants now used in recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F4 now display the framerate, and a debug value about the world (liquids) simulation speed ratio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coral plant a bit more visible in water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show game visibility (public, friends, private) in F4 debug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-315460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/315460/view/2444779293791943347"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-08-24T21:14:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-315460",
+      "checkedAt": "2026-11-12T02:59:01.742Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.742Z"
+  },
+  {
+   "id": "dig-or-die-17686@1.01",
+   "gameId": "dig-or-die-17686",
+   "displayName": "Update 1.01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-08-03T08:27:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here is a first minor update for the game since its launch. The most useful change is the toggeable items now active from inventory - it should give you a lot more useful space in the items bar. The vegetation process update should also help the plants to grow back easier and faster, and avoid getting the world slowly becoming all dead in the areas that were digged a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, a few weapons balance change should make the ZF-0 (and the Sniper & Storm guns) much more efficient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.01 (Build 793)",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggeable items (armor, light, etc.) are active from the inventory, no need to put them in the items bar anymore. Green/red indicator visible in inventory ; right-click to activate/deactivate them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add Italian localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vegetation more dynamic and alive: dirt tiles infiltrated with water keep some of it. Plants drink less water. Dead plants & trees fall faster (so new plants can grow)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve checks for missing minerals at map loading (some minerals are added if they are missing from the map, or have been all mined).: Bug Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix random generator number in multiplayer (each player will get regular monster drops, instead of a regular average of drops for all players)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Delay Gate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Rare Metal Detector, doesn't detect metal just outside the word boundaries anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Storm Gun stopping making water in some situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the post \"Lucky Day\" drop rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix crash if we load a solo game in multiplayer (by moving the save file - now ok)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix freeze as multiplayer client if joining a game when the rocket countdown is alredy on ; or if client is far away from the rocket when built",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix water/lava huge pressure sync in multiplayer (when params are changed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a water sync issue (especially when host remove water by placing/removing a wall): Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sniper Rifle does more damage (30=>35), ZF-0 heats much more slowly (0.02=>0.01), Storm Gun does more damage (55=>65): Minor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5 auto-save files in loop instead of 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam notification moved in the bottom left corner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update Fr, En localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-315460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/315460/view/2451533424637493132"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-08-03T08:27:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-315460",
+      "checkedAt": "2026-11-12T02:59:01.741Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:01.741Z"
+  }
+ ],
+ "issues": []
+}

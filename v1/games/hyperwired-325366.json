@@ -1,0 +1,92 @@
+{
+ "game": {
+  "id": "hyperwired-325366",
+  "igdbId": 325366,
+  "name": "Hyperwired",
+  "cover": {
+   "imageId": "coccpx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coccpx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3831",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3831.jpg"
+  },
+  "ps5Release": "2026-07-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hyperwired-325366@post-2026-07-02",
+   "gameId": "hyperwired-325366",
+   "displayName": "Text Adjust on Upgrades",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-02T18:08:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed positioning for upgrades list in pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3234850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3234850/view/1836506165568755"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T18:08:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-3234850",
+      "checkedAt": "2026-11-13T03:23:18.643Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T18:08:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3234850",
+      "checkedAt": "2026-11-13T03:23:18.644Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-02T18:08:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:05.157Z"
+  }
+ ],
+ "issues": []
+}

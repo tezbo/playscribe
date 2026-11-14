@@ -1,0 +1,4771 @@
+{
+ "game": {
+  "id": "no-time-to-relax-111370",
+  "igdbId": 111370,
+  "name": "No Time to Relax",
+  "cover": {
+   "imageId": "co2g6r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2g6r.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ardai",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ardai.jpg"
+  },
+  "ps5Release": "2022-06-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "no-time-to-relax-111370@1.4.0",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-05T18:40:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another big update, what could it hold?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is what we are calling the \"Spring Cleaning\" update and while this project has a lot of changes, you are unlikely to notice most of them. What it entails is us getting the project running on the newest versions of Unity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Development of No Time to Relax began in 2017, with what was then the newest version of Unity. It's been almost 10 years since and the project has been stuck on some older versions for quite some time now. Unwilling to let the project rot and possibly slowly become unplayable on modern systems we undertook a Herculean effort and spent the last weeks removing parts and plugins that are no longer supported in the newest version of Unity. While this update doesn't directly add any big new features it does open up the possibility of adding new ones in the future. We can now write a single system and hopefully deploy it across multiple games (such as a Save Game feature).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our focus these days is on our new game Walk of Life, but we are unwilling to not support our previous games and the community that loves them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clicking the code in online-lobbies now copies that code to your system clipboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 35 new weekend cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Unity project to the newest version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game is now a native 64-bit application on 64 bit operating systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some bugs connected to interactions between the game and Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the game could stall after not being able to find a weekend card to show to players. We now show a fallback card if this happens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some bugs connected to removal of Players in online games after they had disconnected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential bug when players with no job performed some specific interactions in online games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized how we send info between players in online games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated our Animation Software plugins to the newest version and updated all animations in game to match that (this took a while...).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All fonts were refreshed and should be displayed more correctly and at a higher resolution than before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bunch of bugs connected to players rejoining and leaving games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/1826362059922232"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T18:40:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.896Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T18:40:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.896Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-05T18:40:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:26.686Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.3.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.3.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-27T17:21:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This was originally supposed to be a part of a bigger update that we have been planning but as the other half of our No Time to Relax development team fell out of a tree and broke his programming hand we felt it would be best to get this out ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What this update has is Regions in online play! You can choose from Asia Pacific, Europe, North-America and South-America. We really hope that this will fix disconnection issues that users have been running into recently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a few other small features and optimization things we will be adding in the near future but at least we've got this feature out the door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know over on our Discord if you run into any problems with this!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Porcelain Piglets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/1822556746169590"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-27T17:21:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.895Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-27T17:21:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.896Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-27T17:21:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:26.685Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-20T16:45:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where game could freeze playing multiple games in row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/1802893906767470"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T16:45:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.895Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T16:45:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.895Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-20T16:45:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:26.685Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.3",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Patch 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-22T10:55:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It’s been quite a while since our last major update—three whole years, in fact! We’re excited to bring you what we’re calling The Ultimate Update. This release is not only packed with new features and bug fixes but will also serve as the final major update for No Time to Relax.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can find the full list of features below, which includes fixes for longstanding issues and a groundbreaking innovation we’re pretty sure no other game has done to date: hats!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been an incredible journey since we released the game in 2019, and we’ve loved watching our community laugh and rage in equal measure. We’ll now be shifting our focus to our newest game, Walk of Life, and we hope to see you there when it hits Steam Early Access next summer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "Game now includes Hats! Usefulness is debatable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Thai localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Latin American Spanish localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed missing text for Japanese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made text more readable for handheld screens in various places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the graphics of various items to look better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the board game graphics to be more awesome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the graphics of a few apartment furniture items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clicking the Record player now changes music tracks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the Icelandic Skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "TVs now surf more channels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Look to the skies! Characters now rain down in the Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated graphics for in-game menu button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tutorial has been simplified and can be more easily dismissed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed bug where in a online game if a player bought the First Player item in Competitive mode and then dropped out of the session the game would hang at the start of next round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the game to crash if joining a multiplayer game took unexpectedly long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the game to hang if trying to rejoin an online game at the same time as another player left it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a race condition in online where the game tried to load visual data when receiving ready signal from host but hadn't loaded them yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a mysterious bug with the Pet UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in online multiplayer where the score screen might freeze if another player quit the game just as the score screen was loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Game now includes Hats! Usefulness is debatable.",
+     "Added Thai localization.",
+     "Updated Latin American Spanish localization."
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/1783872412011428"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T10:55:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.894Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T10:55:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.895Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-22T10:55:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:26.684Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.2.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.2.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-03-31T10:12:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sometimes we and our community find bugs. When this happens we need to fix them. This is a small update that fixes some annoying but not major bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where messages were not shown if too many were queued at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Claimed Investments were not cleared on other player in Online Games, this did not affect gameplay. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hex cards could multiply when a person rejoined a Online Game, this has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect localization key was used in one spot and thus the correct translation was not shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/4023377846271028219"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-03-31T10:12:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.894Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:26.683Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.2.0",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.2.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-01-26T18:46:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been working on this update for a while now. Getting reconnect working was analogous to battling the Kraken, our old network code required a lot of poking, prodding and testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But here it finally is! During all this testing we also decided to do a little bit of competitive balancing (see the list below).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy these new features!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to reconnect to online games after disconnecting or quitting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now battle against multiple CPU players in local games (up to 3 CPUs at the same time).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the penalty given by the Slow Down curse in competitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Curses now require a one week cool-down in competitive. I.e. the same curse can not be bought two weeks in a row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zombies can no longer break into the Fancy Apartment. Making your furniture safe from thieves and zombies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Help button at the top of the screen while playing. Pressing it will show the Help Menu for your current context.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing Chinese symbols.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated incorrect Icelandic translation for the Victor card in Marathon mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where using touch could cause you to go to an incorrect building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the Refresh button in the Online Game Browser only showed new games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause two different ambiance audio tracks to play at the same time in Menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the resolution of the Victory Machine in the End Game Score Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some achievements were not counted correctly if the player quit the game before finishing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/4043637702566489975"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-26T18:46:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.893Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:26:53.893Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.1.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-25T11:11:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey! We have a small update for you today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Icelandic Skin: We've added the Icelandic skin to the game. Our artists created this wacky skin to celebrate Icelandic culture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Icelandic Language: Icelandic is now available as a language in game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chinese Language: Chinese language translation was given an overhaul and updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pet Bug: Fixed bug where pets would get too much happiness and health from items within your apartment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mission Bug: Fixed bug where the \"Walked the shortest distance\" mission would not award any points most of the time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stay safe!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The whole Porcelain Fortress Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Icelandic Language: Icelandic is now available as a language in game!",
+     "Chinese Language: Chinese language translation was given an overhaul and updated.",
+     "Pet Bug: Fixed bug where pets would get too much happiness and health from items within your apartment."
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/3444639924493739635"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-06-25T11:11:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.892Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:26.673Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-20T13:36:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Last few months have been pretty crazy for us at the office. Not only have we added some new features to the game but we've also got cross-platform support up and running. You can head over here to see what new platforms we've expanded to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furthermore No Time to Relax has been selected to the PAX East Indie Showcase. We'll be there with a booth so drop by, say hello and pick up some schwag if you are attending PAX!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now let's get to the updated and changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Cross-Platform: Game is now running on a new and different network than before. We made this migration to offer and support cross-platform play between PC and consoles. Head on over here to our web page to see what platforms we expanded into.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Japanese: Game is now enjoyable in Japanese! We recommend you try it out, even if you don’t speak the language!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transport: Tired of walking everywhere you go? Visit VexCorp™ and purchase one of their patented transportation technologies. You can get lifetime access to the town’s Vexportation networks, a lifestyle VexScooter™ or the Nikola™ Electric Vehicle. Spend less time getting around and spend your time on things that matter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weekend Cards: Added new transport themed weekend cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "VexPhone: VexCorp made history this year when they introduced the VexPhone, the world’s first “smart” phone. It comes equipped with an intuitive touch screen and the most powerful antenna ever put on a phone. This phone allows you pay with items using the money in your bank account. Being in constant contact with your broker is also a sure way to increase any profits you get from your investments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Investments: Investments have been buffed to make them more appealing. When you make money off investments you now multiply your profit (but not losses). If you own a VexPhone your multiplier is increased even further!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Time Limits: Time Limits introduced! Do your friends take forever to finish their week? We’ve introduced optional time limits when creating a game. You can choose from Unlimited, 120 seconds, 60 seconds or nerve racking 30 seconds. Available in online and local play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI Pet bug: Fixed bug where AI pets could not die from starvation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolution fixes: Fixed how screen resolution is handled in game. We’ve fixed it so the game in now playable in Fullscreen, Windowed and Windowed Fullscreen. Support for all kinds of weird and exotic screen ratios now included. Also fixed bug where wrong items were selected in the graphics menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Code Invites: Added the ability to invite people to online games using a four-letter code. This is especially useful when playing cross platform private matches. (not available in all regions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Zombie bug: Zombie muggers can no longer steal the money you get from your aunt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Retina Support: Added retina support for Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug fixes and polish: Finally, we found and fixed a lot of small bugs and did a lot of polishing here and there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've been working hard on this update and hope you enjoy it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The whole Porcelain Fortress Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2578811485591870854"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-20T13:36:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.892Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.220Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@major-2019-12-11",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Xmas update and news",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-12-11T14:39:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our new holiday update just went live! It includes a whole new winter wonderland skin for the town and new costumes for all the characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Holiday Theme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New winter wonderland town theme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New holiday skins for the merry band of characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There has been a drought of new features recently but we are currently working on the next big update which should be ready for launch next month. This includes our previously teased transportation update and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A small teaser for 2020",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2610330338694750956"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-12-11T14:39:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.891Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.219Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.0.6",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-04T17:20:11.000Z",
+   "notes": [
+    {
+     "title": "Network changes rollback",
+     "items": [
+      {
+       "text": "We got some feedback from users that the new network code we implemented was causing them to be disconnecting quite frequently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We decided to do a rollback on some of these network changes and will re-implement these changes at a later date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Things should work as they did before. Let us know if you run into any trouble!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2451574645873036987"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-04T17:20:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.890Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.218Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.0.5",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-27T19:26:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Porcelain Fortress team went to London to present our game at EGX. We had a great old time, ate a lot of curries and met a bunch of awesome people.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, what do we have for you now? Let me tell you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game skin foundations",
+     "items": [
+      {
+       "text": "We've built the foundations to re-skin the game completely. This allows us to swap out characters, building and just about everything with but a single click. This allowed us to present you with a super spooky Halloween theme!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Halloween Theme",
+     "items": [
+      {
+       "text": "The quiet town of No Time to Relax has been brought to an unknown outer realm! The town has been re-skinned with a spooky, spooky skin and our merry band of Avatars have donned their Halloween costumes. Their starting clothes have been swapped out for a more festive suit. If you wish to escape the horror dimension you can enable the old skin in the Gameplay Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cross-Platform Multiplayer",
+     "items": [
+      {
+       "text": "We have been re-working our network code to support cross-platform multiplayer once we launch the game on more platforms. We've tested it extensively and it should be as good as the old one. If you run into bugs please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "The game should be much faster to load now and run more smoothly across all devices. We've been doing some much-needed optimization work because of the Switch version and this is the fruit of that labor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Mission Icons",
+     "items": [
+      {
+       "text": "The Newspaper now has new icons for the different types of missions. Sure to delight people of all ages!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "We sometimes find bugs and when we do, we fix them. This update features a bunch of bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Finally",
+     "items": [
+      {
+       "text": "Finally, we ask that all you good people out there bear in mind that we are a very small studio based in the middle of the Atlantic Ocean. We work tirelessly on this game and we are trying to make it all work out. There will be more features in due time. Forgive us being late in delivering some of the requested features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until next time! Peace, out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "The Newspaper now has new icons for the different types of missions. Sure to delight people of all ages!"
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2504491307415335514"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-27T19:26:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.890Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.218Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.0.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-09-02T16:54:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We came back home from Gamescom a week ago. We have been recouping after an awesome time there. A lot of people came by our booth and we had heaps of fun introducing the game to new people. We got some good and positive feedback! We want to say a big thanks to everyone that came by!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As before we are focusing on improving stability after the big update. We have gotten a few bug reports from the community and we are focusing on fixing those ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also noticed few things from playing the game 10 hours a day for 5 days straight at Gamescom that we want to tweak and improve. E.g. instead of giving players equal score for tied or not finished missions, we now give all players 0 as the other way took too much time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is our 1.0.1 update log...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Player's no longer receive points for a mission if all players are tied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed drop down boxes sometimes getting stuck in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text not fitting into the main menu button on the end screen in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where menus could overlap if creating a lobby failed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overall sound levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the audio ambiance could sometimes stop when moving between menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other smaller tweaks here and there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2415540140471306469"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-02T16:54:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.889Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.217Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@1.0",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 1.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-08-21T15:44:31.000Z",
+   "notes": [
+    {
+     "title": "Leaving Early Access - Version 1.0",
+     "items": [
+      {
+       "text": "Creating this game has been quite an adventure for all of us! It’s nowhere near over though. We will continue to support and expand the game (that includes a Nintendo Switch port).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to thank everyone who supported us through this 18 month journey: Family, friends and our community which has been invaluable in helping us shape and make No Time to Relax.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.0 update comes with 3 new main features: Missions, Achievements and a new Score Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions",
+     "items": [
+      {
+       "text": "Mission System: Each game now has 3 random mission that give bonus points at the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Newspaper: To view these mission head over to the Market and buy the Newspaper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "67 Achievements: We added 67 achievements to the game! Can you finish them all?!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New End Screen",
+     "items": [
+      {
+       "text": "More Info: We've created a new score screen at the end of the game from scratch. Hope you like it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Chinese & Russian Fonts: We added specific fonts for Chinese and Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bank Tab Swapping: You can swap between the Bank and Investor with the swap tabs buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI Polish: A lot of UI polish all over the place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fixes: We searched high and low bugs and hopefully squashed them all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Close Building Hex Same building can now not be closed two weeks in a row with the Hex Curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The best and biggest thanks from all of us here at the Porcelain HQ!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0,
+    "topNew": [
+     "More Info: We've created a new score screen at the end of the game from scratch. Hope you like it!"
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2416665403766366208"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-21T15:44:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.888Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.216Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.11.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.11.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-08-05T12:24:32.000Z",
+   "notes": [
+    {
+     "title": "Pet changes",
+     "items": [
+      {
+       "text": "After some feedback and internal discussions, we have decided to add the option to buy another pet if the former has died. You will still receive a penalty to your happiness and your new pet starts at zero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Fixes",
+     "items": [
+      {
+       "text": "Changed end game card text as the victor is now unknown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with pets in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2412159905940228442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-05T12:24:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.888Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.215Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.11",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-07-25T15:38:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here it is, the Pet Update! You can now invest in your very own furry friend. But just before you check out the new features, we'd like to announce something:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gamescom & Launch of v1.0",
+     "items": [
+      {
+       "text": "Two big announcements: The team will be present at the upcoming Gamescom trade fair in Cologne (20-24 August 2019). If you happen to attend please come by and say hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second announcement is the official launch of the game from Early Access to full release. This update will include a completely revamped score screen, a mission system and some more goodies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What does the launch of v1.0 mean for the future of the game? Don't fret or panic, we're not abandoning the game on the 21st! We will continue to update the game with bug fixes and features but on a slightly different schedule. We're a small studio and need to get the game on more platforms to reach a larger group of players. So, with this we're also announcing that No Time to Relax will launch on at least two additional platforms: The Nintendo Switch and Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "With that our timeline has been shifted a little bit. Some features will be launched with the console release while other features ended up on the trash heap as we didn't feel they made the game more fun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Nintendo Switch & Xbox",
+     "items": [
+      {
+       "text": "We are super excited to announce that No Time to Relax is coming to the Switch and Xbox. We plan to launch a free feature update (on all platforms) with the launch on each new platform. So for the next month or two the updates will address bugs and/or minor tweaks. We'll start with the Switch but don't have an exact date for you just yet (we'll tell you as soon as we know!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Pets",
+     "items": [
+      {
+       "text": "Pet Store: Head over to the new Pet Store that just opened in the Mall and get your very own pet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pets: After buying a pet you need to make sure it's well fed and happy (for those extra points!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guardians: Your pet is not only a never-ending spring of joy, it also guards you from the dangers of this world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes and Tweaks",
+     "items": [
+      {
+       "text": "Mouse Disappearing: The mouse would sometimes not register clicks until moved again. That has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Not losing clothes: Squashed a bug where player avatars would not lose their clothes when they should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bank Clothes: There was a way for players to leave the Bank and still keep their work clothes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wrong Building: Sometimes, in online play, the incorrect building was selected on round start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stuck Buttons: Buttons could sometimes get stuck in the pressed state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Button Highlights: We made the highlighting of certain buttons (like Pay Rent) more pronounced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trigger Buttons: You can now use trigger buttons on controllers to switch between Bank and Investments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online Menus: Are now (finally!) animated and better support controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small Tweaks: Bunch of smaller graphics tweaks to make the game shine even more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/3364670677178738081"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-25T15:38:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.887Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.215Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.10.4",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.10.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-07-02T11:59:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We finally had some time to go through our minor task list and hammer out some low hanging fruit fixes and features. This update is a collection of those labors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Avatars",
+     "items": [
+      {
+       "text": "New Avatars: Added two new Avatars!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Work Clothes: Your Avatars now don work clothes when at their job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sad Cloud: A cloud of sadness appears over your Avatar when they become sad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes and Tweaks",
+     "items": [
+      {
+       "text": "Mouse: The mouse could hang about and highlight buttons and even when hidden. We fixed that annoying little bug.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "1p Token Bounce: Characters would double bounce when swapping positions when someone had bought the 1st player token.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controller: The B (Xbox) ◯ (PS4) button no longer opens the main menu when on the map. Instead the Start button does that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Controller & Mouse Image: Updated the controller and mouse images in settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Windowed Mode: If you started the game in Windowed mode the settings menu still said Fullscreen. Fixed that",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Item Icons Highlights: Bought items would not stay grayed out and highlights could get stuck in multiplayer. We fixed both of those issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Character Selection: Highlighting behavior was annoying when selecting Avatars with a controller in local play mode. Fixed that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a single Zombie: A lone single Zombie will now roam the streets when Zombie crime wave is active. He might be joined by more in the future...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Leave Loading Screen: We set a timer that allow you to leave a match if you get stuck on the Loading Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lobby Dings: The game now plays a ding sfx when a player joins a lobby and when the match starts (in case you have the game hidden or are afk).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vomit: Player Avatars now vomit when entering plagued buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "End Screen: We discovered a bug in the end screen where players could be assigned the wrong widget. This did not affect the actual score though!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fixes: Like always there were a few minor fixes and tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2436926440584789363"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-02T11:59:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.887Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.214Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.10.2",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.10.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-24T16:34:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As promised, this is our first big feature update. We've gotten a lot of requests for more player interaction and this is our first feature set to introduce PvP with a bang.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you choose Competitive Mode a new building, Hex 'R Us, will appear snugged between the University and the Culture building. There you can spend a little bit of health or happiness to curse the other players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have more features planned for the competitive mode later on. Until then please let us know what you think about this feature update and how you think it could be made better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Competitive Mode",
+     "items": [
+      {
+       "text": "Competitive: Select Competitive mode to include the Hex building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peaceful: Peaceful mode allows players to enjoy the classic gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hex Building: Six Hexes are available to buy. These are sure to mess up your foes' week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Evil Cloud Hex: Allows you to close a building down. No one can get in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zombie Hooligans Hex: Sets loose a gang of zombie hooligans who will steal anything they see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First Player Token Hex: You are now the first player. The first to choose what hexes to buy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plague City Hex: Sets loose a horrible plague all over the city.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slow Down Hex: Slows down you competitors significantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stress Out Hex: Nail biting, hair pulling and teeth gnashing are all a part of this hex.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No CPU: Unfortunately, we couldn't get this working with the CPU player. We'll have to update it in the future and add the option to do so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other New Features and Fixes",
+     "items": [
+      {
+       "text": "See item effects before buying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few network bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "0.10.3 Hotfix",
+     "items": [
+      {
+       "text": "Three items had wrong effect information. Fixed that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your score turns gray when at 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2415533798146757587"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-24T16:34:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.886Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.213Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.11",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-05-31T14:21:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everybody!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This here is our big language update. We already had German and have now added Russian, Simplified-Chinese, Brazilian Portuguese and French!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There may be one or two texts here and there missing translations, if you run into any please let us know (or if you see any incorrect translations).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since we launched most of our time has been spent on fixing bugs and tweaking core game-play mechanics (with the feedback we've been getting from the community). But now it's time we focus on adding new content to the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can see the Timeline here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Languages",
+     "items": [
+      {
+       "text": "Brazilian Portuguese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chinese (Simplified)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Russian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Brazilian Portuguese",
+     "Chinese (Simplified)",
+     "French"
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2400895196208478241"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-05-31T14:21:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.886Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.213Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.10.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.10.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-05-27T10:32:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last week 2/5 of the team wen't to Malmö Sweden. We had a booth set up at the Nordic Game conference! It was great meeting players and finally attending a conference to show our game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The other part of the team stayed behind and kept working on future updates. The main focus was to test the \"Low Hanging Fruit\" update. We got a lot of feedback from the community. So we decided to squash all the issues that came up in testing before going Live with the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As the game is getting more and more stable, we will be focusing on bigger Feature updates. A road map is in the works so you will know better where we are headed. It should be up soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And here are the changes...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update 0.9.10.1",
+     "items": [
+      {
+       "text": "Fixed New Week Announcement sometimes displaying twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Long numbers on Cards cutting in half.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players are now able to discard Weekend Cards view even if no cards are displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where cards could stop displaying numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed appliances sometimes being displayed in wrong position in apartments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Relax particle sizes reduced on higher tier items in your apartment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed positioning on the new Discord button if obscure aspect ratio is displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Price Tags where displayed with the wrong color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Update 0.9.10",
+     "items": [
+      {
+       "text": "Happiness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Apartment Items Weekend Card has been removed! Now you get initial happiness/health bonus for buying Apartment Items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You get very little happiness when relaxing in an empty apartment. Items give extra happiness when relaxing but not all items give the same amount! And of course, the better apartment gives a higher bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The amount of happiness gained from the Culture building has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Bank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the time penalty for using the bank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you gain interest for deposits each week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's easier now to get stressed in the game. Remember to Relax! ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online Lobbies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lobbies now display lobby privacy, difficulty and max player count.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lobby count down has changed. Now it locks the avatar selection and buttons before the countdown runs out. This is a fix if a person leaves or changes avatar just before the game starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more \"Force Start\" safety checks. Please let us know if anything weird happens when using \"Force Start\" as a host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where Avatar Selection would never finish loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where \"Force Start\" button could be used even if the host was alone in the lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We added the option to disable clicking outside \"Building Windows\" to close them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved the game to Unity Long Term Support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the player Tokens (P1, P2, P3, P4) could be displayed in a wrong position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a link to our Discord Channel above the Feedback button in menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a few smaller bugs here and there. Please let us know if you find more pesky bugs! :P",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2408775863533177156"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-05-27T10:32:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.885Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.212Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.10",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.10",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-05-16T16:41:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back after a short hiatus! The whole team went to the US to get some R&R. We had ourselves some workshops and planned the next updates. We look forward to showing you what we've got planned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last week we added the game's soundtrack as a DLC for those who crave to listen to those sweet NTTR tunes all day, every day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a \"Low Hanging Fruit\" update. It includes a few balance tweaks that you, the community, have been asking for. Our main reason for pushing this first to the Test branch is to get some feedback from you all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The German translations have been overhauled, as we got proof readers and the community to help us make it smoother overall! Thanks to everyone that helped!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for all of your feedback! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If all goes well over the weekend we'll push the update live next week. Here are the changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Happiness",
+     "items": [
+      {
+       "text": "The Apartment Items Weekend Card has been removed! Now you get initial happiness/health bonus for buying Apartment Items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You get very little happiness when relaxing in an empty apartment. Items give extra happiness when relaxing but not all items give the same amount! And of course, the better apartment gives a higher bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The amount of happiness gained from the Culture building has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Bank",
+     "items": [
+      {
+       "text": "Removed the time penalty for using the bank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you gain interest for deposits each week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stress",
+     "items": [
+      {
+       "text": "It's easier now to get stressed in the game. Remember to Relax! ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online Lobbies",
+     "items": [
+      {
+       "text": "Lobbies now display lobby privacy, difficulty and max player count.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lobby count down has changed. Now it locks the avatar selection and buttons before the countdown runs out. This is a fix if a person leaves or changes avatar just before the game starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more \"Force Start\" safety checks. Please let us know if anything weird happens when using \"Force Start\" as a host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where Avatar Selection would never finish loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where \"Force Start\" button could be used even if the host was alone in the lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Settings",
+     "items": [
+      {
+       "text": "We added the option to disable clicking outside \"Building Windows\" to close them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Moved the game to Unity Long Term Support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the player Tokens (P1, P2, P3, P4) could be displayed in a wrong position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a link to our Discord Channel above the Feedback button in menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a few smaller bugs here and there. Please let us know if you find more pesky bugs! :P",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To access testing",
+     "items": [
+      {
+       "text": "Right click No Time to Relax in your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose Properties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click the Betas tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter the password: notimetorelax into the field there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press Check Code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will allow you to choose testing - Testing branch from the dropdown list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You should see by the name of the game in the library list if you have the right branch selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note, the testing branch is not using the same online server as the live game so you won't be able to play anyone using the current live version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To change back to regular Live branch you just do the same thing as above except choose NONE from the dropdown menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2905297189248051275"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-05-16T16:41:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.884Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.211Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.9",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-04-25T13:48:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update has two main parts: German and Network Polish. We're pushing the first language update today with German (and with more to follow!). In addition to this the programmers have been working super hard on getting online play more polished and bug free.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "German / Deutsch: Our first language update arrives today. 99.9% of the game has been translated into german and the other 0.1% will be added in our next update! The first time you start the game after this update you are given the option of choosing English or German. After that you can change the language in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Network Fixes",
+     "items": [
+      {
+       "text": "End of Player Round: We now make sure that players get notified when someone finishes their round. That way you should not get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "End of Week: We are also making sure that player's get notified when the week is over. Added some extra protection and padding there so you don't get stuck if a player misses the week ended message.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unable to read player data: We weren't resetting some of player's network data properly after a game. This could cause players to start the game twice which caused some weird behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Avatar selection: You can't choose avatars now after the Host has started the game. This could cause some unexpected behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Food Count: The amount of food another player has in his refrigerator wasn't being reset. Now it is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stress: Like with food count we weren't updating the stress indicator properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Desynced: We found and fixed 3 different bugs which could cause players to get stuck in multiplayer games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of smaller bug fixes: We found a bunch of smaller network bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "Languages: Right now the game is being translated into Russian, Chinese, Brazilian Portuguese and French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pets v0.1: Well, while the programmers fixed bugs the art department finished all their work for the pets update. So now the programmers are going to do their part and get pets into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soundtrack: Just about everything is ready for the soundtrack to be published. Will happen as soon as we have time to setup the Steam page properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Bugs",
+     "items": [
+      {
+       "text": "Network: We have tested the new network system a lot internally. That said there might still be little sneaky bugs there. If you run into any, please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Choose Avatar: In rare occasions when players join a lobby they are not able to choose an avatar and the Host can not Force Start the game. If the match fills up the countdown will start and the game will start when it reaches 0. Players can try leaving and rejoining to fix this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2432417221735802497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-04-25T13:48:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.883Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.210Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.8.2",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.8.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-04-15T18:16:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Phew! This update has been a real doozy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First, you should update to this version as soon as possible if you want to enjoy online gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We spent three days to begin with, trying to discover the cause of the Game is Full bug. We went through every piece of code that somehow connects to online play and were not able to identify it with 100% certainty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we decided to throw out our network service and swap it for another, much saner one. We spent the next week and a half implementing the new service and testing it before launching it for you guys'n gals now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Required Clothes: We got a lot of requests for this one. Required clothes for each job in the Job Office are now shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Work XP: This one has also been requested a lot. Your current Work Experience is now shown in the info window (accessible by pressing Tab or clicking the player portrait).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Network Features",
+     "items": [
+      {
+       "text": "New Server Provider: Because we swapped server providers you will need to have this version or newer to play online games. Make sure you are running version 0.9.8 or higher (visible in the bottom left of the game window). We'll shut down the old service soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game is Full: Fixed the \"Game is Full\" bug!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many minor bugs: We fixed a bunch of small annoying bugs (like if you accepted an invite to a lobby while in another lobby you couldn't join it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Smart Adjustment: If any network messages get dropped or corrupted the game will try and re-adjust. This might mean that one round looks to be out of wack but the player should sync and update him/her-self correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other bugs: We probably fixed a bunch of online game bugs we didn't know about!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Faster Server: Connecting to the servers should be snappier now (in fact we found a few bugs we didn't know about because of this...).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Same Version: Players now need to have the same version of the game as the game's host. Because of the game's rapid development it's way to easy to run into problems if players with different versions run into each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "University bug: Fixed a bug where if a Player exits the university in multiplayer with the enroll dialog open the game would go haywire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Syncing: Fixed a bunch of sync bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "What does this mean for the future? Well this will allow us to do things such as",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Future Possibilities",
+     "items": [
+      {
+       "text": "Vote Kick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timed rounds (1 min, 3 min, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rejoin game on disconnect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability to identify and fix future network problems faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "German: If all goes well you'll be able to play the game in German before the end of this week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pets v0.1: Our art department has been drawing away for the past weeks while the programmers wrote network code. We'll be rolling out pets in iterative steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soundtrack: We got some requests for the soundtrack and we will upload it soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Bugs",
+     "items": [
+      {
+       "text": "Network: We have tested the new network system a lot internally. We also got our community to try it out and didn't receive any complaints. That said there might still be little sneaky bugs there. If you run into any, please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 1,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/3763229740657699888"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-04-15T18:16:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.882Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.209Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.7.2",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Hotfix 0.9.7.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2019-04-04T18:40:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We got some feedback from our Discord channel that Investments were acting strangely in Marathon Mode. After some investigation we pin-pointed the bug and now it should be fixed. We like to say thanks again to our community for helping us find this bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have been investigation the troubles some people had with Wide Screen monitors. We added a stronger check to set the right resolution for those kind of monitors. Also it should be easier to get to the settings menu if the game is running in some unsupported aspect ratio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Game is Full\" bug still exists to some degree :( We unfortunately didn't catch all its cases in last hot-fix. We are currently working hard on a fix for those and other Online game bugs and we will publish an update as soon as it's ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Investments in Marathon Mode fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolution checks for Wide Screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game works better in obscure aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2508976515644153882"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-04-04T18:40:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.881Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.208Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.7.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Hotfix 0.9.7.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2019-04-01T18:46:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey we have a small hotfix update today that fixes 3 bugs. Big thanks to our community for helping us find these bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Money for clothes against CPU: You should only have to wait 1-2 weeks to receive some money for new clothes if you are naked and poor. We finally found the bug that could cause you to have to wait for much much longer when competing against the CPU. So now you can also have kind old aunts. (Special thanks to Simpleton Fox over on our Discord for giving us the clue to finding this bug).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game is Full: We found the bug that would cause you to get Game is Full message when inviting friends to a private game and fixed it. We are still working hard on squashing all multiplayer bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Score Screen: The score screen could behave in some weird manners if you left it while other players where still there. This should be fixed now. Now you get a pop up telling you that Player X left. We'll redo this in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Until next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2465065785313267758"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-04-01T18:46:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.881Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.207Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.7",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-30T19:03:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "First of all we'd like to thank you all for the brilliant and positive feedback we've been getting since launch. It's been super helpful and we hope you continue to work with us to make the game even better than it is right now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a dedicated Discord channel if you want to look for someone to play No Time to Relax with someone or interact with us developers directly (we're a fun bunch, I promise!). Please join it here: https://discord.gg/sjbUTNd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What has probably surprised us the most is the outcry for longer games. We've listened and added the first iteration of the Marathon Game Mode in this update. Please give us any and all feedback you have (here on Steam or in the Discord channel).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Marathon Mode: This is our first iteration of an even longer game than the current Long game. It’s not week limited and the score required to finish has been increased. It should take around 45-65 weeks to finish a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Weekend Cards: We added 98 new Weekend Event cards (with 33 new illustrations). We’ll continue to add more of these!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Network Heart Beat: We’ve added a network heart beat to online games. Each other player's portrait now has a little green dot that turns red if the player is lagging or temporarily disconnects from the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & Tweaks",
+     "items": [
+      {
+       "text": "Resolution Dialog: We are still trying to make the game appear perfectly on all the different screens in all the lands. We got some reports where players were having problems with the resolution. We are currently working on getting this to work automatically and seamless. Until then we have to following solution: When launching the game in Steam you can hold down the ALT key. This will launch a window that allows you to choose the game’s resolution before the game launches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quitting online games: Quitting an online game could break it for the other players should they want to continue. We fixed this!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online Sync Issues: There where some sync issues where the game would just stop responding in multiplayer. We added some safety checks and believe we've fixed this issue. We’ll continue to monitor this issue in case it is still a problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Job Tweaking: We tweaked the requirements and salaries for some of the jobs. We’ll continue to do so to balance the different buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Money for Clothes: We finally (and hopefully) discovered the bug that was causing players not to receive enough money to buy clothes when they ended up naked with no money. You should only have to wait for one week until you get some money from your aunt.: But now if you don’t spend that money on clothes, you’ll have to wait for another week until you get more money.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor Tweaks: A bunch of small things like changing Mr. CPU's color to Turkish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "Network Stability & Polish: While we gather feedback on the new Marathon mode we're going to be working hard on getting Network Games more stable and adding some features. We're going to look into adding the ability to kick unresponsive players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marathon Games: We're going to continue to work on getting Marathon games more varied and different.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Bugs",
+     "items": [
+      {
+       "text": "Different Game Versions: At the moment we're not sorting out games by the Host's game version. This means players could possibly have different versions of the game. This can and will break the game. We plan to publish a Hot Fix for this as soon as we've have it working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "What's this...?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2465065785306083169"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-30T19:03:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.880Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.206Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.6.2",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.6.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-27T12:25:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just a small hot-fix update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We observed a bug where players could apparently work anywhere. We added a fix that should stop that from happening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2465065785294241908"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-27T12:25:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.879Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.206Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.6.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.6.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-25T18:09:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some people have experienced a bug in Beta version 0.9.5.1 where the Sync Indicator in multiplayer could get stuck over the score screen. We have not been able to replicate the bug at our office. However, we decided to move the Syncing Indicator so it won't block any important data while we keep investigating if the bug still exists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you come across this bug in version 0.9.6 or later, please send us detailed information what happened at the end of the game (for example, did any player freeze or drop out of the game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Moved Syncing Indicator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could sometimes show the wrong avatar picture on the final winning screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2543878145186939982"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-25T18:09:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.879Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.205Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.6",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-21T17:36:56.000Z",
+   "notes": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "The Robot: A new in-game character we talked about in last update has been added. It's the default computer character in single player games. Also you can select The Robot as your own Avatar in Multiplayer games!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Emoji Messaging System: In multiplayer games, you can now \"talk\" to other players with an Emoji system. As of yet, there are 3 emoji types, positive, neutral and negative. We hope you will have fun with the new system :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiplayer Names: Player names have been added to each \"Player Widget\" in Multiplayer games. This clarifies better where you are in the player queue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Players leaving multiplayer: Sometimes when other players left multiplayer, your own character could get stuck in a frozen state. Now when other players leave, you should be able to keep playing if you want.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smaller fixes: As always we try to fix little things we find on the way and we do cleanups on the code for future features. With new features and cleanups there are sometimes hidden bugs that a small team like ours miss. Please let us know if you find anything not working correctly ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "Marathon Mode: People have been asking us both through the Steam Community and emails if we are going to add an Endless Mode to the game. That has always been in our plans but we have still yet to finalize our plans on how it will work. And we would love to get your feedback on how you would like it to work!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2543878145172404581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-21T17:36:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.878Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.203Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.5.1",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.5.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-15T17:46:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We found yet another pesky bug that sometimes made controllers not selecting buttons correctly in menus. It has been fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In other news, we have been working on a new in-game character that will come in next update. Also there is a system in the works for Multiplayer that enables players to message each other while playing the game. Some work has also gone into making the multiplayer more informative. We hope to release this all in next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Else we just hope you all will have a good weekend! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Selecting buttons in menus with controller sometimes failing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/3140604542245660608"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-15T17:46:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.878Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.203Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.5",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-11T19:04:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We got some bug reports through the In-Game Feedback. People were sometimes getting stuck in multiplayer because of the tutorial overlay. We will try to fix bugs like this as fast as possible. We recommend you to send us as detailed feedback as you can, as it helps us to fix things quicker. Thanks for helping us squish those bugs!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Tutorial disabled by default in Multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"Pay Rent\" letter in the Bank sometimes got stuck in Selected state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2530366080610714252"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-11T19:04:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.877Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.202Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.4",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-03-07T16:49:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been hard at work fixing bugs and here is the fruit of that labor. It's not a huge update but we wanted to keep a regular update schedule. We will have some cool new features soon™.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "The CPU player menu bug has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A bug where players were sometimes unable to join lobbies through invitations was fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Those little UI animation bugs that would show up in windowed mode have now, thankfully, been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Buttons could sometimes get permanently highlighted in online multiplayer matches. That has been fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A bunch of little bugs we found but decided not to tell you about. They shall forever be our secret shame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2530366080595920394"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-03-07T16:49:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.877Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.201Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9.3",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-02-28T22:27:18.000Z",
+   "notes": [
+    {
+     "title": "Game Launched",
+     "items": [
+      {
+       "text": "Finally, our game is now available to the general public! We've been working hard for the past year to get to this point. The game is stable and fully playable but we still feel it needs a little more pizzazz. That's what the next few months will be about. We want to hear from you what might make No Time to Relax an even better experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "CPU Player: You can now challenge the computer to a mind-bending game of No Time to Relax. At the moment you can't add a CPU player when playing online though. This option might be added later on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weekend Activities: Added more and finished removing all Placeholder text in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug fixes: We fixed a lot of bugs, oh such bugs did we fix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "A lot of powder went into getting the CPU player ready for launch. These are the features we'll be tackling next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Special Objectives: This is the next big feature. We want to add the option of playing with random objectives. These give points at the end of the game. Objectives such as: Furthest Distance Walked, Longest time spent naked or Eat 10 packs of fries. We'll share more about this feature as soon as we something more concrete to show.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization: Our priority when it comes to localization is Chinese, German and Japanese. Other languages might follow (we promised Zelastion to translate the game to German and by Gods we will).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Single Player & End Screen: Like we've said before we are unhappy with the single player experience and want to make it better. We also want to do another run on the End Screen and Winning screen for multi and single player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better Tutorial: The current tutorial feels too much like a wall of text. We'll look into polishing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish: Our task board is full of big and small polish tasks. We'll be tackling these in conjunction with other tasks. E.g. we are adding a special Robot body for the CPU player. This might make him unstoppable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weekend Activities: Our artists have been working hard on new Weekend Card art. We'll be adding these in the next update. We also have a barrel of monkeys armed with typewrites writing out fun words for you to read (for the new cards and the ones already in game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balancing: We've tried to tweak the game to be both fun and challenging. We feel we've done a good job of it so far but there are still knobs that need tuning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Bugs",
+     "items": [
+      {
+       "text": "There are bugs in game we know about but did not have time to fix. You can read about them here... please don't mock us because of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CPU & Menu: Entering the main menu while the computer is playing might cause it to go haywire. This will be fixed ASAP but shouldn't affect you if you just go into the menu on a human player's turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online Multiplayer: We've yet to catch and react correctly to everything that can go wrong in the online portion of the game. As such you might run into some bugs there. If you do, we'd love to hear about it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Windowed Mode: Our UI whisperer did all of the menu animations in full screen and didn't test them out in windowed mode. He has brought shame upon his UI family. He has promised to test each and every animation in windowed mode and fix them.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Resolutions: The game is fixed to run in a 16:9 aspect ratio (like 1920x1080 or 2560x1440). We've tried to hard code this as best we can for all weird and different screen sizes. If you run into problems running it on your screen the let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grammar: The game's text has not been proof-read yet. If you find any errors then let us know and we'll give you a No-Prize.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Weekend Activities: Added more and finished removing all Placeholder text in game.",
+     "Bug fixes: We fixed a lot of bugs, oh such bugs did we fix!"
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2534869043305555063"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-02-28T22:27:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.876Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.201Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.9",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.9",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-02-22T17:34:50.000Z",
+   "notes": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Online Multiplayer: This is the big one! After blood, sweat and tears we can finally turn on online multiplayer. You and up to 3 individuals can play together over the Internetz.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weekend Activity Balancing: We went through all of our weekend activities and tweaked them to make more contextal sense. We'd love to get some feedback on how they feel now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lots of polish work here and there: Assets, animations and texts here and there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All graphics assets were overhauled: We removed unused assets, shrank some, changed compressions and file formats and optimized our sprite sheets. All of this together shrank the game by about 100 mb and makes the game lighter to load and run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We updated our project to Unity 2018.3: The game is now compiled using the Roslyn compiler. If you run into any weird problems we'd really like to hear from you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There is now a Feedback button: We added a Feedback button on the bottom right of the Main Menu. You can now send us direct feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added backers to About Screen: All the backers that filled out their Kickstarter survey are now listed on top of the About Screen in Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolution settings: There were some bugs with our resolutions settings. These should be fixed now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Backer items and events: We've added the backer events and items we've created in conjunction with our backers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug fixes: Loads of little bugs, but there are more so if you find any then let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "CPU Player: Now that Online Multiplayer is up and running our next big feature is the ability to compete against a player made from bits and silicon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weekend Activities: We'll continue to add new weekend activities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Single Player & End Screen: We are still unhappy with the single player experience and want to make it better. In connection to that we want the end screen to make more sense. We will also do another polish run on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better Tutorial: The current tutorial feels too much like a wall of text. We'll look into polishing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2480825216193200428"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-02-22T17:34:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.875Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.200Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.8.3",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.8.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-01-30T19:35:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been working hard on the game since our last update. Online multiplayer is almost ready to go live and should be included in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A lot of our time has gone into getting multiplayer up and running. Having to restructure our code in several places broke the single player game. We thus have been unable to get a new update running until now. Sorry for the wait!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "New Music Tracks: We added several new music tracks to give the game experience a little more variance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Investment Indicator: Investments you have already bought are now marked with an indicator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fridge: You can no longer buy food for more than 4 weeks at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New SFX: Added new sound effects to various parts of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sales: Items in the Appliance Store and Mall can now go on sale (indicated with a %).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Job Availability: Jobs are not always available, forcing you to rethink strategies or return later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All Avatars Shown: Avatars for all participating players are now shown at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Balancing: Jobs have gone through balancing and requierments have been simplified. Item prices have been tweaked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Performance: We identified and fixed a few things that were causing the game to slow down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug Fixes: We fixed several small, medium and large bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiple Controllers: Fixed a bug where the game didn't detect more than one controller at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Appliance & Furniture Changes: Appliances and furniture now give happiness and/or health over a period of time. To begin with we are presenting the amount to players through a weekend card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Culture Changes: A cultural event now replaces your weekend activity, giving its bonus then.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weekend Activities: Several new weekend events added to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stress Indicator: We added an indicator to show if your stress is going up or down in the Player Info screen. The asset is temporary but should make it more clear what's happening with stress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clerk replies: Added more clerk messages and replies to clarify some actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Easter eggs: Added to game (happy hunting)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming",
+     "items": [
+      {
+       "text": "Weekend Activities: We'll be going through all of our weekend activities and balancing them to make sense in your current context. I.e. when you have little or no money your activities should reflect that (e.g. Stayed at home and counted oatmeal). We'll also be adding several new activities to the game, including backer events as we get ideas and feedback from our backers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online Multiplayer: We'll prepare and upload a build with multiplayer as soon as it is ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Victory Screen: A second iteration of the victory screen. Polish work and have it make more sense when playing a 1 player game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "New Music Tracks: We added several new music tracks to give the game experience a little more variance.",
+     "Investment Indicator: Investments you have already bought are now marked with an indicator.",
+     "Fridge: You can no longer buy food for more than 4 weeks at a time."
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2462808987388698693"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-01-30T19:35:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.875Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.199Z"
+  },
+  {
+   "id": "no-time-to-relax-111370@0.8",
+   "gameId": "no-time-to-relax-111370",
+   "displayName": "Update 0.8",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2018-12-21T19:57:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are overjoyed to launch our closed beta today! We hope you all enjoy our little labor of love and are looking forward to hearing what you think about the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Notes for v0.8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Planned features",
+     "items": [
+      {
+       "text": "Multiplayer was planned to release this month but as is often with the best laid plans of mice and men we are still working on it. It's a priority right now and should launch in the new year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Single player competition against the computer player has come along way but is currently secondary to Multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "About screen and credit list will be added soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We recently did an overhaul on job requirements which skewed some jobs and their requirements. We are working on new ideas but also want feedback from our testers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More music tracks and sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many, many more weekend cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Known Bugs",
+     "items": [
+      {
+       "text": "Multiple controllers don't work on the same machine. You can play with a single controller and a keyboard and/or pass around a single controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Game text has yet to be proof-read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Indicator for already bought Investments is missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay settings have been disabled for your convenience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Extra Info",
+     "items": [
+      {
+       "text": "Right now, the Startup only exists for you to work in (has the highest salary). We have some fun ideas for it in the future but are currently dedicated to finishing other more critical features first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Single player competition against the computer player has come along way but is currently secondary to Multiplayer.",
+     "About screen and credit list will be added soon!",
+     "More music tracks and sound effects."
+    ]
+   },
+   "sourceIds": [
+    "steam-829660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/829660/view/2417769111288152811"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-12-21T19:57:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-829660",
+      "checkedAt": "2026-11-13T03:26:53.874Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:17.198Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "1c39a5f9c881",
+   "text": "Game text has yet to be proof-read.",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.8"
+  },
+  {
+   "id": "7be27d4f8f4e",
+   "text": "Indicator for already bought Investments is missing.",
+   "status": "addressed",
+   "firstReleaseId": "no-time-to-relax-111370@0.8",
+   "addressedBy": "no-time-to-relax-111370@0.8.3",
+   "addressedAt": "2019-01-30T19:35:47.000Z"
+  },
+  {
+   "id": "7d035ba8e61e",
+   "text": "Gameplay settings have been disabled for your convenience.",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.8"
+  },
+  {
+   "id": "427a9dd297f4",
+   "text": "There are bugs in game we know about but did not have time to fix. You can read about them here... please don't mock us because of them.",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.3"
+  },
+  {
+   "id": "df89bfa2d4d9",
+   "text": "CPU & Menu: Entering the main menu while the computer is playing might cause it to go haywire. This will be fixed ASAP but shouldn't affect you if you just go into the menu on a human player's turn.",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.3"
+  },
+  {
+   "id": "a9097f130338",
+   "text": "Online Multiplayer: We've yet to catch and react correctly to everything that can go wrong in the online portion of the game. As such you might run into some bugs there. If you do, we'd love to hear about it!",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.3"
+  },
+  {
+   "id": "2a9833b7c7ac",
+   "text": "Resolutions: The game is fixed to run in a 16:9 aspect ratio (like 1920x1080 or 2560x1440). We've tried to hard code this as best we can for all weird and different screen sizes. If you run into problems running it on your screen the let us know!",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.3"
+  },
+  {
+   "id": "7ce0dd88dc14",
+   "text": "Grammar: The game's text has not been proof-read yet. If you find any errors then let us know and we'll give you a No-Prize.",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.3"
+  },
+  {
+   "id": "99656833939d",
+   "text": "Different Game Versions: At the moment we're not sorting out games by the Host's game version. This means players could possibly have different versions of the game. This can and will break the game. We plan to publish a Hot Fix for this as soon as we've have it working correctly.",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.7"
+  },
+  {
+   "id": "a2a2f5c216a9",
+   "text": "What's this...?",
+   "status": "addressed",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.7",
+   "addressedBy": "no-time-to-relax-111370@0.9.8.2",
+   "addressedAt": "2019-04-15T18:16:13.000Z"
+  },
+  {
+   "id": "4cfd749b0255",
+   "text": "Network: We have tested the new network system a lot internally. We also got our community to try it out and didn't receive any complaints. That said there might still be little sneaky bugs there. If you run into any, please let us know!",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.8.2"
+  },
+  {
+   "id": "ea5eb7f4b922",
+   "text": "Network: We have tested the new network system a lot internally. That said there might still be little sneaky bugs there. If you run into any, please let us know!",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.9"
+  },
+  {
+   "id": "a37504536ed0",
+   "text": "Choose Avatar: In rare occasions when players join a lobby they are not able to choose an avatar and the Host can not Force Start the game. If the match fills up the countdown will start and the game will start when it reaches 0. Players can try leaving and rejoining to fix this.",
+   "status": "open",
+   "firstReleaseId": "no-time-to-relax-111370@0.9.9"
+  }
+ ]
+}

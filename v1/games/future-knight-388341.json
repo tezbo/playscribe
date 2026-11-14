@@ -1,0 +1,122 @@
+{
+ "game": {
+  "id": "future-knight-388341",
+  "igdbId": 388341,
+  "name": "Future Knight",
+  "cover": {
+   "imageId": "cobfps",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobfps.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5bk2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5bk2.jpg"
+  },
+  "ps5Release": "2026-08-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "future-knight-388341@1.4.0",
+   "gameId": "future-knight-388341",
+   "displayName": "Patch 1.4.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-25T06:49:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix stuck over the ceiling at the start of 6-1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix calling Future Knight on a tight spot where it doesn't fit, for example on 8-3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix lost controls after moving between rooms with TwoMore dash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix language changing on the menu sometimes needing 2 inputs to change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix wrong camera moving in a 6-3 room which was preventing the player from leaving the room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4235410"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4235410/view/1841579228677477"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-25T06:49:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-4235410",
+      "checkedAt": "2026-11-13T03:21:28.333Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-25T06:49:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4235410",
+      "checkedAt": "2026-11-13T03:21:28.333Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-25T06:49:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:48.857Z"
+  }
+ ],
+ "issues": []
+}

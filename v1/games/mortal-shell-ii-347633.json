@@ -1,0 +1,3192 @@
+{
+ "game": {
+  "id": "mortal-shell-ii-347633",
+  "igdbId": 347633,
+  "name": "Mortal Shell II",
+  "cover": {
+   "imageId": "cocqos",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocqos.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6aam",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6aam.jpg"
+  },
+  "ps5Release": "2026-08-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mortal-shell-ii-347633@1",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-30T19:34:15.000Z",
+   "notes": [
+    {
+     "title": "Shells & Combat",
+     "items": [
+      {
+       "text": "Lazlo's armor protection no longer persists after switching shells or stacks with repeated use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using a traversal gate right after Proxima's shell ability no longer leaves your melee weapon unequipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability indicators should now refresh correctly at the end of a shell memory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The camera now tracks the long ball hurl during the monolith attack while locked on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Orrem pushing players through the elevator floor when he dies, and players getting stuck in his corpse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rotten Autumn Shell Shades now correctly despawn when you're knocked out of your shell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that caused Proxima to unequip her melee weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shells appearing as white silhouettes in the inventory menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Eredrim's Ethereal Diapason disappearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit that allowed players to make Proxima invincible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shell summons being invisible the first time they're used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tarstones & Items",
+     "items": [
+      {
+       "text": "Fixed the Wellspring Tarstone sometimes not being added to your inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ruk now always appears at the top of Marrow Keep, so Rickart's Journal can always be delivered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed lute visual effects sometimes playing indefinitely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed duplicated drops in certain areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Channeler's Stone not refunding resolve after using certain weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buffed the Waning Stone: resolve cost reduced by 10% per level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lute chest material improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Levels & Dungeons",
+     "items": [
+      {
+       "text": "You can now re-enter the Sideways dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed encounter completion tracking in the Killer Ritual Dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Closed off an exposed area in a dungeon chapel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed night mode triggering inside the hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes and improvements to kill zones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lighting fixes in the Temple of Vaatra, plus general environment fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed dungeons sometimes unloading while entering them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several collision bugs that could cause the player to get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI, Photo Mode & Localization",
+     "items": [
+      {
+       "text": "Graphics options now go above High when set individually instead of using a preset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Photo mode camera sensitivity is more precise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The photo mode scaling setting now applies correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weather effects like snow no longer stay on after exiting photo mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the character's head flicking when returning from pause, inventory, menus, beacons or photo mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shell memory titles no longer overflow their text box in some languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Mixing and timing improvements across many enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brigand rock projectiles now have a doppler effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ambient audio tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability & Performance",
+     "items": [
+      {
+       "text": "Several crash fixes and stability improvements (including Zmey and dungeon crashes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved dungeon transitions: smoother entry fade, background checkpoint saves, less hitching and better memory handling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Overkill graphics setting can now be selected (PC only)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 1,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1847920302240183"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T19:34:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.047Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T19:34:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.047Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-30T19:34:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.159Z"
+  },
+  {
+   "id": "mortal-shell-ii-347633@major-2026-10-20",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "Mortal Shell II: Rotten Autumn Update Brings New Content and Seasonal Treats",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-20T13:05:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It’s that time of year. Rotten Autumn is upon us and with it comes a load of free updates to the core Mortal Shell II experience along with a few seasonal treats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No tricks here. Take a look below to see what’s in store for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are the highlights of everything you get in the Rotten Autumn update, which is now live on Steam, PS5 and Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Photo Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Alternative Soundtrack By Rotting Christ’s Sakis Tolis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "15 New Dungeons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All New Shell Shades for Each Shell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10 New Tarstones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sheep Specific Tarstone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Lighting Presets for Nightmode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Overkill Graphics Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harbinger Pumpkin Helmet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Impervious Lute skin and Additional Lute tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ghost of a lost Shell haunts the land and offers cryptic notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional polishes and bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for all your support of Mortal Shell II. There’s more coming, but for now all we’ll say is that despite whatever you’ve heard—there is no sheep dungeon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy the update,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Mortal Shell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1846651706695184"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-20T13:05:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.046Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-20T13:05:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.046Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-20T13:05:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.159Z"
+  },
+  {
+   "id": "mortal-shell-ii-347633@hotfix-2026-10-13",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "Hotfix Live Now",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-13T17:56:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Player & Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tiltshot projectile now spins and moves forward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Barrage + Solnir Shard Tarstone dealing damage to allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Parasitic Stone exploit when switching between sheep and shell form",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where unequipping Egon's Stone could prevent Gloom loss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tarstones not granting EXP for kills by player summons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Black Needle throw and infused stone being unable to aim or interact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several Slayer Seal/Punch issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed canceling Proxima's Shell ability stopping weapons being re-equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that blocked Gragu from being possessed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Astral Clones not attacking when summoned close to an edge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lost Clotstone for Genessa Clones using Obsidian Hammer getting stuck and staying forever",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cursed Child and Grisha summons being hit and targeted by Biosampler",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cursed Child summons being targeted by Sidearm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spawned summons causing collision issues on big enemies and bosses, such as Grisha or Cursed Child summons launching bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Force feedback tweaks and changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleaned up melee attack logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies & Bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final Boss HP reduced, player cosmic disease resistance doubled and his grab attack now has more anticipation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues around the main bosses' phase change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Droeg, the Conqueror's hitboxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Bor, the Deluded Monarch's lock-on location and Biosampler interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved how the Monolith works with Proxima Biosampler",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted Orrem, the Golem's triple slam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Necrite run attack timing tweak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dungeons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player can now collect 3 extra ovas in the final slice dungeon when playing NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the enemy count on The Last Siege",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for slow-streaming dungeons when \"seamless dungeon streaming\" is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for double dungeon loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mether's Breath now has multiple warning prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed backing out of Mether's Breath's second warning soft-locking the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Lucian, the Thirsting Knight's dodge audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magdelena, Lady of the Woods' unparryable slam attack audio triggering multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "VFX & Animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New VFX for Tiel's Shadow Clones, plus tweaks and fixes for Tiel's Poison Shadow Clones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New explosion version for Droeg, the Conqueror",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Giant Spider FX pass with more feedback, force feedback, and camera shakes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New shell summon handshake animation and a small Gragu height tweak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to camera collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environment and Performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environment and collision bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General optimizations, including castle stairs, mine pillars, tomb floors, and catacomb/iron maiden collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized bear traps and fixed the wrong trap rotation during the disarm animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebuilt shader (PSO) caches and world HLODs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 21,
+    "balance": 1,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1846018067944953"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T17:56:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.045Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T17:56:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.045Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-13T17:56:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.148Z"
+  },
+  {
+   "id": "mortal-shell-ii-347633@hotfix-2026-09-24",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "Hotfix Live Now",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-24T22:20:36.000Z",
+   "notes": [
+    {
+     "title": "Major Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed dungeons not loading correctly when using Egon's Stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed trophy/achievement issues with \"Seeking the Past\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Egon's Stone removing Gloom dropped in the open world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several fixes to prevent players falling through elevator lifts when walking into walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause Orrem, the Reclaimed to be killed instantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies becoming aggroed during miniboss fights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "Fixed a soft lock when cancelling Mether's Severance with a gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Stray Genessa not being interactable after using Mether's Severance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Genessa's Faithful Doubles when using Lost Clotstone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Clockwork Scythe elemental effects not applying correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Harbinger shades and masks not displaying in the level-up tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player continuing sheep attacks after transforming back into their shell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that made the Slayer Seal unresponsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed small parts of Lazlo's leg clipping through armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Enemies and Bosses",
+     "items": [
+      {
+       "text": "Tweaked the final boss's fire ring attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted The Warden's jump timing and trigger boxes to be more responsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted The Warden's positioning so it no longer jumps through walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Several fixes and improvements to The Warden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the player being pushed outside the Hexapod arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Added UI support for Adaptive Difficulty tiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the Adaptive Difficulty indicator with new, improved icons and made the night mode icon easier to see",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Added a Low Latency Mode option to the menu (NVIDIA Reflex and AMD Anti-Lag 2)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where the VSync option was missing its tooltip while Frame Generation is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized shadows in the Hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Texture optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other optimizations and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Edit: Bring my Ova Back to me is not fixed in this patch, but a fix for this will be added in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 15,
+    "balance": 2,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1844751498222819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T22:20:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.044Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-24T22:20:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.044Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-24T22:20:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.147Z"
+  },
+  {
+   "id": "mortal-shell-ii-347633@hotfix-2026-09-14",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "New Hotfix out now",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-14T19:05:44.000Z",
+   "notes": [
+    {
+     "title": "Shells",
+     "items": [
+      {
+       "text": "Fixed issues that caused Proxima to get stuck in the Biosampler animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Lazlo's Temperament perk infinite glitch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Items & Stones",
+     "items": [
+      {
+       "text": "Mether's Severance can now be used at Genessa trainer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Colossus Stone's ability can now be canceled mid-execution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Justiciar Stone durability issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gloombound Stone losing durability from Gloom sources other than enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Egon's Stone Gloom exploit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dungeons not loading correctly after using Egon's Stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spawning and targeting issues with Grisha Remnant and the Summon Stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Enemies & Bosses",
+     "items": [
+      {
+       "text": "Fixed Hexapod diving attack occurring after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with enemies and bosses when being frozen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that allowed players to leave the Twin Sester fight after she spawns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Starved Harridan getting stuck and dying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "NPCs",
+     "items": [
+      {
+       "text": "Fixed Zhirelle not interacting with the player in NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple Muttons spawning in the hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that allowed certain NPCs to be damaged by sidearms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with Genessa's dialogue and training tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Environment & World",
+     "items": [
+      {
+       "text": "Fixed Citadel Annex traversal camera issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with death volumes in the Ashen Cathedral biome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that could trap players in the dungeon after claiming Lazlo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed burn and stasis environmental hazards not using correct values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several collision and geometry issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Stability",
+     "items": [
+      {
+       "text": "Crash and game stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 21,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1843481262702759"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T19:05:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.043Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T19:05:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.043Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-14T19:05:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.146Z"
+  },
+  {
+   "id": "mortal-shell-ii-347633@major-2026-09-05",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "New Update Out Now",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-05T14:13:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adaptive Difficulty (Experimental): A new optional setting that adjusts enemy strength based on how you are playing. It works in both directions, responding to what you defeat and where you die. Any adjustment also relaxes on its own over time, so the game settles back toward its standard balance once your play changes. It is off by default and can be turned on or off at any time under Game > Game Settings > Adaptive Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "If you are winning, the game pushes back",
+     "items": [
+      {
+       "text": "Enemies gain damage, health and break resist, so they hit harder, take longer to bring down and are more difficult to stagger. This does not stop at the standard difficulty. Keep clearing encounters without dying and enemies will scale well past the toughest the game was originally built to be, and they will keep climbing for as long as you keep winning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "If you are struggling, the game gives ground",
+     "items": [
+      {
+       "text": "Enemies weaken across the same three values, and a cap is applied so that no single attack can take more than a set fraction of your health bar, meaning you cannot be killed outright from full health. These reductions do not apply during Night Mode, which can still be pushed harder but will never be made easier. Currently nothing is displayed on screen when the game adjusts in either direction (we will develop this in the future).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parrying, Dodging and Ripostes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Consecutive parries with the Infinite Seal now have a wider window into the wind-up animation, allowing a string of incoming hits to be parried instead of only the first one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Status effects can now be applied to enemies while they are getting back to their feet after a riposte.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sariel's Thornfall now works in enclosed spaces and no longer fails outright when it catches a low ceiling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sariel's Thornfall now prioritises locked on targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sariel's Thornfall now hits moving targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sariel's Agonize no longer requires full pain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sariel's Affliction now shares damage to all cursed enemies and inflicts curse on non-cursed enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Genessa's Augmentation has been changed to prevent players from infinite resolve gain and the ability to summon Faithful Doubles infinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed eyes and smoke effects on Genessa's Obsidian Shade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weapons, Items and Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the logic around Gloom drops on death, making it easier for players to retrieve their lost Gloom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grisha Summons can no longer be hit by player projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grisha Summons now freeze along with everything else when using Miracle with Smert.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grisha Summons now perform fewer attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fragile Tarstones now properly grant Tarcores when they break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Gloombound Stone no longer loses durability when recovering Gloom from your own corpse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leech stacks are no longer saved and reapplied on top of themselves, preventing potential health exploits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the Axe & Dagger's running attack animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bosses and Minibosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved collision on the Lost Child, helping prevent the player from getting stuck inside him or being launched into the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Harpy's frenzied attacks now correctly connect with the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More enemy types can now be summoned by the Cursed Child using the Summoning Stone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sheep no longer flicker while standing still.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bats have returned to the swamp Beacon in the opening region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grisha Hunters no longer lose their weapons when you return to their camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Story",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ruk no longer addresses Genessa as the Harbinger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ruk now appears at map stations when you warp into an overlapping Beacon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zhirelle now has something to say about the corruption in Marrow Keep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merrick now uses his opening greeting once before moving on, and the Tarforge no longer talks over itself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sitting at vistas and on stones now lines up correctly and keeps the player facing the direction they were already facing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smaller Beacons now show their own icons in the Mether's Breath fast travel menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pause menu options now have clearer highlighting, making it more obvious which option is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage numbers no longer cap at 999 and can now display values up to 9,999.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Black Market now has proper ambience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed voices leaking through walls and effects being audible from too far away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The drawbridge no longer plays its finishing sound multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main menu music now returns correctly after the startup videos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raised music levels in several places where they were too low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Performance and Lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Volumetric fog is no longer excessively dense on lower global illumination settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The storm cloud and stun lighting effects performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimised Droeg's explosion effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player lighting rig improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zhirelle's room now lights the player consistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Options, Platforms and Controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On PS5, opening a system pop-up no longer pauses the game, allowing the screenshot function to be used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues that prevented players from using the Citadel Annex Spider traversal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where enemies stopped attacking the player while caught in a bear trap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could become locked out of Baghead's Quest in NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could occasionally fall through the ground when leaving dungeons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could become trapped inside geometry after riding a lift in a late-game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ripostes against Droeg could become misaligned due to Grisha Summons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Genessa's trainer no longer breaks if the first time you approach her is while she is corrupted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a boss arena remaining locked after the fight was over, as well as enemies failing to navigate around a central late-game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause Malborn Offspring to become invulnerable if attacked during the phase transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where two cursed enemies could become caught in a loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with blood masks and beards on various shells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shell Summon handshake animations are now correctly aligned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several collision issues that could cause the player to get stuck in geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor timing issues with the Untarnished Seal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crashes and Stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several crash fixes and optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several localisation improvements and fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 14,
+    "balance": 1,
+    "other": 57,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1842846814449143"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T14:13:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.041Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-05T14:13:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.042Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-05T14:13:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.145Z"
+  },
+  {
+   "id": "mortal-shell-ii-347633@major-2026-08-29",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "The Week 1 Update is Available Now",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-29T15:48:58.000Z",
+   "notes": [
+    {
+     "title": "Harbingers,",
+     "items": [
+      {
+       "text": "Since our full launch last week, we have been overwhelmed by the response and all the experiences you've shared with the team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today marks the first major patch for Mortal Shell II, bringing new content alongside extensive fixes, performance improvements, combat refinements, and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Among the additions are new Fragile Tarstones, a new way to respec your Shell, changes to the Glimpses and Tarcores economy, and new beacons and exploration adjustments that make navigating the world better paced. Ripostes have received a full scaling pass, numerous bosses and weapons have been refined, and we’ve made extensive fixes and optimizations across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full breakdown is below, but be wary that there may be spoilers present in this changelog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Items",
+     "items": [
+      {
+       "text": "Fragile Tarstones - A new class of Tarstone which breaks after losing durability. When breaking, they also yield a tarcore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Glimpse Stone - Wears down as you defeat enemies, then breaks into Glimpses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45649447/76745d2e3de163ebcc254deaccf530c03514b64b.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Egon's Stone - Revive at the entrance of a dungeon at the cost of its durability, and when it breaks it prevents Gloom loss for that death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45649447/05b8812db2471116f4793d3e6703994dc3129ccf.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Justicar’s Stone and Gloombound Stone are now fragile, have increased passive effects and added on break effects. Fragile Tarstones are not unique and can be found multiple times during a playthrough. Existing copies of Jusicar’s and Gloombound have been converted to Fragile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Certain enemies now drop the new fragile Tarstones, several dungeons now reward them, and Merrick has taken an interest in selling them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Economy",
+     "items": [
+      {
+       "text": "Glimpses and Tarcores are no longer finite resources, allowing all shells and Tarstones to be upgraded in a single playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mether's Severance is a shell respec item which can be given to Zhirelle, the shell keeper. In exchange she will sever your bond with a Shell, resetting it and granting you all spent glimpses back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45649447/793b445a021bddd529d3e13bea2bff0e5c74a256.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tarstones now yield more tarcores when broken. If your save already has leveled up Tarstones, you’ll find a compensatory cache of Tarcores in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tarstones and Mether’s Severance can be purchased from Merrick and will restock occasionally when progressing through the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Exploration",
+     "items": [
+      {
+       "text": "We’ve improved exploration flow, while adding new secrets for you to discover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Beacons have appeared throughout Fainweald and Mammon, but are only active during the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Two new cosmetic rewards can be found in the world once completing certain questlines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45649447/4dd33cd0f9e4774789ea5dbe954cd8279c89400e.png\"][img src=\"{STEAM_CLAN_IMAGE}/45649447/da00e4b1a238ece210e9e867c871787abde073b1.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New items have been added to the world, and some problematic chests have been reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Egon's Stone can revive you at a dungeon's entrance when you die inside it, and spares your Gloom for that death when it breaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A teleporter now appears in one dungeon after the Grisha pit fight, removing the walk back entirely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You still haven’t found the second Trollweed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Rewards and Economy",
+     "items": [
+      {
+       "text": "We have changed how many Tarcores a Tarstone returns when tempered, so anyone who leveled up Tarstones before this patch will find some additional tarcores in their inventory to make up the difference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merrick's stock has expanded, with Glimpse Stones, Egon's Stones and Tarcores once you have gathered enough Ova. The Collector now carries Tarcores as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dungeon reward chests across the first two regions have been revised, reward placement in Mammon has been updated, and missing rewards in the arena dungeons restored. Some reward chests in the world have been replaced with straightforward pickups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional rewards, including Glimpses, added to the gloom siphon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mini-Beacons no longer award a Glimpse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weapons, Items and Balance",
+     "items": [
+      {
+       "text": "Obsidian Hammer has had a full balance pass and now hits substantially harder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Great Martyr's Blade deals more damage. It was a pity it didn’t actually make it in the last patch, to make up for it, it’s even stronger now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Heavy weapons in general have had a poise and damage pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Salvaged Trebuchaxe: Tarred Fragment has been redesigned. It was simultaneously overpowered and broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Axatana: its weapon ability now grants invulnerability frames and inflicts Fragile stacks, and its combat Tarstone active triggers correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Weltcap is stronger in both its active and passive forms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Base aggression and disengage ranges have been retuned across the game. Fixed enemies ignoring you while walking to a patrol point, retreating unreasonably far when unable to reposition, and being unable to attack while locked onto a different target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Tarstones continuing to gather experience after reaching maximum level, and missing tooltips on a number of Tarstones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Environmental status hazards have been reworked, including a new handler for Stasis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Shells",
+     "items": [
+      {
+       "text": "Eredrim: Shoulder Bash no longer leaves your primary weapon permanently stowed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Proxima: the same fix applies to Biosampler, she can no longer become stuck in her hook shot, and an arm that was being pulled unnaturally straight has been corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Genessa: dashes have been fixed, including the corrupted version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Losing a Shell no longer breaks her paired animations, and her Intangible upgrade now works during grab attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed astral copies drifting away from their intended target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Doubles select targets better and switch targets when their original dies, rather than standing idle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smert: can destroy projectiles while in permanent fight stance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gragu: the Heart of Vatra no longer trails after you in sheep form, and his helmet uses the correct material.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood now marks Shell skins correctly across the roster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Shell summon interactions, and Tarstone summons occasionally targeting you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bosses and Minibosses",
+     "items": [
+      {
+       "text": "Most bosses in the game have received a general polish pass and bugfixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Monolith in particular has received a broad combat polish and bugfix pass. Its laser and spin attacks now have more consistent, readable timings and do not spam (this was a bug). We’ve also refined animation timings, adjusted bad hitboxes and fixed a nasty bug which was causing it to deal double damage on certain hits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zmey’s Tail grab no longer simultaneously takes both the Shell and Harbinger from 100-0. We heard some of you don’t like getting one-shotted, for whatever reason. In night mode it’s ON, though.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zmey’s Ring Waves align to the ground properly and his elemental stomps have new effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Lost Child no longer launches you, or himself, across the arena. He now uses the finished walk animation rather than the placeholder that shipped, his bite anticipation has been retimed, his riposte no longer wobbles as it begins, and a rare case of endless blood effects has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Droeg, the Conquerer has had his arena navigation repaired, his riposte alignment and physical hit reactions corrected, and a substantial visual pass over his fire and snowfall effects that also improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sir Isaac, the Scholar-Prince has had his arena navigation repaired, a stray lunge removed from one second-phase attack, and his phase transition riposte fixed against a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hexapod deals considerably more splash damage with his area attack, can no longer interrupt his own shooting attack, and has had one attack retimed to be fairer. His arena is smaller and its beacon light is lit by default, which makes the fight far easier to read. He can no longer wedge himself into the environment during his dive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orrem was displaying the wrong name in game, which has been corrected. Stray effects have been removed from his death animations, the fire on his axe no longer flickers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orrem, the Reclaimed has had his attack and riposte alignment improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Malborn Offspring no longer interrupts his own sword throw, and will reliably pick his sword back up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Warden and Urrig, the Executioner have both been reworked, with retuned attacks, new ice attacks and corrected effects. Urrig's spin now gives a proper warning that it cannot be parried.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vrannic, the Grand Illusionist has new projectile vfx trails.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magdalena, the Lady of the Woods no longer rotates incorrectly during her charge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloodcursed Lithopod no longer glitches when colliding with other enemies, no longer nudges you into the air when you are standing still, and has had its damage, turning and jump attacks retuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tainted Vestige ranged attacks no longer miss without reason, and The Wandering Shepherd now teleports sensibly within his arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs, Softlocks and Getting Stuck",
+     "items": [
+      {
+       "text": "Fixed many places you could become trapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck near the closed castle gates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck in a church in the opening region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck in a house in the sunken village dungeon, inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck in Castigator's Keep by walking through a wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck in the snow on the approach to Droeg's arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck in a hole in the ground in Eredrim's castle jail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision holes, ground gaps and missing collision have been patched throughout the first two regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Softlocks and Lost Progress",
+     "items": [
+      {
+       "text": "Fixed an interrupted save being able to destroy your save file. Saves are now written so that a crash or a sudden shutdown cannot leave you with nothing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with Vatra’s Temple where players would be locked out permanently after exploring the area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential crash and softlock during Lazlo's Rekindle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when speaking to the barkeep after Gragu's death but before collecting him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock if you were struck while inside Hilga's Cauldron, and the interface failing to return when you climbed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed declining the cutscene at a Shell unlock leaving you invisible and invulnerable until you restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Objects and Interactables",
+     "items": [
+      {
+       "text": "Fixed an iron maiden that could trap you as it opened, a lift lever that snapped the lift back to its starting position, and a wooden lift that could kill you on the way up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a chest that destroyed itself, several chests that became unreliable after loading a save, and offerings failing to register in a locked chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gates in the Temple of Vatra that could strand your Gloom somewhere you could not reach it, and corrupted gates that would not clear if approached from the sewers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed items in the opening region hidden inside collision, which made them impossible to pick up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a ceiling collapse triggering at the wrong moment, and a light puzzle with two candles that had stopped being connected to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sitting down (hopefully) no longer launches you into the sky, it never happened to us but we saw some of you go flying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Encounters and Spawning",
+     "items": [
+      {
+       "text": "Fixed enemies visible before they had spawned in several encounters, and spawn triggers that did not cover the enemies they were meant to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to lure Vellen, High Lord of Mammon out of his arena, and being able to interact with a traversal point during a boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed resting at one late Beacon drawing enemies onto you, and mis-referenced spawners in a late encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an infinite Ossinite farm, an exploit that allowed unlimited healing, and shield-carrying enemies becoming effectively immortal against one type of projectile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed personal items being unavailable until a restart if you had played the prologue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Wandering Shepherd's Sheep properly respawn when playing NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We Found Out About the Grishas",
+     "items": [
+      {
+       "text": "Fixed a Grisha that respawned indefinitely in one dungeon, astral Grishas spawning embedded in the floor, and enemies becoming stuck on geometry. (rip Grishamancer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Grisha PP item active is now stronger, its passive spawning has been fixed, and its summon no longer displays attack warnings intended for enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Parrying, Dodging and Ripostes",
+     "items": [
+      {
+       "text": "Ripostes have had a full pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player riposte damage now scales with enemy health, so the damage keeps up properly with late game, NG+, and Night Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invulnerability windows are now consistent between ripostes, and last through to the end of the animation rather than expiring partway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many player riposte recoveries end sooner, so control returns to you faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riposte animations across the entire enemy roster now behave when your back is to a wall, rather than sliding you through it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riposte damage is now calculated and applied by the riposte itself, which resolves cases where it applied twice or not at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Proxima's riposte alignment against The Silent Sester.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enemy Tracking and Hit Detection",
+     "items": [
+      {
+       "text": "Enemy tracking and magnetism maximums have been restricted, and will continue to be adjusted on an individual basis in future patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed projectiles that failed to register against enemy weak points, and sidearm projectiles choosing the wrong target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed brigand shield collision that could launch you into the air, and projectiles failing to appear in the shield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several enemies, including Lithopods, now align to sloped ground correctly, and dungeon champions now stand on the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fallen wooden bridges are now easier to hit, and destructible carts use better collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed corrosion failing to apply after a projectile had been reused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Story, Characters and Scenes",
+     "items": [
+      {
+       "text": "Characters no longer turn, stare, drift or fade at the wrong moment across a long list of scenes, including Rickart in The Search and Resignation, Eredrim in Immaculate Path, Tiel in The Bottle, and Vratko during his dance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed overlapping and skippable dialogue in several memories, and retimed voice and sound in The Vision, The Search and The Censer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed story moments taking too long to appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Milos no longer falls silent at random, and greets you properly before moving on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zhirelle's dialogue is now cleared before a memory begins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merrick, Vratko and Egon can no longer be interrupted while dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Franz's conversations now trigger in the correct order, and he returns to his crank after being interrupted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marigold no longer starts two conversations at once, and the barkeeper no longer speaks to you through the tavern wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Baghead can no longer be damaged, and his ending no longer unlocks early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grisha Hunters now hold their weapons, Grisha Pups have new reactions, and the Grisha Matron can be harmed by ranged weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Larreth, the Brigand King now appears without his helmet, and his guards no longer vanish if you kill him first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ruk's greetings react to your progress, and his dialogue no longer remains on screen when you enter a boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Egon's interactions now refresh after offerings, and interaction problems with Gorf have been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected a subtitle that did not match the recorded line in Ruk's dialogue about the Lost Child, along with a considerable number of typos and missing punctuation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Interface and Map",
+     "items": [
+      {
+       "text": "Weapon level now appears in the inventory slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the map offering objectives you had already completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the camera key appearing blank in the launcher on mouse and keyboard, and the interact key ignoring your rebinding.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed resetting \"hide subtitles\" to its default hiding the subtitles instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Change Shade option disappearing after opening the Change Masks menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping text in the Shell revive message in Simplified Chinese, long Tarstone names colliding with the temper notification, panels and icons overlapping at higher interface scales, and misaligned details on Mether's Breath.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a tutorial scale setting, with a separate one for console, and polished a number of tutorials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clearer colorblind setting descriptions, an updated open gate icon, and proper icons when a mask unlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "New riposte stingers, and restored missing riposte audio for the Bloodcursed Lithopod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New sounds for Fragile Tarstones wearing down and breaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies can now be given an audible warning for unparryable attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ambient sound no longer stacks when several sources overlap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Village dance music no longer collapses to a single point as you approach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You no longer continue bleating after transforming back from a sheep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reprocessed older voice recordings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added several missing sounds including the Marrow Keep elevator lever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Lazlo's armor loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the saved audio device being selected at startup when it no longer exists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New speaker presets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Fewer enemies in some of the busiest areas, where the crowd was costing frame rate rather than adding difficulty. Spawners in the dense prison area have been rebuilt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the significant hitch shortly after the shader compilation screen. That work now happens while you are still in the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the frame rate drop when cleansing tar gates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flickering textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several rounds of dungeon lighting optimisation, and optimisation passes over Droeg's effects, the final boss arena, lightning, village buildings, stairs, books and library interiors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The arrow volleys in the final siege no longer arrive all at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced background work across weapons, hit detection and movement, returning a meaningful amount of frame time on console.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved rendering of destructible objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed corrupted terrain in several places and rebuilt the affected landscapes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Crashes and Stability",
+     "items": [
+      {
+       "text": "A substantial number of crash fixes, covering enemy spawning, audio, attribute changes, interface loading, save loading and shutdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some settings that were implicated in graphics driver crashes, and added a crash diagnostics option.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Crash reports now carry considerably more context, which makes the crashes that remain much easier for us to locate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved handling of Steam ownership checks, and updated to the current Steamworks release for better Steam Deck detection and controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Options, Platforms and Controls",
+     "items": [
+      {
+       "text": "Increased Geometry Budgets, a new graphics option. Off by default, which uses less video memory; turn it on if you have memory to spare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Frame generation has been reworked. It now applies after a reload rather than conflicting in real time, which the description states, and it no longer switches on before the world has finished loading. NVIDIA frame generation can now be selected on a much wider range of cards.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Switch Pro and Switch Pro 2 controllers are supported, with an option to swap their glyphs. Steam Deck and Steam Controller now display the correct buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The game now defaults to your monitor's native resolution, and pauses when a system overlay opens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with raytracing options not working as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed post-process options that had no effect, and firing not working on some controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rumble now triggers correctly for riposte damage, held attacks, Beacon interactions and dungeon transitions, and has had a broad pass across sidearms, items and Shell abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Mutton is now immune to damage, he’s been through enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Possible Malborn Offspring bug when using Grisha Remnant Summon during boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cold Symmetry & Playstack Teams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 47,
+    "balance": 11,
+    "other": 83,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1842212951305852"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-29T15:48:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.040Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-29T15:48:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.040Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-29T15:48:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.144Z"
+  },
+  {
+   "id": "mortal-shell-ii-347633@major-2026-02-25",
+   "gameId": "mortal-shell-ii-347633",
+   "displayName": "Update on the Mortal Shell II PC Beta",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-25T16:00:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Foundlings,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the coming months you’re going to hear from us a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mortal Shell II will be yours to play in 2026, and there’s plenty of details we’re going to showcase soon. So, as we march towards our first gameplay reveal, we felt the time was right today for a quick update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First, a long-overdue thank you. Eight months ago, Mortal Shell II opened the show at Summer Game Fest, and the outpouring of love and enthusiasm was an immediate shot of adrenaline. We have been humbled by your support - it gives us focus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of you know that in June we also opened sign-ups for the game’s PC Beta on mortalshell.com. It’s been incredibly motivational seeing so many fans register their interest, and we’re building a Beta that we hope will reward your commitment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our plan is to open the Mortal Shell II PC Beta to everyone this summer. (That’s winter for our friends in the southern hemisphere).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45649447/a60d9a78f794987b2f9787a3d98baefabdfe3c76.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before then, we’re going to run some very small, closed private technical tests on PC only. If you’re interested in taking part in these, fill out your details here. We cannot guarantee you’ll get access to our earlier test builds if you fill out the form, but we’ll try our best. If you don’t get access, rest assured you will when the PC Open Beta goes live.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Finally, if you’re feeling sociable please say hi to our lovely new Community Manager Mikki (@mikkelfromgames) on our Discord. Mikki is doing some spring cleaning on the server and is working on some fun activities he has planned. He loves talking about soulslikes and is super chill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The big picture remains the same: Mortal Shell II releases worldwide in 2026 on PC, PlayStation 5, and Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "You’re closer than you might think about learning more…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speak soon,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cold Symmetry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2584270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2584270/view/1825727806705199"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-25T16:00:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2584270",
+      "checkedAt": "2026-11-13T03:26:06.037Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.141Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "bf5e3eb7d663",
+   "text": "Possible Malborn Offspring bug when using Grisha Remnant Summon during boss fight",
+   "status": "open",
+   "firstReleaseId": "mortal-shell-ii-347633@major-2026-08-29"
+  },
+  {
+   "id": "cf99bcbd83ab",
+   "text": "Cold Symmetry & Playstack Teams",
+   "status": "open",
+   "firstReleaseId": "mortal-shell-ii-347633@major-2026-08-29"
+  }
+ ]
+}

@@ -1,0 +1,177 @@
+{
+ "game": {
+  "id": "snowlike-409290",
+  "igdbId": 409290,
+  "name": "Snowlike",
+  "cover": {
+   "imageId": "cocd3a",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocd3a.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6r26",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6r26.jpg"
+  },
+  "ps5Release": "2026-06-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "snowlike-409290@patch-2026-06-15",
+   "gameId": "snowlike-409290",
+   "displayName": "Opening Week Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-15T22:31:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-fixing the four general quests that were not unlocking related achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-a patch to prevent pausing world creation during load-screen with loss of focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixing autosave on winning of final trophy & quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-moving 'award mode' to be unlocked by finishing difficulty, out of store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-updating gamepad vibration frequencies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+Balance: plus adding more scaled difficulty, and more damage to end-game overtime mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2519710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2519710/view/1835236783572413"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T22:31:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2519710",
+      "checkedAt": "2026-11-13T03:30:49.596Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T22:31:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2519710",
+      "checkedAt": "2026-11-13T03:30:49.596Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-15T22:31:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:24.168Z"
+  },
+  {
+   "id": "snowlike-409290@post-2026-06-04",
+   "gameId": "snowlike-409290",
+   "displayName": "PC Build Fix",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-04T07:43:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "PC Build Fix",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2519710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2519710/view/1834602721186795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-04T07:43:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2519710",
+      "checkedAt": "2026-11-13T03:30:49.595Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:24.168Z"
+  }
+ ],
+ "issues": []
+}

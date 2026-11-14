@@ -1,0 +1,1991 @@
+{
+ "game": {
+  "id": "doom-313161",
+  "igdbId": 313161,
+  "name": "Doom",
+  "cover": {
+   "imageId": "co8no8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8no8.jpg"
+  },
+  "squareCover": null,
+  "artwork": null,
+  "ps5Release": "2024-08-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "doom-313161@3",
+   "gameId": "doom-313161",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-10T15:51:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update as of 4/29: Sigil II music pitch has been corrected. Thanks to everybody who reached out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SIGIL II",
+     "items": [
+      {
+       "text": "SIGIL II is now officially included as part of the DOOM + DOOM II package. It is available from the game select menu at startup. Note: Save games from the Mods version are not compatible with the officially included version. However, the existing Mods version will remain online to users subscribed to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "When viewing a match running a mod, you will now be directed to the Mods page if you do not have the mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a crash that could occur when using the automap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound issues with ceiling sounds on DOOM II MAP04 and TNT MAP04",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when playing BTSX Episode 2 in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that may occur when downloading or deleting many mods during the same launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Custom menu logos appear at the top of the menu again when playing a mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mod Compatibility Fixes",
+     "items": [
+      {
+       "text": "Fixed a crash that occurred when a WAD contains a zero length sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fast doors making double sounds for mods running in Boom or MBF modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Read the above release notes in additional languages on Slayers Club here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "When viewing a match running a mod, you will now be directed to the Mods page if you do not have the mod"
+    ]
+   },
+   "sourceIds": [
+    "steam-2280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280/view/1796631172249612"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-10T15:51:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.239Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-10T15:51:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.239Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-10T15:51:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:11.560Z"
+  },
+  {
+   "id": "doom-313161@1",
+   "gameId": "doom-313161",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-03T15:25:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update 1 is live for DOOM + DOOM II and brings a handful of requested improvements and fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Added 21:9 resolution graphics for DOOM, DOOM II, The Plutonia Experiment, and TNT: Evilution",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Left turn, right turn, and strafe keys added to keyboard bindings, allowing playing with old-school keyboard-only tank controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added 3D sound option in Sound Menu, allowing more than 2 speaker setups to be used – this allows individual sound effect levels to be taken into account compared to the original DOOM sound system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cheats can now be activated from the pause menu. Entering the original game’s cheat codes will unlock them for future use. You can also unlock all cheats from the Gameplay Settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "The multiplayer match browser can now be filtered and sorted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added timer and frag limit added to the multiplayer scoreboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mods",
+     "items": [
+      {
+       "text": "Players can now search for mods by name in the Mod Browser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Release notes for mods are now visible in the Mod Details screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Checking for Mod updates can now be manually done from the Play Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a link in the Play Menu to the Mod’s details page to allow quicker access to unsubscribe, like, and report",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The current page and last selection are kept when backing out from a Mod’s details screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play Mods menu now shows locally installed Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a menu option to pop up the folder where you can drop new WAD files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added “wad” console command to quickly load a WAD file and restart the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "When a save game is incompatible due to a map update, you will now restart the level from the beginning, with the inventory you had at the time of the save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Globally reduced input latency by at least one frame at 60hz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various audio issues fixed, including ones around playing looping sounds, positioning, and limits on simultaneous voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading saves no longer causes enemies to attack other map objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading saves will correctly restore enemy infighting and tracking of Arch-Vile and Revenant targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The correct DOOMguy expression is now displayed on the HUD when being damaged with more than 120 HP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Progress on the “Until It Is Done” achievement can now be made when playing DOOM & SIGIL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All difficulty modifiers will restore correctly when loading a save game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapon lowers properly when dying when turning view bobbing off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Episode-Specific",
+     "items": [
+      {
+       "text": "Resolved soft-locks in MAP03 in Legacy of Rust and TNT: Evilution MAP06 (at the lift near the start of the map)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which some enemies were getting stuck in TNT: Evilution MAP31",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Fixed an issue in which all platforms could not see each other in the Match Browser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which wall textures would sometime not scroll correctly for multiplayer clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mods",
+     "items": [
+      {
+       "text": "The game will no longer force quit when attempting to load incompatible Mods, sending you back to the Menu instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in which saves made from certain Mods would not load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Automap will render correctly for large maps in Mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extended Boom feature compatibility to support a broader range of Mods. If your Boom or MBF21 Mods were having issues prior to this update, please try them again, and thanks everyone for all the reports so far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you'd like to read these release notes in additional languages, check 'em out on Slayers Club here (change language via the globe button at the bottom of the page).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 5,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280/view/6350729003494537664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T15:25:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T15:25:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.237Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-03T15:25:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:11.557Z"
+  },
+  {
+   "id": "doom-313161@2",
+   "gameId": "doom-313161",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-05T15:44:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Edit: For Steam Deck users a hotfix has been applied, so make sure you have the latest version installed before launching and thank you for the quick feedback and providing crashlogs!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Update 2 adds Multiplayer Mod support for DOOM + DOOM II and game improvements/fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer Mods",
+     "items": [
+      {
+       "text": "Hosts need to activate the mod before entering the multiplayer menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players will need to subscribe to the same mod before joining a match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We recommend using room codes to join modified matches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mods must be authored with Vanilla DOOM, DeHackEd, MBF21 or BOOM to be compatible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Resolved an issue in which some red doors did not display as red on the automap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple crashes reported by the community when loading game saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved text line wrapping legibility for mod descriptions in Asian languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed map prefix from intermission screen to be consistent with original game behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Added spectator mode when players are dead and waiting to respawn in co-op mission play (it can also be initiated manually from the scoreboard button)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue in which disabling the crosshair would also turn off player name and co-op respawn text display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There are now more than 4 player colors available in game and on scoreboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue in which players would lose weapons when respawning in co-op using modern rules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which the cross-platform friends menu could not be properly backed out of when no friends were available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further optimized multiplayer networking code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed crosshair centering issue in certain splitscreen configurations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Intermission animations now run at the correct speed in splitscreen mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Modsl",
+     "items": [
+      {
+       "text": "The mod downloader can now process more than the first 100 subscribed mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "For Mod Creators on PC",
+     "items": [
+      {
+       "text": "Mod screenshots with spaces and other non-alphanumeric characters in their file names will now upload correctly in most cases",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Mod Compatibility Updates",
+     "items": [
+      {
+       "text": "MBF21 instant kill sectors were incorrectly killing non-enemy actors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MBF21 instant kill sectors will fire immediately when a monster enters them, instead of waiting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BOOM and MBF21 effects that kill monsters will deal 1 million damage instead of 10000 damage in order to fix mods that used monsters with high HP values to create an invulnerable enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BOOM generic floor actions were not selecting the right neighbor when finding which sector ceiling or floor height they needed to move to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can hurt and shoot projectiles at their own voodoo dolls (aka player model / clone), to be consistent with the original game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ENTERPIC in UMAPINFO is correctly shown for the map you are entering instead of the map you just left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DeHackEd strings for BOOM keys can now be replaced through DEH patches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BOOM line action 242 (Deep water) will now transfer ceiling and floor lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now avoids crashing for invalid sized demos when playing the demoloop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maps using DMAPINFO will print the map name on automap, level select, and savegames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing DeHackEd ammo type will now actually change the ammo type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Berzerk Factor not calculating correctly in the A_WeaponMeleeAttack MBF21 codepointer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed BTSX Episode 1 and Episode 2 demo playback not rendering fullscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mods that override DOOM (1993) Episodes 1-3 will use the correct intermission screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MBF21 A_Lower codepoint now checks for an invalid weapon before changing weapons if out of ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you'd like to read these release notes in additional languages, check 'em out on Slayers Club here (EN-only until 1/31 -- afterwards, change language via the globe button at the bottom of the page).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280/view/6242640076597112616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-05T15:44:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-05T15:44:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.238Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-05T15:44:37.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T02:59:11.558Z"
+  },
+  {
+   "id": "doom-313161@major-2024-08-22",
+   "gameId": "doom-313161",
+   "displayName": "Minor Update for DOOM + DOOM II",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-22T17:41:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This minor update makes improvements to how clients communicate with the backend in DOOM + DOOM II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280/view/5875595438688871849"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-22T17:41:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-22T17:41:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.236Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-22T17:41:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:11.555Z"
+  },
+  {
+   "id": "doom-313161@post-2024-08-08",
+   "gameId": "doom-313161",
+   "displayName": "DOOM + DOOM II Release Notes",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-08T20:29:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Developed by id Software and originally released in 1993, DOOM pioneered and popularized the first-person shooter, setting a standard for all FPS games. The critically acclaimed sequel, DOOM II, followed in 1994.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now the definitive, newly enhanced versions of DOOM + DOOM II are available in a single combined release on Xbox One, Xbox Series X|S, PlayStation 4, PlayStation 5 and Nintendo Switch, in addition to PC platforms and Game Pass (subscription required). This definitive enhanced version is our biggest effort yet with online cross-platform Deathmatch and Co-op for up to 16 players, community-published single-player mod support (with in-game mod browser), optimized renderer, accessibility options, optional modern IDKFA soundtrack by Andrew Hulshult (including brand-new DOOM II recordings) selectable alongside the original MIDI soundtracks, presented in up to 120hz in 4K on supported platforms (see FAQ below for details) and a brand-new episode “Legacy of Rust,” with new weapons and demons made in collaboration by individuals from id Software, Nightdive Studios and MachineGames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Note: Existing owners of DOOM (1993) and / or DOOM II on any of the above platforms receive a free upgrade to the new combined game, and can still access their previously owned versions. (See FAQ below for details.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Owners Receive",
+     "items": [
+      {
+       "text": "DOOM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DOOM II",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Master Levels for DOOM II",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TNT: Evilution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Plutonia Experiment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No Rest for the Living",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SIGIL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Legacy of Rust (a new episode created in collaboration by individuals from id Software, Nightdive Studios and MachineGames)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new Deathmatch map pack featuring 25 maps (to accompany the existing 18) bringing the total Deathmatch levels to 43",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Supported Languages (text only)",
+     "items": [
+      {
+       "text": "English, Simplified Chinese, Traditional Chinese, French, German, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features and Improvements",
+     "items": [
+      {
+       "text": "New Features and Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Online, cross-platform Deathmatch and co-op for up to 16 players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Community-published single-player mod support with an in-game mod browser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chose to play the original MIDI DOOM and DOOM II soundtracks or the modern IDKFA versions by Andrew Hulshult (including brand-new DOOM II recordings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance with multithreaded rendering supporting up to 4K resolution and 120 FPS on Xbox Series X|S, PC and PlayStation 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Now on the KEX engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BOOM source compatibility makes it possible for hundreds of community-created mods from the past 25 years to be published in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessibility options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Brand New \"Legacy of Rust\" Episode",
+     "items": [
+      {
+       "text": "Created in collaboration by individuals from id Software, Nightdive Studios, and MachineGames, Legacy of Rust is the newest episode for DOOM, and the first official episode since DOOM II to feature new demons and weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Vassago's Rest\", the ancient inscriptions called it. With the meaning of the name lost to time, it wasn't long before the interlopers began calling the land by another: \"New Eden\". Just like the Garden of old, mankind's exile from this newly settled realm was swift and brutal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This remote region of Hell, overflowing in (un-)natural resources as it were, was almost entirely devoid of demonic presence. The Union Aerospace Corporation, never one to shy away from hubris and excess, learned the hard way that even the demons feared something greater, something deeper. When the Ones Beneath awoke, the UAC's crown jewel was swallowed in a cascade of blood and fire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Three hours -- all it took to reduce New Eden to a sea of molten glass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Three minutes -- all it took before the UAC's top brass played their ace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Three seconds -- all it took for you to weigh the risks before accepting the job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your orders are clear: reclaim the lost base and preserve the UAC's Legacy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Or die trying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "id Vault",
+     "items": [
+      {
+       "text": "Dive into the id Vault and explore concept art from DOOM + DOOM II’s development, early versions of monsters, weapons, items, props, FX, HUD + Menus and textures left on the cutting room floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enhanced Cooperative Gameplay",
+     "items": [
+      {
+       "text": "New rules have been added to improve cooperative mode. If all players die, you will lose, and the level will restart. Respawn teammates by clearing all enemies in the area or finding a safe place to hide. Teammates will spawn near you, letting you get back into the fight quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Split-Screen Multiplayer",
+     "items": [
+      {
+       "text": "DOOM + DOOM II includes 4-player split-screen multiplayer on all platforms, with 8 player split-screen available on Xbox Series X|S and PC. Fight against your friends in Deathmatch or with your friends in Cooperative mode, available in seven campaigns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Online Multiplayer",
+     "items": [
+      {
+       "text": "Frag with friends and strangers alike across 43 different Deathmatch levels or play any of the episodes in co-op. Play alone or play online with local split screen players. LAN play is also supported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CrossPlay Multiplayer",
+     "items": [
+      {
+       "text": "Play with friends no matter which platform they prefer. Crossplay is available on all platforms, so you can play DOOM + DOOM II with everyone. Join your friends quickly using our room code system for finding lobbies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Deathmatch Map Pack",
+     "items": [
+      {
+       "text": "A new Deathmatch map pack featuring 25 maps was added thanks to community mappers: Luis “DX-Chain” Armacanqui, Luca Ciriaco, Ralph \"Ralphis\" Vickers, Matthew \"RottKing\" Cibulas, Colton \"Arrowhead\" Murchison, Andrew \"Saar\" Bouvé & Joshua \"tokyopunchout\" Boyle. This new pack compliments the existing 18, bringing the total Deathmatch levels to 43",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Existing Enhancements",
+     "items": [
+      {
+       "text": "Upgraded visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modern controller support including: Weapon carousel (for faster weapon switching)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved mouse and keyboard controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Local split-screen deathmatch and co-op for up to 4 players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Featured community mods, including: REKKR, Syringe, Double Impact, Arrival, Revolution and over a dozen more…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "60 FPS and native 16:9 support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored original in-game music using original hardware",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quick Save/Load support DeHacked mod support Game Pass (Xbox Series X|S, Xbox One and Microsoft Store PC:) and xCloud Support (Xbox Series X|S and Xbox One)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "About the Included Games",
+     "items": [
+      {
+       "text": "DOOM (1993) - Original Version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The demons came and the marines died...except one. You are the last defense against Hell. Prepare for the most intense battle you’ve ever faced. Experience the complete, original version of the game released in 1993, now with Episode IV: Thy Flesh Consumed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DOOM II – Original Version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hell has invaded Earth, and to save it, you must battle mightier demons with even more powerful weapons. This beloved sequel to the groundbreaking DOOM (1993) introduced players to the brutal Super Shotgun, the infamous Icon of Sin boss, and more intense FPS action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TNT: Evilution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The UAC relocated their experiments to one of the moons of Jupiter. A spaceship, mistaken for a supply vessel, was granted access. But when it got close to the base, demons poured out. All your comrades were slaughtered or zombified. This time it's not about survival. It's about revenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Plutonia Experiment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Every effort has been made by the nation's top scientists to close the seven interdimensional Gates of Hell, but one portal remains open. Alone, you must infiltrate the ravaged base, defeat the demon Gatekeeper, and seal the last Hell portal before the undead take over the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Master Levels for DOOM II",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This expansion includes twenty additional levels, all with the same hell-spawned horrors and action of the base game. Each level was created by independent designers and supervised by id Software",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sigil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Created by id Software co-founder, John Romero, and released as an episode-sized mod consisting of 18 new maps, Sigil fits in between the timelines of DOOM (1993) and DOOM II. Baphomet, the gatekeeper of Hell, “glitched the final teleporter with his hidden sigil, whose eldritch power brings you to even darker shores of Hell. You fight through this stygian pocket of evil to confront the ultimate harbingers of Satan, then finally return to become Earth’s savior.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Legacy of Rust",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Created in collaboration with individuals from id Software, Nightdive Studios, and MachineGames, Legacy of Rust is the newest episode for DOOM, and the first official episode since DOOM II to feature new demons and weapons. This 16-map Episode is broken up into two 8-map acts: The Vulcan Abyss and Counterfeit Eden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Accessibility Features",
+     "items": [
+      {
+       "text": "With this release, we are adding new accessibility features so DOOM + DOOM II can be enjoyed by even more players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Learn more about DOOM + DOOM II's accessibility features in our guide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "PC Specs Minimum Spec (1080p/60 HZ)",
+     "items": [
+      {
+       "text": "Win 10 64-bit version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Intel Core i5-3570 @3.4 GHz or AMD Ryzen 3 1300X @3.5 GHz",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "8GB System RAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NVIDIA GeForce GTX 650 TI (2GB) or AMD HD 7750 (1GB)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "1920x1080 Resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimum 2GB free space on hard drive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High speed broadband connection required for online play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Recommended Spec (*4K/120 HZ)",
+     "items": [
+      {
+       "text": "Win 10 64-bit version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Intel Core i5-6600k @3.5 GHz or AMD Ryzen 5 1600 @3.2 GHz",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "8GB System RAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NVIDIA GeForce GTX 1070 (8GB) or AMD RX Vega 56 (8GB) or Intel Arc A 280",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "3480x216 Resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimum 2GB free space on hard drive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High speed broadband connection required for online play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Compatible display required",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FAQs",
+     "items": [
+      {
+       "text": "Where can I find these same release notes in more languages?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out these same Release Notes available in additional languages on the Slayers Club website here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I already own DOOM or DOOM II. How do I access the new release?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previous owners of DOOM or DOOM II on Steam will automatically receive the new version with a free update. It may already be updated by the time you read this!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "How do I access the original versions of the game?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam users can use the Beta Participation property option to download and launch the original versions, or the last version that we launched in 2019 labeled \"previous-re-release\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What are the supported resolutions and framerates on Steam?",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "PC: Maximum supported by video card/display",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "What input devices are supported?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller, keyboard, and mouse are supported on all platforms, including consoles. Split screen is available with mixed mouse/keyboard and controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do I need an always online connection to play the game?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DOOM + DOOM II only requires an online connection to play online multiplayer game modes. The single player campaigns and multiplayer via split screen, LAN, or ad-hoc multiplayer on Switch can be played while offline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Is the Steam controller supported?",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DOOM + DOOM II does not support the Steam controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "How do I create a mod?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DoomTools, which offers a wide array of utilities that will be useful or critical towards creating a Doom wad file (requires Java)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultimate Doom Builder for level editing (requires Microsoft .Net Framework 4.7.2)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SLADE for WAD file editing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "...and become familiar with online DOOM community wikis, such as DoomWiki.org, and Discords, such as UDBs and SLADE’s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How do I upload a mod?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mod uploading is only available on PC. To begin the process, select a game from the main menu, like DOOM II for example. Then select \"MODS\" from the menu, and select \"UPLOAD\" and follow the instructions!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "On the Minimap, why do the Kill, Item, and Secrets totals not increment for the Host when completed by another player?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the host player, Kills, Items, and Secrets don't count on the Minimap if another player adds them. This is intended. The minimap shows only your total kills, items, and secrets, not the total for the entire party",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 27,
+    "fixed": 0,
+    "balance": 0,
+    "other": 59,
+    "ps5": 2,
+    "topNew": [
+     "New Features and Improvements",
+     "Online, cross-platform Deathmatch and co-op for up to 16 players",
+     "Community-published single-player mod support with an in-game mod browser"
+    ]
+   },
+   "sourceIds": [
+    "steam-2280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280/view/5963414363391584434"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-08T20:29:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": {
+      "value": 8000000000,
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.235Z"
+     },
+     "liveAt": {
+      "value": "2024-08-08T20:29:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.235Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-08T20:29:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:11.554Z"
+  },
+  {
+   "id": "doom-313161@major-2020-10-06",
+   "gameId": "doom-313161",
+   "displayName": "Mouse Fix Update Released",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-06T16:12:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update has been released for our modern DOOM and DOOM II ports today. The only change is a fix for FPS dependent mouse sensitivity. Your sensitivity will feel different for the same slider value compared to before, however it will now feel more consistent, especially at higher framerates when vertical sync is disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280/view/3807188575867464801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-06T16:12:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.233Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:11.551Z"
+  },
+  {
+   "id": "doom-313161@major-2020-09-04",
+   "gameId": "doom-313161",
+   "displayName": "DOOM Update - September 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-04T19:46:01.000Z",
+   "notes": [
+    {
+     "title": "Note for existing users",
+     "items": [
+      {
+       "text": "The unmodified, original DOS version running under DOSBox is still available! When launching the game, select \"Launch DOS version\" and you will have access to the previous version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added Steam Support",
+     "items": [
+      {
+       "text": "Anyone who already owns either The Ultimate DOOM or DOOM II: Hell On Earth on Steam will automatically receive the new re-releases in their libraries. The original DOS versions are still available as a separate launch option from within Steam, and the original DOS IWAD files are in their original location on disk. Please note: if you have modified the files in the Steam install folder directly, some files may be overwritten. You should not modify files in the Steam folder directly, as this may cause issues. Anyone who purchases Steam copies of DOOM or DOOM II: Hell On Earth in the future; it will default to the re-releases but can access the original DOS versions as a separate launch option from within Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Added widescreen rendering support",
+     "items": [
+      {
+       "text": "For the first time in an official port, the original DOOM renderer has been modified to natively render 16:9 without any letterboxing. The FOV has been increased to reveal more image on the side instead of chopping off the top and bottom. All new 16:9 versions of the titlescreen, intermission, and ending screens have been added. Many of our Add-Ons have also had widescreen support added, so download the latest version from the Add-Ons listing to check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "DeHackEd support",
+     "items": [
+      {
+       "text": "The engine now can load DeHackEd patches, a popular tool for the original release that modified the game in order to support more advanced behavior. Add-Ons can now use new weapons, change enemy behavior, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Deathmatch 3.0 in split-screen multiplayer",
+     "items": [
+      {
+       "text": "Split screen deathmatch has been changed to what is commonly known in the community as \"Deathmatch 3.0.\" Weapons will stay in the world after being picked up in order to account for the extreme lethality of DOOM's weapons, and the weakness of the starting pistol, while all items and ammo respawn on a 30 second timer. Invulnerability and Invisibility will never respawn after being picked up for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added optional crosshair",
+     "items": [
+      {
+       "text": "A crosshair, which can be disabled in Gameplay Options, will also change colors when targeting an enemy. This means less guessing if firing a rocket is going to aim at the enemy above you, or fire directly into your face, bringing about an untimely death. Enabling the crosshair may also help reduce motion sickness by giving you a fixed point to focus on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added Gyro Aim",
+     "items": [
+      {
+       "text": "Gyro Aim, enabled by default when a DualShock 4 controller is plugged in, allows you to look left and right by either turning the controller, or rolling the controller left or right. This allows for an additional amount of precision by enabling fine corrections to turning in order to track moving enemies, while still using the right analog stick for large turning movements. Gyro Aim can be set to either use the controller's yaw, or pitch, or disabled entirely, along with a separate sensitivity slider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added FPS Limiter",
+     "items": [
+      {
+       "text": "You can set the FPS limiter inside Video Options to 30, 60, 120, 144, 165, 240, and unlimited FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added millisecond accurate timer",
+     "items": [
+      {
+       "text": "A millisecond accurate timer has been added to the minimap, and to the end of level intermission, for anyone looking to speedrun levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Keyboard entry of cheat codes",
+     "items": [
+      {
+       "text": "iddqd, idkfa, idclip, and all of their friends can now be entered from the keyboard, in addition to the Cheats menu, as in the original 1993 release.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Added secret area notification",
+     "items": [
+      {
+       "text": "A message and notification is now displayed when you enter into a secret area for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added Ultra-Violence+ Skill Level",
+     "items": [
+      {
+       "text": "Ultra-Violence+ is a twist on our existing Ultra-Violence skill level. Deathmatch/Co-op only weapons will spawn in, and enemies are fast like in Nightmare mode. In DOOM II, this means you get the BFG and Rocket Launcher right from the start, but in Final DOOM: Plutonia you'll have a Spider Mastermind staring you down as soon as you spawn in on the first level. It cuts both ways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nightmare behavior has been fully restored to the original 1993 release by making enemies move twice as fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In honor of double speed enemies returning, the warning when selecting Nightmare difficulty has been restored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolved an issue where lighting in split screen was not accurate compared to single player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved behavior of additional lighting option to increase light levels more accurately across walls and floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PC/Switch: Reduced input latency by disabling rendering extra frames in advance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced delay in starting certain MIDI music in Add-On levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolved an issue from the original 1993 release where the Super Shotgun blast will linger for an extra frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolved an issue from the original 1993 release where the Former Human would not light up when firing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolved a rendering issue from the original 1993 release where certain textures wouldn't tile vertically, commonly known as the \"Tutti-Frutti Effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored original attract loop to the original 1993 release. The original title screen and credits screen are now visible between demo playback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored cut message from the original 1993 release when picking up a medkit, while having with less than 25 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored cut \"ouch face\" from the original 1993 release for when a lot of damage is taken in a single hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Intermission screen is now shown after boss levels, instead of cutting immediately to the ending screens in order to see level completion stats and time. Par times have been added to E1M8, E2M8, and E3M8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Random SFX pitch is now disabled for chainsaw sounds to allow for better looping. Random pitch variation has been reduced for other sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pickup sounds and player voices will no longer interrupt weapon firing sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PS4/XB1/PC: VSync option in Video Settings to minimize input latency, at the cost of potential screen tearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add-Ons will now use their intended custom graphics during intermission and level loading screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Latest Add-Ons appear on the top of the Downloaded list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 25,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "You can set the FPS limiter inside Video Options to 30, 60, 120, 144, 165, 240, and unlimited FPS.",
+     "A message and notification is now displayed when you enter into a secret area for the first time.",
+     "Nightmare behavior has been fully restored to the original 1993 release by making enemies move twice as fast."
+    ]
+   },
+   "sourceIds": [
+    "steam-2280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2280/view/3819571008260691038"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-04T19:46:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2280",
+      "checkedAt": "2026-11-13T03:19:14.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:11.550Z"
+  }
+ ],
+ "issues": []
+}

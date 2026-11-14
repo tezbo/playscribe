@@ -1,0 +1,752 @@
+{
+ "game": {
+  "id": "nour-play-with-your-food-138619",
+  "igdbId": 138619,
+  "name": "Nour: Play with Your Food",
+  "cover": {
+   "imageId": "co2hng",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2hng.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ary1s",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ary1s.jpg"
+  },
+  "ps5Release": "2023-09-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "nour-play-with-your-food-138619@1.2.1",
+   "gameId": "nour-play-with-your-food-138619",
+   "displayName": "Update 1.2.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-31T09:23:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Since Nour is out on Nintendo Switch we're bringing in some optimizations to the game experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Meta Spawn Cap: The spawn cap for physics objects is now shared across all items and scales based on platform tier. A slider option has been added for PC players to adjust the spawn cap.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Addressed various issues, including tool movement bugs in the burger scene, fixed noodle creation in the meat grinder, and corrected audio instance limits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Popcorn level Fixes",
+     "items": [
+      {
+       "text": "Resolved issues with de-spawned food not replenishing and frozen kernels not responding to inputs. Jellyfish no longer collide with problematic stage objects in the Popcorn level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level Unlocks",
+     "items": [
+      {
+       "text": "Fixed an issue where levels were not unlocking correctly after progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vibration and Rumble Adjustments: Adjusted rumble intensity and fixed issues with vibration on multiple platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collider Fixes: Adjusted ground mesh colliders in the Toaster level to improve performance and fixed the egg shatter threshold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm still tryna add fun stuff in future updates too, lemme know if there's any foods you're dyin to see in Nour 🍨🍜🍥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1141050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1141050/view/6240387642461047894"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-31T09:23:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.850Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-31T09:23:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.850Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-31T09:23:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.662Z"
+  },
+  {
+   "id": "nour-play-with-your-food-138619@1.1",
+   "gameId": "nour-play-with-your-food-138619",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-01T09:52:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We don't like bugs in our food so we squished some of them. Here's some of the ones we squished:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mic feature scaling adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial failsafes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug preventing some liquids from rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few missing translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of life",
+     "items": [
+      {
+       "text": "Right analog stick can move spawners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blowtorch is more responsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tools ignore invisible walls that would otherwise obstruct them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game's framerate is limited to keep it from making everyone's GPU's way too hot. We ain't tryina cook an egg on your nvidia geforce.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Move Tool! Use R2 or Mouse1 to pick up and move foods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After a lot of wrestling with tech, achievements have been added in! Apologies for the wait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "KickStarter backers have been added to credits as well. Sorry they were missing for so long! They were meant to go in before our launch date, but we dropped the ball on prioritizing them above other technical issues that were coming up. We put a lil secret in the game for y'all that we'll outline how to reach in a KS email :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-tj",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1141050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1141050/view/5288974951202371369"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-01T09:52:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-01T09:52:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.849Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-01T09:52:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.662Z"
+  },
+  {
+   "id": "nour-play-with-your-food-138619@1.09",
+   "gameId": "nour-play-with-your-food-138619",
+   "displayName": "Update 1.09",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-29T06:35:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed input issues with 125Hz refresh rate mice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General mouse input improvements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Sensitivity slider added to options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse sensitivity slider added to in-game options",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mouse movement bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Eggs break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ice cream melts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jellyfish sting fx are now temporary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio parameter bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General bugfixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tenderizer mesh deformation improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magnet and tools do not disappear off-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Meat grinder tutorial update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More quality of life for better enjoyment of your dish! We're trying to address issues as fast as we can, thank you all for the feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1141050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1141050/view/5220291886489700665"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-29T06:35:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-29T06:35:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.849Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-29T06:35:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.661Z"
+  },
+  {
+   "id": "nour-play-with-your-food-138619@1.08",
+   "gameId": "nour-play-with-your-food-138619",
+   "displayName": "Update 1.08",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-19T03:47:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated food palette binding to Shift + Spacebar.: Spacebar acts as the food palette spawn button while the menu isn't open.: We know how inconvenient the previous binding was, it was annoying for us too. Sorry! Meant to change that a while ago tbhhh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual updates to the backdrop of Hamburger scene.: the rainbow looks a lil less jank. Check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "KBnM magnet control issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some pause menu items being unselectable with mouse in certain levels",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Camera movement in Donut level issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1141050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1141050/view/5480373588799383527"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-19T03:47:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.848Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-19T03:47:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.848Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-19T03:47:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.661Z"
+  },
+  {
+   "id": "nour-play-with-your-food-138619@hotfix-2023-09-12",
+   "gameId": "nour-play-with-your-food-138619",
+   "displayName": "Nour is Out + A Launch Day Hotfix! 🔥",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-12T21:28:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're finally there. Nour is live on Steam! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "After a small hiccup where an old build was set live, (Apologies about that! Please update your game if you downloaded it the morning of launch and give it another try, this time with better keyboard + mouse support. Version 1.06 is the proper launch build), our wild food art game is out into the world.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you all so much for sticking around this long. It's been a long and difficult, but very rewarding journey. And it's not over yet! We have the OST dropping piece by piece.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This project has impacted me in ways I never could've guessed. A huge thanks goes out to Panic as well, for really helping us get past that final hurdle to release. Everyone really came together to help me launch this project.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALRIGHT, I'll let you all enjoy your meal, but thanks again for everything. Peace!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~Tj 🍜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1141050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1141050/view/5159491482928405138"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-12T21:28:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.847Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-12T21:28:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.848Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-12T21:28:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.660Z"
+  },
+  {
+   "id": "nour-play-with-your-food-138619@major-2023-09-12",
+   "gameId": "nour-play-with-your-food-138619",
+   "displayName": "Launch Update (9/12/23",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-12T20:18:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where an older PC build of the game was accidentally uploaded for launch. Now you're playing the latest build, including improved keyboard/mouse support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1141050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1141050/view/5159491482928227777"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-12T20:18:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.847Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-12T20:18:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1141050",
+      "checkedAt": "2026-11-13T03:26:58.847Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-12T20:18:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.660Z"
+  }
+ ],
+ "issues": []
+}

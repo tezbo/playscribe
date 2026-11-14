@@ -1,0 +1,685 @@
+{
+ "game": {
+  "id": "vengeance-hunters-309302",
+  "igdbId": 309302,
+  "name": "Vengeance Hunters",
+  "cover": {
+   "imageId": "co8thc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8thc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar34ha",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar34ha.jpg"
+  },
+  "ps5Release": "2024-10-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "vengeance-hunters-309302@post-2026-04-07",
+   "gameId": "vengeance-hunters-309302",
+   "displayName": "Steam Deck Bluetooth and automatic glyph support for third party controllers",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-07T18:42:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With this small update, you should now be able to connect any Sony/MS/Nintendo OEM controller without issue and the glyphs will automatically change in game on any platform (this fix targets Steam Deck/OS).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Also, we added support for more third party controllers so that they identify correctly when connected. And if you use a controller that is not supported, you can still change the glyphs manually in the Options screen at any time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2738110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2738110/view/1828894815568183"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-07T18:42:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.705Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-07T18:42:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.705Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-07T18:42:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:46.888Z"
+  },
+  {
+   "id": "vengeance-hunters-309302@post-2026-04-05",
+   "gameId": "vengeance-hunters-309302",
+   "displayName": "Speed Runners, Steam Achievements and CHICKEN!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-05T04:42:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Hunters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It was brought to my attention that a couple of achievements were not working. Due to a change with the Steam SDK between when the game launched in 2024 and the recent changes, there was a breaking change in how achievements worked. That is now fixed! Please let me know if there are any issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, I have added a new feature that might be handy for Speed Runners. The game used to track the amount of seconds that it took to complete a stage. I have changed that to a 00:00:00 format. I also added another short screen that tells the total game time up to that point. This screen will be shown between stages and at the end of the game after you beat the final boss. Also, you can press Start to pause the game, go to Options and see your current time. Time ONLY counts down when you are playing. So no out of game or in game cut scene or between stage screens counts for the timer. Thank you for the assist on this, FelpsFGC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then, per request, I added two large chickens to drop from the cyborgs before the final boss. You don't want to try to end your quest for VENGEANCE! on an empty stomach, right?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know if there are any issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2738110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2738110/view/1828894815563186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-05T04:42:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.704Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-05T04:42:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.704Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-05T04:42:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:46.887Z"
+  },
+  {
+   "id": "vengeance-hunters-309302@post-2026-03-26",
+   "gameId": "vengeance-hunters-309302",
+   "displayName": "Vengeance Mode Timers",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-26T14:32:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The timer for the game is to short when playing on Vengeance Mode in the final stage. A timer reset will now happen when you get to certain parts of waves avoid this issue (all modes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We still want the timer to be part of the game and influence play, but it was influencing grindy play-styles more than anticipated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2738110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2738110/view/1827626365770675"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-26T14:32:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.703Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-26T14:32:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.704Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-26T14:32:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:46.887Z"
+  },
+  {
+   "id": "vengeance-hunters-309302@post-2026-03-23",
+   "gameId": "vengeance-hunters-309302",
+   "displayName": "A few fixes and some minor features adds",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-23T04:47:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added High Score screen to the Options menu. Now you can view High Scores whenever you want",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed High Score countdown to properly display and count down from 45 seconds (previously showed 20 seconds incorrectly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Attract Mode sequences to reflect the latest changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Boss Select positioning so the player now spawns correctly in front of the boss room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Candy would incorrectly use the alternate palette after continuing or when using Scene Select",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored Desert Cave to Scene Select (previously unavailable due to technical issues)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2738110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2738110/view/1827626365762734"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-23T04:47:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.703Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-23T04:47:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.703Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-23T04:47:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:46.886Z"
+  },
+  {
+   "id": "vengeance-hunters-309302@1.04",
+   "gameId": "vengeance-hunters-309302",
+   "displayName": "Update 1.04",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-06T14:40:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "* Easier to use the desperation move to get out of a hold the Stage 5 boss can apply",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Changed Options menu text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2738110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2738110/view/6148070194801564708"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-06T14:40:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.702Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-06T14:40:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.702Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-06T14:40:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:46.886Z"
+  },
+  {
+   "id": "vengeance-hunters-309302@1.03",
+   "gameId": "vengeance-hunters-309302",
+   "displayName": "Update 1.03",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-01T15:02:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "• Allowed each player to have their own set of continues in two player mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Note: Yes, you CAN cheese the game with extra continues now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Stage 2 boss has slightly less HP & only attacks twice with his poison claw instead of three times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Note: Some players (T) have not figured out that you can jump + strong attack the claws when they are in the air, so we're making this boss a bit less frustrating for them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Smoothed out a few Waves/Groups to ensure they do not go on for to long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Slightly nerfed the Stage 4 'Miner' enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev note: This guy and his robot vacuum of doom was a bit to frustrating. So we toned him and his little vacuum down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Stage 5 boss missiles now do only 40 damage on hit (was 80)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev note: there were some instances where you could get deleted when hit by the missile and other attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Various other minor enemy tweaks including jump speed, arc and distance of some enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Stretched option added to Options/Display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Note: We added this only for people using 4:3 displays. If you stretch the game on your 16:9 display, we will be extremely upset with you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Character Select music now properly loops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• On Continue, you will no longer go back to the default color palette",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Note: We need to make sure you can remain style'n with that purple Candy alt outfit. PS, you can change to an alt color palette by pressing Jump after selecting your character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• A hit animations is now played even if the hit does not cause a stun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev note: This should help provide even more feedback to the player when they take a hit. You will still only see the hit marker if you're in the middle of a swing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Candy's Bleed should no longer push an enemy the wrong way on death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Golem can now grab/throw regular enemies that use a yellow armored move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Golem now has invulnerability frames during his Ground Pile driver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev note: The move does a lot of damage and AoE, but it was just a bit to risky in a crowd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Golem/Candy/Loony - You can now press left or right while in the middle of a combo string rather than needing to wait a split second to change directions. This includes aerial combos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev note: This should help make the game feel more fluid when punching for some players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Golem/Candy/Loony - The Back Attack was change from <-Light attack to Light Attack + Strong Attack. It animation locks you, but it will knock enemies down and break yellow armor (but only does 2 damage).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev note: This change was needed to make the left/right change work. And it just feels better and I should have done it in the first place. Please give feedback on this if there are issues, however.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Added resolution options for Steam Deck video output",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Dev note: Thank you to NeoCverA for bringing this to our attention",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2738110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2738110/view/6146943657173936509"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-01T15:02:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.702Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-01T15:02:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2738110",
+      "checkedAt": "2026-11-13T03:35:28.702Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-01T15:02:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:46.885Z"
+  }
+ ],
+ "issues": []
+}

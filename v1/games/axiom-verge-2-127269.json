@@ -1,0 +1,560 @@
+{
+ "game": {
+  "id": "axiom-verge-2-127269",
+  "igdbId": 127269,
+  "name": "Axiom Verge 2",
+  "cover": {
+   "imageId": "co3k3x",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3k3x.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar9ls",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar9ls.jpg"
+  },
+  "ps5Release": "2021-08-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "axiom-verge-2-127269@1.0.29",
+   "gameId": "axiom-verge-2-127269",
+   "displayName": "Update 1.0.29",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-09T21:34:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.0.29, 2/9/2023",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "----------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added XB1 style input icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-946030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/946030/view/5036749277230765989"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-09T21:34:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.858Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-09T21:34:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.858Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-09T21:34:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.841Z"
+  },
+  {
+   "id": "axiom-verge-2-127269@1.0.28",
+   "gameId": "axiom-verge-2-127269",
+   "displayName": "Update 1.0.28",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-30T15:43:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Attempt to work around Steam's 32-bit int limitation for leaderboard scores in order for Low% scores to rank properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Had to reset the Low% boards :-(",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-946030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/946030/view/4514316500021274819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-30T15:43:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.857Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-30T15:43:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.857Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-30T15:43:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.841Z"
+  },
+  {
+   "id": "axiom-verge-2-127269@1.0.27",
+   "gameId": "axiom-verge-2-127269",
+   "displayName": "Update 1.0.27",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-22T19:52:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Uncapped 60fps framerate lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes to mitigate chance of save file corruption",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-946030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/946030/view/4584122114607352106"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-22T19:52:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.857Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-22T19:52:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.857Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-22T19:52:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.840Z"
+  },
+  {
+   "id": "axiom-verge-2-127269@1.0.26",
+   "gameId": "axiom-verge-2-127269",
+   "displayName": "Update 1.0.26",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-17T16:26:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Better handling for when SpeechSynthesizer fails to intialize in Windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for fullscreen toggle sometimes not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-946030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/946030/view/4584121659777628162"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-17T16:26:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.856Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-17T16:26:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.856Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-17T16:26:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.840Z"
+  },
+  {
+   "id": "axiom-verge-2-127269@1.0.25",
+   "gameId": "axiom-verge-2-127269",
+   "displayName": "Update 1.0.25",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-15T18:20:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated to latest fnalibs to fix Vulkan memory leaks",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-946030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/946030/view/4607764924165404112"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-15T18:20:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.856Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-15T18:20:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.856Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-15T18:20:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.839Z"
+  },
+  {
+   "id": "axiom-verge-2-127269@1.0.24",
+   "gameId": "axiom-verge-2-127269",
+   "displayName": "Update 1.0.24",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-12T18:05:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Attempt to fix characters rendering bright cyan in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for possible errors with dynamic vertex/index buffers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for text to speech in Windows, disabled in Linux",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-946030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/946030/view/4607764924154440831"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-12T18:05:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.855Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-12T18:05:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.855Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-12T18:05:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.838Z"
+  },
+  {
+   "id": "axiom-verge-2-127269@1.0.23",
+   "gameId": "axiom-verge-2-127269",
+   "displayName": "Update 1.0.23",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-11T23:12:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for yellow lighting bug when indoors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-946030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/946030/view/4607764924151574458"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-11T23:12:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.855Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-11T23:12:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-946030",
+      "checkedAt": "2026-11-13T03:15:30.855Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-11T23:12:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.838Z"
+  }
+ ],
+ "issues": []
+}

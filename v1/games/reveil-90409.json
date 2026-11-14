@@ -1,0 +1,315 @@
+{
+ "game": {
+  "id": "reveil-90409",
+  "igdbId": 90409,
+  "name": "Reveil",
+  "cover": {
+   "imageId": "co6lvy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6lvy.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar10h1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar10h1.jpg"
+  },
+  "ps5Release": "2024-03-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "reveil-90409@1.1.1",
+   "gameId": "reveil-90409",
+   "displayName": "Hotfix 1.1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-25T12:40:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we just released a small patch which fixes the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wake Up achievement not triggering properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speedrun Livesplit breaking for some savepoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Team Pixelsplit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-809060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/809060/view/5759616966664478921"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-25T12:40:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-809060",
+      "checkedAt": "2026-11-13T03:29:07.443Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-25T12:40:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-809060",
+      "checkedAt": "2026-11-13T03:29:07.443Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-25T12:40:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:44.279Z"
+  },
+  {
+   "id": "reveil-90409@1.1.0",
+   "gameId": "reveil-90409",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-19T20:35:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What a ride! We have reached 90% positive ratings here on STEAM. Thank you all for playing and all the kind words!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We have just released a patch to fix some issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "LiveSplit support for speedrunners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Grabbability\" of collectible in act 4 flask in Desk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FOV for static cameras considers aspect ratio -> support for 32:9 screens",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Martha studio crouch hint shown only once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Train: After decoupling mouse couldn't be moved anymore",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Forest: Someone ran crazy in circles off the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Studio: Achievement \"Flawless\" triggered even if not played flawlessly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boiler room: Some sound issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save slot percentage in main menu didn't update properly after finishing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speech in apartment didn't play again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horse race machine in Dories room could break and stop progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forest: Door to \"nothing\" could be opened in Dories room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forest: Round items had strange reflections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Funhouse: Player could fall off map when walking back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Team Pixelsplit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-809060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/809060/view/5762994032395631681"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-19T20:35:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-809060",
+      "checkedAt": "2026-11-13T03:29:07.443Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-19T20:35:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-809060",
+      "checkedAt": "2026-11-13T03:29:07.443Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-19T20:35:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:44.278Z"
+  }
+ ],
+ "issues": []
+}

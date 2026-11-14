@@ -1,0 +1,2468 @@
+{
+ "game": {
+  "id": "in-sound-mind-121084",
+  "igdbId": 121084,
+  "name": "In Sound Mind",
+  "cover": {
+   "imageId": "co3p6y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3p6y.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arloo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arloo.jpg"
+  },
+  "ps5Release": "2021-09-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "in-sound-mind-121084@1.06",
+   "gameId": "in-sound-mind-121084",
+   "displayName": "Update 1.06",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-11T07:21:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow Desmonds,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just two weeks ago, we celebrated 1 year since release of In Sound Mind. We're still here, and we still watch you play, and read your reviews and admire your awesome fanart. Thank you so much, again, for playing and for your support <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we release ISM version 1.06. This update brings an even smoother overall gaming experience with much improved game balance, hints, and some stability fixes to some rare bugs. Find the complete list below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click below to read about the previous major update 1.05, including new Steam Community items:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Featured In Sound Mind Fan Art",
+     "items": [
+      {
+       "text": "There's so much talent in our socials and Discord community, I figured we'd share some of it here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @Vladkonrad_",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @Nexus_Bex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @fluttiko",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @biwazu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Follow our Twitter and join our Discord to explore more awesome community art. Feel free to add more in the comments to this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "In Sound Mind 1.06.0929",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Improved shadow updates in several areas in the game, previously causing some shadows to remain even when their original shadow caster has disappeared. For example, Dave’s shadow in the locker room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare issue causing some collected pills to not count properly and prevent the “Well Medicated” achievement from being triggered. In this scenario, players would receive all 5 individual pills achievements (one per area) but not the 6th for collecting them all (“Well Medicated”). New saves should not have this issue anymore. Existing saves that have experienced this issue will need to go into each tape at least once more through the office (go into the level after the transition area, and then hit “back to office” - no need to replay the entire tape) and then back into the hub. This will mark each level and trigger the fail safe fix and get the final achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorials should now properly clear when going through doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug causing the ranged Inkblots to miss the player 100% of the time in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Hub (Building)",
+     "items": [
+      {
+       "text": "Fixed a rare issue causing the elevator to remain locked forever, causing a progression blocker. Going up to the rooftop should now properly reset the entire floor and prevent this scenario.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the basement flood to not correctly drain in some older migrated saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a save point near the office.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the flare ammo spawner next to the Bull’s apartment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The bombed photo from the Homa Mart photo booth now appears in Desmond’s office after interacted with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various game balance and user experience improvements around all hub floors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Homa Mart (Supermarket)",
+     "items": [
+      {
+       "text": "Fixed a rare issue causing the haunted carts to break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the collectible pill in the vending machine near the locker room to spawn below the floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue causing The Watcher to not get scared. The Watcher now behaves correctly when scared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the brother doll to be highlighted twice in the mirror.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various improvements and balance fixes in the supermarket level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Icarus Point (Lighthouse)",
+     "items": [
+      {
+       "text": "Fixed a few rare bugs causing the Shade to not properly respawn during the warehouse and wharf sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few issues with the rolling collectible pills near the cliffs sometimes appearing when already collected, and incorrectly being highlighted in the mirror.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the jump from the moving container ramp in the wharf a little easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a trigger that prevented players who fell from the crane to die. Nobody survives that jump, not even Desmond.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Shade should no longer be able to trigger the darkness and barrels inside the lighthouse with his projectiles, causing a softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Few visual improvements to the bossfight at the top of the lighthouse, making it easier to understand what to do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Burnt house back door will now properly open after the finale for easier exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various balance and user experience improvements in the lighthouse level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Old Factory",
+     "items": [
+      {
+       "text": "Fixed an issue causing some tutorial tips to appear and never go away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues allowing the ram wagon rotation to be stored in incorrect angles, making it float in the air and cause all kinds of shenanigans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Bull will now roam farther away from the trainyard center, giving players a bit of space when solving the first chip electricity puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an orange state indicator to the power chip boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chips will now highlight in the mirror much farther distances, so it’s easier to find where you left them when needed for a puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better indications about where the suitcase needs to go in the conveyor belts room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with the suitcase teleporter in scenarios it rolls off its tracks (resetting its position).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Streamlined a few tracks and blockers in the conveyor puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a save after solving the conveyor belts puzzle. It’s really annoying to die after a puzzle!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a small gap in the drain station so it’s easier to see the purpose of draining the quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pump stations can now be seen more easily from afar, shining through fog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added signs in the hanger showing which direction is the quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various improvements and game balance updates to the factory level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Elysium Park (Forest)",
+     "items": [
+      {
+       "text": "Fixed a few stutters caused by the flashback memories.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Softened the Radio Device’s sound pitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The rotating platform in the WTF area is a bit bigger and easier to jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some hints about looking at the stars at the WTF tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare issue causing the flashback and helmets to not correctly trigger near the watchtower gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing some flashback war effects to remain forever unintentionally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The flare appearing next to the bunker entrance, after the visitor center sequence, will now remain to help point the player back to the bunker later on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added saves in the tents, next to collecting Lucas’s recorded memories. Prevents losing side quest progress when dying to the Flash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the Flash AI, giving the player a bit more space and varying his behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare bug causing the lamps in the cemetery to not clear out darkness when activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue causing the gate after the radio tower sequence to remain blocked, now clearing it correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On the last star sequence before forming the bunker code, the number 1 changed slightly to look less like 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing the Flash weak points to stay during the bossfight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Antennas during the boss fight will now blink to make it clearer and draw attention as they should be triggered with the Radio Device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a few rain triggers causing the rain to incorrectly start or stop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various forest level improvements and user experience updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The End (Finale)",
+     "items": [
+      {
+       "text": "Initial platforming will now become slightly easier after failing the jumps twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rainbow’s homing barrels should no longer spin around the player endlessly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On Easy difficulty, there were not enough homing barrels to use to ram the gates. All difficulties now have the same amount of barrels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added direction hints about backtracking after the first Watcher tape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed a drug puddle that was a bit too close to a save trigger near the Flash area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various Rainbow boss fight game balance and improvements, including spawned items and other helpers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are reading this you are awesome. Thank you for supporting our small indie operation. Don't be a stranger and follow us here on Steam, or check our Discord community, or our Twitter page for any more updates and news from We Create Stuff.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Team We Create Stuff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 22,
+    "balance": 0,
+    "other": 38,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1119980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1119980/view/4613399405957511605"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-11T07:21:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.858Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-11T07:21:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.858Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-11T07:21:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:11.122Z"
+  },
+  {
+   "id": "in-sound-mind-121084@1.05",
+   "gameId": "in-sound-mind-121084",
+   "displayName": "Update 1.05",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-31T17:08:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow Desmonds,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're excited to ship In Sound Mind patch 1.05 across all platforms today. This update brings further performance optimizations to the game, user experience improvements, bug fixes AND a few new secrets. In addition, we're launching Steam Trading Cards for In Sound Mind! There's a lot to go over, so let's get started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Steam Cards & Community Items",
+     "items": [
+      {
+       "text": "With this new update, we're also shipping Steam Points Shop items and Steam Cards. Including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "10 collectible Steam Cards, a full badge and foil badge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "10 emoticons ːismBullːːismEmptyːːismFlashːːismShadeːːismToniaːːismWatcherːːismAgentːːismDaveːːismDesmondːːismInkblotː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4 profile backgrounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "6 ANIMATED profile backgrounds!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Further Optimization Improvements",
+     "items": [
+      {
+       "text": "We hear your feedback, and we took the time to further optimize the game. After further inspection, we've identified that for most players, the game is experiencing CPU bottlenecks even on high end rigs with great CPUs. The biggest offender were the real time shadow calculations, which, before rendering, were taking a big toll on the CPU every frame. From this, we’ve refactored our real time shadows system over the course of the last few months. In addition, we've optimized certain boss AIs, inkblots, effects, and level logic to further bring down the CPU load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Among our tests, we used an Nvidia 1070 GTX / Intel I5 7600k / 16GB rig on high settings to test the new update (1.05) vs the previous update (1.04) and could see improvement from 10-30% in average FPS, depending on the area, hovering 60 FPS. Areas with a lot of light and details were showing an improvement, whereas other areas saw a smaller improvement (but generally were lighter to begin with). Keep in mind, while this is a positive enhancement and should affect all game systems and rigs, it might affect each system differently so it's hard to guarantee exact numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "In Sound Mind 1.05.0511",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "👾 There are now 6 hidden portable game systems scattered around the game, playing each features a brand new 8-bit version of a song by The Living Tombstone from the OST. Go hunt for them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⏯️🎶 Added a new in-game animated video by Mashed, featuring the theme song by The Living Tombstone and accessible after finishing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎴🃏 New Steam Community items and Steam Cards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapon switching is now significantly faster, improving combat experience during the late stages of the game when scrolling through an arsenal of 8 weapons. It's no longer required to confirm with an extra click when switching weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equipment UI now shows ammo count and renders the weapon red when it runs out of ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements, including optimizations to the real time shadow rendering system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional optimizations to much of the puzzle and level logic across the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refactored the enemy inkblots music system, addressing some edge cases causing their music to remain past combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mirror debris on the floor, indicating there's a Mirror Shard puzzle nearby, will only glow once and stay for longer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mirror Shard attack range increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When finishing a level, the final door now glows in the mirror from a distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Radio Device features new lights indicating the device status",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decreased the speed granted when consuming a Lure Pill, but increased its effect duration and improved on screen effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "It's now easier to collect items under temporary barrel and boxes debris",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new enemy inkblot music when fighting the brute type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a few animation issues causing enemy inkblots to stutter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The enemy brute inkblot shields less often",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy inkblot weakpoints now glow in red instead of green",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crows now have red eyes and will properly react to noise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏆 Added a failsafe system in case pills were collected and an achievement was not triggered correctly (previously could happen during old save migrations)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a highlight issue when replaying a tape, causing specifically sequenced collectible pills (the pill in C1 photobooth, rolling pill in C2 cliffs, dropped pill in on the electricity pole in C3 near power station) to highlight incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased player controls while in mid-air, giving players more agency when platforming and especially in the finale tape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Locked doors will now automatically open when unlocked with their corresponding key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many level bug fixes, balancing and tweaks across the entire game - more on this below",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Video settings added: Fog Quality and Texture Streaming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spotty volumetric fog, usually seen near windows, was improved and can be set via Fog Quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug causing saves not to write to disk properly when using a non-Gregorian calendar settings - more on this here https://steamcommunity.com/app/1119980/discussions/0/3185740024688663519/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various localization improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug causing the Audio volume settings to not save correctly when closing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing electricity wires to appear red in the Mirror Shared reflection even when they are correctly active after reloading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pressing ESC when viewing a note will first dismiss it rather than pause the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing the trees to not move in the wind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing the contaminated water to appear low-quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing the game objectives text to wrap unexpectedly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the locked basement door issue when starting a new game from the 2nd starting point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong UI scales in the Load Game screen in some resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various UI improvements and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Building (Hub)",
+     "items": [
+      {
+       "text": "General performance improvements, lighting improvements and bug fixes in the hub level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new portable game system in the hub! Go hunt for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a telescope at the rooftop chill area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After completing a tape, a new postcard will now appear in Desmond's office wall showcasing the places he visited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a hint to the Flare Gun puzzle room as well as new Agent Rainbow graffiti.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved the collectible pill from next to the Pistol parts quest note to the gas room nearby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We unhinged the Maintenance Room's door and threw it on the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's now a red blinking light near ringing phones in the hub hallways, making it easier to spot which phone is ringing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an Unnatural Darkness puzzle in the Mail Room with a small reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The building basement now floods after the third tape. Find a way to drain it to get new rewards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vinyl records in apartments now glow in the Mirror Shard's reflection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the introduction phase, when at the top floor, Your Office and Desmond's Apartment are revealed in two separate steps to make it less overwhelming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switched between early Vitalyx and Enduramin collectible pills to make it easier to get at least one of each upgrade before the first tape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Homa Mart (Supermarket)",
+     "items": [
+      {
+       "text": "General performance improvements, lighting improvements and bug fixes in the hub level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Originally, only the supermarket had a portable game system. It is updated to align with the new tracks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further optimized the reflection in the large mirrors in the center of the supermarket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing The Watcher to sometimes scream randomly. It's ok, you can rest now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you finish the tape and still have pills to collect, a new note appears encouraging to use the Mirror Shard to find them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the power room puzzle (right before Dave's moment), we changed the letters to numbers to create better consistency across different languages. Tweaked the note hint a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The supermarket map now shows the maintenance doors in red.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The collectible 4 dolls are now highlighted using the Mirror Shard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved the Pen and Sticky Notes item to the office, close to the window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Icarus Point (Lighthouse)",
+     "items": [
+      {
+       "text": "Lighting improvements, bug fixes and overall performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new portable game system somewhere in Point Icarus! Go hunt for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the visual effects of the red lighthouse beam hitting the player. Also optimized its performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor balancing changes to the The Shade, making him a little faster the longer he chases you uninterrupted and made it easier to cast light on him with the Flashlight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the lighthouse yard generator puzzle. Power lines are clearer, and the broken fuse box under the center spotlight is easier to see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements to the boathouse puzzle making its mechanics clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the jump from the moving gantry crane slightly easier to perform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the light bulb fight sequence, adding a doorway leading outside to the top of the lighthouse and additional visual hints during the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new light indicator on the generator in the basement below the lighthouse so it's clear when the power is on without looking back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved the ending door to the tool room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Old Factory",
+     "items": [
+      {
+       "text": "Lighting improvements, bug fixes and overall performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new portable game system somewhere in the Old Factory! Go hunt for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added bigger signs and light indications around the entire level making exploration easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the power box puzzle at the yard center, right before the power station gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the train turntable puzzle near the beginning of the level. There's a better indication to blocked rotations, it's easier to see the climbable fence, and the gate buttons are clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Balance The Bull eyes HP, making it slightly easier to disable him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When The Bull first crashes into the train yard, the way to the loading zone is now blocked by a large wagon. It's still possible to go over it, but it's now harder to troll The Bull in this area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Climbing and platforming over the yard bridge is clearer and easier to perform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the power station inkblot waves sequence, it's more clear that you can setup the electricity traps versus incoming enemies with some level changes and a new tutorial hint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The armory section inside the factory now requires a 3V chip. You have to work for your rewards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the conveyor belt room sequence. There are fewer levers and the path for the suitcase was simplified. Added more loot to deal with The Bull and clearer path signs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebalanced the packing room battle (where the big Brute Inkblots appear), making some traps using Lure Pills and electricity clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When returning to the hangar area after crafting the Lure Pills, there's clearer indication that The Bull is right outside and using the Lure Pills might get him wrecking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thrown Lure Pills will no longer dissolve in shallow water anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the quarry near the pumping station, added water draining signs and visual effects when draining the quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new tutorial hint in the quarry to remind about the Lure Pills speed benefits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Elysium Park (Forest)",
+     "items": [
+      {
+       "text": "Lighting improvements, bug fixes and performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added TWO new portable game systems, somewhere in Elysium Park! Go hunt for them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebalanced The Flash spotlight HP and optimized it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Using the Radio Device on The Flash's weakpoints to stun it now has a cooldown before you can use it again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved signs all around the level, making them bigger and easier to spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mines are a little easier to disarm now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When The Empty calls via the Radio Device, the device now emits a radio static sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added three new gates in the forest with signs making exploration better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sinking objects (like floating wooden planks in the swamp) will now shake the camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The valve tool item will now remain in the inventory even after using it on all gates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a small tutorial teaching about the Radio Device and The Flash's jammers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Selecting stars in the skies using the Radio Device will now make the star blink so it's clearer which one you have selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added highlights and Unnatural Darkness on top of secret graves near the church.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The radar in the final bossfight now has blue laser sight and the antennas around the radar are blue as well, making the bossfight mechanics clearer. The radar monitor was changed to an updating target locking indicator. Generally optimized this part of the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The End (Finale)",
+     "items": [
+      {
+       "text": "After Agent Rainbow wraps up his piano solo (damn isn't he good?) you can now interact with his piano 🎹",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase player controls mid-air in low gravity, making platforming better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Falling to the abyss during the fight no longer instantly kills, instead the player respawns and takes 10 HP damage. Agent Rainbow will still mock you for falling down 👀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now retry to high-five Dave the mannequin by falling down and teleporting back at the cost of HP ✋ The mannequins will not leave you high and dry, and will stay until you successfully slap Dave's plastic hand or move on to the next area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered the big punch attack damage and knockback radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "There's now more loot and healing items in the later phases of the battle. Removed battery loot from the finale as it's not needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced the final bit near The Flash tape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed explosive homing barrels being able to pass through some objects such as gates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After Agent Rainbow is destroyed, it now rains for a few moments. Also his hat now drops, and you can put his hat on your head and hang around with it. For example, this is you with his hat on: 🤠: End of changelog.: And in the meantime, we'd like to feature some really good playthrough series of In Sound Mind!: https://www.youtube.com/watch?v=pKiUTdSmhTE: https://www.youtube.com/watch?v=PhX1TUaRUyI: https://www.youtube.com/watch?v=r8KF-zdzDv8&list=PLrVhyUnEQMV-cOvLMRdd3_uo0mWTcKxgz: Let us know in the comments if you have a favorite streamer or video series featuring In Sound Mind.: Don't be a stranger and follow us here on Steam, or check our Discord community, or our Twitter page for any more updates and news from We Create Stuff.: Finally, we want to thank you so much for your support since release. In Sound Mind was a wild ride for us at We Create Stuff. To us, with In Sound Mind we tried to push the boundaries of what a psychological horror game is- and it didn't come without its challenges! What we found is a big community of horror fans who are looking for just that kind of a special journey. So thanks again for giving us a chance. Until next time!: Thank you ❤️: Team We Create Stuff",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 27,
+    "fixed": 12,
+    "balance": 6,
+    "other": 71,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1119980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1119980/view/4437747060845307119"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-31T17:08:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.856Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-31T17:08:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.857Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-31T17:08:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:11.121Z"
+  },
+  {
+   "id": "in-sound-mind-121084@post-2021-12-08",
+   "gameId": "in-sound-mind-121084",
+   "displayName": "Patch Notes: December 7, 2021",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-08T10:43:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Desmonds,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we're releasing a small update, In Sound Mind 1.04 with a few bug fixes for a better overall experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing the collectible pill in the lobby floor of the hub to get clipped through the window if migrating from a 1.02 save into 1.03. The interaction was fixed and this should no longer happen to any collectible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few trigger issues in Max's tape, with one notable issue causing the bottom floor of the factory to sometimes not load correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue around re-playing the RB finale tape with the tape not being reset properly. Additional fixes to tape resets mechanics when replaying the same tape for a third time in a row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with The Shade's decal effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with weapons not given back after returning to the office on tape replay. If your Mirror Shard disappeared, try going back to the hub office and it should be given back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the volumetric lights in Desmond's office.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't forget to check the quality of life improvements and balancing changes just recently released with patch 1.03 here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for the quick feedback! As previously mentioned, we're working on additional improvements so stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1119980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1119980/view/4224936215405160917"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-08T10:43:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.855Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-08T10:43:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.855Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-08T10:43:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:11.119Z"
+  },
+  {
+   "id": "in-sound-mind-121084@post-2021-11-25",
+   "gameId": "in-sound-mind-121084",
+   "displayName": "Patch Notes: November 25, 2021",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-25T22:10:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow Desmonds!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Sound Mind Patch 1.03 is now live. Following your feedback, live streams and reports we've fixed bugs, took care of rare blockers, rebalanced many parts and improved the overall flow of In Sound Mind. Please note that the patch notes may include spoilers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "The game now stores 5 latest autosave checkpoints instead of 1. There's a new load screen displaying the list of recent saves, time and location. This allows going back a bit further in case needed. Your original save will work the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved hangs during saves in mid to late game. Save file size reduced by roughly 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a crash on Windows 8.1",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added surround sound 5, 5.1 and 7.1 support on PC following player feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Following player feedback, it is now possible to collect all pills even after defeating a boss, prior to heading back to the office(e.g. sinking crates with The Shade near the lighthouse, riding The Bull for some pills near the factory, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a UI visual issue causing some game objectives to re-appear when loading saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various localization fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing the FOV now properly positions the weapon, so Desmond's hand is no longer awkwardly stretched out at 90 FOV.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various rare gameplay blocker issues resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased font size and time for the \"you can live stream this game and music\" message at the intro to make sure streamers see it - Yes you can stream the game and its music! Also added it to the audio settings screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Enemies and Combat",
+     "items": [
+      {
+       "text": "Enemy inkblots can now open doors. Good luck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Brute Inkblot can now lift its arm up as a shield. Adjusted its animations and speed slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various issues in Enemy Inkblots noise system setup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Melee inkblots run slightly faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy inkblots have a slightly higher chance to spawn with armor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced collectible upgrades: Health upgrade downgraded from 10 to 5 HP per 3 pills, Speed from 0.075 to 0.055 per 3 pills, Stealth radius from 0.075 to 0.050 per 3 pills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons and food values re-balanced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Building (Hub)",
+     "items": [
+      {
+       "text": "The Pistol quest is now mandatory prior to the supermarket. Added a small tutorial with a note after assembling the pistol about using it on explosive barrels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing the guitar prop to play by itself sometimes in Desmond's apartment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various level design improvements in the building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transition Areas: Adjusted some audio tape locations making it easier to spot and listen to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RB Tape: Various minor gameplay improvements to make the fight sequence flow better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RB Tape: Moved the save point prior to Dave so the clap achievement can be perfected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Virginia's Tape",
+     "items": [
+      {
+       "text": "Fixed a rare issue causing getting stuck in the forklift and get saved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug causing two Agents to appear at once in the freezer. One is enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Watcher now properly reacts to stuns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Desmond now responds to the photobooth sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Allen's Tape",
+     "items": [
+      {
+       "text": "Fixed some visual issues with The Shade's pit effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added small step to the Lighthouse Basement to make it easier to jump back up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug allowing to get the crank while the gate is still open in the boathouse puzzle. The puzzle was readjusted and balanced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue causing getting stuck within the wall after obtaining the Flare Gun in the Thanatos trip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the generator puzzle to remain on for a little longer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added 3 additional save points in the wharf area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced the pill crates puzzle in the wharf from physics based to tween based, making it more reliable preventing strange collision issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare issue causing The Shade to spawn outside of the Wharf area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue unintentionally allowing to collect the collectible pill in the dried bay without walking the invisible steps leading to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the platforming in the ??? area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Shade's smoke deals more damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The red lighthouse beam deals more damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Max's Tape",
+     "items": [
+      {
+       "text": "Fixed issues causing the key card puzzle in the top floor to sometimes not activate properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the swamp and quarry areas not to load correctly in some rare occasions, preventing progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Bull's navigation was revamped, and should make its way across the level more easily. This should fix an issue causing The Bull to appear high up in the air during the boss fight at the end unintentionally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Bull should no longer stutter in the end scene when hooking him up to the truck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the initial trainyard puzzle with better clues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The conveyer belts puzzle in the Factory bottom floor was tweaked, better clues and more food. The Bull can no longer access the area near the blast room, giving Desmond more space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Bull cave is now blocked, preventing some confusion about facing The Bull within the cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Power station puzzle and subsequent Inkblots battle improved with clues about using the electricity against the incoming waves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified the electricity puzzle in the trainyard center, leading into the power station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added better guidance leading to the quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved some save points around to safer locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More Lure Pills spawn in the boss fight at the end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lucas's Tape",
+     "items": [
+      {
+       "text": "Starting from the second bunker encounter, The Flash spawns with shields making him more challenging to stun using the Radio Device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added guidance from the water treatment facility to the cable car station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cemetery lamps now show up in the Mirror Shard reflection to make it clearer it can be interacted with. Flares ammo locker now produces infinite ammo for this sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some land mines are now hidden under grass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various sequences improved and tweaked to feel better overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Flash moves more during the boss fight, and the towers around the radar glow stronger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified first Radio Device tutorial in the cabin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rosemary's vinyl record now appears in the Mirror Shard and is easier to trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for sending over your feedback and your experiences! We'd like to mention we're still hunting down more issues and working on optimizing performance across platforms, so stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 12,
+    "balance": 3,
+    "other": 40,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1119980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1119980/view/4224935490637079692"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-25T22:10:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.854Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-25T22:10:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.854Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-25T22:10:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:11.118Z"
+  },
+  {
+   "id": "in-sound-mind-121084@post-2021-10-12",
+   "gameId": "in-sound-mind-121084",
+   "displayName": "Patch Notes: October 12, 2021",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-12T17:11:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we’re releasing the first stability patch for In Sound Mind. We have more improvements, bug fixes, and QoL changes in the works, so please stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare crash while fighting The Bull.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing players to sometimes get locked outside of the quarry in Tape 3, at the end of The Bull boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading a save will set the player with at least 20 HP, preventing rare cases where saving with near 0 HP can cause instant death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance and hangs around enemy inkblots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player speed should jitter less strangely when experiencing low frame rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Original demo saves are no longer detected in the main menu (this was unintentional).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed reported minor localization mistakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are continuing to improve the save system and addressing performance issues on some systems, as well as some other requested changes. We’re also balancing the game for a smoother overall experience following your feedback. Thanks again for playing In Sound Mind, for your patience, and for petting Tonia on your way out of the office!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1119980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1119980/view/4069556867223094535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-12T17:11:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.853Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-12T17:11:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.853Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-12T17:11:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:11.117Z"
+  },
+  {
+   "id": "in-sound-mind-121084@major-2020-08-12",
+   "gameId": "in-sound-mind-121084",
+   "displayName": "In Sound Mind Demo Update Addresses Players' Most Common Feedback",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-12T16:00:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, fellow Desmonds!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me start by thanking you not only for playing the In Sound Mind demo but also for providing amazing feedback on ways that we can make the experience even better. We’ve just pushed update 0.731, and you will see in the changelog below that your feedback had a direct impact on many of the changes we decided to make. Here is a high-level overview of some of the changes we've been cooking up:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many small bug/quality of life fixes: Over the past few weeks we’ve read your feedback forms, forum discussions, and Discord chats. So, we’ve increased the player height, improved jump momentum for better platforming, improved phrasing in notes & hints, balanced puzzles, and enemies to just name a few!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most common crashes resolved: If you’ve been crashing on the ISM demo, it’s very likely to be resolved in this new update. We’ve identified the most common crash issue some players were having and confirmed a fix in this new build. In case you’re still facing issues, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better controller support: PS4, XB1, and Switch controllers are now supported out of the box and do not require you to enable the Steam Controller features anymore. We also fixed some controller selection issues in menus.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you have yet to play the demo, there is no better time than now to try it out. You can find the free download on Steam here. Check out the full list of changes coming to update 0.731 below. Until next time, don’t forget to pet Tonia.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ido / We Create Stuff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Added native controller support for PS4, XB1 and Switch controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General engine stability and bug fixes, fewer noticeable hiccups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player is now slightly taller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved player controls, should feel responsive and smooth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player HP is now properly saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced white screen fade in tape transition areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed culling issues popping objects in and out of existence close to the ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Due to changes in save format, older demo save files will reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When collecting the final pill in an area, objective will no longer show “1 pill left”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowed enemy inkblots FOV to 90 to 75 to allow for better sneak opportunities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many level design improvements and fixes to The Hub and Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hub",
+     "items": [
+      {
+       "text": "Crouching out of the elevator shaft should be easier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The broken elevator fuse box now sparks every few seconds until players takes out the broken fuse, encouraging players to look up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player physics in hub elevator is better, and jumping is possible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is now possible to see the pistol grip from behind the washing machine but not collect it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional washing machine to make the pistol washing machine appear in the middle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled respawning food in Hub during the demo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Watcher song no longer automatically plays when returning to the hub after Chapter 1. Instead, it can be activated from the shelf, and can be stopped and replayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As long as The Watcher song is not playing, it is now easier to trigger Tonia's outro scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pistol aiming down sight tutorial will now stay until the player zoom in with it, or leaves the basement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Desmond’s Tape, Virginia's Tape:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the way tapes are segmented to make more sense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed player equipping his weapons back too early while the screen fades to white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some areas where the player can get stuck on the terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed save trigger to prevent issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 1: Supermarket",
+     "items": [
+      {
+       "text": "Added note hint about the zooming mechanic with the Mirror Shard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added note hint next to the safe hinting about seeing pills in the Mirror Shard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Mirror Shard zoom tutorial will now stay until the player zooms in with it, or reach the East Wing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dollhouse slots now show highlights even when the house itself blocks them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After collecting the fuse, the small shelf hiding half the fuse box is gone, and the fusebox highlight radius is much larger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the size of the East Wing and West Wing keys (the keys collected from the big mirrors) as well as increased the highlight distance and made it appear through objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered The Watcher’s FOV to 60 from 75, and look distance to 27 from 32",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "After attacking The Watcher will leave you alone slightly faster now, roughly 9 seconds instead of 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified the registers puzzle, there are now only 4 prices and the requirements have lowered. Also removed Desmond voice (“that was a dollar!”)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Mysterious Man’s sneak cool down range to 250-400 seconds (was 200-300), and peek cool down to 50-100 (was 20-40), he should appear much more rarely now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Mysterious Man will now sneak behind the player once, and peek around corners 4 times in the east wing, and then again in the west wing (total 2 sneaks and 8 peeks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added light above the cart with the brother doll, and a battery to grab the player's attention to go there first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a small fence in the freezer next to the mom doll, so players will have to turn around and see Mysterious Man in the doorway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a small fence inside the freezer fan so players won't try to crouch jump into it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In the freezer, Inez will now start slightly closer to the fan, her \"pointing at the key\" pose will be skipped, and she will point at the lever better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The door behind the dad doll is now open, letting in light from the other room shine in, showing the player how to get there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Desmond’s voice when adding dolls in the dollhouse and cubes in the toys puzzle (“I've placed the H block!”)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 3,
+    "balance": 4,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1119980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1119980/view/3667572547701333187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-12T16:00:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1119980",
+      "checkedAt": "2026-11-13T03:23:28.852Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:11.115Z"
+  }
+ ],
+ "issues": []
+}

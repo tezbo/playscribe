@@ -1,0 +1,376 @@
+{
+ "game": {
+  "id": "mamon-king-375641",
+  "igdbId": 375641,
+  "name": "Mamon King",
+  "cover": {
+   "imageId": "coarq4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coarq4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4ksa",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4ksa.jpg"
+  },
+  "ps5Release": "2026-03-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mamon-king-375641@1.1.1",
+   "gameId": "mamon-king-375641",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-26T03:05:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjustment: Refined UI text for enhanced clarity and intuition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: Dr. Mamon’s post-experiment reactions now dynamically scale based on the outcome’s success level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: Resolved a critical crash issue occurring when no more skills could be acquired from Trainers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Resolved a critical crash issue occurring when no more skills could be acquired from Dr. Mamon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4030290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4030290/view/1819386365108605"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-26T03:05:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-4030290",
+      "checkedAt": "2026-11-12T08:24:04.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:04.264Z"
+  },
+  {
+   "id": "mamon-king-375641@1.1.0",
+   "gameId": "mamon-king-375641",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-23T01:56:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added: Achievements System",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now access the Achievements page from the title screen to unlock achievements you’ve already earned. Please note that some achievements are triggered at the exact moment of completion, so you may need to earn those again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added: Self-Legend Battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now battle Mamon that you have registered as Legends. (To start a battle, go to Manage → Legends and select a Mamon.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed: Character Names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the names of certain characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed: Dialogue Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refined the dialogue for certain characters, such as Dr. Mamon, to make the instructions and story clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed: Legend Mamon Stamina Display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mamon registered as Legends will now be displayed with their Stamina bars full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed: Navi Naming Confirmation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When asking Navi to name a Mamon, you can now review the suggested name before choosing whether to accept or cancel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed: Skill Sorting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the skill list to group Evolved Skills together in addition to alphabetical/name-based sorting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Expedition Crash Bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where players could become stuck in an Expedition if the game crashed immediately after defeating the Mamon in the deepest area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4030290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4030290/view/1819386365103084"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-23T01:56:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-4030290",
+      "checkedAt": "2026-11-12T08:24:04.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:04.263Z"
+  },
+  {
+   "id": "mamon-king-375641@1.0.1",
+   "gameId": "mamon-king-375641",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-16T23:35:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🌟 New Feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a \"Pass\" option to the shortcut keys during battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Using \"Pass\" causes the player's Mammon to take no action.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚙️ Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified some dialogue and UI text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the success rate of the \"Dr. Mammon's Skill Acquisition\" and \"Training Drink Event.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the amount of money requested by the beggar, and lowered the cost required to obtain powerful cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the default volume setting to 75.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the parameter experience points gained from part-time jobs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "🐛 Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where an incorrect number of dice rolls was displayed immediately after starting an Expedition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game crash that occurred when pressing the \"Tournament\" shortcut key without Mammon present.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the icon for \"Great Shield\" was incorrectly set to be the same as the \"Defense\" icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game crash that occurred when repeatedly pressing the button while attempting to sell Mammon to Marco.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the effect animation and evasion animation would not play if the second hit of \"Inescapable Bite\" was evaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game crash that occurred when evading an attack after a double knockout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 3,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4030290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4030290/view/1819386365085292"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T23:35:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-4030290",
+      "checkedAt": "2026-11-12T08:24:04.262Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:04.262Z"
+  }
+ ],
+ "issues": []
+}

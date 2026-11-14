@@ -1,0 +1,1461 @@
+{
+ "game": {
+  "id": "the-sinking-city-2-289696",
+  "igdbId": 289696,
+  "name": "The Sinking City 2",
+  "cover": {
+   "imageId": "co7uod",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7uod.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6faa",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6faa.jpg"
+  },
+  "ps5Release": "2026-08-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-sinking-city-2-289696@1.1.1",
+   "gameId": "the-sinking-city-2-289696",
+   "displayName": "Hotfix 1.1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-28T07:20:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 1.1.1 is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Added missing art content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AMD-related issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "– Frogwares Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2825860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2825860/view/1847920302229922"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-28T07:20:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.233Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-28T07:20:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.233Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-28T07:20:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:06.399Z"
+  },
+  {
+   "id": "the-sinking-city-2-289696@1.1.0",
+   "gameId": "the-sinking-city-2-289696",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-06T13:07:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Major Update 1.1.0 is live! HDR (with HDR10+ support!), FSR, bug fixes, two new outfits for Calvin, and more. Full list below ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Steam Demo is also back and available, with your saves carrying over to the full game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Added HDR output on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HDR 10+ Support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an in-game HDR brightness calibration screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added multi monitor HDR support on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HDR follows your system HDR setting and will not be forced on if HDR is disabled there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added AMD FSR 4.1.1 to the Video settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a Legacy mode for NVIDIA DLSS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a visual glitch when switching DLSS off during gameplay at 4K and 1440p.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Inventory slot upgrades and weapon upgrades now carry over into Ex Oblivione.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you find an inventory or weapon upgrade you already own, you now receive Dream Essence instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Pure New Game, which starts a completely fresh playthrough after you have finished the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed weapon upgrades for the Holloway Manor revolver being granted a second time when starting Ex Oblivione.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Dream Essence icon covering a locked supply crate icon on the map in Ex Oblivione.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added two new outfits for Calvin: The Warlock and The King in Yellow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added wardrobe preview images for both new outfits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the Warlock outfit textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Encounters have been retuned in \"The Wake-Up Call\", \"A Sight for Sore Eyes\", \"Time and Tide\" and \"Cold Comfort\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy counts and wave composition are reduced in the encounters you told us were overwhelming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Explosive props read more clearly and cover more ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Grenade Launcher damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the damage of explosive gas cans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Explosive lamps are now red so they read clearly as explosives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the delay before a Slither weak point becomes vulnerable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced how often companion commentary triggers during boss fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an Acheronian Juggernaut standing idle when Calvin blocked its path while its attacks were on cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Acheronian Juggernaut being killed by a single Grenade Launcher shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Acheronian Juggernaut temporarily stopping after being hit by an explosive barrel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Acheronian Juggernaut not always breaking breakable objects as it passes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Acheronian Juggernaut being unable to land attacks on Calvin standing on the ledge by the fence (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed all arena enemies freezing after an Acheronian Juggernaut was damaged by an explosive barrel during its acid attack (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Shadow not banishing after taking 125 damage from The Minuteman with Doyle's Cold Blood (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Shadow becoming idle after being banished once you moved away from it (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Shadow becoming stuck in the terrain at a specific location (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Shadow teleporting near the Observation Ward and becoming stuck in the floor (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Shadow unable to pass a doorway while in combat (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Shadow not attacking if Calvin stood in a specific spot as it spawned (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Grenade Launcher not destroying Shadow spikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Shadow spikes failing to spawn in the church.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Grenade Launcher dealing no damage to a Deep One when fired point blank during its attacks (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Deep One approach behavior breaking after it crossed a navigation link.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Deep One becoming stuck in the cold storage (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Lethian Revenant becoming stuck mid dodge against collision (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Stygian Harvester becoming idle and unresponsive (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Stygian Harvester snapping back to a bear trap when leaping over it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Slither becoming stuck mid charge while approaching Calvin near the safe (\"A New Day\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Slither appearing in mid air in the locker room (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Slither being misplaced from its coffin during the spawn animation (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Slither sliding after stepping onto the first stair while attacking (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Slither falling through the floor if you moved away and came back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Slither being blocked by a navigation link while using attack animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Slither killed in doorways not disappearing and clipping through the doors (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a dead Slither keeping collision against Calvin after you opened an interaction screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed default melee attacks sometimes dealing no damage to a Slither.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Slither Colonies couldn’t be stomped while the Grenade Launcher was equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed single doors staying open if Slither Colonies were killed inside the door frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed water blocking radial damage from the Grenade Launcher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed critical damage applying when shooting a Slither weak point with the Grenade Launcher (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to fire the Grenade Launcher while it was still being drawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to switch weapons after taking specific damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies being able to throw physical objects and breakables through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies pushing Calvin out of the arena bounds with a melee attack while dodging (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies not spawning in the swamp arena (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies appearing from thin air when backtracking to the fire department (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a boss not falling fully when shot in the legs on sloped ground (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a boss starting phase one with no health (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a boss occasionally not summoning a Slither during the healing phase (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing navigation mesh that stopped a Slither from reaching Calvin (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed companion dialogue triggering out of place at the start of a boss fight (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed arena supply drops reverting to default before the arena ended (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved frame rate in several locations throughout \"Cold Comfort\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a hard hitch after completing the first arena wave (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frame rate drops and hitching when traveling between the printing house and the church in both directions (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed frame rate drops when entering the tunnels (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed performance drops when opening the Examine screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed low frame rate once VRAM was fully used with auto detected settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed hitching after picking up new items with Frame Generation enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed enemy lighting and shadow quality no longer moving with distance (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when changing graphics presets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when starting a session with DLSS Frame Generation presets.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a crash during the first Slither scene (\"A New Day\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash during \"A Sight for Sore Eyes\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash before the second arena fight (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash after idling in the pause menu and then resuming (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the game process staying open for around ten minutes after quitting on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed being able to clip through the whale carcass after loading the crane (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Prism station completing with a duplicated prism, which could block progression (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a prism duplicating if rotated at the last moment before validation (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a station value changing while a prism was charging if the rotate button was held (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a correct value being read as incorrect on the largest glyph circle (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the last light bulb staying off after entering a value (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to change your answer during validation on the Brain Radio puzzle (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to change your answer during validation on the obelisk puzzle (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to change your answer during validation on the fuse box puzzle (\"A New Day\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an upgrade in the printing room being available before the puzzle was solved (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to leave the radio room before the doors locked (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bullet holes appearing on an installed coin (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Calvin being launched upward when dodging toward the edge of a ramp after using a ladder (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to collect an evidence item at the fresco after the sinkhole if you had not already collected it (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a document reappearing after saving and loading once it had been taken from the picture (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clarified the wording of two puzzle hints so the intended solution reads more clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the supply crate essence easier to collect in the General Ward (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the supply crate ammunition easier to collect in the General Ward (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the Grenade Launcher upgrade easier to collect (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the backpack easier to collect, the prompt no longer requires a specific angle (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a map marker for the passage that opens after raising the crane (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an incorrect icon on the museum door (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a unique map icon for the Holloway Manor museum door (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the stairs area being marked complete on the map before the lore note was collected (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting and shadows switching in the General Ward (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed placeholder textures visible at the start of the Fish Market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing textures in the ship boss arena (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exaggerated effects above the arena on the Low preset (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wall level of detail on the construction site while crossing the bridge (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level of detail popping on building windows near the Fish Market (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed light leaking at a specific location (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the ship entrance cutscene freezing and flashing white (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a tunnel lamp switching on and off with distance (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hair disappearing on a character with distance (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed excessive light emitted by proximity mine traps on the Low preset (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed candle lights remaining lit after saving and loading (\"Holloway Manor\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed low hair detail in the final pier cutscene on the Low preset (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a snow pile disappearing in a single frame (\"Cold Comfort\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed default engine materials on Slither Colonies in a cutscene (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed poor window textures near the hotel gates on all presets (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed excessive geometry appearing during a boss scene (\"A New Day\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed white water near the first water gate on the Low preset (\"A New Day\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overexposed lighting near the prism station on the Low preset (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed terrain and grass flickering at the start of the dungeon with DLSS enabled (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed poor surface foliage at the start and end of the dungeon on all presets (\"A Sight for Sore Eyes\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a dead Slither disappearing at certain camera angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a dead Deep One disappearing at certain camera angles (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies killed by movable shelves despawning in a single frame without effects (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Calvin's model blinking after some interaction and puzzle screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lighting effect remaining on surfaces after toggling the flashlight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mirrors and windows turning gray when lit by the flashlight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the rain screen effect scaling incorrectly with render resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tree geometry breaking after changing Global Illumination from High or Ultra to Low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tree geometry breaking after changing graphics presets on a cleared shader cache,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a wall material issue in the church crypt appearing and disappearing at distance (\"The Wake-Up Call\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new jacket wrinkle detail for Calvin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed music stopping during a boss fight (\"Time and Tide\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sliders in the settings menu not changing or not saving their value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed High DPI scaling affecting in-game resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Completed a full review pass on the Polish localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed typos and translation errors in Polish and Ukrainian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text overflowing the map boundaries in Turkish, and untranslated text in one location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Proofread the maps of \"A New Day\" and \"The Wake-Up Call\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing Kickstarter backers and playtesters to the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 108,
+    "balance": 4,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2825860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2825860/view/1845383656396372"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-06T13:07:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.231Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-06T13:07:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.232Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-06T13:07:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:06.398Z"
+  },
+  {
+   "id": "the-sinking-city-2-289696@1.0.2",
+   "gameId": "the-sinking-city-2-289696",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-21T18:00:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 1.0.2 is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Added an additional notification about outdated drivers that may lead to game instability and visual issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved several PSO-related hitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a rare crash with navigation mesh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Frogwares Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added an additional notification about outdated drivers that may lead to game instability and visual issues.",
+     "Improved several PSO-related hitches."
+    ]
+   },
+   "sourceIds": [
+    "steam-2825860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2825860/view/1841579228669653"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-21T18:00:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.230Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-21T18:00:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.230Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-21T18:00:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:06.396Z"
+  },
+  {
+   "id": "the-sinking-city-2-289696@1.0.1",
+   "gameId": "the-sinking-city-2-289696",
+   "displayName": "Hotfix 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-19T14:28:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 1.0.1 is live! In this hotfix, we fixed some rare crashes and bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a rare crash in \"A New Day.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash after the arena fight in \"Cold Comfort.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Prism could be removed during puzzle validation in \"A Sight for Sore Eyes.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the third lamp not lighting during the brain puzzle in \"A Sight for Sore Eyes.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several instances of missing textures.: – Frogwares Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2825860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2825860/view/1841579228662785"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-19T14:28:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.229Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-19T14:28:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.229Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-19T14:28:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:06.396Z"
+  },
+  {
+   "id": "the-sinking-city-2-289696@post-2026-06-12",
+   "gameId": "the-sinking-city-2-289696",
+   "displayName": "The Sinking City 2 Demo. Patch Notes #1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-12T09:32:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44913468/3e2a54de192776ccd4f53ed34c40028c1093328d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Sinking City 2 Demo. Patch Notes #1",
+     "items": [
+      {
+       "text": "Hello to all citizens of Arkham!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update, we are addressing some of the issues you may have encountered while playing the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that our main focus remains on delivering the best possible experience for the full release. At the same time, we're committed to making your experience with the demo as enjoyable as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed several crashes in various areas of the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause the camera to break after boarding the boat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the evidence related to the safe puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made balance adjustments throughout the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "—",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Frogwares Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2825860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2825860/view/1835236783562820"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T09:32:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2825860",
+      "checkedAt": "2026-11-13T03:33:59.228Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:06.395Z"
+  }
+ ],
+ "issues": []
+}

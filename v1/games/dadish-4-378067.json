@@ -1,0 +1,98 @@
+{
+ "game": {
+  "id": "dadish-4-378067",
+  "igdbId": 378067,
+  "name": "Dadish 4",
+  "cover": {
+   "imageId": "coaysl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaysl.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4t37",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4t37.jpg"
+  },
+  "ps5Release": "2025-12-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dadish-4-378067@major-2025-12-19",
+   "gameId": "dadish-4-378067",
+   "displayName": "Update December 19",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-19T01:10:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where placing a crate onto an exploding crate would cause the game to crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4184320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4184320/view/1819386365093070"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T01:10:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-4184320",
+      "checkedAt": "2026-11-13T03:18:21.465Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T01:10:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4184320",
+      "checkedAt": "2026-11-13T03:18:21.465Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-19T01:10:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:47.207Z"
+  }
+ ],
+ "issues": []
+}

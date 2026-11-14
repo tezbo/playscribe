@@ -1,0 +1,1466 @@
+{
+ "game": {
+  "id": "ruffy-and-the-riverside-143829",
+  "igdbId": 143829,
+  "name": "Ruffy and the Riverside",
+  "cover": {
+   "imageId": "co92in",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co92in.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar372t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar372t.jpg"
+  },
+  "ps5Release": "2025-06-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ruffy-and-the-riverside-143829@1.2.0",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Update 1.2.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-05T09:24:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "shortened some more dialogues, final version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "renamed Bobby at the steep games to Robby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased Map UI default zoom, so it's easier to find Ruffy on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed some farm collider issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "new chestnut enemies next to town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed box rotation in the intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed clipping of lava fountain in wall riddle on Crash Island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "display skulls and lava bubbles better in the first wall riddle next to the town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some stuttering during the rafting segment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some bug where the charging sound didn't stop when being attacked while charging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "properly damage Ruffy when taking damage in wall riddles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "always display Ruffy damage sprite correctly while receiving damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a collider issue for scanning trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the Etoi start position when turning to an Etoi in the forest area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "reduced Ruffy touch collider size, so Ruffy needs to get closer to collectibles and entries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed some issue with ice missiles causing damage too early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "small audio adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "some more visual fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 2,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1809869180061807"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-05T09:24:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.972Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-05T09:24:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.972Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-05T09:24:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.163Z"
+  },
+  {
+   "id": "ruffy-and-the-riverside-143829@1.1.16",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Update 1.1.16",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-26T14:18:59.000Z",
+   "notes": [
+    {
+     "title": "Dialogue changes",
+     "items": [
+      {
+       "text": "reduced amount of Dialogue for all languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reworked Japanese dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed some spacing issues in dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "preview images in main area now have a night variant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "could get stuck behind garbage bins in the Steep Games area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "starting animation of halfpipe challenge looks better now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ruffy is shown at correct map position during the intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "reloading the area before the Silya cave caused the movement sound of the stone pillars to play all the time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "garage in farm sometimes didn't close again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "wrong dialogue played when talking to Sir Eddler before entering the fourth Buried Cities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "when loading a scene while the pixel drawings are enabled, sometimes not all selected objects were pixelized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some stuttering issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "when closing the map while doing some input, the map continued moving after reopening without any input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 7,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "preview images in main area now have a night variant",
+     "could get stuck behind garbage bins in the Steep Games area",
+     "starting animation of halfpipe challenge looks better now"
+    ]
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1808601382610033"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-26T14:18:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.972Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-26T14:18:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.972Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-26T14:18:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.162Z"
+  },
+  {
+   "id": "ruffy-and-the-riverside-143829@1.1.14",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Update 1.1.14",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-19T09:30:17.000Z",
+   "notes": [
+    {
+     "title": "Following issues have been fixed",
+     "items": [
+      {
+       "text": "after winning a race against one of the Five Fellas, you lost when you didn't skip the dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "you could walk during cutscene in area before fight against Silya",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "your rotation wasn't reset when doing a frame perfect jump when climbing up a vine with a curve on the top, allowing you to basically fly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some seam in the corridor before the Hurricane Heights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other adjustments",
+     "items": [
+      {
+       "text": "door opens faster when getting a bale at the bale rental station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "you can go back from the cave where you fight Silya now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "changed fullscreen mode to exclusive fullscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 3,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1808061939496715"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-19T09:30:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.971Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-19T09:30:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.971Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-19T09:30:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.162Z"
+  },
+  {
+   "id": "ruffy-and-the-riverside-143829@1.1.13",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Update 1.1.13",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-15T16:45:50.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "you could enter some closed arrow door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "punch button was shown above mole bells from a distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "pattern potatoes were a little dirty when they appeared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "swapping some water on the racing farm into sand caused some issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "in the fifth buried cities, the marble could get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "enemies were sometimes disabled in the buried cities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "issues when renting a bale at the halfpipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "visual/position issues at the beginning of the halfpipe challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "drowning sound/sprite in ocean sometimes quickly came without drowning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Z-fighting issues, double mesh:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "first cutscene showing the buried cities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "path from Crash Island to the jungle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "five fellas: Ruffy sometimes turned invisible after the race",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "stuttering of sinking bale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "while Ruffy is punching, stone enemies don't cause idle damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "slightly increased normal punch collider again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "reduced difficulty of stone enemies in the domino corridor fight against Groll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improved some cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "audio volume adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "reduced stuttering when the frame rate is unstable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "splash sound also plays when jumping into the ocean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "always play running sound effect when starting to run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "allow skipping the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "allow to end five fellas race early when leaving the bale (in case you messed up early)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "stone ball in the main area can now cause damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 14,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "while Ruffy is punching, stone enemies don't cause idle damage",
+     "slightly increased normal punch collider again",
+     "reduced difficulty of stone enemies in the domino corridor fight against Groll"
+    ]
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1808061939378477"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-15T16:45:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.971Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-15T16:45:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.971Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-15T16:45:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.161Z"
+  },
+  {
+   "id": "ruffy-and-the-riverside-143829@major-2025-08-08",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Smooth camera update, tweaks to the fighting system and more!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-08T08:53:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The focus of this patch is a smoother player camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before the player camera placement was updated on a fixed 60 FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now in most cases the actual frame rate is used for the camera update, so the player camera now runs better if the screen and graphics card support higher frame rates. And even if the frame rate is only 60 FPS or lower, the camera movement should feel smoother now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many animated or moving objects had to be reworked to update on a higher frame rate as well to avoid stuttering because of distinct frame rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another noticeable change is the fighting system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The different attacks have been made more distinct to make fights slightly more challenging and strategic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The punch attack now is more precise. It only hits objects in front of Ruffy. This makes it easier to hit a specific box on a tower of boxes. And hitting enemies will take a little effort now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The charge duration of the spin attack has been reduced to encourage players to use it more often. Also its range is higher now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The range of the stomp attack shock wave has also been increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update also contains many other small tweaks and bugfixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added a door and a white fade when leaving the town area through the small forest to avoid loading spikes in the small forest in front of town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "changed how the camera follows the player in rivers if automatic camera alignment is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "when starting scan or throw, the camera zooms in faster now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some multi throw selection issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "when one of the selected objects got destroyed, the selection crosses didn't disappear again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the selection crosses had some small delay when moving the camera fast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "camera zooms in narrow areas changes faster now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reduced the duration of some cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "enemies walk smoother in general",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added some new sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed some sounds which weren't affected by the global volume setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "reduced the amount of Ruffy voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduced dialogues of Pix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduced waiting duration after applying the snoop onto the screen before Groll appears",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "changed some look directions after cutscenes and dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Five Fellas quest:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a bug where the opponent was stuck inside the ground while moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "reduced the difficulty a little",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed some typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "halfpipe challenge:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased the score of mini tricks, so everyone should be able to reach the 10.000 points required for proper cheating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "more obvious hints that you are supposed to cheat during the halfpipe challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the forest tower riddle won't appear until you have to go there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some issue where you can go out of bounds on the water spire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some bug where you could get stuck in the world core",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "improved the unwraps for rivers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "some fixes in the dialogue where you find the Heavenly Bell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "viking ball can now collect coins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed bale controls: when riding the bale, it sometimes stopped moving for a short time after boosting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "made the slot machine slower and easier to win",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "no need to press anything after watching the credits, the transition back to the main menu is automatic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some subtle stuttering while caused by automatic camera alignment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ghosts at the graveyard always look in the direction they are flying to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some issue with resetting the world core",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some duplicate voices during dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "scaled graffiti symbols to fit the grid drawing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased hit boxes of environment assets (grass, one tree type)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "small rework of stone enemy:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "stones won't get destroyed immediately after hitting the stone enemy, so it doesn't get destroyed in a single hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "stones falling out of stone enemy disappear much faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "intro screen smooth animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some issue with the tower cutscene in intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "general visual improvements of the landscape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 11,
+    "balance": 7,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1807332909598246"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T08:53:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.970Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T08:53:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.970Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-08T08:53:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.160Z"
+  },
+  {
+   "id": "ruffy-and-the-riverside-143829@post-2025-07-17",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Support for fast forwarding dialogues and skipping most cutscenes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-17T14:11:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch mostly adds the convenience feature to fast forward dialogues and skip cutscenes, mostly for people not interested in the story, and for people wanting to replay the game like speedrunners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialogues will usually be fast forwarded, as if you mash very fast. So it won't work if dialogues have automated segments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And cutscenes will be skipped completely, even if a dialogue plays at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For technical reasons, a small amount of cutscenes can't be skipped. But most of them, including the longest ones (like the intro cutscene) can be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Besides that, these things has been changed",
+     "items": [
+      {
+       "text": "consistent versioning among all platforms, so it's clear which console versions correspond to which Steam versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "window can now be resized properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reduced the duration of some cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "also added the button to exit the game to the settings in the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "walking on stairs is easier now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "some more minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1805431065337958"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-17T14:11:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.969Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-17T14:11:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.969Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-17T14:11:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.159Z"
+  },
+  {
+   "id": "ruffy-and-the-riverside-143829@post-2025-07-07",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Small bugfixes, usability improvements, and further dialogue reductions",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-07T11:03:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "shortened dialogues until the beginning of the second area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "shortened Quintus introduction dialogue (bufferfly sidequest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improvements for the beginnig of the Pix quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improved dreamstone visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed an issue where the drawing board camera didn't always focus the waterfall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "when drawing the first waterfall texture using the drawing board next to Pix, the waterfall will always turn back into water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "different music when being lost in the Currents of Colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed some missing character in the Japanese font",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "adjusted the apply effect radius for some objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduced the number of Ruffy gliding voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "second exit at wall riddle on Crash Island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed an issue where the ice riddle at the Tree of Life could be solved early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "some more small fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 2,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1803527891860973"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-07T11:03:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.968Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-07T11:03:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.968Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-07T11:03:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.158Z"
+  },
+  {
+   "id": "ruffy-and-the-riverside-143829@post-2025-07-01",
+   "gameId": "ruffy-and-the-riverside-143829",
+   "displayName": "Widescreen support and shortened intro dialogues",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-01T18:10:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added support for different resolutions without black bars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "reduced the amount of dialgue lines for most of the intro dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "increased the sizes of some texts and reworked them to improve readability on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HEART-O-BOT doesn't sell hearts anymore when they are full",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "don't allow skipping some intro dialogue at the beach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed bug that prevented closing the game in the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added another way to return from the Water Spire using ice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "unlock some achievements earlier (no need to go back to the questgiver)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improved targeting during the SWAP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "more minor bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1002260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1002260/view/1803527891678836"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-01T18:10:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.967Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-01T18:10:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1002260",
+      "checkedAt": "2026-11-13T03:29:33.967Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-01T18:10:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:32.157Z"
+  }
+ ],
+ "issues": []
+}

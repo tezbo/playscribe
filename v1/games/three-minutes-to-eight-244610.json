@@ -1,0 +1,184 @@
+{
+ "game": {
+  "id": "three-minutes-to-eight-244610",
+  "igdbId": 244610,
+  "name": "Three Minutes to Eight",
+  "cover": {
+   "imageId": "co6j01",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6j01.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar29e2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar29e2.jpg"
+  },
+  "ps5Release": "2023-12-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "three-minutes-to-eight-244610@0.6.2",
+   "gameId": "three-minutes-to-eight-244610",
+   "displayName": "Update 0.6.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-08T09:08:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Puzzlers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "thank you for your humble feedback on my latest developer notes about the most reported flaws of Three Minutes To Eight. As stated there, I took your feedback very seriously trying to adjust the discussed negative issues as good as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the changelog",
+     "items": [
+      {
+       "text": "Removed the \"Typewriting\" effect on subtitles (now they appear right away)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced them to the bare minimum \"safety\" time before skipping a dialogue line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Both things make the skipping of lines about 5X faster than before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, there's a 1 second safety margin when the dialogue options appear, so if player is fast-skipping all the lines, then it has a short moment of pause when it's time to make a decision (this to avoid to start a dialogue again by mistake)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the movement when using Point'n'Click controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Holding the left mouse button down will keep the player running until it's released (to avoid double clicking each time, very useful when running on large scens, like the street)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bunch of localization issues; especially for German, Italian and Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug related to giving the Titanium Positron to PD-99 when you're not on that narrative",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug related to showing the year as \"nil\" when ending a narrative in the future during narrator's lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the possibility to have duplicates of items (like battery and charged battery, pistol and charged pistol, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered the intercom sound to make it less bothering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the size of text for the Journal as well as adding green highlight to the last line (once accomplished), for better readability of the various narratives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Plus some additional minor polishing and bugfixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for your feedback and patience so far and what's to come. It is much appreciated. I hope the changes add more comfort to the repeating dialogue skips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nicola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 3,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2303320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2303320/view/5302486387993819550"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-08T09:08:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2303320",
+      "checkedAt": "2026-11-12T15:41:14.774Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:14.774Z"
+  }
+ ],
+ "issues": []
+}

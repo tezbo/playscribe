@@ -1,0 +1,2519 @@
+{
+ "game": {
+  "id": "the-alters-204634",
+  "igdbId": 204634,
+  "name": "The Alters",
+  "cover": {
+   "imageId": "coaaju",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaaju.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3ra1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3ra1.jpg"
+  },
+  "ps5Release": "2025-06-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-alters-204634@2.2.1",
+   "gameId": "the-alters-204634",
+   "displayName": "Hotfix 2.2.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-10T10:08:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are introducing small hotfix with sunrise, which you have reported recently in your feedback:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue where sunrise wouldn't cause a proper game over, leading to other issues. Note: loading an invalid save file created after a sunrise will now cause an instant game over to prevent further issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1843481262691717"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-10T10:08:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.834Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-10T10:08:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.834Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-10T10:08:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:28.394Z"
+  },
+  {
+   "id": "the-alters-204634@2.2.0",
+   "gameId": "the-alters-204634",
+   "displayName": "Patch 2.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-18T08:06:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are coming back to you with another regular update, which should cover rest of the issues you have reported so far after the DLC release. Thank you for your ongoing feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Resolved the most common causes of game crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Photo Mode did not save screenshots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where starting a Journey with an active rebellion could cause the game to become unresponsive at the beginning of the next Act.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where DLC Alters were not properly awakened from the Womb in certain scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where resources could remain permanently reserved after starting a Journey while production was still active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Neutralizer Tower workplaces were unavailable after loading a saved game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the default upscaler on Steam Deck to TSR.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where base objects were not properly animated after returning from exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Miner's arm remained visible after amputation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Take care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1840944183788127"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-18T08:06:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.831Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-18T08:06:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.831Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-18T08:06:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:28.394Z"
+  },
+  {
+   "id": "the-alters-204634@2.1.0",
+   "gameId": "the-alters-204634",
+   "displayName": "Patch 2.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-30T12:19:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back with our first regular update since the DLC launched. This patch addresses most of the issues you've reported so far.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're also aware of a few additional issues that our team is currently working on, and we expect to resolve them in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Structures placed in a specific location in Remote Hill are now destroyed in new cycles even after the region is terraformed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Advanced Terraformation quest now updates correctly when reaching Misty Gorge through a specific root blockade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the framerate was locked to 60 FPS after the first dialogue in the DLC despite the frame rate cap being set to Unlimited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where achievements related to Rapidium Arks did not unlock after meeting their requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where more than one Extractor could be placed within a single deposit area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a soft lock in the Project Redemption quest that could occur if the Goo was picked up too quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Miner could be assigned to the Research Lab after loading a save created before the Alter was created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Gamer's Den was sometimes unavailable in Research.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could fall into limbo during the final Epilogue cutscene sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Metals and Organics could become stuck in reserve despite there being no items in the production queue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the third Field Lab could rarely be missing from the Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Time Boosters lost their effect after loading a saved game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could drill more resource batches than intended with the \"Advanced Drilling\" SAM analysis buff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an empty Shallow Deposit remained marked on the Exploration Map after the player revisited it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where graphics settings shown in the UI were not always correctly applied when launching the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented multiple performance improvements across the game related to our transition to Unreal Engine 5.5. These changes affect many different systems and areas of the game, helping improve overall performance and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "Miner's arm may sometimes remain visible after amputation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting a Journey while a rebellion is active may cause the following Act to become unresponsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Objects in the base are not animated when used by the player or Alters after returning from exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters cannot be assigned to all Neutralizer Tower workplaces after loading a save with the Towers already built.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters may disappear if they are woken up in the Womb immediately after the player returns from a conversation with another Alter in a Field Lab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Photo Mode does not save screenshots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters may be facing the wrong direction during conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1839676055885056"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-30T12:19:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.830Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-30T12:19:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.830Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-30T12:19:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:28.393Z"
+  },
+  {
+   "id": "the-alters-204634@2.0.2",
+   "gameId": "the-alters-204634",
+   "displayName": "Hotfix 2.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-23T13:17:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As we promised here goes second part of our last week's hotfix packed with performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Implemented multiple performance improvements across the game related to our transition to Unreal Engine 5.5. These changes affect many different systems and areas of the game, helping improve overall performance and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Frame Generation was not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Take care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1839041357026637"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-23T13:17:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.830Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-23T13:17:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.830Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-23T13:17:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:28.392Z"
+  },
+  {
+   "id": "the-alters-204634@2.0.1.182",
+   "gameId": "the-alters-204634",
+   "displayName": "Hotfix 2.0.1.182",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-17T17:42:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today's hotfix is strictly focused on performance optimization. This is the first of two planned updates, with the second scheduled for next week. Following our recent transition to the new Unreal Engine, we identified the engine upgrade as the root cause of most recent technical issues across industry, and these tweaks are designed to address them directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because this is a Friday deployment, we have opened a legacy Steam branch containing the previous live build. If the new patch breaks anything for you (we certainly hope not!), you can safely roll back to this branch with full save-file compatibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your ongoing feedback! If you experience any further issues, please don't hesitate to send them over to our support team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PATCH NOTES",
+     "items": [
+      {
+       "text": "Implemented multiple performance improvements across the game related to our transition to Unreal Engine 5.5. These changes affect many different systems and areas of the game, helping improve overall performance and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where graphics settings shown in the UI were not always correctly applied when launching the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To access rollback branch of The Alters 2.0.1",
+     "items": [
+      {
+       "text": "Open Game Properties: Right-click the game in your Steam Library and select Properties from the drop-down menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigate to Betas: Click on the Betas tab located on the left side of the properties window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Your Branch: Click the Beta Participation drop-down menu on the right and select the \"last_variable_2.0.1\" from the list. Steam will automatically begin downloading the selected version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1838407329260259"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T17:42:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.829Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T17:42:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.829Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-17T17:42:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:28.391Z"
+  },
+  {
+   "id": "the-alters-204634@1.4.2",
+   "gameId": "the-alters-204634",
+   "displayName": "Hotfix 1.4.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-09T11:55:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After gathering your reports from the last patch, we’re happy to see that significantly fewer issues are being flagged at the moment. It seems that we also solved \"Ghost Rebellion\" problem flagged for a long time by some of you, which was quite diffcult to track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to you, we’re continuing to improve your experience with the game, so don't hesitate to leave more feedback in the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out all the changes below",
+     "items": [
+      {
+       "text": "Adressed all major crashes reported so far",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed \"ghost\" rebellions, which in some conditions were active on UI, but absent during gameplay, leading to infinite dialogue loops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented a system preventing black screens to be active for more than 60 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the issues with MRI scan prompt disappearing occasionally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unlocked 11bit spacesuit on all platforms: Take care!: ~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1823825466505217"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-09T11:55:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-09T11:55:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.828Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-09T11:55:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:28.390Z"
+  },
+  {
+   "id": "the-alters-204634@major-2025-12-08",
+   "gameId": "the-alters-204634",
+   "displayName": "Free Major Content Update is Available Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-08T18:03:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big changes come to our base. Free Major Content Update is now ready to download! Introducing base customization, suit skins, photo mode, and changes inspired by your feedback such as: Relax Mode and new save system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out our new trailer here",
+     "items": [
+      {
+       "text": "We hope you will enjoy all the new additions to the base. Our community of Jans has grown tremendously over the past few months, and we’re incredibly grateful for your kind words and the valuable feedback you’ve shared. Thanks to you, we recently reached an “Overwhelmingly Positive” review status on Steam, which is absolutely mind-blowing for us!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/5876f18131e5095adce3b95fee3a273ae884730c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We broke it down in our previous updates, but if you missed it, we are attaching all the highlights below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Updates Inspired by You",
+     "items": [
+      {
+       "text": "We received many requests to add these features to the game, and now we couldn’t be happier that you can finally try it by yourselves!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relax Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We introduced a new difficulty option for those who prefer to enjoy the story and exploration without worrying too much about survival mechanics or inventory management.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Save System",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Saving just got simpler. You can now save automatically upon exiting the game, and during crucial story moments. Keep in mind that any saves from the open playtests in October will not transfer to the full game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing the Gamer’s Den",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new base module, designed by the Scientist, brings a little fun to your daily routine. Step inside the Gamer’s Den to play the new Card Game and lift the spirits of your Jans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/9329834637169a652213ed786d1b370049ee3d6a.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Card Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tested in our office kitchen and now fully available in the Gamer’s Den, this mini-game gives you a playful break from managing the base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/785df014c9d8d140f0d6c6c26a6d6ea0a32df875.gif\"]New Sidestory Solve the mystery with a new Noir-themed storyline in the Gamer’s Den, and take the role of Jan Detective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/50c450ea0608c14b42d7125c5c1a5172d5209684.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Photo Mode",
+     "items": [
+      {
+       "text": "Capture the perfect shot with new photo tools. Play with lighting, angles, and composition to recreate your favorite scenes. And yes, Molly is always ready to strike a pose, Titanic recreations welcome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/6008849bf5bd14de1d3aefd80c1f2df59bf9da55.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Customize Your Gameplay",
+     "items": [
+      {
+       "text": "Base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redesign your base from top to bottom. Animate and personalize every module with new styles and set designs to make your base feel truly yours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/33a7ed65398d39163fe5196849addb89e66b75b7.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spacesuits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New suit options let you explore the planet in style. Watch reactions to the Molly, Frostpunk, and Death Howl suits. Let us know what you think about them in the comments!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/ff38b3a120ea995e390ac393f40161a517ea8a66.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please don’t hesitate to leave more reviews after the update goes live. Your feedback helps us improve the game and make your future journeys even more meaningful!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in the next update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/42519165/5876f18131e5095adce3b95fee3a273ae884730c.png\"]",
+     "##",
+     "Highlights"
+    ]
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1818118366183390"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T18:03:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T18:03:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.828Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-08T18:03:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:28.388Z"
+  },
+  {
+   "id": "the-alters-204634@major-2025-10-29",
+   "gameId": "the-alters-204634",
+   "displayName": "Open Playtests of New Update Launch Today!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-29T18:07:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our base will soon introduce some new features, and we invite you to the Test Room, where you can experience them firsthand!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To access the Beta Branch - right-click The Alters title in your Steam app and go to Properties → Betas. Enter your branch code “CLBetatheALTERS11bit2025Rapidium” and click Check Code. After that, choose the branch from the drop-down menu, install the game, and you’re all set!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]The playtests will run from today until November 12, and will include upcoming features that will be part of the Free Major Content Update releasing later this year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out all of the below (remember that all screens are still WIP!):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features According to Your Feedback",
+     "items": [
+      {
+       "text": "[p align=\"justify\"]- Relax Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We have received a lot of your feedback about the difficulty of the game. That’s why we decided to add an additional difficulty setting for players who want to focus on exploration and story rather than survival management.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Save System: We’ve heard you loud and clear, and we’re adding a rehauled save system, which now lets you save upon exiting the game for that extra flexibility. What’s more, autosave now triggers after dialogues with other alters. Please note: saves created during the playtests will not work outside of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Module - Gamer’s Den",
+     "items": [
+      {
+       "text": "[p align=\"justify\"]A new base module designed by the Scientist. This project was loosely based on a place meaningful to every Jan Dolski. It will unlock new activities where you will be able to play Card Game and raise the mood of Jans as well. There is always space for new ways to increase joy and have fun on extraterrestrial travels, right? During your playthrough, you can encounter fresh narrative content that expands Jan’s story with new situations, dialogue, and emotional moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/141daf6bccbd9f939173382c3905108877174aa3.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/81449ca9d37be73a30cdfdef4ca880f0522ffd46.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Card Game",
+     "items": [
+      {
+       "text": "[p align=\"justify\"]Made and tested in Jan Dolski’s kitchen on the 4th floor in our office. Now available in the Gamer’s Den. Play a new mini-game designed to add a bit of downtime and fun between your base duties!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/759b4bc7cf13f59d10b48a2ba26cb6f2d2fa7ef2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Photo Mode",
+     "items": [
+      {
+       "text": "[p align=\"justify\"]Honestly, we are very excited about it! You asked for it, and we cannot wait to see what you will create with this opportunity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will be able to experiment with angles, lighting, and composition to capture that perfect shot. Recreate iconic scenes from your favorite movies or games. We’ve already seen a few attempts at Titanic-themed photos, and let’s just say Molly is always eager to join a photoshoot…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out what our team has made so far with it",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/79316b5a495642e3180ef46295500e869c65766a.png\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/437917a2c5c68a6333026dfc4fd42117488d658d.png\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/911e29fc070d0937d55fc45dc662e5e5578ec827.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/6513023e3208f114a1e46fce25d6762674bf9d0e.png\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/0ddb5b696f6d4e5e0a9dc5c2a86de7579f24f1b6.png\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/badcedf44c8e6ad59d74763c6d0d43def5eb903a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Customization Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"justify\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We all know that Jan Dolski’s journey is a deeply personal experience, so we decided to make it even MORE personal for you:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]- Base Customisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, you will be able to personalize the exterior of every module of your base to reflect your own style! You will find them animated, and many more set designs that you can personalize to your own liking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]- Spacesuit Skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]New suit variations, letting you change your appearance while exploring the planet. We cannot wait to see your reactions specifically about: Molly Spacesuit, Frostpunk Spacesuit, and Deathowl Spacesuit!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/e08a541d7045adbf74890028bd6a4624b6cc3102.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/24d1e0acd3af49917f09ddaca84742c64007b63d.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/42519165/8bcf8dd98bd9bc2402514d90c2b8c6650e48bc03.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/6e260244fcf90d81df02e55577e0be7702747acc.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please keep in mind that this is not the final version of the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]Bugs and technical issues may occur during the playtests, and we would greatly appreciate it if you took the time to report anything you encounter, as your feedback will help us improve the game and polish the upcoming update. For the best experience, we recommend playing in English and using a keyboard and mouse instead of a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We hope you will make your travels even more special with these new features, and we cannot wait for your feedback from the Playtests!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1814942955108047"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-29T18:07:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-29T18:07:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.826Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-29T18:07:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:04.648Z"
+  },
+  {
+   "id": "the-alters-204634@1.3.0",
+   "gameId": "the-alters-204634",
+   "displayName": "Patch 1.3.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-15T11:02:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are coming back with some more minor bugfixes, which you reported recently. Thank you for your ongoing feedback via tickets and forums! It helps us improve yours and future Jan's journeys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story/Quests",
+     "items": [
+      {
+       "text": "ACT2 - Disease rebellion is not properly cancelled after MRI scan if the player ignored it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters refuse to work if the player removes the module where the Radiation Phobia story started",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alter Rebellion dialogue is getting stuck in a specific scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Black screen after transitioning chapters with Miner having Heavy Injury",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If Miner dies in the Workshop, he is considered alive until the player observes him. Now we know how that cat felt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Black screen after ACT2 or Interlude in a specific scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ACT3 - Alters sometimes not reaching the Sarcophagus if the path is too long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sometimes, the \"Jan Complete\" achievement only unlocks after opening Lessons Learned from the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Scientist is permanently assigned to an Infirmary bed if he left the base while being heavily irradiated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash when going to the main menu while hovering the map cursor over a structure with a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters rotating at the start of dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Landscape quality drops when the user looks towards the base if Texture Quality is set to High or Ultra in 4K",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ACT3 - Parts of the tree are not visible after scanning the interferences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mustache appears with a delay during dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple minor performance and gameplay issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor collision issues during exploration and in the base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VO, SFX, and subtitle adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1810503566543497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-15T11:02:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-15T11:02:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.825Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-15T11:02:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:04.647Z"
+  },
+  {
+   "id": "the-alters-204634@1.2.0",
+   "gameId": "the-alters-204634",
+   "displayName": "Patch 1.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-12T12:07:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have prepared another round of bug fixes and improvements to address your most recent feedback on the game. Thank you so much for your continued support, and be a part of this amazing personal journey with us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out the full patch list below",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42519165/7747a5ee771ff26665da08aadffd182763d9f80f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story / Quests",
+     "items": [
+      {
+       "text": "Alters not being properly healed of radiation after starting a Journey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Edge-case issues after progressing to a new Journey with an active rebellion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash after the Miner cuts off his arm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Womb being non-interactable in Journey 3 due to an active funeral or wake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters refusing to work indefinitely if the player progresses from ACT 2 to ACT 3 while they are temporarily in that state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Better Treatment” rebellion being unsolvable after a final decision on ACT 2 under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the beds in the infirmary being unusable in ACT 3 if a rebel Alter was assigned to it at the end of ACT 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Miner having two dialogues about the accidents at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The meeting with the Technician happening too soon before the “Into the Wild” storyline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An out-of-focus camera during some scenes with the Stranger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Sound Mind in a Sound Body\" flow breaking if the Gym is built and destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An armless Miner performing activities as if he had an arm when a Personal Cabin was assigned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “As Good as Feast” quest soft-locking if the Feast is created during the night.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "The game not starting properly on specific machines with more than one GPU.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Licensed music still being audible in streamer mode in certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitch localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improper player positions during some exploration dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jan standing on a table after finishing a Beer Pong match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critically injured and radiated Alters attending a funeral.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The deep deposit grid disappearing after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Beer Pong trajectory line not being accurate enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Base supports not being connected properly on the highest tier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to the size of Chinese fonts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anomalies VFX issues with upscaling enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Call icon being visible on the Game Over screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple collision issues during exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Over 40 other less severe issues with SFX, VO, UI and performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay safe on your journeys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ 11 bit studios Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1807332909731174"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-12T12:07:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-12T12:07:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.824Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-12T12:07:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:04.646Z"
+  },
+  {
+   "id": "the-alters-204634@1.1.0",
+   "gameId": "the-alters-204634",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-14T11:22:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the middle of July, we would like to introduce another update to The Alters, which address most of the bugs reported by you recently: \"A quantum singularity\" achievement, crashes, rebellion, localization and many many more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still speechless about your kind words, positive comments and reviews. Your constant feedback and support helps us improve the game, and your own personal experience from it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story / Quests",
+     "items": [
+      {
+       "text": "Multiple fixes to rebellion logic. These fixes apply to new playthroughs and when player reloads a save from last journey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main quest on ACT2 breaking due to Research Lab removal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters failing to gather during Final Day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Personal Cabins not preventing Dormitory Rebellion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters not claiming new Personal Cabins after old ones being removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALX left on ACT2 being visible in ACT3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple adjustments to Alters side stories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALX research being available before researching Luminator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Perspective lesson being required for certain dialogue with Lena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebels not using their Personal Cabins after returning to base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unable to complete Miner’s arm quest after he rebels at the end of ACT2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ACT2 Interal veins not completing the “Look for more strange phenomena” step during “Strange Phenomena” quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player getting stuck in ACT3 Tree climbs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Luminator being visible during dialogue with Technician in rebel base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters mentioning TUR and rebel base after the rebels return",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Miner still being in pain after receiving the prosthetic arm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Captain still moving after dying in Interlude",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization and VOs",
+     "items": [
+      {
+       "text": "Multiple missing and wrong translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Occasional missing voiceovers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced LLM generated text on Command Center asset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced machine translated subtitles in Social Room movies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Resources being reserved although no production was set up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\PS5: Game crashing when quickly closing the Tree of Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Infinite uphold showing negative production time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple collision issues during planet exploration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Occasional crashes during climbing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crash when fast travelling to certain locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dialogue icon visible on Alter Panel even though no dialogue is available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Excessive movie watching stimulus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Insufficient mood effect when using Contemplation Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“A quantum singularity” achievement never triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple SFX fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Luminator getting misaligned with Jan’s hand after being damaged by anomaly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Social Room movie audio still playing after alt-tabbing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Strobing effect on Luminator light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interal foliage popping up on low quality settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Duplicated Alter News entries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing warnings when disassembling outposts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing logs from Contemplation Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player gets teleported to Airlock or outside of base when using QC while an alter is present there in ACT3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "HUD not scaling properly with selected settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Movie watching tutorials being too long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\[Steam Deck] Fixed a crash when progressing to the next chapter",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Over 50 other minor fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stay tuned Jans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "~ 11 bit studios team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 25,
+    "balance": 0,
+    "other": 23,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1805065414330326"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-14T11:22:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-14T11:22:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.823Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-14T11:22:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:04.644Z"
+  },
+  {
+   "id": "the-alters-204634@1.0.2",
+   "gameId": "the-alters-204634",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-26T12:13:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Jans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are launching first Hotfix to address majority of the most popular issues, which you have reported so far. We are very grateful for your ongoing feedback, which helps us improve your experience from the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What’s gone",
+     "items": [
+      {
+       "text": "No more getting stuck in Guard conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters won’t block your progression by not going to Arc Sarcophagus on the final day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alters refusing to work will no longer remain stuck in that state in new playthroughs. If you’re already affected, please load a save from before the issue started to resolve it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No more infinite narrative loops causing stutters, black screens, or save issues (especially in Act2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No more black screens or missing daily saves when you’re close to a rebellion and move to journey / new act for new playthroughs. We are still working on a fix for the existing playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "DLSS Framegen and FSR3 not working - Fixed an issue where mentioned features were unavailable on the Game Pass PC version of the game. (Note that users who have V-Sync turned on might need to switch it off and on again for Framegen to become available)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Guard Conversation Softlock - Fixed an issue where talking to the Guard about surveillance could lead to a softlock, if you hadn’t triggered the early conversation before. The problematic dialogue now always completes correctly and no longer blocks progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Alters Not Moving to Sarcophagus - Resolved an issue where, in some cases, Alters (especially Miner) would not move to the Arc Sarcophagus on the final day of Act 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Alters Refusing to Work Forever - Fixed an issue where an Alter (e.g. the Botanist) who refused to work due to an ignored request would stay in that state forever after transitioning from Act 2 to Act 3. This state will no longer happen in new playthroughs, but users already affected by this issue will need to reload a save from before the issue began.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Narrative System Infinite Loop - Addressed a bug where certain narrative systems would loop indefinitely, causing performance drops, framerate stuttering, black screen during day transitions and various problems with save files. The fix should resolve all of these issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Journey Black Screen and Missing Saves - Fixed an issue where starting the Journey with less than 24 hours left before a rebellion could cause a permanent black screen and prevent daily saves from being created in later chapters. The Journey now starts correctly and daily saves are generated as expected for new playthroughs but users already affected by this issue will need to reload a save from their last journey. We are still working on a fix for the existing playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional minor improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1601570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1601570/view/1803527891506684"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-26T12:13:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-26T12:13:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1601570",
+      "checkedAt": "2026-11-13T03:32:51.822Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-26T12:13:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:04.643Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "982b629d082e",
+   "text": "Miner's arm may sometimes remain visible after amputation.",
+   "status": "addressed",
+   "firstReleaseId": "the-alters-204634@2.1.0",
+   "addressedBy": "the-alters-204634@2.2.0",
+   "addressedAt": "2026-08-18T08:06:57.000Z"
+  },
+  {
+   "id": "262e9a9c4f61",
+   "text": "Starting a Journey while a rebellion is active may cause the following Act to become unresponsive.",
+   "status": "addressed",
+   "firstReleaseId": "the-alters-204634@2.1.0",
+   "addressedBy": "the-alters-204634@2.2.0",
+   "addressedAt": "2026-08-18T08:06:57.000Z"
+  },
+  {
+   "id": "4f1b73ae5018",
+   "text": "Objects in the base are not animated when used by the player or Alters after returning from exploration.",
+   "status": "addressed",
+   "firstReleaseId": "the-alters-204634@2.1.0",
+   "addressedBy": "the-alters-204634@2.2.0",
+   "addressedAt": "2026-08-18T08:06:57.000Z"
+  },
+  {
+   "id": "3cb8f7d9a900",
+   "text": "Alters cannot be assigned to all Neutralizer Tower workplaces after loading a save with the Towers already built.",
+   "status": "open",
+   "firstReleaseId": "the-alters-204634@2.1.0"
+  },
+  {
+   "id": "721438896083",
+   "text": "Alters may disappear if they are woken up in the Womb immediately after the player returns from a conversation with another Alter in a Field Lab.",
+   "status": "open",
+   "firstReleaseId": "the-alters-204634@2.1.0"
+  },
+  {
+   "id": "f8c0286a3dea",
+   "text": "Photo Mode does not save screenshots.",
+   "status": "addressed",
+   "firstReleaseId": "the-alters-204634@2.1.0",
+   "addressedBy": "the-alters-204634@2.2.0",
+   "addressedAt": "2026-08-18T08:06:57.000Z"
+  },
+  {
+   "id": "cd206965f00e",
+   "text": "Alters may be facing the wrong direction during conversations.",
+   "status": "open",
+   "firstReleaseId": "the-alters-204634@2.1.0"
+  },
+  {
+   "id": "c32a2f169d6f",
+   "text": "Take care,",
+   "status": "addressed",
+   "firstReleaseId": "the-alters-204634@2.1.0",
+   "addressedBy": "the-alters-204634@2.2.0",
+   "addressedAt": "2026-08-18T08:06:57.000Z"
+  },
+  {
+   "id": "7455dce00a11",
+   "text": "~ 11 bit studios Team",
+   "status": "addressed",
+   "firstReleaseId": "the-alters-204634@2.1.0",
+   "addressedBy": "the-alters-204634@2.2.0",
+   "addressedAt": "2026-08-18T08:06:57.000Z"
+  }
+ ]
+}

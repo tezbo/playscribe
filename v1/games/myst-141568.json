@@ -1,0 +1,4405 @@
+{
+ "game": {
+  "id": "myst-141568",
+  "igdbId": 141568,
+  "name": "Myst",
+  "cover": {
+   "imageId": "co2mk2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2mk2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aruuq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aruuq.jpg"
+  },
+  "ps5Release": "2026-05-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "myst-141568@3.3.0",
+   "gameId": "myst-141568",
+   "displayName": "Patch 3.3.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-08T00:16:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Myst fans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off, we’re happy to celebrate nearly 5 years since our remake of Myst was released on PC/Mac. Thank you so much to everyone who has purchased, played, and reviewed Myst over the last five years, and a special thanks to those who played our Rime update to Myst that we shipped in 2025. Your support enables us to keep doing what we do.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Second, we have a very small patch update to share with you all, followed by a Devlog describing what the future holds for this remake of Myst. Scroll down to see the patch notes and the Devlog below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Global",
+     "items": [
+      {
+       "text": "Major",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that would prevent the “It’s Bob!” achievement from occurring under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where key icons in the menu were not updating properly on Windows handheld devices aside from Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Microsoft Store Only",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Key icons now remain as gamepad icons instead of keyboard icons when touch input is attempted to be used while in the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "A Devlog About Future Support for Myst (and Riven)",
+     "items": [
+      {
+       "text": "We’re looking into what it would take to update our remakes of Myst and Riven to the latest version of Unreal (5.8).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Currently, Myst and Riven are stuck on Unreal Engine 5.3.2. There’s a good reason for this – mainly being that native ray tracing support in the engine on Windows, Mac, PS5, and Xbox Series platforms overall outside of the use of Lumen is basically “locked” to this version of Unreal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "If we update Myst and Riven to a version above 5.3.2, we would lose native-to-the-engine ray-tracing support in the game without fully converting Myst and Riven to using Lumen, which is not feasible at this time (especially for Myst). Yes, there are other possible solutions like using NVIDIA’s tech to bring in their version of ray-tracing… but we’ve historically experienced incompatibilities with building for multiple platforms when you factor in external tech like this, which creates tech debt and more manual exceptions to our engine’s codebase that become hard to maintain over time. Some folks may also suggest “rolling our own” version of ray tracing in the 5.8 engine outside of Lumen, but frankly, that will take up developer resources we simply do not (and will not) have available to create or maintain, especially as it is not an official effort supported by Epic.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Maybe the lack of ray-tracing in the game in the future doesn’t necessarily break anyone’s heart – but we do have to weigh the costs and benefits to any kind of engine upgrade before we proceed. Some of the benefits at this point to an upgrade to Unreal Engine 5.8 would be a much better PSO caching system, which we know has historically been a pain point for some of our users who expect a hitchless experience in Myst and Riven – and many of those PSO micro hitches are unfortunately just not solvable without better engine tech we would need to upgrade to. Additionally, we would see better platform support features roll in, such as better support for the Steam Frame (both for 2D play and VR play) into the game – which at this time, would be a much better experience than the compatibility support we’d be able to offer through our version of Unreal Engine 5.3.2. We would also see better supersampling support become available to help with performance, in addition to other native engine performance gains and improvements that would naturally come with the engine upgrade. That, and as operating systems continue to evolve (especially MacOS, which can have breaking changes to how the OS interacts with our games over time), an engine upgrade almost always immediately addresses those gaps to help maintain compatibility of our game for many years to come. (Pre-emptive clarification in case this comes up from some of y’all inquiring about AI tools in Unreal 5.8: the Myst and Riven remakes were not built using AI tools, and we have no intent to use AI tools in them in the future.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is possible that when (or if) we do end up releasing a 5.8 version of Myst and Riven, we will make a “legacy” branch available of the 5.3.2 version of the game for a limited period of time, so folks can still experience ray-tracing. This would be similar to what we did for Myst, which allowed MacOS users on older MacOS versions or hardware to still be able to play the game through a beta branch. It is also possible we will decide NOT to bring this update to platforms where ray-tracing is already supported in the game. The reality is that Myst and Riven currently run and play well on these platforms, and a 5.8 update is currently not mission critical to implement until a compatibility update may force our hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In any event… There are plenty of hurdles for us to overcome before we get Myst and Riven running well in Unreal Engine 5.8. We certainly have our work cut out for us in doing so. We cannot give any kind of estimate or timeline as to when this major update will occur, especially as we are now a very small team – other than saying that this will be, at the very least, many months away. What we CAN say though is that, again, your purchase and shared experience of Myst, Riven, and the rest of our catalog is what has supported our team of developers to continue working on our games for both many decades prior, and hopefully many decades to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 10,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1836506165579166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-08T00:16:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.993Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-08T00:16:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.993Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-08T00:16:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.526Z"
+  },
+  {
+   "id": "myst-141568@3.2.5",
+   "gameId": "myst-141568",
+   "displayName": "Patch 3.2.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-05T00:59:45.000Z",
+   "notes": [
+    {
+     "title": "Major",
+     "items": [
+      {
+       "text": "Fixed being unable to view the Rime note or the Rime book on Myst Island under certain circumstances after leaving and returning to the Myst Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Minor",
+     "items": [
+      {
+       "text": "Fixed a small hitch that could occur in Rime when approaching the hut.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using a mouse to click on any area of the new Welcome screen when prompting for any button to be pressed will now proceed, instead of requiring the player to use their mouse to click precisely on the prompting button itself.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(Mac only) Fixed the outline displayed on save game slots not showing properly under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Console only",
+     "items": [
+      {
+       "text": "Allow HDR mode to be kicked on (or off) automatically on Xbox platforms based on the OS-level setting for HDR to bring it in line with console requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Improved some LODs on Myst Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed controller diagram displaying incorrect lines to some buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the appearance of UI in HDR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the displayed save game image might not update properly until you leave the save game submenu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Microsoft Store Only",
+     "items": [
+      {
+       "text": "(PC Only) Fixed necessary redistributables not automatically being included.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1826362059919705"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T00:59:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.992Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.525Z"
+  },
+  {
+   "id": "myst-141568@3.2.4",
+   "gameId": "myst-141568",
+   "displayName": "Patch 3.2.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-13T21:59:26.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added auto detect support for better default graphics settings on OLED Steam Decks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gamma adjustment page will show up automatically on Steam Deck now if you have never set up your gamma settings (as long as HDR is not enabled).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "“Press Any Button” welcome screen has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Minors",
+     "items": [
+      {
+       "text": "Minor edits made to the sketches in the back of Atrus' Rime journal in the Myst library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor tweaks made to color values on the last page of Sirrus and Achenar's journals in Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an additional sketch to Sirrus' crystal observation notes in the Rime lab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated design of the hidden panel in the forechamber dock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with being able to rotate specific cranks with the shoulder buttons while holding down trigger buttons simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor improvements to lever haptics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved LODs on some trees on Myst Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the focus on a game slot could be incorrect when using a controller under specific circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "VR only",
+     "items": [
+      {
+       "text": "Disabled toggling of HDR mode on and off checkbox while in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "System-level height resets while the menu is being opened or closed are now prohibited.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements made to Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed haptics with levers running on connected gamepads even when playing with separate motion controllers in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Motion Controller Locked” movement orientation setting is now named “Controller Locked”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TSR is available as a Supersampling option in VR now for supported platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Console only",
+     "items": [
+      {
+       "text": "Improved various LODs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented TSR for Xbox Series platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Improved widescreen play on Xbox platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Gamma adjustment page will show up automatically if you have never set up your gamma settings (as long as HDR is not enabled).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 3,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1824644522840575"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-13T21:59:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.991Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.525Z"
+  },
+  {
+   "id": "myst-141568@3.1.0",
+   "gameId": "myst-141568",
+   "displayName": "Patch 3.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-09T18:04:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Majors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the color context subtitles showing a missing string error on Sirrus’ and Achenar’s notebooks in Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed PC VR diagrams showing invalid icons on controller diagrams.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor visual updates made to the star fissure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1818118366186192"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-09T18:04:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.991Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.524Z"
+  },
+  {
+   "id": "myst-141568@3.0.9",
+   "gameId": "myst-141568",
+   "displayName": "Patch 3.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-25T22:04:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Majors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-added “Teleport to Safe Spot” button in the Help settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a PlayStation controller diagram for folks who are playing the game with a PlayStation controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed issues with controller support when using the shoulder buttons on certain puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various performance improvements made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various LOD improvements to meshes made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added improvements to gamepad cursor speed to be relative to horizontal resolution of a display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements made to default cursor movement speed to feel more natural.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with one of the videos in Channelwood not playing properly under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) Fixed a translation issue happening under certain circumstances with the Rime note in the Myst Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shortened a translation in German for “contextual rotate/flip” as it was too large for the controller diagram to display it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the tower plaque not displaying a clue correctly in Spanish under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could lower a bridge in Channelwood without the bridge being powered, possibly allowing the player to get stuck on one side of the bridge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a possible race condition where the player could enter the interior of the rocketship on Myst Island, but not see the interior meshes render properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing translation issue with the Invert X option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with an achievement in Rime firing off even when a particular puzzle hasn’t been solved yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some controller diagrams showing up too small when playing Myst at resolutions larger than 1080p.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed red and blue pages flickering under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "VR Only",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a key in Stoneship being rotated oddly in your virtual hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For folks who monitor the patch notes here on Steam but play Myst on Xbox, the issue with achievements not working after the Rime update is now resolved. The patch for those platforms will be released within the next couple of days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 10,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1816849002024863"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-25T22:04:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.990Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.523Z"
+  },
+  {
+   "id": "myst-141568@3.0.5",
+   "gameId": "myst-141568",
+   "displayName": "Patch 3.0.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-11T18:32:56.000Z",
+   "notes": [
+    {
+     "title": "Global",
+     "items": [
+      {
+       "text": "Majors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a journal texture appearing in English when it should have appeared in French when the French language is selected as the in-game language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a journal texture appearing in Spanish in the Channelwood journal on Myst Island when it should have appeared in Portuguese when the Portuguese language is selected as the in-game language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a timing issue that could occur where the Rime book pedestal could be raised, but unable to be clicked on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Mac only) Re-enabled SM5 RHI to help with performance on lower-memory Macs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Windows only) Updated DLSS to 4.0.2.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Minors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the visibility timing of some areas in Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some shoulder button issues with gamepad interactions with certain puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting for a specific chamber on Myst Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the appearance of frost on the hut in Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed splash effects not appearing in Channelwood when the frog jumps into the water based on certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where some levers in the Myst Island library could cause progress to be blocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated cached shaders to help with minor hitching across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Store/Xbox Only",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Updated the GDK version the game uses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switched the default movie player over to using Electra.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a menu setting for legacy navigation mode that was not intended for Xbox play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "A note for our Mac users",
+     "items": [
+      {
+       "text": "Due to Apple’s recent announcement of newer macOS software updates preventing the future support of many non-Apple Silicon Macs, and increased frequency of reports to our support address of instability on Intel and AMD Macs in the latest macOS versions despite our lack of impactful changes to our games during those times, we are updating our minimum and recommended requirements of Myst to remove official support for non-Apple Silicon Macs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You may still be able to play Myst on certain Intel and AMD-based Macs at this time, but you may run into unexpected issues with game stability, performance, visual defects, and more, especially if you are playing on macOS Sequoia or above. Unfortunately, Cyan is unable to make meaningful changes to remedy these issues, as they appear rooted in changes in the operating system updates themselves and how they interact with our games over time.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As a studio that has been around for over 35 years, we've seen many operating systems and different hardware platforms go through similar growing pains. With some of our games being on digital stores for 15+ years, we pride ourselves in being able to maintain and continue offering our decades-old award-winning games to folks. However, there almost always comes a time in which software or hardware deprecation forces us to make tough decisions like this, and we can no longer provide the experience folks expect us to in those cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1802261838722321"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-11T18:32:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.989Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:26:23.990Z"
+  },
+  {
+   "id": "myst-141568@3.0.4",
+   "gameId": "myst-141568",
+   "displayName": "Patch 3.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-18T02:06:13.000Z",
+   "notes": [
+    {
+     "title": "Majors",
+     "items": [
+      {
+       "text": "Fixed an issue where some players who had previously played a randomized game of Myst prior to the Rime update were seeing a puzzle on Myst Island become unsolvable, preventing those players from reaching Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steam only: Fixed new Rime achievements not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minors",
+     "items": [
+      {
+       "text": "Minor mesh and lighting fixes implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a typo in Sirrus’s Journal in Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some interaction issues with the miniature lens toy in Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) Updated miniature lens toy model to have the same number of notches as the imager device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the lab ruler model and textures in Rime so the \"1\" is in the right spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an elevator region for the buttons in Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with the aurora in Rime initializing to the wrong color under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with the blank book in Rime causing incorrect behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quest only",
+     "items": [
+      {
+       "text": "We are writing the Quest-specific patch notes here as we recognize some standalone Quest users come to Steam to look at patch notes instead of through the Meta Horizon app. There is a fairly major save game fix that was a part of this patch (for Quest standalone only) and wanted to communicate it here as well. Again, please note that these changes are not for issues that occurred on Windows or Mac, or in PC VR.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some lenses in an area of Rime not displaying colors properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save games from older patches on Quest not copying over to new builds. If you had already made new saves in the latest version of Myst on Quest standalone, you will be prompted with a choice to convert your old saves to new ones. If you did not already make new saves in the latest version of Myst, your old saves will automatically be brought over and converted without prompt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1797185861656823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-18T02:06:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.988Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.521Z"
+  },
+  {
+   "id": "myst-141568@major-2025-03-20",
+   "gameId": "myst-141568",
+   "displayName": "The Rime update is now LIVE!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-20T16:56:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You’ve been asking, and we’ve been listening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re happy to announce that this major content update and quality of life patch of Myst introduces the Age of Rime. This new Age offers additional content for players following the successful completion of the story of Myst. Once completing your game or loading a completed game, a new journey awaits you somewhere on Myst Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some fans may know that Rime was previously a part of realMyst and realMyst: Masterpiece Edition. This reimagining of Rime will bring fresh discoveries to new and old players alike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Age of Rime introduces players to the snowy, mountainous seascape that Atrus and his family would visit in years past, before the events of Myst and Riven upended their lives. Sweeping vistas, beautiful ice structures, and fantastical natural phenomena await new visitors. This breathtaking new Age also houses a detailed laboratory space where bold experiments were made, delving into the mysterious nature of Linking Books themselves. This new version of Rime includes all-new narrative beats, new lore, and new sights to behold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope to bring this patch to as many currently supported platforms for Myst as possible, so hang tight while we get that sorted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team at Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added the Age of Rime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auto detect now supports auto-setting appropriate supersampling settings based on your scalability settings and platform type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "An option for Color Context Subtitles has been added to the Interface settings menu. This will show text next to puzzles that require seeing particular colors to figure out a solution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Windows only) DLSS updated to version 4.0.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the ability to zoom in on things with the Z key on mouse and keyboard, or left bumper on gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for Intel XeSS and TSR (Windows only) supersampling.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Visual improvements made to the Myst Island library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Majors",
+     "items": [
+      {
+       "text": "Fixed cranks not reacting properly if you wind them past their endpoints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash that could occur going between two different engage points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed DualSense controllers not working natively in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Mac only) Implemented a workaround for auto detect not behaving well on Mac and sometimes setting too high of settings for what your Mac can handle. Auto detect will now use a specific set of rules based on the number of cores available on your Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minors",
+     "items": [
+      {
+       "text": "Adjusted LODs on some meshes to prevent popping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed deleting a screenshot from your notebook bouncing you back to the main menu instead of the Notebook submenu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) Fixed a missing material in D’ni.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) The player is now stopped from being able to link back to Myst in the good ending until Atrus is done speaking with you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed music not persisting upon save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "VR only",
+     "items": [
+      {
+       "text": "Made the offsets for picking up specific objects more user-friendly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 5,
+    "balance": 1,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1794102528307244"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-20T16:56:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.988Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.519Z"
+  },
+  {
+   "id": "myst-141568@2.0.6",
+   "gameId": "myst-141568",
+   "displayName": "Patch 2.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-29T00:00:36.000Z",
+   "notes": [
+    {
+     "title": "Global",
+     "items": [
+      {
+       "text": "Integrated a fix from Epic for a potential crash that could occur on certain machine configurations on a subsequent startup after already playing the latest patch with ray tracing enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a random crash that could occur when DLSS is enabled and you exit the game normally.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a random crash that could occur when moving very quickly between two areas with different music playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various audio updates and improvements made to Myst Island and Stoneship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the clocktower randomized solution not visually representing the correct time with the clock hands on the clocktower with certain solutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Myst Island linking book video ending shortly before the audio does when you view it in the linking book during the intro sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various footstep sounds not playing the correct footstep sound in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad controls not working correctly with the clocktower puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some environment sounds on Myst Island not playing properly if you run across the island back and forth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "VR only",
+     "items": [
+      {
+       "text": "Improved dial interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the grip location for holding books.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where force-teleport spots when in teleport mode caused the player to not be teleported to the exact location needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a random crash that could occur when the player camera fades out when hiding a vehicle transition or when clipping through other objects in the scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/1790214123031777"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-29T00:00:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.987Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:47.518Z"
+  },
+  {
+   "id": "myst-141568@2.0",
+   "gameId": "myst-141568",
+   "displayName": "Patch 2.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-28T22:25:27.000Z",
+   "notes": [
+    {
+     "title": "Myst Patch 2.0",
+     "items": [
+      {
+       "text": "Hello, everyone! Myst version 2.0 is here with some big stability updates, tech-adds, improvements, and more to make your experience playing Myst even better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before we dive in, we’d like to thank everyone for their support in playing this remake of Myst since it came out over three years ago. Everyone’s purchase of Myst has directly contributed to helping us update Myst over the years to make it a better experience for everyone, especially as hardware and operating systems evolve, which is a very tricky thing developers have to deal with. We are proud to be the kind of company that continues to maintain its games for as long as we possibly can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is a beefy one, and we’ve tried to consolidate it as much as we could to make sure you all know what to expect. Let’s do this thing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Engine Upgrade",
+     "items": [
+      {
+       "text": "First things first: We’ve upgraded Myst from using Unreal Engine 4.27+ to Unreal Engine 5.3.2. Doing this has resolved a WIDE number of stability issues related to the game running on various platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual changes/stability: The newer engine has resolved a lot of flickering texture issues we saw come up on lower-end hardware especially. There should also be some slight improvements in lighting, reflections, and more, despite not using all of the bells and whistles in UE5 (no Lumen, no Nanite here in Myst… yet!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HDR support changes: HDR has better support on all platforms now, including Steam Deck (when plugged into an HDR-capable screen if it’s a regular Steam Deck, or natively on an OLED Steam Deck), where previously the game would crash on startup if HDR had been enabled on an OLED Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "RHI support changes",
+     "items": [
+      {
+       "text": "Windows: DX12 support is now a requirement for playing Myst on Windows. Engine support on this RHI is much better here moving forward, and it enables us to get rid of most shader compilation hitches when you move around the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mac: Metal 3 RHI support has been added. This is enabled for the M3 family of chips on Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Device support changes",
+     "items": [
+      {
+       "text": "Windows: Nothing is changing here, actually, other than adjusting our minimum specifications to require DX12 (see above).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mac: We are increasing our MacOS minimum requirement from MacOS 11.6 to MacOS 14.5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "VR",
+     "items": [
+      {
+       "text": "​​We’ve officially moved to using OpenXR in Myst! This brings stability improvements, more generic launch options (see below), and a more flexible environment for our VR users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Were you tired of the trillion VR launch options we had? We were as well! There’s now a single launch option and it should work for all officially supported headsets in Myst (and maybe even some unsupported ones, since it’s still using the OpenXR backend).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-line with Meta’s official support drops, we are dropping official support in Myst for the original Rift headset and Quest 1 through Quest Link. We are also dropping official support in Myst for the original Vive headset. This doesn’t mean that you CAN’T play Myst with those headsets, it just means that we are unable to give official support for them anymore. This statement also applies to WMR headsets, of which we only supported the HP Reverb 2 previously, but we will unfortunately no longer be able to officially support it, especially because of Microsoft’s own announcements to deprecate this support on Windows. Note however that now that we have moved to OpenXR, it is very possible that folks will have an even easier time playing Myst on unsupported HMDs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Performance changes: “Mileage may vary” based on your machine. We’ve seen areas have both increased performance on some hardware, and decreased performance on some hardware. We recommend toying with the existing & updated Supersampling options to see what works best for your machine and your preferred playstyle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online Subsystem improvements: Some folks were reporting instability with achievements on Mac in particular (with the occasional instability on Windows as well, but that was much rarer). This should be resolved now that the engine is using an updated version of the Steamworks SDK. We have been unable to reproduce any issues related to this since updating the engine.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Ray Tracing Changes",
+     "items": [
+      {
+       "text": "This is a big one…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve got two things to cover, the first being that we continue to support ray traced reflections in Myst on Windows, and that you’ll find many of the ray traced reflections to be improved in multiple areas.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Second, we’re excited to offer Myst with support for hardware-accelerated ray tracing, now available on Macs with the powerful M3 and M4 family of chips. This is a part of the patch you are receiving today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been very hard to find out in any of our research if Myst is, in-fact, one of the first titles with hardware ray tracing support for the M3 and M4 family of chips to be released (maybe it’s the first Unreal Engine title with this support?). Let us know if you know! We want another excuse to celebrate our hard work on this patch over here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI Refresh",
+     "items": [
+      {
+       "text": "We’re happy to introduce a cleaner, more usable, and much nicer looking version of the menu and general UI for everyone in Myst. For those who have played our remake of Riven, you may find some similarities between the two. Here are some of the improvements our new menu in Myst brings compared to the old one:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New cursor options have been added, and the default cursor has been switched to be the hand cursor. The default cursor size has also been modified to accommodate this change. This will override what folks currently have set in their cursor settings as we believe it is the best default experience for folks moving forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The graphics settings menu is now much clearer on which settings need to be “Applied” and which ones will Apply automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated naming for “Gameplay Context Subtitles” to “Sound Context Subtitles” for clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There’s a “Help” sub-menu now, and you can find the game’s version number there, in addition to “Teleport to Safe Spot” when you are in-game, should you need it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The controller/keyboard diagrams are now much clearer and scale better for a variety of screen sizes instead of being baked images. It will also properly detect the kind of controller you are using. Note that a couple of bindings may have changed – in particular the screenshot binding is now “x” instead of spacebar, and the PC VR bindings for the menu now encourage the use of non-system bound buttons to open the menu if necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The resolution scale setting will now be much clearer as to what the acceptable resolution scale range is between 2D and VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Gamma settings menu has been added that all users will be prompted with when they start up the game for the first time (or if they have not previously configured the setting through this menu, which should be just about everyone right now!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A “UI Volume” slider has been added to the audio settings menu to quell anyone who abhors sounds playing while they click around the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The default font used in Myst for subtitles and other in-game UI has been changed to be more readable and aligned with the general style Myst already has.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The credits formatting has been updated to be more readable., and new folks who contributed to this patch have been added to the credits as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updated Supersampling Options",
+     "items": [
+      {
+       "text": "All Supersampling options have been updated to newer versions to bring you even better performance and visuals in Myst based on your hardware’s needs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MetalFX is now the default Supersampling option on Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FSR has been removed as a Supersampling option on Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DLSS is now allowed to be used in VR if you have compatible hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DLSS is now the default Supersampling option on Windows if you’re running the game with compatible hardware, regardless of whether or not you are running the game in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Global",
+     "items": [
+      {
+       "text": "Added in movement tutorials for Vive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better support for Dualshock controllers added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Fixed incorrect translation of a Polish clue to get to the Selenitic Age",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saving and loading while music is playing in an area now has better persistence when loading back into those areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some textures flickering if you stand too close to them on certain quality settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed haptics not working in some areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unexpected lighting changes occurring when moving between various areas on Mac",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some items appearing outside of their drawers when you load into the room the drawers are in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added water splashing sounds when walking over puddles in Stoneship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Mac only) Fixed crash or hang that could occur on startup of the game when you had AirPods as your current audio device",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lighting on AMD Macs has been improved in certain situations",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "VR only",
+     "items": [
+      {
+       "text": "Fixed player height changing unexpectedly when teleporting into certain areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound context subtitle for the water flowing in Channelwood not following the player properly when on a Vive HMD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the in-game menu not showing up in front of the player when in particular areas of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed backward movement spamming if you hold the thumbstick down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur if you leave one of the brother’s rooms in Stoneship while holding a page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed random occurrence where you could completely lose your teleport stream and not regain it until restarting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed menu not appearing for some SteamVR users based on various SteamVR settings they have set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the water splashing effect for the gears raising on Myst Island looking differently in each eye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the VR bindings in some circumstances so that the menu can be opened on non-system reserved buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Support & Future Update Questions",
+     "items": [
+      {
+       "text": "“When does this patch come to other platforms?”: For folks who are on Xbox or Microsoft Store platforms, or Quest platform, or iOS, or other store platforms supported by Myst: we are working on getting this patch over to you soon, but we don’t have a clear estimate at this time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "“I’m running into new issues in this new patch that I never used to run into. How do I report these?”: Please see our pinned post in the Steam discussion forums here for our to properly report a problem to our support team: https://steamcommunity.com/app/1255560/discussions/0/3810660546002327220/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Looking for more adventures?",
+     "items": [
+      {
+       "text": "If you haven’t already, check out our latest release from this year, Riven, which is the sequel to Myst. It launched in June to absolutely rave reviews by press and fans alike! If you already own Myst, you get a special discount on Riven by buying it as a part of a bundle here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 1,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/6212245217911965218"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-28T22:25:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.985Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:26:23.986Z"
+  },
+  {
+   "id": "myst-141568@post-2023-01-28",
+   "gameId": "myst-141568",
+   "displayName": "STEAM DECK VERIFIED!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-01-28T01:24:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Myst version 1.8.7 (Windows Only) is here. And with it, comes… FULL STEAM DECK SUPPORT!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Myst will now autodetect to optimal graphics settings when playing on Steam Deck for the first time (this will not affect games that are streamed to Steam Deck; it only affects game instances from installations on the Steam Deck itself). Autodetect can be used in the graphics settings menu to bring you back to these optimal settings on the Steamdeck version of Myst at any time.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated credits localization for a few members.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) Fix for a little piece of Atrus’ hair floating away from his head while in D’ni.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for player height being a bit off in VR when descending some ladders around Myst, regardless of Quick Travel On Ladders enabled or not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for “(Restart Needed)” showing up next to the ray tracing option if you simply auto detect your graphics settings in the graphics settings menu, without modifying the ray tracing setting at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Don’t forget to contact support@cyan.com with any bugs you might encounter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/5035622109514808416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-28T01:24:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.984Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.449Z"
+  },
+  {
+   "id": "myst-141568@9",
+   "gameId": "myst-141568",
+   "displayName": "Patch 9",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-17T01:10:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Myst version 1.8.6 is here, which is a hotfix for 1.8.5 (it included a fun new feature called \"Legacy Navigation Mode\" for those who may want a navigation mode more akin to what is used in our older 3D titles.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements should work on Mac now! (As well as the Steam overlay in general).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "More robust gamepad support to get us closer to being Steamdeck verified.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Legacy Navigation mode inadvertently causing players to disengage with puzzles while in puzzle engage mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Quick Travel on Ladders setting causing you to feel a bit shorter than usual when you descend a ladder in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Don’t forget to contact support@cyan.com with any bugs you might encounter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/5035620840547439369"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-17T01:10:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.982Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.449Z"
+  },
+  {
+   "id": "myst-141568@post-2023-01-12",
+   "gameId": "myst-141568",
+   "displayName": "\"Legacy Navigation\" mode & more!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-01-12T23:09:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Myst version 1.8.5 is here, with a fun new feature called \"Legacy Navigation Mode\" for those who may want a navigation mode more akin to what is used in our older 3D titles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Myst’s file size is now about 5% smaller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Legacy Navigation mode: Available in the controls settings menu for platforms that support mouse & keyboard or touch controls (it will be hidden in VR!). Selecting this option will allow you to move around by double-clicking with a mouse or tapping on the screen (touch controls in general are still a work in progress though). This is different from node mode, as this mode will move you smoothly forward until you let go of your left mouse button.: Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Potential fix for some users not seeing the interior of rooms when loading games inside of the room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for particular areas of the game not loading properly if your system’s language was set to a language not supported in Myst.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked some menu formatting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scaled up some gameplay context subtitles so they’re a bit easier to read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased texture fidelity on some portions of Achenar’s temple and the elevator interior in Channelwood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fix for the “Teleport to Safe Spot” confirmation dialog running off of the screen when playing in the Russian language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for camera button prompt not showing correct prompt when using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Show the “rotate” tutorial when interacting with the generator in Stoneship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the credits to add some extra names.: Don’t forget to contact support@cyan.com with any bugs you might encounter!: Thanks for your continued support, and enjoy Myst!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/5035620840532557604"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-12T23:09:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.981Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.448Z"
+  },
+  {
+   "id": "myst-141568@8",
+   "gameId": "myst-141568",
+   "displayName": "Patch 8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-07T02:15:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Myst version 1.8.3 is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(VR only) input from HP Reverb is now supported in Myst.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now access the photo album from the main menu, not just from the in-game menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Myst is now running on Unreal 4.27, which comes with various rendering and performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "17% decrease in game size on disk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some crashes that would sometimes occur when using Oculus Quest controllers through the Play in SteamVR option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the speedy achievement not firing off when it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for parts of Myst Island being hidden or made visible unintentionally when running into particular areas/walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the player getting “snagged” on collision when walking around some corners, especially in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you press the ‘P’ key (shortcut key for photo album) and you don’t have any photos to view, we’ll let you know that you don’t have any photos to view before you see an empty photo album.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the door levers in Stoneship sometimes being unliftable in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The generator in Stoneship is now prevented from accumulating in negative amounts, which now prevents players in VR from thinking the generator is broken if spun the wrong way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the pointing gesture not working when launching the game from SteamVR Home.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the mazerunner glass windows not rendering on low & medium effects settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) The white page will now no longer appear from a marker switch on very random occasions that you flip the switch up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) The fireplace book will no longer flip to the correct page one Brothers’ speech too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Fix for the fireplace sometimes spamming a loud sound when you open it, leave the library, and return to the fireplace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Some more notes",
+     "items": [
+      {
+       "text": "Setting SteamVR HMD to run at any refresh rate above 90Hz causes the menu to sometimes disappear in game. The workaround for this for now is to set your SteamVR HMD to 90Hz or lower refresh rate when playing Myst. If you are still encountering the issue, please ensure your graphics drivers are up to date, delete your GameUserSettings.ini file in C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and attempt to validate game files to see if that helps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "There was a legitimate issue with the Speedy achievement that we did solve, and in the process of fixing that, we verified that the Bob achievement has worked (and continues to work) as it should. If you are having trouble attempting to achieve the Bob achievement on Windows (achievements are not yet supported on Mac), spoilers ahead: Please verify you have rotated the island in Mechanical enough to see the skeleton when engaging with the spyglass in Sirrus’ throne room.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "There is not currently a diagram for Reverb controllers, but you can use the Oculus controller diagram as reference in the meantime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although our support for WMR is only in the form of Reverb controllers at this time, we’d love to hear from folks who have other WMR devices if Myst is now more playable on their device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Some more features we’re looking to add",
+     "items": [
+      {
+       "text": "Subtitle size changing ability for 2D mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subtitles for Classic Videos. This is going to take some time as this will require some time to write up the timing + words in the format Unreal Engine prefers, and put that text through another localization pass for every language we support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extra Notes/Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you to everyone who has reported issues with crashes on startup after enabling certain menu options, or even on the first attempt to start the game. In most cases, ensuring:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1. Your machine fits our minimum spec,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2. Your graphics drivers are up to date, and",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "3. Verifying game file integrity should fix the issue for most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "About 95% of the support tickets we've seen come in related to crashing or flickering of graphics are caused by out-of-date graphics drivers, with users reporting the issues they see are resolved after updating their drivers. Please ensure your graphics drivers are up to date and it may resolve the issue(s) you are seeing almost immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With that said, there are some legitimate engine issues on specific hardware in DirectX 12 that we are looking into resolving. Also, if you’ve enabled some graphics settings that caused Myst to poop out launching every time after then, you can delete your user settings here: C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and please let us know which setting it was that caused the issue (as well as information about your machine). As a workaround for these issues for now, you can use our new launch option for starting the game in dx11 mode, and that should get you in the game ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If anyone encounters any crashes or other issues, please email support@cyan.com with the following information:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dxdiag (if on Windows) or screenshot of “About this Mac” page (if on Mac) of your machine,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The contents of your C:\\Users\\\\AppData\\Local\\Myst\\Saved directory, zipped up, or if on Mac, the contents of your /Users/username/Library/Application Support/Epic/Myst/Saved directory, and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Details of the bug, with any repro steps if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For folks who monitor our Steam page for patch update information but own Myst on other platforms, and are still waiting on a patch for Myst to come to Xbox One/Xbox Series/Windows Store, please note that all updates we push on those platforms have to go through a certification process on Microsoft’s end that can take a week or longer. Unfortunately this process is completely out of our control so we can only hope for it to get through the queue ASAP and be approved at the end of it all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "e8006-p23097",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 8,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0,
+    "topNew": [
+     "Subtitle size changing ability for 2D mode.",
+     "Extra Notes/Support",
+     "1. Your machine fits our minimum spec,"
+    ]
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4613399405942163735"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-07T02:15:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.981Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.447Z"
+  },
+  {
+   "id": "myst-141568@7",
+   "gameId": "myst-141568",
+   "displayName": "Patch 7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-15T23:37:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Patch 7 is here for Myst on PC/Mac! It is a smaller patch than previous ones but aims to address a couple of issues that have been discovered since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clickable regions on most interactables have now been sized-up a bit to make it easier to select things in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Oculus HMDs only) Timewarp performance improvements have been made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some translated text overlays not appearing if going from System Language → some language in the menu → back to System Language when your machine OS is using a language other than English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various performance improvements made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for parts of Myst Island being hidden unintentionally when running into particular areas/walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various performance improvements have been made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) The white page will now no-longer clip through the arm in the marker switch it comes out of.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are still plenty of issues we are hoping to fix within the next few weeks, some of the hot-button ones being:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A couple of achievements are still not firing off for some users (Speedy & Bob achievements). We are still unsure of the cause of this, as some users are able to achieve it and others are not. Still tracking it down!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Setting SteamVR HMD to run at any refresh rate above 90Hz causes the menu to sometimes disappear in game. The workaround for this for now is to set your SteamVR HMD to 90Hz or lower refresh rate. If you are still encountering the issue, please ensure your graphics drivers are up to date, delete your GameUserSettings.ini file in C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and attempt to validate game files to see if that helps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "For the folks playing in a true-free-roam environment in VR (literally walking around in a physical space), we have some hopeful fixes coming soon for the screen randomly appearing to turn black when you walk in tight collision arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some DirectX 12 crash issues (see notes below on this).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Some more features we’re looking to add soon",
+     "items": [
+      {
+       "text": "Subtitle size changing ability for 2D mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subtitles for Classic Videos. This is going to take some time as this will require some time to write up the timing + words in the format Unreal Engine prefers, and put that text through another localization pass for every language we support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extra Notes/Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you to everyone who has reported issues with crashes on startup after enabling certain menu options, or even on the first attempt to start the game. In most cases, ensuring:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1. Your machine fits our minimum spec,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2. Your graphics drivers are up to date, and",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "3. Verifying game file integrity should fix the issue for most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "About 95% of the support tickets we've seen come in related to crashing or flickering of graphics are caused by out-of-date graphics drivers, with users reporting the issues they see are resolved after updating their drivers. Please ensure your graphics drivers are up to date and it may resolve the issue(s) you are seeing almost immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With that said, there are some legitimate engine issues on specific hardware in DirectX 12 that we are looking into resolving. Also, if you’ve enabled some graphics settings that caused Myst to poop out launching every time after then, you can delete your user settings here: C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and please let us know which setting it was that caused the issue (as well as information about your machine). As a workaround for these issues for now, you can use our new launch option for starting the game in dx11 mode, and that should get you in the game ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If anyone encounters any crashes or other issues, please email support@cyan.com with the following information:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dxdiag (if on Windows) or screenshot of “About this Mac” page (if on Mac) of your machine,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The contents of your C:\\Users\\\\AppData\\Local\\Myst\\Saved directory, zipped up, or if on Mac, the contents of your /Users/username/Library/Application Support/Epic/Myst/Saved directory, and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Details of the bug, with any repro steps if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For folks who monitor our Steam page for patch update information but own Myst on other platforms, and are still waiting on a patch for Myst to come to Gamepass/Xbox One/Xbox Series/Windows Store, please note that all updates we push on those platforms have to go through a certification process on Microsoft’s end that can take a week or longer. Unfortunately this process is completely out of our control so we can only hope for it to get through the queue ASAP and be approved at the end of it all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Please note that we will be on holiday break until January 3rd and any support tickets/requests sent in next week may have delayed answers until the new year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 3,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4224937392749488639"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-15T23:37:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.980Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.445Z"
+  },
+  {
+   "id": "myst-141568@6.1",
+   "gameId": "myst-141568",
+   "displayName": "Patch 6.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-10T00:01:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Patch 6.1 is here for Myst on Windows! No Mac update this time since the main fix is for VR only. It is a much smaller patch than previous ones but aims to address a couple of issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some SteamVR HMDs not having input or being put into VR immediately upon launching the game in SteamVR mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some translated text overlays not appearing if going from System Language → some language in the menu → back to System Language when your machine OS is using a language other than English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, if you have any other issues, contact us at support@cyan.com.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4186653626160238081"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-10T00:01:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.979Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.444Z"
+  },
+  {
+   "id": "myst-141568@6",
+   "gameId": "myst-141568",
+   "displayName": "Patch 6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-04T23:34:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Patch 6 is here for Myst on PC/Mac! It is a smaller patch than previous ones but aims to address a couple of issues that have been discovered since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Russian & Polish localization added. Witamy na wyspie Myst… Добро пожаловать на остров Мист …!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New “Engage Sensitivity” slider added to controls settings menu. This decouples the regular cursor sensitivity option from how sensitive your cursor is in engage mode, and vice-versa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a “Gamma” slider to the display settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a “Delete All” option to the photo album, for all of you who want an easy way to clean up the photo album.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "‘P’ key now allows you to open the photo album directly. Same with the left face button on a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some performance improvements to AMD FidelityFX FSR on Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added black plane to prevent folks from seeing the sky when looking up the elevator shaft in Mechanical.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix planetarium music sometimes cutting out when pressing the planetarium puzzle buttons too many times in quick succession.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some command-line overrides for windowed, fullscreen, etc. not applying when starting Myst with custom command-line overrides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some SteamVR HMDs not having input or being put into VR immediately upon launching the game in SteamVR mode. See our new launch options for VR as well; ensure that you select a SteamVR launch option and that should fix it for y’all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controller support for Mac is a bit more robust now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Fix for crash occurring on some Macs with Intel GPUs when linking to D’ni.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Fix for Sirrus’ and Achenar’s hair looking a bit swimmy on Mac during end-game sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are still plenty of issues we are hoping to fix within the next few weeks, some of the hot-button ones being:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A couple of achievements are still not firing off for some users (Speedy & Bob achievements). We are still unsure of the cause of this, as some users are able to achieve it and others are not. Still tracking it down!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Setting SteamVR HMD to run at any refresh rate above 90Hz causes the menu to sometimes disappear in game. The workaround for this for now is to set your SteamVR HMD to 90Hz or lower refresh rate. If you are still encountering the issue, please ensure your graphics drivers are up to date, delete your GameUserSettings.ini file in C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and attempt to validate game files to see if that helps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "For the folks playing in a true-free-roam environment in VR (literally walking around in a physical space), we have some hopeful fixes coming soon for the screen randomly appearing to turn black when you walk in tight collision arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some DirectX 12 crash issues (see notes below on this).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Some more features we’re looking to add soon",
+     "items": [
+      {
+       "text": "Subtitle size changing ability for 2D mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subtitles for Classic Videos. This is going to take some time as this will require some time to write up the timing + words in the format Unreal Engine prefers, and put that text through another localization pass for every language we support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extra Notes/Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you to everyone who has reported issues with crashes on startup after enabling certain menu options, or even on the first attempt to start the game. In most cases, ensuring:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1. Your machine fits our minimum spec,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2. Your graphics drivers are up to date, and",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "3. Verifying game file integrity should fix the issue for most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "About 95% of the support tickets we've seen come in related to crashing or flickering of graphics are caused by out-of-date graphics drivers, with users reporting the issues they see are resolved after updating their drivers. Please ensure your graphics drivers are up to date and it may resolve the issue(s) you are seeing almost immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With that said, there are some legitimate engine issues on specific hardware in DirectX 12 that we are looking into resolving. Also, if you’ve enabled some graphics settings that caused Myst to poop out launching every time after then, you can delete your user settings here: C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and please let us know which setting it was that caused the issue (as well as information about your machine). As a workaround for these issues for now, you can use our new launch option for starting the game in dx11 mode, and that should get you in the game ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If anyone encounters any crashes or other issues, please email support@cyan.com with the following information:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dxdiag (if on Windows) or screenshot of “About this Mac” page (if on Mac) of your machine,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The contents of your C:\\Users\\\\AppData\\Local\\Myst\\Saved directory, zipped up, or if on Mac, the contents of your /Users/username/Library/Application Support/Epic/Myst/Saved directory, and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Details of the bug, with any repro steps if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For folks who monitor our Steam page for patch update information but own Myst on other platforms, and are still waiting on a patch for Myst to come to Gamepass/Xbox One/Xbox Series/Windows Store, please note that all updates we push on those platforms have to go through a certification process on Microsoft’s end that can take a week or longer. Unfortunately this process is completely out of our control so we can only hope for it to get through the queue ASAP and be approved at the end of it all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 4,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4186652991111067766"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-04T23:34:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.978Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.443Z"
+  },
+  {
+   "id": "myst-141568@5",
+   "gameId": "myst-141568",
+   "displayName": "Patch 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-04T17:57:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Patch 5 is here for Myst on PC/Mac! It is a smaller patch than previous ones but aims to address a couple of issues that have been discovered since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Renamed keys to WASD on French keyboard diagram",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Localization fix for objects not localizing correctly when “system language” is selected in the language options, or the OS language is set to something other than English. This fixes situations like Atrus’ note to Catherine sometimes not showing the correct translation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed fish schools disappearing at fairly short distances in Stoneship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the red page missing when going directly to the red page in Mechanical",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) Fix for white page turning invisible if loading a save game with a marker switch holding out the white page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are still plenty of issues we are hoping to fix within the next few weeks, some of the hot-button ones being:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A couple of achievements are still not firing off for some users (Speedy & Bob achievements).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Setting SteamVR HMD to run at any refresh rate above 90Hz causes the menu to sometimes disappear in game. The workaround for this for now is to set your SteamVR HMD to 90Hz or lower refresh rate. If you are still encountering the issue, please ensure your graphics drivers are up to date, delete your GameUserSettings.ini file in C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and attempt to validate game files to see if that helps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Some SteamVR HMDs sometimes won’t kick into VR mode immediately when starting the game with the HMD off, even if booting into the VR mode of game (regression from launch).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Some Macs with Intel GPUs will crash when linking to D’ni.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the folks playing in a true-free-roam environment in VR (literally walking around in a physical space), we have some hopeful fixes coming soon for the screen randomly appearing to turn black when you walk in tight collision arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some DirectX 12 crash issues (see notes below on this).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Some more features we’re looking to add soon",
+     "items": [
+      {
+       "text": "Subtitle size changing ability for 2D mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Localization for Russian & Polish languages. We have received localization from our localization partners for these and now we just have to implement them (aiming for this to be in Patch 6!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subtitles for Classic Videos. This is going to take some time as this will require some time to write up the timing + words in the format Unreal Engine prefers, and put that text through another localization pass for every language we support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extra Notes/Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you to everyone who has reported issues with crashes on startup after enabling certain menu options, or even on the first attempt to start the game. In most cases, ensuring:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1. Your machine fits out minimum spec,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2. Your graphics drivers are up to date, and",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "3. Verifying game file integrity should fix the issue for most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "About 95% of the support tickets we've seen come in related to crashing or flickering of graphics are caused by out-of-date graphics drivers, with users reporting the issues they see are resolved after updating their drivers. Please ensure your graphics drivers are up to date and it may resolve the issue(s) you are seeing almost immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With that said, there are some legitimate engine issues on specific hardware in DirectX 12 that we are looking into resolving. Also, if you’ve enabled some graphics settings that caused Myst to poop out launching every time after then, you can delete your user settings here: C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and please let us know which setting it was that caused the issue (as well as information about your machine). As a workaround for these issues for now, you can use our new launch option for starting the game in dx11 mode, and that should get you in the game ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If anyone encounters any crashes or other issues, please email support@cyan.com with the following information:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dxdiag (if on Windows) or screenshot of “About this Mac” page (if on Mac) of your machine,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The contents of your C:\\Users\\\\AppData\\Local\\Myst\\Saved directory, zipped up, or if on Mac, the contents of your /Users/username/Library/Application Support/Epic/Myst/Saved directory, and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Details of the bug, with any repro steps if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For folks who monitor our Steam page for patch update information but own Myst on other platforms, and are still waiting on a patch for Myst to come to Gamepass/Xbox One/Xbox Series/Windows Store, please note that all updates we push on those platforms have to go through a certification process on Microsoft’s end that can take a week or longer. Additionally, our previous patch (Patch 4) was rejected by MS Cert due to an issue with an incorrect diagram being shown, so we have to start the entire process over again. We submitted a new patch on Friday last week and we hope for it to be approved sometime next week. Unfortunately this process is completely out of our control so we can only hope for it to get through the queue ASAP and be approved at the end of it all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/3938951840895436801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-04T17:57:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.977Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.442Z"
+  },
+  {
+   "id": "myst-141568@4",
+   "gameId": "myst-141568",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-11T00:33:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Patch 4 is here for Myst on PC/Mac! This one is less meaty than Patch 3 (if you haven’t seen it yet, we added CLASSIC VIDEOS mode in that patch!) but still contains some stability fixes we were able to make within the week. Please beware -- some spoilers ahead!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Generator room lights now turn on like the original Myst did when you enter the generator room. CA-CHUNK, CA-CHUNK, CA-CHUNK! (if you're an OG Myst fan, you could probably \"hear\" that)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Due to popular demand, we’ve added a motion-controller-locked movement orientation option for VR gameplay. There is now a selector in the main menu for how you’d like to lock your movement orientation as such, instead of a single checkbox for whether or not you’d like camera-locked movement. Note that we have temporary localization in for this new menu setting right now and will be working with our localization partners to make more official adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are now bats that fly through the Selenitic tunnel when you turn the lights on for the first time. Spooky!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Channelwood spiral staircase tree having its bark look separated from the middle of the tree when on Low effects settings in 2D, or Low or Medium effects settings in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for in-game photos sometimes looking oddly cropped if you take an in-game screenshot while engaged with a puzzle or the library bookshelf.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Stoneship beacon light on the top of the lighthouse not being visible while the player is under the umbrella.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the half page in Stoneship being completely black when held at particular angles (it should be a bit brighter now in those circumstances).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the half-pages being torn on the same side regardless of which side (front or back) you’re looking at. We had a good laugh about that one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) Fix for the fireplace code reminder videos not playing when in Classic Videos mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are still plenty of issues we are hoping to fix within the next few weeks, some of the hot-button ones being:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A couple of achievements are still not firing off for some users (Speedy & Bob achievements).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Setting SteamVR HMD to run at any refresh rate above 90Hz causes the menu to sometimes disappear in game. The workaround for this for now is to set your SteamVR HMD to 90Hz or lower refresh rate. If you are still encountering the issue, please ensure your graphics drivers are up to date, delete your GameUserSettings.ini file in C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and attempt to validate game files to see if that helps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Atrus’ note to Catherine sometimes won’t appear translated for users whose Windows systems are set to a language other than English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Some Macs with Intel GPUs will crash when linking to D’ni.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the folks playing in a true-free-roam environment in VR (literally walking around in a physical space), we have some hopeful fixes coming soon for the screen randomly appearing to turn black when you walk in tight collision arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some DirectX 12 crash issues (see notes below on this).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Some more features we’re looking to add soon",
+     "items": [
+      {
+       "text": "Subtitle size changing ability for 2D mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Localization for Russian & Polish languages. We already have our localization partner working on this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subtitles for Classic Videos. This is going to take some time as this will require some time to write up the timing + words in the format Unreal Engine prefers, and put that text through another localization pass for every language we support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extra Notes/Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you to everyone who has reported issues with crashes on startup after enabling certain menu options, flickering graphics, or even crashing on the first attempt to start the game. In most cases, ensuring:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your machine fits out minimum spec,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your graphics drivers are up to date, and",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Verifying game file integrity should fix the issue for most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "About 95% of the support tickets we've seen come in related to crashing or flickering of graphics are caused by out-of-date graphics drivers, with users reporting the issues they see are resolved after updating their drivers. Please ensure your graphics drivers are up to date and it may resolve the issue(s) you are seeing almost immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With that said, there are some legitimate engine issues on specific hardware in DirectX 12 that we are looking into resolving. Also, if you’ve enabled some graphics settings that caused Myst to poop out launching every time after then, you can delete your user settings here: C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and please let us know which setting it was that caused the issue (as well as information about your machine). As a workaround for these issues for now, you can use our new launch option for starting the game in dx11 mode, and that should get you in the game ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If anyone encounters any crashes or other issues, please email support@cyan.com with the following information:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dxdiag (if on Windows) or screenshot of “About this Mac” page (if on Mac) of your machine,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The contents of your C:\\Users\\\\AppData\\Local\\Myst\\Saved directory, zipped up, or if on Mac, the contents of your /Users/username/Library/Application Support/Epic/Myst/Saved directory, and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Details of the bug, with any repro steps if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For folks who monitor our Steam page for patch update information but own Myst on other platforms, and are still waiting on a patch for Myst to come to Gamepass/Xbox One/Xbox Series/Windows Store, please note that all updates we push on those platforms have to go through a certification process on Microsoft’s end that can take a week or longer. We are submitting a patch today and we hope for it to be approved sometime next week. Unfortunately this process is completely out of our control so we can only hope for it to get through the queue ASAP and be approved at the end of it all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Thanks, everyone, for your support. Note that I will be on vacation for the next couple of weeks, and our support/community person is back “in the office” now (yay!) so he will be the main one to respond to any support inquiries & community postings while I’m away, although I may take a peek every now and then because I can’t help myself. Have a great weekend, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 6,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4020014731800220060"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-11T00:33:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.976Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.426Z"
+  },
+  {
+   "id": "myst-141568@3",
+   "gameId": "myst-141568",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-04T00:13:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all, Hannah from Cyan here. Patch 3 is here for Myst on PC/Mac! It’s a big update with lots of fixes & feature updates (some of which have been highly requested by y’all), so hang tight and come along for the ride!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The feature you’ve all been waiting for… we’ve added a \"Classic Videos\" option to the display settings menu! Enabling it will allow you to watch some classic, upscaled versions of Myst videos where applicable, plus the original audio to go along with it. This setting is disabled by default but can be enabled (or disabled) at any time. A few things to note:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you change this setting in the midst of a game session, you may have to reload your save, or leave + re-enter the area you’re in to see the nearby videos and audio change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We do not yet have subtitles in for the classic audio, as this will require some time to write up the timing + words in the format Unreal Engine prefers, and put that text through another localization pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) This change does not apply to the characters in any of the end-game sequences, or the regular fly-by videos for each Age.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Classic videos mode currently won’t play the “extra” video that plays after the player learns of the fireplace code page. This is the video of the brothers immediately reminding the player of the fireplace code page instead of taking a minute to get to it. We will put a fix in for this in the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you wish to see tutorials for gameplay every time you encounter a puzzle instead of tutorials for interactions you have not yet learned, we’ve added a menu option for you! \"Always Show Tutorials\" is a new option in our display settings menu that will do just that for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For all of you who don’t want to bask in the glory of our full 20s Cyan logo movie every time you start up Myst, we now have \"skip\" functionality implemented. After 5 seconds of dreaded waiting, you can skip through the logo scene with the enter key or with the bottom face button on your controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added framerate limit setting to graphics settings menu (unlimited by default).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added motion blur option to graphics settings menu (disabled by default).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For folks who want the cursor to get out of the way more often for screenshots or whatnot: We’ve added an option into the display settings menu to allow the cursor to auto-hide if you are not moving around or hovering over an interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Engage mode cursor speed now respects the look/turn sensitivity players set in the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are new launch options as of 2 days ago (August 30th) to start up the 2D game with dx11.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "VR-specific Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Knuckles controls to allow for height reset & other shortcuts; see the new controller diagram for it in the controls settings menu for more information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for Myst appearing unresponsive when taking off SteamVR HMD for a few minutes and then putting it back on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated launch options so that they don’t start up SteamVR if you selected a 2D play mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another potential fix for the menu disappearing for some SteamVR users running the game with their HMD above 90hz. If you are still encountering the issue, please ensure your graphics drivers are up to date, delete your GameUserSettings.ini file in C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and attempt to validate game files to see if that helps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "General Fixes & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SPOILER) Fix for the white page disappearing from D'ni when the player opens + closes the menu it’s floating in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the channelwood spiral staircase door locking you out from middle level on a revisit of the Age if you pulled the lever more than once while it was opening the first time you visited that age",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some pickupable objects in Mechanical caches being invisible when you open the menu + close the menu while inside of the cache.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the music volume not being set on startup after setting it to 0 in a previous game instance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some LOD pops on Myst Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General performance improvements for users with M1 Mac laptops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the elevator blocker lever in the Mechanical Age being unresponsive sometimes, or flipping back to a position you did not intend for it to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Numerical elements on clocktower puzzle gears have been darkened so that they are more readable at lower resolution scales.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for being able to use the fortress rotation controls while inside of the elevator in the Mechanical Age.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some items spawning outside of the drawers on save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the colors up on the pipe controllers in Channelwood so that the levers have a more interactable appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the fog showing up in ray traced reflections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the player being able to pick up a book in VR and 2D when the bookshelf in Myst Library is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the ceiling fan and linking book in Stoneship ship becoming visible when stepping to the end of the plank on Myst Island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for softlock in Mechanical on the second floor when being booted from the elevator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for main menu scene not being reachable from logo scene if there are no audio devices available, or music is set to 0 on gamestartup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent player from being able to change walk/run mode while in Cyan Logo scene, and if it can't change walk/run, prevent the notification from showing at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a “fail” sound for Myst Island tower elevator if the player tries to move it without the door closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a “fail” sound for Channelwood elevators if they are powered but the player tries to move it without the door closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Linking books can now be used to link by clicking on any part of the panel page, instead of the book closing if you press the white space below the linking panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for disengage from Myst Island bookshelf not working if you previously disengaged from reading a book with the left mouse button.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for some interactable cursor offset issues after going up or down a ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upcoming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who has reported issues with crashes on startup after enabling certain menu options. In most cases, ensuring 1. Your machine fits out minimum spec, 2. Your graphics drivers are up to date, and 3. Verifying game file integrity should fix the issue for most, but there are some legitimate engine issues on specific hardware in dx12 that we are looking into resolving. Also, if you’ve enabled some graphics settings that caused Myst to poop out launching every time after then, you can delete your user settings here: C:\\Users\\\\AppData\\Local\\Myst\\Saved\\Config, and please let us know which setting it was that caused the issue (as well as information about your machine). As a workaround for these issues for now, you can use our new launch option for starting the game in dx11 mode, and that should get you in the game ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We hope to implement a menu feature to increase dialog subtitle size in 2D.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are looking into a fix for the half page in Stoneship being very dark when picking it up from the side of the drawer. As a workaround for now, you can see the page clearly if you pick up the page with the drawer opened directly in front of you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the folks playing in a true-free-roam environment in VR (literally walking around in a physical space), we have some hopeful fixes coming soon for the screen randomly appearing to turn black when you walk in tight collision arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some folks with their system language in languages other than English have found that changing the game language while in a game instance does not immediately update the journal textures to match the desired language. We will look into fixing this, but as a workaround for now, you can quit and restart Myst, and the textures should reflect the desired language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More fun improvements and features are in the pipe that we’ll announce at a later date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extra Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If anyone encounters any crashes or other issues, please email support@cyan.com with the following information:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dxdiag (if on Windows) or screenshot of “About this Mac” page (if on Mac) of your machine,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The contents of your C:\\Users\\\\AppData\\Local\\Myst\\Saved directory, zipped up, or if on Mac, the contents of your /Users/username/Library/Application Support/Epic/Myst/Saved directory, and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Details of the bug, with any repro steps if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For folks who monitor our Steam page for patch update information but own Myst on other platforms, and are still waiting on a patch for Myst to come to Gamepass/Xbox One/Xbox Series/Windows Store, please note that all updates we push on those platforms have to go through a certification process on Microsoft’s end that can take a week or longer. We are submitting a patch today and we hope for it to be approved sometime next week. Unfortunately this process is completely out of our control so we can only hope for it to get through the queue ASAP and be approved at the end of it all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "We will be out of the office this Labor Day weekend, through the end of the day Monday, and will address any tickets or discussions once we’re back in the office on Tuesday.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for all of your support! Enjoy playing Myst, and have a great weekend, y’all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 14,
+    "balance": 0,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4020014099093544884"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-04T00:13:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.974Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.424Z"
+  },
+  {
+   "id": "myst-141568@2",
+   "gameId": "myst-141568",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-28T01:16:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy Myst launch weekend! We released an initial patch this morning and worked hard today to bring you this second patch for Myst, just in time for the weekend! This patch contains the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with the in-game menu in VR not being visible on occasion on some Steam VR HMDs. If you are still experiencing this issue, please ensure you have the latest graphics drivers installed on your machine.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Players playing Myst with Ultra Wide monitors can now interact with parts of puzzles that were previously cut off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stoneship lighthouse crank will now auto-crank about a third of the way just by clicking on it. This should alleviate some confusion about the crank being unable to charge the generator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed hover tooltip about ladders for \"textures\" in graphics settings menu. Turns out ladders and textures have almost nothing to do with each other... weird!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for input placement on elevator rotation puzzle in Mechanical.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for imager room door occasionally trapping players when it opens as people leave in 2D and VR. Someone needed to just come and grease that thing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(SPOILER) Fix for white page and other pages on Myst Island not appearing when you complete the game and start a new one within the same game instance. For all you folks trying to accomplish the \"Speedy\" achievement, this one is for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New optimized DLSS binary to get better performance from Myst.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Additionally, we've received an overwhelming number of comments and emails about the desire for Russian and Polish language support. I'm happy to report that we will begin looking into adding this next week! We just need the weekend to rest first :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks, everyone! As always, if you encounter any issues, please send an email to support@cyan.com with information about your system (and a dxdiag report if on Windows). Our main support person is still out due to a family emergency so it'll just be me (Hannah) responding to folks -- as such, please be patient with us as we navigate the next week, and most importantly: Enjoy Myst!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4018887653985632966"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-28T01:16:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.973Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.423Z"
+  },
+  {
+   "id": "myst-141568@1",
+   "gameId": "myst-141568",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-27T18:22:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi folks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1 is now available for Myst! The following fixes are contained:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for Index HMDs sometime showing black screen if exiting the bounds of the intro logo sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for mazerunner not being able to be used at certain locations in the maze: We have a Patch 2 we are working on with more fixes that we are hoping to push soon.: Thanks,: Hannah @ Cyan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1255560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1255560/view/4018887653984586320"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-27T18:22:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1255560",
+      "checkedAt": "2026-11-13T03:26:23.972Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:47.422Z"
+  }
+ ],
+ "issues": []
+}

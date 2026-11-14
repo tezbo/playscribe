@@ -1,0 +1,4904 @@
+{
+ "game": {
+  "id": "tcg-card-shop-simulator-309862",
+  "igdbId": 309862,
+  "name": "TCG Card Shop Simulator",
+  "cover": {
+   "imageId": "co8o8l",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8o8l.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar31ib",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar31ib.jpg"
+  },
+  "ps5Release": "2026-09-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tcg-card-shop-simulator-309862@1.03",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 1.03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-28T00:02:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The default branch now uses the new rendering method with the GPU issue fixed and optimizations implemented to help the game runs better. Materials and lighting have also been adjusted to bring the visuals as close as possible to the classic look.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/d1cdb23ff604017ecf3c29eb591e4c8a18db155d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spooky season is here at last and what better way to celebrate than to rip some pack and hunt down six new Ghost cards! There are now 24 new Ghost cards to hunt down and collect. Can you find them all before Halloween night?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/fa093a0b597246c254ab3a16bdb84e149bcbf872.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bulk Boxes are now consolidated into generic versions to support all current and future card expansions. Along with this change, the new OG Bulk Box (Omega Grade) will be created when the total bulk card value exceeds $5,000. The Tetramon and Destiny Bulk Boxes will remain in game but will no longer appear in the price app or be available for creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/b5e4019e5f15d066e257f92dae070700e69a911f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/b6459f64fa4b45b1b3bd4f15c6cd4786b7fad723.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ascension Card Box and Playmat (Halloween) are added in game, along with a new poster decoration featuring artwork by Bad Moon Art Studio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/f30cbeeeffcf8ac5843df7a6898a7297c9b6b954.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Changelist",
+     "items": [
+      {
+       "text": "Added Ascension Card Box, Playmat (Halloween), Halloween poster deco",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added six new Ghost cards (total 24 rare cards to collect)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Consolidate Tetramon and Destiny Bulk Box into generic Bulk Box, make it ready for future card expansions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added OG Bulk Box (Omega Grade) at base price of 4000, it will be created if the bulk card value exceeds $5000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed Tetramon and Destiny bulk boxes (it will remain in game, but won't be shown in the price app and cannot be created anymore)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workbench price slider limit increased to $100",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted lighting and materials to match back the classic looks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimization - fixed GPU excessive usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - sometimes stuck and unable to play cards in TCG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - quality settings not working properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - shadows flicker issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Build 1.04 - Bug Fixes",
+     "items": [
+      {
+       "text": "Fix bug - Wall Display Case texture has some artifacts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Adjusted Evo statue material's shininess",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Bulk box's material reset on load issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - price tag numbers text look stretched",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - lighting problem with certain furniture causing them to be black",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Build 1.05 - Material tweak and bug Fixes",
+     "items": [
+      {
+       "text": "Updated warehouse shelf packaging box's material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated furniture and item's color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - card game stuck after viewing discard pile while play effect is resolving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer's glasses disappear when player looked down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - noisy wall texture problem",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer's play card material too bright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Build 1.06 - Bug Fixes",
+     "items": [
+      {
+       "text": "Fix bug - price tag text font and size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - mouse and controller can't work at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix bug - item and warehouse tag should show 0 instead of blank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Build 1.07 - Bug Fixes",
+     "items": [
+      {
+       "text": "Fix bug - price tag's text is blurry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - scanner giving wrong max storage amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - grabbing a box off the warehouse shelf is no longer giving the box with fewer items in it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 19,
+    "balance": 1,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1847920302229083"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-28T00:02:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.423Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-28T00:02:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.423Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-28T00:02:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:18.511Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@1.0",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-14T09:38:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, Ding here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TCG Card Shop Simulator was made because I was bored out of my mind after burning out from solo mobile game development back in 2023. I felt aimless and wasn't sure what to do with my life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm not sure if I hit some kind of boredom limit, but one day I thought to myself, \"Let's see if I can publish a PC game on Steam and make some cool Steam Trading Cards, always wanted to try it. And it would be nice if I can open an infinite amount of TCG card packs in the game, real ones are so expensive!\". And what's more fitting than the TCG tycoon game I already had on mobile? I just needed to make it work for the PC platform.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "From then on, I was a madman. I worked on it everyday and spent at least 90 hours every week for 6 months. And on 15 September 2024, I managed to launch TCG Card Shop Simulator on Steam Early Access, a month earlier than what I've planned. I had no big expectations or plans for it other than making the Steam Trading Cards work, but I would have been really happy if it sold 100,000 copies in a year (it somehow sold that amount in just 3 days!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The roadmap was something for me to aim for after the Early Access launch, so I wouldn't suddenly stop without any direction. I had no idea if I can actually finish everything because I didn't have a clear plan for how the features actually work. That's why I didn't put specific dates on it or promise that I would definitely make everything happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Halfway through development, things got difficult and I had no idea how to implement many of the features, such as card grading and the playable TCG. I often thought about giving up and stopping development. After all, I can walk away any time. But I told myself to take it slow and take it one step at a time to not overwhelm myself. In the end, almost two years later, I actually completed most of the roadmap and I still cannot believe TCG Card Shop Simulator is actually going 1.0 on Steam and launching on all console platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And here, I would like to thank everyone who made 1.0 possible:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you General Arcade for porting TCG Card Shop Simulator to all the console platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you Bad Moon Art Studio, GiganticBrush, Hide and Seeds, ThunderRoar Studio, and Kudaman for the amazing Ascension card artworks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to the Community Art Contest participants with your awesome artwork! (Added all as posters in game, everyone is a winner)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to my wife for being there for me everyday, your love and support is what helped me through many difficult times in life!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And finally, a big THANK YOU to every player who played TCG Card Shop Simulator. Your support made this entire journey possible!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Completed roadmap from Early Access to 1.0",
+     "items": [
+      {
+       "text": "From 77 > 111 items to unlock and sell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From 21 > 43 furniture types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From 2714 > 4436 cards to collect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "273 decoration options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "55 community fan art posters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can sell old shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer review app",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer trade cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More shop product types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More shelf & table types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More shop space expansions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shop decoration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grading card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scanner order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workers improvement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Organize tournament",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New card expansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Playable TCG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many QOL updates, bug fixes, collaborations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Playable TCG",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/8a32ccf5d36476ab142f94a2fbeac71b11b5493a.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The biggest feature is finally here! Tetramon TCG is a quick 3-5 minutes match that you can play with any lone customer that is waiting at the play table, while the shop continues to operate. To join the game, approach the play table with a waiting customer and press RMB or gamepad right face button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TCG Rulebook",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/0b5f88dd091be56b5e0633f0bd10f9a5d41c2586.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can read the full rulebook at the Workbench to learn how to play the TCG. Note that Workbench is unlocked at shop level 7 so you might not be able to access this and the playable TCG at the beginning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Create Your Deck",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/568b0469d266fdb51562b1c9eaefb4ca7260311d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deck can be created or modified at the Workbench as well. Create your 50 cards deck and prepare for battle! Select your deckbox and playmat based on the license you have unlocked. You can easily share your deck by copying it and sending the output list to your friend. And if you're really rich, maybe you can try blinging out your entire deck with full art foils 🤩",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join Your Own Tournament",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/d35f526dfcb83e6414a1c802436abf65bcb120c7.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the addition of playable TCG, you can now join the tournament you hosted! Based on your ranking at the end of the tournament, you can keep the prizes for yourself if you win :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Community Art Contest",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/b27896281f68013744b73ce9eaeb88917af2b4eb.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I decided to add all the artworks created by Discord members during the contest period because they all look great! Thank you so much for participating and for your love and support for TCG Simulator/Tetramons. It means the world to me!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Ascension Cards",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/072d42a50136bed95ce2131739458463a0eb3f01.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ascension card packs are added and that comes with a total of 1452 new cards to collect! It will feature new artwork with fully illustrated Tetramons and background. Again, a big shout out to all the art studios and artists involved! It's a massive project that took more than 6 months to complete, but it's well worth it to see these lovely card illustrations come to life!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "1.0 Changelist",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/a30e8086b510413ca6ad8e1172ab5af182653766.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added all Community Art Contest artworks in game as posters (55 total)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added playable TCG, you can now play against customer when they are waiting at the play table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Playable TCG Rulebook in game, view it at the Workbench",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added function to edit deck at the Workbench",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added gift pack from customers when player plays the TCG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Ascension card pack and total of 1452 new cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added function for you to join the tournament and play against the tournament customers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 5 new Steam achievements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix bug - save load issue of tournament customer data which causes naked customer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - save load issue of tournament customer going missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker skill level lost if fired and then save game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - when holding certain items, it is too close to camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - some areas of wall/ceiling texture are not seamless",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer stuck in shop lot B that is not yet unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted deco wall, floor, ceiling material color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted Tetramon card stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated Tetramon stat icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Tetramon \"Play Effect\" text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated localization text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New BGM for TCG battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized models and textures for improved performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced overall memory usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Version 1.0 is a major milestone, but it is not the end of development. I will continue to support the game with future updates, bug fixes, and new content. Thank you for being part of this journey from Early Access to 1.0. I hope you will continue to enjoy running your card shop, collecting cards, and playing the Tetramon Card Game. More to come!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "P.S. These cards look amazing IRL! I couldn't resist printing them out and putting them in an album 😆",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/364cedff6656d70fb589ee1122edb6ed40f92474.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Build 1.01 - Bug Fixes",
+     "items": [
+      {
+       "text": "Added RMB to skip entire graded card opening sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "At the end of graded card opening, you will now hold all the graded cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - gamepad selection UI still showing after TCG match is done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - tournament match for player haven't start but unable to join",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turn on tooltip by default at game start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Build 1.02 - Bug Fixes",
+     "items": [
+      {
+       "text": "Higher chance to get Ascension Card Pack as gift by winning duel even at lower shop level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - duel win count for the TCG Arcade achievement is not counted correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - possible fix for tournament not able to progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 14,
+    "balance": 3,
+    "other": 46,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1843481262701187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-14T09:38:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:40:18.510Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.70.3",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.70.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-23T02:33:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix bug - tournament save/load bug causing naked customer to appear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - ending the day while tournament has not ended will cause pairing data to be wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - when getting new Tournament Prize Shelf, the pairing screen is not disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.70.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - sometimes error when starting new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1830797770232058"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-23T02:33:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.420Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:18.507Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.70",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.70",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-19T17:05:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Attention potential shop owners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TCG Card Shop Simulator is on sale for 20%! In addition to that, we are introducing a new update, the Tournament Update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/af772552cab6637e2e8455be89c889b898b0daf3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Host your own tournament in your shop by getting the new Tournament Prize Shelf furniture. Be sure set your tables up with table numbers, pick out your prizes to giveaway and charge an entrance fee for the participants to make a few extra dollars!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/b5b05889858e9fc74b79b459ce14013f740e593d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As part of the Tournament Update, we are also introducing a Camera feature built into the game's phone. You can now snap photos of your shop or even the new tournament participants!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/efb01a7d28b858d1587c202f35adf69411151483.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the full list of new features in v0.70",
+     "items": [
+      {
+       "text": "New item in MY DIY: Tournament Prize Shelf.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can host their own tournament in the \"Tournament\" app of the phone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can host a tournament size between 8-32 participants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can select your own prizes to be given out to the 1st, 2nd, 3rd and top 8 participants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set your own entry fee based on the prizes worth!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set up your tables in the store with a Table number to make sure the participants can play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Live update of the participant's match rates and stats when the tournament starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "At the end of the Tournament, winners will gather around in front of the Tournament Prize Shelf to pose with their prizes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New App on the phone: Camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Snap photos with your new \"Camera\" app",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Photos taken will be saved to the \"Gallery\" app",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hope you all enjoy the new update ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Early access build 0.70.1",
+     "items": [
+      {
+       "text": "Fix bug - saving during tournament will cause save file to corrupt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45081570/3cfa4b9afbe03f971750fe082b1f24abe3325ba9.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "New item in MY DIY: Tournament Prize Shelf.",
+     "Players can host their own tournament in the \"Tournament\" app of the phone.",
+     "Players can host a tournament size between 8-32 participants."
+    ]
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1827626365754507"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T17:05:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.420Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:18.506Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.66.6",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.66.6",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-11T03:00:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bulk Donation Box and Card Storage Shelf can now hold up to 216 card types instead of 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Remove All Card\" function at quick fill screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quick fill price limit increased from $1000 to $5000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raised height of Corner Shelf and Box Shelf to prevent big-sized items from clipping through",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Raised height of Card Storage Shelf to match height of Corner Shelf and Box Shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fix bug - Quick fill not selecting black Ghost cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker with \"Set Price\" as secondary task will keep going back to rest point after setting price once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.66.7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - play table collider has empty space between each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customers looking for cards only are not entering shop if there is no card table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.66.8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent card grade to go over 10 (possible cause of game freezing after opening Card Storage Shelf screen)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Separated Bulk Donation Box and Card Storage Shelf's quick fill setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1821288646583643"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-11T03:00:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.419Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:18.504Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.66.5",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.66.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-01-08T05:44:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Early access build 0.66.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - adjusting tooltips setting during gameplay does not make it appear/disappear until the player interacts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - unable to put certain item on Tetramon Shelf (example - Nocti plushie)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - difficult to put or take item from a few of Tetramon Shelf's compartments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.66.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker not setting card price after customer bought it and new card is displayed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.66.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make worker with \"Set Price\" task to also set card price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Early access build 0.66.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker that is manning counter stops working when secondary task is set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker that is manning counter cause other worker to stack on same counter when secondary task is set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.66.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added toggle option to enable/disable set card price for both \"Set Price\" and \"Restock Card\" task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked worker's skill speed boost from 8% to 7% each level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - losing cards that failed to get placed though quick fill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - checkout counter's change is floating on air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer that wants to buy cards only ended up buying tons of items instead of cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Wall Display Case 3X2 missing deco bonus multiplier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1821288646578042"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-08T05:44:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.418Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:18.504Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.65.4",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.65.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-30T06:15:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update workers to re-check primary task each time they finish one instance of secondary task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed customer reviews for shop lighting to only start after 6PM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak customer to take lesser cards from Bulk Donation Box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - able to put graded card into Bulk Donation Box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - evening BGM not playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.65.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - package box stuck to worker when day end",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - duplicate sfx when set primary/secondary task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker unable to get item from warehouse shelf if there is secondary task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.65.6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker that is manning counter will go back rest point constantly if they have secondary task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.65.7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker not coming back the next day if game is saved at end of day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.65.8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix worker related bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimization - Displayed graded card will show simplified version of the case when further away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Early access build 0.65.9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker not showing up next day if saved at night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - graded card case showing wrong shader sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - simplified version of graded card case show up when not supposed to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1817483467042544"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-30T06:15:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.418Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.519Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.65",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.65",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-29T10:12:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Bulk Donation Box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Customer will walk by to grab anything inside and will have a high chance to leave good review",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new worker tasks - Refill Scent & Refill Pack Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added secondary task option for workers, they will now execute the secondary task once their primary task is done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased effect of store rating on play table's XP gain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When customer sit down at Play Table, allow new customer to spawn immediately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update customer to search for Play Table game better, will prioritize table that is waiting for game to start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new customer reviews for Bulk Donation Box and shop lighting at night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed to RMB for selecting card in album for grading, LMB is for viewing card in close up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization - added occlusion culling to hide object blocked by wall between store A and B",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - customer able to walk through small gaps between 2 Play Tables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Yen money display becomes negative when number is too big",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.65.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - package box stuck in halfway open/close state when stored in warehouse shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker stuck after finish filling Pack Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.65.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - Bulk Donation Box screen capacity not updated properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - able to open phone after opening album to select card for Bulk Donation Box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Early access build 0.65.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reverting thousand separator added in 0.65 as it might be causing price related issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 6,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1817483467041190"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T10:12:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.417Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.518Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.62.3",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.62.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-23T05:58:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Slightly increased price tag and warehouse tag image size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raised warehouse shelf's height slightly to make bottom label more readable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "After placing item or card on shelf, only allow customer to take it after 3 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer will not take item or card while you are setting price for it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - unable to adjust the bottom most price tag if player is too close to it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - close phone quickly after scanner is purchased, will be stuck in locked screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small announcement about the plushie, I have received the profit sharing from Makeship amounting to about $10k dollars and have donated all of it to Malaysian SLE Association. For those who bought the plushie, thank you very much for supporting! Can't wait for them to arrive :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1814309641433410"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-23T05:58:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.416Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.517Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.61.5",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.61.5",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-07T09:25:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Card grading submission will now remember the last service type selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Able to key in how many boxes of item to order when restocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Limit purchase box count to 100 when adding restock order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - stuck at restock screen after backing from virtual keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Patched Unity CVE-2025-59489 vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1811772772633018"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T09:25:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.416Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.516Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.50.4",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.50.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-04T08:25:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated Cashier Counter to be able to turn on/off checkout and card trading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - customer sell card and then buy back same card on Card Table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1784506359202807"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-04T08:25:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.415Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.514Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.50.3",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.50.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-28T06:12:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated Workbench and card pack texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated timer to pause on all customers that are waiting to trade while you are in a trade, take your time to haggle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - customer trading same Ghost card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - crash after clicking \"Let Me Think\" button and go back to the person trying to trade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1784506359003078"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-28T06:12:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.514Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.50.2",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.50.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-26T05:06:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added \"Let Me Think\" button when trading to be able to exit the trade and come back to it later",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Show card's market price when customer is selling it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show amount of card in album for the card that the customer is offering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly lowered customer's chance to initiate card trading or selling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated card image resolution from 512 to 1024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - customer trading same Ghost card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1783872412132280"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-26T05:06:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.514Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.50.1",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.50.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-22T04:24:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Tweaked customer's ask price when selling card to be lower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked customer's chance to initiate card trading or selling to be lower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked customer to have higher chance to sell card rather than trade card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer looking to sell or trade card will go away automatically after 1hr in game time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - customer stop trading after a few days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer initiate card trading at boxed up Cashier Counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/1783872412002697"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T04:24:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.513Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.49.2",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.49.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-28T01:49:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated save load to use JSON",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor update on a texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - shelf data not loading correctly due to mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6212245217911936186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-28T01:49:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.413Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.512Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.49.1",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.49.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-27T03:33:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix bug - show wrong total card collected amount in album",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - spamming enter key while going next day may sometimes jump to the next day twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - play mat or accessories customer uses should only be selected from licenses unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix text typo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6212245217911906900"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-27T03:33:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.413Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.512Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.49",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.49",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-26T05:53:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Customer will now use playmat and other accessories when playing at Play Table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer that played at Play Table will have higher chance to look for single cards to buy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Play Table shop exp bonus that is affected by store rating and shop level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Others\" category at TCG Price screen, and removed the \"All\" button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Last customer in checkout queue will look for other Checkout Counter with shorter line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will automatically backup auto save file to an empty manual save slot when loading manual save, this is to prevent players from losing their auto save file accidentally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - customer unable to find path to Play Table at corner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - collision not disabled when moving Checkout Counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Wide Shelf model's normal is reversed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6212245217911878709"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-26T05:53:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.511Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.46",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.46",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-09T04:10:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added actual total number of cards text when sorting by Duplicates, it will not show at all if you only have 1 card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added potential fix for memory leak during pack opening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated customer's Play Table pathfinding linking to prevent getting blocked or stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated worker to find the closest Trash Bin to discard boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated auto cleanser collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - Trash Bin unable to snap when moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Trash Bin is missing \"Move\" tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - black and white Ghost card sharing same price tag when put on display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Decimite Figurine wrong spelling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Katengu card effect wrong spelling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - wrong card number sequences in album",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer at play table showing shopping bag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6360862737590767737"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-09T04:10:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.511Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.44",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.44",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-04T02:21:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Able to take Workbench's stored Bulk Box while holding box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show door area guideline when moving furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer will now complain if the shop entrance is blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker gone next day after telling them to rest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer give less money than required during checkout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer unable to queue if checkout counter is placed near and facing Shop Lot B wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "0.44.1 patch notes",
+     "items": [
+      {
+       "text": "Worker will ignore boxes that are too high, to prevent them getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker not going back to rest point when there is nothing to restock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - daily report stat not updated properly when customer is stuck in shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6350729003496199054"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-04T02:21:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.510Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.43",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.43",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-03T00:23:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a prompt to switch album when getting the first Ghost card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Warehouse Shelf's label to be removeable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Auto Cleanser model to be smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker not appearing after being hired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - boxed up Workbench not loading Bulk Boxes stored on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Customer will queue through wall in Shop Lot B when checking out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker going back to rest point when restocking eventhough there is still task to do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - card foil not displaying correctly when taking it from album",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - cards not sorted correctly in album when switching expansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6350729003492254547"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-03T00:23:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.510Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.42",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.42",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-02T02:07:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated customer and worker waypoint seeking method to fix getting stuck issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated AUD conversion rate to 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - unable to place shelf near shop window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - bulk box not reducing card amount correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - credit card can't key in more than 1m Yen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6350729003488870372"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-02T02:07:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.509Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.40",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.40",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-27T11:15:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Able to store bulk boxes on Workbench",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some workers will go back home at 9pm sharp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated black outline of the text on cash register and credit card screen to be more subtle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker not restocking if asked to fill up shelf without label",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - loading empty save file will get stuck in loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6339469370185349474"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-27T11:15:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.509Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.39",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.39",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-26T07:02:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Steam Trading Cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added black outline to the text on cash register and credit card screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auto Cleanser will deplete the Cleanser with lowest fill amount first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Worker manning the cash register will not leave until all customers has left the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer will not queue up at empty Checkout Counter unless there is no choice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Checkout Counter collider to prevent box getting stuck on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated and fixed missing translation text in a few places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - worker stuck if interact after 9pm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker will keep going back to rest point before restocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker will now store the box on warehouse shelf at end of day before going back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Destiny and Ghost cards value is not changing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - cleanser spray can't affect customer when spraying from the top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - box not respawning when out of bound at certain places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - package box outline is missing when highlighted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Small patch",
+     "items": [
+      {
+       "text": "Added some safety check for loading and saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6339469370181062324"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-26T07:02:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.508Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.38",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.38",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-24T07:21:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added pack opening speed option in setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added black outline to the money guide text when giving change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Automatically rearrange boxes on warehouse shelf, box with the lowest item count will be taken first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workers will finish their job even after day has ended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - workers not putting box back on warehouse shelf after restocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - daily report screen showing wrong total play table time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize packaging box model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6341720536519996769"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-24T07:21:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.508Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.37",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.37",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-22T13:44:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added more auto backup save files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Shop Lot B close entrance sign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed currency name from RMB to CNY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - workers not restocking item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - error when loading items in hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - cash register showing wrong item amount on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - achievement not registering as done",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Wide Shelf wrong description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - if Shop Lot B entrance is closed, workers will not be able to enter from the front",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - restocker throwing box on ground and not putting it on warehouse shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6341720536513675895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-22T13:44:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.507Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.36",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.36",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-20T10:44:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Workers that are restocking will not fill shelf space that has no label, unless instructed to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain workers will now arrive earlier at the start of new day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 2 new card album sorting method - Duplicates and Total Value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix bug - total number of customers that played in the shop is not reset in new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - package box that is out of bound at certain place is not respawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker data is not saved correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - Wide Shelf has wrong description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - wrong total value shown when opening card pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6341720536505931558"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-20T10:44:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.408Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.507Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.35",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.35",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-19T06:22:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Will automatically return to main menu without saving if there's error when loading furniture data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered smelly customer spawn chance and capped smelly customer spawn count",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fix bug - customer still taking items from shelf even after ending the day (after Daily Report shows up)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker data not saving and loading properly, making them not appearing even after hired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer not queuing properly at second cashier counter when worker is manning them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer sometimes loop around the shelves when they can't find items they want",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - get Basic Card Box tutorial not hidden after unlocking it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - RMB rounding issue during checkout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker cant give 0.01 RMB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6341720536501624175"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-19T06:22:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.506Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.34",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.34",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-18T11:17:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Note : Due to difficulty debugging the loading and restocking bug, I have added a log file in the save folder, if anyone faces item disappear after loading, customer not appearing or package box not appearing bug, please exit the game, go to C:\\Users\\\\AppData\\LocalLow\\OPNeonGames\\Card Shop Simulator and send the DebugLog.txt file over to opneongame@gmail.com for me to check, thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added toggle to disable VSync in setting screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Prevent bulk box creating process if there's no space to store it anywhere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Worker will now prioritize restocking shelf space with label first before filling up the empty space without label",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted Play Table collider, you can now stand between chairs for tightly packed Play Tables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted setting screen UI scaling to enable side buttons access for screen resolution issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Customer will only leave due to smell if he/she is within certain range of the smelly customer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - customer unable to find the items they want eventhough it's on the shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer cannot walk to play table at corner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - infinite/NaN showing on average cost price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - unlocking shop lot B expansion not affecting customer's max money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - box that clipped into locked shop lot B not respawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - game event fee is not saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker stuck in restocking loop if no space to restock item or store on warehouse shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 2,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6341720536498725336"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-18T11:17:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.506Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.33",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.33",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-17T07:06:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added PS4/PS5 controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fix bug - hire worker Steam achievement not receiving properly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix bug - putting in empty Cleanser into Auto Cleanser will make it stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - worker can't give change at cashier with some of the currency setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - controller unable to use A & B button to scan item, accept cash, add/remove change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - controller unable to use R2 button to finish checkout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - wrong Destiny bulk box texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - shop level achievement not unlocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - D20 Dice material got weird color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - average cost of deck box become really high",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered RMB conversion rate from 3 to 2.5 to prevent decimal rounding issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 1,
+    "other": 0,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6250522009530442278"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-17T07:06:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.406Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.505Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.32",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.32",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-16T12:42:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Base rent amount reduced from $100 to $50 per day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play table event fee increased from $5 to $7 per hour for Standard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play table event fee increased from $5 to $8 per hour for Pauper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Respawn package box if fall out of bound or stuck in locked shop lot B",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - warehouse shelf's label not saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - wrong item amount displayed in restock screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - SFX volume off but still hear footstep sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - auto cleanser cannot detect smelly customer that enters from shop lot B",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - manual save not working properly when overwriting existing save with different shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer looking for item that cannot be unlocked at current shop level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - sell and unbox are mapped to the same button on controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6250522009527648080"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-16T12:42:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.406Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.505Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.31",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.31",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-16T05:43:44.000Z",
+   "notes": [
+    {
+     "title": "Today's patch",
+     "items": [
+      {
+       "text": "Reduced rent amount for shop expansions from extra $50 to $20 per expansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added function to sell furniture, box it up and press C to sell for half price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug fix - ghost card displaying wrong price when opening pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - play table customer stuck and unable to progress to next day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - workbench stuck when bundling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - customer getting invisible item on shelf and unable to scan it on checkout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - missing tooltip for auto cleanser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yesterday's patches, sorry I didn't post any patch note as I need to fix various bugs quickly:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added disable controller setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug fix - controller movement even if no controller plugged in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - wrong total card value displayed when opening packs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - changed tutorial text from Card Shelf to Card Table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - AZERTY keyboard detecting movement in wrong keys",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Bug fix - auto save not working properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fix - cashier counter disappear after load game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn cashier counter if none is present in shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note : auto save bug should be fixed in the previous update, let me know if you are still facing this issue after updating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, I'm still trying to fix a bug where package item did not arrive when finishing checkout, do let me know if you have more info about this bug, thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/6250522009526588473"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-16T05:43:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.504Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.27",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.27",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-14T10:52:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add able to exit cash register by moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - Anguifish card will not display in album if sorted by number",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - set game event UI bug out on certain screen aspect ratio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - player can press credit card when employee is checking out credit card customer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5875594803673936997"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-14T10:52:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.503Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.26",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.26",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-13T11:03:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add move and place box function",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting money increased from 500 to 1000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shop expansion rent amount lowered by half",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item license unlock price decreased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer more likely to find play table with other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - play table fee can be set to any amount when customer is queuing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - after buying furniture, tooltip icon will appear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer always holding shopping bag after finish playing game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - hold spray button and exit spray mode, spray will not stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - spam ready cleanser button and hold right click on shelf get multiple cleanser added to hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963414363408374338"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-13T11:03:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.404Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.503Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.25",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.25",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-10T14:03:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add arrow keys for movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak daily price change amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add customer popup text if they don't have enough money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer have wants and will only buy items they looking for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warehouse Shelf cost lowered from 2000 to 1200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Checkout counter cost increased from 1200 to 2000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - item floating on shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer stuck at shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - putting item on shelf from hand will not count towards the tutorial task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963414363397894756"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-10T14:03:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.404Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.502Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.24",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.24",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-09T13:39:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add sprint function by holding Shift key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweak higher chance for customers to play at play table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update item's price change to have a limit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Able to input both , or . as decimal when setting price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Able to press Q to call customer to stop play, then Q again to move table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - German \"Setting\" translation error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer go through window to sit on play table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - some customer clothing disappear at certain view angle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - open close sign display wrongly after loading game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963414363394190196"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-09T13:39:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.403Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.502Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.23",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.23",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-07T10:52:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add AZERTY keyboard option",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Able to use comma key as decimal in checkout credit card screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated card foil shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - item sometimes fall from counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - card in customer's bag not hidden when loading game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - customer sometimes exit shop without paying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963414363386478405"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-07T10:52:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.403Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.501Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.22",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.22",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-05T07:25:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add new foil shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customer will react to being sprayed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug - salary bill not added properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug - box dropped from warehouse shelf when loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963413728348840831"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-05T07:25:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.501Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.21",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.21",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-01T01:57:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Add rent and bill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Add hire staff function, only 1 available currently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Add language setting and rough translation (auto translation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Update foil card's brightness and color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Warehouse shelf lower shop level requirement from 15 to 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Cash counter increase shop level requirement from 10 to 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963413728333431688"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-01T01:57:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.500Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.20",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.20",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-07-28T01:59:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fix bug - unable to start new game properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - restock amount display wrongly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - put box on warehouse shelf but unable to take it out until restart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - warehouse shelf tag should not be able to set price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - right click warehouse shelf while holding opened box will bug out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - right click while holding item will make warehouse shelf price tag gone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - when holding item and look at box, highlight won't turn off when look at another box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963413094357489598"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-28T01:59:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.500Z"
+  },
+  {
+   "id": "tcg-card-shop-simulator-309862@0.17",
+   "gameId": "tcg-card-shop-simulator-309862",
+   "displayName": "Update 0.17",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-07-24T19:49:36.000Z",
+   "notes": [
+    {
+     "title": "Savefile clear/restart notice",
+     "items": [
+      {
+       "text": "I am very sorry about this but the previous save file will be lost in this update due to a major change in save load method, the new save load method should work better and more stable from now on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to the play testers for taking your time to play the beta test and writing feedbacks, all the comments and suggestions from you are very helpful in making the game better! Not all feedback are addressed in this update yet and will be done in later updates, but most of the high priority feedback should be in this update already. Do check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelist",
+     "items": [
+      {
+       "text": "-Added camera FOV slider in setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed camera FOV to be higher by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Open phone button changed from F to Tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Able to put item straight from hand back into box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Able to press Esc to exit phone screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Able to use keypad number in credit card screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Add a simplified method to access manage event screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "=(left click on play table)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Add a simplified method to put card on shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "=(left clicking on card display will open up album automatically, select any card and it will be put on display)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Decrease higher rarity card border chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Add option to restock small package of Deckbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Smelly customer will never buy Cleanser on shelf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Higher chance for customer to give exact change when checking out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Smelly customer spawn chance decreased from 25% to 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Decreased chance of customer leaving due to smell from 30% to 15% per smelly customer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Basic Card Box (4) license cost lowered from 500 to 400",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Basic Card Box (8) license cost lowered from 800 to 600",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-D20 Dice license shop level requirement lowered to 3, cost lowered to 200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Deckbox license cost lowered from 1000 to 500",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-All plushie license cost cut by half",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - save load naming issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - while moving shelf, shelf will be saved outside shop when closing game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - when behind counter, shouldn't be able to interact with other object not related to counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix bug - customer sometimes didn't give enough cash when checking out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3070070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3070070/view/5963413094345617094"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-24T19:49:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-3070070",
+      "checkedAt": "2026-11-13T03:32:34.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:28:50.499Z"
+  }
+ ],
+ "issues": []
+}

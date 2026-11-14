@@ -1,0 +1,1833 @@
+{
+ "game": {
+  "id": "defend-the-rook-152300",
+  "igdbId": 152300,
+  "name": "Defend the Rook",
+  "cover": {
+   "imageId": "co39u7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co39u7.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1bua",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1bua.jpg"
+  },
+  "ps5Release": "2023-08-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "defend-the-rook-152300@1.20",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.20",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-29T08:47:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.20 brings a substantial round of fixes to Defend the Rook, covering combat interactions, enemy abilities, save/load reliability, achievements, translations and the interface. We’ve also upgraded the game to Unity 6.3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These improvements apply to both the full game and the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat and ability interactions",
+     "items": [
+      {
+       "text": "Enemy special attacks and volleys now trigger the appropriate attack reactions, including counters and follow-up attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stunned enemies no longer perform delayed attacks that should have been prevented by the stun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Area attacks now hit each enemy once, including enemies occupying multiple tiles. Precise Shot also counts each victim once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redirected damage now preserves the original attacker’s credit and whether the attack ignores Armor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attacks correctly recheck their aimed tiles when Take the Hit moves a unit. Later shots no longer follow that unit outside the original attack area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Units killed by counters or other reactions can no longer continue moving, attacking or summoning afterward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage-triggered augments now activate once per positive hit, rather than activating from attack events that caused no damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick Reflexes is no longer consumed by zero-damage hits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Followup’s extra attack remains consistent after previews, other heroes’ kills and loading a saved battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Energise and Point Blank now work together regardless of which upgrade was acquired first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Utility movement now receives its advertised two-tile movement budget.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Utility summons now appear near their summoner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forced friendly attacks correctly trigger Utility counters and follow-up reactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Defense Augment now restores its advertised 10 Health at the end of the turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Defense Augment’s lethal-hit protection now works against armor-piercing damage and no longer applies negative healing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected Witch extra-hit targeting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shadow clones of Possessed Souls no longer incorrectly revive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Traps, towers and battle progression",
+     "items": [
+      {
+       "text": "Trap effects now remain attached to the unit that triggered them, even when movement or another reaction changes the trap tile’s occupant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cling Trap now activates its on-trigger upgrades before being consumed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shadowmaze now creates its replacement trap where the enemy died, including kills caused by Proximity Mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed enemies remaining greyed out after mine interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sniper Tower now attacks from its stated minimum range: 5–8 tiles, rather than 6–8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Emerald and Splitter Towers now fire after start-of-turn buffs, consistent with other towers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Waves can no longer be marked as cleared while enemies are still spawning, preventing skipped waves and bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coral barricades no longer prevent the final boss wave from arriving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed enemies remaining on the board after a boss’s flee effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wave-clear rewards are now awarded correctly and only once per wave, including split waves and early waves on higher Ascensions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing or duplicated upgrade choices around split waves, including the Desert battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy spawns now check their entire footprint against occupied and blocked tiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple enemies summoned together now reserve valid spaces, preventing overlapping spawns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Freed heroes are placed on a valid nearby tile rather than overlapping another unit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enemy and boss fixes",
+     "items": [
+      {
+       "text": "Both Ballistas now use the Destroyer behaviour stated in their descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dire Wolf’s aura now affects the intended wolves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elven Mage now grants temporary Armor rather than Power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Anemone Leech now destroys itself after lethal attacks too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Suction Cupper now restricts its pulls to heroes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Necromancer’s Elusive behaviour now matches its keyword.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hysteria can now force Sacred Gem to attack allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Geometric cannon movement now considers future firing lines, matching its Hunter behaviour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bombardment Cannon’s damage now matches its displayed attack line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vampiric Sorcerer’s warning now includes the centre of its impact area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Perching enemies now display their full attack threat from the destination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies immune to Stun no longer incorrectly appear to be effectively stunned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coralled Cager no longer swallows a hero that its attack has already killed, preventing heroes returning alive at 0 Health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the Hydra’s limits for each head type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed duplicate demon spawning on Ascension 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ascension Gem Spectre now performs its recurring summons correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ascension Cleric now summons worshippers at the stated turn boundary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Immortal Commander now revives with half of its modified maximum Health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Commander’s Arrow Shower now activates when it reaches exactly 175 Health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ascension Commander’s pulls now place units adjacent to the attacked target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ascension Valter now receives the correct bonuses when statues die, including Arkosh’s Range bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected Valter’s description to show five normal statues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ascension Fungal Rook now selects random, non-repeating attack patterns consistently with its description and warning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jezebel’s attack areas now exclude herself and her allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jezebel’s proximity checks and slam areas now follow her current position after displacement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Final-boss volleys now respect their original aimed tiles when reactions move a defender.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy thieves now return only the gold they actually stole, separately from their normal defeat reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preserved the wealthy tutorial Orc’s identity and reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Saving, loading and previews",
+     "items": [
+      {
+       "text": "Fixed Continue duplicating loot-history events, which could grow saves dramatically and eventually cause End Turn failures. Existing duplicate entries are removed when loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Combat random choices now remain consistent through previews and Continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss intentions, AI state and thief flee behaviour now restore correctly and remain reversible during previews.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected restoration of enemy-owned traps, Ascension modifiers, blocked-tile effects and pending loot choices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replacement attacks now retain their source and behaviour after loading, including attack availability, Range and kill credit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect Power bonuses after Continue, including the Sap Strength interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kill-based bonuses and achievement checks now handle earlier spell-caused deaths correctly after Continue, without errors interrupting later valid kill credit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved restoration of damage attribution, revival charges, augment effects and trap consumption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved save writing, backups and recovery when a save file is locked or cannot be replaced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reset Game now clears recovery files too, preventing deleted progress from being restored accidentally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save & Quit now warns when leaving will discard the current turn’s actions or restart a battle that has not yet been saved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Not Even Close now correctly counts heroes already lost in earlier battles. Shadow clones no longer count as the original hero being alive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an error in A Peaceful Place when an attacker dies during its own attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The speedrun achievement now measures 20 minutes of active run time. Time spent paused, in menus or with the game closed no longer counts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected kill-credit handling used by kill-based achievements after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Interface, graphics and settings",
+     "items": [
+      {
+       "text": "Restored the blurred background behind menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed pink/magenta dissolve effects on hero upgrades, shop items, spell icons and the meta-upgrade book.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hero portraits now keep their positions when clones or summons appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a VSync setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved resolution matching and application of the selected refresh rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the mouse cursor being hidden incorrectly when virtual joystick devices are detected.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "End Turn reminders now ignore units that cannot move or attack and should not require attention.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an updated spike-trap icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the optional -run-in-background launch option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ensured developer controls are disabled in release builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing-script issues and several errors that could interrupt combat or loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Text and localization",
+     "items": [
+      {
+       "text": "Made translation corrections across all supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected outdated values, inaccurate mechanics, missing placeholders and empty entries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clarified descriptions for Truly Gifted, Proximity Mines, Temporary, Extra Juice, Vengeance Cast, Hero Essence, Banshee souls and Advantage Fighter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clarified that Stone Form’s Armor lasts through the enemy turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected Start Up’s description to state +1 Damage Radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unresolved placeholders in the Leave and Radius glossary entries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected Destroyer and Chain Lightning wording.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shortened overflowing Russian interface labels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added fallback fonts for missing characters in localized UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved localized text lookup and caching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’ve also expanded our automated checks for attack previews, save/load consistency, spawning and battle state to help catch future regressions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing Defend the Rook and for reporting the issues that helped shape this update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 43,
+    "balance": 0,
+    "other": 48,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/1847920302233952"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-29T08:47:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.084Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-29T08:47:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.085Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-29T08:47:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.239Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.18",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.18",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-01-25T01:17:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Font size increases supporting steam deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/5035622109503852246"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-25T01:17:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.237Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.17",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.17",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-12-08T04:55:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Achievement: Not even close",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Achievement: Spellslinger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crossbow training overrides Earthquake strike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ranger-Danger attacks gem cannon, it survives, thus Ranger gets additional attack. Wizzy finishes said cannon (for the defeat buff), and now Ranger is still lit but unable to attack since cannon is gone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The precise shot talent doesn't seem to trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hysteria spell makes the attack-range disappear after use for enemies technically correct, as they can't attack then, but they will after you press end turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4980448574107354860"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-08T04:55:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.237Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.16",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Patch 1.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-04T00:07:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Vampiric Sorcerers will no longer attack if stunned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Acquire Target will no longer hit friendly units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4613399405930905722"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-04T00:07:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.236Z"
+  },
+  {
+   "id": "defend-the-rook-152300@post-2022-04-22",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Minor Fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-04-22T13:49:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Minor patch rectifying the white background in zone 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4348797798079097538"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-22T13:49:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.236Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.15",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.15",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-04-19T22:38:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Provisional Xbox controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed occasional crash on end turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/5493837466498881268"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-19T22:38:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.082Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.235Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.14",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Patch 1.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-30T08:18:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Minor UI and stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4237326104329674658"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-30T08:18:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.234Z"
+  },
+  {
+   "id": "defend-the-rook-152300@major-2021-12-14",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Experienced Mode update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-14T18:27:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of you asked us to add more challenge to Defend the Rook, so we've been working on the Experienced Mode - available now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you next start a run you will be asked to turn on this mode. It will change all the battles difficulty and adjust the shops and drop rates of abilities to provide more challenge for experienced players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can turn this mode on or off at your choosing in the Ascension menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you will enjoy this new feature and can't wait for your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4224936849669538117"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-14T18:27:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.234Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.12",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Patch 1.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-24T08:06:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Magister Hunter no longer damages on spawn round",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Translation and ability description tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "My Money bags acheivement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Banshee wont damage allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ascensions unlocking early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ocassional units overlapping spawns with large units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Frostbolt tower wont slow elites or bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4224935490631302346"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-24T08:06:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.233Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.11",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.11",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-04T10:16:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "End turn performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trap upgrade wording clarifications",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frostbolt no longer affects allies when combined with other upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Possessed Soul clone wont revive with more than 1 HP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several translation corrections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vampiric Sorcerer threat correction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Intro cutscene no longer blurry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4186652991109048952"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-04T10:16:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.232Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.10",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.10",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-01T01:42:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Invigorate and Fadeaway fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swallow Cut fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Earthquake spell fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cloud sync rectified.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "External monitor refresh full screen switching fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Granting heal instead of revive in loot fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hero upgrades wording clarified.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magister Hunter spawning more than once fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Freestep no longer procs on large or massive units more than once per move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Intermittent Spell casting errors fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Samurai Deflection fixed when movement occurs following an attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4186652357036869690"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-01T01:42:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.080Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.232Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.09",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.09",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-29T08:58:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Boss Unit portrait images clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swallow Cut only applies to enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sitting Duck wont trigger off Proximity Mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4186652357027048204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-29T08:58:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.231Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.08",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.08",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-28T08:41:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Elven Commander stat adjustment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boom Barrel buff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some upgrade nerfs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lightning tower stat adjustment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stability Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rook Mulitfire fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Retaliate fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4186652357023362016"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-28T08:41:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.230Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.07b",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.07b",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-27T11:00:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Blurry images at higher resolutions made crisp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death Speaker no longer triggers Bitter Revenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flintlock Repeater now targets the closest unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution selection improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More translations improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4186652357020072167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-27T11:00:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.230Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.07",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.07",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-27T02:04:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Anemone Leech fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorceress Phasing fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cancel hotkey now is C",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor UI improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor translation corrections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4186652357018715968"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-27T02:04:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.229Z"
+  },
+  {
+   "id": "defend-the-rook-152300@1.06",
+   "gameId": "defend-the-rook-152300",
+   "displayName": "Update 1.06",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-26T14:10:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed combat log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some achievements completing too soon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fungal Rook no longer has blocked tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1531250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1531250/view/4103335143123990610"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-26T14:10:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1531250",
+      "checkedAt": "2026-11-13T03:18:51.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:05.229Z"
+  }
+ ],
+ "issues": []
+}

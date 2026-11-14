@@ -1,0 +1,2617 @@
+{
+ "game": {
+  "id": "atlas-fallen-214409",
+  "igdbId": 214409,
+  "name": "Atlas Fallen",
+  "cover": {
+   "imageId": "co546f",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co546f.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1th9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1th9.jpg"
+  },
+  "ps5Release": "2023-08-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "atlas-fallen-214409@5.4",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "Patch 5.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-15T09:14:52.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone!",
+     "items": [
+      {
+       "text": "Here is Atlas Fallen: Reign of Sand's latest patch. Make sure you read the entire note!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PERFORMANCE",
+     "items": [
+      {
+       "text": "Added an experimental option to fix the stutters that players with uncapped FPS suffered when playing with high frequency monitors (requires more powerful PCs and changes to settings.json file).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This allows you to manually set the rate at which all game systems are updated (including camera movement, which was the main culprit for the stuttery feeling encountered at high framerate).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to enable the fix",
+     "items": [
+      {
+       "text": "Download the file available on Focus Together here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replace your settings file with the pre-made one you just downloaded, it will activate the fix, but it will reset all the rest of your options to defaults.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Formatting tips",
+     "items": [
+      {
+       "text": "Make sure to respect the formatting of the json file (spaces, tabulations ...etc.).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you add the line in the middle of the text block, don't forget the comma at the end of it. It will not work without it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the line that you add is the last line, it doesn't need a comma at the end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Warnings & Guidelines",
+     "items": [
+      {
+       "text": "The higher you set the value, the more resource intensive the game will become, which can lead to potential slowdowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We advise to try this experimental fix only if your system specs are vastly above the recommended specs for the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to try the fix, we advise to first set the setting's value to a framerate that your machine can hit most of the time in game (for example, if your machine can play the game at an average of 100 fps, even in intensive situations, then you can start with the setting's value to 100).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the game doesn't behave well with a high value, reducing it should help performance (for example, if a value of 100 leads to slowdowns, you can try 90 or 80, and adjust based on your tests' results).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On the contrary, if the game runs well with the value that you set, then you can try to progressively crank up the value, to reach the smoothest experience possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to go back to the default behavior of the game, simply put the value to 60 (default), or delete the line from the settings file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "STABILITY",
+     "items": [
+      {
+       "text": "In some rare cases, when the EOS matchmaking option is enabled, crash may happen when quitting the game or going into co-op mode. If that happens, disabling the EOS matchmaking option should fix the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that happened with specific SteamDeck settings changes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue that caused players to have a black screen during one of the tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused Corruption Breach events to end when playing in co-op and the host dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that happens when disconnecting from co-op sessions after one of the player dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the game to stop responding after players change both the frame and refresh rate to 30 under specific conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that happened when reloading save files multiple times at a specific location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved stability on XBSS: Fixed an issue that caused the game to crash when players died repeatedly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Fixed an issue that caused the Essence Stone “Saving Grace” to not work properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the “Idol of Salvation” to not work properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused two audio logs to be duplicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the Knuckledust weapon to be unavailable during NG+ under specific conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the Knuckledust weapon and loadout presets to be unlocked at the wrong time when converting save files from the base game that were at a specific point in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused chests to not be displayed correctly when at a Vantage Point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which specific items would not get awarded to co-op partners upon collecting them thus preventing getting 100% of the game and/or certain achievements/trophies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused enemies to stop attacking players after starting NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issues where players could skip the save conversion process from base game into Reign of Sand edition leading to further issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused certain bosses to take extra damage in NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the player character to no longer take damage after rekindling a specific boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the achievement/trophy “Forgemaster” to not unlock for guest players under specific conditions in co-op",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the cost for weapon upgrades in NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue that caused players to be blocked if they used up all of their essence before reaching the locked sockets tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "VISUAL",
+     "items": [
+      {
+       "text": "Fixed an issue that caused the healing VFX of the Essence Stone (Beastial Claws) to remain on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue that caused several artifacts when Idol and Shatter Attacks were used multiple times in quick succession.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue that caused options in the Anvil Menu to be grayed out when they shouldn’t (and the opposite for when they shouldn’t)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue that caused the Anvil menu to display a broken reference under specific conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed an issue that caused the profile name on XBOX to not be properly displayed when changing languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an UI issue that caused icons in the save file to display a broken reference upon dying and reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an UI issue that displayed the wrong option for opening chests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an UI issue that caused the “rekindle” option to not be available after completing a challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused certain tutorial prompts to not be displayed properly under specific conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused tutorials in NG+ to not be displayed properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 32,
+    "balance": 1,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/6211118320240909500"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-15T09:14:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.247Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-15T09:14:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.247Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-15T09:14:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.571Z"
+  },
+  {
+   "id": "atlas-fallen-214409@5.3",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "Update 5.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-10T08:11:55.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone!",
+     "items": [
+      {
+       "text": "We're happy to present you a brand new update of ​Atlas Fallen: Reign of San​d! You shall find the list of changes here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Addition of Code-based matchmaking support on the PC Gamepass / Microsoft Store version, to allow for easier co-op with Steam & EGS players.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Stability / Technical fixes",
+     "items": [
+      {
+       "text": "Fix for freezes & crashes that happened when completing a large number of Source Trials (via the Rekindling functionality). Savefiles that were affected by this bug should be fully usable again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Memory Optimizations to increase general stability during long play sessions, for all platforms & game modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Fixed an issue that would sometimes cause the Fallen King boss to be extremely weak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an exploit that allowed players to become completely invulnerable via a specific build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Co-op",
+     "items": [
+      {
+       "text": "Fix for a co-op bug that locked players in the final dialogue of the Source quest if they used characters of different genders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a savefile corruption that happened when an advanced NG+ Guest joined an early-game NG+ Host, and picked the “Save Character” option after exiting the session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a blocking co-op bug that permanently locked the character in place when dying while the co-op partner defeated the Source’s Final Boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would prevent players from rekindling Source Trials in co-op, under specific conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Corruption Breaches despawning if the co-op Host died two times in a row while doing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a co-op issue that caused shoppable items to become irretrievable for the Guest, if the Host had bought them before launching co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added correct name on UI plate when defeating the Source’s Final Boss in co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed audio issue that caused one of Nyaal’s barks to be very loud and hard to understand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio file not playing for “The Lost Caravan” lore item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Enemies",
+     "items": [
+      {
+       "text": "Fix for an issue that caused greater & colossal enemies to turn invincible when targeted by a support ability of the Weaver wraith at a specific time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for an issue that caused the Sand Clones of the Marauder Enemies to be invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual / UI",
+     "items": [
+      {
+       "text": "Fix for the rendering of armors breaking when quickly scrolling through several armor models.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues that would happen with the Compass when dying during Source boss fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added UI popup for the distribution of the “Celestial Damage” NG+ essence stone, that could easily be missed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added functional counter for the discovered Source Portals on the Source Map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Fix for camera issues when getting hit or killed while interacting with a Source Portal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Localization issues in the Credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 16,
+    "balance": 2,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/6242640076614191823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-10T08:11:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.246Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-10T08:11:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.246Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-10T08:11:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.570Z"
+  },
+  {
+   "id": "atlas-fallen-214409@major-2024-08-06",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "The Atlas Fallen Reign of Sand free, major update is LIVE!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-06T16:10:30.000Z",
+   "notes": [
+    {
+     "title": "Welcome back, everyone! ✨",
+     "items": [
+      {
+       "text": "The free major update of Atlas Fallen Reign of Sand is now available! You are back in the Sand to discover new environments, enemies, difficulty mode, voice cast... and more! ⌛",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get ready to conquer the Source and its tremendous mysteries! 💥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "All-new Challenge area: the Source",
+     "items": [
+      {
+       "text": "Explore the very fabric of God’s limbo and wield new powers in various epic challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "During your exploration, you’ll encounter special Rifts across the world. Interacting with these portals allows you to enter the Source as Nyaal. In this seemingly endless desert teeming with shattered giant structures you’ll face new challenges and unearth key elements that help you better understand the past.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Source features exciting combat centered around the new gameplay mechanic of Wraith Abilities. Within the limbo, you’ll unlock wraith-like powers, allowing you to master the sand like never before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transform into a Shellshocker and unleash a devastating tornado that damages enemies and generates momentum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Morph into a Mawer to perform a forward dash, damaging opponents as you pass through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combine these new abilities with swift sand surfing to overcome this menacing sand limbo. Each challenge provides rewards and uncovers previously untold story fragments related to the War of Gods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New monsters join the cast!",
+     "items": [
+      {
+       "text": "New threats emerge in the world of Atlas Fallen! With Reign of Sand, we aim to offer you a refined combat experience and unique challenges to overcome. A diverse range of enemies is crucial to convey a satisfying sense of progression and ensure a consistently fresh gameplay experience. So, let’s introduce some of our new Wraith Challengers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Morpher",
+     "items": [
+      {
+       "text": "The Morpher is a nimble new Wraith that challenges you both in the air and on the ground. While airborne, this foe attacks with swift strikes focused on speed and mobility. In contrast, it resorts to powerful melee attacks when grounded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These two distinct behaviors require you to adapt on the fly to stand a chance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Transmuter",
+     "items": [
+      {
+       "text": "Prepare to face this bulky Wraith capable of devastating strikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It begins by unleashing powerful but slow attacks. Sounds easy to dodge, right? However, there’s a catch: each destroyed body part triggers an evolution in its combat pattern, granting new abilities that are significantly faster. This dynamic creates an evolving fight, forcing you to react strategically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weaver",
+     "items": [
+      {
+       "text": "Meet the Weaver - a small yet nasty parasitic Wraith. It performs a binding ritual to enhance its host’s power and spread the new Affliction status (available in NG+ only). Once the ritual is complete, it moves on to another host, starting the process anew. Despite its agility, the Weaver won’t attack unless provoked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Essence Stones",
+     "items": [
+      {
+       "text": "With Atlas Fallen, we’ve introduced a new way to play according to your preferences, featuring cool and unique abilities called Essence Stones. As you progress through the game, you’ll unlock, find, or craft these powerful stones, each granting you impactful gameplay modifiers or super-powered abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reign of Sand update introduces 25 new Essence Stones to further expand your combat arsenal. Let me showcase four of them :",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Let’s start with Momentum Phoenix: A new Stone that summons a Tailwhipper. This creature flies toward your target, creating burning areas on the floor, damaging enemies, and generating momentum. It’s perfect for dealing with groups of wraiths, thanks to its impressive area-of-effect capability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Healing Alliance is another new Stone that proves incredibly useful for both solo play and cooperative mode. It summons a friendly Mender, which follows and massively heals nearby damaged players for 15 seconds. Additionally, the Mender can sacrifice itself once to prevent your or your ally’s death. You’ll quickly grow fond of this little companion!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some newly added Essence Stones are corrupted, making you more vulnerable to damage. However, they provide strong counterparts. Afflicted Overcharge is a simple yet super-effective ability. It conjures massive shockwaves around you, crystallizing all hit foes for an extended duration, immobilizing them while reducing their defense.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unleash your inner wrath with Bestial Claws. This new Stone summons Marauder claws, allowing you to shred enemies with powerful slash attacks. You can even chain these attacks twice to perform combo maneuvers with increased damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There are many more exciting new Essence Stones to discover, and we sincerely hope you’ll enjoy them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Corruption Breaches",
+     "items": [
+      {
+       "text": "In the world of Atlas, the Watcher is a giant floating divine structure that constantly gazes upon you, bringing forth threats and unexpected wraith ambushes during your exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Corruption Breaches, we introduce a new open-world activity—a dynamic event that offers an intense combat experience. These challenges constantly evolve, providing you with opportunities to earn special rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you venture through the game, you’ll come across special Breaches. Interact with it to reveal the type of challenge that awaits you. Each breach is influenced by unique gameplay modifiers, requiring you to adapt your playstyle to succeed. These modifiers set specific objectives and introduce buffs and debuffs to spice up the fight. For instance, you might experience a significant increase in Momentum gain but lose the ability to perform jumps during the challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you progress through these trials, you’ll encounter many other modifiers. These intense yet rewarding combats grant you materials, unique Essence Stones, and new customization options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game +",
+     "items": [
+      {
+       "text": "With Reign of Sand, we aim to provide additional and meaningful ways to enjoy a new playthrough. But we’re not stopping at a simple replay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After completing the main story campaign once, you can choose to start a new adventure in our newly-added New Game + mode. Carry over all the equipment, materials, currency, and character progression you’ve already accumulated and enjoy a new super-powered playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Game + introduces an updated enemy population, providing surprises along the way. Stronger, unexpected foes can now be encountered in earlier levels. Be cautious, as each of your enemies can be corrupted by the Weaver, a new support monster that buffs nearby wraiths with Affliction, causing them to deal additional special damage. If you get hit by their attacks, your health will be reduced. Defeating the Weaver quickly is crucial to increasing your chance of victory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additionally, NG+ brings 3 new armors and unique rewards, including new Essence Stones to adjust your progression to the challenge. But that’s not all—we’re introducing a new Weapon Upgrade System that allows you to further improve your different weapons with stronger, impactful modifiers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Difficulty Mode “Nyaal’s Nightmare”",
+     "items": [
+      {
+       "text": "Once you’ve completed the main Story Campaign, it’s up to you to increase the challenge by selecting the newly added “Nyaal's Nightmare” difficulty, exclusive to NG+. With an updated enemy population, this mode requires you to master all game mechanics to face even tougher foes. Alternatively, you can choose to play NG+ on the difficulty level of your choice, simply enjoying a playthrough with overpowered capacities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Revamped First Hours and New Voice Cast",
+     "items": [
+      {
+       "text": "We’ve made significant enhancements to the game’s opening hours and universe introduction. Our focus has been on improving pacing, refining storytelling, enhancing cinematics, diversifying combat, overhauling VFX and SFX and addressing various specific areas to create an overall enhanced player experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "With Reign of Sand Update, you’ll also encounter a fresh voice cast for several characters. This includes both male and female main playable protagonists, as well as Nyall—the entity that powers your Gauntlet. With the talented support of Ben Starr (known for Final Fantasy XVI and Warframe), who voices the male player character, we hope you’ll enjoy this new perspective on our sand-covered fantasy world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "About your Game Save",
+     "items": [
+      {
+       "text": "With all these additions and upgraded features, we strongly recommend starting the game anew to fully experience the Reign of Sand content—even if you can carry over your current save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our save file transfer feature allows you to retain your character progression (level, equipment, achievements). However, please note that world progression (i.e., quest progression) will be reset to the beginning of your latest level reached",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Significant Changes",
+     "items": [
+      {
+       "text": "Overall balancing passes for all difficulty modes ensure that all players find their preferred level of challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The enemy distribution and the encounter setup has been updated to create more variety in combat challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overhauled lighting setup for the character creator as well as the first level of the game to enhance the visual experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved camera lock-on in combat and the introduction of two different modes to choose from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvement on the camera used during NPC conversations to provide a more cinematic look.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional functionalities for mouse/keyboard controls and updated mapping to increase usability in gameplay and comfort in menus.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated player feedback for when you leave combat and clearer communication for enemies respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded UI visuals for in-game menus and gameplay elements as well as additional UI elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New option to turn on enemy outlines during gameplay for more accessibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General bug fixing on gameplay, visual and audio issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We wanted to thank you all for your patience and excitement towards this release! We've put all our heart into making sure you get the best possible gaming experience. We can't wait to read and hear about your feedback on this free update! 💫",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And don't forget : Even in ruins, we endure. We won't let go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 22,
+    "fixed": 0,
+    "balance": 1,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/5963413728353815280"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-06T16:10:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.244Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-06T16:10:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.245Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-06T16:10:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.570Z"
+  },
+  {
+   "id": "atlas-fallen-214409@major-2024-07-29",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "25+ new Essence Stones featured in the free update Atlas Fallen Reign of Sand!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-29T15:01:46.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone! ✨",
+     "items": [
+      {
+       "text": "With our upcoming Major Free Update, Reign of Sand, we’ve packed in a whole new way to play according to your preferences, featuring 25+ new Essence Stones. These bad boys are the key to unlocking powerful gameplay modifiers and super-charged abilities that make you feel like an unstoppable force! 💎",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you progress through the game, you’ll unlock, find, or craft more than 150 Essence Stones, each one offering a unique twist to your combat style. Let’s dive into four of these game-changing abilities in our today video with our dev team. 🪄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jump back into Atlas Fallen and discover which Essence Stones fit your playstyle best on August 6 with Reign of Sand update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/5963413094363114377"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-29T15:01:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.243Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-29T15:01:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.243Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-29T15:01:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.568Z"
+  },
+  {
+   "id": "atlas-fallen-214409@major-2024-07-26",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "New Game + is coming with the Atlas Fallen Reign of Sand free update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-26T14:08:19.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone! 💫",
+     "items": [
+      {
+       "text": "Get ready for the free Reign of Sand Update, coming August 6, which will enhance your Atlas Fallen experience with improvements across all aspects of the game. 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, let's talk about something we’re really excited to bring to the table: New Game+!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NG+ offers new and meaningful ways to enjoy another playthrough. But it's not just about replaying the same game! After finishing the main story campaign, you can dive into it, bring all your equipment, materials, currency, and character progress with you for a super-powered adventure. We also let you pick our new Difficulty Mode Nyaal’s Nightmare for an epic and spicy new journey. 🪄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you'll enjoy it, and we're thrilled to share more details about Reign of Sand in the days leading up to its release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/5963413094352044186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-26T14:08:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.242Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-26T14:08:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.243Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-26T14:08:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.568Z"
+  },
+  {
+   "id": "atlas-fallen-214409@major-2024-07-24",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "Discover The Source, a new area coming soon in the Reign of Sand free update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-24T16:04:27.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone! ✨",
+     "items": [
+      {
+       "text": "With the free Reign of Sand Update, coming August 6, enhance your Atlas Fallen experience with improvements across all aspects of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, let's take a look at the Source, our brand new challenge area. 🗺️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Source, you'll dive into God's limbo and unlock new powers through epic challenges. Along the way, you'll find special Rifts scattered around the world. Entering these portals lets you become Nyaal and explore a twisted desert filled with broken giant structures. Here, you'll face new challenges, unlock new Wraith abilities, and reveal the past with crucial elements... 🔮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you'll enjoy it, and we're excited to share more details about Reign of Sand in the coming days!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/5963413094345047112"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-24T16:04:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.242Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-24T16:04:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.242Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-24T16:04:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.567Z"
+  },
+  {
+   "id": "atlas-fallen-214409@major-2024-01-30",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "Atlas Fallen - Minor Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-30T14:41:56.000Z",
+   "notes": [
+    {
+     "title": "Fixes/Improvements",
+     "items": [
+      {
+       "text": "[CONTROLLERS ONLY] Implementation of new Hardlock options in the settings menu: Players now have the option to retain the old control scheme or opt for the new one. Main difference is that the new hardlock will now not change enemies when using the right stick to move between them. Players now need to press the LT/L2 button in combination with moving the right stick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for Korean Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updates to the Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/5519792046266756188"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-30T14:41:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.241Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-30T14:41:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.241Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-30T14:41:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.567Z"
+  },
+  {
+   "id": "atlas-fallen-214409@2",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-17T10:53:39.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone!",
+     "items": [
+      {
+       "text": "A new update has been deployed on Atlas Fallen, bringing many improvements to the game. Read the patch notes down below for the details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tweaks/QoL Improvements",
+     "items": [
+      {
+       "text": "Shellbasher:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tweaked the behaviour so that it can only use the tornado attack when below 75% health remaining and player has at least 15% momentum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tweaked the duration of the tornado attack (-1s)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "UI/UX:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hold Inputs now display the text (HOLD) to avoid confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Difficulty:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Multiple deaths in a boss fight now apply a debuff to the enemy to make fights less frustrating (after 6 retries in normal difficulty, 4 in easy. No changes to hard difficulty)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player is no longer forced to have conversations with Nyaal at Anvils. Essential dialogue is now displayed a second time the players interacts with Nyaal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Repositioned Sand Echo in Level 2 to allow players to explore more freely before stumbling on another narrative element",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased/Repositioned enemy variety in Level 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Broken Desert Bridge in Level 2 is now crossable when only having 1 AirDash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Several tweaks to better guide players:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Indicate that the desert area is more dangerous/challenging than the forest area leading into Castrum VII",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Where to go when coming out of the map tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Allow players to immediately retry the shatter tutorial when dying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Collecting Shards now provides additional rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed a bug that allowed players to use the Shatter attack before reaching the first Bolster Level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented enemies from spawning when retrying an encounter multiple times in a row after dying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several instances of wrong collisions that allowed players to reach unintended locations (Decision point in Caladrias: Forbidden Lands)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several instances of wrong collisions that allowed players to reach unintended locations (Prophecy Space and Sunken City in Bastengar’s Underground)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several instances of wrong collisions that allowed players to reach unintended locations (Priest Estate, Cliffside and Roadside Temple in Monsalar: Wildlands)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed players to skip the launch/slam attack tutorial and thus not unlock it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the perk “Lucky Spotter” from working appropriately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that blocked autosaves after defeating or fleeing from a Watcher’s Fury event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the Watcher’s Fury event from starting under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented some quests from automatically completing under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the Shatter attack from working appropriately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused Arif to spawn under the map in Monsalar: Wildlands and blocked players from advancing through the main quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused some NPCs to be placed incorrectly when updating the game to newer versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General fixes to NPC behaviours and animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General fixes to quest auto completion requirements and notifications",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General improvements to targeting enemies using Mouse & Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that prevented the Essence Stone “Ruthless Advantage” from working properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused certain enemies/groups of enemies to despawn mid-fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented Journal Entries and Audio Logs from working properly after defeating the Thelos’ Champion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Enemies",
+     "items": [
+      {
+       "text": "Fixed a bug that caused enemies to stop attacking during the Shatter Tutorial in Caladrias: Forbidden Lands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed players to also engage in other regular enemies when inside a Watchtower fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that made enemies walk into walls and/or terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several fixes to the fight against the final boss Thelos’ Champion:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lasers could spawn too high and not hit players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to targeting behaviour when fighting in co-op",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to client not getting damaged by certain attacks when fighting in co-op",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to player having momentum decay in moments they shouldn’t",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the mines from the Scatterer to explode despite bouncing them back at the enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the Diver enemy from being stunned when underground and hit by a Slam attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed the Marauder to go outside the combat arena by using one of its abilities in the fight on Caladrias: Forbidden Lands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "General improvements to FSR2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that caused Essence Stone’s VFX to be displayed wrongly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented the VFX’s for the Essence Stone “Whirling Blade” from being displayed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented the VFX’s for the Essence Stone “Shattered Ground” from being displayed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where lighting would look different when opening Photo Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the character would activate the Sandskin when opening Photo Mode under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Adjusted character voices volume to be more consistent during conversations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug that prevented the voice lines from Thelos’ Champion from playing appropriately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the correct SFX from playing when players picked up a reward from a wildlife treasure hunt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the SFX of the Essence Stone “Wearying Veil” to loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General improvements and fixes to German Voice Over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that prevented the correct track from playing when picking up Gauntlet Shards (Console only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed a bug that could cause map counters to incorrectly increase their count when reloading savefiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause map counters to incorrectly increase their count when loading different levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a general bug that made map counters display incorrect numbers after completing certain quests or world activities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented resetting perk points to work appropriately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented notifications of loot pick up from appearing on the HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented banners from displaying the correct ‘dissolve’ effect in the HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General fixes to navigation using Mouse & Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that caused the momentum bar to look full when it was, in fact, just almost full",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented certain text boxes to not be displayed properly on UltraWide Monitors",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that prevented certain screens from displaying properly on UltraWide Monitors",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that caused some NPCs to have blank conversation options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused some NPCs to still have quest markers on them even after finishing the quest related to them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the new item notification (exclamation mark) to never disappear from the items if an item was removed before the quest was completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the new quest marker (exclamation mark) to never disappear from new quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the cursor to not snap appropriately to certain Map key icons (such as Anvils)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Technical",
+     "items": [
+      {
+       "text": "Fixed multiple crash instances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Specific crash during an Animatic when the language was set to German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some instances of stuttering around the City of the Sun in Monsalar: Wildlands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to texture loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to chest textures taking a couple seconds to load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to NPC character outfits’ textures taking a couple seconds to load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Environment",
+     "items": [
+      {
+       "text": "General fixes for floating vegetation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General fixes for inaccurate collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General fixes for alpha maps on some assets in the City of the Sun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the lighting in specific spots of the Queen’s Passage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Valery’s body from the Prison area after you attend her funeral",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Co-op",
+     "items": [
+      {
+       "text": "Fixed a bug that allowed a co-op partner to proceed during cutscenes even though their partner was dead and waiting to be revived causing the player to appear as a corpse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed a co-op partner to start the Watchtower fight in Monsalar: Wildlands without their partner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused players to be blocked if one of the players skipped through cutscenes while the other was having a specific conversation at an Anvil in Caladrias: Forbidden Lands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that cause the client player to be displayed not having a hand (for the host) in the co-op menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIxed a bug that allowed co-op players to see and hear VFX/SFX from the other player without them experiencing it themselves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused players to not get loot if they were performing certain actions while their partner picked it up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused players to be stuck into sand surfing if they entered the Black Alms level while their partner had a pop up active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the Fusion Tutorial to trigger twice for certain players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "General fixes for typos, grammar and localization in English, German, Russian and Korean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General updates to the font so that it can better accommodate non-latin alphabets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused several lines in Spanish Castellan to be displayed incorrectly throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused certain strings to be displayed as “00” on certain languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 61,
+    "balance": 17,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/6560117310267447354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-17T10:53:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.240Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-17T10:53:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.240Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-17T10:53:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:16.566Z"
+  },
+  {
+   "id": "atlas-fallen-214409@1",
+   "gameId": "atlas-fallen-214409",
+   "displayName": "Hotfix 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-21T13:02:28.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "A new update is now available in Atlas Fallen!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AMD FSR 2 is now available as a feature on PS5, Xbox series X and PC (Xbox series S still will have the feature enabled in the future)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "The Version number is now displayed on the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that prevented players from properly being rewarded Essence Dust when picking up Pale Root with the Lucky Spotter Perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the Spiker Wraith in Monsalar: Bastengar’s Underground & Monsalar: Wildlands to despawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an invisible collision that prevented the players from obtaining a collectible inside a cliff in Monsalar: Bastengar’s Underground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed Khendra to give players the Vanity Item “Lion Chestplate” again even if players already have it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs that prevented the following essence stones from being obtainable:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Protective Instinct”: A Conjurer has a new respawn zone in The Black Alms: Citadel, allowing it to drop this Esence Stone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Hardening Scar”: Has been added to the Travelling Vendor’s inventory in The Black Alms: Citadel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Imperious Bastion”: It has now been added to the Travelling Vendor’s inventory if the player did not get it from beating a Watcher’s Fury in Monsalar: Wildlands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that prevented the Essence Stone “Disruptive Throw” from properly hitting enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed wraiths to despawn and softlock players during the Combat Intro sequence if players went idle for too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused equipped Essence Stones and Presents to be unequipped when switching presets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where damaging enemies wouldn’t recharge the idol.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused some animals to stop moving after reaching their first waypoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare progression blocker where users couldn’t get the last AirDash upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented Armor stats to properly update when gaining or losing armor bonuses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented some wraiths from being properly crystallized when being targeted by a Shatter attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a Photo Mode shortcut for Mouse & Keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that prevented the Essence Stone “Narrow Escape” from working properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the Essence Stone “Crystalline Cure” to make it more efficient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug that caused the Essence Stone “Ruthless Slayer” to reset its cooldown: after opening the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that prevented the Conjurer Wraith from receiving damage when being the target of a Shatter attack under very specific circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple balancing updates based on feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved damaging parts on multiple enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a couple bugs that caused enemies to spawn with wrong rotations, positions or animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused airborne enemies to plummet in height when performing certain attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused certain enemies to enter the enraged state after having a body part destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused Sealing Totems in Monsalar: Wildlands’s Raise shards to have disjointed rays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the VFX from the Gauntlet to remain on the player character's arm after Morrath takes it on the cutscene in the Camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved LOD and draw distances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Morrath’s hair visual during his cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the screen to flash red if you successfully parried an enemy attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused Watchtower SFX’s to trigger again when reloading a save after defeating it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple fixes on the German VO.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat music now stops after the combat has ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General bug fixes for weapon/hit SFX’s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General bug fixes for SFX’s when in Photo Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused the UI to be distorted when players changed resolution and went back to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the Watcher Fury events to be counted as an Elite Wraith encounter being defeated in the Map Legend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the ! marker is displayed on the tab but not on the object in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the “The Fallen Knight” quest HUD to not be updated properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Technical",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed multiple crash instances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance in the Lower City area of Lithesta in Monsalar: Wildlands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved frame rate drops when getting close to Castrum VII in Calandrias: Forbidden Lands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changing resolution from 4k to any other resolution no longer makes some objects invisible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused the DX12 version to be brighter when compared to Vulkan.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused “Shatter them All” achievement from being unlocked properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused “Flawless Victory” achievement to not be unlocked properly during co-op play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented the “Airborne” achievement from unlocking properly when jumping over objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused the camera to spin if the co-op partner started a conversation and the camera was moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the co-op partner could not buy a treasure map after the host had bought it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused co-op partners to get blocked when opening Nyaal’s Prison gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused enemies to stop targeting players and idle if their primary targets were downed in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented Khendra from properly rewarding both players with the Vanity Item “Lion Chestplate” after talking to her in The Black Alms: Citadel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused a desync to happen on the end credits, which would provoke the endgame to not start when playing co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple desyncs happening through the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused host players to get stuck after interacting with Splinter to build the bridge during the side quest “Building Bridges”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented guest players from fast travelling under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused enemies to reset if players were too far away from each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player can now heal and revive the partner if they join a more advanced co-op session even before unlocking the idol tutorial in the selected save slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 42,
+    "balance": 1,
+    "other": 23,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1230530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1230530/view/5127964289187461246"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-21T13:02:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-03T09:49:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1230530",
+      "checkedAt": "2026-11-13T03:15:23.238Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-03T09:49:06.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:15:23.238Z"
+  }
+ ],
+ "issues": []
+}

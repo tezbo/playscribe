@@ -1,0 +1,1073 @@
+{
+ "game": {
+  "id": "instruments-of-destruction-149952",
+  "igdbId": 149952,
+  "name": "Instruments of Destruction",
+  "cover": {
+   "imageId": "co8s9w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8s9w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arjpl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arjpl.jpg"
+  },
+  "ps5Release": "2025-10-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "instruments-of-destruction-149952@1.14a",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Patch 1.14a",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-11T18:40:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some more minor fixes coming over from the console version porting process:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"EARTHQUAKE!\" to the screen when there's an earthquake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a few more 60hz physics issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some logic was processing while the game was paused (making vehicles go wonky after you paused)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor localization issues (mission labels being the most obvious one)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made water depth no longer update during Kraken fail sequence (speeds it up, saves a lot of memory)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Dragonfly Alpha shooting itself with some hidden lasers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a 2nd vehicle loading and making things weird if you went to build mode on 3-2/etc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After you reset progress, it should now be reset when you restart the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forced a couple non-mission islands far off the map if you use the unlock-all-missions cheat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Total Destruction achievement so it doesn't trigger by skipping a mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved outline object cleanup so reloading a level doesn't increase memory usage by nearly as much as it used to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made vehicle parts get added to the Recent list in more cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you skip a mission, the game now remembers that so some islands don't be re-locked when you restart the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/1810503566424780"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-11T18:40:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.563Z"
+  },
+  {
+   "id": "instruments-of-destruction-149952@1.14",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Update 1.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-21T20:07:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A long list of stuff, though much of it gamepad-related in preparation for console release, improved playability of some of the more annoying missions, and made 60hz physics more fair:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Remap Controls shows controller buttons, and they are a bit blurry (only fix if it's easy)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"DO NOT DESTROY\" objective text is not translated (m9-4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text in multiple areas of Build & Destroy are not translated to its supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad icons during the build section text width",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed B key glyph rather than the B button controller glyph showing on custom vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Flip/Swap Vehicle prompts flash when you push the corresponding input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed pause menu default gamepad selection being incorrect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated options menu to show LB/RB and LT/RT for swapping menus and scrolling respectively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with B&D Reset All Instructions not working for gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added potential null-crash fix for EntityOutline crash (m4-4 killing outlined car corpses)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made plants kill themselves a lot faster in player collisions, and they also have 50% less mass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed “Show Controls” option still showing text for the controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Build Mode Settings buttons being all messed up with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed holding A toggling/repeating presses in the options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialogue box saying “Press X to continue” but not really working that way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed not being able to reset instructions for building with a gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed BnD mission 3-3 boxes not returning to their home when they went in the water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bridge-heavy levels not appearing to count destruction for a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a bit of HUD to the Kraken-control mission, and made the UI transitions between the states smoother",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed returning to Island Select often picking a random island to highlight instead of the one you just played, or being started at the spot of the other campaign",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pausing the game and changing vehicle control remapping not updating right away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "At 60hz physics, player takes 50% damage, structures take 25% more, and kraken is 10% slower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced enemy turret/drone HP at 60hz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased homing and damage at 60hz for player projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced earthquakes strength at 60hz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Secret Mode logo to intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Secret Mode people to credits (and made multiple tweaks to credits)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "MISSION TWEAKS",
+     "items": [
+      {
+       "text": "1-5 decreased destruction goal % to 90 (from 100) and increased bonus time to 6 minutes (from 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "1-6 decreased destruction goal % to 90 (from 100)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "2-1 increased bonus no-ruins-destruction goal % to 15 (from 10)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "2-2 increased bonus no-ruins-destruction goal % to 15 (from 10)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "2-3 decreased bonus destruction goal % to 60 (from 80)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "2-5 increased ammo to 20 (from 15), decreased bonus goal % to 80 (from 90)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "3-2 increase bonus time to 6 minutes (from 4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "3-4 increased size of target area for boxes by 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "4-2 revised vehicle to be more responsive to turning/acceleration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "4-4 revised vehicle so it's less spinny, easier to control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "5-2 reduce strength/force of hurricane a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "6-2 reduced strength of earthquake a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "7-1 reduced both % goals to 95 (from 100)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "7-2 reduced accumulate goal to 900 (from 1000) and debris clear % to 90 (from 100)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "9-2 made the lighting a bit brighter, reduced player damage, and increased structure damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "9-2 moved turret so it's more visible from start, has a bright central light, and the ground encourages moving towards it at the start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "10-1 updated vehicle to rotate/move more responsively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "10-2 reduced damage to player from mines, and increased kraken timer 5 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "11-4 reduced damage/force from storm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 16,
+    "balance": 22,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/1808601382454750"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-21T20:07:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.563Z"
+  },
+  {
+   "id": "instruments-of-destruction-149952@1.12c",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Update 1.12c",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-04T17:27:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reverted the vehicle save/load to older instantaneous (vs. async) system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This fixes multiple issues with newer save system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This might fix issues with exiting the game locking up some PCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/1801617199365444"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-04T17:27:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.561Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.562Z"
+  },
+  {
+   "id": "instruments-of-destruction-149952@1.05",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Update 1.05",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-28T20:32:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Let's start with the update changelist, then I'll discuss what we've been up to and the future plans for the game:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VERSION 1.05 CHANGELIST",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turned off shadows from rendering for cameras that don't need them (optimizes rendering a decent amount)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Flex pieces updating every frame even when not necessary (major fix for certain vehicles)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Kill Timer property to cannons (set it to kill off cannonballs X seconds after they are fired)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a gamepad issue with the options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple challenge types never working 100% correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missions/challenges in BnD having no parts available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a divide by zero issue with looping counters set to 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The first two items are the important ones for version 1.05, with the rest being minor fixes/tweaks. Alan has been working on the console version, and he discovered a significant optimization for that version. Shadows were rendering on multiple camera types (such as rendering a depth buffer to create grass impacts) that didn't need them, so he turned them off and now the game just runs faster for all platforms. An even bigger slowdown was happening with objects with lots of resizable flex parts, like the bee (MCCH Apis Atomica) at 17:21 in this Scrapman video:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Every flex part was updating its mesh and collider every frame, and that's a lot of expensive code to run for 400+ parts. So I fixed the code that made it happen, and now the vehicle runs a lot smoother (runs above 60FPS for me, while it was below 15FPS previously). Plenty of other vehicles were affected by this issue, particularly some of the more complex ones on the workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beyond Version 1.05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As stated previously, I've been feeling a bit burnt out on Instruments after working on it for so long and for so many hours this year. While Alan has continued to work on the console version for part of the last month, I have moved on to other games (DodgeBomb and Speed Demons in particular) to try to finish them up for release on PC/console, and I had a long vacation with the family.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I was hoping when I returned from vacation, I would have a more balanced perspective on work and Instruments of Destruction in particular. But to be honest, I still dread thinking about or working on the game. Version 1.05 isn't a big update, but it was a necessary one to finish, so I'm glad to have it wrapped up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I appreciate all the kind words and encouragement to keep going and promote the game more. I will definitely do more promotion when the console versions release. I also appreciate the feedback and suggestions to make the game better, though at this point I don't think I'll be making any significant revisions to the campaign or build mode. There will be more updates to the game, but I'm not sure when, or what most of them will be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I think that's all for this time. -Luke",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/5842939267314308657"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-28T20:32:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.560Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.560Z"
+  },
+  {
+   "id": "instruments-of-destruction-149952@1.04",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Update 1.04",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-31T20:17:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added new logic part: Counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Rotate Y setting to Flex Panel and simlar parts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Allow HDR Output option so you can force HDR output off (for Steam Deck OLEDs, for instance)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed drill and saw not using the reverse input strength when set to Normal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed alternate input not affecting strength of Hover parts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed timed challenge objectives that should have failed but weren't (such as 2-4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/5742731639334791819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-31T20:17:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.559Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.560Z"
+  },
+  {
+   "id": "instruments-of-destruction-149952@1.03a",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Update 1.03a",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-21T11:59:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated b4-3 so it's easier to get 3 stars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked m6-3 so it does less damage over time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Fixed bomb (part) explosion damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added building delete function to Sandbox mode (place object)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added confirmation to tutorial reset, making it harder to wipe out vehicles by pressing H",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some objects appearing damaged when a map starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Description for some parts (cannon, bomb launcher, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed thumbnail not updating for previously saved vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/5747233970436555053"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-21T11:59:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.559Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.559Z"
+  },
+  {
+   "id": "instruments-of-destruction-149952@1.02",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-14T22:55:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added \"Vehicle Controls\" option to remap vehicle control layouts (affects all vehicles when gameplay begins)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new vehicle, revised objectives, and modified layout of mission 3-5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a mostly new vehicle and modified layout of mission 6-1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor tweaks to a couple other vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Allow Gamepad\" option (enabled by default) so you can disable a gamepad/etc without having to unplug it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made it harder for gamepads to take over menu inputs on accident",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swapped weather for mission BnD 7-1 and 7-2 to correspond so the voice lines make sense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Show bonus missions on map if all biome missions have been unlocked (regardless of star count)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ignore invisible islands when creating gamepad selection list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed pinetrees looking insane in the wind (mission 4-2, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Obsidian Flats checkpoints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[Added a couple cheat codes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/5747233970412699029"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-14T22:55:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.558Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.558Z"
+  },
+  {
+   "id": "instruments-of-destruction-149952@1.01",
+   "gameId": "instruments-of-destruction-149952",
+   "displayName": "Update 1.01",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-13T23:25:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Invert Y option affects gamepad/etc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Invert Camera Y affects the camera and all vehicles that use the right stick (or mouse) for aiming",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Invert Left Aim Y affects projectile firing vehicles that aim up/down with the left stick: Improved the following vehicles/missions: 3-1, 3-2, 3-4, 3-5, 6-2, 8-2, 9-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles for 3-1 and 3-2, and the map for 3-2, got the most significant updates: Added a way to speed up dropship animation (hold SHIFT or gamepad X): Made GP selection more obvious (slight outline of medium/large buttons if using GP): Added mouse sensitivity option: Cam shake option now affects UI and earthquake shakes: Added new option for shadow strength (1.0 by default, scale down to 0.2): Changed it to always show the Skip Mission button below options in the pause menu: Fixed not being able to update creations in workshop: Fixed follow-lock camera rotation being too fast: Changed Build & Destroy so you can't start it without having completed a couple Main Campaign missions first (or a BnD mission if you've done so previously): Changed Smoother Low FPS to be Min FPS and provide 5 options there instead of 2 (20/24/30/40/60 instead of 40/60)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Should improve SteamDeck playability by a decent amount: Show game speed change if not 1.0x in Sandbox, even without stats on: No longer syncing PC settings with Steam Cloud (only game progress/vehicles/etc): Tweaked Close Call achievement: Fixed Total Destruction achievement: Increased the range to swap to a vehicle in front of your current vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1428100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1428100/view/5768625435411747467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T23:25:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1428100",
+      "checkedAt": "2026-11-12T07:24:14.558Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:14.558Z"
+  }
+ ],
+ "issues": []
+}

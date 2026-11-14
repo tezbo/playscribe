@@ -1,0 +1,1021 @@
+{
+ "game": {
+  "id": "carrion-90055",
+  "igdbId": 90055,
+  "name": "Carrion",
+  "cover": {
+   "imageId": "co2eau",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2eau.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar76w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar76w.jpg"
+  },
+  "ps5Release": "2023-04-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "carrion-90055@major-2022-11-06",
+   "gameId": "carrion-90055",
+   "displayName": "Illegally smol update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-06T15:06:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "An update so smol it's actually illegal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-643-g5c2bf631",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes/changelog",
+     "items": [
+      {
+       "text": "Added: new controllers/gamepads support (SDL controller database update), including DualSense and Xbox Series controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed: physics performance slightly decreasing over time in GTOY (Christmas DLC)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: version tag displaying incorrectly on aspect ratios other than 16:9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/4732747437213164449"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-06T15:06:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.794Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.794Z"
+  },
+  {
+   "id": "carrion-90055@major-2022-02-22",
+   "gameId": "carrion-90055",
+   "displayName": "Tiny Steam API update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-22T17:42:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update so small most of you won't even notice it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-624-g262b23e0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes/changelog",
+     "items": [
+      {
+       "text": "Fixed: some potential extremely rare Steam API issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/4246335198911315629"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-22T17:42:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.794Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.794Z"
+  },
+  {
+   "id": "carrion-90055@post-2021-11-10",
+   "gameId": "carrion-90055",
+   "displayName": "Crash fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-10T18:31:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Crashes bad. Patches good.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-621-ga03a5f62",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes/changelog",
+     "items": [
+      {
+       "text": "Fixed: rare crash involving splitting the monster under specific circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: custom mod menus crashing the game upon loading a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/4186653626163045729"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-10T18:31:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.793Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.793Z"
+  },
+  {
+   "id": "carrion-90055@patch-2021-08-01",
+   "gameId": "carrion-90055",
+   "displayName": "Small yet important save file patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-01T22:55:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our hemorrhoid mastermind has spilled yet another genetic mutation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-609-ge57d4e92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes/changelog",
+     "items": [
+      {
+       "text": "Fixed: multiple cycles of saving and loading the game without leaving the current level can lead to performance/stability issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/4038025597323999232"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-01T22:55:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.792Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.792Z"
+  },
+  {
+   "id": "carrion-90055@post-2021-06-26",
+   "gameId": "carrion-90055",
+   "displayName": "Shotgun & rendering fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-26T11:15:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The hivemind has procured a new patch for our devout followers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-609-g93cf0b43",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes/changelog",
+     "items": [
+      {
+       "text": "Fixed: superficial \"saving...\" message before the menu is loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: power boxes no longer being interactable after their cover gets blown off with a shotgun from a significant distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: parts of mech armor remaining suspended in the air after being blown off with a shotgun or assault rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: background parallaxes occasionally rendering in an incorrect order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/4032392655070732008"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-26T11:15:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.791Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.791Z"
+  },
+  {
+   "id": "carrion-90055@post-2021-06-21",
+   "gameId": "carrion-90055",
+   "displayName": "Animation & tooltip fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-21T23:50:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "How do you do, fellow humans?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another day, another minor DNA sequence mutation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-602-g54e439d7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes/changelog",
+     "items": [
+      {
+       "text": "Human animations tweaks & fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frontier tooltips fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/4056035920070972478"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-21T23:50:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.791Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.791Z"
+  },
+  {
+   "id": "carrion-90055@post-2021-06-15",
+   "gameId": "carrion-90055",
+   "displayName": "Minor clarity tweaks",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-15T16:01:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, amorphous flesh beings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're rolling out a new update that should address certain clarity issues some of you might've encountered after the latest tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-592-gf8b9af8e",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes/changelog",
+     "items": [
+      {
+       "text": "Fix: Frontier: increased visibility of the Military Junkyard pipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Military Junkyard: floating screen fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/5019805792179681710"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-15T16:01:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.790Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.790Z"
+  },
+  {
+   "id": "carrion-90055@major-2021-06-13",
+   "gameId": "carrion-90055",
+   "displayName": "Quality-of-life Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-13T09:53:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Apex Predators!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is out! The patch focuses on quality-of-life improvements and some level design tweaks and fixes. We have some further enhancements in mind though, so stay tuned for future updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.5-RELEASE-589-g7236f57f",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "New Controller Setting: Smoothing - smoothes out the motion of the crosshairs/prehensile tentacle while aiming with an analog stick (Options -> Controls -> General Settings -> Smoothing)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhancement: you can now exit mechs by pressing the \"Use/Activate\" button - breaking parasitism is no longer required to leave the mech",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancement: the status of the level is now displayed in the \"Squeeze In\" tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: improper fire resistance HUD order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level Design",
+     "items": [
+      {
+       "text": "Enhancement: Frontier/Military Junkyard - additional clues leading the player to the Hazardous Waste Landfill after obtaining the required skill*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancement: Frontier/Leviathan Reef Base - additional clues leading the player to the Leviathan Reef Base - Bridge after obtaining the required skill*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancement: Botanical Gardens - clearer order of the puzzles leading up to the chamber containing the Biomass Sample*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: Leviathan Reef Base - out of place splashing sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Bunker - cocoons getting stuck in the pipes in the Caverns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Bunker - a minor tunneling glitch in the Caverns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: GTOY mech softlock no longer occurs now that the player can exit mechs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "*old saves might remain unaffected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/5019805792171470965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-13T09:53:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.789Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.790Z"
+  },
+  {
+   "id": "carrion-90055@post-2020-10-23",
+   "gameId": "carrion-90055",
+   "displayName": "Minor Workshop Updates",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-10-23T21:08:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some of you might have noticed that we have published several updates in a row over the last few days. They are mostly related to the Workshop, as we still occasionally stumble upon some minor issues and missing features that need to get fixed or implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full changelog",
+     "items": [
+      {
+       "text": "Added: new Lua wrappers to expose sound and music API;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added: missing property setters in some types exposed to Lua;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: inconsequential asset paths in the mods;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: hot reload not working with user levels;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: hard crashes happening in Lua wrappers not logging any meaningful error messages;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgraded: SDL 2.0.10 to 2.0.12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's all for now. Happy modding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/3895010671341868110"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-23T21:08:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.788Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.788Z"
+  },
+  {
+   "id": "carrion-90055@major-2020-08-09",
+   "gameId": "carrion-90055",
+   "displayName": "The First Post-Release Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-08-09T21:59:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Amorphous Beings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first post-release update is coming out today! The patch focuses on the most critical issues you've reported so far since day one, such as game-breaking softlocks, crashes, and so on. Additionally, there are some quality-of-life improvements made with custom level creation in mind. Not quite the Workshop integration we're after yet, but there's more to come soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version: 1.0.3-RELEASE-140-gaacc44a3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fix: linking to glibc 2.2.5 on Linux (instead of glibc 2.27)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix: the prehensile tentacle is no longer able to keep grabbing switches through walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: the prehensile tentacle is now unable to keep grabbing objects while traversing through background doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: more windowy windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: KO translation for \"Deposit biomass\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: crash caused by some controls being bound to \"None\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhancement: power nodes cannot be grabbed while they are inactive/charging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Design",
+     "items": [
+      {
+       "text": "Fix: First Flashback Sequence softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Frontier - Highlands minor geometry bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: missing ladder pieces added in Bunker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Leviathan Reef Base - Bridge Arachnoptysis puzzle skip*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Leviathan Reef Base - Bridge Parasitism puzzle softlock*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Relith Science HQ Parasitism puzzle softlock*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: a rare bug that prevented backtracking through Botanical Gardens*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhancement: a smoother introduction to rivets in Nuclear Power Plant*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancement: power nodes remain inactive before obtaining the Photokinesis skill*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Custom Level Creation",
+     "items": [
+      {
+       "text": "Enhancement: it's now possible to load a level on startup with the following command line argument: carrion -level level_name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancement: the \"editor\" mode (edit_level level_name) hot-reloads the level upon detecting any change in the level/script file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancement: the console hotkey can be rebound in the config file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancement: the .png version of the \"tiles\" texture is shipped alongside the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*old saves might remain unaffected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-953490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/953490/view/3667572003470702678"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-08-09T21:59:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-953490",
+      "checkedAt": "2026-11-11T21:57:55.787Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.787Z"
+  }
+ ],
+ "issues": []
+}

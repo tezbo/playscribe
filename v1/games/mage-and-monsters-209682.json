@@ -1,0 +1,2424 @@
+{
+ "game": {
+  "id": "mage-and-monsters-209682",
+  "igdbId": 209682,
+  "name": "Mage and Monsters",
+  "cover": {
+   "imageId": "co5242",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5242.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1qf5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1qf5.jpg"
+  },
+  "ps5Release": "2023-10-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mage-and-monsters-209682@3.2.5",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 3.2.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-20T15:37:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The pathfinder has been improved from using 1 thread to now being able to use 4 threads. This should make the units move smoother, and make them less likely to sometimes move back and forth while walking to their target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/6560117310279100512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-20T15:37:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.727Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-20T15:37:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.727Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-20T15:37:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.615Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@3.2.4",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 3.2.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-28T07:19:47.000Z",
+   "notes": [
+    {
+     "title": "Cave map",
+     "items": [
+      {
+       "text": "-Fixed a bug where selecting Effero or upgrading ranged units' range would mistakenly grant enemy ranged units, such as Archers or Cyclops, extra range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug that could cause some enemy units to gain more movespeed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5220291886486167538"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-28T07:19:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.727Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.615Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@3.2.3",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 3.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-17T13:03:14.000Z",
+   "notes": [
+    {
+     "title": "Patch 3.2.3",
+     "items": [
+      {
+       "text": "Nerfed the following enemies in cave (less will spawn of them on average): Elder Dragon and Forest Dragon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the amount of units spawned in the endgames of cave with about 10%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug that allowed you to take Frost Giant + another unit selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5480373588793500919"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-17T13:03:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.726Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.614Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@3.2.2",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 3.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-16T09:46:23.000Z",
+   "notes": [
+    {
+     "title": "Patch 3.2.2",
+     "items": [
+      {
+       "text": "Added 1 Frost Giant to start unit selection options in cave and forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nerfed the following enemies in cave (less will spawn of them on average): Footmen, Dwarf Warrior, Knights, Pyromancers (big nerf) and Necromancers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can’t reroll exact same enemies now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can’t meet exact same enemies twice in a row now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start Reroll from 4 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now get 1 extra reroll in the endgame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5480373588789359312"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-16T09:46:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.726Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.614Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@3.2.0",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 3.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-12T17:50:00.000Z",
+   "notes": [
+    {
+     "title": "Patch 3.2.0",
+     "items": [
+      {
+       "text": "You now gain about 20% more gold on average from units and spells in the cave challenge (reduced variance by raising the minimum gold that you can get).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfed the following enemies in cave (less will spawn of them on average): Shard Souls, Brutes, Dwarf Warriors, Centaurs, Fish Priests, Ogres, Golems, Pyromancers, Frost Giants, Griffins, Elder Dragon, Forest Dragon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rogue Rats are now added to the pool of enemies from round 10, instead of being possible to get from round 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5159491482927851401"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-12T17:50:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.725Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.613Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@3.1",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 3.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-07T08:36:24.000Z",
+   "notes": [
+    {
+     "title": "Patch 3.1.0",
+     "items": [
+      {
+       "text": "You can now see upcoming enemies and reroll in the endgame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made a bit less enemies spawn on round 30 to 35.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frost Giant, Arch Angel and Guardian Construct are now being added later to the pool of enemies in the: cave, from being added at level 10 to being added at level 20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfed the following enemies in cave (Less will spawn of them on average): Elder Dragon, Forest Dragon, Frost Giant, Arch Angel, Guardian Construct.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed Troll enemy being able to appear in the endgame.: Thanks to everyone who gave feedback and helped me improve the new cave map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5159491482908223902"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-07T08:36:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.725Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.613Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@3.0",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 3.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-05T13:29:29.000Z",
+   "notes": [
+    {
+     "title": "New cave challenge",
+     "items": [
+      {
+       "text": "Fight randomly generated enemies in the new cave map, including traitor units who now fights against you! Unlocks after you beat forest endgame round 5. If you have already beaten forest endgame round 5 before this update it is also unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Includes 4 new achievements",
+     "items": [
+      {
+       "text": "Defeat Cave on normal or harder difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Defeat Cave on impossible or harder difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Defeat Cave on +400% or harder difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Defeat Cave on brutal or harder with max 800 Blood Shards spent on upgrades.: Let me know your thoughts about this new map challenge, or if you discover any bugs. Good luck in the cave!: Also please check out and wishlist my upcoming auto battler Behold Battle: https://store.steampowered.com/app/2338910/Behold_Battle/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Defeat Cave on normal or harder difficulty.",
+     "Defeat Cave on impossible or harder difficulty.",
+     "Defeat Cave on +400% or harder difficulty."
+    ]
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5141476355675875340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-05T13:29:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.724Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.612Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.5.4",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.5.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-22T06:31:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The max 1200 Blood Shards system now works like before, where it is only silver upgrades that count towards the limit. Gold power ups do not count towards the limit, and for the two max 800 Blood Shard achivement, Gold power ups also do not count towards that limit. The gold upgrades are: Reroll, Teleport, Tornado, Frost Shock, Necromancer and Pyromancer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To make the new 800 max achievements work I tried to do it a quick way, but it was badly done, and some people were rightly annoyed and confused about this change. It is back to the old system now. I apologize for this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5127964289190115515"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-22T06:31:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.724Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.612Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.5.0",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.5.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-12T17:08:08.000Z",
+   "notes": [
+    {
+     "title": "Buffs",
+     "items": [
+      {
+       "text": "Griffins from +4 to +5 damage each attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Arch Angels passive heal from 40 to 50 every 2nd second.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Frost Giant passive freeze chance from 30% to 37%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Nerfs",
+     "items": [
+      {
+       "text": "Necromancer attacks to summon Undead Dwarf from 6 to 7 (Still summons after the first attack in start of the round).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Two new achievements",
+     "items": [
+      {
+       "text": "Defeat Arena on brutal or harder with max 800 Blood Shards spent on upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Defeat Forest on brutal or harder with max 800 Blood Shards spent on upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I have also updated the Behold Battle demo, adding a gold betting mode, and improved both the normal game mode and the sandbox/simulator game mode. Check it out at:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 4,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Defeat Arena on brutal or harder with max 800 Blood Shards spent on upgrades.",
+     "Defeat Forest on brutal or harder with max 800 Blood Shards spent on upgrades."
+    ]
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5839532486218690014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-12T17:08:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.723Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.611Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.4.0",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.4.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-06T10:21:16.000Z",
+   "notes": [
+    {
+     "title": "Unit buffs",
+     "items": [
+      {
+       "text": "Cultists from 6 to 8 damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Priests from 7 to 9 damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cherubs passive heal from 10 to 15 health regenerated every 2 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Spell powerup buffs",
+     "items": [
+      {
+       "text": "Spell damage powerup from +13% to +20% per rank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Healing powerup from +17% to +30% per rank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "New achievements",
+     "items": [
+      {
+       "text": "Each mage now has two new achievements (In total 20 new achievements):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1: Survive arena endgame round 5 on impossible or harder with each mage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2: Survive arena endgame round 5 on +475% with each mage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 5,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Each mage now has two new achievements (In total 20 new achievements):",
+     "1: Survive arena endgame round 5 on impossible or harder with each mage.",
+     "2: Survive arena endgame round 5 on +475% with each mage."
+    ]
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5124582150155855334"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-06T10:21:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.723Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.611Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.3.2",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.3.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-15T12:22:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "You now on average receive twice as much gold when picking or upgrading spells:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold received when picking or upgrading a spell at level 1-10 from 0-21 to 10-32.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold received when picking or upgrading a spell at level 11-20 from 0-26 to 15-37.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold received when picking or upgrading a spell at level 21-30 from 0-31 to 20-42.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/6539831519492687516"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-15T12:22:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.722Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.610Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.3.1",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.3.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-13T12:27:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug with player skeletons sometimes causing the enemy AI to not work correctly (it would keep trying to move towards a dead skeleton).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/6539831443778125791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-13T12:27:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.722Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.610Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.3.0",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.3.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-11T10:24:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New melee mage Sicaria: Cannot cast spells. Starts with 1 Cherub and 1 Paladin. All melee units have 20% faster attack speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New power ups",
+     "items": [
+      {
+       "text": "New power up that gives each unit a chance to spawn skeletons when dying. Higher tier units have higher chance of spawning when dying. Tier 1 20%, tier 2 40%, tier 3 60%, tier 4 80% and tier 5 100%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New powerup that allows you to gain up to 70 bonus gold each round, when you have 700 gold or more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Spell buffs",
+     "items": [
+      {
+       "text": "Frost Shock level 3 from area increased by 20% to area increased by 35%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tornado starting cooldown from 9 seconds to 7 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Impending Doom level 2 from dealing 30% damage to your own units to now only dealing 15% damage to your own units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Impending Doom level 3 upgrade from cooldown reduced by 20% to cooldown reduced by 30%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport cooldown increase each time the spell is cast from 1.5 seconds to 0.75 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport level 4 max units teleported from 15 to 25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 6,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5121196841306230846"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-11T10:24:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.722Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.609Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.2.2",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-01T09:43:44.000Z",
+   "notes": [
+    {
+     "title": "Patch 2.2.2",
+     "items": [
+      {
+       "text": "Dwarven Construct text from “damages all nearby units” to “damages all nearby enemy units”. This unit never did friendly fire damage, so the previous text was incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it more clear that you unlock forest challenge when defeating endgame round 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various text issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now shows once at level 8 that you can move spells around, by clicking and holding down left mouse button on the spell you wish to move.: -Fixed 1000 Blood Shard achievement sometimes not activating when Blood Shards was set on All.: -Made it more clear that you can remove the limit on Blood Shards in options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that could cause a unit to survive impending doom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5035622743875779228"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-01T09:43:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.721Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.609Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.2.0",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-13T08:42:26.000Z",
+   "notes": [
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Added Simplified Chinese translation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Upgrading to rank 3 spells cost from 120g to 90g.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Upgrading to rank 4 spells cost from 200g to 140g",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sinon starting gold from 80 to 110.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Forest level 9 from 5 necromancer rats to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 4,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5035620840534005801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-13T08:42:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.721Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:01.608Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.1.1",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-18T15:04:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Astrina chosen UI elements being misplaced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed popup in settings being behind text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5623338145761964592"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-18T15:04:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.720Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.383Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.1",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-16T16:30:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New mage Gus: Cannot cast any spells. Starts with +4 Archers and +2 Dwarf Miners. All your ranged units attack 20% faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: You can now swap spells around. In gold shop menu, click and hold down left mouse button to change the position of your spells.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New setting: You can now choose between default mouse cursor, big blue mouse cursor, and big red mouse cursor.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Impending Doom now also gives the doomed unit +200% health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport level 1 and 2 can now be used instantly at start of battle (previously had 8 and 4 seconds starting cooldown).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport max units teleported from 5/6/7/12 to 5/7/9/15.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport level 2 upgrade now also reduces teleport cooldown by 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport level 3 upgrade now also reduces teleport cooldown by 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport level 4 upgrade now also reduces teleport cooldown by 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Teleport from +2 seconds cooldown every cast, to +1.5 seconds cooldown every cast (reset at end of the round).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pyromancer’s special attack damage from 75% to 100% of the unit’s attack damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Many melee units health has been buffed",
+     "items": [
+      {
+       "text": "Bandit leader 50>60 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Miner 70>80 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Centaur 35>43 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gladiator 75 > 90 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cherub 60 > 75 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plague Doctor 50 > 60 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golem 150>190 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Griffin 120>140 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paladin 120>140 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Royal Guard 80>100 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frost Giant 270>310 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arch Angel 220>240 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed a bug that sometimes allowed you to start with more units than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause ranged units to get stuck under the lake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the “choose units or spells” options to appear twice and overlap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause units to not attack the enemy in endless mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could cause the teleport spell to get stuck on the portal icon, and not work anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Game over screen now displays your interest gold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a popup description for Pyromancer and Necromancer in the Power Up shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 8,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/5623338145754896152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-16T16:30:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.720Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.382Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@2.0",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-02T15:25:14.000Z",
+   "notes": [
+    {
+     "title": "New challenge",
+     "items": [
+      {
+       "text": "20 new monsters in a new forest map challenge! Unlocks after you beat arena endgame round 5, or is already unlocked if you have beat it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "More max units upgrade cost from 40 gold to 20 gold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "More max units upgrade now goes from +10 to +20 units at 60 max units instead of at 100.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Frost shock area of effect is now 20% larger on every level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Impending doom from +100% to +200% move speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pyromancer’s special attack from every 6th attack to every 5th.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pyromancer’s special attack damage from 50% to 75% of attack damage. (For example if pyromancer normal attacks deals 20 damage, the special attack would deal 10 damage before, and now deals 15 damage).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Centaur from 30 to 40 percent cleave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Griffins from +3 to +4 damage each attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Necromancer now summons a Dwarf on his first attack (and then like before every 6th attack).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Necromancer range from 4 to 6, and projectile speed from 6 to 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Necromancer’s Undead Dwarf from 40 to 60 health, and damage 12 to 18.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Plague doctors now spawns from the center in first spawn wave (instead of previously spawning in the top).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Added popup that explains “From 6 to 8 tier 1 units offered” upgrade in gold shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Good luck in the forest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 12,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/4979322040020695598"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-02T15:25:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.719Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.381Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@1.2b",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 1.2b",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-05T21:59:25.000Z",
+   "notes": [
+    {
+     "title": "1.2b",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the new Teleport spell to have 0 sec cooldown for all heroes but Procellus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "1.2c",
+     "items": [
+      {
+       "text": "Fixed that the cursor icon for the new Teleport spell did not disappear on level victory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "1.2d",
+     "items": [
+      {
+       "text": "Fixed the auto adjust speed feature not working with Fire Tornado.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/4732747437210565651"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-05T21:59:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.718Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.381Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@1.2",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-05T20:40:28.000Z",
+   "notes": [
+    {
+     "title": "General Changes",
+     "items": [
+      {
+       "text": "New Unit: Pyromancer - Tier 4: Medium range, 35 health, 16 damage, fast attack speed. After every 6 attacks creates a fireball that pass through units, dealing 50% of the Pyromancer's attack damage to all enemies it hits. Costs 150 Blood Shards to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Unit: Necromancer - Tier 5: Short range, 60 health, 30 damage, medium attack speed. After every 6 attacks summons an Undead Dwarf with 40 health and 12 damage. Costs 250 Blood Shards to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Spell: Teleport - Teleport up to 5/6/7/12 units. Can't be used first 8/4/0/0 seconds of combat. 10 seconds cooldown. Costs 300 Blood Shards to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: Reroll upgrade. Each rank allows you to reroll upgrades 1 time per game. Max 3 ranks. Costs 100/200/300 Blood Shards to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: In settings you can now enable “Auto change speed”. This feature will speed up the game if all your spells are on cooldown, and return to 1x speed if you can cast a spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Defeat at level 35 or under now awards more Blood Shards*.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Sinon starting gold bonus from 70 to 80.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cyclops damage from 55 to 45.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cyclops health from 120 to 80.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bonus gold offered from upgrades at level 1-10 from 1-20 to 0-20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bonus gold offered from upgrades at level 11-20 from 6-25 to 0-25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bonus gold offered from upgrades at level 21+ from 11-30 to 0-30.: Developer note: This makes it so if a Tier 5 unit is better than the rest, it may not always be the best choice if you now gain a lot more gold picking another unit. The increased RNG is at least somewhat offset by the new reroll feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gold upgrade from 60 to 50 gold at level 1-10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gold upgrade from 75 to 65 at level 11-20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Changed cyclop attack speed text to medium speed, so its accurate with the units actual attack speed. Since release it has been average 1.5 attack (at spawn ranged units roll a random range around their attack speed, cyclops rolls between 1.4 and 1.6, so they don’t all shoot at once). So now it accurately says medium attack speed, instead of very fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug with 1000 Blood Shards achievement that caused it to sometimes not work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "*Examples of Blood Shards new and old rewards comparison",
+     "items": [
+      {
+       "text": "Level 7 old: 7 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level 7 new: 14 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level 17 old: 24 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level 17 new: 41 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level 27 old: 51 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level 27 new: 71 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level 34 old: 76 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level 34 new: 96 Blood Shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 1,
+    "balance": 8,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Level 7 old: 7 Blood Shards",
+     "Level 7 new: 14 Blood Shards",
+     "Level 17 old: 24 Blood Shards"
+    ]
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/4732747437210366302"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-05T20:40:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.718Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.380Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@1.1",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-25T07:16:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.1: Release the Blood Shards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "You can now remove the “max 1200 Blood Shards used on upgrades” limit by going into settings and in “Blood Shard Upgrades” switching from “Choose” to “All”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the endgame rounds from 9 to 5, and made their difficulty increase faster, since it was a bit too repetitive. The new endgame round 5 is basically* the same as the old endgame round 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added icons in the gold shop menu, and added icons next to your stats when you hover over your hero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now set hotkeys in settings to speed up or slow down the game while playing. You can also set how much the hotkeys should change the game speed (by 0.5, 1 or 2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ranged units now spawn further to the left, to make it harder for melee units to get stuck behind them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Cyclops damage from 70 to 55.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Both level 2 summon spells from 0 to 4 seconds cooldown at the start of a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Effero's passive bonus from +60% max range to +40% max range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Max Range Power Up from +20% per upgrade to +15% (total from +60% to +45%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added +400% difficulty and the final difficulty +475% (grats to CropCircles for being the first to beat +340%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the cooldown reduction in gold shop to not work on Summon Melee and Summon Ranged spell (thanks HeyHi).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed a spell to be cast twice in the same frame (thanks AquaBaby).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause celebration particle effects to sometimes not appear at 30 normal levels victory and ultimate victory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Various minor changes",
+     "items": [
+      {
+       "text": "Interest gold is now hidden while fighting so it doesn’t block ranged units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added popup info explaining how lifesteal works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option in settings to disable gold shop info popups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a popup box in settings that explains “Automatically use higher tier units”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Limited how many times the Monarch death and attack audio can play at once, to prevent the sound getting too loud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*Ifrits now spawn further apart in endgame round 5 (they did so in old endgame round 8, but not old endgame round 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 3,
+    "balance": 6,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/4714731755429519608"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-25T07:16:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.717Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.376Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@1.04b",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 1.04b",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-17T09:37:29.000Z",
+   "notes": [
+    {
+     "title": "Mage & Monsters patch 1.04b",
+     "items": [
+      {
+       "text": "Brutal difficulty from +25% to +60% more Blood Shards, and insane or harder from +50% to +120% more Blood Shards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Power Up shop sometimes not displaying the player’s Blood Shard amount correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/6402455182518598058"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-17T09:37:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.716Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.375Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@1.04",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-16T16:37:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you for the overwhelming reception to Mage & Monsters. I plan to continue to improve the game by fixing bugs, adding new features, units and mages. Here is the first post release patch, mainly focused on fixing bugs and balancing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mage & Monsters Patch 1.04 📜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that would sometimes cause a unit to get higher attack range than it was supposed to, leading to very long range melee and ranged attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brutal difficulty now gives +25% more Blood Shards, and insane or harder gives +50% more Blood Shards (from +100% and +200% previously).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On insane difficulty fixed a bug that would cause you to gain no blood shards once you defeated endgame round 9 and beyond.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Blood shards upgrades sometimes showing incorrect prices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased centaur attack range and reduced movespeed a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug that allowed you to cast spells while in the gold shop menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause “need more gold” error message and “unlock tier 2 units” error message to become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved difficulty button to a more central location on the mage selection screen, since the previous placement was easily overlooked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some units healthbar placement being a bit off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/6402455182516017730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-16T16:37:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.716Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.375Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@0.3c",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Update 0.3c",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-07-31T10:00:47.000Z",
+   "notes": [
+    {
+     "title": "Demo version 0.3c",
+     "items": [
+      {
+       "text": "-Summon Ranged and Summon Melee cooldown increased from 18 to 21 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Endgame round 6 from 20 Ogres spawned to 16.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug that sometimes would cause spells to keep appearing in offered upgrades after they had been fully upgraded to rank 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug that sometimes would cause Summon Melee and Summon Ranged rank 4 to not summon any units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/4587497456691176200"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-31T10:00:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.715Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.373Z"
+  },
+  {
+   "id": "mage-and-monsters-209682@0.3a",
+   "gameId": "mage-and-monsters-209682",
+   "displayName": "Patch 0.3a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-29T18:09:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I have just updated the demo to version 0.3a.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has resolution options now and should work well with widescreens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also added some quality of life changes like reduced wait time when taking an upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully the bug with being able to take spells past level 4 which breaks the spell is fixed, please let me know if you encounter it again.: Let me know if you find any issues/bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1950440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1950440/view/4587497456685172963"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-29T18:09:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1950440",
+      "checkedAt": "2026-11-13T03:25:09.715Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:39.373Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1613 @@
+{
+ "game": {
+  "id": "among-ashes-258510",
+  "igdbId": 258510,
+  "name": "Among Ashes",
+  "cover": {
+   "imageId": "co79jd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co79jd.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2f42",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2f42.jpg"
+  },
+  "ps5Release": "2024-12-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "among-ashes-258510@1.1.5",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-04T08:48:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This version of Among Ashes includes the option to access the Night Call main menu from the pause menu, allowing you to switch between different Night Call save slots at any time without having to die.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will hopefully solve some issues where due to some rare bugs (which I'm still trying to squish) players can end up stuck and unable to complete the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope this helps!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1818118366172260"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T08:48:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.646Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T08:48:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.646Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-04T08:48:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.865Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.4c",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.4c",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-06T08:36:03.000Z",
+   "notes": [
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Added a small delay to the autosaves in the game to prevent potential save file issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1807332909531541"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-06T08:36:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.646Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-06T08:36:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.646Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-06T08:36:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.865Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.4b",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.4b",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-04T19:38:43.000Z",
+   "notes": [
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed bug that allowed players to save at a point where it could soft-lock them towards the end of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1806698490820790"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T19:38:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.645Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-04T19:38:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.645Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-04T19:38:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.865Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.4",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-07T11:12:35.000Z",
+   "notes": [
+    {
+     "title": "New Language",
+     "items": [
+      {
+       "text": "Catalan (Català)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed incorrect item description in Russian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with lighter disappearing from real world before interacting with it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Catalan (Català)"
+    ]
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1801617199455866"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-07T11:12:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.645Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-07T11:12:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.645Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-07T11:12:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.864Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.3",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-02T12:29:43.000Z",
+   "notes": [
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed save file issues when loading from specific moments in the game under specific conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1792751526105502"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-02T12:29:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.644Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-02T12:29:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.644Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-02T12:29:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.864Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.2d",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.2d",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-21T10:03:33.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Better Turkish translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed broken text in Turkish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential progression issues before garden section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Better Turkish translations"
+    ]
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1792116353222562"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-21T10:03:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.644Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-21T10:03:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.644Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-21T10:03:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.863Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.2c",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.2c",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-13T17:33:23.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Better French translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Solved game progression issues if players manage to open the music box before finishing the Tree of Life game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra checks after greenhouse fight to ensure the game progresses correctly for all players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra checks in basement to prevent players falling off the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Better French translations"
+    ]
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1791580425970325"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-13T17:33:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.643Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-13T17:33:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.643Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-13T17:33:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.863Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.2b",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.2b",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-23T18:43:58.000Z",
+   "notes": [
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed issue when loading a save file where you had a pending chat with Mark",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some missing characters in Chinese fonts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the uh... fleshy things... going through the wall into the player's kitchen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1789580505313802"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-23T18:43:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.643Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-23T18:43:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.643Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-23T18:43:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.863Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1.2",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-20T21:51:42.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added \"Frame Cap\" option to Settings Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed issue with game progression getting screwed up when playing in Hard Mode (hopefully)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted level design of late game areas to make them less frustrating (moved some arrows in basement maze, made the note with the clue more obvious & added extra gates to Cali's maze to limit the paths you can take)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed arm reappearing under bed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue when loading a save file with keys inside the lab box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added \"Frame Cap\" option to Settings Menu"
+    ]
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1789039014477145"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-20T21:51:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.642Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-20T21:51:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.642Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-20T21:51:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.862Z"
+  },
+  {
+   "id": "among-ashes-258510@1.1",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-15T17:30:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's been a month since the launch of Among Ashes! Thanks everyone for sharing your feedback and reporting bugs you've found throughout the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Even though the feedback has been really positive overall, I wanted to add some options for those who have found the game to be too challenging! I'm also super happy to add more languages to the game so that more people can experience it all over the world!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Languages",
+     "items": [
+      {
+       "text": "Traditional Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Turkish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added the option to activate \"Censor Bars\" over all the butt and breast-shaped polygons in the game. The game has been streamed and uploaded to sites like Youtube in its entirety without any issues, but for those afraid of the algorithms, this one's for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Aim Assist\" settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Infinite Saves\" option for Easy and Normal difficulty modes, for those who find limited saves too stressful",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Infinite Ammo\" option for the Easy difficulty mode, for those struggling with ammo conservation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Infinite Health\" option for the Easy difficulty mode, for those who prefer to focus on the story and puzzles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing Changes",
+     "items": [
+      {
+       "text": "Made Blocking more effective at absorbing damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced damage from enemies in Normal difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed enemy from the garden maze in Easy and Normal difficulty modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed Night Call puzzles still receiving input when tabbing out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added slight input delay in Night Call main menu to avoid loading errors when spamming buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the ability to aim an shoot when inspecting the children's book",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the ability to interact with the lift buttons after pressing them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing subtitle to a specific sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed final boss door issues when reloading to a previous save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional checks to avoid getting stuck after grabbing Amalia's Key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Limited frame rate to 120fps to avoid some graphics cards from working at 100%: Thanks again for everyone's feedback and whatever you do, remember... K̴͉͚̗̅̃̄E̷͓̤̺̊͠E̴̤̰̿̽P̴̠̳̀́ ̴̨̮̭̕̚P̷̠͇̳͐̓̀L̶̹̔Ả̷̧Y̵̘̺͆̓Ï̸̻̏͂N̷͙̯͊G̵͖̹̠̽̿",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 8,
+    "balance": 3,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Traditional Chinese",
+     "Turkish",
+     "Added \"Aim Assist\" settings"
+    ]
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1788945554762862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-15T17:30:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.642Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-15T17:30:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.642Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-15T17:30:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.862Z"
+  },
+  {
+   "id": "among-ashes-258510@1.0.3c",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.0.3c",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-19T23:54:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed bug that could cause corrupt save files when switching between different Night Call save slots after a game over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1786573930636597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T23:54:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T23:54:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.641Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-19T23:54:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.861Z"
+  },
+  {
+   "id": "among-ashes-258510@1.0.3b",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.0.3b",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-19T19:28:14.000Z",
+   "notes": [
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Easy mode is quite a bit easier (stronger weapons, weaker enemies)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed enemies going through walls in basement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hole in basement map when going through a specific series of tunnels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed PC icons not always working after closing a program",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some enemies having issues getting back to their starting point when losing track of the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1786573930630470"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T19:28:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T19:28:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.641Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-19T19:28:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.861Z"
+  },
+  {
+   "id": "among-ashes-258510@1.0.3",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-16T18:47:40.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added \"Streamer Mode\", which tells the game never to display your name on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished Chinese texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Added extra health and ammo pickups for Easy and Normal difficulty modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added extra clue for basement maze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed game breaking when starting a new save file after advancing a lot in Night Call",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added checks for lighter and other puzzle objects to make sure you have them when needed, in case something went wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed game breaking if you somehow get the Ankh key without solving the monkey puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera getting stuck on Night Call music box if you reload your game and inspect it after opening it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added checks to make sure the weak spots of the final boss don't glitch out after too many game overs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added \"Streamer Mode\", which tells the game never to display your name on screen",
+     "Polished Chinese texts"
+    ]
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1785774543662085"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T18:47:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T18:47:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.640Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-16T18:47:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.861Z"
+  },
+  {
+   "id": "among-ashes-258510@1.0.2d",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.0.2d",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-14T12:27:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed (hopefully) the game not working if the language on Windows is set to Turkish",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a small delay when entering or exiting the PC before you can enter or exit it again to prevent the game from glitching out if you do it too fast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved some parts of the Simplified Chinese translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Simplified Chinese texts to the tunnel in Cali's temple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed incorrectly translated Korean texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Korean translations for puzzle-related texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added additional clue to cat puzzle for Asian languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed potential UI issue after Final Boss battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"OK\" button not working with the mouse click on the \"Save slots full\" error message",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed falling off the map in Basement when following a very specific path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1785774543589613"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-14T12:27:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.639Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-14T12:27:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.639Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-14T12:27:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.860Z"
+  },
+  {
+   "id": "among-ashes-258510@1.0.2c",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.0.2c",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-12T00:43:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed missing Chinese characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed final boss not finishing correctly if you ignore your messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1785774543507876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T00:43:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.639Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T00:43:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.639Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-12T00:43:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.859Z"
+  },
+  {
+   "id": "among-ashes-258510@1.0.2b",
+   "gameId": "among-ashes-258510",
+   "displayName": "Update 1.0.2b",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-10T22:09:33.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Solved issue when reloading a save file before the lab after a game over, which didn't allow you to access dark areas even though you had a flashlight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed ability to leave PC at critical moments that could break the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flying zombies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new, more readable font for Chinese language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra condition for Demon Blood to end in case something goes wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Final Boss fight not ending correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain sound effects playing when they shouldn't in basement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Added a few extra pages in some save slots (will only work on a fresh save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made \"Male Patient\" enemies a bit less powerful",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2430900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2430900/view/1785321795779922"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-10T22:09:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.638Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-10T22:09:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2430900",
+      "checkedAt": "2026-11-13T03:14:45.638Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-10T22:09:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:53.859Z"
+  }
+ ],
+ "issues": []
+}

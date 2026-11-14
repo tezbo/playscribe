@@ -1,0 +1,568 @@
+{
+ "game": {
+  "id": "phantom-fury-218009",
+  "igdbId": 218009,
+  "name": "Phantom Fury",
+  "cover": {
+   "imageId": "co5apb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5apb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1wa0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1wa0.jpg"
+  },
+  "ps5Release": "2024-05-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "phantom-fury-218009@2",
+   "gameId": "phantom-fury-218009",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-07T12:01:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey folks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're pleased to bring you our second patch for Phantom Fury, you can find the detailed patch notes inside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch #2 - Patch Notes",
+     "items": [
+      {
+       "text": "Fixed an issue in \"Chicago On Fire\" where the game could crash while loading into a specific checkpoint under certain circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in \"Grand Canyon Facility\" where players could get softlocked inside the Microstinger Testing Range if they shot the Fleshware Robots too quickly, causing the garbage chute to be locked until players reloaded to last checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in \"Underwater Passage\" where players could spawn at the start of the submarine section without a submarine, forcing them to swim all the way back to the beach of Chicago",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Arm & Suit Upgrades could be lost, if players died while on a vehicle, and reloaded to the latest save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Arm & Suit Upgrades could be lost, if players reload to the first checkpoint while underwater in Underwater Passage, and then did a second reload to last checkpoint after reaching the first checkpoint on land",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain Weapon Mods would get unequipped if they had recently reloaded to last check-point, or after continuing a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Grand Canyon Facility where players could get softlocked after clipping through the floor of one of the lifts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ammo would sometimes stop regenerating for the Bile Breather or the Psychic Giant's Head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added audio to the Psychic Giant cinematic at the end of \"Underwater Passage\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with Level Select where travelling to certain levels would not properly award players with an appropriate amount of Nanite Cores (Upgrade Points)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Grand Canyon Facility where players could accidentally skip the Microstinger Rocket Launcher by solving the puzzle without picking up the weapon in the Microstinger Test Range. Players will now have to use the Microstinger to shoot the Fleshware Robots in order to solve the puzzle. We've also added a much larger quantity of ammo pick-ups added to the room to avoid potential softlocks from players who may run out of ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Bile Spitter, Psychic Giant's Head and the HSKL-9M Tazer Mod where these specific weapons could break and no longer regenerate ammo, if the player used their alt-fire and then immediately mounted a weapon, like the Automatic Grenade Launcher, or the Mini-gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Loverboy where its alt-fire would do 0 damage, if the player presses and holds main-fire while the alt-fire auto-aim is executing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Loverboy where it would ignore the first main-fire input after the player has fired its alt-fire, essentially forcing player to press main-fire twice after alt-firing in order to fire again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Bile Spitter where it would no longer regenerate ammo after players loaded an earlier save while the Bile Spitter had 0 ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players' movement controls would break if they punched an enemy and picked up a weapon while the punch was executing, for example in Phoenix Medical Facility near the Stun Baton pick-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ammo meters would disappear from the HUD when switching between weapons that each had their own cooldown to show on the HUD (or when switching mods that had a cooldown on the HUD, like the Psychic Giant's Head or the HSKL-9M Tazer Mod)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in End of the Road where players could get softlocked outside the 2nd Phase Room for the Colonel fight, if they engaged the 2nd Phase and then immediately stepped outside the room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Demon Core Retrieval where a placeholder test beep sound could still be heard near the Demon Core",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked balancing in Chicago On Fire by adding more resource and health pick-ups in the most sparce areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in Lake Michigan Submarine Facility where players could get softlocked if they got squeezed between the smaller elevator and the nearby computer server meshes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Auto-Switch Weapon When Empty option would only work for some weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the HSKL-762AP where the alt-fire firing sound did not correctly trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Los Alamos Defender boss where it would not always explode after dying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Echis SMG where the player could pick up more than its max amount of rounds when the Ergonomic Grip Mod was enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Echis SMG where the ammo for it would be doubled if the player loaded to an earlier checkpoint while Ergonomic Grip (dual-wield) is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Grand Canyon Facility where a Grunt would not react to the player, specifically the Grunt in the two Turrets corridor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Grand Canyon Chase where the player's rockets would often be unable to home in on its target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in The Cabin where certain Drones would not engage in combat until the player got very close to them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Automatic Weapons where weapons such as the Echis SMG would not automatically reload until the player lets go of main-fire, and then clicks main-fire again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in The Crater where players could easily skip past a music fade-out trigger volume, potentially causing 2 soundtracks to play untop of each other, once the player arrives at the old western town section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Chicago On Fire where a certain car model looked unintentionally messed up and broken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional signposting at the end of The Cabin to lead the player towards the helicopter at the end of the level, and added a barrier to avoid players backtracking all the way back to the start of the level by accident",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked audio levels for music generally throughout the game; made music slightly louder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the audio mix across the entire game, turned up certain explosion sounds (Microstinger explosion, Los Alamos Defender explosion & Crawford Mech boss missiles)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the Echis SMG , the HSKL-762AP and the Microstinger sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the Weapon Selector HUD where the player would always switch to the 1st weapon in a category, even if they were holding a later weapon in that same category",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Alburquerqe Outskirts where an invisible wall was present behind the punchable train-car, forcing players to punch the train-car in order to progress. Players can now either climb over the train-car, squeeze past it, or punch it out of the way in order to progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few issues across the game where objects where not correctly attached to something and instead hovering mid-air (For example, we had some floating spotlights in White Sands Facility)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Automatic Grenade Launcher and the Mini-Gun where the player would not automatically drop them, once they've run out of ammunition and could no longer be used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Chicago On Fire where debug text with a \"0\" was floating behind the Bowling Pins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it would sound like the player is permanently underwater, if the player was underwater and then loaded into a save where the player was no longer underwater (For example, loading into an earlier save while underwater in Underwater Passage).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved level progression in White Sands Facility by no longer requiring players to pick up the Triangulation Data and insert it into the computer before being able to launch missiles at the end-of-level vent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved level progression in Demon Core Retrieval by moving the Red Keycard to a location where it is easier for the player to spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue in Los Alamos Research Facility where the pause menu would open up after players used ESC to exit the Power Generator Terminal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Los Alamos Defender introduction sound-file would play over-and-over again, if the player waited around in the boss arena for 30 seconds after killing the boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Echis SMG where it would not automatically reload after exhausting its whole clip while Ergonomic Grip (dual-wield) mod was enabled and the player either punched, used the shield, or picked up a drone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Phoenix Medical Facility where two specific Drones would not engage the player in combat, until the drones reached a specific point in their scripted pathing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some weapons (like the HSKL-9M, or the Echis SMG) would no longer be able to reload, if the player used their alt-fire, and then shot the final bullet in their magazine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some weapons (like the HSKL-9M, or the Echis SMG) would no longer be able to reload (until players shot another bullet), if the player used their alt-fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's all for now. Thank you for your continued support of Phantom Fury!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 42,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1733240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1733240/view/5766372999961650723"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-07T12:01:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1733240",
+      "checkedAt": "2026-11-12T09:24:01.796Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.796Z"
+  },
+  {
+   "id": "phantom-fury-218009@1",
+   "gameId": "phantom-fury-218009",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-26T10:16:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first patch is live and we're bringing a lot of fixes to the table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed an issue in Lake Michigan Submarine Facility where players could get soft-locked after reloading the final check-point of the level, causing a gate to no longer be open upon loading last checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Grand Canyon Facility where players could get soft-locked after placing the ISD if they had reloaded to last check-point before placing it, or after continuing a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in The Phoenix Tower where players could get squished through the floor of an elevator if they hugged the wall of the elevator while it rose upwards, potentially soft-locking players inside the elevators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in The Crater where players could get squished through the floor of an elevator by floating ammo boxes if they had recently reloaded to last check-point, or after continuing a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Phoenix Medical Facility where players could no longer see the first gate that they have to punch and crouch through, if they had recently reloaded to last check-point, or after continuing a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated signposting in Grand Canyon Facility to better indicate the main progression path; specifically around the Microstinger area where players has to drop through a garbage shute to progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slight performance improvements to Chicago On Fire; specifically lighting changes, improving specific particles, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in The Crater where players could be stuck with a black screen if they loaded into another level while sitting in the car with Gus at the start of the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could be stuck with a black screen if they loaded into another level while a fade-to-black sequence was playing, for example at the end of a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in The Dream where players would pull out their weapons and re-enable the HUD after interacting with a Terminal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in The Dream where players would pull out their weapons after vaulting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where StimShots and StimPacks would not overheal HP over 100",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in The Cabin where an ISD was difficult to pick-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Zealots where they would explode if they were directly below the player, even if the player was very high up compared to the Zealot. Zealots now explode based on a 3D calculation, instead of 2D.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an inconsistency in Demon Core Retrieval where the red keycard door had blue paint on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ammo counters in HUD would break if players switch from weapons on cooldown to Bowling Bombs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an inconsistency between The Cabin and Grand Canyon Facility where Shelly's Helicopter was using an outdated model after the player arrives at Grand Canyon Facility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players' weapon selection would show the 'Microstinger' and -1 ammo after players pick up a downed Drone enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's all for now. Thank you for supporting Phantom Fury!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1733240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1733240/view/5759616966667759195"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T10:16:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1733240",
+      "checkedAt": "2026-11-12T09:24:01.795Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.795Z"
+  }
+ ],
+ "issues": []
+}

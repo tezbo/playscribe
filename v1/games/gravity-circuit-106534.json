@@ -1,0 +1,3296 @@
+{
+ "game": {
+  "id": "gravity-circuit-106534",
+  "igdbId": 106534,
+  "name": "Gravity Circuit",
+  "cover": {
+   "imageId": "co54xb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co54xb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1scj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1scj.jpg"
+  },
+  "ps5Release": "2023-07-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "gravity-circuit-106534@1.2.2",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-01T17:01:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "ADDED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a banner that links to GC2 Steam store page, how exciting! If you wish to disable this banner, create a file called \"disable_sequel_banner.txt\" (without quotes) in the game's save folder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Little visual tiling fix in City Center's Master Level variant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a visual offset bug if player is holding something while on moving platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a slight wall collision animation bug (code was checking player's current velocity, rather than direction).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in French localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the pause menu to display the correct description for a certain menu option (\"quit current level\") after player has used the boss rush feature at HQ.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small rendering error relating to the achievement pop-ups in-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if player had disabled achievement popups in-game, they'd stop unlocking on the given platform. If you missed an achievement because of this, they should unlock by relaunching the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one of the late-game bosses might \"glide\" along the floor if player crouched or performed a slide at the right time. This made the boss invulnerable until it touched either wall within the boss room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the final boss could crash the game, if certain Burst Techniques were used together to \"skip\" phases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the audio system to be less error prone, as there seemed to be some rare null reference error at seemingly when launching the game. Usually seemed to manifest only on slower/older hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an extremely rare game crash that could happen during Trace, the Patch Circuit's boss fight (1 in 65000 whenever she summons an enemy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CHANGES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hot-Headed Red Armor Paint received a slight buff: the \"bonk\" upon touching an enemy is now a heavy bounce, adding an extra bit of damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it easier to hug or grab onto walls/ledges on moving platforms that are moving away from the player. This was something that was added to GC2, so we are backporting this back into GC1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified the game's shaders a bit, so that the game doesn't crash if player is trying to use Reshade (an application to apply custom on-screen shaders, usually for CRT-like filter effects) or similar applications.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(LINUX) Modified the default AppImage that it can now launch as stand-alone outside of Steam. This can help with launch issues, as AppImages may not necessarily play nice with all Linux distributions. If you run into issues on Linux, give the \"linux-appdir\" branch a try.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 11,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/1833968530898206"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-01T17:01:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.958Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-01T17:01:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.958Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-01T17:01:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:28.394Z"
+  },
+  {
+   "id": "gravity-circuit-106534@post-2024-10-25",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Alternate Linux branch",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-25T14:16:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. This is not a game patch, but rather an announcement about a new, alternate public branch for Linux users. Windows and macOS users are unaffected.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Recently, an user approached us about how the AppImage the game was delivered with didn't launch on their linux system. AppImages are essentially containers that contain most every dependency the game needs to run, which makes it handy for distribution in the Linux ecosystem; covering some of the most popular distros (including Steamdeck). However, for any edge-cases, users may not be so lucky, and additional tinkering is needed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "To help alleviate that tinkering process, we made a new separate branch (linux-appdir). You can find this new branch under:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Open Steam library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Find and right-click Gravity Circuit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pick 'Properties...'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pick 'Betas'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pick 'linux-appdir' branch from Beta Participation dropdown box",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Let Steam download and install the changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Try this if you find that the AppImage is not launching on your linux distro, for a reason or another.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "To revert back to default branch, just pick 'None' from said dropdown box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save files and achievements are not affected even if you hop between the two.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a technical explanation: instead of delivering the default AppImage, the AppImage was extracted (with --appimage-extract), resulting in an AppDir folder. This is just the contents of the AppImage, with all the dependencies, executables and necessary scripts. The linux-appdir branch was then configured to launch the AppRun script directly (which is what an AppImage does under the hood). This appeared to fix the issue for the afore-mentioned user.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Do note, that you'll need FUSE to use either the default AppImage or AppDir. This is just a requirement of the underlying methods AppImages use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you find any other issues, let us know. In the meanwhile, happy gaming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/6212245217911857290"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T14:16:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.957Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T14:16:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.957Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-25T14:16:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:28.393Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.2.1",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-10T14:51:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. This is a small patch that addresses a few game crashes, couple small issues, and adds one tiny bit of QoL based on player feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QUALITY OF LIFE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a number icon into player's hud when player is using more than one loadout. The icon will appear if player is currently using a loadout from any other slot than 1, or multiple slots have defined loadouts available. This number icon is not displayed while riding the Powered Walker (ex: Ore Mines).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GAME CRASHES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a game crash caused by Piercing Drill hitting a target, and Kai getting crushed on the same frame by an obstacle. This could only really happen in Cyberspace (Warehouse Area).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game crash caused by destroying Dave the Training Dummy with Scheming Pink Armor Paint's ability as Dave was spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a random game crash that happened whenever loading into Guardian Corps HQ area when loading a save file, or after finishing a stage. This was a race condition between regular player spawn logic, and the cutscene logic associated with the HQ. This crash happened on lower-end hardware more regularly, while newer PCs hardly ever had this issue, making it a tricky one to understand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MISC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed hookshot (vertical) assist button to behave more consistently if mashing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one visual tiling error in City Center stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue if using Hardware Barrier during the boss fight in the game's second last stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text overflow issues in pause menu in Chinese localization (traditional and simplified)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a translation issue in Japanese localization during the ending sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, if you find any other issues, let us know. In the meanwhile, happy gaming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/6242640076615204046"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-10T14:51:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.957Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-10T14:51:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.957Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-10T14:51:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:28.392Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.2.0c",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.2.0c",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-28T08:57:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. This is an addendum patch, 1,2.0c, which mostly addresses a few issues identified by our players:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where on certain screens, the displayed time may \"freeze\" if the save file's timer has been maxed out. This is merely a visual issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where the game might crash (only about two-in-65k chance to happen) after launch, due to a bug in the game's RNG mechanism.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the checkpoint menu for Blade's stage at Mission Select, after he has been defeated. Picking any checkpoint led to you spawning at the first checkpoint, as opposed to the intended target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor oversight where Dave the Training dummy spawned with a different amount of hp if easy or hard mode was enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the displayed names in Chinese (traditional and simplified) for the game's last two levels, where they were using old names that were accidentally left in from earlier parts of development.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some camera triggers in the game's second last stage (both regular and Master Levels version)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted jumping while holding an object: previously, while grounded and pressing down+jump, you wouldn't slide or jump at all. Now you jump normally (so long there's no pass-through platform below Kai).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "As always, if you find any other issues, let us know. In the meanwhile, happy gaming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5842939267312546354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-28T08:57:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.956Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-28T08:57:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.956Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-28T08:57:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:28.391Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.2.0b",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.2.0b",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-23T09:58:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. This is an addendum patch, 1,2.0b, which mostly addresses a few issues identified by our players:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some spikes being on the wrong layers in two of the final levels, when Master Levels were enabled. This led to those spikes not having any collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a camera connection between two screens in Cyberspace (Warehouse Area), which led to players being able to lead the camera to a place where it's not supposed to go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance of couple of object types in Power Plant. This should make the stage run more smoothly on lower end hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warp Portals (the green ones) in Cyberspace (Warehouse Area) now refresh air actions like air slide when exiting them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Burst Techniques",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the aerial version of Flying Strike, where its hitbox may spawn on the \"wrong side\" if player changes direction during the startup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Clone Array did not get its duration refreshed if it was already active, and player used a \"dumb cancel\" (slide on the same frame as the technique activates).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed how Surface Render Burst Technique's multhit timers work, making it do a bit more damage against bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made hazard damage calculations consistent. When player touched spikes or lava, the game would check if Surge Protector (Booster Chip) was equipped, apply its effect if it was, and then increase damage based on if player had Fading Onyx equipped. However, if player got crushed by a moving object, these two steps were done in the opposite order, which could cause some slight difference. This change makes Surge Protector apply its effect first in both cases, because the spike situation is more common than being crushed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some safety precautions into the Bestiary screen's code, if the game's Linux AppImage is being run through Proton. Specifically, one particular shader seems to not work correctly when the AppImage is running through Proton, leading to a game crash. This fix attempts to pre-empt that particular crash, though it may make the bestiary enemy/character sprites invisible if the issue does occur.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an oversight where the description boxes did not update on the equip screen in pause menu, if the loadout swap button was used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where grabbing and throwing an icicle (Mountains stage) would break the icicle if you grab and throw it a second time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with doors, where if some upwards vertical velocity pushed you slightly above the door (on Y axis) just as you entered it, the door transition might play out a bit weird. Fixed by forcibly moving Kai down a few pixel units if he was higher than the door upon the door transition starting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor issue where data chips may float in place, as opposed to bouncing when they spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a certain boss in the final levels might clip out of bounds, possibly softlocking the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kai's palette may appear wrong when he dies under certain circumstances (ex: while frozen, or while Function Overload is active).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, if you find any other issues, let us know. In the meanwhile, happy gaming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5741605105606764764"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T09:58:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.955Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T09:58:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.955Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-23T09:58:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:28.390Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.2.0a",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.2.0a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-15T08:57:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. This is an addendum patch to the major patch 1.2.0 we released a couple days ago. This mostly addresses a few issues identified by our players:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes to things introduced in 1.2.0",
+     "items": [
+      {
+       "text": "Fixed a softlock in the final stage of the game, if the \"start from checkpoint\" feature is used from Mission Select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Medley (Wave Circuit) when playing with Rude Enemies game modifier enabled, where she might lock up and freeze, if she was launched during the startup of a certain action. If this happened before or when she reaches half-way health, she'd be invincible for about three minutes, requiring you to either wait, or reload from checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one respawn zone in City Center leading to a bit of a weird spot when Master Levels game modifier is enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one miscolored square bracket (\"]\") on the Mission Complete screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General fixes and adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As per a suggestion from a player, if \"manual slide\" is disabled from game's control settings (and player has assigned the dedicated slide key), the only way to trigger Blade's Armor Paint's air slide is by pressing the dedicated slide key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made all object types (excluding bosses) destruct when Heavenly Piledrive gets interrupted, for example through touching hazards. Previously, this was only limited to certain enemy types (eg. Lava Crawlers in Steelworks). This prevents some weird behavior from certain enemy types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it so that player needs to take more than 0 damage from any source or hit, before the \"perfect\" status against a boss is nullified. This is mostly to account for Trace (Patch Circuit), where touching her goop didn't deal damage, but still registered as a hit that would prevent a perfect boss clear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, if you find any other issues, let us know. In the meanwhile, happy gaming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5747233970414222716"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-15T08:57:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.954Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-15T08:57:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.955Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-15T08:57:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.628Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.1.1a",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.1.1a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-11T15:37:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a minor addendum to the latest patch, that we put in Open Beta a couple of weeks ago (see the link for details for how to opt in!). These were minor enough issues or changes, that we felt were worth including in the beta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what has changed",
+     "items": [
+      {
+       "text": "Fixed a small contextual error in Japanese localization (thanks to a forum user for the heads up!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A small change to the final boss behavior (on easy/normal modes, hard mode is unaffected): the bosses won't regain their shield/armor until they have taken a bit of damage first. This makes the final gauntlet a bit easier for first time players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a camera trigger in the Power Plant stage (Power Circuit), since there was a tiny gap you could slide under and this would cause the camera to behave strangely for a moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If no major game breaking issues are found, 1.1.1a will be merged to the default branch later this week. After this, we'll be focusing our efforts on working on extra features and content. Stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5679673637667107041"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-11T15:37:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.953Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.623Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.1.1",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-27T15:03:42.000Z",
+   "notes": [
+    {
+     "title": "Message from the developer",
+     "items": [
+      {
+       "text": "This is an open beta test, where we are ensuring that some of these new changes and additions do not cause any trouble down the line, before making the patch more widely available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues, let us know! Your cooperation is much appreciated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to opt-in product betas?",
+     "items": [
+      {
+       "text": "Right Click ''Gravity Circuit'' on your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Go to \"Properties\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click on ''Betas''",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Input openbetatest into the code field --> Check Code (as shown in the screenshot below)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Opt in the beta version and start playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "Added a controls option for toggling manual slide (jump+down) on/off if the dedicated slide button is set. Defaults to being enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new Big Medal category for clearing a stage with maximum rank in all available categories (signified by acquiring 1000 bits in a given category). Acquired Big Medals are displayed in the Circuit Vault at Guardian Corps HQ.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mission Result screen",
+     "items": [
+      {
+       "text": "The amount of defeated enemies required for getting maximum rank (1000 bits) toned down for most stages, to make them less strict:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steelworks (Optic Circuit): 30 → 25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Junkyard (Patch Circuit): 40 → 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mountains (Cooler Circuit): 50 → 35",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Power Plant (Power Circuit): 50 → 45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highway (Shift Circuit): 40 → 35",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City Center (Wave Circuit): 60 → 35",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ore Mines (Break Circuit): 40 → 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warehouse Area (Cipher Circuit): 30 → 25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the final stages: 60 → 45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Map loading algorithms have been tweaked, reducing load times slightly (up to 40~50% faster in some levels), while also taking less memory (generally saves between 100~400MB of RAM). The time saves vary by hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved music playback, which helps with BGM issues in the Guardian Corps HQ area on lower-end hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed how the game's text is stored and loaded. This makes the game launch faster on lower-end hardware, and switching localizations via options will also take less time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly optimized texture loading by removing some redundant data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Kai's rendering code speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slighty improved rendering code by removing unnecessary debug code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Armor Paints",
+     "items": [
+      {
+       "text": "Hologram Trap Burst Technique no longer visually \"consumes\" the powered up state of a certain Armor Paint, since it's not affected by it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For whatever reason, Light Alloy chip reduced the duration of Function Overload twice as fast. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a slight animation bug if Hash's Armor Paint's ability is activated after taking damage while Catch Block is equipped. Other potential sources too, but the fix makes sure that the correct animation plays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Realized that a certain pick up in the Mountains stage is nigh-impossible to pick up if Electrifying Green Armor Paint is in use. Adjusted the Armor Paint so that the projectiles it shoots out do not interact with the specific stage obstacle, if Kai's divekick is used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Data Chips",
+     "items": [
+      {
+       "text": "Data chip drop rates increased across the board (base chance increased 20%→30%, additional chance increased 4%→15% per killed regular enemy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Few specific enemy types' base data chip drop chance increased (Junk Crawler, Junk Fly, Junk Fly Hive), previously 20%. Now 40% (i.e. higher than normal base chance of 30%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magnet Chassis Booster Chip can now collect data chips that drop from enemies or bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted Wrecker Tank's (Central Station, i.e. opening stage boss) data chip position to stay within certain bounds, so to ensure it's always possible to pick up, even if you beat the boss off-screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Tweaks",
+     "items": [
+      {
+       "text": "Made it possible to perform \"dumb cancels\" (skipping the activation animation of certain Burst Techniques, like Function Overload, by sliding on the same frame as the activation) with the slide assist key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Clone Array Burst Technique now be \"dumb cancelled\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gave dedicated slide button a buffer, making it easier to slide after landing from a jump. The buffer duration is the same as normal jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slide direction can be influenced by the held direction at the moment when the slide input is detected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Level Select screen now displays if you have collected the palette chip from said stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Opening Stage now also grants gold medals, platinum stars, and newly added big medals (see Additions).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed the dedicated slide button to work with crouching jabs. The problem was that with manual slide (jump+down), you could cancel out of the crouching jab sooner than with the dedicated slide button. This fix makes the cancel window the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small stutter Kai does if you do a crouching jab, let the crouching jab finish, and hold a downwards diagonal angle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a situation where Kai can't turn around to a face a wall, if his back is against it, and he's looking the other way. Usually, this would only happen if Kai took damage, or via conveyor belts in Ore Mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor visual issue where the screen may briefly flip in Cyberspace when choosing to reload or quit the stage from the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a small precaution for a game crash that may occur if the action table in a cutscene has an unexpected value in a certain place. This is to possibly fix a very edge-case game crash, that might very rarely occur in stages like Warehouse Area (Cyberspace).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small bug where Kai's jump or double jump might get eaten by a Float Rider (the moving platforms in the Highway stage), if one is performed after doing an action like standing jab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small visual issue with the health bar when riding a Powered Walker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Powered Walker's health bar may stick on-screen even after exiting it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a certain boss crashing the game when you throw a block at them (either one he generates, or one generated by their Armor Paint) after they have been defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Steam",
+     "items": [
+      {
+       "text": "Fixed an issue on Windows build, where if user's LUA_CPATH is modified (e.g. by having scoop. installed), the game may fail to launch because it fails to find the dll/so used for Steam integration.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Localizations",
+     "items": [
+      {
+       "text": "Fixed some issues in Dutch localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple of incredibly minor issues in Korean localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Japanese localization, where one of the lines during the ending was slightly off from intended meaning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 13,
+    "balance": 7,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5728086065200422892"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-27T15:03:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.953Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.622Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.1.0d",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.1.0d",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-08T16:58:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. This a fairly small patch, that addresses some issues in the Chinese localization (traditional and simplified):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a handful of instances where the Chinese languages displayed a \"[]\" when the font used by game couldn't support a given character. To address these issues, alternative translations were implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you happen to notice any more of these instances, or any other localization issues, just let us know - and we'll get them fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5410576585196137236"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-08T16:58:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.952Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-08T16:58:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.952Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-08T16:58:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.621Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.1.0c",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.1.0c",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-04T00:48:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Following the 1.1.0 patch before the holidays, here's a small minor update. This only fixes some minor edge-cases, and addresses one little request from players:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Kai could be damaged by certain boss patterns after the ability of a certain Armor Paint activates. Player is supposed to be an immune during this activation, so this was an oversight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Against certain specific end-game bosses, fixed a potential soft-lock if they are struck with a delayed attack (eg. Hologram Trap) during specific attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a small visual issue where enemy gibs might remain on-screen after carrying certain enemy types into an \"open\" boss arena (Opening Stage, Highway).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Against a specific boss, adjusted Emergency Warp (the teleport Kai does when touching hazards like spikes) to move its target position, so to prevent Kai from spawning in unintended places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When starting New Game+, your clear times (boss refight times via C.O.M, level clear times shown on level select screen) are carried over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, let us know if you find any issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5410576585179104486"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-04T00:48:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.951Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-04T00:48:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.951Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-04T00:48:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.621Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.1.0b",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.1.0b",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-28T11:06:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Following the 1.1.0 patch from last week, here's a little small addendum update to fix following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Armor Paints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a game crash caused by one of the armor's abilities not playing nice with pass-through-platforms (eg. the ones found in Hash's boss arena).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Catch Block and one other armor's ability accidentally granting invincibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock where if Kai uses Speedy Teal paint to slide around after a boss is defeated, he may get stuck against a corner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Hot-headed Red armor paint's ability could hit the healing chamber at HQ in unintended ways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if Kai is pushed around by certain things (eg. wind), the ability from Hot-headed Red armor paint might disconnect and get disjointed from Kai.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Light Alloy particles from spawning when using the ability from Hot-headed Red armor paint. The said ability overrides Light Alloy chip, so this is more to prevent visually confusing information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can no longer break K.I.D's ball with a certain armor paint's ability; plays error sound if attempting to do so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where checkpoints or the training room at HQ do not grant full burst energy when using armor paints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the power up ability of a certain armor paint accidentally disabled player-on-enemy contact damage checks during it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a certain armor paint's ability to work with Hardware Barrier, as well as fix one visual bug relating to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some precautions to possibly fix a bug where when Kai grabs onto a ledge, he might randomly float up to the skies while still in the ledge-gab animation/state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the punching bags in training room from phasing out of view because of too intense screenshaking caused by some specific armor paints or combos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grabbed objects can no longer block enemy projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an animation bug with Cable where one of his attacks might not play properly on hard mode, if he queues up the same attack twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possibly fixed an issue with Crash having a \"phantom hitbox\" when he activates his desperation Burst Technique. This phantom hitbox could hit the player, so it was sometimes unfair, unavoidable damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added precautions against an issue where you might be able to prematurely end Heavenly Piledriver, which may lead to situations where you can throw bosses in a way that clips them out of the arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a small visual issue with the C.O.M boss refight background visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small issue where the monitor settings menu incorrectly always displayed that the chosen fullscreen mode was \"desktop\" when launching the game, even if the loaded setting from player configurations stated \"exclusive\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5410576585155156334"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-28T11:06:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.951Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-28T11:06:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.951Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-28T11:06:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.620Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.1.0a",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.1.0a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-23T06:28:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Following the 1.1.0 patch from yesterday, here's a little small addendum update to fix following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a game crash when Emergency Accumulator chip is equipped, and taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a game crash when using a certain Armor Paint against a specific boss' attack pattern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with double-tap-to-run (Command Run), where it wasn't working properly due to changes to controls code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one of the Armor Paints allowed hitting the healing chamber in Guardian Corps HQ in unintended ways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small typo in English. Gotta remember to use a spellchecker!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed C.O.M so that you can not access him immediately after clearing the Opening Stage (Central Station). This is to fix an issue where Wrecker Tank may not spawn properly when refought via C.O.M. Come back later when you have visited at least one other stage. An error beep will play when you try to step onto the platform in the room, to signify he's not available yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential softlock where if an enemy is off-screen upon Trace's defeat, the enemy survives the \"clear all enemies on-screen\" check Trace's defeat does. This was not introduced by 1.1.0, but rather was a bug that nobody had noticed until now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5410576585136233333"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-23T06:28:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.950Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-23T06:28:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.950Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-23T06:28:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.619Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.1.0",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-22T14:00:27.000Z",
+   "notes": [
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "Boss Rush: Guardian Corps HQ now features Combat Memory Bank, a computer which lets you refight any of the game's bosses at your leisure. Good for practice, or for chasing record times!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Armor paints: Prim, a painter NPC that hangs around in the Guardian Corps HQ, now offers swappable armor paints, allowing further customization! These armor paints each bestow new abilities or effects, so give them all a try! Prim will explain to you how to unlock the paints to her shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Quality of life additions",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Loadout swap: A dedicated button for quickly swapping loadouts on the fly. During gameplay any unset or empty loadouts are skipped when the button is pressed, so you can choose to use only two loadout slots, or all three.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slide: A dedicated button has been added for sliding. Down and jump will still continue to work, but this button may be useful for those who need it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hookshot - vertical: A dedicated button that locks the hookshot's aim only to upwards vertical directions. This may help with any platforming involving the hookshot, for those who might need it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mouse control mapping: You can now map mouse buttons on PC, in addition to keyboard keys.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Effect Timer: An additional toggle setting has been added to the game's system options menu. This toggle adds on-screen visuals for certain effect durations, removing ambiguity. This setting is enabled by default, but can be toggled off at any time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Burst techniques",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cycle Kick: In-game shop price reduced from 2000 to 1500.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Surface Render: In-game shop price reduced from 2000 to 1500.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity Freeze: Affected area increased, damage slightly increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Piercing Drill: The chain portion now also damages enemies, not just the tip, making the technique easier to use effectively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flying Strike: Fixed an issue involving the Speedrun Mode, where it was possible to accidentally skip acquiring the technique by saving and quitting during the Opening Stage (Central Station). It was still possible to buy the technique, but Flying Strike is intended to be given to the player for free.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pass-through platforms: Kai can now gain sprinting speed by holding the run button (or having \"inverse\" run button behavior enabled) when dropping through pass-through platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sprint jumping when hugging walls: Previously, if Kai was hugging a wall while grounded (holding left/right while up against a wall), Kai would be unable to gain sprinting speed when run button was held (or having \"inverse\" run button behavior enabled) when jumping. This behavior has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopkick: Kai's hopkick (up+attack while grounded) has been sped up by a few frames based on player feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Telefragging: When Kai is struck by a hazard (lava, spikes, crushing), Kai will perform an Emergency Warp to last safe ground. Because this behavior could sometimes lead to Kai respawning inside an enemy, Kai now automatically defeats any enemy around him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Data chips",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"NPC\" type data chips: Research cost reduced from 150 to 100.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stage changes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highway: Fixed an issue where it was possible to skip over the stage's checkpoints with certain actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ore Mines: Fixed a certain area not having correct camera triggers when entering it in a specific way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guardian Corps HQ (visuals): Additional sign has been added to hint towards the location of the training facilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guardian Corps HQ (design): Additional platforms added to make reaching the Training Room easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guardian Corps HQ (training room): When Dave the Training Dummy is hit, the Training Room door will be inoperable for a few seconds. This is to prevent players from accidentally exiting the room while performing combos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guardian Corps HQ (NPCs): \"Prim\" and \"Shock\" NPCs have switched places. Their dialogue has been adjusted slightly to match these changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final stage: Additional respawn points added in a certain section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chinese: A certain scene had an issue where the talking characters were accidentally reversed, and there were other issues involving few untranslated words. This has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "English: Fixed a slight typo in Pat's dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "macOS: Loading times improved by changing some code, that made some of the game's threads run slower on systems with M1 chips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speedrun Mode: If the in-game timer is enabled from the game's system settings, Speedrun Mode is enabled by default when launching the game (if Speedrun Mode has been unlocked). This is so that speedrunners do not need to remember to toggle this setting every time they launch the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General code performance: Slight improvements across the board in various places, that cumulatively help the game run more smoothly on lower end hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5410576585133730778"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-22T14:00:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.949Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-22T14:00:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.949Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-22T14:00:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.618Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.0.8",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-03T15:00:17.000Z",
+   "notes": [
+    {
+     "title": "Speedrun Mode Unlocked!",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ready to take on the challenge of speedrunning? Now you can with our new Speedrun mode!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To unlock this feature, either finish the game with cleared save data or enter a cheat code at the File Select screen: Left, Left, Right, Right, Left, Right, Up, Down, Burst!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speedrun mode allows you to skip various cutscenes and interactions for a smoother gameplay experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You have full control over when to toggle this mode, and it works seamlessly with both new and existing save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Loadout Customization",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing the ability to create and switch between three unique loadouts, complete with booster chips and techniques, right from the pause menu!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you can tailor your loadouts to suit different situations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stage-Specific Civilian Tracker",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keeping track of your heroic endeavors is easier than ever before! Check out the new in-stage tracker in the pause menu, which shows how many civilians you have rescued in a particular stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No more guessing - quickly identify which rescues you might have missed to ensure no one is left behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Training Room",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get ready to level up your skills with some exciting Training Room opportunities! You can seek the room out at the HQ.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance Enhancements",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've also included various small stability improvements to make your gaming experience even smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0,
+    "topNew": [
+     "##",
+     "We've also included various small stability improvements to make your gaming experience even smoother."
+    ]
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5220291886505557530"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-03T15:00:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.948Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-03T15:00:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.948Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-03T15:00:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.617Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.0.7a",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.0.7a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-21T11:53:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. Based on player feedback, we bring you version 1.0.7a, which addresses an issue that was identified by our Chinese players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game issues",
+     "items": [
+      {
+       "text": "Fixed an issue where the game would crash upon reaching a certain boss while playing in Chinese. This was caused by a formatting error in the Chinese localization script files, as well as some changes made to the text rendering between 1.0.6 and 1.0.7. As such, while the formatting error worked in versions 1.0.6 and earlier, it started crashing the game in 1.0.7, and this slipped past us in testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sincerest apologies to Chinese players for any inconvenience this may have caused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on 1.0.8 which will bring more changes and even some additions, but we felt it was important to get this crash fixed when we became aware of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5127964289187286127"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-21T11:53:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.948Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-21T11:53:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.948Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-21T11:53:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.616Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.0.7",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-08T10:03:58.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone. Based on player feedback, we bring you version 1.0.7, which brings various bug fixes and other tweaks. Following things have been fixed or adjusted",
+     "items": [
+      {
+       "text": "Note: Due to how language selection was adjusted for this patch, the game will ask to select your language again upon launch. This is one-time operation, however, so hopefully this won't be too bothersome!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game issues",
+     "items": [
+      {
+       "text": "Fixed an issue where in rare situations, ledge grabbing onto an object that has despawned may crash the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra code to account for strange behavior in the pause menu, that could under very specific circumstances lead to a game crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix an issue where Hardware Barrier may not activate properly; in that the shield effect appears, but it doesn't actually shield you from damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a visual issue where Hardware Barrier remains if you complete a stage, and the technique is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a visual issue where Hardware Barrier being active may lead to some weird visuals during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, due to a coding oversight, a jump activated through the game's jump buffer may unwittingly cancel a burst technique activation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed Kai's control code a bit, in that it checks for burst technique activation first before any other button input. This helps with any unintentional \"double jump cancelled burst technique\" bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a visual offset issue with Junk Fly Hive enemies, when they are grabbed with Heavenly Piledriver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a certain boss, under certain circumstances, can get stuck mid-air in a way that requires you to restart the fight by reloading the checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if you pressed crouching jab just before doing some special NPC interactions in the HQ, Kai's controls might get locked up after trying to leave that interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kai's controls may get locked up when Kai gets frozen or gooped up in Mountains or Junkyard while doing a crouching jab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue relating to using Gravity Freeze against a specific attack one of the game's bosses can do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Chain Dasher may fail to grab the target object if the hookshot button is held down at the end of the dash, and the target is eligible for a grab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game crash that may happen when using Support Platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that may happen if Kai gets crushed during Screen Interrupt, like by the toggleblocks in Cyberspace",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Chain Dasher can cause grabbed enemies warp around rather randomly if they're thrown while Kai is standing on ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a visual issue with Virus Bruiser enemies if they're grabbed with Heavenly Piledrive while their chain is extended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue when grabbing an enemy object with hookshot, where the enemy may be displaced for some few frames while Kai is doing the pull-in action. This tended to happen the most when grabbing an enemy after Heavenly Piledrive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Due to a small oversight, Data Chip count may go up to 82 out of 80, due to the game interpreting wrong data as picked up data chips. This error has been fixed, and additional code has been added that corrects any affected save files when game boots up. This bug did not affect achievements, it just displayed the wrong visual on GAME COMPLETE screen, as well as file select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a game crash in Highway caused by preserved momentum from Float Rider platforms when entering miniboss cutscene triggers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue where divekick can be cancelled with a burst technique, leaving a lingering attack overlay effect and lingering hitbox attached to Kai",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where some enemies may continue their normal behavior if they are Heavenly Piledrived into a pit of spikes or lava, or Kai getting crushed. Made the said enemies destruct in these circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one unintentional interaction with a moving platform and one enemy type in one of the latter stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game crash that may occur if the game takes longer than expected to load Research Compendium assets, and the game attempts to update which object sprite to show.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added precaution to one of the cutscene triggers in one of the final stages, so to ensure that Kai doesn't fly past the cutscene trigger too hard due to any momentum shenanigans",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay adjustments",
+     "items": [
+      {
+       "text": "Gave Emergency Heal and Hardware Barrier the \"invincible\" status for their activation durations (ie. the time between activation and player regaining control), to better ensure that the techniques do their designated effects without some weird interactions preventing them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made it possible to crouch and get the crouch jab out on the same frame, since previously these had to be handled in two consuctive frames, which could lead to dropped inputs (crouching but not getting the jab out)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made it possible to crouch from sprint, so long you only hold the downwards direction. Previously you had to slow down enough for crouch to register.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Heavenly Piledrive unintentionally grabs overkilled enemies. However, instead of removing this, additional code was added that ensures that an overkilled enemy destructs after the Heavenly Piledrive finishes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can gain sprint speed if Kai falls off a ledge after a slide if run button is held",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can gain sprint speed after letting go of a wall-slide if run button is held",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a few more \"safe zones\" for Kai to respawn on, if he falls into a pit near the miniboss in Junkyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Adjusted language handling, and how it is saved in player's user configuration files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slight modifications to Japanese localization (eq. one achievement erronously using the wrong name for a certain character)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Working on improving text rendering performance. This was done for console ports, but may help with running the game on older PCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GAME COMPLETE screen now shows clear time down to centisecond accuracy, as opposed to just seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GAME COMPLETE screen now also shows your research completion rate for compendium (in ###%), not just your data chip collection rate (in ##/80)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know if you find any new issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 22,
+    "balance": 8,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5124585319866939903"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T10:03:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.947Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-08T10:03:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.947Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-08T10:03:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.614Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.0.6",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-21T14:00:12.000Z",
+   "notes": [
+    {
+     "title": "Thank you for playing the game and everyone's overwhelming support! It means a lot to us as an indie dev, thank you to everyone who gave their feedback in the form of reviews.",
+     "items": [
+      {
+       "text": "Now that it's been exactly 7 days since we released this 7 years worth of hard work out in the world for everyone to enjoy and play, as with all releases and specially with indie games, we try to patch all the bugs and issues reported to us by the community as soon as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, we bring you the third Steam Patch note for the game following the game's launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Following bugs/issues have been fixed",
+     "items": [
+      {
+       "text": "Fixed several typos in English (thanks for the heads up, folks!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed skipping over the junkyard miniboss trigger zone. Sorry speedrunners, but there may be bugs involved if you approach this trigger zone from the wrong side. This also makes the level line up with Opening Stage and Highway, where the trigger zones are appropriately sized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a string ID in Chinese localization, which made the game print \"NULL_STRING\" for one of Nurse's dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix certain lines of text in Chinese localizations that the game's font wasn't able to display properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted German localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a crash that can happen against Trace, in case she's defeated while there's still falling garbage blocks on the screen from her Burst Technique.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed buggy camera behavior if falling down a certain pit with the Powered Walker in Ore Mines (Crash, Break Circuit)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a game crash that may happen if Trace (Patch Circuit) is defeated under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add a safety net to how cutscenes and dialogue boxes are handled, to hopefully catch some edge-case bugs or behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added code that better ensures that Truly Healthy and Truly Energetic challenges unlock properly if playing on NG+ or Circuit Mode+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added code to Steam version that ensures proper syncing between Steam achievements and the game's internal challenge tracker",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with the Powered Walker in Crash's stage, where the mech didn't keep autofiring if attack button is held, and autofire is enabled in gamepad settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "22/07/23 edit, to add a change that had gone unmentioned",
+     "items": [
+      {
+       "text": "Adjusted the game's garbage collector settings a little bit, which may help with performance on some hardware: PATCH CIRCUIT: Let us know if you find any new issues or bugs on discord/steam discussions. Stay tuned for more updates as we approach the post-launch frenzy!: Follow us on our official Steam page, Twitter (@GravityCircuit), and join our vibrant Discord community as we all celebrate Gravity Circuit!: https://store.steampowered.com/app/858710/Gravity_Circuit/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/5124584051973561081"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-21T14:00:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.946Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-21T14:00:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.946Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-21T14:00:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.611Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.0.5",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-17T06:58:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is the second Steam patch for the game following the game's launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Following things have been fixed or tweaked",
+     "items": [
+      {
+       "text": "Fix several typos in English text (thanks for the heads ups, folks!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a crash with level select screen when pressing the burst button while it's closing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it possible to do the boss portrait \"recolorize\" on level select screen with additional buttons: hookshot and pause, previously only the burst button worked. This allows you to rewatch cutscenes that happen within the stages after they're beaten. Requires beating the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue with the game loading assets during a stage transition; may help with random crashes people are reporting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix one of the game's cutscenes not playing after beating a certain boss, when returning to HQ. This cutscene was rather minor, but it's quite embarrassing that we didn't realize this cutscene wasn't playing in retail builds of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix red draining health bits being overlaid on top of \"healthy\" bits in player's HUD sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash where if Chain Dasher was starting up, and the target object had despawned or gotten destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where game may crash if the targets picked by Screen Interrupt are not legible ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock if Hash, Bit or Blade are defeated by using Heavenly Piledrive, and sending them down to the hazards surrounding their fight arenas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a certain boss' health bar may have somewhat buggy visuals when damaging it during certain periods of time: Note: We are still looking into the issues experienced by macOS users - hang on tight!: Let us know if you find any new issues or bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/6079346804885243618"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-17T06:58:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.945Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-17T06:58:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.945Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-17T06:58:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.610Z"
+  },
+  {
+   "id": "gravity-circuit-106534@1.0.4",
+   "gameId": "gravity-circuit-106534",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-14T22:41:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is the first Steam patch for the game following the game's launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Following things have been fixed or tweaked",
+     "items": [
+      {
+       "text": "Fix several typos in English text (thanks for the heads ups, folks!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a floating point operation issue for one of the game's shaders, which affected some visuals on some hardware (eq. defeated bosses in level select having their portraits purely black)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a crash in Ore Mines (Crash, Break Circuit) stage, involving the large falling crumbling blocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a camera lock issue in City Center (Medley, Wave Circuit) stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix certain section of Highway (Bit, Shift Circuit) stage not having collision, due to tiles being on the wrong layer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a crash involving Medic and his tube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a potential crash when the game is unloading texture memory, due to a possible race condition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an issue with the Dodge Slider chip, as well as making it a bit stronger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a softlock situation if boss dies after player dies, such as a bouncing enemy hitting a boss after player has died",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Energy Absorber chip a bit stronger, and it now absorbs energy if player's hits get blocked by a shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a buggy camera connection in one of the latter stages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a buggy camera connection in Ore Mines (Crash, Break Circuit)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a crash if Blade spawns ice blocks during his boss fight, and those ice blocks break in a particular manner upon his defeat: Note: We are still looking into the issues experienced by macOS users - hang on tight!: Let us know if you find any new issues or bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-858710"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/858710/view/6079346804876699259"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-14T22:41:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.944Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-14T22:41:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-858710",
+      "checkedAt": "2026-11-13T03:22:02.945Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-14T22:41:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:40.609Z"
+  }
+ ],
+ "issues": []
+}

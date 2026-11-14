@@ -1,0 +1,1420 @@
+{
+ "game": {
+  "id": "dauntless-26166",
+  "igdbId": 26166,
+  "name": "Dauntless",
+  "cover": {
+   "imageId": "co93as",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co93as.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar510",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar510.jpg"
+  },
+  "ps5Release": "2021-12-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dauntless-26166@major-2025-02-24",
+   "gameId": "dauntless-26166",
+   "displayName": "Important Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-24T18:29:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dauntless is shutting down on May 29, 2025. Dauntless will receive no additional content or updates. The game will no longer be available to play on May 29, 2025.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-331370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/331370/view/1792116353331158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-24T18:29:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-331370",
+      "checkedAt": "2026-11-13T03:18:32.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-24T18:29:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-331370",
+      "checkedAt": "2026-11-13T03:18:32.758Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-24T18:29:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:52.999Z"
+  },
+  {
+   "id": "dauntless-26166@2.1.1",
+   "gameId": "dauntless-26166",
+   "displayName": "Update 2.1.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-17T00:18:00.000Z",
+   "notes": [
+    {
+     "title": "New to Dauntless",
+     "items": [
+      {
+       "text": "Please note these Patch Notes are being published a few days early to give exposure to the upcoming fixes. Changes will go live on December 19th!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Frostfall",
+     "items": [
+      {
+       "text": "Frostfall is here, including a new Event hunt, facing off against the Cheerless Charrogg:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cheerless Charrogg has long been a fairytale told to ill-tempered children of the isles during Frostfall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This season, however, the childrens’ collective petulance reverberated far enough to penetrate into dense deposits of unstable Aether and it has erupted from innocent imagination into grim reality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beware, The Cheerless Charrogg is an unstoppable humbug that can be damaged, but not killed. Pummel it with all the snowballs and holiday cheer possible to survive until it retreats back into the fireside folklore it came from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More details in your Inbox once the event starts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Behemoths",
+     "items": [
+      {
+       "text": "Fixed an issue with Behemoth attacks becoming out of sync between the game client and server after enrage, resulting in players being hit by attacks that did not visually seem to have hit them yet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Epic parts were not correctly dropping from some Dire Behemoths that used to have Heroic versions pre-Awakening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused players to not always be staggered in the correct direction by heavy Behemoth attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Karkonos’ parts being unintentionally hard to break during the Titan’s Awakening event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Karkonos’ umbral pools not doing damage to players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Karkonos’ missile attack no longer activating after the first few salvos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where Karkonos could turn invisible temporarily",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed horn parts for Boreus, Chronovore, Embermane, and Karkonos incorrectly being set as a second head so it wasn’t breaking to the intended weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Embermane sometimes not spawning a fireball when intended during attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing Frostwülf’s ice pools to spawn collision above the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-enabled mounting attack on Malkarion that had previously been disabled in a server hotfix to temporarily address a crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Shrike’s tornado attack visual effect sometimes not spawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Weapons",
+     "items": [
+      {
+       "text": "Fixed Alluring Moons-spawned Chaox having player collision blocking movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit that allowed players to spawn infinite Chaox using Alluring Moons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a debug visualization that could spawn around Firestorm’s projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Golden Claws’ Passive III talent stacking infinitely, and also addressed it doing unintentionally high increased damage even without stacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed The Hunger and Molten Edict retaining equipped mod slots from pre-Awakening loadout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause a texture to stretch from the model for Reaper’s Edge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed The Anvil being able to max Speed stacks by weapon swapping with Passive talent IV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed The Godhand’s passive glyph continuing to trigger after swapping to another weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Escalations",
+     "items": [
+      {
+       "text": "Fixed an issue resulting in the intended weekly Heroic Escalation rewards not being granted on completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Escalation 10-50s still spawning Heroic Behemoths",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed combat audio not playing during Escalations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Planar Voyage modifier sometimes giving an unintended -10 Defense stacks at the end of the round",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removing the Chronostones reward from the Radiant Escalation puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hunting Grounds",
+     "items": [
+      {
+       "text": "Replaced the Scorchstone Hellion spawn on Cape Fury (Surge) with the intended Bloodfire Embermane, giving them two guaranteed spawns each, and addressing a blocker in the Behemoth Survey: Cape Fury (Surge) side quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stopped Chronostones dropping from island events on The Paradox Breaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that could cause fauna, gatherables, and patrol chests to not spawn on the following Surge islands: Hades Reach, Undervald Defile, Aulric’s Peak, Razorcliff Isle, Cape Fury, and Snowblind Waste",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the big storm-nado to not appear in the middle of Cape Fury’s Surge version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Ramsgate",
+     "items": [
+      {
+       "text": "Fixed some lanterns near Kat in Ramsgate giving off an unintended purple glow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Armour & Perks",
+     "items": [
+      {
+       "text": "Fixed Rezakiri’s armour pieces requiring the Level 15 recipe at Level 10 as well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quests",
+     "items": [
+      {
+       "text": "Fixed the Reaching the Apex main quest unlocking earlier than intended in progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the dye Rumours for Koshai, Riftstalker, and Valomyr requiring kills of the now-removed Heroic versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing objective string in Rumour: Exquisite Sunburn (III)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a reference to the Middleman in Rumour: Toxic Phage (II)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Fixed Curiosities not being consumed from inventory when used. Pack it up folks, party’s over!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hunt Pass Prestige Cores not being listed separately from other Rare cores in the Core Breaker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Assault Tonic count reducing by 2 when only 1 is used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Banners not being individually customizable per loadout slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Head Accessories being the same across all loadouts, despite the My Slayer screen showing the intended one equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Wildland Flute emote’s audio not stopping when the emote does",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the rarity of the Champion’s Repeaters transmog from Rare to Epic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cosmetic versions of the pre-Awakening lanterns still granting gameplay effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Quickslot 4 keyboard input still activating an item if it had been equipped to the slot pre-Awakening",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed crafting items that had been pinned pre-Awakening still remaining on the Quest Tracker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some quests unintentionally showing old crafting schematics as rewards in the Quest Log screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed effect layering obscuring the weapon active ability slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tracker information sometimes not displaying correctly in player overheads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “breadcrumbs” not clearing after viewing the item in a number of cases in the My Slayer screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing controller input prompt for Continue on the Canister results screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case that could cause popups to stack multiple times when trying to purchase more Platinum from the Canister results screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Canister opening animation being unintentionally stretched on wider aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a poorly-visible Continue prompt on the Message of the Day popup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a broken UI texture that sometimes appeared around button prompts on Xbox One",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed a purchase confirmed text string showing when cancelling out of a Platinum purchase on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some long quest titles flowing out of the NPC interaction screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unintended audio behavior with hold prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed videos in the Move List screen not looping on PlayStation 4 and PlayStation 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Removed an input that could still allow access to the Reward Cache",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed an input that could allow access to a work-in-progress version of the Hunt screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed item names in the Steam checkout popup from appearing in the correct language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Enabled dynamic resolution (with a lower bound of 70% of 4K) as a short-term assist to performance on PlayStation 5 and Xbox Series X. Please note that improving performance more generally across all our platforms remains high on our priority list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Stability",
+     "items": [
+      {
+       "text": "Fixed an issue causing timeouts loading into the game on accounts that had heavily customized their cosmetic setup per loadout, and had a high number of loadouts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a server crash that could occur when mounting Malkarion due to a missing file in the game package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare server crash related to weapon swapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare client crash in the colour picker UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare client crash related to breadcrumbs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare client crash related to the Umbral elemental effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed an issue with the Steam version of the game not detecting language correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a portion of UI strings not displaying correctly in Spanish, and falling back to English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Miscellaneous text and localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Behemoths",
+     "items": [
+      {
+       "text": "Moonreaver Shrike’s wing swipe projectile now adds the Shocked debuff if hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allowed Sporestruck Charrogg to use more of its moves outside Enrage, to reduce encounter downtime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weapons",
+     "items": [
+      {
+       "text": "Removed the Steel Marks requirement for the third Weapon Talent unlock on all weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Fury of the Mountain’s Special IV talent so it correctly gives a Determination gain of 15 (was 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased duration of Oathkeeper’s legendary ability from a default of 15 seconds to 30 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Oathkeeper’s Legendary III talent from 5 to 10 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Stopped players from being able to hit or redirect lightning orbs spawned by Skies of Ostia turrets, as they can get in the way and cause you to do less damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered The Living Branch’s legendary ability default cooldown from 60 to 40 seconds (and with the talent, 40 seconds to 20 seconds)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered The Silver Sword’s legendary ability cooldown from 90 to 50 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Buffing The Hunger",
+     "items": [
+      {
+       "text": "Basic attack damage increased by 10-20% each",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Light attacks grant 3 meter per hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Active talent II buffed from 5% to 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passive talent I buffed from 30% to 40%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passive talent II now also works with Passive talent V",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passive talent V no longer gives a defense penalty, now just gives 4 Defense while in Verge of Night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hunting Grounds",
+     "items": [
+      {
+       "text": "Added existing Blazeworks 75% XP boost to all Level 60 Hunting Grounds, and removed it from the Level 30 Blazeworks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tuned down the power level of Behemoths on Level 60 islands, as they were hitting harder than intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Armour & Perks",
+     "items": [
+      {
+       "text": "Replaced the Predator perk on Shrike armour with Cunning, and on Malkarion armour with Sharpened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Predator perk’s cost has been reduced from 8 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Strategist perk now stacks up to 500 shields (please note that the text string will be updated in the next patch)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fortress perk increased from 120 to 150 shields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Economy",
+     "items": [
+      {
+       "text": "Rebalanced Hunt Pass Prestige Core drop tables to give more guaranteed Rams and Aetherite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Significantly increased Rams rewards from (almost) all Main and Side quests, and added Rams rewards to a few Side Quests that didn’t have them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased average Rams dropped from Patrol Chests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Rams dropped from Behemoth kills from a range of 100-500 to 115-1000, based on Behemoth level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted Chaox kill Ram drops to better balance with Behemoth kill drops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Training Grounds",
+     "items": [
+      {
+       "text": "Removed weapon swap combos from the move list panel in the Training Grounds, to avoid confusion for early game players who only have one weapon equipped, and so cannot complete them. They still show in the full Move List menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hunting Grounds",
+     "items": [
+      {
+       "text": "Fixed Emberthorn Cove sometimes matchmaking in other players - it is intended to be a tutorial island for new players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Armour & Perks",
+     "items": [
+      {
+       "text": "Re-added the HUD icon for the Pulse perk for better tracking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quests",
+     "items": [
+      {
+       "text": "The main quest A Heroic Accomplishment no longer requires main quest Karkonos Rising to be completed first, to allow players faster access to Dauntless Trials and Heroic Escalation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The side quest Medicinal Purposes (which unlocks tonic crafting) no longer requires the side quest The Slayer’s Path to be completed first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main quests Welcome Back, Slayer! and Basic Slaying now both unlock from the start for returning players, to avoid a rare case where they could get stuck unable to unlock Basic Slaying in order to proceed through the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 61,
+    "balance": 9,
+    "other": 35,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-331370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/331370/view/1785774543669583"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T00:18:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-331370",
+      "checkedAt": "2026-11-13T03:18:32.756Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T00:18:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-331370",
+      "checkedAt": "2026-11-13T03:18:32.757Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-17T00:18:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:52.998Z"
+  },
+  {
+   "id": "dauntless-26166@2.1.0",
+   "gameId": "dauntless-26166",
+   "displayName": "Update 2.1.0",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-05T17:49:43.000Z",
+   "notes": [
+    {
+     "title": "Steam Launch",
+     "items": [
+      {
+       "text": "They said it would never happen…and yet here we are - Dauntless is now available directly on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Dauntless remains, as always, fully crossplay and cross-progression. To bring your progress to Steam, launch the game and, when prompted, sign into the same Epic Games Account that you are using to play on other platforms - from there you’ll be good to go! As well as of course adding support for Steam Achievements, we’ve also added Achievements on the Epic Games Store.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Behemoth: Karkonos",
+     "items": [
+      {
+       "text": "Uncovered as part of an Orrery mining expedition gone wrong, the fearsome Umbral beast Karkonos has arrived in the Shattered Isles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "First brought to life in direct collaboration with our community, Karkonos of course comes with a full new armour set to craft and upgrade, as well as a new dye Rumour, so head to Twilight’s Domain and keep an eye out for the Titan’s Awakening event!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Learn more about Karkonos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Hunting Ground: Twilight's Domain",
+     "items": [
+      {
+       "text": "Twilight’s Domain is an all-new Umbral Hunting Ground map, replacing the old Twilight’s Sanctuary. Full of mysterious caves and ill-advised ritual sites, Twilight’s Domain is where you’ll find Karkonos on both the Level 30 and Surged Level 60 versions, as well as many of your other Umbral faves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Weapon System & Weapon Swapping",
+     "items": [
+      {
+       "text": "The weapon systems in Dauntless have been significantly overhauled in this update - while there’s much more detail on our blog, here’s the highlights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slayers can now carry two weapons at a time and swap them at a button press or as part of new swap combos mid-combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There are now 18 unique weapons and each come with their own passive, special, and legendary abilities. Weapons still belong to the broad 7 categories you’re used to, but they’re now much more distinct, with their own personability and abilities. Weapons are now unlocked, not crafted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The first 7 weapons come from quest progression, with the other 11 available in the Store for Weapon Tokens, which can be earned from sources like the Hunt Pass and Challenges, or purchased with Platinum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After unlocking weapons, they upgrade to Level 60 via XP from hunts and infusing XP-filled Aetherite items that you’ll find from reward sources across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weapon Talents are powerful customizations for to your weapons, unlocked at Level thresholds and custom to each weapon, allowing you to lean into the particular style of play you most enjoy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Learn more about weapon and gear progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Armour & Cells Rework",
+     "items": [
+      {
+       "text": "Armour is returning to a 20-level upgrade system using Behemoth parts and Rams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Armour will be where you get all your resistance, as the only place to slot Cells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All armour now has Prismatic Cell slots, unlocked as you level up each piece, to help you reach Perk activation thresholds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equipping a Cell (of which there are now only one tier, goodbye +3s) into a piece of armour is now a binding choice - swapping it for another, or removing it, will now discard the Cell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that Cells are more plentiful, and you can now target grinding for specific Cell categories from region Patrol Chests, as well as the Trials and Gauntlet stores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Season & Hunt Pass: Awakening",
+     "items": [
+      {
+       "text": "It’s a whole new Hunt Pass! The Awakening season’s Hunt Pass is headlined by the Alluring Moons, a brand new pair of Umbral Repeaters with Chaox-summoning special abilities (yes, you can call them the raptor-peaters). Alluring Moons is immediately unlocked upon purchase of the Elite track. Also included in Elite at Level 50 are their cosmetic counterpart, the Alluring Suns repeater transmogs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Elsewhere on the Hunt Pass you’ll find loads of Aetherite ready to level up your weapons, as well as the usual offerings of useful currencies like Rams and Bounty Tokens. In addition, going Elite with your Hunt Pass now also gives you gameplay boosts - 2x Hunt Pass XP earn rate, extra Weapon XP from Behemoth and Fauna kills, extra Escalation XP, and even a bonus loot roll!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Over in the Store, you’ll find a new armour set inspired by the Godhand radiant pike, a Canister full of brand new cosmetics inspired by the Deep Sea, another Canister bringing back the fan-favourite Arcslayer items, Weapon Tokens, and a weekly rotation of other limited time offerings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Quests & Progression",
+     "items": [
+      {
+       "text": "We’ve made a significant shift to how players unlock new gameplay, modes, and content in Dauntless. While the Slayer’s Path is still present, it is now exclusively for bonuses and boosts to enhance your slaying journey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Instead, all main progression, modes, islands, and feature unlocks come from a brand new Quest flow that starts right at the Training Grounds and takes you all the way up to our end-game modes, with many adventures along the way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Learn about quest migration for existing players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Fauna",
+     "items": [
+      {
+       "text": "Three new fauna are now present across the Shattered Isles - Chaoxes, Vespers, and Orquids, for a different challenge than you’re used to from fauna. All fauna now drop parts that are used in consumable crafting with Granny Strega",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Buff & Perks Systems",
+     "items": [
+      {
+       "text": "There have long been a huge number and variety of different Buffs (and Debuffs) available across Dauntless’ many modes, systems, and gear. With Awakening, we are compressing (most of) them into six new core Buffs: Might, Speed, Critical, Defense, Endurance, and Vitality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Buffs can come in positives and negatives (yes, you can get negative crit chance!), and in two versions: Held or Temporary. A Held stack is always on, never expiring, and often comes from effects on your weapons and gear. Temp stacks will expire after a duration, and you’ll see the ticking down on your buff icon - these might come from a Behemoth’s attack, or a Cell with a trigger condition. You’ll see these new Buffs across the game, from weapon abilities to tonics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Perks have been changed too. As well as adding some new and removing some old, Perks no longer scale in power based on your equipped gear and cells, instead requiring a hard threshold to activate (with no benefits to being higher than that threshold).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Umbral & Radiant Status Effects",
+     "items": [
+      {
+       "text": "Radiant: If a Behemoth does an Unstable Move, the effect explodes, dealing minimal damage, but interrupting the Behemoth. If the Behemoth doesn’t do such a move, the effect deals a small amount of damage as it ends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Umbral: An umbral cyst appears on a random part of the Behemoth, for 30 seconds. The cyst has 3,000 health and, when hit, deals part damage in an AoE explosion. When destroyed, they explode, dealing umbral and heavy part damage in an AoE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also adjusted the Frost elemental effect - instead of slowing Behemoths, it now freezes them for four seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Content Removals",
+     "items": [
+      {
+       "text": "With all the changes made in Dauntless: Awakening, a number of pieces of content and systems have been retired:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All previous gameplay weapons, including legendary weapons, have been removed, with the exception of Exotic and Event weapons (which are part of the new lineup)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Gameplay” Lanterns have been removed, and the slot is no longer present in the My Slayer screen. Lanterns are now cosmetic only (with many of their previous gameplay features now moved to some of the weapons), and so are in the Customize screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The three Exotic helm armours - The Skullforge, Prismatic Grace, and Tragic Echo - have been removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Neutral “element” is no longer present in the game - Shrike is now Shock, Quillshot is now Frost, and Gnasher is now Terra, with all of their gear updated to match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The “Multi Hunt Pass” feature, the repeating “Slayer Commission” currency passes, and the purchasable Vault and Event Passes have been removed from the game, in favour of the One True Hunt Pass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Hunting Grounds Restless Sands, Frostmarch, Thunderwatch, Fortune’s Folly, and Twilight’s Sanctuary have been removed. In addition, Emberthorn Cove has been redesigned into more of a tutorial hunt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Reforge feature has been removed, and Slayers no longer have an overall “weapon category level”, with each individual weapon now having its own upgradable level that cannot be reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Middleman has left Ramsgate, and taken his cell fusion systems with him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The “Far & Away”, “Spore Problems”, and “Call of Kaltauga” Mission Hunts have been removed. Kaltauga will return…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Reward Cache has been retired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aetherdust, Aethersparks, Aetherhearts, Chronostones, and Cache Coins have all been removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many Reforged-era quests have been removed from the game, and replaced where relevant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Learn more about changes for existing players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "My Slayer & Armour Crafting Refresh",
+     "items": [
+      {
+       "text": "While you’ll see a new coat of paint across much of Dauntless, the My Slayer screen and Armour Crafting in particular have been fully rebuilt to better support and highlight the new systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of particular note, and inspired by feedback from our Awakening Beta, you can now preview every level of an armour piece to see its resistance, perks, cell slots, and crafting materials, before you invest in it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cosmetics on Loadouts",
+     "items": [
+      {
+       "text": "It isn’t just your gameplay gear that is tied to loadout slots, your cosmetics are now too! Moved from the old Personality screen to a Customize option in the My Slayer screen, you can now set custom emotes, flares, titles, and even unique character appearance to each of your loadouts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Trackers",
+     "items": [
+      {
+       "text": "With the new weapon system now in play, we’ve taken the opportunity to refresh how Trackers work. Still purchasable from the Research Lab, your Trackers now get equipped in the Customize screen and track across all your gameplay once they’ve been unlocked, not just when they are active on a specific weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Trials and Gauntlet Store Refreshes",
+     "items": [
+      {
+       "text": "Lady Luck’s “Lucky Break” has a new look, joining the rest of our modern stores, and both it and the Gauntlet Research Lab now offer targeted Cores for categories of cells, as well as being home to a Lantern Core (what used to be called Omnicells), and some returning dyes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievement & Rumour Changes",
+     "items": [
+      {
+       "text": "A number of achievements/trophies have had their requirements updated so they remain unlockable with all the other game system changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is also true for many rumours, which have had objectives removed, replaced, or updated to match the new game progression and currencies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Engine Upgrade",
+     "items": [
+      {
+       "text": "Dauntless now runs on Unreal Engine 5, better setting us up to support the game for the future. Things should mostly be the same, but if you find you are having any new performance or stability issues, please write into our wonderful Support team so we can track any issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "With such a large update, with a long development period, we are not compiling a full list of bug fixes and balance changes this time round (suffice to say, there were lots!). Expect this back for future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 32,
+    "fixed": 1,
+    "balance": 3,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-331370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/331370/view/1784506359249970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T17:49:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-331370",
+      "checkedAt": "2026-11-13T03:18:32.754Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T17:49:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-331370",
+      "checkedAt": "2026-11-13T03:18:32.755Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-05T17:49:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:52.995Z"
+  }
+ ],
+ "issues": []
+}

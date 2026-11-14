@@ -1,0 +1,4255 @@
+{
+ "game": {
+  "id": "samson-380437",
+  "igdbId": 380437,
+  "name": "Samson",
+  "cover": {
+   "imageId": "coay8a",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coay8a.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6lmw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6lmw.jpg"
+  },
+  "ps5Release": "2026-09-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "samson-380437@major-2026-10-08",
+   "gameId": "samson-380437",
+   "displayName": "Samson | Update 10/8/2026",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-08T13:43:11.000Z",
+   "notes": [
+    {
+     "title": "Daily Due Balancing",
+     "items": [
+      {
+       "text": "Since the launch of the game we have added ways to earn cash on the side, from taking Taxi Gigs to cruising for groups of gang members with money bags, and more. We are also seeing that the combination of certain Skills and Perks can earn you quite a lot of cash on lucky days. This balancing pass takes the game back to its stressful roots where you have to work hard and choose your Jobs carefully each Day for a chance to meet your Daily Due. Your Daily Due will now increase more often and also reach higher values than before to keep the pressure up. It also puts a heavier emphasis on going exploring for POIs so that you unlock Action Point number 7 and 8 for use each Day, but it should be doable to meet your Dues without unlocking Action Point 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "To learn more about some of these aspects, see this new post with some tips & tricks:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/news/app/3634520/view/699903960312448015\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Combat Responsiveness",
+     "items": [
+      {
+       "text": "Relaxed the angle limitations on Heavy Attacks so that you will more often land them against targets that are not right in front of you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the minimum range from which an NPC can throw a weapon at you to 6m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Don't allow NPC weapon throw unless thrower is in view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added global throw weapon cooldown (4 seconds) to keep NPCs from throwing multiple weapons in quick succession",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved responsiveness of the Heal / Painkiller action and the Adrenaline Rush action after an evade action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the Evades to be harder for NPCs to interrupt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where NPCs that were playing a missed Heavy attack could not be hit by your attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one NPC could block you from landing a hit on another NPC close by",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Various Tweaks and Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the Night-specific Perks sometimes were not viable for being selected when transitioning to Night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Perk Unexpected Donation sometimes triggered twice in a row when received",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a progress bar when interacting with Points of Interest to show how close you are to unlocking your next Action Point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly increased how much you get paid for Taxi Gigs, making it more viable to make ends meet on a bad Day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved navigation behavior for passengers trying to get into your car",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the White Whisper Stash tutorial sometimes would not trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the vehicle target in “Skulls and Crowlanes” not always resetting as intended between attempts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made sure Debt Collectors appear at your car the Noon after each bad payment day to increase the pressure (and give you the chance for some cash loot if you defeat them)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the $ rewards for all Street Trials to keep them in line with other Jobs (roughly $500 per AP)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Skills Heart of Steel and Punching Bag did not always trigger as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in “Not Too Old to Fuck Up” where sometimes 2 NPCs would spawn in the same space, making them joined an inseparable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebalanced the Carpe Diem Skill to set your first Job each Day to cost 1 AP instead of 0, since it was a bit too powerful",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new character models for the Shadow Jobs, so you’re always following a specific named character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Streetwise Skill: Changed the design of this Skill to make it less situational and more attractive to chase: If you succeed your first Job of the Day, the next Job is -1 AP (minimum 1.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in Press Pedal to Pay Respect story event where the event wouldn’t complete if you gave the man cash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a stuck target vehicle in Culling of the Skulls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 18,
+    "balance": 4,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1846018067929736"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T13:43:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.107Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T13:43:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.107Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-08T13:43:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.081Z"
+  },
+  {
+   "id": "samson-380437@2026",
+   "gameId": "samson-380437",
+   "displayName": "Hotfix 2026",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-02T09:25:53.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone!",
+     "items": [
+      {
+       "text": "As some of you may have noticed, we pushed a hotfix for Samson yesterday, addressing a few minor issues we identified following the console launch and our latest update here on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've seen all the amazing positive feedback, as well as the constructive criticism, and we're so grateful that so many of you are enjoying the game. We're always listening to your feedback and looking for ways to improve in the areas you've brought up. Your input helps us continue to make Samson a better experience for everyone, so thank you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With that said, we're working on a somewhat larger update, focused on but not limited to improving combat responsiveness. This is something we've seen a lot of feedback on, from both PC and console players, so we've made it a priority.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we can't share an exact release for that just yet, we're looking at about a week/weeks. Our goal is to get the update out as soon as possible while making sure it launches as smoothly as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Yesterday's update included",
+     "items": [
+      {
+       "text": "Fixed an issue where you could end up in a state unable to perform melee takedowns until you performed a Quit>Continue. This issue happened if you were in the process of performing a takedown but got interrupted by e.g. a thrown weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Getaways: Fine tuned locations and waiting times for all Getaways for when you are supposed to pick up passengers. Show the green target circle during the entire pickup process to make it clearer that you are supposed to stay put within a certain radius during the pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Taxi Gigs: Fixed an issue where you could get stuck with a non-abortable taxi fare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clear any current GPS navigation on a new Day and when you respawn at the Clinic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a visual issue that left some parts of a van in mid-air after a takedown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent vehicles from colliding with pickups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where sometimes, the Greet input did not trigger as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Skulls and Crowlanes where sometimes you could end up in a state where you could not progress the Mission after picking up the bags",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue where in rare circumstances you could fall through the ground after being Knocked Out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1845383656385581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-02T09:25:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.106Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-02T09:25:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.106Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-02T09:25:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.080Z"
+  },
+  {
+   "id": "samson-380437@8",
+   "gameId": "samson-380437",
+   "displayName": "UPDATE 8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-21T12:06:04.000Z",
+   "notes": [
+    {
+     "title": "Samson Update 8 - Build Notes",
+     "items": [
+      {
+       "text": "Hi everyone! It's been a minute since we last launched an update for the game. We've had our hands full preparing for the console release, getting the game into the best possible shape it can be, but also adding a bunch of new stuff that we hope you will enjoy as much as we do. We constantly make sure to balance player feedback from you guys, while staying true to our vision and what we believe makes the game the best possible experience it can be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is a huge deal for us to have reached this milestone, getting the game out on PC but now also on XBOX, PS5 and Steam Deck. We're a small, self published team and coming this far makes us incredibly proud. Thanks for having been along for the journey, and thank you for playing Samson. Without further ado, here are the updates:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Playable Tutorial Prologue & Onboarding Updates",
+     "items": [
+      {
+       "text": "Added a new playable step-by-step combat tutorial at the start of the game that also ties into Samson’s past before returning to Tyndalston. Added some new tutorials to highlight easy to miss gameplay elements, like triggering Adrenaline Rush while driving a vehicle and shoving enemies into hazards. Updated tutorials to include images to make them more informative. Added gameplay hints at various points in time to help you progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Vehicle Combat Messaging",
+     "items": [
+      {
+       "text": "Added visualization of enemy vehicle weak spots. As you approach an enemy vehicle that you are supposed to take out, their wheel weak spots will have a blue overlay to denote that they are what you should typically aim for when performing a side ram. This blue overlay will change color to blinking red as it takes damage to show when it has reached critical health. Ramming a wheel that has reached the red damage state is often the fastest way to take out a vehicle. The health bar above a vehicle is a more general health pool that can take damage from normal collisions, but performing the side ram action on the wheels is the recommended way to take out vehicles fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Introducing Swappable Player Jackets",
+     "items": [
+      {
+       "text": "With this update, you will be able to unlock 5 additional jackets to freely swap between. 4 of these are progressively unlocked by earning between 2 and 12 Skill Points total (whether you spend them or not.) The fifth option will unlock as you complete the final Story Chapter. All jackets are visible and available as they unlock in the hallway in your apartment. If you have already earned the required amount of Skill Points, any related jackets should be retroactively awarded to you as you load your saved game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Adding Emergency Respawn at Clinic Option",
+     "items": [
+      {
+       "text": "We have added a “Respawn at the Clinic” choice under the Quit option in the pause menu. Selecting this choice will effectively make you Knocked Out, and apply any and all gameplay effects accordingly. This means that depending on your Skills, current Perk, and your chosen difficulty level, you may lose any Cash you were holding. This is meant as an emergency option if your save file puts you in a state that you cannot progress from. While the risk of this happening is very low, we know it can happen and wanted to offer a solution to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Loot Drop Placement Tweaks",
+     "items": [
+      {
+       "text": "Improved where loot from knocked out enemies is spawned to reduce the risk of items ending up inside walls and similar. Also made sure that dead bodies don’t block interactions in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Missions: Increased Fail Distances",
+     "items": [
+      {
+       "text": "Increased the fail distances in a few Missions, including Fine Old Things, Wreck the Wrecking Crew, and Never too Old to make it easier to reach your objectives without seeing the “Too Far Away” warning message. Removed fail distances from most Takedown Jobs so that you are not at risk of failing a Mission if you go after one vehicle while the other target vehicle stays behind or drives to another location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Mission: No Return Fare",
+     "items": [
+      {
+       "text": "Fixed an issue where the passenger could sometimes enter the front seat instead of back seat as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mission: Bad for Business",
+     "items": [
+      {
+       "text": "Fixed an issue where the fleeing NPCs would move erratically at the start of their escape attempt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mission: Unholy Trinity",
+     "items": [
+      {
+       "text": "Removed delivered cars and replaced them with smashed wrecks out of the way of the dropoff point to avoid obstacles when dropping off cars 2 and 3. Fixed an issue where the “Lose Your Wanted State” warning message would sometimes flicker on and off instead of activating correctly when trying to deliver a vehicle while Wanted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vehicle XP Tweaks",
+     "items": [
+      {
+       "text": "You are no longer rewarded XP for destroying normal traffic cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You now gain a larger amount of XP for vehicle Takedowns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You now also gain some XP for taking out a mission target vehicle by depleting their \"normal\" health (shown in their health bar)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You are now also rewarded XP if an enemy car gets destroyed in any way (e.g. by driving into a pillar or into the water) if that happens within 3 seconds after you last dealt damage to it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Vehicle Tweaks",
+     "items": [
+      {
+       "text": "Added a Partial Repair option in all garages where you can repair a small chunk of your car health at a lower cost than a full repair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the chance to spawn an alternate Sandwich Board (repairs or Nitro refill) after the original board has been smashed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the amount of Nitro replenished when smashing a Nitro board, and the amount of repairs done when smashing the Repair board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the duration of Adrenaline Rush while in a vehicle to make it easier to benefit from its damage bonus when trying to take out enemy vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Moved the first Nitro Flask unlock from 50 to 25 Sandwich Boards smashed to make it quicker to get this vital upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved NPC vehicle avoidance – The response should now be quicker and give NPCs a better chance at avoiding incoming vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous Tweaks, Improvements and Fixes",
+     "items": [
+      {
+       "text": "Fixed a visual issue where the “Pay All” option when going to sleep could incorrectly show a higher number than your remaining debt (the actual payment would still function as intended.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some NPC vignette characters sometimes could end up in the staircase down to the Clinic and block your movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “Incoming Call” hint could be displayed when already on the phone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Perk “Violent Healing” could sometimes stay active even after being replaced by another Perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements: Changed unlock thresholds for “Car Care” and “Crash Test Dummy” from 100 and 50 to 10 and 5 to make them quicker to complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could get repeatedly rewarded with cash for finishing the Pimping Hard and No Place Like Home Stories.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the “Skill Point Available” notification flash to make it harder to miss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one Grim Skull gang could have their money bag placed in an unobtainable location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the “Driver” Perk did not apply to the Taxi Mission The Meter’s Tickin’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly increased the range at which taxi passengers decide to enter your cab to make it easier to pick up passengers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Samson could say “Out of Nitrous” while swapping to the next nitro flask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked the GPS settings to more strongly favor bigger and well-established asphalt streets compared to offroad routes and shortcuts (these are for you to discover, and are not always preferable, depending on your playstyle and current situation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where combat music sometimes could continue playing after completing a fight against Debt Collectors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved NPC navigation through doorways and when in close proximity to one another to make their movement smoother",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved camera movement and smoothness when entering and exiting vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensure Greater Mission Variety on Population",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have tweaked how we populate new Missions each in-game Day. Now, we strive for a larger variety of seen Missions, whether you have played them or not. This means that you should see less (but still some in certain cases) repetition of Missions until the point where we have rotated through all of the 100+ Missions currently available in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Introducing New Enforcements Factions: Debt Collectors, Grim Skulls, and Generic Gang!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new Enforcements for Debt Collectors, Grim Skulls, and a standard Street Gang that is now called during Jobs. Each Faction has new roadblocks (excluding Debt Collectors), and improvements have been made to the existing Crow Lane and Law Enforcement. The Debt Collector Enforcements are triggered in the new Takedown Job “Three Payments Due” (see below.) We are hoping to increase the Debt Collector Enforcement presence in various ways in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the number of spawn points for all Enforcement factions and spread them out across the map to reduce some of the longer response times that could happen when you committed a crime in certain parts of the city.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Takedown Job: Culling of the Skulls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It's these Skull bozos again. They're becoming a nuisance. Been seen zippin' around in their juiced up rust buckets trying to build a rep. We need to thin out their numbers so they don't get any ideas. Take 3 rides outta commission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Takedown Job: Three Payments Due",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Samson. I know these Saint Louis assholes have been hounding you. Today you get a shot at a little sweet revenge. These suit-wearing piss bags are cruising around town stirrin' up shit. Go after them. Any cash they drop is yours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Takedown Job: Black Top Bunco Boys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few of these Black Top kids are playing fast and loose with the rulebook. Taking bets on the side, getting their own little racket going. You know the drill. Find these punks and run 'em off the road.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More Aggressive and Dynamic Enemy Vehicle Combat Behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "To make car combat overall a bit more dynamic, unpredictable, dangerous, and exciting, we have tweaked most enemy vehicles to be a bit more aggressive. This mainly means that they will try to perform side rams on you more often, and from a wider range of situations. This move can be used by enemies both to try to deal damage to you, and to try to evade you or block your progress. Some enemies, like Paulie Flash in Chapter 2, will instead be more defensive in their driving, sometimes pumping the brakes when going at high speed and you are close behind, to try to shake you or even deal damage to you if you slam into his car.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Drivers Stay in Wrecked Cars (Normally)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy vehicle drivers in various Missions should now normally not try to exit their vehicle when it is wrecked. The rationale for this is that if you are in a Mission that only requires you to take out vehicles, we don’t want to distract players with anything else – You should go after the next vehicle target instead of getting out and fighting the driver. If you have unfinished business with the driver, they still get out so you can progress the Mission, e.g. in Silver Bullet (Chapter 2.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved NPC vehicle avoidance – The response should now be quicker and give NPCs a better chance at avoiding incoming vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it could become impossible to complete a new Jack Mission after having failed a previous Jack Mission (if you accepted defeat after having picked up at least 1, but not all, of the objective items)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Greet / Taunt sometimes resulted in no lines being spoken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added map markers for vehicle targets in Missions so they are easier to track and hunt down from a large distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where in some scenarios the Debt Collectors at your parking lot would not despawn after knocking you out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed so that you can now navigate to the southernmost parts of the map, e.g. Lowline Circuit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could sometimes travel through a chain link fence during certain moves, e.g. certain melee takedowns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kill enemies quicker during the wall takedown move to avoid a few edge cases in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensure that Enforcement vehicles do not spawn too close to player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Enforcement vehicles getting stuck when trying to reach the player when far away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bust out Barry: Enable trail lights when you are supposed to take out the police car, which also enables the weak spot highlights on the wheels. Made sure the police car does not consider sidewalks viable for driving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Not Too Old for Shit: Fixed issue where the final beatdown may not complete, preventing the player from completing the mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heavy Hitters: Made final objective to Torch the Car more clear by updating the map marker location, adding props, and updating the objective text to better inform the player of what is needed to complete the objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you were allowed to “Quit to Clinic” while in onboarding or other cases where you are not supposed to leave your apartment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in “Big Take on Trader Street” where NPCs could have issues to navigate through the gate at the pickup point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make Him Pay: Increased the distance you have to put between yourself and the target to complete the Mission, since you in rare cases could end up completing it while still inside, effectively trapping you in the factory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where sometimes a passenger in a Getaway Mission would fail to use their fallback teleport into your car after having failed to navigate to it normally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where sometimes a Mission objective would activate, but the objective would not be completable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 50,
+    "balance": 12,
+    "other": 4,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1844115010501177"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T12:06:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.105Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T12:06:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.105Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-21T12:06:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.079Z"
+  },
+  {
+   "id": "samson-380437@major-2026-08-06",
+   "gameId": "samson-380437",
+   "displayName": "Samson Livestream: Back from Vacation / Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-06T06:35:19.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone!",
+     "items": [
+      {
+       "text": "Hope you're having a fantastic summer, and that you've enjoyed your experience with Samson so far.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're livestreaming today in a bit right here on our Steam page as well as our Youtube channel for a couple of hours!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A little post vacation update, talking to chat and playing Samson. Come say hi! 👊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today at 10:00 CEST / 09:00 BST / 08:00 UTC / 04:00 EDT / 01:00 PDT / 17:00 JST",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://youtube.com/@SamsonMcCray\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1840310314340979"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T06:35:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.103Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.076Z"
+  },
+  {
+   "id": "samson-380437@7",
+   "gameId": "samson-380437",
+   "displayName": "UPDATE 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-23T14:13:27.000Z",
+   "notes": [
+    {
+     "title": "Hi all!",
+     "items": [
+      {
+       "text": "Today we're releasing a fresh update focused on combat refinements, QoL improvements, bug fixes, and overall polish across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before diving into the details, we want to thank everyone who played and supported our previous major update, Welcome to The Pit. Seeing you explore the new content, share feedback, and continue enjoying the game has been incredibly motivating for the team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is more about improving the core experience. We've spent time refining combat feel, addressing community reported issues and improving performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we'd love to hear what you think. Please continue sharing your feedback, suggestions, and bug reports on the Steam forums or in our community Discord: https://discord.com/invite/xPHpQgKUwG We read everything and your feedback continues to play a role in shaping the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One final note: after this update, we'll be taking a little bit of a longer break from releasing updates as much of the team heads off for summer vacations. Development isn't stopping, but update releases will be less frequent for a while. We appreciate your patience and support, and we're looking forward to returning refreshed and ready to continue improving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Below you'll find the full build notes",
+     "items": [
+      {
+       "text": "Combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted enemy turn-taking to improve overall combat pacing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Heavy attacks have been tuned and got their range increased to increase their usefulness and make them more rewarding to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuned stun times on all player attacks to avoid undesired interruptions of player attacks and flow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Parry has been tuned to be more rewarding to use and give players more time for different types of follow-ups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The light attack combo now flows better and is more responsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted camera framing of combat camera slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved reliability of crush hazards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some cases where an environmental hazard could cause a killed NPC to end up intersecting a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases where a hazard would trigger a second death animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed perfect parry sometimes playing the wrong animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Perfect parry is now uninterruptible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made NPCs bumping into other NPCs smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player messaging for enemy attacks. Can be disabled in options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attackers glint yellow for parryable attacks. Attackers glint red for unparryable attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environmental hazards are highlighted in the world during combat. (NOTE: disabled on non-RTX graphics cards for now due to a bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/b1d995ee140fb7f4321ddd1039a38c673a0121fe.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/3a3fbe8c1c8ec61cbdeec6755bb80443735bb674.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Began testing Simplified Chinese localization. Feedback is greatly appreciated!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further refinements to Russian localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Greet / Taunt",
+     "items": [
+      {
+       "text": "A small but perhaps little known feature that has been in the game since launch is the ability to Taunt enemies in combat using C / D-Pad Down.This is mostly there for light role playing purposes. With this update, you can now Greet or Taunt most regular NPCs out of combat as well. Standing in close proximity of a non-combatant and performing this action will result in a neutral greet and response, while doing so near a combatant such as a Grim Skull or Crow Lane gang member will result in a taunt that might lead to combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visualizing Locked AP Slots",
+     "items": [
+      {
+       "text": "In order to help drive awareness that you can unlock additional Action Points, we are now showing locked AP Slots in the top right UI widget. You should now clearly be able to see that you start the game at 6 AP (2/2/2 for Noon/Evening/Night) and that you can grow to a maximum of 9 AP (2/3/4.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/b911447c2799c66c63fe808743d407623abf6292.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visualizing your locked AP Slots. Unlock these to earn additional AP by interacting with POIs in South End.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional Save States",
+     "items": [
+      {
+       "text": "We save the game automatically in a number of situations. With this update, we are adding more such situations, so that the game should now in general be saved more frequently. The original save states are:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you bring up the detailed information from a Mission Starter in the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you successfully complete a Mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you Accept Defeat in a Mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you wake up at the Clinic after KO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you wake up from Sleep",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you have completed a Cab Fare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When exiting Floyd’s Garage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update, we are also adding the following save states:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you have interacted with a POI (Point of Interest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you have picked up a Combat Mag or a Car Mag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you have burned a White Whisper Stash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When exiting a normal (i.e. not Floyd’s) Garage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For any of the above states, we only save if you are not in a Mission, not in combat, and some other checks for safety reasons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional Messaging",
+     "items": [
+      {
+       "text": "Added input hints when on foot and not in combat for the new Greet / Taunt input, and for the Call Vehicle feature since that one has been proven easy to forget.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a tutorial popup for when smashing your first alternate Auto Sandwich Board to make their gameplay effect clearer and added notifications when you smash them so you know whether they granted you a small Nitro top-up or a small repair of your vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a reminder on Day 5 that you can unlock additional Action Points by collecting Points of Interest if you haven’t already done so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added feedback showing the amount of money gained when picking up currency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes and Tweaks",
+     "items": [
+      {
+       "text": "Mission: Fixed various issues with the “You Move me Man” Mission that could cause it to not progress on repeat attempts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mission: Fixed various issues with the “Bust out Barry” Mission that could cause it to instantly fail or progress incorrectly on repeat attempts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mission “Am I My Brother’s Keeper”: Fixed an issue where a 'Too Far Away' distance fail notification sometimes was activating wrongfully.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mission “Black Top Renegades”: The Mission will now complete even if you destroy the vehicles before finishing the beatdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mission “Skulls and Crossbones”: Fixed cases of enemies getting stuck in rubble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Debt Collectors would still be around in the parking lot or your apartment if you returned there directly after being knocked out by them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Collectibles screen could show a higher number for certain items than what we are tracking for the purposes of Achievements and other unlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved first Action Point unlock earlier so that you only have to find 10 POIs to go from the starting 6 AP to 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chain-link fence climbing sound no longer plays incorrectly when interacting with certain unrelated objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vehicles no longer emit exhaust smoke when the engine is off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an updated Controls menu with aligned layout between Xbox and PS5 as well as an option to tab between On Foot and In Vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Combat music now plays when you fight Debt Collectors, just like when you enter combat in Jobs or Missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hiding Nitro UI elements while driving a car that lacks the Nitro feature overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The boombox in the streets now plays more upbeat music that better matches the dancing NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-added the mysteriously missing dock by the harbour, allowing access to the POI on it once again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved vehicle entry behavior to prevent anyone from entering restricted seats, such as the driver’s seat or trunk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved hair physics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced hitches on machines with fewer cores by improving how time slicing works during async PSO creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced hitches by general optimization, preloading vfx, improved parallelism and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More general CPU and GPU optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized vegetation rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 26,
+    "balance": 3,
+    "other": 37,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1835871199315689"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T14:13:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.102Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.075Z"
+  },
+  {
+   "id": "samson-380437@major-2026-06-09",
+   "gameId": "samson-380437",
+   "displayName": "Samson: Welcome To The Pit - Free Update is Live!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-09T12:43:15.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone!",
+     "items": [
+      {
+       "text": "After weeks of hard work, we’re finally live with our biggest update yet: Welcome to The Pit! This free update brings a ton of exciting new content, along with improvements to quality, bug fixes, and overall performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re still incredibly excited to be working on this game and grateful to see so many of you continuing to enjoy it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we’d love to hear your feedback, please share your thoughts with us on the Steam forums or in our community Discord: https://discord.com/invite/xPHpQgKUwG. We read everything and value your input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Underneath, find details about what the new update contains",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Area: Lowline Circuit Race Track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Access to the Pit, Tyndalston’s legendary Lowline Circuit with more Street Trials to beat! This newly opened up area also contains the usual mix of pickups, magazines, Sandwich Boards, Points of Interests, White Whisper stash locations, and opportunities to get ambushed by Debt Collectors. It also includes an endurance Street Trial Job, as well as two new free Street Trials that are always available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Free Street Trials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "With Lowline Circuit comes the introduction of a new type of Street Trial that is always on, always free (i.e. no AP cost) and as alway for Street Trials, 0 AP to Retry. There are two of these available for now:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lowline Circuit (free Street Trial, always available)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Race on the legendary Lowline Circuit - beat the timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lowline Circuit - Reverse (free Street Trial, always available)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Race on the legendary Lowline Circuit, but in the opposite direction - beat the timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vehicle Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modify Samson’s car, with performance upgrades and customization options at Floyd’s Garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Taxi Gig",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you’re short on cash and have no Action Points left, maybe consider stealing a cab and riding as a cab driver for an evening? The taxi gig starts automatically as you enter a cab, and allows you to take passengers around town for small fares. Fares have different preferences on how they want to get to their destinations, make sure to pay attention to their inclinations to maximize your cash reward. Perfect if you need to top up your daily earnings or if you just want to cruise around Tyndalston in a stress free environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Jobs",
+     "items": [
+      {
+       "text": "With the new area comes a fresh batch of jobs appearing around the world, adding more opportunities to explore, make money, and see what the update has in store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Black Top Renegades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You know the Blacktop Club. Street racers. Gearheads. A little wild, sure, but they usually mind their own business. Problem is, a few of their boys got ambitious and started running a gambling racket down at the Circuit without anybody's blessing. Blacktop leadership ain't behind it. Go down there and remind these cowboys to stay in their lane.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You Move Me, Man",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Father O’Malley needs a man moved, fast. He’s been helping people off Whisper and the pushers want him gone. Pick him up at the church, stash him in the trunk. Harbor’s hot with crooked cops, so drive clean. Drop him at the containers, designated box. We take it from there. Nobody’s killing him on our watch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Van Diesel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You know \"Diesel\" Donnie? Yeah, tweaker gearhead. He's cowtowing up to some Blacktop club dropouts who has him running errands. So, \"Deisel\" jacked a van full of pro-racing wheels. Genuine Rock Face and SupaStandard... forged magnesium, top of the line stuff. I want you to find that van and jack it back. Deliver it to the race track. Gonna be good money in your pocket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bust Out Barry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stan Barry got pinched last night slingin’ coke. They’ve got him locked up the precinct for now, but they'll be moving him to jail. They're sending a cruiser for the transfer. Seek it out, tail it, wait for them to load Stan. Once they've left the precinct, run 'em off the road and bust Barry out. Don't kill him, he owes me a lot of money.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Meter’s Tickin’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We got too many eyes on us. Gotta slow our roll. We don't want to attract attention. I need to clean a lot of cash and it's gotta look legit. Simple stuff: drive a cab. Pick up fares and shit. My guys cook your books and my money comes out clean. This way, the pay is good and the risks are minimal. Find a cab and get to driving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lowline Circuit Endurance Street Trial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can you complete 10 laps on Lowline Circuit in 12 minutes?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/1f9c8cdfd27ff8603fd75780a509b6c642113146.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Sandwich Boards",
+     "items": [
+      {
+       "text": "Once you’ve taken care of DeVries’ ugly sandwich boards, you might see new entrepreneurs stepping in to showcase their businesses. Smash those as well for a minor vehicle boost that will either do a small repair (red board) or top up a bit of Nitro for you (blue board.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enforcement",
+     "items": [
+      {
+       "text": "Both Police and Gang have become slightly easier to trick once you are Wanted or Escaping, since we have introduced a short “suspicious state” before you are detected by enforcement. This means that they now have to keep you in line of sight for some time before they actually get a visual on you.Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added text localization support for Brazilian-Portuguese and Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This update introduces a handful of new achievements tied to the content arriving in this release:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gig Economy - Complete your first cab fare in a Taxi Gig.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Samson McCab - Complete 10 cab fares in one Day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Endurance Street Trial - Complete the Endurance Street Trial at Lowline Circuit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chop Shop - Install your first car mod in Floyd’s garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open Sesame - Smash through the gate to Lowline Circuit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/78f880f65749a8b851d22f493c23ec59a268558f.png\"]",
+     "items": [
+      {
+       "text": "Combat Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved animation fidelity for various combat moves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased animation coverage and reliability for parries from all directions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved parry timing to make them more consistent and responsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Smoother motion when stepping up and down on objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Posture damage slightly on Light and Heavy Attacks, and increased Health damage on them to not make it too easy to bring enemies to a takedown state with e.g. Light Attacks only.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Posture damage from some hazards to make them more relevant in bringing enemies to a takedown state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fix for ragdoll being \"frozen\" when you push people over railings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission Logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues that could affect progression in Missions and Jobs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/7af55be88579c50b2c4f1fbdecd17830a2ac781a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Optimization and better threading as well as budgeting of NPC characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New asynchronous bulk tick system to reduce tick overhead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Performance improvement to various AI systems such as behaviour trees, targeting, mic and senses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoother frame pacing when VSync is disabled and not using frame generation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New custom throttling system to improve performance when running faster than 30 fps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various general optimizations in Traffic System UI, WorldQuery, LodSync, StoryDeck and Audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wide performance improvements that help reduce hitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated and added more systems to our custom timeshare system to reduce spikes in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 35,
+    "fixed": 2,
+    "balance": 3,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1834602721201659"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-09T12:43:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.101Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.073Z"
+  },
+  {
+   "id": "samson-380437@6",
+   "gameId": "samson-380437",
+   "displayName": "Update 6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-20T11:36:39.000Z",
+   "notes": [
+    {
+     "title": "Hi all!",
+     "items": [
+      {
+       "text": "We hope you’ve been enjoying the latest content update, featuring the new difficulty modes, combat camera, jobs, and debt collectors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, Update #6 is out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This week, we’ve mainly been focused on improving combat reliability and overall smoothness, alongside some general performance improvements and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to thank you all for playing the game and for the continuous feedback and suggestions. We’re listening closely and working hard to deliver more updates - both new content and broader improvements to the overall experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Without further ado, here are the build notes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved parry responsiveness, and reduced enemy sluggishness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved enemy targeting logic, reducing the risk of enemies being either too passive or swarming and overwhelming the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies could sometimes attack while being grabbed by the player, this is no longer the case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some Health damage and heavy Posture damage on the automated counter-attacks that you perform after a Perfect Parry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved reliability of tripping interactions and railing hazards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Refined visual and movement glitches in player evades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parry animations now play more reliably during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Jobs & Chapters",
+     "items": [
+      {
+       "text": "Rebalanced traffic density during the Chapter 12 “Rosary Requiem” car chase to improve the daytime gameplay experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Job “Skulls and Crowlanes”: Fixed cases where collectable bags would fail to spawn in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Job “Skulls and Crowlanes”: Objective markers now appear more reliably when completing objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "The player will no longer play the wrong animation in rare cases after climbing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to delete save games directly in-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved obstacle traversal and overall jumping responsiveness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combat magazine collection can no longer exceed the intended maximum limit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved trunk interactions and refined, smoother vehicle enter/exit animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can now slowly regenerate Health while sitting on benches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing visual distortion of certain trees and other foliage assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a missing collision area in the world that could result in unintended player deaths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "CPU Side Performance Optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 2,
+    "balance": 1,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1833334318566053"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T11:36:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.099Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.070Z"
+  },
+  {
+   "id": "samson-380437@5",
+   "gameId": "samson-380437",
+   "displayName": "Update 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-06T12:45:33.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone,",
+     "items": [
+      {
+       "text": "We're officially live with our 5th update! We're just about a month into Samson being out in the world. We honestly can't believe it. It's been a journey for sure, and all of the improvements we've had time to get into the game since launch is much thanks to you guys and all of the feedback you've been taking the time to give us. It's been so rewarding for the team to see everyone play the game and have their own thing with Samson. We’re very grateful for the continued interest and for the opportunity to keep pouring time and love into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For future suggestions or feedback, we're always reading the forums here on Steam, but we also have a community on Discord that you can join here: https://discord.gg/xPHpQgKUwG",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enough talking for now, we're here to attach the changelog for Update #5 that just went live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now navigate combat spaces more smoothly, are less likely to get caught on objects, and can be boxed into corners preventing them from evading, making positioning and crowd control more effective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bulky enemies now use a wider variety of attacks, making their combat behavior more dynamic and less predictable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environmental Hazards will now trigger more reliably when used from a short distance away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Stuffed Bird Weapon is now available outside of its original Chapter mission, making it easier to obtain. You can find it in the “Slayboy Mansion” Beatdown. It will now respawn each time you play this Job, which was not the case previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vehicles",
+     "items": [
+      {
+       "text": "Exiting vehicles is now smoother and more responsive, allowing for quicker transitions between driving and on-foot gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy interactions when attempting to pull players from vehicles have been refined, resulting in more consistent behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map navigation now provides more reliable routing to destinations located beneath highways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Traffic networks have been expanded in areas that were lacking, creating a more connected and consistent road network across the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Vaulting and climbing is now more responsive and reliable, making traversal across the environment smoother. As an example, it is now easier to enter climbing and vaulting while sprinting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Night Owl” Skill now grants its bonus consistently only once per Night, and missions will remain visible when players have sufficient AP from bonuses to activate them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “On a Roll” Skill had an issue where you would gain its reward even if you went to sleep with 0 Action Points remaining. This has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Character placement in the world has been refined, reducing instances of them clipping into the environment or facing the wrong directions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players will no longer be transported out of bounds when interacting with some Point of Interests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using the phone is now disabled during combat while at home, ensuring more seamless gameplay during active encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various fixes where players could get stuck or fall through the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/8f09f2b82ef8b0c1e8ee8990d87f36ee674e27b7.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapters & Jobs",
+     "items": [
+      {
+       "text": "Further polish has been applied to Chapter 12 “Rosary Requiem” to ensure a more fluid experience: Volkov’s dialogue now triggers reliably after the takedown, his presence and vehicle persist correctly, and the mission flow clearly resolves if he is eliminated before the car chase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players will no longer become stuck in The Double Tap after the shooting sequence in Chapter 1 “Blood On Tap” even if the cutscene is skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Chapter 13 “Evil” – Trafficking victims will no longer join the Beatdown event, ensuring the encounter unfolds as intended, which will also prevent the player entering a Wanted state during the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rare cases of old missions becoming active again when they had been previously completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The final fight in Chapter 14 “Am I My Brothers Keeper” now maintains its intended narrative tension, with the enemy no longer running away mid-dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 2 “Silver Bullet” – After failing the mission and retrying the next day, the dialogue with Paulie now consistently begins as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 14 “Am I My Brothers Keeper” – The Beatdown sequence now consistently plays when replaying the mission on a subsequent day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 9 “A Walk Down Memory Lane” – Enemy spawns in the dialogue scene are now positioned to ensure they no longer appear directly in front of the player during the sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Job “Taxi Snitch” – The mission now correctly ends in failure when the car reaches TYPD HQ.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players are now placed in a paused state when interacting with mission starters, preventing damage or death while the interaction is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tommy’s animation in the bar during Chapter 9 “A Walk Down Memory Lane” now plays as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability",
+     "items": [
+      {
+       "text": "Stability improvements that help reduce crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ongoing performance improvements that help reduce hitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1832065502808774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T12:45:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.097Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.067Z"
+  },
+  {
+   "id": "samson-380437@4",
+   "gameId": "samson-380437",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-29T11:58:17.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "As we continue to support Samson, today we are back with update #4! This one is packed with fixes and improvements across the board. To highlight a few: we've reworked how the police pursuit works to make them feel more dynamic, tightened up combat to make fights flow more naturally, and squashed a number of bugs. There are also some QoL additions, such as the option to skip cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always we are present in the steam forums and on our discord server. We value your feedback and input so make sure to share your thoughts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Read full changelog below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions & Jobs",
+     "items": [
+      {
+       "text": "Addressed some issues which prevented Story Chapters appearing if the player's game got into a bad state, this should prevent this from occurring in the future as well as for those currently affected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various issues addressed for Chapter 8 \"He Has Risen\" to make the logic more robust and prevent future issues occurring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue which prevented Objective descriptions and markers showing for Chapter 11 \"Crucifix Connection\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player should no longer be able to get locked in the Containers during Chapter 12 \"Rosary Requiem\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed various issues with dying, accepting defeat then replaying missions the next day that would prevent or confuse progress, if you still encounter a case of this please do let us know on our Discord or Steam Bug Reporting discussion group",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ambushers should now spawn properly during the \"Not too old for Shit\" Job. This should also fix most cases in other Jobs where expected combatants were not spawning in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jack missions should now show the correct number of required items to be collected in the HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vehicles",
+     "items": [
+      {
+       "text": "Several changes to how Enforcement encounters work to make them feel more fair and less frustrating. Rather than knowing exactly where you are at all times, instead the Player will generate Breadcrumbs that the Police can follow, the Police will consume these breadcrumbs while pursuing the player and once the last is consumed, if they then still don't see the player, they will start to search for them in a more \"random\" manner. This should reward the Player for more effectively hiding from the Police and make the experience more engaging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further tweaks to lower the time required to escape during Wanted events further on each subsequent time the Escape Cooldown is triggered. Lowered to 3 from 5 seconds for each escape, max reduction is lowered to 12 from 20 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raised the weak spot health of the recently added Drift & Rallycross variations to make them more robust for using in the various activities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved traffic & civilian navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cost for refiling Nitrous will be correct even when you have multiple Nitrous Tanks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speedometer will now work correctly when reversing the player car",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cars should no longer be reversing on their own when you first enter them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoothened the experience when being pulled out of vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Police Patrols should be more frequent and follow their intended routes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the police react when observing the player stealing a car",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When the engine has been turned off you can start it by reversing, just as you do with going forward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Increased players chance to hit when varying the attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased NPCs chance to defend against shoves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased NPCs overall chance to defend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Addressed an issue preventing the NPCs counter attack after parrying predictable attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Worked to prevent jittering NPCs during fights, especially against very defensive enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuned parries to show more of the punch animations before the parry animation kicks in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Prevent excessively rapid follow up strikes when light punches get interrupted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where NPCs could throw a Heavy then immediately Parry if they were interrupted during the Heavy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preventing enemy NPCs from spinning around after being hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where we showed the incorrect character level border icon. This is what you should see:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smooth circle: This enemy is way below the player character in level and will have lower defensive capabilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Circle with horizontal spikes: This enemy is roughly equal to player level and will have balanced defensive capabilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Circle with many spikes: This enemy is way above the player level and will have greatly increased defensive capabilities, such as their ability to evade, parry, and counter attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interface and Accessibility",
+     "items": [
+      {
+       "text": "Added a user setting to be able to toggle on/off Vehicle Healthbars along with the Enemy Healthbars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various improvements to the Satnav and GPS markers to handle elevation better, should make it more accurate when you're traveling to a location on or below a bridge for example",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to skip the in-game cut scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Race UI should now always be displayed correctly during Street Trials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the range at which we show the POI interact icons to make them generally easier to find when exploring the city",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Make the Hidden Stash skill available for users that had previously unlocked the skill prior to the last patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ongoing improvements to the Localization content including various missing prompts, UI elements and incorrect or missing translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ongoing fixes & polish for NPC placement and behaviours as well as world art and environmental issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved NPCs enter vehicle behavior. Fixed contention over seats. Added fallbacks if the wanted seat is unavailable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Stability",
+     "items": [
+      {
+       "text": "Added a Low Video Memory warning for players running at too high settings for their available VRAM, when this occurs they would get poor performance and hitching",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Continued general improvements to performance as well as reducing potential hitches encountered by the players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several crash fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 6,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1831432155564899"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-29T11:58:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.096Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.066Z"
+  },
+  {
+   "id": "samson-380437@3",
+   "gameId": "samson-380437",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-22T14:29:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been two weeks since launch, and a lot has been happening behind the scenes as we continue iterating on the game based on your feedback. Today, we’re rolling out our third update, bringing a mix of long-awaited improvements and changes directly inspired by what you’ve pointed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your feedback has been incredibly valuable, and we’re truly grateful for it -- please keep it coming so we can continue shaping the best possible experience together.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since our last update, we’ve also published a long term roadmap covering both fixes and upcoming content, so be sure to check it out and let us know what you think. Alongside news about our planned console release this fall, there’s plenty more exciting stuff in there as well!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're always present in the Steam forums and our community Discord server: https://discord.gg/xPHpQgKUwG, do make sure to be part of it and share your thoughts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Without further ado, here are the build notes for today’s update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vehicles",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/b1c57995b2b9f4c38ea1d35c9157a6f45aa9c807.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Rallycross and new Drift car variants can be found at garages to cater to more driving styles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several improvements for Keyboard & Mouse controls for driving vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted vehicle impact damage and scoring logic to be more consistent and reliable. The goal with this update is for you to be able to finish vehicle jobs with less damage, reducing the need for costly repairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a police siren warning for minor vehicle collisions before an actual chase is triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy vehicles can now overtake dead teammates so they won't get stuck behind the first vehicle in the group if you take that out first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where police characters would fail to exit their vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updates to UI for Street Trials and Police Chases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted Samson's car model so the exhaust no longer intersects with its rear tires.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45883062/a9928d54ce776ddf10e4a7343428e9f2d1876a7b.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Melee Combat",
+     "items": [
+      {
+       "text": "Tuned parry timing and improved parry interval for better reliability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced character sliding during melee Takedowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Trimming hit reactions for faster, more fluid combat flow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adrenaline Rush action now forces interrupt on incoming attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved animation management to prevent lost animations and improve action feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Melee Weapon Collector achievement now correctly tracks the Police Baton.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed so that the melee takedown icon now displays the correct keyboard input to initiate takedown (Q) when playing with mouse and keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updates to Enemy Healthbar UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions & Jobs",
+     "items": [
+      {
+       "text": "Resolved teleportation and spawn issue in Chapter 12, \"Rosary Requiem\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Police vans are now correctly told to stop after the Chapter 12, \"Rosary Requiem\" mission, so they don't run Volkov over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare issue preventing Chapter 11, \"Skulls And Crossbones\", from unlocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when using old save files that prevented a dialogue with Floyd at the start of Chapter 2, \"Silver Bullet\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Steve Macnamara could be spawned dead when you re-attempt Chapter 4, \"Dirty Scripts\" on a later day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mission stall in \"Shipping Showdown\" by adjusting enemy spawns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unlocked the toilet door in the Euro Trash mission to prevent soft-locks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Street Trial retry cost is now 0 AP, making it easier to replay, improve your runs, and grind for better results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several cases where sometimes enemies would not spawn due to streaming issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This should fix for example the case in the Job \"Not Too Old for Shit\" where sometimes the combatants would not spawn, thus making it impossible to complete the Job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We believe that this should fix most similar cases in various Jobs, but if you keep seeing similar issues, please let us know which Mission is affected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NPC Behavior",
+     "items": [
+      {
+       "text": "Fixed NPC's taking a seat mid-fight or breaking out of combat to do similar idle animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved several instances of NPC's clipping into the ground/walls/concrete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies now walk into the church during mission \"A Walk Down Memory Lane\", instead of spawning in the player view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies will properly scale their combat decisions (blocking, evading, and throwing weapons) based on their level relative to the player's level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interface and Accessibility",
+     "items": [
+      {
+       "text": "Added support for platform-specific gamepad icons for PS5 and enabled support for PlayStation Controllers without the need for Steam Input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Added options to adjust subtitle sizes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed UI overlaps between Street Trials and the Wanted UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Walk button (toggle) for Keyboard & Mouse players.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made Mission warning messages like \"You need a working vehicle\" and \"You are too far away\" appear in center of screen initially to draw more attention to them so they are harder to miss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Stability",
+     "items": [
+      {
+       "text": "Improved rendering performance during Evening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled Garbage Collection Timeout to prevent crashes during prolonged loading screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential deadlock/contention issue related to UObject pooling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Fixed numerous spots where the player could get stuck in the terrain, fall through the world, or clip into objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Hidden Stash skill, so that the cash safe on KO works properly, and the stacking bonus behaves as it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save Games metadata is tracked in the save file itself so it will display correctly in the Load Game menu after being cloud synced or copied manually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue preventing the player from sitting on benches placed too close to walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with destructibles that were unbreakable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a geometry issue with one of the Gas Station walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed visual Z-fighting and minor collision traps in numerous locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 18,
+    "balance": 4,
+    "other": 25,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1830797770230845"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-22T14:29:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.095Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:46.064Z"
+  },
+  {
+   "id": "samson-380437@2",
+   "gameId": "samson-380437",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-15T11:38:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi guys! First of all, we want to thank you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been an intense first week after launch for all of us here in the studio, with trying to address some of the most mentioned issues and feedback you've been bringing to us. We've also genuinely loved seeing so many of you having fun with the game -- keep sharing that, too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We always value your input and experience with the game highly. In today's update, we've looked at performance & stability, localization, missions & jobs, combat, gameplay, controls and UI, tutorials, as well as general fixes and bug squashing. With that said, here are our newest notes for the latest update that is now live (a little earlier than anticipated):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Stability",
+     "items": [
+      {
+       "text": "Improved performance and reduced stuttering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tentative fix for a crash related to the in-game movie streamer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for shader compilation crash.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Much improved translation coverage including missing characters for Turkish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Much improved translation coverage for German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Much improved translation coverage for Italian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General localization polish for Spanish and French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localized text has been added to the controller help screen for all supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Missions & Jobs",
+     "items": [
+      {
+       "text": "Fixed a bug in the \"Hot Iron\" mission where the Weapon Dealer Antwan might not spawn after mission failure/abort.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players should no longer be able to get locked in the bathroom of the Mansion during replaying the mission \"Evil\" (Chapter 13).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a serious issue in the Volkov mission where the mission could fail if Volkov became aggressive before the dialogue could start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix April 16th: Fixed yet another issue with Volkov not spawning into Chapter 12 mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the visibility issue in \"Looking for Volkov\" (Chapter 12).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with states not being reset when replaying missions after having Accepted Defeat and replaying them again the next day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Getaway Jobs: Resolved an issue where warning messages from previous missions (e.g., \"You left the guys in the car\") could incorrectly appear in later Jobs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ACAB: Expanded the boundaries of the combat area to allow players more freedom during the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the Kids Are United: Increased the size of the Beatdown area to give players more strategic options for the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Improved reliability of Takedowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreased risk of interruption from Takedowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased window for successful parry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced repetition of heavy attacks resulting in increased variety.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Balancing of combat encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Reduced the AP cost of Street Trials by 1 AP. This makes them less punishing to attempt and retry, addressing low engagement due to difficulty. It also lets players use leftover 1 AP at the end of the day instead of wasting it. It's also the first step in the bigger effort to further balance the game loop as a whole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the engine start delay when entering a vehicle, allowing you to drive away faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue that prevented players from using vehicle interactions if the car was flipped over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a notification would fail to appear if a vehicle call failed because the vehicle was wrecked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vehicles (except Samson's car) will now properly restore their state after an End-of-Day reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed damage taken on undercarriage impacts on your vehicle while driving. This is a first step toward improving overall vehicle gameplay balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked placement of pickups that previously couldn't be picked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made sure the normal bat in your wardrobe reappears next day if you are wielding it when you go to sleep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Consecutive escapes from Police and Gangs for the same crime will reduce the required escape time by 5 seconds each time, up to a maximum reduction of 20 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controls & UI",
+     "items": [
+      {
+       "text": "Mouse and Gamepad now have separate settings for inverting the camera axes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The \"Use Painkiller\" action can now be successfully reassigned in the Keyboard settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Takedown action is now correctly displayed in the controller help menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & Bug Squashing",
+     "items": [
+      {
+       "text": "Resolved an issue where non-starting dialogue would occur after restarting various missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPCs will now consistently react when you hit them with thrown Weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the total amount of Sandwich Boards on the Collectibles screen; the correct total is 163.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensure the Police Radio can be heard properly when driving at speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various misspelled names in the credits section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the weapons would visually pop away before the trunk was fully closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes for floating or misplaced NPC positions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes and Improvements to the Multi-Slot Save system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensured that Save Game files synced via the cloud are recognized correctly by the manifest. This means slots used will be visible as intended on the Load Game screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tutorials",
+     "items": [
+      {
+       "text": "Added a new tutorial specifically for the Shove & Grab combat action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new tutorial detailing how to perform Side Rams when you start your first Vehicle Takedown Job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made HUD & UI hints for various moves stick on screen to make them clearer to the players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 17,
+    "balance": 5,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1833968530885280"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T12:32:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.099Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:23:40.588Z"
+  },
+  {
+   "id": "samson-380437@1",
+   "gameId": "samson-380437",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-09T18:32:47.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone,",
+     "items": [
+      {
+       "text": "The team has been hard at work with the continued support for Samson. This update fixes some immediate issues some of you are having. Improving combat, stability, performance, and missions among other. Below is a more detailed list of changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to the teams dedication we are able to drop this update today, ahead of tomorrow!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Several performance fixes focusing on PSO related hitches (Fixes stuttering related issues)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some misses with Slate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed landscape RayTracingDynamicGeometry misses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "bIgnoreMaskMateria & bRequireRTDynamicGeometryUpdate was not set correctly from landscape PSO precache dispatch since 5.7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NaniteLumenCard & NaniteShading misses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed PSO misses due to FStaticMeshComponentHelper::CollectPSOPrecacheDataImpl fetching materials from LOD levels depending on MinLOD even for Nanite-enabled meshes which will render with LOD 0 materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Crash fixes",
+     "items": [
+      {
+       "text": "Crash fix for clearing UseDestructionHelp for vehicles with a timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for potential case where attempting to update a failed dispatch when losing warp governance could clear the callback lambda as it was being executed, causing a dangling this pointer and crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various audio-related crashes, including one when closing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Avoid race conditions caused by writes to bIsCachedRayTracingInstanceValid and bDynamicRayTracingInstanceCachedDataDirty from parallel tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Force separate storage unit between ray tracing and non-ray tracing bits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Force separate storage unit between bIsCachedRayTracingInstanceValid and bDynamicRayTracingInstanceCachedDataDirty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Physics",
+     "items": [
+      {
+       "text": "Fixed issue with Physics destructables behaving like solid objects and not getting destroyed when playing on high framerates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mission",
+     "items": [
+      {
+       "text": "Ice Fish – NPCs spawned in the Beatdown are no longer only Level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thrill of the Fight and Running on Fumes – now functional after save/continue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suzy Red no longer gets multiplied during \"Stitches for Snitches\" mission completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hit 16 (No Return Fare) – passenger now gets into the cab at the pickup location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dave Shultz Tailing Job – Dave now spawns close to player, avoiding near-instant fails for being too far away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Story Chapter – No Whisper Dealers – no beatdown triggers when eliminating enemies, preventing mission failure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hot Iron – fixed issue where the fail radius for the reach dealer objective was too small",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Progression blockers for mission \"Hot Iron\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Progression blockers for mission \"Consulting Doctor\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes for the controller sensitivity setting being experienced as slower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Day 3: Oonagh Welcome Home – call now comes after story mission Blood on Tap rather than Dirty Scripts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with the “Hot Iron” not being replayable after failing and retrying the next day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved traversal and removed collision traps by White Whisper stash close to the priest's house in Park Avenue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the Cumberland barge wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Gameplay",
+     "items": [
+      {
+       "text": "NPC fall damage added as a failsafe for dropped NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Day 3 Pickups – raised interact range to allow easier pickup if an item is dropped under a body",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let outsiders check if the driver can be pulled out of the vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues where enemies were not advancing towards you in group encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with AI running onto roads to inspect dead bodies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where police siren sometimes did not work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Polish",
+     "items": [
+      {
+       "text": "Fixed smoker alignment in Double Tap and Suzy's",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed vehicle voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a dedicated \"remote dialogue\" bucket for voice lines without a visible speaker (e.g. phone calls or police radio chatter)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added separate dialogue buckets for police vehicles and remote dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed door kick spam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ New day stinger now plays before dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased volume for NPC vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Prevented corpses from popping back up or being launched into the air after takedowns, hazards, or railing interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved lean-on-wall alignment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blocked bark gestures or one-offs during ranged combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Vivian holding a folder in the doctor's office instead of nothing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ Added \"outside vehicle\" dialogue lines to NPC non-combat efforts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several grammatical errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the facility marked on the map for no reason.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved French localization, adding a whole lot of strings that were missed in translation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Fix for unreliable combat barge. If you tried to do a combat barge during the 4-second cooldown, it would just drop you out of combat stance instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Enemies failing to pull the player out of a vehicle if misaligned even slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balanced Police escalation detection ranges to make it fair to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with player falling through the floor, dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Usability",
+     "items": [
+      {
+       "text": "New \"Controls\" screen for showing game input from the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Correct text for Carpe Diem: First Job costs 0 AP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Heal to combat hints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed so we toggle Grab / Throw when you pick up an item in the combat hints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with changing the Deadzone setting not changing the way sticks respond",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with turning off vibration in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 28,
+    "balance": 1,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1832700592786245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-13T12:55:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.098Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:23:40.586Z"
+  },
+  {
+   "id": "samson-380437@major-2026-04-08",
+   "gameId": "samson-380437",
+   "displayName": "SAMSON - Launch Day Game Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-08T19:29:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s launch day and Samson is here. We have been having a lot of fun watching folks have fun with the game and we released a game with flaws for a number of reasons. Early impressions are mixed and many of you are experiencing game-breaking bugs and performance issues. That’s unacceptable and we are listening to everyone’s feedback and are hard at work to deliver the game we spent years of our lives developing. Launching a game is a ton of work and I'm proud of the effort our team has put into seeing Samson from its initial concept, through release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are committed to the future of both Samson and Tyndalston and this game will grow over time on all fronts; quality, gameplay and content. Thank you all for supporting us and sticking with us this super exciting launch day. We will continue to keep our ears to the ground and improve the game with your support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What I can tell you now is: there is a patch coming on Friday that addresses some of the immediate issues players are facing and we have more meatier document detailing what this all means. Here’s what it includes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several performance fixes focusing on PSO related hitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several crash fixes related to audio, animation and GPU",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several fixes for mission and progression related issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several fixes for gameplay related issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several updates for general polish on various parts of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability for up to 8 save files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can find the full change log of patch notes here: https://steamcommunity.com/app/3634520/discussions/0/800092562772785651/.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But the work doesn’t stop there, Samson is here to stay and we are not going anywhere. Here’s what we are continuing to do as we move forward:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continue to squash performance related issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve gameplay related issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix animation related issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Continue to polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Christofer Sundberg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Founder & Creative Director, Liquid Swords",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3634520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3634520/view/1829528821305102"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-08T19:29:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3634520",
+      "checkedAt": "2026-11-13T03:29:52.091Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:40.585Z"
+  }
+ ],
+ "issues": []
+}

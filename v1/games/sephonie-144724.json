@@ -1,0 +1,95 @@
+{
+ "game": {
+  "id": "sephonie-144724",
+  "igdbId": 144724,
+  "name": "Sephonie",
+  "cover": {
+   "imageId": "co7v7e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7v7e.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arywd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arywd.jpg"
+  },
+  "ps5Release": "2023-07-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sephonie-144724@1.0.7",
+   "gameId": "sephonie-144724",
+   "displayName": "Update 1.0.7",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-08T03:16:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This ONLY affects linux. It pushes a native (but untested) linux build (1.0.7) which can be used if there are late-game crashes on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1248840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1248840/view/5395938616796578848"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-08T03:16:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1248840",
+      "checkedAt": "2026-11-13T03:30:10.240Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-08T03:16:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1248840",
+      "checkedAt": "2026-11-13T03:30:10.240Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-08T03:16:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:57.762Z"
+  }
+ ],
+ "issues": []
+}

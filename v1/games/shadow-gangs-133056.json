@@ -1,0 +1,605 @@
+{
+ "game": {
+  "id": "shadow-gangs-133056",
+  "igdbId": 133056,
+  "name": "Shadow Gangs",
+  "cover": {
+   "imageId": "co2kfd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2kfd.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar7en",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar7en.jpg"
+  },
+  "ps5Release": "2023-01-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shadow-gangs-133056@5.4",
+   "gameId": "shadow-gangs-133056",
+   "displayName": "Update 5.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-02T12:05:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VSync fix: Fixed VSync incorrectly switching off on displays reporting fractional refresh rates around 60 Hz and its multiples.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143430/view/1847920302247921"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-02T12:05:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-02T12:05:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.579Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-02T12:05:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:59.801Z"
+  },
+  {
+   "id": "shadow-gangs-133056@post-2026-10-25",
+   "gameId": "shadow-gangs-133056",
+   "displayName": "Controller Pause and Steam Overlay Fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-25T16:36:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where pressing Pause or the PS5 touchpad to resume would immediately reopen the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Improved Pause and Back handling for controllers and keyboards. B/Circle goes back in menus without pausing gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The game now pauses when the Steam overlay opens or the active controller disconnects.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Closing the Steam overlay leaves the game paused until you choose to resume.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1143430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143430/view/1847286114042323"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-25T16:36:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-25T16:36:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.578Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-25T16:36:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:59.800Z"
+  },
+  {
+   "id": "shadow-gangs-133056@post-2026-10-24",
+   "gameId": "shadow-gangs-133056",
+   "displayName": "60 FPS Gameplay and Steam Input Improvements",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-24T23:50:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update addresses two issues reported by players: gameplay timing on different monitor refresh rates and controller compatibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "60 FPS gameplay across monitor refresh rates",
+     "items": [
+      {
+       "text": "Gameplay now runs at its intended 60 FPS timing independently of your monitor's refresh rate. This fixes refresh-rate-related game speed and timing issues, including on high refresh rate displays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Input controller support",
+     "items": [
+      {
+       "text": "Shadow Gangs now uses Steam Input, improving controller detection and compatibility. Default layouts are included for Xbox, PlayStation (including the PS5 DualSense), Nintendo Switch Pro, Steam Deck and other supported controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can customize your controls through Steam's controller settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you still encounter an issue, please leave a comment with your monitor's refresh rate or your controller model.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143430/view/1847286114040913"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-24T23:50:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-24T23:50:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.578Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-24T23:50:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:59.799Z"
+  },
+  {
+   "id": "shadow-gangs-133056@4.04",
+   "gameId": "shadow-gangs-133056",
+   "displayName": "Update 4.04",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-01-09T00:13:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Daddy rockets weren't showing up when he got out of view at the level end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor issue, but wanted to address it, especially as I am making a certification for Switch and XB1 and would like to have there too the best version possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143430/view/4224939386885180547"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-09T00:13:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:59.793Z"
+  },
+  {
+   "id": "shadow-gangs-133056@4.02",
+   "gameId": "shadow-gangs-133056",
+   "displayName": "Update 4.02",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-01-08T09:26:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added two small level change indicators, one in the bridge level at the end of the ship, and one in the cave level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143430/view/4224939386882939696"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-08T09:26:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:59.792Z"
+  },
+  {
+   "id": "shadow-gangs-133056@4.01",
+   "gameId": "shadow-gangs-133056",
+   "displayName": "Update 4.01",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-01-06T16:20:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Never trust .0 versions :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Just two minor issues I wanted to fix",
+     "items": [
+      {
+       "text": "Issue with parallax layer on the forest level at the end. I was missing some layer data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When jumping, Dan ninja can fire with his Uzi if the player presses the mine button.: Both these bugs are old, and been here for a long time, they were not introduced with version 4.0.: Please don't forget the Dreamcast Kickstarter, it's getting now near the campaign end.: If you'd like a physical version of Shadow Gangs, or the Dreamcast version, check the Kickstarter here: https://www.kickstarter.com/projects/jkmcorp/shadow-gangs-dreamcast-version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143430/view/4224939386876701600"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-06T16:20:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:59.792Z"
+  },
+  {
+   "id": "shadow-gangs-133056@4.0",
+   "gameId": "shadow-gangs-133056",
+   "displayName": "Update 4.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-01-05T00:58:48.000Z",
+   "notes": [
+    {
+     "title": "Many fixes and tweaks",
+     "items": [
+      {
+       "text": "-16 credits on Easy and Normal difficulty. (Rising Ninja and Ninja)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prone gunman removed from level 1 in easy and normal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bigger collision box for the prone gunman, so making contact with him is easier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No more dying falling from the ships in the bridge level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Art assets enhancements for pickups in both game and hud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Checkpoint position change in the forest level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added one checkpoint in the temple level, just before the two Collins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Honcho Dragon no more dying inside the mountain in the Bamboo level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Killing a boss will automatically switch the game to the end mission credits, instead of waiting for the exit pickup to drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No more waiting for the pickups to stabilize on the ground to pick them, now they can be picked as soon as they hit the ground the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the fall height a bit, no more dying when falling from small heights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Code is more optimized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Very rare crash when starting the game fixed.: And a lot more fixes and enhancements, any issues please let me know.: This will probably be the final gameplay and art update, any new update will be for hardware issues, compatibility etc...: Don't forget the back the Dreamcast version please if you are interested, there is physical versions available, and also a stretch goal for Shadow Gangs II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143430/view/4224939245932052515"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-05T00:58:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143430",
+      "checkedAt": "2026-11-13T03:30:13.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:59.791Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1464 @@
+{
+ "game": {
+  "id": "quake-ii-261085",
+  "igdbId": 261085,
+  "name": "Quake II",
+  "cover": {
+   "imageId": "co9bgb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9bgb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2ges",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2ges.jpg"
+  },
+  "ps5Release": "2023-08-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "quake-ii-261085@post-2025-11-20",
+   "gameId": "quake-ii-261085",
+   "displayName": "Quake II is now Steam Deck Verified!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-20T20:28:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/3953585/a935868bd0c973304394e8f4d17ab074b7be19d9.jpg\"]Quake II is now Steam Deck Verified and Handheld Optimized on Xbox ROG Ally devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2320/view/1816849002012197"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-20T20:28:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2320",
+      "checkedAt": "2026-11-13T03:28:40.339Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-20T20:28:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2320",
+      "checkedAt": "2026-11-13T03:28:40.339Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-20T20:28:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.219Z"
+  },
+  {
+   "id": "quake-ii-261085@1",
+   "gameId": "quake-ii-261085",
+   "displayName": "UPDATE 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-03T16:55:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is the first major update to the enhanced Quake II re-release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1 includes multiple quality of life improvements, some balance changes, and several notable bug fixes. Thanks to everyone who provided valuable feedback at launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QUALITY OF LIFE IMPROVEMENTS",
+     "items": [
+      {
+       "text": "General Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added controller vibration effects when taking damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Restored Always Run in the Input Options menu, with separate options for controller and keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Save and load menus will now indicate which campaign a save is from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Compass, Drop CTF Tech and Use Grapple actions can now be mapped as custom binds from the Input Options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added toggle for Underwater Warp in the Gameplay Options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the window in which input is disallowed after disengaging the weapon or inventory wheel to prevent erroneous look input or accidental item/weapon deselection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabling View Bob in the Gameplay Options menu bobbing results in fewer residual head bobs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing Tank animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Compass objective navigation throughout various places in Quake II, The Reckoning, Ground Zero, and Quake II 64",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skipping cinematics now requires the Action key/button to be pressed instead of any key/button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an extra chain segment to the Plasma Beam and Grappling Hook when using higher FOVs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved cases where momentum would be lost when traveling up stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Proper drowning sounds are now used based on selected player model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Capped maximum FPS to 1,000 prevent possible engine anomalies at higher frame rates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Prioritized Saved Games directory over game install directory when basepath is changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to load quick saves and manual saves in online co-op without having to back out to the lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bot chat can now be disabled from Multiplayer Options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added match browser filters and the ability to sort by ping in the Multiplayer/Online/Join Match menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Raised the maximum number of visible matches in the Multiplayer/Online/Join Match menu from 20 to 50",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Excluded full servers from visible matches in the Multiplayer/Online/Join Match menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled Quake II 64 physics changes when playing Quake II 64 multiplayer maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enabled Spawn Furthest by default in competitive game modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enabled Auto Join Teams by default for team-based game modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Raised default Frag Limit to 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set multiple cvars as cheat-enabled, disallowing hosts to use them when cheats are disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Q2CTF2 (Stronghold Opposition) and Q2CTF3 (The Smelter) to better reflect the original versions of these Capture the Flag maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for PC and Xbox consoles to play on LAN together",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "BALANCE CHANGES",
+     "items": [
+      {
+       "text": "General Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Railgun damage from 100 to 125",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Monsters will no longer dodge shots coming from the side or behind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The slime and lava traps in The Slimy Place and The Frag Pipe can no longer be avoided",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Turrets no longer do extra damage when blind firing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Killing a Brain while its chest is open will now always count as a kill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Monsters will no longer open nearby doors immediately after spawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixbots will abort healing when staggering from pain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Berserker:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Berserker’s attack can be dodged by jumping when the slam occurs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a visual tell to indicate when the Berserker’s jump is being charged up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an additional 100ms delay before the Berserker jumps after it is fully charged",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced slam attack damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed ladder sounds from multiplayer for balance reasons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "General Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced vision cone size on monsters waiting in ambush to fix some cases of accidental trap activation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Power shield will no longer reactivate after picking up ammo if it was manually turned off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Power-ups will no longer leave a phantom pickup after a player dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when a soldier tries to use a run attack against no player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Issue",
+     "items": [
+      {
+       "text": "I am experincing noticeable frame stuttering and hitching after installing Update 1 for Quake II (enhanced) on PC. Is there anything I can do about this?",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Resolution",
+     "items": [
+      {
+       "text": "We are going to resolve this issue in an upcoming patch. In the meantime, the following workaround should resolve this issue:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press the ~ key to open the console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Type in: 'jobs_enable 0' (without quotes) and hit Enter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press the ~ key again to close the console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To read these Update 1 Release Notes in more languages, click here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To see Quake II initial release notes & FAQ in a variety of languages, click here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ICYMI: Be sure to check out this awesome tech rundown on how Quake II enhanced was made here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 28,
+    "fixed": 5,
+    "balance": 15,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "General Gameplay",
+     "Added controller vibration effects when taking damage",
+     "Save and load menus will now indicate which campaign a save is from"
+    ]
+   },
+   "sourceIds": [
+    "steam-2320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2320/view/5220291886505848594"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-03T16:55:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2320",
+      "checkedAt": "2026-11-13T03:28:40.337Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-03T16:55:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2320",
+      "checkedAt": "2026-11-13T03:28:40.339Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-03T16:55:06.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:28:40.338Z"
+  },
+  {
+   "id": "quake-ii-261085@post-2023-08-10",
+   "gameId": "quake-ii-261085",
+   "displayName": "QUAKE II RE-RELEASE PATCH NOTES & FAQ",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-10T17:22:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The legendary sci-fi action FPS is enhanced and now available on modern platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take the fight to the Strogg with our enhanced re-release of Quake II, now available on PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S and Nintendo Switch, in addition to PC platforms and Game Pass (subscription required). This re-release is our biggest effort yet with enhanced AI, gameplay improvements, presented in up to 120hz in 4K on supported platforms (see the below FAQ for details) and we even dug into the development archives of Quake II to restore elements that were cut from the original game’s conception.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Note: Steam users who already own Quake II will automatically receive the new version with a free download. Read the FAQ below for details on how to access the original version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features and Improvements",
+     "items": [
+      {
+       "text": "Includes the original Quake II campaign plus both Mission Packs, The Reckoning, Ground Zero, plus the previously Nintendo 64-exclusive Quake II 64 and the brand-new Call of the Machine episode from MachineGames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements to gameplay, including content restored from the original development, plus visual upgrades such as dynamic shadows, improved lighting, glow maps and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Play local split-screen and online across four Multiplayer modes with crossplay functionality:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cooperative",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Deathmatch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Team Deathmatch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Capture the Flag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add AI opponents in Deathmatch and Team Deathmatch modes, explore the id Vault, enjoy improved co-op play and much more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For a deeper dive into the technical enhancements we made in this re-release of Quake II, please check out this in depth article",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Supported Languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "English, French, Italian, Spanish, German, Russian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "RELEASE NOTES",
+     "items": [
+      {
+       "text": "Enhanced Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The gameplay in Quake II has been shined to a polish to improve the feel of the game while keeping the original spirit intact. Weapon fire from players and enemies now have muzzle flashes to improve feedback and new damage indicators to better communicate to players where they are taking damage from. An increased tick rate ensures action is more responsive and hundreds of level and gameplay bugs have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The forces of Stroggos are deadlier than ever with improved pathing, new attacks and new tactics. Enemies will hit the dirt to dodge shots and jump down off ledges to get a better angle, making enemy encounters more dynamic. Flying AI has been rebuilt to allow for better and more realistic navigation through the air. Watch out for the Berzerker’s new leap attack, restored from the game’s original development, and dodge Parasite tongue lashings which will now stick into the wall, temporarily stunning them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Lighting, Shadows & Models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Levels have been enhanced with improved lighting, along with updated weapon and enemy models. Dynamic shadows and lighting have been added to levels and weapon effects. New glow maps make computer terminals, power cores and other illuminated surfaces pop. These graphics settings and more can be customized through the in-game menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Includes Both Original Expansion Packs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This release of Quake II includes the original expansion packs, The Reckoning, and Ground Zero. All the AI enhancements from Ground Zero are now available in all episodes. Additionally, for the first time, Quake II 64 has been ported over, making this exclusive episode available in high resolution and high framerate with modern controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brand New Episode: Call of the Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the depths of Strogg space lies the Machine, a singularity capable of collapsing the fabric of reality. Fight across time and space to find the Strogg-Maker, destroy it and change humanity's destiny in the brand-new episode, Call of the Machine. Created by MachineGames, this follow-up to their Quake episode Dimension of the Machine is now available for both single player or in cooperative play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigate With The Compass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigate your way through the vast hub-based worlds of Stroggos with a brand-new compass item that will direct you to your next objective, no matter where you are, with useful arrows dropped into the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the id Vault",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the first time, dive into the id Vault and explore concept art and gameplay footage of Quake II, including early versions of weapons, items and even playable levels from the game's original development.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Split-Screen and Online Multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quake II includes 4-player split-screen local multiplayer on all platforms, with 8 player split-screen available on Xbox Series X|S and PC. Fight against your friends in Deathmatch, Team Deathmatch and Capture the Flag, or team up in Cooperative games available for all five campaigns. Fill out your slots with AI bots for both Deathmatch and Team Deathmatch modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "For the genuine QuakeCon experience, LAN play is also supported across all platforms and Nintendo Switch players can frag locally through ad-hoc wireless multiplayer. Mix up your games with custom settings such as Instagib and random weapons to maximize your fun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crossplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play with friends no matter which platform they prefer. Crossplay is available on Game Pass, PC (with controller), Xbox One, Xbox Series X|S, PlayStation 4, PlayStation 5 and Nintendo Switch versions of the game, so you can play Quake II with everyone. Join your friends quickly using our room code system for finding lobbies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Enhanced Cooperative Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Save games are now supported while playing cooperatively and new rules have been added to improve Quake II's Cooperative modes. If all players die, it's game over and the level will restart. Respawn your teammates by clearing all enemies in the area or finding a safe place to hide. Teammates will spawn near you, letting you get back into the fight quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Create an additional challenge for you and your friends by setting a maximum lives limit or upping enemies' health. To help with communication, you can also ping areas in the map by using the “point” gesture that will be visible to all other players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI Bot Opponents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quake II bots can be added to Deathmatch and Team Deathmatch modes in both offline and online matches. They are more aware of their surroundings, including danger, and can perform advanced maneuvers like rocket jumps. With six skill levels from Training to Nightmare, Quake II bots are fun for both beginner and experienced players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ACCESSIBILITY FEATURES",
+     "items": [
+      {
+       "text": "With this release of Quake II, we are adding new accessibility features so the game can be enjoyed by even more players. For a full rundown of the accessibility features offered, check out this article.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessibility Options Notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After installing or updating the game for the first time, you will be presented with an Accessibility Options notification. Read through the available options to make sure they are set to your preference. Once in-game, these options can be altered from the Options/Accessibility sub-menu via the Main and Pause Menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Note: All Accessibility options default to ON during first launch after install, but can be easily toggled OFF/ON via Disable/Enable All Settings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessibility Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Read Chat Out Loud *",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enables synthesized voiceover of incoming multiplayer text chat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transcribe Voice Chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Converts incoming voice chat into text in the multiplayer chat window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Speak For Me in Voice Chat *",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Use text-to-speech on outgoing multiplayer chat, converting your text into a synthesized voice chat audible to other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Voice profiles can be selected from the Accessibility menu when connected to an online multiplayer session. Note that the number of voice profiles may vary by language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Text-to-speech features not supported for menu interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High Contrast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the default text field backgrounds to improve User Interface legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High Contrast OFF",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High Contrast ON",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Alternate Typeface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the original in-game font for added legibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Alternate Typeface OFF",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Alternate Typeface ON",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Screen Flash Amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreases opacity of onscreen effects to reduce flash intensity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Center Message Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the display duration of center print HUD messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corner Message Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the display duration of corner print HUD messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Maximum Lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the maximum number of onscreen corner print HUD messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chat Message Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes the display duration of multiplayer text chat messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "PC SPECS",
+     "items": [
+      {
+       "text": "Minimum Specs (1080p/60Hz)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows 10 (64-bit version)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Intel Core i5-3570 @3.4 GHz or AMD Ryzen 3 1300X @3.5 GHz",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "NVIDIA GeForce GTX 650 TI (2GB) or AMD HD 7750 (1GB)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "8GB System RAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimum 2GB free space on hard drive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High speed broadband connection required for online play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recommended Specs (4K/120Hz*)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows 10 (64-bit version)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Intel Core i5-6600k @3.5 GHz or AMD Ryzen 5 1600 @3.2 GHz",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "NVIDIA GeForce GTX 1070 (8GB) or AMD RX Vega 56 (8GB)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "8GB System RAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimum 2GB free space on hard drive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High speed broadband connection required for online play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Compatible display required",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FAQ",
+     "items": [
+      {
+       "text": "I already own Quake II. How do I access the new release?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previous owners of Quake II on the Microsoft Store, Steam and Good Old Games (GOG) will automatically receive the new version via a free update. It may have already updated by the time you read this!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "How do I access the original versions of the game?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Users on the below PC platforms will be able to access the original version of Quake II as follows:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam users can use the launch options to launch the original versions of the games and the original files are still on disk in the same place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How do I play with friends on other platforms?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The easiest way to join a crossplay match with friends is using the room code system. The room code is a four-letter sequence that can be seen inside the pre-game lobby. Send this to your friends over text message, Discord or yelling very loudly and they'll be able to join through the multiplayer menu without having to search through the match browser or enter passwords. Note that on some platforms, crossplay may be disabled at the system level by default. Check if the feature is enabled if you have problems joining crossplay matches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What input devices are supported?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller, keyboard and mouse peripherals are supported on all platforms, including consoles. Split-screen is available with mixed mouse/keyboard and controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Is the Steam Controller supported?",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Quake II does not support the Steam Controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Do I need an always-online connection to play the game?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quake II only requires an online connection to play online multiplayer modes. Single-player campaigns and multiplayer via split-screen, LAN or ad-hoc multiplayer on Nintendo Switch can be enjoyed offline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Are existing mods supported on PC?",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Custom maps designed for the PC versions of the original Quake II should still work with the enhanced release of the game. We recommend installing custom maps into your Saved Games profile in your %USERPROFILE%\\Saved Games\\Nightdive Studios\\Quake II\\baseq2\\maps folder.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You will need to create the maps folder yourself after launching the game for the first time. We have also updated the bot navigation editor to allow custom maps to make full use of our updated AI, including automatically laying down navigation nodes simply by running around the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The PC versions of the enhanced Quake II support mods. However, due to the move from 32-bit to 64-bit, existing mods are not compatible. Along with this release, we have made the source code for the game DLL available, allowing mods to be updated and new mods to be created supporting all the enhancements in our updated engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This unified codebase also contains all the additions from the two expansion packs and Capture the Flag, making it an excellent base for creating new mods based on expanded content. The updated source, with more detailed instructions for programmers, can be grabbed here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES",
+     "items": [
+      {
+       "text": "All Platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue: A phantom player character appears when loading a Cooperative Mode save made after completing a Call of the Machine unit. Is there anything I can do about this?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution: If you encounter this issue, the phantom player character will depopulate upon map change or when another player joins you in Co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue: For autosave to work after starting a Playable Demo, a manual save must first be created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution: If you start a Playable Demo and want to enable autosave functionality, you must first create a manual save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue: While playing Team Deathmatch, if you change teams during the match, your score moves over to the other team; if you quit during Team Deathmatch, your score disappears from the results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution: Until we address this issue, we recommend you avoid changing teams or quitting during Team Deathmatch matches to avoid it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All PC Platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue: Disconnecting headphones during cinematics can cause them to appear incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution: If you encounter freeze frame or black screen issues during cinematics after disconnecting headphones, restarting the game should resolve the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue: Disconnecting wired USB headphones and reconnecting them can cause audio to stop playing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolution: If you encounter audio issues after disconnecting and reconnecting wired USB headphones, restarting the game should resolve the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 45,
+    "fixed": 0,
+    "balance": 0,
+    "other": 58,
+    "ps5": 2,
+    "topNew": [
+     "Play local split-screen and online across four Multiplayer modes with crossplay functionality:",
+     "Cooperative",
+     "Deathmatch"
+    ]
+   },
+   "sourceIds": [
+    "steam-2320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2320/view/5839532486211436780"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T17:22:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2320",
+      "checkedAt": "2026-11-13T03:28:40.336Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": {
+      "value": 2000000000,
+      "verification": "official",
+      "sourceId": "steam-2320",
+      "checkedAt": "2026-11-13T03:28:40.336Z"
+     },
+     "liveAt": {
+      "value": "2023-08-10T17:22:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2320",
+      "checkedAt": "2026-11-13T03:28:40.336Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-10T17:22:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:27.217Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "0c39004a67c4",
+   "text": "All Platforms",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "641e2a152d9a",
+   "text": "Issue: A phantom player character appears when loading a Cooperative Mode save made after completing a Call of the Machine unit. Is there anything I can do about this?",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "a45cfed622d8",
+   "text": "Resolution: If you encounter this issue, the phantom player character will depopulate upon map change or when another player joins you in Co-op.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "65c0a83b36f6",
+   "text": "Issue: For autosave to work after starting a Playable Demo, a manual save must first be created.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "c7db30f31d80",
+   "text": "Resolution: If you start a Playable Demo and want to enable autosave functionality, you must first create a manual save.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "55796193a989",
+   "text": "Issue: While playing Team Deathmatch, if you change teams during the match, your score moves over to the other team; if you quit during Team Deathmatch, your score disappears from the results.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "016fff06304d",
+   "text": "Resolution: Until we address this issue, we recommend you avoid changing teams or quitting during Team Deathmatch matches to avoid it.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "88641c8941ea",
+   "text": "All PC Platforms",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "f80cac62f1db",
+   "text": "Issue: Disconnecting headphones during cinematics can cause them to appear incorrectly.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "62f6da240d13",
+   "text": "Resolution: If you encounter freeze frame or black screen issues during cinematics after disconnecting headphones, restarting the game should resolve the issue.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "a3f3c766cb50",
+   "text": "Issue: Disconnecting wired USB headphones and reconnecting them can cause audio to stop playing correctly.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  },
+  {
+   "id": "33fe372f8e28",
+   "text": "Resolution: If you encounter audio issues after disconnecting and reconnecting wired USB headphones, restarting the game should resolve the issue.",
+   "status": "open",
+   "firstReleaseId": "quake-ii-261085@post-2023-08-10"
+  }
+ ]
+}

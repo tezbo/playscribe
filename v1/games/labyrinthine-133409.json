@@ -1,0 +1,5358 @@
+{
+ "game": {
+  "id": "labyrinthine-133409",
+  "igdbId": 133409,
+  "name": "Labyrinthine",
+  "cover": {
+   "imageId": "co2i9w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2i9w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3tp0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3tp0.jpg"
+  },
+  "ps5Release": "2025-09-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "labyrinthine-133409@hotfix-2026-10-26",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Console Cross-play Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-26T20:37:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue causing desync between PC and console players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1847286114046688"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T20:37:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.489Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T20:37:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.489Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-26T20:37:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.793Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2026-10-26",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Pre-patch for Lost in the Sands DLC.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-26T12:01:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Lost in the Sands DLC content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1847286114044679"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T12:01:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.488Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T12:01:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.488Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-26T12:01:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.792Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2026-04-05",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Fixes 05/04/26",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-05T03:05:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated SteamVR to fix some issues relating to an older version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated OpenVR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed strong flashlight settings being set to regular flashlight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the CRYO banner overlays the server browser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1828894815563113"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-05T03:05:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.488Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-05T03:05:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.488Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-05T03:05:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.792Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2025-12-19",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Labyrinthine Christmas Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-19T02:47:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated versions for Crossplay with consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 4 new Christmas Cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Included a CRYO advert on the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1819386365093281"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T02:47:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T02:47:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.487Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-19T02:47:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.791Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2025-09-11",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Patch 11/09/25",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-11T13:29:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where switching lobbies could break the networking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed join requests not working from steam friends when using a private + friends lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the pathing at the end of a case not displaying correctly in VR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the demo UI to flash at the start of a lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1810503566417305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-11T13:29:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.790Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2025-08-27",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Minor update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-27T09:14:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated internal versioning for crossplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1809235871548380"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-27T09:14:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.790Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2025-08-22",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Added cross-play and several fixes/changes to Chapter 6",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-22T17:40:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added cross-play support in preparation for the console release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Miner has had their vision reduced and will no longer aggro onto players behind him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an error with grass that prevented it from spawning correctly in chapter 5, chapter 6 and the swamp/dead forest case files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chapter 6 now resets lives in the final area, and revival bracers can be found scattered around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The mining lantern in chapter 6 (and found in case files) has had a significant brightness increase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug which resulted in the sliding puzzle in chapter 6 sometimes breaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the flashlight didn't \"break\" correctly in chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1808601382484460"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-22T17:40:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.789Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2025-04-17",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Easter Event Pre-Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-17T15:41:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added new easter cosmetics, full post coming soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1797185861642685"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T15:41:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.788Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2025-02-19",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Patch 19/02/25",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-19T11:20:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue in VR which prevents the end map from displaying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the experience UI where it would display an incorrect amount before updating to the correct one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1792116353157386"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-19T11:20:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.787Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2025-02-13",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Pre-patch for Valentine's event",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-13T19:22:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added content relating to the valentines event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1791580425972748"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-13T19:22:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.767Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2025-02-08",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-08T02:13:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue that could cause the greenhouse puzzle to break preventing progress in the chapter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1790848102671417"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-08T02:13:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.767Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2024-12-06",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Patch 06/12/24",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-06T19:13:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the christmas hat taking up huge chunks of the map / lobby.: Apologies in advance for the download size, it's how the engine packages files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1785321795647469"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-06T19:13:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.484Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.666Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2024-12-05",
+   "gameId": "labyrinthine-133409",
+   "displayName": "New Cosmetics Added + 10% increased chance of a Christmas cosmetic",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-05T20:39:43.000Z",
+   "notes": [
+    {
+     "title": "Added the following",
+     "items": [
+      {
+       "text": "Snowman Outfit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Icicle Flashlight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Yule Log Flashlight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gingerbread Glowstick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Christmas Bead Bracelet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"White Candle\" Music Disc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Poinsettia\" Music Disc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changed",
+     "items": [
+      {
+       "text": "+10% Chance of a Christmas Cosmetic Appearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Snowman Outfit",
+     "Icicle Flashlight",
+     "Yule Log Flashlight"
+    ]
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/1784506359253841"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T20:39:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.484Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.666Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2024-09-29",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small pre-event patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-29T20:59:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added noticeboard stickers for all events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed/Edited a few spawnpoints that spawned items inside objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added arrows and the ability to skip the tutorial, as well as an infinite timer for the tutorial puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several changes to try improve the performance of VR on Quest 2 headsets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Serbian as an available language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/6339469370194119532"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-29T20:59:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.483Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.665Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2024-06-27",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small update 27/06/24",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-27T16:40:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed the ability to respawn in zone 1 until you have passed a certain point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where monsters would run through walls on the backrooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Another fix for being killed at spawn on the swamp casefile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved lighting visuals on the castle casefile to make things spookier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to buy multiple amounts of items in the lobby store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed floating cob web in Castle hallways",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cross that could sometimes get covered up by a door frame in Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed z-fighting at Dead Forest exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5842939267310073568"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T16:40:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.483Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.664Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2024-06-12",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix 12/06/24",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-12T12:04:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug preventing Chapter 6 from being completed under certain circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with smiley not reacting to play voice chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5747236506606539345"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-12T12:04:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.482Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.664Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2024-06-10",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix 10/06/24",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-10T12:25:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that prevented the tutorial from saving for certain players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the flashlight from unlocking post-tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where players could die before they were finished loading into a case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5746109972563329523"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-10T12:25:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.482Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.663Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2024-06-05",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Patch 05/06/24",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-05T19:39:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a typo in Portuguese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some localisation keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the tutorial not saving correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the tutorial \"timeout\" to help people struggling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a safe spot in the backrooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5746109972546198763"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-05T19:39:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.482Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.663Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2024-06-01",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Hotfix for a Checkpoint issue",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-01T02:09:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a rare issue with checkpoints that can cause objectives not to sync after the most recent update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5742731639335683774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-01T02:09:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.481Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.662Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2024-04-12",
+   "gameId": "labyrinthine-133409",
+   "displayName": "12/04/24 Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-12T16:14:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Seasonal drop chance raised to 35%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the lever puzzle being always solvable in 4 moves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue preventing the physics on the valentines hat: [Apologies for the large update size, this is due to how the engine packages files]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/6474562312185250086"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-12T16:14:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.481Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.662Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2024-04-03",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Easter Event Enabled",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-03T17:33:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Seasonal cosmetic spawn chance dropped to 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easter cosmetics active until the 23rd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing sounds when crouching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5756237364305141185"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-03T17:33:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.480Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.661Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2024-02-14",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Minor Patch 14/02/24",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-14T17:02:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed VR players not being able to interact with some Valentine cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blue rose appearing as red roses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5750603429273248597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-14T17:02:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.480Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.661Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2024-02-05",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Labyrinthine Update 05/02/2024",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-05T11:27:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello maze dwellers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update, we've tried to address some of the more frequent issues players (especially new players) are having. One of these includes a new equipment that is also available for use in case files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Spray Paint",
+     "items": [
+      {
+       "text": "The spray paint item was added to help people who were finding chapters 4 and 6 rather difficult to navigate. We had originally added some small QoL bits (different coloured lights, paint splashes etc) to break up the area in Chapter 6. Navigation is still an issue for many people in Chapter 6 and Chapter 4 is often brought up as having a similar issue. Our solution is to give people the ability to make their own system of markings by giving them a spray can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The spray can has four different colours which can be accessed by holding right click (or the relevant VR controller button). You also have access to eight different symbols which you can cycle using right click (or the relevant VR controller button). Sprays can be rotated by either holding left click and moving your mouse or by using the scroll wheel prior to spraying (for VR players, you can just rotate your hand freely).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Each spray can has 50 sprays worth of usage in it. They can be found at the start of Chapter 4 and Chapter 6 or purchased in the case files shop for tickets. We're excited to see people's creativity with them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 1 Puzzle Change",
+     "items": [
+      {
+       "text": "While we love the iconic tiles puzzle in Chapter 1, we've decided to replace it with another to make the chapter less difficult and help get players into Chapter 2 quicker. We noticed a lot of players get stuck on the first puzzle which can be frustrating and lead to them becoming demoralised by the time they complete it and get into Chapter 2. We've gone ahead and added a replacement that should be much more simple and straight forward and requires visiting the missing letters (something players also skipped and were then getting stuck on the cryptex). We hope this change helps introduce more players to the game that would have otherwise given up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yes, this puzzle is also available in the case files!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Some Minor Changes",
+     "items": [
+      {
+       "text": "Alongside the above, we've also gone ahead and made some minor changes and a few QoL improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new crouch animation has been added that both looks better and lowers the player further",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sprint drinks have had their uses increased to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fog city has had changes to it's end puzzle to help VR players interact with it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom cases now allows you to manually choose how many of each monster you want on your case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom cases now saves the last used configuration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The lowerable walls in Chapter 6 and now usable by a single player when in multiplayer mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several small IK and animation tweaks to help make the players feel less static",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR players now have access to the same colour wheel as desktop players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know many players have been asking for some of these changes, so we've delivered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We've also fixed several bugs",
+     "items": [
+      {
+       "text": "A potential fix has been added to help with WMR headsets sometimes displaying blue lines on the screen borders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A fix to prevent the mercy system taking into account people retrying the same cases repeatedly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The miner lantern cosmetic has been corrected to point forwards rather than at an angle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some minor performance changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented VR players from changing their characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Blog and Plushies",
+     "items": [
+      {
+       "text": "We've started to see people receiving their pigman plushies, so if you grabbed one while the campaign was live, you should have one coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, for those who haven't seen it or are not apart of discord, you can find out what we've been up to and the game we're working on in the December blog Valko Game Studios - December Developer Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's all for now! As always, feel free to drop your feedback and suggestions on discord, we read everything and we'd love to hear people's thoughts on the update: Valko Games Official Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5582843074955096809"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-05T11:27:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.479Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.660Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2024-01-03",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Patch 03/01/24",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-03T00:06:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added VR Game of the Year cosmetic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5410576585175350662"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-03T00:06:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.479Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.659Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2023-12-08",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Patch - 08/12/23",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-08T15:46:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "* fix VR pickup on year 2 christmas clothing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* fix industrial flashlight light cookie resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* increase mercy system to 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5395938616798477544"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-08T15:46:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.478Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.650Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2023-10-01",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Patch 01/10/23",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-01T02:09:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with monsters charging on corn fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved monster charging overall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed giant pumpkins spawning for halloween",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5220291886496318219"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-01T02:09:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.478Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.649Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2023-09-06",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Patch Notes - 06/09/2023",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-06T11:23:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed scrolling in VR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed VR resolution issue when going into menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing collider in the castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rope in the swamp safe house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with navmeshes in the swamp case file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved charging mechanics for charging monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now use either type of sluice gate part in chapter 5 to complete the objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a collision issue in the farm on Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mirrors so that VR players can interact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the tile puzzle so that VR players can interact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the pigman clothing from the Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that prevented stamps from spawning on the mines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5141476355679203043"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-06T11:23:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.478Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.649Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2023-08-22",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small patch 22/08/23",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-22T15:52:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Italian Language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with the black bride getting stuck in certain areas when killing players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue on the ruins where part of the submaze wouldn't generate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All available languages now appear in the list when creating a public lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed DLC glowsticks causing issues for VR players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with door frame collisions in spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that would occur when spectating players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some minor translation issues fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5127964289191537457"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-22T15:52:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.477Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.648Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2023-08-17",
+   "gameId": "labyrinthine-133409",
+   "displayName": "17/08/23 - Bug Fixes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-17T11:15:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Arabic Localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed VR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with gates in the castle dungeons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a few missing localisation keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5127964289172612418"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-17T11:15:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.477Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.648Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2023-08-10",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Labyrinthine Case File Update - Part 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-10T15:06:55.000Z",
+   "notes": [
+    {
+     "title": "Part 2!",
+     "items": [
+      {
+       "text": "Yes, it's finally here. The second part of the case file update brings in new maps, monsters and various other changes. As many of you are aware, this is the final \"planned content\" update for Labyrinthine. We will be bringing another update shortly that addresses some smaller issues, brings a few new languages to the game and also takes us out of \"early access\" at long last.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't fret though, that doesn't mean it will be abandoned or receive no new content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Added New Case File Map; Ruins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Map; Brick Maze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Map; Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Map; Swamp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Rat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Creep",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Vampire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 5 New Cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Help Screens to the Lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Separate Custom Case Board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Several New Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Additional Lore to Chapters 1, 2, 3 and 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Loading Screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the lighting on Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the amount of parts available on Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some cosmetics that didn't spawn due to a bug in the last update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved AI mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tons of bug fixes and performance edits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 1,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5839532486211094266"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-10T15:06:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.476Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.647Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2023-06-12",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small fixes + Steam Rich Presence",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-06-12T16:07:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a nav mesh issue in chapter 6 near the puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed monster spawns in the dead forest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Steam Rich Presence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5129083846354009512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-12T16:07:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.476Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.647Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2023-06-09",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix 09/06/23",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-09T11:45:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with colliders being missing in the carnival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flying leeches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5129083846342412791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-09T11:45:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.475Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.646Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2023-06-07",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Labyrinthine Case File Update - Part 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-07T12:14:50.000Z",
+   "notes": [
+    {
+     "title": "Why does it say Part 1?",
+     "items": [
+      {
+       "text": "We know you're all excited for the case file update. We think that the QoL changes we have done so far deserve to be in the public space, so we've decided to break the case file update into two parts, with most things coming in part 1 and additional maps/monsters in part 2 (which were originally planned for another update). You may notice the brick maze is not included with this part; there's changes we want to make and we don't think we can get them done soon enough to include, so we're going to move it over to part 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Added New Case File Map; Mines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Map; Carnival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Map; Dead Forest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Map; Fog City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Miner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Clown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Marionette",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Feeler",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; The Nameless",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Mosquito",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster; Leech",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster Variant; Hunter Pigman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster Variant; Ash Oni",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster Variant; Crimson Lady",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster Variant; Smoldering Wickerman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added New Case File Monster Variant; Joker Smiley",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to customise lobby music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 23 Music Tracks that can be found in cases, 2 are hardcore exclusive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 15 new hardcore exclusive cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added over 80 new regular/map exclusive cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added mercy system that helps reduce the chance of repeat cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more spawns to all mazes for tickets, tokens, equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added validation to roots/bars to help combat people getting stuck in dead ends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new submaze in backrooms to help break it up a little",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the daily tasks to include new maze types (they didn't include bamboo forest or later)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the range of Smiley's hearing range when you are being chased by another monster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved UI of buttons in the lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the lighting on the daily task board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added findable stamps for generating your own rare/hardcore cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The cornfields and sewer are now available at level 0-5, the unkept hedges and the forest appear at level 5 instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some cosmetics (such as the monocles) now appear in a small jewelry box to make them easier to see",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Map Equipment has been updated and will now show safehouse, landmarks and drawn paths (rather than pixel paths)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Compass has been improved and now displays an illuminated \"N\" as well as changes to make it more accurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked how clubfoot does his vision detection, should fix the intermittent issue with him randomly aggroing on players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved how waypoints are placed by the random case system, this should help with monster navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added animated skies to some case files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added firebowls / shrines to some case files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cosmetics in the tent now show their aquisition method (i.e. red = hardcore, orange = unique, blue = rare, green = uncommon, white = common)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added equipment spawns to mazes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added two new pieces of equipment (The M.P.A.S and the High Power Flashlight)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked difficulty to reduce the amount of monsters you receive when over level 50",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reworked the difficulty to balance the monsters you receive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Modified AI of monsters to help prevent them from \"camping\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added in systems to deter monsters from hanging around start/end/safe house pieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Huge rework to the audio system (please reset your volumes to full) to balance the overall sound levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to generate custom cases with variant monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You will now always have an normal/easy case file on the board (for those without time to run the extremes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified Chapter 6 to include some barriers near the puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 6 now has graffiti in the mine section to hint at the mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 6 has had some lantern colours changed to help distinguish areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked how the cryptex works on a technical level in chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the performance of VR players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several objects have been updated to now have the correct footstep sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new paintings to the manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+ So many random little tweaks and bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 36,
+    "fixed": 0,
+    "balance": 5,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5129083846335195571"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-07T12:14:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.475Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.645Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2023-04-12",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-12T00:24:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Easter ears should no longer display the wrong pickup item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5132456474581419661"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-12T00:24:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.474Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.644Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2023-04-06",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Easter Event Pre-patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-06T17:14:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a few cosmetics receiving decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Joan receiving decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The secret safe is now no longer checkpointed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added volumetric support to low quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where you could donate tickets after the host had reached their daily limit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some font sizing issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved some quality settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The secret mask is no longer green in chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easter ear cosmetics now have physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new easter cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased rare case chance by x4 while an event is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5121196841289051036"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T17:14:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.474Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.644Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2023-02-23",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Patch to fix some minor issues",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-23T02:15:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed ability for male teen to wear Valentine clothes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rose positions on characters in game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preventative measures to stop hackers from donating negative tickets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5059268543355220060"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-23T02:15:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.643Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2022-12-28",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix 28/12/22",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-28T23:50:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed Developer mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5000716037465866800"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-28T23:50:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.643Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2022-10-27",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix for chapter 5 issues",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-27T01:55:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue making Chatper 5 impossible to complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4706851091171401949"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T01:55:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.641Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2022-10-10",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix - 10/10/2022",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-10T10:30:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue causing the game to sometimes freeze while completing the pipe puzzle on the sewer case file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4613399405954345739"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-10T10:30:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.641Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2022-10-07",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Bugfixes and the ability to kick players",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-07T16:57:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where monsters would just idle continuously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where crashing could rarely result in losing your cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue preventing monsters from getting around scarecrow posts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with flashlight skins causing it to disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with customisation resetting to last item you had equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with shadows on the new flashlight/lantern skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made effigies more visible in the unkept hedges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to kick players in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a fail-safe for when maps fail to load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some lighting issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor performance issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4613399405944394812"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-07T16:57:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.640Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2022-09-28",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix 28/09/2022",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-28T08:28:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue with AI navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with AI animations breaking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4588629064106246520"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-28T08:28:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.471Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.640Z"
+  },
+  {
+   "id": "labyrinthine-133409@2022",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Update 2022",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-27T17:24:33.000Z",
+   "notes": [
+    {
+     "title": "Once again, the spooky season is upon us!",
+     "items": [
+      {
+       "text": "Let's see what's in store for Labyrinthine this October...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Limited Time Cosmetics",
+     "items": [
+      {
+       "text": "For a limited time, the halloween cosmetics are back. Starting from the 1st of October until midnight of the 31st, you will be able to find various halloween themed cosmetics in maps. They will spawn in place of regular cosmetics, so look out for them in case files!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside the 9 returning cosmetics from last year, we also have 4 new clothing items and two brand new cosmetic slots, a spooky lantern and a ghostie flashlight!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Flare Gun and Energy Drinks",
+     "items": [
+      {
+       "text": "Coming across from the public_testing branch, we have the new Flare Gun and Energy Drink items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The flare gun can be bought from the in-game shop and provides a way to fight back against monsters. Beware though, they are only a single shot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The energy drink item can also be bought from the in-game shop and gives you a temporary speed boost, great for escaping monsters like wickerman.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Clothing arrives in Labyrinthine",
+     "items": [
+      {
+       "text": "Also coming across from the public_testing branch is clothing. Most of the clothing was designed by members of the community via a competition that was announced on both Discord and Social Media.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clothing can be found the same way as hat cosmetics, with a few unique variations being hardcore-only.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QoL and Misc changes",
+     "items": [
+      {
+       "text": "Finally, we have a bunch of misc changes that should improve players experiences. Here's a few of the most noticeable ones:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zeke and Kate now blink",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blueprints spawn much more frequently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map exclusive cosmetics now spawn much more frequently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The AI will camp much less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The spawnpoints on the backrooms have a wall to prevent instantly being attacked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daily Objectives are now player-based so you won't all have to complete the same objectives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customisation is now ordered by an internal sorting rather than order of obtaining",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Dunce Hat and Ghostie Jersey is available to buy from the in-game store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now find Aviator Glasses and a Tin Foil Hat on the trenches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The manor now has 4 Monocles to find",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two brand new flare-gun related achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Cases can now have up to 10 monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The level-cap has been removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Cases are now much cheaper to generate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's a new variant monster lurking in the Crypts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Duplicate Blueprints now award tickets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved AI navigation overall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Items are now much easier to pick up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some monsters will now Idle around the map rather than constantly moving around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes and Performance tweaks",
+     "items": [
+      {
+       "text": "We have fixed a whole host of bug fixes and improved several systems that could affect performance. We have also completely reworked how we handle player's loading into the game which should fix the \"endless loading\" screen some people have had issues with. You will now also see a loading indicator in the loading screen when entering a case or chapter which will show you who the game is waiting for. There are also some fixes for UI scaling which should help people on resolutions that are out of the ordinary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4589754330750891696"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-27T17:24:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.471Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.639Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2022-07-21",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Bugfixes and some small changes.",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-07-21T12:55:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with levels resetting for some users",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with being able to equip custom items while downed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where lighting wouldn't affect hats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a generation problem with submazes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added localisation for trench objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some more anti-cheating measures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a few lighting issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the pedestal puzzle in the bamboo forest, added the correct sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing frame drops (particularly in the manor)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance in manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ghosts now ignore other monster collisions (this prevents them getting stuck on each other)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a de-sync issue that could occur on the manor paintings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added collider to some doors in the manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where controllers couldn't drag (cryptex/paintings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where monsters could get stuck in certain mazes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localisation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could occur with checkpoint loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pigman's stun (after running into a wall) has been reworked to be less janky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some missing colliders in the sewer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 13,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4598755821865120153"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-21T12:55:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.470Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.638Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2022-07-15",
+   "gameId": "labyrinthine-133409",
+   "displayName": "The Case File Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-15T19:11:47.000Z",
+   "notes": [
+    {
+     "title": "The Case File Update",
+     "items": [
+      {
+       "text": "This update focuses on bringing more depth to the case files and addresses the length of Chapter 5. Here's what has come to the game:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4 new case files (maps) each with their own new monster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Randomised objectives for most cases, for example you may now need to destroy effigies on the unkept hedges rather than find and place seals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daily Objectives that refresh each day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new in-game store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tickets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glowstick Skins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom Cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hardcore Cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Checkpoint system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 5 rework.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A ton of fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A ton of improvements to performance and visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New sounds and misc QoL changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Serverlist and public lobby options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New level cap (lv100).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Let's go through some of these in more detail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The New Cases",
+     "items": [
+      {
+       "text": "Up first we have the four new cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Manor - Unlocked at Level 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This spooky old manor has some surprises for those who dare to enter it's hallowed halls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bamboo Forest - Unlocked at Level 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This once sacred forest is now home to an evil that taints it's ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trenches - Unlocked at Level 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The soldiers stationed here fled not from the enemy, but from the malevolent trench stalker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unlocked at Level 10: This one we will leave as a bit of a surprise for people to find for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Daily Objectives",
+     "items": [
+      {
+       "text": "Daily Objectives bring a new set of challenges. These incentivize players to join each other's games and also give some direction as to which mazes are required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tickets, The Store and More!",
+     "items": [
+      {
+       "text": "As mentioned, tickets can now be obtained. They can spawn in any map so keep an eye out while exploring! You will also get tickets from completing daily objectives and regular case files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What use is currency without somewhere to spend it? Welcome to the store! Here you can buy cosmetics as well as handy single use items that can be the difference between win or fail on those particularly difficult cases. Simply buy the item, equip it in one of your loadout slots and it will spawn in game by the backpack at the start. Right now, only the host can equip items in the lobby, but once in game, anyone can use them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While it may appear limited at the moment, we will be bringing more items over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tired of regular boring old glowsticks? Here's an example of what you can buy at the in-game store. They come in all of the standard colours and yes, they are still throwable!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Custom Cases",
+     "items": [
+      {
+       "text": "The new custom cases system allows you to generate your ideal maze for a small ticket cost. Want to play a very small map on the manor against 5 pigmen? Of course you do, you masochist. Well now you can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can unlock more maps by finding a blueprint in random cases. The blueprint will unlock the type of map you found it in. They only appear in safe houses for now. Enjoy the hunt!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters are unlocked by simply completing 10 cases where that monster was present.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hardcore Cases",
+     "items": [
+      {
+       "text": "Once you reach level 10, similar to rare cases, you have a chance for a hardcore case to generate. This case modifier will bring out the teamwork in the group by providing a challenge with higher stakes. There will be a unique hardcore-only cosmetic somewhere in the map, however, you will have zero lives and failing to complete it means the case will be gone forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We think the new cosmetics are worth the extra risk!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Checkpoint System",
+     "items": [
+      {
+       "text": "Have to leave for the night? Just one objective away? No problem anymore. We've gone ahead and built a fully functioning Checkpoint system that will allow you to save your progress and return with friends whenever you're ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simply back out to the lobby and you will see a little orange checkpoint icon next to the chapter you're saved on. To resume the game, select that chapter and hit \"Continue\" rather than \"Start Game\". You will be back to the nearest checkpoint with all your completed objectives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 5 Rework",
+     "items": [
+      {
+       "text": "Chapter 5 has had some really mixed reviews, which we always expected. However, after watching more and more people give constructive feedback, it appears the size of the level is the biggest issue. We get it, it's something we commented about here https://www.valkogames.com/march-2022-developer-update/. We weren't going to change it at the time but as we've watched more people play, we thought it's best that we at least reduce the length (It regularly takes people over 1 and a half hours!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This rework was focused around condensing the map, removing more of the \"sluggish\" and repetitive bits and overall streamlining the direction for players. We wanted to make it clearer what the player is supposed to do, while also preventing the amount of backtracking in the previous version. We think this new version will be much more friendly to players experiencing it for the first time and also a refreshing new play through for those who have already completed it. If you didn't like chapter 5 before, give this reworked version a go and let us know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "And Finally, Discord",
+     "items": [
+      {
+       "text": "As always, we're hoping to hear people's feedback on the changes, preferably on our discord. We also have players regularly creating lobbies on the official discord, so it can be a great place to meet up with others! Valko Game Studios - Official Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4937651144689818189"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-15T19:11:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.469Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.638Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2022-04-16",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Labyrinthine Easter Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-16T12:45:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch brings seasonal easter-themed cosmetics to the game, as well as reworks to maze sizes in the cases gamemode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Easter Cosmetics",
+     "items": [
+      {
+       "text": "In total, there are 6 cosmetics to find. These will appear in place of regular cosmetics at a 50% chance. Existing cases will be elligible so if you have saved a rare case, it may now have a cosmetic! These will be findable until the 22nd of April but will be wearable all year round. Happy hunting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Easter Eggs",
+     "items": [
+      {
+       "text": "We've added a little \"easter egg\" that will run until the 22nd of April. They should put a glow on your face.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Case File Size Changes",
+     "items": [
+      {
+       "text": "We decided to bring forward the map size changes we had planned for the case file update. This should significantly reduce the total map size so they should be much quicker to complete. This makes the cases gamemode much more beginner friendly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed Double interaction bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed voice slider bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed glowsticks so if you don't have infinite glowsticks on, they will fade over time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to right click cases to zoom (button press on controller)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed UI scaling in lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented gates, roots and ghosts from spawning in cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Easter cosmetics (from the 15th until midnight on the 22nd).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"easter egg\" for easter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance of glowsticks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated sizing formula for generating cases to drastically reduce map sizes. (Only applies to new cases)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new objective spawn points for several maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5493837466486550810"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-16T12:45:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.468Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.636Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2022-04-05",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix for objective items not being interactable in some cases",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-05T15:53:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue preventing cases from being completed due to certain objectives not being interactable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved how volume sliders work",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed weird rotations when completing cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4347669995478883671"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-05T15:53:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.468Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.636Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2022-04-01",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small patch to fix a few issues",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-01T17:23:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a few issues with colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some lighting issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where cameras could be tilted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue preventing you from choosing certain hats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed double highlighting when choosing cosmetics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enabled unique hat for sewers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed corn material so it doesn't react weird with light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4347669995464543155"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-01T17:23:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.467Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.635Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2022-03-31",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Several Fixes and Improved Controller support.",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-03-31T16:52:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with end screen fonts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused several AI to break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with animations that likely caused a crash when spectating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the cabin in chapter 2 to act like a safe house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause the crocodile to go invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause the player to be invisible when looking in certain angles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with czech localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cosmetics sometimes not spawning in at the start of a case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug where you could die multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed leech over-stretching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the audio popping at the start/end of a match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crocodile no longer heads to the players last position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed \"blood\" screen effects when being killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the leech would appear \"stiff\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added glowstick collision noises",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed monster kill animation ground detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoothed the kill animation transition for the swamp dog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where leeches didn't disengage properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor localisation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a couple trees from Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more colliders to the 2nd water area (no more climbing on the sides )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Altered player camera position (may change, fixes an issue with interactions being an issue)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mosquito is now faster but disengages quicker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed font in localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clothes lines in chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebaked lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several bugs with AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled wrapping on the \"reviving\" text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where pigman's AI could break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Massively improved controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabled full steamdeck support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Dutch translations turning to French (still missing part of the translation for Chapter 5, will have that out soon)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few issues with Chinese translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 21,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4347669995460820621"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-31T16:52:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.467Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.635Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2021-12-21",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Fix for monsters",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-21T12:35:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where monsters could sometimes become passive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5320438099054003797"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-21T12:35:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.466Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.634Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2021-12-16",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Fix for uncompletable maps",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-16T23:11:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small fix to prevent maps from losing their exits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/5320438099037407162"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-16T23:11:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.466Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.633Z"
+  },
+  {
+   "id": "labyrinthine-133409@post-2021-11-11",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Crypt Zombies Fixed + Customisation drops more random",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-11T15:57:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue with crypt zombies not being aggressive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made customisation more random (people got a lot of purple beanies)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several smaller performance fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revive cursor should no longer appear on alive players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance of cornfields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4971405952701312107"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-11T15:57:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.465Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.633Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2021-11-02",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small update to fix reviving and other issues",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-02T17:32:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Revive should now work correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can't self-revive now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the speed of the pedestal puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Witch stun improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue preventing you from escaping the cornfields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4186652357042913230"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-02T17:32:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.465Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.632Z"
+  },
+  {
+   "id": "labyrinthine-133409@hotfix-2021-10-31",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Hotfix for Chapter 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-31T22:29:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed missing vegetation in chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Bush LODs in chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4186652357036379588"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-31T22:29:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.464Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.632Z"
+  },
+  {
+   "id": "labyrinthine-133409@major-2021-10-30",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Labyrinthine Update 31/10/21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-30T23:57:44.000Z",
+   "notes": [
+    {
+     "title": "Changelog below",
+     "items": [
+      {
+       "text": "Improved Network Interpolation (i.e. people should jitter less)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the halloween items so they spawn on the correct date",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monsters screaming will now cause screenshake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now play an animation when reviving someone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where crypt and cornfields were rare at lv5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the chance for a cosmetic to spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Revive changed to require holding E instead of pressing it once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anniversary hat added for those who purchased the game in the first year of release",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where some monsters would scream twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the well objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shows \"A player just died\" when infinite lives is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Notes now say Read instead of Pickup when examining them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the background of the early access screen being blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked smiley's kill range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Massively improved performance on the corn maze map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corn leaves on the ground should be static",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"safety net\" to lobby so that failing to load an avatar won't cause a disconnect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a navigation issue that could occur on certain maps causing the monsters to \"walk in place\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dissolve effect changed for effigies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters should now be able to enter the tree puzzle room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The cursor should always unlock when the go to lobby button appears (fixes an issue of not being able to click it when in bleedout)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved clubfoot's vision detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved scarecrow's vision detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lives should now reset between story chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the lights out puzzle in the corn maze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential fix for duplicated lobbies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters can no longer kill you when they are killing another player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bunch of smaller bug fixes not listed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 7,
+    "balance": 1,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4186652357032963313"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-30T23:57:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.464Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.631Z"
+  },
+  {
+   "id": "labyrinthine-133409@patch-2021-10-19",
+   "gameId": "labyrinthine-133409",
+   "displayName": "Small Patch to fix some issues",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-19T19:05:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fixed unlimited lives not working for story",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed navigation issues in the forest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where monsters would walk into the forest safe house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed safehouses spawning next to each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed font issues with Chinese Translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a vignette when a monster screams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Enabled cloud saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1302240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1302240/view/4698935641774308205"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-19T19:05:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1302240",
+      "checkedAt": "2026-11-13T03:24:27.463Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:57.630Z"
+  }
+ ],
+ "issues": []
+}

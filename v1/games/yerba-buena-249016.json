@@ -1,0 +1,496 @@
+{
+ "game": {
+  "id": "yerba-buena-249016",
+  "igdbId": 249016,
+  "name": "Yerba Buena",
+  "cover": {
+   "imageId": "cobxq0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobxq0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5v9e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5v9e.jpg"
+  },
+  "ps5Release": "2026-05-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "yerba-buena-249016@1.3",
+   "gameId": "yerba-buena-249016",
+   "displayName": "Patch 1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-23T10:32:50.000Z",
+   "notes": [
+    {
+     "title": "Hi all!",
+     "items": [
+      {
+       "text": "Here's the complete list of what Patch 1.3 brings in Yerba Buena available now on all platforms (Steam, MS Store, XBOX Series X, PS5) 🧩 [img src=\"{STEAM_CLAN_IMAGE}/44021406/3d158e275f4a1072285acc33feb92156e193ba4e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Quality of Life & User Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a \"Limit FPS\" option under Graphics settings for Steam, which is available and effective when VSync is turned off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new toggle to turn Subtitles On/Off in the General Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the skip cutscene user experience by immediately showing the UI with a progress bar and background when pressing any button, indicating it is a \"hold\" action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the new notification exclamation mark would remain stuck on Journal prompts even after they had been read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed empty subtitle boxes that would occasionally appear on the screen..",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stability & Performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved multiple critical issues where players could get trapped in endless falling or death animations, including sequences in Bank Heist 2 and DestructibleIntro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a major bug that caused the entire level to disappear if the player died on the transition platform between the Brewery and Amusement Park 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Brewery where a saving animation would play without actually creating a save point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay & Progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bugs that prevented players from moving after certain cutscenes or caused them to get permanently stuck after puzzle resets in the Brewery and Amusement Park 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the very first copy interaction on a mission would not properly copy the trait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed broken laser beams at the top of the Pillars puzzle in the Bunker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exploits that allowed players to skip early puzzles in RobotBasics or complete the BouncyArcade puzzle incorrectly after only one basket was made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level & World Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing physical barriers and colliders to various objects, such as Jorge's desk and the Glitchy Swan Ride, to prevent players from falling out of bounds or getting blocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cleaned up floating objects found throughout the Bank Heist level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed flickering textures and Z-fighting at the top of the stairs in the building in front of the Convenience Store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Camera & Visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented the player camera from clipping through walls when getting too close.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where the briefcase would persist on screen after navigating to the main menu and back in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 11,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2330110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2330110/view/1839041357026317"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-23T10:32:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2330110",
+      "checkedAt": "2026-11-13T03:36:45.147Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-23T10:32:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2330110",
+      "checkedAt": "2026-11-13T03:36:45.148Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-23T10:32:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:45.503Z"
+  },
+  {
+   "id": "yerba-buena-249016@1.2",
+   "gameId": "yerba-buena-249016",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-09T10:20:56.000Z",
+   "notes": [
+    {
+     "title": "Hi all!",
+     "items": [
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Here's the complete list of what Patch 1.2 brings in Yerba Buena 🧩",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stability & Performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved overall game stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several crashes that could occur during boss fights, puzzle completion, cutscenes, level transitions, and object interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay & Progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed multiple progression blockers and softlocks throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issues where certain puzzles, objectives, and scripted events could fail to progress correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where players could become trapped, endlessly respawn, or be unable to continue after specific gameplay scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved reliability of checkpoints, save points, and respawn locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level & World Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed numerous collision issues across environments, puzzles, and interactive objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed multiple areas where players could leave the playable space or become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected environmental issues such as floating props, misplaced geometry, clipping objects, and visual inconsistencies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved puzzle interactions and object behavior throughout several levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Boss Fight Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several issues affecting boss fight progression and phase transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved unintended interactions that could disrupt boss mechanics or progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Camera & Controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed camera clipping and visibility issues in several locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various controller and input-related issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved interaction prompts and tutorial guidance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "User Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues causing journal entries, notifications, and dialogue elements to display incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved overlapping, cropped, and improperly formatted UI text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved menu and HUD behavior across multiple resolutions and aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several issues related to language switching and interface updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing translations and incorrectly localized text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved font rendering, text formatting, and special character support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enhanced right-to-left language support, including text alignment and punctuation behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visual Polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved visual glitches involving textures, object attachments, and environmental effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed various graphical artifacts, clipping issues, and visual polish items throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 17,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2330110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2330110/view/1834602721201363"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-09T10:20:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2330110",
+      "checkedAt": "2026-11-13T03:36:45.146Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-09T10:20:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2330110",
+      "checkedAt": "2026-11-13T03:36:45.147Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-09T10:20:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:45.502Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,868 @@
+{
+ "game": {
+  "id": "this-bed-we-made-218674",
+  "igdbId": 218674,
+  "name": "This Bed We Made",
+  "cover": {
+   "imageId": "co65u9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co65u9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1vpj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1vpj.jpg"
+  },
+  "ps5Release": "2023-11-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "this-bed-we-made-218674@post-2024-04-09",
+   "gameId": "this-bed-we-made-218674",
+   "displayName": "Patch Notes for April 9, 2024",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-09T14:36:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Corrected the issue where lights would turn off at a distance on medium quality settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed the problem of stains disappearing when hovered over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rendering issues on ultra settings have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse sensitivity instability has been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The method for detecting optimal resolutions has been refined.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1243850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1243850/view/5756237364326566004"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-09T14:36:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.439Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-09T14:36:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.439Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-09T14:36:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:14.048Z"
+  },
+  {
+   "id": "this-bed-we-made-218674@post-2024-02-27",
+   "gameId": "this-bed-we-made-218674",
+   "displayName": "Patch Notes for February 27, 2024",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-27T18:53:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The breakroom door no longer remains open in the basement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lipstick can still be opened after inspecting it and exiting immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the vent puzzle issue that occurred when exiting the special inspection while adjusting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Local dialogue and eavesdropped subtitles now display correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The pendulum now moves in the basement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The tutorial no longer remains on screen after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's now possible to scroll through progression entries after switching between them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4K displays now automatically adjust screen percentage for enhanced performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blood trails no longer persist after loading a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The highlight on the typewriter case is removed upon opening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sophie now only says \"You need a screwdriver\" if you interact with the screws.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bench in the basement is no longer accessible for walking on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The laundry bag's interaction point is now correctly positioned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The highlight for the deciphering puzzle has been made more visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1243850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1243850/view/5728086065201004270"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-27T18:53:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.438Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-27T18:53:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.438Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-27T18:53:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:14.047Z"
+  },
+  {
+   "id": "this-bed-we-made-218674@post-2023-12-20",
+   "gameId": "this-bed-we-made-218674",
+   "displayName": "Patch Notes for December 20, 2023",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-20T20:24:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed bug that caused the second phone call in room 505 to trigger too early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused an acolyte \"\"ghost\"\" to appear when reloading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused Bernard to have his \"\"exasperated\"\" idle in inappropriate moments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused the vent puzzle to be blocked on the gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused the Texas letter to reappear after throwing it away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused the player to get stuck in the elevator in the lobby after loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused lights to be off when loading a save from another part of the game during the power outage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed room 509 phone cord physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera glitch at the end of the last phone call with Andrew",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the ability to put back the ice pick and the tip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed fuse box behavior so it no longer automatically removes the ice pick from inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Saving...\" UI when auto-saving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various lighting bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1243850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1243850/view/5410576585127409612"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-20T20:24:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.438Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-20T20:24:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.438Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-20T20:24:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:14.046Z"
+  },
+  {
+   "id": "this-bed-we-made-218674@post-2023-11-15",
+   "gameId": "this-bed-we-made-218674",
+   "displayName": "Patch Notes for November 14, 2023",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-15T01:05:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed collision that was preventing Bible in 506 and Do not Disturb Sign in 504 to be interacted with",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player cannot step on walls in Lobby Corridor anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sophie can no longer ask Wendy about the grafiti if she's already figured out who did it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed second \"inspect\" interaction on letter from Andrew's mom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finding the White Cat match book in Beth's locker no longer creates a clue journal entry for room 507",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Annes chest's key is harder to break with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed interaction order on Anne's chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Light fixture near Elevator now turns off during Power Outage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added back up saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various clipping fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed disappearing light in room 507",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted start position and camera distance for various objects in inspection mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted opacity of god rays in room 509",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some problems with highlights on menu buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that allowed players to get stuck in closets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented the 2nd phone call from triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for deciphering puzzle bug on controller and PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Removed Syracuse thought on game score sheet in the break room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug with toggle text for open newspaper in the break room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 2,
+    "other": 9,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1243850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1243850/view/5322753221336502133"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-15T01:05:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.437Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-15T01:05:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.437Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-15T01:05:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:14.045Z"
+  },
+  {
+   "id": "this-bed-we-made-218674@post-2023-11-08",
+   "gameId": "this-bed-we-made-218674",
+   "displayName": "Patch Notes for November 7, 2023",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-08T01:46:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed various localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision and clipping issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed display mode issues in the Initial Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cursor offset issue that occurred with some screen resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the dog in the family picture in 507.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed condition problem that prevented the \"Live To Fix Another Day\" achievement from triggering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensured that clue selection is not possible on Candle Stash Plan until you’ve found the Candle Stash Note.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the interaction zone for the candle in the laundry room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed “Leslie Boswell” mistake from Sophie’s journal entry about the Adam or Eve pulp fiction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug with the saving and loading of the blood footsteps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing facts that led to Maurice talking about Paul first even though Beth was the acolyte.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1243850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1243850/view/5302486387992700474"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-08T01:46:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.436Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-08T01:46:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.436Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-08T01:46:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:14.044Z"
+  },
+  {
+   "id": "this-bed-we-made-218674@post-2023-11-03",
+   "gameId": "this-bed-we-made-218674",
+   "displayName": "Patch Notes for November 3rd, 2023",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-03T17:49:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added more supported resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various asset issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the ability for the 0 on the numpad to trigger the game's ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocked all input during the Consequences Warning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented the \"Game completed\" achievement from triggering when talking about the chocolate shoe to Andrew.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensured both Eugene achievements don't trigger simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the hint after opening the chest in 507 so Sophie always suggests calling the acolyte for help.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made letters in the typewriter case non-throwable until they've been read.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the uninteractable 509 safe bug that occurred after looking at the code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Sophie's dialogue about Bernard at the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed some journal entries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the ability to exit the credits by pressing the pause button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the physics of the telephone cord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1243850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1243850/view/5288974951210870748"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-03T17:49:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.436Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-03T17:49:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1243850",
+      "checkedAt": "2026-11-13T03:34:11.436Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-03T17:49:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:14.044Z"
+  }
+ ],
+ "issues": []
+}

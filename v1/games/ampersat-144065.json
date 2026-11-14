@@ -1,0 +1,470 @@
+{
+ "game": {
+  "id": "ampersat-144065",
+  "igdbId": 144065,
+  "name": "Ampersat",
+  "cover": {
+   "imageId": "co4paz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4paz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ary1y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ary1y.jpg"
+  },
+  "ps5Release": "2021-08-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ampersat-144065@1.1.3",
+   "gameId": "ampersat-144065",
+   "displayName": "Update 1.1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-06T23:54:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It was heartening to see so many people (bloody thousands!) playing Ampersat during the past week while it was free. Thank you for all the lovely comments, I'm very happy so many enjoyed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deloris found an honest-to-goodness bug and since I had to fix that, I made some other quick updates to go along with it, to address some requests that were recently made. Here's what's changed:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boulder speed fixed in Vice Level 2. This was, stupidly, linked to your frame rate and since they are faster these days it became a big problem. It's now frame rate independent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lumi managed to dash behind the targets in the same level, so I've made the colliders thicker there to prevent it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While I don't have the time to do a full keybinding menu, sorry, I did add some alternate keys to make life easier for non-qwerty users. You can now also use the following keys:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Arrow keys - Movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ctrl/Right Shift - Dash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Backspace - Inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter - Interact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\\\ - Zoom/Map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "/ - Switch Spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One player expressed frustration about status effects, particularly when using melee. Sure, they suck, but that's the point. Anyway, I've reduced their duration considerably (30-50% less) and increased the period of immunity between infections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the amount of XP lost when dying to 1/5 (previously was 1/3), and GP loss is now between 40% and 60% (previously 50-66%). Remember to stash your gold in the Inn (and upgrade it to stash more) to blunt the impact!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A couple of players thought The Incubator levels were too dark and hurt their eyes. I increased the ambient light in them by a little and increased the range of light from the flares.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1356040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1356040/view/1803527891846336"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-06T23:54:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1356040",
+      "checkedAt": "2026-11-13T03:14:46.470Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-06T23:54:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1356040",
+      "checkedAt": "2026-11-13T03:14:46.470Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-06T23:54:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:54.279Z"
+  },
+  {
+   "id": "ampersat-144065@1.1.2",
+   "gameId": "ampersat-144065",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-10T12:18:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks to all the people who have played Ampersat so far! It's put me in a tweaking mood, though this is probably the last one for a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Italian translation of gem attach message (thanks CinanzonRoll)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked: Spike traps in the Well won't damage the player, they just apply status effects. (thanks to Eatitup_86 for prompting me on this and the next one)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Spike traps shouldn't appear below the Well entrance (unless in a wide open area or separate room).: [BTW for those who haven't played the old Rogue ASCII games, these arrows, i.e. ^^ are how traps looked. And walls were hash marks ( # ), floors were periods ( . )]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Enemy HP/Status indicators and Pickup indicators can now be seen through level gemoetry. I can't quite remember why I liked that these things seemed \"in\" the world and could be blocked from view, but I can see how it hinders information (especially with that hidden gold amiright?).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: When unequipping Max HP items, if Current HP is above Max HP it will be lowered immediately to Max HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Similar to last update's dying area effect tweak, prevented enemies from making a final melee or ranged attack while dying. It was pretty cool when it happened, but I concede it could be unfair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: The dryrots in Tiamat's cave thin out a little earlier if you're getting swarmed. (thanks to Caddlebear)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Mac version is offline due to a compatibility issue with Apple Silicon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1356040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1356040/view/4348799082208331890"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-10T12:18:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1356040",
+      "checkedAt": "2026-11-13T03:14:46.469Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-10T12:18:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1356040",
+      "checkedAt": "2026-11-13T03:14:46.469Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-10T12:18:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:54.278Z"
+  },
+  {
+   "id": "ampersat-144065@1.1.1",
+   "gameId": "ampersat-144065",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-09T13:58:08.000Z",
+   "notes": [
+    {
+     "title": "1.1.1 Changelist",
+     "items": [
+      {
+       "text": "Fixed: A collider in Stone Dungeon Level 4 sometimes blocking doorway unless shot (thanks Radiosanchezz).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Re-enabled spawners on Ice Tower Level 4 (thanks Reyom89 on this and the next two).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added: Secret Chest Found status on level minimap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added: Numerical HP value in Health bar. This was on the Stats page but can be useful there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added: Hint message in cold room of Ice Dungeon Level 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked: Less damage from ice and chaos rivers. Because they're kinda nasty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Radius of area effect slightly reduced for Carrion Crawler, Harmless Mote, Incubator destructible poison walls, Destructor's Bombs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Harmless Motes don't cause Weakness. I thought this was amusing when you need to melee them for a bonus word. Many did not agree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Touch-damage enemies can no longer do damage while dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Wake-up radius of Xenophage eggs slightly reduced. You don't NEED to wake them up, you know. Well, a couple of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked: Increased price of Unspek's Death Shroud. I'd been thinking for a while it was a little too good value, and yeah it is.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known issue: If you remove an item that provided added HP, your current HP can remain above your Max HP. Will likely change this if I do another update, for now enjoy the tiny boost!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known issue: If you are Silenced but still try rapid-firing your staff, the overheat bar can rise. This was intentional - my logic was you're still drawing on the staff's power to attempt to cast the spell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known issue: Completed Bestiary Achievement doesn't trigger until you check the Bestiary (either during your final battle or by Continuing the game afterwards). This was intentional, as you don't \"write\" the bestiary entry until you open the book. Note that your Bestiary also remains completed when starting a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known issue: The bonus word chest does not appear on Level 4 of the Chaos Tower. This was intentional, a somewhat cruel gag about chaos. I may simply be too Chaotic Evil to ever change this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1356040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1356040/view/4348799082204942364"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-09T13:58:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1356040",
+      "checkedAt": "2026-11-13T03:14:46.468Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-09T13:58:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1356040",
+      "checkedAt": "2026-11-13T03:14:46.468Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-09T13:58:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:54.278Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "0937aa7004d7",
+   "text": "If you remove an item that provided added HP, your current HP can remain above your Max HP. Will likely change this if I do another update, for now enjoy the tiny boost!",
+   "status": "open",
+   "firstReleaseId": "ampersat-144065@1.1.1"
+  },
+  {
+   "id": "ad347c689dfd",
+   "text": "If you are Silenced but still try rapid-firing your staff, the overheat bar can rise. This was intentional - my logic was you're still drawing on the staff's power to attempt to cast the spell.",
+   "status": "open",
+   "firstReleaseId": "ampersat-144065@1.1.1"
+  },
+  {
+   "id": "37f17f492ca0",
+   "text": "Completed Bestiary Achievement doesn't trigger until you check the Bestiary (either during your final battle or by Continuing the game afterwards). This was intentional, as you don't \"write\" the bestiary entry until you open the book. Note that your Bestiary also remains completed when starting a new game.",
+   "status": "open",
+   "firstReleaseId": "ampersat-144065@1.1.1"
+  },
+  {
+   "id": "1d1176f47401",
+   "text": "The bonus word chest does not appear on Level 4 of the Chaos Tower. This was intentional, a somewhat cruel gag about chaos. I may simply be too Chaotic Evil to ever change this.",
+   "status": "open",
+   "firstReleaseId": "ampersat-144065@1.1.1"
+  }
+ ]
+}

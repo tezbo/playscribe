@@ -1,0 +1,2521 @@
+{
+ "game": {
+  "id": "wreck-runners-395285",
+  "igdbId": 395285,
+  "name": "Wreck Runners",
+  "cover": {
+   "imageId": "coc0b9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc0b9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5yib",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5yib.jpg"
+  },
+  "ps5Release": "2026-07-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "wreck-runners-395285@1.1.2",
+   "gameId": "wreck-runners-395285",
+   "displayName": "Hotfix 1.1.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-26T18:54:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the winch becoming unusable after placing an augment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gaps in the ORCA’s collision that allowed salvage to fall out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unintended damage to salvage from the ORCA and the barge’s extraction opening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issues with Fogwailers, their valves, and dying large birds that could violently launch vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Fogwailers teleporting when detaching from the ORCA. They now fly up and away on death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Fogwailer shockwaves activating after the Fogwailer had died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed players getting stuck in .50 cal, cannon, and rocket booster augments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flare projectiles sticking to objects and causing erratic physics. Flares now bounce instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gravity wells being consumed by the barge’s extraction opening while winched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed paranormal visual effects failing to appear while paranormal experiments were active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Trustwell container clipping into a rock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed voice chat failing to reconnect after a temporary network interruption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unnecessary loading work whenever wreck parts spawned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential crash during graphics pipeline compilation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the Shrink Ray slightly more common in the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated crash reporting, added Linux crash diagnostics, and fixed Linux deployment issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed being able to use tap instead of hold in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed augments becoming unavailable in store prematurely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1473960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1473960/view/1844751498227865"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-26T18:54:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.772Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-26T18:54:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.772Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-26T18:54:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:36.947Z"
+  },
+  {
+   "id": "wreck-runners-395285@major-2026-09-18",
+   "gameId": "wreck-runners-395285",
+   "displayName": "The BIG Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-18T17:04:30.000Z",
+   "notes": [
+    {
+     "title": "The BIG Update",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46041302/30a736c5d052a72d53a448cbc60b36bd5e12f7ff.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey Runners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get the crew back together. Wreck Runners just got a serious upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve expanded the game across the board with new places to explore, new progression and customization, new threats, new gear and abilities, and major improvements to the way Wreck Runners looks, feels, and plays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There’s a lot here. Giant floating Temples have appeared throughout the Triangle. Paranormal salvage now has an entirely new progression system. The Scrapjack can launch you through the air. Underwater exploration is considerably more dangerous. You can build and customize your Runner in new ways, and we’ve made major improvements to the UI, performance, audio, multiplayer, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Something New Is Rising",
+     "items": [
+      {
+       "text": "Giant Floating Temples have appeared throughout the Triangle, adding an entirely new type of location to explore and salvage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "These eerie ruins join wrecks and Trustwell bunkers as major destinations during your runs. There’s new salvage to recover, enemies to contend with, and paranormal sources to bring back for experiments at the Trustwell Store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "They make quite an entrance, too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Paranormal Progression",
+     "items": [
+      {
+       "text": "Paranormal salvage now has a much bigger role in your runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now run Paranormal Experiments in the lab under the Trustwell Store. As you discover paranormal sources throughout the Triangle, you can unlock their attributes and use the experiment system to influence valuable salvage during your runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can discover these paranormal sources within the Temples, giving you another reason to explore these new locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46041302/f0ee14568728dbe9395bbf4aa8c4601350b94ade.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Jack Up",
+     "items": [
+      {
+       "text": "Your Scrapjack has a new trick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hold Grab + Throw to charge Jack Up, then release to launch yourself into the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reach higher ground, clear obstacles, move through the world in new ways, or just find out how far you can send yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://static.wixstatic.com/media/8d5eaf_6811920040454c7ebe838bff9cfab35e~mv2.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Environmental Hazards",
+     "items": [
+      {
+       "text": "The Triangle has a few new ways to ruin your day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New environmental hazards can appear during your runs, creating dangerous situations for both Runners and the ORCA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some are considerably harder to ignore than others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "What’s Your Color?",
+     "items": [
+      {
+       "text": "Trustwell Clothing has expanded its selection with 20 total outfit colors, including 16 new options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing your look is free, and you can find the new customization area just outside the Trustwell storefront.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://static.wixstatic.com/media/8d5eaf_f2c2feeb4ecb4298aeecdcb3de26b0b0~mv2.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Build Your Runner",
+     "items": [
+      {
+       "text": "Personal upgrades are now available in the Trustwell Store, giving you more control over how your Runner develops during a run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Upgrade your",
+     "items": [
+      {
+       "text": "Movement Speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oxygen Capacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stamina",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each upgrade can stack up to 100%, and different upgrades can be combined to build around how you want to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your currently applied upgrade effects can be viewed from the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Gear, Gadget Buffs and More",
+     "items": [
+      {
+       "text": "Trustwell has expanded its inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The new Farstriker sniper rifle is now available in the Trustwell Store, giving crews a new long range option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Existing gadgets have received a broad balance pass as well, with buffs across much of the gadget lineup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"https://static.wixstatic.com/media/8d5eaf_037b770ecfb24323b2ec4d13c38f5ad7~mv2.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Something Is Hunting Below",
+     "items": [
+      {
+       "text": "Underwater exploration just got considerably more dangerous.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fogwailers can now attack the ORCA underwater, and underwater wrecks can contain two new hazards, including explosive bombs and a new anglerfish enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Watch the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://static.wixstatic.com/media/8d5eaf_44100876d3934272adf8f2d56f6e8782~mv2.jpeg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Trustwell Lost Salvage",
+     "items": [
+      {
+       "text": "Trustwell has apparently misplaced some very valuable cargo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Consoles inside Trustwell bunkers can now unlock hidden Trustwell Lost Salvage containers somewhere in the Triangle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once revealed, the container appears in purple on the Lookout Station. Track it down and you will find a substantial salvage stash waiting inside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A Major UI Overhaul",
+     "items": [
+      {
+       "text": "We’ve improved the HUD across the game, with a redesigned compass, clearer ORCA and crew information, and improved menus and interaction prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New compass icons and threat indicators help you track what’s around you. Crew Haul separates carried and banked salvage, while Crew Funds breaks down earnings and spending. Interaction prompts show what you can do, and what’s stopping you when you can’t. There’s also a new downed ping to help your crew find you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"https://static.wixstatic.com/media/8d5eaf_23af9bfea44543cd9e4efd023774f499~mv2.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ORCA Improvements",
+     "items": [
+      {
+       "text": "Communication from the Lookout just got easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now ping directly from the Lookout Station, complete with updated sounds and icons to help crews communicate while searching the Triangle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "15 More Languages",
+     "items": [
+      {
+       "text": "We’ve added 15 languages to Wreck Runners, so even more of you can play in your own language. That includes in-game text, tutorial subtitles, and trophy and achievement descriptions. Welcome to the Triangle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arabic / العربية",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deutsch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Español latinoamericano",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Français",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Italiano",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "日本語",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Қазақ тілі",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "한국어",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polski",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Português do Brasil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Русский",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Türkçe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Українська",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "简体中文",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "繁體中文",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MIDI Support Has Arrived",
+     "items": [
+      {
+       "text": "For the musicians out there, PC players can connect a MIDI keyboard, guitar, or other MIDI-capable instrument to play the in-game instruments. Just open Settings, then Sound, and pick your hardware under Midi Input Device. It defaults to None.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "A New Sound Across the Triangle",
+     "items": [
+      {
+       "text": "New locations, abilities, hazards, and encounters all come with a fresh audio pass. Temples feature unique music and ambience, Jack Up has its own charge, release, and launch sounds, new environmental hazards have dedicated audio cues, and upgrades, collectibles, and underwater NPCs have all received additional audio refinements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "# Wreck Runners 1.1.1 Full Changelog",
+     "items": [
+      {
+       "text": "Locations and exploration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added four temple ruin layouts with salvage, enemy encounters, and ambient audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added floating temple islands with rising and settling sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added temple salvage and combat salvage, including spherical salvage pieces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Temples now appear throughout a run: one in Stage 1, two in Stage 2, and three from Stage 3 onward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added locked Trustwell containers and bunker terminals that reveal their locations through the lookout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added compass markers for unlocked Trustwell containers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added location-type labels to the lookout, including temples, bunkers, shipwrecks, and reanimation stations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enabled pinging while using the lookout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an extra room and staircase to an engine room layout, turning a dead end into a connected route.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added salvage placements in the Grand Staircase and ship lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corrected wreck and rock placement where they floated or intersected surrounding terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gaps, clipping geometry, and collision issues in vaults and cargo holds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy navigation links in cargo holds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing salvage in bunker secret rooms and a misplaced salvage-spawn area in the cult puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected audio volumes in the theatre, ballroom, vault, Grand Staircase, and other interiors so interior audio and pings behave correctly near entrances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several POIs where ambience was not playing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paranormal experiments and effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added collectible paranormal sources that can be placed in experiment chambers in the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an experiment board showing installed sources, their combined effects, chamber unlock stages, and instructions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Installed experiments apply their effects to valuable salvage when it is winched and adjust the global salvage-value modifier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added stage-based access to paranormal sources and experiment chambers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Sturdy, Frail, Tiny, Oxygen Tank, Speedster, Splitscreen, and Double or Bust paranormal effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Doubled Electric Skin damage and increased its charge time from 1.5 to 3 seconds, with matching charge audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Decay and Don't Let Go canceling each other when both affect the same salvage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced unnecessary processing for several paranormal effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted paranormal salvage-value drain rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the severity of Klutz.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Explosive's sensitivity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Home Sick, Hot Potato, and Bad Influence now deactivate when entering the vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Separation Anxiety and Shy now apply reduced friction to affected salvage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Auto Launch throwing salvage in the wrong direction or failing to launch when tether tension was low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hidden salvage no longer displays damage numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paranormal sources return to their chamber positions when the crew returns to the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the processing cost of Downer and inactive Zero Gravity effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player upgrades and customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added consumable Health, Stamina, Oxygen, and movement-speed upgrades to the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgrade effects persist through death and travel between stages. Restored upgrades from saved runs are returned as items on the ORCA's corkboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade consumables cannot be used inside the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade bonuses stack with additional uses of the same upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added purchased upgrade bonuses to the pause menu's statistics display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added player color selection in the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added upgrade-specific consumption animations, sounds, and colored effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Scrapjack and movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Jack Up, a Scrapjack boost jump: while grounded with an idle Scrapjack, aim at walkable ground and hold both fire and throw to charge a launch. Releasing early cancels the charge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jack Up launches away from the aim point, briefly reduces gravity near the apex, and ends on landing or impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Jack Up charge, launch, cancel, and low-gravity effects and sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jack Up height depends on how long the charge inputs are held. Releasing early launches a shorter jump; a full charge launches at full strength.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scrapjack targeting now follows the camera reticle more accurately, including when grabbing salvage beneath the ORCA or while standing near walls and corners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jack Up impacts can cause damage and ragdoll based on impact speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased glider duration to three times its previous duration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed gliders remaining attached to another player's body after a short deployment or cancellation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed active gliders being invisible to players who join during a deployment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Automatic ladder mounting now requires movement toward the ladder, reducing unwanted grabs when falling past one or dropping through the ORCA’s bow hatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented moving salvage from pushing riders through ceilings and other geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sprinting and swimming animation transitions, including recovery from ragdoll underwater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies and environmental hazards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Angler Fish enemies that navigate underwater spaces, pursue players, and explode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Angler Fish can be grabbed and thrown with the Scrapjack. Thrown impacts damage them, and pulling them above the water detonates them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added mine hazards to underwater encounters in submerged locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced Gullum swarm damage over time from 50 to 20.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the size and maximum visual intensity of elite Floater projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Limited how many players can attach to a Floater missile at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a visible health indicator to Floaters and enlarged their headshot hit area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corrected critical damage to Floater and Heavy heads and tanks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cannon shots requiring an extra hit to take down a Floater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added underwater movement support for Fogwailers and bubble effects for their underwater fog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted early-stage paranormal enemy modifiers and reduced encounter intensity in large locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed threat waves failing to spawn enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed airborne enemies spawning inside location geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gullum swarms pushing player meshes through the ground or the ORCA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gravity physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added low-gravity areas in cargo holds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added roaming gravity effects that lift players, salvage, and the ORCA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Roaming gravity effects avoid protected locations and the docked barge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons, gadgets, and equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a dedicated mounted-gun reload input: R on keyboard and Y on Xbox-style controllers. Reloading no longer also exits the seat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Added mounted-gun reload sounds, effects, camera feedback, and gun movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the mounted-gun reload action to the on-screen controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed mounted .50-caliber hit markers not appearing for the player firing on a client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoothed other players' mounted-gun aiming movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the anti-materiel rifle's aiming vignette and adjusted its aiming camera position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the rifle's icon, thumbnail, and animation setup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the rifle's appearance in the store and on the ground, and adjusted its projectile behavior for close-range headshots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted weapon damage and resistance values and corrected hitscan hit feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Antigravity bombs now stun and ragdoll eligible enemies for four seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased decoy grenade duration to 30 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Loot locators now continue searching for salvage after activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity wells prioritize valuable salvage, remain intact when winched, and drain battery while being winched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity wells now pull objects from their center of mass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased the damage-reduction charm's protection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed weapon pickups incorrectly stacking and item pickups selecting the wrong inventory slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pickups ignoring partially filled stacks and leaving duplicate-looking items in the world when an existing stack was full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed item material overrides failing to display correctly in packaged builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added another row of playable notes to instruments and updated their on-screen controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed an obsolete menu binding from the M key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ORCA, salvage, and progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced salvage weights and reduced the ORCA's maximum carrying capacity to match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed submerged salvage spawning without its underwater physics behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Scrapjack and barge highlights to temple salvage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed obstructing collision in front of the ORCA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vehicle impact-damage immunity now also blocks helicopter-blade damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the ORCA's propeller animation and restored repair-point smoke effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Purchased augments now persist between stages even if they were detached before travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Existing saved runs retain the augments recorded in their saved attachment slots when migrated to the updated save format.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the force geysers apply to the vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed geyser controller vibration continuing indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed salvage falling through the world when moved out through the back of the ORCA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Store and crew funds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the store layout, paranormal lab, secret area, item displays, and upgrade fridge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Store stock now includes at least one weapon, gadget, and personal upgrade, with the remaining stock selected using weighted chances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons taken from store shelves now return to their shelves if the player dies in the store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players retain their loadout items when respawning after a store death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed store item-return handling removing the wrong item during a swap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players now use separate hub spawn points instead of spawning on top of one another.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an itemized Crew Funds display for earnings, deductions, purchases, and deposits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "HUD and interaction prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the compass, Crew Haul display, vehicle status, player nameplates, and interaction prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added distinct compass icons for location types, vehicles, and crew members.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added nearby crew names to compass markers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added threat direction, progression, and incoming-wave indicators to the compass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crew Haul now distinguishes carried and banked salvage, with separate states for reaching the quota and banking enough to meet it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the barge departure and status display for late joiners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Discovery, mission, and action notices now appear below Crew Haul, with separate detail lines where needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Notices retain their reading time through loading and hidden-HUD periods; warnings take priority over queued discoveries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discovery messages identify shipwrecks, plane crashes, bunkers, containers, and temples.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interaction prompts now distinguish available actions, unavailable actions, and informational messages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unavailable actions show their requirements separately from the action name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added input-specific button symbols and progress feedback for hold interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Actions sharing a button now share a single button symbol while keeping both action labels visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radio prompts now update immediately when playback is toggled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Door prompts distinguish Open from Close.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item-swap prompts now identify the item being replaced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equipment action prompts now appear correctly after equipping an item, including on clients.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hold interactions retain their target until the hold ends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interaction targeting pauses during camera transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player nameplates use proximity, line of sight, and voice activity to reveal crewmate identities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected player-nameplate placement above the head.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed downed-player indicators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Employee of the Day portrait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Menus, settings, and controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Units setting with Automatic, Imperial, and Metric options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unit changes now update lookout distances and salvage weight labels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated pause-menu layout and statistics presentation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed pause and social menus failing to open correctly while occupying stations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed settings-menu focus after closing the gamma screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a controller Adjust prompt for sliders and option rows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "DualSense and DualShock controllers on Windows now display PlayStation button symbols.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed controller button symbols failing to initialize correctly at startup or after travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Languages and text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for Arabic, French, German, Italian, Japanese, Kazakh, Korean, Polish, Brazilian Portuguese, Russian, Latin American Spanish, Turkish, Ukrainian, Simplified Chinese, and Traditional Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added localized subtitles to tutorial videos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trophy and achievement descriptions are localized in new languages on all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added international font coverage and right-to-left text support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated HUD and menu fonts for consistent text sizing and weight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added translated names for all 45 paint colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Language changes now refresh paint names, salvage labels, quota text, and other displayed values without restarting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spanish and Portuguese regional settings select the available Latin American Spanish or Brazilian Portuguese translation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated credits and corrected credit formatting and spelling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio and visual effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added MIDI input support for playable instruments on Windows, with a MIDI Input Device selection in the audio settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added temple ambience, music, reverb, and floating-island movement sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added bunker-vat ambience and updated audio for gravity effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Angler Fish sounds and underwater explosion effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed ballroom ambience not playing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the range and overlap of some enemy ambient sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the clarity of long-distance voice echoes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced bass in the Scrapjack tether loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Corrected Fogwailer shockwave-effect positioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kept swimming water effects aligned with the water surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized toxic-floor effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiplayer, stability, and performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Steam sign-in handling and recovery from temporary account-service errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Authentication and build-verification requests now respect server retry cooldowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed station entry overlapping ragdoll recovery and leaving movement, camera, and station occupancy out of sync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed observer weapon and station animations failing to recover when equipment or station data arrives late.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stations reusing a previous station's exit position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lookout spectator tracking and host camera jitter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the processing cost of underwater navigation, paranormal effects, and gravity physics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a crash caused by an invalid aim-assist target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash involving an invalid networked physics object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when respawning before input setup was ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added safeguards against crashes when salvage objects activate nearby salvage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PlayStation 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Added Quality (30 FPS target) and Performance (60 FPS target) options under Video > Quality Presets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quality remains the default. The selected mode is saved and restored when the game restarts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each mode now applies a matching frame-rate and dynamic-resolution budget.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Buying Vehicle Armor upgrade before you repair all of your damage points makes it appear as though you don't have enough damage points to fully repair; however, they do appear the next time you take damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Temple sphere’s attach point is offset, so it may spin strangely in the ORCA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 57,
+    "fixed": 44,
+    "balance": 21,
+    "other": 128,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-1473960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1473960/view/1844115010495520"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T17:04:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.770Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-18T17:04:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.771Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-18T17:04:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:36.945Z"
+  },
+  {
+   "id": "wreck-runners-395285@major-2026-08-28",
+   "gameId": "wreck-runners-395285",
+   "displayName": "September Update Incoming",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-28T20:14:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Runners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The September Update is coming, bringing new places to explore, novel threats to survive, another way to customize your runner, and more changes across Wreck Runners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here’s a first look at some of what’s landing in the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "More to Discover",
+     "items": [
+      {
+       "text": "This is a big update with lots of new content. Highlights include new locations to discover, more underwater gameplay, and new environmental hazards. In addition, Trustwell Lost Salvage will give crews another reason to explore beyond the most traveled areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update also adds Temples, an entirely new type of location to explore and salvage. They join wrecks and Trustwell bunkers as a major new destination type, with a pretty hard to miss way of appearing in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46041302/8dc3619b30ffd8a2fe208a827c4e0ba8c9eaca53.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Something Lurks Below",
+     "items": [
+      {
+       "text": "A dangerous new underwater enemy is hunting beneath the surface of the Triangle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46041302/9435c26ca3061d3440ac9b1e0a40679498addd45.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What’s Your Color?",
+     "items": [
+      {
+       "text": "The update is bringing a new way to personalize your Runner, with the ability to choose your uniform color in the lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46041302/d2afc61dfd9ff207762d54ead6d62c0f92fb12d9.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Paranormal Progression",
+     "items": [
+      {
+       "text": "A new progression system gives paranormal salvage a larger role, creating new choices for crews as they push through a run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46041302/f0ee14568728dbe9395bbf4aa8c4601350b94ade.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements Across the Game",
+     "items": [
+      {
+       "text": "Alongside the new content, we’re continuing to refine the ORCA and overall player experience, including Lookout updates, better underwater functionality, additional tutorial guidance, gadget buffs, and plenty of fixes and quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Speaking Your Language",
+     "items": [
+      {
+       "text": "We’ve expanded language support with 15 additional languages as part of the September Update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arabic / العربية",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deutsch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Español latinoamericano",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Français",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Italiano",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "日本語",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Қазақ тілі",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "한국어",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polski",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Português do Brasil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Русский",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Türkçe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Українська",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "简体中文",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "繁體中文",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "And That’s Not All",
+     "items": [
+      {
+       "text": "This is only a first look at some of what’s coming in the September Update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll have more to share as we get closer, along with complete patch notes once everything is locked and ready to go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in the Triangle!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1473960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1473960/view/1842212951304280"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-28T20:14:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.768Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-28T20:14:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.768Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-28T20:14:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:36.943Z"
+  },
+  {
+   "id": "wreck-runners-395285@hotfix-2026-08-14",
+   "gameId": "wreck-runners-395285",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-14T00:56:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "• ORCA Augments now save properly in your save slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The Oxygen Charm now works as intended, including fixing the rapid oxygen drain and lingering O2 meter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• We plugged the hole in the world inside the Cargo Hold Wreck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed several edge cases that could cause crashes when using gadgets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1473960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1473960/view/1840944183778268"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T00:56:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T00:56:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.767Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-14T00:56:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:36.942Z"
+  },
+  {
+   "id": "wreck-runners-395285@major-2026-07-19",
+   "gameId": "wreck-runners-395285",
+   "displayName": "Invite Codes Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-19T23:01:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "You can now use invite codes to bring friends directly into your game, whether you’re playing across platforms or on the same platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To invite friends",
+     "items": [
+      {
+       "text": "Host a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Open the Social menu from the pregame lobby",
+     "items": [
+      {
+       "text": "Press P on PC,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Press the Menu/View button with two squares on Xbox or controller,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Press the touchpad on PS5,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Select Show Invite Code and share the code with your friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To join",
+     "items": [
+      {
+       "text": "Open the Play menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Join by Code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter the invite code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invite codes work with both public and private games. Make sure everyone has downloaded the latest update before trying to join.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1473960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1473960/view/1838407329264374"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-19T23:01:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.767Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-19T23:01:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.767Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-19T23:01:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:36.941Z"
+  },
+  {
+   "id": "wreck-runners-395285@major-2026-07-17",
+   "gameId": "wreck-runners-395285",
+   "displayName": "Difficulty Tuning Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-17T19:01:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Runners,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been reading your feedback, watching gameplay, and it's clear we made the early game more difficult than we intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve pushed an update focused on giving new crews more time to learn the game before the pressure really ramps up. You'll have more breathing room to explore, figure out the ORCA, salvage wrecks, and get your footing before things start getting dangerous. As your run progresses, the challenge should still ramp up and continue to test experienced players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This isn't the final balance pass. We'll keep monitoring feedback and gameplay data and continue making adjustments where they're needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for playing, and please keep the feedback coming. It's making a real difference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Disruptive Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46041302/4543bb0158ed1bc6585bc52d069e3cc33a4dfc8f.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1473960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1473960/view/1838407329260492"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T19:01:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.766Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-17T19:01:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1473960",
+      "checkedAt": "2026-11-13T03:36:32.766Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-17T19:01:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:36.941Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "17e0ed4a0916",
+   "text": "Buying Vehicle Armor upgrade before you repair all of your damage points makes it appear as though you don't have enough damage points to fully repair; however, they do appear the next time you take damage.",
+   "status": "open",
+   "firstReleaseId": "wreck-runners-395285@major-2026-09-18"
+  },
+  {
+   "id": "99a615167d14",
+   "text": "Temple sphere’s attach point is offset, so it may spin strangely in the ORCA.",
+   "status": "open",
+   "firstReleaseId": "wreck-runners-395285@major-2026-09-18"
+  }
+ ]
+}

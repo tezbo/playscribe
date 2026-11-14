@@ -1,0 +1,2222 @@
+{
+ "game": {
+  "id": "calico-122345",
+  "igdbId": 122345,
+  "name": "Calico",
+  "cover": {
+   "imageId": "co2c9c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2c9c.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar65u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar65u.jpg"
+  },
+  "ps5Release": "2023-11-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "calico-122345@patch-2025-04-18",
+   "gameId": "calico-122345",
+   "displayName": "Small Bug Fix Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-18T22:56:02.000Z",
+   "notes": [
+    {
+     "title": "Fixed some bugs in the DLC and base game",
+     "items": [
+      {
+       "text": "Fixed Sundae Potion breaking clothing upon save and reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed achievement for getting all animals not activating (DLC not required to get achievement)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rubber duckie neat thing starting in the wrong place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dog statue neat thing missing first step",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Arcade game default volume being too high and volume sliders not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mermaid music boundaries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various little visual and performance fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/1797185861685405"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-18T22:56:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.887Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-18T22:56:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.888Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-18T22:56:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.344Z"
+  },
+  {
+   "id": "calico-122345@major-2023-01-16",
+   "gameId": "calico-122345",
+   "displayName": "Fixes for Pawsome Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-16T18:39:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed designs not being unlocked in clothing designer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animals regaining hats after removing hat and reloading the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed not being able to select some design sliders with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with Owl Club quest that caused player to become stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed update popup not closing when button is pressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed owl and chicken making crow sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of the clothing tops being unobtainable, now available in clothing store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spoon catapults not working in some recipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bagel stretching taking much longer than intended when fps is high",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scritches minigame being uncontrollable when you have an animal on your head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes that happen on Switch and some computers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made cat scritches indicator easier to see on low graphics settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added keyboard controls to new color picker",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed boba balloon being able to get stuck in cups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There were some urgent bugs to fix, so they took priority over the mac version. The mac version is still being worked on and once it's done it will release with all the fixes included",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/5035620840546449959"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-16T18:39:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.887Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.343Z"
+  },
+  {
+   "id": "calico-122345@post-2022-12-22",
+   "gameId": "calico-122345",
+   "displayName": "Calico Pawsome Edition",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-12-22T08:02:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Feature Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added over 25 new cooking minigames!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added sales bonuses based on minigame speed and score",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new animals! (Owl, Cow, Goat, Opossum, Chicken, Alpaca, Sheep)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to customize wallpaper and floor of café",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new \"Outline Potion\" rewarded by Prism Break Quest (if you previously finished this quest it will appear in your inventory)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed player getting stuck in swimming animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed falling through the ground while dismounting birds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inventory preview of some garden furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some animals appearing to sink into the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases where animal physics and petting were configured wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with teleporting or entering furniture mode while player was in a chair or bed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved graphics and new outlines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added setting for automatic camera rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New improved UI for character creator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved furniture mover selection, and the ability to place furniture on top of other furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved player movement and jumping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New, improved sound effects, and rebalanced sound effect volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character creator now closes faster if you don't change skin or face texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renaming animals no longer reloads entire animal journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New redesigned café kitchen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new grass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Animals now run faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved textures for some animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made all menus compatible with mouse clicking",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved button prompt images when playing with an Xbox controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Improved performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 6,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/5000716037441605826"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-22T08:02:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.887Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.342Z"
+  },
+  {
+   "id": "calico-122345@major-2022-12-22",
+   "gameId": "calico-122345",
+   "displayName": "Free Update! Calico: Pawsome Edition Out Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-22T05:01:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Whether you've been away from the café for awhile or you've yet to stop by, now is the purr-fect time to pounce on Calico. With new animals to befriend, new cooking minigames to play and more, this fresh-baked free update is sure to be a treat!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you'd like to hear more about what's new, the full patch notes can be found below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feature Updates",
+     "items": [
+      {
+       "text": "Added over 25 new cooking minigames!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added sales bonuses based on minigame speed and score",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new animals! (Owl, Cow, Goat, Opossum, Chicken, Alpaca, Sheep)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to customize wallpaper and floor of café",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new \"Outline Potion\" rewarded by Prism Break Quest (if you previously finished this quest it will appear in your inventory)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed player getting stuck in swimming animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed falling through the ground while dismounting birds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inventory preview of some garden furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some animals appearing to sink into the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cases where animal physics and petting were configured wrong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with teleporting or entering furniture mode while player was in a chair or bed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Improved graphics and new outlines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added setting for automatic camera rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New improved UI for character creator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved furniture mover selection, and the ability to place furniture on top of other furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved player movement and jumping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New, improved sound effects, and rebalanced sound effect volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character creator now closes faster if you don't change skin or face texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renaming animals no longer reloads entire animal journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New redesigned café kitchen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new grass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Animals now run faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved textures for some animals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made all menus compatible with mouse clicking",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved button prompt images when playing with an Xbox controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Improved performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 6,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/5000716037441146209"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-22T05:01:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.886Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.342Z"
+  },
+  {
+   "id": "calico-122345@patch-2021-09-23",
+   "gameId": "calico-122345",
+   "displayName": "Bug fix and polish patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-23T03:26:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're in the middle of working on a big update to expand the gameplay! but in the meantime, we wanted to give you this smaller update with a bunch of bug fixes and quality of life improvements. Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Korean and Latin America Spanish localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added unique icons for every animal in the animal journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed NPCs getting stuck in some situations and made NPC movement smoother",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stores selling clothes, potions, toys, and recipes that the player already owns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animals getting stuck falling on furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Freya running to the wrong place when owl club quest starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed credit sequence getting stuck sometimes, and improved credit sequence route",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed autosave saving while player is in food minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed duplicate dialogue response options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed birds being unable to land if they were too close to the ground, and made it so player can dismount birds while flying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused NPCs not to follow their schedules sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI not updating the day of the week name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that made it so player couldn't enter furniture mode sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed money display getting stuck at 1,000 sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Broomstick getting stuck when following player, and fixed broomstick getting stuck at an angle when respawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Succulent Chair\" not actually being a chair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed small animals stored on big animals floating away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed position of small animals put on capybara heads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animals pushing you back when you remove them from your head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cafe music vocals being cut off when they weren't supposed to, and increased frequency of when vocals play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed item previews of pangolin and witch toys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed large animals not being mountable after removing float potion effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made \"Hide UI\" also include button prompts and quest log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made credit sequence repeatable after saving and reloading game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made furniture bounce to indicate when it's selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it so that multiple carpets overlapping won't cause graphical glitching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it easier to reach animals with the unfloat potion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made remote control toy change speed depending on size of animal chasing it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed turning animation delay from player movement for better control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added sitting direction indicator to chairs that needed it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gave names to unnamed animals, only applies to new save files. Crow:Inkwell, Raven:Poe, Rabbit:Harvey, Snow Dog:Marshmallow, Snowy Deer:Tap Dancer, Arctic Fox:Sugar, Raccoon:Trash King, Pigeon:Flappy, Piggles 2:Wiggles, Piggles 3:Jiggles, Boar:Country Oinks, Deer:Dear, Fox:Focsimile, Black Cat:Unfamiliar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Tiny tinier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Mac version will be ready as soon as we can get it!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More news on the gameplay update in the coming months~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 20,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/3936699406868395878"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-23T03:26:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.885Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.341Z"
+  },
+  {
+   "id": "calico-122345@major-2021-06-28",
+   "gameId": "calico-122345",
+   "displayName": "Small fix for customization update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-28T05:46:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A few issues arose with the customization update and loading old saves, causing all of the controls displaying as \"Mount\", and the menus not working. This patch should fix that problem, and the problem with creating multiple new games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know if you still experience these issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4032392655077177532"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-28T05:46:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.885Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.340Z"
+  },
+  {
+   "id": "calico-122345@major-2021-06-19",
+   "gameId": "calico-122345",
+   "displayName": "The Customization Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-19T01:10:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A big expansion to clothing and furniture customization, along with autosaving and some bug fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added autosaving every 5 minutes or when you enter furniture mode. It alternates between 2 autosave slots that you can select from the load menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added color presets to character customization to save your favorite colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added design option to clothing. Allows you to select a design and control the pattern. Designs are unlocked from meeting the townsfolk, finding animals, and buying recipes and items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added color gradient option to clothing. Allows you to select two colors, and set gradient size, direction, and position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added furniture color customization. All copies of furniture share colors (All \"Cute Chair\" will share colors). Currently only works with untextured furniture (not things like the plants and trees)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to choose from several running animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Greatly reduced the time it takes to launch the game to the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added German and Brazilian Portuguese to language options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made it easier to talk to a specific NPC when 2 are standing next to each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made jeans texture grey instead of blue for better color customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made item previews in store, inventory, and character creator stay fully lit even at night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed dialogue sounds that were broken by the previous update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the outline of the player showing on top of the outline of their clothes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Finally fixed the item names of the Crown and Sailor Hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a freeze that was sometimes caused by opening the clothing store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preview trailer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6/22 Edit: Added a few more fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed localization UI problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Owl Club members teleport into their position when player arrives to avoid waiting and possible bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added saving animal hats and the hat's customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed animals sometimes continuing to walk while you are trying to petting them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 5,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4056035920060257035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-19T01:10:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.884Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.339Z"
+  },
+  {
+   "id": "calico-122345@post-2021-04-20",
+   "gameId": "calico-122345",
+   "displayName": "Small fix for garden furniture!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-04-20T21:43:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some furniture items getting duplicated upon saving and loading. If you've noticed a gradual decrease in performance since the garden furniture update you may have a large number of duplicated furniture items. You can check by trying to move a piece of furniture and see if there were actually multiple in the same spot, and put any duplicates in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed not being able to pick up some furniture items after exiting furniture mode. This mostly affected flowers and wall decoration furniture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4570566565011280791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-20T21:43:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.884Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.339Z"
+  },
+  {
+   "id": "calico-122345@major-2021-04-09",
+   "gameId": "calico-122345",
+   "displayName": "Garden Furniture Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-09T18:47:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added outdoor furniture, you can place furniture anywhere inside the cafe's fence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added plants to furniture, you can even put them inside if you want",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made number of items available in stores increase with main quest progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made furniture menu remember which set you last selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed hair color being reset to white by hair potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made teleport potion reset player swimming state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed clock graphic flickering and stretching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed furniture item stacks getting capped at 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed big animals getting stuck standing in one spot in cafe yard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added more degrees of furniture rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed player getting stuck from construction cat conversation bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed parts of buildings appearing textured black on certain graphics cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4117954073003285318"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-09T18:47:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.883Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.338Z"
+  },
+  {
+   "id": "calico-122345@1.05",
+   "gameId": "calico-122345",
+   "displayName": "Update 1.05",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-02-13T02:24:36.000Z",
+   "notes": [
+    {
+     "title": "Hello friends! We have another update!",
+     "items": [
+      {
+       "text": "This update adds some new clothing options, including accessories for your face and eye area! Right now we have added items that will be available as the start of the game (and anyone currently playing will have them automatically to their inventory). These items include some facial hair options as well as glasses!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also added basic control remapping for mouse/ keyboard and controllers! (In this build the on screen controller UI may show in the wrong positions for now, this is a known issue.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Japanese Localization!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you would like to see more details, as well as previous patch notes, visit this page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re working on some bigger content updates that hopefully you’ll see soon! Get excited for more animals, quests, potions, clothing and furniture!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ Kells and Andrew of Peachy Keen Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4703417046205150461"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-02-13T02:24:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.883Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.337Z"
+  },
+  {
+   "id": "calico-122345@post-2021-02-12",
+   "gameId": "calico-122345",
+   "displayName": "Patch notes for February 12th",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-02-12T23:14:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Glasses, Beard, and Mustache accessories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added control remapping for mouse, keyboard, and controllers (the controller UI may show remapped buttons in the wrong position for now)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Japanese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Golden Grove getting re-locked if you didn't talk to Kai to finish the quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player map icon which was accidentally reverted in previous patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4703417046204671009"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-02-12T23:14:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.882Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.337Z"
+  },
+  {
+   "id": "calico-122345@1.04",
+   "gameId": "calico-122345",
+   "displayName": "Update 1.04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-01-27T04:16:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello we have another update! Stick with us as we take community feedback and bug reports to continue to improve Calico!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One big change in this version is the face options! We added some new options to allow for a more sharp jawline and thinner lips, and a few more facial hair options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're coming to the point where we will hopefully be putting out updates more focused on usability improvements and new content, so look out for that in the future. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Performance improvements for lowest settings on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Reduced stutter and lag from spinning camera around or loading new areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a few more masculine face options in character creator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Split animal journal list into areas to make it easier to find them all",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed hat position on raccoons and ferrets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed player being able to pick up the animal they are riding in certain circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-changed list of face customization to be more intuitive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed base eye color and eye design color being swapped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Murphy's model to match real life Murphy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed animal command menu not highlighting when used repeatedly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed broom sound and removed bunny sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed credits sequence cat spawning off-center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Daisy's house having no collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made Color customization palette bigger for easier use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Possible fix for clothes disappearing bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed stores resetting their stock if you buy all of their items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added page down and page up controls to animal journal for faster selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed another cause of NPCs getting stuck at the cafe gate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Possible fix for NPCs floating around stuck in animation like sitting down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted Forest Spirit Cat and Bootes to look more distinct from each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Gabby not accepting Snow Dog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "~ Kells and Andrew of Peachy Keen Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4050393736333196898"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-27T04:16:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.882Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.336Z"
+  },
+  {
+   "id": "calico-122345@post-2021-01-01",
+   "gameId": "calico-122345",
+   "displayName": "Happy New Year and And Patch Notes!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-01-01T23:26:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Happy New Year friends! We have some new updates coming through. These are the patch notes. v 1.03",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feature Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Added player direction indicator to map, and made it easier to see where the player is",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Added cafe notifications that shows when food is purchased and the NPC that bought it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Added support for navigating menus with the D-Pad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed player entering mount animation with no mount and getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed another cause of NPCs getting stuck at the cafe gate, there were a lot of different causes of this one bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed NPCs getting stuck in animations while traveling between locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed naming animals with controller on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "⦁ Fixed Golden Grove getting re-locked after reloading game in some circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed setting colors on face bandage accessories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed glitches caused by putting small animals on big animals and then removing them while unmounted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed animals trying to run around while playing with the string toys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed sleeping not advancing quests if you go to sleep after midnight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Added double check to all quests achievement in case it didn't fire the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed crash happening on some AMD processors",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "⦁ Fixed bug with saving while the cat potion is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed talk prompt getting stuck on screen or being activated from a distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed dog eyes while in sitting or sleeping animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed \"new day\" graphic flickering on screen sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed petting animals being slow to start sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed some animals not spawning if your cafe was full",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed Malcolm not appearing in the townsfolk journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed all characters in heart village visiting the cafe on the same day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Fixed NPCs being able to go upstairs in the cafe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Made it easier to get out of bed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Made player look at animal they are petting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Improved dog petting hand position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Added more controls hints to furniture mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Added more information about journal, map, and how food is sold to tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Adjusted size of furniture mover to be able to reach all wall decorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Changed money display to be visible while in stores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Adjusted Calico 4D to be less flashy at high speeds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Changed chairs so you can sit on them while standing behind them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope everyone is happy and healthy, and here's hoping we all have a great 2021. 💖",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kells and Andrew",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 36,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/3917534300103910062"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-01T23:26:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.881Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:47.335Z"
+  },
+  {
+   "id": "calico-122345@patch-2020-12-17",
+   "gameId": "calico-122345",
+   "displayName": "First Patch!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-17T08:22:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "First off, I can not even begin to thank you all for your amazing support! This is our first game launch, and as such it has been a huge learning experience. You have all been so kind in the way that you've communicated your feedback and frustrations, and I hope you know we are taking them all very seriously. We understand that getting bug reports and feedback on our game means that you are interested in and passionate about our game, and would love to see it improve. 💖💖💖",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We've sent out a patch that should fix the following issues",
+     "items": [
+      {
+       "text": "Fixed dialogue ending abruptly which may have caused problems with the \"Big City Dreams\" quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs walking at times when they should be running",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cat potion player model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed problem where NPCs and animals would sometimes get stuck invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed journal switching tabs while typing animal names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs standing in front of the cafe door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed not being able to buy things if you have the exact amount of money that the item costs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player getting stuck on top of log or ground next to Estelle's General Store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed construction cat and owl club conversations getting interrupted which resulted in player getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed conversations being interrupted by passing NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hats not fitting on Pudgems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animals disappearing from collection quests (pigeons, bunnies)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs getting stuck at the door of the cafe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed problem where food wasn't being bought when multiple NPCs visited at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed saving food that has been made but not put in the display case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered volume of rain and splashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made player movement speed gradually increase over time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raised top run speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added potion to teleport back to the cafe (This one is especially important to note if a different bug has gotten you stuck somewhere!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We plan to release more patches as soon as we can to solve the remaining issues that have been brought to our attention. After that we will turn our focus on feedback that aren't bugs, but have been suggested to improve the experience, as well as more content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kells and Andrew of Peachy Keen Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 21,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1112890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1112890/view/4090922416494481299"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-17T08:22:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1112890",
+      "checkedAt": "2026-11-13T03:16:47.880Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:53.605Z"
+  }
+ ],
+ "issues": []
+}

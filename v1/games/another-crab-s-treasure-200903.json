@@ -1,0 +1,4299 @@
+{
+ "game": {
+  "id": "another-crab-s-treasure-200903",
+  "igdbId": 200903,
+  "name": "Another Crab's Treasure",
+  "cover": {
+   "imageId": "co6mrs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6mrs.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2x39",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2x39.jpg"
+  },
+  "ps5Release": "2024-04-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "another-crab-s-treasure-200903@major-2025-10-06",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch - Unity Security Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-06T21:08:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey crab fans,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unity recently identified a security vulnerability extending back to games made in Unity 2017 and later. Another Crab's Treasure is included in this - as of now there have been no known instances of anyone using this vulnerability for nefarious purposes, but we have now patched the game with Unity's fix to this issue, so you can rest easy your game should remain functionally unaffected by this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OK THANKS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/1811772772617494"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T21:08:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T21:08:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.822Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-06T21:08:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.789Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@2.0.000.5",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Hotfix 2.0.000.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-23T20:45:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey we fixed more things!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FIXES",
+     "items": [
+      {
+       "text": "Fixed an issue where killing one out of the two Lichenthropes in NG+ could break the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where Voltai and Petroch's achievements could be obtained without actually defeating them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ALL damage applied to Kril will now scale with NG+2 and beyond, including enemy projectiles, urchins, and certain status effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Shelleport menu will now properly display total Umami Crystal count in NG+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sinker, Sponge, and Whelk would not specify the percentage of their effect in languages besides English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where turning your shell to a hammer would give you a long parry window. (oops)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the undead Bleached King in New Game+ had no working hitboxes besides projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Wave Breaker could break cubes that can should only be broken with Mantis Punch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed YET ANOTHER issue where shells being destroyed would sometimes not properly remove bonus stats from shell-only Stowaways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/1800357164450751"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T20:45:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T20:45:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.821Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-23T20:45:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.788Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@2.0.000.3",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Hotfix 2.0.000.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-01T21:50:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "more little fixes idk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated credits to include playtesters for the YOTC update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Topoda's shop could very rarely allow players to spend Umami Crystals they don't have.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented the Die Instantly button from becoming available during certain important plot sequences (Opening sequence, Unfathom intro)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with The Consortium in NG+ where it could either fail to grant its Adaptation or level up an existing one to Lvl 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Flotsam Vale where a NG+ only item had replaced its default version in the base game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/1798454487616075"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-01T21:50:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-01T21:50:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.821Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-01T21:50:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.788Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@2.0.000.2",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Hotfix 2.0.000.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-24T00:37:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hope you guys are enjoying the Year of the Crab Update! Of course, there's always some bugs, so here's today's fixes. Please continue reporting found issues in our discord, our QA team is keeping an eye on it :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MAJOR FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where entering a Moon Snail Shell with the spawned Snail Sanctum shell equipped could lock up gameplay after quitting and reloading the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where playing a Combat Memory / Trial of the Warrior could mess up dialogue flags upon returning to the main game. (The \"vanishing treasure map\" issue reported was a result of this)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Consortium would not drop his Adaptation in NG+. For players who already defeated him, go back to where he was to find it on the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "GENERAL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed control prompts to fall back to keyboard when an unidentifiable \"controller\" is attached. Should fix a handful of issues where players saw <> in place of a keyboard prompt.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Scuttling Sludge Steamroller would not have his additional friends when fought in a Combat Memory or Trial in NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Snapbandit Deadeye Museum Exhibit will also be visible after defeating Topoda, as a failsafe for those who killed the Deadeye before the update launched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Royal Shellsplitter no longer drops its NG+ reward in New Game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where fishing the Molted King while he's midair would make him unfishable for some duration afterwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Roland's boss drop in NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the bonus New Game Plus boss to Combat Memories.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where some Sardines have 1 HP above their intended max health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a buried treasure in the Unfathom could not be fished out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where getting grabbed while performing Twist Top would keep the hitbox active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where opening the Stowaways menu by clicking on an equipped Stowaway which is the last on its page opens the next page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LOCALIZATION",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several typos in the Museum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/1797820624443113"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-24T00:37:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.820Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-24T00:37:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.820Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-24T00:37:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.787Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@major-2025-04-21",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "YEAR OF THE CRAB: THE FREE CONTENT UPDATE IS OUT NOW",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-21T17:03:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's finally Time for Crab once again! Just four days short of Another Crab's Treasure's one year anniversary!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We worked really hard on this update. As you can see, there's a lot. And we're pretty proud of how much we were able to throw in. Thank you for following us on our crab journey. So dive in, get your shell handed to you, thank us, then try again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In case you missed our previous post, here's a look at what's in the update...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a reminder, this is not a DLC, it's a FREE yes FREE content update. It's not a small one either, we packed this baby with a bunch of new stuff:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW GAME PLUS",
+     "items": [
+      {
+       "text": "The most highly requested feature from the community ever since we launched was New Game Plus, and the response to the game has been so overwhelming that we eventually had to do it. I'm happy to say that we cooked on this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IMPORTANT: If you have already completed the game prior to the update, you will need to refight the final boss (SPOILERS: Firth) to activate New Game Plus. You can use the gun if you want, I won't snitch. Think of it as a warm up ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We didn't just lazily scale up enemy stats and call it a day, we've added new moves to bosses, some new items, and oh yeah, remixed almost every enemy encounter in the game. You'll even be able to upgrade your fork and stowaway weight even higher. Have you ever wanted FOUR stowaway slots? NG+ has FOUR stowaway slots. PLUS we've also added new exclusive stowaways for NG+, the Sigils.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "oOooOooOoohmysteriouswhatdotheydooooo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "OUTSIDE of New Game Plus...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "REFIGHT BOSSES",
+     "items": [
+      {
+       "text": "You'll now have the chance to go back to your favorite boss fights and get your shell handed to you through COMBAT MEMORIES. Maybe you just wanna listen to Polluted Platoon Pathfinder again, I won't judge. Re-fight any defeated boss in your playthrough from any Moon Snail Shell. Speaking of bosses...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BOSS RUSH MODE",
+     "items": [
+      {
+       "text": "Topoda now offers Boss Rush challenges - with a variety of themed sequential fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your reward for beating one of these trials is...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW COSTUMES",
+     "items": [
+      {
+       "text": "OK I GUESS I can't just move on from this without leaking one of the new costumes. Here's a look at Pretty Princess Kril:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "MUSEUM BESTIARY",
+     "items": [
+      {
+       "text": "The Museum is finally open again for business, and inside is a constantly updated display of all enemies you encounter and defeat in your journey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CHAPTER SELECT",
+     "items": [
+      {
+       "text": "Wanna dive back in to a specific point in the story? Now you can with Chapters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter Select can be enabled from the Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "AND ONE NEW BOSS FIGHT.",
+     "items": [
+      {
+       "text": "I'm not snitchin' ok. I won't budge, but trust me it's a well deserved fight. This boss totally deserves it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "COMMUNITY UPDATES",
+     "items": [
+      {
+       "text": "Due to popular demand, we've also added new achievements AND community trading cards! Here's a sneak peek at one of them:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AND if you're in the speedrunning community, keep an eye out for some speedy snails around the world...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As usual, if you run into any bugs, you can let us know through our Discord! We try to check Steam forums as much as possible too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you all enjoy, and thank you SO SO much for all the support on this game! We’re excited to show you what’s next as soon as it’s ready! It won’t be long now…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Codspeed,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paige (Community Manager)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/1797185861771696"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-21T17:03:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-21T17:03:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.819Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-21T17:03:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.787Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.103.8",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 1.0.103.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-23T23:01:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "HI TREASURE HUNTERS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PATCH NOTES COME GET YA PATCH NOTES",
+     "items": [
+      {
+       "text": "Fixed a BUNCH of missing NPCs that were supposed to be in the game!!! (especially in late game areas) (Thank you @soomoto on Discord for the help on this!!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where status buildup could be reduced below 0 by equipping Stowaways totaling greater than 100% status resistance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain world-space text (such as Affliction triggers) could fail to display in languages besides English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Firth's bubble bullet claw model would stay active if you Wave Breaker him at the right moment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Found a potential fix for Seahorse projectiles being considered a safe platform on which to respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Firth's bubble bullet claw model would stay active if you Wave Breaker him at the right moment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted boss health bar UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "\"Lower Enemy Health\" assist option kicks in immediately and is reversible if you tab through",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where munch+kintsugi would cause Kril to do a mega jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where kril would have his heartkelp out and be slow moving and unable to take action IF you drink as a boss is dying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where bosses such as Topoda wouldnt play the peril symbol if attacking you from a distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Wave Breaker's text prompt wouldn't update its layout properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where pufferfish would never get up after being poise broken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5963413094342456819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-23T23:01:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-23T23:01:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.819Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-23T23:01:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.786Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.103.6",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 1.0.103.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-11T19:03:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "wake up babe it's time for some patch notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A quick reminder for those on consoles: These patches will reach your console in the future - we have not forgotten about you! Cool? Ok cool:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GENERAL",
+     "items": [
+      {
+       "text": "Added missing dialogue to Topoda's upgrade shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed multiple progress blockers related to dying or resting right before the Boat Powered sequence could take place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Experimenting with delaying backup saving by 10 frames to eliminate instances where both files can be corrupted at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented small soft lock in Bleached CIty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented small soft lock in Pinball Barge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "BOSS FIXES",
+     "items": [
+      {
+       "text": "Fixed Heikea's opening cutscene camera clipping into the sushi boat floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "LEVEL FIXES",
+     "items": [
+      {
+       "text": "Small geometry fixes in Open Ocean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small geometry fixes in the Unfathom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Geometry fixes in Bleached City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CODSPEED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aggro Crab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5842939267361469029"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-11T19:03:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-11T19:03:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.818Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-11T19:03:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.785Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.103.3",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 1.0.103.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-13T00:22:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "PATCH V1.0.103.3 HAS BEEN PUSHED TO STEAM!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most important change: we caved to audience pressure and you can scroll around on the Location tab now! View all the pretty art! Go nuts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MAP CONTROLS!!!",
+     "items": [
+      {
+       "text": "⦁ You can now move and zoom the map on the Location menu. Look at all the pretty art, go nuts!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FIXES",
+     "items": [
+      {
+       "text": "⦁ Fixed multiple SFX and voice lines in Voltai's fight being played silently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Fixed multiple instances of NPCs persisting in a spot after having moved on in the story",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Improvements to camera collision, especially when using Dispatch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Removed some fun visuals from the Felix Cube, as it would occasionally cause weird player physics interactions. Sad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ You can no longer use Self Repair to restore Shell Health reduced from self-inflicted damage such as Munch and Twinkle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Removed access to Assist Settings from Title, as assist settings are saved specifically to individual save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Game can no longer be paused during the credits (esc key will skip them normally). This eliminates a bug where killing Kril via the pause menu during the credits could result in weird behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "SAVE STABILITY",
+     "items": [
+      {
+       "text": "⦁ Improved the save backup system, increasing the scenarios in which it'll replace an unusable file with a backup if available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Eliminated a very rare scenario where a save file could show up as corrupt in the main menu despite being technically playable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "BOSS FIXES",
+     "items": [
+      {
+       "text": "⦁ Fixed a ghost hitbox on a colossal late-game boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "LEVEL FIXES",
+     "items": [
+      {
+       "text": "⦁ Small geometry updates to Expired Grove, Unfathom, and Bleached City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Fix geometry in Scuttleport that could lead to the player getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Fixed a content skip in Expired Grove that was a little too easy (don't believe it was useful for speedrunners, don't kill us!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⦁ Removed floating props in Slacktide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "LOCALIZATION",
+     "items": [
+      {
+       "text": "⦁ Updated translations for \"Lv\" across various languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Updated description of Rubber Band to reflect that it doesn't make you fully immune to electricity damage anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⦁ Updated credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BALANCE",
+     "items": [
+      {
+       "text": "⦁ Stowaway Weight on Sea Cucumber Reduced from 6 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "⦁ A certain late-game tentacled boss's HP increased by ~14%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/6890025005346966008"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-13T00:22:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-13T00:22:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.817Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-13T00:22:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.784Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.102.5",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 1.0.102.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-23T17:31:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Got a fresh new patch for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most important thing here is some save file safety fixes! We'll occasionally get reports of save files being corrupted for one reason or another. Some of these we're working to fix, and others are much less preventable, due to hardware crashes and such. So we figured a good place to start is to add a backup system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you ever need to access your backup file for some reason, it can be found in the same folder as your save file - but the game should load it automatically if something goes wrong with your main save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GENERAL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ":GoOver: Added a save backup system that should help stem the tide (haha) of people losing progress due to save corruption. Ideally in a worst case scenario, folks will only lose one save point's worth of progress instead of ruining their entire file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ":GoOver: Fixed an issue where having no readable files in your save list would show \"new game\" button even if some of them existed, but were corrupt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "COMBAT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where a certain colossal lategame enemy would not release you from a grab properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now always use Spearfishing on said colossal enemy. It used to be only when they were in a specific animation, but this was unclear to players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where your hammer could attack as if it was the standard fork after a cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies could hit your dropped shell to hurt you. This was especially prevalent in the final boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "LEVEL FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved collision in Roland's arena for clipping issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved collision in the endgame sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5741605105607911370"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T17:31:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T17:31:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.817Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-23T17:31:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.783Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.102.4a",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 1.0.102.4a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-17T22:44:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey gamers! Nick, who normally makes the update thumbnails, is out of the office today. Could you tell?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just located a bug that's urgent enough to skip the normal Beta process, so I'm uploading the fix here as an emergency patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔥 Fixed an issue where upon loading in, your location would very frequently be reverted to the previous Moon Snail Shell, even if you saved & quit somewhere else. This was particularly messing up people's progress in locations where Moon Snail Shells were few and far between, such as The Unfathom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's literally it! Hope you enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that this is not the total extent of our save issues - this issue would exclusively affect the player's position, and not damage their progress in any other way such as reverting any killed bosses. We continue to hunt down other issues related to save files, and the community on Discord has been extremely valuable so far in this process. Thank you for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5747233970423609369"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T22:44:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T22:44:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.816Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-17T22:44:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.783Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.102.4",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Hotfix 1.0.102.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-16T23:02:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New patch coming in hot! Thanks as always to our beta branch players for testing this in advance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Our biggest priority right now is investigating the save file corruption happening to a small percentage of players. It's not going to be easy, but we're fast-tracking some features that will hopefully get us better information from user error reports and minimize the damage, even if finding the real source of the issue takes longer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GENERAL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better error reporting for save file issues to help us track it down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unique Broadsword Rangoon no longer respawns in Expired Grove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Hermit Mimic acting strangely in Open Ocean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where getting your hammer destroyed would also cause your DEF stat to not respect your currently worn shell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where being electrocuted while rolling did not stop the roll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Another Chance\" now properly grants invincibility to let you survive multi-hit grabs that you revived during",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented \"windbox\" hitboxes such as the Frogfish vacuum attack from affecting the player while climbing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where getting grabbed while climbing would disrupt the grabber's physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Flotsam Vale's Inkerton could be interacted with prior to ambushing you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hitting an enemy would cause the game to get softlocked and spawn the hit vfx particle every frame in very rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "OPTIONS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 16:9 resolutions to the Resolutions list for those with ultrawide monitors who wish to play at standard resolution",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "ABILITIES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mantis Punch teleport should behave more consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BOSS FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where Magista could hit you with a ghost hitbox after she's done her spin attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pagurus can no longer be fished while he's burrowing away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LEVEL FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed grapple point in Scuttleport facilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Border colliders in New Carcinia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a problematic urchin in Slacktide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Level Border Collision in Flotsam Vale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Geometry collision updates in Unfathom to prevent softlock issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved collision in Voltai's Arena to reduce cases in which Kril phases through it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "LOCALIZATION",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a mis-typed italics tag present in all languages except English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved a variety of Russian translations including a misgendered lobster in Slacktide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BALANCE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stowaway Weight on Sea Cucumber Reduced from 6 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A certain late-game tentacled boss's HP increased by ~14%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QUALITY OF LIFE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlighted the text that tells you that you actually need two Old World Whorls to upgrade your charges after the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 10,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5747233970420008744"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-16T23:02:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.815Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-16T23:02:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.815Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-16T23:02:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.781Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.102.3",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 1.0.102.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-10T21:29:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another patch is live! Thank you to our beta branch players for helping us test these changes :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPORTANT FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We fixed the cursed issue with the blue pufferfish. You can kill blue pufferfish to your heart's content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We updated our audio plugins to hopefully fix an issue where some users had no audio whatsoever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've gotten many reports of the game failing to save progress, but are still unable to reproduce the issue -- so now after you save, the game will check whether the save worked. If it didn't, it will display an angry message and boot you back to the Title screen. PLEASE show us if you encounter this and send us your log file. - Instructions for how to do so are in the FAQ channel in discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a possible fix to the issue where the game would give you Umami Crystals for free upon reloading the game. Let us know whether you're still experiencing this or not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option for \"FPS Limit\" in the settings for users reporting high GPU usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "GENERAL FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some achievement issues where they would not trigger. Now if you enter an MSS the game will check whether or not you have completed the achievement EXCEPT for \"This Kills the Crab\" and \"You Fell Off\" (in which you will have to re-trigger those again)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shell UI wouldn't update language when the Language setting changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inadvertently fixed an issue where a Decoy could be placed on umami replenishers to infinitely restore umami",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where spinny part of the Felix Cube shell could become offset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where smokescreen caused Pagurus to teleport",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Heikea's camera clips thru the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where you could get stuck in Heikea's grab attack the same way you could get stuck in the Duchess's",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Kril would take damage from enemies hitting a Decoy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a 1 second buffer after swapping your hammer before you can block to prevent soft locks happening by doing it too fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the Fortify effect would last forever even after the visual expired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an extended floor only firth collides with so he doesn't fall off the sides",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a small issue where killing a boss without aggroing them (gun) would make their dead icon never show up on the Map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wad of Gum no longer triggers on attacks that deal no damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where hammer dash would yeet you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented a soft lock at the end of the game where Kril's shell could go out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed final boss arena collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Umami Crystal count would increase for no reason upon returning to title and back to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made bobbits \"X marks the spot\" look slightly different from hidden items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it so you dont need to jump to aim at hidden items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where you could scroll off the Status page and open the Shellfish Desires menu accidental",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save slots without a save file appearing as an error in title save menu (introduced in 1.0.102.1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Infinite Stowaway Sale Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed previously sold Sand Dollars from shop. Sand Dollars are already infinite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Infinite loading bug caused by some shells in the player corpse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could climb on the Consortium's back after it died",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Topoda's fast movement during his sandstorm ability would cause the player to get flung into the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain costumes would appear completely black permanently after being gunked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Self-Repair logic fixed to not overheal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where taking off the gun would remove it from the shell collection menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kril could get stuck in a climbing animation when leaving a climbable surface in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FEATURES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kril can now use Adaptations without a fork. Have fun, speedrunners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "LEVELS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved floor collision in gas canister such that player can't get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Pagurus's map piece randomly floating in the open ocean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small fixes to platforming in Scuttleport Facilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various platforming and encounter fixes in the final area of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced some rocks in the Unfathom that players could get stuck on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed two collision issues in the Unfathom that allowed disc drive gates to be easily bypassed-Fixed an issue that caused a rock in the Unfathom to have a corrupted mesh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a collision issue with a crack in a tile platform in The Bleached City",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a hole in the Expired Grove that Kril could get stuck in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved an item out of the wall in Flotsam Air Pocket cave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where nemma and some urchins were floating in the void if you return to the pinbarge post fall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small hole in the terrain near Topoda",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you can walk around the trigger for Topoda's fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved camera interactions with coral assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved camera interactions in small interiors such as milk carton and gas canister homes such that visibility is maintained during close quarters combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rock hole in shallows where kril could get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed z-fighting issue that caused flickering on a weapon rack in Fort Slacktide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issue with Fort Slacktide rubble that could cause player to get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could become trapped on a rock in Trade Route Detour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed New Carcinia bell not colliding with Camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Patched up a hole in the coral in New Carcinia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased visibility on a key point of interest in the Sands Between",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slowed down the speed of a powered moving platform in the Sands Between",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleaned up collision on rocks in the Sands Between",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved collision on treasure chest such that Kril can't get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed player being able to walk up a certain trash pile in The Open Ocean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing caustics in The Open Ocean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Kril being able to get stuck in beverage cup lid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rock in the grove you could get stuck in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rock in Trade Route Detour could repeatedly make player respawn to their death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed troublesome urchin from the return route of an end game platforming challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ENEMY RELATED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polished up Bobbit worm visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bobbit worms now release you and fling you much earlier if you have a shell. This prevents situations where they drag you under the map before releasing you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pushed a fix to Topoda sending players under the map with mantis punch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Petroch could be softlocked by hitting him with a bobbit trap before he spawns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer focus on Petroch before the fight starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Actually fixed the issue where Topoda's brain would break if Smokescreen was used on him during his sandstorm phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BALANCE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfed hammer slightly by adding an extra third of a second before the Hammer's first attack cancels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rubber Band now only halves electric damage and entirely removes the electric stun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stunpounder's chain lightning attack damage reduced from 90 → 75",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stunpounder's chain lightning attack radius reduced by 25% to reduce the amount of doubled hits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stunpounder's big lightning attack replaced entirely with an electric ring that can be jumped over, but the windup time is faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stunpounder and Voltai: Electric ring damage buffed from 40 → 60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Puffer Quill stowaway weight reduced from 3 → 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rusty Nail+ stowaway changed to 6 ATK -5 MSG, Req. 8 RES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bobbit Trap lockdown time reduced on bosses and extra large enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bobbit Trap extra lockdown time on Lv.3 upgrade is also reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Praya Dubia Health increased from 3000 → 7000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Praya Dubia Reduced Damage from orbital laser from 95→ 70",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mantis Punch Base Damage reduced from 250 → 220",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Puffer Quill stowaway -DEF reduced to -10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the amount of time you are invincible after swapping shells by 0.5s (It was too easy to abuse the mechanic to dodge damage even once kril finished the swap animation)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 39,
+    "balance": 3,
+    "other": 45,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5768625435400518939"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-10T21:29:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-10T21:29:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.814Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-10T21:29:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.782Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.101.1",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Hotfix 1.0.101.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-01T20:01:03.000Z",
+   "notes": [
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "⭐ Added a cap to certain force values in Kril's physics, preventing or at least MASSIVELY reducing instances where Kril would get launched into the void by a strong enemy attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⭐ Entering an Moon Snail Shell now checks ALL your achievements, solving issues where save files that had previously collected broken achivements would not be able to obtain them retroactively.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several physics issues relating to Topoda's boss fight that could result in the player getting pushed through the terrain or other weird behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed instances where your shell wouldn't be properly insured when respawning at a Moon Jelly or an area entrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional tough enemies in Open Ocean now die permanently when killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several places where the player could get stuck on geometry or wind up out of bounds in the Expired Grove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several fixes to floating sand crates in Slacktide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fredrick can no longer be re-bought for 1 microplastic when dismissed, now costs 3000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nemma and Konche will now properly leave their spot at the start of the Sands Between as the plot progresses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed SFX functionality on a certain colossal late-game boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Puffer Quill Stowaway ATK buff reduced from +10 to +5 (Sorry! It was fun while it lasted)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "That's all for now! Hope you enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5766372999940995045"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-01T20:01:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-01T20:01:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.813Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-01T20:01:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.766Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.101.0",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 1.0.101.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-30T18:51:51.000Z",
+   "notes": [
+    {
+     "title": "A few pieces of BIG NEWS this patch!",
+     "items": [
+      {
+       "text": ":GoOver: We've located the memory leak in our level loading that was causing lag & crashes after many repeated deaths or scene transitions - this is potentially MASSIVE for performance and was likely the cause of several other mysterious issues as the game's memory use stacked up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch also includes some balance changes to builds relying on high ATK + Scrap Hammer. It's a single-player game, and ultimately we're not going to get too picky about how powerful certain builds are, but we felt that some stuff was pretty far off where we wanted. We've nerfed Shark Tooth, as it essentially felt like a must-pick for any ATK-based build. But simultaneously, we've made Lug Nut slightly better, and MASSIVELY buffed the Dispatch skill, in the hopes that capsizing enemies continues to feel worth it into the late-game. Ring-a-ding also no longer stuns absolutely every enemy in the game. We probably could have seen that one coming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of course, we've got plenty of other bug fixes here, especially ones relating to the camera, or to the player getting stuck in geometry. Hope you enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Note for anyone also playing on console: This update represents the cutoff for our first big round of hotfixes for console players! Now that we've made some serious optimization gains as well as fixing a lot of soft locks, we'll be bringing this patch to consoles as soon as possible!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed a hole in the ground in The Shallows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small Rock geometry fixes in The Shallows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a spot where the player could get stuck in the rockface in the tutorial area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies that dropped their hat would be able to be hurt by attacking the hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Sands Between where two Gumpounders that dropped bloodstar limbs would respawn, allowing you to farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could become trapped on a trash bag in a ravine in the Sands Between",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player could become trapped on a rock in Hermit Cave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Circle of life now works properly and will trigger more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where player could stand on a certain gunk pit in Flotsam Vale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where player could become trapped on trash near the Oil Drum in Expired Grove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lobster Guard in Slacktide no longer floats above the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sand Barrel in Slacktide no longer floats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collider on a comb gate just before New Carcinia to avoid wandering out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lobster statue in Slacktide missing collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Die Instantly will kill you regardless of assist settings. You don't even take damage, you just die. It's that instant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shell Abilities Fortify and Stealth no longer double charge Umami Charges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fortify VFX end properly when the effect is disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed geometry in a section of Expired Grove that could lead to issues in pitfall respawn safety",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Moon Jelly could push the player through the floor if standing under it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Skull shell would not spawn after killing the enemy that dropped it in Expired Grove, potentially locking out Shell Collection completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shell Spells are no longer displayed in the UI until you unlock them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to some unintended skips around Adaptation-Gated obstacles in the Expired Grove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skills tab in the pause menu now properly displays the starter 3 skills once you've unlocked Shelleport",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed geometry in Flotsam Vale that could be used to access a cliff in an unintended path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the possibility of a softlock in a pit in Flotsam Vale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Camera",
+     "items": [
+      {
+       "text": "Camera collision improvements for the pipeline in the shallows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the camera could freak out while wearing the Gun in a tight space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix to many cases where the camera would clip through the ground during the Dispatch animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pufferfish have a more stable lock-on target during their big spin move, preventing nauseating camera movement as they spin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Accessibility",
+     "items": [
+      {
+       "text": "Added Recover Microplastics button to Assist Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Lug Nut Attack speed debuff reduced slightly from -30% to -25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Default Capsize Time for most enemies reduced from 2.5s to 2.25s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Dispatch base damage buffed from 95 to 150",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ring-a-Ding no longer interrupts bosses or strong enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shark tooth bonus damage nerfed from 30% to 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shark tooth+ bonus damage nerfed from 60% to 40%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Combat",
+     "items": [
+      {
+       "text": "Hammer attacks should now work properly with attack speed modifiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dispatch no longer breaks the hammer instantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dispatch now properly accounts for hammer damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Nephro's grab attack could throw you out of the arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Enemies",
+     "items": [
+      {
+       "text": "Possible fix to weird visual corruption and crash when killing the Bleached Pufferfish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Topoda can no longer be spearfished during his sandstorm, as it was causing an issue where he stays invincible forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Large Thimble Rangoons no longer are marked as small weight class.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed a typo in Konche's intro dialogue in French.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 18,
+    "balance": 6,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5759616966683644165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-30T18:51:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.812Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-30T18:51:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:38:29.295Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-30T18:51:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.295Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.100.8",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Hotfix 1.0.100.8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-29T04:37:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Players with pit damage turned off were occasionally ending up in infinite loops of falling into the abyss, unable to die or pause the game. We will be working on reducing the instances where the game can spawn you in an improper place, but for now, we have added a failsafe where falling into a pit several times in a row this way will simply kill you, regardless of your assist settings. This should prevent players from getting soft locked this way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare soft lock where restarting the game could prevent the Moon Snail Shell in the Moon Snail's Domain from ever spawning. It should now always appear if you have talked to the Moon Snail at least once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the collision detection on many bosses, to hopefully reduce instances of them falling through floors and dying without a fair fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5759616966677835307"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-29T04:37:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.811Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-29T04:37:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.811Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-29T04:37:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.765Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.100.7",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Hotfix 1.0.100.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-28T02:11:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Happy Saturday! We have some more fixes for y'all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Certain users were finding their save file unusable if they had previously completed Verne's quest in The Shallows (the trapped crab on top of a small sand castle). This should now be resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Users with their system language set to Turkish will now be able to see text properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PROBABLY fixed an issue where Bloodstar Limbs were vanishing from the Prawn Shop without having purchased them. We never saw this issue on our end, but some inconsistent code was found and fixed that likely resolves it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The camera collision and locations where you could get softlocked in the Shallows that we reported in the previous hotfix did not actually make it in before -- they are included in this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the shell collection menu background would shrink over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Drastically increased the radius where you can pick up your corpse from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where removing a Stowaway the quick way via the Status Panel would not update your Stats display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Combat and enemy related",
+     "items": [
+      {
+       "text": "Fixed an issue where Voltai's appliances would come back to life after she dies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A certain late game enemy type no longer have healthbars on their legs when you equip the Contact Lens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Frogfish enemies could succ after dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the poise damage from Fizzle's bubbles by half.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Puffer Quill stowaway does -20DEF instead of -2DEF (It was always supposed to)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aggro Crab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5759616966673822225"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-28T02:11:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.811Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-28T02:11:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.811Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-28T02:11:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.764Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@1.0.100.6",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "PATCH 1.0.100.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-27T00:42:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been heads down today but this is us letting you know that we have seen all your bugs and suggestions reported in discussion, even if we haven't replied! It's our Friday night, so please bear with us if we're slow over the weekend with reports. Thank you for all the support, Crab Fans <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed an issue where you could not pause when grabbed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sand pillars' rock chunks not fading away when despawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue where pencil barricades’ rubber bands turned teal upon breaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where smokescreen ink wouldn’t dissipate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Also fixed the smokescreen issue where you could distract Heikea for far too long with the ability, leaving him idle for longer than the effect lasted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Interrupting the petting animation prevents Kril from acquiring items or equipping shells until he dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Chum can be targeted by Fizzle bubbles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer equip the gun as a hammer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat and enemy related",
+     "items": [
+      {
+       "text": "Fixed an issue where capsizing the Royal Shellsplitter during the fear attack would keep the screen greyscale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Duchess would spin you around forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Nerfed the Duchess’s grab damage from 65 to 50 and it no longer does true damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Duchess Moonjelly point lowered to ground level to prevent glitchy reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where bobbit worms could grab Pagurus. Pagurus can no longer be grabbed by any source.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you can walk around the trigger that starts the Duchess cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ceviche Sisters not properly dying permanently, allowing you to upgrade Bubble Bullet by killing them multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with Fredricks grave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Area",
+     "items": [
+      {
+       "text": "Fixed some soft lock issues in the shallows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated colliders on Fort Slacktide for improved camera performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a coral platform in Trade Route Detour on the way to New Carcinia that could leave the player trapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed functionality on multiple magrails in Scuttleport, some of which would move slightly even while unpowered during the loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization fixes",
+     "items": [
+      {
+       "text": "Fixed a typo in french for \"pet\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Two NPCs in Open Ocean had dialogue that was left in the game accidentally, and which lacked translations. It has been removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed swapped East and West on the compass in Portuguese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We've been heads down today but this is us letting you know that we have seen all your bugs and suggestions reported in discussion, even if we haven't replied! It's our Friday night, so please bear with us if we're slow over the weekend with reports. Thank you for all the support, Crab Fans <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aggro Crab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 19,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5759616966669950781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-27T00:42:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.810Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-27T00:42:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.810Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-27T00:42:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.763Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@0.10.60.11",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "PATCH 0.10.60.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-07T01:40:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey gang its 6:30 on a friday night but we have one last patch for you before Steam Next Fest starts! Ping me if there's any fires over the weekend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PATCH NOTES 0.10.60.11",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added basic support for PS5 Dualsense Controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Added a new setting in the Options Menu, \"Input Display Style\", allowing you to force prompts for a specific controller type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can no longer see Chum's healthbar with the contact lens lol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved readability of shortcut reels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where you could get softlocked by fishing a buried item in the Moon Caves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of polish to rolling-in-your-shell 🙂",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made it quicker to fall off cliffs and respawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed how the \"Shellshock\" Shell Spell works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5220292521186194218"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-07T01:40:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.809Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.735Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@0.10.60.9",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 0.10.60.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-05T21:05:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We hit 10k Downloads! Thank you for all the support and love for the demo. As a reward you get... a patch! Remember, if you got a bug to show off or a bone to pick with us, stop by the discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a handful of code issues that could cause a variety of unexpected bugs during play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where your corpse would spawn in the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the hitbox on the Lichenthrope's inhale attack to be more forgiving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "HOWEVER, Lichenthrope's turn speed has increased slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALSO decreased Lichenthrope's likelihood that he'll spam this move over and over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies will now politely wait for a couple seconds after a loading screen occurs (such as when respawning from a cliff).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version number is always visible so we can better assess bug reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual changes to the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5220292521181853790"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-05T21:05:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.808Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.735Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@0.10.60.8",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "Patch 0.10.60.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-04T01:49:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Its been a few hours since the demo's been out, and you guys already found some gnarly bugs. Nice!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just dropped a patch for some of the more egregious ones we're seeing, so update the game before you resume playing. Remember, if you got a bug to show off or a bone to pick with us, stop by the discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PATCH NOTES",
+     "items": [
+      {
+       "text": "You no longer get sent to Crab Heaven/Crab Hell when dying with a corpse in play sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where localized text wouldn't parse properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Combined \"mouse sensitivity\" and \"controller sensitivity\" into \"camera sensitivity\". It works for mouse now!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed missing characters in Simplified Chinese, Traditional Chinese, Japanese, and Korean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Diseased Lichenthrope's grab hitbox was active on Frame 1 of the grab animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grove Demo Fogwall will no longer prevent players from falling to their deaths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grove MSS 4 no longer null (attempted fix at level loading issue in grove)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various out of bounds issues in Moon Caves and The Grove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with an unintentionally slippery rock in The Grove near the oil drum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Somewhat reduced the ability to clip through walls using a shell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5220292521175280905"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-04T01:49:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.808Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.734Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@major-2023-05-18",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "RELEASE UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-18T20:06:51.000Z",
+   "notes": [
+    {
+     "title": "Good news for all our haters: We’re delaying Another Crab’s Treasure until early 2024.",
+     "items": [
+      {
+       "text": "After a lot of discussions, we’ve decided that spending another few months on developing this mfer is going to make it a way better game - one that’s worth the wait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Q: What are you gonna do with all that extra time?",
+     "items": [
+      {
+       "text": "A: Finish the game lol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We underestimated how much content this game would need in order to feel like a proper entry in its genre, and we need some additional time to get it right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Q: Is this because of all the other crap you’ve been doing like making a merch brand??",
+     "items": [
+      {
+       "text": "A: Not at all!! Promise. Side projects like LAZYDEVS are handled by people with actual free time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Q: So when the FRICK is your release date?",
+     "items": [
+      {
+       "text": "A: If we told you, we'd have to kill you. There are a bunch of reasons why devs might be unable to share their release date - timing an announcement like that well can completely make or break a game’s success.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For now, trust us that this is not an indefinite delay, and we'll have new announcements related to our launch sooner than you think. We’re making progress every single day toward a release that’ll make a splash💦",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Long story short - hang in there, we really appreciate all the support and continued hype for Another Crab's Treasure. Thank you for your patience, crabs <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paige (Community Manager)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5140340943306259414"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-18T20:06:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.807Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.733Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@major-2023-04-20",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "ANOTHER CRABS UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-20T18:36:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "HEY CRAB FANS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's already been a busy year for us, so I thought we should summarise how the past few months have gone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "DEMO SHOWCASE AT GDC",
+     "items": [
+      {
+       "text": "We had another chance to showcase ACT for an in person event. It was really great to hear all your honest feedback and excitement for the game. We took notes, made fun of people for being bad at the game, and got to see what you enjoyed most about Another Crab's Treasure!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those curious if the demo will ever become available online, the answer is: probably. We have plans!! BUT... Can't confirm dates or share any official news yet so hold tight on that and have some copium <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ALSO: Nick and Caelan got the chance to play the demo with the Kinda Funny team LIVE! The VOD is up If you'd like to hear some explanation about the demo directly from us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NINTENDO JAPAN'S INDIE WORLD SHOWCASE",
+     "items": [
+      {
+       "text": "Today we had a segment for Nintendo Japan go live! You can watch that HERE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been working on that secretly for a little while so if you're itching for some NEW GAMEPLAY FOOTAGE I recommend you check that out. We show off NEW MOVES and a NEW BOSS?!?!?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TOPODA",
+     "items": [
+      {
+       "text": "Speaking of new boss, meet TOPODA. A Mantis Shrimp that will really test your limits in combat. A lot of you from the community have been asking for us to add a Mantis Shrimp so it was HARD to not leak that we already had one in the game. SO HERE YA GO.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COSMETICS ANNOUNCEMENT",
+     "items": [
+      {
+       "text": "(Making this post made me realise how many events we've been involved in recently WOW)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Rivals of Aether team host a showcase every April 1st called \"Rivals Direct\". You should watch it HERE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Surprise surprise, WE WERE IN IT! This announced a new feature that we think a lot of you will be proud of... and that's COSMETICS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't worry, we're too lazy to implement microtransactions, so they're totally free and will come with the game. This includes, but is not limited to skins like:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maid Costume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mr Money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blue...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We might add more as we continue development, but for now this is something to look forward to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "OKAY BUT HOW'S THE ACTUAL GAME GOING?",
+     "items": [
+      {
+       "text": "It's going well! We still can't announce anything about the launch date though. The team is working on the later parts of the game, plus going back to previous levels and polishing a BUNCH of stuff. Not to mention all the little nitty gritty bits in between. BASICALLY we're on that grind. Game Development hard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AND THAT'S THE UPDATE! Thanks for all the continued hype for our game. We're very active on TikTok and Twitter if you're looking for more frequent updates, but if you hate that idea - Our Discord now has a bot that posts all of our TikToks! Pick your poison, really.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paige (Community Manager)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5133583099796266722"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-20T18:36:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.732Z"
+  },
+  {
+   "id": "another-crab-s-treasure-200903@major-2023-01-12",
+   "gameId": "another-crab-s-treasure-200903",
+   "displayName": "2023 - THE YEAR OF CRAB (Dev Log Update)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-12T20:52:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Crab Fans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a while - We've been working hard to fill Another Crab's Treasure with all your favorite crustaceans, trash, and pretty goated enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That being said, we have a big year ahead of us. So let's just jump right into the deep end!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "THE GAME IS LIKE, 75% DONE.",
+     "items": [
+      {
+       "text": "No, this doesn't mean that you can predict the release date. We still gotta do a few other things - like fix that bug that everyone's avoided for months, and a few other boring clean-up chores too. When we're ready, we'll let you know when to prepare your asses for launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SHELL AND TELL",
+     "items": [
+      {
+       "text": "As we said, we've been pretty busy. SOOOOO here's a highlights list of our best moments from development. Let us know your favorite!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW OFFICIAL SPLASH ART",
+     "items": [
+      {
+       "text": "We felt the promo art needed a bit of a refresh. Thanks to the very talented artist Arthur, we got him to make this REALLY COOL splash art for the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It's really starting to all feel real!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "COOL BOSS FIGHTS",
+     "items": [
+      {
+       "text": "If all you've seen is the trailer back in May last year, you might have missed some of the clips showing off a few characters and boss battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heikea, Intimidation Crab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polluted Platoon Pathfinder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GUN",
+     "items": [
+      {
+       "text": "TBH, not much to say here. We added a gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SHELL DESIGN COMMUNITY VOTE",
+     "items": [
+      {
+       "text": "We ran a community competition to suggest shells that could be added to the game. We picked our top 4, and left it to the community to vote which would be added to Another Crab's Treasure!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The winner ended up being... a weirdly stiff sock. Honestly, that's on us though.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "DEMO @ DAY OF THE DEVS",
+     "items": [
+      {
+       "text": "Another Crab's Treasure was lucky enough to be a part of Day of the Devs! An event where players can come along and play a bunch of upcoming indie games. We got a ton of feedback from new players, and it was incredible to get some in-person opinions on the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A playable demo might become available again at a later date - but for now, have this cool GIF that's directly from the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "WHAT'S NEXT?",
+     "items": [
+      {
+       "text": "This is gonna be an exciting year for Aggro Crab. Another Crab's Treasure is due to launch, PLUS we have plans for a bunch of other events including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collaboration news??",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Community Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AAAAAND MANY MORE >:): Thanks for all the support this past year! Here's to another year filled with crustaceans, Shellposts, and the destruction of crabitalism.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paige (Community Manager)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1887840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1887840/view/5035620840532210532"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-12T20:52:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1887840",
+      "checkedAt": "2026-11-13T03:14:53.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:06.731Z"
+  }
+ ],
+ "issues": []
+}

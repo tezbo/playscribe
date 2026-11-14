@@ -1,0 +1,5781 @@
+{
+ "game": {
+  "id": "kiborg-249998",
+  "igdbId": 249998,
+  "name": "Kiborg",
+  "cover": {
+   "imageId": "co9tma",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9tma.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2bg5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2bg5.jpg"
+  },
+  "ps5Release": "2025-04-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "kiborg-249998@major-2026-10-30",
+   "gameId": "kiborg-249998",
+   "displayName": "Body Split update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-30T17:12:31.000Z",
+   "notes": [
+    {
+     "title": "1. New Playable Character",
+     "items": [
+      {
+       "text": "A charming and powerful lady with flowing hair joins the roster! She doesn't have any unique abilities, but she does feature some decorative differences from Morgan. Note: the new character is only available via the free DLC, so don't forget to activate it. Co-op now allows players to pick different characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/5384860/KIBORG_Body_Split/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "2. Mud-Drenched Levels",
+     "items": [
+      {
+       "text": "The world now sinks deeper into filth with every new difficulty — expect more grime, mud, blood, and worse. We believe this will add a bit of extra interest to replaying the later difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/518fdad6d56a3c3c62ea1a17fb1173274f6e930a.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "3. Morgan's Prison Cell",
+     "items": [
+      {
+       "text": "We've added Morgan's prison cell, which means the co-op activator and the appearance selection stand have been relocated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "4. Customization Options",
+     "items": [
+      {
+       "text": "You can now remove Morgan's mustache, and the girl's hair color can be changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/ba9a12cfbaf7d8440eedf2c33fb52df814b0f13c.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "5. New Default Costume for Morgan",
+     "items": [
+      {
+       "text": "Morgan's default outfit has been changed to better fit the game's atmosphere. The old costume is still available for selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "6. Bug Fix",
+     "items": [
+      {
+       "text": "We've almost completely fixed one of the most infuriating bugs, where killing an agent caused animations to desync and characters to sync up incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/972d06c09a71e9d00fe060eb9a3dcb7315ad79a6.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1847920302239581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T17:12:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.621Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T17:12:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.621Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-30T17:12:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.143Z"
+  },
+  {
+   "id": "kiborg-249998@06.08",
+   "gameId": "kiborg-249998",
+   "displayName": "Patch 06.08",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-06T19:52:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Multiple fixes for Showstopper implants behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arena 4 / 5 enemies fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Asteroid skin fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Test Subject skin removed: Sorry for those issues who ecnounter it. Continue work on more fixes soon, Stay Tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1840310314343008"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T19:52:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.620Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T19:52:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.620Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-06T19:52:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.143Z"
+  },
+  {
+   "id": "kiborg-249998@major-2026-08-03",
+   "gameId": "kiborg-249998",
+   "displayName": "Showstopper update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-03T16:37:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "\"Showstopper\" Implant Set",
+     "items": [
+      {
+       "text": "Complete trap domination, sadomasochism and tricks are the main pillars of this circus-themed set. Lure enemies into traps using Hell Boxes from the Butcher dimension, ride a unicycle while running over everyone in your path, and turn your foes into flat pancakes using the new unique Wabbazam Hammer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Showstopper\" provokes high risk gameplay and gives high rewards in return. Some of the set's abilities are resurrection with subsequent seduction of your killer via a Kinky Balloon, damage increase with health decrease and Wabbazam Hammer that drains your blood instead of weapon durability, letting you control your health reserves for the aforementioned damage bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Showstopper\" also features 15 new augmentations to turn the tides of battle in your favor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/938c4f49bb439272426f70cfa3106fc81b74e459.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Arena 7",
+     "items": [
+      {
+       "text": "Fresh off the punishing trials of Descent, Morgan Lee thought he’d seen the worst of the Omega-201 tower. But the tower has a twisted sense of humor. Now, inmates must step into Arena 7, a brand new, unforgiving combat zone where familiar foes from KIBORG: Descent return with a vengeance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/ea0424de7c3205f8200ca670cc0e06742cc6a202.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Descent fixes",
+     "items": [
+      {
+       "text": "Ronin's first phase is more difficult now: his melee attacks were rebalanced and his dodge and parry chances were improved. His second phase has also received new distant attacks and the boss has overall gone through various fixes for a more comfortable and memorable fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous Improvements",
+     "items": [
+      {
+       "text": "Cooperative game progress is now saved correctly on exiting the game mid-run. Now you can continue playing with your friend without problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1839676055895269"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-03T16:37:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.620Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-03T16:37:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.620Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-03T16:37:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.142Z"
+  },
+  {
+   "id": "kiborg-249998@7",
+   "gameId": "kiborg-249998",
+   "displayName": "Patch 7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-23T17:09:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, All!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some small fixes here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Icer — shotgun damage fixed to match the arsenal value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snatcher — reduced resistance to unarmed damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloodhunt mutator — health restore fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Descent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a location where an enemy could get stuck under the floor — arena now ends correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy spawns in 2 locations — no longer stuck in walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed first boss activation trigger in co-op — now waits for both players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several subtitle timing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1835871199316249"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T17:09:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.619Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T17:09:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.619Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-23T17:09:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.141Z"
+  },
+  {
+   "id": "kiborg-249998@6",
+   "gameId": "kiborg-249998",
+   "displayName": "Patch 6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-16T14:07:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some cases where enemies would get stuck under the floor, preventing the combat arena from being completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare case where bullets (from primary weapons) would fly past the enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare case where a room could unload directly from under the player's feet, causing the hero to fall into the void (this mainly happened in the bar or event rooms).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated collapses, brought back the normal roll, and added invincible enemies — we think it's now much more \"fun\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you have dual firearms (primary or secondary), the HUD icon now reflects this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Accelerated the Butcher's resurrection process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed primary weapon aiming in co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1832700592794465"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-16T14:07:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.619Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-16T14:07:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.619Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-16T14:07:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.141Z"
+  },
+  {
+   "id": "kiborg-249998@post-2026-05-01",
+   "gameId": "kiborg-249998",
+   "displayName": "Rapid fix",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-05-01T14:25:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! Thanks for playing the DLC and for your direct feedback on the things that bother you the most — we're watching and will keep fixing things. Here's the list of quick fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Volkov has been moved to the center of the room. That's where he always should have been.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snatcher charge accumulation & spending — nerfed. Weapon theft can now be blocked, and so can shooting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Volkov achievement now unlocks not after one hit, but when his health is almost gone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed most DLC voice lines' volume — they should now be louder and respond properly to volume controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy kill count names in stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added stagger resistance to the final boss so he can't be knocked down so easily.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed most subtitle timing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Russian voice lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brought back Russian voiceover for the \"zero\" comic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We see your messages about co-op, balance, and other important things. We're on it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1831432155571508"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T14:25:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.616Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T14:25:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.616Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-01T14:25:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.138Z"
+  },
+  {
+   "id": "kiborg-249998@hotfix-2026-01-15",
+   "gameId": "kiborg-249998",
+   "displayName": "New Year hotfix!",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-15T12:12:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've released a hotfix that finally addresses the most annoying and long-standing bug: enemies will no longer become immune to firearm bullets over time. We apologize for the long wait for this fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Along with it, two simpler fixes",
+     "items": [
+      {
+       "text": "You will no longer see a score of 0 on the results screen if you haven't played Endless.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Endless mode now always correctly saves its progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Consoles and Mac will be updated later, sorry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Happy New Year to all! Best wishes! We're preparing mega-updates — details coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1821922921812641"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T12:12:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.615Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T12:12:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:38:29.287Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-15T12:12:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.288Z"
+  },
+  {
+   "id": "kiborg-249998@patch-2025-12-16",
+   "gameId": "kiborg-249998",
+   "displayName": "New Patch: \"Multiple saves\"",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-16T10:49:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🛠️ Patch NewNew: \"Triple Backup\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Hello, Friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]This update brings a long-awaited feature \"multiple save slots\", a major balance pass for maps and arenas, and a host of bug fixes. It's a great time to return to the KIBORG!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "✨ New Key Feature: Multiple Save Slots",
+     "items": [
+      {
+       "text": "You now have 3 independent game save slots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Start a new game without losing your main progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Share your setup with a friend so they can try their hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your main progress in Slot #1 remains completely safe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]🗺️ Tower Levels",
+     "items": [
+      {
+       "text": "Hardpoint Corridor: The force field has been repositioned to remove an unfair tactical advantage for the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tech Corridor: Added spawn points to allow Recruits to use the winch descent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser Trap: Its attack can now be blocked for defense.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Arena 2 (Rework)",
+     "items": [
+      {
+       "text": "Players now start the fight with 4 implants for more build flexibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Novak's health has been slightly reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arena 5: Removed 5 final waves. Implants are now granted immediately after defeating the Agents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Arena 6",
+     "items": [
+      {
+       "text": "Mutants in the tubes now spawn randomly. The pool includes: Lancer, Cutter, Slender, Ripper, Recruit, and Host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spike: Fixed the area of effect (AoE) of his attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Butcher: Increased base damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arena Rewards (General Rework): Rewards for completing Arenas 2 through 6 have been significantly revised and now range from ~300 to 750 Data, depending on difficulty and performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🩹 Improvements & Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an annoying bug that could cause a player's action (blocking, shooting, etc.) to become stuck during a sudden safe drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug that caused Novak to spawn underground and die if a player was standing in his spawn point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Whisper\" fight: A door now functions properly where there was previously just a hole in the wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interface: Minor color scheme fixes for menu buttons to improve readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio: Adjusted the frequency and volume of the Arena Announcer's voice lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing brief game freezes when saving settings changes on some PC configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]P.s. Consoles and Mac will be update a bit later!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Thank you for staying with us. Good luck on your runs through the Towers and Arenas!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]— Sobaka Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 10,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0,
+    "topNew": [
+     "You now have 3 independent game save slots!",
+     "Start a new game without losing your main progress.",
+     "Share your setup with a friend so they can try their hand."
+    ]
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1818752592135365"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T10:49:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.614Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-16T10:49:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:38:29.287Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-16T10:49:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.287Z"
+  },
+  {
+   "id": "kiborg-249998@hotfix-2025-11-06",
+   "gameId": "kiborg-249998",
+   "displayName": "Commando update hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-06T17:42:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've released a hotfix to address several issues reported by the community. Thank you for your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed Bugs",
+     "items": [
+      {
+       "text": "Arena 6: Fixed an issue where Brute would throw grenades at incorrect targets instead of focusing on enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arena 4: Resolved a bug where firearm ammunition was not replenishing upon killing enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elevator: Fixed a collision bug that could cause the player to fall through the floor while riding the elevator upwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Meditation Room: Addressed fall that could occur in the meditation room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Commando Implant Set: Fixed an issue where mines from the new Commando implant set were not dealing damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arena 5: Fixed an issue where allies would incorrectly attack the defense generator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1815580768267952"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-06T17:42:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.613Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-06T17:42:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.613Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-06T17:42:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.135Z"
+  },
+  {
+   "id": "kiborg-249998@major-2025-11-05",
+   "gameId": "kiborg-249998",
+   "displayName": "COMMANDO update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-05T18:00:12.000Z",
+   "notes": [
+    {
+     "title": "Greetings, KIBORGS!",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Strap in and prep your systems for the biggest update to KIBORG yet! The \"Chaos & Control\" update is live, bringing a massive amount of new content, wild new ways to play, and the power to break the game itself. Let's dive in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🎯 New Content to Master",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3 Brand New Arenas: Expand your battlegrounds with three distinct new locations, each with unique layouts and challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/b540d234290c89fe703dd548a2b2f7f05ea61b97.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 New Skins: Customize your kiborg with two fresh new looks to stand out in the combat zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/cd374bcfb305712a1d0428c5106ddedb22f74fcf.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1 New Implant Set: Unleash explosive mayhem with a brand new implant set focused on boosting explosions and projectile-based abilities!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/558b48e2adfbe86aa754e2961103be0f0756f346.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🌀 New Game Modes System: Chaos or Cheats?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]A whole new system of Modifiers is here! These can be purchased for a hefty amount of Data and allow you to drastically alter your runs. Choose your path: controlled chaos or pure power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Game Modes (75,000 Data)",
+     "items": [
+      {
+       "text": "Chaos Mode: Grants a random status effect to Morgan and all enemies every 10 seconds. Pure anarchy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OHKO Mode (One Hit Knockout): Everyone, including you, dies in a single hit. High stakes, high tension.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collapse Mode: An annihilation cannon strikes the arena from above every 5 seconds. Nowhere is safe!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Cheat Modifications (100,000 Data): Feeling overpowered? These cheats let you break the game's rules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Infinite Implant Reroll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Infinite Weapon Durability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Infinite Ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Infinite Energy & Shields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Everyone Staggers from One Hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. No One Can Block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10. Connector Roulette Doesn't Cost Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/647725b3d42200941cea9784072074aba7070036.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]🐛 Bug Fixes & Polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We've also squashed a number of pesky bugs to make your experience smoother:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Sovereign Co-op finishing shot firing a ray from the other player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed issues with end-stage checking rules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controls in the skin and hat selection menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the next level wouldn't load in the labs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hint displays in the HUD for range weapons on Keyboard & Mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated icons for some mouse buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the endless train not closing its doors while moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected UI colors in the Grey color scheme.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed score display issues when continuing a game after quitting in Endless mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1815580768235668"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-05T18:00:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.612Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-05T18:00:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.613Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-05T18:00:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:28.134Z"
+  },
+  {
+   "id": "kiborg-249998@2",
+   "gameId": "kiborg-249998",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-30T13:59:13.000Z",
+   "notes": [
+    {
+     "title": "Short Patch Notes for Rapid Patch",
+     "items": [
+      {
+       "text": "Fixed two rooms that could fail to load at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Descent difficulty now automatically increases from 8th to 9th level after completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Closed several geometry holes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple fixes for Narrative flow in Descent mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed first elevator (in Co-op) not waiting for the second player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed infinite loop on boss in Endless mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Blur implants distribution in Co-op (again).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collision fixes in some Descent levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly adjusted cases where the host could speak two lines at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1815580768273593"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-06T21:41:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.614Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-30T13:59:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.616Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-30T13:59:13.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:17:36.569Z"
+  },
+  {
+   "id": "kiborg-249998@hotfix-2025-09-27",
+   "gameId": "kiborg-249998",
+   "displayName": "Co-op hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-27T08:55:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, players! This hotfix addresses several issues to improve your gameplay experience. Here's what's new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Co-op Play: Fixed an issue where Player 2 did not receive the correct implant rewards from safes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera: Addressed a camera problem during reward distribution for Player 2 in co-op mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat: Resolved several cases where players could accidentally damage themselves with their own attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy AI: Corrected instances of improper attack behavior from enemy blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance: Reduced the frequency of encounters with suicide-bot enemy patterns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI/UX Improvements: Polished the user interface with database optimizations and updated settings and buttons across multiple screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1811772772304165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-27T08:55:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.611Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-27T08:55:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.611Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-27T08:55:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.568Z"
+  },
+  {
+   "id": "kiborg-249998@1.4",
+   "gameId": "kiborg-249998",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-16T17:16:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We've just deployed a major update that makes KIBORG even better. As always, a huge thank you for your continued support and feedback—it was instrumental in shaping this list of changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Key Improvements in This Update",
+     "items": [
+      {
+       "text": "[p align=\"start\"]🛋️ Local Couch Co-op (via Steam Remote Play Together)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The highly requested feature is here! You can now experience the game's story with a friend on the same screen. While it's local co-op, you can easily invite a friend to play online using Steam Remote Play Together. Grab a couch and get ready for some shared adventures!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/8a6d8cce61b8dc332811c8e8a02a45327fd1d0b6.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]✨ Significant UI Polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've done a major visual overhaul of the game's user interface. All elements remain in their familiar places (we didn't change the UX), but they now look much more detailed, stylish, and atmospheric. We hope you enjoy the new visual flair!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/afd9107e4a414e19954a2e7de570343e240d7573.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]⚡ Major Performance Optimization (CPU)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We performed a deep code refactoring that significantly reduces the game's CPU load. This is especially noticeable in large levels and scenes with many objects. Note: If your performance was previously limited by your graphics card (GPU), you may not see a drastic FPS boost, but overall stability should be improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]🎙️ New Narrator Voiceover (Optional)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've recorded an alternative voiceover for the main narrator in English. This is an option for those who, for whatever reason, would prefer a different delivery. It's important to note: We still consider the original voice to be the canonical one and we love it, but we are listening to our community and want to ensure everyone can find the most comfortable experience. The new voice can be selected in the sound settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]📢 New Announcer Lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The narrator has become a bit more talkative! We've added several new lines that may hint at some story details and immerse you deeper into the game's atmosphere. Don't worry, we've avoided spoilers—just some light and intriguing hints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]🎬 Intro Video for New Players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To better introduce new players to the game's world, we've added a cinematic intro video that plays when starting a new game. We took it from our launch trailer, so it won't be new content for our veterans, but it will perfectly set the tone for newcomers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]🐞 Numerous Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As with any major update, we've squashed a bunch of small and not-so-small bugs to make your gameplay even smoother and more enjoyable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For example fixed chain attack widget stuck on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]We hope you enjoy these changes! As always, we'd love to hear your feedback in the comments below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Thank you for playing KIBORG!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Your Sobaka Studio team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "[p align=\"start\"]🛋️ Local Couch Co-op (via Steam Remote Play Together)",
+     "[img src=\"{STEAM_CLAN_IMAGE}/44057409/8a6d8cce61b8dc332811c8e8a02a45327fd1d0b6.jpg\"]",
+     "[p align=\"start\"]✨ Significant UI Polish"
+    ]
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1810503566585873"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-16T17:16:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.611Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-16T17:16:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.611Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-16T17:16:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.567Z"
+  },
+  {
+   "id": "kiborg-249998@hotfix-2025-07-04",
+   "gameId": "kiborg-249998",
+   "displayName": "HOT FIX",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-04T15:56:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix Drone Factory not dying softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add separate camera sensitivity controls for Gamepad and Mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1803527891773486"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-04T15:56:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.610Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-04T15:56:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.610Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-04T15:56:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.567Z"
+  },
+  {
+   "id": "kiborg-249998@patch-2025-07-01",
+   "gameId": "kiborg-249998",
+   "displayName": "Good patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-01T21:47:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🛠️ Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A small patch focused on polishing Novak, Endless Mode, and overall balance. After this update, we’ll be shifting our focus to a larger content release — it’s going to take some time, but it’ll be worth the wait. Stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚔️ Novak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charged attacks now have an orange trail on first-boss difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that allowed Novak to use second-phase attacks during phase one on difficulty level one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented the Charged Vertical Attack from being used at long range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated visuals for the Charged Vertical Attack’s wave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Behavior and balance readjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New combo attack: a chain of Charged Vertical Strikes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Novak’s HP scaling per level reduced: 300 → 200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "♾️ Endless Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Endless scores now save even if you close the game mid-run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the train door could open before the location was fully loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixed issues with enemy speed behavior in Endless Mode",
+     "items": [
+      {
+       "text": "Enemies no longer stand AFK after spawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Killing the Butcher too quickly could prevent the room from ending and cause a softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Agents’ finisher animations no longer speed up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⚡ Balance Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fenrir’s Heart buffed – required kills to trigger effect reduced: 5 → 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spinner Mine damage reduced: 30 → 20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bosses’ damage scaling per level decreased by approximately 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bosses' damage processing updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gunslinger’s Revolver now deals 1 shield damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "📝 Dev Comment: This change makes Gauss Revolver more comfortable to use on higher difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Thundergod’s Heart reworked",
+     "items": [
+      {
+       "text": "New effect: Prevents death and consumes all energy to heal. The effect triggers if you have at least 1 battery. Each subsequent trigger costs 3 more batteries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Healing slightly buffed: 3/4/5/6% → 4/5/6/7%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ga Bolg",
+     "items": [
+      {
+       "text": "Combo third strike damage: 25 → 35",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combo finisher damage: 120 → 90",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vajra",
+     "items": [
+      {
+       "text": "Combo finisher damage: 35 → 60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trap Master achievement is now more consistent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where allies couldn’t damage enemies with shield generators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Chemist explosions were triggered by ally attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple softlocks caused by falling through elevator floors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Affinity augmentations no longer drop if you already have 7 implants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased chance of receiving melee and ranged agents from the same set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where having too many weapons caused only a portion of them to be saved after restarting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where flying polearms (from Fenrir Spine effect) didn’t rotate like other weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shockwave VFX notify in Balmung combo finisher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Heavy Rounds weapon mod could stunlock bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 20,
+    "balance": 1,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1803527891683732"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-01T21:47:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.609Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-01T21:47:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.609Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-01T21:47:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.566Z"
+  },
+  {
+   "id": "kiborg-249998@patch-2025-06-26",
+   "gameId": "kiborg-249998",
+   "displayName": "Regular Patch with good improvements!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-26T15:34:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "⚔️ Novak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Novak got serious upgrades",
+     "items": [
+      {
+       "text": "Saint Rain attack reworked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charged attacks no longer leave energy clouds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charged Vertical Strike now launches a damaging wave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After a Dash, Novak can perform Charged Vertical Strike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Base attacks can now be performed as combos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Railgun attacks now include an extra effect to better telegraph timing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage, cooldowns, shield cost, and weights of most attacks rebalanced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn position adjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On first boss difficulty (Towers 1–5), Novak’s primary color changed to orange",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stage 2 now starts slightly earlier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where some attacks were extremely rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where DoT status damage could cancel Novak’s flight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the melee strike in the railgun combo couldn't be parried",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "📝 Novak Comment: You had your fun. Now it’s my time :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📊 Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Second Wind status updates",
+     "items": [
+      {
+       "text": "3 burning swords: Regeneration → Protection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4 burning swords: Vampirism → Regeneration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5 burning swords: Symbiosis → Vampirism",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Endless Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced risk of one-shots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Difficulty scales faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Points rebalanced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minigun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Base damage: 7 → 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ammo capacity: 300 → 200",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Augmentation “Golden Shield”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bonus limit: 85% → 80%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bonus per 100 tokens: 5% → 1%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Augmentation “Bulwark Protocol”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ally healing on parry: 5% → 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bar Prices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bottomless Pit: 500 → 400",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clear Sky: 400 → 250",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mutator “The Last Light”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Temporarily disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slowed (again)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚀 Blur",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage over time from status effects no longer resets attack chains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage over time from status effects no longer triggers torso explosions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Aerodynamic Design augmentation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new augmentation: Ghost Synchronicity – ghost copies now inherit all of Morgan’s bonuses to movement and attack speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📝 Dev Comment: A QoL change — the removed augmentation’s effect is now applied by default, and the slot has been repurposed for a new augmentation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚡ Thundergod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heart’s resurrection energy cost increased: 3 → 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Power Flow augmentation reworked – new effect: Triples the energy gain rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A “Stuck” button is now available in the pause menu during combat – it teleports the player and enemies to appropriate positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug preventing Stage 3 from appearing in Endless Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed entering the helicopter after encountering Novak in endless mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where combat mods weren't generating properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Gunslinger agent’s attack animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated light and heavy attack animations for dual-wield weapons (bats, swords)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where Source Slenders could spawn after room completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Ricochet Rounds caused bullets to hit allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting issues in Arena 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated several sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 1,
+    "other": 47,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1803527891511546"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-26T15:34:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.608Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-26T15:34:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.608Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-26T15:34:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.565Z"
+  },
+  {
+   "id": "kiborg-249998@hotfix-2025-06-17",
+   "gameId": "kiborg-249998",
+   "displayName": "Hot fix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-17T14:03:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Quick patch for some annoying issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed endless scores from enemy kills after resuming the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed endless scores UI not updating properly after completing a room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed meditation-like event screens not responding correctly to gamepad input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where declining a mutation increased negative effects. It now increases only positive effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gunslinger legs — they now properly drop ammo from AoE melee attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Reaper IV mutation not increasing attack speed as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1802354289725261"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-17T14:03:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.607Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-17T14:03:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.608Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-17T14:03:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.564Z"
+  },
+  {
+   "id": "kiborg-249998@hotfix-2025-06-15",
+   "gameId": "kiborg-249998",
+   "displayName": "Implants drop hot fix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-15T22:19:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Agents now correctly drop implants after players complete Arena 3 and enter the Tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1802354289671297"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-15T22:19:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.607Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-15T22:19:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.607Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-15T22:19:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.563Z"
+  },
+  {
+   "id": "kiborg-249998@major-2025-06-14",
+   "gameId": "kiborg-249998",
+   "displayName": "Endless mode update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-14T16:43:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "♾️ Endless Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After defeating Novak, you can now continue your run in Endless Mode to truly test your build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How far can you go? How high can you climb on the leaderboard?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏟️ New Arenas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two new arenas have been added! One throws you into chaotic fights against agent hordes, and the other is a full-on boss rush. Clear these challenges to unlock two new skins for Morgan:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Medical Worker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bureaucrat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔧 Major Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug causing enemy attack frequency to scale incorrectly with level. Enemy attack speed has been fully rebalanced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased movement speed for Morgan and all enemies by 15–30%, making tower traversal during combat feel more fluid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "🌀 Whisper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue that spawned the boss on the first difficulty with a higher level than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused Whisper’s mirrors to always spawn at level 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed Spinner-mine to one-shot Whisper’s mirrors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "☄️ Asteroid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue that spawned the boss on the first difficulty with a higher level than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Base HP increased by +400.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧬 Source Rework",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All 7 Source Implants have been reworked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed all debuffs and individual summon effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implants now grant global synergistic effects with game-breaking potential.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved target selection logic — bosses and enemies now won’t ignore the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Allies attack more frequently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Augmentations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Family Sharing I–V",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recycling Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deadeye Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sacred Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plague Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Matriarch Module",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Complete Symbiosis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Augmentations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bleeding Core",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grave Forge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Contagion Core",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebirth Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swarm Surge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easier Conditions for Augmentations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Generator Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bulwark Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combo Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Augmentation Tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Generator Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Duration: 10s → 20s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bonus Electric Damage: 10 → 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bulwark Protocol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revive Speed Boost: 5s → 10s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👑 Sovereign Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easier Conditions for Augmentations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Chain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Chalice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Scabbard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Standard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Rod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Augmentations Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spoils of War token bonus: 20% → 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Chalice status accumulation: 10% → 5%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Golden Shield damage resistance cap: 75% → 85%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eternal Regalia activation time: 30s → 20s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧬 Mutator Tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berserk Rage damage per hit taken: 5% → 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reaper II damage bonus: 25% → 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reaper V",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage Bonus: 10% → 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HP Penalty: -20% → -25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reaper VI movement speed penalty: -20% → -15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Exploder Bot Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bot now explodes faster but within a smaller radius.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Movement speed has been increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bots now appear slightly more often and in larger numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📦 Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On difficulty 1, the second Agent now appears in room 5 instead of 6 in Streets and Labs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rubber Hammer crit damage multiplier: 20 → 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📝 Dev Comment: It’s a rubber hammer, and it’s not the most powerful weapon in the game?.. We’ll fix that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guardian synergy starting bonus: 1% → 5%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various localization and description fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potential fix for a softlock when falling under the arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed softlocks in Labs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where weapon particles would trigger when attacking the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated AoE damage logic for enemy projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the game would not load after being minimized during loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎬 Animations & Visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added spawn animations for",
+     "items": [
+      {
+       "text": "Greatsword Agent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fenrir Agent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Loader Robot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved projectile VFX for HPS-13 “Seeker” SMG.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added unique impact VFX for KSS-04 “Icer” shotgun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies no longer rotate toward Morgan during death animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed decapitation visuals for Spike and Ripper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corrected Spike’s arm dismemberment animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed torso physics on Bandit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new combo finisher for lighter greatswords.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new attack animation for Asteroid for more visual variety.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🔥 See you in the Tower, Kiborgs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 8,
+    "balance": 1,
+    "other": 73,
+    "ps5": 0,
+    "topNew": [
+     "Greatsword Agent",
+     "Fenrir Agent",
+     "Loader Robot"
+    ]
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1802354289632653"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-14T16:43:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.606Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-14T16:43:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.606Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-14T16:43:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.563Z"
+  },
+  {
+   "id": "kiborg-249998@patch-2025-05-30",
+   "gameId": "kiborg-249998",
+   "displayName": "Another Great Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-30T22:18:15.000Z",
+   "notes": [
+    {
+     "title": "🛠️ Patch Notes",
+     "items": [
+      {
+       "text": "🎮 Steam Deck Verified!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Kiborg is now officially Steam Deck Verified!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "To achieve this milestone, we’ve significantly improved the Steam Deck interface and enhanced text readability throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🐞 Major Bug Fix",
+     "items": [
+      {
+       "text": "Fixed a critical bug that caused the game to crash when pressing \"Play Game.\" Enjoy a smoother experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Blur",
+     "items": [
+      {
+       "text": "Secondary stats now provide more speed: 5% → 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fire damage bonus from attack chain increased: 0.1% → 0.3%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slow motion from Blur Spine reduced: 40/50/60/70% → 20/25/30/40%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack chain duration bonus from major synergy increased: +1s → +3s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fenrir",
+     "items": [
+      {
+       "text": "Altars now count all deaths in the zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gunslinger",
+     "items": [
+      {
+       "text": "Knives from the left hand now travel farther, no longer getting stuck mid-air, and reliably fly toward walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Source",
+     "items": [
+      {
+       "text": "Source implants now grant stronger bonuses when combined with other implants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased ally damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Implant base bonus to ally level increased: 1 → 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thundergod",
+     "items": [
+      {
+       "text": "Thunderstorm Attractor augmentation now summons lightning instead of just buffing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Free Spark now has a new effect: Restores 10% of battery after killing an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Remedium",
+     "items": [
+      {
+       "text": "Removed health bonus from Remedium secondary stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right Hand poison buildup from attacks increased: 10 → 40",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Left Hand poison buildup from blocking increased: 20 → 40",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Comment: Remedium was too tanky without meaningful early-game damage options. These changes provide more offensive tools earlier in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Guardian",
+     "items": [
+      {
+       "text": "Removed the outdated part of the minor synergy: “You receive positive status effects of your allies, while allies receive yours.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New major synergy effect: Each shield increases melee damage by 1%. This bonus increases by 1% per shield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dev Comment: These changes remove outdated effects and introduce much-needed late-game damage scaling for the set.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sovereign",
+     "items": [
+      {
+       "text": "Swapped the effects of the minor and major synergies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚔️ Combat",
+     "items": [
+      {
+       "text": "Dash attack damage reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combo attack damage increased for",
+     "items": [
+      {
+       "text": "Ankhil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balmung",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gáe Bolg",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gan Jiang",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mjölnir",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kusanagi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Comment: We want to keep dash attacks primarily as movement tools while rewarding players for engaging in close combat and executing combos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "👾 Enemies",
+     "items": [
+      {
+       "text": "Disabled Loader’s gravity pull attack to prevent softlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chemist explosion now has a trigger chance; radius and timing adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incubator projectile now travels faster, but is less magnetic to targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Weapon Mods",
+     "items": [
+      {
+       "text": "Death Bonus effect reduced: 3% → 1%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fortune Matrix nerfed: 0.25/0.5/0.75/1% per token → 0.1/0.2/0.3/0.4%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Disabled the following melee mods",
+     "items": [
+      {
+       "text": "Awaken Rage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Awaken Defense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Awaken Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Awaken Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Awaken Symbiosis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transcend Rage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transcend Defense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transcend Blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transcend Life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transcend Symbiosis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Comment: These mods cluttered loot drops and had minimal impact. Disabling them improves the overall quality of high-rarity weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚠️ Traps",
+     "items": [
+      {
+       "text": "Laser: lasts longer, moves slower, deals more damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flamethrower: duration increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hand trap: more accurate, hits for longer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Comment: These changes improve clarity and fairness when dealing with traps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Other Changes",
+     "items": [
+      {
+       "text": "Implant primary stats (such as shields from Guardian or energy from Thundergod) are now unlocked from the beginning of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ammo Drops perk is nerfed: 15 ammo → 10 ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy level increased in stages 2 and 3 on difficulties 6 and 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoothed difficulty curve between floor 1 end and floor 2 middle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Second Wind super attack is now locked until the beginning of the first fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Russian Roulette can no longer kill the player and now leaves them at 1 health instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Safe rewards adjusted:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tokens: 150 → 120",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ammo: 150 → 100",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player now repels allies when moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased max FOV for ultra-wide screens",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New UI for the start and end of combat animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Soldiers now have an alternative model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎬 Animations",
+     "items": [
+      {
+       "text": "Updated block-break animations for several enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked knife attack animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New dismemberment death animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated animation for Agent Fenrir",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved asteroid visuals and animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished heavy sword animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Lancer visual effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧰 Fixes",
+     "items": [
+      {
+       "text": "Fixed damage types for Generator Protocol, Golden Rod, and Thunderdome augmentations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Thunderdome math calculations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed critical hits on heavy hitters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Prevention Wearout weapon mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several localization bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spike dodge behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Whisper Arena intro lighting now only plays once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented players from getting stuck on traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed secondary explosions from Ki Explosion harming allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trap decals now properly appear beneath traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ammo on Demand perk no longer drops duplicate boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the suicide bot loader could use gravity pull",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mine Launcher spawning all mines in one place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented the Long-Term Investment mutation from appearing at the beginning of the run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 15,
+    "balance": 1,
+    "other": 61,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1800991756357312"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-30T22:18:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-30T22:18:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.605Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-30T22:18:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.561Z"
+  },
+  {
+   "id": "kiborg-249998@patch-2025-05-16",
+   "gameId": "kiborg-249998",
+   "displayName": "Major Patch & Future Plans!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-16T21:51:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, dear players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just released a major patch packed with fixes (details below), and now we’d like to share our current plans and thoughts with you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MAC build and Consoles will be updated in nearest future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Thank You!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all — a huge thank you for your time spent in the game, your feedback, bug reports (especially via F7!), and for the amazing content on YouTube, Twitch, and other platforms! You make our community better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. What We’re Working On Right Now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Endless Mode and 6 new arenas — both features are already in development and will be released in just a couple of weeks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Trading Cards — waiting for final approval from Valve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Deck — actively working on compatibility improvements to get that sweet verification.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Soundtrack and ArtBook — will be released soon separatly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Co-op — Is It Happening?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We did experiment with local co-op in one of the demo versions, but the game has since become more complex. Just imagine: two players in full \"Source\" armor means 14 units on the battlefield at once! 😅",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Still, we’re exploring the possibility of adding co-op in some limited form. But it’s important to note: online co-op is definitely not happening — it’s technically impossible in \"KIBORG\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Voice Acting — What’s the Plan?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know many of you aren’t happy with the current voice acting. In this patch, we’ve added the option to disable character voices individually. We’re also looking into ways to improve this further, but we’re not ready to share details yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Discord & Leaderboards?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re considering adding Discord activities (maybe tournaments or events) and a leaderboard system — but these are still in early discussions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Secret Ideas…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have some really exciting ideas in the works, but it’s too early to talk about them. Once things are finalized, we’ll share the news — promise it’ll be worth the wait! 🔥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay changes",
+     "items": [
+      {
+       "text": "Status effect tick damage can no longer kill the player — it no longer deals damage when the player has 1 health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Comment: Dying from status effects was one of the most frustrating experiences. With this change, status effects should feel fairer to players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Status explosions now deal more damage to enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now have higher levels on difficulties 2 through 7, providing a more engaging challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the difficulty curve at the end of Floor 2 and the beginning of Floor 3 to smooth out a difficulty spike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The \"Organic Tissue\" augmentation now heals from the last two hits instead of three.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the \"Efficient Exchange\" perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev Comment: \"Organic Tissue\" and \"Efficient Exchange\" rewarded passive gameplay, such as standing AFK out of combat. This created unengaging playstyles, so we’re addressing this issue in this and the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Buffed the following mutators",
+     "items": [
+      {
+       "text": "Brawler",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Defensive Overcharge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berserker Rage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Last Light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glass Cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloodhunt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tesla Adept",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Energy Surge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Status Overload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bladerunner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glassforged",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Digital Mirage I",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Digital Mirage II",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Digital Mirage III",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reaper III",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reaper IV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reaper VI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reaper VII",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deadeye II",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deadeye III",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deadeye V",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aegis Shield System III",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aegis Shield System IV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steelblood IV: Dev Comment: Mutators should now feel like real power boosts instead of unfavorable trade-offs.: Removed \"Elite Bodyguards\" mutator until further rework.: Slightly increased the reload cost of the Gauss Revolver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Nerfed Gunslinger augmentations",
+     "items": [
+      {
+       "text": "Quick Reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick Draw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full Metal Jacket",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One Machine Army: Dev Comment: These high-end augmentations were a bit too strong and made the Gunslinger overpowered too quickly. The set can still reach a \"broken\" state, but now it won’t escalate as fast and won’t one-shot the final boss.: Reduced number of Drone Factories and Incubators in encounters.: Fenrir Minor Synergy now has an increased chance to drop health pickups.: Fenrir altars now drop melee weapon pickups instead of health packs.: Dev Comment: These Fenrir changes should make the set more stable and less dependent on RNG for melee weapon drops.: Reduced horizontal recoil deviation; overall recoil on some weapons has been lowered.: Removed the \"Integrator\" melee weapon mod.: Blur Heart now requires a smaller attack chain to trigger healing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚙️ IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Chemist Balloon Explosion – Updated logic for more predictable chaos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy AI Tweak – Attack commitments! Enemies can no longer swap targets mid-swing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weapon Recoil 2.0 – Smoother shooting physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "HUD Upgrade – Critical info now bigger & bolder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reset Progress – Added hold-to-confirm (no more tragic misclicks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cutter Abilities – Rebalanced weight system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam Deck – Disabled annoying feedback hints",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🐞 BUG FIXES",
+     "items": [
+      {
+       "text": "Cinematic Safety",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed deaths during safe cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turrets no longer fire during dramatic moments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Progress Blockers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Meditation softlock erased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Negative max health glitch patched",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Annoyances Removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Duplicate notifications silenced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inga’s repeated phrases reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Roulette spin after reward fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Text & UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Incorrect descriptions rewritten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Super Strike gamepad hint corrected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implant upgrade stats now display properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balance & Behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Universal Remedium regeneration fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Equilibrium perk won’t harm allies anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dual Heatstorm sidearms stats recalibrated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Character Issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Novak no longer eternally stuck in \"Saint Mode\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Whisper no longer stuck after Dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gunslinger drones don't stugger bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 22,
+    "balance": 1,
+    "other": 54,
+    "ps5": 0,
+    "topNew": [
+     "Chemist Balloon Explosion – Updated logic for more predictable chaos",
+     "Enemy AI Tweak – Attack commitments! Enemies can no longer swap targets mid-swing",
+     "Weapon Recoil 2.0 – Smoother shooting physics"
+    ]
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1799817379513427"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T21:51:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.603Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T21:51:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.604Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-16T21:51:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.560Z"
+  },
+  {
+   "id": "kiborg-249998@5",
+   "gameId": "kiborg-249998",
+   "displayName": "Patch 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-11T23:49:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In Volkov's room, breakable objects now shatter from the main hero as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All augmentations that required 4 implants from a set now require 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Randomizer now has more useful rewards than harmful ones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuned Ronin staggers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Miner now has a warning sound and lantern flicker (the sound is a bit annoying, but it really helps you stay alert).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Significantly reduced Miner's hit collision (previously he hit from too far away).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longer dashes on the Chainsaw.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered block chance for hosts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed the Intervention event from the first five arenas in the Ruins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Novak's and Demon's wave attacks so one attack cannot damage the player more than once (previously this could feel like an instakill).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed doors to the previous location not closing when a fight started (could create a hole/exploit).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Gauss Revolver (Gunslinger's right hand) stopped dealing damage if the game was turned off and restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Closed the possibility of skipping a fight in the final location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several collision issues (getting stuck).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 2,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1832065502822596"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-11T23:44:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.618Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-11T23:49:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.618Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-11T23:49:07.000Z"
+     }
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:24:06.618Z"
+  },
+  {
+   "id": "kiborg-249998@4",
+   "gameId": "kiborg-249998",
+   "displayName": "Patch 4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-07T22:15:15.000Z",
+   "notes": [
+    {
+     "title": "🎯 Arsenal",
+     "items": [
+      {
+       "text": "Added implant preview screen in the Arsenal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/39828e4e73eaa7e00ac87fb8f9bdcad74adb6a67.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚔️ Weapon Fix",
+     "items": [
+      {
+       "text": "Fixed a bug where dual primary weapons infinitely restored ammo on any hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🧱 Collision & Geometry",
+     "items": [
+      {
+       "text": "Fixed collision in the Ruins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual hole in the Limbo elevator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed geometry overlapping in several places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🛗 Elevator",
+     "items": [
+      {
+       "text": "Fixed the starting elevator — could arrive at wrong point and cause softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "💀 Difficulty",
+     "items": [
+      {
+       "text": "Added skulls to difficulty levels 8 and 9. (This will better explain that fight will be tough)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44057409/514616735b7858cf40c830dc1b1eb1c605b4995f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "🎙️ Volkov's Voice Lines",
+     "items": [
+      {
+       "text": "Fixed Volkov's lines interrupting each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1832065502818393"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-09T23:05:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.617Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-07T22:15:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.618Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-07T22:15:15.000Z"
+     }
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:24:06.617Z"
+  },
+  {
+   "id": "kiborg-249998@3",
+   "gameId": "kiborg-249998",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-06T21:54:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🍎 Mac Overhaul (Important)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added full Descent mode support, fixed achievements & Steam overlay.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Disabled sandbox mode — saves now go to a new location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automatic save copying added. If saves seem lost, contact us (they're still in the old folder).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚔️ Enemies & Combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Boulder & Miner attack readability and balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Snatcher can no longer steal the Gauss Revolver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chainsaw third hit now hit properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix case where Descent biom could start on lowest difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎙️ Audio & Subtitles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed cut-off voice lines and inaccurate subtitles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected Volkov's voice line order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed repeated narrative lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🧩 Levels & Bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added unstuck points in Disruptor boss level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiple fixes for both phases of the final boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arena selection now shows rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Other Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visually improved comic cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Commando synergy unlock order (was swapped).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⚠️ Rare Shader Cache Issue & Fix",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We want to address one very rare issue here as well (about 1/100 cases): the shaders cache could break after updates, causing the game to stop running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To fix this, please do the following",
+     "items": [
+      {
+       "text": "Press Win + R",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Copy and paste \"%LOCALAPPDATA%\\\\Kiborg\\\\Saved\" (without quotation marks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the folder that opens, delete all files with the extensions .USHADERPRECACHE and .UPIPELINECACHE (do not delete or touch any folders)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restart the game — the shaders will rebuild and the game should launch correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sorry you had to experience that! 🙏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1832065502813488"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-07T22:15:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.617Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-06T21:54:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.617Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-06T21:54:37.000Z"
+     }
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:24:06.617Z"
+  },
+  {
+   "id": "kiborg-249998@hotfix-2025-05-03",
+   "gameId": "kiborg-249998",
+   "displayName": "🔥 Second Hotfix is Live!",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-03T20:00:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve just deployed the second hotfix addressing several key issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug preventing video settings from applying on Mac",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies no longer get stuck behind fences or on spawn points (in most cases).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Host’s presence has been rebalanced – now a bit less intrusive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a 5-second delay before the \"New Game\" button activates – reducing accidental clicks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thanks for your feedback! Keep reporting bugs, and enjoy the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1798454487678113"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-03T20:00:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-03T20:00:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.600Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-03T20:00:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.556Z"
+  },
+  {
+   "id": "kiborg-249998@1",
+   "gameId": "kiborg-249998",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-01T20:57:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, dear players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your incredible enthusiasm and positive feedback on Kiborg! We’re rolling out the first hotfix patch—intentionally keeping it focused on fixes rather than big changes to avoid unexpected issues. Many of these adjustments were originally planned for the release but are finally making their way in now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moving forward, we’ll keep polishing and improving the game, and yes—we’re also preparing free additional content for those of you who want EVEN MORE! Stay tuned, and thanks for your support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added end credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed video cutscenes for difficulty levels 6 and 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected soundtracks for video cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Linked Armor augmentation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Iron Fist and Ki Explosion not penetrating Lancer’s shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed music disappearing when exiting the arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sovereign features being incorrectly disabled with the Brawler mutation (which disables ranged weapons)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Defective Implants mutation affecting couriers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with ranged weapon mods and upgrades for the Gunslinger’s right-hand revolver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sidearm selection screen for the Gunslinger’s right-hand revolver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted hit reactions when breaking enemy blocks to better differentiate them from regular hit reactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tweaked hit stops for Gromila’s attacks and the two-handed sword’s combo finisher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhanced effects for piercing attacks and fixed minor related bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced Asteroid’s charge dash effects (yellow highlight) with red",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved sound mastering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 9,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1798454487615159"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-01T20:57:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-01T20:57:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.600Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-01T20:57:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.556Z"
+  },
+  {
+   "id": "kiborg-249998@dayone-2025-01-13",
+   "gameId": "kiborg-249998",
+   "displayName": "Day one patch",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-13T15:09:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Kiborgs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're pleased to announce that both KIBORG and its upcoming demo are coming to macOS in Steam on day one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sobaka Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2405060"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2405060/view/1788311419147218"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-13T15:09:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2405060",
+      "checkedAt": "2026-11-13T03:24:06.599Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:36.554Z"
+  }
+ ],
+ "issues": []
+}

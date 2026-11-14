@@ -1,0 +1,936 @@
+{
+ "game": {
+  "id": "undivine-311563",
+  "igdbId": 311563,
+  "name": "Undivine",
+  "cover": {
+   "imageId": "co8lx0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8lx0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar32e7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar32e7.jpg"
+  },
+  "ps5Release": "2025-05-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "undivine-311563@1.0.12",
+   "gameId": "undivine-311563",
+   "displayName": "Patch 1.0.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-19T12:55:34.000Z",
+   "notes": [
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Increased Mirelurk’s maximum HP on Expert difficulty;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a visual issue in the Heat Room, in the Crypts. The memento is not hidden anymore;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a dev tool shortcut left in the code;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/1799817379596311"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-19T12:55:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.506Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-19T12:55:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.506Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-19T12:55:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.221Z"
+  },
+  {
+   "id": "undivine-311563@1.0.11.1",
+   "gameId": "undivine-311563",
+   "displayName": "Patch 1.0.11.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-17T19:39:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I thought I fixed this. I was wrong. It is fixed now. I promise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where equipped items would reset to previously worn items upon death;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/1799817379542055"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-17T19:39:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.505Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-17T19:39:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.505Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-17T19:39:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.221Z"
+  },
+  {
+   "id": "undivine-311563@1.0.11",
+   "gameId": "undivine-311563",
+   "displayName": "Patch 1.0.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-16T19:46:09.000Z",
+   "notes": [
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Minor adjustments to Expert difficulty level;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more markers throughout the game to help identify important areas and events;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the critical damage chance formula;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that prevented the player from acquiring the Ancient Book if the inventory was full;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug preventing the player from getting the “All Mighty” achievement;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/1799817379510753"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T19:46:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.505Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T19:46:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.505Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-16T19:46:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.220Z"
+  },
+  {
+   "id": "undivine-311563@1.0.10",
+   "gameId": "undivine-311563",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-13T16:09:13.000Z",
+   "notes": [
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "New icons were added as options to mark the map;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Removed a Macula Box before the entrance of the Xelophos boss area;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added several “warning” signs near potentially dangerous areas;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where newly acquired quests weren't saved if the player died before saving the game;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where life wasn't fully restored when saving the game while under the Poison status effect;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Macula regeneration sparks would spawn endlessly when the Macula gauge was at 1/3 near a Kobold mining a crystal (this is too specific and makes no sense, but trust me on this one);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/1799088287993409"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-13T16:09:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.504Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-13T16:09:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.504Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-13T16:09:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.220Z"
+  },
+  {
+   "id": "undivine-311563@1.0.9",
+   "gameId": "undivine-311563",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-11T22:35:00.000Z",
+   "notes": [
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Base prices for items in shops were reduced;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed incorrect Relic slot count - there are 17 Relics available, not 18 as previously displayed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where equipped items would reset to previously worn items upon death;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a certain character related to a specific quest would not appear in their designated location;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/1799088287939827"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-11T22:35:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.503Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-11T22:35:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.504Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-11T22:35:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.219Z"
+  },
+  {
+   "id": "undivine-311563@1.0.6",
+   "gameId": "undivine-311563",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-10T21:54:33.000Z",
+   "notes": [
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Slightly increased enemy knockback when attacking it with a sword;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased by 10% the chance for a chest to have items;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased chance for an enemy to drop a Macula regeneration spark;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where the mask icon was not showing correclty in a certain room regarding a certain hidden Memento;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a certain item was not removed from the inventory when combining it with another certain item;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Trial of the Ancestors room’s map was being displayed as a save room;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some major fixes and game breaking issues were already addressed in previous patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 2,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/1799088287909210"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-10T21:54:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.503Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-10T21:54:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.503Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-10T21:54:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.219Z"
+  },
+  {
+   "id": "undivine-311563@0.14.250113",
+   "gameId": "undivine-311563",
+   "displayName": "Update 0.14.250113",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-13T21:16:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After almost three years we can confidently say that we are close! Undivine is almost complete and we are working hard to make it the game we wanted to make. As we need a little more time to finish the game, polish and test, here's a new demo version:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Attack an enemy will now push it back a little bit;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "The base life of some enemies was slightly reduced;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual improvement in several areas;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scanlines intensity was slightly reduced;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scanlines are not active by default;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Recommended” text from Scanlines option was removed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemis will not be damaged by spikes anymore;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inventory minimum slots increased: 15 → 18;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keys for keyboard mode were changed. Now the player movement uses the arrow keys and the attack, jump and conjure keys were changed to Z, X and C respectively.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "The rolling sound of Elkhor was STILL playing in some specific occasions after it was defeated. Now it was REALLY fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where sometimes after loading a game after a game over made the music volume to increase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Attack an enemy will now push it back a little bit;"
+    ]
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/1788311419155535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-13T21:16:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.502Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.218Z"
+  },
+  {
+   "id": "undivine-311563@0.13.280724",
+   "gameId": "undivine-311563",
+   "displayName": "Update 0.13.280724",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-28T04:04:45.000Z",
+   "notes": [
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Prettier backgrounds added to the outside areas;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "None;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "If the player kills the first boss Elkhor while it is rolling around, the rolling sound would never stop;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The “map available” notification was showing keyboard shortcuts even when using a controller;bit;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Prettier backgrounds added to the outside areas;"
+    ]
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/5963413094357806403"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-28T04:04:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.502Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.217Z"
+  },
+  {
+   "id": "undivine-311563@0.12.230724",
+   "gameId": "undivine-311563",
+   "displayName": "Update 0.12.230724",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-23T20:59:08.000Z",
+   "notes": [
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "A notification will pop up when acquiring a new Talent;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "System Options are now available on the Title Screen;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General changes",
+     "items": [
+      {
+       "text": "Transitions between rooms are slightly faster;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Few layout changes in the Buried Crossing area;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rules for item drop rate in chests updated;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the map icon that represents the room where the player is at the moment;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where some enemies will lock themselves in a “death state” after being killed by the player;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elkhor boss fight had some issues - they are now fixed but the boss' behaviour had to be changed a bit;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "A notification will pop up when acquiring a new Talent;",
+     "System Options are now available on the Title Screen;"
+    ]
+   },
+   "sourceIds": [
+    "steam-3087910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3087910/view/5969041959984197163"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-23T20:59:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3087910",
+      "checkedAt": "2026-11-13T03:35:10.501Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.217Z"
+  }
+ ],
+ "issues": []
+}

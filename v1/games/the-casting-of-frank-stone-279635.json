@@ -1,0 +1,811 @@
+{
+ "game": {
+  "id": "the-casting-of-frank-stone-279635",
+  "igdbId": 279635,
+  "name": "The Casting of Frank Stone",
+  "cover": {
+   "imageId": "co8j6w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8j6w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar31ky",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar31ky.jpg"
+  },
+  "ps5Release": "2024-09-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-casting-of-frank-stone-279635@hotfix-2024-09-26",
+   "gameId": "the-casting-of-frank-stone-279635",
+   "displayName": "Hotfix Update - Sep. 26, 2024",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-26T16:09:20.000Z",
+   "notes": [
+    {
+     "title": "Crashes & Blockers",
+     "items": [
+      {
+       "text": "Fixed a crash during game launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when accessing another game mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where some save files would not load properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Graphics & Performance",
+     "items": [
+      {
+       "text": "Fixed issue where changing motion blur settings caused screen tearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor graphical corruptions and missing VFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Objects & Environment",
+     "items": [
+      {
+       "text": "Fixed issue where player could fall through the world in the Stormdrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where player could fall through some metal construction textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2223840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223840/view/6339469370182448819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-26T16:09:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.667Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-26T16:09:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.667Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-26T16:09:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:35.303Z"
+  },
+  {
+   "id": "the-casting-of-frank-stone-279635@major-2024-09-16",
+   "gameId": "the-casting-of-frank-stone-279635",
+   "displayName": "Bugfix Update - Sep. 16, 2024",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-16T16:14:09.000Z",
+   "notes": [
+    {
+     "title": "Crashes and Blockers",
+     "items": [
+      {
+       "text": "Fixed a crash in The Phantom of Cedar Steel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the user could not return to the main path after reloading a save during The Phantom of Cedar Steel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Compatibility and Compliance",
+     "items": [
+      {
+       "text": "The SteamVR plugin has been disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where accessibility settings were not applied when changing them on the start screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Fixed Cutting Room Floor related issues where the All-Seeing achievement unlocks incorrectly in some instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where achievements related to collectibles became frozen at 50% completion in some instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players were not gaining the Plangonologist achievement after collecting all Relliks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Entity Displeased trophy was incorrectly unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Relationships",
+     "items": [
+      {
+       "text": "Fixed an issue tied to the Relationship screen when playing through the Cutting Room Floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Sam’s relationship bar is not affected following certain interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed an issue with an abrupt stop in music during The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an Audio issue in The Massacre at Gerant Manor where a heartbeat SFX persists not as designed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where jump-scare audio is played at an incorrect moment in A Curiosity on Main Street.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the choice loop music was inaudible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the credits music continued throughout The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with SFX for the Trapper doll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with incorrectly triggered dialogue during Closing the Noose.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with distant audio being incorrectly played in A Curiosity on Main Street.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with missing SFX in Murder Mill and The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with missing dialogue in Murder Mill and The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with missing music during In the House of Darkness and A Curiosity on Main Street.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Graphics and Performance",
+     "items": [
+      {
+       "text": "Film Grain settings are now always applied to fix an issue with possible graphical corruption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the DLSS Anti-Aliasing was sometimes missing.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with lighting exposure within the relationship screen in The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced hitching with shaders in various scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the target framerate to 60fps default if the dynamic resolution is turned to on. Dynamic resolution is now off by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "UX/UI",
+     "items": [
+      {
+       "text": "Fixed an issue with keyboard incorrect inversions when selecting dialogue options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with chapter names in the Cutting Room Floor whilst using a mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Object and Environments",
+     "items": [
+      {
+       "text": "Fixed an issue with asset flickering during The Phantom of Cedar Steel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with texture popping during Beyond the Gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a collision issue causing players to fail collecting a Trinket in The Phantom of Cedar Steel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issues in various chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with missing or incorrect doors in These Walls Have Eyes, Murder Mill and In the House of Madness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with floating objects in A Perilous Place, Mystery Manor and The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Characters",
+     "items": [
+      {
+       "text": "Fixed an issue where an incorrect character appears for brief appearances in The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with incorrect character behavior in A Curiosity on Main Street.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with floating hair on Madi during The Massacre at Gerant Manor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a character disappearing during Beyond the Gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Jaime incorrectly wearing a backpack in The Phantom of Cedar Steel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with an incorrect animation looping in Murder Mill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Jaime when using the Cutting Room Floor to restart Murder Mill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with missing or freezing animations during Murder Mill, Hunting Ground and Beyond the Gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with character textures in The Massacre at Gerant Manor, Murder Mill and All Paths Must Cross.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Fixed an issue with a missing camera filter in some endings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue experienced with pausing during Twitch polls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 38,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2223840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223840/view/6250522009528184883"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-16T16:14:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.666Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-16T16:14:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.666Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-16T16:14:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:35.302Z"
+  },
+  {
+   "id": "the-casting-of-frank-stone-279635@hotfix-2024-09-10",
+   "gameId": "the-casting-of-frank-stone-279635",
+   "displayName": "Hotfix Update - Sep. 10, 2024",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-10T15:51:40.000Z",
+   "notes": [
+    {
+     "title": "An update on Standard & Deluxe Edition rewards",
+     "items": [
+      {
+       "text": "We are working around the clock on getting rewards out to everyone - it is top priority to ensure that all impacted players get their rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will be rolling out fixes for these issues this week, and all affected players will receive 2 million Bloodpoints as compensation alongside your rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance Issues",
+     "items": [
+      {
+       "text": "Enabled Frame Generation option for NVidia 40xx series card",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A future update is planned to address ongoing performance issues. If you have experienced performance issues, please submit a Support ticket with the following information:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DxDiag logs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics card settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Framerate issue (video or FPS number)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2223840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223840/view/6242640076615356425"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-10T15:51:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.665Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-10T15:51:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.665Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-10T15:51:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:35.301Z"
+  },
+  {
+   "id": "the-casting-of-frank-stone-279635@hotfix-2024-09-04",
+   "gameId": "the-casting-of-frank-stone-279635",
+   "displayName": "Hotfix Update – Sep. 4, 2024",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-04T17:48:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "UPDATE Sep. 5: The hotfix is now live on Xbox and Windows Store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "This hotfix is now live on Steam, EGS, and Playstation. It will be deployed later on Xbox, and Windows Store due to the certification process; we will keep you informed once it is live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "We are investigating the reports of performance and optimization issues on PC, and will share more information in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Dead by Daylight Rewards",
+     "items": [
+      {
+       "text": "You can claim your Dead by Daylight rewards through your Behaviour account, following these instructions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are aware that players are experiencing issues receiving some or all of the Dead by Daylight rewards. We are currently investigating this issue and are working to get it fixed ASAP. If you are missing any rewards, please submit a Support ticket to ensure we get you what is missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Crashes",
+     "items": [
+      {
+       "text": "Fixed an issue that could cause the game to crash when continuing from the beginning of Punch save point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause the game to crash after opening the drawer in the reliquary that contained the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause the game to crash in the Prologue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc.",
+     "items": [
+      {
+       "text": "Removed the 4-hour limitation when using Twitch Integration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the intro video on PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed the issue where Xbox created large save files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Removed the Player Marker on Xbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 6,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-2223840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223840/view/6242640076593781727"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-04T17:48:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.665Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-04T17:48:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2223840",
+      "checkedAt": "2026-11-13T03:33:00.665Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-04T17:48:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:35.300Z"
+  }
+ ],
+ "issues": []
+}

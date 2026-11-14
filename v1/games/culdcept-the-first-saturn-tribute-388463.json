@@ -1,0 +1,310 @@
+{
+ "game": {
+  "id": "culdcept-the-first-saturn-tribute-388463",
+  "igdbId": 388463,
+  "name": "Culdcept The First Saturn Tribute",
+  "cover": {
+   "imageId": "coc03d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc03d.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar58nm",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar58nm.jpg"
+  },
+  "ps5Release": "2026-07-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "culdcept-the-first-saturn-tribute-388463@major-2026-08-14",
+   "gameId": "culdcept-the-first-saturn-tribute-388463",
+   "displayName": "Bug Fix Update Announcement",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-14T08:06:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today, we released an update aimed at improving game stability and fixing known bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fix Details",
+     "items": [
+      {
+       "text": "Reduced audio noise issues occurring in certain system environments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game could stop progressing (e.g., failing to recover from a black screen), primarily on Steam Deck and certain hardware configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved overall application stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We remain committed to providing ongoing support so everyone can enjoy the game for a long time to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3825600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3825600/view/1840944183778861"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T08:06:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-3825600",
+      "checkedAt": "2026-11-13T03:18:14.973Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T08:06:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3825600",
+      "checkedAt": "2026-11-13T03:18:14.973Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-14T08:06:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.361Z"
+  },
+  {
+   "id": "culdcept-the-first-saturn-tribute-388463@major-2026-06-15",
+   "gameId": "culdcept-the-first-saturn-tribute-388463",
+   "displayName": "Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-15T12:31:45.000Z",
+   "notes": [
+    {
+     "title": "Demo Update Notice",
+     "items": [
+      {
+       "text": "Based on player feedback, we have released an update featuring bug fixes and specification adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note that all adjustments made in this update will also be reflected in the full version of the game, releasing on Thursday, July 30.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Details",
+     "items": [
+      {
+       "text": "Added the \"In Game Volume\" option to Extra Options, allowing players to adjust the master volume of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the \"In Game Glyph\" option to Extra Options, allowing players to change the in-game button icons to their preferred style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the bonus card reward amount when turning ON the \"Bonus Pack\" in Extra Options from \"+4\" to \"+10.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restricted the number of card rewards obtainable when using Rewind (available in the demo) or Quick Load (unavailable in the demo) to return to a match and win again after already receiving rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the maximum card acquisition limit to 9 cards per type. Note: While the card acquisition screen may occasionally display numbers of 10 or higher, the amount will be automatically corrected to a maximum of 9 when saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the game could stop progressing after receiving card rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor button display errors within the manual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game language would unintentionally default to English upon the initial launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where controllers were occasionally not recognized properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "When migrating from the demo to the full version for the first time",
+     "items": [
+      {
+       "text": "Your demo save data will be automatically loaded upon launching the full version for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: Please ensure that your demo save data remains in its default save location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "When playing the demo again after having played the full version",
+     "items": [
+      {
+       "text": "If full version save data already exists, your demo data will not automatically overwrite it. Demo save data will only be transferred to the full version again if all full version save files have been completely deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Demo Specifications",
+     "items": [
+      {
+       "text": "Story Mode: Only 1 stage is playable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Versus Mode: Only 1 map is playable against initial characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cards obtained in this demo can be carried over and used in the full version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Demo save data will be automatically loaded upon launching the full version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new Quick Save & Load features are unavailable in the demo. The Rewind feature is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This demo is a work in progress. Content may differ from the final release, and availability may end without prior notice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3825600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3825600/view/1835236783570093"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T12:31:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3825600",
+      "checkedAt": "2026-11-13T03:18:14.971Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:42.360Z"
+  }
+ ],
+ "issues": []
+}

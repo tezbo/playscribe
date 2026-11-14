@@ -1,0 +1,1924 @@
+{
+ "game": {
+  "id": "platypus-reclayed-307503",
+  "igdbId": 307503,
+  "name": "Platypus Reclayed",
+  "cover": {
+   "imageId": "coai3v",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coai3v.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar326i",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar326i.jpg"
+  },
+  "ps5Release": "2025-09-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "platypus-reclayed-307503@1.3.6",
+   "gameId": "platypus-reclayed-307503",
+   "displayName": "Patch 1.3.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-18T14:19:20.000Z",
+   "notes": [
+    {
+     "title": "A minor patch with a handful of fixes. Here's the details",
+     "items": [
+      {
+       "text": "Disable text wrapping on level select scene titles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the order of localisation loading so that mods better support custom text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with how the game handled score bonuses which 1. Prevented the first boss from awarding any score bonus, 2. Prevented the final boss from awarding all its score bonus, 3. Allowed score bonuses to carry over into refresh runs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added audio events \"s_one_up\" when getting a 1-up and \"s_shot_hearts\" when firing the hearts weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed an extra zero from extraLivesAtScore array (which resulted in a broken life-up progress bar)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2912430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2912430/view/1819386365089960"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T14:19:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T14:19:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.412Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-18T14:19:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:08.000Z"
+  },
+  {
+   "id": "platypus-reclayed-307503@patch-2025-11-26",
+   "gameId": "platypus-reclayed-307503",
+   "displayName": "Patch to expand modding capabilities",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-26T10:20:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.3.4 patch notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is no \"Mods\" folder inside StreamingAssets/ now - the asset bundle data now lives inside each mod folder e.g. \"StreamingAssets/Platypus Reclayed/Bundle/\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refactored save file migration and updated save version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set the music audio source to loop so that music no longer fades out and back in when repeating the same track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made homer bullet gradient configurable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Split s_ui_main_toggle_announcer_setting and s_ui_ready events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make player damage entities configurable in skins.json",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Give cannon boats more screen space before despawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lessen the night time effect on enemy lightning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add -skipAssetPreload_AllowStutter argument, speeding up load times for modders significantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix single sprite lua behaviours not updating their collider state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Get a fresh script instance for each lua behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove all function pointers when deinitializing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add Player.GetPosition() and Player.GetWorldPosition() to LUA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add get GetActivePlayerCount and GetRandomActivePlayer to LUA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add support for fireSFX to squidMotherTurret",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2912430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2912430/view/1817483467033103"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T10:20:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T10:20:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.411Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-26T10:20:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:07.999Z"
+  },
+  {
+   "id": "platypus-reclayed-307503@2a",
+   "gameId": "platypus-reclayed-307503",
+   "displayName": "Update 2a",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-14T11:38:50.000Z",
+   "notes": [
+    {
+     "title": "Patch 2a - version 1.3.3",
+     "items": [
+      {
+       "text": "A follow up to our meaty or should I say monstrous patch 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have you found the Witch player ship in the free Platypus Spooky DLC?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "She's so cool, Anthony really knocked it out the park!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Back to Patch 2a, we've been focussing some improvements on;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlock progress on a per mod basis",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to error reporting if a mod has an issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lua modding refinements to make it easier to create bullet entities and more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music customisation for Ship select and Level select",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix up some localisation oddities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some Claymatic addons included with the game - all weapons are fish? You got it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In game button linking to the Workshop - locate the incredible community contributions!!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "More Lua support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music customisation for the selection screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for joystick input being over exaggerated at frame rates above 60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Move UnlockAllContent flag to save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trigger cloud saves when saving player settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made a bunch of settings mod specific",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Ocean Loader 4 default volume and set Terra Cresta as the fallback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed copyright flag and fallback from level3 (ocean loader 4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 3 of our example add-ons as claymatic official add-on mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added area selection to track customisation panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Music track selector cleanup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved save migration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug which causes some icons to not display on the ship selection panel for some languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo that would makes migration fail for unlock flag",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If the user presses back on the front end they can pick another profile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add GetPlayer function to lua",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add functions to set the gameObject layer in lua",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add documentation for the logic layers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add PlaySound function to lua bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skip mods that failed loading the meta file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow animations in SpriteLoader spawned sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add shard spawn utilities for Lua",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add support for fireSFX for goldfish and octo-guns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 1,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2912430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2912430/view/1816307528944654"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-14T11:38:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-14T11:38:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.410Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-14T11:38:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:07.999Z"
+  },
+  {
+   "id": "platypus-reclayed-307503@2",
+   "gameId": "platypus-reclayed-307503",
+   "displayName": "Patch 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-31T11:17:21.000Z",
+   "notes": [
+    {
+     "title": "Patch #2",
+     "items": [
+      {
+       "text": "We’ve been hard at work making many updates & improvements to Platypus Reclayed. There are so many it’s hard to know where to start so let’s dive straight into the big one - we navigated the uncharted waters of music licensing successfully and so the oft-requested Ocean Loader music has been added to Platypus Reclayed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ok ok, so that’s the biggest community request sorted but there are more significant changes, such as the official addition of Steam Workshop support and associated modding tools. Our Discord community has been hard at work developing several mods and add-ons. From today they can be easily shared, played and managed via Steam Workshop. We’ve also provided much more functionality, such as Lua support, to allow modders to get more creative going forwards.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Do you want more Platypus levels? We can fix that! We’re giving away free bonus DLC to celebrate spooky season with ‘Spooky Platypus’ and you’ll soon find our free Desert mod and other mod concepts of our own on Steam Workshop. Along with community mods, we hope this will keep you returning to Platypus Reclayed for many a year to come.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Patch #2 also brings a whole bunch of quality of life features requested by our community including scoreboard filtered by difficulty, multiple user profiles, 7 new music tracks, music selector for the primary Reclayed mod, streamer-safe music options, revamped options menu, two new galleries including fan art and the National Video Game Museum feature on Platypus, and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oh and… Steam Trading Cards are now live in the ecosystem!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Download the update, share with your friends, and check mods out on Steam Workshop today!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Key Changes",
+     "items": [
+      {
+       "text": "DLC and Modding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Official free DLC, Spooky Platypus, can you defeat death!?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam workshop tool - turn on ‘tools’ in the library listing and install from there.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam workshop support - subscribe to mods and they'll appear in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A new mod selection screen that lets you pick mods and add-ons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Content highlighting system to indicate when there are new mods to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now decide whether or not to disable achievements when using mods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Example starter mods and addons for Steam Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Customise entity behaviours with Lua scripting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Platypus Reclayed music selector - customise your music choices selecting from 21 tracks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7 additional music tracks including community favourite Ocean Loader 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Streamer safe music option, swaps out known copyrighted tracks when streaming Platypus Reclayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "User Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Save profiles! On start up you can now select from 1 of 3 profiles to keep your scores separate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New high scores filtering by difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New options screens with joystick dead-zone support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Confirmation dialogs when restarting and quitting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Gallery Panel featuring Fan Art and photos from the National Videogame Museum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many many bug fixes and balancing tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam eco system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam trading cards are now available to collect and trade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch #2 Changelist",
+     "items": [
+      {
+       "text": "Quit and restart now have a confirmation panel,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Notification panel dynamically resizes to better fit all location text,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the icon that indicates achievements are off,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No longer consume fireballs when charging,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix nudge and dink sounds happening when something deals 0 damage,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed invisible 0.25 multiplier addition when using BasicGuns,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Always spawn fireballs when consumed,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added skySprite level parameter,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added print command,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add missing setFighterScript to documentation,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplify and remove hardcoded default for groundSprite,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated localisation,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Rewired plugins,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added spawnEntityRandom command,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Centered the main logos,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remember last applied resolution, use it when going full screen,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implement a backup system for save files,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added graphics option menu,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added mouse guidance image on level start with option to permanently hide,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Implement CustomBalloonBehaviour,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a wrongly labeled cheat option: \"Weapon Increment\" is now \"Reload Mods\",",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added CustomSafeBalloonBehaviour,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an example fire turret,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't allow mods to be reloaded while the game is paused,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added fireSFX to ReclayedTurretBehaviour,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix ReclayedTurrets sometimes disconnecting from their shadows,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaks to Level 5 enemy spawns,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added shield count and score multiplier to ship panel stats,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some better UI icons for the player keys with mouse,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Options panel split up into sub pages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Options panel now has mouse only buttons for easy options cycling",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix an issue that made the fireball deal way less damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enabled score text for mounted guns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded Unity version to mitigate Unity's security vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"firstShotDelay\" to Octopus weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added waitForDayAmount commands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced level 3 music with Ocean Loader 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rework entity explosion offsets to be configurable, explosionX and explosionY added to all entities using explosions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow importLevel command to insert directly into the command handler",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for subCommand handlers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated icons for check boxes and left right arrows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed score difficulties on classic's starting score table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Moonsharp to allow for Lua scripting support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added system to load lua behaviours from disk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Expose a few proxies to the lua environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added LuaBehaviour to interface with a Lua script",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rewrite SaucerBehaviour in lua as an example",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added example lua files to \"Platypus Original\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More fruit for purple un in 2-4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Looping/cut-off cloud fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for enum definitions to Lua integration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Allow use of the \"X\" level in classic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added example level files for command handlers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Make it possible to spawn entities in lua",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pause menu, main menu and practise screens will now last selected button when returning from other panels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the lives bar to look more like clay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New combined mods and add-ons menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added isOfficial flag to ModMeta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Claymatic icon to all official mods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Give homingShipBehaviour a minimum of 500 ticks before it can despawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Users can decide if they want achievements active or not with the mods they're using",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow users to filter scoreboards based on selected difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam workshop integration",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reclayed Music selection screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented multiple save profiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added icon and flag to indicate if a mod comes from the steam workshop",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added systems to deal with unread messages and new content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a copyright symbol for track names to indicate those which are not safe to live stream and option to remove them from the playlist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for front end “Press fire to start” prompt sometimes ignoring inputs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added fall back tracks to known copyrighted tracks (Platypus Original)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some scoring adjustments at the suggestion of Psychosquid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6 new music tracks added to the Reclayed music selector",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty sprite no longer looks squished on the classic new highscore panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do not store last player ship selection in endless mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 29,
+    "fixed": 5,
+    "balance": 0,
+    "other": 59,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2912430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2912430/view/1815034432901783"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T11:17:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.409Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T11:17:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.409Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-31T11:17:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:07.998Z"
+  },
+  {
+   "id": "platypus-reclayed-307503@1.1.7",
+   "gameId": "platypus-reclayed-307503",
+   "displayName": "Update 1.1.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-26T16:29:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here are the changes in 1.1.7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse bug fixes - players may need to update sensitivity",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Restart menu option relocated in pause menu (requester in next patch)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easy mode has level 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor gameplay tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recovers from corrupt data with a data wipe instead of a crash (possible recovery in next patch)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Octopus explosions added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Purple squids stop shooting when off screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modding: reload script key (r)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modding: add-ons can support multiple targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed invincibility being reset after a star at hard+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed power line killing player at the end of level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed window to borderless mode resolution retention",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Polish extras translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed German best(er) translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed underpowered food weapons with pods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wheel clipping early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor art issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2912430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2912430/view/1811772772282265"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-26T16:29:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-26T16:29:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.408Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-26T16:29:49.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:28:07.408Z"
+  },
+  {
+   "id": "platypus-reclayed-307503@1.1.6",
+   "gameId": "platypus-reclayed-307503",
+   "displayName": "Update 1.1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-24T21:46:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.1.6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalancing and minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regular difficulty rebalanced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bonus life score targets rebalanced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locale update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix achievements - Lightning Fighter, Convoy Raider and Precision Fighter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix and remember difficulty mode default and last setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix minor graphical issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix boss 5 weapons launching immediately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2912430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2912430/view/1811772772223154"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T21:46:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T21:46:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.407Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-24T21:46:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:07.995Z"
+  },
+  {
+   "id": "platypus-reclayed-307503@1",
+   "gameId": "platypus-reclayed-307503",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-23T22:43:19.000Z",
+   "notes": [
+    {
+     "title": "Patch #1",
+     "items": [
+      {
+       "text": "We understand there are a wide range of gamers looking for different experiences from the game, from long time fans and Shoot 'em up players to those preferring a less frantic flight to Colossatropolis, so we have good news for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Our first patch includes",
+     "items": [
+      {
+       "text": "All new Easy difficulty, making a total of 5 difficulty levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previous difficulties moved up one rank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easy and Regular modes have several stress-reducing quality of life improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty descriptions to help you choose your game style",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various bug fixes: We’re already working on the next patch which focuses on Steam Workshop and built-in music customisation support. Free additional content is in the works too!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Platypus Reclayed Deluxe edition is available now!",
+     "items": [
+      {
+       "text": "The best way to enjoy the Game, Music and Art of Platypus Reclayed. A treat for all Platypus fans and those interested in the games music and unique production.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Original Sound Track (OST)",
+     "items": [
+      {
+       "text": "Includes all the music from the game (so far…) - 15 tracks in total - featuring selections from legendary remix albums of classic Commodore 64 chiptunes including the “Back in Time” series and Karma 64, iconic tracks such as “Wizball 2000”, “Comic Bakery” and \"Sanxion\" makes this soundtrack legendary on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Art book",
+     "items": [
+      {
+       "text": "Featuring a look at the game’s unique creation process. Learn about how the game's production pipeline has changed over the years from Anthony Flack, accompanied by photographs from the studio and beautiful high resolution images of game models, and plenty more besides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch #1 Changelist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new difficulty \"Easy\" with more forgiving level setup and enemy behaviour. Additionally players regain pods whenever they lose a life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All existing difficulties moved up one difficulty level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added difficulty selection description to the UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra invulnerability states to \"Easy\" and \"Regular\" difficulties so you're briefly protected after collecting a power-up and adjusted invulnerability timings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Regular difficulty icon features a smile :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship stat adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player homing missiles now move faster (more changes under discussion)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy homing missiles now move slower, on lower difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crates containing weapon pods will deliver a weapon pod if you only have 1 rather than an extra life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beginner ship is default on first-time start-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced player hitbox size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Minor level tweaks including to passive resistance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Super Gunship and Thruster Ship explosions increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered opening splash video volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Modding: Data changes (mods will need to be updated - see modding docs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modding: Font added to mod pack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for Ship UI in Score Attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Score saving bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for various localisation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for restarting Score Attack using left mouse button",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for languages using a capital 'i' that is not an 'I'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for player crash score missing on Score Attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix with with certain achievements not being awarded in 2 player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for unlock all giving certain achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Steam cloud saves",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for Steam achievement status reports",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for Boss 5 death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for bonus score issue when score is 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for invincibility on spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Colossatropolis spelling lessons… again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 10,
+    "balance": 2,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2912430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2912430/view/1811772772191209"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-23T22:43:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.406Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-23T22:43:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2912430",
+      "checkedAt": "2026-11-13T03:28:07.406Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-23T22:43:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:48.279Z"
+  }
+ ],
+ "issues": []
+}

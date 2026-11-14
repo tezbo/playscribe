@@ -1,0 +1,3688 @@
+{
+ "game": {
+  "id": "sos-ops-258837",
+  "igdbId": 258837,
+  "name": "SOS OPS!",
+  "cover": {
+   "imageId": "cod11p",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cod11p.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2fd0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2fd0.jpg"
+  },
+  "ps5Release": "2024-12-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sos-ops-258837@1.5.9",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update 1.5.9",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-23T10:10:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Cat and Panda skins now unlock for owners of PAO PAO.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated: glasses no longer clip through head skins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated: lobby and PVP arena settings can now be switched left/right with a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated: the record player sound in Backrooms is quieter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor network optimization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: the RPG could explode in your hands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1847286114035792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T10:10:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.557Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T10:10:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.558Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T10:10:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:31.204Z"
+  },
+  {
+   "id": "sos-ops-258837@1.5.8",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update 1.5.8",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-25T19:34:49.000Z",
+   "notes": [
+    {
+     "title": "DLC - OVERBOOKED",
+     "items": [
+      {
+       "text": "Added auto-load on repeat runs: the airport terminal loads cargo up to your best result (host only).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a passenger indicator to the HUD: orange means someone needs something, red means someone is about to jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a toilet icon above passengers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an icon above passengers who are about to jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The need icon now pulses when a passenger is about to run out of patience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a toilet queue: needs grow slower while waiting in line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated refueling: the fuel level now rises smoothly from the start of refueling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passenger needs no longer appear for everyone at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passengers spend less time in the toilet and need it less often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passengers at the door are easier to catch: they shock less often and the stun is shorter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The plane loses altitude more slowly when a bird hits an engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Passengers no longer get worried for no reason.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: when the toilet was occupied, a passenger would forget about their need and suddenly go to jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: two passengers could head to the same toilet stall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: a passenger could get stuck in the toilet if scared on the way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: a passenger wouldn't return to the toilet after being distracted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: the need icon reappeared above a passenger after they jumped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Main game",
+     "items": [
+      {
+       "text": "Updated: the bee swarm no longer chases a player it has already killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 5,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1844751498225797"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-25T19:34:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.557Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-25T19:34:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.557Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-25T19:34:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:31.203Z"
+  },
+  {
+   "id": "sos-ops-258837@1.5.7",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update 1.5.7",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-25T16:05:27.000Z",
+   "notes": [
+    {
+     "title": "DLC",
+     "items": [
+      {
+       "text": "New DLC: OVERBOOKED",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 2 new vehicles: Airport Tug and Bus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 2 new trailers: Baggage Trailer and Stair Trailer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Flight Attendant outfit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Flight Attendant hat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BASE GAME",
+     "items": [
+      {
+       "text": "Updated the DLC tab UI in the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the in-game computer UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added outlines to computer controls in the Hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new 15-level difficulty display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added reticle support for vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "FIXES",
+     "items": [
+      {
+       "text": "Fixed an issue where the timer and stars were not counted correctly in certain regions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a brief freeze when new music started playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping UI elements in the wardrobe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed location names displaying incorrectly in platform social interfaces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some wires and hoses could get stuck or have incorrect lengths",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor vehicle-related issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1844751498225105"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-25T16:05:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.556Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-25T16:05:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.556Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-25T16:05:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:31.202Z"
+  },
+  {
+   "id": "sos-ops-258837@post-2026-08-08",
+   "gameId": "sos-ops-258837",
+   "displayName": "Mouse Stuttering Issue Fixed",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-08T10:05:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have fixed the issue that could cause stuttering, frame drops, or freezes when moving the mouse in SOS OPS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The fix has been implemented and is now available in the latest version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you previously lowered your mouse polling rate to 125 Hz as a temporary workaround, you can now return it to your preferred setting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you for reporting the issue and for your patience while we worked on the fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1840310314347167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-08T10:05:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.556Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-08T10:05:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.556Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-08T10:05:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:31.201Z"
+  },
+  {
+   "id": "sos-ops-258837@1.5.6",
+   "gameId": "sos-ops-258837",
+   "displayName": "Patch 1.5.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-07T06:16:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"https://a.slack-edge.com/production-standard-emoji-assets/16.0/google-medium/2728.png\" style=\"height: 1.2em; width: 1.2em; vertical-align: text-bottom\"] New & Updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC Hit Boxes — Introduced headshot multipliers with dedicated NPC hit boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapon Rebalance — Adjusted weapon stats across the board to improve overall gameplay balance and combat feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"https://a.slack-edge.com/production-standard-emoji-assets/16.0/google-medium/1f527.png\" style=\"height: 1.2em; width: 1.2em; vertical-align: text-bottom\"] Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snow (Downtown Winter) — Fixed visual issues with snow on the Downtown Winter location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glass Shatter — Resolved an issue where glass shatter effects triggered incorrectly when hit by weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lootbound DLC Colliders — Fixed missing colliders on Lootbound DLC assets that caused interaction and physics issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Voice Chat Devices — Fixed a bug where the game would occasionally freeze on startup when audio devices had changed since the last session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1840310314343943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-07T06:16:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-07T06:16:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.555Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-07T06:16:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:31.200Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2026-08-05",
+   "gameId": "sos-ops-258837",
+   "displayName": "Free Lootbound DLC is out, 90% off and a HUUUUGEE update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-05T13:01:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, OPS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.5.5 is now live, together with a brand-new free DLC:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SOS OPS! - LOOTBOUND",
+     "items": [
+      {
+       "text": "Take the elevator down from Headquarters into a crystal dungeon that changes with every run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose your path, collect loot, upgrade your gear, fight your way through enemies, and try to reach the final boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The DLC is free for every SOS OPS! owner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, congratulations to Human: Fall Flat on its 10th anniversary!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ten years of physics, friendship, and falling off things deserves respect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We went with 90%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "WHAT ELSE IS IN THE UPDATE",
+     "items": [
+      {
+       "text": "• Headquarters rebuilt from the ground up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Reworked customization with categories, color presets, and full controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Smoother shooting, reloading, and melee combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• New fog, atmosphere, and improved water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Better performance and a smaller download size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Many fixes for split-screen, vehicles, enemies, saves, and connections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And yes, something new is hiding in Canals, Downtown, and the SOS Com Office.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Watch your fingers...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SPEEDRUN CONTEST",
+     "items": [
+      {
+       "text": "A speedrun contest for the new mode is already live in our Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Complete Lootbound as fast as possible, submit your best time, and compete with other players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can find all the rules here",
+     "items": [
+      {
+       "text": "Grab the free DLC, bring your friends, and start a new run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOS OPS! - Lootbound is available now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44299901/7ec707b8cd829022be77963742046f6188a18d9c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1840310314339133"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-05T13:01:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-05T13:01:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.555Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-05T13:01:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:31.199Z"
+  },
+  {
+   "id": "sos-ops-258837@1.5.4",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update 1.5.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-18T07:05:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, OPS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update v1.5.4 is now available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update continues our work on remastering locations, improving visuals, polishing performance, and fixing several issues reported by players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW & UPDATED",
+     "items": [
+      {
+       "text": "• Train Location Models, Part 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We continued the overhaul of the train location with updated models, building on the improvements from the previous update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Power Station Models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We refreshed the visuals across the Power Station, including Power Input and Output units, cables, sockets, and plugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The goal is to make the location feel cleaner, more polished, and more consistent visually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Power Station Fonts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We added new fonts across the Power Station UI to improve readability and visual consistency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "IMPROVEMENTS",
+     "items": [
+      {
+       "text": "• Power Station Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We improved performance in the Power Station to make gameplay smoother and reduce unnecessary overhead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "• Mission restart logic fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where restarting a mission would not always behave correctly. The restart flow should now be more consistent and reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Boxes falling through the train fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where some boxes could fall through the train floor when the level started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Car wheel visual bugs fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several visual glitches affecting car wheels during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Localization typos fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected various typos across localized text strings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "WHAT’S NEXT",
+     "items": [
+      {
+       "text": "We are continuing to improve SOS OPS! step by step.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some updates bring new content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some updates make existing locations, systems, and gameplay feel cleaner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update v1.5.4 is focused on polish, performance, and making the game more reliable for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you on the missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 8,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "• Train Location Models, Part 2",
+     "• Power Station Models",
+     "We refreshed the visuals across the Power Station, including Power Input and Output units, cables, sockets, and plugs."
+    ]
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1835871199303140"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T07:05:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.554Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T07:05:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.554Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-18T07:05:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.425Z"
+  },
+  {
+   "id": "sos-ops-258837@1.5.3",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update 1.5.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-16T06:41:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey, OPS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A small hotfix for SOS OPS! is now available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update focuses on a few quick fixes to make the game feel cleaner and more consistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "• Fixed the DLC icon on customization elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed missing sound effects for UI buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed a collider issue on the train location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "See you on the missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1835236783573194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T06:41:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T06:41:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.553Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-16T06:41:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.425Z"
+  },
+  {
+   "id": "sos-ops-258837@1.5.2",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update 1.5.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-15T09:26:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, OPS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.5.2 is now available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one brings several quality-of-life improvements, training updates, customization changes, remastered locations, security improvements, and a few fixes to make SOS OPS! feel smoother overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "• Added an instant mission restart button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now restart a mission directly from the pause menu without returning to the garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added quick mission launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can jump into a mission faster without going down to the garage first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added damage numbers on hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage dealt is now displayed on screen. Hits that deal zero damage will no longer show unnecessary numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The fire extinguisher can now be picked up and used as a weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because sometimes rescue work needs improvisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TRAINING",
+     "items": [
+      {
+       "text": "• Added a shooting range to the Training Center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is now a new shooting training section, including an instructional video to help players get familiar with the system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TRIALS & TEST DRIVE",
+     "items": [
+      {
+       "text": "• New vehicles from this update are now available at the SOS Ring location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can try them out and test how they feel before taking them into the chaos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CUSTOMIZATION",
+     "items": [
+      {
+       "text": "• Added a color picker to the skin editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The old preset color swatches have been replaced with a full HSV color wheel, giving you much more control over your character colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "LOCATIONS & ART",
+     "items": [
+      {
+       "text": "• Desert Train has been remastered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We reworked wagon models, materials, and the scene layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Canals has been remastered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The location received updated geometry and materials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added a cat bed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Important update. No further explanation needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Reworked lever and button models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New models are now used across all scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Added a new wardrobe model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SECURITY & FIXES",
+     "items": [
+      {
+       "text": "• Improved anti-cheat protection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We added extra protection against malicious game state injection and invalid spawn requests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Improved weapon controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed gamepad navigation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Added various stability and performance fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "WHAT’S NEXT",
+     "items": [
+      {
+       "text": "We are continuing to improve SOS OPS! step by step.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some updates bring big new content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some updates make the game more stable, smoother, and easier to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.5.2 is about making the game feel better, cleaner, and more prepared for what comes next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you on the missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1835236783569596"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T09:26:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T09:26:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.553Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-15T09:26:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.424Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2026-06-13",
+   "gameId": "sos-ops-258837",
+   "displayName": "SOS OPS! is 90% off + new update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-13T13:00:30.000Z",
+   "notes": [
+    {
+     "title": "SOS OPS! is 90% off + new update",
+     "items": [
+      {
+       "text": "Hey, OPS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We have a few things to share with you today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you have been waiting for a good moment to jump into co-op chaos with your friends, this is a great time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "90% DISCOUNT",
+     "items": [
+      {
+       "text": "• A great moment to invite your friends and play together",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The more people you bring, the faster everything turns into chaos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TECHNICAL UPDATE",
+     "items": [
+      {
+       "text": "• We worked on game stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed several technical issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved the overall gameplay feel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Prepared the game for future updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is not a huge content update, but updates like this are important for the game. They help make SOS OPS! more stable, smoother, and better for both new and returning players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW EASTER EGGS",
+     "items": [
+      {
+       "text": "• We added a few new easter eggs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Some of them are easy to notice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Some will take a bit more attention",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• And some are better to search for with friends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We will not reveal all the details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Let some of the chaos stay a surprise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "WHAT’S NEXT",
+     "items": [
+      {
+       "text": "We are continuing to work on SOS OPS! and prepare more things for the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who plays, leaves reviews, invites friends, shares moments, and helps our community grow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you on the missions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "Hey, OPS!",
+     "We have a few things to share with you today.",
+     "If you have been waiting for a good moment to jump into co-op chaos with your friends, this is a great time."
+    ]
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1835236783565835"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-13T13:00:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-13T13:00:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.552Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-13T13:00:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.423Z"
+  },
+  {
+   "id": "sos-ops-258837@1.5.1",
+   "gameId": "sos-ops-258837",
+   "displayName": "Patch 1.5.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-08T13:00:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, rescuers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released patch 1.5.1. In this update, we improved game security, made several changes, and fixed a number of issues on the locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Security",
+     "items": [
+      {
+       "text": "• Prevented injection of common third-party software into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "• Increased the number of cats on the village location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Slowed the fan speed by 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Clients can no longer select a DLC mission if the host does not have it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "• Fixed an issue where meat could get stuck in the air when placed on a skewer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed an issue where the player could grab the harpoon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Added a possible fix for an issue where the player body stretched across the entire location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed an issue where the SOSNESS monster could heavily stretch the player and cause performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed an issue where meat fell through the map and did not return.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed an issue where hay fell through the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed missing collision in some places on the village location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed rendering of objects behind glass in the Training location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed localization errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for playing SOS OPS! We continue to monitor your feedback and work on improving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1832065502815121"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T13:00:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.551Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T13:00:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.551Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-08T13:00:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.421Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2026-03-30",
+   "gameId": "sos-ops-258837",
+   "displayName": "Regional Pricing Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-30T14:09:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Operators,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve heard your feedback. For a long time, many of you told us that SOS OPS! wasn’t available for purchase in certain regions, and we know how frustrating that was. We’re happy to say - this issue is now fixed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regional pricing has been updated, and SOS OPS! is now available to purchase in all regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No more barriers for you guys to save the city!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Join the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1828441623109907"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-30T14:09:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-30T14:09:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.550Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-30T14:09:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.420Z"
+  },
+  {
+   "id": "sos-ops-258837@1.4.3",
+   "gameId": "sos-ops-258837",
+   "displayName": "Patch 1.4.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-17T15:02:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Add AMD FSR Upscaling",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improve client input handling on high ping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remove TAA anti-aliasing, as it was not functioning properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix gamepad navigation in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix clients \"Crawl\" inputs were not consumed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1826992588604111"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T15:02:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.549Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-17T15:02:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.550Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-17T15:02:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.419Z"
+  },
+  {
+   "id": "sos-ops-258837@1.4.2",
+   "gameId": "sos-ops-258837",
+   "displayName": "Patch 1.4.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-12T13:54:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey guys. We did a new patch for you!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Add bomb teleport to GUNS N' OPS location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Add join/leave messages in chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fix visual bugs on Backrooms location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix input hints on GUNS N' OPS location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix black screen when touching gifts on xmas location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix black screen when touching animals on Amusement Park",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix animals on Amusement Park disappearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix wrong gun orientation on the firetruck & APC vehicle gun after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix PvE mission progress saving improperly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix soft-lock when somebody connects while host is changing clothes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix spawn points on arenas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1826992588592450"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-12T13:54:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.549Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-12T13:54:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.549Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-12T13:54:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.418Z"
+  },
+  {
+   "id": "sos-ops-258837@1.4.1",
+   "gameId": "sos-ops-258837",
+   "displayName": "Patch 1.4.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-09T15:01:18.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "• Changed application icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "• Fixed client player stretching across the location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed NPC in Backrooms taking players under the location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed split-screen UI on the player list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed carousel animal synchronization in Amusement Park",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "• Fixed version text in the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "• Changed application icon"
+    ]
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1826362059930445"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-09T15:01:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-09T15:01:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.548Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-09T15:01:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.418Z"
+  },
+  {
+   "id": "sos-ops-258837@1.4",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-05T16:43:32.000Z",
+   "notes": [
+    {
+     "title": "New PvP Mode",
+     "items": [
+      {
+       "text": "Added a brand-new PvP game mode focused on competitive arena combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players compete in fast-paced arenas with dynamic spawning and score tracking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Supports customizable match parameters such as time limit, kill limit, and spawn rate modifiers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Designed to emphasize quick decision making, positioning, and direct player encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Skins. Melee Weapons and Vehicle \"Formula\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Input Rebinding",
+     "items": [
+      {
+       "text": "Added full control rebinding support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can now customize keyboard and controller bindings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved input device pairing logic for local multiplayer sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved handling when devices disconnect or reconnect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mouse Inversion",
+     "items": [
+      {
+       "text": "Added Mouse Y-axis inversion option.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Allows players to choose their preferred camera control style.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New UI",
+     "items": [
+      {
+       "text": "Introduced a new branded UI design across menus and HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved readability and visual clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved controller navigation between UI elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More consistent UI behavior throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Input System",
+     "items": [
+      {
+       "text": "Improved device pairing behavior for multiplayer input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved input fallback handling for disconnected devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved input action triggering stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Lobby & Networking",
+     "items": [
+      {
+       "text": "Improved lobby compatibility validation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lobby compatibility now uses a static compatibility index instead of application version checks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved lobby metadata synchronization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lobby joining error handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Voice Chat",
+     "items": [
+      {
+       "text": "Improved Vivox participant handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved voice indicator responsiveness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved microphone state synchronization with UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Reduced unnecessary shader variant compilation during build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved shader compilation stability.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reduced runtime allocations in several systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Systems",
+     "items": [
+      {
+       "text": "Improved AI noise detection calculations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved NPC reaction behavior to sound sources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved spawn validation logic in multiplayer sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Fixed cases where players could fail to join active lobbies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed synchronization issues with lobby parameters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player state inconsistencies during match transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed UI navigation breaking when dynamic elements are created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed back button input triggering multiple times in certain menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect focus behavior in several UI screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed cases where players could spawn in invalid positions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed occasional duplicate timer updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed arena parameter synchronization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Voice Chat",
+     "items": [
+      {
+       "text": "Fixed Vivox channel connection timeout issues in certain scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed participant handlers not cleaning up correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Fixed several visual inconsistencies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various minor stability issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional internal fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 24,
+    "fixed": 13,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1826362059921814"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T16:43:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.548Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T16:43:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.548Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-05T16:43:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.417Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2026-03-05",
+   "gameId": "sos-ops-258837",
+   "displayName": "The Update & DLC Is Now Live",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-05T16:01:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Operators,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new SOS OPS! update is now live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can jump back into the game right now and try the brand-new PvP mode with your friends. Pick an arena on the in-game computer, set your own match rules, and fight across five arenas: Volcano Crater, SOS Factory, Flight 747, Pyramid, and Tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside the update, SOS OPS! – Backrooms is now available as a DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this co-op expansion, what starts as a normal mission quickly turns into something very different as your team falls into a series of strange and unsettling levels inspired by the Backrooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you already own SOS OPS!, grab some friends and jump into PvP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And if you want to explore the Backrooms the DLC is now available to purchase and play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1826362059921680"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T16:01:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.547Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T16:01:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.547Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-05T16:01:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.416Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2026-03-04",
+   "gameId": "sos-ops-258837",
+   "displayName": "Update and DLC Tomorrow!!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-04T15:00:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Operators,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new SOS OPS! update and Backrooms DLC arrive tomorrow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The free update introduces the long-awaited PvP mode, where you can jump into arena matches and set your own rules. Originally we planned to launch PvP with three arenas — Volcano Crater, SOS Factory, and Flight 747.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But we love you. And we love SOS OPS!.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So after yesterday’s announcement we spent the night adding two more arenas to the PvP mode: Pyramid and Tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the same time, we’re releasing SOS OPS! – Backrooms, a new co-op DLC where a normal mission quickly turns into something much stranger as your team falls into a series of unsettling levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll give away 5 Backrooms DLC keys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Good luck, operators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1826362059918463"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-04T15:00:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.546Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-04T15:00:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.547Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-04T15:00:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.415Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2026-03-03",
+   "gameId": "sos-ops-258837",
+   "displayName": "Major Free Update + Backrooms DLC",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-03T15:01:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Operators,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A major free update is coming to SOS OPS!, and yes - PvP is finally here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of you have been waiting for this, and we’re excited to say it’s happening. You’ll be able to pick an arena from the in-game computer and jump straight into PvP. Set your own rules: time limit, kill goal, infinite mode, gear spawn rate. Weapons and power-ups spawn on the map, and you lose them on death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "At launch, PvP includes three arenas",
+     "items": [
+      {
+       "text": "Volcano Crater",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOS Factory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flight 747",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside it, we’re releasing SOS OPS! – Backrooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What starts as a normal mission quickly turns into something very different. You and your team fall into a strange, unsettling dimension made of endless yellow walls, empty spaces, and levels that don’t feel quite right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The DLC features multiple unique levels with distinct atmosphere and tension, built around co-op survival in environments where the rules feel different.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is the biggest content drop for SOS OPS! so far.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More details soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/1825727806720469"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-03T15:01:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.546Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-03T15:01:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.546Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-03T15:01:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.415Z"
+  },
+  {
+   "id": "sos-ops-258837@patch-2024-10-30",
+   "gameId": "sos-ops-258837",
+   "displayName": "Small Patch 30/10/2024",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-30T09:08:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed authorization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/6146943657173860852"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-30T09:08:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.545Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.401Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2024-04-22",
+   "gameId": "sos-ops-258837",
+   "displayName": "Another major update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-22T16:33:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello y'all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've made quite an impressive update in SOS OPS! Let's not beat around the bush - see for yourselves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOS OPS! Update v1.2.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ":car: Cars Rethinking Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles now have dynamic lights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles now have skidmarks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles now have realistic steering curve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles now can be flipped when upside down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Braking system updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vehicles now not started by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ladder Car model update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sedan Car model update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firetruck model update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monster Truck model update :eyes: :gear: Update Log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changed",
+     "items": [
+      {
+       "text": "Add weapons in hub for DLC Owners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add special vehicle in hub for DLC Owners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Character now have health parameter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Server now run by default 60 fps lock (can be changed in settings)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update water in Downtown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hydrants now push vehicles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated main train environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Painting now hang on walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized all locations loading timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sewer hatchesnow pushes player on winter location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fountains now interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Fixed input delay on client-side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character arms break sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed remote car control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gifts outline on winter location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mission timer for late-join clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed game stuck on loading screen when moving from hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spawns at some locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player customization break sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed split-screen issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed compression on some textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed input issues on pause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed train world generation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed winter location light poles synchronization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fire sound: Don't forget to share your opinion on the Steam game page and in Discord https://discord.gg/EkEUAjum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/5762994032405953496"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-22T16:33:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.544Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.400Z"
+  },
+  {
+   "id": "sos-ops-258837@major-2024-02-12",
+   "gameId": "sos-ops-258837",
+   "displayName": "BIG UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-12T17:43:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Friends, February 12th is truly a legendary day 🏆",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we are launching the Steam Remote Play festival, introducing a new SOS OPS! level, and offering you the opportunity to get the game at an ultra-great price with a 55% discount!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But let's take it step by step. Participating in Steam Remote Play is a wonderful opportunity for us to once again introduce our game to as many players as possible, and for you to play with more like-minded gamers, find friends, and test your skills as a team player. Join us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During the festival, we're giving you a 55% discount. The promotion will last from February 12th to February 19th. So, if you were thinking of getting SOS OPS! for yourself, your mom, dad, siblings, or grandparents, now is the time. After all, the opportunity to buy the game at such a low price doesn't come around so often 😉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, the most important part! We're introducing a new level, as well as a bunch of awesome updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out",
+     "items": [
+      {
+       "text": "Added positional Voice Chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new location \"Amusement Park\" with mission \"Fix the Rides\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added many rides with different puzzles to fix them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new skins & hats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added personal records for missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added rewards for mission completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added game credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added many new different & hidden easter eggs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added many SFX to missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update wardrobe UI with previews",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update in-game computer UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update \"Downtown Winter\" location visual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update \"Canals\" location visual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed \"Downtown Winter\" gifts pass through walls on high speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed grabbing of important objects (buttons, levers, car steering wheel, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character stretching on high impact: Well, you can see the amount of work that has been done 💪 We highly value the feedback of all our players. Please, check out all the latest updates and, of course, share your thoughts on the main Steam game page and on our Discord server https://discord.gg/JG4Xzh89.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 3,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2475460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2475460/view/5589599109280487929"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-12T17:43:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2475460",
+      "checkedAt": "2026-11-13T03:31:01.544Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:46.398Z"
+  }
+ ],
+ "issues": []
+}

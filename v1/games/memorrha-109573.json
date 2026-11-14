@@ -1,0 +1,877 @@
+{
+ "game": {
+  "id": "memorrha-109573",
+  "igdbId": 109573,
+  "name": "Memorrha",
+  "cover": {
+   "imageId": "cocs6h",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocs6h.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arjy5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arjy5.jpg"
+  },
+  "ps5Release": "2023-10-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "memorrha-109573@1.6.4",
+   "gameId": "memorrha-109573",
+   "displayName": "Update 1.6.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-02T10:03:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have addressed a bug that was preventing the process engine from processing crystals in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have fixed several minor loading issues with the rails that could cause bugs to occur. This was due to certain content being loaded too quickly on systems with strong CPUs and SSDs, resulting in problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-954080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/954080/view/5133583642668856207"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-02T10:03:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-954080",
+      "checkedAt": "2026-11-12T08:24:13.029Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:13.029Z"
+  },
+  {
+   "id": "memorrha-109573@1.6",
+   "gameId": "memorrha-109573",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-20T16:15:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Memorrhians,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we present the long awaited Update V1.6 with the manual savegame feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furthermore the regional pricing for some countries were adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPORTANT: Savegames from 1.5 and under are NOT compatible with the 1.6! To checkout the older version install the Update 1.5 branch in your steam library!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patchnotes",
+     "items": [
+      {
+       "text": "Added a manual savegame option to allow manual savegames (Finally!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced CPU load by 40% and RAM usage by over 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improve loading and saving times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major Upgrade to the 2020.3.38f1 Unity Engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a physic bug in the elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed two door bugs in the temple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of savegame bugs that could occur with the old savegame system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted controller configurations and updated it to support even more controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A lot of small visual glitches, bugfixes and unnecessary loadings of objects was improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Why did it take us so long to do this?",
+     "items": [
+      {
+       "text": "One reason the port to consoles took so long is the game's savegame system and the way Memorrha loads into RAM. So we rewrote the entire Savegame-System and changed the level loading behavior. Unfortunately this was very time consuming - but now it's done!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the V1.6 update it will now be possible to save manually. This is really a big step and we are happy that we can finally make this possible. The old savegames will not be compatible with the V1.6 update, so we have provided a V1.5 on Steam beta branch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "One more really important request",
+     "items": [
+      {
+       "text": "We as a small indie studio rely a lot on reviews, our heart and soul goes into this project.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you liked Memorrha it would REALLY help us if you leave a positive review on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you very much! ːsteamthumbsupː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The StickyStoneStudio Team -",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 2,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-954080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/954080/view/5035621474415087736"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-20T16:15:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-954080",
+      "checkedAt": "2026-11-12T08:24:13.029Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:13.029Z"
+  },
+  {
+   "id": "memorrha-109573@patch-2021-11-07",
+   "gameId": "memorrha-109573",
+   "displayName": "Small MAC-Build patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-07T18:38:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a problem with the folder structure of the MAC build",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-954080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/954080/view/4186653398781766737"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-07T18:38:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-954080",
+      "checkedAt": "2026-11-12T08:24:13.028Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:13.028Z"
+  },
+  {
+   "id": "memorrha-109573@1.3",
+   "gameId": "memorrha-109573",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-27T19:03:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Memorrhians,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we present Update V1.3 and will continue on improving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furthermore the regional pricing for some countries were adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patchnotes",
+     "items": [
+      {
+       "text": "Added a save checkpoint after the puzzles in the last area of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that would let the statue carts leave the rails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the clipping plane of the camera to fix some visual glitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug that would prevent a cart in the underground cave from starting in rare cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a terrain glitch that partly covered a cart controller interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some improvements regarding the activation and movement of the excavator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deleted some floating particles in the underground cave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed colliders on cart entry points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would players allow to place more than one cart on a single cart track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs regarding some achievements that would prevent them from being triggered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes regarding the secret minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some improvements regarding the rail system and cart movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "There are still some visual issues with the rail system that causes cart jumping in specific cases, we are working hard on fixing this problem and will continue updating!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-954080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/954080/view/2504491307415275888"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-27T19:03:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-954080",
+      "checkedAt": "2026-11-12T08:24:13.027Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:13.027Z"
+  },
+  {
+   "id": "memorrha-109573@1.2",
+   "gameId": "memorrha-109573",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-12T10:20:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Memorrhians,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released our second big update fixing some issues that were reported to us during the last week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks a lot to all the players who have supported us diligently in troubleshooting and are still doing so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Always running option added to the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the possible FOV to 100 and adjusted the value related to camera clipping behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When emptying an amphora with liquid the animation is now stopped when the player drops the amphora or moves away from the container",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When picking up an amphora that is currently filling up the animation now stops instead of continuing until the amphora is full",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted culling triggers in the abyss section to lessen object popup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted doors in the abyss section to not create slight collider bumps in the floor anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the elevator to prevent objects placed on the elevator from stuttering during elevator movement and stopped the walking sound from constantly starting up in fast succession",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added certain safeguard measures for several elevators to prevent players from breaking their game if they manage to circumvent the respective colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the charge sound in the energy color puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a particle bug that would cause particles to continue emitting under certain conditions instead of properly fading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further adjustments to world colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected certain texture bugs in the cellar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The master volume slider setting now does not reset when choosing between graphical preset profiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a controller related bug that would allow players to open the main menu when already being in the options menu: The next update will focus on mine cart puzzles, stay tuned!: As always, thank you so much for playing Memorrha! ːreheartː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 5,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-954080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/954080/view/3051677487681912886"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-12T10:20:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-954080",
+      "checkedAt": "2026-11-12T08:24:13.026Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:13.026Z"
+  },
+  {
+   "id": "memorrha-109573@1.1",
+   "gameId": "memorrha-109573",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-04T18:02:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Memorrhians,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released our first big update fixing some issues that were reported to us during the last week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks a lot to all the players who have supported us diligently in troubleshooting and are still doing so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a player displacement bug that would occur when interacting with a teleporter and quickly opening the scanner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the projection door in the green cart puzzle area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem with the abyss puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem with the last abyss puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would prevent plate interfaces from resetting properly after loading a checkpoint in the cart puzzle areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the carts in the colorizing puzzle wouldn't contain crystal ore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could solve the colorize puzzle without having crystals ores in the carts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the four crystal network puzzles in the ending puzzle could get stuck during processing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would prevent opening the last chamber if the puzzle was solved in a different sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would let the projector statues go off the rails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made adjustments in the blue puzzle room to prevent players from being trapped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Closed a few collider gaps in the blueprint chamber and mine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made adjustments to pickupable objects when holding them and trying to interact with a teleporter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the yellow projection color relating to the ending puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various improvements to the secret minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the necessary projection symbol to gain access to the minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the door in the last chamber to allow backtracking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a memory leak causing performance drops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved savetimes: we also updated the minimum system requirements to the GTX 660/ Radeon HD7850, due some players had stutters below that.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 2,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-954080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/954080/view/2426802221723185631"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-04T18:02:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-954080",
+      "checkedAt": "2026-11-12T08:24:13.026Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:13.026Z"
+  },
+  {
+   "id": "memorrha-109573@1.01",
+   "gameId": "memorrha-109573",
+   "displayName": "Update 1.01",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-09-29T17:59:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.01 Hotfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an error in which certain forge puzzles would not accept the correct solution on a reloaded save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error in the secret minigame causing some crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several other bugs causing issues on reloaded save files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-954080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/954080/view/2422298078095063750"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-29T17:59:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-954080",
+      "checkedAt": "2026-11-12T08:24:13.025Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:13.025Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "fe30f14b1ed7",
+   "text": "There are still some visual issues with the rail system that causes cart jumping in specific cases, we are working hard on fixing this problem and will continue updating!",
+   "status": "open",
+   "firstReleaseId": "memorrha-109573@1.3"
+  }
+ ]
+}

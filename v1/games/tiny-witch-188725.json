@@ -1,0 +1,1454 @@
+{
+ "game": {
+  "id": "tiny-witch-188725",
+  "igdbId": 188725,
+  "name": "Tiny Witch",
+  "cover": {
+   "imageId": "co4rq8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4rq8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1en6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1en6.jpg"
+  },
+  "ps5Release": "2026-07-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tiny-witch-188725@1.1.4",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Update 1.1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-29T01:02:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings! 🪄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Ramon from Creative Hand here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I decided to write this update myself, because it brings a fix I owed many of you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏆 All Decorated Achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]I got several reports that the All Decorated achievement wasn't unlocking on Normal difficulty. I dug into it, opened the saves you sent me, and found the problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]The achievement was counting every decoration in the game, including 8 that are only sold in Casual mode. On Normal, the shop has 15 decorations, so it could never be completed no matter how much you bought. The mistake was mine, not yours. Your saves were fine all along.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Now the achievement only counts the decorations your difficulty actually sells. If you already bought all 15 on Normal, it unlocks as soon as you enter a store, with no need to buy anything again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]A heartfelt thank you to everyone who reported this and sent me their saves. 💜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎨 New Tiny Witch Avatars",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Tiny Witch now has 6 profile avatars on Steam for everyone who owns the game! Now you can show off the little witch and her cat on your profile, drawn with the same care as the game. 🧙‍♀️🐱",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41277622/4a8a7ae4c0024c4e6fa14d50e4a1a4ac35272ca6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]How to use them",
+     "items": [
+      {
+       "text": "Open your Steam profile and click Edit Profile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Go to Avatar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the avatars from your games, click See All and find Tiny Witch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pick your favorite and click Save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "✨ Improvements",
+     "items": [
+      {
+       "text": "Controller vibration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]I added controller vibration: your gamepad now vibrates when you take damage, get hit by mushroom spores, and when you win or lose a day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "👾 Bugfixes",
+     "items": [
+      {
+       "text": "[p align=\"start\"]I also took the chance to fix other things that you and I found along the way:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievement progress no longer carries over from one level to the next by mistake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restarting a completed store no longer resets your progress in the other stores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Your save is no longer overwritten if it fails to load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed progress from one save slot leaking into another after returning to the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the world map not loading correctly when choosing Continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Daily hazards now refresh properly when loading a saved game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a tutorial step that could get stuck because the level briefing didn't open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Day 5 decoration check now counts every Casual mode decoration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The victory music no longer overlaps or loops incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shop scrolling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes in the pause menu and the Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when closing the book.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]If you run into any other issues, let me know using this form. I read every single one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Thanks for playing! 💫",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ramon Creative Hand 🧙‍♀️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 23,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0,
+    "topNew": [
+     "[p align=\"start\"]",
+     "[img src=\"{STEAM_CLAN_IMAGE}/41277622/4a8a7ae4c0024c4e6fa14d50e4a1a4ac35272ca6.png\"]",
+     "Controller vibration"
+    ]
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/1844751498232856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T01:02:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.557Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T01:02:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.557Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-29T01:02:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:19.590Z"
+  },
+  {
+   "id": "tiny-witch-188725@1.1.3",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Update 1.1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-07T23:17:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings! 🪄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👾 Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Reviewed achievements in Challenge Mode",
+     "items": [
+      {
+       "text": "We’ve thoroughly revised the logic behind three achievements that were not triggering as expected:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All Decorated, Everything Dirty Here!, and Let’s Mash It Up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During this process, we applied small adjustments and improvements to the validation conditions that might have been interfering with achievement tracking—especially under specific Challenge Mode restrictions. The system now correctly interprets flags like not using certain items or not buying pets. Progress tracking was improved and all tests were executed specifically in the Village map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tutorial",
+     "items": [
+      {
+       "text": "We fixed minor bugs and improved the message flow throughout the tutorial to make the onboarding clearer and smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed an issue where the music from the Village store would keep playing alongside the world map music after finishing day 10. Now, only the map music will play at that moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "⸻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any other issues, please let us know using this form:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tiny Witch even more magical! 💫",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With gratitude,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Creative Hand Team 🧙‍♀️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/1807332909585301"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-07T23:17:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.556Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:19.588Z"
+  },
+  {
+   "id": "tiny-witch-188725@1.1.2",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-12T14:48:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👾 Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed progression issues in Challenge Mode: Completing the fourth store in Challenge Mode now correctly unlocks the corresponding achievement. The game no longer shows the “You’ve unlocked Challenge Mode!” message erroneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved high score tracking errors: The game now correctly registers and saves high scores when finishing a store, both in Casual and Challenge modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save system improvements: Addressed a conflict where saves from Challenge Mode and Casual Mode could interfere with each other. Progress in each mode is now stored independently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed broken modal in Challenge Mode: The “Continue or Restart” modal now properly displays the translated text. There are no longer raw keys like challengeStore.continueOrRestart!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "ESC key no longer forces unwanted restarts: Pressing ESC in the “Continue or Restart” modal now closes the window instead of deleting your progress. Your runs are safe! 💾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⸻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re continuing to polish the game and address your reports, so keep sharing your magical findings with us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With gratitude,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– Creative Hand Team 🪄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/1799088287960413"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-12T14:48:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:19.587Z"
+  },
+  {
+   "id": "tiny-witch-188725@1.1.0",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-20T13:36:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings, We are releasing the new version of Tiny Witch with great appreciation and pride.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👑 Major Feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Casual Mode: A brand-new mode for players seeking a more relaxing and fun experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚒️ Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The tutorial has been updated with new images and clearer explanations about decorations, the Casual Mode, and other features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Restart Level\" option was renamed to \"Restart Day\" for better clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game commands now respond more smoothly, making gameplay feel more fluid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Texts across the game were adjusted to enhance localization, and the following languages were added:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simplified Chinese (SCH)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Russian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spanish (EU)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turkish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interface improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial messages and GIFs have been refined for easier understanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text alignment and spacing issues across various screens (e.g., shop, recipe book, world map) have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menus such as \"Attention\" and \"Resource Shortage\" have been centralized for better readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual elements like titles and icons have been polished to ensure a cleaner experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fonts were adjusted to better support Japanese and Chinese text, avoiding clipping or overlapping issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decorations now affect the entire shop instead of just adjacent customers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new visual feedback system shows buffs and debuffs on the little witch, including how long they last.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critters: New small creatures have been added to liven up the phases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a direction indicator to show which way the little witch is facing, improving navigation and gameplay clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "👾 Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the sound of drips from leaks would persist indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a crash occurring during the night session of the shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now restart any challenge shop and return to Day 01, even if not all days have been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a problem that caused the game to close when accessing credits in certain languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where the catalyst would disappear from the cauldron when exiting to the main menu without refunding the gold. The cauldron's state is now saved and restored properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor bugs were fixed to enhance overall stability and gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Hand team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/1789039014465412"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-20T13:36:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:19.586Z"
+  },
+  {
+   "id": "tiny-witch-188725@post-2024-05-15",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Minor fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-15T14:36:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings! 🔮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👾 Bugfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small errors relating to achievements were corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any other problems, please don't hesitate to let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's it for now folks, keep following us for more news.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Hand team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/5747233970415082940"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-15T14:36:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.554Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:19.585Z"
+  },
+  {
+   "id": "tiny-witch-188725@1.0.3.1",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Hotfix 1.0.3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-12T01:09:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings! 🔮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👾 Bugfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The error that occurred when changing text during pause has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any other problems, please don't hesitate to let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's it for now folks, keep following us for more news.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Hand team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/6474562312182958407"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-12T01:09:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:19.584Z"
+  },
+  {
+   "id": "tiny-witch-188725@1.0.3",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-29T21:24:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings! 🔮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👾 Bugfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've adjusted achievements that weren't working properly or weren't saving progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've fixed the error of breaking the game on the 10th of the store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few minor adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any other problems, please don't hesitate to let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's it for now folks, keep following us for more news.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Hand team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/5749481331441851098"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-29T21:24:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:21.689Z"
+  },
+  {
+   "id": "tiny-witch-188725@1.0.2",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-05T17:18:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings! 🔮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚒️ Improvement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The lighting torch radius is returning to 100% when you click to restart it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been added to reset the level, so it comes back at the beginning of the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been added so that it returns to the world map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small improvement to the world map artwork.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An exclusive music track has been created for the world map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "25% increase in the little witch's speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've increased the time of the challenge mode phase and decreased the goal for day 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We increased the time of impatient customers by 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We increased the flight time a little and agile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👾 Bugfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The lighting torch radius is returning to 100% when you click to restart it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixing the oChest crash problem that some users were experiencing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixing the SteamDeck touch problem",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "That's it for now folks, keep following us for more news.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Hand team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/5220292521181278689"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-05T17:18:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:21.688Z"
+  },
+  {
+   "id": "tiny-witch-188725@1.0.1",
+   "gameId": "tiny-witch-188725",
+   "displayName": "Hotfix 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-09T17:38:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello magical beings! 🔮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚒️ Improvement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've improved the brightness of the items when positioning them in the store to make them stand out more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now the castalizer lasts the whole working day instead of half the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now use the arrows in the menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The collision box of several attacks has been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, when he's in the quicksand, he's no longer hit by any attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved so that all cuts are skipped with a cancel button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We've improved the map transition smoothly;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👾 Bugfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We adjusted some words that were misspelled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The item in the chest is no longer deleted when you reset the store because you don't have the necessary materials;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed so that the witches' confusion attack no longer hits in the air.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where the goteria sound was playing non-stop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed items and dirt remaining in the store during the preparation stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the book sound that kept playing even when you weren't turning pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's it for now folks, keep following us for more news.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Creative Hand team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1740310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1740310/view/5159491482916888123"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-09T17:38:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1740310",
+      "checkedAt": "2026-11-13T03:34:21.551Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:30:21.687Z"
+  }
+ ],
+ "issues": []
+}

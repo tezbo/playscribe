@@ -1,0 +1,244 @@
+{
+ "game": {
+  "id": "missing-banban-315973",
+  "igdbId": 315973,
+  "name": "Missing Banban",
+  "cover": {
+   "imageId": "co8s97",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8s97.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3g05",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3g05.jpg"
+  },
+  "ps5Release": "2025-05-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "missing-banban-315973@post-2025-06-02",
+   "gameId": "missing-banban-315973",
+   "displayName": "Wall Jumping Fix + Skin Select Option for Zolphius Gift Shop",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-02T20:55:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-I fixed a bug, where you would get stuck in a wall when wall jumping into a ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You can change skins you bought at a Zolphius Gift Shop!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3113680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3113680/view/1800991756451791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-02T20:55:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-3113680",
+      "checkedAt": "2026-11-13T03:25:46.519Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-02T20:55:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3113680",
+      "checkedAt": "2026-11-13T03:25:46.519Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-02T20:55:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:24.532Z"
+  },
+  {
+   "id": "missing-banban-315973@major-2025-05-30",
+   "gameId": "missing-banban-315973",
+   "displayName": "Final Level Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-30T09:58:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added more checkpoints to the final level + improved final weapon control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3113680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3113680/view/1800991756339776"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-30T09:58:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-3113680",
+      "checkedAt": "2026-11-13T03:25:46.518Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-30T09:58:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3113680",
+      "checkedAt": "2026-11-13T03:25:46.519Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-30T09:58:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:24.532Z"
+  },
+  {
+   "id": "missing-banban-315973@post-2025-05-29",
+   "gameId": "missing-banban-315973",
+   "displayName": "CTRL Bug fix",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-29T15:40:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed endless dialogue spawn for when pressing control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3113680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3113680/view/1800991756314884"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-29T15:40:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3113680",
+      "checkedAt": "2026-11-13T03:25:46.518Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-29T15:40:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3113680",
+      "checkedAt": "2026-11-13T03:25:46.518Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-29T15:40:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:24.531Z"
+  }
+ ],
+ "issues": []
+}

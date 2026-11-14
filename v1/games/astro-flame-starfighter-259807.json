@@ -1,0 +1,98 @@
+{
+ "game": {
+  "id": "astro-flame-starfighter-259807",
+  "igdbId": 259807,
+  "name": "Astro Flame: Starfighter",
+  "cover": {
+   "imageId": "co6wzs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6wzs.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2fs6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2fs6.jpg"
+  },
+  "ps5Release": "2023-08-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "astro-flame-starfighter-259807@post-2026-10-22",
+   "gameId": "astro-flame-starfighter-259807",
+   "displayName": "Achievement fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-22T19:19:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the \"Fully Upgraded\" achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where 3 stars were not being awarded for missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3990840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3990840/view/1847286114033951"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-22T19:19:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-3990840",
+      "checkedAt": "2026-11-13T03:15:16.515Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-22T19:19:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3990840",
+      "checkedAt": "2026-11-13T03:15:16.515Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-22T19:19:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:13.611Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,710 @@
+{
+ "game": {
+  "id": "r-type-tactics-i-ii-cosmos-225776",
+  "igdbId": 225776,
+  "name": "R-Type Tactics I & II Cosmos",
+  "cover": {
+   "imageId": "co7dfq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7dfq.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1z3t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1z3t.jpg"
+  },
+  "ps5Release": "2026-03-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "r-type-tactics-i-ii-cosmos-225776@1.0.7",
+   "gameId": "r-type-tactics-i-ii-cosmos-225776",
+   "displayName": "Update 1.0.7",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-14T18:10:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello commanders,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released version 1.0.7, which fixes the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in certain missions where the background was rendered in front of the hex grid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the combat effects for certain units on the mission screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where it was difficult to move the cursor straight up and down when selecting hexes with the analog stick during missions, causing only diagonal inputs to be available. Note: If you want to input directions precisely in the four cardinal directions, we recommend using the directional buttons (D-pad).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, if the game window was unfocused then refocused such as through Alt+Tab, the Max FPS Setting would no longer apply correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various other bug fixes, text fixes, and stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any issues with this patch, please report the issue in the troubleshooting forums, or send issue information to gamesupport@nisamerica.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you, and we hope that you will continue to enjoy playing R-Type Tactics I • II Cosmos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2169930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2169930/view/1846651706675239"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T18:10:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.380Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T18:10:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.380Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-14T18:10:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:29.491Z"
+  },
+  {
+   "id": "r-type-tactics-i-ii-cosmos-225776@1.0.6",
+   "gameId": "r-type-tactics-i-ii-cosmos-225776",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-19T18:00:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello commanders,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released version 1.0.6, which fixes the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where in missions, if you do an input such as moving the control stick while the command window is open, the hex selection cursor moves even though it is in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, when using a Desynch Sonar-type weapon, a sound would play in response to detecting allied units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the displayed damage amount during missions could be invalid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, if there is a unit that has damaged parts, saving and reloading could make the visuals of the damaged parts revert to the undamaged appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some units were displayed too small relative to the hex size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some unit 3D models.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted some combat visual effects and animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Additional fixes and improvements to bugs and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any issues with this patch, please report the issue in the troubleshooting forums, or send issue information to gamesupport@nisamerica.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you, and we hope that you will continue to enjoy playing R-Type Tactics I • II Cosmos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2169930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2169930/view/1841579228663436"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-19T18:00:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.379Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-19T18:00:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.379Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-19T18:00:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:29.491Z"
+  },
+  {
+   "id": "r-type-tactics-i-ii-cosmos-225776@1.0.5",
+   "gameId": "r-type-tactics-i-ii-cosmos-225776",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-11T18:40:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello commanders,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released version 1.0.5, which fixes the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where in version 1.0.4, the game could enter a soft-locked state if the game window is unfocused during certain combat animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where in version 1.0.4, spoils on the map during missions would become invisible if the game window became unfocused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where outlines were displayed incorrectly when View Distance was set to Low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"New\" icon on the Unit Development menu option would not disappear correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the duplicate game cursors could be displayed during missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue a red rectangle could be displayed when clicking outside of the game window during certain missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed other issues relating to the mission information screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional fixes and adjustments to bugs and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any issues with this patch, please report the issue in the troubleshooting forums, or send issue information to gamesupport@nisamerica.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you, and we hope that you will continue to enjoy playing R-Type Tactics I • II Cosmos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2169930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2169930/view/1840310314354888"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T18:40:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.378Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-11T18:40:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.379Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-11T18:40:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:29.490Z"
+  },
+  {
+   "id": "r-type-tactics-i-ii-cosmos-225776@1.0.4",
+   "gameId": "r-type-tactics-i-ii-cosmos-225776",
+   "displayName": "Update 1.0.4",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-24T17:01:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello commanders,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released version 1.0.4, which fixes the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue on Steam Deck where movies would not play on certain configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted some combat environments and combat effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted behavior of the \"new\" icon notice in the Unit Development Map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where the sound effect when a unit is destroyed could be cut off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that occurred when ramming with a multi-hex unit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed control-related issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted anti-crashing routines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Other fixes and improvements to bugs and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes that were applied in version 1.0.3",
+     "items": [
+      {
+       "text": "Fixed an issue on Steam Deck where the game would not progress when in offline mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where certain units could not be targeted with mouse controls.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Text fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you encounter any issues with this patch, please report the issue in the troubleshooting forums, or send issue information to gamesupport@nisamerica.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you, and we hope that you will continue to enjoy playing R-Type Tactics I • II Cosmos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Edit: An issue has been discovered that appears to occur on 1.0.4 but not 1.0.3:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During certain attacking animations, if you disactivate the game window with Alt+Tab, the game can enter a state where control is not given back to the user and the game cannot progress.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The public version of the game has temporarily been reverted to 1.0.3 while we investigate this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your understanding, and we apologize for any inconveniences caused by this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 3,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2169930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2169930/view/1839041357030204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T17:01:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.378Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-24T17:01:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.378Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-24T17:01:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:29.490Z"
+  },
+  {
+   "id": "r-type-tactics-i-ii-cosmos-225776@1.0.2",
+   "gameId": "r-type-tactics-i-ii-cosmos-225776",
+   "displayName": "Update 1.0.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-23T18:00:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello commanders,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released version 1.0.2, which fixes the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in version 1.0.1 where, when targeting an enemy while attacking, enemy information would not be displayed or the wrong information would be shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, when selecting a tile with a hidden enemy, the control guide at the bottom of the screen would change and effectively give away their position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you encounter any issues with this patch, please report the issue in the troubleshooting forums, or send issue information to gamesupport@nisamerica.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you, and we hope that you will continue to enjoy playing R-Type Tactics I • II Cosmos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2169930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2169930/view/1835871199316358"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T18:00:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.377Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T18:00:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2169930",
+      "checkedAt": "2026-11-13T03:28:44.377Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-23T18:00:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:29.489Z"
+  }
+ ],
+ "issues": []
+}

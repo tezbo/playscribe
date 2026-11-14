@@ -1,0 +1,174 @@
+{
+ "game": {
+  "id": "mythwrecked-ambrosia-island-223097",
+  "igdbId": 223097,
+  "name": "Mythwrecked: Ambrosia Island",
+  "cover": {
+   "imageId": "co62oi",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co62oi.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2a7g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2a7g.jpg"
+  },
+  "ps5Release": "2025-09-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mythwrecked-ambrosia-island-223097@1.07",
+   "gameId": "mythwrecked-ambrosia-island-223097",
+   "displayName": "Patch 1.07",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-20T08:59:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, we’re still very solid with very few bug reports coming in, which is great! I've caught a few things internally so done a v1.07 patch (v1.05 and v1.06 were internal, hence the jump in version number) with the following fixes:-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Edge case blocker bug where you can save after placing the final soulstone before triggering the endgame finale. On reload of that save, the endgame finale would not trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you entered the South-Western beach at exactly 5am then the stars would remain in the sky for the rest of the day in that location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On very old PCs/Laptops we've had a report of the player character remaining tiny when emerging from fast travel. We can't replicate this, even on a 15 year-old laptop, but have made a change that we think will fix the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save benches, the mosaic and the chillout blanket did not have a highlight in the Atrium scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a couple of minor visual bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's it! Thanks for playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2000210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2000210/view/1786573930649205"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T08:59:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2000210",
+      "checkedAt": "2026-11-12T08:24:49.385Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:49.385Z"
+  },
+  {
+   "id": "mythwrecked-ambrosia-island-223097@1.04",
+   "gameId": "mythwrecked-ambrosia-island-223097",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-13T09:34:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Happy to report that we've had very few bugs reported so this is just a minor update. The fixes for V1.04 are as follows:-",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed rare progression blocker where you can sprint from a non-Hermes friend favour to a gull and skip the dialogue quickly, meaning his points aren't allocated directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a typo in the game's final scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2000210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2000210/view/1785774543553305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-13T09:34:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2000210",
+      "checkedAt": "2026-11-12T08:24:49.384Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:49.385Z"
+  }
+ ],
+ "issues": []
+}

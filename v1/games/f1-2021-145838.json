@@ -1,0 +1,4092 @@
+{
+ "game": {
+  "id": "f1-2021-145838",
+  "igdbId": 145838,
+  "name": "F1 2021",
+  "cover": {
+   "imageId": "co31gd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co31gd.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arvdk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arvdk.jpg"
+  },
+  "ps5Release": "2021-07-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "f1-2021-145838@1.18.1",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.18.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-20T15:08:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey drivers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Having investigated recent desync problems affecting Multiplayer following patch 1.18 on PC, this patch is aimed at fixing the issue",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you to all the leagues who tested this prior to release & apologies for the inconvenience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4348797798072012968"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-20T15:08:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-20T15:08:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.819Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-04-20T15:08:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:00.607Z"
+  },
+  {
+   "id": "f1-2021-145838@1.17",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-28T11:08:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi drivers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.17 is out now, and you can find what's in this patch below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where if a player joined during the grace period of a qualifying session, they would be unable to start the race.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fastest lap point is no longer removed after editing results in Leagues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grid penalties now correctly carry over from sessions in Leagues if they are completed at different times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Red Bull White livery added as an option to use on the Player Car.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved AI Behaviour in sessions when they are on in-laps with faster cars approaching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Addressed an issue where Victory VO may not play at the end of a race.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a calibration issue with the Fanatec CSL DD pedals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where the R&D completed or failed screen would show up blank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4258723269522324536"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-28T11:08:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-28T11:08:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.818Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-28T11:08:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.934Z"
+  },
+  {
+   "id": "f1-2021-145838@1.16.852849",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.16.852849",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-28T12:06:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey drivers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've released a small patch for F1 2021, patch 1.16.852849, you can find the note for this below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to PC stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're still running into issues with stability on your PC, there are a number of additional troubleshooting steps you can take:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Delete the contents of xxx\\Documents\\my games\\F1 2021\\hardwaresettings before loading into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Verify integrity of game cache.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make sure your graphics drivers are up to date.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If things still aren't working as they should, please let us know in the Steam forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4246335832522524026"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-28T12:06:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-28T12:06:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.818Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-02-28T12:06:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.933Z"
+  },
+  {
+   "id": "f1-2021-145838@1.16",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-21T12:04:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi drivers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.16 is out now, and you can find what's in this patch below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where re-joining a qualifying session would result in the session timer being reset for that user.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where host and client could struggle to get into the same league event if they previously declined to proceed to the next session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghosting can now be disabled in Two-Player Career.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Penalties given for collisions under the Safety Car will be more fairly distributed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved a crash when attempting to back out from the Official F1® 2021 Championship and attempting to re-enter on consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a crash when selecting a salary with your current team having cancelled negotiations with them previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Previous simulation settings in Grand Prix will now be remembered when starting a new Grand Prix event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4246335198906817378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-21T12:04:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-21T12:04:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.817Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-02-21T12:04:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.931Z"
+  },
+  {
+   "id": "f1-2021-145838@1.15.843175",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.15.843175",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-07T12:12:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey drivers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we've released a small patch for F1 2021, you can find the note for this below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to PC stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're still running into issues with stability on your PC, there are a number of additional troubleshooting steps you can take:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Delete the contents of xxx\\Documents\\my games\\F1 2021\\hardwaresettings before loading into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Verify integrity of game cache.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make sure your graphics drivers are up to date.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If things still aren't working as they should, please let us know in the Steam forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4235074931861496967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-07T12:12:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-07T12:12:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.817Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-02-07T12:12:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.930Z"
+  },
+  {
+   "id": "f1-2021-145838@1.15",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-24T12:02:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi drivers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.15 is out now, and you can find what's in this patch below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Custom team can now be used within Grand Prix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Network warning indicators have been added to multiplayer games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where players could get stuck in the garage after retiring during a practice or qualifying session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where players could not connect to online sessions on particular accounts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted AI on the following tracks and corners to reduce overall speed:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Austria – Red Bull Ring: Turn 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Belgium - Spa-Francorchamps: Turn 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Netherlands - Zandvoort: Turn 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where Force Feedback would be lost after using Quick Resume on console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where penalties could be incorrectly given on Jeddah pit entry or exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "F2 qualifying positions will now be correctly carried forward into race sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Race 3 points will now correctly be shown on the race results screen for F2™ 2021",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where the F2™ Champion could incorrectly be declared after the final feature race in career",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where VO lines for Fittipaldi were using the incorrect lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted speed limit for Zandvoort pit lane to match the official season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Position indicator is now correctly displayed in the second sprint race of an F2™ 2021 session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Need some more information on the new features in this patch? Keep reading!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom team can now be used within Grand Prix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today’s update has added the ability to race as the 11th team in Grand Prix mode. All teams will have equal performance, so this is the perfect opportunity to compete against the entire F1® 2021 grid in full, racing with your currently selected livery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will also be able to pick a teammate from the F2™ 2020 and F2™ 2021 seasons (except for Mick Schumacher, Nikita Mazepin, and Yuki Tsunoda) – as well as the My Team Icons, which are available to purchase in-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How does your perfect line-up stack up against the competition? Is it time to promote a new driver from F2™? Maybe this is the ideal opportunity for you to test who your new Icon signing will be in Grand Prix before recruiting them in My Team?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Connection Warning Icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve added some additional feedback when playing in Multiplayer in the form of the connection warning icons – you’ll see those if you or your competitors experience connection difficulties in-game. Here’s what we’ve added and what they mean:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Connectivity Issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You’ll see the ‘Connectivity Issues’ icon displayed if you are connected to less than 67% of the players in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Low bandwidth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Divide your bandwidth by the number of connections in your game, and if this number drops below a particular threshold, you’ll see the ‘Low Bandwidth’ icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Host Bandwidth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Similar to ‘Low Bandwidth’ but focused on the host’s connection. Divide the host’s bandwidth by the number of connections in the game, and if this number drops below a particular threshold, all players in the game will see the ‘Host Bandwidth’ icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you happen to run into these issues, some additional troubleshooting is available in our forums here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 2,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4237325463685662564"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-24T12:02:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-24T12:02:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.816Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-01-24T12:02:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.929Z"
+  },
+  {
+   "id": "f1-2021-145838@1.14",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-06T12:18:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Experience the teams, cars, and drivers of the F2™ 2021 season in our free update. Live from today, get to grips with F2™ 2021 in Grand Prix, Time Trial, Social Play, Split-Screen, and LAN. If you’re unfamiliar with the final stop on the road to F1®, find out about the finer points of Formula 2™ right here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F2™ is where herculean drivers shine, and the next generation of stars are born. Championships often go to the final flutter of the chequered flag as glory awaits; last year’s champion, Mick Schumacher, was locked in a battle that dramatically went down to the last race in Bahrain. It’s no different this year, as the title race between Prema Racing’s Oscar Piastri, Robert Shwartzman and Uni-Virtuosi’s Guanyu Zhou looks like it could go down to Abu Dhabi.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today’s update features both F2™ 2020 and F2™ 2021 weekend structures, depending on which season you play. Unlike F2™ 2020’s structure, which you can choose to play through in Career mode, of one practice session, a qualifying, followed by an hour-long Feature race on Saturday, time depending on your race settings, and a Sprint race on the following Sunday, the 2021 season is slightly different. Available in Grand Prix, Time Trial, Social Play, Split-Screen, and LAN, F2™ 2021 has two Sprint races on Saturday, with the Feature race taking place on Sunday. Qualifying sets the grid for the feature race and the first sprint race, with those in the top ten reversing positions for the first sprint grid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How do I access F2™?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Experience F2™ 2021 in Grand Prix, Time Trial, Social Play, Split-Screen, and LAN. Head to any one of those modes and select ‘F2™ 2021’ to get started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F2™ 2020 is still available in Driver career, and to find that, start a career and select 'Driver' and then 'Start in F2™', follow the on-screen prompts to tailor the career to your preference. There is one additional option: choose which Driver Academy you wish to join. You will start the F2™ 2020 with a single goal of getting to F1® for the start of the 2021 season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How do I drive an F2™ car?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although F2™ cars are less complicated than F1®, they can be more challenging, primarily if you're used to the high levels of grip and stability. This, combined with the low-profile tyres, means you can't lean on the car as hard in the corners, and you will need to get on the brakes earlier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, the most challenging aspect of driving an F2™ car comes at low speed, where the lack of tyre grip and the engine's high torque output results in a less planted car than in F1®. You'll need to be extremely patient with the throttle while you go through the gears, as an F2™ car can easily snap on you with minimal warning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F2™ cars are notoriously tough to drive without Traction Control, so mastering them with this assist on first will help you get to grips quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They are challenging beasts to drive, but F2™ offers some of the most authentic and exciting racing. Start your story here, and when you graduate to F1®, your prowess and refined skills will make you the next G.O.A.T.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are the full patch notes for today's update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.14 Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F2™ 2021 season has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue with a lack of force feedback on Logitech G923 wheels for PC players",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where team badge and sponsors would not appear on the player’s helmet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced time between stops when a team is double stacking cars in the pits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted track limits at turns 1 and 14 on Portimao",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "F2™ 2020 Sprint race will now correctly use the results from the feature race if a custom grid is used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where Imola was using the incorrect garages for the player car",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 2,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4224936215398118646"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-06T12:18:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.815Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-06T12:18:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.815Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-06T12:18:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.928Z"
+  },
+  {
+   "id": "f1-2021-145838@1.13",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-15T12:06:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Welcome to Jeddah: the newest and fastest street circuit to race onto this year’s calendar. With average speeds estimated to exceed 250km/h, this is your chance to take on the Saudi circuit in F1® 2021 before the drivers head there in December.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Built on the shoreline of the Red Sea, the Jeddah Corniche Circuit is the second-longest circuit on the calendar (with only Spa-Francorchamps being longer) and sports more corners than any other track this year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So that’s the circuit. Let’s take you on a flying lap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the lights go out, it’s a sprint to the first turn, a left-right mini chicane, followed by a series of corners designed to test the mettle of even the greatest driver. Next, turn 13’s banked, long, left-handed hairpin, which could become one of the spectacular sights of the circuit, ahead of the fast, flowing second half of the track. It wraps up with the sweeping corners of turns 25 and 26, sandwiched between a lagoon and the Red Sea, and the final turn 27, before speeding across the start/finish straight to finish the lap in style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There will be a few overtaking places, with the home straight to turn one being top of the list. Coming out of the fastest parts of the circuit, aided by two DRS zones between turns 24, 25, and after the last corner, you’ll have a great opportunity to overtake your rivals. We also expect the banked hairpin at turn 13 to be a perfect place to set up a move too, just make sure you’re not carrying too much speed as you enter the corner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As with the previous two additional circuits, you’ll be able to select Jeddah immediately in Time Trial, Grand Prix, Real-Season Start, and online. If you’re in the middle of a Career save, you won’t need to start again: whether in My Team or Driver Career, Jeddah will appear for selection in your next season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can get to grips with the fastest street circuit in F1® 2021 with a playlist dedicated to non-stop Jeddah. Just go to Social Play, hit ‘Jeddah 24/7’, and start racing. There’s no need to worry about damage or crashing out as collisions will be set to ‘off’. Combined with One-Shot qualifying and 5-lap races, you will get to know Jeddah in no time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "That's not all! Here are all the notes for this patch",
+     "items": [
+      {
+       "text": "New Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jeddah has been added to the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to enable or disable Pit Lane Tyre Temperature simulation so cars that box closer to the pit lane entrance are not disadvantaged by colder tyres as they exit the pit lane.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2021 Red Bull has been reverted to their traditional livery with a visual update to closer match the real season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to disable driver moves in career",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Equal performance has been added to Grand Prix mode using F1 2021 cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Users kicked from a session due to the timer running out are no longer banned from the session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Host-spectators will now correctly see the race starts lights go out at the same time as racers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where the “Advance” button could disappear from a career save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "R&D progress history screen now looks correct with the increased number of available tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Victory VO can now correctly be previewed within the item store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where users could go out of world in photo mode on Imola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fanatec CSL DD pedals now have the correct brake and throttle thresholds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DRS white line has been adjusted on Imola to match the activation point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4971406207533135297"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-15T12:06:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-15T12:06:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.814Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-15T12:06:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.927Z"
+  },
+  {
+   "id": "f1-2021-145838@major-2021-10-20",
+   "gameId": "f1-2021-145838",
+   "displayName": "F1® 2021 DRIVER RATINGS UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-20T11:37:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The F1® season continues its rollercoaster ride, with records broken, hard racing and a lot of rain. With all of that, we can hardly believe it’s only been two races since our last rating update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, the drivers are scored according to their Experience, Pace, Awareness, Racecraft and Overall Rating, with the numbers weighted towards their most recent race results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take a deeper look into how the driver ratings are calculated here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are some of the changes in the latest update, up to and including the Turkish Grand Prix:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raikkonen on the Rise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Raikkonen has rocketed himself up the timesheets, getting in the top four overtakers in both Sochi and Istanbul. The veteran has proved he’s still got it, his Racecraft and Overall Rating have both gone up by one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ricciardo’s Results",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The past two races have seen Ricciardo’s resurgence. Managing to be in the top three overtakers in both Russian (11) and Turkish (8) Grands Prix has risen his Racecraft by one, in addition to a one-point Experience boost. Despite a storming performance in the Turkish Grand Prix, starting from the back and finishing in 13th, his Pace has gone down slightly, though his Overall Rating remains the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pierre’s Penalty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Turkish Grand Prix proved costly for Pierre Gasly, as he picked up a five-second penalty and one penalty point for his collision with Fernando Alonso in the first corner. This has meant his Awareness has dropped 12, the biggest points drop this update, and his Overall Rating by three.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alonso’s Awareness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It wasn’t just Gasly who picked up penalty points at the Turkish Grand Prix. Fernando Alonso received a five-second penalty and two penalty points after contact with Mick Schumacher causing his Awareness to fall by nine. Istanbul Park proved even more costly to Alonso, as finishing in 16th from a starting position of 5th has dropped his Racecraft by three. Both Awareness and Racecraft drops have seen his Overall Rating to go down by two.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Championship Rivals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the battle of the driver ratings, there has been a little change since the last update. Max Verstappen’s Experience has risen by one, and his Pace and Overall Rating has dropped one each. Lewis Hamilton’s performances have ensured he stays where he is, keeping his position as the highest-rated driver on the grid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you’re new to the franchise, in F1® 2021’s My Team, you’ll become driver-owner of your Formula 1® team, and along with choosing the power unit and selecting your team’s name & colours, one of the most important decisions is that of your teammate. This is where the driver ratings come in - to help you decide who will be the best for you on your budget.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Find the full ratings table on our website As usual, if you’re in the middle of a My Team save, you’ll be asked via an in-game message whether you’d like to apply the changes to your existing save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tell us what you think of the updated ratings - follow our social channels on Instagram, Twitter, YouTube and Facebook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4103335143101756370"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-20T11:37:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-20T11:37:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.813Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-20T11:37:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.926Z"
+  },
+  {
+   "id": "f1-2021-145838@major-2021-10-13",
+   "gameId": "f1-2021-145838",
+   "displayName": "𝑰𝒏𝒕𝒓𝒐𝒅𝒖𝒄𝒊𝒏𝒈 Imola, a special Red Bull Racing livery, sports update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-13T11:02:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It’s time to re-introduce Imola to the Formula 1® game franchise. We’re extremely excited that the Italian circuit is available for you to play right now, but that's not all that's coming in this patch. Explore everything in today's update right here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Imola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Autodromo Internazionale Enzo e Dino Ferrari, also known as Imola, is named after the famous founder of Ferrari. It’s a circuit steeped in history, narrower than modern tracks, and characterised by its fast, often blind corners, and anti-clockwise direction. Active on the Formula 1® calendar from 1980 to 2006, it’s seen many motorsport legends take to the track, before returning last year due to the COVID-19 pandemic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is the first time since F1® 2013 that Imola has been included in the franchise, and now you can head out and immerse yourself in the incredible Italian circuit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As with Portimao, once you’ve downloaded the update, you’ll be able to select Imola immediately in Time Trial, Grand Prix, Real-Season Start, and online. If you’re in the middle of a Career save, you won’t need to start again: whether in My Team, or Driver Career, Imola will appear for selection in your next season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The narrow nature of Imola means that overtaking spots are at a premium here, so once you’re up to speed with the track layout, you’ll want to make the most of the DRS zone around the final bend and line up your move into the first chicane – corners 2, 3 and 4 – otherwise known as the Variante Tamburello.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sports Update & Red Bull Racing livery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s not just the Italian circuit that’s included, we’re adding a whole raft of livery and sponsor updates, along with one very special looking Red Bull.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Red Bull Racing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ahead of the Turkish Grand Prix, Red Bull Racing revealed a unique farewell livery to celebrate the team’s race-winning partnership with power unit supplier Honda, on what should have been their last home race in Suzuka. To celebrate, this new design will replace Red Bull Racing’s 2021 livery in all modes for a limited period in F1® 2021, so head in game now and pay tribute to the end of an era by racing this memorable livery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've made a bunch of livery and sponsor updates to the other cars too, which you can find out more about here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the full notes for this patch",
+     "items": [
+      {
+       "text": "New Content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Imola has been added to the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual sports update including the special Red Bull livery as seen in the 2021 Turkish GP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Esports Pit Release option has been added to multiplayer sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for the Fanatec CSL DD Base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for AMD FSR and CACAO",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the game information received by the host in an online session from a client machine resulted in the following issues: incorrect positional information for other players, stuttering and lag on the host machine, cars driving the wrong way in the pitlane and cars appearing on top of one another on the spectator feed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where players would sometimes fail to connect to an online session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a visible timeout to multiplayer sessions so that lobbies will not be unnecessarily held up while loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Addressed an issue where the lap counter could appear incorrect for spectators after a formation lap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a crash that could occur when entering a weekly event after a network error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where the host being invited back to the session after a host migration could result in an error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Portimao and Imola have been added to the Beginner and Experienced Social Play templates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed a handling exploit in lower speed corners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where user’s customisation could be locked as Carlos Sainz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where dials could be missing from the Ferrari wheel after adjusting camera settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where users could incorrectly receive a penalty at the end of a Virtual Safety Car period",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted various kerbs in Bahrain, Monza and China",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Addressed various terrain holes on Bahrain and China",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where changing shutter speed in Photo Mode could cause the image to be distorted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where floor damage could be accumulated on Spa-Francorchamps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Leaderboard percentage ranking has been re-added to Time Trial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made improvements to AI yielding behaviour so they no longer match the player pace when not on a flying lap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where resetting camera customisation to default would only apply to TV-Pod camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where it could be difficult to exit the pits in Baku as Williams without crossing the white line on the pit exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where UDP data was not being broadcast on Xbox Series consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Addressed an issue where retiring in the garage could cause a yellow flag incident",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player will no longer incur a penalty for fitting a new gearbox after a gearbox failure has resulted in retirement from the race",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where Nvidia DLSS mode could not be changed in some circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Component changes now correctly take effect when using Quick Practice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where fuel mix could be locked on an out lap on certain tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Driver of the Day selection criteria has been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll see you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 17,
+    "balance": 1,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4101082696717644260"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-13T11:02:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.812Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-13T11:02:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.812Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-13T11:02:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.925Z"
+  },
+  {
+   "id": "f1-2021-145838@major-2021-09-29",
+   "gameId": "f1-2021-145838",
+   "displayName": "F1® 2021 DRIVER RATINGS UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-29T10:47:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The last few races have been fast-paced, featuring flurries of wet weather and fraught with a little controversy. It may have only been three races since our last driver rating update, but those three races have been full of racing action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As the season has been going on, we’ve been working hard to get the results in-game and updating the driver ratings according to their Experience, Pace, Awareness, Racecraft and Overall Rating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you’re new to our driver ratings, they’re weighted more towards recent race results and driver performance. In F1® 2021’s My Team, you become driver-owner of your Formula 1® team, and alongside deciding on your power unit, colours, name, one of the most important decisions you’ll make is that of your teammate. Enter the driver ratings. Study them and decide who will deliver the best bang for your buck, and together you can go for glory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can find out more about how the driver ratings are calculated in our deep dive right here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are some of the biggest changes in the latest update, up to and including the Italian Grand Prix:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bottas’ Boost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Being one of the drivers whose ratings dropped last time round, two consecutive podium places, including one having started at the back of the grid, have boosted Bottas’ statistics. His Racecraft and Pace have both gone up one, meaning his Overall Rating has also bumped up one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forza Ferrari",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both Charles Leclerc and Carlos Sainz have delivered some great results for Ferrari, with the former scoring two top-five finishes in a row. This fantastic form has meant Leclerc’s Racecraft and Awareness both rise by one. Sainz’s Awareness, Racecraft and Pace all go up one too, leading to an Overall Rating increase from 87 to 88.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Momentum for Mick Schumacher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Despite contesting towards the back of the grid, rookie Mick Schumacher has impressed in his first season in Formula 1®. Consistently out-qualifying and finishing ahead of teammate, Nikita Mazepin, Schumacher’s Experience and Awareness increase by one each, with his Racecraft and Pace going up two. These add up to an impressive Overall Rating rise of two, joint highest increase this time around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ocon’s Overall Drops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been a mixed few races for Alpine’s Esteban Ocon. Out-qualifying his teammate at the Belgian Grand Prix and an eighth position at the Dutch Grand Prix have meant the Frenchman’s Racecraft increases by one, and his pace by three. An incident involving Sebastian Vettel at the Italian Grand Prix has proved costly, however, as his Awareness drops 14, ultimately causing his Overall Rating to fall by two.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Checo’s Challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keeping up with Max Verstappen isn’t easy, even for experienced drivers such as Sergio Perez. Despite a great performance at the Dutch Grand Prix, coming from the pit lane to finish in an impressive eighth place, his pace and finishing position compared to Verstappen has taken his ratings down slightly. His Racecraft has dropped by two and pace by one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Championship Rivals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“But what about the two championship rivals?” With the triple-header giving us so much championship action, we know you’re clamouring to know what’s changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max Verstappen’s Racecraft increases by one, however, it’s that incident at the Italian Grand Prix, with the subsequent penalty from the stewards, which has proved costly, dropping his Awareness by nine points, causing his Overall Rating to fall by two.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the battle of the driver ratings, Lewis Hamilton is currently in the lead, as his performances have ensured his ratings remain the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Those are some of the notable changes this time around, and you can find the full ratings table on our website As usual, if you’re in the middle of a My Team save, you’ll be asked via an in-game message whether you’d like to apply the changes to your existing save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tell us what you think of the updated ratings - follow our social channels on Instagram, Twitter, YouTube and Facebook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/3938951840876145506"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-29T10:47:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.810Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-29T10:47:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.811Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-29T10:47:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.924Z"
+  },
+  {
+   "id": "f1-2021-145838@1.10",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-13T11:15:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, Portimao will be fully playable for all players in F1® 2021, and we’ll tell you everything you need to know and how you can explore it for yourself in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See everything that will be available from today and coming in the months ahead in our trailer:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you’ve downloaded the update, Portimao will be available for you to race in Time Trial, Grand Prix, Real-Season Start, and online. If you’re in the middle of a Career save, you won’t need to start again to experience Portimao. Whether in My Team, or Driver Career, it will appear for selection in your next season. Brand-new Career saves will have Portimao available from the start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s not all that’s available in F1® 2021 from today. For the first time ever, the 2021 F1® season saw the introduction of two official Safety Cars. Alongside the very recognisable (but now red) Mercedes AMG, the green Aston Martin Vantage will be taking on Safety Car duties at certain races.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trigger the Safety Car in the following races, and you’ll see the special green Aston Martin Vantage leading the pack:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bahrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monaco",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Canada",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "France",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Great Britain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Netherlands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Singapore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Russia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Japan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Australia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saudi Arabia (when added in game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Abu Dhabi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The performance of the cars has also been updated so that they are now much more reflective of what is happening on track right now. As a result of this, we’ll be wiping the F1® Time Trial leaderboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, we have made some minor tweaks to the handling model to remove an unrealistic element with low-speed cornering, which will be coming into the game as soon as the AI retraining has been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Livery updates will also be coming in October, updating the teams’ look.*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes 1.10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the full notes for this patch",
+     "items": [
+      {
+       "text": "Portimao has been added to the available tracks in all modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F1 2021 vehicle performance has been brought more in-line with the real season. All F1 Time Trial leaderboards have been reset as a result of this change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aston Martin safety car has been added to tracks where it is used in the real season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash when watching highlights or replays on Xbox Series consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Various improvements to Xbox multiplayer connections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Addressed an issue where the race could end after the first lap in Two-pPlayer career",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where the MFD could pop-up when tyre wear reached 20% increments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where users could not enter the pits with heavily worn engine components while using steering assist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Race strategy practice programme is now locked to standard fuel mode to bring this in line with race regulations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue when adjusting HDR peak nit, it would not show a change on the images",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash quitting to the front end after negotiating a contract in Two-Player career",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when viewing standings after retiring from a league",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dazzle camo helmet now displays correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash when renegotiating with their current team after a reboot in Two-Player Career",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where ERS toggle input could not be recognised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll see you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4020014731809121565"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-13T11:15:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.809Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-13T11:15:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.810Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-13T11:15:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.923Z"
+  },
+  {
+   "id": "f1-2021-145838@major-2021-09-01",
+   "gameId": "f1-2021-145838",
+   "displayName": "F1® 2021 DRIVER STATS - THE MID-SEASON UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-01T12:07:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We couldn’t have wished for a better start to the 2021 season, with the Constructor and Driver Championships finely poised coming out of the summer break. F1® fans around the globe have been treated to drama at almost every turn with jaw-dropping moments, head-in-hands heartbreak, and frenetic action throughout the field in arguably one of the most exciting seasons to date.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As the F1® season progresses, we’re feeding the real-world data into our game and applying the changes to the F1® 2021 My Team Driver Ratings. We’ll be updating these stats throughout the season to reflect each driver’s performance on-track, with recent results from this season having a bigger influence than past season performances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In My Team, you take on the role of driver-owner: creating your F1® team, choosing a teammate from the current F1® and F2™ market, and forming the 11th team on the grid. Each driver in My Team is assigned a score out of 99 in four areas - Experience, Racecraft, Awareness, and Pace - before an Overall score is given.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you need a quick reminder on what each category is based on and how we calculate these changes, then head to our Driver Stat deep dive which can be found here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let’s take a look at some of the bigger moves of the field. The changes in this update are based on the first 11 races of the season; up to and including the Hungarian Grand Prix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Williams Double Boost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After simultaneously scoring their first points for Williams Racing at the Hungarian Grand Prix, Nicholas Latifi and George Russell are the biggest positive movers with their Racecraft increasing by +4 and +3 respectively. Picking up Williams Racing’s first points in two years has also contributed to their Overall ratings increasing by +1 to 72 for Nicholas and 85 for George.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rookies on the Move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The three drivers in their first F1® season - Yuki Tsunoda, Mick Schumacher, and Nikita Mazepin - have experienced quite different seasons so far. Yuki has racked up a respectable 18 championship points, whereas the two Haas drivers are stuck on zero points. Nobody can doubt they’ve gained a ton of Experience in the races up until now, with all three drivers getting a +3 boost in that stat. Yuki has been out-qualified by teammate Pierre Gasly in every qualifying session so far - that coupled with a pair of P20 finishes in qualifying has meant his Pace has dropped by -5, the most significant Pace drop of the field.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Awareness Drops for Lando and Valtteri",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Despite Lando Norris finishing in the top five in nine of the 11 races so far this season, a five-second penalty for squeezing out Sergio Perez in Austria has cost him dearly. With fewer races under his belt than other drivers in the field, his Awareness has fallen to 84. Similarly, Valtteri Bottas has also seen his Awareness drop -7 after a handful of mistakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alonso’s Impressive Return",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Following his recent return to the sport, Fernando Alonso has experienced a season of two halves so far. After a slow start in the opening five races, he’s on a six-race streak of finishing in the points including an impressive fourth place finish in Hungary. With over 300 races under his belt, his Experience of 99 couldn’t be improved upon but +3 for Racecraft, +1 for Awareness, and +1 for Pace has seen his Overall rating rise to 91.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Leading Pair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What of the two title contenders? Seven-time and reigning champion Lewis Hamilton leads the championship by the slenderest of margins, with just eight points separating him and his closest rival Max Verstappen. Max will undoubtedly consider himself unfortunate not to be leading after a series of on-track incidents, where two were out of his control. Lewis’ penalty at Silverstone has been a factor in his Awareness dropping by -4, whereas Max’s two DNFs have contributed to a Racecraft drop of -3 but a Pace increase of +1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Those are the headline changes, below is the full list of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DRIVER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXPERIENCE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RACECRAFT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AWARENESS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PACE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OVERALL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lewis Hamilton",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "94",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "89",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "98",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "95",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Valtteri Bottas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "75",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "89",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "99",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Max Verstappen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "69",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "96",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "96",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "97",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "95",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sergio Perez",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "81",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "84",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "87",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "87",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charles Leclerc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "62",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "88",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "87",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "88",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carlos Sainz Jr.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "69",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "88",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "94",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "85",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "87",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sebastian Vettel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "91",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "93",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "87",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "88",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "89",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lance Stroll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "62",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "93",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "82",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "82",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "83",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daniel Ricciardo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "80",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "94",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "91",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "88",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "90",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lando Norris",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "96",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "99",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "89",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "91",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fernando Alonso",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "99",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "89",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "94",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "86",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "89",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Esteban Ocon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "93",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "98",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "79",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "86",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pierre Gasly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "59",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "92",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "99",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "89",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "90",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yuki Tsunoda",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "46",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "88",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "78",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "86",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "82",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kimi Raikkonen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "99",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "91",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "84",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "86",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "87",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Antonio Giovinazzi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "54",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "82",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "82",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "80",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "79",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mick Schumacher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "47",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "65",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "81",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "83",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "76",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nikita Mazepin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "47",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "65",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "78",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "66",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "67",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "George Russell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "76",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "99",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "83",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "84",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nicholas Latifi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "55",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "69",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "79",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "70",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "71",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When these new stats go live, anyone in the middle of a My Team save will be asked through in-game messages whether they’d like to apply the changes to the existing save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 143,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4020014099084427911"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-01T12:07:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.808Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-01T12:07:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.809Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-09-01T12:07:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.922Z"
+  },
+  {
+   "id": "f1-2021-145838@1.07",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-23T10:07:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Good morning F1 drivers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.07 is out now on PC, and you can find out what's in this patch below:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Addressed an issue where Xbox users could fail to join an online session with error WS10004",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Re-enabled 3D audio for PS5 headsets and addressed the underlying issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "F2™ races that finish due to the 1-hour time limit no longer result in the incorrect positions being awarded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where driver stats were reset to baseline stats and not taking upgrades into consideration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where players could start a lap ahead at certain tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Distort sponsor will now correctly pay out the sponsor bonus after achieving the goals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Driver name filters have been updated for career",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where audio could drop out during an extended play period",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The vehicle halo will no longer have low shadow resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fanatec advanced paddle module top paddles will now be correctly recognised",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue with saturated characters in the background of meet the press sequences with HDR enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Closing the game during the season transition in MyTeam no longer results in the user having no team name, engine supplier or sponsor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Viewing a highlight or replay after a race no longer causes game resolution to change on ultrawide screens",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Addressed an issue where users could have negative resource points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "DRS Beep audio level has been increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI will no longer overtake the safety car when it is ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision setting will now be retained if changed between sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where the ERS deploy setting could display “To Do”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UDP: m_resultStatus no longer shows as active after the race has finished",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UDP: Correct number of laps now shown in final classification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UDP: Session history information from previous session is no longer sent following a restart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UDP: LapHistoryData will now be correctly sent for an active car following a retirement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On-Demand leagues can now turn AI reserves off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Very Short has been added to the session length filter in social play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability to hide the menu when customising camera settings has been re-added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added quality options and sharpening slider for DLSS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Rebalanced chapters 3, 5, 9 and 12 on Challenging difficulty in Braking Point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced chapters 3, 5 and 12 on Hard difficulty in Braking Point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "General stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Need help? Come and visit us in our Technical Assistance forums. Please be sure to check out the read me thread before posting. Something from this patch not working the way it should? Tell us in our forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 2,
+    "other": 22,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4022264629325405902"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-23T10:07:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.807Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-23T10:07:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.807Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-08-23T10:07:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.920Z"
+  },
+  {
+   "id": "f1-2021-145838@1.06",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-09T10:07:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.06 is out now on PC and you can check out what's in this patch below:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Addressed an issue where there could be no force feedback on Thrustmaster wheels if task manager was open in the background in Windowed mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Addressed an issue where force feedback would not be active on Thrustmaster wheels when launching from a desktop shortcut.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio will no longer stutter when connecting an official Xbox headset into the controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Quick Practice will no longer cause excessive wear to components.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed high GPU usage on loading screens during Braking Point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ghosting is now set to on in Ranked sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“League Racer” achievement/trophy can now be correctly unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MFD will now pop-up after receiving minor damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UDP: LapHistoryDate will now be correctly sent for an active car after another has retired.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed a potential crash while using photo mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a potential crash during broadcast sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Track surface will now appear correctly for player 2 in split-screen during a wet race.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On-track VFX can no longer be seen by other drivers in F2™ one-shot qualifying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Car performance can now be changed after creation of a league.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mid-season driver negotiations have been removed from the first season of a Real Season Start career.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where the Emirian flag could be displayed on the podium instead of the Turkish Flag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tyre wear can now be viewed on the MFD during the formation lap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced chapters 1,3,5,9 and 12 on Normal difficulty in Braking Point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "General stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Need help? Come and visit us in our Technical Assistance forums. Please be sure to check out the read me thread before posting. Something from this patch not working the way it should? Tell us in our forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track, drivers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4032396530954773173"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-09T10:07:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-09T10:07:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.806Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-08-09T10:07:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.919Z"
+  },
+  {
+   "id": "f1-2021-145838@1.05",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-28T10:14:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey drivers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.05 is out now on PC. Check out what's in this patch below:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improvements to DLSS implementation.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Resolved a crash that could occur after returning to a ranked lobby if the lobby had split.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where players could be split into a placeholder lobby when re-matchmaking in ranked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebalanced Prologue and chapter 9 of Braking Point on Hard difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Addressed a crash when previewing items within the Podium Pass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a crash when Player 2 quits in Two-Player Career Player career while Player 1 is in an interview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a crash with UDP if the number of active cars was zero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a crash when editing colours of customisation items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a crash that could occur when saving an F2™ highlight from Grand Prix mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where Two-Player Career could be locked to equal performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where players could be placed on sub-optimal tyres during an F2™ Sprint race.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where the game could briefly stall when passing the start/finish line in one-shot qualifying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed an issue where only the lobby host would be notified that the Virtual Safety Car was ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added option to select Ray Tracing quality on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "General stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Need help? Come and visit us in our Technical Assistance forums. Please be sure to check out the read me thread before posting. Something from this patch not working the way it should? Tell us in our forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4038025325468821284"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-28T10:14:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.805Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-28T10:14:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.806Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-07-28T10:14:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.918Z"
+  },
+  {
+   "id": "f1-2021-145838@1.04",
+   "gameId": "f1-2021-145838",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-15T15:46:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey drivers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.04 is out now on PC, and you can check out what's in this patch below:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Addressed an issue where users would experience a corrupt save if they edited their vehicle's livery from within the MyTeam HQ. Saves that were previously corrupted as a result of this bug will be able to be resumed after applying the patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Need help? Come and visit us in our Technical Assistance forums. Please be sure to check out the read me thread before posting. Something from this patch not working the way it should? Tell us in our forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out on track!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1134570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1134570/view/4204657340165825883"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-15T15:46:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1134570",
+      "checkedAt": "2026-11-13T03:20:29.805Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:21.917Z"
+  }
+ ],
+ "issues": []
+}

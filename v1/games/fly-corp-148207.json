@@ -1,0 +1,5351 @@
+{
+ "game": {
+  "id": "fly-corp-148207",
+  "igdbId": 148207,
+  "name": "Fly Corp",
+  "cover": {
+   "imageId": "co3zrv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3zrv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arq2a",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arq2a.jpg"
+  },
+  "ps5Release": "2024-11-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "fly-corp-148207@1.15",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-13T16:35:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're introducing six new scenarios for the Fly Corp Delivery DLC! It’s been almost half a year since this expansion was released, and it has performed quite well. We’ve decided to continue supporting not only the base game but also this DLC. Each of the new scenarios features unique gameplay situations and has its own victory conditions. In one, you must build a certain number of warehouses; in another, deliver a million packages; and in a third, the key to victory is quickly sorting out rival companies’ warehouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/d215765cd5237eab4abea930397cf8f33e86bb63.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We may also release a user-created scenario editor for this expansion soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also in this update",
+     "items": [
+      {
+       "text": "Fixed a bug that prevented the camera from switching to a full warehouse after clicking on a notification in free play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the warehouse icon could remain marked with an exclamation point even if the warehouse was connected to the network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the condition for clearing a competitor’s warehouse: it is now considered cleared when the vehicle carrying the last shipment on its route from that warehouse has zero packages remaining - when it has unloaded everything. Packages do not necessarily have to reach their final destination until the timer ends; it is sufficient to unload everything into their respective warehouses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that sometimes prevented the game from disabling the speed boost during the countdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the placement of some cities in the main game.: [img src=\"{STEAM_CLAN_IMAGE}/40269024/6985ba37b5ec6c6e040123c05aa784d07bc394f5.png\"]: At the same time, we’ve been quietly working on a full refactor of the main game for several months now. As we mentioned earlier, this is an important step to clean up the project’s code so that it will be easier to maintain in the future. We’re also exploring ways to improve and update the user interface.: Thank you for playing Fly Corp!: [img src=\"{STEAM_CLAN_IMAGE}/40269024/41980fd17b5950c49ff4ed60cdf4dc26545a1a7d.jpg\"]: Do you like the update? Please let us know your feedback about it. It's important for us to hear your opinion! You can participate in discussions about game updates on our Discord server: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1837955055363937"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T16:35:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.680Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T16:35:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.680Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-13T16:35:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.784Z"
+  },
+  {
+   "id": "fly-corp-148207@1.13",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-07T10:48:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re a little late in announcing it, but we’ve released a new game update. It fixes known issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Updated daily scenarios #42, 53, 63, 72, and 75, which players had reported issues with;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a critical bug causing the game to freeze in the Delivery DLC;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused issues with player interaction with the UI while the game was paused;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the Delivery DLC that prevented a competitor’s warehouse from being fully dismantled during an event where one of the destination warehouses was blocked;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could break automatic aircraft routing on a route after a warehouse block event;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the route’s end point could be visually set next to a warehouse instead of on it;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the warehouse pop-up would flash when hovering over the name of another warehouse;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the following languages to the Delivery DLC: Arabic, Korean, Portuguese (Portugal), Spanish (Latin America), Turkish, Vietnamese, Japanese;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where it was possible to switch to windowed mode from the Delivery DLC settings;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Syrian city of An-Nabek has been renamed to Al-Haditha and moved to its correct location;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cities with zero population now have a population of 50 to prevent an error when placing a warehouse near such cities.: [img src=\"{STEAM_CLAN_IMAGE}/40269024/be1d2cd08fbd0e5405f4ed351e7480ce7cf5ad02.jpg\"]: Do you like the update? Please let us know your feedback about it. It's important for us to hear your opinion! You can participate in discussions about game updates on our Discord server: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1832065502811623"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-07T10:48:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.679Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-07T10:48:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.679Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-07T10:48:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.782Z"
+  },
+  {
+   "id": "fly-corp-148207@1.12",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-19T11:53:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The biggest new feature in this latest game update is the addition of competitor warehouses in the Delivery DLC. Every 10 minutes, a warehouse belonging to a bankrupt parcel delivery company will appear at random locations. Your task is to send all the packages left in the warehouse within 5 minutes. In other words, packages in these warehouses are generated only when the warehouse appears, and no new ones appear. If you manage to clear the warehouse, you’ll receive a generous reward and refund for all routes and planes connected to that warehouse. However, keep in mind that there are quite a lot of packages, and they create an additional load on your network. Is it worth taking the risk for the sake of an extra reward? It’s up to you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/6a800768d1eec62091fad592bb24d7d9c3275e2e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also in this update",
+     "items": [
+      {
+       "text": "Fixed the total number of territories displayed on the game statistics screen. It is now 201 everywhere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "French Guiana now unlocks with a city - its administrative center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the “completed without saves” bonus to the statistics screen if the player only saved but did not load that game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where exiting ladder mode in the American Dream DLC would take you to the ladder mode screen of the main game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the “completed” marker for a scenario would disappear after switching between scenario pages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several interface bugs in the Delivery DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the Delivery DLC where the construction mode would open when clicking the speed-up button while the route construction window was open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the Delivery DLC that caused an event result to trigger even if the game was paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the Delivery DLC where the game could be resumed from pause in construction mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Delivery DLC save files now store the next two countries that are due to appear as destinations (similar to how it works in the main game): [img src=\"{STEAM_CLAN_IMAGE}/40269024/b7c86fe35387939e100c7865cb31d421c8aaf34d.png\"]: Do you like the update? Please let us know your feedback about it. It's important for us to hear your opinion! You can participate in discussions about game updates on our Discord server: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1827626365753068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T11:53:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.678Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T11:53:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.678Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-19T11:53:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.781Z"
+  },
+  {
+   "id": "fly-corp-148207@1.11",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-27T19:12:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Since we received quite a few bug reports about the newly released Delivery DLC, we decided to focus on it in this new update. There are many changes, and here is the full list:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Statistics screen has been added to the Delivery DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where some saves from the main game reset city levels to level one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The number of routes from/to one warehouse is now unlimited in Delivery DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A restriction has been added to the “Discover the World” mode in the Delivery DLC to prevent large territories from unlocking too early in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The exit from the game mode in the Delivery DLC play session has been fixed. Now the exit takes you to the menu of this DLC, rather than to the main game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a visual bug in the Delivery DLC where warehouse names and customer base numbers were displayed under the borders between territories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the Delivery DLC where if a pop-up was open when a random event occurred, it could only be closed with a press of the Esc key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the Delivery DLC, a bug has been fixed where sometimes when opening the settings window, the elements in it were displayed as semi-transparent and inactive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, the change in warehouse size when upgrading it with each level is now more noticeable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, the event with warehouses being blocked due to rats has been adjusted. Now a maximum of 4 warehouses can be blocked, and the blocking time has been reduced to 2 minutes (was 6 minutes before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, the event with the drivers' strike has been adjusted. Now the number of delivered parcels left in warehouses has been halved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, the display of leaderboards with a 3:4 aspect ratio has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A sound effect has been added when unlocking a territory in the Delivery DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, the option to cancel warehouse construction by clicking the warehouse purchase button for the second time has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, a bug that caused the game to freeze if a random event occurred while the player was plotting a route has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a camera bug in the Delivery DLC that prevented the camera from moving to an overflowing warehouse if another warehouse pop-up window was open at the time of overflow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the “Radical Solution” achievement to the Delivery DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a game over sound to the Delivery DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In the Delivery DLC, the camera no longer moves to a new territory each time one is unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, the sale price of the supersonic aircraft from the event is now the same as in the main game (previously, the cost was zero)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Delivery DLC, a bug has been fixed where the map scale would change when scrolling with the mouse wheel in the pause menu or settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In Delivery DLC, a bug that sometimes prevented the pause menu from opening completely has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some localization fixes have been made in Delivery DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Delivery DLC, a bug that caused advanced aircraft to cost two to three times more than purchasing level 1 aircraft and then upgrading them has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/aac7bb2add5240e3ea6687df54367f0059ed8abd.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What's more, in the Delivery DLC, you can quickly bring up the save game dialog by pressing F5 and open the load save dialog by pressing F9. We hope all of this will improve your gaming experience! Thank you for your feedback. It helps us find issues and fix them faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1825727806711823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T19:12:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.678Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T19:12:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.678Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-27T19:12:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.779Z"
+  },
+  {
+   "id": "fly-corp-148207@1.9.7",
+   "gameId": "fly-corp-148207",
+   "displayName": "Patch 1.9.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-31T14:03:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This week, patch 1.9.7 was released, which includes the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Year game modes have been removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The capital of Equatorial Guinea has been renamed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug with the display of percentages when saving a Free game in the American Dream DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the names of some Chinese cities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The city of Salmon River in Idaho is now simply Salmon, as it should be called",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the location of the city of Uelen in Russia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The city of Cape Girardeau has been moved to the state of Missouri, where it should be located",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the name of the city of Blagoveshchensk in Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The city of Faribault, Minnesota can now be unlocked on the user scenario timeline: [img src=\"{STEAM_CLAN_IMAGE}/40269024/e5a9e04ad791e88ac5cbb60e0ca6b9a988ba39ee.jpg\"]: We are already working on the next update.: The beginning of the year is turning out to be very exciting for all Fly Corp fans!: We recently released a demo version of a new game in the series, Deep Corp, and we are confident that all Fly Corp fans will enjoy it, as it features familiar gameplay on the one hand, but also many new mechanics and a different theme on the other. You can try the demo on the game's Steam page—it's already available.: In addition, we will be making another announcement regarding Fly Corp in the coming weeks. But we won't reveal our cards ahead of time. Stay tuned for news! And don't forget that we have a cozy Discord server where we constantly discuss the game and everything related to it: https://discord.com/invite/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1823191198607458"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-31T14:03:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.677Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-31T14:03:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.677Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-31T14:03:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.778Z"
+  },
+  {
+   "id": "fly-corp-148207@1.9.3",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.9.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-01T13:36:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/f44dc5f9e4c3840e3001a875bf54cdc29c11e7fe.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In response to your numerous requests, we have expanded the “Cities of Your Choice” mode by adding a version without timers. This means that you can't lose due to airport overcrowding, you don't need to unlock new territories every 6 minutes, and you can start the game from any territory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/d2edfb6691225f96bd2c3adb56840883d0f6ab4d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have reworked the balance of the classic version of the “Cities of Your Choice” mode. Now the cost of unlocking territories does not increase as quickly as before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/bd27552a42f29cc3c1615e32d7641b5019717827.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have also added the ability to enable the option for players to choose the city to unlock in the scenario editor. This means you can expect new scenarios with this feature from other players, or try making your own!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also in this update",
+     "items": [
+      {
+       "text": "Fixed a bug where, at random moments during the game, newly purchased planes would fly out of the city with the green color, even though they had passengers on board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where, when loading a save with Ladder mode after playing “Cities of Your Choice”, the city selection button remained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the setting for the minimum city population when creating a custom scenario.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes.: Do you like the update? Please let us know your feedback about it. It's important for us to hear your opinion! You can participate in discussions about game updates on our Discord server: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1815034432937652"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-01T13:36:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.676Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-01T13:36:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.676Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-01T13:36:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.775Z"
+  },
+  {
+   "id": "fly-corp-148207@1.9.2",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.9.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-22T14:33:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've released update 1.9.2. Most of the changes are about fixing bugs we found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "List of changes in today's update",
+     "items": [
+      {
+       "text": "Fixed a bug where, after creating a scenario with a zero price per kilometer for route creation, saving it, and then loading that save, the price for route creation was no longer zero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the user scenarios screen could open when re-entering the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug that caused the description of \"Loan Payment\" scenario to be displayed instead of its name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the button for the old Leaderboard in “Discover the World” mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the display of Free Mode save progress in the American Dream DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the locations of some cities that were too close together and couldn't be connected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the privacy policy and user agreement texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other fixes.: [img src=\"{STEAM_CLAN_IMAGE}/40269024/b2467a10cb10b0b44401744170723d1071c2e7f0.jpg\"]: An update with manual selection of cities to unlock in Free Mode and in custom scenarios will be released a little later. We are already testing it.: As always, we're looking forward to see you in our Discord community! There you can get news about our games and discuss game tactics with other players: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1814309641412490"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-22T14:33:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.675Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-22T14:33:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.675Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-22T14:33:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.771Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2025-09-29",
+   "gameId": "fly-corp-148207",
+   "displayName": "Plans for the October game update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-29T09:39:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you for the warm reception of the September update, which added a mode where players can choose cities themselves! We carefully read all your feedback and comments and strive to continue improving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We plan to release the next content update in the second half of October. In it, the option to choose cities to include in the game process will be added to “Free Play.” We also want to give players the opportunity to create their own scenarios with similar settings. In other words, a parameter that allows players to select cities will be added to the Scenario Editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/7ba227d7dc59bac5590eed339cdd5716c879130b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We wish you a pleasant Fall! It's a great time to spend cozy evenings playing our game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we look forward to seeing you in our Discord community! There you can get news about our games and discuss game tactics with other players: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1811772772369152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T09:39:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.675Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T09:39:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.675Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-29T09:39:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.770Z"
+  },
+  {
+   "id": "fly-corp-148207@1.9",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-18T20:06:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Meet the 1.9 update! It adds the long-awaited “Cities of your choice” mode to the main game. In it, your task will be to unlock territories for a limited time, but this time it's up to you to choose which cities to bring into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40269024/a8bbef2bd39fb9c529b6eb48f72035e130180f2c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Along with this, we have made other changes, including fixing several achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we look forward to seeing you in our Discord community! There you can get news about our games and discuss game tactics with other players: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1811138915402166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-18T20:06:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.674Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-18T20:06:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.674Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-18T20:06:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:30.769Z"
+  },
+  {
+   "id": "fly-corp-148207@1.8.4",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.8.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-01T00:00:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The new monthly mode for the American Dream DLC is called “Cities of your choice”. In it, you will have to choose the cities you want to include in the game. To do this, you need to open a special map mode where all cities available for inclusion in the game are displayed in gray. You can select any of them at any convenient time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also in this update",
+     "items": [
+      {
+       "text": "The Great Lakes have been added to the US map in the American Dream DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug with the playtime counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where upgrading all aircraft on a route did not update their sale price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where clicking the pause button would start building a route if there was a city under the button at that moment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now, after completing a stage in Ladder mode in the American Dream DLC, the game exits to the free play menu instead of the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where selling planes of level 2 and above would give you more money than usual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made adjustments to the French localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some errors in the Korean localization of city names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some translations into Spanish, Portuguese, Turkish, Japanese, Korean, Vietnamese, and Arabic: We are happy to strive to make the game even better. We hope you enjoy the new monthly mode. As with previous modes, you have a limited time to try it out. However, after a month, we will launch a cycle of monthly game modes from the very beginning. This is a great opportunity to play game modes you may have missed before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for playing Fly Corp!",
+     "items": [
+      {
+       "text": "As always, we invite you to our Discord server to discuss the update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1800991756391250"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-01T00:00:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.673Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-01T00:00:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.673Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-01T00:00:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.665Z"
+  },
+  {
+   "id": "fly-corp-148207@1.8.3",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.8.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-01T11:25:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another month has passed, which means that we are ready to introduce a new monthly mode for the American Dream DLC. It's called “Popular City”. Its quirk is that all passengers want to fly to one single city. This city is chosen randomly and changes periodically. That means you will have to constantly keep track of the alternating passenger flow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This mode will be available for a month, and when it is over we plan to publish the next one. However, “Popular City”, as well as the previous monthly game modes, will still return as part of the mode rotation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other than that, the update contains minor fixes to both the main game and the DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we invite you to our Discord server to discuss the update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1798454487601452"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-01T11:25:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.673Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-01T11:25:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.673Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-01T11:25:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.664Z"
+  },
+  {
+   "id": "fly-corp-148207@1.8.2",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.8.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-03T16:21:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The biggest change in this update is related to the American Dream DLC. It now has a new monthly mode “City on Demand”, which has replaced the previous one. The essence of the mode is that in it you can unlock a random city on demand when it is convenient for you. Of course, you won't be able to unlock thousands of cities, as each state has a limit on their number. However, the new method of opening cities transforms the game experience. We plan to replace City on Demand with the next mode in a month.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also here's what we did in this update",
+     "items": [
+      {
+       "text": "Improved the quality of some interface elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare issue where an arrow pointing to an overcrowded city could appear in the center of the screen and stay there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the conditions for the supersonic airplane event to occur",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the stats screen would sometimes incorrectly display the time spent in a scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now in the Free Mode of DLC American Dream cities in the state of Alaska unlock correctly: Also, we would like to remind you that we have recently added game acceleration by pressing F key.: Please share your impressions about the new game mode! Thank you for playing Fly Corp!: As always, we invite you to our Discord server to discuss the update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1795917897330185"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-03T16:21:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.672Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-03T16:21:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.672Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-03T16:21:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.663Z"
+  },
+  {
+   "id": "fly-corp-148207@1.8.1",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.8.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-10T18:29:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In the latest update, most of the changes affect the recently released American Dream update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "List of changes",
+     "items": [
+      {
+       "text": "Added Spanish, Spanish (Latin American), Portuguese (Brazilian), Portuguese, Turkish, Japanese, Korean, Vietnamese, Arabic, and localizations to the DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The “Influx of Tourists” scenario in the original game has been updated. It became a bit harder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated loading screen in the DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed achievement bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the airplane freezing during the city lockdown event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now, a timeline event will not occur in a custom scenario if there are no suitable conditions for it in a given game session. Previously, a random event would occur instead of such an event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where it was not possible to open Michigan bordering Illinois if Illinois was open at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with displaying the number of postmarks in the DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Stingray stamp disappearing after restarting the game.: We continue to work on the game and are already preparing the next update, which will introduce a new monthly mode for the American Dream add-on.: Thank you for playing Fly Corp!: As always, we invite you to our Discord server to discuss the release - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1793384379509151"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-10T18:29:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.671Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-10T18:29:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.672Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-10T18:29:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.661Z"
+  },
+  {
+   "id": "fly-corp-148207@1.7.2",
+   "gameId": "fly-corp-148207",
+   "displayName": "Patch 1.7.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-04T17:53:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we have published a new patch. The most important change is about the difficulty of the “Discover the World” mode. We listened to your requests to make the start easier. Now the starting balance has been increased from 250 to 500, and passenger traffic grows more smoothly. At the same time, we have slightly decreased the timer of the first new city appearance - instead of three minutes (at the same time as the first random event) now it opens on the second minute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also in this version",
+     "items": [
+      {
+       "text": "Fixed some minor UI elements;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some problems in Korean localization;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the text that told the player to upgrade the city from the news bar when the city is close to overcrowding. This phrase often misinformed new players, because instead of upgrading the airport it is sometimes better to start a new route or buy a new airplane;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now if you unlock the USA, you can open Portugal.: We would like to remind you that the “American Dream” DLC is in active development. Its release is scheduled for the end of February. But you can add it to your wishlist now!: https://store.steampowered.com/app/3285860/Fly_Corp__American_Dream/: Thank you for playing Fly Corp! We are happy to make the game better with every update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1790214123251329"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-04T17:53:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.671Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-04T17:53:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.671Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-04T17:53:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.661Z"
+  },
+  {
+   "id": "fly-corp-148207@1.7.1",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.7.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-27T09:57:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We're announcing the start of the competition for time! Who will unlock all the territories in the “Discover the World” mode with the maximum amount of time left? It is the in-game time that is taken into account, i.e. you can safely pause the game and plan further actions. The main thing is the amount of available time you have at the end of the game. In a month we will summarize the results and publish a table of best records. This game mode is published instead of daily scenarios (don't worry - they will be back, we just decided to diversify the game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "List of other changes in version 1.7 and 1.7.1",
+     "items": [
+      {
+       "text": "Allowed uploading custom scenarios without victory conditions to the server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the holiday game mode “Gift Delivery”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where it was possible to get too many infrastructure points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where passengers stayed in a city when it was locked and then stayed there permanently after unlocking it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Leaderboards icon in the dark theme is now properly visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In “Discover the World”, “Free Play” and “Ladder” modes, the write-off for negative events has been halved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Ten Countries” scenario has been replaced with a easier version: As always, we invite you to our Discord server to discuss the newest update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1789580505430848"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-27T09:57:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.670Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-27T09:57:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.670Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-27T09:57:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.660Z"
+  },
+  {
+   "id": "fly-corp-148207@1.6",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-20T11:23:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "On the eve of the holidays, we decided to give you, our players, a big present! We have made a special game mode “Gift Delivery”. You will have to help Santa to deliver presents from Rovaniemi (Lapland) to cities all over the world. And this time you will control a network of flying reindeer sleighs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "KishMish Games team wishes you happy upcoming holidays! May you have good luck both in the game and in real life!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1786573930652847"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T11:23:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.670Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T11:23:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.670Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-20T11:23:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.659Z"
+  },
+  {
+   "id": "fly-corp-148207@1.5.3",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.5.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-16T14:50:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The main topic of this update is performance improvements. We received a lot of complaints about low game performance and occasional freezes in game sessions with a lot of unlocked cities and running routes. It took us a lot of time to improve pathfinding and passenger generation algorithms, but we managed it. Now the game should be able to handle a large number of routes much easier. If you experienced performance problems before, please let us know how much better the game is on the new version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, important changes have been made to some scenarios. There were some that were too easy or too difficult. Changes have been made to scenarios: Caribbean Islands, Volatile Passenger Flow, Passenger Spike, Domestic Flights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "List of other changes",
+     "items": [
+      {
+       "text": "Fixed a bug where you could get the “Millionaire” achievement by loading two saves, one after another",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now if you load a game that was saved during the city overcrowd timer countdown, the timer value is retained",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed of camera movement with buttons no longer depends on whether VSync is on or off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed erroneous refreshing of the scenario list while adding a scenario to favorites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where passenger generation would increase if the same save was loaded several times in a row",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where in the Caribbean scenario, the statistics screen showed more territories than were actually unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a city could overflow with just one passenger in Ladder mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with “Discover the World” mode freezing when unlocking the final territory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the presence of passenger generation in cities that were blocked by an event: We continue to actively work on the game and prepare something new and interesting for you in the near future. Thank you for playing Fly Corp!: As always, we invite you to our Discord server to discuss the newest update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/1785774543656198"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T14:50:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.669Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T14:50:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.669Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-16T14:50:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.658Z"
+  },
+  {
+   "id": "fly-corp-148207@1.5.1",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.5.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-15T13:28:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Previously, for optimization, we used a pathfinding algorithm with an approximate calculation of the optimal route. This means that in complex situations, the algorithm gave close to optimal, but not the most optimal routes. We have long been trying to improve the path search algorithm to increase its accuracy and performance. This is a truly non-trivial task. And now, finally, we have succeeded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now passengers should choose the most optimal route from the departure city to the final destination city for transfers. At the same time, you should be able to see improved performance of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also in this version",
+     "items": [
+      {
+       "text": "Fixed a bug when in some rare cases the statistics screen showed more territories than were actually unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where passengers could try travelling to a city that was not yet connected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem with city names in the tutorial when switching languages from the pause menu: As always, we invite you to our Discord server to discuss the newest update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/6211118320241552014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-15T13:28:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.668Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.656Z"
+  },
+  {
+   "id": "fly-corp-148207@1.4.2",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.4.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-18T12:36:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We released another patch that fixes known issues and improves overall game stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's new",
+     "items": [
+      {
+       "text": "Updated all scenario previews in the Menu. Previous ones were made long time ago, with a different map appearance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the operation of the cost change coefficient for each subsequent country in scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where unlocking random cities in custom scenarios stopped working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where you could endlessly sell planes in Antarctica and thus earn a huge amount of money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the layout of some windows in 4:3 resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the display of Free Mode statistics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug with incorrect calculation of the number of points awarded for the remaining time at the end of the Discover the World\" mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed problems with changing localization in the save menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where loading a saved game could reset the random city unlock timer: If you find any problem in the game - please let us know so that we can fix it promptly. This will make our favorite game even better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Updated all scenario previews in the Menu. Previous ones were made long time ago, with a different map appearance",
+     "Fixed the operation of the cost change coefficient for each subsequent country in scenarios",
+     "Fixed a bug where unlocking random cities in custom scenarios stopped working"
+    ]
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/6341720536498925356"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-18T12:36:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.668Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.656Z"
+  },
+  {
+   "id": "fly-corp-148207@1.4.1",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.4.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-29T11:47:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have released another small update that improves the quality of the game and fixes some bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "List of changes",
+     "items": [
+      {
+       "text": "Fixed the bug when upgrading an airport from the statistics screen gave twice as few infrastructure points as upgrading it from the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arrows pointing at overcrowded cities (with camera panning to overcrowded cities disabled) have been removed from the Game Over screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the logic of random events in scenarios. Now, if the \"Random event trigger interval\" is zero, the \"First random event time\" and \"Time before showing message with the consequence of the choice taken in event\" parameters are not active and greyed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the timer for events that have a lifespan. Now it indicates the correct time until the next event appears, even if it is called not by the interval, but earlier, by the timeline in the scenario editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug that caused the pop-up of a city or route to close when a new territory is unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the assignment of target territories in the \"Discover the World\" mode. Now territories bordering through the Pacific Ocean will not be considered as neighbors.: As you can see, although we have already started preparing for the next big update, we also do not forget to release patches that improve the quality of the game.: Thank you for playing Fly Corp!: As always, we invite you to our Discord server to discuss this update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/6240387642454120602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-29T11:47:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.667Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.655Z"
+  },
+  {
+   "id": "fly-corp-148207@1.4",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-12T19:48:03.000Z",
+   "notes": [
+    {
+     "title": "Major changes",
+     "items": [
+      {
+       "text": "New balance of the \"Discover the World\" mode. We tried to make it more enjoyable and interesting. By \"more enjoyable\" we mean a changed income curve, prices for opening new countries and building routes. In the previous version of the game, the number on the balance is often more than tens and hundreds of millions. In the new one, you will have to operate with smaller numbers, and this is much more convenient.: Along with the rebalance, we completely reset the leaderboards and deleted all saves made in the previous version of this game mode (this is a forced step, since the changes in the balance are too big to be able to load old saves). As a tribute to our loyal players, we leave access to the old leaderboards in the game. So you don't have to worry about your high score going into oblivion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The option to start the \"Discover the World\" mode from a random country. Attention! This option is only suitable for experienced players, as the difficulty from the very beginning of the game can be significantly higher due to large territories. For those who are not ready to restart due to randomness, we recommend playing the classic version starting from Germany.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The option to turn off the automatic panning of the camera to a crowded city. Now it is replaced by arrows with a timer; they show in which direction the crowded city is. The option is in the game settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The option to turn off messages that the city is almost full. This option will appeal to those who find such messages annoying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two new languages ​​​​have been added - Vietnamese and Arabic. And this time, the introduction of a new language turned out to be a very difficult task. After all, in Arabic, the text is written from right to left! Buttons, signatures, numbers - all this shifted, mixed up, and confusion reigned on the screen. We had to change the logic of the interface, edit many elements, manually separate the numbers (after all, unlike the text, they are written from left to right). In general, the amount of work turned out to be much more than we expected. But we hope that our efforts were not in vain, and this will allow native speakers of these two languages ​​to play our game with ease.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New balance of the \"Loan payment\", \"Continents\" and \"Long distances\" scenarios.: The first scenario, in which the balance periodically goes into the negative, was too easy. Now it can be determined as a medium-difficulty scenario. \"Long distances\" and \"Continents\" on the contrary were made easier, since in the previous version after rewriting the algorithm for calculating the cost of tickets they were unbeatable. However, these two scenarios still remain quite difficult, as they were originally intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Fixed a bug that caused passengers to be generated at a very high rate in some cities after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed button overlaps and UI issues at different resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where players' score points that were too high could overlap the edge of the user scenario card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that prevented the \"Active Pause\" achievement from being unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the display of events on the editor timeline. Previously, if there were too many events, they would stop being displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer earn achievements in the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you upgrade an overcrowded city while paused, the camera will no longer move to it after you unpause the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a small visual bug in the free play progress bar in the dark theme.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a bug that caused the pause button to turn black if you changed the game language while paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor fixes.: We continue to work on supporting and improving the game. We will share our plans for future updates soon.: In the meantime, we are waiting for your feedback on the current update. Write what you like and what you don't like. Thank you for playing Fly Corp!: As always, we invite you to our Discord server to discuss this major update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5963414363406055959"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-12T19:48:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.666Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.654Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2024-08-08",
+   "gameId": "fly-corp-148207",
+   "displayName": "We invite you to the open beta test of a new major update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-08T21:47:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Before releasing the next update, we would like to first know the opinion of players who want to participate in testing. Without exaggeration, this is one of the most important updates this year. There are quite a few changes, but in this post we will dwell in more detail on what we would like to hear your opinion about in the first place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New balance of \"Discover the World\" and \"Free play\"",
+     "items": [
+      {
+       "text": "We completely rebalanced both modes. We did not like the way the cost of tickets was calculated before as it was somewhat chaotic. Now, this value changes smoothly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Next, a little about how the calculations happen \"under the hood\". The more territories are unlocked, the more the costs of supporting the infrastructure are. This is reflected in the ticket price. For example, for delivering a passenger from point A to point B, when 1 territory is unlocked, you get a little more than when 10 territories are unlocked. However, in general, due to the constantly increasing passenger flow, you still earn more and more money in total. If we did not change the ticket price, the amount earned would quickly exceed all conceivable limits - hundreds of trillions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The cost of unlocking new territories and the cost of creating routes at later stages of the game were reduced. Now the numbers are more convenient to operate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "It also became possible to start the run of \"Discover the World\" from a random territory. This option is more suitable for experienced players, since it is almost always more difficult to play than in a compact European region. But at the start, you are given twice as much money.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Try the new balance and share your opinion. We worked on it for a really long time, and it is important for us to know that our efforts were not in vain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "New balance of the \"Loan payment\" and \"Long distances\" scenarios",
+     "items": [
+      {
+       "text": "The first scenario, in which the balance periodically goes into the negative, was too easy. Now it can be classified as a medium-difficulty scenario.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "\"Long distances\" on the contrary was made easier, since in the previous version after rewriting the algorithm for calculating the cost of tickets it was impossible. However, the scenario still remains difficult, as it was originally intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Important! We need your opinion about these and other official scenarios in the game. Maybe some of them seem too easy to you, and others are impossible? Write, we will definitely check and make adjustments if necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "New options - arrows indicating overcrowded cities and disabling notifications",
+     "items": [
+      {
+       "text": "By popular demand, we have added two extremely useful options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The option to disable the automatic panning of the camera to an overcrowded city. Instead, an arrow with a timer is displayed at the edge of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The option to turn off messages about the city being almost full. This option will appeal to those who find such messages annoying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New languages - Arabic and Vietnamese",
+     "items": [
+      {
+       "text": "If you know one of these languages, we would be grateful if you let us know about any mistakes you notice. However, we tried to make high-quality professional translations and refactored the interface so that the new languages are displayed correctly in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Many minor edits",
+     "items": [
+      {
+       "text": "In addition, we fixed the bugs found before and made minor changes to the game. The full list will be published when the update is released for public access to everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to join the Beta?",
+     "items": [
+      {
+       "text": "We are starting testing in a closed branch of Steam. To switch to the test branch on Steam, find the game in your library, right-click on it and select \"Properties\" in the context menu. There, go to the \"Betas\" tab and enter the code flycorppublictest. After that, you will be able to switch to the closed test branch public_test in the list above.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Attention! Do not forget to switch back to the default branch after you finish inspecting the test branch, otherwise you will not receive fresh game updates in the future, which are published in the default branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Attention!!!",
+     "items": [
+      {
+       "text": "If you have any saves of the game in the \"Discover the World\" mode, it is better to copy them manually into a separate folder. When starting the new version, they will be automatically deleted, since the entire balance is new and is not compatible with the old save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we invite you to our Discord server to discuss the Beta - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 8,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5963414363391783150"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-08T21:47:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.666Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.653Z"
+  },
+  {
+   "id": "fly-corp-148207@1.3.2",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.3.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-26T16:01:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new version of Fly Corp 1.3.2 has been released on Steam with important bugfixes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The most important thing is that we discovered a bug due to which, when an active or passive pause was turned on, the “life” timers of cities continued to count down. This meant that the more the player paused the game, the greater the passenger flow in the cities was. Consequently, the difficulty of the game increased significantly. This problem has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The full list of fixes",
+     "items": [
+      {
+       "text": "Now, after creating your new scenario, you will return to the private scenarios tab, not public ones;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the random event effect duration bar not automatically collapsing. The bug occurred when, at the moment of a new event with an effect, this notification was maximized;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the bar for the number of passengers at the airport did not correspond to their actual number when the game was paused;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which sometimes caused connected cities to show as non-connected in Statistics;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the disappearance of the passenger list from the city window when it was upgraded during an active pause.: As always, we invite you to our Discord server to discuss the update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5842939267306325970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-26T16:01:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.665Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.652Z"
+  },
+  {
+   "id": "fly-corp-148207@1.3",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-11T09:25:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The main change in the new version is a change in the algorithm for calculating the cost of tickets. The fact is that previously it was more profitable to build long routes and send passengers along non-optimal routes. Now, when a passenger lands at their destination, you will always receive income based on the distance between the departure city and the final city (not including transfers). This opens up more opportunities to use a variety of viable tactics when building your transportation network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The difficulty of the existing scenarios has not changed for the most part. However, we have slightly adjusted the “Discover the World” mode - it has become more difficult when many countries have already been opened (more than 90).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The following changes have also been made",
+     "items": [
+      {
+       "text": "added the ability to upgrade the country’s airports from the statistics menu, even if it is in quarantine;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "in the user scenario settings, the minimum city population slider limit has been increased to one million;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "information about the city name is now showed on the penalty for overflowing it all the time the penalty is active, even if the city is no longer overcrowded;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed possible playback of game session sounds after returning to the main menu;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "if there is the last parameter left in the Ladder Mode for improvement, then it will be centered in the stage completion screen.: We hope you enjoy the update. Thank you for playing Fly Corp and happy flying!: As always, we invite you to our Discord server to discuss the update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5746109972566520138"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-11T09:25:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.664Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.651Z"
+  },
+  {
+   "id": "fly-corp-148207@1.2.3",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.2.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-28T14:29:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We are not stopping making the game even better. Update 1.2.3 contains significant changes to the balance of the Ladder mode and introduces many fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on your numerous requests, we have reworked the balance of the Ladder mode so that with each newly unlocked territory, the income received from ticket sales does not decrease so much. In previous versions, a completely working tactic was long development within several territories, and then unlocking the number of territories necessary for victory at once. It will now be more profitable to expand into new territories when the opportunity arises.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also in this update",
+     "items": [
+      {
+       "text": "Active pause is now toggled with Space key, and speed can be changed with Enter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save file from a custom scenario is now also deleted when the scenario is deleted, not only when it's altered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the logics of getting back to the tabs that were opened before after finishing custom scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor sorting bugs of custom scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added confirmation for leaving the game session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug with the Transport Hub achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed layout of Scenario Finish screen in 3440x1440 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with Ebola event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed \"Load game\" button from loss screen in \"Discover the World\" mode. Now it appears on the next screen, which is more suitable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sault St. Marie in the USA has been renamed to Sault Ste. Marie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some layout issues of Custom Scenarios editor screen: Thank you for playing Fly Corp! Good luck with your flights!: As always, we invite you to our Discord server to discuss the update - http://discord.gg/invite/9eHyYap and to subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5759616966675689621"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-28T14:29:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.663Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.650Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2024-04-13",
+   "gameId": "fly-corp-148207",
+   "displayName": "We are pleased to present you a new update that adds collectible items!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-13T09:24:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In certain areas in different parts of the world, you may encounter postage stamps. They depict the most famous landmarks - both natural and man-made. You can pick them up and add them to your collection. A total of 30 stamps have been added, 5 for each part of the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We added 6 achievements for collecting stamps in each part of the world. And also, by popular demand, we have included several achievements related to the recently-introduced Ladder mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, as always, the update contains various bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "custom scenario saves are now deleted if the scenario has been edited",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed speed bonus calculation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "in Libya, the second city of Gadamis has been removed and replaced with Nalut",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed recording of game time on the statistics screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where the checkbox for agreeing to the terms and conditions was not cleared before publishing a user scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a visual bug in the free play progression bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed layout of the editor window in 1024x768 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug caused by the possibility of entering too large values in the custom scenario settings fields",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where bonuses would disappear when restarting the current game session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "minor localization errors have been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "hopefully fixed the bug where it was sometimes impossible to progress in Ladder mode after some point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Which of the sights depicted on the stamps have you personally visited? Share in the comments if you have already tried the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/6474562312187857769"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-13T09:24:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.663Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.650Z"
+  },
+  {
+   "id": "fly-corp-148207@1.1.9",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.1.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-26T14:28:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We continue to work to improve the game. Today's 1.1.9 update includes many different fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perhaps the most important changes concern the recently added Ladder Mode. We have added an autosaves to this mode. So, now you don’t have to keep in mind that you need to save before leaving the game. Also, all texts related to the Ladder Mode have been translated into all languages available in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed bugs",
+     "items": [
+      {
+       "text": "Now, after restarting the game in Ladder Mode, upgrades received earlier are not lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when the game could freeze when exiting the game on pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing penalties for overloaded airports after restarting the game in Ladder Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the \"Exit to menu\" button not to work after losing in a scenario.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed display of East Timor on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with incorrect detection of the Free Game save type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when after the event “Development grant” no money was added to your balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs with broken Ladder Mode on macOS.: In the meanwhile, we are also working on an update that adds collectible items - postage stamps. This update will be released in April.: In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5686430301736383912"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-26T14:28:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.662Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.649Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2024-03-13",
+   "gameId": "fly-corp-148207",
+   "displayName": "Announcing the new update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-13T13:51:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "\"Since Fly Corp allows us to visit different places on our planet, why wouldn't we make some unique items that tell us about this or that territory?\" - we thought. The idea transformed into collecting items, namely postage stamps. Each one of them will depict a famous landmark or sight. Postage stamps will appear randomly in all game modes provided that the territory in which the landmark is located has already been unlocked by the player. We're planning to introduce 30 stamps (five for each of the six parts of the world, so they will be evenly distributed) at the release of this update. We'd be glad if this update allows you to learn something useful and interesting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is scheduled for release in the second quarter of this year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, tell us in the comments which famous sights or landmarks you have visited and which ones you liked the most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5686429670867895563"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-13T13:51:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.662Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.648Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2024-03-06",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update with the new Ladder Mode is available!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-06T20:01:04.000Z",
+   "notes": [
+    {
+     "title": "We're proud to present to you the long-awaited update that adds Ladder Mode and upgrades for your transport network!",
+     "items": [
+      {
+       "text": "It's united with the Free Mode and is divided into many levels (steps). The initial territory of each level is chosen randomly, so you'll have to visit different parts of the globe. The task of the first level is to earn some money and unlock just one territory. In the second level, you will have to unlock two territories, and so on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the end of each level, you will be able to choose what to upgrade: capacity of planes or airports, amount of money when starting the level or something else. All upgrades are applied to both Ladder Mode and general Free Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The competition for a place in the top of leaderboard of the Ladder mode has begun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Try the update and write us your opinion! If there are many requests, we can also add Ladder Mode to the “Discover the World” mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5679673637649549478"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-06T20:01:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.661Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.648Z"
+  },
+  {
+   "id": "fly-corp-148207@1.1.6",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-06T10:51:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fly Corp version 1.1.6 has been released. According to your requests, income from flights is no longer displayed near the cities. Also, we added seven more territories, and some of the bugs were fixed:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed French text string displayed when you try to sell the last plane on the route",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed border between Cameroon and Chad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug that sometimes caused inability to spend the last 100 credits on an upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with counting unlocked countries in Statistics screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "The new territories are",
+     "items": [
+      {
+       "text": "Malta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "São Tomé and Príncipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Comoros",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Palau",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Micronesia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bahrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seychelles: In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Malta",
+     "São Tomé and Príncipe",
+     "Comoros"
+    ]
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5582843074958653614"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-06T10:51:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.661Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.647Z"
+  },
+  {
+   "id": "fly-corp-148207@1.1.5",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-29T12:54:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fly Corp version 1.1.5 is avaialble. It brings quite a lot of changes and bugfixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are all of them",
+     "items": [
+      {
+       "text": "Income from flights is now displayed near the cities. Note that it only appears if the zoom level is close enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bug that caused some text in Statistics screen to increase in size over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed no city unlock sound when you unlock a country while on active pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug that caused upgrade prices for cities to not update on Statistics screen in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cities that could become unlocked even though their country is locked by a random event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed leaderboard appearance on Ultrawide monitors.: In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5519792046262837544"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-29T12:54:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.660Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.647Z"
+  },
+  {
+   "id": "fly-corp-148207@1.1.2",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-21T20:35:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fly Corp has been updated to version 1.1.2 that includes fixes of several bugs, and changes to Daily Scenarios:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor Stats screen bugs: improved airplanes and cities on this screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which caused your position in Leaderboard to appear incorrect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug which limited the number of planes that can be upgraded on pause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some UI bugs when using 2560x1600 and 1024x768 resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-added old Daily Scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Daily Scenario 21 according to suggestions of players: Tomorrow, we'll tell you about the game mode that is coming in a couple of months! So, stay with us and subscribe to our socials: Discord: https://discord.gg/9eHyYap: X (ex. Twitter): https://twitter.com/KishMishStudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5410576585131084309"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-21T20:35:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.660Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.646Z"
+  },
+  {
+   "id": "fly-corp-148207@1.1.1",
+   "gameId": "fly-corp-148207",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-27T13:28:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fly Corp has been updated to version 1.1.1 which features bugfixes, such as:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bug when passengers tried to fly to cities that were removed in the latest update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug that prevented passengers from flying anywhere from Kingston",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rendering of number of passengers in cities on statistics screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pointe-a-Pitre translated to Korean: In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5382426458991692873"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-27T13:28:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.645Z"
+  },
+  {
+   "id": "fly-corp-148207@1.1",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-05T12:15:15.000Z",
+   "notes": [
+    {
+     "title": "Today we're glad to show you the new update named \"Caribbean vacation\"!",
+     "items": [
+      {
+       "text": "Fifteen new territories have been added to the game, and all of them are in the Caribbean. It means that both Free Mode and Discover The World are now even longer, and new territories have to be considered while developing your transport network. Some of the cities can serve as good hubs for passengers flying between North America, South America, and Africa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We could not stand against the desire to create a new scenario... and made, perhaps, the most difficult scenario at the moment. Can you complete it? It's the last one in the set of Extreme scenarios. You'll have to connect multiple islands and create a profitable airline in the Caribbean. Believe us, never before have you had to suspend the game for an active pause so frequently :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Of course, all new territories are available for use in Custom Scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many minor fixes were introduced in this update as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Meanwhile, we're moving on to working on the winter update that will add the entire new game mode. What is it going to be? During the next week, we'll tell that to the subscribers of our newsletter, so subscribe as well! You can do that by clicking the letter icon in the main menu of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5288974951217312929"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-05T12:15:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.645Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2023-08-28",
+   "gameId": "fly-corp-148207",
+   "displayName": "Meet the new big update - Statistics screen and many fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-28T15:24:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Statistics screen can be used to find general information about your transport network, including the number of transported passenger and infrastructure cost, detailed information about planes and their load, airports, cities without airports, and routes. Also, you are able to see the most profitable routes, airports with highest load and most popular destination with just one glance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since many of you were asking for this, we have also added the option to quickly upgrade all planes or airports with one button. Of course, if you have enough money for this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Fixed \"Non-flying weather\" scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed appearance of some interface elements in Dark Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed names of some cities in Korean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused two cities that are too close to each other to still appear upon an event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added loading bar while waiting for response from the server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed exclamation mark for city not re-appearing when all routes to and from the city are sold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to interface layout on different screen resolutions and aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In order not to miss anything important, keep an eye on our socials (our Discord server - http://discord.gg/invite/9eHyYap) and subscribe to our page on Steam - https://store.steampowered.com/developer/kishmish.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5141475722342015641"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-28T15:24:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.658Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.644Z"
+  },
+  {
+   "id": "fly-corp-148207@1.0.4",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-05T20:56:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We released the important patch 1.0.4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we fixed the bug that could lead to crash in Scenario Editor on some PCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also",
+     "items": [
+      {
+       "text": "Scenario gets shown in the the top of the list of scenarios sorted by rates only if it has more than 5 votes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the field for entering e-mail address when subscribing to the newsletter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added progress bar when loading custom scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other minor changes.: Later this month, we’ll start the test of a long-awaited feature. We’ll send the password for the closed branch to those who are subscribed to our newsletter. Make sure to subscribe by clicking the letter icon near the “Subscribe” label in the menu.: Make sure to visit our friendly Discord server: http://discord.gg/invite/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5124582150153819649"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-05T20:56:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.658Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.643Z"
+  },
+  {
+   "id": "fly-corp-148207@1.0.2",
+   "gameId": "fly-corp-148207",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-06T15:55:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We planned several updates which will bring most requested features to the game for upcoming months. But for now, we are publishing patch 1.0.2 with minor fixes, which will improve quality of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Your progress in official scenarios is now shared between your devices. If you log into the game on another device, you won't have to complete scenarios for the second time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed search and sorting in Custom Scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now see how many pages are there in the list of Custom Scenarios and jump to any specific page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now publish no more than five Custom Scenarios per day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the 5-second countdown timer (in previous version, you could not trigger Active pause if less than 2 seconds remained until you lose).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with marking Custom Scenarios as completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor map issue near Antarctic.: Make sure to visit our friendly Discord server: http://discord.gg/invite/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5151601211244712851"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-06T15:55:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.657Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.642Z"
+  },
+  {
+   "id": "fly-corp-148207@1.0.1",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-30T14:34:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We published the first patch for Fly Corp since the release! We're still improving quality of life while mostly relying on your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what we changed in Version 1.0.1",
+     "items": [
+      {
+       "text": "Now you can engage Active pause while countdown timer of an overloaded airport or scenario's goal is on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plane's occupancy is now color-coded in Routes menu as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bug that caused passengers to set unreachable destinations (non-unlocked cities).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug that caused players to lose money even if they win the case in one of the random events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several gaps in borders between territories.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5151600576606479183"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-30T14:34:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.656Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.642Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2023-04-24",
+   "gameId": "fly-corp-148207",
+   "displayName": "New test branch update - you can now report custom challenges",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-24T19:59:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fly Corp has just got an update on public test branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It includes all new features from version 0.4.15 (including plane auto-spacing) and scenario reporting. If you think that scenario is senseless, inappropriate or offensive, you can report it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are planning the release from Early Access for May 18th. Before this date, we'll update the game in the public_test branch. At the release date, this version will become the public one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To switch to the testing branch, find the game in your library, right-click on it, select Properties. There, go to \"Betas\" tab and enter \"flycorppublictest\" as the access code. After that, switch to public_test branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the link: http://discord.gg/invite/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5133583099811054921"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-24T19:59:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.656Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.641Z"
+  },
+  {
+   "id": "fly-corp-148207@0.4.15",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 0.4.15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-19T16:21:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Auto-spacing of planes on the route is now finally available as part of the Steam update 0.4.15! This option can be toggled in Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is currently only for release Steam version. Soon it will come to the branch for public testing and later to Android and iOS devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also",
+     "items": [
+      {
+       "text": "Fixed color of Lesotho after it was unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer start Free Mode from Cyprus, Jamaica, Salvador, Rwanda, Burundi and Guinea-Bissau.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a problem sometimes causing the plane to appear outside of the city if it was bought on active pause. Now it appears in the city.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed bonus for completing \"Unlock the whole world\" without saving. This mode is very long to fully complete, rendering this bonus senseless.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a problem with active pause in the Tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor improvements.: How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :): Here's the link: http://discord.gg/invite/9eHyYap: Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/6539831519507873689"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-19T16:21:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.655Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.640Z"
+  },
+  {
+   "id": "fly-corp-148207@0.4.14",
+   "gameId": "fly-corp-148207",
+   "displayName": "Patch 0.4.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-09T17:20:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 0.4.14 is available on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here's what was changed",
+     "items": [
+      {
+       "text": "Fixed bug that caused plane level to show incorrectly after active pause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused the game speed button to disappear after restarting from loss screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed no save bonus from \"Unlock the whole world\" mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed plane upgrade animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjustments for translations and other minor fixes.: How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :): Here's the link: http://discord.gg/invite/9eHyYap: Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5121196841299996523"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-09T17:20:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.655Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.640Z"
+  },
+  {
+   "id": "fly-corp-148207@0.4.12",
+   "gameId": "fly-corp-148207",
+   "displayName": "Patch 0.4.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-21T22:11:58.000Z",
+   "notes": [
+    {
+     "title": "It resolved a few problems, in specific",
+     "items": [
+      {
+       "text": "Benin’s capital is now Porto-Novo, as is it in real life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed localization of the result of «Ad campaign» event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that rarely caused passengers not to leave an airport even if it’s full and there are all necessary routes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inability to scroll through scenarios in 1024x768 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that rarely caused a city to unlock in a locked country and overflow with passengers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other small fixes: We’d like to remind that recently we began testing the new update which features possibility to upload your own scenarios to the server and play scenarios by other players from the server. We invite you to try it out as well - the details are in one of the previous posts!: *Screenshot by AltaNaty926: How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :): Here's the link: http://discord.gg/invite/9eHyYap: Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5125698536873485736"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-21T22:11:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.654Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.639Z"
+  },
+  {
+   "id": "fly-corp-148207@0.4.11",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 0.4.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-09T11:24:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We released a minor patch 0.4.11 that fixes the way the game determines the next territory to unlock. Players complained about the bug that caused the next territory being the one that's already unlocked before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the link: http://discord.gg/invite/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5070528810291853900"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-09T11:24:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.654Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.638Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2023-02-17",
+   "gameId": "fly-corp-148207",
+   "displayName": "New update with new bugfixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-17T09:47:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new update is available for Fly Corp in Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a problem that could cause in-game money to become negative",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"The United States of America\" scenario",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that allowed cities that are too close to each other to open in Daily scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Singapore added to Scenario Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed performance issues after entering pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various minor bugs: How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :): Here's the link: http://discord.gg/invite/9eHyYap: Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/5059268099239532315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-17T09:47:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.653Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.638Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2022-10-27",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update of October 27, 2022 - the new save/load system!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-27T13:27:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A new update is available on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "It took one of our programmers almost half a year to re-work a big portion of game code connected with loading various game modes, saves, restarts etc. Many scripts have been re-written from scratch. All these updates are necessary to make our work over the game easier and to release patches quicker. There were many rare bugs with save/load system, and now they should be fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right now, we have more than 50 bugs found by our testers and players. Most of them are minor and don't affect gameplay, but we still intent to fix them. We'd like to see a product of high quality before we release the game (the date is to be announced later).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have something interesting in mind for you, but that's for another post :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encountered any problem in the game, please contact us so that we can fix it in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the link: http://discord.gg/invite/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/4706851091173152810"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T13:27:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.653Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.636Z"
+  },
+  {
+   "id": "fly-corp-148207@patch-2022-09-10",
+   "gameId": "fly-corp-148207",
+   "displayName": "September 10, 2022 patch - fixes for known bugs",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-10T10:55:11.000Z",
+   "notes": [
+    {
+     "title": "A new patch is available on Steam, fixing three nasty bugs",
+     "items": [
+      {
+       "text": "Fixed planes that could freeze when you load a save. It can still occur when loading and old save file which already had this problem, but now it's only cosmetic and shouldn't repeat again.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed order of unlocked countries in UAC mode. Before, the game could force you to unlock China or Mongolia right after Austria. There also were versy similar errors with Afghanistan, Oman and Nigeria.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed planes that could stick together when you load a save.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Here's the link: http://discord.gg/invite/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/4606641560255353623"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-10T10:55:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.652Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.636Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2022-08-23",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update of August 23, 2022 - more optimiztions and fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-23T19:16:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We just released an update that increases performance of the game and fixes some problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, even when there are tons of routes and hundreds of planes, the game should work much better than before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's what we did",
+     "items": [
+      {
+       "text": "Optimized movement and rotation of planes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized creation of passengers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a memory leak that could occur if you're playing for a long time.: We're waiting for your feedback! If you encountered any performance issues, please report whether it's better now. Thank you! In the meantime, we are working on the next update/: Screenshot by abrid: How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :): Here's the link: http://discord.gg/invite/9eHyYap: Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/4584122114610906298"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-23T19:16:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.651Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.635Z"
+  },
+  {
+   "id": "fly-corp-148207@major-2022-07-29",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update of 29 July - fixes for events and more",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-29T21:12:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We released a minor patch which fixes lack of events in some scenarios, problem with French locale and some fixes to Challenge Editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We understand you might've been waiting for something bigger. Even though now is the perfect time to take a break from work since it's summer, we're still working on updates. During the last month, we've been working a lot on fixing the game code which does basic things: starts different game modes, loads save files etc. In the future, this will let us work on the game faster. We are grateful to you for reporting bugs in the game about missing achievements, troubles with performance with a large number of routes etc. It's not always when problems are solved as fast as you and we would wish, but it doesn't mean that we are ignoring these issues. Right now, there are more than 50 cards in our task tracker which we'd like to complete soon. There is a lot of work to be done, but we're not afraid!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here it is: https://discord.gg/9eHyYap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/4587497456685632577"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-29T21:12:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.651Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.634Z"
+  },
+  {
+   "id": "fly-corp-148207@0.3.4",
+   "gameId": "fly-corp-148207",
+   "displayName": "Update 0.3.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-10T17:40:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In our game, color coding is necessary to quickly navigate between lots of connected cities and planes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, not everyone can distinguish some colors. This update is dedicated to those people, and it should make it easier to see how and airport of plane is filled up with passengers. Now you can select one of color blindness options in Settings. We're waiting for your feedback regarding these settings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are some other changes",
+     "items": [
+      {
+       "text": "Added an option to enter texts for different languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now author is displayed near scenario's name (only for new scenarios).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug with timer sound in custom scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in custom scenarios when, if win condition is to unlock countries each n minutes, the country is chosen randomly and there is no initial country selected, no country for unlock will be displayed in top-right corner. Now the initial country will be chosen randomly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now, if the scenario was edited and the player has save file from the previous version of this scenario, this save file will be deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added confirmation prompt for rewriting scenario file in Editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added confirmation prompt for deleting scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug causing speed of planes to be rounded to 0,03.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Domestic flights\" scenario. The number of passengers is now correct and they are only flying inside their own countries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes.: We're still improving the game with hope that we would be able to make you enjoy the latest updates even more. If you like the game, please post a review on Steam - we'll be happy :): How about joining our Discord server? Different game tactics are discussed there, and sometimes you can directly chat with the developers :): Here's the link: http://discord.gg/invite/9eHyYap: Our page on Twitter: https://twitter.com/kishmishstudio",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1372530"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1372530/view/4480532686351909121"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-10T17:40:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1372530",
+      "checkedAt": "2026-11-13T03:21:04.650Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:50.634Z"
+  }
+ ],
+ "issues": []
+}

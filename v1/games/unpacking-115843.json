@@ -1,0 +1,556 @@
+{
+ "game": {
+  "id": "unpacking-115843",
+  "igdbId": 115843,
+  "name": "Unpacking",
+  "cover": {
+   "imageId": "co1t45",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1t45.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar8zs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar8zs.jpg"
+  },
+  "ps5Release": "2022-05-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "unpacking-115843@post-2025-10-04",
+   "gameId": "unpacking-115843",
+   "displayName": "Fixes and updates",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-04T23:26:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update addresses the recently announced Unity engine vulnerability as well as rolling in small fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improvements to input rebinding behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed an issue related to Album naming and improved handling of Asian characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "updated a couple of entries in the game credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "various small fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save files and progress should be unaffected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1135690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1135690/view/1811772772556279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T23:26:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1135690",
+      "checkedAt": "2026-11-13T03:35:13.687Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T23:26:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1135690",
+      "checkedAt": "2026-11-13T03:35:13.687Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-04T23:26:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:36.919Z"
+  },
+  {
+   "id": "unpacking-115843@post-2021-11-09",
+   "gameId": "unpacking-115843",
+   "displayName": "Fixes and updates",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-09T05:11:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update addresses an issue that could prevent the game starting if the window had been moved to a second monitor along with some other minor issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In some cases, moving the game window to a second monitor that had a different scaling factor to the default monitor would prevent the game from restarting. Previously we were advising workarounds but this should no longer be a problem",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When VSync was disabled, the game was capable of excessive CPU usage. A maximum framerate has been set for when the game is run without vsync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed an issue involving drawers that are above doors that could allow incorrect item placement in 2007, 2013 and 2015",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a couple of minor visual issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save files and progress should be unaffected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "if you have rebound your controls in a way that makes navigating the menus difficult, it's possible to reset them now from outside the game by adding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "resetcontrols",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "to Launch Options. Remember to remove this text once you've customised your controls or they will be reset each time you start the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1135690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1135690/view/4186653398787009240"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-09T05:11:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1135690",
+      "checkedAt": "2026-11-13T03:35:13.685Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:13.685Z"
+  },
+  {
+   "id": "unpacking-115843@post-2021-11-06",
+   "gameId": "unpacking-115843",
+   "displayName": "Fixes and updates",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-06T01:45:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update addresses an input rebinding issue and fixes some smaller issues and placement rules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Input rebinding allowed binding the esc key over the primary action input, resulting in menus that couldn't be navigated. This is now prevented and if you had bound it this way the game will revert your input bindings on start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a Steam integration issue that was blocking progression in rare cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed issue where items could be placed in the corner of a shower and not retrieved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed issue that occasionally caused items in drawers to be very hard to select if there was an item on the floor behind them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a \"vanishing book\" issue caused by holding a book over a shelf while changing rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added a missing sprite to a toothpaste in 2012 and fixed issue where an item in 2018 could be hung on hooks and towel racks when it wasn't meant to be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "tweaked the dining-room reverb in 2007",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed an issue that was causing red validation outlines to render with visual artefacts on specific screen resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "several items have had some extra areas assigned to them either because they should have been that way originally or we saw it in someone's stream and were like \"yeah, fair\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed other various visual issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save files and progress should be unaffected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Features and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big Picture mode now uses a virtual keyboard when naming your album",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "the pulsing button effect that signals that other rooms have unpacked boxes has been reduced slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The pulsing can also be turned off entirely by adding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "nopulse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "to Launch Options - this is considered a workaround and will hopefully have an in-game menu option in future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1135690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1135690/view/4186652991115039520"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-06T01:45:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1135690",
+      "checkedAt": "2026-11-13T03:35:13.684Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:13.684Z"
+  },
+  {
+   "id": "unpacking-115843@2",
+   "gameId": "unpacking-115843",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-17T10:19:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another minor update! Don't mind us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes include",
+     "items": [
+      {
+       "text": "The sound the Star makes when you put everything in valid places no longer plays repeatedly if you keep moving things about - we were watching people stream the demo and it got super annoying, honestly it's the only reason we're doing this update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "esc button on the main menu will skip the logo sequence for people who are in a hurry to play our extremely chill slow paced game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1135690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1135690/view/3819572206267027734"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-17T10:19:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1135690",
+      "checkedAt": "2026-11-13T03:35:13.681Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:13.681Z"
+  },
+  {
+   "id": "unpacking-115843@major-2020-09-15",
+   "gameId": "unpacking-115843",
+   "displayName": "Demo update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-15T09:41:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've released a minor quality of life update to the Unpacking demo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes include",
+     "items": [
+      {
+       "text": "Made the \"Witch Beam\" whisper quieter so it's not as scary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added control-click for turning items for our one button Mac mouse friends",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Several items have been marked up to be allowed in more places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Caught an issue where the game might not auto save if you quit too quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where room icons could show up wrong on load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Escape key no longer immediately quits from the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've already successfully played through the demo these changes are unlikely to give you a different experience but we're hopeful they'll make things a little bit nicer for anyone who checks it out between now and the end of PAX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But of course you can play it again if you'd like, that's totally allowed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1135690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1135690/view/4249665521696760447"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-15T09:41:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1135690",
+      "checkedAt": "2026-11-13T03:35:13.680Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:13.680Z"
+  }
+ ],
+ "issues": []
+}

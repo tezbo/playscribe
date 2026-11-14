@@ -1,0 +1,2958 @@
+{
+ "game": {
+  "id": "crime-scene-cleaner-115830",
+  "igdbId": 115830,
+  "name": "Crime Scene Cleaner",
+  "cover": {
+   "imageId": "co8vyd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8vyd.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3qzx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3qzx.jpg"
+  },
+  "ps5Release": "2025-06-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "crime-scene-cleaner-115830@major-2026-10-21",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Achievement Sets Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-21T15:24:40.000Z",
+   "notes": [
+    {
+     "title": "Hi Cleaners!",
+     "items": [
+      {
+       "text": "[p align=\"justify\"]We have some good news for all the achievement hunters among you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]Steam has recently introduced a new Achievement Sets feature, and we've already implemented it in Crime Scene Cleaner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]From now on, our Steam achievements are organized into separate sets, between the Base Game, Nightmare Levels and Act 2.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What does this mean for you?",
+     "items": [
+      {
+       "text": "[p align=\"justify\"]Most importantly, completing the base game can now stand on its own. New achievements added alongside additional content won't have to take away the completion you've already earned in the base game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]This is especially important to us with Biohazard DLC on the horizon. We want to be able to give you new achievements and challenges to hunt down as we add new content, without making completionists feel like their previous 100% suddenly doesn't count anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]Each Achievement Set also has its own progress, making it easier to see what you've completed and what you still have left to clean up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]One important thing to keep in mind: Achievement Sets are currently still a Steam Beta feature, so for now you'll need to be using the Steam Client Beta to see the new system in action fully. Additional information about these changes you can find in the official announcement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]We're really happy to see Steam introduce a feature like this, and naturally, we wanted to make use of it as soon as possible!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"justify\"]Happy hunting, Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1847286114029235"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-21T15:24:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.174Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-21T15:24:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.174Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-21T15:24:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.796Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@4.0.10e",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 4.0.10e",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-20T11:26:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed mouse input stutter caused by lower framerates",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed mouse input stutter potentially caused by wireless mouses",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted UI scaling for Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1846651706694856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-20T11:26:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.173Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-20T11:26:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.173Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-20T11:26:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.796Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@4.0.6a",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 4.0.6a",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-19T09:19:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added the long-awaited trash bag disposal quest to the \"This town too small\" mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with animation system that could lead to bodies disappearing on pickup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix codex categories not being clickable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare case with last pressure washer perks being locked permanently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix elevator location in \"Alter Ego\" mission not tracking quests properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1832700592800464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-19T09:19:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.173Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-19T09:19:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.173Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-19T09:19:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.795Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@4.0.5d",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 4.0.5d",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-11T12:21:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added alternative Level 3 and Level 4 bag models for the \"Magician's Hat\" skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced the unicorn artwork asset on lunchboxes regarding community reports",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed chapter numbers in Act II",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the long-awaited trash bag disposal quest to the \"Circle of Friends\" and \"Secluded Retreat\" missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the blood location assignment system across all maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the trash location assignment system across all maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added protection to prevent the hanging woman’s body from disappearing during the “Bad Call” mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1832065502821130"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-11T12:21:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.172Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-11T12:21:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.172Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-11T12:21:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.794Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@major-2026-04-21",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Soundtrack Update / Now also available on YouTube!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-21T17:00:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve got something for all Crime Scene Cleaner music fans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/09a89342a81651abf280e87175935f70471e5ab8.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UPDATED MUSIC TRACKS",
+     "items": [
+      {
+       "text": "We’ve updated the official soundtrack with tracks introduced in our latest game updates (although \"Other Girls\" from LULU Suicide won't be released until May 8th). This expanded version brings in new pieces that better capture the atmosphere of the latest locations and moments in the game. Plus, they're just plain fun to listen to, right?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3153150/Crime_Scene_Cleaner_Soundtrack/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On top of that, the full soundtrack is now available on YouTube! You can listen to your favorite tracks anytime, anywhere. If you enjoyed the vibe of the music while cleaning… now you can take it anywhere with you :) You’ll also find additional details about specific tracks in the description section – our sound designer Matik often shares various bits of trivia and behind-the-scenes insights about how particular pieces were created. Check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crime Scene Cleaner - Cassette Tapes\\\\CDs",
+     "items": [
+      {
+       "text": "[dynamiclink href=\"https://www.youtube.com/playlist?list=PL67-Gkii-XnZ51kEM4WqgT-xxYfeGYgyB\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crime Scene Cleaner - Dream Boxes",
+     "items": [
+      {
+       "text": "[dynamiclink href=\"https://www.youtube.com/playlist?list=PL67-Gkii-Xna6NP5snobRYeR-sBTuIZ6Y\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crime Scene Cleaner OST - Gameplay",
+     "items": [
+      {
+       "text": "[dynamiclink href=\"https://www.youtube.com/playlist?list=PL67-Gkii-XnZulY_Bf8JNqnh7IDmp16kA\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And if you haven’t picked up the soundtrack on Steam yet, this is a great opportunity to support us a bit extra if you’d like. As always, the soundtrack is also available in a discounted bundle together with the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Let us know which track is your favorite!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See ya!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Devs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/d017551b346de3df4d7b058bd3ce1177b6620683.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1830163047269128"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-21T17:00:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.172Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-21T17:00:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.172Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-21T17:00:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.794Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@4.0.4a",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 4.0.4a",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-10T08:47:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Further improvements to „Winter Hotel” optimization, enhancing overall performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the mop could push objects through walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tools not rotating correctly after being picked up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced few posters in Act 1 following some community reports raising concerns about possible AI usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential softlock related to blackmail files in „Town Too Small”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing turret on Camo Truck variants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1829528821309495"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T08:47:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.171Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T08:47:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.171Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-10T08:47:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.793Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@4.0.3b",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 4.0.3b",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-02T10:39:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reverted recent changes to the grabbing system and fixed collision detection issues when picking up objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General improvements and fixes for \"Secluded Retreat\" (collisions, clipping, and more)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further fixes for the body hanging from the chandelier in \"Secluded Retreat\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General improvements and fixes for \"Circle of Friends\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bucket and mop skins not becoming stained with blood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1828894815557015"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-02T10:39:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-02T10:39:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.171Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-02T10:39:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.792Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@4.0.2e",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 4.0.2e",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-30T16:31:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reduced darts difficulty – cursor shake has been lowered; further improvements are planned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed katana using incorrect sounds from previously equipped skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual bug in the garbage collection quest where leftover trash quest was still active despite full completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Kovalsky not properly waking up after nightmare missions in Act 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved item pickup behavior – items no longer rotate on pickup, reducing the chance of clipping through walls and floors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced bought arcade machine textures in Amber Alert and Development Hell with textures made by our artist, following multiple community reports raising concerns about possible AI usage. Thank you for reporting this issue to us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1828441623110208"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-30T16:31:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-30T16:31:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.170Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-30T16:31:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.791Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@4.0.1",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 4.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-27T13:40:13.000Z",
+   "notes": [
+    {
+     "title": "PATCH NOTES",
+     "items": [
+      {
+       "text": "Fixed elevator in \"Alter Ego\" which wasn't working with a certain combination of items inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized truck's physics detection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected unlock descriptions for several skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Holy Wota\" skin, which wasn't unlocking after completing \"Circle of Friends\" on a True Cleaner run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebuilt the skin package, so hopefully this should resolve the issue with invisible skin models",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed multiple spots in the \"Amber Alert\" mission where standing near walls caused level to disappear due to occlusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hanging female bodies in \"Secluded Retreat\", which were jerking into the stratosphere when hit with items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1828441623104556"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-27T13:40:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.169Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-27T13:40:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.169Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-27T13:40:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.790Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@3.0.3",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 3.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-07T15:31:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 3.0.3-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed UI scaling for Russian, Chinese, Korean, and Japanese localizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where bodies could clip out of bounds in the “Alter Ego” map when interacting with the elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted body card placement in “Alter Ego” — now located directly below the vacuum chamber tube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized performance in the “Alter Ego” map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue with \"Super Stacker\" arcade machine not playing \"Super Stacker\" song",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1815580768297912"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-07T15:31:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.168Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-07T15:31:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.169Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-07T15:31:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.788Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@3.0.2",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 3.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-29T13:59:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 3.0.2-1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed remaining French text from German localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed mop skins not applying correctly to the soap mop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved multiple issues with Swedish localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a check for the \"Juke Box Hero\" achievement when opening the music tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grounded the floating succulent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed community maps not being marked as “Perfect” after true cleaner completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1814942955102088"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-29T13:59:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.167Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-29T13:59:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.168Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-29T13:59:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.787Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@3.0.1",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 3.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-28T13:13:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjusted bridge colliders in \"Alter Ego\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved VFX for laser and fisherman’s mops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where French text appeared in the German localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Czech localization and font (no more randomly bolded letters).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored proper values to certain stealable items in \"Alter Ego\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1814309641607261"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T13:13:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.167Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T13:13:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.167Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-28T13:13:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.786Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@major-2025-10-27",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "\"Communiti\" Update is here! New missions and more",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-27T15:09:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sup Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Communiti Update\" IS NOW AVAILABLE. After a round of testing on the beta branch (huge thanks to everyone who joined and shared feedback), we’re finally releasing the \"Communiti Update\" outside the beta! We’ve polished things up, fixed what needed fixing, and added new content for you to enjoy. Now get to work, Cleaners! You have new places to clean!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/fb8936c2c65201a3441645d88aed684319a9582e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW CONTENT",
+     "items": [
+      {
+       "text": "2 new maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4 skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "7 new music tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added chapter selection in mission selection map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New room in Kovalsky's apartment where he stores all his professional tools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "FIXES",
+     "items": [
+      {
+       "text": "Improved body ragdoll physics (now it should be much nicer to punch, kick and throw them)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated skin visual effects (older skins have received visual improvements)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General game performance and stability improvements (updates to new maps also include fixes affecting previous ones)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have fun Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "2 new maps",
+     "4 skins",
+     "7 new music tracks"
+    ]
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1814309641573097"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T15:09:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.166Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T15:09:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.167Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-27T15:09:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:33.786Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@major-2025-10-01",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "1,000,000 Copies Sold – Thank You, Cleaners! New Beta Update Out Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-01T11:27:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sup Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/0663270f92a05f5d5365e4409e68fd3b984a5b7d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The New Beta Is Here!",
+     "items": [
+      {
+       "text": "To celebrate, we’re rolling out a brand-new Beta Update, continuing Kovalsky’s story with new maps and new secrets. This update features two new narrative maps, each packed with the signature dark humor, mystery, and grime that you love:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🧪 Lab – Winner of our Community Map Contest! Explore a hidden research facility hidden on an island. This twisted map is inspired by Valicity Stiles’ original concept. Huge thanks to Valicity for their creativity and vision!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🏢 Gamedev Office (Interlude Map) – A brand new, original map serving as an interlude before the next act of Kovalsky’s story. This time, Kovalsky gets an unusual request from none other than “Communiti” themselves: they need his help cleaning up... What could possibly go wrong?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🧰 Explore Kovalsky’s New Workshop – Your hideout just got an upgrade! Discover Kovalsky’s Workshop – a brand new room where you can admire your loadout and check out your unlocked gear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🎵 New Music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This update also comes with new original tracks that set the perfect tone for Kovalsky’s next steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🎨 New Skins & Hidden Secrets – The beta also introduces 4 new skins to unlock:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2 exclusive skins – unlocked through the True Cleaner mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2 secret skins – it’s up to you to figure out how to unlock them. (We won’t spoil it – it’s a secret!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/62c8660029dcd1512420d59d7a1cdf1c6575b04b.png\"][img src=\"{STEAM_CLAN_IMAGE}/34613706/6ceddf0eef930e5bda72201f879a7d74b7eb3bca.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "How to access beta?",
+     "items": [
+      {
+       "text": "Thank you for helping us reach this huge milestone – and now, it’s time to celebrate the only way we know how… by cleaning up the mess.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in the beta, Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/d017551b346de3df4d7b058bd3ce1177b6620683.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1811772772440432"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T11:27:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.166Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.593Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@2.0.1g",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 2.0.1g",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-30T11:30:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Resolved an issue where a body in 'Party's Over (Nightmare)' could not be picked up in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1806698490646462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-30T11:30:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.165Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-30T11:30:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.165Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-30T11:30:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.592Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@2.0.1f",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Patch 2.0.1f",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-25T14:17:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2.0.1f Patch is LIVE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix tackles the following problem: sometimes game didn't load properly after a crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1806064758644674"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-25T14:17:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.165Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-25T14:17:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.165Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-25T14:17:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.592Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@major-2025-07-24",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "“Nightmare Update” now available!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-24T10:22:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sup Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Nightmare Update Patch is now available. It adds 2 new challenge modes (Nightmare Mode + True Cleaner Mode tabs), which are available in the mission hub (to access it you need to enter Kovalsky’s car) after completing all base missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW CONTENT",
+     "items": [
+      {
+       "text": "challenges that are available after completing the original 10 maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2 new tabs in the mission hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "20 new challenges, which include",
+     "items": [
+      {
+       "text": "10 new \"Nightmare\" maps, which are nightmare versions of every currently existing map with new stories and mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "10 original maps to complete in a True Cleaner Mode with the upgrade modifier and the task list and cleaner sense disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "20 skins to unlock as a reward for completing challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "10 music boxes to collect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "13 new achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "new skill “6th sense” which highlights items that should be put back in their place (ideal for Modern Art mission!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "overall game improvement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Have fun Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/c075f7780b304615940fc944c0758a304b697b17.png\"][img src=\"{STEAM_CLAN_IMAGE}/34613706/366c66444ee6ecb3120b7636a4f567f3aa2600f9.png\"][img src=\"{STEAM_CLAN_IMAGE}/34613706/52c80def5271d6207a691a30500131f384c1b377.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "challenges that are available after completing the original 10 maps",
+     "2 new tabs in the mission hub",
+     "10 new \"Nightmare\" maps, which are nightmare versions of every currently existing map with new stories and mechanics"
+    ]
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1806064758605966"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-24T10:22:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.164Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-24T10:22:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.164Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-24T10:22:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.591Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@major-2025-07-22",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Nightmare Update COMING TO STEAM!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-22T16:11:04.000Z",
+   "notes": [
+    {
+     "title": "Crime Scene Cleaner launches its first major update “Nightmare Update” July 24, 2025 on Steam!",
+     "items": [
+      {
+       "text": "The nightmares are getting worse. From twisted spaces to blood-soaked rooms, each scene feels like a descent into madness. It's your job to erase every trace – no matter how disturbing...",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A big update is coming your way - available on Steam 24th July 2025. The Challenge Mode “Nightmare” update will contain whole 10 \"Nightmare\" versions of every currently existing map, featuring new mechanics and even more thrilling gameplay. Completing these special nightmare maps will reward you with unlockable cosmetics – special skins – so there’s plenty of incentive to push through the challenge!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cleaning up after the mafia was never going to be without consequences. The blood, the bodies, the silence, it all left a mark. In the Nightmare Update Kovalsky is haunted by twisted versions of the crime scenes he once scrubbed clean. Nothing is as it was – and he’ll have to face them all over again.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Think you’ve mastered the art of cleaning? Think again. There’s a new True Cleaner Mode that strips away all the help – no hints, no cleaner’s instinct, no mercy. Just you, the filth, and your tools. It’s the ultimate challenge for those who believe they can handle the job without leaving a single trace.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/d017551b346de3df4d7b058bd3ce1177b6620683.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1805431065502084"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-22T16:11:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.164Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-24T23:59:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.164Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-24T23:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.317Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.7g",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.7g",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-09T10:36:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated localizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1801617199519716"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-09T10:36:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.163Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.590Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@major-2025-04-25",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Get Ready for the Nightmare Update – Join the Beta!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-25T16:36:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Sup Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You’ve voiced your thoughts and many of you expressed a willingness to help us test new content. And we want to make our community feel special! Let it be a thank-you gift for our most engaged players for waiting so long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/3b1ad18036ca2993054796846cbc9d73576d16ce.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know that you’re tired of waiting. And let me tell you… it’s about time. Nightmare Update is slowly coming to Crime Scene Cleaner! Now you can grab the beta access code from the news section on our discord server and join the Nightmare Update tests starting NOW. Help us find all the bugs and other issues! Your feedback will be invaluable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Nightmare Update is our first big update with new content – and we’re opening up a beta test for players who want to experience it first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update introduces new challenge modes. Nightmare mode contains whole 10 \"Nightmare\" versions of every currently existing map, featuring new mechanics and even more thrilling gameplay. Completing these special nightmare maps will reward you with unlockable cosmetics – special skins – so there’s plenty of incentive to push through the challenge!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How to join Crime Scene Cleaner \"Nightmare Update\" beta test? Hop on our discord, the inivitation link is attached to the image below! That's where you'll find the code and all the important instructions you need.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Be among the first to face the nightmare!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Edit: Beta has ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34613706/d017551b346de3df4d7b058bd3ce1177b6620683.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1797820624498541"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T16:36:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.163Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.589Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.7f",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.7f",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-11T11:44:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed game freezing when using power washer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various sound issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1790848102781258"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-11T11:44:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.162Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.588Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.7e",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.7e",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-27T14:41:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Kovalsky no longer wears gloves in his own house",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added loading screen animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved UI visibility on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the issue with not all prompts working with controller inputs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed not being able to mix the same detergents unless perk \"Clean Mind\" is unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/1789580505437734"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-27T14:41:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.162Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.588Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.6d",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.6d",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-02T11:08:52.000Z",
+   "notes": [
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Fixed broken collisions in hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing translation to \"cost\" in skill tree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed chapter numbers in load save preview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated community translation end credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/6350729003490241989"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-02T11:08:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.161Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.587Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.6a",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.6a",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-27T06:24:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjusted some Hud & UI elements to display better on smaller screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added each perk's cost to their description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed softlock preventing player from interacting with anything, this change should fix existing saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock where bodies could fall out of bounds and prevent player from progressing, this change should fix existing saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bodies sometimes disappearing when opening tablet menu while holding a body",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with music tab in tablet menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new supported language: Traditional Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new community translated languages: Czech, Dutch and Portugese (PT)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/6339469370184612438"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-27T06:24:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.161Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.586Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.2r",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.2R",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-22T11:44:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed settings not scrolling with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed button for skipping cutscenes on gamepad to \"A\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed FOV and brightness settings not persisting between scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FOV resetting to incorrect value after taking photos in \"Affair with Death\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added glass shards to middle house in \"Party's Over\" mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated lighting in \"Trial by Blood\" mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue in \"Short Circuit\" where you can't fix cat's pictures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock when opening photo mode and tablet at the same time in \"Affair with Death\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mouse stutter when looking around while walking",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some items in \"Party's Over\" mission incorrectly counting as trash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player camera flipping around and inverting controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level 2 sponge having stats of base sponge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some Korean & Polish translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect values during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed power washer sometimes shooting in a very small area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly buffed power washer base stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated colliders in many missions to reduce cases where trash is stuck out of reach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/5875595438687967479"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-22T11:44:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.160Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.585Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.2k",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.2k",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-16T17:43:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix \"Return clues\" quest not saving properly and blocking progress after load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/6909171012599995584"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-16T17:43:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.160Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.583Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.2j",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.2j",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-16T13:36:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed another bug that prevented the new game and some cutscenes from starting correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix crashes on loading save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix crashes when equipping/picking up ladder, uv lamp etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated \"Invert Y axis\" option to work with gamepads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/6909171012599371249"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-16T13:36:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.159Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.583Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@2",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-14T23:39:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix for a bug that caused the game progress to be blocked if you closed the game via crash or Alt+F4 right after completing a mission. This Hotfix should repair the corrupted save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/6909171012593605878"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-14T23:39:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.159Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.582Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@1.0.2e",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Hotfix 1.0.2e",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-14T18:17:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that prevented the new game from starting correctly when a gamepad was connected (This also fixes the game on Steam Deck!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/5875594803675065289"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-14T18:17:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.158Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.582Z"
+  },
+  {
+   "id": "crime-scene-cleaner-115830@major-2022-12-30",
+   "gameId": "crime-scene-cleaner-115830",
+   "displayName": "Devblog #15 - The \"Interior Designer\" Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-30T15:10:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Cleaners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s renovation time! Proper cleanup does not only mean collecting trash or washing up floors and walls. Once the mayhem of a crime happens, there will be some furniture you must move around. These could be a sign of struggle or victims’ attempts to hide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the beginning of some missions, you may receive photos which will guide you in cleaning up misplaced furniture. Miscellaneous things should be returned to their spots, so no one can even suspect that anything has happened before. Sometimes you will have to use your own imagination and cleaning sense to make sure everything is in the right spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Luckily, you don’t have to worry about perfectly recreating the pictures, coherent look is key. If you find random chairs in the middle of the room, make sure to find which table has an unfinished set. The same goes for other larger objects such as drawers or wardrobes. Every cabinet has to have a full set of drawers and stand in roughly the same place. So before you move on to another room, make sure everything is neat and as clean as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unfortunately, not every piece of furniture can be simply picked up and placed in its rightful spot. There are those which are too big to simply throw away, in that case, you will be forced to dismantle them into smaller pieces, so they can fit in your van more easily. Luckily you have your powerful fists! Break the old furniture to make space for potentially new! The house owner will thank you later! If they are still alive that is...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These small renovations may be some of the final things you do on the crime scene, so check every corner carefully before you leave. It would be unprofessional to leave the house you just spent time cleaning and renovating in a state of disarray. Hopefully, you enjoy a bit of house decor and macabre renovations. Let us know what you think about this element of cleaning up. We’re awaiting your feedback here in the comments, on our social media and in our discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1040200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1040200/view/5000716037471840202"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-30T15:10:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1040200",
+      "checkedAt": "2026-11-13T03:17:57.157Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:12:02.578Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,95 @@
+{
+ "game": {
+  "id": "desolus-58718",
+  "igdbId": 58718,
+  "name": "Desolus",
+  "cover": {
+   "imageId": "co8pt9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8pt9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar33fo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar33fo.jpg"
+  },
+  "ps5Release": "2026-10-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "desolus-58718@post-2026-10-18",
+   "gameId": "desolus-58718",
+   "displayName": "Adds button remapping",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-18T19:20:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "For both keyboard and controller, you can now customize key/button remapping.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1003460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1003460/view/1846651706687815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-18T19:20:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1003460",
+      "checkedAt": "2026-11-13T03:18:59.113Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-18T19:20:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1003460",
+      "checkedAt": "2026-11-13T03:18:59.113Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-18T19:20:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:58:57.176Z"
+  }
+ ],
+ "issues": []
+}

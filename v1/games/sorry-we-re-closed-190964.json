@@ -1,0 +1,905 @@
+{
+ "game": {
+  "id": "sorry-we-re-closed-190964",
+  "igdbId": 190964,
+  "name": "Sorry We're Closed",
+  "cover": {
+   "imageId": "co79i1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co79i1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1g3u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1g3u.jpg"
+  },
+  "ps5Release": "2025-03-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sorry-we-re-closed-190964@post-2025-07-02",
+   "gameId": "sorry-we-re-closed-190964",
+   "displayName": "Fix for Achievements",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-02T11:12:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, we've had some reports recently that some achievements weren't working after the latest game update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've had a look into this and it was an issue on the Steam backend where unfortunately when adding the new Chinese translations for achievements some were added in the wrong place. This meant that when the game tried to unlock that achievement (when playing in any language) it wasn't able to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The achievements impacted by this were",
+     "items": [
+      {
+       "text": "Lumberjack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overkill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heartbroken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Postwoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Indecisive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The fix is now live and Heartbroken, Postwoman and Indecisive should automatically unlock next time you load a save file where these events have occurred as their progress is included in your save data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Lumberjack and Overkill you would need to redo the requirement for these in combat, sorry about that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There isn't a patch for the game as it's a backend Steam fix for this. After making the fix I closed and reopened Steam (to make sure it refreshed) and was able to unlock all of the above achievements when testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1796580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1796580/view/1803527891701139"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-02T11:12:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-02T11:12:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.032Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-02T11:12:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.986Z"
+  },
+  {
+   "id": "sorry-we-re-closed-190964@major-2025-03-12",
+   "gameId": "sorry-we-re-closed-190964",
+   "displayName": "Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-12T17:41:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We released our original demo back in October 2023 and it was missing many improvements that were included in the full game along with the updates we've been adding since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A new demo is available today that includes",
+     "items": [
+      {
+       "text": "French, Spanish and Japanese language options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optional tank controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aim assist options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Difficulty modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Accessibility settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Remappable controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New painted character portraits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated character dialogue typewriter and vocal SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several bug fixes and adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Please note: saves from the original demo are not compatible with this new version as we've had many changes with how data is saved behind the scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Can't launch the new demo?",
+     "items": [
+      {
+       "text": "Try closing and reopening Steam, we needed to update some of the launch options for the new version and I believe these come from the Steam client rather than the demo file download.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Access the original 2023 demo",
+     "items": [
+      {
+       "text": "We've added a public beta branch \"2023 Demo\" that can be selected for the game if you'd like to play the original demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you were part way through the 2023 demo and would like to continue without restarting then you can enable the beta branch and your saves will still be there for you if you're playing on the same device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To opt into the 2023 demo branch",
+     "items": [
+      {
+       "text": "Right click on the demo in your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select \"Properties\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open the \"Beta\" tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Under \"Beta Participation\" select \"2023 Demo\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam should now automatically download the 2023 demo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom & C.B.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "French, Spanish and Japanese language options",
+     "Improved controller support",
+     "Optional tank controls"
+    ]
+   },
+   "sourceIds": [
+    "steam-1796580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1796580/view/1794014851396576"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-12T17:41:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-12T17:41:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.032Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-12T17:41:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.983Z"
+  },
+  {
+   "id": "sorry-we-re-closed-190964@post-2024-12-22",
+   "gameId": "sorry-we-re-closed-190964",
+   "displayName": "Controller Aiming Improvements and New Aim Assist Options",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-22T17:05:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today’s patch updates controller sensitivity, smoothness and adds an adjustable aim assist feature for targeting enemy weak points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is an update I’ve been working on for several weeks with the goal of improving play when using a controller. Aiming should be smoother and we’re hoping it makes for a comfortable experience when playing with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Weak Point Aim Assist” will help with aiming at enemy weak points while using the third eye, it has low, medium and high settings. You can combine it with the existing “Weak Point Stickiness” setting which helps to keep weak points targeted once the reticle is over them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feature: New “Weak Point Aim Assist” setting available in “Settings” > “Accessibility”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: Smoother controller aiming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: Slightly higher default controller sensitivity (your existing setting won’t be changed if you already started playing). You can adjust this in “Settings” > “Controller”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1796580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1796580/view/1786573930725068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-22T17:05:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.031Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.982Z"
+  },
+  {
+   "id": "sorry-we-re-closed-190964@post-2024-12-05",
+   "gameId": "sorry-we-re-closed-190964",
+   "displayName": "Patch Notes for December 5th 2024",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-05T17:16:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, today we have an update for the credits (thank you to our localisation team and community testers!) as well as some adjustments to settings and stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: Credits updated for localisation teams and community testers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feature: A second song now plays towards the end of the credits so it isn’t silent after the main credits song finishes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feature: Added support for AZERTY keyboards which can be enabled in “Settings” > “Controller” > “Keyboard Remapping”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Bug Fix: Removed redundant resolution option when in windowed mode is active",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjustment: The game window can be resized manually by dragging the edges when in windowed mode. After manual resizing, the aspect ratio will be automatically adjusted to be 16:9 for correct display with the fixed camera angles and cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjustment: Text for options in dropdown menus is a little larger and dropdowns have been adjusted to show at least 4 items before needing to scroll (previously showed 3 items)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: Icons for the currently mapped buttons are now displayed when controls are mentioned in accessibility setting descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: Tweaks to stats required for 6 star rankings. Additional Detail: The formula for the calculation hasn't changed but it will block awarding 6 stars if you didn't find all artifacts/critters for the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1796580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1796580/view/1784506359248987"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T17:16:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.030Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.981Z"
+  },
+  {
+   "id": "sorry-we-re-closed-190964@post-2024-11-20",
+   "gameId": "sorry-we-re-closed-190964",
+   "displayName": "Patch Notes for 20th November 2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-20T16:51:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, today I have fixed some bugs and made a couple of adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: fixed potential for offscreen player to walk off a ledge and be killed during the credits sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: fixed the aquarium generator room relocking if you previously completed it, saved, loaded and re-entered the room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: under certain circumstances the player could spawn on the lower floor of the aquarium generators after completing the sequence on the upper floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: an animation for the cutscene after the 2nd boss did not play correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: towards the end of the 3rd level it was possible to block progression by speaking to the eyesore, saving and loading again before passing the eyesore (he would not reopen his eye). If you have encountered this issue you’ll be able to load your save and the eyesore will reopen the next time you speak to him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: under certain circumstances the repenting demon could be spoken to when he was not visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: updated collection message for artifacts in the final area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustment: the 2nd boss is a little more forgiving with slight adjustments to delays before/after attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: I will be looking at additional combat adjustments after handling the important bugs that have been raised. This one is not a massive change for the 2nd boss but you will have a little more time to react.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I would also like to thank the Japanese players who are discovering our game. One fan has kindly been in touch to report some localisation issues which I have included fixes for in this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localisation (Japanese): Fixed an issue where the “Perfect!” text for enemy weak point combos did not display correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localisation (Japanese): Fixed an issue where a broken style tag would be displayed when trying to buy an item you didn’t have enough currency for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localisation (Japanese): Fixed an issue on the final stats screen where the main heading would overhang the length of the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1796580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1796580/view/1783872411953640"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-20T16:51:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.030Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.980Z"
+  },
+  {
+   "id": "sorry-we-re-closed-190964@post-2024-11-19",
+   "gameId": "sorry-we-re-closed-190964",
+   "displayName": "Patch Notes for 19th November 2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-19T04:17:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey! Today’s update is for some important bug fixes that players have kindly shared info on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: rankings didn’t correctly calculate if you had exactly 0 deaths or 0 water bottles used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: in certain circumstances crushed critters could respawn when you loaded a save. If you’re trying to track them all down and encountered this issue then it won’t stop you getting the achievement (you might actually get it slightly early, if you crushed the same bug twice)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: the Lumberjack achievement should be triggering correctly now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Really appreciate people taking the time to report these so that we can continue to improve the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1796580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1796580/view/1783238125376003"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T13:47:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.029Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:24:45.947Z"
+  },
+  {
+   "id": "sorry-we-re-closed-190964@post-2024-11-16",
+   "gameId": "sorry-we-re-closed-190964",
+   "displayName": "Patch Notes for 16th November 2024",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-16T09:20:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you to everyone supporting us at release, we've been overwhelmed at the response and are so happy to see people enjoying the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've been checking the community posts for reported issues and have a patch ready to address the first batch of these.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: the stats screen value shown for the total artifacts available to collect was reversed on levels 3 and 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: some combat achievements weren’t triggering correctly (any you missed will be awarded next time you load your save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fix: purchased water bottle capacity upgrades were not correctly applied (if you purchased extra slots they will be applied next time you load your save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change: Adjustments to how end of level stats are calculated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Misc: fixed some minor typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note: there is an unresolved issue with the Lumberjack achievement. I have narrowed it down but haven't written the fix yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1796580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1796580/view/1783238125273790"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-16T09:20:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1796580",
+      "checkedAt": "2026-11-13T03:31:01.028Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:45.947Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,403 @@
+{
+ "game": {
+  "id": "codex-lost-235597",
+  "igdbId": 235597,
+  "name": "Codex Lost",
+  "cover": {
+   "imageId": "co7q5v",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7q5v.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar24nw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar24nw.jpg"
+  },
+  "ps5Release": "2024-11-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "codex-lost-235597@1.5.0",
+   "gameId": "codex-lost-235597",
+   "displayName": "Patch 1.5.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-19T11:14:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.5.0 Patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the player could die unexpectedly before Mesmison",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with camera lock sensitivity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2284600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2284600/view/1786409468873194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T11:14:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2284600",
+      "checkedAt": "2026-11-13T03:17:37.520Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-19T11:14:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2284600",
+      "checkedAt": "2026-11-13T03:17:37.520Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-19T11:14:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:20.983Z"
+  },
+  {
+   "id": "codex-lost-235597@1.4.8",
+   "gameId": "codex-lost-235597",
+   "displayName": "Patch 1.4.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-18T17:27:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.4.8 Patch notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Changed the mechanics of dropped arcana, now arcana will spawn where the player was recently rather than where they died. This means when falling into a death pit that the arcana will spawn near the ledge instead of in the pit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the walking/jogging animation of the player to be smoother and more similar to the old walk animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed some materials on the player so that a dither is applied when the camera is up close",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed player movement speeds slightly when walking and frozen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed behaviours and interactions on floating skulls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed some attack animation speeds on some undead enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the damage of Alestra’s light waves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed Midlight staff incorrect text display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed detection bugs with various bosses such as Helberoth and the cursed beast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed geometry in the Cren which could cause the player to become stuck in a tunnel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where dropped arcana would not spawn in the chapel of St Merim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the cradle of doom where the player could fall through the metal stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various typos in the spell crafting menu which would display the wrong materials needed to craft spells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs in the spell crafting menu that might cause a player’s materials to drop into negative values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some charms would not appear properly in the inventory and equipment when obtained.: Patch notes from 1.4.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Significantly increased base movement speed (now jogs rather than walks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced movement speed when frozen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased felt impact of incoming light attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced stagger potential and damage of blade spheres, floating chair summoners and limb crabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased mana earned from parries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased passive mana regen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed the collision from the underside of the penal village lift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a laser graphic to green guiding stones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Settings",
+     "items": [
+      {
+       "text": "Added option to disable camera shakes in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced motion blur significantly (by about 90%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed a bug where the 'cursed flaming beast' would lose aggro on the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the health bar of 'cursed flaming beast' would become: invisible after accessing the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where in the Haragusket fight - parrying all his swords and then attacking might cause him to take no more damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug whereby casting different 0 manacost spells back to back: could cause the character animation to freeze or get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug whereby getting hit by a medium weight attack several times: quickly in a row could cause the character animation to freeze or get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed penal village where the player could get stuck in geometry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed craglands where player could get stuck in geometry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where continued parrying could reduce accumulated ailments: to infinite negative amounts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various small bug fixes such as typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 17,
+    "balance": 7,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2284600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2284600/view/1786409468848971"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-18T17:27:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2284600",
+      "checkedAt": "2026-11-13T03:17:37.519Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-18T17:27:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2284600",
+      "checkedAt": "2026-11-13T03:17:37.519Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-18T17:27:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:20.982Z"
+  }
+ ],
+ "issues": []
+}

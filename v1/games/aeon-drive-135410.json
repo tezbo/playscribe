@@ -1,0 +1,568 @@
+{
+ "game": {
+  "id": "aeon-drive-135410",
+  "igdbId": 135410,
+  "name": "Aeon Drive",
+  "cover": {
+   "imageId": "co391h",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co391h.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aryxv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aryxv.jpg"
+  },
+  "ps5Release": "2021-09-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "aeon-drive-135410@1.5.01.1919",
+   "gameId": "aeon-drive-135410",
+   "displayName": "Hotfix 1.5.01.1919",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-30T22:07:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Neo Barcelona visitors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A small hotfix just went live to address some minor issues found in our latest patch (update #3).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the list of hotfixes",
+     "items": [
+      {
+       "text": "Eliminated delay in throwing dagger at the end of dash animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eliminated delay when throwing dagger when touching the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you for all the support that you have shown, and we hope you continue to have fun with Aeon Drive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For feedback and/or bug reports, feel free to join our Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1252240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1252240/view/4224938027326240262"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-30T22:07:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-30T22:07:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.747Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-30T22:07:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.269Z"
+  },
+  {
+   "id": "aeon-drive-135410@3",
+   "gameId": "aeon-drive-135410",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-28T17:21:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We meet again, Neo Barcelona visitors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch just went live featuring several bug fixes and improvements to the mobility and responsiveness. This patch was created with the help of our speedrunning community feedback, so the game should feel and play better than ever!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s a list of the main changes",
+     "items": [
+      {
+       "text": "Time will no longer stop when pausing on respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jack will no longer face a different direction when attacking/throwing dagger while idle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Levels beat using wall glitches will no longer count towards the leaderboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed landing animation delay and input bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented players from teleporting to the dagger while slashing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added input buffers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ground pound animation can now be canceled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wall jump is improved and should feel more responsive now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grabbing a diamond while in co-op mode will now correctly show in the level report",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that would show all save slots with 100% collectibles unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed end of tutorial game crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added button remap localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Overall polish of animations and inputs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you for all the support that you have shown, and we hope you continue to have fun with Aeon Drive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For feedback and/or bug reports, feel free to join our Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1252240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1252240/view/4224938027318233178"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-28T17:21:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-28T17:21:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.746Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-12-28T17:21:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.269Z"
+  },
+  {
+   "id": "aeon-drive-135410@2",
+   "gameId": "aeon-drive-135410",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-16T17:00:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Neo Barcelona visitors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch just went live featuring bug fixes and general improvements to the UI, menus and gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s a list of the main changes",
+     "items": [
+      {
+       "text": "Faster respawns and level reload times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the screen controls bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the resolution bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collectibles bug when changing language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where the the player would lose control of Jack and the timer would stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where the 4th player in co-op would get stuck inside the wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where the player couldn't progress in the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated fonts and backdrops in the tutorial and new cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For feedback and/or bug reports, feel free to join our Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1252240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1252240/view/4971406207537518893"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-16T17:00:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-16T17:00:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.745Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-11-16T17:00:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.268Z"
+  },
+  {
+   "id": "aeon-drive-135410@major-2021-10-21",
+   "gameId": "aeon-drive-135410",
+   "displayName": "Aeon Drive Update: Bug fixes + improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-21T11:27:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Neo Barcelona visitors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch just went live featuring bug fixes and general improvements to the UI, menus and gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s a list of the main changes",
+     "items": [
+      {
+       "text": "Collectible information (gems, hotdogs, data cubes and number of time capsules used) will now correctly display on the save slot, sector selection and level section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Confirmation step when deleting a save slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter video replay sharing system re-implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More options: disabling vibration, screenshake and countdown at the start of a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remapping is no longer in playerprefs (this will solve the crashing issues some players were experiencing).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-game bug fixes: fixed camera boundaries, fixed the bug where sliding and pausing the game would cause the timer to stop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For feedback and/or bug reports, feel free to join our Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1252240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1252240/view/4103335143105372508"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-21T11:27:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-21T11:27:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1252240",
+      "checkedAt": "2026-11-13T03:14:18.745Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-21T11:27:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.267Z"
+  }
+ ],
+ "issues": []
+}

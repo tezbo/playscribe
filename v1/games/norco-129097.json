@@ -1,0 +1,742 @@
+{
+ "game": {
+  "id": "norco-129097",
+  "igdbId": 129097,
+  "name": "Norco",
+  "cover": {
+   "imageId": "co3nu3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3nu3.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar8zq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar8zq.jpg"
+  },
+  "ps5Release": "2022-10-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "norco-129097@1.4.5",
+   "gameId": "norco-129097",
+   "displayName": "Update 1.4.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-31T09:11:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! We spent the past few weeks making NORCO Steam Deck verified. It's been compatible for a while, but in order to receive full verification, we made some slight UI modifications to support a 16x10 screen resolution. For now, this resolution is only supported on Steam Deck, but we'll make it available across all platforms in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, we deeply appreciate the feedback and bug reports that we receive. Because of this community's help, the game has been able to grow and mature since its release. With a team as small as ours, the kind of support you've all shown is invaluable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The best way to report issues and ensure that they get addressed in future patches is to use the bug reporting form available through Raw Fury's online portal: https://rawfury.atlassian.net/servicedesk/customer/portal/1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below are some additional updates and improvements included in the 1.4.5 patch, many of them in response to your reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.4.5 Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix \"screen flip\" bug that occurs if a player simultaneously presses the dive and zoom buttons in the lake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug that causes the phone to disappear during choice selections when using the head drive app.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug preventing controller input after engaging with the pigman hotspot in the lake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make input diagram fade from the screen when any button is pressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix attribution of \"Templars in Acadiana\" by Wilbur Stiles, which was mistakenly listed as \"Templars in Louisiana\" in the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Edit script for brevity and clarity, and to address typos in Acts II & III.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust the boat collision sensitivity during the puppet show and lake sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Support 16x10 screen resolution for Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reset/readjust UI on screen ratio change (this triggers when docking a Steam Deck).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With abundant gratitude,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yuts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221250/view/6839319551984956498"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-31T09:11:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.981Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-31T09:11:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.981Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-31T09:11:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.117Z"
+  },
+  {
+   "id": "norco-129097@1.3.7",
+   "gameId": "norco-129097",
+   "displayName": "Update 1.3.7",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-09T17:41:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "NORCO 1.3.7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: 1.3.7 will be available for Mac next week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolve bug introduced in 1.3.5 that was causing difficulty when players attempted to record a voice memo during a dialogue session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update localization to reflect minor dialogue edits in 1.3.5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust vehicle animation speeds at mall canal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add timestamps to saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix scroll wheel in bedroom computer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221250/view/4606641560252738837"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-09T17:41:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.981Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.116Z"
+  },
+  {
+   "id": "norco-129097@1.3.6",
+   "gameId": "norco-129097",
+   "displayName": "Patch 1.3.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-02T15:27:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.3.6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CHANGES",
+     "items": [
+      {
+       "text": "Fix various auto combat bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Edit Act 1 dialogue for brevity & clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Color adjust several scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also includes 1.3.5 updates for non-steam-pc builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES",
+     "items": [
+      {
+       "text": "Minor edits to the Act 1 dialogue needs to be re-localized. We'll have these changes reflected in all languages in a new patch next week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We found a bug that was introduced in 1.3.5 or earlier: the mouse scroll wheel isn't working in the bedroom computer scene. Holding and dragging to scroll still works. We'll address this asap.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221250/view/4621277624694823839"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-02T15:27:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.980Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.115Z"
+  },
+  {
+   "id": "norco-129097@1.3.5",
+   "gameId": "norco-129097",
+   "displayName": "Patch 1.3.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-29T14:38:50.000Z",
+   "notes": [
+    {
+     "title": "[PC - 8/29/2022] NORCO 1.3.5",
+     "items": [
+      {
+       "text": "Fix the door knock mechanic so there's a noticeable wait before Leblanc fusses you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve the dive timing when in the swamp overworld to prevent camera dislocation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix (?? or at least significantly reduce the likelihood of) the issue causing text strings to disappear when the player spams the return button. This should fix other reported bugs in which players weren't receiving the correct items or couldn't progress beyond certain points in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221250/view/4514316500017467618"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-29T14:38:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.980Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:29.115Z"
+  },
+  {
+   "id": "norco-129097@post-2022-04-01",
+   "gameId": "norco-129097",
+   "displayName": "NORCO REVIEWS & PATCH NOTES",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-04-01T18:25:25.000Z",
+   "notes": [
+    {
+     "title": "NORCO released last week and we've been overwhelmed by the support.",
+     "items": [
+      {
+       "text": "We were particularly touched by these insightful reviews from PC Gamer & Kotaku (which calls the game a \"Mesmerizing Head-fuck\"); this hilarious stream from TiraLyra; this excellent fanart from twitter and then so many thoughtful, insightful Steam reviews, more than we can point to in this post, but here are a couple...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one articulates the themes of the game well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So does this one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Even a couple of the negative ones were extremely insightful and generous. So thank you to everyone for being courteous, thoughtful, and supportive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The reviews help a lot, as do the bug reports. We take all of this into consideration. We pushed our first patch out today with several bug fixes, and next week we're aiming to deploy the French, German, Spanish, Russian, and Brazilian-Portuguese language versions – I'll confirm the exact date soon, but the languages are coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can check on the latest version patch notes here, and submit any bugs you find here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Thank you' seems insufficient here but it's the best I got. So thank you, a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With love, Y.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221250/view/4347669995464699745"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-01T18:25:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.979Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:22.026Z"
+  },
+  {
+   "id": "norco-129097@1.0.4",
+   "gameId": "norco-129097",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-01T16:21:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released version 1.0.4 EN including some critical bug fixes. Please find them below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled all gamepad support except for joystick/cursor interaction, confirm (A), cancel (B), and hint (Y).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will be adding full gamepad support in a later patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug causing the player to get stuck outside of Eagle Imports after speaking to Superduck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Immediate\" speed text mode that could cause a couple of transitions during Act Two to fail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that was causing the hotspot for the messenger to remain interactable after disappearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed items/overworld/cellphone from UI inside ark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced \"hold and drag\" text with icon on the Apocryphon phone app.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to exit credit screen with double click.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Have a great weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221250/view/4347669995464386430"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-01T16:21:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.977Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:22.025Z"
+  },
+  {
+   "id": "norco-129097@1.1.7",
+   "gameId": "norco-129097",
+   "displayName": "Update 1.1.7",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-16T21:04:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have just published Demo v.1.1.7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.1.7 includes a hotfix for players in regions where commas are used as decimal separator (100,00 rather than 100.00).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you started the game playing 1.1.6, your savegame should carry over. but please feel free to let us know via Twitter (Geography of Robots / Raw Fury) or by directly posting a comment here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you for playing, we hope you enjoy this early look at the game and please feel free to send us your feedback via this form.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1221250"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1221250/view/4056035920052355915"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-16T21:04:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1221250",
+      "checkedAt": "2026-11-13T03:26:57.976Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:21.713Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "b195f1dfae0d",
+   "text": "Minor edits to the Act 1 dialogue needs to be re-localized. We'll have these changes reflected in all languages in a new patch next week.",
+   "status": "open",
+   "firstReleaseId": "norco-129097@1.3.6"
+  }
+ ]
+}

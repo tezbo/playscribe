@@ -1,0 +1,644 @@
+{
+ "game": {
+  "id": "roman-sands-re-build-229067",
+  "igdbId": 229067,
+  "name": "Roman Sands RE:Build",
+  "cover": {
+   "imageId": "co5wt4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5wt4.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar22gb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar22gb.jpg"
+  },
+  "ps5Release": "2026-09-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "roman-sands-re-build-229067@3",
+   "gameId": "roman-sands-re-build-229067",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-28T11:15:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Next round of patches is up. Most of the work since the previous patch has been against ongoing, difficult issues, but expect fixes in the next day or two on Act 2 failing to save, and for Russian text layout problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main points here are some various quest fixes, and solving an issue that had broken the mouse smooth toggle (forcing it on all the time). Mouselook will still be a little bit... imperfect on high DPI mice, but it ought to be far more tolerable. Further improvements will come in due course.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I've also put in a quick loading screen prompt advising that the game autosaves at the start of new days. There's been a decent amount of save game related bug reports for Act 1 that turned out to not be bugs, but us not communicating when the game actually saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Next Up",
+     "items": [
+      {
+       "text": "Mainly Russian text layout, Act 2 saving issues, and continuing to sweep through quest errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Going through player logs for various crashes, I've noticed a pattern suggesting that some crashes are due to a conflict between hardware vs. engine configuration. I've got a probable fix for this, but am going to test it robustly over the next few days to ensure it won't lead to instabilities for everyone else.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Mouse smooth toggle now works, mouselook better.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When the pool is repaired, task tracking will no longer point you to the inaccessible filter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exiting to menu from Act 3 or completing the credits no longer causes a new game to softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Examining the Ideal upon completion of the Orrery puzzle no longer locks the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Giving Betty her refund now actually completes the task.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed another dialogue error that would softlock Betty's talk-to-manager conversation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added load screen prompt advising when the game saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2231460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2231460/view/1844751498231206"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-28T11:15:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-28T11:15:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.580Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-28T11:15:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.001Z"
+  },
+  {
+   "id": "roman-sands-re-build-229067@2",
+   "gameId": "roman-sands-re-build-229067",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-22T15:43:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Playstation 4 & 5 controllers now have playable sensitivity settings - that's what happens when you set up your config on a cheap third party controller, I guess.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Alongside that, work with this patch has focused on fixes & stability for the drink mixing sequence. I think between this patch & yesterday's we should have gotten most of the issues, but... there's a lot to this game, and plenty of room for things to sneak in. Please use the Steam bug report form & send a save file/debug log if you run into anything!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're down to about 15 reported & known bugs on the tracker - going to try and get through all those over the next two days, including a fix for issues on how the game handles mouse sensitivity, and bringing in steam cloud saves.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "CHANGELOG",
+     "items": [
+      {
+       "text": "Playstation controllers no longer have an exceptionally low sensitivity on both sticks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Bunk will no longer repeat his conversation vignettes in the Bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where, in the bar, Bunk will revert to the previously spoken to character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The tomato sprite on drinks mixing is no longer offset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential softlock when giving out drink related items during conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now mix & hand out the same drink multiple times in a day, but you can only hold one of each drink at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bunk no longer complains that bourbon isn't Whiskey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The coconut punch recipe is now mixable!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 8,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-2231460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2231460/view/1844115010504635"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T15:43:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T15:43:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.579Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-22T15:43:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:28.000Z"
+  },
+  {
+   "id": "roman-sands-re-build-229067@1",
+   "gameId": "roman-sands-re-build-229067",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-21T13:16:58.000Z",
+   "notes": [
+    {
+     "title": "First proper patch has gone live.",
+     "items": [
+      {
+       "text": "Main focus with this one is tackling the dialogue softlocks that keep biting at people. With the softlocks we've been seeing, there's generally two causes - an error in the code driving the actual flow of dialogue, followed by the dialogue management or user interface failing to bounce back from that error. A lot of my work with this patch has gone in to identifying areas where the management or interface would get stuck and freeze, and setting up cleaner ways of handling that. Nominally this means either exiting the dialogue without freezing the game, or falling back to displaying whatever broken line caused the issue, rather than it just curling up as a nervous wreck in the corner unable to cope with the situation. This should mean far fewer instances of lost progress in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There may well still be situations I've not found that could cause softlocks, or other ways that seemingly fixed bugs can be triggered, so please use the bug report form on the discussion boards if you run into anything. I'm going to be doing daily bugfixing sessions through the next few weeks, so the more we know about the more we can fix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside that, this patch contains an assortment of fixes to progress blocking errors & other glaring issues, alongside the addition of accessibility options in the gameplay settings menu. These let you switch text to a high contrast mode for better readability, and reduce the player camera + UI motion when moving around the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lastly, a spare filtration unit has been added to the basement (behind the bull state) as a little bandaid until I figure out where people's filtration units are dissapearing to. If you hit that situation, please submit a save file using the Steam discussion board!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Up next....",
+     "items": [
+      {
+       "text": "There's still some potential problems that may arise when handing out drinks to NPCs, and some issues with PS5 & possibly PS4 controllers. Goal is to have those fixed in a patch tomorrow, alongside fixing more generalized issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug reporting",
+     "items": [
+      {
+       "text": "When reporting bugs, please zip up and include your save folder found under",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "C: \\ Users \\ \\ AppData \\ LocalLow \\ Arbitrary Metric \\ Roman Sands_ Rebuild \\",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "and the player.log file found under",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "C: \\ Users \\ \\ AppData \\ LocalLow \\ Arbitrary Metric \\ Roman Sands Rebuild",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(uhh... there should be backslashes in there but steam keeps formatting them out? Ourgh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Accessibility options have been added to the gameplay settings for high contrast text and reducing both camera and UI movement animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flashing lights when running back into the sea at end of day are less aggressive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game will now save at the beginning of Act 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kara no longer bypasses commentary on Ideals etcetera if spoken to after certain combinations of puzzle completion vs NPC task completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two issues have been fixed that could result in the player finding duplicate Ideals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If player has somehow obtained duplicate Ideals, speaking to Kara will no longer softlock the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues causing the containment breach timeskip zone to appear prematurely, particularly if the player has somehow obtained duplicate Ideals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Identified & fixed gaps in the Dialogue system's error handling that were resulting in softlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the Dialogue UI that was preventing the screen from closing under error conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A fallback to displaying raw localization keys has been added for a couple of circumstances where invalid strings would prevent dialogue progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an invalid string lookup during Betty's drink request dialogue in late Act 1, which combined with above issues was causing softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed textures not loading in on some props & parts of the environment in MSpace.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The drink mixing window will no longer lock when the input key is pressed during non-mixed drink making.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A softlock has been resolved on the interaction UI triggered by localization lookup failing while examining an item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where removing spa trash over multiple days prevented completion of the associated tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the dialogue chain would drop during Betty's talk-to-the-manager conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A spare filtration unit has been added to the basement (behind the bull statue) until I figure out why filtration units are going missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 16,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2231460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2231460/view/1844115010501352"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T13:16:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-21T13:16:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.579Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-21T13:16:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:27.999Z"
+  },
+  {
+   "id": "roman-sands-re-build-229067@post-2026-09-19",
+   "gameId": "roman-sands-re-build-229067",
+   "displayName": "Achievements Fixed",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-19T10:15:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Oof. Due to a build script misconfiguration, the game went live without Steam integration or Achievement tracking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Took a bit of time to fix this in order to make sure that changing backend data stuff didn't brick anyone's save files, but achievements are up and running now, and tracked by Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note - Due to it not actually tracking them before, unfortunately previous gained achievements are lost to the void - big, big apologies for that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2231460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2231460/view/1844115010496928"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T10:15:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-19T10:15:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2231460",
+      "checkedAt": "2026-11-13T03:29:26.578Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-19T10:15:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:27.998Z"
+  }
+ ],
+ "issues": []
+}

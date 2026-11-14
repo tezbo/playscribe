@@ -1,0 +1,2639 @@
+{
+ "game": {
+  "id": "you-suck-at-parking-138884",
+  "igdbId": 138884,
+  "name": "You Suck at Parking",
+  "cover": {
+   "imageId": "co59yn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co59yn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1r1i",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1r1i.jpg"
+  },
+  "ps5Release": "2023-09-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "you-suck-at-parking-138884@1.11.05",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.11.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-19T09:52:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey parksters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the release of You Suck at Parking® Complete Edition, there have been a lot of changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CHANGES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parking Lot Fully Loaded - All cosmetic items are available, but you need to have the right level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Daily Challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed IAP’s and Real Money shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Parking Pass & Seasons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Roadmap screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified achievements to work with the new Player Level system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUGFIXES",
+     "items": [
+      {
+       "text": "Corrected time stats in the career screen, because time flies when you're having fun (Discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player name now properly displayed in golden color when fully parked in a MP match, even if hex codes are used to change font color on Steam, because gold is the new black (Discord)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the issue where the start match button was grayed out if a spectator joined in and the host changed the biome settings, no more shady starts (/Private Match)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gamertag is now consistently shown in the leaderboards after expanding the leaderboard, let's get personal (UI)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the inspect cam was resetting the parking spots until the player respawned a new car, no more parallel parking fails (Inspect Cam)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The reconnection popup is now shown only once, no more nagging (MP)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an \"App not responding\" error on quitting the game, the app is back on track (GPC)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The leaderboard UI no longer disappears when toggling between friends and global leaderboards, because leaderboards are for everyone (Leaderboards)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a loading screen issue where the player gets stuck and can see main menu tabs if disconnected during the match start countdown, we've cleared the traffic (Private Match)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player no longer sent back to the main menu if disconnecting and reconnecting on the round end screen, no more pit stops (Recon)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Island unlock popup now appears when playing the game offline, because offline adventures need rewards too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No more invisible cars in MP matches, they've got their paint jobs back (Discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lobby member connection issues when the host selects a new lobby during a private match, no more lost connections (Private Lobby)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The accelerator no longer gets stuck on low-speed input, it's full throttle ahead (Discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stripes pattern is now symmetrical on the hatchback, because symmetry matters (Discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed XP grant delays, you'll get your rewards on time (Discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where parking spots do not update in the inspect cam UI if the player parks and immediately opens the inspect cam, no more disappearing spots (Discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Standard yellow car no longer collides with all the other cars on scrolling the player list in the round end screen, we've taught it some manners (MP)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The mastery island popup no longer goes into the ground, it's staying afloat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The parking lot UI is no longer visible in the main menu if the host fails to create a lobby while in the friends party, we've tidied up (Private Lobby)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inspect mode reset view is now consistently on the center of the map, because maps need a focus (SP/MP/Inspect mode)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spectate UI no longer remains during active gameplay after certain steps, we've cleared the spectators (Discord/Multiplayer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The previous level's name no longer seen in the pause menu on the current level, no more backward glances (Multiplayer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Host can no longer see other members of the party while the other members form a new party if the host disconnects and reconnects during an MP match, no more party tricks (Friends Party)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exiting Steam Overlay by pressing ESC no longer inputs ESC in-game, because we've stopped the double ESCAPE (Discord/UI)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Names of friends who are in-game are now aligned in ascending order in the party UI, we've sorted things out (Friends Party)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Career & Main Menu UI no longer overlap after certain steps, because UIs should play nice (Friends Party)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settings & Main Menu elements no longer overlap after certain steps, we've untangled the wires (Friends Party)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Camera no longer jitters when holding down RMB on the mouse while spectating a player, steady as she goes (Multiplayer)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\"Default horn\" text is now localized in all languages, because horns have their own language (LOC)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Timer/fuel HUD and player list can now be seen after disconnecting and reconnecting during the lobby countdown, no more HUD mysteries (Reconnection)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved the issue where the parking spot font was supersized in the in-match player list (MP), no more squeezing in those parking spots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a soft lock issue related to level rotation with the level Babylon, no more scenic detours (MP), we've got a clear road ahead!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the title freezes on a \"failed to create new lobby\" popup, no more icy reception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the player stays invisible in the private match lobby if leaving and rejoining the same lobby multiple times, because invisibility isn't always an advantage (Private Match)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Party no longer disbanded when pressing new match for certain players, the party goes on (Discord/GPC/Friends Party)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clipping through the ground on Frosty Toppings has been fixed, we've paved the way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The camera has finally learned to keep up from round 2 onwards in online matches (MP), it's no longer stuck in the slow lane.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In-game player rank list is now visible in online matches, so you can see who's leading the pack (MP), let the race for glory begin!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 36,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/5480373588800307526"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-19T09:52:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.153Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-19T09:52:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.153Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-19T09:52:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:47.611Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.8.4",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.8.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-24T13:47:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey parksters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We made some small bugfixes, here's what we fixed",
+     "items": [
+      {
+       "text": "Fixed a bug where map selection switches are reset after every private match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the inspect cam resets the parking spots until the player respawns a new car",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the FTUE on the main menu mentions 8 player lobby for online match instead of 6 (change made on v1.8.3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the car did not spawn in the round and the player gets stuck in the sky cam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/5133583099810112597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-24T13:47:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.152Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:47.609Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.8.3",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.8.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-03T13:35:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey parksters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is a new patch note with a few small fixes that were needed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "CHANGE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online match making maximum number of players from 8 to 6 (does not affect private match lobbies)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUGFIXES",
+     "items": [
+      {
+       "text": "Fixed an issue where the lobby full error is shown even if the lobby has 7 players (for private matches lobbies)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the store section is blank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed no items showing up in the store caused due to a null ref",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where colliders are missing in the level Hiding spots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few issues where certain maps had floating parking spots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Having to press on the parking pass to continue with parking pass animation progress has been removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/6839319551996556471"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-03T13:35:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.151Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.152Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.7.3",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.7.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-13T16:26:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey parksters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just keeping the place nice and tidy while we wait for the end of Season 2. Here's what we fixed:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the spectate cam breaks and overlaps the inspect cam if the player invokes the inspect cam exactly before parking on the last spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where resetting cam in inspect mode does not consider the new spawned car as its center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in inspect mode where all parking spots are shown red during round 2 and 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where one of the fans in the level Triple Threat is not animated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the old Tutorial spots are also added in the career screen total parking spots counter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the game got stuck on loading in the car customizer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Most of those issues were also spotted by the community on Discord! Help us make the game better by joining the server 💜",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/5036749277244569517"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-13T16:26:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.150Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.150Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.7.1",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.7.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-26T09:29:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Parksters,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to this first patch of 2023!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're coming back from our break in December with a lot of fixes and features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COMMUNITY SUGGESTIONS",
+     "items": [
+      {
+       "text": "Inspect mode available at any time in singleplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inspect mode available during a multiplayer match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added hints in the Lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW FEATURES",
+     "items": [
+      {
+       "text": "A special helper item: the water balloon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A brand new tutorial: learn each and every parking trick on a wide playground!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "8 brand new multiplayer levels were added to the rotation with this update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added vertical invert option for the inspect and spectate camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a notification if a player is on an older version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUGFIXES",
+     "items": [
+      {
+       "text": "Fixed an issue where the player got Round 6 in a multiplayer match and got stuck after that",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the title gets stuck on the round-end screen if the player suspends the title on the round-end screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the total XP of the landmark \"The Freighter\" does not match the total XP given in the sheet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Restarted level text is not visible if the player restarts a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the in-game player list does not show all the players in the match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the ability to bind controls to R4 R5 L4 L5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where MP game stuck after round three",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player can drive around in the background of the pause menu and in the inspect mode after certain steps in MP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the car does not spin in the air after certain steps (and that was sad because we want to see some 360!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the spectate cam can be seen for 1 second if the player parks the last car",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the trail effect animation which was misplaced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 11,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "A special helper item: the water balloon",
+     "A brand new tutorial: learn each and every parking trick on a wide playground!",
+     "8 brand new multiplayer levels were added to the rotation with this update"
+    ]
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/5035622109508740945"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-26T09:29:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.150Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.150Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.6.8",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Hotfix 1.6.8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-20T13:51:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the last patch of 2022.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Before taking a break at the end of December we",
+     "items": [
+      {
+       "text": "Added daily challenges to pause menu in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new achievement: \"Acquire a cosmetic from the parking lot\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the landmark is not shown as perfected after certain steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed settings reset issues, including the Roll right keybinding that used to reset after restarting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the online match button that stayed accessible despite the game being offline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the player remains on the level preview screen on reconnecting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Centered Player names in the Lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the item Derpy Banana which showed a placeholder image in the parking lot and players couldn't buy it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused some items to be missing from the player's inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the preview UI which disappeared after certain steps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the timer & fuel gauge were missing after certain steps in Multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed numerous controller issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We wish you all a happy holiday! Thanks for playing YSAP in 2022 <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/5623338145769069828"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-20T13:51:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.149Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.149Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.6.4",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.6.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-08T13:09:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Parksters,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's a new update post-Inferno with some hot fixes. Do you need more details about what changed since the beginning of Season 2? You can check out our blogpost about it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "COMMUNITY SUGGESTION | The ranks are now hidden in the multiplayer lobbies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the text does not fit some languages if the text size is the biggest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where spamming L2 R2 and constantly changing between the parking lot and the parking pass screen causes the title to crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the player does not get the round end screen on reconnecting and is stuck after round 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where \"The Satelite\" landmark has 0 multiplier, so it rewards no XP when completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the tier skip button shows up on the wrong tier if the player has only a few XP left to complete the tier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Top 2 match position daily challenge is not marked as completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various Rewired errors under the hood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the player gets two last cars if the other players are done parking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the match gets stuck on various rounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4980448574108603633"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-08T13:09:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.148Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.148Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.6.3",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Update 1.6.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-12-02T17:59:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch fixes a few issues reported after the Inferno release. Some of the bigger issues include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for the game getting stuck on the round 3 end screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for the inspect camera UI breaking if you press the restart hotkey while inspecting a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for the S2 bundle in the store not showing as purchased after it was auto granted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for for the car position being slightly off on round result screen UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for the preview camera showing briefly just before the round starts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for longer strings not displaying correctly on daily challenges titles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for for Virtual currency reward displaying incorrectly on widescreen monitors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for the pause menu overlaping the settings screen if the player disconnects the controller while the settings screen was active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4979322040021085676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-02T17:59:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.147Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.148Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.5.6",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.5.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-24T10:48:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A few small fixes that were needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed all players in the lobby getting an error when a player with an older build gets into the online match lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a countdown timer for Parking Pass Season 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4836332027655041156"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-24T10:48:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.147Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.147Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.5.5",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.5.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-10T10:16:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some house keeping with a few small fixes that were lingering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Campaign rewards pop up now includes more details to identify which island the reward is for.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sometimes a player was shown twice in the friend party UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The friends tab is visible if the game is launched offline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For some players the Antarcticar achievement was still locked after doing the requirements to unlock it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a NullPtr issue that was causing some issues when viewing store items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the string \"Take a look\" on the Parking pass in the store as it was miseading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another bug that caught your attention? Check out our bug forum on Discord or use this form. Thanks a lot for your help!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/6368680725420588160"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-10T10:16:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.146Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.146Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.5.4",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.5.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-04T09:38:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A few small fixes that were need.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the UI for the Tier Skips showing more than 50 in a season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the compatible car list showing incorrect items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a NullPtr issue in leaderboard names that was causing crashes on consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few more errors reported in the health checks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4732747437205045936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-04T09:38:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.145Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.145Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.4.5",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.4.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-05T13:31:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In this patch, we fixed an issue with the millisecond option that we added where the timer would start counting down (and go below zero) before starting the level in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This setting to see milliseconds while playing is new and can be activated in the Settings under Accessibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more speedrun tricks and to join other super-duper fast parksters, a speedrun category can be unlocked in our Discord by taking on the Speed Parkster role.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also join a bunch of dedicated speedrunners on the Speedrun.com page of YSAP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4613399405936583268"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-05T13:31:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.144Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.4.2",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.4.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-03T12:23:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've got good news for completionists and those who have an eye for details! Here's what we fixed in this patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[COMMUNITY SUGGESTION] Added a setting option to display level time in milliseconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the road clipping issue that happened for a few levels (Fasten your seatbelt, Head start, 4 stories high)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the link to the store from the main menu news item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the absence of input for Quit button in the main menu when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the campervan missing a grey line on the back of the vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cement truck missing a shader on the mixer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that allowed a player to drive around in the background of the round result screen, making them control 2 cars for the next round in some instances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the credits screen redirecting back to the settings screen once it reaches the end even if the song is playing in the background. We also fixed some accents and spelling there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scaling for multiplayer status messages that would appear very small on high-resolution screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the text \"Last Round in 10\" can be seen if the player disconnects and reconnects on the round 4 result screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the car's wheels colliding with the car's body when using an island cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the locked mastery island 1 building which was a bit under the terrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the audio settings not applying to the Happy Volcano logo screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You don't suck at reading patch notes all the way through! And you were right to do so because if you didn't, you wouldn't know we added something special in the credits. Turn the music on!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another bug that caught your attention? Check out our bug forum on Discord or use this form. Thanks a lot for your help!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4588629064125058645"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-03T12:23:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.143Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@1.3.8",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Patch 1.3.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-21T08:50:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have some hotfixes coming your way. Thanks to all of you who took the time to report bugs, either on Discord or by email.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What has been fixed in this patch?",
+     "items": [
+      {
+       "text": "The localization needed fixing in a few languages, but it's now done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some multiplayer achievements weren't triggering they will update automatically once you log in after the patch, except for the 'Carnivore' one (win 3 MP matches in a row). Go get them, tiger!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Xbox Controller wasn't recognized by the game: no more keyboard for you, that's fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Your player level was sometimes not updated after an MP match: it was a display bug and your XP has been collected properly, now it will appear as it should in the online match result screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Your new personal record didn't update in a leaderboard: it was also a display bug, but your awesome performance was taken into account. It will appear correctly after the patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please take a look at our roadmap to get an idea of the content coming your way in You Suck at Parking™.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4589754330727731999"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-21T08:50:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.142Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@post-2022-09-01",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "New Demo Alert!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-01T11:55:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After taking it for a spin during Gamescom this year, our new 2022 demo comes to Steam 14 days before release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What to expect",
+     "items": [
+      {
+       "text": "A truckload of single-player new levels, revisited ones, and the actual overworld so you can have a feel of what the full game is gonna be like, in a small demo portion! If you're grinding to get a nice spot on the leaderboards, please note that they will be different in the full version: your score won't carry on from the demo version to the full one. We thought it was important for you to know. The competition is already raging though, it's a good training field!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now for the technical part, we're already aware of some issues thanks to our lovely QA team and some experience with the build at Gamescom. Find the list below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "updated September 12th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision is partly missing on Mastery Island portal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The XP is shown in negative and the Miscellaneous stats do not reset if the player resets the progression using the in-game progression reset option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The car falls off the map if the player tries to travel through the other side of the portal on the VIP Island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The loading screen flickers if the player travels from one biome to another",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The controller does not vibrate if the player parks a car and immediately respawns a new one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The text \"Unlocked in full game\" can be seen behind the island cannon if the player changes the language and sets the text size to the biggest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The screen flickers if the player tries to go through the other side of the portal on snow island 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The car spawns underwater while traveling to another biome after certain steps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The car is redirected to island 1 after completing the VIP landmark level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Island unlock popup is not invoked after unlocking an island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Old demo leaderboard times are sometimes shown in new demo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The car wheels collide with the car's body if the player drives the car through the boost pad and immediately travels to another island using the island cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The landmark P sign blinks if the car moves around it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Need to report a bug or ask for help? Feel free to join our Discord and use the appropriate channels, or email supporthappyvolcano.com.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4621277624690644777"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-01T11:55:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.141Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@major-2022-01-11",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "2022: A new demo update is our gift to you!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-11T13:30:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Parksters,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For a few months now you’ve been able to enjoy an extended demo of You Suck At Parking, available for free, right here, on Steam! We’ve updated it and made a few changes, here are our release notes:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We freshened up the levels, adding some new ones for you to try!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New easy levels to be off to a good start, go your own way, and take the high road!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Discover the magnetic force and some windy levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Challenge yourself in 3 exclusive hard levels: Mind over matter, Ejector, and Car Guys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We squashed a few bugs that weren't being really festive",
+     "items": [
+      {
+       "text": "The leaderboard is not working and the user is logged in as a guest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secondary text for the tutorial popups is now visible if you’re playing with a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We removed a bug that impacted the text on the tutorial end screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Curious about those changes? Take the demo for a spin!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "See you on the road",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Happy Volcano team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4224939386894478401"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-11T13:30:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.139Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@major-2021-02-03",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Demo update II: visual overhaul and loads of fixes and updates",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-02-03T19:44:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "VERSION: 0.108",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now watch a replay of your run in a level! Select 'Replay Editor' in the level end screen to start watching!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is a free camera, allowing you to get some great cinematic shots. You can also use the standard follow camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can save screenshots, and gifs from a replay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Be aware that replays are still in a highly experimental phase and may be full of bugs or glitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last Car!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New gameplay mechanic: last car!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When the timer of a level runs out, the level only ends once you have parked your current car.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You cannot take a new car when you're out of time, and crashing your last car will also end the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay & Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-game UI when finishing a level now shows best time, amount of cars used and crashed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using no more cars than there are parking spots in a level will result a perfection if all spots are filled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When exiting a level back to the overworld, the level select menu will be opened automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've changed how settings are saved. If you played previous demo versions, your settings may have reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC cars now try to keep driving after hitting obstacles and also have a life time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC cars now explode when hitting crash borders or magnets!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC cars with intelligent behaviour will now drive up slopes and steer a bit faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fuel pickups can no longer fill up a car more than the starting amount of fuel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added setting to turn vsync on or off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Very Low and Low quality settings now disable car skid marks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're working on overhauling the visuals of the entire game and there's still much to be done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The body of your car will now tilt based on movement. Purely visual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added billboards and more props to various levels and the overworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed shader requirements of the grass. This should improve hardware compatibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added several more blockers in the overworld to prevent bad respawn locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed floating tree on Crowded House",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual look of crashed/flattened bulldozers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cursor vanishing in pause menu after closing the bug reporter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level end screen sometimes appearing right after a restart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a UI issue with the first button of a menu not being highlighted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're putting more focus on making the game run better. We've made a few small improvements in this version already, but more performance enhancements are still to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance of water rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance of car skid marks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is a bug with cars sometimes being stuck at spawn. We're investigating a solution. If this happens, try pressing respawn or restarting the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Replay Editor cannot have their controls customised yet. For azerty keyboard users, set your controls preset to azerty in the main menu for azerty-friendly controls.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 5,
+    "balance": 0,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/4051520269923095909"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-02-03T19:44:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.137Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.137Z"
+  },
+  {
+   "id": "you-suck-at-parking-138884@major-2020-10-14",
+   "gameId": "you-suck-at-parking-138884",
+   "displayName": "Demo update I: better camera, quality settings and small optimization fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-10-14T13:59:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new Dynamic Camera, which reacts to the movements and rotation of the car more smoothly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to toggle between the (new) Dynamic and Legacy cameras in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a fuel indicator for each car.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The in-game timer now also displays milliseconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game will now indicate you can press the respawn button when being stuck or flying out of bounds in the overworld (level select).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced bad parking pop-up by an interactable \"Badly parked\" traffic sign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to disable grass in the settings menu, to help improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a fuel meter to the HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The HUD timer now also displays milliseconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bonus time not resetting when a level is restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Out of fuel\" text not disappearing when restarting a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possible fix for grass causing significant performance issues on specific devices. If you still have low framerate, try disabling grass in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed overworld props not having friction applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now see through the balloon and treehouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a few edge cases where respawning was impossible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked the level \"Crowded House\" to make it harder to avoid the bulldozers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed in-game timer sometimes incorrectly displaying seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI SFX not being affected by the SFX volume setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 6,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-837880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/837880/view/3854477638700791201"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-10-14T13:59:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-837880",
+      "checkedAt": "2026-11-13T03:36:48.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:48.131Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "3975b93d70ce",
+   "text": "updated September 12th",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "82a80771a134",
+   "text": "Collision is partly missing on Mastery Island portal",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "26bd69216324",
+   "text": "The XP is shown in negative and the Miscellaneous stats do not reset if the player resets the progression using the in-game progression reset option",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "33c5d79b1459",
+   "text": "The car falls off the map if the player tries to travel through the other side of the portal on the VIP Island",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "962705b0a1f2",
+   "text": "The loading screen flickers if the player travels from one biome to another",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "be55b408cc28",
+   "text": "The controller does not vibrate if the player parks a car and immediately respawns a new one",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "3379b2f452c2",
+   "text": "The text \"Unlocked in full game\" can be seen behind the island cannon if the player changes the language and sets the text size to the biggest",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "99c1512904d4",
+   "text": "The screen flickers if the player tries to go through the other side of the portal on snow island 1",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "efd0798ea5fd",
+   "text": "The car spawns underwater while traveling to another biome after certain steps",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "fdba74f73837",
+   "text": "The car is redirected to island 1 after completing the VIP landmark level",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "219631944835",
+   "text": "Island unlock popup is not invoked after unlocking an island",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "26867d5bc471",
+   "text": "Old demo leaderboard times are sometimes shown in new demo",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "6163a7d59fc3",
+   "text": "The car wheels collide with the car's body if the player drives the car through the boost pad and immediately travels to another island using the island cannon",
+   "status": "addressed",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01",
+   "addressedBy": "you-suck-at-parking-138884@1.4.2",
+   "addressedAt": "2022-10-03T12:23:02.000Z"
+  },
+  {
+   "id": "bff8b19f0db3",
+   "text": "The landmark P sign blinks if the car moves around it",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  },
+  {
+   "id": "56d3e1f7b5eb",
+   "text": "Need to report a bug or ask for help? Feel free to join our Discord and use the appropriate channels, or email supporthappyvolcano.com.",
+   "status": "open",
+   "firstReleaseId": "you-suck-at-parking-138884@post-2022-09-01"
+  }
+ ]
+}

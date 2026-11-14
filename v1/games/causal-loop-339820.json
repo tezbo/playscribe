@@ -1,0 +1,1602 @@
+{
+ "game": {
+  "id": "causal-loop-339820",
+  "igdbId": 339820,
+  "name": "Causal Loop",
+  "cover": {
+   "imageId": "co9pg5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9pg5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3frj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3frj.jpg"
+  },
+  "ps5Release": "2026-04-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "causal-loop-339820@1.1.1",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-21T17:08:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released a small update focused on improving stability, addressing some lingering issues, and adding a handful of quality-of-life improvements. Thank you, as always, for your continued feedback and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shoutout to all the crazy folks combing through every corner of Tor Ulsat to unravel the final, chapter-spanning mystery!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that could prevent certain voiceovers from playing when the Curated or Event Skip option was enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some secret solutions can now be retried immediately, making them less punishing and reducing unnecessary friction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In relation to the previous change, a new checkpoint has been added to Chapter 15 (if you know, you know).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that could prevent a dossier entry from unlocking after completing Chapter 15.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented additional gameplay stability improvements and bug fixes for Chapter 15 and the Challenge Map \"Orbital Edge Case\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3374460/Causal_Loop/?l=german\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1838407329269563"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T17:08:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.606Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T17:08:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.606Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-21T17:08:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.812Z"
+  },
+  {
+   "id": "causal-loop-339820@1.1.0",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-06T16:56:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/b2ad6572763ae1f687634dcb6c7cc73e7feee308.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.1.0 marks a special milestone update for Causal Loop and introduces our first challenge experience: Orbital Edge Case. We've heard feedback from some players looking for a greater challenge, and pushed many of the game's mechanics further than we ever dared during the main campaign.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What exactly makes Orbital Edge Case different? We could explain it in writing, but apparently this happened instead:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://www.youtube.com/watch?v=SIZE30zyfa0\"]Orbital Edge Case can now be accessed at any point during your playthrough via the Chapter Select Menu. However, we strongly recommend completing the campaign first, as this map assumes familiarity with gameplay systems that are only introduced and fully explored during the later chapters of Causal Loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/18e4f554605ebe03341ef99ee614162487018d0b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, Patch 1.1.0 also includes some minor fixes and improvements to the overall experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued feedback and support. We really appreciate it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kai & The Mirebound Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3374460/Causal_Loop/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1834602721194199"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-06T16:56:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-06T16:56:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.606Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-06T16:56:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.811Z"
+  },
+  {
+   "id": "causal-loop-339820@1.0.5",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-24T19:02:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/833d00c2bb224d0394a477c287649a6638a1d8b8.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since launch, we’ve been reading a wide range of player feedback about Causal Loop, including discussions around how the game’s narrative pacing interacts with exploration and puzzle solving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Causal Loop was always built as a narrative-driven puzzle adventure, with dialogue, character development, cinematics, and environmental storytelling as part of its core.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That being said, we’ve heard from some of you who prefer a more gameplay-focused experience with fewer narrative interruptions while you’re solving puzzles and exploring Tor Ulsat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s why, with Update 1.0.5, we’re adding new ways to play the game so you can better choose what fits you best.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/88754ad703e88110bbcbd76f13e1561fe7340cea.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting a new game on a fresh save slot will now bring up a Mode Selection screen, where you can choose between the full narrative experience, a more streamlined narrative experience that keeps the focus tighter on gameplay flow, or a pure gameplay mode for repeat playthroughs, achievements, or speedrunning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This took us a bit longer than planned because we didn’t want to just rush this. We wanted the different modes to still feel like Causal Loop, just tuned for different ways of playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also expanded the gameplay options so you can fine-tune things further at any point, no matter which mode you picked, continuing to build on the flexibility of options in the game many of you have already come to appreciate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whether you’re here for the story, the atmosphere, the puzzles, or all of it together, you’re welcome in Causal Loop and we hope you’ll enjoy exploring the new options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Mode Selection",
+     "items": [
+      {
+       "text": "A new Mode Selection screen has been added when starting a new game on a fresh save slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Complete Narrative",
+     "items": [
+      {
+       "text": "The original experience, featuring all dialogue, cutscenes, and story events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Streamlined Narrative",
+     "items": [
+      {
+       "text": "A curated experience designed to keep a stronger focus on exploration and puzzle solving. Some Narrative elements such as dialogue, cutscenes, and certain events are significantly reduced, with no direct guidance during puzzles and exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Only",
+     "items": [
+      {
+       "text": "This mode was previously available via the “Skip Story Events” option in Gameplay Settings, but is now also selectable at the start of a new game. It is not recommended for first-time players, as it removes all story dialogues, cutscenes, and narrative events and is mainly intended for replaying, achievements, or speedrunning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & Other Changes",
+     "items": [
+      {
+       "text": "The “Automatic Exit Vector” option has been renamed to “Goal Hints” to better reflect its function",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "HDR brightness behavior has been corrected. Brightness settings are now disabled when HDR is active, as they have no effect in this mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the key charged throw audio could persist after the key was placed or removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where audio ducking for music and sound effects would not properly reset in certain situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue with the player arm animation in Phase Rifts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted scan range for the first Gateway in Chapter I to match tutorial guidance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved consistency of keys interacting with antigravity streams at certain throw angles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved reliability of Antigravity Lift behavior at start and end positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various collision fixes across multiple chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes for inconsistent emissive and shadow casting behavior across multiple chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional gameplay stability improvements and fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your continued feedback and support. We really appreciate it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Kai & The Mirebound Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0,
+    "topNew": [
+     "A new Mode Selection screen has been added when starting a new game on a fresh save slot."
+    ]
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1833334318575806"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-24T19:02:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-24T19:02:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.605Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-24T19:02:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.810Z"
+  },
+  {
+   "id": "causal-loop-339820@1.0.4",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-08T22:04:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/b39aead93bc484aa998c52696e3b7edd7df3c626.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1.0.4 mainly introduces a handful of new optional settings for players who prefer a more customized experience. Some HUD elements can now be adjusted further, and we’ve added new accessibility features that let you fine-tune how forgiving the game is when Bale dies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You might also notice some changes in the Chapter Select menu, where we’ve added a new UI element in preparation for Patch 1.1.0, so stay tuned for that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extended the Chapter Select menu in preparation for our milestone patch 1.1.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Echo collision behavior with keys to feel more precise and forgiving in most situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Certain non-story dialogues - especially ones related to secrets - will now always play, even when Event Skip is enabled (We don't want you to miss the good stuff)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to disable the center HUD dot visual (crosshair)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new optional quality-of-life feature that allows Echo reset after player death to be toggled off (we heard you!). This option can be found under Gameplay Options → Difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Internal controller deadzone settings are now also applied to the \"immersive helmet HUD\", if enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that could occasionally prevent head bobbing from working correctly while carrying a key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inactive torches in an important story location will no longer play ambient audio before they become relevant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted several key throw setups to make them slightly easier and more reliable to perform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the chromatic aberration effect while using the scanner (this was especially egregious on ultra and superwide screens and should be a lot better now)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Various collision fixes across multiple chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various additional gameplay-related fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued feedback and support. We really appreciate it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kai & The Mirebound Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 2,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1832065502816378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T22:04:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.604Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-08T22:04:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.604Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-08T22:04:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.809Z"
+  },
+  {
+   "id": "causal-loop-339820@1.0.3b",
+   "gameId": "causal-loop-339820",
+   "displayName": "Hotfix 1.0.3b",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-02T21:50:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just rolled out a small hotfix addressing a rather elusive issue that slipped in with Update 1.0.3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A specific checkpoint removal unintentionally made it impossible to leave a secret area. That has now been resolved, and the area should behave as intended again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside that, we’ve included a few minor collision fixes across the game. Nothing major this time, just smoothing out a couple of rough edges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kai & The Mirebound Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1831432155574540"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-02T21:50:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.603Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-02T21:50:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.603Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-02T21:50:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.806Z"
+  },
+  {
+   "id": "causal-loop-339820@1.0.3",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-01T18:41:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/4e1ba32f7aecdb9816f33615bfadaaa34119a6ba.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Update 1.0.3, we had a look at a wide range of smaller issues and rough edges that could sometimes get in the way of a smooth experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller input should now behave the way you expect it to. A few confusing progression moments have been cleaned up - and some interactions that felt a bit… stubborn have been convinced to behave the way they should. We're specifically talking about a few \"wait, is this supposed to work like that?\" situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also took another pass at general clarity and consistency across multiple chapters. That includes improving visibility and conveyance where it mattered, as well as trimming down elements that ultimately added more confusion than value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, a lot of this comes directly from what you've been telling us and we're incredibly thankful for the input. See the full list of patch notes below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where controller stick dead zones were not applied correctly, which could cause unwanted drifting inputs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the default controller input for skipping dialogue and cutscenes to “D-pad up”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where some gameplay settings were not properly reset to their default values when using the reset option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly reduced how often Bale comments when interacting with certain gameplay systems in Chapter 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The teleporter dossier entry now unlocks correctly in Chapter 04",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restored a missing conveyance symbol in the final puzzle of Chapter 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Discord button in the main menu would remain in the foreground when attempting to quit the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the behavior of a certain secret object in Chapter 02 to make it less frustrating to interact with",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed checkpoints \"3a\" and \"3b\" in Chapter 07",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These checkpoints caused unnecessary confusion without adding meaningful value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential soft lock related to a secret in Chapter 07",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Certain hidden objects are now easier to scan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor collision and mesh related fixes across several chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various other minor issues have been addressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued feedback and support. We really appreciate it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kai & The Mirebound Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1831432155572227"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T18:41:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T18:41:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.602Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-01T18:41:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.805Z"
+  },
+  {
+   "id": "causal-loop-339820@1.0.2",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-27T01:06:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/49f6239121213e3d7b786a678981bb14c6279614.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we heard you loud and clear. While this update addresses a range of smaller issues, quality-of-life frustrations, and a few lingering glitches, it also tackles one of the most requested improvements: a smoother dialogue flow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Update 1.0.2, we’ve significantly reduced the amount of time your movement is restricted during dialogue. Our original approach aimed to prevent overlapping or interrupted conversations, but it ended up feeling too limiting in practice. This was something that ultimately didn’t receive the attention it needed during the final stages of development—but it should have.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve now cut these interruptions by around 85%. And if a line of dialogue does get overridden, it will automatically be added to your dialogue log in the menu, so you won’t miss out on anything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fly free now! No more invisible handbrakes. ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved overall dialogue pacing, especially in the early chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "→ Players will no longer be frequently stopped to wait for dialogue to finish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "→ This should result in a smoother experience, particularly for those unaware of the option to skip dialogue and cutscenes (e.g. by pressing/holding the X key)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "→ Note: As a result of this change, dialogue may now be interrupted more frequently at key locations if progressing quickly through a chapter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "→ Real-time cutscenes remain unchanged and will still need to be skipped manually if desired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse Wheel (Up/Down) can now be assigned as a keybinding",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted scan range for a specific object in Chapter 09",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "It should now be easier to access the Stasis Cache at the end of Chapter 03",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "History and Mission dossier entries that have already been read will no longer reset to “unread” when revisiting related story points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Discord button to the main menu (Drop in, say hi!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved system scan behavior for bridges to better match their actual shape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor collision and mesh fixes across several chapters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various other minor issues addressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued feedback and support. We really appreciate it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kai & The Mirebound Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3374460/Causal_Loop/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 1,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1830797770241107"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-27T01:06:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.601Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-27T01:06:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.602Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-27T01:06:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.804Z"
+  },
+  {
+   "id": "causal-loop-339820@1.0.1",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-25T12:22:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just rolled out Update 1.0.1 for Causal Loop. This update addresses a handful of smaller issues and is intended to make your journey through Tor-Ulsat as smooth as possible. You’ll find the full list of changes in the patch notes below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The motion blur setting should now be properly taken into account during chapters 01 and 08",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue to prevent the iteration chase event in chapter 04 from starting too early under specific conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in chapter 05 to prevent a larger rock asset from visually disappearing when it should not",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some locations where players could get partially stuck in chapters 06, 10 and 13",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor logic setup as well as some collision issues at the start of chapter 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Flashback cutscene coloration should now be properly monochrome as intended while HDR is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased the size of the checkpoint selection popup info text on the chapter select screen for better readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "French text for locked chapters on the chapter select screen should now properly fit into their respective boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor text fixes for English and German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1830797770238442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-25T12:22:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.601Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-25T12:22:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.601Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-25T12:22:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:03.803Z"
+  },
+  {
+   "id": "causal-loop-339820@02",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-29T14:26:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/fc4d9997d7f98abec1304f60a978dcebe7ed5938.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With only three of us working on this game, every detail you'll get to see has to earn its place in our own hearts as well. This time, we want to take you deeper into one of our worldbuilding efforts we’re especially proud of: the Tor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When we began designing the Tor, we wanted to create a civilization that felt lived in. One that could have risen, thrived, and ultimately collapsed, leaving only fragments for you to uncover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/4e69aea0ce3a10e998f5fb7a17cb6f9ac153c1c2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our starting point was their homeworld: Tor-Ulsat (as humans call it). It’s true name, spoken in the tongue of the Tor, has since been lost to time. Orbiting the sixth planet of its sun in the Cygnus sector of our own galaxy, Tor-Ulsat is a desolate and ragged world. A place, scarred by an extinction event that marked the beginning of the Tor's downfall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1 - Laying the Foundations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During early sketch phases, we drew inspiration from Earth’s own vanished cultures. We looked into what made them thrive, what they believed, and what traces they left behind. The goal was to make sure that if players were going to uncover the Tor, their civilization needed to feel authentic, with enough realism woven in to make them matter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/237cdda69d2f27dd05a84015f60b09bb31aff57b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We imagined the Tor as deeply connected to nature and our idea was to have their culture revolve around a sacred oath never to violate their world. But we knew they couldn’t just be \"idealized\" guardians of their home planet. Their downfall had to come from within. A single, catastrophic misstep that shattered the harmony they had struggled so hard to build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 - Design Principles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From a design point of view, we wanted the Tor to feel advanced without falling into the usual sci-fi clichés of gleaming cities or sprawling megastructures. We wanted to create spaces that feel both alien and believable. Machines hidden in caverns, temples carved into cliffsides, structures that look less “built” and more “grown into place.” This approach also gave us a way to weave their philosophy directly into the environments players will explore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/c6d076fea3a741a6ad381ef7985728f09030abc9.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although their way of life might appear tribal at first glance, the Tor were anything but primitive. Their civilization was powered by a unique energy source found only on their home world, and with it, they built extraordinary devices and machines. These creations were designed to ease life’s burdens, but always in balance with their oath not to damage their own ecosystem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3 - Story Considerations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We had to make sure that the Tor aren’t simply “the ancient aliens” of Causal Loop. They shouldn't just be used as a story lever, or a MacGuffin. They work more as a way to explore ambition, reverence, and the dangers of overreaching within Causal Loops main story. We grounded them in nature and technology to make sure their presence feels authentic, but mysterious at the same time, like a people who might have truly existed somewhere in our galaxy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/16c2bc8b1f3dafe0974a9c98ab8c48e5f60ac13e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of course, their tale doesn’t end here. The terrible mistake that led to their downfall is something players will uncover for themselves, piece by piece, as they explore the ruins of the Tor. Their fate is deeply entwined with Bales’ own path and what they left behind will shape the challenges he faces and the choices he must make.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope this short sneak peek gave you an insight into how the team thinks and feels about worldbuilding in Causal Loop. There’s much more to uncover though, so stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until next time and thanks for being on this journey with us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kai & the Mirebound-Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3374460/Causal_Loop/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1811772772376288"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T14:26:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.600Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:13.841Z"
+  },
+  {
+   "id": "causal-loop-339820@01",
+   "gameId": "causal-loop-339820",
+   "displayName": "Update 01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-06T21:39:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/853d1f01ceb215ba13cca5982a593aa7845352a8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fellow explorers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "gamescom was an unforgettable week for us, and that’s thanks to all of you who stopped by our booth to play the Causal Loop gamescom demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And you didn’t just play. You experimented, discovered paths we hadn’t expected, and pushed the limits of our puzzles in ways that made us go \"wait, what?\". We’re humbled (and still a bit shaken) from all the positive feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since we didn’t have a lot of time time to post updates in the past, we’ll be making it a point to share more of our process here on Steam going forward. Expect regular check-ins, insights, and a peek behind the curtain as we get closer to the final stretch.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45579268/6c43738565f26577eb83ca4248855e12b18f6d0e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right now for example, our focus is on pulling the full story together so we can finally step into the recording booth with our amazing voice actors to record the rest of the game. That means combing through every line of dialogue, tightening what feels off, cutting what no longer fits, and making sure everything flows as it should. Turns out 2 years of re-writes leave you with quite some debt that is now demanding to be paid ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until next time and thanks for being on this journey with us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kai & the Mirebound-Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3374460/Causal_Loop/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3374460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3374460/view/1809869180111421"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-06T21:39:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-3374460",
+      "checkedAt": "2026-11-13T03:17:10.599Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:13.840Z"
+  }
+ ],
+ "issues": []
+}

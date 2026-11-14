@@ -1,0 +1,867 @@
+{
+ "game": {
+  "id": "albacete-warrior-152237",
+  "igdbId": 152237,
+  "name": "Albacete Warrior",
+  "cover": {
+   "imageId": "co39ox",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co39ox.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arwm3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arwm3.jpg"
+  },
+  "ps5Release": "2023-02-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "albacete-warrior-152237@1.1.1",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-24T00:13:48.000Z",
+   "notes": [
+    {
+     "title": "A quick update to fix a few things",
+     "items": [
+      {
+       "text": "Fixed the jump against the wall in depth in the waterfall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Benito's interactions when grabbing onto the wall when exiting an aerial dash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The mechanic of braking the player to avoid falling off an edge when landing on it has been better implemented",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed (finally) the mechanic of rolling in the Temple of the Jungle: you can no longer go through the walls and there are no more dashes towards the ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several abilities of the bosses disappear when they are defeated so that the player does not die from them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the checkpoint that loads when you fall in front of the first movable platform at the end of Egypt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Raijin no longer stays stuck in the air without attacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now Dark Benito ALWAYS deals damage, at least to the enemy he is targeting for his attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/4224938027301072097"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-24T00:13:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.373Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.373Z"
+  },
+  {
+   "id": "albacete-warrior-152237@1.1.0",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-22T15:37:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello there fellas,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we bring you a few fixes that we have been working on these days. Since the early access came out, we have been watching other people's videos and streams and we are working on correcting all the bugs that have come out as soon as possible. Here is a list of all the changes that this new version brings:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GENERAL CHANGES",
+     "items": [
+      {
+       "text": "eliminated a bug after some attacks that made Benito float and walk through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "slightly adjusted the jump when it starts close to a wall on Benito's horizontal axis to make it easier to hold onto the wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MAIN MENU",
+     "items": [
+      {
+       "text": "updated the credits of the main menu, before they were not exactly the same as those of the end of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ALBACETE / DOJO",
+     "items": [
+      {
+       "text": "adjusted collisions at tutorial level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tutorial information pop-ups now only display buttons for the device Player 1 is using, instead of toggling between controller / keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "JUNGLE",
+     "items": [
+      {
+       "text": "cartwheeling in the jungle temple should no longer cause Benito to go through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HIMALAYA",
+     "items": [
+      {
+       "text": "corrected a typo in one of the dialogs near the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug in the destroyed Albacete cargo. If you left the menu or closed the game, it would load the next level to the corresponding one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "eliminated the possibility of brandishing Pepito in the fake credits scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a bug where the music of the final boss was not heard after dying and restarting the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "while fixing various situations that cause Benito to go through the ground, if this happens in Albacete's level against the final boss, the player will now respawn correctly above the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the FAS3 team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/4224938027296122302"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-22T15:37:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.373Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.373Z"
+  },
+  {
+   "id": "albacete-warrior-152237@0.4.1",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "Update 0.4.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-26T11:01:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug causing the player not being able to load the new levels when pressing the \"Continue\" button on the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/4038024692300287172"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-26T11:01:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.372Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.372Z"
+  },
+  {
+   "id": "albacete-warrior-152237@0.4.0",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "UPDATE 0.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-23T16:41:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "What is goin' on partylovers?!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Did anyone miss us? If you were waiting for more Albacete Warrior content, and awaiting with curiosity to know how Benito's adventures continue, the wait no further. It is here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What's in the new update?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 new levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The followup to Benito's story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New abilities and powers unlocked with the game's progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A new trailer, watchable in the store page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New cover art, used to replace the images of both the store and user library of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More absurd humor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More cockslapping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More pixelated blood.: ----------------------------------------------------------------------------------------------------------------: Lastly, we would like to thank everyone who has bought or played the game, and everyone who has reported a bug, left us a review, or offered us any kind of feedback.: This means the world for us, we love seeing you playing our game, and fuels our motivation to keep working hard to create things you will like, and might leave a mark in your hard, because every one of you have left one in ours.: One more time, we are asking you to leave us any kind of feedback, bug, or tell us how your quest in achieving what you want in life is going using any of our media channels. (Discord/Twitter/Youtube/e-mail) We will read it attentively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "With a lot of love",
+     "items": [
+      {
+       "text": "Fas3 Studios Dev team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/4038024692290228457"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-23T16:41:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.372Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.372Z"
+  },
+  {
+   "id": "albacete-warrior-152237@0.3.1",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "Update 0.3.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-14T08:46:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "GAMEPLAY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added new icons for the Controller buttons (Xbox)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "• Added input indicator to use Xusos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Modified the ringtone of the Fokia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUG FIXING",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed translation error in the separation indicator between Benito and Dark Benito",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the Spawn particle system when playing 2 players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed input prompt to use cure in controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the bug that did not show the main menu when returning from a scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/5019805792174942120"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-14T08:46:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.371Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.371Z"
+  },
+  {
+   "id": "albacete-warrior-152237@0.3",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "UPDATE 0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-10T16:26:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Quality of life changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey everyone, we'd like to start this announcement by thanking every single one of you for playing the game, and leaving your reviews. So far the reviews have been mostly positive, and we aim to keep them like so. We are proud and excited to be creating someone that you are all enjoying, seriously, and we will try our best to keep it like that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have implemented some QoL changes to some parts of the game and the tutorial, with the aim of improving the games and menus clarity. If you feel these changes are not achieving this, or there is any feedback you'd like make us aware of please do let us know through our discord. Thank you for your time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI and Icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added \"contact us\" icons and buttons to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added use indicators to the players abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added new keyboard icons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Added the current game version to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added a visual input to show the player how to use the dark benito.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Dodge tutorial was modified so he player can't just move away, and the dodge is actually easy to achieve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Modified the double jump and roll air jump tutorial layout so players get properly introduced to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Modified the containers a the Dojo to get a smoother climb, and avoid technical problems with the in-depth collision detection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Changed some dialogue lines that weren't too coherent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will continue to work on the build, and we encourage everyone to please let us know your opinion, or any problems you might've had with the game. As a reminder, we will be adding 2 more levels SoonTM, so stay tuned to our discord or twitter to not miss it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once again, thank you for playing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in Albacete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sincerely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fas3 Studios Team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/4093189984238825358"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-10T16:26:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.371Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.371Z"
+  },
+  {
+   "id": "albacete-warrior-152237@0.2",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "Update 0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-04T15:47:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "BUGFIXING",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the bug that skipped the combat of the first boss when playing from level selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The player's life bar has been corrected, it was in front of the menu in the Tutorial Dojo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The transparency of the outer pillars of the Dojo has been disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The text of the level completed screen has been corrected to return to the menu (SPA)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Corrected the translation of the indicative sign when unlocking new powers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The decorative texts of the main menu have been corrected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/4093189347046967812"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-04T15:47:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.370Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.370Z"
+  },
+  {
+   "id": "albacete-warrior-152237@major-2021-05-28",
+   "gameId": "albacete-warrior-152237",
+   "displayName": "Minor update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-28T11:01:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Corrected a typo in the English version for Manolo dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1605480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1605480/view/4069544815359586410"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-28T11:01:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1605480",
+      "checkedAt": "2026-11-11T18:33:46.369Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:46.370Z"
+  }
+ ],
+ "issues": []
+}

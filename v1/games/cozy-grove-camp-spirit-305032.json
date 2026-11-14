@@ -1,0 +1,566 @@
+{
+ "game": {
+  "id": "cozy-grove-camp-spirit-305032",
+  "igdbId": 305032,
+  "name": "Cozy Grove: Camp Spirit",
+  "cover": {
+   "imageId": "co8p8t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8p8t.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6b02",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6b02.jpg"
+  },
+  "ps5Release": "2026-07-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cozy-grove-camp-spirit-305032@3.3.1",
+   "gameId": "cozy-grove-camp-spirit-305032",
+   "displayName": "Patch 3.3.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-21T18:47:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Spirit Scouts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've heard your recent feedback around crashes and some other areas of the game that needed Quality of Life adjustments. 3.3.1 addresses these crash reports as well as continued feedback around things like mythical shell spawn rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone here on Steam as well as our players in the Cozy Grove Discord for flagging these issues so quickly for us to look into. Hopefully we can make your experience a bit smoother with this one!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Note: the demo version of the game has also been updated with these changes, but will instead be reflected as v3.3.2 when you update. The patch notes are the same despite the version number difference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed Kyli's pronouns for a quest localized in German 💛",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes happening when entering/exiting the tent or other houses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented unlocking the P.A.W.S. Seedling Badge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where companions would stop following the player after entering/existing a building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where companions would not give you back your money after selling to Mr. Kit if you exited a building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality-of-Life Improvements",
+     "items": [
+      {
+       "text": "Checked on the spawn rate of mythical shells after continued feedback about their spawn rate and adjusted what may be impacting it. These should be easier to find now - please let us know!: We'll keep an eye on the Discord and forums, so please let us know if you continue to have any issues!: [img src=\"{STEAM_CLAN_IMAGE}/46026647/fe74582abab3b4c18a3fd27842e4670361cce3dd.png\"]: All the Spry Foxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2021960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2021960/view/1847286114029986"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-21T18:47:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-21T18:47:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.142Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-21T18:47:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:30.288Z"
+  },
+  {
+   "id": "cozy-grove-camp-spirit-305032@3.3.0",
+   "gameId": "cozy-grove-camp-spirit-305032",
+   "displayName": "Patch 3.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-29T00:00:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi again, Spirit Scouts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back with some additional Quality-of-Life improvements and bug fixes in response to your reports. Thank you for all your feedback in the days after launch, it's been a huge help for our small team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update, we've also added Simplified Chinese, Traditional Chinese, and Latin American Spanish translations to the game. 🥳 We're super excited about this, and we appreciate you all waiting while we made sure these translations passed our quality bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now we'd love to hear your feedback in the Cozy Grove Discord and we're looking forward to hearing about your experience, especially if this is your first time playing. <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Okay, onto the full Patch Notes! ↓",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a crash that could happen when scrolling the friends list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect \"full storage\" popup text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could lose the items needed for some Altar quests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where animals could disappear 🦌❌",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Soul Shepherd badges not being rewarded properly (thank you for all those reports!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality-of-Life Improvements",
+     "items": [
+      {
+       "text": "Fixed some Korean typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a fireworks toggle for the Summer festival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed gamepad controls to use Craw's dig ability and Snugula's \"what's up\" dialog option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Simplified Chinese, Traditional Chinese, and Latin American Spanish translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a quest item recovery option for specific quest types: We'll continue to keep an eye on the Discord and forums for bug reports & feedback.: It's been incredible seeing all of your screenshots and posts in the Community pages. We can't emphasize enough just how much these little ghost bears mean to us. It's wonderful to know they mean just as much to so many of you.: Until next time.: [img src=\"{STEAM_CLAN_IMAGE}/46026647/fe74582abab3b4c18a3fd27842e4670361cce3dd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Fixed some Korean typos",
+     "Added a fireworks toggle for the Summer festival",
+     "Fixed gamepad controls to use Craw's dig ability and Snugula's \"what's up\" dialog option"
+    ]
+   },
+   "sourceIds": [
+    "steam-2021960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2021960/view/1842212951304586"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-29T00:00:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-29T00:00:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.142Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-29T00:00:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:30.287Z"
+  },
+  {
+   "id": "cozy-grove-camp-spirit-305032@3.2.6",
+   "gameId": "cozy-grove-camp-spirit-305032",
+   "displayName": "Patch 3.2.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-20T19:59:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here's our first patch for Cozy Grove: Camp Spirit on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In this one, we're bringing you some fixes based on your reports over the last few days, including a fix that should address texture quality issues and low default resolution settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes for v3.2.6",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where disabling Vsync was capping the game at 30fps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enabled using the right thumbstick to scroll item information UI that has a scrollbar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where pressing L in the \"Craft Multiple\" UI would bring up the Filter UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Capped the \"Craft Multiple\" UI L/R buttons to +/- 10, not minimum/maximum: ##: Quality-of-Life Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved texture quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set the default game resolution to 1920x1080 instead of 720p",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set default to fullscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a calendar to the Main Menu to display current in-game event dates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some translation fixes for Korean: We'll be continuing to keep an eye on the Discord and forums for bug reports & feedback.: Thank you so much for all of your support in the past week! We're so happy to see all of your screenshots and hear about your experiences playing the game, especially if this is your first time getting to do so. This little game about ghost bears means a lot to us, and we really appreciate hearing how much it means to you, too.: We'll be back with more to share soon, Spirit Scouts.: [img src=\"{STEAM_CLAN_IMAGE}/46026647/fe74582abab3b4c18a3fd27842e4670361cce3dd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2021960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2021960/view/1838407329267437"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T19:59:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-20T19:59:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.141Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-20T19:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:30.286Z"
+  },
+  {
+   "id": "cozy-grove-camp-spirit-305032@post-2026-07-15",
+   "gameId": "cozy-grove-camp-spirit-305032",
+   "displayName": "Simplified and Traditional Chinese localization coming in a few weeks!",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-15T19:23:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In the coming weeks, we plan to have an additional update with new localization added as well as additional Quality-of-Life adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please rest assured that we are doing everything we can to publish the Simplified and Traditional Chinese localization of Cozy Grove: Camp Spirit as soon as possible. We want all of you to have a great experience with our game, so we are taking more time to carefully translate and perform QA on these translations, so that we can be more confident in them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We currently believe that we should have this ready no later than the end of August, and we are working hard to get it done sooner. Thank you so much for your understanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46026647/fe74582abab3b4c18a3fd27842e4670361cce3dd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2021960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2021960/view/1838407329255032"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T19:23:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T19:23:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2021960",
+      "checkedAt": "2026-11-13T03:17:51.140Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-15T19:23:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:30.285Z"
+  }
+ ],
+ "issues": []
+}

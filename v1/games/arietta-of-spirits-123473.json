@@ -1,0 +1,472 @@
+{
+ "game": {
+  "id": "arietta-of-spirits-123473",
+  "igdbId": 123473,
+  "name": "Arietta of Spirits",
+  "cover": {
+   "imageId": "co2jwo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2jwo.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arm11",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arm11.jpg"
+  },
+  "ps5Release": "2023-12-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "arietta-of-spirits-123473@1.2.9.0",
+   "gameId": "arietta-of-spirits-123473",
+   "displayName": "Update 1.2.9.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-01T19:01:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have released a new update for the game! The changes consist mostly of quality of life updates, but also include a fix for a major issue when running the game at 30 fps (for example, when in Steam Deck's 30Hz power save mode).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Additionally, we've added some features to support the speedrunner community. These features include a fixed memory location that contains the current state of the game (to enable support for autosplitting tools) and a way to completely disable the conversation dialogs via a change in the game's setting file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can discuss and learn more about these features in our Discord channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fix for issues when running game at 30Hz (Steam Deck power save mode)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for speedrunning features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix issue where player can get stuck when visiting Almona",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Italian translation fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to pixel perfect scaling at aspect ratios other than 16:9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1140170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1140170/view/4469272893489814694"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-01T19:01:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1140170",
+      "checkedAt": "2026-11-11T18:34:05.070Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:05.070Z"
+  },
+  {
+   "id": "arietta-of-spirits-123473@1.2.8.0",
+   "gameId": "arietta-of-spirits-123473",
+   "displayName": "Update 1.2.8.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-12T14:54:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've made various bug fixes and performance improvements to the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is a more detailed list of changes in this update",
+     "items": [
+      {
+       "text": "- Various visual and performance improvements on lower end hardware",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- Fixed collisions issues in Mine maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- Improvements to hit detection with Shade Roamer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- Added a warning marker to \"Sunken Behemoth\" Vortex attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- Fixes to depth issues with various items throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "- Fixed an issue where player can get stuck when talking to Almona",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+ Other smaller quality of life updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1140170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1140170/view/4020014731806035596"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-12T14:54:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1140170",
+      "checkedAt": "2026-11-11T18:34:05.069Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:05.069Z"
+  },
+  {
+   "id": "arietta-of-spirits-123473@major-2020-11-03",
+   "gameId": "arietta-of-spirits-123473",
+   "displayName": "An update about the release date",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-11-03T19:54:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to let you know that the launch of Arietta of Spirits will unfortunately be delayed until the beginning of 2021.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Originally, we were hoping to release the full version of the game this year, but rather than rushing things, we want to take the time and polish the game to the level we are happy with. We have also listened to your feedback from the demo and have made changes, both big and small, to make the finished game even better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once we are able to settle on an exact release date, we will let you know! So stay tuned for more news and updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To those who are more interested in details, here are some things we are still working on to finish:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish of the final area of the game and the related cutscenes (This is quite a lot different from the rest of the game. It's going to be epic and emotional, and we don't want to spoil it – hence the lack of updates lately)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish of the mechanics, graphics and sounds for the final bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Testing, ...lots of testing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other administrative and business side of things",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your patience is highly appreciated, and we'll try to make sure that it'll be greatly rewarded once the game comes out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arietta of Spirits Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1140170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1140170/view/3884878205233571789"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-11-03T19:54:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1140170",
+      "checkedAt": "2026-11-11T18:34:05.068Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:05.068Z"
+  },
+  {
+   "id": "arietta-of-spirits-123473@major-2020-06-02",
+   "gameId": "arietta-of-spirits-123473",
+   "displayName": "Development update: The Spirit Shield",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-02T16:09:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "During her adventure Arietta and her sidekick Arco gain the ability to use a powerful new move called the Spirit Shield. Used in tandem with the Spirit Sword the Spirit Shield open up both defensive and offensive ways to stay in the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It can be used to block enemy attacks and projectiles, either with a fast block or by creating a more lasting barrier around Arietta:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Spirit Shield uses Spirit Energy and it depletes quickly, so you'll have to keep your eye on the spirit power gauge! Luckily it will recharge by itself. The Spirit Shield may be utilized in other ways too, but you'll have to figure them out by yourself ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you at the next update! If you haven't already, please add the game to your Wishlist!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1140170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1140170/view/3142896212107292204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-06-02T16:09:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1140170",
+      "checkedAt": "2026-11-11T18:34:05.067Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:05.067Z"
+  },
+  {
+   "id": "arietta-of-spirits-123473@1.0.0.6",
+   "gameId": "arietta-of-spirits-123473",
+   "displayName": "Update 1.0.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-17T16:06:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The demo has been updated. This update includes a highly requested feature; support for remappable controls, among other various bug fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This will probably be the last update for the demo. We're still on track to release the full game later this year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1140170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1140170/view/3893864668628570446"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-17T16:06:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1140170",
+      "checkedAt": "2026-11-11T18:34:05.067Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:05.067Z"
+  }
+ ],
+ "issues": []
+}

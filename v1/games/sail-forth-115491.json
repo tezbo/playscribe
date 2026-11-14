@@ -1,0 +1,4606 @@
+{
+ "game": {
+  "id": "sail-forth-115491",
+  "igdbId": 115491,
+  "name": "Sail Forth",
+  "cover": {
+   "imageId": "co1usz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1usz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar9oo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar9oo.jpg"
+  },
+  "ps5Release": "2022-12-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sail-forth-115491@1.7.6",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.7.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-03T22:46:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, here is a quick small patch to address a few issues I've seen crop up over the last couple months. The biggest thing is a fix to some incorrect spawn logic which could cause certain encounters to spawn at the center of a location which would often be inside an island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This also includes a fix for displaying proper keyboard glyphs when using an alternate keyboard layout. Thanks to members of the sail forth discord for reporting this!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Bugfix: Fix cases where some quest content could spawn inside islands, particularly Bonnibel and Kerblapp during the bibblebait quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Disable expiration timer on intro spyglass tutorial to avoid missing it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Properly handle alternate keyboard layouts when displaying keyboard glyphs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As always, thanks for playing my game, and Gorbspeed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1828894815561474"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-03T22:46:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-03T22:46:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.580Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-03T22:46:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.320Z"
+  },
+  {
+   "id": "sail-forth-115491@1.7.5",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.7.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-21T21:35:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all, here's the latest patch with a couple important fixes, along with some smaller bugfixes. This should be hitting the rest of the platforms fairly soon as well!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for your continued support and bug reports to the game, it's all very helpful!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.7.5",
+     "items": [
+      {
+       "text": "Bugfix: Fix potential softlocks in New Game Plus related to the harpoon, the researcher, and Marga",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix potential softlock in Kreb battle where it can become invincible if attacked at a specific point of its animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix kreb shell armor stat not being properly applied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix case where the spyglass tutorial could be uncompletable if the player waits long enough",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix cases where target shooting targets could end up underwater or in the wrong position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix error related to the Pretty Good Fish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Prevent attempting to equip mods that are already equipped, which could result in duplicate items being spawned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1825093633190884"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-21T21:35:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-21T21:35:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.580Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-21T21:35:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.319Z"
+  },
+  {
+   "id": "sail-forth-115491@hotfix-2026-01-19",
+   "gameId": "sail-forth-115491",
+   "displayName": "Croaker Update Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-19T18:34:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, happy to see ya'll enjoying the new Croaker update! This is a quick hotfix in response to a report of an old save failing to load. If you experienced a black screen when selecting your save but a new save loaded fine, this is likely the fix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix case where a save in the Eclipside arc might fail to load: Note I'm not bumping the in-game version number for this tiny fix, will wait for a few more fixes before doing that!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1821922921821942"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T18:34:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-19T18:34:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.579Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-19T18:34:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.319Z"
+  },
+  {
+   "id": "sail-forth-115491@major-2026-01-16",
+   "gameId": "sail-forth-115491",
+   "displayName": "Battle for Croaker Command Update is Now Available!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-16T03:56:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34584373/f3211dee4a5bbad9afb7f4be6eab62cbab79c2d2.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to the Battle for Croaker Command update! This huge update brings a new Croaker quest and faction ship, new features, tons of bug fixes, and various other improvements and content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug reporting",
+     "items": [
+      {
+       "text": "If you find a bug you can report it directly from the game, using the 'Feedback' option found in the pause menu. This is helpful for me as it includes a copy of your save file, the log, and a screenshot which makes it much easier for me to find and fix the bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Croaker Expansion",
+     "items": [
+      {
+       "text": "A new quest for the Croakers now begins shortly after defeating the boss in Autumn Isles (along with completing either the Green Ruins or Frigid Sea). The quest involves building a Command Center for the Croakers and defending it against an assault from the Tekk Clan, who have developed a new weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Croaker Flagship",
+     "items": [
+      {
+       "text": "The Croaker Flagship is a new vessel acquirable via the added quest line. It has frog foot paddles which give it powered movement even when under sail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34584373/72d704baabfb41f3c4fa0acd957c9a8d55404a7e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tekk Walkers",
+     "items": [
+      {
+       "text": "The Tekk Clan have a new item in their arsenal, the Tekk Walker, which is a giant walking mech with lasers on it. They're encountered during the new quest line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Angler Bait Shop",
+     "items": [
+      {
+       "text": "A new building which can be constructed as part of the Croaker Command Center quest. Here you can trade fish for specialized bait which makes catching new fish from the relevant biome much more likely. Fishing bait is automatically used when it is relevant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34584373/693d5f6295ced7868c060236fa3b38459afc4fab.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Croaker Cantina",
+     "items": [
+      {
+       "text": "A constructable location which allows you to play Blowfish with a number of different NPCs. This is huge for Blowfish enjoyers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/34584373/0b4542fe3978be9e9ca1ad5c5c62dc000231b7d4.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fish Pond",
+     "items": [
+      {
+       "text": "A fun little vanity building which you can store any number of fish in and watch them swim around in it. A fun way to show off your favorite catches! Or just see how many yuckfish you can cram in there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game Plus-ish",
+     "items": [
+      {
+       "text": "You can now choose to start a \"new\" game within your existing completed save by talking to Doc Zissoo after the credits sequence. This will regenerate the world map, effectively resetting all quest and story progress, while retaining all of your fleet, inventory, and stored boats. The map will be regenerated with a new seed so things will be in different places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Revised Map Rumor Screen",
+     "items": [
+      {
+       "text": "The rumors panel in the world map has been redesigned to better act as a browsable \"quest log\" which is helpful when trying to figure out what to do next. The rumors list can be browsed by pressing tab or the \"View Rumors\" button. When browsing rumors the relevant location will be automatically selected in the world map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.7.2 Changelog",
+     "items": [
+      {
+       "text": "New: Add Tekk Walker enemy type to Tekk Clan faction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add Croaker Base quest line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add player-sailable Croaker Flagship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add Frog Logs resource item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add floating drift wood to Deepblue as a source of Frog Logs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Player constructable buildings system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Fishing bait items and mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Play blowfish with a variety of NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvement: Redesigned rumors view in the world map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Anglers and Croakers are hireable as sailors from various locations within their biomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Hireable sailors can now be hired even when the player ship has a full crew, and will be put below deck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix soft lock when selecting Deepblue as a Free Sail location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Case where turning in smuggled goods to the Croakers could cause a softlock when outside the bounds of the location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Sail trim UI sometimes would display a non-optimal trim position for your sails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Attempting to equip two of the same mod would cause one to disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix case where enemies could remain hostile during a cutscene or menu like the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix some UI screens not scaling properly with offbeat aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank you",
+     "items": [
+      {
+       "text": "I started making this game just about 10 years ago, and never imagined it would get anything close to the attention it has, so I really appreciate everyone who has played and enjoyed it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'll continue to bugfix and ensure the game is stable, but this is likely the last content update as it is time to work on new things! If you are on the Discord, then you've already seen some of what I'm working on!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to get the latest information about my future projects (I'm making another game!) then you can join my Discord. I also post development things under this name on Bluesky pretty often. If you like Sail Forth then I think you'll probably enjoy what I'm working on!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sail forth, and Gorbspeed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "David",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 1,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1821922921814857"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T03:56:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-16T03:56:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.578Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-16T03:56:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.318Z"
+  },
+  {
+   "id": "sail-forth-115491@1.6.8",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.6.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-01T21:05:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ahoy! Here's another very small patch, with rather large implications. I recently discovered a quite annoying bug in the game which meant that the UI indicating the best way to adjust your sails was actually wrong. In certain cases, this could mean that if you followed the UI hints to adjust your sails or used the Auto Sail accessibility option you'd end up moving quite a bit slower than you could have been.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This was most apparent when sailing on a cross wind, where the UI would recommend sailing fully close-hauled when in reality the best trim would be about halfway, AKA a beam or broad reach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I also slightly tweaked the UI for the bar, adding some small indicators which make the best trim position much more easily readable, especially if you have trouble distinguishing red and green colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.6.8",
+     "items": [
+      {
+       "text": "Bugfix: Fix desired sheet length calculation for boats to be more accurate for all points of sail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Add extra UI indicator to sail trim UI to make it more readable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1817483467046524"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-01T21:05:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-01T21:05:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.577Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-01T21:05:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.315Z"
+  },
+  {
+   "id": "sail-forth-115491@1.6.7",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.6.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-08T00:50:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi! This is a small bugfix patch which also includes a hotfix from Unity to address a recently discovered security exploit in their engine. As part of applying the hotfix, I've also updated the Unity engine by several major versions which may yield minor performance gains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition to the bugfix, after seeing a few comments about it I've decided to slightly increase the Proa's top speed to better fit its role as the fastest ship on the Deepblue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.6.7",
+     "items": [
+      {
+       "text": "Change: Increased Proa's max speed up to 15.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix for a case where the 4th Maelstrom boss encounter might not spawn. If you have experienced difficulty in finding the 4th boss, it should now spawn correctly for you once an in-game day passes and the appropriate quests have been completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I really appreciate everyone continuing to play and give feedback! I know the updates have slowed down, which is due to me taking the necessary time to begin new projects. That said, I do intend to create more content for Sail Forth in the future :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And If you're interested in my future projects, a great way to follow along is by joining the Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1813041031157819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T00:50:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T00:50:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.576Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-08T00:50:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.315Z"
+  },
+  {
+   "id": "sail-forth-115491@1.6.6a",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.6.6a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-06T20:13:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, this is just a tiny patch that does not change the version number in order to sync with the 1.6.6 that is going out to consoles and epic today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The biggest thing is making the ship shape shop not attack you when you have negative civilian standing. It was kind of fun but was an accident initially, and I think it is too confusing for many players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also I think thematically the slug merchants wouldn't get involved in your conflict and would simply prefer to take your Boat Parts 😄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.6.6a",
+     "items": [
+      {
+       "text": "Improvement: Many performance improvements across the board, particularly with large numbers of boats on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: The Ship Shape Shop is now considered a neutral entity and will not attack when you have negative standing with civilians",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1793384379382823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-06T20:13:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-06T20:13:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.576Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-06T20:13:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.314Z"
+  },
+  {
+   "id": "sail-forth-115491@1.6.6",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.6.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-24T19:54:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, here's a quick Christmas patch with some fixes and tweaks! This includes a couple changes that should hopefully address some issues people have encountered with the open world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first one is the introduction of a timed auto save feature. An unintended side-effect of the new Deep Blue open ocean was that saving occurred far less frequently as it was only triggered upon entering a location. This meant it was possible to spend a bunch of time in the open ocean without saving, and if you were sunk you could lose a lot of progress. To address this I'm adding a 5 minute auto save timer which will save when out of combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second thing is more subtle and if it works right shouldn't even be noticeable. During a recent play session in a new game I noticed that it was possible to not encounter any NPC boats for quite a while if you just happened to not cross paths with them as they wander. I think this isn't ideal as it can lead to having a pretty boring experience if you get unlucky, and new players might not even realize that there *are* NPC boats out there. To address this I've made some tweaks to the NPC wandering logic which makes them more likely to cross paths with you if it's been a while since you last encountered something 'fun'. This should *not* result in a constant stream of ships heading your way, the aim is just to prevent long stretches of encountering nothing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.6.6",
+     "items": [
+      {
+       "text": "Improvement: Auto save the game on a timer when out of combat to prevent loss of progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Occasionally redirect NPC boats towards player if you haven't encountered anything in a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Prevent pressing 'B' to close a menu from lowering your boat's sails at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix case where broken on-screen tutorial text could be displayed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix some errors that could happen when NPCs were sunk, potentially fixing some black screen bugs I've seen reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Wormkin forts now regenerate every 3 in-game days, instead of never.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1786573930793056"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-24T19:54:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.575Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-24T19:54:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.575Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-24T19:54:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.313Z"
+  },
+  {
+   "id": "sail-forth-115491@1.6.5",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.6.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-13T22:10:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, glad to see people enjoying the Before the Wind update! I got a couple bug reports and some feedback and have made some small changes to address these.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.6.5",
+     "items": [
+      {
+       "text": "Improvement: Add shell spells to the Moontide Shell Shop for controlling the weather. Useful for sailors hunting those last few fish!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Lightkeepers at the Lighthouse will now give directions to find the Maelstrom if you have not found it yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: More sailor types can be rescued from the Wormkin cages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix case where certain loadouts would have a broken visual at a distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everyone for playing and following along with the game! It was really nice to see all the positive comments about 1.6 😊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1783238125192935"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-13T22:10:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.574Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-13T22:10:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.575Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-13T22:10:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.313Z"
+  },
+  {
+   "id": "sail-forth-115491@1.5.8",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.5.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-08T02:24:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! I'm back from a trip and getting back into work on Sail Forth. This patch fixes a few bugs and also contains some nice quality of life improvements to crew management.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of you are apparently racking up hundreds of sailors below deck, and managing this screen plus finding the sailor you want to crew a boat starts to get a bit difficult. This update adds some filtering options to the below deck screen so you can filter to *just* Skull Clan for example.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This also includes a faster way to fill a boat with sailors via the new 'fill crew' option in the crew management screen, which uses the same filtering options to enable quickly crewing a boat with a particular sailor type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.5.8",
+     "items": [
+      {
+       "text": "Improvement: Add a tab to crew inventory screen for filtering sailors by type, helpful when dealing with large numbers of sailors below deck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Add “Fill Crew” with type selector option to crew management screen, useful for quickly filling an empty boat with sailors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a part of this change, “Remove All Crew” was moved to be below the “Crew” section of the screen, to be consistent with it’s behavior in only removing crew members, not the captain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Updated visuals when boats are equipped with golden oars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix a bug that sometimes resulted in locations having incorrect boundaries after fast travel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Handle fast traveling in the middle of Gregg’s penguin quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fixes to ensure achievements are properly unlocked, especially in Epic build",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always thanks to everyone for playing and following along with the game! Barring any important bug fixes, I intend the next update to include some fun new content and mechanics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5589599109263576318"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-08T02:24:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.573Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-08T02:24:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.573Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-08T02:24:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.310Z"
+  },
+  {
+   "id": "sail-forth-115491@1.5.7",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.5.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-21T02:30:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ahoy! This is another small patch which fixes one *big* thing I came across in my own testing, plus a few smaller tweaks and fixes to things I've seen reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This does include one new feature, which is that boats can now turn (slowly) in place! This uses the boats oars (and rowing stats) to turn when your speed is set to 0 and you turn the helm. It shouldn't be fast enough to significantly change any tactics but it is quite helpful if you're in a tight spot and want to maneuver your way out of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've historically been kind of against this as it felt like it might be a little too 'arcadey' but I've been convinced that it does make sense and I think the way it's implemented still feels realistic and maintains the weight of the boats. Let me know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.5.7",
+     "items": [
+      {
+       "text": "Fix a major bug that caused locations with DLC content in them to have incorrect boundaries when the DLC is not installed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boats can now turn (very slowly) in place by using oars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make torpedo waves a bit smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Photo hunt encounters are now properly marked as complete across the map when all giant creatures have been photographed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always thanks to everyone for playing and following along with the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5510784213107212416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-21T02:30:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.572Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-21T02:30:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.572Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-21T02:30:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.309Z"
+  },
+  {
+   "id": "sail-forth-115491@1.5.6",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.5.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-19T01:56:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings! This is a small bug fix patch to smooth out a few issues I've come across and seen reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.5.6",
+     "items": [
+      {
+       "text": "Fixed some cases where the map would sometimes freeze or display islands incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Angler Emporium liberation battle would sometimes fail to register as complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an error that could occur when talking to Picklepea again after completing the Frogghammer battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix an edge case where meeting the Moontide for the first time at Barnacle Base would result in a broken game state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Shell Shop requiring the shop to be re-opened for each purchase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potentially fix an edge case where the final boss would not progress to the next phase after taking damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add some checks to re-unlock key achievements when appropriate, if they were somehow missed previously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some cases in late game where a cinematic teleporting the player to a new location might behave strangely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add a backup save file, updated on each launch of the game called “boat-game-backup.save”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always thanks to everyone for playing and following along with the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5510784213099835088"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-19T01:56:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.572Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-19T01:56:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.572Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-19T01:56:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.309Z"
+  },
+  {
+   "id": "sail-forth-115491@1.5.5",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.5.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-16T21:27:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ahoy! This update features a revision to the Skull Summoning Circle encounter, along with numerous bug fixes. The game has now been downloaded several million times(!) on Epic due to the free week which as you can imagine has resulted in many new issues being found!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.5.5",
+     "items": [
+      {
+       "text": "Revised the design of the Skull Summoning Circle: Waves are now triggered one at a time, and there are torches surrounding each Skull which are destroyed as each wave is defeated. The state is saved for each location, so you can return whenever you like to continue the challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix cases where enemy waves would spawn at the wrong time during Skull Clan summoning encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Captains of ships should no longer go down with the ship, despite the popular saying. This should make assigning a crew member as Captain essentially a way to keep them alive forever, as long as you are diligent about picking them back up out of the sea!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add \"Active DLC\" list to main menu to make it more clear if you've installed it successfully.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix cases where boat physics could become bugged, causing them to ‘drift’ far more than intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix cases where Bonnibel and Kerblapp would not show up to collect your Bibble Bait Penguins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Shell Shop taking all your pearls instead of the advertised amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Lightkeeper conclusion event triggering again if talked to immediately after",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Priscilla and Nausicaa correctly hint at which locations you are missing a Deadrock from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a missing Lightkeeper dialog string",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix local map not opening to correct screen the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a positioning error on a cosmetic slot on the Sakana",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add ‘secret’ fps uncap option in the options file (not exposed to UI yet)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I saw a few people in feedback mentioning wanting uncapped FPS. I haven't had time to add it to the UI yet but if you dig up the options save file (next to the save file), you'll find the entry \"EnableFrameLimit\" in the XML which you can set to false.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both save files can be found here on Windows, the options file is called boat-game.options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "%userprofile%\\AppData\\LocalLow\\Festive Vector\\Sail Forth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always thanks to everyone for playing and following along with the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/6300039510139200664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-16T21:27:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.571Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-16T21:27:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.571Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-16T21:27:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.308Z"
+  },
+  {
+   "id": "sail-forth-115491@1.5.4",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.5.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-12T03:26:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! With the influx of new players from Epic in conjunction with the new updates there have been *a bunch* of new feedback and bug reports so I’m doing everything I can to address things as quickly as possible. These early patches are intended to address the issues with the biggest impact and other items will be looked at soon after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch actually contains two new versions, detailed below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.5.4",
+     "items": [
+      {
+       "text": "Fix potential soft lock in Croaker recruitment arc when searching for Teknowreckage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix intermittent errors when aiming cannons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to crew boarding logic, fixes some cases where boarding sequence would fail to complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "1.5.3",
+     "items": [
+      {
+       "text": "Fix cases where the achievement for catching all fish was unlocked early on game load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Aurora Lantern cosmetic displaying as a different lantern when equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks to everyone for playing and providing positive feedback about the game, it’s incredibly motivating! If you’ve submitted feedback in-game and haven’t seen it addressed here, don’t worry, I’ve definitely seen it and am working on it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/6300039510121885340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-12T03:26:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.570Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-12T03:26:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.570Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-12T03:26:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.307Z"
+  },
+  {
+   "id": "sail-forth-115491@major-2024-01-02",
+   "gameId": "sail-forth-115491",
+   "displayName": "Open Seas Free Update + DLC Announcement",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-02T22:39:32.000Z",
+   "notes": [
+    {
+     "title": "Open Seas Update",
+     "items": [
+      {
+       "text": "Ahoy! The next big update to the game is called Open Seas and it is available right now! This update dramatically expands the exploration and sailing aspects of the game with a fully open world, there are no longer any boundaries between locations or loading screens. This also includes a big redesign to world map generation to further improve the exploration experience. If you’re returning to an old save, your progress will be retained but expect the map to look significantly different!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sail Forth: Maelstrom Expansion",
+     "items": [
+      {
+       "text": "Additionally, we’re excited to announce the upcoming release of the expansion Sail Forth: Maelstrom! This is a paid expansion that adds new areas to explore, new enemies, exclusive Maelstrom cosmetics, and a new NPC + associated shop. This will be paired with another free update that adds the ship cosmetic system, a new Skull Clan encounter, and many other changes and fixes. Sail Forth: Maelstrom is targeted for release on January 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌪️ Sail Forth: Maelstrom - Brave the Vortexes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dive headfirst into the heart of the storm with the Sail Forth Maelstrom expansion! A tempest has swept across the Deepblue, bringing forth colossal vortexes that promise unparalleled challenges and untold treasures. Are you ready to face the Maelstrom?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌌Meet the Arcane Order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Maelstrom is watched over by mysterious guardians who offer strange new rewards to sailors willing to risk charting the depths of the Underworld. In exchange for much-coveted Maelstrom Pearls, the Arcane Order is willing to offer everything from ancient weaponry to custom cosmetics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚔️ Beware the Wormkin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Maelstrom introduces a host of menacing adversaries that will test your sailing prowess and combat skills. The Underworld does not easily tolerate interlopers. Do not linger, or the Wormkin may claim your fleet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎨 Expanded Vessel Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Express yourself with the brand new ship cosmetic system, adding dozens of decorative items that can be fitted to the vessels in your fleet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚓ Sail Forth into the Unknown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continue your nautical adventure with Maelstrom, where the call of the vortexes beckons you to uncharted waters. Will you return to the light, or be swallowed by the abyss?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Open World Exploration",
+     "items": [
+      {
+       "text": "Loading screens between areas are removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can sail seamlessly between areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ‘Deepblue’ ocean biome between areas with its own soundtrack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Island generation has been reworked a bit to give locations a bit more personality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "World Map Rework",
+     "items": [
+      {
+       "text": "World Map generation has been redesigned with an open world in mind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now freely explore the biomes in any order after Sandy Shores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty is now scaled based on your overall progression in the game, rather than by which location you are in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Depending on where you explore, you may still encounter some high-challenge enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player exact position is now saved instead of just current location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Content Updates",
+     "items": [
+      {
+       "text": "New boat: Kestrel, a mid sized schooner balancing armament and maneuverability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clams: New digging/surfacing behavior to make finding them more interesting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clams: New types of pearls are dropped by clams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clams: Moontide Shop uses Moon Pearls instead of normal pearls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ship Shape Shop: Shops now have intermittent sales depending on the calendar day, look for flashing lights!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ship Shape Shop: Can now sell boats that are stored in your dock without undocking them first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI Updates",
+     "items": [
+      {
+       "text": "New combined Area Map + World Map with better visuals for nearby locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New design for wind indicator in the steering/compass display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "World Map shows real player position instead of anchoring to nearest location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Label ‘key’ items in inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Crates and other small targets now always take 1 shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perf improvements when many boats are visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time passes during eclipse so you aren’t stuck on the same day forever",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved sinking physics for destroyed boats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved sorting of crew inventory and cargo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Photo hunt encounter now properly progresses through the various ‘giant’ photo subjects, fixing cases where players were unable to complete their photo collection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boat AI now uses oars properly when necessary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix case where player escorts might stop following player for no reason",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix cases where the wrong fleet boat could be selected after exiting the outfit or crew manage screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix many cases where NPCs could be covered by trees or rocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjust ice target course to be less insanely difficult",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many fixes throughout the game to quest logic and cutscenes: A big thank you to everyone for continuing to play and support the game! This update was a huge endeavor and I'm looking forward to expanding on it further with the upcoming Maelstrom update. I'd also like to give a big thank you to everyone in the Discord who participated in the Open Beta and submitted feedback, it was incredibly helpful in making this update as smooth as possible!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 7,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5410576585175131292"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-02T22:39:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.569Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-02T22:39:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.570Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-02T22:39:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:41.306Z"
+  },
+  {
+   "id": "sail-forth-115491@1.3.4",
+   "gameId": "sail-forth-115491",
+   "displayName": "Update 1.3.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-14T19:17:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, I'm still working on Update 2, but in the meantime here are just a couple small fixes to issues brought up by members of the Discord (thanks!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It turns out the Glubbgill was bugged and had no way of ever spawning, which is now fixed for those of you trying to complete your fish collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.3.4",
+     "items": [
+      {
+       "text": "Fish fixes: Fix glubbgill erroneously spawning as a dravenscale, making them uncatchable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HUD fix: Options for hiding the speed/sail trim UIs are working again: Also, here is a little peek at something I've been working on in Update 2 land:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5126832680918392152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T19:17:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.568Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T19:17:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.568Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-14T19:17:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:36.152Z"
+  },
+  {
+   "id": "sail-forth-115491@1.3.3",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.3.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-11T21:20:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, this is a small patch to fix some things I've seen brought up on the forums / discord over the past month or so. If you've reported something and don't see a fix for it here, chances are I am aware of it but have not yet been able to track down the cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.3.3",
+     "items": [
+      {
+       "text": "Fish fixes: The spawn logic for all fish and wildlife has been reworked to avoid cases where a particular fish doesn’t spawn for long periods of time by random chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fish weather requirements: Certain weather requirements (mainly snow), have been fixed so that the relevant fish now properly spawn when the appropriate conditions are met. This should resolve any issues people have had with completing their fish collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI fixes: AI ships are better at aiming at certain types of targets, especially land-based things",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crushed Ice achievement fix: The relevant achievement should now be properly triggered when the player crushes an enemy vessel with a falling ice spire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map travel: Revised fast travel logic to avoid rare situations where a revealed location would not be visitable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map travel: Prevent traveling via shell spells in situations where fast travel is unavailable: I'm busy working on Update 2, which I'll have more details to share on in the near future! Cheers and as always thanks for playing my game! : )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/6557848386942463707"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-11T21:20:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.567Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-11T21:20:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.567Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-11T21:20:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:36.151Z"
+  },
+  {
+   "id": "sail-forth-115491@1.3.2",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.3.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-04T00:22:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, this is a small-ish patch which addresses a few things I've seen reported throughout all the various feedback channels. Thanks for all your continued support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.3.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Capsizing rework: It’s intended to be pretty hard to do this but previously if it happened your boat would just sink, which felt too punishing. Now your crew will spend some time pulling the boat upright before hopping back in and continuing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Photo encounters: Fix some instances where these weren’t being marked as complete on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More photo encounter fixes: Remove ‘fake’ photo encounter icons being shown on map that didn’t represent a real encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Tekk Blazer occasionally hitting itself when firing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Target Courses: Ensure player does not spawn on top of another boat when positioning player at the start of the course",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moontide Recruitment Arc: Ensure the location the player is directed to travel to is revealed on their map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Docking: When recovering a sunk boat from the Ship Shape Shop, it will now be automatically sent to the dock if there is no room in the player’s fleet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Teknogaunt Boss: Teleport player out of collision zone if the Teknogaunt surfaces directly below them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some instances of ghost ‘Talk’ or ‘Interact’ prompts that didn’t do anything",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lighting Pearls are now properly sellable at the merchant, as indicated by their description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final Boss: Your save will always begin you at the rift entrance while fighting the boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Travel: Rules for when the player is allowed to exit a location are now more consistent between fast travel and manual travel. In cases where the active quest disables travel for a critical story section, purple mist will prevent leaving the area. It is still possible to leave a location via manual travel during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/6839319551998192423"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-04T00:22:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.567Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-04T00:22:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.567Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-04T00:22:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:36.150Z"
+  },
+  {
+   "id": "sail-forth-115491@major-2023-03-17",
+   "gameId": "sail-forth-115491",
+   "displayName": "Major Update: The Fleet Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-17T20:44:35.000Z",
+   "notes": [
+    {
+     "title": "Update 1: The Fleet and Community Update",
+     "items": [
+      {
+       "text": "Hi, I’m excited to bring you to the first large feature update to Sail Forth! This update is all about addressing feedback from the community and improving the fleet mechanics within the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fleet Management - The Dock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The goal here is to enable more playstyles and allow you to accumulate new ships in a satisfying way. Don't want to deal with a fleet? Store all extra boats in your dock and use them like extra lives. Got a neat boat for a specialized purpose? Bring it out of the dock when you want to use it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boats can be stored at a dock, accessible from the fleet management menu whenever not in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlimited boats can be stored at the dock along with their crew and loadout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your entire fleet sinks but you have docked boats, you can undock them to continue the fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously in places where you could acquire a boat (encounters, boarding), you might have had to scrap it due to no remaining room in the fleet, now it can be stored at the dock directly: Fleet Management - Orders and AI: Some of the most common feedback about the game so far has been that the fleet AI doesn't do a great job of avoiding collisions. I spent a bunch of time overhauling the way the AI sees the world around it and expanding your ability to control them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greatly improved navigation AI: Your fleet (and other AI boats) should be much more adept at avoiding collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ‘set order’ functionality of previous demos has been restored and updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fleet boats can be told to Escort, Hold Position, or Hold Fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can also issue one of these commands to the entire fleet at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your fleet will attempt to escape combat and return to your flagship if you are not close by: Progression Balancing: Another common bit of feedback from the community was that the progression felt a bit strange. Having large ships available from the first shop you encounter meant that some players would grind it out immediately and not feel any need to upgrade for the rest of the game. With this in mind, the set of available ships has been modified to spread out the progression more sensibly throughout the game's chapters. Special thanks to Neizod from the community for a great writeup on the Steam forum about this problem!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on feedback many of the boats in the game have had their balance tweaked, in addition to a revised unlock progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each new Shipshape Shop encountered will unlock a new boat of that chapter’s tier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Larger ships are now unlocked later in the game and have had their prices updated to reflect this",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed boat selection from tutorial sequence to curate a more consistent intro experience: Content Updates: This is not a content-focused update but I did find some time to add a bit of stuff. The new Tekk Speedboat should make the Tekk Clan fleets a bit more interesting to fight, and the Croaker bounties have been overhauled to present a bigger challenge. Many people have asked for more ability to customize their crew-members, and this update brings a small first step towards this, giving you the ability to set their colors separately from the boat/sail colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The way enemies are placed in the world has been overhauled, which will allow for new types of content in the future",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For now the main difference is that hostile locations such as forts have a chance to spawn new enemies each day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Croaker Bounty encounters which now scale in size and difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing the Tekk Clan Speedboat: a fast and lightly armed engine-powered vessel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tekk Subs are now implemented as proper ‘boats’ in game terms, giving them better physics and AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tekk Destroyer weapon slots increased to 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated visuals for Lightkeeper Flagship: Based on feedback the design of the ship has been revised with a more realistic and better looking sail rig",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crew color customization: Your crew’s color scheme is now chosen separately from the sail colors: Other fixes and changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated tutorial system: The old tutorial system felt a bit heavy handed as it would frequently pause the game and force you to do something that you potentially already know how to do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorials now use a ‘checklist’ system that never pauses the game, and are much less intrusive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New tutorial added for camera zoom controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "'Feedback' option now available from the pause menu to report bugs directly from the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved capsizing logic: If your boat capsizes, your crew is temporarily thrown in the water and must spend some crucial time flipping the boat right side up again, which can be devastating in a battle. Watch those sails!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many smaller bug fixes and tweaks, too many to enumerate here: Thank you to everyone for continuing to play and engage with the game, it's really motivating for me! This was a ton of stuff, and it is by no means the end, I've got lots of cool stuff planned for the rest of the year. Feel free to share any feedback you have on the forums, the new Discord, or via the new feedback tool in-game. I can't promise to address everything but I do read all of it.: For console players - The update is in certification, and should be out in about a week.: Gorbspeed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5125698536858688820"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-17T20:44:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.566Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-17T20:44:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:38:29.303Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-03-17T20:44:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.303Z"
+  },
+  {
+   "id": "sail-forth-115491@7",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-30T19:29:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, this will likely be the final patch before the first big feature update! This has a small set of bug fixes and improvements to address some things I've seen mentioned here in addition to a couple things I noticed myself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The feature update (v1.3.0) is nearly done, and I'll soon be sharing more details about it along with other planned major updates, so keep an eye out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.2.7",
+     "items": [
+      {
+       "text": "Remove 2 non-existent photos that were making it impossible to complete the photos achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extra dialog hint to encourage exploring to the north while exploring Commo Cay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased time limit on final target course",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don’t show stats on items in research tree that aren’t unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some bounds calculations for target courses that allowed them to spawn partially in an adjacent area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Light Prism logic at Skull Shrines, made them more visually obvious and ensure the prism remains collectable if player leaves area without picking it up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5035622109524846144"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-30T19:29:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.564Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-30T19:29:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.564Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-30T19:29:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:36.148Z"
+  },
+  {
+   "id": "sail-forth-115491@6",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-19T18:47:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, here is the latest patch! This is a bit of a small one as the main focus here was fixing a crash on Switch and the interest of keeping versions synced across all platforms some of the fixes I've made in the last couple days aren't present. Those should come along in 1.2.7 pretty quickly though!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v.1.2.6",
+     "items": [
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Switch/Low spec machines: Fix crashes and GPU stuttering in Pine Peaks locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crew dialog adapts to crew members being stowed below deck mid-dialog, fixes possible soft locks in tutorial from stowing Goose or Toot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix bug where the Moontide Moonflower event might not trigger if the player had done many Moontide quests in quick succession: Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "World Map: Rumors window resizes to fit content, current location is selectable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further optimization to island flora rendering and generated meshes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first Shipshape Shop and Anglerwrangler Emporium are revealed on the map after being mentioned by Toot and Goose: As mentioned before, I've been working in parallel on the first feature update, which is getting close to being ready! In case design changes I won't be that specific about it but the goal with this update is to give you more control over fleet management. ːfrogagentː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5035621474411827961"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-19T18:47:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-19T18:47:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.564Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-19T18:47:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:36.147Z"
+  },
+  {
+   "id": "sail-forth-115491@5",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-10T19:41:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, here's the latest patch! This one has a mix of bug fixes, some changes based on feedback, and some other small improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.2.5",
+     "items": [
+      {
+       "text": "Improvements / Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World Map: Add Rumors tab which has same info as the Area Map for selected location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lengthen day/night cycle and weather patterns to make catching specific fish easier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make wind direction slightly more consistent in calm weather",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wind turbulence now increases in stormy weather",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Target shooting courses have hand-authored wind directions to ensure fair difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boats involved in Friendly Rescue encounters can be damaged before the dialog begins, which shortcuts the encounter straight into combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item fishing spots are much less likely to give Ancient Junk that has already been collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perf improvements to vegetation rendering: Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moontide Recruitment: Automatically add new Prophecy Bell locations if there aren’t enough remaining to get the required number of bells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Angler Recruitment: Automatically add new Bibblebait Penguin locations if there aren’t enough remaining to get required number of penguins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Buzzing Box\" delivery quest: Marley no longer acts as if you still haven’t delivered the package once the quest is complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Free Sail mode: Fix mode failing to start if the rowboat had been unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Free Sail mode: Add description window explaining what the mode is about",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tekk Clan ships no longer drop non-functional blueprints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensure Eclipse state is properly applied when changing active save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boarded boats no longer gain a bit of health when being boarded at very low health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization: Add a few missing translations for some player dialog options late-game: Thanks everyone for continuing to play and give feedback, it's really helpful and encouraging! I'm also working on some larger features which I hope to have out in the coming weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5035620387707019825"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-10T19:41:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-10T19:41:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.563Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-10T19:41:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:36.146Z"
+  },
+  {
+   "id": "sail-forth-115491@1.2.1",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-24T22:24:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, first of all just want to say massive thanks all around to everyone who has been playing and for all the positivity around the release despite some of the more frustrating issues! It's been really encouraging to see for me, hopefully I can fix the larger issues very soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've just pushed an update to the game which attempts to do quick fixes to some of the most pressing things I've seen reported, which are AI collisions and being unsure where to go to progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.2.1",
+     "items": [
+      {
+       "text": "AI Collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At least for now, collision damage between ships in your fleet is disabled. I will be making improvements to their navigation in the near future, but this is the best thing I can do in the short term to mitigate the issue. Your own ship will still take collision damage if you crash into something, and your fleet will still deliver ramming damage to enemies, but they won't take damage when colliding with environment, you, or each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest Guidance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've made several changes to help guide people to the main story in Chapters 1, 2 and 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Chapter 1) The map fragment in the first Skull Fort has had it's pickup radius increased to match the other loot from the chest, I believe people were missing it and thus not having the Lichlett location revealed for them, contributing to confusion early on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Chapter 2) The researcher will now give you information about where the next Deadrock might be if you bring them some evidence! Bring a Kreb Shell from one of the crab enemies to them and the boss location will be revealed on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Chapter 3) Added a map fragment to reveal the final Chapter 3 location which should be found during normal play for new players. If you are currently stuck and have already done most of the stuff: Tekk Towers now contain the map fragment as loot, in addition to being dropped by some Tekk ships",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both key story locations in Chapters 2 and 3 that have been hard to find have had their bounds size increased, which should make them substantially easier to reveal via manual exploration. If you've been sailing around unable to find them, give it another try!: Other changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quests which spawn 'search locations' have been modified to avoid spawning them in invalid locations like old boss areas. Mainly relevant to the quests that take place after Chapter 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent adding the same boat twice to the available list at the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some perf improvements in snowy areas / rainy weather",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When turning in Ancient Junk to lightkeepers, the reveal screen waits for player input before continuing so you can read the description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add version number to options screen: This is a small patch but hopefully this starts to alleviate some of the difficulties with progression! Thank you everyone and Happy Holidays!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5000716037451077747"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-24T22:24:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.560Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-24T22:24:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.560Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-12-24T22:24:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:36.143Z"
+  },
+  {
+   "id": "sail-forth-115491@4",
+   "gameId": "sail-forth-115491",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-21T01:47:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, the next update is nearly ready and so I'm making it available early in the usual public preview branch on Steam. This update adds a bunch of things, including a new Croaker quest line and a sort of new game plus option that allows you to play through the campaign again with your end-game stuff.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This is compatible with old saves, and should be mostly portable back to the previous version of the game if you switch off the beta though, any new items or boats that you acquired would be lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A big thank you to everyone who has continued to play and engage with the game! We've just hit 3 years since the release and it's been really fun to see everyone enjoying it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Joining the beta",
+     "items": [
+      {
+       "text": "If you have the game on Steam and would like to opt-in to the beta, you can do so by right-clicking the game in your Library, selecting Properties > Betas, and choosing `public_preview` from the dropdown. You'll see `1.7.1` at the bottom right of the in-game options screen if you're on the beta.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug reporting",
+     "items": [
+      {
+       "text": "If you find a bug you can report it directly from the game, using the 'Feedback' option found in the pause menu. This is helpful for me as it includes a copy of your save file, the log, and a screenshot which makes it much easier for me to find and fix the bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Croaker Expansion",
+     "items": [
+      {
+       "text": "A new quest for the Croakers now begins shortly after defeating the boss in Autumn Isles (along with completing either the Green Ruins or Frigid Sea). The quest involves building a Command Center for the Croakers and defending it against an assault from the Tekk Clan, who have developed a new weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Croaker Flagship",
+     "items": [
+      {
+       "text": "The Croaker Flagship is a new vessel acquirable via the added quest line. It has frog foot paddles which give it powered movement even when under sail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tekk Walkers",
+     "items": [
+      {
+       "text": "The Tekk Clan have a new item in their arsenal, the Tekk Walker, which is a giant walking mech with lasers on it. They're encountered during the new quest line, and rarely out in the Autumn Isles and surrounding Deepblue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Angler Bait Shop",
+     "items": [
+      {
+       "text": "A new building which can be constructed as part of the Croaker Command Center quest. Here you can trade fish for specialized bait which makes catching new fish from the relevant biome much more likely. Fishing bait is automatically used when it is relevant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Croaker Cantina",
+     "items": [
+      {
+       "text": "A constructable location which allows you to play Blowfish with a number of different NPCs. This is huge for Blowfish enjoyers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fish Pond",
+     "items": [
+      {
+       "text": "A fun little vanity building which you can store any number of fish in and watch them swim around in it. A fun way to show off your favorite catches! Or just see how many yuckfish you can cram in there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game Plus-ish",
+     "items": [
+      {
+       "text": "You can now choose to start a \"new\" game within your existing completed save by talking to Doc Zissoo after the credits sequence. This will regenerate the world map, effectively resetting all quest and story progress, while retaining all of your fleet, inventory, and stored boats. The map will be regenerated with a new seed so things will be in different places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Revised Map Rumor Screen",
+     "items": [
+      {
+       "text": "The rumors panel in the world map has been redesigned to better act as a browsable \"quest log\" which is helpful when trying to figure out what to do next. The rumors list can be browsed by pressing tab or the \"View Rumors\" button. When browsing rumors the relevant location will be automatically selected in the world map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.7.1 Beta Changelog",
+     "items": [
+      {
+       "text": "New: Add Tekk Walker enemy type to Tekk Clan faction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add Croaker Base quest line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add player-sailable Croaker Flagship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add Frog Logs resource item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Add floating drift wood to Deepblue as a source of Frog Logs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Player constructable buildings system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Fishing bait items and mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New: Play blowfish with a variety of NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvement: Redesigned rumors view in the world map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Anglers and Croakers are hireable as sailors from various locations within their biomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvement: Hireable sailors can now be hired even when the player ship has a full crew, and will be put below deck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix soft lock when selecting Deepblue as a Free Sail location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Case where turning in smuggled goods to the Croakers could cause a softlock when outside the bounds of the location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Sail trim UI sometimes would display a non-optimal trim position for your sails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Attempting to equip two of the same mod would cause one to disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix case where enemies could remain hostile during a cutscene or menu like the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 1,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/1819386365113532"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-30T00:30:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:29:47.577Z"
+  },
+  {
+   "id": "sail-forth-115491@3",
+   "gameId": "sail-forth-115491",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-18T20:54:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, I've been working on a pretty large update to the game which includes quite a bit of stuff, and I think it's about time to make it available in the experimental branch for testing. It still has a ways to go so I expect it to remain in the preview branch for a while longer while I bug fix and finish additional content not yet enabled in this release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The biggest changes so far are combining the world/local map into 1 radial menu item, the addition of the spyglass, and the world entity system. The map now shows a wind field to help plan your sailing routes better, this will shift over the course of in-game days! The spyglass is obtained during the tutorial and is used to spot distant locations and ships. The entity system allows for fully persistent AI boats that travel around the world in the same way you do, and can be encountered out in the Deepblue or within locations. This completely replaces the old system of simply spawning a few NPCs randomly at each location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is compatible with old saves, but as usual your save will not be portable back to the old version of the game (see below for instructions on recovering your original save file).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "** Joining the beta **",
+     "items": [
+      {
+       "text": "If you have the game on Steam and would like to opt-in to the beta, you can do so by right-clicking the game in your Library, selecting Properties > Betas, and choosing `public_preview` from the dropdown. You'll see `1.6.0` at the bottom right of the in-game options screen if you're on the beta.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "** Before you play **",
+     "items": [
+      {
+       "text": "It is very important to note that if you do this your save file will become incompatible with the old version! The game will automatically create a backup of your original save on load, which can be found on Windows at `%appdata%\\..\\LocalLow\\Festive Vector\\Sail Forth\\boat-game-old.save`",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you want to return to playing the old version before the update is released, replace `boat-game.save` with `boat-game-{previous version}.save` Otherwise you can continue playing your save in the public preview branch until the update is fully released. The previous version should be `1.5.8` if you were playing on an up to date build of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlike previous betas I've done, this one is going to be longer, and I expect a lot of changes to be coming into the preview branch as there is still at least one major feature I intend to add. This means things will probably be less stable than usual, so please be ready to experience *bugs*. For instance, the Free Sail mode is likely broken at the moment due to the new entity system, which will of course be fixed but is just a low priority right now in terms of getting the update ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "** Bug reporting **",
+     "items": [
+      {
+       "text": "If you find a bug you can now report it directly from the game, using the 'Feedback' option found in the pause menu. This is helpful for me as it includes a copy of your save file, the log, and a screenshot which makes it much easier for me to find and fix the bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Base Game",
+     "items": [
+      {
+       "text": "Area Map and World Map are combined into a single item on the Radial Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map marker can be viewed and placed from the zoomed out world map mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map identifies unexplored locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unexplored locations cannot be fast traveled to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map now shows the global wind field in the background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wind is now a continuous field across the entire world, shifting over time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World Entity system: Enemy and friendly boat NPCs are now persistent entities in the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC boats have their own agenda and travel around the world freely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now encounter these boats out in the Deepblue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new Enemy Fleet entity type, lead by a large pirate flagship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Croaker Subs as a potential NPC type, which will patrol Autumn Isles and engage pirates/tekk clan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some NPC boats have custom names, visible in Spyglass view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new Spyglass key item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Acquired in tutorial instead of first map fragment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Used from Radial Menu to spot distant locations and ships",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can place map marker directly from Spyglass when looking at a Point of Interest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will be retroactively added to existing saves that have completed the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New large class ship: The Swift, a light brigantine rigged ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Revised final boss battle to hopefully be less tedious and more fun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI ships will try to tack against the wind to reach their destination faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skull ships will use cosmetics to express themselves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(PC Only): Custom sail decals can now be loaded from the game’s save folder",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New art assets for birds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better preview when customizing boat sails and colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moontide weapon fx are less blindingly bright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player reputation is better tracked by civilians and merchant ships, engaging in piracy should have more consequences now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General perf improvements to rendering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Fix some cases where some encounters like the Shell Shop might fail to spawn in the location they are said to be in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Xbox should properly recognize DLC on launch, fixing issue that could result in DLC items being stripped from save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Bugfix: Final boss should no longer get stuck in first phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Shell Shop no longer sells first item for free",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Potential error in fast travel route planning causing the route to be longer than necessary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Potential error in Moontide rescue animals encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: The ‘Glubsugnite’ fish now spawns in the biome it is said to spawn in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Moontide intro should occur properly when entering Pine Peaks for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Skull Summoning Circle is properly shown in the map legend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfix: Escorts should not target boats the player is currently boarding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More to come...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Maelstrom",
+     "items": [
+      {
+       "text": "Improvement: New weapon, the Arcane Sun Lance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More to come...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 1,
+    "balance": 0,
+    "other": 39,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/5766372999959676273"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-06T23:01:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.574Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:29:47.574Z"
+  },
+  {
+   "id": "sail-forth-115491@2",
+   "gameId": "sail-forth-115491",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-18T01:48:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, Update 2/the Open Seas update is close to complete, and like with Update 1, this is a pretty big set of changes and I'd like to make a beta available for a couple weeks before the update goes out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "** Joining the beta **",
+     "items": [
+      {
+       "text": "If you have the game on Steam and would like to opt-in to the beta, you can do so by right-clicking the game in your Library, selecting Properties > Betas, and choosing `public_preview` from the dropdown. You'll see `1.4.0` at the bottom right of the options screen if you're on the beta.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "** Before you play **",
+     "items": [
+      {
+       "text": "It is very important to note that if you do this your save file will become incompatible with the old version! The game will automatically create a backup of your original save on load, which can be found on Windows at `%appdata%\\..\\LocalLow\\Festive Vector\\Sail Forth\\boat-game-old.save`",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you want to return to playing the old version before the update is released, replace `boat-game.save` with `boat-game-{previous version}.save` Otherwise you can continue playing your save in the public preview branch until the update is fully released. The previous version should be `1.3.4` if you were playing on an up to date build of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "** Bug reporting **",
+     "items": [
+      {
+       "text": "If you find a bug you can now report it directly from the game, using the 'Feedback' option found in the pause menu. This is helpful for me as it includes a copy of your save file, the log, and a screenshot which makes it much easier for me to find and fix the bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "** Other Notes **",
+     "items": [
+      {
+       "text": "This is a big update that pretty dramatically changes the campaign map. If you play with an existing save your progress will be retained but expect locations to move around significantly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a fair warning, with how large of a change this is there will almost certainly be bugs I haven't found yet!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update 2: Open Seas Beta Changelog",
+     "items": [
+      {
+       "text": "Open World Exploration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading screens between areas are removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can sail seamlessly between locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ‘Deepblue’ ocean biome between areas with its own soundtrack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Island generation has been reworked a bit to give locations a bit more personality: World Map Rework",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World Map generation has been redesigned with an open world in mind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now freely explore the biomes in any order after Sandy Shores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty is now scaled based on your overall progression in the game, rather than by which location you are in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Depending on where you explore, you may still encounter some high-challenge enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player exact position is now saved instead of just current location: Feature Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Boat: Kestrel, a mid sized schooner balancing armament and maneuverability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clams: New digging/surfacing behavior to make finding them more interesting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clams: New types of pearls are dropped by clams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clams: Moontide Shop uses Moon Pearls instead of normal pearls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship Shape Shop: Shops now have intermittent sales depending on the calendar day, look for flashing lights!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship Shape Shop: Can now sell boats that are stored in your dock without undocking them first: UI updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked Area Map to better show nearby locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New design for wind indicator in the steering/compass display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "World Map shows real player position instead of anchoring to nearest location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Label ‘key’ items in inventory: Misc Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crates and other small targets now always take 1 shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perf improvements when many boats are visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time passes during eclipse so you aren’t stuck on the same day forever",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved sinking physics for destroyed boats: Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Photo hunt encounter now properly progresses through the various ‘giant’ photo subjects, fixing cases where players were unable to complete their photo collection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boat AI now uses oars properly when necessary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix case where player escorts might stop following player for no reason",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix many cases where NPCs could be covered by trees or rocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjust ice target course to be less insanely difficult",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many fixes throughout the game to quest logic and cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 3,
+    "balance": 1,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/6438516944139837113"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-17T20:28:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.569Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 7,
+   "updatedAt": "2026-11-13T03:29:47.568Z"
+  },
+  {
+   "id": "sail-forth-115491@1",
+   "gameId": "sail-forth-115491",
+   "displayName": "Patch 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-17T00:04:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone, Update 1 is close to complete, and as this is a pretty big set of changes I'd like to try making a beta available for a couple weeks before the update goes out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have the game on Steam and would like to opt-in to the beta, you can do so by right-clicking the game in your Library, selecting Properties > Betas, and choosing `public_preview` from the dropdown.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "It is very important to note that if you do this your save file will become incompatible with the old version! The game will automatically create a backup of your original save on load, which can be found on Windows at %appdata%\\..\\LocalLow\\Festive Vector\\Sail Forth\\boat-game-old.save",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you want to return to playing the old version before the update is released, replace `boat-game.save` with `boat-game-old.save` Otherwise you can continue playing your save in the public preview branch until the update is fully released.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you find a bug you can now report it directly from the game, using the 'Feedback' option found in the pause menu. This is helpful for me as it includes a copy of your save file, the log, and a screenshot which make it much easier for me to find and fix the bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 1 Changelog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fleet Management - The Dock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boats can be stored at a dock, accessible from the fleet management menu whenever not in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlimited boats can be stored at the dock along with their crew and loadout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your entire fleet sinks but you have docked boats, you can undock them to continue the fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you get a new boat and have no room in the fleet it can be added to dock automatically: Fleet Management - Orders and AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 'set order' functionality of previous demos has been restored and updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fleet boats can be told to Escort, Hold Position, or Hold Fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can also issue one of these commands to the entire fleet at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greatly improved navigation AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your fleet (and other AI boats) should be much more adept at avoiding collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your fleet will attempt to escape combat and return to your flagship if you are not close by: Progression Balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on feedback many of the boats in the game have had their balance tweaked, in addition to a revised unlock progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each new Shipshape Shop encountered will unlock a new boat of that chapter’s tier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Larger ships are now unlocked later in the game and have had their prices updated to reflect this",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed boat selection from tutorial sequence to curate a more consistent intro experience: Content Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hostile locations such as forts have a chance to spawn new enemies each day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Croaker Bounty encounters which now scale in size and difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing the Tekk Clan Speedboat: a fast and lightly armed engine-powered vessel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tekk Subs are now implemented as proper 'boats' in game terms, giving them better physics and AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tekk Destroyer weapon slots increased to 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated visuals for Lightkeeper Flagship: Based on feedback the design of the ship has been revised with a more realistic and better looking sail rig",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crew color customization: Your crew’s color scheme is now chosen separately from the sail colors: Tutorial Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated tutorial system: The old tutorial system felt a bit heavy handed as it would frequently pause the game and force you to do something that you potentially already know how to do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorials now use a 'checklist' system that never pauses the game, and are much less intrusive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New tutorial added for camera zoom controls: Other fixes and changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many smaller bug fixes and tweaks, too many to enumerate here",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 29,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1031460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1031460/view/3384966595864614607"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-06-17T00:04:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1031460",
+      "checkedAt": "2026-11-13T03:29:47.557Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:29:47.565Z"
+  }
+ ],
+ "issues": []
+}

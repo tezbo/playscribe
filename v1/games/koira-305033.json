@@ -1,0 +1,121 @@
+{
+ "game": {
+  "id": "koira-305033",
+  "igdbId": 305033,
+  "name": "Koira",
+  "cover": {
+   "imageId": "co8bj2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8bj2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar38cg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar38cg.jpg"
+  },
+  "ps5Release": "2025-04-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "koira-305033@1.0.7",
+   "gameId": "koira-305033",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-17T09:26:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heeeey Puppy Lovers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 1.0.7 is out with some sweet little bug fixes here",
+     "items": [
+      {
+       "text": "Rare crash that could occur when picking up the stick during the first tug-of-war moment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added proper credits for the FMOD plugin used with Godot - thank you for the magic!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where players couldn't jump of the cliff at the end of the Battue sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some various other small bugs: Snuggle up and enjoy your time with your loyal companion <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1626620"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1626620/view/1797185861633446"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T09:26:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1626620",
+      "checkedAt": "2026-11-13T03:24:20.407Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-17T09:26:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1626620",
+      "checkedAt": "2026-11-13T03:24:20.407Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-17T09:26:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:26.830Z"
+  }
+ ],
+ "issues": []
+}

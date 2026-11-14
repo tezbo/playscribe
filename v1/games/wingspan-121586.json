@@ -1,0 +1,6975 @@
+{
+ "game": {
+  "id": "wingspan-121586",
+  "igdbId": 121586,
+  "name": "Wingspan",
+  "cover": {
+   "imageId": "co1xh8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1xh8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6f2i",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6f2i.jpg"
+  },
+  "ps5Release": "2024-10-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "wingspan-121586@patch-2026-10-27",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - October 16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-27T19:59:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Birders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The latest update is now available on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "These patch notes are a little overdue, but we're here to catch you up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this one, we've fixed a bunch of bird powers and added a few missing artworks in the overview's card tray.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full patchnotes",
+     "items": [
+      {
+       "text": "Fixed issues when undoing powers for European Herring Gull and Garden Warbler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Greater Flamingo's power when exiting to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when playing Eastern Imperial Eagle using both bird cards and food.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Great Argus's power not allowing for changing the chosen food.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing artwork on the overview's card tray for Mediterranean Shearwater and Eurasian Wryneck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Happy gaming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1847286114050293"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-27T19:59:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.274Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-27T19:59:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.274Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-27T19:59:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.032Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2026-09-29",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - September 29",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-29T17:06:45.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new patch is flying to Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update, we've fixed several gameplay issues affecting bird powers, games against the Automa, and improved the controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check the full patchnotes below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Wrybill's card not immediately updating the number of discarded bonus cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed games against Automa freezing after activating Western Jackdaw's power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed playing Garden Warbler with a Round End or Game End power causing the game to freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller focus being lost after quickly activating Common Crane's power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller focus being lost while activating Bali Starling's power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player nicknames overlapping UI elements on the first round's end screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Happy birding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PS. Wingspan Bird Pack: Birds of Continental Europe is releasing in just two days!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1844751498234948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T17:06:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.273Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T17:06:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.273Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-29T17:06:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.031Z"
+  },
+  {
+   "id": "wingspan-121586@post-2026-09-17",
+   "gameId": "wingspan-121586",
+   "displayName": "New Flamecraft Player Portraits Land in Wingspan!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-17T16:45:36.000Z",
+   "notes": [
+    {
+     "title": "Birders! We're celebrating Flamecraft's release and Wingspan 6th anniversary with 3 new player portraits, free for everyone!",
+     "items": [
+      {
+       "text": "Since it's such a big day for our studio, we wanted to prepare something extra special for the occasion. An idea came up, and our extremely talented art team jumped on it right away, creating three original player portraits:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "a Bread Dragon in a Onesie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "a Gryphon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "and a Plant Dragon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "They are available right now for free as a permanent addition to your collection. You'll find them in your player profile settings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Our special Anniversary Background is also coming back, and you can enjoy it until September 24th!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Happy birding, and we invite you to visit Flamecraft's cozy town!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "a Bread Dragon in a Onesie",
+     "a Gryphon",
+     "and a Plant Dragon"
+    ]
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1844115010492678"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T16:45:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.273Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T16:45:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.273Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-17T16:45:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.031Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2026-09-07",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - September 7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-07T12:01:03.000Z",
+   "notes": [
+    {
+     "title": "A new patch has landed on Steam!",
+     "items": [
+      {
+       "text": "In this one, we introduce various gameplay and UI improvements, bird power fixes, and a new feature: Card Tray Preview!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You will now find a new button in the game, located under the \"Overview\" button. This button opens the full card tray, where you can see:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "the current bird cards in the tray,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "the top card of the bird discard pile,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "the top card of the bonus discard pile,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "counters indicating how many cards remain in each deck,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "counters indicating how many cards are currently in each discard pile.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Check the full patch notes below",
+     "items": [
+      {
+       "text": "Fixed bird cards artwork overlapping when repeating Great Eared Nightjar's power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 4-digit numbers misaligning in cached food counters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed turn order progression not always progressing clockwise for bird powers that allow all players to draw food or cards (e.g., Purple Sunbird, Common Loon).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Game End food caching powers incorrectly displaying doubled values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed undoing the upgrade of the Grassland's action with cached seed not returning the seed to the player's supply.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Rose-Ringed Parakeet incorrectly highlighting as playable in the Wetland when another player has a bird that plays on top of another bird.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the highlighting of playable cards in hand during card tucking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed American Oystercatcher not unlocking in the Birds atlas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resetting the card tray with a spare Duet token during a bird power's activation is now consistent across all bird powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player order on the end-of-round goal and spent nectar screens now matches the player order for the current round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refreshed the overview icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added: Card Tray Preview. Players can now preview the card tray in a separate window using the button below the overview. The preview shows the current bird card tray, the top cards of the bird and bonus card discard piles, and counters showing the number of cards remaining in each deck and discard pile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Happy birding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1842846814452931"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-07T12:01:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.272Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-07T12:01:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.272Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-07T12:01:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.030Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2026-08-17",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Hotfix - August 17th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-17T09:45:26.000Z",
+   "notes": [
+    {
+     "title": "Birders! A new hotfix has landed on Steam!",
+     "items": [
+      {
+       "text": "In this one, we fix several gameplay issues involving bird powers, bonus cards, Automa games, and card interactions, along with some improvements to the Preserve Archive. Also, Western Yellow Wagtail no longer breaks the chain when scoring the Ranger bonus cards!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Check the full patchnotes below!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Patchnotes",
+     "items": [
+      {
+       "text": "Fixed spending an egg to upgrade the Wetland's action and leaving to the main menu before confirming, causing the egg to be lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed skipping when copying bonus card powers with Marsh Warbler, causing a soft lock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed caching the 4th round's goal with Daurian Jackdaw, causing a gameplay lock in games against Automa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Great Eared Nightjar removing bird cards from the deck after a failed hunt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Great Eared Nightjar skipping food caching after drawing the last card left in the deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed viewing the opponent's board when choosing the starting hand, clearing the selection of starting bird cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tundra Swan not activating in games against Automa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "American Oystercatcher now allows drawing cards both from the deck and the tray.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Only in English] Luzon Bleeding-Heart now counts toward the Photographer bonus card, as Additional Asian Avians add \"blood\" to the list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Only in English] Tufted Titmouse now counts toward the Anatomist bonus card, as Birds of Canada will add \"tuft\" to the list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Western Yellow Wagtail no longer breaks the chain for the Ranger bonus cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The players' order on the game-end scoring screen now corresponds with the players' order in the 4th round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to the Preserve Archive - archived games are now sorted by date, with the most recent on top. Scrolling and deleting archived games is now easier. Added icons for game mode and online games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remember to update your game and happy birding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1840944183785544"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-17T09:45:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.271Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-17T09:45:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.272Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-17T09:45:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.030Z"
+  },
+  {
+   "id": "wingspan-121586@major-2026-07-22",
+   "gameId": "wingspan-121586",
+   "displayName": "Important Update: Three Birds Temporarily Unavailable",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-22T10:13:55.000Z",
+   "notes": [
+    {
+     "title": "Due to a bug that causes skip pop-ups to lock the game, we've decided to temporarily disable the following birds in both Online and Offline games",
+     "items": [
+      {
+       "text": "Sri Lanka Frogmouth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rhinoceros Auklet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Little Ringed Plover",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're already working on a hotfix and we will turn them back on once the issue has been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We apologize for the inconvenience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1839041357023577"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-22T10:13:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.271Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-22T10:13:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.271Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-22T10:13:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.029Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2026-07-21",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - July 21",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-21T16:00:44.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new patch just landed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update fixes several gameplay issues affecting bird powers, bonus cards, Automarazzi mode, achievements, and the Bird Atlas, along with various gameplay and UI improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check the full patchnotes below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in Automarazzi mode where skipping through gifting cards to another player could block further play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Automarazzi mode where backing out of taking eggs from another player could cause the “Next” button to disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Western Capercaillie not triggering Eurasian Skylark’s power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cards in other players’ hands being highlighted as playable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Marsh Warbler’s copied “play another bird” powers not properly applying discounts to egg or food costs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Western Yellow Wagtail not counting correctly for the “Ranger” bonus cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Belted Kingfisher incorrectly counting toward the “Photographer” bonus card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed undoing an upgraded habitat action not restoring seed used from Eurasian Nuthatch to the player’s supply.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed undoing card tucking with a controller causing focus to be lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tawny Owl not counting toward the “Doomsday Prepper” achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pink Cockatoo appearing in the wrong position in the alphabetically sorted Bird Atlas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Western Yellow Wagtail no longer counts double toward the bonus cards: Mechanical Engineer, Site Selection Expert, Population Monitor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make sure to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy birding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1838407329269353"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T16:00:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.270Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-21T16:00:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.270Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-21T16:00:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.028Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2026-06-19",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Hotfix - June 18th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-19T05:37:04.000Z",
+   "notes": [
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "\"Endangered Species Protector\" bonus card not counting Eurasian Skylark and Western Capercaillie.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Garden Warbler allowing undoing the last step of its power in no-return scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Habitat icons appearing in overview mode after automatically switching from the opponent's view at the start of the player's turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cases where trying to play a bird in an incorrect habitat caused the game to freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remember to keep your game up-to-date and happy birding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1835871199306194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T05:37:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.270Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T05:37:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.270Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-19T05:37:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:25.027Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2026-01-29",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - January 29",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-29T15:13:26.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new patch is now live on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In this update, we fix several issues related to bird powers, including edge cases caused by specific card combinations. We’ve also addressed a number of UI problems and improved gameplay flow across different modes, with fixes for Automa, Automarazzi, and Duet mode to make matches run more smoothly overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check the full patchnotes below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "An issue where a specific bird combination allowed a bird’s power to be repeated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "American Oystercatcher’s power resetting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Back button appearing during card drawing after reloading the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The overview board and player’s hand hiding when playing against Automa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gaining food from the Duet map after playing a predator triggering some pink powers incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misplaced tooltips in the overview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing glyphs for some card-drawing actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue where exchanging cards with another player in Automarazzi mode during a tucking action could cause a turn skip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have fun playing and remember to keep your game up-to-date!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1823191198602609"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-29T15:13:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.268Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-29T15:13:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.269Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-29T15:13:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.269Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2025-12-11",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Hotfix - December 11",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-11T18:00:24.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new hotfix has landed on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This one focuses on further improvements for the Online mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "\"Wait for AI move\" popup blocking player's action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Settings screen getting stuck during AI move.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues with joining the game from Steam invite causing error 902 and/or \"empty\" players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Timeout or forfeit during RoundEnd phase should no longer cause a whole round to skip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remember to keep your game up-to-date and happy birding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1818752592124518"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T18:00:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.268Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T18:00:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.268Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-11T18:00:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.268Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2025-11-18",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Hotfix - November 18",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-18T16:04:01.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new hotfix has landed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one focuses on further improvements for the Online mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Players' portraits displaying incorrectly on the Nectar scoring screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cases of online error 16 during online login.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "EE tutorial error causing rare crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor issues caused by forfeiting opponents in online games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Hotfix is now live on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As always please make sure to update your game. Happy birding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1816307528973967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T16:04:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.267Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-18T16:04:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.267Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-18T16:04:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.267Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2025-11-07",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Hotfix - November 7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-07T15:30:19.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A small hotfix is now live on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In this one, we fixed an issue where players could lose their starting hand in online games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, we are still working on improvements and fixes, and we are thankful for your feedback and bug reports - please, keep them coming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remember to update your game and we will see you soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a great weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1815580768297906"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-07T15:30:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.266Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-07T15:30:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.266Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-07T15:30:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.266Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2025-11-05",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Hotfix - November 5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-05T15:42:26.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new hotfix just landed on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "You can find the full list of fixes below. Happy birding!",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Friends invited to an Online Duet game can now properly place Duet Tokens on the board,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Forfeiting during another player’s turn no longer causes issues in their turn flow,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All Duet map food slots now correctly unlock after using nectar to pay for a wild food in a bird’s cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1815580768232211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-05T15:42:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.266Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-05T15:42:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.266Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-05T15:42:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.266Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2025-10-30",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - October 30th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-30T14:57:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Birders, the hotfix has just hatched and is ready for download!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes in the online mode",
+     "items": [
+      {
+       "text": "Friends unable to join an online game when invited using Your Friend list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game not recognising when a user deletes an invitation before the game starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other fixes",
+     "items": [
+      {
+       "text": "Players' colors changing in the Duet mode with the player order set to random.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players not owning all of the expansions seeing a different Champ of the Bird challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Text fields closing upon pressing the 'X' button on the keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\"Enable bug reporting\" button setting now saves after closing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1815034432873457"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T14:57:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.265Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T14:57:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.265Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-30T14:57:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.265Z"
+  },
+  {
+   "id": "wingspan-121586@major-2025-10-27",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Online Update Is Now Live!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-27T11:01:36.000Z",
+   "notes": [
+    {
+     "title": "You’ve been sharing your thoughts with us, and we’ve been listening. Thanks to your feedback, the Online mode just got a bunch of quality-of-life upgrades",
+     "items": [
+      {
+       "text": "🪶In-game “Your Friends” list - set up games quicker with your favourite Birders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Your Friends” option in the Online menu allows you to add other Wingspan players to your list by typing in their in-game nicknames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The list displays two sections: your platform friends and Wingspan in-game friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check the star for your favourite in-game friends to display them at the top of the “In-game Friends” list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When setting up a custom online game, use the “Invite a friend” option to easily add your friends to the match - either in bulk or one by one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🤖AI upgrade for all online games",
+     "items": [
+      {
+       "text": "Now, whenever a player times out or forfeits in a matchmaking or a custom online game, AI will step in their place!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the matchmaking games, this means the remaining players can finish the match and gain Karma!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌺Oceania Expansion in the Duet Matchmaking - enjoy the sweet nectar with both Asia and Oceania Expansions enabled!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔔Online Notifications - never miss your move again! You’ll now receive in-game alerts when:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "it’s your turn in another matchmaking game, and/or",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "there’s only 1 minute left before your turn times out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can tweak these notifications in the game settings anytime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🐛Bug report visibility is now an option that can be easily changed in Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope these updates make your time in Wingspan even smoother, more fun, and more Birder-friendly. Thank you for helping us make the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always - check out the new features and let us know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy gaming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1814309641566950"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T11:01:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.264Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T11:01:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.264Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-27T11:01:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.265Z"
+  },
+  {
+   "id": "wingspan-121586@post-2025-09-24",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patchnotes - September 24",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-24T15:47:58.000Z",
+   "notes": [
+    {
+     "title": "We’re back with a small update! This one fixes the stubborn overview mode that was blocking your moves, and takes care of an issue where the app wouldn’t launch on Radeon GPU devices.",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "unresponsive board when switching to another player's and back using the overview mode,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the game failing to launch on computers with Radeon graphics cards,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Xbox input displaying on several screens when using a PlayStation controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1811772772214774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T15:47:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T15:47:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.263Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-24T15:47:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.263Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2025-09-08",
+   "gameId": "wingspan-121586",
+   "displayName": "Patch - September 8th",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-08T10:10:52.000Z",
+   "notes": [
+    {
+     "title": "Birders! A new patch is now live!",
+     "items": [
+      {
+       "text": "September is extra special to us as the next Wingspan Digital anniversary is heading our way – and we have many surprises prepared for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’re starting with a new patch! It fixes a bunch of bird power issues, improves UI and gameplay flow, and makes some changes to Automa. The patch is now live on all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We might have slipped in a little surprise – make sure to check out the full patchnotes here:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "5th Anniversary player portrait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Automa will now only take the actions allowed for each specific round in Champ of the Birds challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Automa will no longer make a double move at the start of rounds 2,3 and 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mute Swan will now properly recognize when wetland has no birds played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the deck was unclickable when using Indian Peafowl’s power in Overview mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Emu will no longer allow players to re-roll twice when the bird feeder is empty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked several bird powers that interacted with bird tray incorrectly after using a reset token in Duet mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with blurred nicknames on the end-of-round goal screen in online mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added reminder text about nectar to the Winter Feeder bonus card. Interaction with birds scoring bonus cards before the game end was fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorial will no longer get stuck after entering pause menu in specific cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Undoing consecutive “Play another bird” powers will no longer allow placing a bird in the wrong habitat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Infinite card draw exploit of migrating birds has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ Stability fixes for rare cases of faulty Game Center connection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Egg-streme Measures ACHIEVEMENT/TROPHY will now unlock properly if egg limit is exceeded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Large Billed Crow will be counted towards “Attempted Murder” Achievement/Trophy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Make sure to try out this week’s Champ of the Birds challenge – it was prepared by one of our most successful and experienced birder, Jolex. Try out your skills and share your scores on our Discord server. May the best birder win!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have a great week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 16,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1809869180159795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T10:10:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.262Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T10:10:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.262Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-08T10:10:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.262Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2025-07-14",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - July 14th",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-14T17:00:04.000Z",
+   "notes": [
+    {
+     "title": "Here’s what changed in the patch",
+     "items": [
+      {
+       "text": "Players will not be able to back out from playing Wrybill after already seeing the discard pile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wingspans updated for Count Raggis Bird of Paradise, Horsfields Bushlark, Malleefowl, Pesquets Parrot, Pheasant Coucal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s what’s been fixed",
+     "items": [
+      {
+       "text": "Wetland bonus conversions allowing for indefinite activations when used alternately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "'Historian' bonus card displaying an incorrect % of birds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "#ERROR displaying instead of the sum of wingspans during push-your-luck powers in German, French, Spanish, Portuguese, Japanese, and Italian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grey Butcherbird tucking birds with a 40 cm wingspan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some bird powers rerolling dice being not predictible in Champ of the Birds mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pink powers not allowing the reset of the birdfeeder when triggered by Automa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Fewest Duet tokens on bonus spaces\" goal not displaying correctly on Automa's screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Birds in the online menu covering active games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Black Drongo and Red-Wattled Lapwing not displaying the \"no return\" arrow appropriately during activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI placing Duet tokens on spaces with beak pointing left/right when playing a bird pointing forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Playing a second bird in the same turn (via another bird's power) in Duet mode unable to be undone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resetting the tray with a Duet token when selecting a card in the tray being inconsistent for Yellow Bittern compared with other card-drawing powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Refill Tray\" option displaying as active after resetting the tray with a Duet token.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bluethroat and Common Nightingale's powers not displaying the \"back\" button in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eurasian Collared-Dove not counting towards Anatomist bonus card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues when playing Montagu's Harrier and Southern Cassowary in overview mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paying food costs with seed cached on Coal Tit not allowing placing duet token on appropriate space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Food cached on Coal Tit restoring more than it should when player undoes playing bird action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Satyr Tragopan not restoring card when undoing its power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Playing Rose-Ringed Parakeet in overview mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor Tutorial fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor UI and sound fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Global Analyst Achievement not unlocking after scoring a bonus card with Red-Crowned Crane and Great Indian Bustard's powers, and not taking copied bonus cards into account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For those of you playing with a controller, we’ve made a few improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"undo\" action available when a pop-up to confirm an action was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trying to play a bird without the required food using a GAME END power, displaying a non-interactive pop-up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Backing out of the Grassland bonus conversion action resulting in the controller losing focus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We hope this update smooths things out and makes your experience even better. And of course, we hope you’re enjoying the Asia Expansion!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have a great week,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monster Couch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 30,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1805065414338207"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-14T17:00:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.261Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-14T17:00:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.261Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-14T17:00:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.261Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2025-06-18",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - June 18th & Double Karma Treat",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-18T12:58:18.000Z",
+   "notes": [
+    {
+     "title": "The previously announced patch is ready for download on Steam. The whole patch notes are in the previous announcement",
+     "items": [
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/news/app/1054490/view/815827986650503171?l=english\"]",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "We hope this update enhances your gameplay experience, especially since we'll be a bit quieter over the next couple of days. Tomorrow is a bank holiday here in Poland, where Monster Couch is based. Our team will be temporarily unavailable, but don’t worry - we’ll be back Monday, ready to tackle any issues you report with fresh energy!",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1802893906696258"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T12:58:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.260Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T12:58:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.260Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-18T12:58:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.260Z"
+  },
+  {
+   "id": "wingspan-121586@major-2025-06-16",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan: Asia Expansion BIG Update is Here",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-16T15:08:57.000Z",
+   "notes": [
+    {
+     "title": "Asia Expansion features",
+     "items": [
+      {
+       "text": "90 new bird cards with their unique audio clips and trivia.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "11 new bonus cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Duet mode for exactly 2 players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Available offline against a human player, AI, or Automa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Available online in real-time matchmaking and custom games against a human player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Includes a Duet Map and 12 end-of-round goals designed specifically for this mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "2 new Automa-only bonus cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the Automa's Hoard variant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "8 new portraits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4 new backgrounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4 new soundtrack pieces composed by Paweł Górniak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New features coming to all players along with the Asia Expansion patch",
+     "items": [
+      {
+       "text": "Revamped Tutorial for base game, European Expansion, and Oceania Expansion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New tutorials for Asia Expansion and Duet mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "5 new portraits unlocked through the completion of the tutorials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Duet mode available in online real-time matchmaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Expanded Bird Atlas with new birds, Asia Expansion filter, and \"clear filters\" button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game mode icon added to active game saves (both offline and online).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bird card, bonus card, and end-of-round goals counters added to the Expansions selection screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new Automa's Cache variant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed how Automa counts owned items for powers activated by the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Automa's rulebook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 11 new Asia Expansion achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pinned news functionality added to the News screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new birdpersons in the Credits section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes and improvements",
+     "items": [
+      {
+       "text": "Fix for softlock during skipping White Stork, White-throated Dipper & Black-throated Diver powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for rare cases of Peaceful Dove’s UI showing a nectar button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Black-Shrouded Kite used not handing out a rodent to the player, and other similar powers not displaying the correct popup when activated by AI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Migratory birds slightly improved by adding more prompts when their powers cannot be used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hooded Merganser's power now clearly communicates that it needs predators with brown powers to activate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Automarazzi mode card exchange payment exploit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworks of UI of some food caching powers and predators rolling dice outside of the birdfeeder in order to harmonize with the new Asia Expansion powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possible fix for Oystercatcher played in Round End/Game End issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possible fix for Savi’s Warbler’s power giving out cards even when skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possible fix for \"You have 10 active games\" pop-up displayed while having fewer than 10 active online games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Automa’s Automubon Society card moved from EE into the base game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit allowing for repeating the \"when played\" bonus card drawing powers ad infinitum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor UI and visual fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 24,
+    "fixed": 13,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "90 new bird cards with their unique audio clips and trivia.",
+     "11 new bonus cards.",
+     "Duet mode for exactly 2 players."
+    ]
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1802354289693781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-16T15:08:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.259Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-16T15:08:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.259Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-16T15:08:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.259Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2025-02-13",
+   "gameId": "wingspan-121586",
+   "displayName": "PATCH - FEBRUARY 13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-13T13:00:58.000Z",
+   "notes": [
+    {
+     "title": "Birders, a new patch has landed!",
+     "items": [
+      {
+       "text": "In this update, we’ve tackled some pesky bugs and made improvements to keep your Wingspan experience running smoothly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Please remember to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Check out the patchnotes below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Some actions sometimes allowing to skip the payment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "EE predators locking gameplay when paying their cost with bird cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No option to progress when trying to draw cards from an empty deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players getting stuck on the settings screen when their turn starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Incorrect copied bird name displayed during Superb Lyrebird and Tui activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some of the bonus card-drawing powers not discarding cards properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NEWS screen scrolling issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Also, the in-game store has been updated!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS. We are so excited about the Asia Expansion coming this summer! Check our previous announcement for more info!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have a great rest of the week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 10,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "In this update, we’ve tackled some pesky bugs and made improvements to keep your Wingspan experience running smoothly.",
+     "Please remember to update your game!",
+     "Check out the patchnotes below!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1791580425963528"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-13T13:00:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.256Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-13T13:00:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.256Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-13T13:00:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.256Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-11-15",
+   "gameId": "wingspan-121586",
+   "displayName": "HOTFIX - NOVEMBER 15",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-15T12:58:47.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "We're back with a fresh hotfix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this patch, we continue our work to improve Wingspan and to bring you the best experience we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotfix is now live on Steam so make sure to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Check out the patchnotes below",
+     "items": [
+      {
+       "text": "Fix for major turn flow issues causing additional or missing turns and rounds, being asked to discard a card at the end of a turn, Automa getting stuck during her turn and other errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for exchange actions not proceeding when used a second time in a row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for egg exchanging action switching off the overview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Automa not discarding cards from the tray correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Goldcrest's missing option to skip the entire power activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Wilson's Storm-Petrel and Great Crested Grebe's power not highlighting drawn cards before discarding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The overview interactivity improvements aiming at solving the unclickable actions issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/1783238125246203"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-15T12:58:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.255Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-15T12:58:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.255Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-15T12:58:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.255Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-11-07",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - November 7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-07T15:27:34.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "We're back with a qucik post-release hotfix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this patch, we're fixing a couple of pesky issues with discarding cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please remember to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out the patchnotes below",
+     "items": [
+      {
+       "text": "Fixed an issue where the Automa was not discarding cards from the tray correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where discarding cards from hand could block gameplay progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/6148070194801599011"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-07T15:27:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.254Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-07T15:27:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.254Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-07T15:27:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.254Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-09-12",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - September 12",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-12T11:02:04.000Z",
+   "notes": [
+    {
+     "title": "With this patch, we continue our work to improve Wingspan and to bring you the best experience we can.",
+     "items": [
+      {
+       "text": "The hotfix is now live on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please remember to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out the patchnotes below",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a card not returning to the player's hand and locking the discard slot when undoing a Forest or Grassland bonus conversion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Round End and Game End bird powers not activating in the overview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for birds played on two slots not giving the player the choice to play them on one or two slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Rufous-Banded Honeyeater not activating Spangled Drongo's power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Magpie-Lark returning discarded eggs at the end of power activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Cockatiel's activation incorrectly counting as predator's success if a predator was tucked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/6250522009512813864"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-12T11:02:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.252Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.252Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-09-05",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - September 5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-05T14:00:42.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new hotfix is flying your way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this one, we continue our work to improve Wingspan and to bring you the best experience we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotfix is now available on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please remember to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out the patchnotes below",
+     "items": [
+      {
+       "text": "Fix for bird powers incorrectly counting eggs to lay on birds with a specific nest type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Goldcrest returning a discarded card to the player's hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for \"You don't have enough eggs\" pop-ups incorrectly showing up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for AI freezing on activation of Common Little Bittern or Squacco Heron.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for missing characters in Korean, Simplified Chinese, and Traditional Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/6242640076596849528"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-05T14:00:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.251Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.251Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2024-09-02",
+   "gameId": "wingspan-121586",
+   "displayName": "Patch - September 2nd, 2024",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-02T15:48:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Birders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch is flying your way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update, we introduce a couple of new features and a handful of bug fixes to improve Wingspan and bring you the best experience we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new feature landed in the main menu - the News! From now on you will find there all the crucial updates about patches, upcoming online maintenance works, new game content, and more! So keep your eyes peeled for a shiny feather in the main menu meaning a fresh announcement awaits!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also improved the bird tray! From now on, when you draw cards from the bird tray and then activate a bird power, allowing you to draw again from the tray, you will see the slots you took cards from are shown as empty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can check the full patchnotes below",
+     "items": [
+      {
+       "text": "\"News\" section added - game news and updates are now accessible through the game's main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Empty slots on the bird tray are now visually represented when a power using them is activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for Eurasian Collared-Dove and Common Starling not tucking cards when using nectar as an option to discard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for House Wren's power letting players to play a bird in an incorrect habitat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kakapo's power will now inform players that the bonus card deck is empty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor power fixes for Pukeko, Kea, Greater Flamingo, Common Chaffinch, and Common Chiffchaff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mac: Fix for empty tooltips appearing on some devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mac: Fix for the game freezing when switching between tabs on MACs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please remember to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/6240387642469310860"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-02T15:48:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.251Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.251Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-05-20",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - May 20",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-20T13:03:49.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A fresh hotfix is heading your way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this one we're introducing minor online fixes, so please make sure to update your game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotfix is now available on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Also, it's been a week since the release of the Woodland Wonders Decorative Pack! We hope you're having fun exploring these new enchanting forests!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a feathery rest of the week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5747233970433072835"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-20T13:03:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.249Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.249Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-04-22",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - April 22",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-22T12:00:51.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A new hotfix is flying your way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this one, we're taking care of several issues with bird powers, encouraging a few birds to fully show their feathers by fixing their animations and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, joining Online matches is now improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotfix is now available on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Check out the changelog below",
+     "items": [
+      {
+       "text": "Fix for nectar appearing in some bird powers when playing without Oceania Expansion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Turkey Vulture being triggered by Sacred Kingfisher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for players not being able to pay with cached seed while using Kea's power or Grassland bonus conversions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several birds' animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for instances of online matches showing two players the same starting hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online matches will now assign joining players to their seats in the correct order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a great week and remember: keep your beaks sharp and your game up-to-date!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5762994032405262298"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-22T12:00:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.248Z"
+  },
+  {
+   "id": "wingspan-121586@major-2024-04-05",
+   "gameId": "wingspan-121586",
+   "displayName": "[UPDATE] Online Maintenance - April 5th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-05T12:07:50.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "Our servers are now back up and running!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now access the Online mode and create new games. Unfortunately, fixing the problem took its toll, and games started before yesterday’s incident were deleted. We are deeply sorry for this, but it was unavoidable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still observing the server's behavior. We feel rather optimistic about it, but we want you to know there’s still a risk of an issue. We hope it will remain stable, but we stay alert.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right now we’re keeping in touch with our online service provider to work out this situation and prevent such events in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your patience and for staying with us. We are very grateful for all your support, especially in moments like this one. We're working hard to provide you with the best online experience. Please rest assured that we’ll do our best to make it happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a good weekend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5756237364311609127"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-05T12:07:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.248Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2024-04-03",
+   "gameId": "wingspan-121586",
+   "displayName": "Patch - April 3rd",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-03T13:39:00.000Z",
+   "notes": [
+    {
+     "title": "Birders,",
+     "items": [
+      {
+       "text": "We're back after Easter with tummies full of chocolate eggs and introducing a fresh patch! It is now available for download on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Check out the patchnotes below",
+     "items": [
+      {
+       "text": "New in-game store added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved tooltip system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved displaying of players' portraits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix for Automa not counting spent nectar correctly when Automa's animations were turned off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for tucking slots being locked while choosing cards from the player's hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for paying with eggs for additional cards not working correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the majority of cases when the game was blocked while drawing bonus cards (error 920).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance and stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have egre(a)t rest of the week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5756237364304547571"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-03T13:39:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.247Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.247Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2024-02-23",
+   "gameId": "wingspan-121586",
+   "displayName": "Special Patch - February 23",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-23T14:07:38.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "A special patch is flying your way!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On February 27 Wingspan is getting cozy like never before. Make sure your game is up-to-date so you can enjoy this very special treat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The latest update is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a feathery day and see you next week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5728086065185699558"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-23T14:07:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.246Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.246Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-01-26",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - January 25",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-26T10:51:19.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "We're back with another juicy hotfix. Check out the change log below and update your game ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Change-log",
+     "items": [
+      {
+       "text": "Fixed birds being sometimes played in a different habitat than intended in Overview Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error occasionally occurring when drawing cards from the deck (Error 915).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed nectar not returning correctly from the 'spend nectar' space after undoing an action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Automa's window covering goals/nectar screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cards not displaying correctly when drawn while copying bird powers from Automa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Data Analyst bonus cards counting points incorrectly when a bird on two slots was played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor translation and text fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fix for players getting a second starting cards/food choice in online matchmaking has been implemented on the server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5519792046251592290"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-26T10:51:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.245Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.245Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2024-01-11",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - January 11th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-11T15:07:45.000Z",
+   "notes": [
+    {
+     "title": "Changelog below",
+     "items": [
+      {
+       "text": "Fixed issues with joining a game via an invitation (most Error 902 cases).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for locked slots when choosing cards to tuck from the player's hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for issues with Oystercatcher interacting with birds allowing to play another bird.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Australian Raven not being able to use seed cached on Coal Tit/Eurasian Nuthatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Australian Ibis's deck shuffling power is now more deterministic in Champ of the Birds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for some powers not returning to the correct state when loading a saved game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Pheasant Diversion achievement not unlocking correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor text improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun playing! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/6300039510120014059"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-11T15:07:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.244Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.244Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2023-12-20",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - December 20th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-20T12:38:58.000Z",
+   "notes": [
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Common Raven and Chihuahuan Raven excluded from Online Matchmaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for pink powers not triggering other pink powers when conditions are met.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a disappearing bonus card drawn by Kea if no additional food was spent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for North Island Brown Kiwi and Abbott's Booby unable to draw bonus cards after trying to skip the power and choosing \"don't skip\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for North Island Brown Kiwi not shuffling discarded bonus cards when the deck is empty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with playing birds using nectar and cached seed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for gamepads not working with bird powers in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Magpie-Lark not allowing to play a predator on top of a bird in grassland when the habitat is full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Red-Winged Parrot's power allowing to go back and undo previous actions and powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Common Moorhen adding extra points to Spent Nectar when discarding nectar and skipping playing a bird.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for AI incorrectly using Gray Catbird's and Northern Mockingbird's repeating powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievement \"All Birds, Aligned!\" now unlocks after turn ends during the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor text fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5410576585126230365"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-20T12:38:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.243Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.243Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2023-12-14",
+   "gameId": "wingspan-121586",
+   "displayName": "Post-Oceania Hotfix - December 13",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-14T08:41:13.000Z",
+   "notes": [
+    {
+     "title": "Check out the list below",
+     "items": [
+      {
+       "text": "Fix for the game freezing/crashing between Round-End and Game-End powers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Preserve Archive not displaying saved games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the custom online game setup issue when changing expansions after sending invitations to other players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Nectar of Life achievement causing errors after completing games started before OE patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/7585814657459818568"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-14T08:41:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.243Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.243Z"
+  },
+  {
+   "id": "wingspan-121586@major-2023-11-22",
+   "gameId": "wingspan-121586",
+   "displayName": "Deck Update Alert: Bye-bye Ravens!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-22T16:16:52.000Z",
+   "notes": [
+    {
+     "title": "Hey Birders,",
+     "items": [
+      {
+       "text": "You were chirping, we listened! You will be able to UNRAVEN your Wingspan games!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "With the upcoming release of Wingspan: Oceania Expansion, we will introduce the rulebook’s suggestion and give all players an option to ditch the Chihuahuan Raven and Common Raven in single-player and custom multiplayer games! The option will also be available to all Birders who do not have Oceania Expansion.",
+     "items": [
+      {
+       "text": "Fed up with the constant cawing? No worries. Customize your deck pre-game and say farewell to those black-feathered individuals. Tailor your gaming experience to suit your style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*******",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "While waiting for the Oceania Expansion release, we’d like to invite you to help us with online beta testing of our second game, Quilts & Cats of Calico!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you like cozy puzzle games and would like to help us with development and growth as a studio, we invite you to sign up in the form below*:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "*If you’ve already signed up for our previous beta tests for Quilts & Cats of Calico, you don’t have to do it again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "That’s it for today. Stay tuned for other eggciting news!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "P.S. We’re celebrating the Soon™ anniversary so our beachy Oceania background is again available! Play with it until November 29th. We have come a long way since then and Wingspan has undergone many changes and improvements in its backend. Thank you for being with us all this time and supporting us in our work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5382426458974030955"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-22T16:16:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.241Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.241Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2023-05-24",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Hotfix - May 24th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-24T13:59:47.000Z",
+   "notes": [
+    {
+     "title": "We're not slowing down! Another day, another piece of news!",
+     "items": [
+      {
+       "text": "We're introducing the new hotfix. Below you can see the fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed additional turn after activating an opponent's pink power at the end of a round;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft-lock after receiving a card draw bonus from an opponent at the end of a round;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AI improvements;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor texts and localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, don't forget to update the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5151600576584526954"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-24T13:59:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.238Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.238Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2023-05-11",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - May 11th",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-11T10:13:27.000Z",
+   "notes": [
+    {
+     "title": "Release notes",
+     "items": [
+      {
+       "text": "Stability improvements;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bell notification's added to all pink powers activation and other interactions in online matches;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed multiplayer game causing visual issues in singleplayer;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect bird icons displaying during some power activations;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual bug in Black-headed Gull's decision panel;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed birds being played in incorrect habitat after switching back from the opponent’s view;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed inability to discard eggs after switching back from the opponent’s board view;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues during the undoing of a combination of birds' powers;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pop-ups blocking gameplay when starting a turn or after switching games;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed empty dice slots appearing before rerolling the birdfeeder when activating European Honey Buzzard's power;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dice re-roll button not always working;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed card icons not graying out properly when activating Red Knot's power;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Automa triggering player's pink powers in incorrect order;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hummingbirds' powers messing with the player's turn counter display;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed American Oystercatcher triggering the \"Build Two Birds with One Stone\" achievement;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor text and localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Steam notifications not appearing for the creator of an online game;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remember to download the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/6557848386940776164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-11T10:13:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.238Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.238Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2023-03-31",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - March 31st",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-31T13:25:44.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "Smol but strong hotfix just landed on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed pink powers activating an additional automa turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Snow Bunting power allowing to peek a card from the deck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remember to update the game and have an eggscellent weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/6839319551985599463"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-31T13:25:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.237Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2023-03-24",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - March 24th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-24T16:07:00.000Z",
+   "notes": [
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed problem with opponent's cards;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes on iOS due to assets unloading;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed problems with exceptions on card-tucking powers;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the player being unable to tuck cards under birds after undoing Common Chiffchaff power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remember to download the update and have a great weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5143713753732730701"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-24T16:07:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.236Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2023-03-22",
+   "gameId": "wingspan-121586",
+   "displayName": "BIG CHONKY PATCH - March 22",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-22T11:14:26.000Z",
+   "notes": [
+    {
+     "title": "Hello Birders,",
+     "items": [
+      {
+       "text": "As we prepare Wingspan: Oceania Expansion, we are making changes and improvements in the flow and functionalities of the currently available base version and European Expansion. We want them to be as well-prepared as possible for the new expansion and work well with it. Below you'll find a list of the UI/UX changes and bug fixes we've introduced with today's patch. More coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New information panels when brown powers do not meet the criteria for activation;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Birds that players can use during power activation are highlighted;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Brant activation flow;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed rolling dice outside of birdfeeder action - only matching dice are highlighted;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved rolling dice in birdfeeder action in bird powers - removed one decision panel, food indicators replaced by food dice;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can see opponents' face-down cards in hand;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better animation for birds that the player can play on top of other birds;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Food and eggs indicators grayed out or highlighted accordingly during gaining or discarding resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed undoing bird powers in a habitat that has a bird played on two slots;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI issues when the player quits to the menu during AI calculating its turn;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bird highlighting in Bird Atlas and tray;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed displaying goal summary panel in archived games;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed displaying the \"Next\" button in games with Automa;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI issues while playing second bird in the grassland habitat;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed disappearing feather animation for brown power activation after switching back from the opponent’s board view;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor localization fixes;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes in the counting of played birds (possible fix for the Ecologist bonus card problem).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5125698536875465739"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-22T11:14:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.236Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2023-02-07",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - February 7th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-07T10:43:42.000Z",
+   "notes": [
+    {
+     "title": "Hello Birders,",
+     "items": [
+      {
+       "text": "Another hotfix is live! Below you'll find the list of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed infinite habitat activation bug with birds moving between habitats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tuck and drawing birds activation after interjection actions of other players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed round panel exiting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5035622743897802723"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-07T10:43:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.235Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2023-02-01",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - February 1st",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-01T14:33:37.000Z",
+   "notes": [
+    {
+     "title": "Hello Birders!",
+     "items": [
+      {
+       "text": "We are entering a new month with a hotfix to the latest patch. 🦾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Fixed infinite habitat activation bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed paying for cards with cost X/Y/Z with cached food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor fixes in the Ukrainian language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor changes in AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another hotfix in the making!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5035622743876513662"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-01T14:33:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.234Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.234Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2023-01-19",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan Patch - January 19th",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-19T15:38:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Birders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This year's first patch has just landed! Below is the list of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "New audio birds assets for the Chinese language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Main game scene optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved AI with flocking powers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Snow Bunting counts for the Photographer bonus card now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed using cached food with Thekla’s Lark and Eurasian Nutcracker powers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed non-refreshing tray before \"Round End\" powers activation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed using more than 6 food when paying for a bird",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual bug after playing European Turtle Dove and exiting the match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed +1 turn in turn counter after playing a bird",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5035621474411348140"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-19T15:38:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.233Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.234Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2022-12-14",
+   "gameId": "wingspan-121586",
+   "displayName": "Patch - December 14th",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-14T13:20:31.000Z",
+   "notes": [
+    {
+     "title": "Hello Birders!",
+     "items": [
+      {
+       "text": "The new patch is now available for download. It introduces one fix:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed errors in online games happening at larger player counts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More patches are coming soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4991708208074618934"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-14T13:20:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.233Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.233Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2022-12-08",
+   "gameId": "wingspan-121586",
+   "displayName": "Patch- December 8th",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-08T11:09:03.000Z",
+   "notes": [
+    {
+     "title": "Hiya Birders!",
+     "items": [
+      {
+       "text": "A new patch is here and ready to download. Below you'll find a changelog:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New project announcement added to the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed frequent game refreshing while previewing other players in online games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an additional turn at the end of the round",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed starting EE tutorial from the “End-of-round powers” segment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And we continue to work on other fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "P.S. Have you already seen our new upcoming game which we announced yesterday? If not, check it out and wishlist below if haven't done it yet. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4980448574108299091"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-08T11:09:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.232Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.232Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-11-30",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - November 30",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-30T08:09:59.000Z",
+   "notes": [
+    {
+     "title": "Another hotfix is now available. Below you can check the changelog",
+     "items": [
+      {
+       "text": "Fixed skipping birds' powers after activating Ruby-throated Hummingbird, Anna’s Hummingbird, birds with “Steal food” power, and other similar birds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game performance fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We continue to work on the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4979322040012302818"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-30T08:09:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.230Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.230Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-11-25",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - November 25",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-25T15:50:04.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "The hotfix for the latest update is now available for download!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Below you can see the patch notes",
+     "items": [
+      {
+       "text": "Fixed disappearing bird feeder when starting a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cards missing in the tray after drawing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue on leaving the game while using birds with power “All players draw 1 card from the deck”: And of course, we continue to work on further fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4836332027659451927"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-25T15:50:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.230Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.230Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2022-11-23",
+   "gameId": "wingspan-121586",
+   "displayName": "Online Maintenance Ended + Huge Wingspan Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-23T11:34:21.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "Online mode is now available! We managed to carry out the maintenance of the online system faster than expected. Thank you for your patience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Along with the restoration of the online mode, we are also uploading one of the biggest updates in Wingspan's history! Please install the update first and then play online. Below is the list of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Major rework of pink powers and turn interjections system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In-game shop rework and a new special announcement added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new notification to in-game shop when there is something new",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some birds animations rework and refresh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed Goldfinch and Snow Bunting triggering each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Eleonora’s Falcon not triggering pink power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed playing Oystercatcher with Round End powers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional action cubes after triggering AI’s pink powers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with additional action cubes caused by Ruby-throated Hummingbird and Anna’s Hummingbird",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Eurasian Golden Oriole and Eurasian Tree Sparrow bug in Automa mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 9004 error in Online games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed notification when using Common Moorhen to play Oystercatcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bonus card visible in the bird’s atlas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor visual bug in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Snowy Owl’s habitat icons in Overview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed resolution change bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Squacco Heron translation mistake in Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor visual bugs while playing Montagu’s Harrier, Common Buzzard, Red Kite and Eurasian Hobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed buttons when using birds with “Play a second bird” power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs concerning “Toucan of my appreciation” and “Ill Eagle” achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing feather colors for birds from EE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with DLCs not being properly loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known issues we are working on",
+     "items": [
+      {
+       "text": "Issues with reversing power of Mute Swan, Common Moorhen, Wilson’s Storm-Petrel and Great Crested Grebe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue with repeating Black Woodpecker’s power with Gray Catbird that sometimes causes a bug when a player can’t gain food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are also working extensively on fully changing the service that operates the Wingspan online server, which involves moving all functionality of this mode to another system. This change is intended to address issues reported with online games. The work is going well, but it is a large task and requires some time. We will update you on further progress soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 18,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Major rework of pink powers and turn interjections system",
+     "In-game shop rework and a new special announcement added",
+     "Added new notification to in-game shop when there is something new"
+    ]
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4836332027651519314"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-23T11:34:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.229Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.229Z"
+  },
+  {
+   "id": "wingspan-121586@major-2022-09-07",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan & European Expansion Patch - September 7th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-07T10:03:48.000Z",
+   "notes": [
+    {
+     "title": "Hello Birders,",
+     "items": [
+      {
+       "text": "Grab the newest, September patch and check the changes below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed animation of Yellow-Breasted Chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor bug when leaving Automa’s overview in the finished game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional card draw after using Wilson's Storm-Petrel and Red-Breasted Merganser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Parrot Crossbill issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed playing Montagu’s Harrier, Common Buzzard, Red Kite and Eurasian Hobby on birds with caught food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4606641560244295156"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-07T10:03:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.227Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.227Z"
+  },
+  {
+   "id": "wingspan-121586@major-2022-08-18",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan & European Expansion Patch - August 18th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-18T12:56:30.000Z",
+   "notes": [
+    {
+     "title": "Hiya Birders,",
+     "items": [
+      {
+       "text": "We're back with a bunch of fixes in Wingspan & Wingspan: European Expansion. You can check out the introduced changes below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing action cubes after using Hummingbirds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed custom automa settings in the replayed game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed triggering own pink power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed buttons when playings birds with the “Play a second bird” power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed beginning game with two starting hands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed European Expansion bonus cards in automa with disabled expansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Black-Bellied Whistling-Duck & Coal Tit issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed playing Montagu’s Harrier, Common Buzzard, Red Kite, Eurasian Hobby on Overview",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mute Swan and Common Moorhen issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed egg-laying issue after playing birds that cover 2 spaces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting achievements after using Round End birds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled the sound of writing in the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4584121659780740286"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-18T12:56:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.227Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.227Z"
+  },
+  {
+   "id": "wingspan-121586@major-2022-06-27",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan: European Expansion - Patch June 27th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-27T12:04:21.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "Here it is - a regular patch for Wingspan: European Expansion just dropped! 🤩 If you don't have automatic updates enabled, hit that update button! 🔥",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "-Fixed Citizen Scientist bonus card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Oystercatcher + Belted Kingfisher issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed gaining food on turn end",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Passenger 57 achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Further fixes within birds with pink powers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4474904295744198557"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-27T12:04:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.226Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.226Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-06-03",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan: European Expansion Hotfix - June 3rd",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-03T09:50:07.000Z",
+   "notes": [
+    {
+     "title": "Hello Birders!",
+     "items": [
+      {
+       "text": "We're introducing another quick hotfix for European Expansion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed blocking tutorial while playing with a pad: Further fixes coming soon, including those related to the June 1st update issues. Thank you for staying with us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4469272893495704406"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-03T09:50:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.226Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.226Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-06-01",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan: European Expansion - Hotfix June 1st",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-01T10:34:03.000Z",
+   "notes": [
+    {
+     "title": "Hello Birders,",
+     "items": [
+      {
+       "text": "We're introducing another hotfix for Wingspan: European Expansion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Ruff card icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed paying with cashed food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Common Goldeneye laying eggs with only one click",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing & additional/unnecessary turns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed played bird in the wrong habitat in the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4469272893488530618"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-01T10:34:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.225Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.225Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-05-19",
+   "gameId": "wingspan-121586",
+   "displayName": "European Expansion Hotfix - May 19th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-19T17:00:10.000Z",
+   "notes": [
+    {
+     "title": "Birders!",
+     "items": [
+      {
+       "text": "New pack of fixes for Wingspan: European Expansion arrived!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed CPU performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Japanese goal tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed automa bonus card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4292505348825903942"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-19T17:00:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.225Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.225Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-05-12",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan: European Expansion Hotfix - May 12th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-12T14:44:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Eastern Kingbird activation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Audouin’s Gull activation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Snow Bunting activation sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hummingbird skipping activation in the habitat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/5849624375818385968"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-12T14:44:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.224Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.224Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-05-09",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan: European Expansion Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-09T14:26:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fixed Snow Bunting pink power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed European Goldfinch pink power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Japanese goal tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Northern Harrier Latin name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed sometimes missing overview button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Common Goldeneye counting toward Anatomist bonus card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4348799082205013260"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-09T14:26:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.224Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.224Z"
+  },
+  {
+   "id": "wingspan-121586@major-2022-05-05",
+   "gameId": "wingspan-121586",
+   "displayName": "Major Wingspan Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-05T16:51:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added new European Expansion in online matchmaking games for everyone (!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new European Expansion tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI major overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "better AI logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "faster AI turn times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI birds powers major rework",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automa changes - minor changes to Automa turn screen for better user experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new online profile panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new toggle expansions popup in custom game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added play birds sound button in the atlas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added card preview while taking from the card deck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed missing confirm buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed End of round power sometimes blocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed refreshing online turns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing focus buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mouse and controller navigation on scrollable lists",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4348799082190812420"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-05T16:51:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.223Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.223Z"
+  },
+  {
+   "id": "wingspan-121586@hotfix-2022-02-23",
+   "gameId": "wingspan-121586",
+   "displayName": "Hotfix - February 23rd",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-23T13:26:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed localization issue inside the store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Summer Solstice background glitching bucket sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4246335832504516898"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-23T13:26:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.222Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.222Z"
+  },
+  {
+   "id": "wingspan-121586@patch-2022-02-16",
+   "gameId": "wingspan-121586",
+   "displayName": "Wingspan: Seasonal Decorative Pack Patch - February 16th",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-16T13:00:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed missing music on Halloween background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Introduced review other players after transforming the online game to local",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Lazuli Bunting blinkings wings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1054490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1054490/view/4246335198888748394"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-16T13:00:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1054490",
+      "checkedAt": "2026-11-13T03:36:20.221Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:20.221Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "4975f33be507",
+   "text": "Issues with reversing power of Mute Swan, Common Moorhen, Wilson’s Storm-Petrel and Great Crested Grebe",
+   "status": "open",
+   "firstReleaseId": "wingspan-121586@patch-2022-11-23"
+  },
+  {
+   "id": "1797548a3eff",
+   "text": "Issue with repeating Black Woodpecker’s power with Gray Catbird that sometimes causes a bug when a player can’t gain food",
+   "status": "open",
+   "firstReleaseId": "wingspan-121586@patch-2022-11-23"
+  },
+  {
+   "id": "3b8373e1d9df",
+   "text": "We are also working extensively on fully changing the service that operates the Wingspan online server, which involves moving all functionality of this mode to another system. This change is intended to address issues reported with online games. The work is going well, but it is a large task and requires some time. We will update you on further progress soon.",
+   "status": "open",
+   "firstReleaseId": "wingspan-121586@patch-2022-11-23"
+  }
+ ]
+}

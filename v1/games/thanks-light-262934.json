@@ -1,0 +1,2763 @@
+{
+ "game": {
+  "id": "thanks-light-262934",
+  "igdbId": 262934,
+  "name": "Thanks, Light.",
+  "cover": {
+   "imageId": "co6zb8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6zb8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2h58",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2h58.jpg"
+  },
+  "ps5Release": "2026-10-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "thanks-light-262934@1.0.8",
+   "gameId": "thanks-light-262934",
+   "displayName": "Update 1.0.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-01T10:54:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! This is LIGHTERSGAMES. We originally wanted to come back to you with 1.1.0. However, there were quite a few things that made playing uncomfortable, along with many bugs that we felt changed the experience far too much, so we wanted to fix them as quickly as possible. So while continuing our main work on physics stability and a new reset system, we've been releasing a number of fixes along the way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Quality of Life",
+     "items": [
+      {
+       "text": "Added levels 5 and 6 to the Motion Sickness UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to adjust camera shake intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added tooltips to every setting that didn't have one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the FOV default was shown as 90 even though it was actually 100.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🧩 Puzzles & Levels",
+     "items": [
+      {
+       "text": "Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-20: Adjusted the button positions at the fork and made the buttons easier to see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the visibility of the Chapter 1 crossroads. Also experimentally removed some Chapter 1 sequences that were repeating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-19: Made it clearer that you can also proceed in the opposite direction, and adjusted the position of a hidden flower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-22: Greatly improved a stage experience that felt unpleasant because it relied too heavily on physics. We're continuing to improve other stages in the same direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3-12: Improved the puzzle design to prevent overly unfair situations and make outcomes easier to predict.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed seesaws in some stages, such as 3-13, so they tilt properly according to the weight of objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-19: Fixed an issue where the triangle copied with a mirror appeared too low, and changed the position of a hidden flower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3-21: Jump pads that can't be used because a door blocks them now look switched off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made adjustments to some stages in Chapters 2 and 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐞 Bug Fixes",
+     "items": [
+      {
+       "text": "Progression & Puzzles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a loading-related issue in the Chapter 1 intro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in some Chapter 1 areas where the extra reset button and the shapes on the floor didn't reset properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-17: Fixed an issue where a hidden flower couldn't be collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the corridors after 2-8 and 2-12 where Reset Stage and Select Stage couldn't be selected after the error window sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2-21: Fixed an issue where you couldn't jump onto the pillar after skipping the cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-8: Fixed an issue where there was an invisible floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where dark marks left by right-clicking sometimes didn't disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blocked unintended ways to get through some stages and spots where you could get outside the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blocked unintended solutions to some hidden puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chapter 3 Final Stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where re-entering through Select Stage started you in the wrong place. You now start at the beginning of that section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where progress stopped after loading a checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the difficulty and some inconveniences of certain patterns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added guidance lines and hint lines for the first pattern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some flying shapes passed through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some surfaces weren't displayed properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the background music didn't play or cut out when looping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the pieces of the finished object didn't connect properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the difficulty of a hidden achievement in Chapter 1 that was nearly impossible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made some hidden achievements just a little easier to find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some hidden achievements weren't unlocked if another object touched first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one of the hidden flowers in Chapter 1 wasn't counted toward the total. This is corrected automatically when you launch the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where achievement progress went up twice when revisiting the same place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If your achievement count doesn't add up, or an achievement you definitely completed wasn't recorded, please report it using the steps below. We'll help you sort it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "📮 How to Report Issues",
+     "items": [
+      {
+       "text": "If you run into a problem, please send us the files below via Discord or a shared link such as Google Drive. It helps a lot in tracking down the cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press Win + R on your keyboard, enter %LOCALAPPDATA% and click OK. In the folder that opens, go into the ThanksLight folder, then the Saved folder.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In the Saved folder, compress the Crashes and Logs folders together. The Crashes folder is created when the game closes unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upload the compressed file to our official Discord (the Discord button in the game's main menu) or send us a drive link. It's even better if you also tell us when and in what situation the problem occurred.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 28,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1847920302244575"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T10:54:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.584Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T10:54:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.584Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-01T10:54:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.557Z"
+  },
+  {
+   "id": "thanks-light-262934@1.0.7",
+   "gameId": "thanks-light-262934",
+   "displayName": "Update 1.0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-23T17:45:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44474206/89aef3a5f9e2e96fbc565d70b0d3642c45b6aaaa.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our very first fan art for THANKS, LIGHT.! What an honor 😭😭 Thank you, TheShekinah!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello! This is LIGHTERSGAMES. A heartfelt thank you to everyone who has played our game, cheered us on, and given us honest (and sometimes stinging) feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1.0.7 will likely be the last of the 1.0.X patches! We're currently redesigning puzzles that relied too heavily on physics and luck, and researching ways to tame the excessive physical reactions of puzzle objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're also working on a way to undo your progress other than the reset button. We're truly sorry for those frustrating moments when you'd almost solved a puzzle and had to hit the full reset. Because we're tackling such big changes, the next patch will take a little longer, but it should bring bigger changes too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Controls & Physics",
+     "items": [
+      {
+       "text": "Because our game is built on the game engine's physics, inconvenient or unexpected situations are bound to happen. We know this is a serious issue, and we feel the weight of not having polished the physics enough before launch. So we're carefully studying the plays of streamers who played our game and fixing the physics pain points one by one. The changes below are the first step.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved held objects having so much friction against walls and floors that they wouldn't move the way you wanted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved objects bouncing or rolling when they land after being turned 3D or put down. This also fixes the issue being worse at high frame rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "These changes have a big impact on how the game feels, so we really need your honest opinions. Please let us know whether things got much better, or whether anything feels worse!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧩 Puzzles & Levels",
+     "items": [
+      {
+       "text": "Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-20: It's no longer a pinball stage! Relying too much on physics meant many players struggled with the ball's random movement. We replaced it with a brand-new puzzle that's predictable enough to plan around, yet still asks for observation and thought. If you've already cleared this stage and you're curious, give it another try.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-23: We added an elevator! You can now move between floors quickly! Woo! We also replaced the three pieces and the finished shape, and added markings to the scale so it's easier to recognize as a scale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-11: Made the puzzle design more intuitive, and adjusted the slope in the second area so the ball rolls faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-14: Added a reset button that resets only the ball and the box, making retries less of a burden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redesigned the spaces of some Chapter 1 stages, including 1-7. We also improved the presentation and visuals of early Chapter 1 and the design of its later stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-11: Added lighting so the objects you need to find are easier to spot, and reduced background elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐞 Bug Fixes",
+     "items": [
+      {
+       "text": "Progression & Puzzles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2-22: Fixed the truly unfair issue where the sled would strangely reset right at the very end. (We're so sorry...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-19: Fixed objects launched by the seesaw flying off on their own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2-13: Fixed a button you shouldn't press being placed incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2-18: Fixed issues with the rotating cross device and the cylinder with holes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed misaligned indicator lights at door passages in some Chapter 2 stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-18: Fixed the ball not reappearing after a reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved birdsong looping endlessly in Chapter 3. If it keeps happening, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements & Stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Found and fixed one cause of the Fatal Error. The game could close unexpectedly when graphics quality settings were applied after you had turned an object 3D and then left that stage. We're sorry to everyone who experienced sudden crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you collected hidden flowers but the related achievement wasn't unlocked, the game now checks again and unlocks it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "⚠️ Known Issues",
+     "items": [
+      {
+       "text": "We expect this fix to greatly reduce Fatal Errors, but other causes may remain, so we're keeping a close eye on it. If the problem happens again, please report it using the steps below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📮 How to Report Issues",
+     "items": [
+      {
+       "text": "If you run into a problem, please send us the files below via Discord or a shared link such as Google Drive. It helps a lot in tracking down the cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press Win + R on your keyboard, enter %LOCALAPPDATA%\\\\ThanksLight\\\\Saved and click OK.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In the folder that opens, compress the Crashes and Logs folders together. The Crashes folder is created when the game closes unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upload the compressed file to our official Discord (the Discord button in the game's main menu or button right down of this page) or send us a drive link. It's even better if you also tell us when and in what situation the problem occurred.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 12,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1847286114037401"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T17:45:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.583Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T17:45:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.583Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T17:45:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.556Z"
+  },
+  {
+   "id": "thanks-light-262934@1.0.6",
+   "gameId": "thanks-light-262934",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-20T10:20:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! This is LIGHTERSGAMES. Sure, the Admin was never great at managing things, but we didn't think it was THIS bad! (Of course, that's on us. Heh.) We're working hard on fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They aren't in this update yet, but we're also improving stages that were inconvenient or whose intent was just too hard to figure out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'd love for more people to discover the game... but it's not easy :( It's tough out there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In 1.0.6, we've polished rotation mode and puzzle usability, and fixed a Fatal Error that occurred on some systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Quality of Life",
+     "items": [
+      {
+       "text": "Entering rotation mode no longer resets an object's rotation. Instead, it now snaps to the nearest 45-degree angle from its current orientation. To return the rotation to its original state, hold the R key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pressing a button that is still operating and can't be used again yet now plays a separate sound, so you can easily tell it isn't ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧩 Puzzles & Levels",
+     "items": [
+      {
+       "text": "1-20: Improved the level design of the pinball stage. We hope you can now focus more on the intended puzzle solution than on the ball's random movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-14: Made the puzzle less demanding to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-18: Improved glass frames and magnetic field frames blocking the view of puzzle objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased the transformation speed of objects that need to be transformed quickly in some puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed geometry buttons in some puzzles registering answers incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the final stage of Chapter 3, it's now easier to tell when a shape doesn't fit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐞 Bug Fixes",
+     "items": [
+      {
+       "text": "Progression & Puzzles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-13: Fixed some buttons not responding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-19: Fixed an issue where you could unintentionally fall in some areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2-9: Improved an issue where the player could get stuck on a background object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some puzzle objects getting caught in glass and flying off in late Chapter 3 stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some puzzle elements not resetting along with the stage when using stage reset or a reset button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved an issue where some puzzle objects did not appear. However, we haven't yet pinned down the cause, so if this happens to you again, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the credits not playing in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Fatal Error caused by a conflict between the NPU built into some CPUs and an Unreal Engine plugin. This fix has not been fully tested yet, so if you have an NPU and run into the same problem, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "⚠️ Known Issues",
+     "items": [
+      {
+       "text": "We are still tracking down Fatal Errors that occur on systems without an NPU. We're sorry we haven't been able to fix this sooner. We are currently focusing on a possible conflict with custom overclocking settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📮 How to Report Issues",
+     "items": [
+      {
+       "text": "If you run into a problem, please send us the files below via Discord or a shared link such as Google Drive. It helps a lot in tracking down the cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press Win + R on your keyboard, enter %LOCALAPPDATA%\\\\ThanksLight\\\\Saved and click OK.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In the folder that opens, compress the Crashes and Logs folders together. The Crashes folder is created when the game closes unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upload the compressed file to our official Discord (the Discord button in the game's main menu) or send us a drive link. It's even better if you also tell us when and in what situation the problem occurred.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1846651706694613"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-20T10:20:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.582Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-20T10:20:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.582Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-20T10:20:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.554Z"
+  },
+  {
+   "id": "thanks-light-262934@1.0.5",
+   "gameId": "thanks-light-262934",
+   "displayName": "Hotfix 1.0.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-17T12:49:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is the 1.0.5 hotfix. It focuses on Chapter 3, fixing progression issues and hidden flowers and achievements that couldn't be obtained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐞 Bug Fixes",
+     "items": [
+      {
+       "text": "Progression & Exploits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-13: Fixed an issue where you could climb onto the metal frames and clear the stage without solving the puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-15: Fixed some objects passing straight through the magnetic field.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-15: Changed the shape of the final button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, after watching the cutscene following 3-15, falling no longer returned you to the restart point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-17 (rotating stage): Fixed an issue where you did not restart at the correct position after falling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hidden Flowers & Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-17: Fixed an issue where the hidden flower could not be collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some hidden achievements in Chapter 3 could not be unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "⚠️ Known Issues",
+     "items": [
+      {
+       "text": "We have received reports that a lens sometimes does not appear in its place when first entering a stage, and are investigating the cause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are also still investigating reports of the game closing with a Fatal Error in some environments. If it happens to you, letting us know where and in what situation would help a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1846651706684497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-17T12:49:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.581Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-17T12:49:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.581Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-17T12:49:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.553Z"
+  },
+  {
+   "id": "thanks-light-262934@1.0.4",
+   "gameId": "thanks-light-262934",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-16T16:29:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been so busy fixing things that we never got around to posting patch notes! This post rounds up everything that quietly went into 1.0.2 and 1.0.3, together with 1.0.4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Quality of Life",
+     "items": [
+      {
+       "text": "The volume of the Admin's English voice lines can now be adjusted separately in the Audio settings. Glitch voices of the Admin, the Girl and the Fugitive are still included in the sound effects volume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have corrected some audio files that were either unassigned or assigned to the wrong category.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hint lines now appear ever so slightly sooner when you're stuck on a puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧩 Puzzles & Levels",
+     "items": [
+      {
+       "text": "Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-12: Fixed an issue where the large box dropped from too high after resetting the stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-12: Adjusted the difficulty of the puzzle tied to an achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-14: Made the early part of the puzzle easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1-23: Fixed pieces not fitting even when the shape matched, so pieces now snap firmly into place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-10: Relaxed the timing and placement needed for the section where you float objects on water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-11: Objects you need to find are now lit up so they're easier to spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-12: Added markings to buttons you shouldn't press, and added frames to the glass edges so they're easier to see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-20: Switched-off (red) buttons now glow faintly so they're easier to find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved an issue in some stages, such as 3-7, where objects reset just by lightly touching a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "3-9: The moving pillars can now be controlled with a button, making it easier to time turning them 2D.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3-13: Fixed the mirror being hard to see behind beams of light, and changed the magnetic field to blue so it stands out more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3-13: Changed the central sphere to metal and fixed an issue where you could pass through the metal frames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Early Chapter 3: Floating balls are now easier to see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Early Chapter 3: Adjusted where you restart after falling in the moving platform section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐞 Bug Fixes",
+     "items": [
+      {
+       "text": "Progression & Exploits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-15: Fixed an issue where the hole and the rail were misaligned, making it impossible to progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in parts of Chapter 3 where a box turned invisible after rising up during a cutscene and blocked the path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could jump out of the area during some cutscenes in Chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "3-12: Fixed an issue where the stage could be cleared in an unintended way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-12: Fixed an issue where you could step on the reset button's base to climb onto the large box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-12: Fixed an issue where you could get the box out of the falling room without breaking the statue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in parts of Chapter 1 where you could carry a cylinder on its side and climb up on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Graphics & Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-15: Fixed objects falling through a hole under the stairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "1-15: Fixed the large wall not displaying correctly in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a reset button outside the stage appearing reflected on a wall in parts of Chapter 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2-11: Fixed stripes appearing on the surface of wheel objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a sound looping endlessly after entering a certain spot in the stage with pyramids and cones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controls & UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Steam and Discord shortcut buttons in the menu not responding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the game freezing while turning an object back to 3D when Texture Quality was set to Low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "⚠️ Known Issues",
+     "items": [
+      {
+       "text": "We have received reports of the game closing with a Fatal Error in some environments and are investigating the cause. If it happens to you, letting us know where and in what situation would help a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 18,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1846651706682245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T16:29:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T16:29:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.580Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-16T16:29:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.552Z"
+  },
+  {
+   "id": "thanks-light-262934@1.0.1",
+   "gameId": "thanks-light-262934",
+   "displayName": "Hotfix 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-14T21:36:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you so much for playing THANKS, LIGHT.! Hotfix 1.0.1 is now live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed lights, bulbs, and cables being visible when they should have been hidden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some objects sliding at unintended angles. They now stay firmly in place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player's respawn position in some areas was set inside a wall, causing the player to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to grab objects behind the glass in the pinball puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 2",
+     "items": [
+      {
+       "text": "Fixed rods that start in a 2D state not being visible in some puzzles. These rods now start in a 3D state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 3",
+     "items": [
+      {
+       "text": "Fixed the computer screen not displaying correctly in a cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed balls getting stuck because their respawn position after a collision was too low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the position of the pillars in the final stage so they no longer block cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a ball being placed outside the room in the first section of the final stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues related to progression in the final stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Sound",
+     "items": [
+      {
+       "text": "Fixed the sound effect for finding hidden dialogue not following the volume settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Text & Translation",
+     "items": [
+      {
+       "text": "Fixed formatting tags (e.g., ) appearing as plain text in some dialogue. This applies to all supported languages except Korean.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a line in Chapter 1 that was translated differently from the original in some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a missing noise effect to a Spanish line and fixed a typo in Greek.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And... we pulled an all-nighter for this! 🌙",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1846651706675661"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T21:36:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.579Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-14T21:36:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.579Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-14T21:36:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.551Z"
+  },
+  {
+   "id": "thanks-light-262934@major-2026-05-16",
+   "gameId": "thanks-light-262934",
+   "displayName": "THANKS, LIGHT. — Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-16T07:03:52.000Z",
+   "notes": [
+    {
+     "title": "THANKS, LIGHT. — Demo Update",
+     "items": [
+      {
+       "text": "It's been a while, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we've been holed up in our small dark room, hiding from the sun and grinding away,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "has the world been doing alright out there?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A game with the same gimmick as ours didn't drop while we were gone, did it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Just imagining it gives us chills.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've done a HUGE amount of work this whole time, but since most of it went",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "into the later chapters, the demo only gets this slice of the patch notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Honestly, we did so much that this is just what we managed to dig out of",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "our memory. We also fixed, tweaked, and polished a ton of other little things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🌐 Localization",
+     "items": [
+      {
+       "text": "The game now supports a whopping 21 languages! (With a little help from AI.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Controls / Quality of Life",
+     "items": [
+      {
+       "text": "Expanded gamepad options — sensitivity settings, more stable key remapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revamped rotation logic — smoother to use, with more ways to rotate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New interaction UI that reflects flashlight range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Story skip feature added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🖥️ Graphics / Video",
+     "items": [
+      {
+       "text": "Various new graphical elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New video options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upscaling options added (TSR + Screen Percentage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DLSS and FSR are planned for a later update",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A tiny bit of optimization (really, just a tiny bit)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔊 Sound",
+     "items": [
+      {
+       "text": "SFX and BGM improvements across the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🌸 Content",
+     "items": [
+      {
+       "text": "We've hidden even more flowers! You can now see your collection progress on the stage list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character dialogue translations and revisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed button solution detection and a number of other small bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It's been a long time since our last update, so even one more player picking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the demo up means a lot to us. After playing, please share your thoughts with us",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "through Steam reviews or our Discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Praise, complaints, bug reports — all welcome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We also have some events coming up — we'd love to see you there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "May 22–24 — BitSummit 2026 (Miyako Messe, Kyoto) on-site booth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "May 28 – June 4 — Cerebral Puzzle Showcase on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you swing by our booth in person, we'll be over the moon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Oh, and one more thing! Our game launches in September,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "but if you're too curious to wait, you can sign up for our Playtest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You'll find the details in our community posts. Spots are filling up fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "See you soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— Lightersgames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 13,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1832700592793876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-16T07:03:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.578Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.549Z"
+  },
+  {
+   "id": "thanks-light-262934@major-2025-08-09",
+   "gameId": "thanks-light-262934",
+   "displayName": "[NOTICE] Demo “Mega Update” is live!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-09T07:50:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44474206/9e5009d077efde653c9a4a0e50687068be8c0cca.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "\\ Demo “Mega Update” is live!",
+     "items": [
+      {
+       "text": "Hello from Lightersgames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yes… it’s been a while. We’ve been grinding for a month straight 😭",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big rebuild today: new options, presentation, subtitles/localization—pretty much everything got touched. Please play and tell us what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] Massive UI revamp – cleaner menus, better readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] Comfort Mode – tweaks aimed at reducing 3D motion sickness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] Gamma slider – for anyone who felt the game was too bright.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] V-Sync toggle – reduce screen tearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] Lots of new options – tune it your way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] Story & presentation update – more natural, clearer delivery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] New subtitle system – improved sync & stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] Localization pass – KO/EN polished (more languages coming).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] Early levels tweaked – smoother flow & difficulty curve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\[] SFX overhaul (ongoing) – some volume balance may still be off—thanks for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Details",
+     "items": [
+      {
+       "text": "UI / Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check the new layout under ESC → Options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Comfort Mode bundles settings that reduce camera shake/acceleration, etc. Adjust to taste.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gamma, V-Sync, plus many graphics/audio/gameplay toggles added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Story & Presentation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscene timing, environmental reactions, and audio cues reworked to convey info more naturally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subtitles & Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New subtitle backend for better stability/readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Full pass on Korean/English (fixed mistranslations/garbling). More languages soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level Tuning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Early demo sections got light guidance and clue adjustments to improve onboarding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Large SFX library rework. Note: some volume sliders are still being fine-tuned—patch incoming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Known Issue",
+     "items": [
+      {
+       "text": "SFX volume balance isn’t perfect yet (actively tuning). If something stands out, tell us and we’ll prioritize it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feedback & Bug Reports",
+     "items": [
+      {
+       "text": "Discord: Join our server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Demo review: Leave a review",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Follow-up form: Google Form",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Email: hb@lightersgames.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Even a single line of feedback helps shape the next build. And don’t forget the Wishlist—thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "From - Lightersgames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1807332909629544"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-09T07:50:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:26.548Z"
+  },
+  {
+   "id": "thanks-light-262934@major-2025-06-15",
+   "gameId": "thanks-light-262934",
+   "displayName": "[UPDATE]DEMO UPDATE-Bugs Fixed!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-15T11:15:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello from Lightersgames!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Huge thanks to everyone still enjoying our demo—we’ve shipped a fresh build that fixes many of the pain points you told us about. 🛠️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🆕 Patch Highlights",
+     "items": [
+      {
+       "text": "ESC Menu UI Overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All sub-menus should now work…we hope! If any button misbehaves, please send us a bug report ASAP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Intro Re-watch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "From \\[Select Stage] you can replay each chapter’s opening cut-scene (if that’s really what you want!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Continue Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pressing \\ now drops you at your latest save point. It survived 100 internal tests—but if it breaks on you, let us know. 😭",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dev Message Pop-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Click the little “letter” icon in the upper-left of the main menu to read greetings, patch notes, and event news in real time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Demo Event Closed & Short Version Returns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The extended content is taking a break, but the core-mechanic tutorial is still here! Next extension arrives at Gamescom 2025 / Tokyo Game Show 2025—stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🐞 We Need Your Feedback!",
+     "items": [
+      {
+       "text": "Bug reports: email, Discord, or the Steam Community—anywhere is fine!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Even a single-line comment helps us a ton. Thanks to you, the journey of light continues. Enjoy the puzzles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— Lightersgames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "ESC Menu UI Overhaul",
+     "All sub-menus should now work…we hope! If any button misbehaves, please send us a bug report ASAP.",
+     "Intro Re-watch"
+    ]
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1802354289656700"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-15T11:15:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:02.909Z"
+  },
+  {
+   "id": "thanks-light-262934@major-2025-05-08",
+   "gameId": "thanks-light-262934",
+   "displayName": "[BIG DEMO UPDATE] New Chapter Reveal! & New Stages!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-08T15:08:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎉 THANKS, LIGHT. – Major Demo Update! (After 6 Months)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been a while — and we mean it. After six months, the demo of THANKS, LIGHT. is finally back with a major update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New content, better UX, improved mechanics — all here to give you a smoother, deeper puzzle experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🆕 Here’s what’s new",
+     "items": [
+      {
+       "text": "5 brand new puzzle stages added to Chapter 1!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 2 is now playable! Try out the new light absorption mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved story cutscenes (still work-in-progress, but a lot added!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player movement speed boosted — no more crawling across the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cube interaction fixed — you won’t need to slam it on the ground anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved UX and convenience tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And... countless other updates we honestly forgot after 6 months",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This update marks a big step for our game. We’re still refining things, but your feedback is what keeps us going.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📣 Want to help us grow?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Please add us to your Steam Wishlist!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thanks for waiting. And thank you even more for playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "– With love, Lightersgames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "5 brand new puzzle stages added to Chapter 1!",
+     "Chapter 2 is now playable! Try out the new light absorption mechanic",
+     "Improved story cutscenes (still work-in-progress, but a lot added!)"
+    ]
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1799088287835357"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T15:08:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:02.908Z"
+  },
+  {
+   "id": "thanks-light-262934@1.0.1.0",
+   "gameId": "thanks-light-262934",
+   "displayName": "UPDATE 1.0.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-27T17:50:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are Lighters, the development team behind THANKS, LIGHT.!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'd like to share some news about the updated demo version that's currently available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are now posting update news in Korean!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It was strange that we, as Korean developers, weren't using our own language, right? Especially since we're not that great at English...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where puzzle objects couldn't be picked up in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhanced the interaction effect when picking up puzzle objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We received feedback that it was hard to tell when an object was picked up or not, so we made the effect stronger. However, it might end up being too flashy and hurt your eyes. If it's too much, please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Actually, we're currently working hard to improve the object interaction effects!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the level design of several stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We tried to remove inconveniences without hindering the fun of the puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added magnetic fields to the doors!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now it's more intuitive that you can't carry puzzle objects through them! We finally understand why Companion Cubes were made separately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed other miscellaneous bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "But it seems that fixing bugs just creates more bugs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have slightly reduced the brightness of the stage clear effect that was straining your eyes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the future, we plan to provide customization options for brightness, contrast, and other settings to help you create your own optimal experience, so please wait just a little longer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As we've mentioned, we are a very small indie development team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We apologize for not always providing the best experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, THANKS, LIGHT. is still in active development, so your feedback and opinions are always welcome!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will strive to repay you with a better game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 1,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1784506358984843"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-27T17:50:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.575Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:02.907Z"
+  },
+  {
+   "id": "thanks-light-262934@1.0.0.1",
+   "gameId": "thanks-light-262934",
+   "displayName": "Hotfix 1.0.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-20T17:06:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! We've just released a hotfix for the demo of THANKS, LIGHT. 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "Improved Puzzle Visibility: We've adjusted the background in certain stages to make puzzle elements that were previously hard to see much clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted Difficulty: We've slightly eased the difficulty of a specific stage to enhance the gameplay experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Persistent Light Color Bug: We found that after certain sections, the light color unintentionally stayed changed to a yellow hue due to the clear effect. This issue has now been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As we're still new to game development, we really appreciate your feedback. Please give the updated demo a try and let us know what you think! Your support means a lot to us. 🙏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2544740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2544740/view/1783872411953713"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-20T17:06:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2544740",
+      "checkedAt": "2026-11-13T03:32:49.574Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:29:02.906Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "349e704717de",
+   "text": "SFX volume balance isn’t perfect yet (actively tuning). If something stands out, tell us and we’ll prioritize it.",
+   "status": "open",
+   "firstReleaseId": "thanks-light-262934@major-2025-08-09"
+  },
+  {
+   "id": "79642a3d43ea",
+   "text": "We have received reports of the game closing with a Fatal Error in some environments and are investigating the cause. If it happens to you, letting us know where and in what situation would help a lot.",
+   "status": "open",
+   "firstReleaseId": "thanks-light-262934@1.0.4"
+  },
+  {
+   "id": "179d1b329e98",
+   "text": "We have received reports that a lens sometimes does not appear in its place when first entering a stage, and are investigating the cause.",
+   "status": "open",
+   "firstReleaseId": "thanks-light-262934@1.0.5"
+  },
+  {
+   "id": "7d775f74e568",
+   "text": "We are also still investigating reports of the game closing with a Fatal Error in some environments. If it happens to you, letting us know where and in what situation would help a lot.",
+   "status": "open",
+   "firstReleaseId": "thanks-light-262934@1.0.5"
+  },
+  {
+   "id": "ff51889fa641",
+   "text": "We are still tracking down Fatal Errors that occur on systems without an NPU. We're sorry we haven't been able to fix this sooner. We are currently focusing on a possible conflict with custom overclocking settings.",
+   "status": "open",
+   "firstReleaseId": "thanks-light-262934@1.0.6"
+  },
+  {
+   "id": "93500d1789e4",
+   "text": "We expect this fix to greatly reduce Fatal Errors, but other causes may remain, so we're keeping a close eye on it. If the problem happens again, please report it using the steps below.",
+   "status": "open",
+   "firstReleaseId": "thanks-light-262934@1.0.7"
+  }
+ ]
+}

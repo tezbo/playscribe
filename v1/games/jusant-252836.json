@@ -1,0 +1,1199 @@
+{
+ "game": {
+  "id": "jusant-252836",
+  "igdbId": 252836,
+  "name": "Jusant",
+  "cover": {
+   "imageId": "coa2kv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa2kv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2cju",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2cju.jpg"
+  },
+  "ps5Release": "2023-10-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "jusant-252836@1.07",
+   "gameId": "jusant-252836",
+   "displayName": "Patch 1.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-17T09:45:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello climbers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are a few quick fixes we’ve made with this new patch 1.07",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Environment:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing plants in chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collisions - Removed some environment collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoothed some climbing walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed character collisions with some props",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed walkable areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some grips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugs:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the tutorial trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wind trigger at the reload of the 2nd checkpoint in chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed roots not being triggered by the Ballast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1977170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1977170/view/5747233970421635286"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T09:45:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.732Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T09:45:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.732Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-17T09:45:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:23.533Z"
+  },
+  {
+   "id": "jusant-252836@1.06",
+   "gameId": "jusant-252836",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-08T11:04:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello climbers! Here are a few quick fixes we’ve made to ensure smoother sailing in Jusant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tech",
+     "items": [
+      {
+       "text": "DLSS 3 added",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "VSync is now correctly disabled when activating Reflex or FrameGeneration",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Qualities not supported by hardware will be removed from the list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DLAA quality has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other fixes",
+     "items": [
+      {
+       "text": "Fixed Out of Memory crash when wind particles accumulate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed line breaks in letters (for French language)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing walking SFX for lizard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements ‘Acrobat’, ‘Fresh Air’ and ‘Restored Connection’ should now be handled properly with reload and unlocked properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented players to “Continue” their save, after completing and starting a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1977170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1977170/view/5589599109264892910"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-08T11:04:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.731Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-08T11:04:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.732Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-08T11:04:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:23.532Z"
+  },
+  {
+   "id": "jusant-252836@1.04",
+   "gameId": "jusant-252836",
+   "displayName": "Patch 1.04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-21T11:20:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello climbers! Before we get into the patch notes, we wanted to give a big thank you to all players who have taken the time to leave feedback or a review of Jusant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve titled this patch The Accessibility Update, as many new accessibility features have been added as well as bugfixes (ultrawide players, rejoice!) and quality of life changes of course. We’re pleased to welcome even more players to the tower with this update.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Accessibility additions",
+     "items": [
+      {
+       "text": "Simplified Climbing Mode (instead of triggers, only the joysticks are used)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Alternate Rappel Mode and tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Simplified Interactions Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jump Assistance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "No Stamina Mode (stamina mechanic can be deactivated)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Color Blindness options and intensity sliders (Deuteranopia, Protanopia, Tritanopia)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Animation",
+     "items": [
+      {
+       "text": "• Improved shaky movements performed by the character during climbing and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "when the rope is at maximum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved character’s hand location on grips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved multiple broken animations when jumping over several assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed grass animation clipping through assets in chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Ballast clipping through character’s head during climbing and gripping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed animations on peebles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the possibility to bypass the rope wind tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a possibility to get stuck at the top of a ladder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Corrected character’s hands location on the gear in chapter 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved interactions with the relays",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed misplaced foot during game ending cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed wallrun animation missing when rope is at its maximum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved out of bounds falling issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed jump animation after exiting seashell cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved wind’s interaction with character’s hair and poncho",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Environment",
+     "items": [
+      {
+       "text": "• Fixed several missing collisions in environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed invisible collisions in several parts of the environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Programming",
+     "items": [
+      {
+       "text": "• Bluetooth now recognized for Dualshock 4 and Dualsense",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Collectibles now saved when starting a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the missing peebles in biome 2 in a specific area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the partly cut-off screen loading symbol on lower resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed control option to invert X and Y camera axis when using mousepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed remapping issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Language can now be changed from system’s default language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Resetting default language to OS language is fixed for FR, IT, DE, PL, JP, KR, RU, ZH-Hans",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved ziplines and related rope",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved performance drops and FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed gamma submenu “back button” navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Cinematics and gameplay transitions in ultrawide won't stretch the image for one frame",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Ultrawide won't crop and zoom image in 21:9",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Lighting",
+     "items": [
+      {
+       "text": "• Improvement on lighting at the end of biome 2 observatory cinematic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Camera",
+     "items": [
+      {
+       "text": "• Fixed several incorrect camera zooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improved camera clipping through walls and character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed incorrect camera location when reloading biome 3 checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "• Fixed UI overlaps issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed prompts that used to hide climbing path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tech and Performance",
+     "items": [
+      {
+       "text": "• Added auto HDR settings on XSS & XSX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added motion blur scale settings on all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added DLSS3 settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed physics optimisation on low specs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed autodetection of graphics settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "• Fixed elevator SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed footsteps material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Design",
+     "items": [
+      {
+       "text": "• Fixed character stuck in several parts of environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed UI tutorials remaining on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed inconsistencies between credits from main menu and game ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed grappling hook interaction in chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the manual stamina spamming that was leading to unlocking the Fresh air achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• No more delay on Ballast loading after a continue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed various visible macros in texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed lizard clipping through chapter 4 - mountain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed sparkles issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed floating seashell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 55,
+    "ps5": 0,
+    "topNew": [
+     "Simplified Climbing Mode (instead of triggers, only the joysticks are used)",
+     "Alternate Rappel Mode and tutorials",
+     "Simplified Interactions Mode"
+    ]
+   },
+   "sourceIds": [
+    "steam-1977170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1977170/view/5382426458969632545"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-21T11:20:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.731Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-21T11:20:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.731Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-21T11:20:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:23.531Z"
+  },
+  {
+   "id": "jusant-252836@1.02.1431188",
+   "gameId": "jusant-252836",
+   "displayName": "Patch 1.02.1431188",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-31T15:23:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Jusant is finally out, and we’ve put together a day one patch to introduce some improvements for smoother sailing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ANIMATION",
+     "items": [
+      {
+       "text": "Improvements on the jump mechanic feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements on zipline animations to add idle movement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several improvements on gameplay animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Retakes on cutscenes animations to better reflect creative intentions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ENVIRONMENT",
+     "items": [
+      {
+       "text": "Improved environments in all cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clouds reworked in specific cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various environments were reworked on all biomes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "LIGHTING",
+     "items": [
+      {
+       "text": "Improved lighting across the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lighting on all cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upped the lighting in darker areas to help player navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transition between first and second biome’s lighting was reworked to fix performance and visual issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "VFX",
+     "items": [
+      {
+       "text": "VFX overhaul on most cutscenes to reflect creative intentions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revamped echo effect on some observatory cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "AUDIO",
+     "items": [
+      {
+       "text": "Improved audio on all cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved audio on all moods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved audio on footsteps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved audio on gameplay features (vines, pebbles).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Improved stamina gauge visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added chapters menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished all menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FEATURES",
+     "items": [
+      {
+       "text": "Added data tracking implementation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added HDR Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added additional accessibility settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "DESIGN",
+     "items": [
+      {
+       "text": "Additional fauna integration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General debug and cleaning on all biomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks on Tutorial scripting, specific gameplay cameras and climbing paths in general",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forced feedback addition on cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES (to be fixed with an incoming patch)",
+     "items": [
+      {
+       "text": "For PC players using mouse & keyboard:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In version 1.02.1431188, it is possible to rebind the input meant to go back to the game after reading any letter. But even if players change that key, they still need to use the default one (Backspace) to be able to move on. If no input works properly, players must use right-click on a mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "For PC players with ultrawide monitors:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Currently on 21:9 screens, the original image becomes cropped. We’re working on a fix for this that’ll come at the end of November, but until then you can fix it locally by following these instructions:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Follow this path on your computer: %localappdata%/ASC/Saved/Config/Windows/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Open the file Engine.ini (you can use Notepad, for instance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add the following directly in the file: [/script/asc.asclocalplayer]: MaxAspectRatio=1.7777777777777",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Graphics (PC):",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "On the first launch of Jusant, the game may automatically recognize your graphics settings to be lower than they actually are. While we work on a fix, you can manually set your graphics a level higher and see how you go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 4,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1977170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1977170/view/5229301621594648121"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T15:23:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.729Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T15:23:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1977170",
+      "checkedAt": "2026-11-13T03:23:57.730Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-31T15:23:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:26.546Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "24db346c453a",
+   "text": "Follow this path on your computer: %localappdata%/ASC/Saved/Config/Windows/",
+   "status": "open",
+   "firstReleaseId": "jusant-252836@1.02.1431188"
+  },
+  {
+   "id": "92c8d6b54004",
+   "text": "Open the file Engine.ini (you can use Notepad, for instance)",
+   "status": "open",
+   "firstReleaseId": "jusant-252836@1.02.1431188"
+  },
+  {
+   "id": "9c9ee7e4ee76",
+   "text": "Add the following directly in the file: [/script/asc.asclocalplayer]: MaxAspectRatio=1.7777777777777",
+   "status": "open",
+   "firstReleaseId": "jusant-252836@1.02.1431188"
+  },
+  {
+   "id": "418aad1cc728",
+   "text": "On the first launch of Jusant, the game may automatically recognize your graphics settings to be lower than they actually are. While we work on a fix, you can manually set your graphics a level higher and see how you go.",
+   "status": "open",
+   "firstReleaseId": "jusant-252836@1.02.1431188"
+  }
+ ]
+}

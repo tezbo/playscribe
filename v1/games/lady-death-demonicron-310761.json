@@ -1,0 +1,464 @@
+{
+ "game": {
+  "id": "lady-death-demonicron-310761",
+  "igdbId": 310761,
+  "name": "Lady Death Demonicron",
+  "cover": {
+   "imageId": "cocjy8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocjy8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar31yy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar31yy.jpg"
+  },
+  "ps5Release": "2026-08-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "lady-death-demonicron-310761@post-2026-11-04",
+   "gameId": "lady-death-demonicron-310761",
+   "displayName": "Minor fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-11-04T11:04:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with save states in Arcade and Outlast modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the final boss could be defeated while a clone was active, leaving the clone alive at game over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor graphical fixes to the backgrounds on level 6 and 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updates to credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2954890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2954890/view/1848557880478728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T11:04:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.924Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T11:04:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.924Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-04T11:04:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.876Z"
+  },
+  {
+   "id": "lady-death-demonicron-310761@patch-2026-10-16",
+   "gameId": "lady-death-demonicron-310761",
+   "displayName": "Latest bug fix and tweaks patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-16T14:07:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed wall blocker unblock bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Camera Y offset slightly adjusted on the Factory level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the way the save slots handle the sword selection to ensure the sword can't revert to the default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor glitch if tunnelling crawlers were hit immediately on first frame of spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an AnimEvent issue that could throw an error when the corpse bombs explode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved vertical camera positioning on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Minor graphical fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updates to credits and BBR names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2954890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2954890/view/1846651706681613"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T14:07:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.924Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-16T14:07:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.924Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-16T14:07:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.875Z"
+  },
+  {
+   "id": "lady-death-demonicron-310761@2",
+   "gameId": "lady-death-demonicron-310761",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-17T10:01:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed non-progression bug that could occur on respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where player could respawn walking left/right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fallback system to catch and fix any enemies that get stuck while spawning off screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the speed at which some enemies get into the battle after spawning off screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements to AI behaviours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Normalised the spin/charging razorbacks on the blimp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated KS backer names in backgrounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to how some trophy unlocks are handled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent the chalice artefact from respawning after collecting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add notification when using a cheat code, that trophy unlocking has been disabled for the session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2954890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2954890/view/1844115010491531"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T10:01:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.923Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-17T10:01:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.923Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-17T10:01:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.875Z"
+  },
+  {
+   "id": "lady-death-demonicron-310761@patch-2026-09-04",
+   "gameId": "lady-death-demonicron-310761",
+   "displayName": "First patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-04T08:25:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a respawn bug which could happen during the fight with the final boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which could cause the end-of-song trigger to fail during the concert",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a graphical glitch with the blood pool when a Riot Guard explodes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed humiliation trigger which was incorrectly set on Crawlers on some difficulty settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed knockback direction if hit by swarming rats while blocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cutscene videos now rendering correctly on Steam Machine/Proton",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Lots of minor graphical tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2954890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2954890/view/1842846814445709"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-04T08:25:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.923Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-04T08:25:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2954890",
+      "checkedAt": "2026-11-13T03:24:27.923Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-04T08:25:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:29.874Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,2308 @@
+{
+ "game": {
+  "id": "arctic-awakening-145041",
+  "igdbId": 145041,
+  "name": "Arctic Awakening",
+  "cover": {
+   "imageId": "co6kfg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6kfg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4956",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4956.jpg"
+  },
+  "ps5Release": "2025-09-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "arctic-awakening-145041@1.0.21",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.21",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-08T12:36:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've fixed plenty of bugs over the last year, but one has been tying us in knots since well before the release. The rope nets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's a few moments in the game that involve these nets (no spoilers!). They look really cool with the physics simulation, but occasionally the ropes would fail to do their intended job. What worked in our testing didn't always work for some of you due to the non-deterministic nature of physics simulation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've spent more time than we'd like to admit over the last year trying to nail this one down, so it's particularly gratifying to finally announce that this bug has finally been squashed (and without sacrificing the fun physics aspects of the feature)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes/Polish",
+     "items": [
+      {
+       "text": "Fixed inconsistent rope net physics simulation on some play throughs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Kai's walking/jogging speed outdoors when no conversation is going on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for your reports and patience while we hunted this one down. If you've run into a bug that we haven't fixed here, use the troubleshooting guide to get help. We're always happy to help, and the reports help improve the experience for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And if you've been enjoying the game, leaving a review means a lot to our small team!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1846018067929496"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T12:36:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T12:36:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.253Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-08T12:36:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.929Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.20",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.20",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-13T12:16:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small update focused on a few bug fixes and general polish throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been enjoying the game, leaving a review is a huge help for a small studio like us! And, if you've run into a bug that we haven't fixed here, use the troubleshooting guide to get help. We're always happy to help, and the reports help improve the experience for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes/Polish",
+     "items": [
+      {
+       "text": "Fixed bug that could get you stuck in a side seat in the plane when transitioning between certain scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent rare instances where Alfie's waveform display could get stuck on between episodes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brought back the full screen toggle that was accidentally disabled previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some engine packages to improve various platform issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other minor fixes and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1840944183776583"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-13T12:16:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-13T12:16:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.253Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-13T12:16:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.928Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.19",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.19",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-01T15:23:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small update focused on a few progression fixes, improved clarity, and general polish throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been enjoying the game, leaving a review is a huge help for a small studio like us! And, if you've run into a bug that we haven't fixed here, use the troubleshooting guide to get help. We're always happy to help, and the reports help improve the experience for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes/Polish",
+     "items": [
+      {
+       "text": "Fixed a race condition that could occasionally cause code entry sequences to become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue that could block progression midway through Episode 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted several elements throughout Episode 3 to improve clarity and reduce player confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other minor fixes and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1833968530897903"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-01T15:23:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.252Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-01T15:23:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.252Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-01T15:23:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.927Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.18",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.18",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-11T15:06:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is another small update focused on stability, polish, and edge-case fixes that we’ve been tracking down from reports and playthrough videos. Thanks again for all of the feedback, it's been a huge help for us to continue improving the experience for everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been enjoying the game, leaving a review is a huge help for a small studio like us! And, if you've run into a bug that we haven't fixed here, use the troubleshooting guide to get help.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed rare cases where Alfie could become stuck in the air, especially after loading from a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a drone could get stuck off the navmesh when loading from a save in a few specific areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed other drones temporarily getting stuck mid-air when loading from a save early in Episode 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a scenario where you could get stuck inside a tree trunk when restarting a scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a scenario where you could get stuck with an ailment for longer than intended in Episode 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other Fixes/Polish",
+     "items": [
+      {
+       "text": "A handful of additional minor fixes and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1824459501604072"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T15:06:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.251Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T15:06:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.252Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-11T15:06:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.927Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.17",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-06T15:03:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small update focused on polish, a few edge-case fixes, and continued improvements for Steam Deck. Thanks again for all the support and feedback. We've really appreciated reading your reviews and hearing how much you've enjoyed the story, characters, and world we've created! Here’s what’s new:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Systems",
+     "items": [
+      {
+       "text": "Loading into a save file now checks that you've been awarded all achievements you should have and tries again to award ones that are missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an edge case where a rock could get stuck in your hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge case where Alfie could get stuck while navigating in certain scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save file thumbnails not updating correctly until returning to the main menu when using Steam Cloud across devices.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed missing colliders on the greenhouse front doors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented getting stuck on the roofs of certain buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional rocks around the plane to make building the SOS less tedious based on starting location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Improved rendering sharpness on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Further performance optimizations for Steam Deck and lower-end hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1819386365125882"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-06T15:03:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.251Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-06T15:03:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.251Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-06T15:03:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.926Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.15",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-05T20:49:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today's update is a smaller one focused on some minor bugs and optimizations, especially for lower-power devices like Steam Deck. Thank you for continuing to share your bug reports, videos, and feedback! If you’ve been enjoying the game, leaving or updating a Steam review really helps more players discover the game. Here's what's new:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a few rare edge cases where Alfie could fall through the world and be lost forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where your pocket knife could remain stuck in your hand when saving at a few specific spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Targeted optimizations to a handful of areas/scenes (with noticeable improvements on lower-power devices such as Steam Deck).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized minor CPU spikes that could occur when turning the camera in certain locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1818118366177792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-05T20:49:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.250Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-05T20:49:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.250Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-05T20:49:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.926Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.14",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-26T18:39:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks again for all of your feedback, videos, and reports! As a small team, it's really helpful for us to continue improving and refining the experience, and today's update brings another round of polish, improved clarity, and more performance gains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Level Design",
+     "items": [
+      {
+       "text": "Fixed collider issues that allowed climbing onto the sides of certain walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing collider that could let you fall through a platform in the power plant area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor adjustments to some early scenes to reduce confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added audio feedback from Kai when attempting to climb where no valid hand hold is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various level design polish passes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various additional fixes and small quality-of-life improvements throughout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Further Steam Deck performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Performance improvements to rendering large clusters of trees, plants, and grass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Art",
+     "items": [
+      {
+       "text": "Various minor art fixes and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a visual issue with the camera in the credits when using a high FOV setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’re so grateful for all the support as you continue to play and share your feedback and excitement for the game/story with us and with your friends! If you've been enjoying the game, leaving (or updating) a Steam review really helps us out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1817483467034689"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T18:39:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.250Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-26T18:39:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.250Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-26T18:39:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.925Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.13",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-30T13:02:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today’s update brings continued polish, performance improvements, and a few new quality-of-life features. We also recently released a new console patch that includes crash fixes and a new performance mode option bringing 60fps to PS5 and Xbox Series X|S.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Thank you all again for your feedback, bug reports, and kind words. Every message and screenshot you share helps us keep improving Arctic Awakening!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Level Design",
+     "items": [
+      {
+       "text": "General adjustments to food staging for better balance in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor level design polish passes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor art fixes and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed floating objects that could appear after pushing some carts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Alfie getting stuck in certain scenarios, primarily partway through episode 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-staged flare gun ammo to avoid confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rare flickering black screen glitch in the ice caves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a screen effect when wearing a gas mask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Platform Improvements",
+     "items": [
+      {
+       "text": "More Steam Deck performance optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed random frame hitch during specific events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Steam overlay not working consistently on macOS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various minor performance improvements and optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI & Settings",
+     "items": [
+      {
+       "text": "Improved the design and presentation of the closing credits screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Extras\" menu with options to view credits, access the upcoming merch shop, and access the soundtrack page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option in Settings to override detected gamepad glyphs (for third-party controllers that misidentify as Xbox/PlayStation).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed a few translation errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’re so grateful for all the support as you continue to play and share your feedback and excitement for the game/story with us and with your friends! Every review and report helps us make Arctic Awakening better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1815034432870602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T13:02:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.249Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T13:02:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.249Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-30T13:02:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.924Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.12",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-08T00:24:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve continued optimizing and polishing the game, and this update focuses heavily on performance improvements across all platforms (console update coming soon) along with a few tutorial updates, fixes, and nice-to-have touches based on all of your feedback and playthroughs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oh, and one more thing... we're incredibly honored to have been nominated alongside some amazing games for Excellence in Narrative at the upcoming DevGAMM Awards! 🏆",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40166011/0fd2ebb304f04474c76823a61991e60fc7b16add.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Significant performance improvements in a particularly colorful area of Episode 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various baseline performance improvements across all outdoor areas (10-20% reduction in GPU usage in our tests).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance in many indoor areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimizations to physics and IK systems on drones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various Steam Deck-specific performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved VSync handling for monitors with non-standard refresh rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed Alfie sometimes getting stuck in areas with scaffolding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some objects not properly being pushed by carts or other rolling objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed placed rocks occasionally floating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare case where audio could get stuck in “sleeping” mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved footstep sounds on glass surfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI/UX",
+     "items": [
+      {
+       "text": "Added a mini-tutorial for accessing inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved jogging tutorial to better show that the key/button can be toggled or held.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other Improvements",
+     "items": [
+      {
+       "text": "Added Steam Rich Presence, showing what episode you’re currently playing to your friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed edge cases where the Weather Man and Pack Rat achievements might not award initially.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated/improved translations in all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various art polish and minor fixes throughout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hearing from so many of you about how much the story, characters and world have affected you has meant a lot to our small team. Thank you for the reviews and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1813041031157375"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T00:24:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.248Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T00:24:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:38:29.273Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-08T00:24:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.273Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.10",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-02T16:32:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re continuing to smooth out rough edges and respond to your feedback as you explore the Arctic. Patch 1.0.10 brings a mix of traversal fixes, UI improvements, polish across art and performance, and a handful of rare bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thanks for sending in your reports! They're a big help in tracking down the stranger edge cases. Here's what's new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Traversal",
+     "items": [
+      {
+       "text": "Various traversal/collider fixes and polish throughout the level design.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased reach range when rock climbing to prevent feeling stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Prevented climbing onto robot arms (no more accidental joyrides).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented vaulting over a railing into the chasm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented trapping yourself inside the plane with large branches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed traversal issues in Episode 2 where you could fall off ledges and not recover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare soft lock after performing a traversal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some collider clipping in the tunnel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay/Interactions",
+     "items": [
+      {
+       "text": "Fixed Alfie sometimes getting caught on objects or holding branches indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Alfie sometimes saying you were going the wrong direction when you weren’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor tweaks to Alfie’s behavior in specific situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to some scene triggers to feel more intuitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed edge case logic issues in Episode 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted difficulty in breathing/meditation sequences, especially after repeated failures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "UI/Controls",
+     "items": [
+      {
+       "text": "Fixed “Put Down” text sometimes getting stuck on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added “Put Down” under the reticle when placing objects for clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing UI icons when assigning mouse side buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed collection alert occasionally getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed spectrum analyzer not showing when loading into a specific scene from a save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare case where breathing exercises UI could get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various minor translation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visuals",
+     "items": [
+      {
+       "text": "Added graphics setting to toggle anti-aliasing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a few shadow clipping issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NESE tower not being visible from certain cairn vistas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various art polish and minor visual fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed rare audio spam issue at the start of a specific Episode 4 event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed music/sound overlap in edge cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Alfie easier to understand under high stress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability/Polish",
+     "items": [
+      {
+       "text": "Various minor performance improvements to reduce micro stutters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor polish passes throughout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’re so grateful for all the support as you continue to play and share your thoughts with us and with your friends! Every review and report helps us make Arctic Awakening better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 20,
+    "balance": 2,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1811772772480776"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-02T16:32:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.247Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-02T16:32:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.247Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-02T16:32:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.923Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.6",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-25T14:39:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks again for diving into Arctic Awakening! We’ve been carefully listening to your feedback and working hard to address rough edges and polish the experience. Patch 1.0.6 includes a wide range of fixes across traversal, UI, puzzles, and stability. Many of these updates were made possible thanks to your reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you run into an issue, the best way to help us fix it for you and everyone else is by visiting our troubleshooting guide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Traversal",
+     "items": [
+      {
+       "text": "Fixed various collider issues that could cause players to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a certain ledge in episode 4 that wasn't supposed to be accessible and allowed you to bypass a scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented Alfie from getting stuck behind an elevator door when restarting a scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented falling off the world if attempting to exit an episode 5 location after reaching the top.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing rock colliders in specific locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few occlusion culling issues that caused areas to flicker when standing in certain spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various traversal and level design polish throughout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Interactions",
+     "items": [
+      {
+       "text": "Fixed an issue where you could be stuck sitting after restarting a certain scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-worded some objectives and hints for improved clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional hints to make some Episode 1 puzzles more intuitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved clarity in environmental hints for a few Episode 5 puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra cairns in locations where they were too far apart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Show hints about hunger/stress sooner to avoid confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eating is now allowed at 50% hunger instead of 25%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Star Crossed Lovers achievement not awarding in one particular branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI/Controls",
+     "items": [
+      {
+       "text": "Improved movement handling on gamepads for better axis sensitivity normalization across devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed traversal actions not triggering correctly when using some Xbox 360 controllers and some third-party controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed camera clipping issues when head bob is turned off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue preventing typing into the feedback form on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed high refresh rate monitors not always showing all available refresh rate options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed music not always transitioning correctly in the final scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several dialogue overlap issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Stability",
+     "items": [
+      {
+       "text": "Fixed rare instances where restarting a scene or returning to the main menu could result in a black screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various other errors that could cause crashes, hangs or other unexpected issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you again for your patience and support as we continue to improve Arctic Awakening. If you’ve been enjoying your time in the snow, leaving a review (or updating one!) really helps us out a lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're working on more updates/fixes right now and will update you again soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 17,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1811772772246305"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-25T14:39:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.246Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-25T14:39:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.246Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-25T14:39:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:03.922Z"
+  },
+  {
+   "id": "arctic-awakening-145041@1.0.4",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-21T13:49:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A huge thank you for diving into Arctic Awakening with us! We're so thrilled to see how many of you are loving the experience :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been listening closely to your feedback and working hard to smooth out any rough edges. Many of the below fixes/updates were made possible thanks to reports from many of you -- we really appreciate all of the feedback and help tracking these down!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you run into an issue, the best way to help us fix it for you and everyone else is by visiting our troubleshooting guide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Traversal",
+     "items": [
+      {
+       "text": "Prevented situations where players could get stuck at cliff edges or climbing walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed instances where Alfie could get stuck flying high in the air, especially when going up and over cliffs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed edge cases that could leave players stuck while meditating or sitting at scene transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some areas where Alfie could fall off of a cliff and go missing for a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoothed traversal/collider issues in multiple areas (including around the power facility and later exploration areas -- we're still working on this throughout the world map).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly sped up rock climbing animations for a smoother feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced camera clipping through rocks and geometry in some specific locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Interactions",
+     "items": [
+      {
+       "text": "Fixed specific instance where you could get stuck in the cockpit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft lock where a particular scene would sometimes get stuck after exiting the cockpit and talking to Alfie.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using the \"auto keep\" option will no longer block progression when collecting pill bottles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed instance where a specific event in episode 2 could be unknowingly bypassed, blocking further progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI/Controls",
+     "items": [
+      {
+       "text": "Exiting to main menu now correctly clears all on-screen UI (meditation, code entry, etc.).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where remapping input could break code entry sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blocked compass usage when the left arm is already performing an action/animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed hand scanner sometimes not activating on first use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented scanning interactions from outside vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Stability",
+     "items": [
+      {
+       "text": "Fixed various logged errors that could lead to crashes or unexpected behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved consistency of save/load across edge cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you again for your patience and support as we continue to improve Arctic Awakening. If you’ve been enjoying your time in the snow, leaving a review (or updating one!) really helps us out a lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're working on more updates/fixes right now and will update you again soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1811138915490591"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-21T13:49:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.245Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-21T13:49:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.245Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-21T13:49:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:15.020Z"
+  },
+  {
+   "id": "arctic-awakening-145041@major-2025-04-30",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Devlog #15: Content Complete + Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-30T14:01:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! Our last update was during Steam Next Fest, and even two months on we're still blown away by the response. Over 10,000 of you checked out the demo during the event and thousands more have left snowy footprints since. We've been more motivated than ever from seeing the excitement surrounding the world we're creating!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Demo Update",
+     "items": [
+      {
+       "text": "Since Next Fest, we've been hard at work completing the full game, fixing bugs and making improvements based on the hundreds of feedback messages we received and the dozens of streams we've watched. Beyond just getting the game in front of so many new people, these last few months have been incredibly valuable for us to improve the overall game before release. Since we aren't doing early access, the demo has doubled as a sort of beta test for us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While most of our recent efforts have been in the later stages of the game, and while we still have more work to do based on the submitted feedback, we've taken the time to release an updated build of the demo that includes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor and some game-breaking bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to overall traversal mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhancements to drone flight and navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art and level design polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to the auto save system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Newly recorded voice-over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization improvements for all 7 languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Game Progress",
+     "items": [
+      {
+       "text": "We aren't quite ready to share a release date just yet (we've got one in mind, but we're going to be extra sure before finalizing it); however, we are excited to announce that the game has now been content complete for nearly a month, and as of today we've finished recording all voice-over for the entire game! Our main focus right now is QA testing (and more QA testing -- you can never do too much), polishing every detail and optimizing performance to make sure the game runs smoothly and looks great.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're in the home stretch now, and we can't wait to share more soon. Stay tuned, and as always, thank you for your support! Feel free to pop into Discord, X or BlueSky and say hello as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/1798454487572153"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-30T14:01:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:15.018Z"
+  },
+  {
+   "id": "arctic-awakening-145041@major-2023-10-26",
+   "gameId": "arctic-awakening-145041",
+   "displayName": "Devlog #12: Release Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-26T19:01:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As we approach the end of 2023, you might be wondering why we haven't nailed down a precise release date for the game. Well, creating ambitious projects like this one can often take longer than even the most seasoned developers anticipate. While we've worked hard to meet our initial release target, it's become clear that we need a bit more time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But fear not! We aren't about to compromise on quality just to meet an arbitrary deadline. We're committed to delivering a game and story that meets the high standards we set for ourselves. We want Arctic Awakening to be truly exceptional when it lands on your PC, Steam Deck, console or wherever you choose to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, what's been keeping us busy lately? Well, we've recently wrapped up the script and voice-over recording is nearly finished as well. We've also taken all of your feedback from the online and in-person demos to heart, which includes major updates to the companion AI system, character locomotion, performance optimizations, object interactions, world design and overall polish to every nook and cranny in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know you're disappointed to hear the release is being delayed – heck, we're disappointed ourselves! However, we're equally excited for what's to come and know that Arctic Awakening will be worth the wait. We can't wait to share it with all of you in 2024!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned for more updates by following/wishlisting our Steam page. You can also join our Discord, Twitter (X?) and the newsletter for future updates and chat with us and others about the progress of the development!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1275550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1275550/view/5229301621576977819"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T19:01:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1275550",
+      "checkedAt": "2026-11-13T03:15:01.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:14.954Z"
+  }
+ ],
+ "issues": []
+}

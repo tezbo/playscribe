@@ -1,0 +1,803 @@
+{
+ "game": {
+  "id": "dorfromantik-134799",
+  "igdbId": 134799,
+  "name": "Dorfromantik",
+  "cover": {
+   "imageId": "co2lzk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2lzk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arhl0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arhl0.jpg"
+  },
+  "ps5Release": "2025-08-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dorfromantik-134799@1.2.3",
+   "gameId": "dorfromantik-134799",
+   "displayName": "Patch 1.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-09T09:27:48.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed an issue where clicking the Resume button while an empty map was loaded in the background caused the tile stack and UI to become invisible, preventing tile placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Bug Reporting tool button is no longer visible on the Game Over screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pressing Gamepad X to open the Bug Reporting tool no longer interferes with deleting a save game or continuing a completed Creative Mode game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the score label on the Game Over screen overlapped with the game mode label when UI Scale was set to 150%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1455840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1455840/view/1836506165582836"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-09T09:27:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-09T09:27:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.237Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-09T09:27:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.022Z"
+  },
+  {
+   "id": "dorfromantik-134799@post-2026-07-03",
+   "gameId": "dorfromantik-134799",
+   "displayName": "In-Game Bug Reporting Tool",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-03T10:14:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/77c57e40ab09fd085add1d3e03350dfc979be573.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With our latest patch, we’ve added a new in-game bug reporting tool and made several fixes to help leaderboards refresh faster and show your rank more reliably. Whether you have feedback to share or a high score to chase, Patch 1.2.2 brings a smoother experience to Dorfromantik.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Bug Reporting Tool",
+     "items": [
+      {
+       "text": "We’ve added a new bug reporting tool directly to Dorfromantik. Just click the bug-shaped icon to open the form.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Since the latest patch, you can send us a message straight from the game and let us know whether you have encountered a serious issue or simply have some feedback for us. Once you submit the form, your report is sent directly to our development backend, where the team can review it more easily.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/e7d4aec2e37354f1f4b55dcd4bad5de53a27c66c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Of course, you can still use the Steam Feedback sub-forum and our feedback channel on Discord. But when you spot something while playing and do not want to leave the game to report it, you now have a convenient in-game tool for that. 🙌",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Leaderboards",
+     "items": [
+      {
+       "text": "We have also made a few improvements to the in-game leaderboards. After their initial introduction, you discovered some reliability issues. Thank you again for your feedback on this. With the fixes in this update, leaderboard data should refresh faster and display your rank more consistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you’re having a great (and hopefully bug-free) time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You’ll find the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Dorfromantik Patch 1.2.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an in-game bug reporting tool. Use it to send bug reports directly to the development team, including your description, save game, and log data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Note: The tool is only localized to English and German for now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved leaderboard score upload timing to comply with Steam’s limits. Scores now upload at most once per minute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the leaderboard screen to refresh automatically when new scores are uploaded while it is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refined the leaderboard overview: the dropdown now only shows leaderboards where the player has a recorded score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved keyboard behavior for input fields on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increased Steam Cloud file limit from 100MB to 10GB.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where local Monthly Mode highscores could occasionally be overwritten by online highscores from previous months. This could prevent the correct monthly highscore from being uploaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed another potential cause of highscores occasionally failing to upload.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI flickering when using the Toggle UI hotkey while a menu is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1455840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1455840/view/1836506165570073"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-03T10:14:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-03T10:14:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.236Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-03T10:14:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:13.021Z"
+  },
+  {
+   "id": "dorfromantik-134799@major-2026-06-02",
+   "gameId": "dorfromantik-134799",
+   "displayName": "Anniversary Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-02T13:19:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/9c09471581b79d6cb6580ecb7e15d967b116d6bc.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Dorfromantik Anniversary Update is here! And it brings a cozy new way to enjoy your landscapes: Night Mode!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With Night Mode, your colorful Dorfromantik worlds are gently transformed into a calm and cozy evening atmosphere. You can enable it directly from the Biome menu and switch between day and night whenever you like. Night Mode works across all biomes, including the brand-new medieval biomes from the Medieval Biome Pack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[table noborder=\"1\" equalcells=\"1\" colwidth=\"\"][td colspan=\"2\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/8034e2007007e9ceae1f7798849d3fc88bff1da6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/0225f424e60d13649c3279813086899534ca95c3.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/027f88cb321491b6716b62a3f350d176f1d9f476.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/88a872f8902716830009756526630e69e6395344.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/35a3cd8ab3c6113429da25478c97a5a0d0f6b5d2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Anniversary Update is free for all Dorfromantik players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for still being here with us after five years. And a warm welcome to everyone who has joined us along the way. We hope you have a wonderful time with the new additions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Toukana Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Patch 1.2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Night Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introducing Night Mode, transforming the Dorfromantik landscape into a cozy nighttime setting that is easier on the eyes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggle Night Mode on or off globally in the Biome options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a muted UI color scheme to better match the nighttime visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In-Game Leaderboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for displaying all leaderboards directly in-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to switch between Friends Only and Global leaderboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that caused lighting and colors to appear slightly different between our developer version and the public version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added DLC support, allowing additional music and biomes to be loaded from DLCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an in-game news section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved localization for French, Czech, and Swedish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Music now continues playing when switching between savegames instead of restarting with each game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where decorations, such as grass, flowers, and rocks, did not update their color when changing selected biomes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues when navigating dropdowns in the settings menu with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some UI elements not showing selected feedback when navigating to them with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Want to be the first to hear news like this?",
+     "items": [
+      {
+       "text": "[table noborder=\"1\" equalcells=\"1\" colwidth=\",\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/32d85f136784f2ad0d39d3e0216968c8584de8a2.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/e7c50563ee2278ef5dbbb197c7eac0b3b54e2040.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/8311d6599ad8ccb44c4d7f22a650c2fa118d1abe.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/3811375da2d4638c105aea1a91693448bfc0de59.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/c9f74f60e085b27c59f3b7f7e4b627a67c5f4594.png\"][img src=\"{STEAM_CLAN_IMAGE}/45053649/ffa78e3c48e9330f71177ceccd60f38420e0eaa4.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/21ba1472d3e168cf695f6530a5d72765783a5e44.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 5,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1455840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1455840/view/1833968530900453"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-02T13:19:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-02T13:19:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.235Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-02T13:19:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:19.033Z"
+  },
+  {
+   "id": "dorfromantik-134799@major-2026-03-12",
+   "gameId": "dorfromantik-134799",
+   "displayName": "A Small Update on Big Wishes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-12T15:08:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/39b59730b946e9c86d4711cc1b36a1668e000012.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re currently putting the final touches on a long-awaited community wish that will arrive this spring alongside our upcoming DLC. Since release, many of you have shared recurring ideas. We’re excited to finally bring one of those long-standing requests to life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since the release of Dorfromantik, there have been certain community wishes that keep coming up again and again. True evergreen topics. One of the biggest examples was the Undo Button, a feature many of you asked for from day one. We were happy to bring it into the game in 2022, and it’s been a core part of the experience ever since.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But of course, the Undo Button wasn’t the only idea.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Community Wishes: So Many Wonderful Ideas",
+     "items": [
+      {
+       "text": "There are other requests that regularly find their way into our inboxes, comment sections, and forums. And while we genuinely love many of them at their core, we unfortunately can’t implement all of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sometimes it’s the balancing of the base game that makes an idea difficult to realize. Sometimes it would require rebuilding large parts of Dorfromantik’s technical foundation from scratch. And sometimes, quite simply, it comes down to us being a small team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To give you a bit of insight, some of the most requested additions that haven’t become reality include Mountains, Bridges for your train tracks, and a Night Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are just a few voices from the community",
+     "items": [
+      {
+       "text": "\"Just like how we unlock the Windmill will there be possibilities to unlock more cool tiles? For example bridge that would allow rails to pass over water.\" - CrazyCory1230",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"It should be 'jack of all trades' tile that fits all sides (it could be amusement park, zoo botanical garden or a mountain or something else)\" - ostrowanet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Little signposts to place, so we can name our towns, forests and lakes.\" - Spaz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Ooooh. Yeah, night mode with lit houses etc sounds really neat.\" - The Renderer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Make Pizza Hut special tile. It must be done.\" - Maf",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want you to know that we take these wishes very seriously. At regular intervals, we sit down as a team and review which ideas we might realistically bring to life, without compromising the heart of Dorfromantik. And this spring, we’re finally able to fulfill one long-standing community wish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Surprise: Free for All Dorfromantik Players",
+     "items": [
+      {
+       "text": "For the surprise we’re preparing, we’re currently in the final stages of polishing. We’re refining the game feel and testing how the new addition integrates with the existing elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timing-wise, we’ll reveal this surprise together with the upcoming DLC (read more about it here).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While the DLC will most probably be a paid one, the additional surprise will be free of charge for all Dorfromantik players. If you already have Dorfromantik in your Steam Library, you’ll receive the surprise simply by updating the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "... and the catch? There isn’t one. We just felt that you’ve been waiting a long time for new content, and it wouldn’t feel right to release a paid DLC only. As passionate players ourselves, we always appreciate it when our favorite games surprise us with a few gifts every now and then. It's our way of saying: Thanks for sticking with us over all these years! 🎁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/03ccba945e7c12173987a408e7cbb3b466fd1c56.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can expect more detailed information toward the end of the month. Do you have any guesses which community wish we’re currently working on?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Want to be the first to hear news like this?",
+     "items": [
+      {
+       "text": "[table noborder=\"1\" equalcells=\"1\" colwidth=\",\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39260149/32d85f136784f2ad0d39d3e0216968c8584de8a2.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/e7c50563ee2278ef5dbbb197c7eac0b3b54e2040.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/8311d6599ad8ccb44c4d7f22a650c2fa118d1abe.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/3811375da2d4638c105aea1a91693448bfc0de59.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/c9f74f60e085b27c59f3b7f7e4b627a67c5f4594.png\"][img src=\"{STEAM_CLAN_IMAGE}/45053649/ffa78e3c48e9330f71177ceccd60f38420e0eaa4.png\"][img src=\"{STEAM_CLAN_IMAGE}/39260149/21ba1472d3e168cf695f6530a5d72765783a5e44.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1455840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1455840/view/1826992588592729"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-12T15:08:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.234Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-12T15:08:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1455840",
+      "checkedAt": "2026-11-13T03:19:17.234Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-12T15:08:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:19.031Z"
+  }
+ ],
+ "issues": []
+}

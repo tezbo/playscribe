@@ -1,0 +1,1291 @@
+{
+ "game": {
+  "id": "the-darkside-detective-35283",
+  "igdbId": 35283,
+  "name": "The Darkside Detective",
+  "cover": {
+   "imageId": "co23bz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co23bz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aradz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aradz.jpg"
+  },
+  "ps5Release": "2021-04-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-darkside-detective-35283@2.66.1626.10816",
+   "gameId": "the-darkside-detective-35283",
+   "displayName": "Update 2.66.1626.10816",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-15T18:26:32.000Z",
+   "notes": [
+    {
+     "title": "The Darkside Detective - Bug Fix Update v2.66.1626.10816",
+     "items": [
+      {
+       "text": "The Case Files will flickering any time you enter the Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PlayStation Controllers Set up having some of the wrong button images on PC Platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Press to Start Screen not detecting PlayStation Controllers until after input on PC Platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Click to Start Menu Issue using controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The D-Pad occasionally not working in the Main Menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Case 7: Santa's Coat having no Hotspot Text in most languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Case 9: A Save/Load or Leaving/Re-Entering the Screen causing the Vent Hotspot to layer over the Rat Hotspot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS5 Controller not working on most PC Platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Case 4: The Gremlin appearing for a brief second on entering the Evidence Room after already being collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS4 Controller Image showing when using a PS5 Controller on PC Platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Police Car and Loading Screen Text missing on Loading Screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Screen getting really dark when opening the Quit Game Menu from the Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 0,
+    "ps5": 4
+   },
+   "sourceIds": [
+    "steam-368390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/368390/view/7309977427439294867"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-15T18:26:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.685Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-15T18:26:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.686Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-15T18:26:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:39.042Z"
+  },
+  {
+   "id": "the-darkside-detective-35283@2.66.835.9107",
+   "gameId": "the-darkside-detective-35283",
+   "displayName": "Update 2.66.835.9107",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-01-30T12:32:51.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Issue with Dialogue not being in the correct state after Resetting the game, causing softlocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Language: How to Play, controller screen layout is inconsistencies between languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In Windowed Mode the Cursor doesn't Scale and Items don't Scale with everything else except when dragging them",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Game won't save after completing the second case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Case 4: Possible to un-light the Nodes in a way you are not meant to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Case 7: Visual issue with Armelia's Portrait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Migration Issue with Save Files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restarting a Case while Dialogue is on Screen will make Dialogue Choices unable to be interacted with",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Item Hotspots can overlap inventory causing the wrong item to be picked up on smaller screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Case 6: Leaving and re-entering a Screen makes the Tapestry Hotspot layer over the shopkeeper's Hotspot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-368390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/368390/view/5519792046266429453"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-30T12:32:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.685Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-30T12:32:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.685Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-30T12:32:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:39.042Z"
+  },
+  {
+   "id": "the-darkside-detective-35283@post-2023-12-05",
+   "gameId": "the-darkside-detective-35283",
+   "displayName": "Darkside Detective - PlayStation 5 Patch Notes (2023/11/30)",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-05T00:31:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey detectives,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released a patch for Darkside Detective that fixed issues with older save files not being compatible with current DSD1 Builds, fixed issues where saving during a case causes the player to load into an infinite loop, and more. You can read the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed issue with older save files not being compatible with current DSD1 Builds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the very slow cursor speed in Cases 6 and 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some hotspot errors in Chinese localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Unity splash screen showing at the start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where saving during a case causes the player to load into an infinite loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with being able to interact with minigames and hotspots while the game is paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues where save/loading would cause items to disappear/reappear incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various visual and audio glitches on save/loads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the strange behaviour on the How To Play Menu after completing Case 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various hotspot inconsistencies and placements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements and minor bug fixes to the menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where resetting the game caused the Power Button to show up in the Main Menu on Consoles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General optimisation and improvements to load times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riv Otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-368390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/368390/view/5395937983677362996"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-05T00:31:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.684Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-05T00:31:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.684Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-05T00:31:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:39.041Z"
+  },
+  {
+   "id": "the-darkside-detective-35283@2.66.0.7484",
+   "gameId": "the-darkside-detective-35283",
+   "displayName": "Update 2.66.0.7484",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-06T16:27:52.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone! This update fixes an issue that was preventing game progress from saving!",
+     "items": [
+      {
+       "text": "There are couple of steps to complete in order to get your save files to work correctly with the new update. Before playing the latest update, please follow these instructions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "First go into your The Darkside Detective folder at C:\\\\Users\\\\\\\\AppData\\\\LocalLow\\\\Spooky Doorway\\\\The Darkside Detective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Backup your existing save files in another folder of your computer just in case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Delete any save files that don't end in numbers outside of the range '1_0' to '10_0', with the exception of '666_0'. For example, you would delete 'The Darkside Detective_0_0.save'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Delete any 'PreviousSave' files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wait for the Darkside Detective update to complete on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Right click on The Darkside Detective in your Steam library, and select Properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Go to Updates, and check that the Build ID is '12595018'. If it doesn't match, you might need to wait a couple of minutes, or close and restart Steam on your computer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Click Play - your game progress should work correctly now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There is a chance that when recovering your Save Files like this, you might find some strange issues appearing, like the Case Music not playing correctly, or starting a case on the wrong Screen, etc. If you do encounter any of these, then resetting the game in the Main Options Menu or restarting the cases individually should permanently fix these issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spooky Doorway Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-368390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/368390/view/5288974951221597087"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-06T16:27:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.683Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-06T16:27:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.683Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-06T16:27:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:39.040Z"
+  },
+  {
+   "id": "the-darkside-detective-35283@2.61.269.6650",
+   "gameId": "the-darkside-detective-35283",
+   "displayName": "Patch 2.61.269.6650",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-13T12:31:26.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Cotton candy in the inventory blocked by giant tree hotspot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game freezes a little before and after Dialogue Chunks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controller Issue related to dragging Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Case 5: The sticky tape that's supposed to be in Nigel's lair is not there, and strange portrait visual issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-368390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/368390/view/6438516944124051521"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-13T12:31:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.682Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-13T12:31:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.682Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-13T12:31:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:39.040Z"
+  },
+  {
+   "id": "the-darkside-detective-35283@major-2023-05-02",
+   "gameId": "the-darkside-detective-35283",
+   "displayName": "April Steam Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-02T15:14:03.000Z",
+   "notes": [
+    {
+     "title": "Fixed the following bugs",
+     "items": [
+      {
+       "text": "Black screen on Baits Motel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No Transition In Between Screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "if you give emily the milk out of order, the candy shop is closed and you cannot add floss to fountain, breaking case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dialogue not refreshing correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements not triggering reliably",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "load music carries into cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tape hotspot on table in cave in Loch Mess remains after picking up tape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unity splash screen at the start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Case summary for Tomb Alone is cut short",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resizing issues going in and out of Windowed Mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Issue clicking through Item dialogue while your Cursor is still on the Item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various visual and SFX glitches being caused by Save/Load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can interact with the Case 1 Minigame when Paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can't click on McQueen for their usual dialogue when in the Shooting Range Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can interact with the Minigame when clicking through dialogue in the Case 4 Water Pipe Minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can interact with the final Minigame (Tinfoil Hat) of Case 5 while Paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can interact with the Minigame when clicking through dialogue in the Case 5 Computer Minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There are 2 Screens McQueen will still have Shoes on after the point he takes them off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can't click on McQueen for his usual dialogue when in the Spooky Doorway Screen in Case 8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can't click on McQueen for dialogue on one of the Screens in Case 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The End of Case Music doesn't loop in Case 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "McQueen's Head does some weird quick movement in Case 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Corridor Hotspot in Holding Cell One not low enough in Case 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can interact with the Wire Minigame while the Game is Paused at the Carpark Screen in Case 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue when holding down the Mouse to light up all the Arrows at once on the Computer Minigame in Case 5",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "SFX Issue after making the Tinfoil Hat in Case 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Layering issue with the Lockpick Minigame in Case 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can't click on McQueen when looking in the Dumpster in Case 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "McQueen's Hotspot doesn't adjust when he is using the Stilts in Case 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can't click on McQueen on any of the outside Graveyard Screens when he is disguised as a Zombie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There is no Notebook on the Screen during the Final Minigame of Case 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can sometimes get 2 Glyphs to go onto the same section of the Life Ring on the Final Minigame of Case 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using the Mouse to control the Zombie Munch Arcade Game in Case 7 can feel really bad and unresponsive a lot of the time.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Zombie Munch Results Screen can get in the way of the Notebook in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Faith Invaders issue in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cursor will stay Greyed out if you Pause during the Faith Invaders and Zombie Munch Arcade Games in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can interact with the Faith Invaders and Zombie Munch Arcade Games in Case 7 when Paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Another small issue with the Faith Invaders Arcade Game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "2 small issues with the Jump Rope in the Toy Store Screen in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "One of the Vent Hotspots takes you to the wrong part of the Vent in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Loading Screen doesn't resize to Windowed mode like everything else does",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Another issue with not hearing the traffic SFX on the Carpark Screen in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue if you Quit Game while in the Space Cutscene in Case 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Cursor disappears for a second or two when clicking on the Used Circuit Breaker in Case 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Strange behaviour on the How To Play Menu after completing Case 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shooting Range Gremlin Gunfire Audio kept looping even when they weren't shooting and even when they were knocked out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"White Board\" Hotspot should be \"Whiteboard\" on the first Screen of Case 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with the Electricity and the 2 Green Lights for a brief second when you enter the Electricity Minigame in Case 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Possible tweak to the Computer Puzzle in Case 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can make the Train SFX carry over to other Screens on the Darkside in Case 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Delay before the Cursor appears again after progressing the dialogue you get after dropping the Vent on McKing's Car in Case 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "SFX Issue when you enter Nigel's Cave in Case 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On rare instances the Screen can sometimes be half way too high",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wrong sound plays when going through one of the Church Doors in Case 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weird Head movement in the Zombie Munch Arcade Game in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cursor doesn't stay Greyed out if you replay the Faith Invaders Minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Opening the Pause Menu or Clicking on the Quit Button will start the Zombie Munch Minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you complete the Zombie Munch game while one of the people are Blue then they will be Blue briefly if you Replay in Case 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using the D-Pad on Controller highlights the Notebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor adjustment to the Waitress Hotspot in Case 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "McQueen's Hotspot is mostly unclickable on the Case 6 Mafia Car Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue when opening the Options Menu when Dialogue is on the Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can bring up the Pause Menu in the Quit Game Menu via the Main Menu and get a little blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 59,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-368390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/368390/view/5133583642669642504"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-02T15:14:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.681Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-02T15:14:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.682Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-02T15:14:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:39.039Z"
+  },
+  {
+   "id": "the-darkside-detective-35283@major-2021-06-09",
+   "gameId": "the-darkside-detective-35283",
+   "displayName": "The Darkside Detective update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-09T13:39:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Good news Darkside detectives, we've pushed an update to The Darkside Detective!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you may be aware, we recently released The Darkside Detective on new platforms (e.g. Xbox, PS4, PS5 & Stadia), as well as a sequel called The Darkside Detective: A Fumble in the Dark (which is also available on Xbox, PS4, PS5, Switch and Stadia) and as part of that development process, we made a bunch of improvements for stability and performance to the framework we've built for the Darkside series. Now that the game has been out and stable on multiple platforms, we're delighted to bring all that work to the original game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "If you've had a fairly frictionless experience playing The Darkside Detective, you shouldn't notice much new, but over the few years the game has been out, some people have experienced bugs, and this new version should address those issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A complete changelist is",
+     "items": [
+      {
+       "text": "More stable save system, fixed many of the issues that in a small number of cases caused issues with saves becoming corrupted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the option to save during gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added gamepad control remapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Miscellaneous small gameplay fixes and visual improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modernised architecture to improve maintainability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed gating issues in the bonus cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many thanks to the members on our Discord who helped us test and bug-fix this version before it went live. If you run into any issues at all, please visit support.spookydoorway.com and we'll try to get you back up and running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Spooky Doorways",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-368390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/368390/view/4093189984234763930"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-09T13:39:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.680Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-09T13:39:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-368390",
+      "checkedAt": "2026-11-13T03:33:06.680Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-06-09T13:39:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:39.037Z"
+  }
+ ],
+ "issues": []
+}

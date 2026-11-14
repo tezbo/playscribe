@@ -1,0 +1,381 @@
+{
+ "game": {
+  "id": "oo-328028",
+  "igdbId": 328028,
+  "name": "Öoo",
+  "cover": {
+   "imageId": "coa9bo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa9bo.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar39cc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar39cc.jpg"
+  },
+  "ps5Release": "2026-03-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "oo-328028@1.0.13",
+   "gameId": "oo-328028",
+   "displayName": "Update 1.0.13",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-02T15:16:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added warning effect when resetting data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some background elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with certain BGM playback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed behavior when skipping the ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously, skipping the ending would send you to the result screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It now transitions to the post-ending instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This adjustment allows players to reach the post-ending without having to watch the full credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect key name display during keyboard input",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where long confirm key names would go off-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed soundtrack file format (wav → flac)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2721890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2721890/view/1809235871752240"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T15:16:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2721890",
+      "checkedAt": "2026-11-12T09:23:39.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:39.140Z"
+  },
+  {
+   "id": "oo-328028@1.0.12",
+   "gameId": "oo-328028",
+   "displayName": "Update 1.0.12",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-12T05:26:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "・Fixed a bug where entering a certain spot in a specific area would incorrectly trigger the ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where certain rooms could not be entered without initializing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed a bug where, after dying and resuming, the player could respawn inside a wall and die repeatedly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where certain achievements would not unlock, so they will now unlock after restarting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2721890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2721890/view/1807332909721906"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-12T05:26:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2721890",
+      "checkedAt": "2026-11-12T09:23:39.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:39.139Z"
+  },
+  {
+   "id": "oo-328028@1.0.11",
+   "gameId": "oo-328028",
+   "displayName": "Update 1.0.11",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-10T07:40:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for a bug caused by the changes in v1.0.10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2721890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2721890/view/1807332909660918"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-10T07:40:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2721890",
+      "checkedAt": "2026-11-12T09:23:39.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:39.139Z"
+  },
+  {
+   "id": "oo-328028@1.0.10",
+   "gameId": "oo-328028",
+   "displayName": "Update 1.0.10",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-10T06:28:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "・Fixed draw order of certain background elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Corrected loop playback position of certain BGM tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where it was possible to enter unintended areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Fixed an issue where the player could become stuck in certain areas upon resuming the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "・Adjusted a section in a specific area that required unnecessarily precise inputs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2721890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2721890/view/1807332909659122"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-10T06:28:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2721890",
+      "checkedAt": "2026-11-12T09:23:39.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:39.138Z"
+  },
+  {
+   "id": "oo-328028@1",
+   "gameId": "oo-328028",
+   "displayName": "Update 1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-08T16:46:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the hitboxes of certain flies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2721890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2721890/view/1807332909609582"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T16:46:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2721890",
+      "checkedAt": "2026-11-12T09:23:39.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:39.138Z"
+  }
+ ],
+ "issues": []
+}

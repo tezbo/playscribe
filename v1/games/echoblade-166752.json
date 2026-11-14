@@ -1,0 +1,698 @@
+{
+ "game": {
+  "id": "echoblade-166752",
+  "igdbId": 166752,
+  "name": "EchoBlade",
+  "cover": {
+   "imageId": "co5gm0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5gm0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar11xs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar11xs.jpg"
+  },
+  "ps5Release": "2023-07-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "echoblade-166752@1.5.0",
+   "gameId": "echoblade-166752",
+   "displayName": "Update 1.5.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-13T16:11:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.5.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-----------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Key Holders that are attached to a wall will no longer glow after the key has been picked up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional sound effects have been added when blocking an attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perk menu has been adjusted to cause less confusion. Transparency of some icons have been adjusted. New sound effect are also present.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with perks not applying after unlocking them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with ESC key not working as intended within certain menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted experience curve to level up character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue with duplicate skill points being awarded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with player not being able to pick up keys from dead guards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with arrows not applying damage immediately after contact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1422570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1422570/view/1794102528077286"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T16:11:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1422570",
+      "checkedAt": "2026-11-13T03:19:52.385Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T16:11:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1422570",
+      "checkedAt": "2026-11-13T03:19:52.385Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-13T16:11:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.810Z"
+  },
+  {
+   "id": "echoblade-166752@1.4.0",
+   "gameId": "echoblade-166752",
+   "displayName": "Update 1.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-08T20:57:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.4.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-----------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EchoKnight now carries 8 arrows by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More arrows can be found in various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A lot of alcoves have been removed from various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some larger rooms have been decreased in size to avoid the player from getting lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More environment objects (benches, altars, chandeliers, pillars, torches, rock piles, buckets, medieval torture devices, chains, breakable barrels, breakable walls) have been added to all levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A smoother echo effect has been applied for the torches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The echo effect from jumping has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly tweaked double tap input for controllers to require more precision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various voice lines have been adjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Healing will activate quicker when not moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fast travel map has been updated to show if a Main Gate Key has been picked up from each level or not. If the selected level is highlighted with gold, there is still a key to pick up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1422570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1422570/view/1785321795712816"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-08T20:57:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1422570",
+      "checkedAt": "2026-11-13T03:19:52.384Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-08T20:57:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1422570",
+      "checkedAt": "2026-11-13T03:19:52.384Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-08T20:57:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.809Z"
+  },
+  {
+   "id": "echoblade-166752@1.2.0",
+   "gameId": "echoblade-166752",
+   "displayName": "Patch 1.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-31T13:48:19.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Localized in 7 additional languages! Spanish, French, German, Portuguese, Chinese, Korean, and Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed glitches occurring with the Main Menu and Fast Travel menu using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed glitches with the Load Game Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Barrels are now breakable and more of them have been added to various levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy sightlines have been reduced to encourage more stealth opportunities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies holding a key have a larger collision box to prevent the key from not being able to be picked up after their demise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player's \"Quick Noise\" distance has been improved but will fade quicker. There are additional sound effects as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"The Lost Chamber\" level has been slightly modified to prevent confusing backtracking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified Fast Travel map to show where Main Gate Keys are located",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fast Travel Menu will now show current location highlighted in red",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hitting enemies now produces some slight screen shake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted some tutorial prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Skill tree menu has been cleaned up a little bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health Regen will only activate if the character stops moving for a few seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Echo effects from torches have been modified",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Walking echo distance has been slightly decreased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a slight delay to enemies attacks after they make a grunting noise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased amount of rats and the noises they make........so please stop asking for more rats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 2,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1422570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1422570/view/5124584686260741570"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-31T13:48:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1422570",
+      "checkedAt": "2026-11-13T03:19:52.383Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-31T13:48:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1422570",
+      "checkedAt": "2026-11-13T03:19:52.384Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-31T13:48:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.808Z"
+  },
+  {
+   "id": "echoblade-166752@1.1.0",
+   "gameId": "echoblade-166752",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-23T13:44:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Been adding lots of new stuff to the game after getting some feedback from other players and just some other things I wanted to add but didn't get time to before releasing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy the new update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.1.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-----------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed trapdoor leading to infinite abyss in West Dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Basic enemy damage animations have been altered. Enemies now step backwards and have less \"stunned\" time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Giant spike ball will only do damage if it is rolling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Trickster\"'s voice lines have been fixed after killing or not killing him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed subtitles clearing too early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fading on default HUD health and stamina bars are now an exponential function instead of a linear function",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where Claborn was able to get out of his cell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Perk menu now disables items you have already unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed navigation issue in Perk menu for keyboard and controllers",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New voice actor for NPC that talks about poison",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New voice actor for NPC that talks about lava and stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly increased enemy opacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Keys\" in settings has been renamed to \"Key Bindings\"",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Page Up and Page Down have been added to list of bindable keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spike trap will produce an echo effect before launching spikes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Echoes have a slighter harder edge to their texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rocks produce less and smaller echoes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few rooms in Level 1 have been made smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first gate in Level 2 has been moved up to prevent players from getting lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggle Sprint option has been added in Settings -> Controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added HUD message that displays when the player is entering the next area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Running and walking echo distance has been slight decreased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click noise echo fades a lot quicker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new exit appears in Level 5 to gain access to 5 new levels!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new NPC by the main gate!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Piles of Bones have been added throughout the levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 3,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1422570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1422570/view/4474904295729880876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-23T13:44:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1422570",
+      "checkedAt": "2026-11-13T03:19:52.383Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.806Z"
+  }
+ ],
+ "issues": []
+}

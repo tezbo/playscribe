@@ -1,0 +1,519 @@
+{
+ "game": {
+  "id": "perennial-order-149935",
+  "igdbId": 149935,
+  "name": "Perennial Order",
+  "cover": {
+   "imageId": "co3v9e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3v9e.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ars9y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ars9y.jpg"
+  },
+  "ps5Release": "2024-09-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "perennial-order-149935@1.0.4",
+   "gameId": "perennial-order-149935",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-29T17:55:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to be back with a new Perennial Order update! Patch 1.0.4 is now live on Steam and it’s packed with fixes and improvements to make the plant-horror experience smoother and more refined than ever.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In this update, Vestiges and Instincts have been rebalanced to improve gameplay flow, while a number of UI issues, such as text and inventory problems, have been addressed. Several bugs, including instances where characters could become stuck out of bounds during dashes, have also been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update marks a major milestone for Perennial Order. Thank you for growing with us and supporting the game! Be sure check the patch notes below for all the details!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance Changes",
+     "items": [
+      {
+       "text": "Instinct: Stinger Burst memory requirement reduced from 2 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Instinct: Ghost Dash memory requirement reduced from 3 to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Instinct: Corpse Maker memory requirement reduced from 3 to 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Instinct: Gambit damage increased from 100 to 150.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vestige: Oxalis damage reduced from 200 to 150.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vestige: Phantom Strike base damage increased from 25 to 30, and synchronized-release damage increased from 100 to 120.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vestige: Echo Parry damage increased from 250 to 300.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vestige: Salvo cooldown reduced by 1 second.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Resolved issues",
+     "items": [
+      {
+       "text": "Visual issue with a puddle in Wetlands Plateau.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Text not being translated in the mini-cutscenes when you gain Memory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inventory menu being accessible in NG+ when you don't have any items yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attack charge-bar-UI not resetting when you lose your weapon during the Marassa Twins fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The first time you'd open the Instincts menu, the highlighted Instinct would be incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"Dance in front of every boss\" achievement now keeps track of each boss globally, instead of requiring it all to be done on a single save-slot or Boss Rush attempt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The “percent completion” value on a save-slot that has completed 100% of the game would show up as 99%. To refresh this value on an existing save-slot, load into the save-slot and then quit back to the Main Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steam player gets stuck on infinite loading screen and is unable to proceed in the cross-play gameplay after selecting the Connect option from the lobby .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player fails to scroll the Region list while on the Join Online Multiplayer window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A visual glitch occurs after jumping at a specific spot in King's Pass location on the climbing track in the two-player online multiplayer mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The character can get stuck out of bounds after dashing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-SOEDESCO & Gardenfiend Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 8,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1411020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1411020/view/1809235871626671"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-29T17:55:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1411020",
+      "checkedAt": "2026-11-13T03:27:51.378Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-29T17:55:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1411020",
+      "checkedAt": "2026-11-13T03:27:51.378Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-29T17:55:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:59.137Z"
+  },
+  {
+   "id": "perennial-order-149935@1.0.3",
+   "gameId": "perennial-order-149935",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-19T21:14:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch contains balance tweaks for the final boss and the Corpse Orchard boss, and fixes for many minor issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BALANCE TWEAKS",
+     "items": [
+      {
+       "text": "Final Boss: Lots of tweaks to increase fairness and reduce frustration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: The Eldritch Hornet \"vision\" now has a much bigger visual indicator before it attacks, and flies at the player once (instead of twice)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: Tweaked some of the attacks that included the Oak Devil destroying the player's wisps to give the player more time & opportunity to react",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: Tweaked the attack that uses the Corpse Orchard red-light to give the player more time to prepare and position for it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: The Queen chess piece will now only attack once before fading out (it used to attack twice, which could unexpectedly come from off-screen)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: Removed an instance of the Oak Devil teleporting behind the player and trying to grab them that could be hard to see",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: Fixed issue where Oak Devil teleporting behind the player and grabbing them didn't play the death animation on the player correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: Fixed issue where the Oak Devil's arm-grab that drags the player in wouldn't drag the player (would bounce off of them)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Final Boss: Tweaked the occurance of attacks that included the Grandmaster doing his big arm-swipe attack, so that they won't trigger back-to-back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Corpse Orchard: Tweaked one of his red-light attacks to make it less frustrating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "FIXES",
+     "items": [
+      {
+       "text": "The Disciple NPC that gives you The Plague instinct will now still be available even at the end of the game if you haven't gotten The Plague instinct yet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional backup locations for some of the Expressions so they can still be found if you didn't get them in the initial location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the dead Spirit Form player in co-op could charge up Beast and Infection from using Vestiges while dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with talking to soldier in Unknown Chasm an additional time after he gets grabbed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Bonded Council member (co-op vestiges NPC) not having audio in the Hive area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the size of some of the voice-text being displayed at the top of the screen while delving into the Inner Sanctuary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the Crow that gives you the Council's Invitation inventory item wouldn't fly away after receiving the invitation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various minor visual issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where dancing in front of the final boss wouldn't count towards the achievement if you've already beaten the final boss and loaded back into that save slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialogue issue where the band member that plays the horn instrument would say the wrong number of band members were waiting at Fort Holgrove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 10,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1411020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1411020/view/6341720536503881057"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-19T21:14:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1411020",
+      "checkedAt": "2026-11-13T03:27:51.377Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-19T21:14:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1411020",
+      "checkedAt": "2026-11-13T03:27:51.377Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-19T21:14:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:59.136Z"
+  },
+  {
+   "id": "perennial-order-149935@1.0.1",
+   "gameId": "perennial-order-149935",
+   "displayName": "Hotfix 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-08T20:39:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue with Dryad Door in the Unknown Chasm not counting as being solved when the correct conditions have been met.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1411020"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1411020/view/6242640076608794782"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-08T20:39:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1411020",
+      "checkedAt": "2026-11-13T03:27:51.376Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-08T20:39:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1411020",
+      "checkedAt": "2026-11-13T03:27:51.376Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-08T20:39:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:59.135Z"
+  }
+ ],
+ "issues": []
+}

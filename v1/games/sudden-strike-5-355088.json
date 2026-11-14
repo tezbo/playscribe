@@ -1,0 +1,836 @@
+{
+ "game": {
+  "id": "sudden-strike-5-355088",
+  "igdbId": 355088,
+  "name": "Sudden Strike 5",
+  "cover": {
+   "imageId": "coa8ad",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa8ad.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5px2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5px2.jpg"
+  },
+  "ps5Release": "2026-04-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sudden-strike-5-355088@1.3.1",
+   "gameId": "sudden-strike-5-355088",
+   "displayName": "Hotfix 1.3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-27T12:20:19.000Z",
+   "notes": [
+    {
+     "title": "Sudden Strike 5 - Hotfix 1.3.1 - Changelog",
+     "items": [
+      {
+       "text": "We have just released Hotfix 1.3.1 for Sudden Strike 5 on all available platforms. The Hotfix focuses on resolving several achievement and trophy issues related to the France: Road to Liberation DLC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed two issues with “Aux Armes, Français!”, it should now unlock as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that prevented DLC achievements from unlocking correctly on Xbox and WinStore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where “French Legion of Honor” was incorrectly unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the description for several achievements to refer to “vehicles” instead of “units” in order to better describe their actual unlock conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some issues that prevented the “Libération” achievement from unlocking correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2808550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2808550/view/1842212951299857"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-27T12:20:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.183Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-27T12:20:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.183Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-27T12:20:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:48.398Z"
+  },
+  {
+   "id": "sudden-strike-5-355088@major-2026-07-15",
+   "gameId": "sudden-strike-5-355088",
+   "displayName": "Sudden Strike 5 - Co-op Campaign Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-15T12:31:47.000Z",
+   "notes": [
+    {
+     "title": "Sudden Strike 5 - Co-op Campaign Update",
+     "items": [
+      {
+       "text": "Generals,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released Update 1.3 for Sudden Strike 5 on all available platforms. This Update adds the New “Co-op Campaign” game mode, which lets you experience the full main game campaign together with a friend! The update also includes a new ping feature for co-op and multiplayer as well as other fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full changelog can be found below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game mode “Co-op Campaign”",
+     "items": [
+      {
+       "text": "2 Player game mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can invite each other via their friendlist and play the three campaigns together. The coop campaign does not support playing across separate platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Progression will be based on the progression of the host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Both the Host and Client earn rewards and unlock achievements. Only the Host's progress determines which missions and Doctrines are available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "UI & UX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unit badge visibility is affected by Health Bar Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Setting Interface settings to “Low” with controller is now easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Feature: Ping System",
+     "items": [
+      {
+       "text": "A new Ping feature has been added to co-op and multiplayer, allowing you to quickly communicate and coordinate with your ally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Mechanics",
+     "items": [
+      {
+       "text": "LCVP Landing crafts are no longer able to deplete fuel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Long Tom can no longer get stuck on Mission “Ruhr Pocket”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The doctrine card effect “For the Motherland!” now has a hotkey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\ Tactical Pause can now be used while selecting a target on consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0,
+    "topNew": [
+     "2 Player game mode",
+     "Progression will be based on the progression of the host.",
+     "##"
+    ]
+   },
+   "sourceIds": [
+    "steam-2808550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2808550/view/1838407329254142"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T12:31:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T12:31:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.182Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-15T12:31:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:48.397Z"
+  },
+  {
+   "id": "sudden-strike-5-355088@major-2026-06-18",
+   "gameId": "sudden-strike-5-355088",
+   "displayName": "Sudden Strike 5 - Quality of Life Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-18T11:21:28.000Z",
+   "notes": [
+    {
+     "title": "Sudden Strike 5 - Quality of Life Update",
+     "items": [
+      {
+       "text": "Generals,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released Update 1.2 for Sudden Strike 5 on all available platforms. This Update adds the ability to individually remove units from trenches, vehicles and buildings on mouse and keyboard, new tutorial hints in loading screens and new visibility settings, among other adjustments and fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The full changelog can be found below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45702302/c5666529a1d34ac55bba59ed58bcc777d1686c5a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "\\[Mouse & Keyboard only] Added the ability to select infantry units and command them to leave trenches one by one.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\\[Mouse & Keyboard only] Added the ability to select infantry units and command them to leave vehicles one by one.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\\[Mouse & Keyboard only] Added the ability to select infantry units and command them to leave buildings one by one.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added new visibility settings allowing players to reduce or completely disable ground marker visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extended visibility settings with options to reduce HP bar visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extended visibility settings with options to reduce unit silhouette visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Extended visibility settings with options to reduce unit outline visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a toggle allowing players to enable or disable infantry scaling when zoomed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added tutorial hints to loading screens to improve onboarding and gameplay guidance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a loading screen gamepad icon to indicate controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced memory usage during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several UI issues affecting loading screens and multiplayer menus when large text scaling is enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where enemy and allied infantry units in a suffering state retained normal line of sight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where snow weather effects were not displayed correctly on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where train units would occasionally teleport under specific circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where ghost units could appear when visibility settings were reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several issues related to target acquisition and distance checks for bomber aircraft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the “You Shall Not Pass” achievement did not unlock correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the “Steal Division” achievement did not unlock correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved loading screen layout and text presentation when using larger text scaling options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved gamepad navigation and controller support in update-related menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved overall stability on PlayStation 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 1,
+    "topNew": [
+     "Added new visibility settings allowing players to reduce or completely disable ground marker visibility.",
+     "Extended visibility settings with options to reduce HP bar visibility.",
+     "Extended visibility settings with options to reduce unit silhouette visibility."
+    ]
+   },
+   "sourceIds": [
+    "steam-2808550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2808550/view/1835871199303883"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T11:21:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.181Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T11:21:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.181Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-18T11:21:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:48.396Z"
+  },
+  {
+   "id": "sudden-strike-5-355088@1.1",
+   "gameId": "sudden-strike-5-355088",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-20T12:26:33.000Z",
+   "notes": [
+    {
+     "title": "Sudden Strike 5 – Update 1.1",
+     "items": [
+      {
+       "text": "Generals,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just released Update 1.1 for Sudden Strike 5 on all available platforms. Update 1.1 focuses on improving overall game stability, multiplayer reliability, and console performance, while also addressing a wide range of gameplay, UI, and localization issues. In addition, several mission balancing adjustments and visual/audio improvements have been implemented to enhance overall player experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full changelog can be found below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Stability",
+     "items": [
+      {
+       "text": "General optimisations improving memory usage and stability on consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved stability by reducing video memory consumption of vegetation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where console quality settings were not properly set.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay & Mechanics",
+     "items": [
+      {
+       "text": "Fixed and adjusted mission scoring for the ‘Siege of Budapest’ mission in the Soviet Campaign to allow players to achieve a 3-star rating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed and adjusted mission scoring for the ‘Siege of Budapest’ mission in the Axis campaign to allow players to achieve a 3-star rating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in ‘Breakthrough at Borisov’ where the third 173mm artillery cannon could get stuck when reinforcing three units via train simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer",
+     "items": [
+      {
+       "text": "Improved multiplayer stability and synchronization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed multiplayer desynchronization issues in both Player vs Player and Player vs AI scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flag lock mechanics and related command handling issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the multiplayer session could freeze on ‘Rocky Ridge’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Skirmish",
+     "items": [
+      {
+       "text": "Fixed team switching issues in skirmish mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tutorial & Onboarding",
+     "items": [
+      {
+       "text": "Added new tutorial images to the tutorial menu to improve clarity and guidance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a gap on the onboarding screen (German version).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved gamepad navigation on onboarding screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI & UX",
+     "items": [
+      {
+       "text": "Improved general UI consistency and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a display issue with the recovery unit badge icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where duplicate buttons would appear on purchase panels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Effects & Animation",
+     "items": [
+      {
+       "text": "Fixed incorrect impact sound effects for Machine Gun Nests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new visual effects for Anti Air Cannons when hitting objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added failsafe for character death states to prevent stuck animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "\\[PC only] Fixed the “Steal Division” achievement counter",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "\\[PC only] Fixed the “You shall not pass” achievement counter",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Localisation",
+     "items": [
+      {
+       "text": "Fixed various localisation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 15,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2808550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2808550/view/1833334318566154"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T12:26:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.180Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T12:26:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2808550",
+      "checkedAt": "2026-11-13T03:32:00.180Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-20T12:26:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:48.395Z"
+  }
+ ],
+ "issues": []
+}

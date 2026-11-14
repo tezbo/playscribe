@@ -1,0 +1,107 @@
+{
+ "game": {
+  "id": "cards-of-the-dead-147335",
+  "igdbId": 147335,
+  "name": "Cards of the Dead",
+  "cover": {
+   "imageId": "co3099",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3099.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arx33",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arx33.jpg"
+  },
+  "ps5Release": "2021-10-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cards-of-the-dead-147335@1.0.3",
+   "gameId": "cards-of-the-dead-147335",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-27T11:17:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Implemented windowed mode (requested by some streamers)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a checkpoint before Selena's boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where the player was unable to progress when entering a boss fight without a weapon in hand or in the bag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1592230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1592230/view/4186652357020114608"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-27T11:17:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1592230",
+      "checkedAt": "2026-11-13T03:16:57.459Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-27T11:17:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1592230",
+      "checkedAt": "2026-11-13T03:16:57.459Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-10-27T11:17:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:53.656Z"
+  }
+ ],
+ "issues": []
+}

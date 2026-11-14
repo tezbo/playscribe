@@ -1,0 +1,556 @@
+{
+ "game": {
+  "id": "no-longer-home-116408",
+  "igdbId": 116408,
+  "name": "No Longer Home",
+  "cover": {
+   "imageId": "co6l5y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6l5y.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arp2c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arp2c.jpg"
+  },
+  "ps5Release": "2023-03-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "no-longer-home-116408@major-2023-06-14",
+   "gameId": "no-longer-home-116408",
+   "displayName": "Friary Road Soundtrack Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-14T00:01:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A brief update regarding the Friary Road soundtrack for No Longer Home. Unfortunately the Friary Road soundtrack is being removed from sale as we no longer have the rights to distribute it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are an existing owner of the soundtrack, or if you purchase it before it is removed from sale, you will still be able to access the Friary Road soundtrack files via your Steam Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-651490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/651490/view/5126832680915464812"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T00:01:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-651490",
+      "checkedAt": "2026-11-13T03:26:51.639Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T00:01:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-651490",
+      "checkedAt": "2026-11-13T03:26:51.639Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-14T00:01:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:25.293Z"
+  },
+  {
+   "id": "no-longer-home-116408@1.2.0",
+   "gameId": "no-longer-home-116408",
+   "displayName": "Update 1.2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-19T22:45:00.000Z",
+   "notes": [
+    {
+     "title": "New",
+     "items": [
+      {
+       "text": "Accessibility options appear on launch for all players after installing the update or if no config file is found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Screen Reader on Windows and MacOS. Windows requires you to download NVDA, a free screen reader.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Linear Navigation, an option to adjust the game to use simple keyboard/controller controls. Auto enabled when Screen Reader is active.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Bigger Dialogue Text, an option to toggle between 32pt and 38pt font during dialog and dialog menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Dyslexic Dialog Font, an option to toggle between Anonymous Pro and OpenDyslexic fonts. Only available when the current language is English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Selection Indicator, an option that adds a visual indicator to discern your selection. Auto disabled when Linear Navigation is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Use System Cursor, an option to toggle between using NLH's pixel cursor and your system cursor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Fast Skip, skips dialog every 0.3 seconds as long as the button is held. Button is the Space or Enter key on keyboard and mouse and the Run button on controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated Xbox controller icons to be more in line with modern Xbox iconography.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Increased height of dialog and dialog menus to accommodate the bigger dialogue text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where pause menu items could not be selected with the mouse during the Bo’s dream sequence while the dialogue menu was hidden.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed instances where Among the Leaves’ dialogue was displayed at the bottom of the screen instead of the top.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Screen Reader Notes",
+     "items": [
+      {
+       "text": "The screen reader's voice and volume cannot be changed within the game, instructions on how to change it below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Auto skip cannot be enabled when the screen reader is enabled due to limitation to detecting when the Screen Reader finishes speaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text prints all at once when screen reader is enabled, this is so the screen reader properly reads the text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NVDA users: We recommend you disable \"Speak typed characters\" under Keyboard in Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "MacOS users: We have observed audio issues on MacBook speakers when dialogue starts and finishes, using headphones are recommended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to adjust Screen Reader Volume and Voice",
+     "items": [
+      {
+       "text": "NVDA: Right click NVDA in the system toolbar and navigate to Preferences > Settings > Speech.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS: Open System Preferences and navigate to Accessibility > Spoken Content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Linear Navigation Notes",
+     "items": [
+      {
+       "text": "Minimal UI is auto enabled when Linear Navigation is enabled. Keyboard/Controller buttons for Auto Skip, Narrative Log, and Pause all still work.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If Screen Reader is disabled Linear Navigation will skip the selection of labels since they have no interaction without the Screen Reader.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While Linear Navigation is enabled, UI will be revealed automatically without needing to navigate the scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Linear Navigation Controls",
+     "items": [
+      {
+       "text": "Keyboard and MouseXbox ControllersPlayStation ControllersNintendo Switch ControllersSelectUp and Down arrow keysLeft Stick, D Pad, or LB and RB buttonsLeft Stick, D Pad, or L1 and R1 buttonsLeft Stick, D Pad, or L and R buttonsConfirm SelectionEnter keyA buttonCross buttonA buttonRotate EnvironmentA and D keysLT and RTL2 and R2ZL and ZRAuto Skip (if Screen Reader disabled)Tab keyY buttonTriangle buttonX buttonNarrative LogL keyX buttonSquare buttonY buttonPauseEsc keyStart/Menu buttonOptions button+ button",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 1,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Accessibility options appear on launch for all players after installing the update or if no config file is found.",
+     "Added Bigger Dialogue Text, an option to toggle between 32pt and 38pt font during dialog and dialog menus.",
+     "Added Use System Cursor, an option to toggle between using NLH's pixel cursor and your system cursor."
+    ]
+   },
+   "sourceIds": [
+    "steam-651490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/651490/view/4237325463669079267"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-19T22:45:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-651490",
+      "checkedAt": "2026-11-13T03:26:51.638Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:25.292Z"
+  },
+  {
+   "id": "no-longer-home-116408@1.1.0",
+   "gameId": "no-longer-home-116408",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-08T10:36:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.1.0 of No Longer Home has been pushed live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everyone for your feedback and bug reports so far. As a quick reminder, please report any bugs you find in this thread.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Enhanced Dialogue UI, adds auto text skip, narrative log, and pause buttons to the Dialogue UI. These changes can be disabled by selecting “Minimal UI” in the Visuals Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auto text skip, allow text to auto progress without the need of clicking. Togglable via Tab on keyboard, the top most face button on controllers (Y on Xbox), or clicking the auto text skip button on the Enhanced Dialogue UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Narrative Log can be accessed via controller now by the left face button (X on Xbox)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Added option to skip playing Friary Road when no save data exists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect camera position after the bathtub animation. (Link)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Credits wouldn’t play at the end of the game in certain situations. (Link)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Studio door would disappear when loading a save in the studio before interacting with the Unknown Geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typo fixes for Ao’s Suitcase 2, Ao’s Sketchbook and Bo in Bed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mop Bucket no longer appears outside if Bo knows Ao stole it back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-651490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/651490/view/4032396530951208567"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-08T10:36:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-651490",
+      "checkedAt": "2026-11-13T03:26:51.637Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:25.291Z"
+  },
+  {
+   "id": "no-longer-home-116408@major-2020-03-26",
+   "gameId": "no-longer-home-116408",
+   "displayName": "No Longer Home (formally known as 29) Pricing Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-26T16:18:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a little while since we've made an update on Steam. We've been intensely busy developing No Longer Home (formerly known as 29), after a successful Kickstarter campaign. We're really close to finishing the first chapter now and plan to release it this year. It's grown a lot since it's first inception and because of that we decide to make some changes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "No Longer Home will now be a paid for game. We don't have a price to announce yet, but you can expect to to be around the $20 mark. It will consist of 3 chapters that we plan to release episodically, and the single payment will get you access to all of the chapters. We don't have a set release schedule yet, but we will keep you updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry if you were looking forward to playing it for free, it was a difficult decision for us to make as well. Considering the amount of time and effort we put into it, this was the most sensible thing for us to do. We do, however, have a prequel to No Longer Home called Friary Road which you can download here for free: https://humblegrove.itch.io/friary-road",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Humble Grove x",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-651490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/651490/view/2984138620245274863"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-26T16:18:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-651490",
+      "checkedAt": "2026-11-13T03:26:51.637Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:14.700Z"
+  }
+ ],
+ "issues": []
+}

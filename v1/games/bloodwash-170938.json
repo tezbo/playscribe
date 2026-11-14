@@ -1,0 +1,144 @@
+{
+ "game": {
+  "id": "bloodwash-170938",
+  "igdbId": 170938,
+  "name": "Bloodwash",
+  "cover": {
+   "imageId": "coda26",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coda26.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar13u3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar13u3.jpg"
+  },
+  "ps5Release": "2022-11-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bloodwash-170938@01",
+   "gameId": "bloodwash-170938",
+   "displayName": "Patch 01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-18T21:36:45.000Z",
+   "notes": [
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "Added a V-Sync Option to the camera options Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Lock-Framerate and Target Framerate options to the camera options menu.: This requires V-sync to be turned off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to invert vertical camera controls under Camera Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Chatterbox achievement fixed: Unfortunately no previous progress counts towards this. But the good news is that it no longer relies on talking to everyone in a single playthrough! So if you miss someone in the plaza now, you no longer need to play through the intro again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Can no longer get stuck playing Gametoy: Some people were getting stuck playing the gametoy and couldn’t exit. This was happening because they were accidentally unequipping the gametoy while playing. This can no longer occur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Version number on the title screen: With this patch we are at version 1.0.1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rapidly firing the gun in Chapter 3 should no longer knock you out of bounds: We weren’t able to replicate this, but are pretty sure it’s caused by the gun incorrectly having a collider. We removed this but please let us know if you still encounter this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player can no longer run back up stairs during the final encounter. This was an issue as the Womb Ripper couldn’t run up stairs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjust collision in Chapter 3 vents: At least one player reported being able to get out of bounds here but we were not able to replicate the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you couldn’t call the Call-Girl on subsequent playthroughs: As a side-note. The call-girl is not required for the Chatterbox achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where custom controller mapping would not save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added a V-Sync Option to the camera options Menu.",
+     "Added a Lock-Framerate and Target Framerate options to the camera options menu.: This requires V-sync to be turned off.",
+     "Added an option to invert vertical camera controls under Camera Settings"
+    ]
+   },
+   "sourceIds": [
+    "steam-1598160"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1598160/view/5418383147744036204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-18T21:36:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1598160",
+      "checkedAt": "2026-11-11T18:34:50.882Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:50.882Z"
+  }
+ ],
+ "issues": []
+}

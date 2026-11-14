@@ -1,0 +1,1413 @@
+{
+ "game": {
+  "id": "dead-end-city-197176",
+  "igdbId": 197176,
+  "name": "Dead End City",
+  "cover": {
+   "imageId": "co5d14",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5d14.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1l6u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1l6u.jpg"
+  },
+  "ps5Release": "2024-02-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dead-end-city-197176@1.1.08",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.08",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-03T15:30:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) The Score Attack select screen was displaying incorrect high score data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) In some cases, the game data array was being accessed before it was created. It is now created earlier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Steam was being initialized before game data was initialized. It is now done in the correct order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5220291886505632708"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-03T15:30:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.621Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.621Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.07",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.07",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-25T17:33:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added more thorough update check for data changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reset the difficulty variable when entering Highway Mode.: This update is mostly to fix issues with older versions of the game not updating to the more recent data changes. This will fix crashes that people were seeing on startup. I am not sure if this will play nice with steam cloud files, so if you are still seeing a crash on startup, let me know in the discussion.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5219165352638981272"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T17:33:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.620Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.620Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.06",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.06",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-04T18:11:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) \"Scoring 101\" achievement was writing to the wrong data cell when syncing to Steam's achievement data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) The Ending viewer would crash when pressing Right to cycle past Crankcase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added secret input. ^_^",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5141476355672944149"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-04T18:11:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.619Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.620Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.05",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.05",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-25T15:33:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) Highway mode tally was not properly disabled after finishing a run. This caused it to appear simultaneously during arcade mode tally sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5141475722331108728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-25T15:33:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.619Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.619Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.04",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.04",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-25T13:01:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added syncing between local achievement array and Steam achievement data. The achievements screen should automatically sync all data now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5141475722330723679"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-25T13:01:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.618Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.618Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.03",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.03",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-24T20:34:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) Old data format was not updated in some cases. All blank data is now updated automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) NEW badges on the Extras menu were incorrectly offset by one line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) The Achievement menu item in the Extras menu did not display a NEW badge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5141475722328224908"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-24T20:34:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.618Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.618Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.02",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.02",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-24T14:05:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) There was a small bug in the default data regarding Highway mode. The default highway scores were populated with high values (instead of 0). This made it seem like leaderboards were not working. The new default data set corrects this problem.: NOTE: Pressing \"L\" on the boot screen should correct this issue. The new data will be used in any fresh install of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5141475722327239274"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-24T14:05:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.617Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.617Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.01",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.01",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-15T02:10:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) game crashes when an enemy is killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5059267908808958565"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-15T02:10:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.617Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.617Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.1.00",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.1.00",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-14T20:37:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Highway Mode - a caravan stage unique to each driver that uses a modified rule set.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lot of minor fixes and adjustments",
+     "items": [
+      {
+       "text": "Adjusted the Boot screen to only display \"Press Z to Continue\" when input is allowed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Bug) Shiro's Napalm shot was not scoping enemies properly. This caused some boss parts to spawn medals when they shouldn't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Bug) Items that are attracted to the player after death would not be collected. They are now destroyed on contact with the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the point value indicator onscreen to the Rival's death sequence. This is similar to the boss death sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rivals now release small medals on each item spawn if the score multiplier is at max (x9).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the ability to speed up the Shop Point tally with a button press.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Bug) End of Boss Tally bonus points for medals was not properly added to the player's score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the sound and visual fx on the wooden barricade props.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the Unicorn Buggy shooting live area to be smaller (80 to 100px from the screen bottom).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added 1000pt bonus to enemies that are destroyed by a landmine blast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Windows cursor is now hidden when the game is running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shiro Napalm damage and lifespan were adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shiro Napalm now does more damage on initial impact. Bosses take additional damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decreased Desert Convoy live Y area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shiro Napalm cooldown increased from 30 to 60 frames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decreased Mountain Drone live Y area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Rival Shiro Napalm sorting with enemy bullets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All special shots (except Hettie) can now hit the bonus balloons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Hettie's car speed from 2 to 2.25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Crankcase's car speed from 2.5 to 2.65.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Split the How To Play menu into Arcade and Highway sections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Bug) Quick Restart was not loading the proper area in Highway Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the laser art for Crankcase's special shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an Achievements menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added 2 new achievements for Highway mode. (Get A Rank, Get S Rank)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a Rival Appear sfx to the Tally menu after a boss fight. This required an additional pause in the Tally sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new strings for Achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Bug) Car skins were not reset between play sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Bug) Black market achievement \"ach_buy_all_items\" was misspelled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 29,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/5036749277248849245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-14T20:37:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.616Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.616Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.10",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-04T19:54:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjusted the Boot screen to only display \"Press Z to Continue\" when input is allowed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "(Bug) Shiro's Napalm shot was not scoping enemies properly. This caused some boss parts to spawn medals when they shouldn't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Items that are attracted to the player after death would not be collected. They are now destroyed on contact with the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the point value indicator onscreen to the Rival's death sequence. This is similar to the boss death sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rivals now release small medals on each item spawn if the score multiplier is at max (x9).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the ability to speed up the Shop Point tally with a button press.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Bug) End of Boss Tally bonus points for medals was not properly added tot he player's score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the sound and visual fx on the wooden barricade props.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/4732747437206606929"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-04T19:54:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.615Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.616Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.09",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.09",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-29T15:37:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "\"- (Bug) Local scores were being overwritten by incorrect leaderboard entries. This affected offline play. The game will now do a one time sync with Steam Leaderboards (when online) to resolve any incorrect local data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NOTE: This can also be done manually by pressing the L key on the Boot Screen.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An indicator of Steam's online status is now displayed in the lower left corner of the Boot and High Score screens. This should help players know if Steam is connecting properly or not for Leaderboard use.: It has been reported that some people are only seeing one score (their personal score) on each Leaderboard in game on the High Score screen. If this is the case, the game was not able to connect to Steam. There is now an indicator in the lower left corner of the High Score screen that lets you know if Steam was found and connected. If you don't seem to be connecting to Steam, please let me know so I can try to resolve the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/4706851091180774989"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-29T15:37:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.615Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.615Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.08",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.08",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-27T19:40:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) Sound Test was accessible even when it wasn't purchased in the Shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Upon leaving the Sound Test, the Title bgm was not restored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Scanlines caused the game to rescale incorrectly on displays with different resolutions. The screen size is now handled a little differently when calculating the final scanline output.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Switching between fullscreen and windowed mode with scanlines active sometimes caused the screen to be resized incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(Bug) Starting the game with scanlines active sometimes caused the screen to be resized incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) The gallery numbering began with 0. It now begins with 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) The gallery's final image was not displaying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/4706851091174099636"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T19:40:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.614Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.614Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.07",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.07",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-25T17:43:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) Medal counters were not reset if a Rival fight was activated, causing the final game Results screen to display incorrect information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Medal counters were not reset properly if Restart Run was used, causing the final game Results screen to display incorrect information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Airstrike strafe bullets were not using the enemy bullet color defined in the game options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Landmine, ammo gain, desert boss door open, many final boss sounds and Topoff sound fx were not affected by the sfx volume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Ending bgm was not affected by the bgm volume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 14 new achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added preliminary Steam cloud saving.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/4714731755431108766"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-25T17:43:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.614Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.614Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.06",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.06",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-21T19:17:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) Player ammo icons were sometimes wrongly positioned at the start of a new area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Rockset's special shot was not properly generating medals on bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a small speed increase over time to Hettie's special shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Bug) Hettie's hairball special shot would sometimes overshoot the target and not lock on. Every step is now checked for distance.: Also, I have begun work on a new mode to be added to the game in the near future (whenever I finish). :) It will be a free addition and hopefully adds to your enjoyment of the game. --Pixel Licker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/4714731755416770186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-21T19:17:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.613Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.613Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.05",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.05",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-17T14:23:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-(Bug) Existing Hard mode scores were not loaded properly for Score Attack. This caused the current game score to be compared to Normal mode scores on Game Over. Because of this high score entry was not loaded as expected when a new high score was achieved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Score Attack select screen scores were not displayed properly for Hard mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Score Attack select scores no longer display the default car icon if the score is 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/6402455182519323001"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-17T14:23:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.613Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.613Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.04",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-16T13:52:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) Wraith special shot had a bug introduced by the previous update. It is now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/6402455182515598807"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-16T13:52:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.612Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.612Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.03",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-15T20:40:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) Gampad confirm button was not recognized in the Score Attack select screen after an initial play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Some Score Attack Steam leaderboard calls were misnamed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Friends sort option to the High Score Tables. It currently only sorts the top 5 scores, but the plan is to add scrolling in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Bug) Enemies with no point value still granted a multiplier score bonus when killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss grunt enemies no longer spawn item drops indefinitely. Only the first round of grunts will spawn item drops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Leaderboard numebring displayed a \"9\" in both fonts in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) The x9 icon would appear on enemies worth no points. It now only spawns when points are awarded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Bug) Gamepad up/down inputs were not working on the Gallery screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/6402455182512989551"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-15T20:40:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.611Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.612Z"
+  },
+  {
+   "id": "dead-end-city-197176@1.0.02",
+   "gameId": "dead-end-city-197176",
+   "displayName": "Update 1.0.02",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-14T21:00:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "(Bug) If fullscreen + Tate were active, Options menu icons would disappear if you cycled through the scanline settings. The icons were being positioned incorrectly when scanlines == 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for up to 6x game window scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Bug) Score Attack leaderboard _areaString was not set to \"ALL\" in the case of finishing any area before area04.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leaderboard now shows the ranking entry number when sorting by player score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a smaller high score table ranking score font for scores above ranking entry 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1880840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1880840/view/6402455182509397060"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-14T21:00:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1880840",
+      "checkedAt": "2026-11-11T21:58:55.611Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:55.611Z"
+  }
+ ],
+ "issues": []
+}

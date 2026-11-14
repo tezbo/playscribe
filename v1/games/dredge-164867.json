@@ -1,0 +1,2847 @@
+{
+ "game": {
+  "id": "dredge-164867",
+  "igdbId": 164867,
+  "name": "Dredge",
+  "cover": {
+   "imageId": "co9kyk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9kyk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4dxo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4dxo.jpg"
+  },
+  "ps5Release": "2023-03-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dredge-164867@major-2025-10-03",
+   "gameId": "dredge-164867",
+   "displayName": "❗Update Required",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-03T13:53:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We want to let you know about an important update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A recently identified security vulnerability within Unity has been spotted, and while there is currently no evidence of impact on users, we’re taking all relevant steps to ensure you’re on the latest and safest version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To keep you safe, we’ve released a new patch that addresses the issue. Please update your game as soon as possible to stay protected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can read more about it here",
+     "items": [
+      {
+       "text": "As always, our priority will be on keeping our games safe and enjoyable for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/1811772772510304"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-03T13:53:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.196Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-03T13:53:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.196Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-03T13:53:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:22.909Z"
+  },
+  {
+   "id": "dredge-164867@1.5.3",
+   "gameId": "dredge-164867",
+   "displayName": "Hotfix 1.5.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-18T14:00:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Anglers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released update 1.5.3 for DREDGE. This update addresses what should hopefully be the last round of bugs for The Iron Rig.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the Aurous Anchor could be duplicated. Players who already have excess Aurous Anchors can get rid of them by doing the following: Deploying them all at sea (via Inventory > Cast Overboard). Save and Quit the game. When loading, only 1 will be preserved, which you can collect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where 16:10 aspect ratios were considered unsupported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a handful of ooze spots in Twisted Strand and Stellar Basin could not be cleared under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where SteamDeck detection was not working in certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "<3 Black Salt Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/6341720536499136933"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-18T14:00:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.196Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-18T14:00:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.196Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-18T14:00:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:22.907Z"
+  },
+  {
+   "id": "dredge-164867@1.5.2",
+   "gameId": "dredge-164867",
+   "displayName": "Hotfix 1.5.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-29T15:00:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Anglers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released update 1.5.2 for DREDGE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update fixes a handful of bugs and improves a few areas that have been catching players out since our release of The Iron Rig the other week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Exotic bait no longer requires the correct rod to be equipped in order for it to be placed. You'll still need the correct rod to catch whatever shows up though!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Foreman will make it clearer that you can talk to him if you run out of ooze patches to siphon up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the size of the ooze markers on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a map marker for the rig's location before you visit it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added 1-2 nautiloids to each of their spawn locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an item duplication bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The portal from the Aurous Anchor now visually layers better when placed on ooze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Leviathan will no longer be able to consume players as they're in the process of docking at the rig.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one patch of ooze couldn't be fully cleared in Twisted Strand under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could mark bait spots on their map, causing a number of flow-on issues with the map and spyglass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A handful of small text fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additionally, the whole team is incredibly grateful for your support. The reception to The Iron Rig has exceeded our expectations, and we're so happy you've enjoyed diving back into the world of DREDGE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "<3 Black Salt Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 5,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/6240387642454608522"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-29T15:00:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.195Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-29T15:00:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.195Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-29T15:00:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:22.906Z"
+  },
+  {
+   "id": "dredge-164867@1.4.2",
+   "gameId": "dredge-164867",
+   "displayName": "Update 1.4.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-18T10:00:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey anglers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update contains a handful of small bugfixes and performance improvements to the game. Check out the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re hard at work on our next DLC, The Iron Rig, and are looking forward to sharing more about it in 2024!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Various optimizations to reduce the game’s memory usage and improve load times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the volume of the Aurous Anchor’s portal idle SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "The grids at the ice shards in The Pale Reach now only accept ice axes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some lines of text (at The Airman, and The Collector) would hang when run in some languages (Japanese, Chinese, Korean) with Text Speed set to “Fast”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We’re aware of a few more instances of this occurring in some side quests, specifically when refusing to pick up quest items from NPCs. To avoid this, you can either:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reload, and do not refuse the item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Change your text speed to “Normal”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing ambient audio to the shrine in The Pale Reach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in the line that describes the dog vomiting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/5409450219986679214"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-18T10:00:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.194Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-18T10:00:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.194Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-18T10:00:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:22.904Z"
+  },
+  {
+   "id": "dredge-164867@major-2023-09-28",
+   "gameId": "dredge-164867",
+   "displayName": "Update on DLC",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-28T20:05:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Anglers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have an announcement to make, and yes, it's about a delay – but please hear us out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few months ago, we were thrilled to share with you our release plans for the first DLC for DREDGE, ‘The Iron Rig.’ Originally, we planned to spend a few months crafting this exciting addition and release it in Q4 this year. However, as we progressed, we were faced with the reality that, given the time of the year, we'd need more lead time to coordinate our marketing and make the launch as exciting as it could be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We were genuinely disheartened because we knew had made a commitment to all our dedicated players, but we firmly believed there was only one path forward and that was to delay ‘The Iron Rig’ until next year while still delivering an exciting DLC to our players in 2023.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, we've been hard at work crafting some additional content and we can't wait to share more details with you soon, including when it will be available and how much it will cost. We understand that this isn't what we had originally promised but we hope you understand. Your support means the world to us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for being an essential part of the DREDGE community and please stay tuned for more info soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the best from the team at Black Salt Games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/5220291886488107911"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-28T20:05:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.194Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-28T20:05:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.194Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-28T20:05:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.525Z"
+  },
+  {
+   "id": "dredge-164867@1.3.0",
+   "gameId": "dredge-164867",
+   "displayName": "Update 1.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-18T13:02:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Anglers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just released our third update for DREDGE, which introduces a new character - The Painter! Those looking for a spoiler free experience can go and visit him in Little Marrow now. For the rest of you, check out our trailer and patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added Boat Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After you’ve acquired your dredge crane as part of the main story, a new character will set up shop at Little Marrow - The Painter! He’ll be able to make adjustments to your boat’s appearance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Painter starts with some basic options available, but you’ll be able to discover additional paint ingredients and flag designs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added crab aberrations (craberrations).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new filter to the Encyclopedia to display Crabs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a number of new shipwrecks around the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Equipment tooltips now display the previously hidden “Aberration Catch Bonus” statistic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly buffed some of these values on some rods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced crab pots slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All crab pots provide some aberration catch bonus, with higher tier / special pots offering a larger bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mouth of The Deep catch rate and duration reduced to make progressing the crab pot tech tree more meaningful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where in very rare cases, the game would take longer than expected to save. Losing power during this time would cause save files (and in some cases, backup save files) to become corrupt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a new font which should handle Japanese characters better and prevent them from falling back to use Chinese characters in some scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where clicking on the boat upgrade purchase button too quickly could cause the screen to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some areas of the sea floor reported that they were 100m+ deep when they clearly were not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some achievements would not trigger immediately if the last thing they required was for you to catch a crab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could get stuck on the map screen if it was switched to another screen while a marker was being placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some small animation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 7,
+    "balance": 5,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Added Boat Customization",
+     "Added crab aberrations (craberrations).",
+     "Added a new filter to the Encyclopedia to display Crabs."
+    ]
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/5480373588797144477"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-18T13:02:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.193Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-18T13:02:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.193Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-18T13:02:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.524Z"
+  },
+  {
+   "id": "dredge-164867@1.2.0",
+   "gameId": "dredge-164867",
+   "displayName": "Update 1.2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-06T13:12:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey anglers! We’ve just released our second chunk of content for DREDGE. In this update we’re adding photo mode, passive mode, new aberrations, and a bunch of new random encounters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Watch the video below, then read on for the full notes - or dive in to the game first for a spoiler-free experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added Photo Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This new ability can be unlocked after providing some assistance to a new character - The Photographer! You’ll find her at a new camp on an island to the south of The Marrows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Passive Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This mode can be activated at any stage by selecting the option from the Settings menu. In this mode, you’ve nothing to fear from the creatures of the deep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 10 new aberrations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 8 new types of wildlife for you to encounter, including one that isn’t afraid of the shallows...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "V-sync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pause In Background - the default behaviour of this has changed so that the game does not pause when it loses focus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Camera Follow Mode - you can now detach the camera from the boat’s turning orientation. This means that when the boat turns, the camera won’t automatically turn to look in the boat’s new direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Spyglass Sensitivity - sliders for horizontal and vertical movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Haste VFX - disables the visual effects (FOV pull & screen shake) that occur when the Haste ability is activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Added a new “General” tab to Settings and moved some options around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a couple of new names to the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated Dolphin SFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Dolphins and some other events are discouraged from swimming over the abyss of Stellar Basin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the Crab Pot / Trawl Net information panel didn’t show correctly the first time if the game was loaded with either of these abilities pre-selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game could freeze when downgrading a trawl net to another net with a smaller internal capacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where discarding the package from The Mayor never removed the associated map marker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an island in Devil’s Spine was culling incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And for our speedrunning community...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Haste activation SFX does not play if Haste was deactivated recently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game now reports a few values to an Autosplitter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 8,
+    "balance": 4,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Added Photo Mode",
+     "Added Passive Mode",
+     "Added 10 new aberrations"
+    ]
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/5124582150156288597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-06T13:12:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.192Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-06T13:12:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.192Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-06T13:12:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.523Z"
+  },
+  {
+   "id": "dredge-164867@1.1.2",
+   "gameId": "dredge-164867",
+   "displayName": "Hotfix 1.1.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-30T19:12:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Anglers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've released a small patch to address some continued reports of players encountering issues with their save data. It makes us really sad to hear that a few players have lost their progress in the game, and we want to apologize to those affected. With that in mind, these are the notes on the improvements to our save system:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players who were unable to open the game due to corrupt settings files should now be able to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added multiple levels of data verification before, during and after saving the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A history of up to 50 backups is now kept (per save slot). These are stored inside the backup-saves folder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, please continue to report any issues you encounter in our forums so that we can check them out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right, now we're back to working on our upcoming 1.2 update! Here's a quick peek at one of the new wildlife species that will soon be showing up alongside your boat. We can't wait to see what amazing photographs you all take when photo mode releases!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/5151600576607182633"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-30T19:12:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.191Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-30T19:12:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.192Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-30T19:12:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.523Z"
+  },
+  {
+   "id": "dredge-164867@1.1.0",
+   "gameId": "dredge-164867",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-11T09:02:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey anglers! In our first large patch for DREDGE, we’re adding a much-requested map feature and making some quality of life adjustments and bug fixes. Check out the video below to see how map markers work, then read on for the detailed notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added advanced map functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The map can now be zoomed and scrolled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "6 different types of markers can now be added to the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A total of 50 markers can be added to the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Markers can be viewed through the Spyglass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments",
+     "items": [
+      {
+       "text": "Removed timers on timed quests (Hooded Figures, Castaway)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The book rewards for the Hooded Figures’ quests have been retroactively awarded to players who already exceeded these timers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Travelling Merchant now always stocks 1x Research Part every day, with a 50% chance of stocking 2x.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All basic material spots (Lumber, Scrap and Cloth) now restock over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Doubled the chance of finding an aberration of trawl-only species (Aurora Jellyfish, Anchovy)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "From now on, shops will retain unique equipment sold to them, allowing them to be bought back if you change your mind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made it harder to accidentally discard important items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Items such as equipment and quest items now take longer to discard and flash the prompt as the button is held.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rot is now faster to discard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Moved 3 Loosejaw spawns in Stellar Basin to make them easier to locate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The description of a few quest items now update to let you know they can be discarded when they are no longer needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Research button now highlights itself to draw attention in some situations:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "After players have been given their first research part.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "After the Researcher tells players to upgrade a certain piece of equipment in Stellar Basin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When using a controller, the icons that prompt you to switch sides (L3/R3) now flash until they’ve been used at least once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed a destructible wall in Gale Cliffs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the visibility of glowing quest item VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Items from the Blackstone Key DLC can now be sold for a tiny amount of money.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The height of the spyglass has been raised slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "It should be slightly easier to locate and focus on fishing spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a rare issue where save files could become corrupted, which also prevented new save files from being created.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you load the game with any save files that have already been corrupted, the game will remove these files and allow you to create a new save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players still experiencing issues with the game not loading should delete their settings file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where some equipment could go missing when upgrading to a larger hull.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fallback system to hold excess items in extreme cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing dredge cranes have been restored to players affected by this bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Prey Sighted and Servant of the Shrines achievements would not unlock correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo where the Researcher was asking for a “Stoplight” Loosejaw.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where more than 5 trinkets could not be sold at a time to the Trader when playing in Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added 4 missing Playtester credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additionally, we’ve added a speculative fix for players who suddenly find themselves unable to use their abilities. If you’re experiencing this issue, please reach out to Team17 customer support and send us your save file so we can better identify the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 12,
+    "balance": 20,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added advanced map functionality.",
+     "The map can now be zoomed and scrolled.",
+     "6 different types of markers can now be added to the map."
+    ]
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/6557848386940596109"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-11T09:02:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.191Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-11T09:02:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.191Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-11T09:02:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.522Z"
+  },
+  {
+   "id": "dredge-164867@1.0.4",
+   "gameId": "dredge-164867",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-06T21:44:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have been overwhelmed by the response to DREDGE but one thing keeping us up at night was a soft-locking bug experienced by a few of our players. This patch should address that problem and we can only apologize to players affected and thank you for your patience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed an issue where your Dredge Crane could disappear when upgrading hulls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-added Dredge Cranes to save files that have been affected by this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We appreciate the players who reached out via the Forums, Discord or Support channels who helped us solve this. We are currently working on a larger patch that will address any other situations where equipment could go missing, as well as a few balance tweaks and quality of life improvements suggested by our community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/5121196841289734066"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T21:44:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.190Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T21:44:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.190Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-06T21:44:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.521Z"
+  },
+  {
+   "id": "dredge-164867@0.9.1",
+   "gameId": "dredge-164867",
+   "displayName": "Update 0.9.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-25T02:10:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In this update to the demo for DREDGE we've been able to respond to some of the suggestions you've sent via discord, twitter, or the in-game feedback form. Before we dive into the full patch notes, we want to take a minute to give a little report on what your feedback looks like.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So far, we've processed and sorted over 700 individual tickets reported through the in-game feedback form - and there are hundreds more we've yet to go through!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Most Requested Features",
+     "items": [
+      {
+       "text": "Additional Map Functionality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ability to organize fish in your cargo when you have one on the hook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Control Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tutorials / Communication of features (e.g. Dredging, Panic)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Most commented on design features",
+     "items": [
+      {
+       "text": "Passage of Time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Economy / Debt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Most requested language support",
+     "items": [
+      {
+       "text": "Brazilian Portuguese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Most reported bugs",
+     "items": [
+      {
+       "text": "Dockworker has 2 lines of unlocalized dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spyglass opening at odd angles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Getting beached on the islands of The Marrows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crab pots interfering with docking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing Turkish uppercase 'i' in font",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With that in mind, let's take a look at one of your most suggested features that we've added in this update: the Temporary Storage Tray!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This unlocks after you complete the introduction quest, and allows you to store fish (and trinkets and materials) temporarily so that you can re-arrange your cargo. Any items left in the tray when you exit fishing mode will be lost!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Added temporary storage tray.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added controller rumble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various SFX and music balancing changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Literally hundreds of text fixes and adjustments across all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the dredging minigame to better communicate that the notches should be avoided.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The dredging and fishing minigame animations now respect your color preferences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted mouse button glyphs to be slightly clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted xbox controller d-pad glyphs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "The default binding for \"Back\" is now X. If you have played the game before, your binding won't be adjusted unless you reset it (or reset all settings).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more colors into the accessibility dropdowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The title logo of the game now changes in Simplified and Traditional Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The T17 splash screen audio now respects volume preferences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The T17 splash screen video has changed to a custom DREDGE logo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potentially fixed a crash that was preventing the game from running on Windows 7.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the Trader's pipe wasn't smoking correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some geometry where players were getting stuck on the shoreline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Crab pots sometimes would not open or behave correctly for players using the Russian language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the spyglass would remember its previous vertical position when re-activating it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where capital i's would appear as squares for players with a Turkish system locale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of text-wrapping issues on the map for some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where text line breaks were in bad places in Korean.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a number of issues that could arise if the player was interrupted while docking (for example, if docking 'through' a placed crab pot).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "When rebinding a control on Mouse & Keyboard, the screen says \"Press X to cancel binding\", but you actually have to press ESCAPE.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Some item descriptions and backgrounds do not follow your color preferences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The spyglass sometimes opens to strange orientations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the Mayor's dialogue lines about the old fisherman is messed up, in german.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, since we last spoke, we've pinned a FAQ topic to our Steam forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 15,
+    "balance": 2,
+    "other": 16,
+    "ps5": 0,
+    "topNew": [
+     "Additional Map Functionality",
+     "Ability to organize fish in your cargo when you have one on the hook",
+     "Control Updates"
+    ]
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4714731755428745564"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-25T02:10:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.189Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.519Z"
+  },
+  {
+   "id": "dredge-164867@major-2022-09-29",
+   "gameId": "dredge-164867",
+   "displayName": "Demo Update: Build 1516",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-29T23:39:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Anglers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have to start by saying THANK YOU to everyone who has played DREDGE: CHAPTER ONE so far. We've had literally thousands of you play our little fishing game, which has blown our expectations out of the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just pushed a new build of the demo live with some bugfixes and improvements. All of these came from the feedback you've given us, either via our Discord or the in-game feedback form - so keep that feedback coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the patch notes",
+     "items": [
+      {
+       "text": "Fixed a critical issue where players managed to uninstall their engine while out at sea.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the tooltip could disappear when installing equipment, making players think they were stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit where a puzzle reward could be claimed repeatedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where particles on character portraits (flies, dust, etc) scaled incorrectly at high resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the boat's light could be in an incorrect state when loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the camera could get confused when docking near a crab pot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in one of the Mayor's lines that we must have not noticed for literally a year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple of slightly embarrassing chinese translations. Please note that all of our translations are currently being improved for the full release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a \"Reset All Settings\" button on the settings screen. Please note that the confirmation dialogue has not been translated into other languages yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If players get lost and dock at Little Marrow before completing the tutorial quest, the Dockworker will pop up and remind them where Greater Marrow is. Please note that this line has not been translated into other languages yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The encyclopedia 'page turn' animation was too severe, so it has been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The default master volume of the game is now ~25% quieter. Existing players will be unaffected by this change until they adjust it in the Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the lighthouse ambience to be much less grating on the ears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted some camera colliders around Blackstone Isle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Add SFX to a previously silent group of sea creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-planted some floating trees at the top of some islands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "And some significant known issues",
+     "items": [
+      {
+       "text": "There’s an issue where sometimes you need to disable steam’s PlayStation / Switch support for the game to correctly register these controllers. To solve this: Close the game > right click the game in your library > Properties > Controller > Override for DREDGE > Disable Steam Input > Reopen the game: Alternatively, go into your main Steam Settings and disable PlayStation controller support under the controller settings. Please note that this will affect all of your Steam games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Crab pots may stop working even though they have a few hours of durability left, but only when playing in russian language. Yeah, don't ask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game fails to launch on Windows 7.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Some game UI does not scale nicely on 4:3 aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Q: How do I know if I've received the update?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A: It should say \"1516\" in the bottom right corner of the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 2,
+    "other": 13,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4588629064112197817"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-29T23:39:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.518Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-12-22",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 21 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-22T20:10:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We finish the year off with filling out Gale Cliffs building models and adding in full support for control remapping on PC!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We're now weighing up whether to support control remapping on consoles, what do you all think? One mapping to rule them all, or give players the freedom to choose (and potentially really mess up their play experience)? Drop us a comment below with your thoughts or stop by our Discord: https://discord.gg/DtgjkKvXeP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wishing everyone happy and safe holidays and hope you join us again when we're back in January '22; new year, new area!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Nadia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4224938027296814568"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-22T20:10:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.188Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.516Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-12-07",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 20 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-07T23:13:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Explorer types can now seek out rare and exotic fish in hard-to-find locations in Dredge! We've updated our map markers and added yet more fish, and our new 3D artist crafts a town for Gale Cliffs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll be back again in a couple of weeks with another update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Nadia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4224936215403416360"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-07T23:13:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.187Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.515Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-11-22",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 19 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-22T20:51:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A short and sweet update for you all this week -- we've added in Destructible Walls that will allow players to access shortcuts and hidden caches of treasures if they're savvy enough to find them. Golden notches can now also appear on your fishing reel -- you'll have one shot of hitting the golden notch, if you do you instantly catch a trophy sized fish, if you miss it though you'll have to wait for the next big one to come along.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally some character concepts and fish art to share with you as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Catch you soon for our next update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Nadia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4227186657156645586"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-22T20:51:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.187Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.515Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-11-16",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 18 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-16T18:47:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've been working away building our second area of Dredge; The Gale Cliffs - check out what the zone is going to look like in our video below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've also added fish that will only appear at night for those brave souls willing to venture out in the fog, and special fishing spots that are easier to see in the dark and might net you some valuable, if strange, creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "+ a few more bits and pieces",
+     "items": [
+      {
+       "text": "Player feedback banners for key events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World art update to add ambient fish particles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An update to dredging!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Catch you for our next update soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Nadia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4971406207537791513"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-16T18:47:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.514Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-10-29",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 16 & 17 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-29T00:13:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A double-dealing of Dredge updates for you! Sprint 16 saw the introduction of ocean depth and lots of art updates; from boat model concepts and visible boat damage to improved sea foam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sprint 17 introduced the new fish encyclopedia to track your catches and some strange goings-on on the waters around The Marrows...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bye for now from Nadia!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4186652357025720607"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-29T00:13:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.514Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-10-08",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 15 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-08T02:17:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've had a lot of fun these last couple of weeks adding in spooky and eerie world events to keep players on their toes while venturing out in the night. We have some new world art and inventory art to show off as well!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New world event: 5 new events that can happen around or to the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New world art: Messages in bottles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New resource: Cloth can now be salvaged from shipwrecks: + more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4069556867206271557"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-08T02:17:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.186Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.513Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-09-23",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 14 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-23T22:30:23.000Z",
+   "notes": [
+    {
+     "title": "DREDGE Dev Diary - Sprint 14 (Aug-Sep 2021)",
+     "items": [
+      {
+       "text": "We've got our latest sprint update for you with a big new feature that we've been planning for a while; ship upgrades! Keep an eye out for the accompanying model updates in a couple of sprints time. We also have some new production art in a number of areas and a new ability for players to use; a foghorn. We'll let you figure out what effects it has.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New UI and World Art: Crab Pots & Crabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New weather effect: Rain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: Fishmonger Store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature: Ship Upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Foghorn! Toot toooot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hei kōnā mai from Nadia, follow to get notifications of our future updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/3936699406871289037"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-23T22:30:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.185Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.513Z"
+  },
+  {
+   "id": "dredge-164867@major-2021-09-07",
+   "gameId": "dredge-164867",
+   "displayName": "Development Update: Sprint 13 Recap",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-07T00:23:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "DREDGE Dev Diary - Sprint 13 (Aug 2021)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We kicked off this sprint with showcasing Dredge at NZGDC21! It was excellent to watch people we didn’t know play our game finally! Below we have our Sprint 13 summary, check it out for a peak at some of the new features and updates that have made it into Dredge lately, including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New world art: Blackstone Isle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New character art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Map screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New feature: Research trees",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mā te wā from Nadia, more DREDGE updates coming regularly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1562430"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1562430/view/4020014099104489873"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-07T00:23:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1562430",
+      "checkedAt": "2026-11-13T03:19:29.184Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:29.512Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "8a534dc11155",
+   "text": "There’s an issue where sometimes you need to disable steam’s PlayStation / Switch support for the game to correctly register these controllers. To solve this: Close the game > right click the game in your library > Properties > Controller > Override for DREDGE > Disable Steam Input > Reopen the game: Alternatively, go into your main Steam Settings and disable PlayStation controller support under the controller settings. Please note that this will affect all of your Steam games.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@major-2022-09-29"
+  },
+  {
+   "id": "ad7652c661c6",
+   "text": "Crab pots may stop working even though they have a few hours of durability left, but only when playing in russian language. Yeah, don't ask.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@major-2022-09-29"
+  },
+  {
+   "id": "de507107297a",
+   "text": "Some game UI does not scale nicely on 4:3 aspect ratios.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@major-2022-09-29"
+  },
+  {
+   "id": "7782df1947b9",
+   "text": "Q: How do I know if I've received the update?",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@major-2022-09-29"
+  },
+  {
+   "id": "effc83bbf3b8",
+   "text": "A: It should say \"1516\" in the bottom right corner of the title screen.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@major-2022-09-29"
+  },
+  {
+   "id": "2ce26fb58c7e",
+   "text": "Some item descriptions and backgrounds do not follow your color preferences.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@0.9.1"
+  },
+  {
+   "id": "db9e388fdda4",
+   "text": "The spyglass sometimes opens to strange orientations.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@0.9.1"
+  },
+  {
+   "id": "367819e6bc35",
+   "text": "One of the Mayor's dialogue lines about the old fisherman is messed up, in german.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@0.9.1"
+  },
+  {
+   "id": "3329b4311d81",
+   "text": "Also, since we last spoke, we've pinned a FAQ topic to our Steam forums.",
+   "status": "open",
+   "firstReleaseId": "dredge-164867@0.9.1"
+  }
+ ]
+}

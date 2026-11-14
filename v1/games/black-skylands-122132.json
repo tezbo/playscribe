@@ -1,0 +1,6101 @@
+{
+ "game": {
+  "id": "black-skylands-122132",
+  "igdbId": 122132,
+  "name": "Black Skylands",
+  "cover": {
+   "imageId": "co25b9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co25b9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar903",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar903.jpg"
+  },
+  "ps5Release": "2023-08-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "black-skylands-122132@patch-2023-09-22",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch - Bug Fixes & Performance Improvements",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-22T14:09:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Captains!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this new patch, we've tackled a number of bugs since the 1.0 launch, and we’ve also made improvements to the game's performance. Additionally, we’ve introduced a new difficulty level tailored for those seeking a more relaxed exploration experience. Plus, newcomers will appreciate the improved prologue, now equipped with more hints and guidance. As always, please don't hesitate to report any issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed UI with misplaced marker for big bird nest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed black screen during save loading (GOG non-auth store).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed non-auth players no DLC content (GOG).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Video options dropdown spacing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed players stuck between switch and lamp in Moth Nest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed font with \"Student Notes\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed boarding ship speed boost if a turret was placed into its armor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed items cloning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mosquitoes (Falcon ships) flying in circles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed black screen when alt-tabbing during loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed main menu black screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Volcano and Hive weapons not damaging Kraken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Steam Deck video hints.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Ship Workshop quest completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed last swarm weapon mod obtainability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ship changing bug after death in Raid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies spawning after Big Water Island liberation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed assault rifle respawning on Fathership after reloading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with tiles on Hungry Gardens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fishing hole interaction bug while jumping nearby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Kraken not spawning in West Aspya.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Kraken instant revival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed batteries not respawning if not placed in slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the player could take 2 items from Fathership's hold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug a discrepancy observed with the max limit of warehouse in gameplay HUD and inventory menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed turrets stopping shooting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed in-active Sleep feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed estimated recovery bar persistence when dying while using medkit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Eva's dialogue & moth event triggering bug when getting close to skyship rubble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Boss' flag flying in air during Rhoda fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Moth Nest corrupted texture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed final trailer without blur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Icy Hollow platform not moving Eva.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Raid tile visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed swarm sounds in inappropriate places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ship cannons upgrade bug that only takes effect after teleporting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Horos eyes and sphere cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sleepy Refuge island music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance Changes",
+     "items": [
+      {
+       "text": "Rebalanced Mort's battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased bow damage and crit multiplier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Horos' HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased last weapons' upgrades cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Golden Revolver damage by 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "What’s New",
+     "items": [
+      {
+       "text": "Optimization work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new difficulty level for casual players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added auto-aim feature depending on difficulty level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hidden Luma button if unable to use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Prologue improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Prologue dialogue updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aron's box always has an arrow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Box art changed in the ship's hold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Green zone added for box placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Assault Rifle weapon change tutorial hint added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Yours truly,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• • •",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Join the community to chat with other captains",
+     "items": [
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reddit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 35,
+    "balance": 5,
+    "other": 7,
+    "ps5": 0,
+    "topNew": [
+     "Optimization work.",
+     "Added a new difficulty level for casual players.",
+     "Added auto-aim feature depending on difficulty level."
+    ]
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/5219165352627533049"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-22T14:09:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.838Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-22T14:09:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.838Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-22T14:09:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:45.501Z"
+  },
+  {
+   "id": "black-skylands-122132@post-2022-12-20",
+   "gameId": "black-skylands-122132",
+   "displayName": "Christmas has come to Black Skylands!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-12-20T17:03:51.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Captains!",
+     "items": [
+      {
+       "text": "We've just released a little update to get you into the Christmas spirit. Update your game and remember to check out Turtletown before you embark on your new journey through the lands of Aspia!🎄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yours truly,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• • •",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/5623338145769556543"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-20T17:03:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.837Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:45.498Z"
+  },
+  {
+   "id": "black-skylands-122132@0.4.4",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch 0.4.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-28T13:21:49.000Z",
+   "notes": [
+    {
+     "title": "THE LIST OF CHANGES",
+     "items": [
+      {
+       "text": "Air enemies’ HP is slightly reduced, the attack power of some air swarm enemies is also reduced;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spawn time of Jetpackers from Landing Ship was increased;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big Scarab Ship no longer spawns in starting locations;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug when the machine gun on the Small Scarab Ship don’t shoot;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when opponents don’t move on one of the swarm islands;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when nose gun reloading visual state doesn’t update after weapons’ changing;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when Eva hung if you pick up any cargo and shoot the nose gun with a hook;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with displaying the list in Ron's shop;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with displaying parameters of ship components;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when the sound of smoke doesn’t disappear after holes’ repairing on the ship;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when RocketTurret and ShipTurret don't reset aggro after its death;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when you can't resurrect if you die in the prologue;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with displaying damage while comparing ship weapons;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when boost don’t stop if player leaves the helm;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when the music of the cutscene of Morgan's death don’t turn off after its ending;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when the Double Threat ship don’t shoot.: Yours truly,: • • •",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4706851091176785724"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-28T13:21:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.837Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.100Z"
+  },
+  {
+   "id": "black-skylands-122132@major-2022-10-13",
+   "gameId": "black-skylands-122132",
+   "displayName": "The AERIAL UPDATE is Now Available!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-13T19:15:58.000Z",
+   "notes": [
+    {
+     "title": "🔹 Salvo for skyship cannons",
+     "items": [
+      {
+       "text": "The cannons on the player's ships have been replaced by salvo fire; now, air battles look much brighter and tactically more exciting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Impulse Shield",
+     "items": [
+      {
+       "text": "Reflects projectiles at the enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Ship's forward guns",
+     "items": [
+      {
+       "text": "The ship now has separate forward guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Reworked skyship boost",
+     "items": [
+      {
+       "text": "The boost has a significant initial impact. It uses energy that replenishes automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 New enemies",
+     "items": [
+      {
+       "text": "Landing Ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Miner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔹 New enemy cruisers",
+     "items": [
+      {
+       "text": "Double Treat - equipped with a giant cannon;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Allin - an impregnable flying fortress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Destructible armor on enemy ships",
+     "items": [
+      {
+       "text": "Some enemy vessels are equipped with armor that can be destroyed gradually. Also, those vessels have weak spots: if you hit that spot, the enemy becomes more vulnerable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Improved enemy balance and AI",
+     "items": [
+      {
+       "text": "In addition, they have updated behavior - aerial enemies now attack at proximity and interact in squads. New types of flying Swarms have also been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Air currents",
+     "items": [
+      {
+       "text": "Speed up map navigation or use the air currents in battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Increased space between islands",
+     "items": [
+      {
+       "text": "More space for air battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 New music manager",
+     "items": [
+      {
+       "text": "The music now depends on the environment and other conditions, such as the player's health. Also, the manager doesn't just switch tracks but turns the appropriate music layers on/off, which makes the music flow smoothly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Captains, thank you for your support! We hope you’ll enjoy this update. Remember that we’re looking forward to reading your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Added the possibility to order Luma to take the box with the cargo while player is operating the ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Holding the Fire button now allows you to start shooting even if the Fire button was pressed during the weapon’s change period",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed interruption of music and notification, while entering the location at the docking of the Windyriver and Broken Stairs locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ship’s controls were updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blowders can explode the rocks obstructions with TNT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game camera no longer jerks, while entering / exiting the steering wheel or ship os colliding with the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect ship’s control tips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ships accelerate with a push effect, while using the boost now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the repulsion of composite objects’ parts by explosions (for example, an engine, a fuel tank, a player's ship's steering wheel)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed grenade indicator is flashing while switching weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gun’s overheating system has been changed: now the cooling rate may be differ, depending on whether the gun was overheated (to the end or not)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bug when the artifact’s cooldown restorer had restored the cooldown of all artifacts at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player's flashlight and the flashlight on the player's ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ship ability widgets were removed from HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship abilities tab from Ron's shop was removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keybinding setting for ship abilities were removed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ship components’ UI in the tablet was rechanged: the button for installing a ship's nose guns was added, the button for installing ship abilities was removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased bosses’ HP: Rhoda, Airis, Mort",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed particles for projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Key assignment has been reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 7,
+    "balance": 1,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/6402455182505487944"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-13T19:15:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.099Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2022-07-11",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: cruise control, bugfixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-11T13:48:52.000Z",
+   "notes": [
+    {
+     "title": "- FEATURES -",
+     "items": [
+      {
+       "text": "Some cutscenes are able to be skipped now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ship's cruise control is no longer activated automatically at engine's max power, but it can be activated manually at any point by double pressing the acceleration button. Any further acceleration or deceleration input will disable the cruise control.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Minecart's destruction during a raid is always correctly finishes the quest now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Splatter's bullets that ricochet off the player's shield now deal damage to enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player's animation won't be reset to the empty-handed one after a cutscene with raid boss' appearance: enemies on a boarding ship cannot be pushed through walls by projectiles now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Speech bubbles are always the same size regardless of camera distance now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with disappearing of boss' HP bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with death screen, if the nearest respawn point is Fathersip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a projectiles' missing sound, when they are reflecting by the player's shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue, when players got broken save with a ship inside surface's collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- MISCELLANEOUS -",
+     "items": [
+      {
+       "text": "Inventory items sort by tier and power now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the boss fight in the \"Helping Hands\" quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Free camera on the ship is always active without pressing the button now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can put any weapon in each weapon slot now (previously only pistols could be put in the first slot)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a ship's hold capacity widget to the ship's HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the \"Raise Shields\" hint in the HUD: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 8,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4539082035573775741"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-11T13:48:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.834Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.097Z"
+  },
+  {
+   "id": "black-skylands-122132@major-2022-06-27",
+   "gameId": "black-skylands-122132",
+   "displayName": "The Raids Update Trailer",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-27T18:43:22.000Z",
+   "notes": [
+    {
+     "title": "Watch it and get in the mood for action! Don’t forget to share your feedback!",
+     "items": [
+      {
+       "text": "Yours truly,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• • •",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reddit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4474904295745208514"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-27T18:43:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.829Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.097Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2022-06-23",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: some improvements of the Raids",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-23T19:31:20.000Z",
+   "notes": [
+    {
+     "title": "- FEATURES -",
+     "items": [
+      {
+       "text": "— Increased generator's HP in \"Protect the wrecked ship and its crew\" raid quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "— Added alternative enemy sets to some quests in Raid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "— Fixed a hit sound effect's changing after Broot's first attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— Fixed an inability to press \"Start raid\" button after cancelling raid start with selected challenges in confirmation window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— Artifact's effect stops after loading and teleportation now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— Raid finishes just before a loading on button's press in case of death now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— Enemies won't be pushed through the obstacles from player's shots on stationary platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— It's no longer possible to pass through the gates in Raid after its starting to close",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "— Island liberation fireworks' sounds are back now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "— Increased generator's HP in \"Protect the wrecked ship and its crew\" raid quest",
+     "— Added alternative enemy sets to some quests in Raid"
+    ]
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4474904295730758919"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-23T19:31:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.096Z"
+  },
+  {
+   "id": "black-skylands-122132@major-2022-06-18",
+   "gameId": "black-skylands-122132",
+   "displayName": "THE RAIDS UPDATE is Now Available!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-18T00:46:06.000Z",
+   "notes": [
+    {
+     "title": "Greetings, Captains!",
+     "items": [
+      {
+       "text": "The news are so exciting that we are yelling them out loud in writing: THE UPDATE IS NOW AVAILABLE! It adds additional content for those who have already completed the game or are in the late stages. You will be able to test your skills and claim exclusive rewards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Play raids and defeat all the bosses",
+     "items": [
+      {
+       "text": "During a raid, you will be able to complete various missions: first comes the air stage, after successfully surviving it, you will progress to the ground stage and face different missions and enemies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Increase the difficulty by introducing new challenges",
+     "items": [
+      {
+       "text": "Before starting each raid, you will be able to choose up to four challenges, for example, “Play raid without using ship abilities” or “Play raid without dodging”. The choice is yours!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Get unique weapons",
+     "items": [
+      {
+       "text": "You get a reward for each successfully completed task! As a note: these rewards can only be collected once per player. As a prize, you will earn resources which can be used to create a special weapon – Swarm Gun, Swarm Flare Gun, Swarm Acid Flame Gun, Swarm Rifle. They all have special features. Try each of them to decide what suits you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 Earn as many points as you can",
+     "items": [
+      {
+       "text": "During a raid, you will earn points for various actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can easily track your progress as your points will be displayed during the raid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What affects the points?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Defeating an enemy or/and a boss, completing a quest, time spent, and receiving damage are the main factors that influence the total number of points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then the previous number multiplies by the rate of your challenges. Each challenge has its own rate that depends on its difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to get to the Raid",
+     "items": [
+      {
+       "text": "The raids to the Swarm become available after full completing the Hunting the Eater quest. Start the dialog with a new mystery character, who will wait for you on the Fathership.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Captains, thank you for your support! We hope you’ll enjoy this update. Remember that we’re looking forward to reading your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- OPTIMIZATION -",
+     "items": [
+      {
+       "text": "Optimized the effects of rain, capsules and other animations with small elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "Lowered the difficulty of enemies in the Hungry Gardens location (the resources are the same as before)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Non-Elite ground Falcons damage have been slightly increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Falcons lancers become faster and more aggressive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cooldown of Pyrostation, Shock Storm, Oppressor, Jericho, Time Stopper has increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Duration of Pyrostation, Oppressor has decreased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Oppressor HP has increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Oppressor damage has decreased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduce all grenades fire period to 0.5 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- FEATURES -",
+     "items": [
+      {
+       "text": "Updated the location of buildings on Fathership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There are now 2 stations for opening loot boxes on the Fathership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added enemies direction markers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added cutscenes skip before bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now hook works more conveniently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now the character comes to life at the nearest gas station after the end of all Lumas energy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to put turrets on the ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warehouses added to gas stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to remap ship rotation buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new type of puzzles, where the player is supposed to use levers in a correct order. Some of the scale puzzles are replaced by them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to remap second artifacts button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now, when visiting the Fathership, the energy of the Luna, ammunition, HP, number of first aid kits and grenades are restored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Interactive window with the item that can be sent by Luma has changed. Now you can see the state of the ship's warehouse in that window - the number of items in the hold / the total allowable number of slots in the hold. Minor visual changes regarding the distance of text from the edges of the window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Information about the status of the warehouse of the currently selected ship does not appear on the Fathership, because the item is sent to the warehouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Option which allowed using old ship cannons controls was removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added structure names to the following windows: armory window, laboratory window, ship workshop window. Also added names in the building upgrade window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now the reloading of the player's weapon begins after spending the last ammo from the clip, and also when switching to a weapon that has no ammo left, but there is an opportunity to reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now Luma takes cargo to nearest warehouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Flying enemies are shown on tablet map and mini-map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game saves up to three previous saves backups to folder %USERPROFILE%/AppData/LocalLow/HungryCouch/BlackSkylands/Saves/Profile{N}/backup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies barks work again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Exclamation mark above the ship repair quest character disappears after quest completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to change mapping for grenade throwing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ore processing queue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed Christmas decorations from Tourtletown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- BUGS -",
+     "items": [
+      {
+       "text": "Fixed green artefacts on some graphics cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that when moving to the helm, the cursor crosshair decreased along with the distance of the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed boats' ship holds with repair kits not being moved with the boats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem where assault on some locations could not be fought off (Big Water Island, Old Sawmill, Iron Burgeon) if the game was updated from an older save. For the fix to work you should visit again all the major islands of these archipelagos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies not being able to cross areas with destructible rocks even after their destruction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemies not being able to approach the center of an island because of local avoidance system error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the disappearance of the cursor in the Menu after closing the Tablet by ESC and immediate opening Menu window by the same key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where player's ship could appear in the ground of the Crab Skeet location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Falcons wouldn't attack Ewing in the first cutscene with him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed objects, that could appear under the rubble, left by Crash in the Big Water Island location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a spot in the Glutton Island location, where a player can get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where two warnings in a row could appear in Ron's shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where enemies could still continue to attack the player when received lethal damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where reforged ship ability would get installed on a ship only after ship respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ship ability slot buttons in the shipyard cannot be selected multiple times and play multiple selection sounds now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lingers animation bug when they could stand still and play running animation at one time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: wrong ammo type for crossbow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that the sound of the ship's boost disappeared when the ship received damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that the sound of the ship's boost disappeared over time, even if the boost itself continued",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that when there is a lack of energy for boost, holding the ability key could cause a sound about a lack of energy to be played every frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Angle between shotgun projectiles under mods influence is now correctly calculated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that if you move to Moth Nest using teleportation to Fuel Station during \"Reach the Moth Nest\" quest, there was incorrect input enabling after cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed unused control maps for an old cannons control system for gamepads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Barrel furniture item duplication when attempting to transfer by Luma",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Random sky events are now correctly cleaned up on game loading start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed artifact cooldown timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controls mapping reset doesn't break ship acceleration / deceleration mapping anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Devourer now only attacks the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fire animation position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when it was proposed to make 0 resources in the factory, now the minimum amount is 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that player didn't receive control back after Devourer's death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that if you die while in boarding ship battle, the next time it will be impossible to open boarding ship storage after killing all enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that some sounds were not adjusted by volume sliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some ship abilities activating when navigating tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The wreckage of civil boats is now falling down correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed that if you change key mapping in settings, mapping tips didn't changed on abilities icons in HUD: Yours truly,: • • •: Join our community to share feedback and chat with other captains: Discord: Reddit: Twitter: Facebook: Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 25,
+    "fixed": 36,
+    "balance": 9,
+    "other": 11,
+    "ps5": 0,
+    "topNew": [
+     "Updated the location of buildings on Fathership",
+     "There are now 2 stations for opening loot boxes on the Fathership",
+     "Added enemies direction markers"
+    ]
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/6214419130144356277"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-18T00:46:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.828Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.095Z"
+  },
+  {
+   "id": "black-skylands-122132@major-2022-06-14",
+   "gameId": "black-skylands-122132",
+   "displayName": "The Raids Update is coming",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-14T19:57:51.000Z",
+   "notes": [
+    {
+     "title": "Greetings, captains! 👋",
+     "items": [
+      {
+       "text": "What are your plans for this weekend? Well, you might want to clear your schedule because we're releasing the raid update this Friday! We want to share some details from the upcoming update so, let's get started!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 What are raids",
+     "items": [
+      {
+       "text": "This new content is for those players who have already completed the game or are in the late stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During a raid, you will complete various missions: first comes the air phase, then once beaten you will progress to the ground phase. Earn points and rewards for successful challenge completions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 More about Challenges",
+     "items": [
+      {
+       "text": "Before each raid, you can choose up to 4 challenges. You get a reward for each successfully completed task! As a note: these rewards can only be collected once per player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For example, in one challenge you will be able to select: \"Complete a raid without using Eva's abilities.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 More about rewards",
+     "items": [
+      {
+       "text": "You've successfully completed the challenge. What's next? Why, you get a reward of course! As a prize you will earn resources which can be used to create a special weapon: the swarm machine gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔹 More about points",
+     "items": [
+      {
+       "text": "During a raid, you will earn points for various actions. Several factors will affect the calculation of your points, among which are the chosen challenge and the completion time of the raid. You can easily track your progress as your points will be displayed during the raid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we're preparing the artillery and rigging the sails for your arrival, we invite you to share your feedback on the upcoming update in the comments! ☁️🧭⚙️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wishlist and follow to stay up-to-date on the latest news and events!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yours truly,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• • •",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reddit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4480532686366828065"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-14T19:57:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.827Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.094Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2022-05-20",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: Lost Saves",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-20T16:52:19.000Z",
+   "notes": [
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Partially fixed a rare bug where players would lose their saves: Unfortunately, we haven’t been able to find a solution to the problem of lost saves which the players are experiencing. However, we found a way to fix this for those who might face this problem again.: If you happen to lose your save after the patch, please follow this instruction: From now on, up to three backups of your save files will be saved in the following folder: %USERPROFILE%/AppData/LocalLow/HungryCouch/BlackSkylands/Saves/Profile{N}/backup: After the update of the game, when you save the game for the first time, you can find the Readme file with the instructions in that folder. Follow it to solve the problem.: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4292505348829526879"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-20T16:52:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.092Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2022-02-18",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: old cannon controls system removed",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-18T15:24:21.000Z",
+   "notes": [
+    {
+     "title": "- CONTROLS -",
+     "items": [
+      {
+       "text": "Removed an option which allowed using old controls for skyship cannons. Reason: future porting the game to Steam Deck;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed unused control maps for the old cannons control system for controllers.: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4246335198896397862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-18T15:24:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.090Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2022-01-25",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: Old game saves fixed",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-25T13:40:47.000Z",
+   "notes": [
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Fixed a problem with save data from previous versions of the game. Data containing an enemy assault on a non-existent island could cause errors;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed coal not being dropped from meteorites unless an ability is installed on the player's skyship.: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4237325463689552530"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-25T13:40:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.089Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2022-01-11",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: Kraken loot increased, boarding events frequency, bug fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-11T10:42:31.000Z",
+   "notes": [
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "Increased Kraken's loot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the chance of the skyship boarding event occurring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ron has upgraded Eva's Power Shield. Now it deflects enemy projectiles and blocks melee attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Now different skyships have different capacity of installed abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Energy no longer drops from meteorites unless abilities are installed on the skyship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- UI -",
+     "items": [
+      {
+       "text": "Capsules spent on fast travel is now shown on the capsule panel now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The skyship ability icon is now displayed on the skyship ability slot selection panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- SOUND -",
+     "items": [
+      {
+       "text": "Added sounds to various cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "It is no longer possible to dig out treasure while holding an item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when a player who jumped off the skyship with a box in their hands and dropped it clipped through that box. In that case, the box couldn’t be hooked anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: resource icons no longer flicker when the main character is under a tree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: some artifacts on the Fathership were not highlighted during interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a quest item wouldn't despawn after the \"Lost scientist\" quest is completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where custom gamepad control settings were reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a puzzle in Sickle Archipelago",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Annihilator malfunctioning after teleportation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect display of the skyship's energy bar when using the boost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect reassignment of ship abilities to another slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the skyship ability slot selection window wouldn’t close after changing the skyship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- MISCELLANEOUS -",
+     "items": [
+      {
+       "text": "Taking the helm immediately after requesting evacuation from Luma is not available anymore: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 5,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4224939386894054106"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-11T10:42:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.089Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-12-24",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: small improvements released on 23rd of December",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-24T23:53:54.000Z",
+   "notes": [
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "Boss on Moth Island is now more fireproof.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- UI -",
+     "items": [
+      {
+       "text": "You now can see quantity of Data- and Energycrystalls above the crates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- LEVEL DESIGN -",
+     "items": [
+      {
+       "text": "Visuals for West Aspya islands were improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BUGS -",
+     "items": [
+      {
+       "text": "Eve's Power Shileld no longer blocks lasersight beam;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed random islands in South Aspya;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug in Moth Nest causing the \"Training Cargo\" item remain after completing the \"Training Luma\" quest;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Volcano-islands now dissapear correctly;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pausing the game during the fight with Kraken no longer results in no loot dropped after defeating the monster;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Krakengeist was nerfed: Kraken no longer controls the weather after his death, so it should return to normal now after you finish the battle;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No more boosts for your ship in case she is pulled by the Kraken;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Power Shield no longer outshines Eve: the glow was tuned down.: --------------------: MERRY CHRISTMAS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4224938027304663293"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-24T23:53:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.088Z"
+  },
+  {
+   "id": "black-skylands-122132@major-2021-12-21",
+   "gameId": "black-skylands-122132",
+   "displayName": "The ICE KRAKEN Update is Now Available!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-21T17:09:30.000Z",
+   "notes": [
+    {
+     "title": "❓ Random aerial events",
+     "items": [
+      {
+       "text": "Ice Kraken: A huge Ice Kraken will appear in the skies, capable of easily turning your ship into an ice cube. Only one will emerge alive from this battle… But the reward is so worth it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boarding: You may come across a large, heavily-armed ship carrying treasure, and you can board this ship if you wish. However, it doesn’t stay in one place. To defeat this enemy, you will have to use all your skills as an experienced sky captain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Volcano: A small volcanic island floating in the sky. When the volcano erupts, it scatters debris over a certain area. Only the bravest captains who aren’t afraid to explore the island will find a reward in the mouth of the volcano.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fuel Assistance: You may encounter an Earner ship that has run out of fuel. The ship’s captain will ask you for help. If you help them fuel up their ship, you will be rewarded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repairing an Earner Ship: You may come across a damaged Earner ship. The crew will ask for your assistance in return for a reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚡ Active abilities for Eva",
+     "items": [
+      {
+       "text": "An ability slot will appear in your inventory. You can buy abilities from Ron and Rupert, a scientist and his ape who swapped bodies in a failed experiment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oppressor: An automatic machine gun turret. Shoots suppressing fire and diverts enemy attention to itself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shock Storm: A prototype device that generates a lightning bolt and stuns enemies in a radius. Note: Do not aim it at yourself!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jericho: Experimental technology to utilize solar energy. A weapon of mass destruction. Use at your own risk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Power Shield: A portable energy shield. Shields you from head-on attacks for a short time. Has a significant disadvantage: enemies can sneak up to you from behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pyrostation: An automatic flamethrower turret. Can rotate 360 degrees and burn enemies around it. Note: Do not use it to cook hot dogs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚡ Active abilities for your ship",
+     "items": [
+      {
+       "text": "Previously, each airship had its own individual abilities. Now you can change your ship’s abilities. In addition to existing abilities (ship shield and boost), We added an ability called Annihilator: a powerful laser beam that incinerates enemies. Ship abilities, like Eva’s abilities, can be purchased from Ron and Rupert for crystals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📜 Two new main quests",
+     "items": [
+      {
+       "text": "After the quest where you free the Earner ship, the mines now have two new quests, a new boss, and a new character: Four Arm Frank.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🧩 New puzzles",
+     "items": [
+      {
+       "text": "We added three new types of puzzles. There are now more than twenty types of puzzles in the world, and you will get crystals for solving them. You can use crystals to buy and upgrade abilities for Eva and your ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- GAMEPLAY -",
+     "items": [
+      {
+       "text": "Added a new secret trade quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new weapon: Crossbow (reward for the new secret quest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Ron and Rupert's lab ship on the Fathership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new resources: Data crystals, Energy crystals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now install abilities on your ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3 upgrade levels added for all ship abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the possibility to unlock a second artifact slot by using equipment with the corresponding trait",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crates that are hit by the bow of the player's ship are now automatically placed in the hold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "The laboratory can no longer be built (although players who have already built it will not lose it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ship explosion damage has been reduced by 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Time between Island Assaults has been increased 1.5x",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Long-distance fast traveling now costs less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All players' skyships have had their holds expanded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Frequency of enemies appearing in the skies has been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All resources have had their processing time reduced to 2 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cheap resources will no longer drop from Elite Falcons on Whalehunters Valley or Kain's Fort",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Wombers now drop resources, and the number of capsules they drop has been increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The amount of ship energy contained in one energy sphere (spheres that drop from meteorites) has been increased 3x",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Several resources have had their stack amounts increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- INTERFACE -",
+     "items": [
+      {
+       "text": "A new \"Notes\" tab has been added to the tablet. Notes (both standard notes and notes from the Treasure Seeker update) are now added to this tab after you read them, and can be reread at any time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The layout of the hints menu has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The name of the Swarm Sniper Rifle has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- TEXT AND LOCALIZATION -",
+     "items": [
+      {
+       "text": "Several localization and grammatical mistakes have been fixed, as well as incorrect character names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Names of mods for all Swarm weapons have been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shipyard hint text has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several mistakes in the German version have been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BUGS -",
+     "items": [
+      {
+       "text": "Explosions no longer knock the player out of buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where ship control settings would reset when fast traveling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where ship invulnerability was lost during Island Liberation cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where grenades weren't blowing up explosive barrels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where an enemy/player/character would trigger a second explosion when stepping on a fallen grenade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the icon displaying the hint for which key stops time after interacting with the recovery \"refiller\" was not appearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed armory colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the artifact was not removed from the player when removing items from an additional artifact slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the weight of the ship's starting engine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the position of the list in your inventory when changing tabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attribute scales no longer show negative numbers or extend outside the boundary: Fair winds and happy holidays!: Yours truly,: • • •: Join our community, send us feedback, and chat with other captains: Discord: Reddit: Twitter: Facebook: Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 11,
+    "balance": 11,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/5320438099054698390"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-21T17:09:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.822Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.087Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-10-21",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: cloud save issue fixed, tablet UI improved",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-21T14:47:02.000Z",
+   "notes": [
+    {
+     "title": "- GAMEPLAY -",
+     "items": [
+      {
+       "text": "You can now roll while sprinting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When switching between skyships, if the character is aboard the vessel, they automatically take the helm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Island invasion timer mechanics have been improved: time isn’t elapsed during cutscenes anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bosses can’t be pushed with explosions anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unique weapon attacks added for Elite Falcons in Heaven’s Crown (shotguns, assault rifles and sniper rifles)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Falcon double pistol attacks fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- AI -",
+     "items": [
+      {
+       "text": "Devourer’s behavior after its death fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "Drop chance of Fang Shards and weapon mods from the ground Swarm monsters doubled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved balance in the fight with the first boss in Kain’s Fort",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- LEVEL DESIGN -",
+     "items": [
+      {
+       "text": "Entrances have been added to the fences that appear around the farm after you clear a location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The fuel station on the Fathership has been moved closer to the shipyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- UI -",
+     "items": [
+      {
+       "text": "“Buy/Sell” sections removed from Armory / Ship’s Workshop / Laboratory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Required resources in Armory / Ship’s Workshop / Laboratory are displayed in two rows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All resources required for crafting and purchases now have scrolling captions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exclamation points added to the Inventory and Shipyard categories. It shows when you get a new item in a certain category",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Triangle added to the values of parameters for Weapons/Skyhips/Parts etc. to better understand value changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A lot of fixes for markers being highlighted on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Active quest saving fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highlighted and placed map markers saving added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the position of the shipyard pointer when trying to change a skyship or a part outside of the shipyard radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you opened the weapon mod window from the main weapon page, when you return to that page, you will go straight back to the weapon you had previously selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During bed animations, the laser sight is disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the disappearing hint with the names of seeds in the Farm window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the freezing popup window when traveling between locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- SOUND -",
+     "items": [
+      {
+       "text": "Disabled the background propellor noise in the tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Fixed Steam Cloud saves not synchronizing",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with grenade pointer appearing when you take off from the shipyard fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with plus icons appearing in the money and coin indicators after installing an upgrade fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the character dropping out of the sky when you’re switching from a big skyship to a smaller one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a shipyard issue where, when switching between ships in the following order: Elephant -> Needle -> Hippo -> Elephant, the character didn’t take the helm upon touching it and fell off the skyship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPCs hanging in the air after you clear Grizzly Caverns have been removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, when exchanging resources of one type for another, the quantity of items received increased but no capsules was spent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an occasional issue when turning a skyship using the left stick of a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where clearing an island wasn’t counted as completed if remaining enemies were killed simultaneously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the chance of saving a bullet when using a rifle with the special stock installed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When you die carrying a box, the box stays where you die and isn’t carried with the character to the bed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several minor bugs in Kain’s Fort fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- MISCELLANEOUS -",
+     "items": [
+      {
+       "text": "Dialog with Aaron on the Fathership fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Correct” corpse added for the first boss in Kain’s Fort",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eva is now unable to move during the getting out of bed animation: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 2,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4103335143105877649"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-21T14:47:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.821Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.084Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-10-01",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: save loading bug fixed, other fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-01T16:16:16.000Z",
+   "notes": [
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Fixed a bug with loading saves from the older version of the game, in which buffs were active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the direction line wasn't updated when selecting another quest in the journal (before opening the main map)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the gamepad settings for skyship controls weren't updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with a resident in the Old Sawmill, with whom it was impossible to talk and receive a reward: after liberating the location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where, when transferring Luma to a ship located in a location different from the location where the transfer was starting, the player was not leaving the original location and was staying in it forever, which was causing a constant notification pop-up about entering this location. This issue could also result in resources being saved and displayed in the Swarm Zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where, when flying from the Swarm Zone to Whalehunters Valley, the settings of the generated content weren't changing, which was causing the events of the Swarm Zone to appear in this zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with a new item displaying constantly in the shipyard menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with some objects in Iron Burgeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the inability to activate the upgrade if the population required for activation is occupied by the same upgrade of a lower level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the sell window was remaining active after closing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the Swarm Sniper Rifle and Swarm SMG missing from in the armory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed irrelevant shipyard map markers near Moth Village and the marker of a store on Mills Islands.: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/3938951840884259519"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-01T16:16:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.820Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.083Z"
+  },
+  {
+   "id": "black-skylands-122132@major-2021-09-29",
+   "gameId": "black-skylands-122132",
+   "displayName": "The Treasure Seeker Update is out!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-29T17:11:55.000Z",
+   "notes": [
+    {
+     "title": "💰 \"Treasure Seeker\" event",
+     "items": [
+      {
+       "text": "Treasure chests are buried around the world. Discovering them is not, by any means, an easy task: only a true treasure seeker dares to go on such a perilous adventure. Find out by whom and why the treasue was hidden away!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join our DISCORD SERVER to obtain a secret TREASURE MAP that will help you locate some of the treasure chests!",
+     "items": [
+      {
+       "text": "Gold coins you find in those stashes can be used as currency to purchase unique weapons from Gideon, one of the merchants in Moth Nest:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rocket Launcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Triple Rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hurricane Minigun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚔️ New Swarm weapons",
+     "items": [
+      {
+       "text": "Sniper Rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Assault Rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shotgun: …and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🏝️ New island: Whalehunters Valley",
+     "items": [
+      {
+       "text": "Whalehunters Valley is an old island that belongs to the Hunters: a faction that is a part of the Earners. The Hunters used to fillet whale carcasses here to sell the meat in Moth Village and Turtletown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "📜 4 new side quests",
+     "items": [
+      {
+       "text": "\"Blind Madness\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"End of Childhood\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Delicious\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Lost Scientist\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🧭 Mini map",
+     "items": [
+      {
+       "text": "Navigate Aspya easily!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "💾 Multiple profiles",
+     "items": [
+      {
+       "text": "Create up to 5 player profiles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- QUESTS -",
+     "items": [
+      {
+       "text": "Blind Madness quest added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "End of Childhood quest added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Delicious quest added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lost Scientist quest added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Blind Engineer quest, it is now necessary to take Harold to the Fathership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the “Find grass bait on one of the Swamp Islands in South Aspya” stage of the Kill the Devourer: quest, you can now only find grass on the western island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the fight with the Devourer, it’s now enough just to get the new Swarm ship gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a new quest is obtained, it automatically becomes tracked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- WEAPONS -",
+     "items": [
+      {
+       "text": "6 new types of Swarm weapons: Swarm Rifle, Swarm SMG, Swarm Assault Rifle, Swarm Pistol, Swarm: Shotgun, Swarm Sniper Rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "60 new mods for the guns mentioned above",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4 new types of weapon that can be bought for coins from Gideon: Triple-barrel, Rocket Launcher,: Machine Gun, and Wrap Launcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5 new modes for the guns mentioned above",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Swarm ship gun added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All old SMGs and the mods for them have been redrawn to better fit the setting of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "Default hold size increased for most ships",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Damage from shotguns slightly decreased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Dispersion of all SMGs reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "No. of bullets that drop for killing enemies with a knife increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "No. of bullets in the magazines of Assault Rifles and SMGs increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Amount of coal and time required to smelt most ores reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- AI -",
+     "items": [
+      {
+       "text": "Luma now delivers items to the store on the Fathership if it’s nearby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Logic of enemy behavior altered: “interest” mode added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies’ angle of identification increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rocket launcher operators’ behavior altered: now they also move and are move active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Principle of the “identification” mode for enemies altered: now if they see several objects at one, but lose sight of the closest, they choose the next closest visible object from the list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- CONTROLS -",
+     "items": [
+      {
+       "text": "Method of controlling ship guns changed: now the guns will be aimed at the mouse cursor (depending: on which side of the ship the cursor is located on). If you wish to return to the old control system, you can do so in the game settings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Physics of Behemoth and Needle ships changed: now they are more stable when turning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From the start of reloading until rolling and after rolling, if you press the fire key, firing will continue once: reloading is complete (previously, you had to hit the fire key again after rolling)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All problems with key assignment fixed, along with all problems connected with not being able to fly: away from the launchpad on a ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- LEVEL DESIGN -",
+     "items": [
+      {
+       "text": "Buried chests with gold have appeared in the world. Gold coins can be used to buy weapons and mods: from the trader Gideon (Moth Nest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whalehunters Valley location added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game world expanded: nearly all islands shifted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Partial redesign of the Iron Burgeon location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Destroyed surroundings can now be pushed, and their colliders are more moveable, so that players: don’t get stuck in them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- VISUALS -",
+     "items": [
+      {
+       "text": "Shadows added to objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- UI -",
+     "items": [
+      {
+       "text": "Added mini map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies’ life bars are now always visible (with a few exceptions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scrolling text added to ship and weapon parameters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shipyard interface window entirely redesigned, characteristics list shortened and excess parameters: removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pluses and minuses in weapon/component/ship characteristics changed for up and down arrows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorting of equipment items in the weapons and components tab, as well as in the shipyard, now starts with the rarest and ends with the least rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now when changing direction on the “forward/back” buttons on the ship, the direction of take-off from the shipyard automatically changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TAB can also be pressed when the player is holding the ship’s wheel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now the shipyard can be opened without having to be holding the ship’s wheel. When approaching the dock you can activate the tablet, which will automatically open on the shipyard tab if you press TAB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As soon as the player comes into the radius of entry for the shipyard, the corresponding hint appears: under the heroine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now leave the shipyard window by pressing TAB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hints for buffs now only appear the first two times after they are picked up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buffs in bars now have a cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hints and opening the shipyard will now only work after the quest to open the map is completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Bug that caused enemies not to follow the player now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bug causing Swarm monsters that hatched from eggs not to follow the player now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bug that caused the cursor disappear in the tablet after viewing a mod or a weapon now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bug allowing for endless selling of a resource that was used up now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bug that caused the volume of a canister to display incorrectly when it was added to the hold now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Incorrect positioning of shields on the ship when changing camera angle now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bug that allowed you to open the tablet during the tutorial after receiving the water pistol now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bug that showed a hint when closing the tablet and not pausing the game now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Problems with restarting the first boss fight in Fort Cain now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Problems with collecting grass bait on one of the Swamp Islands in South Aspya now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- MISCELLANEOUS -",
+     "items": [
+      {
+       "text": "Traders added in Garden and Ranch buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heroine’s respawn location changes after Luma moves the active bed: Yours truly,: • • •: Join our community and give us feedback and chat with other captains: Discord: Reddit: Twitter: Facebook: Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 10,
+    "balance": 6,
+    "other": 49,
+    "ps5": 0,
+    "topNew": [
+     "Sniper Rifle",
+     "Assault Rifle",
+     "Shotgun: …and more!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/3938951840877117964"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-29T17:11:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.819Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.082Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-08-26",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: shipyard bug fixed, skyship land collision physics improved",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-26T10:09:14.000Z",
+   "notes": [
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "The Elephant skyship now has a maximum weight of 24 instead of 25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The turn/acceleration speed, maximum speed and durability of the Elephant skyship have been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The damage and rate of fire of Swarm Cannon have been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "\"Hold key\" times for the buff window, hints and construction have been reduced significantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the changing reach of the kick after pulling an object with the grappling hook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the resource cost of ship components and gear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the firing range of ship cannons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the radius of the explosion of cannon missiles by 2.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased grenade capacity from 5 to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Second and third tier flying enemies now drop energy pick-ups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- LEVEL DESIGN -",
+     "items": [
+      {
+       "text": "Removed a collider in the location \"Moth Nest\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unnecessary objects that appeared after liberating the \"Iron Burgeon\" location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- ART -",
+     "items": [
+      {
+       "text": "Updated the Fathership image on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor changes in the design of the Armory, Ship Workshop and Bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed items being wider than chests they dropped from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- OTHER -",
+     "items": [
+      {
+       "text": "Improved skyship land collision physics: now side collisions slow you down less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now switch from the item obtaining window directly to the corresponding tablet tab by clicking a button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All goods are now visible in the Armory and Ship Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now buy furniture in the Traders Square",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items unavailable at the current store level are now shown as blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New item notification now shows exactly where that particular item was added (to Equipment/Hold/Shipyard/Warehouse)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The resource icon is now displayed above resource boxes. Skyship cannon ammo and repair kit boxes now also show the number of items inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrades not available at a certain level of the Armory, Ship Workshop or Laboratory are now displayed as blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy strength and the list of resources are now displayed above the Swarm Zone on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The chance of cloudy weather has been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Fixed a bug where you were unable to fly out of the shipyard. Also fixed remapping of the shipyard exit buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Medkits Full\" notification popped up even though free slots were available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the enemy counter in Windyriver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where teleportation to Fathership led to the player spawning at coordinates [0, 0]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the controls breaking after the cutscene in Moth VIllage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with a tier color of a mod changing to gray in the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the weapon spread angle where weapons began shooting up in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a problem where, when doing a building construction quest, it was not counted if at the time of the start of a quest the required building of a higher level had already been constructed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with resetting the artifact indicator on the HUD after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where Luma carried a box to the skyship in such a way that, if it didn't fit into the hold and was thrown overboard, you couldn't always pick it up (displayed on the map but inactive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When you hover the crosshair over a gas station icon on the map, a fast travel possibility notification now pops up.: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 12,
+    "balance": 10,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4018887653979696766"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-26T10:09:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.818Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.080Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-08-06",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: balancing, level design improvements, bug fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-06T18:08:32.000Z",
+   "notes": [
+    {
+     "title": "- BALANCE -",
+     "items": [
+      {
+       "text": "Some elite enemies in the Winter Zone now have a chance to drop Plates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the chance of large ships spawning in the Winter Zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Coal can now be purchased for 200 capsules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Coal can now be sold for 30 capsules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed some prices in the exchange store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cannon overheating parameters have been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerfed the second overheating upgrade bonus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Broot can now drop 1-3 Swarm Scales instead of just one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Scrap Metal, Gears, Parts, Plates, Swarm scales and Shards of Fangs now accumulate in the inventory (up to 3 of each)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the enemy kick range after being pulled by the hook by 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the roll cooldown from 0.2 to 0.25 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the player grenade damage from 250 to 170",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the buff time in the Bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "- LEVEL DESIGN -",
+     "items": [
+      {
+       "text": "Improved the design of the location \"Frostfang\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Grasshopper Lands\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Iron Burgeon\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Tin Burgeon\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Hungry Gardens\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Glutton Island\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Grizzly Caverns\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Icy Hollow\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Black Hill\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Tramp's Burrow\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Crab Skeet\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the location \"Old Sawmill\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- OTHER -",
+     "items": [
+      {
+       "text": "Remaining enemies are now displayed on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a gas station in Moth Nest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a resource store to Moth Nest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a resource exchange point in Moth Nest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ammo supply before the boss fight in Moth Nest; there are now more crates in the arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The \"Inheritance\" quest in Old Sawmill has been made clearer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added dialogue at the gate leading to the objective of the \"Repairing the Shelter\" quest in Old Sawmill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved the NPC who gives the \"Repairing the Shelter\" quest in the Old Sawmill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the digging NPC's collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Limited event generation outside the game area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved displaying of impassable areas on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Elephant is now accelerated by holding down the key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When acquiring an important item, a separate window opens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a hint that resource boxes can be carried by Luma",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Fixed issues with attacking enemies on various islands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the Rhoda boss: she no longer stands still",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the Rhoda boss: if her first attack is a missle attack, she doesn't aim at herself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in which the Devourer boss failed to deal damage if he had previously received damage from skyship cannons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where it was possible to hide from the Crash boss:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "before the start of the battle; due to that the battle wouldn't start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "during the battle, in the upper corner between the ship and the rock; due to that Crash stopped attacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the following issue: if after opening a modbox at the station, you didn't pick up the item it dropped, then after loading the game or returning to the station from another location, that item turned into a non-interactable modbox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a collider to the boss's body in Moth Nest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the player being able to move their character in the cutscene after defeating the Moth Nest boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the following issue: if you left a lootbox on the Fathership, went to the Swarm zone, waited until an island with the same lootbox appeared there, and (without ever touching it) teleported to the Fathership, the lootbox left by you on the Fathership would disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed resource display in the building upgrade window.: Keep your feedback coming!: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 13,
+    "balance": 13,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4032396530945071249"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-06T18:08:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.817Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.079Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-07-30",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: skyships redesigned, Luma behavior changes, major bugs fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-30T17:34:03.000Z",
+   "notes": [
+    {
+     "title": "- Stingray has been redesigned",
+     "items": [
+      {
+       "text": "width greatly reduced;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "balloons moved under the hull;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "cannons can now be directed at 180 degrees (forward)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "base durability increased from 400 to 450",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Needle's base durability increased from 370 to 430",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The width of all controllable skyships has been slightly reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased shield duration from 1.2 to 1.8 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased shield energy cost from 4 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the spread of the Three-Shot Cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the damage of the Automatic Cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the damage of the Hunter's Rocket Cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the damage of the Swarm Cannon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Swarm Cannon can now overheat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the upgrade that reduces cannon overheating (level 1: -20% (instead of -40%), level 2: -40% (instead of -80%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-balanced the parameters of skyship cannons overheating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elephant now can have the maximum of 5 hull breaches instead of 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed tier 2 shielders' rate of turn: now they move similarly to the rest of the shielders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed shielders' rate of turn change during pause and time stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- BUG FIXES -",
+     "items": [
+      {
+       "text": "Fixed a tablet bug where the controls were not blocked in some windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could leave the helm while interacting with the tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Swarm plant damage bug in the Swarm Zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you couldn't control the skyship after leaving the shipyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, in the Swarm boss's attack on the Moth Village cutscene, the player was \"turned off\" for the duration of one frame and started the fight stuck in the animation without a weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where in the radial menu in the Equipment window when switching to the Modify window, button navigation stopped functioning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the gate at the location of the Moth Nest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Eva filled all the first-aid kit slots and it was still possible to pick up another one from a flower (now it is indicated that all the slots are full)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "- MAP MENU -",
+     "items": [
+      {
+       "text": "Fixed the Fathership location name and flag mapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resource icons are now visible when you zoom the camera close enough for the location names to appear - and vice versa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The map legend now takes up less space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added gradients around the edges to improve the readability of the control hints and legend",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled the outdated marking of the Western Aspya region",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "- LEVEL DESIGN -",
+     "items": [
+      {
+       "text": "Improved the design of the \"Moth Nest\" location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the \"Wing Islands\" location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the \"Big Water Island\" location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the \"Broken Stairs\" location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the \"Windyriver\" location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the design of the \"Sickle Archipelago\" location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "- OTHER -",
+     "items": [
+      {
+       "text": "Luma's ability to transfer resources is now unlocked immediately after the prologue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Luma now carries things and the player faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While aboard a skyship, you can now look around by holding down the spacebar and using the mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Increased power of tier 3 ground enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy power is now updated not only when enemies spawn but also after closing the tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added several cutscenes with Falcons on various islands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced Swarmlit processing time from 30 to 8 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the chance of Marble dropping in one of the Swarm Zone subzones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the chance of asteroids dropping coal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When a Falcon skyship is destroyed, a real skyship model falls into the sky instead of just a hull image",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved memory management when working with navigation grids of some bigger locations.: Keep your feedback coming!: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 11,
+    "balance": 9,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4038025325477212954"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-30T17:34:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.816Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.078Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-07-26",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: new enemies",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-26T18:52:20.000Z",
+   "notes": [
+    {
+     "title": "The list of changes",
+     "items": [
+      {
+       "text": "Added new enemies: Grabber, Clinger. They draw out resources from the player's skyship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed attack speed parameters for Clingers and Grabbers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the way Clingers and Grabbers memorize player's location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies no longer fall off the islands for no reason",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lancers (human melee enemies) no longer lose sight of the player while preparing their attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Lancers' sprite and hitbox positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the Swarm zone where you respawned in the sky without a skyship after it had been destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now fast travel to gas stations from any point of the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doubled the speed with which energy is gravitated towards your skyship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced HP of enhanced opponents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The amplification of opponents who are superior to the player in strength is reduced by 2.5 times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the sniper rifle active reload bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the next target marker would disappear when fast travelling to the Fathership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a panel overlapping the entire screen appeared when the factory assembly line was jammed with crates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The item pick-up sound no longer plays when you are starting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed white buttons in pause menu when returning from other settings windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Autoscroll is now available only on gamepads and keyboards, unavailable on mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the starting skyship weight was always shown while choosing your skyship in the shipyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, when quickly closing the tablet and opening the menu, the player could still shoot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the notification about adding a gift to the skyship's hold at the start of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the notification about first aid kit and Luma's energy pick-ups being added to the skyship's hold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes to the Player.log:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "removed the redundant notification about the absence of the \"WasAggroNotified\" component, which littered the log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "removed some of the extra checks, added new ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a new notification is no longer considered an error and is sent to the informative log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep your feedback coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 1,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4038024692301477804"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-26T18:52:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.815Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.077Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-07-22",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: fast travel, zero health enemies fixed",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-22T12:25:20.000Z",
+   "notes": [
+    {
+     "title": "The list of changes",
+     "items": [
+      {
+       "text": "Fixed an issue where it was impossible to fast travel to a gas station situated in a different region of the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, when attempting a game load while invincibility was active, the player remained invincible forever",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Shards of Fangs drop chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the percentage of strengthening of all opponents (if the strength of the enemy is lower) - from 250% to 180%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where enemies lived with zero health remaining: Keep your feedback coming!: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4038024692285939761"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-22T12:25:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.815Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.077Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-07-21",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: gamepad controls fixed, weapon swap speed increased, AI improved, etc.",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-21T17:53:21.000Z",
+   "notes": [
+    {
+     "title": "The list of changes",
+     "items": [
+      {
+       "text": "Fixed an issue with switching between store tabs using a gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved stability of the island defense cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased chance of Broot spawning in South Aspia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased chance of Big Scarab spawning in West Aspia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased weapon swap speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pistols now have infinite ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pistol DPS (damage per second) has been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the quality of world loading after saving the game while sleeping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the quest conditions counting system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Repair kits and ship ammo are put directly into the hold when purchased on the Fathership",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies from tents will now spawn at random locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the airborne enemies behavior (Traxes, Jetpackers, Hoverers) - now they don't break when the player jumps to the ground and leaves the zone of visibility of these enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed enemies from non-quest tents spawning infinitely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enlarged passages that were harder to get through using bigger ships",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed map navigation using reassigned keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the ability to reassign hotkeys for Map, Diary and Equipment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where flying enemies sometimes flew to the origin of coordinates when attacking an island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some buildings now require less resources to construct",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Special mods sold in the Armory now require fewer resources to create",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The cost of mod boxes sold by merchants has been increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing difficulty has been lowered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fishing minigame controls have been changed: you now use 1, 2, 3, 4 instead of WASD. Please, reset the controls to default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the radius for starting the fishing minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Farm animals now spawn in predefined locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The description of the quest where you have to create an anti-Swarm weapon has been made clearer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss fights can now be restarted if the player accidentally exited and saved the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the difficulty of the final boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a hint for using the shipyard during a mission where the player needs to dock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the stump in the Crash boss fight arena which was dropping 1000 capsules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a twitching stone in a cave on one of the islands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the next target marker disappearing when opening the hint window immediately after closing the tablet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The chance of coal drops from asteroids has been doubled: Keep your feedback coming!: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 6,
+    "balance": 5,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4038024692283129354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-21T17:53:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.076Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-07-15",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: bug fixes (Luma the moth, AI, modboxes), manual save",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-15T17:11:01.000Z",
+   "notes": [
+    {
+     "title": "The list of changes",
+     "items": [
+      {
+       "text": "Luma the Moth doesn't steal mod boxes anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the ship hold is full, Luma puts a crate next to your ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed quest mod boxes clearing contents of all subsequently opened mod boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the inventory getting wiped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Discord invitation now appears only upon exiting the game for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added autosave upon exiting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added manual save option in the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreased the recurring island invasion frequency",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Eva is now invincible during gate opening and lighthouse sequences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed AI issues: enemies with dead AI, enemies that were getting stuck in the reload animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mouse cursor doesn't go beyond the main screen anymore if the player has two or more screens",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an error in which the fuel tank fill up tip would pop up even if the player wasn't holding a canister",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error in which the message about the lack of resources wouldn't pop up even when the player was out of required resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error in which the \"Take the Helm\" tip would pop up even if the player's hands were full",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error in which the Turtletown liberation icon would appear without the civilian population information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Special mod effects are now removed when a weapon that grants a certain effect is holstered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the gate before the Grizzly Caverns mini-boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced the Grizzly Caverns mini-boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed citizens spawning prematurely in Crab Skeet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed disappearing enemies in Iron Burgeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The unreachable Copper Ore liberation reward in the northern part of the Big Water Island made reachable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the shipyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Indoor carpet layers updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now purchase Scrap Metal, Gears, Parts and Plates in a shop in Turtletown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Scrap Metal, Parts and Coal drop chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Tools not spawning during the \"Repairing the shelter\" quest. Two tool boxes may now appear in the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a nest interaction dialogue to read while the player is unable to summon the bird",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a dialogue to the first rubble interaction in the \"Save the Mines\" quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the arrows pointing at the rubbles that can be removed with dynamite during the \"Save the Mines\" quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased acceleration and deceleration parameters for all propellers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the ship component window freezing after a new ship purchase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the load point for the Elephant to prevent it from bumping into the Fathership: Keep your feedback coming!: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 14,
+    "balance": 3,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4204657340166038843"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-15T17:11:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.075Z"
+  },
+  {
+   "id": "black-skylands-122132@patch-2021-07-12",
+   "gameId": "black-skylands-122132",
+   "displayName": "Patch: gameplay, balance, localization",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-12T18:06:49.000Z",
+   "notes": [
+    {
+     "title": "The list of changes",
+     "items": [
+      {
+       "text": "Increased stat bonuses granted by ship components, weapons, boots, armor and pouches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Halved the health and damage increase for enemies who are more powerful than the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repeated island invasions happen less frequently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Crash boss doesn't one shot the player with its projectiles anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new merchants to Turtletown who sell seeds and livestock. Also, you can now buy most of the resources for capsules in the Turtletown market",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nerfed the fishing minigame difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Airborne Swarm enemies now drop ship energy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ground Swarm enemies now drop ammo and medkits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Capsule speed doubled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the disappearing enemies issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the window would switch upon moving the mouse cursor to the second screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We analyzed a lot of reports and reviews from you guys. This patch is based on your feedback that you shared over the last couple of days. Major issues will be addressed in the next patch, which we are working on. It is planned to be released this week. Currently, our QA team is reproducing the bugs in order for the programmers to fix them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to thank you all for your support! It really means a lot. Keep your feedback coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 2,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/4036897704067108658"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-12T18:06:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.074Z"
+  },
+  {
+   "id": "black-skylands-122132@major-2021-03-16",
+   "gameId": "black-skylands-122132",
+   "displayName": "Open Playtest Update: UI key rebinding, polishing, fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-03-16T13:38:34.000Z",
+   "notes": [
+    {
+     "title": "CONTROLS",
+     "items": [
+      {
+       "text": "Added key rebinding for UI navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "WORLD",
+     "items": [
+      {
+       "text": "Enlarged the safe zone near the Fathership’s shipyard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Windy River wind zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved adjacent islands closer to Mills Islands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SKYSHIPS",
+     "items": [
+      {
+       "text": "Fixed the “Needle” skyship’s disappearing helm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the speed of rocket-assisted projectiles for player’s skyship cannons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy “scarab” vessels now drop wood after being downed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "WEAPONRY",
+     "items": [
+      {
+       "text": "Twisted Assault Rifle now shoots regular rounds and cannot be modded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Reduced turret’s explosion radius to increase the chance of backing away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "LEVEL DESIGN",
+     "items": [
+      {
+       "text": "Minor changes to island layouts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TEXTS",
+     "items": [
+      {
+       "text": "Added resources descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some texts: --------------------: Please, update your game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1143810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1143810/view/5556851879152810164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-03-16T13:38:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1143810",
+      "checkedAt": "2026-11-13T03:16:10.812Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:10:19.072Z"
+  }
+ ],
+ "issues": []
+}

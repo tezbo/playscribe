@@ -1,0 +1,592 @@
+{
+ "game": {
+  "id": "penny-s-big-breakaway-254336",
+  "igdbId": 254336,
+  "name": "Penny's Big Breakaway",
+  "cover": {
+   "imageId": "co6nmg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6nmg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2dfg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2dfg.jpg"
+  },
+  "ps5Release": "2024-02-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "penny-s-big-breakaway-254336@1.2.20240313",
+   "gameId": "penny-s-big-breakaway-254336",
+   "displayName": "Update 1.2.20240313",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-14T22:01:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Penny's Big Breakaway 1.2.20240313 is now live",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This is a hotfix build with the following changes",
+     "items": [
+      {
+       "text": "Adjusted ice physics behavior and turn momentum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the catcher's mitt crash when using Hot Rod Pepper power-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a progression block in Gala Night 1 where suction pipe doesn't send Penny high enough",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed input lock that could occur by pressing left face button on the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reinforced the fix to the Player Cannon in World's Edge: Thanks for your patience and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1955230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1955230/view/7309977427436193835"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-14T22:01:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1955230",
+      "checkedAt": "2026-11-13T03:27:50.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-14T22:01:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1955230",
+      "checkedAt": "2026-11-13T03:27:50.182Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-14T22:01:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:58.126Z"
+  },
+  {
+   "id": "penny-s-big-breakaway-254336@1.2",
+   "gameId": "penny-s-big-breakaway-254336",
+   "displayName": "Patch 1.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-12T17:03:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today, we released a patch that fixes several issues. It also includes updates and improvements to existing functions. Please make sure to update your game to the latest version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In lieu of the changes below, we will be resetting the leaderboards for 4-2. This patch introduces a fix to a bug that existed on this level which allowed players to skip a large portion of the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will continue to monitor the game for future fixes and patches, but in the meantime, thanks for playing Penny's Big Breakaway!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Penny has been practicing her performances! She will no longer…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get stuck on wall ledges and other objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infinitely fall to her death in the World’s Edge boss encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slide up slopes that aren’t the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get stuck in a temporary infinite skid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get disconnected from YoYo during Whirl.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lose all momentum when starting a yoyo ride from a distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infinitely tumble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lose all her velocity when transitioning from Dash to Ride after YoYo retraction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Get stuck at the end of a zipline when holding Ride or Throw until released.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furthermore, YoYo has been training and will…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stop going through as many walls when thrown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now accelerate more consistently while swinging in higher frame rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Be correctly sized on the Zipline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ledge Grab on more surfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stop releasing Penny from Edge Grab too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve also asked the denizens to do some repairs and upgrades in the world. Here’s what they’ve been working on…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Omitted video settings from cloud saves – they’re only stored locally now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Fullscreen video option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "From now on, we will reset the global cycle timer when restarting or dropping out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Indicate all-time cleared Show Pieces/Dilemmas for a scene in Pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a quick restart feature to Time Attack – Just hold the top face button!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made Gusto reset to max when dropping out in Time Attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game elements will behave more deterministically when you’re navigating Time Attack (by using a consistent global random seed when restarting or dropping out).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reminded the denizens to not start the timer until Penny leaves Start Platform in Time Attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Scrapbook photos will now be full screen when viewing in menu!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to delete Scrapbook unlock progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Depth of Field video option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tinkered with the Turnstile so Penny is consistently launched from the intended release point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the Rolling Log to not cause tumble when impacting sloped surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "REPAIRS",
+     "items": [
+      {
+       "text": "Repaired the Suction Pipe so that it will now always eject Penny with the intended motion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Politely asked the Peng Balloon to not cause a soft lock at the end of Pengoville 2 when falling on Penny after landing on the Busker Stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reminded the Scatter Birds that their shadows should not disappear for a frame before flying away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turned around the Whirl Screw in the Final Act so that it screws in the correct direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the HUD so it will no longer draw after transitioning offscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When opening pause menu the same frame Penny drops out, the stage will now play music properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the water splash VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with the Fail Transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the Cannon object so that it no longer points to invalid target object references.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Whacked the side of the boombox so that the SFX issue after defeating Judge Rufus no longer occurs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oiled the grease on the ball bearings so that vertical camera movement now always tracks at the correct speed (camera slack delta time scaling).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "—",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Follow us to stay in the loop on Penny’s Big Breakaway",
+     "items": [
+      {
+       "text": "Twitter: https://twitter.com/EveningStarStdo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instagram: https://www.instagram.com/eveningstarstdo/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook: https://www.facebook.com/EveningStarInc/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 4,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0,
+    "topNew": [
+     "Omitted video settings from cloud saves – they’re only stored locally now!",
+     "Added Fullscreen video option.",
+     "From now on, we will reset the global cycle timer when restarting or dropping out"
+    ]
+   },
+   "sourceIds": [
+    "steam-1955230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1955230/view/5679673637670972856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-12T17:03:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1955230",
+      "checkedAt": "2026-11-13T03:27:50.181Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-12T17:03:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1955230",
+      "checkedAt": "2026-11-13T03:27:50.181Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-12T17:03:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:58.125Z"
+  },
+  {
+   "id": "penny-s-big-breakaway-254336@1.1",
+   "gameId": "penny-s-big-breakaway-254336",
+   "displayName": "Update 1.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-28T02:06:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Penny's Big Breakaway 1.1.20240227H is now live",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This is a hotfix build with 2 PC-specific changes",
+     "items": [
+      {
+       "text": "Crash fix for AMD RDNA 3 GPUs (incl. Radeon 7000 series GPUs and ROG Ally)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removal of Crash Catcher module: Thanks for your patience and support!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1955230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1955230/view/5688680204364809419"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-28T02:06:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1955230",
+      "checkedAt": "2026-11-13T03:27:50.180Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-28T02:06:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1955230",
+      "checkedAt": "2026-11-13T03:27:50.180Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-28T02:06:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:58.124Z"
+  }
+ ],
+ "issues": []
+}

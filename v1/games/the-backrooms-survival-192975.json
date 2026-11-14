@@ -1,0 +1,3842 @@
+{
+ "game": {
+  "id": "the-backrooms-survival-192975",
+  "igdbId": 192975,
+  "name": "The Backrooms: Survival",
+  "cover": {
+   "imageId": "co5my5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5my5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1hrl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1hrl.jpg"
+  },
+  "ps5Release": "2024-12-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-backrooms-survival-192975@major-2024-09-02",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Big Patch Update + Nintendo Switch Release",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-02T22:43:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update fixing many reported bugs, and announcing our Nintendo Switch release for The Backrooms: Survival that supports cross-platform multiplayer with Steam! You can now play on Steam with your friends who play on Nintendo Switch!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Official Nintendo Switch Release",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "-Fixed some late level crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some entities unable to be damaged (rare bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Rebalanced some item spawn rated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some UI interacting bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some items not equipping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed unequip bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed entity AI bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Various smaller fixes (typos, UI glitches, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/6240387642470363966"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-02T22:43:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.527Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.527Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-07-29",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Patch Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-29T15:46:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Updated obituary and statistics GUI layouts and look",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where if you interact with vendors while moving you will keep moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug with settings scrollbars not scrolling correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed pumpkin head model clipping camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed vendor stock not automatically scrolling when using a controller/gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where the dialogue choice menu can \"lockout\" and get stuck on a choice when using controller/gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some settings not saving properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced the amount of \"look at me\"/statue (gargoyle etc) entities that spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced the sight/radius of statue/\"look at me\" (gargoyle etc) entities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some crashes and improved overall optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5963413094363228636"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-29T15:46:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.527Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-07-12",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-12T13:42:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Chance of \"giant entities\". A small chance that an entity can be much more bigger, aggressive, and stronger, but drops more items. You will know when you see them by the size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Weakened entities will now sometimes start limping and moving slowly when hurt. This only affects certain entities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Rebalancing of enemy stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Resized some levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed freeze on respawn adventure mode and load screen not showing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a rare bug in multiplayer dropping items causing them to sometimes be other items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-buffed candle (more bright)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-It is now much faster to switch between weapons/tools.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed bug with auto pickup system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some collision bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved visual appearance of all lights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed enemy's not being intentionally distorted on the negative/crazy levels in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed armor not showing in multiplayer sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a white light appearing in the pumpkin character model head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You can press the cancel button on gamepads in character customization to quit out instantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed no hole at the top of the ladder in the pyramid level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed vending machine not appearing for some in multi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Other minor fixes/tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/6000566704269420799"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-12T13:42:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.526Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-07-03",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Patch Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-03T16:34:55.000Z",
+   "notes": [
+    {
+     "title": "Update",
+     "items": [
+      {
+       "text": "-Ability to select specific connected microphones for voice chat instead of being auto selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed gamepad bug where if an action (i.e jump) and menu confirm are binded the same button (i.e A) and you press the button on a menu button you would do that action (i.e jump)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When in a multiplayer game, if you lost connection completely previously (completely disconencted from the server, etc) you would still be in the game, just no longer connected or online. Now there is adisconnection message that is shown for this",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed almond water appearing purple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed strength buff image missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed nail item image missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Intro screens (recode logo etc) are now shown over the quick game load start up instead of after (load time save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where sound sliders settings were all set to zero on a new game by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Some various GUI changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed more core base code, various bugs, typos etc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5842939267331932081"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-03T16:34:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.525Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-06-27",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-27T21:38:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Vendor stock is now synced between all players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When you buy new items from vendors the new items appear on \"your items\" in the sell menu without having to reopen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed vending machine not spawning sometimes bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some vendor trading bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed some multiplayer desync issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-optimised much more base case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5842939267310827359"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T21:38:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.525Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@patch-2024-06-24",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-24T18:58:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fixed voice chat not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-many core game scripts have been updated and changed to fix general bugs hence upload size of the patch being big. We are in the process of overhauling much of the old code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5759622039991651332"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-24T18:58:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.524Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.524Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@hotfix-2024-06-22",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Quick Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-22T20:07:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Quick emergency fix to fix major bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an item dupe exploit where dropping one item drops the whole stack but only reduces one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed firing blunderbuss resulting in muzzleflash never disappearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed vendor spawn chance incredibly low",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5759622039984535829"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-22T20:07:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.524Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.524Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-06-22",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Patch Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-22T13:05:50.000Z",
+   "notes": [
+    {
+     "title": "Quick Patch Update",
+     "items": [
+      {
+       "text": "-Added revive player option in multiplayer adventure mode. Now when you die in multiplayer adventure you have the countdown to be revived else you respawn or give up as normal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added native PS4/PS5 controller support keybindings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed bug preventing you from assigning the same button to the same key. For example, this was an issue as you could not assign a gamepad d-pad to navigating menus if it was already bound to hotkeys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed bug where entities usually always target the host player if the host and client are near",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Tweaked entity sight detection so it is not as aggressive as before (i.e instantly seeing you and charging straight for you instantly as soon as you enter their radius)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed ores spawning over items, campfires, etc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Removed some cut items (i.e glock) that accidentally made it into the game's last update (these are items that were for original testing and should not have been present in the actual game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-All status effects are removed on death after you are revived. Previously for example you could die to bleed, and then when you're revived/respawn you are still bleeding and could die again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where respawning in adventure mode on floor 0 will put you into negatives. Now it will just respawn you again on the start level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where when players die in multiplayer their stunned bodies can be floating off the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When killed by players in multiplayer whether adventure or permadeath there will be no revive countdown and you will instantly die (complete death in perma, respawn in adventure)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced amount of floors lost when dying in adventure mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug in multiplayer where weapons can still show in other players' hands even when they have removed them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5759622039983468501"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-22T13:05:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.523Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.523Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@patch-2024-06-18",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-18T12:37:23.000Z",
+   "notes": [
+    {
+     "title": "Patch",
+     "items": [
+      {
+       "text": "-Fixed a \"help button\" panel appearing when closing text chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Removed some test items that were accidentally added into game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed entity chase/scream volume still present when its turned down low",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed entity footsteps still playing regardless of volume slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed revive prompt UI still showing after revive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added sfx slider for voice chat volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed hotkey numbers slightly appearing off-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some sounds not being tied to volume sliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed frame rate setting being tied to quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/6890025005367054349"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-18T12:37:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.522Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.523Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-06-17",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Update - Controller Support, big bug fixes + QoL changes!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-17T22:20:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello. We have released an update implementing controller support, adding new QoL, and fixing many bugs. Our Nintendo Switch port is finished and we are just waiting on some stuff that is out of our hands before it is released, however, hopefully, it isn't too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update size is relatively large due to the fact that we overhauled a lot of core systems and fixed up a lot of bugs that have been present for a while. Many systems were recoded from the ground up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added controller support. Controls can be rebinded for the controller and PC individually. The game can be played completely from start to finish with the controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed \"Look at me\" entities (gargoyles etc) still moving in multiplayer when some other players are looking (they shouldn't be moving)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new inventory function \"Move\". Mainly for gamepad users. Once selected, you can select another inventory slot to move the item to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed survival guide still showing even when selecting the \"don't show again\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Got rid of the text at the top corner of the inventory screen that shows inventory controls and replaced it with a \"help\" button which shows said information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Huge optimization improvements. Completely changed the way the game loads assets into memory optimizing that assets that are not needed are not held in memory, which should lower the game's RAM usage significantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Text chat starts removing old messages. After 100 messages the oldest one is always deleted after a new one is sent. Prevents clogged chat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Completely changed the networking/multiplayer system which should reduce many multiplayer bugs that were present previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Completely changed the input system and rebinding controls menu. The rebinding system is completely new so you will need to rebind your controls as they will not be saved from the old system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed settings not saving sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When you start up the game, previously there was a few seconds pause while the game loads. Now the game starts instantly and shows a loading screen in place of the \"not responding\" load-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed bug where vendor/NPC interaction showed up under auto-pickup. i.e (\"Pick up: talk\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed taking fire damage in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added loading screen backgrounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-changed lava to do damage and set burn for a long time instead of insta kill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed bug where mimics can instantly appear without being near the chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed vendors spawning in walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed vendors not facing the campfire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed vending machines spawning in each other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Rebalanced the amount of vending machines and vendors that spawn on safe levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a rare bug where you can be placed instantly on a ladder when going up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed sound volume sliders not changing volume consistently. Previously, the volume would be completely silent around 60% on the slider. Now it works smoothly from 0-100 on the volume slider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Prevent your own hair model from clipping your view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-A preview of the currently selected skin model is shown on the char customize screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Choosing your skin is done with left and right buttons now instead of a dropdown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-We decided to remove the \"examine feature\" where you pressed \"Q\" and have a close-up view of the item on the ground for two reasons. Mainly because the feature was just tied to way too many bugs from the start of the game, and secondly it has no real use or mechanic whatsoever other than slightly enlarging the preview of the model on the ground. IMO, it isn't worth fixing the many, many game-breaking bugs tied to this feature when the feature does nothing anyway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Completely changed the text chat system and fixed many bugs with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where melee weapons have strangely long ranges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-a load screen is displayed when first starting the game and not just a white screen flash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 32,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/6890025005364886323"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-17T22:20:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.522Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.522Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-05-08",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "New Gameplay Mechanic Content Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-08T14:47:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released another content update featuring the usual bug fixes, changes and more. However, we have also introduced a new gameplay mechanic that will make it easier for you to acquire resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[New Mechanic]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mining system - As acquiring some materials can be hard, we have added one of a few planned new mechanics that will help to acquire some materials. You will now be able to find ore deposits that can be mined to acquire those materials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Different levels have different ore deposits that can spawn and the frequency in which they do. You will need to find, craft, or buy a pickaxe to mine. Then you can mine the deposits, acquire that material, and eventually break the deposit and acquire a large amount of that material. This also adds some more uniqueness to levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should make acquiring some materials not as rare or completely luck-based. We will add more resources in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Weapon/Tools]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stone Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iron Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steel Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stone Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iron Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steel Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal Pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Ore Deposits]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steel (we know steel is not mined IRL and that it is made from iron, but as steel is a useful crafting material in game we added it as a mineable resource... besides, stranger things happen in the backrooms)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dirt rooms - Ore spawn rate: high. Ore type: stone, iron, lead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Torture rooms Ore spawn rate: medium. Ore type: Bone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greek Level - Ore spawn rate: Medium. Ore type: stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pipe Dreams - Ore spawn rate: medium. Ore Types: steel, iron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sewer - Ore spawn rate: Low. Ore Types: lead, steel, iron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forest- ore spawn rate: medium-high. Ore types: stone, iron, lead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snow level - ore spawn rate: medium-high. Ore types: stone, iron, lead, crystal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fire Level - ore spawn rate: high. Ore types: steel, stone, iron",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graveyard - ore spawn rate: medium. Ore types: stone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pyramid - ore spawn rate: medium. Ore types: stone, lead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal Caves - ore spawn rate: very high. Ore types: crystal, stone, steel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Achievement for ore breaking an ore deposit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-new profession, miner. Starts with pickaxe and yields a slightly higher to chance to get ore from mining. (note that as the pickaxe is technically a \"weapon\", to balance you starting with this, it will be at half durability, and does incredibly weak damage, and have no affinity. Choosing this class to try and start with a weapon would be not useful as this weapon non-upgraded with half durability wouldn't be able to kill the weakest entity)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-.308 ammo max capacity changed to 50",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed long-range hitboxes on some weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-normal facelings can sell pickaxe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-firearms with the \"heavy\" affinity are slower to reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-dismantle shotgun shells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed invisible water droplets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-made healthbar graphic less blurry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed clicking in menus turning the flashlight on or off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed using warpstone from the inventory would make the player unable to move until you pause/unpause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-show mine rate of pickaxes on craft/item description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed presents not spawning in snow level / level fun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed burned corpse not spawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased blueprint spawn rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added skeleton corpses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added shotgun blueprint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed a weapon dupe glitch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 51,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5768625435392209204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-08T14:47:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.521Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.521Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-05-02",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "New Content Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-02T14:44:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've released another game update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Weapon Changes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Some weapons are now capable of inflicting status effects on entities. For example, some weapons can have a chance to inflict status conditions such as bleed, etc onto entities. These effects are shown on the weapon info.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Status Effect for entities: Bleed - same as the player's bleed status effect. inflicts damage over time to the entity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Status Effect for entities: Poison - same as player. Inflicts poison over damage over time. No weapon has this by default weapons are enhanced with the poison kit get it. (We will add more entity status effects in the next update)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-gave some old weapons bleed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated weapons hit ranges so longer weapons have longer reaches and vice versa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Weapon enchant (fire, poison, etc) is shown in the name \"i.e Fire Axe\" and if you have an affinity it is shown before that \"i.e Heavy Fire Axe\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[New Weapons]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Hunters Katana",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Crystal Dagger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Scythe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[General Changes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-dismantle ammo (makes it easier to obtain gunpowder)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New material: Crystal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Nerfed sewers - now not as big and tedious and easy to get lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-arms vendor sells scythe, crystal dagger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated loading screen tips with new ones to reflect changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Blood particle visual effect (NOT the new status) when hitting entity will only appear if the damage is above 5 (prevents broken weapons that deal tiny damage and status effects creating blood pools)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Bug Fixes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed multiplayer entity throw animation not playing for other players sometimes (visual bug only)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-water/blood droplets colliding with the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-nailbox ammo increased to 20 from 15 as the item shows \"x20\" on the box model but previously gave 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-first aid pack voice playing a male-sounding voice even if you select a female voice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix crafted weapons not having a chance to get special affinities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[New Blueprints]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-scythe blueprint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Crystal dagger blueprint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-craft air pellet ammo blueprint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[New Entity]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal Golem",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal gargoyle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Custom Loot System]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some enemies now have chances to drop certain specific items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scythe clown has a 10% chance of dropping scythe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kid entities have 25% chance to dropped stuffed toy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doctors have 15% chance to drop medkits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fire Golem has a 5% chance to drop fire enhancement kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mimic has a 100% chance to drop between 1-3 big material bags",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mummy has a 50% chance to drop 1-2 bandages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yeti has a 5% chance of dropping frost kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tormentor has a 3% chance to drop a fire kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Poisoned has a 5% chance of dropping venom kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sewer Monster has a 2% chance to drop metal chest plate, 4% repair kit, 2% upgrade kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anubis has a 1% chance each to drop warp, ascension or descension crystals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hound has a 25% chance to drop a whistle, a 15% chance to drop bone club",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Reaper has a 20% chance to drop amphetamine salts, 25% for cigarettes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crystal golem has a 12.5% chance to drop crystal dagger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deathmoth has a 25% chance of dropping venom kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, feel free to leave any game suggestions and bug reports for future updates either here on on our discord!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.com/invite/qbQhTy2JhK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 54,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5766372999943839551"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T14:44:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.520Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.520Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@patch-2024-04-23",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Quick Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-23T10:53:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Another quick patch to fix some bugs reported yesterday",
+     "items": [
+      {
+       "text": "-Fixed footsteps not playing sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed player body clipping through camera view on some skins/animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed slight hit delay on melee weapons (you may still see what appears to be a \"delay\" compared to the old system, but it's not. The old system would register an attack as soon as you press the attack key, before the weapon even connects with an entity, which shouldn't be. Now it registers when the weapon actually connects)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed bug where electrician flashlight starts empty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where the ladder in the new level can spawn out of reach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where the ladder in the new level does not have the \"roof\" removed so the ladder goes into the ceiling (visual bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5762994032408737006"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-23T10:53:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.519Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.519Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-04-22",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Big Content Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-22T17:57:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released a new content update adding a brand new level, a complete overhaul for the weapon item system, several new achievements, and some more bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a brand new level theme",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Making weapons more individual and unique]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Every weapon now has its own crit rate chance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Every weapon now has its own crit multiplier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Every weapon stamina swing cost is different. The heavier the weapon, the more stamina it costs to swing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Every weapon now has its own stun chance, which decides whether entities are stunned on hit. Heavier weapons generally have higher stun, at the expense of stamina cost/speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Every melee weapon has its own block absorption rate (amount of damage reduced when blocking).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Show crit chance, multiplier, block rate, stun chance and stamina cost on weapon info",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Every weapon found or crafted has a chance to have a special affinity: Heavy, Critical, Rare, Special, Legendary. These types give bonus effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heavy: a lot more damage, more stamina cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critical: increases critical hit chance and crit damage multiplier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare: slight boosts to damage, crit chance, and crit damage multiplier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Special: decent boosts to damage, crit chance, and crit damage multiplier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Legendary: Good boosts to damage, crit chance, and crit damage multiplier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "???: A special, mythical, very, VERY rare affinity. Will you ever find it? Does it even exist? What will it do? Who knows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Weapons with these added types have special colored inventory/hotkey icon backgrounds and have the prefix added to their name i.e \"Legendary Axe\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Achievements",
+     "items": [
+      {
+       "text": "-Added an achievement for obtaining a heavy weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Added an achievement for obtaining a critical weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Added an achievement for obtaining a rare weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Added an achievement for obtaining a special weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Added an achievement for obtaining a legendary weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Added an achievement for finding the new level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Inventory screen GUI layout changed to accommodate new weapon settings etc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Increased starting inventory slots to 18 (24 with backpack). The reason is since so many new items have been added, 12 slots aren't very much to accommodate what you will pick up, so a few more should balance it without removing the inventory management aspect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Fixed a bug where sometimes the damage done to entities does not sync in multiplier, i.e if you and a friend are attacking an entity, the health damage would previously not adjust for between players sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-show on the blueprint the weapons' new stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Updated player movement animations with much smoother ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Fixed harbor ladder length visual bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0,
+    "topNew": [
+     "-Added an achievement for obtaining a heavy weapon",
+     "-Added an achievement for obtaining a critical weapon",
+     "-Added an achievement for obtaining a rare weapon"
+    ]
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5762994032406166061"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-22T17:57:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.518Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.518Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@patch-2024-04-18",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Quick Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-18T12:37:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick update to fix some multiplayer lobby bugs. Some of the bugs have been present for a while but only recently detected/reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed some multiplayer lobby bugs",
+     "items": [
+      {
+       "text": "-Fixed a big bug where sometimes active online games were not appearing in online lobbies (or only one at a time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where empty online games (one that all players leave) can still be shown in the lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a lobby bug preventing you from joining some games with the error message it is full",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where the lobby rooms are not updating in real time, for example, you see a room in the lobby and if a new player joins it the current players in that room would not update for you unless you left and manually refreshed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Also,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Slight GUI changes to multiplayer layout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5762994032390776936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-18T12:37:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.518Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.518Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-04-16",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Game Update + Special Announcement",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-16T20:26:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released another update adding some quality-of-life changes and bug fixes. We also have an announcement about The Backrooms: Survival and our future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Backrooms: Survival launched just over two years ago as a solo project. As a solo developer, I put a lot of work in the game to bring many updates through the early access phase (I've lost count how many), and a majority of this was done alone. Fortunately, I have now hired some other devs to assist in the development of all our games and future projects, which ultimately means the workload is shared and more updates and content overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That brings me to the next announcement. This year we are looking to port The Backrooms: Survival to console platforms. Cross-platform multiplayer will be enabled so all console players will be able to play with existing Steam players. We are starting with Nintendo Switch who have approved us, so it is simply a matter of starting development to port the game to Switch which will start next week and hopefully be released in May/June. After we release it on Switch, we will look at other console platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And now the announcement about today's update. We are focusing on stamping out all bugs, and improving general QoL and tweaks, and today's update starts in that direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-When dropping multiple items, they are dropped into a single sack instead and can be picked up instantly. Previously, if you dropped 30 nails, for example, 30 nails would spawn leading to clutter and general hassle. It is now much more convenient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed bug where the tactical vest appeared above the hound player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where text from an auto pickup can persist in the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where pressing escape on the multiplayer panel shows the game HUD and soft locks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed wrong item names on auto-pickup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved voice chat quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a button to cancel when attempting to connect to a server, as previously if there was an issue connecting it would try infinitely meaning the only way out was to ALT+F4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where the obituary was not recording new entries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Side pickup notifications for items show the correct name and also the amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed examine text showing the wrong name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a health and armor bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Melee Combat Changes",
+     "items": [
+      {
+       "text": "-Broken melee weapons can still be used but will always do between 1-4 damage despite any buffs or upgrade level until repaired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved the hitboxes of melee weapon swings. before it was cursor/mouse-based, now the actual weapon also had a hitbox",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-When trying to swing a melee weapon when out of stamina, the \"not enough stamina\" message would spam creating 100s. Now it is limited to one a few minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When swinging a melee weapon, instead of the same single-direction animation, the weapon is swung at a random angle each time and the opposite direction on the second combo hits = more realistic/immersive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, another update will come soon, and keep an eye out for any console and other development news.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/6474562312200468949"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-16T20:26:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.517Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.517Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2024-03-19",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "New Content Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-19T14:05:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are pleased to announce we have released a new update. There hadn't been an update in a short while due to taking a much-needed break, mainly due to burnout from work, IRL things, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Added a new level theme: Harbor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added an achievement for finding the new level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added a new entity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed a fatal bug where sometimes entities could not hit the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added an achievement for killing the new entity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where sometimes you would be unable to re-equip a weapon item if you spam unequip/equip keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where the poison buff icon still shows when dying to poison and starting a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Some optimization tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed some item names not being shown correctly when examining them on the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added an option to delete saved files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where the UI is disabled by default (setting) on the first time playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where the lantern appeared intensely bright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-At least one vendor will always spawn on the safe levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-If you miss a shot with a crossbow at an enemy and hit a wall/floor/object, there is a high chance the bolt will not break and drop and you can go pick it up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Same applies above with the nailgun also, there is a high chance the nail can also be picked up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated changelogs are now shown in a box on the left side of the in-game menu as not everyone reads announcement posts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed start-up intro logo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the next update, we plan to add a new game mode that allows you to create a custom game where you can change game parameters (e.g, entity spawn rate, item spawn rate, etc).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.com/invite/qbQhTy2JhK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/7309977427453211216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-19T14:05:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.516Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.516Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2023-10-04",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Quick Patch (...&Halloween update announcement)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-04T22:29:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've released another quick patch fixing a few reported bugs:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed the console command for spawning random entities not working. (Use id 999 instead of -1 to spawn a random entity)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Prevented hunger and thirst depleting in God mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug that prevented dubious liquid from increasing maximum health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You can now press the enter key (or whichever key you choose to map) to execute console commands without clicking the button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-\"purge all items\" command now purges backcoin and material sacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Prevented a bug that could cause death sometimes in God mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Prevent auto pick up while pause/inventory menu is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-the current version number of the game is shown in the top left of the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Again, this was just a quick patch to fix a few reported issues. Also, There will be another update in around two or so weeks that will not only fix more reported bugs but also introduce our seasonal Halloween update for this year, just like we did last year. This will add new items, skins, and other Halloween seasonal stuff into the game! Feel free to leve suggestions for what you'd like to see in it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5220292521178420948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-04T22:29:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.515Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.515Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@major-2023-09-20",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "Patch Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-20T12:45:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've released two patches since our major update four days ago. These two patches fix some bugs reported by players;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "-Fixed a \"white plane\" appearing under the lava at the lava level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed vendors not spawning in the safe level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where if you sometimes have a full inventory and try to pick up an item, and then drop a an item to make room for it you would be unable to pick it up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Patched the add item console command adding \"cut\" items (cancelled items that have no use)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed achievements not unlocking for some",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a dupe bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed the age slider UI hitbox not fully accurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a visual bug where two revolvers or flintlocks can appear when equipped (this was graphical only and had no other effect)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed game settings not saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed crosshair not being disabled when the UI is turned off in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed the craft button hitbox being slightly inaccurate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed the console command SETMAXMATERIAL not working (no ID is required, it will set all materials to max)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Be sure to report any bugs you find. You can do so on the steam discussions or by joining or discord here: https://discord.gg/qbQhTy2JhK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5219165352620028373"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-20T12:45:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.514Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.515Z"
+  },
+  {
+   "id": "the-backrooms-survival-192975@1.0",
+   "gameId": "the-backrooms-survival-192975",
+   "displayName": "UPDATE 1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-15T18:43:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firstly, apologies for the delay in the next update, we have secretly been working on the BIGGEST update yet!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are pleased to announce that after over a year and a half since the early access release and over 50+ updates in this time, we have finally released version 1.0 of The Backrooms: Survival! Version 1.0 comes to you with a massive update featuring entirely new mechanics, game modes, graphical changes, items, and a LOT more. Read below to find out everything that has changed!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, version 1.0 does NOT mean that the game will not receive any more updates. Working on The Backrooms: Survival and watching the community grow has been a fantastic experience, so there are no plans to stop updating it as of now. There are still more updates and other plans for the future (next one already planned for next month!), such as porting the game to other platforms, seasonal updates, any random updates/patches, VR, etc. Version 1.0 simply means that with the massive amount of updates we have released and this mega update, all the content added and new mechanics since the original early access launch, we feel the game has come far enough and fulfilled all that was originally set out to be completed back from March 2023 to simply no longer be considered early access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below is the list of changes in this new mega update. WARNING: There is quite a lot of content added to this update, and if you are an old player the new changes may make the game feel almost like a new game, so if you don't want spoilers and want to just go in blind, ignore below and launch the game and see what awaits you! Because there is quite a lot of stuff added, we will split it into categories (new items, weapons, blueprints, etc.) instead of just all together like a normal update. Read below for all the new changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game Modes",
+     "items": [
+      {
+       "text": "Four game modes have been introduced. Now, when you start a new single or multiplayer game, you can choose one of four game modes that affect the style of play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Classic (Permadeath mode): The original Backrooms: Survival experience. One life, one chance. Die, and your progress and save file for this run are gone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Adventure Mode - Explore the backrooms without permadeath. Instead, the death penalty will see you lose random items and money and respawn a few random floors back, unless you choose to give up and accept the death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Sandbox Mode - Sandbox mode gives you access to a whole list of console commands to do everything from spawning entities, items, god mode, messing around with things such as run speed, other player parameters, etc. A full list of console commands is available on the game's personal wiki. Steam achievements are disabled in sandbox mode for obvious reasons. No permadeath.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Explore Mode - Think of it as a \"peaceful\" mode. No entities spawn, so if you just want to explore levels without fear of a monster jumping out, this is it. No permadeath.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Classic and Adventure mode have their own leaderboards for each category (highest floor, lowest, etc.). Sandbox and Explore do not have leaderboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Multiplayer rooms created for explore and sandbox are invite-only and thus do not appear in the global public lobby, as these are modes you typically would mess around in with friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-New save system: You can now save and load multiple different runs at once. When starting a new game, it will be saved to a new slot. You can then load any of these save files at a time, so for example, you can have multiple save files for each of the game modes. Unlocked blueprints persist across all saved files. Permadeath save files are automatically deleted upon death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "-Console commands for Sandbox mode",
+     "items": [
+      {
+       "text": "-SPAWN ENTITY - spawn entity in front by id",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SPAWN ENTITY RANDOM POSITION - Spawn entity random position on level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-(spawn a random entity by setting ID as -1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SPAWN ITEM - Spawn item by ID in front of the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-UP FLOOR - Go up 1 floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-DOWN FLOOR - Go down 1 floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-TOGGLE GMODE - toggle god mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SET STATUS - Set status on the player for 60 seconds by ID",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SET STATUS MAX - Set status by ID for its maximum time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-RUN SPEED - Set player run speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-WALK SPEED - set the player's walk speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-JUMP HEIGHT - Set player jump height",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SET HUNGER - Set player hunger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SET THIRST - Set player thirst",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SET SANITY - Set player sanity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SET MONEY - Set player back coins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-ADD ITEM - adds item directly to inventory by ID",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-ADD MATERIAL - adds 100 of material by ID",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-SET MAX MATERIAL - Sets 9999 of every material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-GIGACHAD - ???",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-PURGE ENTITY - removes all entities of that ID",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-PURGE ENTITY ALL - removes every entity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-PURGE ITEM - removes an item of that ID",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-PURGE ITEM ALL - removes every item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "-Entities now have stamina. This means they will be unable to endlessly chase you. Instead, they will fatigue just like you and will have to walk for a few seconds until their stamina recovers allowing them to run again. Bigger entities generally have less stamina than smaller ones and creature-type entities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Blocking with a melee weapon is now more effective. Previously damage was reduced by 50%, now it is reduced by 70%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Weapon stats such as damage are shown when selecting a blueprint to craft",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Armor stats are shown when selecting an armor blueprint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-new weapon enhancement effect: Poison. Add poison damage to your weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-A settings option to disable the HUD. Useful for taking screenshots and just for messing around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Critical hits: there is a small chance to deal a critical hit against entities with both melee and ranged weapons, dealing twice the damage. (the damage number will show \"critical\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Headshots: Striking entity heads with melee weapons or ranged deal a headshot and deal extra damage. The damage number will show \"headshot\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New pickup system: You can now pick up items just by standing over them and pressing the pickup button, whereas previously you had to select each item with the cursor/crosshair. This makes it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "significantly easier to pick up smaller items, items you may miss (as if you walk over them the prompt appears), or lots of items at once (i.e. enemy loots). You can still use the crosshair to pickup manually or specific items, so for example, if you are standing on an apple but look at a banana, you will pick that up instead of the apple, so the crosshair is primary while the new pick up is secondary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Text chat overhaul: Text chat now has a dedicated window where all sent chat messages are displayed, as opposed to the old system where text chat appeared over the player's head. It is now possible to scroll through old messages also. When the text chat is closed, if a message is sent by another player you will receive a small notification on the corner of the screen alerting you of new unread messages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The current level you are on is now moved to be under the hotkey bar and is hidden when inventory is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The maximum number of players for an online game is increased from 6 to 14. While a high number, it is useful if you want to create a large room with lots of friends for chaos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Loading screens have been added during level transitions. A random tip is shown on each loading screen. Players will need to press a key to proceed when the level is finished loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The current game most is shown in the bottom left corner of the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a playable \"Hound\" skin character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Obituary records are spaced out and in a darker font so easier to read. The game mode is also shown for that run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The \"time survived\" stat pauses while you are incapacitated/dead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a main menu button linking to the wiki",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Main menu GUI overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-new level 0 wall texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-changed the look of the \"drunk effect\" to be more of a drunken blur than a white fade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New Pause menu GUI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-disable background UI while the pause is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Dead entity corpses will despawn after 30 seconds. This is to reduce clutter, lag, and corpses piling up blocking passageways rendering some players stuck or trapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Durability for weapons/tools is shown on hotkey bars also",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When highlighting an item on the ground with the crosshair, its name will now be shown above the use and examine buttons. (This was previously the case for weapons only, now it is for all items).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-A chance for the default backrooms theme (level 0 ) to be more open and wide similar to the original OR the standard backrooms survival narrow corridors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Headshot kills on entities will decapitate their head clean off with bloody effects also",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed some pistol reload animations (i.e. flintlock)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improved the torture room floor texture",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-short \"RE: CODE\" logo intro on starting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Main menu BGM added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-graphical improvements to lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Status Affects",
+     "items": [
+      {
+       "text": "-Haste: increases movement speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Ward: protects you from being inflicted with negative statuses such as poison, bleeding, etc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Energized: prevents stamina from reducing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Weapons",
+     "items": [
+      {
+       "text": "We have added a few \"modern\" weapons as this is something that has been heavily requested. For balance reasons, they are of course not too OP and they are quite rare to find and expensive to buy. They are similar to the nail gun but slightly better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-9mm Pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-308 Hunting rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-44 Revolver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-38 Snub revolver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Items",
+     "items": [
+      {
+       "text": "-Venom Enhancement Kit - adds poison enhancement to your weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Protection gem: bestows \"Ward\" on the player. Can be found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Energy Nut: eat it to bestow \"Energized\" on yourself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Speed Seed: eat it to bestow haste on yourself",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-9mm Ammo box: contains a handful of 9mm bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-308 Ammo box: contains a handful of .308 bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-38 Ammo box: contains a handful of .38 bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-44 Ammo box: contains a handful of .44 bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Ascension Crystal: used to instantly ascend to the next floor. Can only be found. Very rare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Descension Crystal: used to instantly descend to the below floor. Can only be found. Very rare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Warp Gem: used to warp to a random spot on the current level instantly. Can only be found. Quite rare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Blueprints",
+     "items": [
+      {
+       "text": "-9mm Pistol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-308 Hunting Rifle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-44 Revolver",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-38 Snub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-9mm ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-38 ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-308 ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-44 ammo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Achievements",
+     "items": [
+      {
+       "text": "-Achievement for using any teleport gem/crystal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Achievement for headshotting an entity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Achievement for acquiring the haste effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Achievement for obtaining a modern weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "-Fixed clicking the resume button on the pause menu sometimes not unpausing the game (before had to press escape if this happened)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Stopped the safe level spawning items. This was a bug as it led to an exploit of being able to farm items without threat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-When going to a new level, players no longer \"fall\" while the level is loading but are set to the correct position instantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed the death animation where the player ragdolls not working in singleplayer (previously the player would fall instantly without transition)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where you could use hotkeys while text chat is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed blueprints being lost to corruption",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed starting a multiplayer game deleting single-player saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed ladder spawning in trees in winter whiteout (snow) level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where the battery/oil life of flashlights/lanterns will persist to new ones. I.e you have a dead flashlight, pick up a new one, and that will also be dead. They all now have their own independent life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed the stamina slider disappearing sometimes, usually when alt-tabbing out of steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug where if you fall/do not clip out the level in multiplayer, you wouldn't respawn to a random position (as is the case in singleplayer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed instantly dying to lava in multiplayer levels sometimes when entering the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug preventing you from passing floor 100 in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug that sometimes caused you to not be able to pick up items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a bug preventing locked doors/bars appearing to close when starting a single-player game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed item duplication bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed items sometimes not spawning on low levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-blueprint backup for extra protection: If somehow you do lose your blueprints in a crash, just reload any old save file saved with them and they'll be restored globally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed gunpowder sprite showing as \"wood\" incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Moved some inventory GUI around to stop some elements from overlapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you all who have supported the game during the early access period, and were there to help with suggestions and feedback through the many, many updates we have released, as always, we'll see you in the next update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 39,
+    "fixed": 22,
+    "balance": 0,
+    "other": 63,
+    "ps5": 0,
+    "topNew": [
+     "-Haste: increases movement speed",
+     "-Ward: protects you from being inflicted with negative statuses such as poison, bleeding, etc",
+     "-Energized: prevents stamina from reducing"
+    ]
+   },
+   "sourceIds": [
+    "steam-1889640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889640/view/5480373588787073250"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-15T18:43:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889640",
+      "checkedAt": "2026-11-12T15:40:30.463Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:30.464Z"
+  }
+ ],
+ "issues": []
+}

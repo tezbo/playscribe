@@ -1,0 +1,862 @@
+{
+ "game": {
+  "id": "farworld-pioneers-151956",
+  "igdbId": 151956,
+  "name": "Farworld Pioneers",
+  "cover": {
+   "imageId": "co50eu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co50eu.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1r42",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1r42.jpg"
+  },
+  "ps5Release": "2023-06-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "farworld-pioneers-151956@patch-2023-09-20",
+   "gameId": "farworld-pioneers-151956",
+   "displayName": "Xbox Save Issue Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-20T12:02:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Pioneers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While this isn't a Steam update, we did want to let people know that a patch to fix a major Xbox save issue went live today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Full notes available here: https://www.reddit.com/r/FarworldPioneers/comments/16nn9aw/xbox_update_92023/?utm_source=share&utm_medium=web2x&context=3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll be able to announce a Playstation release date soon due to this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Please enjoy our other media platforms",
+     "items": [
+      {
+       "text": "Twitter: @FarworldPioneer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer Twitter: @igloosoftgames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook: Farworld Facebook!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subreddit: r/FarworldPioneers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: Farworld Pioneers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1363900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1363900/view/5219165352619919522"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-20T12:02:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1363900",
+      "checkedAt": "2026-11-13T03:20:47.510Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-20T12:02:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1363900",
+      "checkedAt": "2026-11-13T03:20:47.510Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-20T12:02:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:11.711Z"
+  },
+  {
+   "id": "farworld-pioneers-151956@1.05",
+   "gameId": "farworld-pioneers-151956",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-01T14:31:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Pioneers! 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much to everyone exploring the frontier with us since launch day! We’re proud to see over 75,000 concurrent players across all platforms, and we’re incredibly grateful for the feedback so far.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re reading every review and are working on plans for a larger update that will tackle some issues, including colonist AI. In the meantime, we’ve also got some urgent fixes coming in hot 🔥!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of these changes were available in Beta but have now been pushed to the public release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI Fix: NPCs will no longer wander away from the base when recruited. They should now stay local - unless instructed otherwise!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix: Research notifications no longer spam or stay stuck to the screen in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Pickaxes no longer have unlimited range when targeting an enemy block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Facility overlay/lock icons are now interactable when clicked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Currency is now added to your wallet even if your inventory is full",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Various small localization and layout issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Expect another hotfix shortly. We’ve seen reports of invisible bugs attacking players on some world seeds, and we’re working on removing those accidental cloaking fields as we speak!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Igloosoft: Our Discord is our main community hub: look for people to play Farworld with there!: Discord: Farworld Pioneers Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Our other spaces are regularly updated",
+     "items": [
+      {
+       "text": "Twitter: @FarworldPioneer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Developer Twitter: @igloosoftgames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook: Farworld Facebook!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subreddit: r/FarworldPioneers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1363900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1363900/view/5151601211226275402"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-01T14:31:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1363900",
+      "checkedAt": "2026-11-13T03:20:47.509Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:11.708Z"
+  },
+  {
+   "id": "farworld-pioneers-151956@major-2023-01-21",
+   "gameId": "farworld-pioneers-151956",
+   "displayName": "Demo Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-21T15:56:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello pioneers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everyone can now play Farworld as a demo version until the build fest ends on Steam. Check it out.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This demo will end January 30th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chat with us in the forums or our discord page and tell us what you think: https://discord.gg/Asntr8e",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1363900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1363900/view/5035621474418683067"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-21T15:56:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1363900",
+      "checkedAt": "2026-11-13T03:20:47.508Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:35.239Z"
+  },
+  {
+   "id": "farworld-pioneers-151956@post-2022-04-20",
+   "gameId": "farworld-pioneers-151956",
+   "displayName": "Outworlder PreAlpha3-Preview5d",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-04-20T00:01:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Colonists,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just adding in a second post real quick for PreAlpha3-Preview5d",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buddy is no longer impervious to cold, hunger and fatigue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Food nutrition values rebalanced; NPC fullness goes down by roughly 75% a day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add some information to food and medical item tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional tweaks to button styles in several dialogs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that caused NPCs to empty food stores rapidly due to not receiving any nutrition from food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused NPCs to get stuck standing in front of a container forever while searching for food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused NPCs to get stuck standing in a position where an item used to be available for pickup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused NPCs to walk all the way to an unavailable item or bed before canceling the current task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause certain items to be consumed twice when used by NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused NPCs to twitch until interrupted instead of going to bed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused NPCs to get stuck when affected by hypothermia if the closest warmup spot was inaccessible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused NPCs to remain in suspended animation until the game is reloaded after being revived by another NPC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1363900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1363900/view/4348797798069717871"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-20T00:01:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1363900",
+      "checkedAt": "2026-11-13T03:20:47.508Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:35.236Z"
+  },
+  {
+   "id": "farworld-pioneers-151956@2a",
+   "gameId": "farworld-pioneers-151956",
+   "displayName": "Patch 2a",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-05T16:03:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Welcome Colonists!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have substantial fixes and changes that have been greatly requested by our community today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take advantage of these updates now! The Steam Next Fest ends in 2 days, and so does the Outworlder festival beta. Going forward we will looking at our paid release of the game, with a date to be decided soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Doubled the horizontal size of the world to 4000 world units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Waypoints to other players now show the distance in a tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chair flipping is now allowed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased grenade damage but lowered damage over range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Protected unbreakable blocks against dynamite mining",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved positioning of setpiece markers on minimap and ensured debug-teleporting to a surface setpiece spawns you somewhere on the surface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated surface setpieces again. Temporarily removed Hut and Ruined Tower. Added Shelter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a more powerful debug button to toggle the UI camera and hide all UI/text (when the Esc and Tab menus are not open)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed issue that caused the “Cold” notification to tick on and off repeatedly when one of your colonists is downed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed icons for certain items and ores looking “thick”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed long-standing bug that caused clicking with the selection cursor in multiplayer to use the last item in the hotbar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with certain armors that could cause damage stacking issues when equipped/unequipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit that allowed recharging the rocket boots in midair by re-equipping them quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that caused chefs and other axe-wielding NPCs to just stand there when attacked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added automatic saving every 5 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Reduced heavy CPU usage that could result from off-screen world regions loading and unloading rapidly by keeping them alive a bit longer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance by caching the result of frequent IO calls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance of the terrain lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue that caused NPCs to get stuck if they decided to go to sleep while standing on a platform block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a long standing bug where Smelter and other facilities that can have materials potentially hauled to them could cause all colony crafting/hauling orders to halt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PreAlpha2 Patch 2c",
+     "items": [
+      {
+       "text": "Hotfix for saving issue introduced in last patch. Clear your save folders!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "F10 hotkey allows you to force saving the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Contest",
+     "items": [
+      {
+       "text": "Did you make it this far? We have an ongoing contest over at our Discord server to build a birthday party! The winner will get a copy of Outworlder for themselves or a friend courtesy of one of our community volunteers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter fast, the contest ends when the Steam Next Fest ends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Social Media",
+     "items": [
+      {
+       "text": "Can’t get enough Outworlder? Itching for the next colony? Try one of our communities and social media platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Discord is our main community hub: look for people to play Outworlder with there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.gg/Asntr8e",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our other spaces are regularly updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter: @playoutworlder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forums: https://forums.playoutworlder.com/index.php",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reddit: https://www.reddit.com/r/Outworlder/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outworlder Site: https://playoutworlder.com/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Facebook: https://www.facebook.com/playoutworlder/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 11,
+    "balance": 1,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1363900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1363900/view/3938951840898790596"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-05T16:03:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1363900",
+      "checkedAt": "2026-11-13T03:20:47.507Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:35.207Z"
+  },
+  {
+   "id": "farworld-pioneers-151956@post-2021-07-16",
+   "gameId": "farworld-pioneers-151956",
+   "displayName": "Outworlder Alpha1-Preview12g",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-07-16T01:11:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Colonists,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed issue with the event manager not working, which caused events like colonists spawning to fail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1363900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1363900/view/4204657340167253783"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-16T01:11:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1363900",
+      "checkedAt": "2026-11-13T03:20:47.506Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:35.205Z"
+  }
+ ],
+ "issues": []
+}

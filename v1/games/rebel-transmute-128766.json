@@ -1,0 +1,2177 @@
+{
+ "game": {
+  "id": "rebel-transmute-128766",
+  "igdbId": 128766,
+  "name": "Rebel Transmute",
+  "cover": {
+   "imageId": "co7sn2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7sn2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2s49",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2s49.jpg"
+  },
+  "ps5Release": "2024-03-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "rebel-transmute-128766@hotfix-2025-03-05",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for March 5th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-05T21:45:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where the first boss could get stuck during a phase transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some of the destructible blocks from the first boss arena to ease in the platforming challenge better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1793384379351776"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-05T21:45:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.923Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-05T21:45:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.923Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-05T21:45:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.929Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2025-02-14",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for February 13th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-14T02:02:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where the Compound Heart augment effect would stay active after removing the augment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some blocks pushing the player into the ground when they spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "By default Spin Bouncing no longer deals damage to enemies, instead the Motorized Blaster augment must be equipped to deal blaster damage to an enemy when you Spin Bounce. This should get rid of a lot of unintentional soft locks, but still allow for it to be useful in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1791580425981731"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-14T02:02:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.923Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-14T02:02:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.923Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-14T02:02:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.928Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2025-02-11",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for February 10th Hotfix (Memory Leak Fix)",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-11T05:43:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a nasty memory leak related to new map functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional explanation text on the death screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1790848102772836"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-11T05:43:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.922Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-11T05:43:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.922Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-02-11T05:43:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.928Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2025-01-26",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for January 25th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-26T02:23:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where a small section of map wasn’t drawing correctly implying an extra room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where falling lava would sometimes damage you without resetting your position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some Repair Stations weren’t being named correctly on the Teleport screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where all Repair Stations weren’t being named correctly on the Teleport screen in any language besides english.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved a drill asset in a Quarry room so it properly draws in the background as opposed to the foreground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cerebellum boss’ lasers are now properly destroyed when the boss is defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map pins no longer disappear the first time you load a game save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each phase of the Small Bot quest line is now properly marked by pins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brian’s NPC pin now moves to reflect where they are on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a visual bug with the active Repair Station marker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1789580505388680"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-26T02:23:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.922Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-26T02:23:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.922Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-26T02:23:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.927Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2025-01-24",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for January 23rd Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-24T03:56:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the game to crash if the player used the Spin ability to enter water while also in the Swim Boost state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that led to the player getting soft locked if they died in a certain story combat encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the game to crash if the player healed while entering the water while also in the Swim Boost state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1789580505326433"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-24T03:56:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.921Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-24T03:56:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.921Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-24T03:56:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.927Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2025-01-12",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for Jan 12th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-12T22:06:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added L3 and R3 controller button support to the rebinding menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that let the player damage the Goliath Drill boss before starting the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that led to some graphical elements flashing during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that led to Echos not being visible in the player's inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when the player tried to upload the 31st imprint to Inaya.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug for the map when using a Repair Station's teleport function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added proper location values to the Repair Station next to HIVE in the Abandoned Quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that led to the game crashing / getting stuck in a loop if the player used all their map markers and tried to open the map marker sub menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where the map marker count would draw over itself when on the map marker sub menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1788311419124144"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-12T22:06:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.921Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-12T22:06:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.921Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-12T22:06:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.927Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2025-01-06",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Hotfix for January 6th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-06T22:43:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes a bug that crashed the game when a player tried to open the rebind menu on an old save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1787858252856340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-06T22:43:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.920Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-06T22:43:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.920Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-06T22:43:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.926Z"
+  },
+  {
+   "id": "rebel-transmute-128766@major-2025-01-06",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "'Enter the Synapse' Update Out Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-06T18:10:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Enter the Synapse is a completely free, massive update to Rebel Transmute that makes a great Metroidvania even better. I've been working on this update for around 6 months now, and I couldn't be more excited for it to finally be in your hands!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4 new bosses have been added that are harder rematches of existing boss fights, with new movesets and patterns. 5 major bosses have been tweaked, given new movesets, new animations, and new sounds to create more engaging, and fairer fights for their placement in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new fully optional, completely new weapon has been added to the game. This weapon is long range, deals less damage per shot, and is a lot of fun to use. But be careful, it doesn't collect sparkblood, so you'll have to switch to the short range blaster if you want to collect more to heal with!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, the majority of the rooms along the main path of the game have been retouched to create a more fare and fun experience when traversing Terra 6. This includes removing some enemies from platforming sections, making certain platforming enemies invincible, and adjusting many of the required jumps to feel better. The player also now has more tools to help them platform, including a few seconds after falling off a ledge where they can still jump, and checks to move the player up or down a few pixels if they are about to bonk their head while dashing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update has a lot of big changes, and a lot of small ones, so without further ado, here is the full patch list for the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Bosses",
+     "items": [
+      {
+       "text": "Hover Queen network rematch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Monstrous Carapace network rematch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bloat Specimen network rematch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reef Tamer network rematch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Augments",
+     "items": [
+      {
+       "text": "Added the Recoiler augment. This augment negates knockback from firing your blaster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Weapon",
+     "items": [
+      {
+       "text": "Tired of having to get super close to shoot your enemies or hit a button? Well, now you have a new weapon to play Rebel Transmute with! The long range Particle Blaster is a perfect compliment to the game’s standard short range Planet Cutter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Switch between weapons on the fly with the press of a button or a flick of the joystick!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Boss Fights",
+     "items": [
+      {
+       "text": "Grey Matter’s health has been lowered to act as a more fair introductory boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hover Queen has new graphics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloat Specimen reworked to be more interesting, difficulty should be around the same or slightly harder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reef Tamer has been reworked to be more fair, added new attack animations, changed timing on attacks, and completely changed how the Urchin acts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Half Eaten Moth has been reworked to be more interesting, and as such has been given a new arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Goliath Drill has had some slight tweaks to make timing of attacks more consistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enemies",
+     "items": [
+      {
+       "text": "Minor Carapace now has better attack signaling and less frequent attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flying Transport Bot now has attack signaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leaping Clay now has less frequent attacks, its attack reaches further.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Living Clay now has less frequent attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exploding Bloats now have a detonation timer, making them more interesting to avoid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Acid Ballooners and Acid Bouncers (both Overgrowth enemies used as platforms) can no longer be killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many enemies now drop more red matter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Augments",
+     "items": [
+      {
+       "text": "Changed the Vital Readings augment to cost 0.25 energy, down from 0.5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased blaster range significantly when using the Stabilizer augment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Moved an Augment Battery item from a later shop to the shop in the Shipyard Commune on the Surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved an Augment Battery item from a later room in the Reef Set Subways to an easier to find room in the Abandoned Quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Main Blaster",
+     "items": [
+      {
+       "text": "The Humming Symbiote blaster upgrade from defeating the first boss now additionally extends the blaster range and changes its color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Main Blaster now deals 25% more damage without upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Map UI",
+     "items": [
+      {
+       "text": "Map visuals reworked to show more at once, and be clearer to navigate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Number of basic pins that can be placed per color increased from 8 to 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked all basic pin sprites to be distinct shapes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added 2 new basic pins that you automatically start with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a pin to track NPCs, you can buy this pin from a certain shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now clearer how to pick up placed pins, which current pin is selected, and how many pins of each type are left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Welder who upgrades your blaster is now marked on the map after a certain conversation, or after finding a certain computer terminal, or if you’ve already found them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Design",
+     "items": [
+      {
+       "text": "Touched up many rooms in the Foray Surface Labs to be less punishing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked enemy placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Extended some platforms to ease platforming difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted laser hazards to be easier to read and avoid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Touched up many rooms in the Abandoned Quarry to be fairer to navigate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked enemy placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reworked some enemy behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted platforming sections to have more consistent jump spacing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted wave fights to fit the location better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed Fossilized Clay from this area, moved to the Fossil sub area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Touched up many rooms in the Sparkblood Mines to be more fun to explore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added map markers for a certain platforming puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted falling lava behavior to be easier to anticipate and dodge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Touched up a few Coral Fissure and Overgrowth rooms to ease a player’s first time in those areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted platforming sections on the main path to be more forgiving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Replaced a very hard to find hidden room with an Augment Battery reward with an easier to find platforming challenge room with the same reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the way bomb blocks work, they now respawn upon re-entering a room, as opposed to staying destroyed forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed some hidden blocks / a hidden path that was necessary to find and complete the subsystem in the Mines, the path is now visible and easier to find by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new repair station at the second entrance to the Arboretum, also much closer to the Devouring Worm boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new repair station in the top room of the Sparkblood Mines Tower, much closer to the Cerebellum boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a warning when entering the Subway area to let the player know it is fine to come back to that area later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new room in the overgrowth! Go find it near the entrance for a powerful new ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Death / Lost Cores",
+     "items": [
+      {
+       "text": "Recovering a lost core from a Repair Station now only costs 35 red matter, down from 50.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dying without any auxiliary cores only loses you 30% of your current red matter, down from 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Accessibility",
+     "items": [
+      {
+       "text": "Added a 4th extra health as an option to the already existing 3 extra health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Misc.",
+     "items": [
+      {
+       "text": "Added new sound effects for the Half Eaten Moth boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new sound effects for the Flying Transport Bot enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Falling lava has had a graphical update and has new sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vines have a new sprite that is more clearly in the background / not interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dried vine platforms have a new sprite to be more clearly in the foreground / interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new item to coincide with an important plot point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made looking up or down with the camera trigger faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Looking up or down uses a dedicated button / joystick movement. If you’d like to look using the movement keys or joystick, that option can now be found under Accessibility options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Water boosting now slows time, allowing for players to control the player even when traveling at high speeds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscenes now visually show you new map markers when you acquire them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added another fuse to the Surface Scavenger shop’s inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Made the ‘interact’ and the new ‘change weapon’ buttons rebindable on keyboard and controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The rebind page for controller now shows all used controls in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The rebind pages now grey out controls that can’t yet be rebound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interact has moved from the d-pad to the right analog stick (up).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The look ahead / peak feature is now exclusively bound to right analog stick (up/down).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes!",
+     "items": [
+      {
+       "text": "Fixed ‘Force Respawn’ not working if inside a Network room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the way leaving Network rooms is handled, which should make behavior when leaving a room more reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with ‘Force Respawn’ confirmation text not disappearing when it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made some short, more gameplay focused cutscenes unskippable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the ‘Skip Cutscene’ text would pop up at the start of every cutscene unprompted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the last 2 map pins placed of each color not showing up correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Goliath Drill boss could get stuck during a few of their attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Particles on / off option in the menu didn’t do anything. Particles can now be set to ‘Few’ or ‘Many’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an animation for an object or enemy being shot but not damage only playing partially.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lost cores showing on the map in the map square you died, not the map square they dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 10,
+    "balance": 11,
+    "other": 49,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1787858252850560"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-06T18:10:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.919Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-06T18:10:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.920Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-06T18:10:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.926Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2024-12-28",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for December 28th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-28T16:20:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that led to many augments in the game being rewarded to the player incorrectly. If players spent money on these incorrect augments, they will now be properly refunded when they first launch the game, and the shops will restock on the appropriate augments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1786573930913857"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-28T16:20:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.918Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-28T16:20:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.918Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-28T16:20:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.924Z"
+  },
+  {
+   "id": "rebel-transmute-128766@major-2024-12-22",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "'Enter the Synapse' free update out January 6th!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-22T21:27:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Boss Rematches!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enter the Synaptic Network and battle smarter, faster, and more dangerous versions of your favorite bosses!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Earn the ability to turn repair (save) stations into teleport destinations!: Updated Boss Fights!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most bosses in the games have had a giant heaping of balance, new moves, added animations to make them feel more alive and to telegraph moves better, added sound effects, and adjusted to lessen wild difficulty spikes. (But have no worry, because the rematch versions are even harder than the old base versions!!): New Augments, New Weapon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equip the new 'Recoiler' augment to completely negate getting knocked backwards from shooting an enemy or wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Find the 'Particle Coil' item to unlock the ability to switch weapons! Swap on the fly between the standard, short-range beam attack and the new, long-range particle blaster attack!: Better World Design, Platforming Changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Better overall world progression, with a mindfulness towards how open the game can be, ensuring most players won't end up completely lost, stuck, or in a place they shouldn't be in yet!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harder areas are more clearly marked, so you know what you're getting yourself into!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many areas on the main path of the game have been completely re-balanced, annoying enemies redesigned, excessive enemies removed from platforming sections, and fairer platforming challenges that are more fun to complete!: Updated Map Tools!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More custom map makers! The limit for each color has been upped, and 2 new colors added. Mark important NPCs and Synaptic Network entrances!: Look for the update out January 6th, and for a full detailed patch notes to drop alongside it! There are way too many small changes to list out here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1786573930730774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-22T21:27:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.917Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-22T21:27:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.918Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-22T21:27:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.922Z"
+  },
+  {
+   "id": "rebel-transmute-128766@major-2024-12-20",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for December 20th Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-20T23:47:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a quick update to deal with some of the most common feedback / grievances about the game since launch. It also sets the groundwork for our huge content / feedback / polish / bug squashing updating due out January 6th 2025!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HUD augment equip cost cut in half.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Less Red Flux lost on death when you are out of extra cores, from 50% down to 30%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where a few sound effects didn’t scale properly with audio settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Background elements now appear dimmed, to make it easier to tell what is in the foreground and a wall / hazard, and what is in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where you could be forever trapped in Network locations. (Worst case scenario Force Respawn now works there, full fix coming in our next update!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized game file size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/1786573930670565"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T23:47:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.917Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-20T23:47:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.917Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-20T23:47:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.922Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2024-03-19",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes for March 18th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-19T04:37:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix for an interaction between the spin ability and bombs, allowing players to clip into walls and objects (such as conveyor belts)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "adds what is hopefully the final room map data that was missing from the map screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "item and augment descriptions now scroll if they don’t fit in the description box (for pixel art fonts only, HD font fix for this still to come)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for some missing collision geometry in a Sunken Basin room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "visual fix for some HUD elements drawing when they shouldn’t (namely during room transitions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for water bugs ending up in the air or underwater in some instances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "updated some computers that would read out the same outdated text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added collision to the sides of screens, so players can’t walk off into the unknown if a room doesn’t have a left or right wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fix for some sfx overlapping leading to an increase in volume (flames, shooting an enemy with the wave blaster, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a bug involving the player’s hitbox shrinking when recoiling from a shot, causing some players to get stuck in ceilings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added more variability to various combat sounds to avoid things sounding monotonous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fix for a crash related to the friendly Armadillapede companion you can get trying to attack enemies that already died",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the friendly Armadillapede can now swim (previously they were struggling)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "screenshots now work on Steam (through hitting F12)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/7309977427451772699"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-19T04:37:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.916Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-19T04:37:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.916Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-19T04:37:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.921Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2024-03-16",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Patch Notes with March 15th Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-16T06:37:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix for another pesky room not drawing on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "increased the jump window after running off a platform to make the platforming feel more fluid and less pixel-perfect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fix for coral barriers (broken using the swim ability) respawning when you re-enter a room, now should stay destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for the final (hidden) achievement not being rewarded properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for some damage resets placing players in blocks or moving platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a typo in the Raw Clay description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a relic that wasn’t properly spawning in the main Basin cavern",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "changed post-game behavior so players can load a save right before fighting the final boss even after beating said boss (while still keeping completion percent)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for a bug that allowed players to access the third subsystem before they’d hit a required story beat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the story marker for the hidden labs should now properly disappear if you’ve explored that location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed Sparkblood Blast to only require 1 injector’s worth of sparkblood to cast, but simultaneously debuffed it’s damage to maintain balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for behavior around the quick reset feature when you hit a hazard (like lava or spikes) so you can’t continue to move or be influenced by other objects while resetting position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for completion percent incorrectly taking into account something that had been removed before launching, capping completion percent at ~98%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added a new sprite for an enemy in the Sparkblood Mines that was reusing a sprite from a Surface enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "removed an enemy from the Subways that was placed inside the floor (what a horrible existence!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for the subway travel screen allowing you to travel to the first station even if you hadn’t visited it yet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a bug where spin-attacking into some hidden paths could get you to areas you shouldn’t be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a typo in Mercal’s first dialog (thanks Kowalth for catching that)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "recolored air-dash barriers to be more distinct from their underwater counterparts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tweaked the projectile shooting scythe bots in the Arboretum so they disengage faster once off screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "nerfed an interaction between the Hydraulic Motor augment and the sticky bomb (to still allow some shenanigans, but not to the same degree)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "added a shortcut through the rooms leading up to the boss in the Arboretum to reduce frustration with the boss run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 12,
+    "balance": 2,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/7309977427441143601"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-16T06:37:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.915Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-16T06:37:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.916Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-16T06:37:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:36.920Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2024-03-13",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Hotfix for Door Bug and Other Crashes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-13T07:52:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix for a few Arboretum rooms not showing up on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "removed another problematic underwater door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "adjusted the health for the Grey Matter boss to create a more gradual difficulty curve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fix for a rare crash while fighting the Goliath boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a devious death and respawn loop that could occur in an Arboretum room containing a large air current",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for Català language option being spelled incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blood Repellent augment no longer pushes bosses to avoid breaking boss fight logic, but has had its damage increased and knockback effect on normal enemies increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for a visual bug that incorrectly showed all Red Flux as lost when skipping the death screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for screen transitions not being fully masked when playing on the Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix for a crash involving turning in Brain Imprints to Inaya",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for a certain story beat making it impossible to turn in Brain Imprints",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for some Brain Imprint rewards spawning early if you left the room and re-entered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "text description for the Blood Maw augment is now clearer in what the augment does",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/5686429670866985212"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-13T07:52:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.913Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T09:24:36.919Z"
+  },
+  {
+   "id": "rebel-transmute-128766@hotfix-2024-03-12",
+   "gameId": "rebel-transmute-128766",
+   "displayName": "Hotfix number 2!",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-12T20:20:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Makes a puzzle in the Sunken Basin easier to complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adds an item to a room that was previously missing an item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed doors not opening when you beat a certain boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a very rare crash that was happening on game launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1191660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1191660/view/5679673637671841845"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-12T22:47:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1191660",
+      "checkedAt": "2026-11-13T03:28:56.913Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:22:37.653Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,2857 @@
+{
+ "game": {
+  "id": "cyber-clutch-hot-import-nights-302383",
+  "igdbId": 302383,
+  "name": "Cyber Clutch: Hot Import Nights",
+  "cover": {
+   "imageId": "co8g8z",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8g8z.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2y5g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2y5g.jpg"
+  },
+  "ps5Release": "2025-07-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@1",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-18T16:54:23.000Z",
+   "notes": [
+    {
+     "title": "Balance adjustments",
+     "items": [
+      {
+       "text": "Reduced frequency of orbital laser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly reduced the competitiveness of the AI in quick race, ranked race & private race",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "This is an ongoing journey, so we're looking for additional feedback from the community to see if they enjoy the difficulty as it is now, or if we should scale it back further.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes/other adjustments",
+     "items": [
+      {
+       "text": "Improved performance on PS5 Pro",
+       "ps5ProOnly": true,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "XSX crash on boot should now be resolved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have had trouble reproducing this on our side, so this fix is exploratory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you are a community member that's still facing this issue after this update, please let us know",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue that caused Steam Achievements to not be functional",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Resolved rare instances where a reward was not received after finishing a grand circuit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players who already finished a grand circuit, but didn't receive the reward, should now receive it when starting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Set crossplay to ON by default for platforms that support this functionality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated splashscreens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 3,
+    "other": 0,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/1808061939474498"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-18T16:54:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.613Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-18T16:54:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.613Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-18T16:54:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.860Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@1.0.0.0",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 1.0.0.0",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-24T09:50:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "MAJOR UPDATE NOTES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update 4 - 1.0.0.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game Mode: Championship",
+     "items": [
+      {
+       "text": "New single-player game mode: Grand Circuit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Race against AI in 5 different cups of varying difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cups include 3 races across 3 different stages, you’ll need to have the highest total score across all races to win!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Earn exclusive cup rewards by finishing first in the cups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After winning all cups in Grand Circuit you unlock Grand Circuit: Expert Mode which will challenge and reward you further.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/fd980b2cc987d51b4d8a6e81f2f749fd4f6489a3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Feature: Color Customization",
+     "items": [
+      {
+       "text": "All vehicles can now have their livery color customized, divided over 4 categories; Primary color, Secondary color, Detailing color, and Emissive color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The color categories can be adjusted in the last tab (color) in the garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Primary color category targets the largest livery surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Secondary color category targets the second largest livery surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Detailing color category can be used to adjust the color of details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Emissive color can be used to adjust the color of the emissive elements on the vehicle body and the front lights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Every vehicle also has 6 preset color combinations to choose from as a starting point. From there the player can adjust the individual color categories as they please.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/6739559e4e9b70ecb5e29b49778c6747f426f6ca.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45023879/31df544b8eff7d9bbfef672efccde31cd81d21a2.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45023879/28de05302f5a2e04610fbefbb38e807ff9db2d33.jpg\"][img src=\"{STEAM_CLAN_IMAGE}/45023879/82fdbd4439f5b927bdfdb17c8d3c5cf1cde6c88b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Fury",
+     "items": [
+      {
+       "text": "A new light weight vehicle has been added, the Fury!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Lightpulse Rounds, fires a flurry of energy rounds dealing damage to targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Repel Mine, deploys a mine behind the vehicle that damages and launches any vehicle that drives over it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Fury can be unlocked by completing the ‘Darkwave Cup’ in the ‘Grand Circuit’ championship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Fury has two sets of aesthetic parts to unlock in the Garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/7c1557df96933d5fb4322f029d1ca645e2b09604.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Angry Panda",
+     "items": [
+      {
+       "text": "A new light weight vehicle has been added, the Angry Panda!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Ion Rays, a burst of ion beams dealing damage to targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Scorch Barrier, deploys a barrier behind the vehicle that sets any vehicle passing through on fire, dealing damage over time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Angry Panda can be unlocked by completing the ‘Darkwave Cup’ in the ‘Grand Circuit: Expert’ championship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Angry Panda has two sets of aesthetic parts to unlock in the Garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/b573f69e128f851af10b2df71452792046c8e723.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Echo",
+     "items": [
+      {
+       "text": "A new medium weight vehicle has been added, the Echo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Plasma Grenade, a volley of plasma grenades dealing damage to targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Seeker Rocket, a targetable rocket that deals massive area damage on impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Echo can be unlocked by completing the ‘Vortex Cup’ in the ‘Grand Circuit’ championship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Echo has two sets of aesthetic parts to unlock in the Garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Apollo",
+     "items": [
+      {
+       "text": "A new medium weight vehicle has been added, the Apollo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Pyro Rounds, a burst of incendiary rounds dealing damage to targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Cyber Tail, leaves a continuous wall of energy behind the vehicle while activated, slowing and damaging any vehicle that drives through it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Apollo can be unlocked by completing the ‘Vortex Cup’ in the ‘Grand Circuit: Expert’ championship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Apollo has two sets of aesthetic parts to unlock in the Garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/6a6fa0f82a615c63789a2e05986e21fbde839888.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Hellion",
+     "items": [
+      {
+       "text": "A new heavy weight vehicle has been added, the Hellion!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Infernal Strike, a burst of heavy laser blasts dealing damage to targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Stinger, a targetable projectile that deals damage to targets and disables ability usage for a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Hellion can be unlocked by completing the ‘Solar Cup’ in the ‘Grand Circuit’ championship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Hellion has two sets of aesthetic parts to unlock in the Garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/6dd64f2bd15d9205de84fd421b4762a4ea2d35c5.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Beast",
+     "items": [
+      {
+       "text": "A new heavy weight vehicle has been added, the Beast!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Infernal Strike, a burst of heavy laser blasts dealing damage to targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Nitro Leap, it launches the Beast forwards into the air, forcing all surrounding vehicles away when landing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Beast can be unlocked by completing the ‘Solar Cup’ in the ‘Grand Circuit: Expert’ championship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Beast has two sets of aesthetic parts to unlock in the Garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/14af2d2ec05d808ca69b953541f67fdeea395b8f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Track: Neon Nihon Bay & Neon Nihon Bay Reverse",
+     "items": [
+      {
+       "text": "A new track has been added to the roster! Neon Nihon Bay and its reversed counterpart. Race your way through the wide highways along the shore and tight city streets to the massive temple crowning this metropole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Master your drifting on this winding track featuring a number of long corners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Survive and overcome the combat chaos in the tight city streets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pick your best route in a series of small traversal choices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/c576afc9b4a4655fbc32f28b016901f3ffcee146.png\"][img src=\"{STEAM_CLAN_IMAGE}/45023879/e23b9a35e360bd92f90902291de183c3734412eb.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Track General improvements",
+     "items": [
+      {
+       "text": "Several tracks have received adjustments to corners for a smoother cornering experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Track height limits have been increased to prevent being destroyed during a particularly high jump (looking at you Mad Rabbit).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Twister Reverse improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased width of the track in choke points to create a less tense racing experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added boostpads at widened areas to keep the sense of speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed tight jumps to prevent players from either crashing into the barrier at jumps or jumping off the track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved the location of pickups to more balanced locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pipes improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the general atmosphere of the level with lighting and fog and material changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the environment within the pipes to create a better immersive experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved smoothness of the downward slope to prevent cars smashing into the track and receiving unwanted air time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Saltspine Reverse improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved several jump landings to prevent cars smashing onto the track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced difficulty of a barrierless tight turn, which now is wider and more accident proof.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more signposting to improve player navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cyber Arena improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved several jumps and landings to prevent cars from smashing into the track or jumping off the track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the environment around the track to create a better immersive experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved the location of pickups to more balanced locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more healthpads to increase player survivability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Ability pickup: Orbital Laser",
+     "items": [
+      {
+       "text": "A new ability has been added to the ability pickups, the Orbital Laser. A huge laser from the sky targets the leading vehicle for a moment before unleashing its massive damage and slow. It is another tool in the arsenal for vehicles that are particularly far ahead of the rest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Every vehicle except the lead has a small chance to receive an orbital laser from an ability pickup once in a while. Depending on the position of the player picking it up and the distance to the leading vehicle the chance can be higher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/e0dfceb854cc306dfd54d9835c10234954692096.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Kill Marker",
+     "items": [
+      {
+       "text": "Killing an opponent vehicle will now give the instigator player a ‘kill marker’, giving clear and satisfying feedback on your triumph.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The kill marker is separate from your hitmarker, ensuring you still get the hit information from your hitmarker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The name of the opponent a player killed is still displayed in the kill feed at the top right of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The kill marker stacks, counting up if a player gets consecutive kills while the kill marker is still active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45023879/b277a08e887215262c812893ce3d1147d3cf1bad.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Kill Attribution",
+     "items": [
+      {
+       "text": "Self-destruct and fall-of-track deaths will now be attributed as kills to the player that within the last five seconds hit the vehicle last. Rewarding players for knocking vehicles off-track and preventing kill avoidance by self-destructing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Combat balancing improvements",
+     "items": [
+      {
+       "text": "Summary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pickup Ability balance changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced pick-up probability per position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased general survivability;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly reduced basic ability damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the high ends of special ability and pickup ability damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased armor gain from armor pickups (10 > 20)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced armor pickups respawn time (5s > 3s)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made death more punishing;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "(Re)spawn armor reduced (50 > 40)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Respawn vehicle velocity reduced by 33%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Armor damage is now counted towards the end of race statistics ‘damage taken’ and ‘damage done’, as well as achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The ‘Deaths Head’ special ability now no longer can be targeted, but instead is a dumb-fire projectile. The effectiveness of the ability was too great for the ease of use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Severely increased projectile size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added additional VFX to better portray the time between attaching to a vehicle until exploding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Added Steam Cloud Save support",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved grinding collision behavior between the vehicles and the barriers of the track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The game will now wait longer for all players to load into an Online race before starting it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect keyboard mappings being showcased during the Tutorial level",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed incorrect keyboard mappings being showcased in the HUD",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Online track vote count persisting after the player leaves the Online Race Lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Wheel and Mod part prices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vehicle collision is disabled upon death which allows players behind them to drive straight through",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Saltspine Crushers not killing the players in Online races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved end of Online race timer logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various leaderboard improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this patch the leaderboards in-game will reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new splash screens and updated credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 81,
+    "fixed": 2,
+    "balance": 16,
+    "other": 12,
+    "ps5": 0,
+    "topNew": [
+     "New single-player game mode: Grand Circuit.",
+     "Race against AI in 5 different cups of varying difficulties.",
+     "Cups include 3 races across 3 different stages, you’ll need to have the highest total score across all races to win!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/1806064758604990"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-24T09:50:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.612Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.859Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@0.9.3.0",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 0.9.3.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-13T18:12:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Clutchers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you new patch update that includes combat overhaul, 2 new vehicles, the track improvements & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vehicle Armor",
+     "items": [
+      {
+       "text": "Energy and the Shield Ability has been replaced for Vehicle Armor to reduce active focus on defense, increase survivability, and allow players to focus more on offense and racing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incoming Abilities first damage and deplete Armor before hitting the player’s health pool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drive over Armor Pickups to replenish some Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ability Pickups",
+     "items": [
+      {
+       "text": "Ability Pickups give a semi-random Ability depending on the player’s race position. These abilities can help the player catch up or overtake, defend or attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drive over an Ability Pickup to receive an ability in the [Right Face Button] slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Ability will remain in the slot until use. The slot needs to be empty before a new Ability can be picked up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Depending on the player’s race position they have a higher chance of receiving certain abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ability Targeting",
+     "items": [
+      {
+       "text": "Only Special Abilities can now be targeted and require a Lock-On to home to their target. Basic Abilities are now shot using dumb-fire only. This has introduced more skill expression and player agency in offense.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Targeting is now only for projectile Special Abilities [Up Face Button]. When a projectile Special Ability is available and off cooldown and a target is within range, targeting will automatically activate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Lock-On is established when having an opponent targeted for 1 second. Projectile Special Abilities shot during a Lock-On will automatically home towards the target. Shooting before a Lock-On will dumb-fire the projectile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dumb-firing shoots projectiles forward from the player’s vehicle. The projectiles will follow the vertical curvature of the road, going up and down slopes. This requires players to aim for targets using their vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Basic Abilities [Left Face Button] are now dumb-fire only",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hit Boost",
+     "items": [
+      {
+       "text": "Hitting an opponent with Abilities now gives the owner of those Abilities a small speed boost, rewarding the player for the hit and giving the opportunity to catch up, overtake or stay ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Speed Boosts",
+     "items": [
+      {
+       "text": "Speed Boosts now scale their intensity and duration depending on the player’s racing position, allowing players that are behind an opportunity to catch up. New speed boost sources have also been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed Boosts now scale their intensity and duration depending on the player’s racing position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Example: In first place a player’s speed boost might be active 1 second where in last it might be active 2.5 seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability Pickups have multiple Abilities in their pool that provide a speed boost to the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Opponents Status Displays",
+     "items": [
+      {
+       "text": "Status Displays are now displayed above every opponent. Allowing players to make more informed combat decisions and providing hit feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Status Display shows vital information like the opponents Health (green bar), Armor (blue bar), and whether the opponent has a shield active (bars become white)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Received damage is indicated in the Health & Armor Bars with orange nodes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Status Displays are visible within a certain distance of a player and when receiving damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ability Balancing",
+     "items": [
+      {
+       "text": "General balancing changes have been applied to Abilities to improve competitiveness and the value of each Ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Projectiles can now destroy Ability Barriers & Mines. Mines will still explode on destruction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Basic Ability cooldowns have been lowered and damage has been increased across the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Special Abilities cooldowns have been increased and base damages have been slightly increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Barrier and Mine abilities lifetimes have been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Null Barrier & Null Rounds no longer reduce Energy, instead now do additional damage to Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Flame Wake DOT now applies only once, stacking damage (until a cap) and resetting its duration for each instance of the Flame Wake hit. Dealing low damage when briefly driving through the Flame Wake but rapidly building damage when staying within",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sonic Boom no longer instantly activates but now has a brief windup, giving an opportunity to players with a shield and a fast reaction time to block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Acid",
+     "items": [
+      {
+       "text": "A new Light Vehicle has been added to the game, the Acid. The neon-colored punk racer is ready to burn it all down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Photon Cascade. Fires a burst of 6 projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Flame Wake. Leaves a trail of flames behind the vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Acid can be unlocked in the Garage for 1000 Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Acid has two sets of aesthetic parts to unlock in the Garage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Vehicle: Ramgrith",
+     "items": [
+      {
+       "text": "A new Medium Vehicle has been added to the game, the Ramgrith. The tough no-nonsense vehicle sporting a grenade launcher will blow its way through the competition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Basic Ability: Plasma Grenades. Fires a burst of 5 projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Special Ability: Deaths Head. A projectile which will launch any target it sticks to after a short delay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Ramgrith can be unlocked in the Garage for 1000 Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Ramgrith has two sets of aesthetic parts to unlock in the Garage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Map Changes",
+     "items": [
+      {
+       "text": "Energy cell rebalancing and addition of ability pickups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Energy cell placement was rebalanced to fit the new shield system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New ability pickups were added to all levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Track - Rooftop Run & Rooftop Run Reverse",
+     "items": [
+      {
+       "text": "Harsh corners were adjusted, jumps made more forgiving, jumps upwards changed to a large ramp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hard corner at the start of the level was made easier by cutting off a part of the building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steep road upwards with jumps that would often result in cars falling off the track was transformed into a double road that allows lane switching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The jumps from rooftop to rooftop were made more forgiving with added balconies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General fixes related to faulty collision, art, & gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added barriers to prevent cars getting stuck at inopportune moments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Track - Saltspine & Saltspine Reverse",
+     "items": [
+      {
+       "text": "Roads changed for better drifting, upper deck removed in the large corner of reverse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked some of the turns to allow for better drifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Road was smoothed out as there were issues with the angle causing bumps to form",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upper deck of the big turn in reverse was removed as it caused issues with cars launching themselves off the track",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Track - The Strand & The Strand Reverse",
+     "items": [
+      {
+       "text": "Alternate road changed to merge with the main road sooner, roads changed for a better drifting experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The alternate thin drift path was changed to merge with the main road sooner than it was before, the curve of the angle allows for better drifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main road turn next to the beach was rounded out for better drifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Track - Twister & Twister Reverse",
+     "items": [
+      {
+       "text": "The large thin drifting corner was changed to be more consistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the angle of the large thin turn to make it easier to drift along while keeping some challenge in doing so. Adjusted the road following the turn to facilitate this change",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Fixed various Achievements not unlocking correctly. All Achievements now should be reachable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Scythe & Wasp vehicle handling to be more in line of how other vehicles handle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The tutorial has been updated to inform players about the most important new features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HUD speedometer changes in color and slightly scales up depending on the vehicle’s speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HUD Health & Armor bars become white when shielded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The HUD ability icons become gray when the player’s abilities have been disabled by the Stinger ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hitmarker now indicates when the player hit a shield with their ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several ability icons have been simplified for better communication",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ability icons indicate whether a projectile ability is targetable with a border",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI opponents now generally use their abilities more effectively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would love to hear your thoughts on the new changes & improvements! Please use our Community Discord to share your feedback and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy racing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cyber Clutch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 1,
+    "balance": 10,
+    "other": 49,
+    "ps5": 0,
+    "topNew": [
+     "A new Light Vehicle has been added to the game, the Acid. The neon-colored punk racer is ready to burn it all down.",
+     "Basic Ability: Photon Cascade. Fires a burst of 6 projectiles",
+     "Special Ability: Flame Wake. Leaves a trail of flames behind the vehicle"
+    ]
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/6250522009517550862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-13T18:12:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.610Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.857Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@0.9.2.1",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 0.9.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-26T20:32:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Clutchers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you a minor patch update that fixes various achievements not unlocking & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Track - Pipes & Pipes Reverse",
+     "items": [
+      {
+       "text": "🛠️ Removed duplicate vent blades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixed few missing textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Removed incorrect signposting arrows on the road",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Improved track collision in various locations for smoother driving experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General fixes",
+     "items": [
+      {
+       "text": "🛠️ Fixed various Achievements not unlocking as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🛠️ Fixed vehicles still having collisions after they have been destroyed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🛠️ Fixed AI vehicles occasionally being able to shoot backwards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🛠️ Fixed Heavy vehicles being able to switch drifting direction mid-drift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🛠️ Fixed drift camera behavior staying active post drift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please continue to use our Community Discord to share your feedback and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the meantime the team is working hard on the next update, so stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Happy racing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Cyber Clutch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/5875595438703883875"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-26T20:32:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.609Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.855Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@0.9.2.0",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Update 0.9.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-30T10:03:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Clutchers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you new patch update that includes improvements to the driving experience, combat, the tracks & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Driving Experience",
+     "items": [
+      {
+       "text": "Auto correction no longer swings the vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased vehicle grip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed steering angles on higher speeds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the speed value of drift boost levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Speed boosts now override maximum speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera screen effects now blend with acceleration, instead of static boost effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed oscillation of car speed camera shake to prevent nausea",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera rotation now starts following the car when the car reaches certain steering input to give less static feeling to the camera behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introduced more slight differences of vehicles within the weight classes to make the vehicles feel more unique",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed cars climbing on walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cars climbing on other cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player starts with higher initial speed after respawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Introduced ‘lock-on’ mechanic, to require proper racing in effective attacking",
+     "items": [
+      {
+       "text": "Players are required to target opponents for 1 second before any fired projectiles will home in on opponents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The reticle changes color when the time requirement has been reached",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Losing the target will reset the locking in mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can still fire projectile abilities before the time requirement has been reached, projectiles will then travel in a straight line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "All offensive abilities no longer require energy but still go on cooldown after use",
+     "items": [
+      {
+       "text": "Energy is now only used by the Shield ability, which enables the player to participate in both offense and defense simultaneously. One full energy bar allows two shield usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introduced short cooldown between shield activation, to give offensive players a gap in defense to exploit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Default key binds are now more intuitive: X for Basic Attack and B for Shield",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Basic Abilities",
+     "items": [
+      {
+       "text": "Reduced cooldown of Basic Attack abilities with slight differences between per class",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slightly reduced damage of Basic Attack abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased fire rate of all Basic Attacks & all Basic Attacks now deliver their full damage faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Special Abilities",
+     "items": [
+      {
+       "text": "Increased damage of most Hazard Special abilities (Mines, Barriers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced lifetime of Hazard Special abilities (Mines, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Cooldown of Hazard Special abilities (Mines, etc.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Ability Activation",
+     "items": [
+      {
+       "text": "When the race starts offensive abilities will have a default cooldown of 8 seconds before they can be used.: This allows the pack to settle in its initial configuration before combat is enabled with an explosive start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a vehicle respawns, its offensive abilities will have a default cooldown of 8 seconds before they can be used.: This allows previous attackers to overtake in relative safety, preventing being immediately shot down by respawned vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The following changes were made to increase readability of the Health, Shield Energy and available Abilities",
+     "items": [
+      {
+       "text": "Health is now a green bar on the left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shield Energy is a blue bar on the right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Offensive abilities light up orange when ready",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shields light up blue when ready",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall size of the HUD is increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Mode UI",
+     "items": [
+      {
+       "text": "Introduced contextual description for each of the available game modes, while hovering over the button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Implemented several features to communicate vehicle damage",
+     "items": [
+      {
+       "text": "Vehicle health is visualized on the vehicle body depending on the health amount and can be seen as subtle body deformation, grime & grunge and smoke particles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added collision impact sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Increased overall effectiveness of the AI vehicles in combat ability usage & driving scenarios",
+     "items": [
+      {
+       "text": "AI chooses between dumbfiring projectile abilities or waiting for the homing time based on their target’s positioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI now more effectively chooses when to use on-track abilities (ex. mines, barriers or ‘tail’ type abilities)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI now more effectively chooses when to use AOE type abilities (ex. Sonic Boom)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI is now slightly more competitive during driving scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cyber Arena/Reverse",
+     "items": [
+      {
+       "text": "Split looping roads adjusted based on the new vehicle behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Split looping roads exits angled better to prevent cars from crashing into a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bump in the road near the end of the track reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Pipes/Reverse",
+     "items": [
+      {
+       "text": "Widened narrow road at the start of the map to allow vehicles to drive and drift through it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Structures around the large courtyard adjusted based on new vehicle behavior, allowing for easier drifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Building removed from the downward slope, ramp added instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pipe roads and their exits adjusted to facilitate the vehicle behavior better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First pipe now flows into a curved wall which players can drive along",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the pipe jump and connected it with the next section of pipe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barriers and collision around track adjusted to allow for better flow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twister/Reverse",
+     "items": [
+      {
+       "text": "Smoothed out initial S-curve to allow for more effective drifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saltspine/Reverse",
+     "items": [
+      {
+       "text": "Fixed minor collision issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted piston obstacles logic to more effectively kill vehicles beneath it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed several AI pathing issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We would love to hear your thoughts on the new changes & improvements! Please use our Community Discord to share your feedback and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team is continuing to work on the next updates that will bring further track, combat improvements and much more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy racing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cyber Clutch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 4,
+    "balance": 8,
+    "other": 37,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/5963413094366004256"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-30T10:03:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.607Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:18:18.608Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@0.9.1.1",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 0.9.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-24T16:53:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Clutchers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you a minor patch update that fixes the audio cutting off during gameplay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "🛠️ Fixed Audio cutting off during Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Improved AI pathing on Saltspine track to minimize unintended falling off the road",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would like to thank all of the players who have given their feedback regarding latest driving experience update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team has taken this feedback into account as we continue to work on the driving experience improvements and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please continue to use the Feedback form or use our Community Discord to share your feedback and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime the team is working hard on the next update which focuses on:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further driving experience improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision behavior improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Track improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First combat related changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy racing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cyber Clutch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/5963413094345172292"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-24T16:53:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.606Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.851Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@0.9.1.0",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 0.9.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-12T18:43:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Clutchers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you new patch update that includes changes & improvements to the driving experience and first adjustments to the tracks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "[Driving Experience]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Improved vehicle steering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Decreased auto-correction of the vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Increased braking power of the vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Air control - decreased automatic over correction & increased downforce",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Drifting behavior - adjusted mid-drift course correction limits & improved post-drift boost control",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Removed forced rear camera look when reversing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Adjusted drift vehicle camera behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Adjusted vehicle camera behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saltspine",
+     "items": [
+      {
+       "text": "🛠️ Various changes to turns to facilitate updated vehicle behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Collision fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Turns tweaked for better player experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Ramps improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Long part widened, energy cells, boosts, and health moved for better strategizing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Checkpoint fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Rooftop Run",
+     "items": [
+      {
+       "text": "🛠️Boosts added to various jumps to facilitate updated vehicle behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️Checkpoint fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Strand",
+     "items": [
+      {
+       "text": "🛠️Various jumps made more forgiving due to updated vehicle behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Strand Reverse",
+     "items": [
+      {
+       "text": "🛠️Various jumps made more forgiving due to updated vehicle behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twister",
+     "items": [
+      {
+       "text": "🛠️Overall road improved with updated vehicle behavior in mind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️Checkpoint fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Twister Reverse",
+     "items": [
+      {
+       "text": "🛠️Overall road improved with updated vehicle behavior in mind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️Checkpoint fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Other Fixes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixed various localization issues & included Language support for German, French, Spanish, Italian, Dutch languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Known issues & Notes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are aware that Players are still experiencing some Audio cutting off during Gameplay. The team is continuing to investigate this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team is continuing to work on adjusting tracks to further facilitate the updated vehicle behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would love to hear your thoughts on the new driving experience changes & improvements! Please use the Feedback form or use our Community Discord to share your feedback and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "For the next update we will be focusing on",
+     "items": [
+      {
+       "text": "Further driving experience tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision behavior improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Track improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First combat related changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy racing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cyber Clutch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 37,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/6000566704270183275"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-12T18:43:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.606Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.850Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@0.9.0.2",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 0.9.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-05T16:54:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Clutchers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you another minor patch update that includes some crucial fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "🎵 Fixed Audio cutting off during Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixed Rank Progression UI falsely appearing after finishing Private Races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📊 Fixed Rank Progression UI showcasing incorrect information after finishing Ranked Races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixed Settings menu not displaying the 'Apply' and other buttons while game is paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We continue to receive some insightful feedback, and our team is working on taking action on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for sharing your thoughts and helping us improve the game. Please continue to use the Feedback form to share your ideas and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy racing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cyber Clutch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/5842939267339272123"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-05T16:54:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.849Z"
+  },
+  {
+   "id": "cyber-clutch-hot-import-nights-302383@0.9.0.1",
+   "gameId": "cyber-clutch-hot-import-nights-302383",
+   "displayName": "Patch 0.9.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-01T19:34:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🚀 Cyber Clutch Patch 0.9.0.1 Update! 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey Clutchers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to bring you a minor patch update that includes some crucial fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our team is dedicated to ensuring Cyber Clutch continues to deliver the best combat racing experience. Here are the details of what’s new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "🎵 Fixed additional music tracks not playing in the main menu and during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔫 Fixed spawnable weapons incorrectly replicating in online matches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏁 Fixed Race HUD sometimes showing incorrect race data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🤖 Improved AI pathing to fix endless respawning issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📊 Fixed total kills being incorrectly showcased in the Profile menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛠️ Fixed Garage UI panel misaligning when switching between controller and keyboard input.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We’ve received some great initial feedback, and our team is already discussing and taking action on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for sharing your thoughts and helping us improve the game. We would love to hear more from you! Please use the Feedback form to share your ideas and suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy racing,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Cyber Clutch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1939920"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1939920/view/5842939267325095039"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-01T19:34:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1939920",
+      "checkedAt": "2026-11-13T03:18:18.604Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:44.848Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1930 @@
+{
+ "game": {
+  "id": "windswept-198422",
+  "igdbId": 198422,
+  "name": "Windswept",
+  "cover": {
+   "imageId": "co9py8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9py8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5k7h",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5k7h.jpg"
+  },
+  "ps5Release": "2025-11-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "windswept-198422@1.1.01",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.1.01",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-08T04:07:51.000Z",
+   "notes": [
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Buffering a groundpound input when dropdashing through an enemy would sometimes get eaten if it was pressed too soon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"NEW GAME\" text in French language was \"NOVEAU\" instead of \"NOUVEAU\" like it is everywhere else in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Fixes",
+     "items": [
+      {
+       "text": "Dying while entering a bonus with 'Hasty Mode' enabled messed up the timings with respawning back into the stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life (Speedrunner Edition)",
+     "items": [
+      {
+       "text": "Reinstated a bug from the previous update that assisted speedrunners during practice, selecting 'Disable Checkpoints' with the 'Create Checkpoints' option enabled and an active checkpoint will reproduce the bugged state, disabling checkpoints under regular circumstances will continue to clear any active checkpoints as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Undid the Thrillhex Thicket camera fix in the previous update because speedrunners got mad >:|",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "End of Stage Goal will display golden lights if all collectibles were picked up in a single attempt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, when at least one key collectible has been picked up, the stage timer will no longer reset when using the \"quick restart\" binding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1823825466502917"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-08T04:07:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.535Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-08T04:07:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.535Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-08T04:07:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.269Z"
+  },
+  {
+   "id": "windswept-198422@1.0.9",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.9",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-14T05:31:27.000Z",
+   "notes": [
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Multiplayer: Calling turtle back while it's in poison water would damage it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: Dismounting Nippa as the companion player didn't bounce you up high enough, making you remount immediately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: Certain actions/states, such as dropdashing, would cancel if the other player took damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: Entering a cannon when the other player was on a mount would get rid of their mount and put them in a glitched state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players could softlock the game by performing a tagteam on the same frame they hit the death plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players could softlock entering the first cannon in Vexatious Vents on the same frame it became inactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There was incorrect collision in Bridgewheel Waterway that could lead to players getting stuck in the ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With the 'Create Checkpoints' assist active, it was possible to create Checkpoints in Laamp's Shade which impacted Minigame start points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With the 'Create Checkpoints' assist active, Dreadmaw wouldn't appear if checkpoints were made outside its trigger zones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading a checkpoint from the overworld would reset the stage timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The dragonfly bridge in Quick Pip Runner was killable, causing issues for players that didn't reach the next checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Conveyor belts would continue to push you during a throw animation, displacing your camera position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies could sometimes fall through moving platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to bounce on enemies while upside down on a ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to (often accidentally) get the \"Turtle Tennis\" and \"You're Out!\" achievements by chaining hits off an unkillable enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to get the \"Shooting Star\" achievement by licking enough flowers in a level with Hue, the timer never reset after losing speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to softlock by getting stuck entering a bucket and cannon over and over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preloading a save file containing a checkpoint and then loading a new file would carry the saved checkpoint status across",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secondary bindings were interfering with the Glide action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clearing a binding on controller would refresh the controller state, making it press again every second frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Erasing a save file on the secret screens when you had a full team would unstick the camera from its location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "V1.0.7 introduced a bug that voided 'Broke' status in a stage if you touched a Buddy Bubble, Checkpoint Bubble or unspawned Moon/Comet Coin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Fixes",
+     "items": [
+      {
+       "text": "Camera panned up too quickly when heading down to the bottom left of Dropdash Chaparral",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Broke/Pacifist progress wouldn't show on stage markers until after beating the game or enabling modifiers, causing confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Button prompts would change from controller to keyboard on keypress, but wouldn't change back unless a different controller was pressed",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enemies flying off the screen after dying would flicker on stages with screen wrap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "It was possible to buffer TagTeam/Piggyback before a cutscene ends up but not Jump/Attack - now all can be buffered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chaos Mode",
+     "items": [
+      {
+       "text": "A scrollbar would appear in the middle of the pause menu behind the text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gravity modifiers were only applied every second frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coin Magnet/Repel was only applied every 5 frames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invisible Stage Goal modifier made the Goal flicker every few frames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invisible Baddies modifier made Grabba flicker every few frames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Randomizer",
+     "items": [
+      {
+       "text": "Game would softlock when entering a warp that leads to a soul link bonus due to the cutscenes interfering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lava Pike Polder wouldn't randomize due to a missing setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed \"No Music\" from the Music RNG Pool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Entering a bonus would often stop the music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 25,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1818752592130768"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-14T05:31:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.534Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-14T05:31:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.534Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-14T05:31:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.268Z"
+  },
+  {
+   "id": "windswept-198422@1.0.8",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-03T03:28:24.000Z",
+   "notes": [
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Native controller support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1818118366168999"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T03:28:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.533Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T03:28:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.534Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-03T03:28:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.267Z"
+  },
+  {
+   "id": "windswept-198422@1.0.7",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-27T03:51:51.000Z",
+   "notes": [
+    {
+     "title": "Crash Fixes",
+     "items": [
+      {
+       "text": "Speedrunners were crashing the BV fight by skipping the cutscene trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "It was possible to softlock by pressing Quick Restart + Tag Team on the same frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to softlock by pressing Piggyback on the same frame bashing through a barrel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced the enemy bridge in Hop Prince with enemies that can't die",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players didn't like that they were getting punished for attacking BV early so I have taken that away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to continue walking on ceilings even after the honey ended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tossing upward when entering lava saved you, but prevented you from being able to groundpound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to get locked in the Laamp Search menu if cancel and jump used the same button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game music could sometimes stop after a while",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Broke and Pacifist runs would be incorrectly invalidated unless the corresponding modifier was enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Fixes",
+     "items": [
+      {
+       "text": "The camera would get real jittery in one part of Nippa's Nook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Doubled the camera's movement speed cap so speedrunners can see more of what they're doing during hyperspeed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visual bugs could occur when tossing a shell and then interacting with it using Hue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Changed the location of the 'M' coin in Beevy Battlefield so the stage flows better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved camera profile in parts of Prickly Peril",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1817483467035479"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-27T03:51:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.533Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-27T03:51:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.533Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-27T03:51:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.267Z"
+  },
+  {
+   "id": "windswept-198422@1.0.6",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-23T10:30:52.000Z",
+   "notes": [
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "All the Minchi after the Guiding Glade checkpoint would get stuck against the right wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Saved checkpoints would carry over to a new file after deletion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to jump midair the next time you walked off a ledge if you attacked and piggybacked at any point before walking off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spicy Ice Speedway had a residual cutscene trigger in an unfortunate position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A locked camera wouldn't unlock after dying in a minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible to run away from the giant bell before it warped you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Projectiles like cannonballs and ink bubbles could still void a pacifist run under certain circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Key collectibles previously obtained would not void a broke run when touching them again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attract videos in the title screen ignored the master volume setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player audio would get louder when performing actions offscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix 1.0.5 caused your companion to disappear if you triggered a checkpoint and then returned to the stage via warp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix 1.0.5 caused Bells End to send you back to the checkpoint instead of the start of the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix 1.0.5 caused some whirlwinds and buddy statues to clip through the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Fixes",
+     "items": [
+      {
+       "text": "It was possible to pet Skree inside cannons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The pause menu at \"home\" indicated there were collectibles to find (there aren't)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trading in an animal buddy for a moon coin before the bonus criteria met still made the coin appear but it couldn't be collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Removed the spikes from the PipWheel in Lunosa's Library Bonus 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the \"stalker\" quality from the 2nd-last PipWheel in Toxic Tunnel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1816849002018197"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-23T10:30:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.532Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-23T10:30:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.532Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-23T10:30:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.266Z"
+  },
+  {
+   "id": "windswept-198422@1.0.5",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-19T12:43:44.000Z",
+   "notes": [
+    {
+     "title": "Crash Fixes",
+     "items": [
+      {
+       "text": "Hue interacting with Attack Pillar/Platforms would crash the game but only for some people",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: It was possible for a player to enter a pose that exceeded their existing pose table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Multiplayer: (Tagteam) It was possible to dismount from an animal buddy move around in real time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: (Realtime) It was possible to pan the camera far enough to the right of the B.V. fight to hit the stage goal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Marbles' charge attack didn't end when picked up by Grabba",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level timer didn't stop at the end of Chime Runners minigame (sorry speedrunners)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players could very easily get stuck in ceiling corner collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game would softlock if you tossed turtle into a cannon while you were standing on a sticky ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Fixes",
+     "items": [
+      {
+       "text": "Added a lil' signpost on the overworld near Honey-Hop Hollow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made the pink colour in secret exits more pronounced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Your last checkpoint will now be saved with your game - if you need to quit for the day or exit the stage, you'll load in at the checkpoint the next time you enter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Attempts made to fix micro-stutters introduced in 1.0.4 (feedback appreciated, but also try unplugging/replugging any backlit keyboard/mouse as it's a known issue that affects all Game Maker games)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1816849002007580"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-19T12:43:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.532Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-19T12:43:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.532Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-19T12:43:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.265Z"
+  },
+  {
+   "id": "windswept-198422@1.0.4",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-17T10:47:58.000Z",
+   "notes": [
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Multiplayer: 1 player would warp to the beginning of the stage when exiting a bonus warp (fixed for real this time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hotfix 1.0.3 FIXED players clipping out of bounds when riding on Bluppo, but CAUSED players to clip out of bounds when riding on Skree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cirra Superstorm final cutscene would softlock if Particle Effects were disabled in the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cloudy Clamber cloud platforms would not spawn if Particle Effects were disabled in the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Respawning in the Quick Pip Runner minigame after making a platform fall would sometimes respawn the platform without resetting its fall state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Changed behaviour of the stalking variants of PipWheel and Staunchin so they always follow a player character and not a thrown shell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game settings will no longer cloud sync, allowing different settings per device",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1816307528970086"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-17T10:47:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.531Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-17T10:47:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.531Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-17T10:47:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.264Z"
+  },
+  {
+   "id": "windswept-198422@1.0.3",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-16T14:19:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I am here once again to offer more stability, hooray.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Multiplayer: Being too close to the ceiling would clip one of you out of bounds when trading an animal buddy for a coin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It's possible to softlock in the final cutscene of Cirra Superstorm, I dunno how, but hopefully it's fixed now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A residual cutscene trigger was left at the end of Windswept EX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The recent screenshot code from v1.0.2 executes before text gets drawn, leading to eerily empty screenshots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You could duplicate the dolphin by activating Multiplayer while riding on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A P. Shooter's cork would sometimes remain in existence after the shooter got KO'd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Animal buddies would sometimes get stuck out of bounds due to low polling rate of surrounding collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Fixes",
+     "items": [
+      {
+       "text": "Some textures would get baked into memory if the window was minimized at certain times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Changed default controller bindings to remove an alternate binding for tagteam, it was originally on R2/RT by default, which caused players to accidentally tagteam if they gripped their controller to jump or bumped the trigger on their body.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1816307528968409"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-16T14:19:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-16T14:19:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.531Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-16T14:19:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.264Z"
+  },
+  {
+   "id": "windswept-198422@1.0.2",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-15T13:15:37.000Z",
+   "notes": [
+    {
+     "title": "Crash Fixes",
+     "items": [
+      {
+       "text": "Crash occurred in Pip Pop to the Top when dying in the clouds after reaching a checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Multiplayer: Entering the Octulent cutscene too far apart locked you in a staring contest and didn't commence the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: Player 2's follower coordinates would overwrite respawn coordinates when exiting a bonus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players couldn't take screenshots... *surprised pikachu face*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tossing Checkers onto the trigger at the bottom of Magmaw Well wouldn't activate the chase sequence properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Taking damage in Rusty Reservoir while being pushed by a torrent would zip you across the stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievement for beating all minigames wouldn't trigger until beating your final minigame a second time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Improved performance for Nugget's Snowy Sprint stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There's more to come, stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1816307528966384"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-15T13:15:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-15T13:15:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.530Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-15T13:15:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.263Z"
+  },
+  {
+   "id": "windswept-198422@1.0.1",
+   "gameId": "windswept-198422",
+   "displayName": "Hotfix 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-14T15:02:02.000Z",
+   "notes": [
+    {
+     "title": "Hello!",
+     "items": [
+      {
+       "text": "Sorry for delays with fixes, I'll be rapid-firing some hotfixes for the next few days - I appreciate your patience as I get through all of your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let's do this...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crash Fixes",
+     "items": [
+      {
+       "text": "Multiplayer: Crash would sometimes occurred when touching a buddy bubble in tag-team mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crash occurred when loading a save file with corrupted world data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crash occurred when a walking enemy would somehow touch a sticky ceiling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crash occurred when restarting from the menu at The Pip Ship checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Crash occurred when using Laamp's Bulb to find coins in the Cloud World stages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Multiplayer: Player would fall through horizontal ropes if they regained control after being freed from a buddy bubble",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiplayer: Players would snap to each others' location when trying to climb honey walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players would immediately jump in Thornado's bonus and lose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bees circling cannon beneath 'M' in Beevy Battlefield were too close to the cannon, sometimes hitting the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cannon at the end of Spicy Ice Speedway would fall short if you were Checkers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players could get stuck if entering a Temporal Railroad's cannon around the same time the comet hits the mountain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Hue Hover\" caused by taking damage while grappling in Shiver Sling Spring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pausing the game while performing an attack makes your controller vibrate constantly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Menu option for \"Flashing Effects\" displayed incorrectly for English (US) Language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jumping in a bonus during Hard Mode could trigger a buddy bubble before its removal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual Fixes",
+     "items": [
+      {
+       "text": "The bubble above Hue in Shiver Sling Spring got displaced behind the ice effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brambles in Bonus 3 of Bridge-Wheel Waterway looked too open, making some players think they could jump through the gap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Camera in Bonus 1 of Skree's Spire never let players see what was below them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life Changes",
+     "items": [
+      {
+       "text": "Multiplayer: (Real-Time Mode Only), Respawned both players on death to assist with the spike in difficulty brought on by being untethered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Credits\" option to the title screen at all times instead of when you beat the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There's more to come, stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 18,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1816307528949521"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-14T15:02:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.529Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-14T15:02:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.529Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-14T15:02:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:24.262Z"
+  },
+  {
+   "id": "windswept-198422@major-2025-03-21",
+   "gameId": "windswept-198422",
+   "displayName": "Important update about Windswept...",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-21T02:45:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry for the clickbait it's just a normal update (but every update is important, so...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I know many of you out there have been eager to receive information from me so allow me to break the silence by using a recent quote from another Australian dev team:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Windswept is real, progressing, and will release.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*mic drop*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There you have it folks, worry not!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But seriously, I'm sorry I haven't been as active with these news updates. It's hard being Mr WeatherFell in every facet of the development process and I've been super busy just making the game and trying to garner more attention for it on socials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Windswept is \"done\"",
+     "items": [
+      {
+       "text": "Yep! Every stage in Windswept has been made, the beginning of the end starts now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I was given instructions back in July that I should get all of Windswept's content made by the end of January in order to ensure the game has a smooth porting/localization process (that's next week OH NO).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Content in this context means I need every stage, menu, overworld, minigame, etc. functional and playable from start to end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, since July I've been on a 6-month crunch to get everything done in time, I've had to take holiday hours off work, cut back on all my hobbies and put some other life events on hold in order to get to where we are right now. I'm not saying any of this to garner pity or sympathy, it's just how it turned out and I did what I deemed necessary to ensure things stay on track. In addition to this, I've had to fulfill my Kickstarter responsibility of releasing World 3's beta in September and World 4's beta in December to eligible backers, that latter update was so riddled with bugs due to this content crunch I simply didn't announce it here just until I could find the time to fix them all up first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So yeah, that's why my updates haven't been as timely as they used to be, I've been grinding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You: Show me the stuff!",
+     "items": [
+      {
+       "text": "Me: Soon! Eventually! Promise!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gathering screenshots and video footage is another time sink I unfortunately don't have the capacity to manage right now, sorry!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The best I can do for now is drop some of the \"is this marketing? 👋🦋\" footage I've been posting on Twitter and Bluesky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's truly all I can manage for now, I just wanted to touch base and keep you all in the loop! Next update will possibly be a release date announcement. Or maybe it won't. But it could be... Unless it isn't!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And if Silksong drops in our release window so help me!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/1794830910890414"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-21T02:45:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:18.528Z"
+  },
+  {
+   "id": "windswept-198422@major-2023-12-20",
+   "gameId": "windswept-198422",
+   "displayName": "Dev Log #6 - Slow-vember Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-20T12:28:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy gamers and welcome to the Kickstarter November Update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You know where I'm going with this - it's time for a relatively short update for a slow-ish month!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most of the time was spent cleaning up existing systems, it's hard to make that sound interesting but let's give it a go...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Screen Transitions",
+     "items": [
+      {
+       "text": "Transitions add so much to a game when used effectively - Windswept had a couple but they were very rigid in their execution, so I needed a better solution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The old transition system was sort of like the gif above, where the fade-in to fade-out were a fixed duration and the game just sorta waited for it to finish before continuing. The new system lets me determine the duration and specifics of every step in the process. If I want the screen to stay black until another system tells it to proceed, I can now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, I can specify different graphics to cut out of the blackness. I can also lock-on to a specific target to draw more focus to it. This will come in handy for Laamp's coin search service and any other situation I need to move your eyes to another part of the screen more naturally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Scoreboard",
+     "items": [
+      {
+       "text": "Support for achievements is baked right into the game for situations where the platform hosting Windswept doesn't support them natively. The goal will be to have pixel art icons that can be reused for Steam's achievement icons. I'm particularly fond of the memorable icons used in Yoshi's Island to give players a clear understanding of what each stage is without having to play it. Be sure to give Woodspixl_ all of your energy, this job rests with her!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Music and Sound",
+     "items": [
+      {
+       "text": "Lemme be real for a sec, professional music and sound is expensive and that part of development was one of the main contributors to why I came to Kickstarter in the first place. With Windswept being my first commercial project, I was faced with a lot of tricky decisions while using my own personal finances in the early days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "95% of the music & sound in our demo was made to help tie the project together in preparation for the KS campaign. The campaign's level of success would go on to determine the number of sounds produced and the amount of times music would repeat throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All that to say FatBard have added their first contributions to the game in over a year! Here's a brief showcase of some things they've done since returning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's still a bit of balancing to do and whatnot but overall it's breathing new life into the project at a time when I really need it to. Motivation is at an all-time high until the bill arrives!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As the year's coming to a close I'm trying to cram in everything I need to before entering the final phase of development - the content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I think next month's update is gonna be quite big, so long as I'm able to deliver on what I set out to do! Guess we'll have to wait until then, byeeeeeee!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1660960"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1660960/view/5410576585126204241"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-20T12:28:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1660960",
+      "checkedAt": "2026-11-13T03:36:18.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:18.526Z"
+  }
+ ],
+ "issues": []
+}

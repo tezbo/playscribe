@@ -1,0 +1,1029 @@
+{
+ "game": {
+  "id": "sir-you-are-being-hunted-8478",
+  "igdbId": 8478,
+  "name": "Sir, You Are Being Hunted",
+  "cover": {
+   "imageId": "co2e3t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2e3t.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1ejx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1ejx.jpg"
+  },
+  "ps5Release": "2026-07-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sir-you-are-being-hunted-8478@1.5.2",
+   "gameId": "sir-you-are-being-hunted-8478",
+   "displayName": "Patch 1.5.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-15T14:56:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "With this patch, we focussed mainly on custom island generation. We majorly improved handling of custom island types, and especially that of large islands. We also fixed various other small bugs. Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remastered game coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wishlist us please!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Linux: Upgraded Engine to Unity 2021.1.24f1 (was Unity 2021.1.20f1).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Further improved handling of \"Dock\" spawns, fixing issues mostly affecting large custom islands. There should now always be the correct number of Docks for any given island, even if there is no suitable space for one to spawn under normal circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the number of places where Riders can spawn. This should help fix issues where Riders sometimes don't spawn at all on large islands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where items held in hand would appear \"zoomed out\" incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the wrong type of villages (rural) would spawn when generating a large island with \"Industrial\" infrastructure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the canal running down the center of the island wouldn't spawn on large islands with \"Industrial\" infrastructure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the player could hang mid-air or mid-crouch, if opening the inventory while jumping or crouching. Opening the inventory will also no longer pause the \"crouching\" camera animation, and it is no longer possible to lean left/right while the inventory is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Windows-specific issue where the Rider would not sound as terrifyingly glorious as was intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the collision models of certain fence models, so that they no longer \"punt\" the player off them when walking along the top of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the collision models for pylons so that players can no longer be stucklaunched from them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor graphical artefact that could be seen on the pylons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Robots would investigate the \"wrong\" location when dynamite was thrown (the intended behaviour is that they run towards where the dynamite landed). Added an impact sound when the dynamite hits the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the compass would jitter when looking up- or down while leaning, or while holding the \"Free Look\" key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the in-game \"rounds\" and \"ammo\" indicators would be shown on top of the loading screen on certain ultra-wide setups.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where vitality can turn negative for a split second after eating a lot of spoiled food very quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-242880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/242880/view/4698935641759115504"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-15T14:56:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-242880",
+      "checkedAt": "2026-11-12T10:24:12.980Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.980Z"
+  },
+  {
+   "id": "sir-you-are-being-hunted-8478@1.1.2",
+   "gameId": "sir-you-are-being-hunted-8478",
+   "displayName": "Patch 1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-29T12:52:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you may know, we have been busy working on bug fixes and various technical improvements to Sir, You Are Being Hunted: Classic Edition, in anticipation of our new product, Sir You Are Being Hunted: Reinvented Edition. There has been some confusion about this, and I wanted to address this and explain the differing development goals of the various products.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The studio currently working on the Sir IP is Den of Thieves Games: we are a different company from Big Robot, the studio that made the original game in 2012 and 2013. We founded our company in 2020, and are a completely separate team from the team that made the original. We have been working on the Sir codebase since April of this year and we’re the people behind the 1.5 and 1.5.1 patches for the Single Player and the 1.1.1 patch and relaunch of the multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a personal aside, I love this game and a big draw to working on the IP, for me, was fixing some of the most long-standing issues that this game has. I believe that this game deserves better than it got back in the day, and we made these patches to give back to a community that clearly believes the same thing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reinvented Edition, which is our new product that we will be launching in February, is a remaster, but it will also feature many significant overhauls in terms of balancing and gameplay- for that reason it is important to me that we continue to offer the original in playable form: we want Classic Edition to be a up-to-date, bugfree and improved version of the 2013 original but we don’t want to change the gameplay and balancing, which made the original exactly as unique as it is. Since Reinvented Edition is based on the original source code, making these patches has been doable because much of these bug fixes will carry over into the new version. It is my hope that with these patches we’ve gained some trust in the community, and proven that we are not a fly-by company that will release just another shitty remaster and console port.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, the same is not true for the multiplayer: because the codebase uses the old multiplayer framework, we are stuck using old versions of Unity (unlike the single player, which has been ported to run on modern versions of the engine). The multiplayer has always been a separate codebase, and if we had to upgrade it we would probably be better off remaking it from the ground up. That’s not something we can afford to do!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, we can meet the community halfway: if we can’t modernize it, then we can at least make it playable; that’s exactly what our goal was with the version 1.1.1 relaunch. The multiplayer as it was, back in 2014 has turned out to be a lot more glitchy than the way people remember it (it really always was this glitchy): a lot of players found it unacceptable and frankly, I agree. This is why we went back and fixed the biggest, most game-breaking issues that were left in the last patch from 2014.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because the multiplayer technology is this old (so old, in fact, that it’s replacement system, UNET, has also been removed from Unity) it has been a hard two weeks at the studio doing a lot of in-depth analysis without our usual many modern tools. Most of our development manpower these past two weeks was spent on fixing the multiplayer: as a closer, I’d like to share some snippets of code that might give you a glimpse at the sort of issues we had to deal with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay Frosty,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anne “Yuang” Wijning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Den of Thieves Games, Lead Developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sir, You Are Being Hunted: Classic Edition Multiplayer 1.1.2 Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed many internal server errors, improving overall stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where players would fall through the map on servers that have been running for a few hours or longer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Riders would not attack players and instead just follow them around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Axe wouldn't do any damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where enemies would not ragdoll when killed, and instead stand still in idle pose.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the off/on schedule of the standing stones would sometimes not be cleaned up correctly between games (leading to situations where, for instance, the standing stones would activate, and then activate again 20 seconds later).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-242880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/242880/view/3938951840876461837"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-29T12:52:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-242880",
+      "checkedAt": "2026-11-12T10:24:12.979Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.979Z"
+  },
+  {
+   "id": "sir-you-are-being-hunted-8478@1.5.1",
+   "gameId": "sir-you-are-being-hunted-8478",
+   "displayName": "Patch 1.5.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-15T13:50:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Den Of Thieves present the Sir, You Are Being Hunted 1.5.1 patch. Come and watch us play on the livestream! STREAM STARTING 2030UK / 2130 CET!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Mac: Upgraded Engine to Unity 2021.1.20f1 (was Unity 2021.1.18f1).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux: Upgraded Engine to Unity 2021.1.20f1 (was Unity 2021.1.18f1).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Linux: Fixed an issue where the \"the experiment has gone terribly wrong\" cutscene had its video freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Replaced some of the music tracks (approximately 15 minutes of audio) with lossless copies (was MP3): the affected tracks are \"Azzent\", \"LPR Zonal III\" and \"In Deep Lanes\". Increased compression quality for all other tracks. Special thanks to Forces of Good for supplying these high-quality copies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the FPS limit launch parameter (\"-fpslimit xxx\") to now also accept \"fpslimit xxx\" (without the \"-\") because some players were getting confused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the intro scene (the \"Big Robot\" logo) to now render at a locked 30 fps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new text/warning messages when a player presses the \"Bandage\" button (default \"H\") without having any bandages in their inventory; or when the player pressed the \"Map\" button (default \"M\") without having a map in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved handling of the \"Toggle UI\" button: when pressed, the crosshair and world-space UI will now be disabled, and the UI will now automatically be re-enabled when the player dies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the \"blood\" overlay to not render correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the starting items would dissapear from the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Hunter Robots would spawn on top of each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused some foliage models to not spawn correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the ending cutscene would not work correctly the second time it was triggered (playing through the game twice in one play session).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Mr Walters would not say his lines on repeat playthroughs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused Bot Indicators to display at the wrong (much too large) size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Strange Device would continue to animate (and make sound) when the game is paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the display on the Strange Device did not look as was intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where a church model would be invisible but the collision was still active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the binoculars would remain active after you deleted the item: binoculars will now automatically be disabled when you open the inventory (or any other menu).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause music to not be played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Poacher's corpse would yeet itself when being killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-242880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/242880/view/3936698772941314782"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-15T13:50:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-242880",
+      "checkedAt": "2026-11-12T10:24:12.976Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.976Z"
+  },
+  {
+   "id": "sir-you-are-being-hunted-8478@1.5",
+   "gameId": "sir-you-are-being-hunted-8478",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-01T16:44:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Well look at this! For the first time in nearly six years we are rolling out some patch notes for a Sir update thanks to amazing work by our Dutch friends, Den Of Thieves Games. They are long time fans of the game, and are responsible for this comprehensive update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's a doubly special occasion, of course, because we are announcing Sir arriving on one of those console machines in 2022, also thanks to Den Of Thieves Games. The console in question is Nintendo Switch. But more on that elsewhere!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And there's more! The Switch version will be a comprehensive remaster, and that will return to PC as a new standalone game, with enhanced visuals, new gameplay options, a modern engine, bigger islands, faster procedural generation, and more! It will be a Reinvented version of the game we love.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, those patch notes for the latest update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Key Features Of 1.5",
+     "items": [
+      {
+       "text": "Multiplayer functionality restored and Official Multiplayer servers back online.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mac 64-bit support. This should give a significant speedup on Apple machines with an M1 chip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Islands generate much faster due to engine upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many legacy bugs fixed and graphical upgrades including modern water shader.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The Full Details",
+     "items": [
+      {
+       "text": "Windows: Upgraded Engine to Unity 2018.3.2f1 (was Unity 4.6.1f1).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mac: Upgraded Engine to Unity 2021.1.18f1 (was Unity 4.6.1f1).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux: Upgraded Engine to Unity 2021.1.18f1 (was Unity 4.6.1f1).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Mac version of \"Sir, You're Being Hunted\" now has native 64-bit support for both Intel and Apple Silicon platforms. This should give a significant speedup on Apple machines with an M1 chip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Terrains are now rendered using the new Terrain System. As a result, distant terrain should now look nicer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rendering has been changed so that the game now renders in the native sRGB color space. Contrast has been slightly increased as a result.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New graphics options have been added: an \"Ultra\" preset, MSAA Anti-Aliasing, an all-new \"Ultra\" setting for Water Effects and a toggle that enables SM 4.0 High-Quality Transparency have been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All Javascript code has been converted to C#, and the game has been switched to the IL2CPP backend on all platforms (Windows, Mac and Linux). This should result in performance gains in CPU-bound scenarios (notably while generating a new world).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All Textures have been reimported at their maximum resolution. This results in a slight increase in texture resolution, notably on many buildings (churches and houses) in the game world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The in-game HUD has been reworked to scale better on widescreen monitors (4:3, 16:9, 21:9 and tripple-wide 16:9 setups are supported). Texture resolution on UI elements has been increased and certain elements have been reworked.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The FPS cap has changed: when enabled, it will now lock to 120 fps by default (was 70). You can override this behaviour by launching the game with \"fpslimit x\" as a launch parameter (where 'x' is the desired framerate cap, such as 144 or 240 fps for high refresh rate monitors).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many lighting issues have been fixed. As a result, lighting should look smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-enabled some missing effects on the \"Axe\" weapon model.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new text/warning messages when a player attempts to insert an item other than a teleporter piece into the standing stones, or attempts to cook meat on an unlit fire, or attempts to put an item in their inventory that they do not have room for.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgraded the navigation backend to the newest version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where it was possible to open the menu while the screen is still fading in (pauzing the fade-in, resulting in a black screen).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a button on the class selection screen that allows players to return to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that caused docks to spawn on inland lakes instead of on the coast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused docks to spawn in the corner of the map, outside of the playable area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where teleporter pieces would spawn inside of other objects, partially obscuring it or making it inaccessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the \"Dog\" models on the main menu to not animate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where it was possible to be shot at, and killed during the ending cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where dogs could perform their \"bite\" attack through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where weapon models would remain visible (and respond to mouse movement) after the player dies.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where it was possible for toy trains to ride across the water (toy trains now explode when hitting water).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Z-Fighting issues on certain building models.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the Rider NPC, and certain objects in the \"industrial\" biome would render fog incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ambient Occlusion would render incorrectly during the ending cutscene, and on underwater objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Sir, You Are Being Hunted\" 1.5 Patch Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lead Programmer",
+     "items": [
+      {
+       "text": "Anne \"Yuang\" Wijning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Producer, Additional Art",
+     "items": [
+      {
+       "text": "Vasil Kichev",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Product Owner",
+     "items": [
+      {
+       "text": "Jim Rossignol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Programming",
+     "items": [
+      {
+       "text": "Lorenzo Greidanus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Emily Oldenwening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Special Thanks",
+     "items": [
+      {
+       "text": "Dan Puzey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jay Shaffstall (Muskingum University)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brean \"Eclecticklish\" Hunt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 12,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-242880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/242880/view/4020014099085129648"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-01T16:44:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-242880",
+      "checkedAt": "2026-11-12T10:24:12.973Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 3,
+   "updatedAt": "2026-11-12T10:24:12.975Z"
+  },
+  {
+   "id": "sir-you-are-being-hunted-8478@major-2019-07-07",
+   "gameId": "sir-you-are-being-hunted-8478",
+   "displayName": "ANCIENT ENEMY, Summer Sales, & The Next THE LIGHT KEEPS US SAFE Update Incoming!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-07-07T19:23:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick update about two things, the first is that ANCIENT ENEMY, the card game that Jim has been working on with Grey Alien Games, is available for wishlist, and isn't too far off release (date TBC!) and if it's your sort of thing then we'd definitely appreciate support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jim has been overseeing the art direction (his first 2D game!) and wrote the story. We're hugely excited to have worked with two fabulous artists, Dan Emmerson and Jen Pattison. Jake at Grey Alien has had years of experience at this sort of thing, and we're anticipating a tremendous game a bit later this year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's a teaser trailer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And the main page for plenty more info and that all-important wishlist link:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "THE LIGHT STUFF",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, we're speeding towards the next update for THE LIGHT KEEPS US SAFE, and now is absolutely the perfect time to try the game out if you've yet to dip in. If you enjoyed Sir. You Are Being Hunted but want something even more atmospheric and mysterious, then we suggest you take a look!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're setting our sights on V1.0, too , and we'll have more news about the end of our Early Access period in the near future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Love you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-BR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-242880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/242880/view/2436926440603971729"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-07T19:23:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-242880",
+      "checkedAt": "2026-11-12T10:24:12.971Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.971Z"
+  }
+ ],
+ "issues": []
+}

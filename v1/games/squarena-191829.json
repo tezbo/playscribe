@@ -1,0 +1,2624 @@
+{
+ "game": {
+  "id": "squarena-191829",
+  "igdbId": 191829,
+  "name": "Squarena",
+  "cover": {
+   "imageId": "co74kd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co74kd.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3f9s",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3f9s.jpg"
+  },
+  "ps5Release": "2025-04-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "squarena-191829@major-2026-08-08",
+   "gameId": "squarena-191829",
+   "displayName": "August 2026 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-08T05:16:06.000Z",
+   "notes": [
+    {
+     "title": "Controller Fixes",
+     "items": [
+      {
+       "text": "Fixed a crash that could occur when controllers were connected or disconnected mid-session, including when changing Steam Input settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the game could freeze instead of showing a message when several controllers connected at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved controller slot assignment. This prevents are rare occurrence of controllers taking up more than one player slot, which could stop additional players from joining.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controller slots now clear correctly on disconnect, so reconnecting a controller works more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Fixed a slight softness affecting the whole image, caused by an incorrect screen offset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Improved internal error logging to help diagnose future issues faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, please let me know if you run into any issues and I'll happily address them as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Shoutout to Upjumptheboogie for bringing a controller assignment bug to my attention!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/1840310314346858"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-08T05:16:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-08T05:16:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.487Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-08T05:16:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.319Z"
+  },
+  {
+   "id": "squarena-191829@post-2025-06-27",
+   "gameId": "squarena-191829",
+   "displayName": "Demo fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-27T09:08:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update to the Squarena demo that fixed an error with launching the .exe file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apologies for any inconvenience this caused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/1803527891537324"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-27T09:08:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-27T09:08:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.487Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-27T09:08:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.319Z"
+  },
+  {
+   "id": "squarena-191829@major-2024-11-24",
+   "gameId": "squarena-191829",
+   "displayName": "November Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-24T23:23:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a smaller update (from the player's perspective), but here are the main changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Highlights",
+     "items": [
+      {
+       "text": "Completely updated every Arena preview in the arena select menu to reflect art/design changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some minor optimizations on performance and disk usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Laying more internal groundwork for PS release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Brought the Squarena Demo up to date in relation to game mechanics, physics, and art updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I also launched an account on Bluesky if you'd like to come say hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Have a great Thanksgiving!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Completely updated every Arena preview in the arena select menu to reflect art/design changes.",
+     "Some minor optimizations on performance and disk usage.",
+     "Laying more internal groundwork for PS release."
+    ]
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/1783872412091788"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-24T23:23:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.318Z"
+  },
+  {
+   "id": "squarena-191829@major-2024-10-07",
+   "gameId": "squarena-191829",
+   "displayName": "October Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-07T21:54:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone! This update brings some level fixes, menu functionality fixes/changes, and some new free cosmetics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Highlights",
+     "items": [
+      {
+       "text": "New Cosmetics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Demon Girl",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bread",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vampire Lady",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Medusa (Animated)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mushroom Cap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes/Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a mechanic to \"Hot Potato\" that will spawn more hot potatoes in relation to the amount of active players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a map boundary issue that, in some arenas, could cause player clipping in certain scenarios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare player input crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the old system for navigating to/from the tutorial arena. Now that it is part of the level select, I added pause functionality with the ability to return to level select, and removed the option to leave the map using the B/O buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some level object layering issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, thank you for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "New Cosmetics!",
+     "Demon Girl",
+     "Bread"
+    ]
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/6350729003510103186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-07T21:54:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.317Z"
+  },
+  {
+   "id": "squarena-191829@major-2024-08-02",
+   "gameId": "squarena-191829",
+   "displayName": "August Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-02T17:48:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! This update has a few notable quality of life changes, as well as some backend changes, and a new skin!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hightlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a \"reconnect controller\" prompt if the menu controller gets disconnected during arena select",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some additional contingencies to menu navigation to help mitigate issues caused by controller disconnects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"Single player mode\" prompt to arena select, if you are currently playing single player to help make it more clear that the level selection is much more limited in single player mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the \"tutorial\" button from character select, and instead added the \"Tutorial\" arena to the standard arena select as the first level. (Players were unintentionally bypassing it before learning the controls)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the \"Pong\" animated skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made some adjustments to obstacles in the \"Square Up!\" mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you all have a fantastic weekend, thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5963413728339485367"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-02T17:48:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.316Z"
+  },
+  {
+   "id": "squarena-191829@post-2024-06-21",
+   "gameId": "squarena-191829",
+   "displayName": "Logo Updates",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-21T04:23:18.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone! Small update here",
+     "items": [
+      {
+       "text": "-Updated the splash screen to reflect the new Codeaclysm Games logo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Remade the Squarena logo in a higher resolution and applied it to the in-game assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where the reload sound wouldn't be affected by the sound effects volume slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated store and library images",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5759622039978499862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-21T04:23:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.316Z"
+  },
+  {
+   "id": "squarena-191829@major-2024-06-01",
+   "gameId": "squarena-191829",
+   "displayName": "Hanabi Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-01T18:10:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update brings a few additions as well as several fixes and adjustments mainly from things that were made known from the many games that were played over Memorial Day weekend at Hanabi Con. Thank you to everyone who stopped by and played Squarena!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update Highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added bounce pads to the corners of \"Hot Potato\", \"Soccer\" and \"Basketball\" arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made various obstacle adjustments in \"Square Up!\" game mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Created a new \"goalie\" object to replace the standard moving platforms on the \"Soccer\" arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that would cause vibration to stay enabled if you paused right as it started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a slight visual overlap in the secret arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that made players able to shoot teleport without aiming. (it would just shoot to the right)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could happen if another player tried to pause the game after someone had already paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that wouldn't allow mega shots to add energy to a charging portal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed health setting affecting the size of your character in \"Square Up!\" game mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with setting reverse gravity and playing any of the race modes. The gravity is intentionally unaffected in these modes, but would still reverse jump direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause a player to spawn for each controller connected in the tutorial, even if they hadn't joined the lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the soccer balls that were embedded into the wall in \"Square Up!\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5742731639338116361"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-01T18:10:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.484Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.315Z"
+  },
+  {
+   "id": "squarena-191829@major-2024-05-16",
+   "gameId": "squarena-191829",
+   "displayName": "Movement Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-16T04:01:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! The main highlight of this update is a nice tweak to the movement physics. Prior to this update, there were certain instances where your character movement wouldn't react as expected. This gave a feeling of a \"delayed response\" of sorts. This was an underlying bug with the movement code, which I have now re-written to feel more responsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update Highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Movement rework",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that would cause the game to crash if paused while playing \"Square Up!\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause the timer to continue counting down and targets to continue spawning behind the scenes in \"Target Practice\" modes while paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed energy GUI in tutorial not showing correct player colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted shooting on \"Boundless\" so that you can shoot even if your crosshair is out of bounds. (Fits the name, right?)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted some platform speeds on various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added description to \"Flying\" arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a mechanic for deflecting bullets that will slightly increase the bullet's lifespan when deflected, which allows for more meaningful deflects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, thank you for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 2,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5747233970417121102"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-16T04:01:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.484Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.314Z"
+  },
+  {
+   "id": "squarena-191829@patch-2024-04-26",
+   "gameId": "squarena-191829",
+   "displayName": "Minor patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-26T07:18:57.000Z",
+   "notes": [
+    {
+     "title": "Minor Patch",
+     "items": [
+      {
+       "text": "Fixed a bug that would \"ready\" a player immediately if they joined after more than one player had already joined and marked as \"ready\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a barrier-type mechanic to prevent players babysitting the basketball hoop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix to the new player glow that would cause not all player's glow to update to their color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5759616966667309168"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T07:18:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.483Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.314Z"
+  },
+  {
+   "id": "squarena-191829@major-2024-04-22",
+   "gameId": "squarena-191829",
+   "displayName": "CRUMBLE collab free update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-22T20:07:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I'm excited to bring another free content update in collaboration with BRUTE FORCE, the fantastic developer behind the game CRUMBLE. There is a nice bit of content and fixes in this update alongside the CRUMBLE collab, as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CRUMBLE COLLAB",
+     "items": [
+      {
+       "text": "New CRUMBLE arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New CRUMBLE cosmetic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Non-Collab highlights",
+     "items": [
+      {
+       "text": "Added a nice new selection of player cosmetics and skins inspired by various anime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a layering issue that was brought to attention after the implementation of the new pause mechanic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a text overlapping issue that would occur in certain instances if specific conditions were met in the 'match stats' screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Worked on laying more internal groundwork in preparation for future platform/OS launches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where you could continue to randomize your appearance after you were marked 'READY'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a very slight (1 px) misalignment with the energy reticule and the player's crosshair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a collision issue between platforms and some of the newer wall objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a sensor bug on 'The Gauntlet'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the 'player glow' from white to match the player's team color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added a nice new selection of player cosmetics and skins inspired by various anime.",
+     "Fixed a layering issue that was brought to attention after the implementation of the new pause mechanic.",
+     "Worked on laying more internal groundwork in preparation for future platform/OS launches."
+    ]
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5762994032406493762"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-22T20:07:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.483Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.313Z"
+  },
+  {
+   "id": "squarena-191829@major-2024-03-02",
+   "gameId": "squarena-191829",
+   "displayName": "2nd Anniversary Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-02T01:45:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "2 years, wow! When I first started making Squarena, I didn't think it would turn into a fully-fledged game. I thought I was making something for just family and friends to enjoy together, but I took that and continued to work on it. I am grateful to be able to spread joy and help people connect and have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are some highlights from this update",
+     "items": [
+      {
+       "text": "New arena added - \"Tech Tile\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Powerup sprites completely remade and upgraded. Some work was done to the powerup code as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pausing mechanic has been improved. Now it is a true pause!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made a selection of new and improved artwork for some of the level objects (mainly walls) and added feature to be able to blend walls together more pleasantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Backend optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed \"tutorial\" from the main menu. Now you can customize your character first and then enter the tutorial directly from character select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed \"New Game\" to \"Play\" on the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Started some backend work in preparation for eventually releasing on other platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I hope everyone enjoys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Codeaclysm Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "New arena added - \"Tech Tile\"",
+     "Powerup sprites completely remade and upgraded. Some work was done to the powerup code as well.",
+     "Pausing mechanic has been improved. Now it is a true pause!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5688680204375694151"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-02T01:45:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.482Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.313Z"
+  },
+  {
+   "id": "squarena-191829@major-2023-12-11",
+   "gameId": "squarena-191829",
+   "displayName": "Holiday Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-11T02:31:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Holiday Update has arrived! This update brings some new holiday-inspired cosmetics and skins, along with some fixes and a complete rework of the recoil system. Who doesn't want to battle their friends while looking like a neatly wrapped gift?!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Highlights",
+     "items": [
+      {
+       "text": "Added Holiday-themed cosmetics and skins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"tutorial\" button in character select menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed \"help\" option to \"tutorial\" on the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that would cause you to spend a mega shot if you fired while aiming out of bounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Completely remade recoil mechanics to improve to a more accurate and consistent feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that would prevent players from exiting the credits screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"B to exit\" display button to credits screen and tutorial arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added audio and visual cues for when your character has \"reloaded\" (ready to shoot).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I'm excited for everyone to try out the new recoil. I believe it improves the general feel and flow of the gameplay. I hope everyone enjoys the changes and additions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Codeaclysm Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added Holiday-themed cosmetics and skins",
+     "Added \"tutorial\" button in character select menu",
+     "Changed \"help\" option to \"tutorial\" on the main menu"
+    ]
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5395938616807398707"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-11T02:31:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.482Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.312Z"
+  },
+  {
+   "id": "squarena-191829@major-2023-10-27",
+   "gameId": "squarena-191829",
+   "displayName": "Square-o-ween Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-27T21:10:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎃 Square-o-ween Update! 🎃",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greetings, Square combatants!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prepare for a hauntingly fun time in our latest update! We've conjured up some frightfully fantastic Halloween-themed treats just for you. Dive into the spooky spirit with our ghoulishly delightful additions that are sure to make your squares shriek with delight. We've been brewing up something special just in time for the scariest night of the year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, don't be a squaredy-cat! Dive into the update now and make this Halloween the most thrilling one yet. Get ready to haunt the competition and show off your stylish new Halloween attire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Codeaclysm Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5229301621580947848"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-27T21:10:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.481Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.311Z"
+  },
+  {
+   "id": "squarena-191829@patch-2023-09-18",
+   "gameId": "squarena-191829",
+   "displayName": "Minor Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-18T01:30:24.000Z",
+   "notes": [
+    {
+     "title": "A small patch to address a couple things",
+     "items": [
+      {
+       "text": "Added Steam screenshot functionality through Steam overlay.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Level revisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a nice day! Remember: it's not just okay to be a square, we encourage it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5480373588795391483"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-18T01:30:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.481Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.310Z"
+  },
+  {
+   "id": "squarena-191829@patch-2023-09-11",
+   "gameId": "squarena-191829",
+   "displayName": "Post-Convention Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-11T06:08:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small patch to address a couple things brought to my attention over the weekend while running our booth at Senshi Con.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug with a particle effect in the match results screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the infinite energy setting that would cause the game to freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made a couple small tweaks to the Square Up! map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you to everyone who stopped by our booth and played Squarena with us, we had a great time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5159491482922429834"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-11T06:08:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.480Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.182Z"
+  },
+  {
+   "id": "squarena-191829@major-2023-07-02",
+   "gameId": "squarena-191829",
+   "displayName": "Squarena Minor Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-02T00:50:52.000Z",
+   "notes": [
+    {
+     "title": "This update has a few slight tweaks, including",
+     "items": [
+      {
+       "text": "Hot Potato arena wall adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hot Potato level object damage increase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed \"Exit Game\" from the pause menu, so you have to go to the main menu first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated to the latest version of Steamworks extension.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 3,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5124582150139834696"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-02T00:50:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.480Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.181Z"
+  },
+  {
+   "id": "squarena-191829@major-2023-05-28",
+   "gameId": "squarena-191829",
+   "displayName": "Squarena Powerup Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-28T04:23:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update has a few key points to it, with one of the main focuses being powerups:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added powerup toggle options in the Rules section of the options menu, now you can pick which powerups are available during gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new powerup: Mega Ammo. Makes your next 3 shots mega-sized!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new level: Race Intro. This is an easier Race/Obstacle Course level intended to be an introduction to the game mode, as the other race levels are fairly difficult. This new level also comes unlocked by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new QOL feature to make it easier to actively keep track of your energy: the Energy Reticle. Now there is a circular energy bar surrounding your crosshair that displays your energy levels used for shields and teleporting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enjoy, and as always thank you for playing Squarena!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5151600576597645940"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-28T04:23:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.479Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.180Z"
+  },
+  {
+   "id": "squarena-191829@post-2023-05-09",
+   "gameId": "squarena-191829",
+   "displayName": "Teams Fix",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-09T06:47:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update I completely rewrote the teams mechanics to resolve an underlying issue if you were to play as teams (same color as another player). This update has less overall fixes/additions, but I wanted to get it released as soon as possible to restore team gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Newly functional team code (more consistent and optimized)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved a bug where more than one team could win a match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would shoe every player as \"Player One\" in player select",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a wall misalignment in Pyramid and Crosshair maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the interval at which the background checks for which teams are still alive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5138087875096716572"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-09T06:47:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.479Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.180Z"
+  },
+  {
+   "id": "squarena-191829@patch-2023-05-06",
+   "gameId": "squarena-191829",
+   "displayName": "QOL patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-06T02:17:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small update that includes some QOL changes and some small bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a text popup if a map is not the standard gamemode in arena select. (Obstacle Courses, Sport Mode, Zero Gravity)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some minor clarification to the Stats/Unlocks screen. I am looking into ways to further improve unlock clarification in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where players could still change their equipped cosmetic after readied up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where player's ready status wouldn't reset after a match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some minor tweaks to the new obstacle course map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5138087875085103469"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-06T02:17:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.479Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.179Z"
+  },
+  {
+   "id": "squarena-191829@post-2023-04-01",
+   "gameId": "squarena-191829",
+   "displayName": "Remote Play Fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-04-01T22:37:27.000Z",
+   "notes": [
+    {
+     "title": "Small but necessary patch",
+     "items": [
+      {
+       "text": "Fixed a bug that would crash the game sometimes during player respawn if playing via Steam Remote Play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/6839319551990639481"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-01T22:37:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.478Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.179Z"
+  },
+  {
+   "id": "squarena-191829@major-2023-03-31",
+   "gameId": "squarena-191829",
+   "displayName": "Squarena Update: Bug fixes and Improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-31T02:07:14.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Added a manual retry button for the obstacle course \"Gauntlet\" arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"Y\" button display on player select",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new small section to the \"Gaunlet\" arena",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreased amount of bouncy balls on \"Waterfall\" and \"Bouncy\" arenas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug where the pause menu could show up in player select under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved transition into secret arena (both visually and technically)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated secret portal animation and charging effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some minor wall misalignments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in secret arena that made you unable to jump properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with shooting bullets that made them not count towards your match count",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/6839319551983882237"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-31T02:07:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.478Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.178Z"
+  },
+  {
+   "id": "squarena-191829@major-2022-12-22",
+   "gameId": "squarena-191829",
+   "displayName": "Squarena Update / Winter Sale!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-22T21:40:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! I'm excited to bring to you a small update with some quality and smoothness improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed room-wrapping mechanic for moving platforms (there used to be a noticeable imperfection with these objects)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fine-tuned the room-wrapping mechanic for all objects and players. This should improve the general feel and fluidity of gameplay, as well as accuracy of bullets passing through boundaries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential crash with the save file manager system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "About a week before Halloween, I noticed the program I use for artwork has an issue with exporting files that has been reducing the quality of images by a fair amount. This is more noticeable in certain skins/cosmetics. I had a batch of cosmetics ready to release for Halloween, but the export quality was not acceptable so I have been looking into new programs and setup for artwork. I'm pleased to say I found a couple options and plan to have some new cosmetics released in the near future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5000716037443678468"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-22T21:40:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.477Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.177Z"
+  },
+  {
+   "id": "squarena-191829@major-2022-09-05",
+   "gameId": "squarena-191829",
+   "displayName": "Singleplayer Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-05T18:44:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Singleplayer content update has finally arrived! Now if you only have one controller connected, you will automatically enter into singleplayer mode when choosing which arena to play. Let's go over the changes with this new release:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added singleplayer target practice modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added rematch button for multiplayer and singleplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked the jumping mechanic to allow for more responsive jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Snorkel, Symbiotic, RoboMask, and Target cosmetics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New particle effect added to Aura cosmetic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a crash that happened if a player was going to respawn while exiting the Help arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heavily optimized player select code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General optimizations throughout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various sprite touchups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully you enjoy this update. I have many more ideas in store for Squarena, and I am always open to hearing thoughts and suggestions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 1,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/4621277624706247417"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-05T18:44:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.477Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.177Z"
+  },
+  {
+   "id": "squarena-191829@major-2022-07-04",
+   "gameId": "squarena-191829",
+   "displayName": "Cosmetic/Skin Cohesion Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-04T05:02:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update is an art rework for several skins and cosmetics, with the overall intention to improve the compatibility between each skin and cosmetic (no matter which combination you choose) as well as just improving some of the art.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upcoming update teaser: I've been dabbling with the idea of adding an arena or two that will expand on single player playability!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/4474904295768630526"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-04T05:02:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.476Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.176Z"
+  },
+  {
+   "id": "squarena-191829@1.0.0.5",
+   "gameId": "squarena-191829",
+   "displayName": "Update 1.0.0.5",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-05T05:29:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.0.0.5 Audio Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-removed music toggle option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added music volume option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added effects volume option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added save/load function to audio options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-minor optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/4348799082189087515"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-05T05:29:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.476Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.176Z"
+  },
+  {
+   "id": "squarena-191829@major-2022-04-17",
+   "gameId": "squarena-191829",
+   "displayName": "Easter Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-17T18:50:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.0.0.4 \"Easter Update\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added Easter cosmetic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reworked \"Turrets\" arena with new level design and turret function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy Easter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/5493837466491081131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-17T18:50:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.475Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.175Z"
+  },
+  {
+   "id": "squarena-191829@1.0.0.3",
+   "gameId": "squarena-191829",
+   "displayName": "Update 1.0.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-17T04:33:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Tweaked the main menu to prevent blocks from piling up and getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/4259848535826208905"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-17T04:33:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.475Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.175Z"
+  },
+  {
+   "id": "squarena-191829@1.0.0.2",
+   "gameId": "squarena-191829",
+   "displayName": "Update 1.0.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-08T02:48:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a jump sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some effects for scoring a basket/goal to make it more noticeable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/4247462367447090502"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-08T02:48:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.474Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.174Z"
+  },
+  {
+   "id": "squarena-191829@major-2022-03-02",
+   "gameId": "squarena-191829",
+   "displayName": "Minor update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-02T06:00:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a minor bug with the music toggle button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1858400"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1858400/view/4247462367425725467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-02T06:00:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1858400",
+      "checkedAt": "2026-11-13T03:31:27.474Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:35.174Z"
+  }
+ ],
+ "issues": []
+}

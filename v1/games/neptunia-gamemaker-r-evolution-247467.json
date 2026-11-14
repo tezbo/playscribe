@@ -1,0 +1,98 @@
+{
+ "game": {
+  "id": "neptunia-gamemaker-r-evolution-247467",
+  "igdbId": 247467,
+  "name": "Neptunia GameMaker R:Evolution",
+  "cover": {
+   "imageId": "co6fef",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6fef.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2v6g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2v6g.jpg"
+  },
+  "ps5Release": "2023-08-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "neptunia-gamemaker-r-evolution-247467@post-2025-09-02",
+   "gameId": "neptunia-gamemaker-r-evolution-247467",
+   "displayName": "Resolution Bug",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-02T17:15:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There were people experiencing a bug with 2560x1440 monitors being unable to select anything higher than 1280x780. The bug appears to be inconsistent, so a couple of adjustments were made. If there are any further problems with this issue, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3341510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3341510/view/1809235871755178"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T17:15:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-3341510",
+      "checkedAt": "2026-11-13T03:26:39.939Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T17:15:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3341510",
+      "checkedAt": "2026-11-13T03:26:39.940Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-02T17:15:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:17.437Z"
+  }
+ ],
+ "issues": []
+}

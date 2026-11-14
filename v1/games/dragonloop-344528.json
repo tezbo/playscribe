@@ -1,0 +1,3309 @@
+{
+ "game": {
+  "id": "dragonloop-344528",
+  "igdbId": 344528,
+  "name": "DragonLoop",
+  "cover": {
+   "imageId": "cocurs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocurs.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3ll7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3ll7.jpg"
+  },
+  "ps5Release": "2026-06-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dragonloop-344528@1.2.21",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.21",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-23T03:31:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added full localized Korean translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some text issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1835871199314534"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T03:31:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.148Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-23T03:31:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.148Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-23T03:31:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.993Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.20",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.20",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-30T16:37:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adjust Ouro Arrow Tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1811772772414569"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-30T16:37:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.148Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.992Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.19",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.19",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-30T04:39:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed handle marker lag issue after exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mini-map defaults to maximum zoom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized some issues with scene changes causing chaos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some elite monster phase transition issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replace the bgm the right of sky island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1809235871640943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-30T04:39:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.147Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.991Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.18",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.18",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-25T10:41:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix some SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some VFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enhance feedback when Ouro hit enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replace the bgm in the Tree area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1808601382572624"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-25T10:41:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.147Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.991Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.17",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.17",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-20T07:07:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimize the section to show problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the underground minimap display error",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add archive backups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduces the movement speed of the sacrificial missionary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Spirit Stone jump height",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1808601382402174"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-20T07:07:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.146Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.990Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.16",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.16",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-12T08:12:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix some dialogue option display issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize save game to potentially fix initial slot error issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some encounter battle enemy not refreshing bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1807332909725471"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-12T08:12:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.146Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.989Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.15",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.15",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-31T16:01:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix UI unselectable issue in v1.2.13",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix bug where Bart gets stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1806698490686177"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-31T16:01:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.988Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.14",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.14",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-31T12:20:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some translation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize the section to show problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1806698490680798"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-31T12:20:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.988Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.13",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.13",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-31T08:19:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimized the order of some prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the map UI sub-menu operation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed boss afterimage interaction issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize the section to show problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1806698490675012"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-31T08:19:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.987Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.12",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.12",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-24T11:34:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where Xi would jump around during dialogue after entering the Soul Realm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the number of bricks in mini-games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added hint when Fuxi event in error timeline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized the minimap fragment hint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize the section display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1806064758607538"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-24T11:34:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.986Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.11",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.11",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-21T07:21:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimized some pattern's textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized some interactive experiences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add 1280x800 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805431065457417"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-21T07:21:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.985Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.10",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.10",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-20T10:22:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix the remaining translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some display errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized some interactive experiences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805431065430207"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-20T10:22:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.984Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.9",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.9",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-19T16:07:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimized some guide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805431065406184"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-19T16:07:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.984Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.8",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-18T19:48:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed pearls switching issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with multi-archive string data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "*We can see the comments in the discussion area, but I don't know why I can't reply it, if you need reply, you can @me in the discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805431065379525"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-18T19:48:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.983Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.7",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-18T16:52:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Continue to optimize the translation, and now most of the game content is translated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When there is only one pearl, the toggle effect does not appear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the volume of some sound effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805431065375393"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-18T16:52:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.982Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.6",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-17T09:22:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have continued to optimise the English text in “DragonLoop” and now the English experience should be better than before. Thanks to Demajen for his help.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some boss fight settlements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some display errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some missing sounds (Soul and Clock sounds)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805431065331177"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-17T09:22:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.981Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.5",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-14T10:54:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a time map ending node",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ending list: Press and hold the OK button to fast-forward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix some display errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805065414329384"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-14T10:54:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:19.980Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.4",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-13T12:45:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimized mouse display issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed boss battle shield remnants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed black hole teleportation bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resize the window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some display issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized some translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805065414300167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-13T12:45:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:13:26.963Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.3",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-12T14:15:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Optimized some translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized some mini-games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized some display issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1805065414270816"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-12T14:15:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.963Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.2",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-09T12:42:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "优化部分翻译",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分ui",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分显示问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891927826"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-09T12:42:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.962Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.1",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-08T15:37:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复ui操作bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分bgm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分翻译",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复缸脑激光判定",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891899876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-08T15:37:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.137Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.962Z"
+  },
+  {
+   "id": "dragonloop-344528@1.2.0",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.2.0",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-07T13:18:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修改古董灵形象",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "获取未知古董时以古董蛋形式呈现",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复bgm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891864216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-07T13:18:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.137Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.961Z"
+  },
+  {
+   "id": "dragonloop-344528@1.1.6",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.1.6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-06T21:47:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复场景加载，该bug会导致角色切换场景时持续掉落",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891843751"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-06T21:47:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.136Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.961Z"
+  },
+  {
+   "id": "dragonloop-344528@1.1.5",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.1.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-06T13:55:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复部分显示错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "调整精灵电磁炮效果，爆炸后获得衔尾能量。",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分bgm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复导图显示错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化场景切换",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891833627"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-06T13:55:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.136Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.960Z"
+  },
+  {
+   "id": "dragonloop-344528@1.1.4",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.1.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-03T17:35:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "优化部分机关",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化主角加载",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化ui操作",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化显示错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分bgm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891742936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-03T17:35:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.136Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.960Z"
+  },
+  {
+   "id": "dragonloop-344528@1.1.3",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.1.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-02T19:15:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "优化部分路线",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复小地图轮廓错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化小游戏成就触发判断",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化bgm衔接",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加快捷键",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加组合键开关",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891712467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-02T19:15:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.135Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.959Z"
+  },
+  {
+   "id": "dragonloop-344528@1.1.2",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.1.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-01T09:13:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复购买小地图不显示区域问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分翻译问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "减小bgm音量",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "调整bgm播放逻辑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化神龙战爬梯",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891666113"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-01T09:13:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.135Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.959Z"
+  },
+  {
+   "id": "dragonloop-344528@1.1.1",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.1.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-29T20:18:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复部分贴图错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "降低黄泉蟹伤害判定范围",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复小地图部分图标错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分翻译缺失",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分文字大小",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分ui错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891616531"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-29T20:18:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.134Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.959Z"
+  },
+  {
+   "id": "dragonloop-344528@1.1.0",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.1.0",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-28T14:08:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "重绘小地图",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加时间导图当前分支所需能力锁提示建议（无提示则可自由通行）",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分房间",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化再次挑战神庙时对话",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "时间机器前增加裂隙",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修改获得链珠时数量提示文字",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复小游戏成就获取",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复时间轨迹显示",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891576651"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-28T14:08:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.134Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.958Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.13",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.13",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-25T16:32:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "优化跨区域交通图标记录逻辑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复灯锁卡死bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复空气墙",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分碰撞bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化空鱼抓取问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分贴图错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1803527891479700"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-25T16:32:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.134Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.958Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.12",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.12",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-24T19:15:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "调整返回时间回廊解锁条件",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "降低龙树遭遇战小怪血量",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复竹林刺判定bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.0.11",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化小地图部分操作",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复古董显示问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复灯草卡死bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化唱歌小游戏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复机器人掉落bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分白虎图片错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分玄武图片错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分场景贴图错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复精灵进化图",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906900022"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-24T19:15:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.133Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.957Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.10",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.10",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-23T12:25:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复地下鲸鱼机关卡死bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "降低摩尔伤害",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复火龙下砸bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复灵石下砸bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复抓妖小游戏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复水神庙刷新错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复霸干击败时伤害还在bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "调整雨水事件判定",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复神兽转阶段隐形bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906857645"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-23T12:25:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.133Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.957Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.9",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.9",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-22T20:34:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "增加能力房背景文字",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加能力描述",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分房间",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化时间导图",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分复位bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加休息时的铃兰成就判定",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分路线",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复精灵选择贴图显示错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化纹路开门速度",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906836499"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-22T20:34:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.132Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.956Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.8",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-22T14:07:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复精英怪bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化铃兰成就判定",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复小地图npc时间错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "降低传教士小怪的移速",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加神庙收集标记",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加观测石收集标记",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复进动画瞬间使用黑洞的bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加碎片残影",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906828000"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-22T14:07:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.132Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.955Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.7",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-21T21:14:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复龙铃图标",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分路线",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906805586"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-21T21:14:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.955Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.6",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-21T17:25:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "旅行商人图标合并进民宿",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加龙铃回响的地图提示",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化地下碎片路线",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复新档默认古董未激活bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906800757"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-21T17:25:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.955Z"
+  },
+  {
+   "id": "dragonloop-344528@1.0.5",
+   "gameId": "dragonloop-344528",
+   "displayName": "Update 1.0.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-21T12:40:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "优化龙树路线",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "降低回廊多次购买点心的费用消耗",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "密林纹路获取逻辑调整",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加纹路开门跳过",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复boss战转阶段bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "调整boss战结果判定",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "地下纹路获取逻辑调整",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复新存档串数据问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复挑战宝箱",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906794261"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-21T12:40:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.954Z"
+  },
+  {
+   "id": "dragonloop-344528@post-2025-06-21",
+   "gameId": "dragonloop-344528",
+   "displayName": "250621",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-21T06:04:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "修复回廊读档后的事件未重置bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分ui",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复石碑bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906785258"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-21T06:04:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.954Z"
+  },
+  {
+   "id": "dragonloop-344528@post-2025-06-20",
+   "gameId": "dragonloop-344528",
+   "displayName": "6月20日",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-20T07:49:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "时间导图在初次轮回后即可解锁在回廊直接进行读档操作（不需要再经过魂界啦！）",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复魂界灵液花bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化纹路房间获得体验",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化龙树路线",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分贴图错误",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906754983"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T07:49:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.129Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:13:26.953Z"
+  },
+  {
+   "id": "dragonloop-344528@post-2025-06-19",
+   "gameId": "dragonloop-344528",
+   "displayName": "250619",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-19T13:45:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "回溯动画按键后加快",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复切换场景后掉落bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加龙子重复挑战",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分boss战前bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化手柄摇杆上下导致移动问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化部分ui逻辑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加弓箭快捷键提示",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "增加琥珀切换提示",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "琥珀调整为按住“上”键以及琥珀键进行切换",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906730604"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-19T13:45:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.128Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:13:26.952Z"
+  },
+  {
+   "id": "dragonloop-344528@post-2025-06-18",
+   "gameId": "dragonloop-344528",
+   "displayName": "250619",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-18T18:33:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "调整摇杆判定",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分ui问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "优化传送至回廊可能会无法加载回廊场景的情况",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "修复部分卡墙情况",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "调整旅行商人，可以更容易遇到",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "小游戏房添加统一音乐……= =",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/1802893906704462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T18:33:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.128Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.951Z"
+  },
+  {
+   "id": "dragonloop-344528@post-2023-02-18",
+   "gameId": "dragonloop-344528",
+   "displayName": "fix some bugs",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-18T08:41:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix some bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Movement speed increased by 1 point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New content is still under development, you can pay attention to our",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Discord https://discord.gg/R89mBv7W7a",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter https://twitter.com/ccx01",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Learn about the latest development progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/5059268099243010588"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-18T08:41:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.127Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.950Z"
+  },
+  {
+   "id": "dragonloop-344528@post-2023-02-11",
+   "gameId": "dragonloop-344528",
+   "displayName": "Fixed key rebinds bug",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-11T03:12:19.000Z",
+   "notes": [
+    {
+     "title": "Demo",
+     "items": [
+      {
+       "text": "Fixed Some UI keys becoming invalid after key rebind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimize some operation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can report any issues or feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter https://twitter.com/ccx01",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord: https://discord.gg/R89mBv7W7a",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/5036749277235269205"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-11T03:12:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.127Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.949Z"
+  },
+  {
+   "id": "dragonloop-344528@post-2023-02-05",
+   "gameId": "dragonloop-344528",
+   "displayName": "Demo is updated",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-02-05T17:59:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The demo is updated. We have optimized the guideline for beginners in the early stage, and made some adjustments to the Ouro and the Seed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "welcome to experience and give feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2059210"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2059210/view/5035622743891616044"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-05T17:59:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2059210",
+      "checkedAt": "2026-11-13T03:19:26.126Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:26.949Z"
+  }
+ ],
+ "issues": []
+}

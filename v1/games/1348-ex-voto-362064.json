@@ -1,0 +1,1073 @@
+{
+ "game": {
+  "id": "1348-ex-voto-362064",
+  "igdbId": 362064,
+  "name": "1348: Ex Voto",
+  "cover": {
+   "imageId": "coab7x",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coab7x.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar41k9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar41k9.jpg"
+  },
+  "ps5Release": "2026-03-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "1348-ex-voto-362064@1.50",
+   "gameId": "1348-ex-voto-362064",
+   "displayName": "Update 1.50",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-10T13:00:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ciao!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ever since launch, we've been hard at work listening closely to your feedback through reviews and our Discord community. We're now excited to share that all that invaluable feedback has taken shape in a massive update: Version 1.50.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This overhauled version of 1348 Ex Voto features the most requested improvements, fixes, and changes: from the targeting system to tutorials, clearer Perfect Attacks, better-paced narration, and much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you'll enjoy the improvements, and once again to everyone who helped shape this update: grazie!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COMBAT OVERHAUL",
+     "items": [
+      {
+       "text": "Updated Perfect Attacks: Added new visual effect on Aeta and on her sword when a Perfect Attack input is successful.: Added new sound when a Perfect Attack input is successful.: Changed controller vibration to trigger when a Perfect Attack input is successful instead of on hit.: Changed Perfect Attack window times for all Aeta's attacks.: Changed sword trail effect to play on all attacks instead of only on Perfect Attacks.: Changed Perfect Attacks to deal +50% increased damage both on Guard and Health, instead of only on Guard.: Improved Weak Attack sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Targeting System: Changed the rule so now when an enemy attacks you the focus doesn't automatically switch to them.: Added an option to turn On/Off the automatic target switching to the attacking enemy.: Added an icon to signal attacks coming from off screen.: Improved passive enemies' attacking behaviour to avoid players getting overwhelmed by surrounding enemies.: Added input to change target on the mouse wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated Dodge: Increased Dodge responsiveness.: Increased Dodge invulnerability time.: Changed Dodge to be able to cancel Aeta's attacks.: Fixed an issue where sometimes the attack input would be lost if pressed at a specific time while dodging.: Fixed an issue where attacks wouldn't be queued to Perfect Dodges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Heavy Attacks: Added sword trail effect to Heavy Attacks.: Reduced recovery time after some Heavy Attacks.: Removed Perfect Attack window from Heavy Attacks.: Fixed an issue where sometimes player could get stuck while charging a Heavy Attack.: Fixed an issue where sometimes player would become unable to attack after a Heavy Attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Sword Parts: Changed all effects of Blades: instead of increasing Guard damage depending on Stances, now Blades increase Guard and/or Health damage in all Stances.: Changed all effects of Pommels: instead of extending the Perfect Attack window depending on Stances, now Pommels extend and change position of the Perfect Attack window in all Stances.: Changed all Sword Parts descriptions to show the values of their effects.: Increased Impera Blade effect from +10% to +50%.: Increased Impera Guard effect from +10% to +50%.: Increased Tusca Blade effect from +10% to +50%.: Increased Tusca Guard effect from +10% to +50%.: Increased Ultima Blade effect from +5% to +25%.: Increased Ultima Guard effect from +5% to +25%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Trinkets: Changed Dragon's Claw trigger chance from 25% to 5%, and its damage multiplier from x2 to x5.: Changed Dragon's Claw to apply its damage multiplier to all damage, instead of only to Guard damage.: Fixed an issue where the Giant Feather was overriding the correct Guard regeneration speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Perfect Parry to be available from the start of the game: now the base Perfect Parry prevents receiving Guard Damage, and the Skill acquisition upgrades it to also deal Guard Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Aeta's attacks to not deal Guard damage when hitting non-boss enemies on Health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Aeta's attacks to deal always the same Health damage, instead of reducing Health damage outside an enemy's Guard Break.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved visibility for red sparks and white sparks to better recognise Weak and Perfect Attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved multiple combat border colliders to reduce the chances of getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved enemy spawn point detection to reduce the chances of spawning enemies on camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved difficulty balance for all bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved final Boss music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed missing VO on Bosses' attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where faces twitched in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where queuing a new attack after the end of a 1-Handed combo could fail depending on performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hitting an enemy on Health while they were attacking would reset their combo counter, making them attack more times than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY NARRATION OVERHAUL",
+     "items": [
+      {
+       "text": "Changed dialogue types and positions in all chapters for better pacing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added introductory shots to Chapter II, III, V, VIII, and IX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "INTERACTIONS OVERHAUL",
+     "items": [
+      {
+       "text": "Changed gameplay interactions visibility: Added glow effect on pickable items (Food, Paper, Sword Parts, Trinkets, Treasures).: Added icon on environment interactions.: Increased interaction size for bubble dialogues.: Changed the effect of the Sunstone to increase items' glow intensity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved interaction detection for crouch and mantle-down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed button for bubble dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed button on controller for Unsheathe / Sheathe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI AND TUTORIALS OVERHAUL",
+     "items": [
+      {
+       "text": "Updated UI: Added a new Load menu with Chapters selection and items tracking (this feature is available only on new Save Games from current version 1.50 forward).: Changed Options menu and parts of other menus with a complete redesign.: Fixed missing UI sounds, interactions, and animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Tutorials: Changed the tutorial for the Perfect Attack.: Added a reminder tutorial for Perfect Attacks when performing too many Weak Attacks.: Added an option to turn off pop-up tutorials.: Changed pop-up tutorials to stay on screen until dismissed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the bubble icon would become white for a moment before disappearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "ENVIRONMENT UPDATES",
+     "items": [
+      {
+       "text": "Updated Paper balancing: Added more Paper to each Chapter.: Changed many Paper placements.: Changed Paper value to be the same for each scroll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more set dressing details in some areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed acquisition method for one Trinket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved multiple exploration border colliders to be less corridor-like.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved audio mix volumes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lighting in some areas with better visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lighting in the Mountains cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Aeta would sometimes trip on ground assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where landing sound could play after falling to death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the pickup animations was sometimes playing faster than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "OTHER UPDATES AND FIXES",
+     "items": [
+      {
+       "text": "Updated auto-save to also save when collecting an item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed death animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed recovery speed after the bad landing animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed blend-in speed of the look mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed camera shake from running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing face animations on food interactions and some comments on Treasures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Aeta's eyelashes appearing red under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing eyelashes on Brigand Leader.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Tutorial where successful Heavy Attacks were counting as Perfect Attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Prelude where a prompted dialogue on the corpse in the first arena would not appear immediately after the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Mountains' cutscene where VO from the lord would overlap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Forest where an audio in the mill would be played before the puzzle completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Villa where Aeta would speak some enemy lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Ruins where ground assets would become black after finishing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Siege where Aeta would make box sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Castle where the first fight could be triggered again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple collision issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple localisation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 27,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1895900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1895900/view/1835236783557476"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T13:00:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.719Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-10T13:00:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.720Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-10T13:00:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:24.435Z"
+  },
+  {
+   "id": "1348-ex-voto-362064@1.06",
+   "gameId": "1348-ex-voto-362064",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-25T14:00:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.06 is here! It improves Aeta's responsiveness, includes numerous bug fixes, adjusts the difficulty of the first boss, and introduces gameplay improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Aeta's responsiveness after getting deflected, hit, and guard broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved greatly Aeta's responsiveness after blocking attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed magnet effect from enemies' attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved greatly hit detection for enemies' attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated balancing for all bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where sometimes Aeta's attack input was lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed subtitles being too small on some screens and overlapping on others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash in the Ruins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a kill collider in the Ghost Town.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some collisions issues in the Forest and Countryside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with music not behaving correctly after respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Castle where the second puzzle could be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a checkpoint in the Ruins where Aeta could respawn under the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a checkpoint in the Castle that could get players stuck inside the church.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sometimes Paper in the Prelude's church wasn't immediately interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visibility collisions of the vineyard in the Countryside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some performance issues in the Ruins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some textures flickering issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some collision issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localisation issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where target switch with 1 and 2 would not work on AZERTY keyboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 16,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1895900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1895900/view/1827626365768175"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T14:00:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.718Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T14:00:10.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.719Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-25T14:00:10.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:24.433Z"
+  },
+  {
+   "id": "1348-ex-voto-362064@1.05",
+   "gameId": "1348-ex-voto-362064",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-18T14:23:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The second patch (1.05) is here! There are various bug fixes and improvements across levels, controls, achievements, and save data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45748059/4937098c339b7657b7bb557b972e6aceea145e05.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in the Mountains where an enemy could spawn behind the combat boundaries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Forest where a crate could be pushed out of its boundaries or get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some texture issues in the Countryside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the unlocking conditions for the Saint achievement where restarting the combat after being hit would not reset the hit counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Knight achievement if final cutscene was skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with AZERTY and QWERTZ keyboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where sometimes items collected in a game save slot would disappear on a new save slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you find any bugs/issues in the game, feel free to share them with us in this dedicated forum. It would help us a lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before reporting a bug, you can check the known issues Topic here that we regularly update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The answer to your problem may already be there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then, you can start a thread on this forum or report on our Discord server \\[discord.gg], our team will look into your issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1895900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1895900/view/1827626365750427"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-18T14:23:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.718Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-18T14:23:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.718Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-18T14:23:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:24.432Z"
+  },
+  {
+   "id": "1348-ex-voto-362064@1.04.1",
+   "gameId": "1348-ex-voto-362064",
+   "displayName": "Patch 1.04.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-13T15:00:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The first patch (1.04.1) is here! It fixes several gameplay issues in different areas of the game, as well as a rare bug that caused save files to be deleted:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in the Forest where a crate could be pushed out of its boundaries or get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Ghost Town where Aeta would die when jumping in a specific location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with libraries' manoeuvrability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a jump in the Mountains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the Prelude where an invisible wall could lock Aeta out of a fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with skipping credits from the main menu that could result in a save deletion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "How to report a bug",
+     "items": [
+      {
+       "text": "If you find any bugs/issues in the game, feel free to share them with us in this dedicated forum. It would help us a lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Before reporting a bug, you can check the known issues Topic here that we regularly update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The answer to your problem may already be there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Then, you can start a thread on this forum or report on our Discord server \\[discord.gg], our team will look into your issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1895900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1895900/view/1826992588595830"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T15:00:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.717Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-13T15:00:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.717Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-13T15:00:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:24.432Z"
+  },
+  {
+   "id": "1348-ex-voto-362064@1",
+   "gameId": "1348-ex-voto-362064",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-23T15:46:34.000Z",
+   "notes": [
+    {
+     "title": "CHANGELOG",
+     "items": [
+      {
+       "text": "Updated Player camera: increased FOV and changed camera position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to turn off Motion Blur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that was making Motion Blur stronger than intended on some framerates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would prevent effects to be played when hitting an enemy on HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Upscaling Resolution having a wrong setup when playing the game for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cursor not visible on white.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some SaveGame issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issue",
+     "items": [
+      {
+       "text": "We noticed some items not spawning after finishing a playthrough and starting a new game. To be safe you can delete the save files while we are looking for a fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your constructive feedback, which helps us to improve the game! Please feel free to send us your comments, bugs, or other suggestions on Steam or on our Discord server referring to the forum rules of conduct.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1895900"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1895900/view/1825093633194343"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-23T15:46:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1895900",
+      "checkedAt": "2026-11-13T03:13:54.716Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:24.430Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "31a2580dcbb7",
+   "text": "We noticed some items not spawning after finishing a playthrough and starting a new game. To be safe you can delete the save files while we are looking for a fix.",
+   "status": "open",
+   "firstReleaseId": "1348-ex-voto-362064@1"
+  }
+ ]
+}

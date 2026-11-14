@@ -1,0 +1,789 @@
+{
+ "game": {
+  "id": "nomad-drive-340570",
+  "igdbId": 340570,
+  "name": "Nomad Drive",
+  "cover": {
+   "imageId": "coc9al",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc9al.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3g7t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3g7t.jpg"
+  },
+  "ps5Release": "2026-09-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "nomad-drive-340570@hotfix-2026-11-01",
+   "gameId": "nomad-drive-340570",
+   "displayName": "Hot Fixes & Patch Notes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-01T19:40:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Don't see the update yet? Restart Steam and it will download right away.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Nomad Drive – Early Access Update 1.0.1",
+     "items": [
+      {
+       "text": "Thank you for all the reports since launch! This update is mostly about multiplayer for players on slow or long-distance connections, plus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a batch of fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer & Connection",
+     "items": [
+      {
+       "text": "Much less lag after joining a game. When you joined, the host used to send the paint, rust and dirt of every vehicle and part all: at once. On slower connections this could push ping to extreme values. These are now sent at a pace your connection can handle, nearest: vehicles first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New \"Loading vehicle looks (x/y)\" indicator next to the connection status while vehicle appearances are still downloading. It: only appears if loading takes more than a moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Less network traffic around loot. Painted or weathered parts that leave your view and come back no longer download their textures: again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More stable connections on unreliable networks. Losing a single network packet no longer throws away a whole update.: Half-received data that never completes is now cleaned up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Automatic port forwarding (UPnP / NAT-PMP). While you're in a lobby, the game asks your router to open UDP ports 7777–7780.: Friends can then connect to you directly instead of through a relay server, which usually means lower ping. If your router doesn't support: this, nothing changes. You can turn it off with the launch option -noupnp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: after a dropped connection while hosting, every new attempt to host could fail until you restarted the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: if Steam briefly lost its connection, you could stay logged out of online services. The game now logs you back in as soon: as Steam reconnects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: another player sitting on furniture far away from you (for example a chair found out in the world) didn't appear seated: when you walked up to them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Vehicles",
+     "items": [
+      {
+       "text": "Fixed: items placed in a vehicle could appear metres behind their spot after loading a save made while driving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unstuck Vehicle can now put your vehicle back on the road. If you use Unstuck Vehicle when the vehicle isn't actually stuck,: you'll be asked whether to move it to the nearest road (within 300 m). Choose Yes and it's placed in a lane facing along the road, with you: standing right next to it. Not available while another player is sitting in or standing on the vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed (multiplayer): after a vehicle had tipped over and been put back on its wheels, a non-host driver could get stuck. The: engine, steering and wheels worked, but the vehicle didn't move and other players saw its wheels spinning in place. Vehicles already: affected recover the next time the driver gets out and sits back in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Restoration",
+     "items": [
+      {
+       "text": "Fixed (multiplayer): grinding, polishing, sponge cleaning and spray painting by other players could land shifted or over a much: smaller area on the host's screen, even on a parked vehicle. The host's copy is what gets saved, so this also showed up after loading. Work: now lands in the same spot for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance & Graphics",
+     "items": [
+      {
+       "text": "Fewer hitches on long drives. When driving fast, the game could hitch about every 2 km. Part of it came from the end pieces of: roadside barriers and guard rails, and they no longer cause it. We're also collecting timing data for this moment so we can track down any: remaining stalls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sharper textures with FSR 2 / DLSS. When an upscaler renders below your screen resolution, textures now keep their detail instead: of looking blurry.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Mouse / Controls",
+     "items": [
+      {
+       "text": "Some players with very high polling rate gaming mice see the camera stutter or freeze when moving the mouse. A one-time notice on the: main menu now explains this and the workaround that helped many players: running the game as administrator (Steam and Windows steps: included). We're still working on a proper fix.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "The limp mode warning (driving on a broken engine) and its tip are now translated into every language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the missing name label when looking at the push point of the RVs and the School Bus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug Reports (F8)",
+     "items": [
+      {
+       "text": "Reports now include more connection details (ping, packet loss, relay use, how much vehicle data is still loading) and your country as: reported by Steam. This helps us fix lag between players who are far apart. Please keep pressing F8 when something goes wrong!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Behind the Scenes",
+     "items": [
+      {
+       "text": "We built a test setup that simulates slow, long-distance connections (like many players in China and Russia have). Now we can reproduce: these multiplayer problems ourselves and check fixes before they ship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2223980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223980/view/1847920302245906"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T19:40:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223980",
+      "checkedAt": "2026-11-13T03:26:56.958Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T19:40:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2223980",
+      "checkedAt": "2026-11-13T03:26:56.958Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-01T19:40:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:28.836Z"
+  },
+  {
+   "id": "nomad-drive-340570@post-2026-06-22",
+   "gameId": "nomad-drive-340570",
+   "displayName": "Patch Notes — Performance, Survival Balance & Quality of Life",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-22T06:32:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "TO RECEIVE THE UPDATE IMMEDIATELY, YOU MAY NEED TO RESTART STEAM. OTHERWISE, STEAM MAY DISTRIBUTE THE UPDATE WITH A DELAY.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone! We’ve just pushed a big batch of fixes and improvements live! This update is packed with stability work, performance optimizations, vehicle and survival balancing, and a long requested controls feature all shaped by your fantastic feedback. Thank you for helping us make the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full list of what we fixed and improved",
+     "items": [
+      {
+       "text": "Multiplayer & Stability 📈",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kick Crash Fix: Fixed a crash that could take down the host when a player was kicked while driving a vehicle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disconnect Notice: You’ll now see a clear on-screen message in the main menu if you lose your connection to a session, instead of a silent drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance Optimization: Eliminated several sources of lag in multiplayer smarter loot streaming, lighter nameplate calculations when many players are nearby, and a major reduction of the hitches that occurred while new areas of the map generated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Map & Environment Fixes 🗺️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Seamless Roads: Fixed visible gaps and width mismatches where roads connect between map tiles roads now join smoothly across the whole world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoother World Generation: Reworked road and vegetation generation to remove the stutter spikes that happened as new points of interest loaded in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Factory POI Adjustments: Fixed geometry issues in the Factory POI where players could get stuck. Starter House Colliders: Adjusted collision boundaries in the Starter House to prevent unexpected physics glitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "POI Loot Positions: Corrected and rebalanced loot spawn locations at the Gas Station, Radio Station, and Watch Tower POIs. Surface Audio: Added proper surface footstep sounds to POI areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vehicles & Driving 🚐",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save-Load Slide Fix: Fixed vehicles sliding around frictionlessly after loading a save (caused by leftover invisible wheel colliders).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Driving Controls HUD: Added an on-screen driving-actions panel. The ignition now tells you exactly why the engine won’t start (missing/broken engine, dead battery, or no fuel), and warns you if the handbrake is engaged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Engine Heat Rebalance: Overheating now works as intended — reworked the engine heat/cooling model so the engine actually reaches its overheat point under real conditions, with retuned radiator cooling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fuel & Battery Balance: Rebalanced fuel consumption and battery drain rates for a fairer driving experience. Ride Along: You can now stand on a moving vehicle and ride along with it without sliding off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay, Balancing & Bug Fixes 🔧",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rescue Feature Upgrade: Greatly expanded the player “unstuck” rescue radius, making it much easier to safely free yourself if you glitch into the environment — and removed a stutter that occurred near parked vehicles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jump Fix: Fixed getting locked into a jump state (stuck + slowed) and the jump animation playing without an actual jump when the jump key was spammed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Survival Rebalance: Retuned how hunger, thirst, and energy deplete over the day. Survival stats no longer freeze after being revived, and you’ll now get on-screen warning effects (vignette, heartbeat, desaturation) when your overall condition gets critical from starvation, dehydration, or poison. Cooling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix: Refrigerated food now correctly stops spoiling — including in multiplayer and after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Farming Save Fix: Fixed harvested fruit disappearing from plant pots and pots getting permanently stuck after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buried Treasure Fix: Fixed buried chests (and their lids/locks) being interactable before they were fully dug up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Food & Cooking Balance: Rebalanced food freshness, spoilage, and cooking times across produce, drinks, and cooked dishes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coffee Machine Fix: Fixed the coffee pot not snapping correctly onto the coffee machine. Varied Start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Time: New games now begin at a different time of day each session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Controls, UI & Quality of Life 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebindable Controls: You can now remap your keybindings in Settings, organized into categories (on-foot, driving, etc.), with conflict detection so you don’t accidentally double-bind a key.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Auto Graphics Quality: On first launch the game now detects your hardware and picks a sensible default graphics quality level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lobby Browser: The lobby browser is now region-aware, with an “All Regions” toggle and ping info to help you find the best games to join.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Version Label: Added the current game version number to the in-game HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Naming & Translations: Cleaned up item and vehicle names and updated translations across all supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More improvements are on the way! 🛠️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Join to Discord Server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45064040/13fdfaf1915c77bb8b121965e131d5a640da886f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 32,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2223980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223980/view/1835871199312186"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-22T06:32:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223980",
+      "checkedAt": "2026-11-13T03:26:56.957Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:28.834Z"
+  },
+  {
+   "id": "nomad-drive-340570@hotfix-2026-06-19",
+   "gameId": "nomad-drive-340570",
+   "displayName": "Hotfix is Live! Multiplayer Fixes, POI Adjustments",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-19T02:36:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "TO RECEIVE THE UPDATE IMMEDIATELY, YOU MAY NEED TO RESTART STEAM. OTHERWISE, STEAM MAY DISTRIBUTE THE UPDATE WITH A DELAY.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone! We’ve just pushed another hotfix live! This update continues our focus on crushing bugs, improving your overall experience, and fine-tuning gameplay mechanics based on your fantastic feedback. Thank you for helping us make the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Multiplayer & Stability 📈",
+     "items": [
+      {
+       "text": "Late-Joiner Ignition Fix: Resolved a bug that prevented players who join a session in progress from using the vehicle ignition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vehicle State Sync: Fixed an issue where a late-joining player could unintentionally stop a vehicle that was already running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance Optimization: Addressed and eliminated several instances of unwanted lag to provide a smoother multiplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Map & Environment Fixes 🗺️",
+     "items": [
+      {
+       "text": "Factory POI Adjustments: Fixed specific geometry issues in the Factory POI, particularly the gaps between pipes where players were getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Starter House Colliders: Adjusted and fixed the collision boundaries (colliders) in the Starter House to prevent unexpected physics glitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bus Stop Loot Positions: Corrected and adjusted the spawn locations of loot items at the Bus Stop POI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay, Balancing & Bug Fixes 🔧",
+     "items": [
+      {
+       "text": "Rescue Feature Upgrade: Expanded the effective radius of the player \"unstuck\" area, making it much easier to safely free yourself if you glitch into the environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More improvements are on the way! 🛠️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Join to Discord Server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45064040/13fdfaf1915c77bb8b121965e131d5a640da886f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2223980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223980/view/1835871199305954"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-19T02:36:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223980",
+      "checkedAt": "2026-11-13T03:26:56.956Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:28.834Z"
+  },
+  {
+   "id": "nomad-drive-340570@hotfix-2026-06-16",
+   "gameId": "nomad-drive-340570",
+   "displayName": "Hotfix Deployed! Major FPS rate update! Addressing Your Feedback & Fixing Bugs",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-16T14:23:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "📢Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just pushed a new hotfix live! This update focuses heavily on resolving the bugs you've reported to make your gameplay experience much more stable. Thank you for your continued feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full list of what we fixed today",
+     "items": [
+      {
+       "text": "Performance & Stability📈",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Major FPS Optimizations: Implemented significant frame rate improvements. You should now experience much smoother gameplay without low FPS rate, even if you are hosting the session!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay & Bug Fixes🔧",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused players to spawn underground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved various glitches and issues related to dead players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected visual and functional bugs within the Main Menu UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebalanced engine fuel and fluid consumption rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved loot spawning logic for better item distribution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Refined damage registration to ensure players receive damage accurately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More improvements are on the way!🛠️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2223980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2223980/view/1835236783574518"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T14:23:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2223980",
+      "checkedAt": "2026-11-13T03:26:56.956Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:28.833Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,889 @@
+{
+ "game": {
+  "id": "zaxoid-392247",
+  "igdbId": 392247,
+  "name": "Zaxoid",
+  "cover": {
+   "imageId": "cobnpn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobnpn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6wxx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6wxx.jpg"
+  },
+  "ps5Release": "2026-07-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "zaxoid-392247@major-2026-11-13",
+   "gameId": "zaxoid-392247",
+   "displayName": "Zaxoid Major Update OTW",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-13T16:36:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been a tad quiet lately and here's the reason. We did a full pass on the game, fixed a bunch of bugs and added the one feature we always wanted (Hive Combat). This updated should be available in the coming weeks. I'll just let the video explain!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1849192144188082"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T16:36:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T23:23:57.438Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T16:36:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T23:23:57.441Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-13T16:36:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T23:23:57.441Z"
+  },
+  {
+   "id": "zaxoid-392247@post-2026-07-13",
+   "gameId": "zaxoid-392247",
+   "displayName": "Leaderboard fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-13T16:30:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch improves leaderboard functionality. We fixed a bug where leaderboards were not updating on the planet select screen. We also added a leaderboard view to the game over screen so you can see how you scored against friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1837955055363927"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T16:30:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.971Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T16:30:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.971Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-13T16:30:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:50.910Z"
+  },
+  {
+   "id": "zaxoid-392247@post-2026-05-26",
+   "gameId": "zaxoid-392247",
+   "displayName": "Enhanced Hit Reactions",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-05-26T14:37:00.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Enhanced hit reactions with a more visible and satisfying damage flash effect. Hits should now feel much more impactful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance & Progression",
+     "items": [
+      {
+       "text": "Reordered the early planets: Cyrus is now Planet 2 and Sonus is now Planet 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player feedback has been very consistent that Sonus is noticeably harder than Cyrus, so we’ve swapped them to create a smoother difficulty curve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bootcamp Changes",
+     "items": [
+      {
+       "text": "Removed the leaderboard from Bootcamp. This mode is meant purely for practice and learning, so we’ve cleaned it up to stay focused on that goal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug in Arcade Mode where it was incorrectly loading mods equipped in Campaign. Arcade Mode now properly starts with default/no mods as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 2,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Enhanced hit reactions with a more visible and satisfying damage flash effect. Hits should now feel much more impactful."
+    ]
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1833334318579546"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-26T14:37:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.971Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:50.909Z"
+  },
+  {
+   "id": "zaxoid-392247@major-2026-05-01",
+   "gameId": "zaxoid-392247",
+   "displayName": "Zaxoid Update (ZX01)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-01T16:35:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Release Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Features & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cargo Drops Reactivated! During surface missions, cargo crates now parachute down from orbit. Seek them out and destroy the crates to deploy powerful new structures:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radio Tower – Boosts city radar range, giving defensive units like the Ion Cannon improved lock-on distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mining Rig – Automatically mines nanites directly from the planet’s surface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Citizen Rescue Expanded – You can now rescue up to 4 citizens at a time. The Titan starts with a base capacity of 2, while other ships start with 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Unlock: Extra Seats – Permanently increases citizen carrying capacity to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quality of Life & UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievement screen now clearly displays which game mode each achievement is available in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pilot now reminds you to collect unopened cargo drops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expanded docking distance when entering cities for smoother landings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radar markers (edge-of-planet icons) have been tuned for better readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera zoom in surface combat adjusted so the top and bottom of the planet are no longer hidden, greatly improving visibility and playability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio & Visual Polish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom explosion sounds added for asteroids and Enemy Darts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health Pickups now have satisfying new FX and audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harvester death now has proper audio and visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beam Blaster audio volume on the Prowler significantly lowered (it was way too loud).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added FX and audio for several other interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Balance Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shields now have a short delay before they begin recharging after taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prowler starting shield strength adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wasp and Spur enemy health tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weak points on enemies now reset the score multiplier timer when destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arcade Mode: Units now correctly add to population count.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Numerous small bugs fixed and general stability improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ready to drop into the next planetary assault! Let us know how the new cargo drops and rescue capacity feel — happy hunting, pilots!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 26,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1831432155571880"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T16:35:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.970Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:50.909Z"
+  },
+  {
+   "id": "zaxoid-392247@post-2026-04-16",
+   "gameId": "zaxoid-392247",
+   "displayName": "Health Pickup Improvement",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-16T19:07:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Health pickups now serve two purposes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your health is at max, the health power-up will give a percentage increase to your max health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your health is below max, you'll get the standard health restore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The icons now clearly show what the pickup will do, so it should be obvious what you're about to grab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is the first phase of reworking powerups. You can now always pick them up without the world becoming littered with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The only potential downside is accidentally grabbing one when you meant to save it for later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1830163047258337"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-16T19:07:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.969Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:50.908Z"
+  },
+  {
+   "id": "zaxoid-392247@post-2026-04-14",
+   "gameId": "zaxoid-392247",
+   "displayName": "Warp trigger & Steam Overlay issues",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-14T05:21:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Some users are experiencing issues with gamepad sensitivity. Warp is getting stuck when pressing one of the triggers and draining all warp energy. This is not intended behavior. We pushed what we believe is the correct adjustment to deadzone settings on the triggers. Please report if you are still having this issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Steam overlay was unpausing the game on exit in some cases where the game was already paused. We cleaned this up and it should work as intended now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Replaced some missing translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1829528821316943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T05:21:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.969Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:50.908Z"
+  },
+  {
+   "id": "zaxoid-392247@major-2026-02-04",
+   "gameId": "zaxoid-392247",
+   "displayName": "Zaxoid Citizens Update is now live",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-04T19:10:54.000Z",
+   "notes": [
+    {
+     "title": "Zaxoid Demo Update 1.1.0 is now live on Steam! 🚀🌍",
+     "items": [
+      {
+       "text": "Huge thanks for the ongoing feedback and enthusiasm, it's fueling our orbital thrusters. We've been blasting through your suggestions and polishing the core experience. This patch adds new depth to defending your world, tightens up controls, introduces scoring for the high-score chasers, and brings a ton of visual and audio refinements. Here's the breakdown:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Citizens & Rescue Mechanics",
+     "items": [
+      {
+       "text": "When your city takes hits from those relentless alien waves, citizens get dispersed across the battlefield. Scoop them up and return them safely to the city to save precious population and earn solid XP rewards. But watch out! If you leave them floating in space too long, Harvesters will swoop in to abduct them. Time to prioritize those rescues during the chaos!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Planets & Visual Upgrades",
+     "items": [
+      {
+       "text": "Each world now feels more distinct with fresh backdrop visuals that give every planet its own unique atmosphere and personality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Opticlops & Snake Enemies",
+     "items": [
+      {
+       "text": "Big buffs to all snake-type enemies. They now slither with much smoother, more satisfying movement and pack new abilities for extra challenge. The Opticlops boss on Planet Cyrus has received a full overhaul with updated functionality to make that fight even more epic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ship Controls & Gamepad Fixes",
+     "items": [
+      {
+       "text": "Fixed responsiveness issues on certain controllers (looking at you, Steam Deck pilots). Rotation and firing now feel snappier and more precise across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Scoring & Multiplier System",
+     "items": [
+      {
+       "text": "You've been asking, and we've been debating. Scoring is here! Rack up points with a dynamic multiplier system to reward aggressive, skillful play. Not into leaderboards? No problem! Just ignore it. Scores are local for now, with friends-only leaderboards planned for the full launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bootcamp & New Player Experience",
+     "items": [
+      {
+       "text": "Added more tutorial guidance and info pop-ups to help first-time defenders get up to speed faster without breaking the flow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Music & Audio Polish",
+     "items": [
+      {
+       "text": "Tweaked mixing and balancing across all tracks for a cleaner, more immersive soundtrack that pumps during those intense moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Decals & Shadows",
+     "items": [
+      {
+       "text": "Introduced a decal system for explosion craters, battle scars, and future surface events on the planet. Tanks and enemies now cast simple shadows to better ground them visually on the curved terrain. Small details, big immersion boost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Check it all out in the latest update,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zaxoid Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1823825466494920"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-04T19:10:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.968Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:50.907Z"
+  },
+  {
+   "id": "zaxoid-392247@major-2025-10-02",
+   "gameId": "zaxoid-392247",
+   "displayName": "Art Update from the team",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-02T23:41:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45758107/9d7577b1ac8bd25252dc0107a4907d2174ee4ba0.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey, Zaxonauts! Sebastian here, Studio AD at M80 Games bringing more beard than anyone asked for. 🧔🏻",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This week we’ve been tinkering with the Achievements screen and icons for that UI. We wanted these to stand apart from the Upgrades (which look like old-school NES cartridges in an SD card form-factor). Achievements felt like they should be more trophy-like, a nice visual reward you get to hold onto. So we settled on a design that feels like pulling a 3D relic out of a sci-fi crate, each one framed for consistency but with plenty of room for personality inside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Kill Streak series really sold us on this direction: a bare skull at 50, colder at 100, sickly green at 200… and by 500, it’s a flaming nightmare grinning back at you. That’s when the achievement system started to feel like it had its own personality, not just a checklist. We’ve got plenty more of these little relics for Achievements to cook up. What do you want to see?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--Sebastian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45758107/1af288e34e3bc7c32e01cafd1d9313378ed65f06.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45758107/8c92131823ba1cc92dc3d69a3611b7c11a22138c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124050/view/1811772772490908"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-02T23:41:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124050",
+      "checkedAt": "2026-11-13T03:36:51.967Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:50.906Z"
+  }
+ ],
+ "issues": []
+}

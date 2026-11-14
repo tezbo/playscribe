@@ -1,0 +1,2853 @@
+{
+ "game": {
+  "id": "horrorvale-120814",
+  "igdbId": 120814,
+  "name": "HorrorVale",
+  "cover": {
+   "imageId": "co9rpa",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9rpa.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ariz2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ariz2.jpg"
+  },
+  "ps5Release": "2026-10-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "horrorvale-120814@1.1.5",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.1.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-16T21:29:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35391521/e0e6de07d6df0f46ec7c71ff369a385875200e8a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HorrorVale has received a rather large patch! Although no major content additions are present, a lot of things have been polished, as well as some commonly requested features added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical Changes",
+     "items": [
+      {
+       "text": "-D-Pad is now supported by default on Xbox controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "-Integrated Xbox controllers much more comprehensively with a better layout and in-game Keyboard button prompts replaced with Xbox buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "-Added a brand new Sort Item feature that allows you to sort by Type, Alphabetically, Oldest to Newest, or Newest to Oldest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new Fast Animations feature that allows you to speed up animations in battle (excludes important ones)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed a layering issue with the Trampolines in HorrorVale Heights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where beating an enemy in the DracCorp Blood Bank during the blackout event could result in the black overlay remaining on screen indefinitely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where frame drops could occur after recruiting many Party Members",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the game could crash when performing specific actions (Notable example: Juno's 4444)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where using Alice's computer after obtaining the Stubborn Ghost's House Key would delete the key overlay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where multiple house keys could be obtained from the chest puzzle in Skeleton Manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a dark overlay applied when visiting the Forgotten Mansion would persist outside of it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Marty referred to his Deathday as a \"Birthday\" (whatever THAT is...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a puddle of corrosive goop had incorrect collision in DracCorp Blood Bank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Act 2 Boss had an incorrect defeat animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the player couldn't check Sugar Rush in the States Tooltip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Frog King Medallion did not resist Blind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the map could display the incorrect room in Dracula Manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where exiting the Blood in the Bog at a specific frame after being touched by October Red's lights would allow the player to noclip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where certain enemies in HorrorVale Castle were incorrectly given a Party Member's ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where re-drawing the leftmost card in Black Jack for Dummies/Hades of Spades would always result in being given the same card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where there was a single transparent pixel on Eva's face",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where enemies could still move while under the effect of the Time Vortex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where beating a boss in the Dream Colosseum too fast could crash the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where sometimes the 4444 Curse state wouldn't apply properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Juno's 4444 move could be done in quick succession if used against bosses in the DC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed the icon for Juno's 4444 in the skill list to the proper version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where enemies in the Dark Moon sidequest didn't have the proper weaknesses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where George's dead sprite wasn't displaying properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where enemies transformed by Plum or Fig's abilities wouldn't have their graphic reset properly when the state is removed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Ultra Flu wasn't available for purchase anywhere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "-Changed the max buff/debuff to 2 instead of 3 (please note that this by extension acts as a slight nerf for characters like Jackie, while also preventing some enemies from spamming debuffs until you can barely damage them)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed a few early Act 1 Enemies ever so slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Mothman & Bigfoot have been buffed slightly in their encounters at the Bone Zone and Drac Corp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-The Tasteless Netherling will now use Dark Blast significantly less often",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Juno's Death Rattle can now only be used in battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed Sir Knightmare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Gwen's \"Fortify\" Ability will now induce Provoke",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Added new upgraded version of Gwen's chips at end-game Jiang locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed Jack's Ultimate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Jack's ability \"Gangster's Greed\" will now last a turn longer and also boost his attack slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Gave Kenneth a starter weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed Fig's ability \"Blood Transfusion\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Fig's ability \"Boomerang\" is now much more likely to inflict Confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Fig's ability \"Sleeping Powder\" will now apply to ALL enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Sleep now lowers Defense by Half",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Millie's \"Scavenge\" move now costs much less to perform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed Eva's move \"Invisible Anvil\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Lowered the defenses of the enemies fought in \"Fire and Lightning\" slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed the Drunk status effect to a 50% damage increase instead of 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Changed the way the damage formula for Juno's \"Spirit Shot\" works so it scales with her stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed some of the Carnival Weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-The Joy Status Effect will slowly charge SP as well now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "-Some minor polish here and there not worth mentioning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added the option to teleport in a few places in Wraps' Second Quest to speed things along",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added icons for Stat Buffs/Debuffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated the visuals for the Graves in battle so State/Buff icons are out of the way of the Nameplates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted the flashing during the end of Mask Guy's quest to not be so intense as well as gave Tall Guy his bust from the Second Quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When Recording a Creepy, Mask Guy will now instantly learn the move instead of giving you a tape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Record also has a proper animation now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated Nessie's sprite to be a bit more in line with her Act M appearance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added new icons to abilities to showcase whether the move is Physical (scales with Attack), Supernatural (scales with Fear Attack), or Neither",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Also added a new Tutorial book for Advanced Combat that covers SP, Phys/Sup Abilities, and Ultimates. (This technically takes the slot for Moments in the Diary, so if you've already collected that Book, you'll need to go to the Deep Woods and collect it again)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated transitions in Skeleton Manor to fade in/out like every other transition in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added an eating animation when using Jewel Candies for better feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added Bats flying around to various points in the game for visual flavor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Increased the brightness in the Withering Woods and Deep Woods areas by 35%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made some of the trees evil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added some floating Wisps to the HorrorVale Heights and Deep Woods for visual flavor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Also added some fog to the Deep Woods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Remade the overworld sprite for Officer Smoggy to be more compact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added signs in the HVPD Vents that should help players who don't realize the first floor vents have three exits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a Red Coffin outside of a mysterious shack in town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new \"Minigame Difficulty\" option that makes minigames that require fast reaction time less punishing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added new portraits for various vendors and notable NPCs including Marie, Fritz, Hood Dude, Grave Hands, and Jackie Lohp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated the sprite for Alice throwing the rock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Dance Shoes will now increase Evasion instead of granting resistance to Trapped (a state that doesn't exist)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-After defeating the first Secret Boss, she will now tell you to visit her to buy the item you're looking for",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Klaus has new dialogue after rejecting or accepting his offer instead of just repeating it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a black coffin deep in Gumdrop Gulch Mine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added Bus Stops in the Withering Woods that can be unlocked after completing Act 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made it easier to run away from the Succubus and Incubus in West HorrorVale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Mystery Grotto will now only be available if the player has been to the Pumplin Village at least once to avoid confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Gave the Time Vortex State a unique icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Skippy's Save/Load State abilities will now save and load States as well as DP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Ghost Pepper found in the Dracula Manor basement is more visible now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the bag on the table during \"The Tale of Two Crows\" more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Adjusted Bolt's attack animation to reduce flashing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-In the Quest \"Where We Belong\", Gwen will now specify that A Friend can be found in an abandoned building in the Woods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Defeating all 12 Nymphs will unlock a teleport shortcut in Gallows Grove that takes you right to the Mother Nymph grove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added new unique animations for Dark Blast, Blood Blast, Frost Blast, and Smoke Blast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made it easier to differentiate a ramp in the Military Zone from a wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new NPC in the Act 4 cafeteria that will recycle Duds into Unknown Ingredients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Plum now has optional dialogue after defeating a certain Secret Boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new \"Scarecrow Mask\" Key Item. It can be used to change the appearance of a certain Party Member outside of battle. If you already have this Party Member recruited, interact with any Save Coffin with them in your party to get it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The last party member's move \"Disarray\" and its \"Fixed\" equivalent have been changed to restore all DP, and can be used on allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MAJOR SPOILER CHANGES",
+     "items": [
+      {
+       "text": "-Created a proper cut off spot for when Act 4 ends and Act 5 begins, complete with brand new art and curtain scene. This is intended to help players understand that there's a bit more game left than they might think.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Also removed some \"finality\" to text when entering the maintenance shaft and the main rift entrance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Act 5 also now has its own tab in Alice's diary. If you have a previous save that already completed the game, you might find Act 5 text in the Act 4 tab still, just ignore it. Visiting a Red Coffin at least once will fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This DOES apply to",
+     "items": [
+      {
+       "text": "-The chase segment in the Senior Realm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Segments involving the Floatshroom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The bottom of the well segments in Dracula Manor and Juno's Quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Huntress hunt segments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The boat minigame & its Act 4 equivalent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This does NOT apply to optional minigames such as",
+     "items": [
+      {
+       "text": "-Carnival Games (The Netherduck shooting game is planned to be reworked in a later update)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Balloon version of the boat minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 26,
+    "balance": 22,
+    "other": 59,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/1830163047258618"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-16T21:29:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.072Z"
+  },
+  {
+   "id": "horrorvale-120814@1.1.4",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.1.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-09T18:42:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "HorrorVale has received a minor patch! We're really scraping the bottom of the bug barrel now...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Added a failsafe to the Hallways in DracCorp so if you get stuck in the slow goop the speed will reset when you exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a clone of Barnaby can show up if doing two Quests at the farm at one time...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "...Again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a newly added scene involving Poe in the Deep Woods would play even for players with old saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where leaving the basement of Ludwig's Lab from a specific side of the elevator would result in duplicate batteries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-...And Fixed an issue where leaving the basement from the OTHER side of the elevator would remove Bolt from the party",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the message for unlocking the Dream Colosseum would trigger when all requirements weren't achieved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a sequence break could occur in Act 3 if an enemy is engaged at the same time a specific tile is stepped on and eventually cause a softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a missing Content Warning in Act 4 if that feature is turned on in the settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "-None",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-...For now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "-The color for completed Quests has been altered to a darker green to be more distinguishable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Frank will now remind you to talk to the Experiments if you don't ask him how to make the Sandwich",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-In the same area, the Hand Frankenling won't awkwardly act like you've already spoken to him before if you got the Mushrooms prior to talking to him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated a few minor NPC dialogues in Act 1 to be more in line with the rest of the game's quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-If you haven't spoken to Webs prior to entering the Dracula Manor carriage, the game will now remind you so you don't accidentally leave him with no Party",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changes have been made to the end of the Dracula Manor segment to help guide the player better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-You will now receive better feedback when attempting to pour the \"Frozen Wolf Blood\" in a chalice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-After completing Dracula Manor, you can now return to explore Dracula Manor via your memories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Getting the Act 3 Boss under 25% DP will now result in its minions dying automatically if they were kept alive as a failsafe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Version Number has been added to the Diary screen and will change with future updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Future Plans",
+     "items": [
+      {
+       "text": "-We are looking into improving the brightness of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Full Game Re-Balance maybe one day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please continue reporting bugs here in the Steam community or over on our Official HorrorVale Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 2,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/1807332909643916"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-09T18:42:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.070Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.070Z"
+  },
+  {
+   "id": "horrorvale-120814@1.1.3",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-29T01:43:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "HorrorVale has received a minor patch. Surprisingly little bugs this time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed(?) an issue where Pink Fiend could appear stuck in the walls in the Forgotten Mansion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a collision issue in Act 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed various minor typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Beatrice and Webs could be invisible during an Act 4 fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Gumball state didn't turn the enemy's Element into Sugar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Juno's 4444 wouldn't work properly after Act 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "-Nerfed Party Member 30's basic attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed Party Member 30's Ultimate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed 4444 in the Dream Colosseum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "-Slightly increased the speed of the animation for Sadie's ship descending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new NPC to Town Square that'll let you know about the Bus Stops after Act 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the Minecarts in Gumdrop Gulch Mine faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Updated an Act 4 Character Card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Using an Orange Coffin will now return to you to the selection menu, allowing you to save and recover without risk of being attacked by enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new option to turn on Content Warnings for potentially sensitive content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new scene to the Deep Woods if you head towards the Forgotten Mansion before interacting with the Strongmen blocking the path for better context of the goal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new scene to the Mushroom area of the Greenhouse in Act 4 to make it clearer where you're meant to go",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new scene with Layla in the game's final area that was meant to be included at launch oops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the Wolfman Warlord immune to all Elements in the first phase to try and make it clearer what you're meant to do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added text after completing the game indicating that the Dream Colosseum unlocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please continue reporting bugs here in the Steam community or over on our Official HorrorVale Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 3,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/1803527891592329"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-29T01:43:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.070Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.070Z"
+  },
+  {
+   "id": "horrorvale-120814@1.1.2",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-26T03:18:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "HorrorVale has received a minor patch to take care of some bugs still present in the 1.1 update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed an issue with the wording of Drain-based abilities in the battle log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where an enemy in the Dream Colosseum could incorrectly use a Party Member ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Quest \"With Friends Like These\" could incorrectly be activated early if you do Wraps and Jekyll's Quests late",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Barnaby could be walked through while Onion hunting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Barnaby died while stockpiling food would cause issues upon revival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the wrong version of Immortal was applied to Bolt when using \"Steel Resolve\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where certain Abilities couldn't be used if the Party Member has their weapon unequipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed(?) an issue where entering a room during a blackout in DracCorp could cause the blackout to remain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a graphical error with \"Void Blast\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the State Tooltips wouldn't function properly with multiple enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some performance issues caused by State Tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed(????) an issue where Barnaby's Harvest move could sometimes rarely crash the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where reviving Barnaby outside of battle wouldn't properly reset his sprite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Frog King Medallion didn't resist Whirlwind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some minor typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Elemental Rings didn't work on certain characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Updated the description for Bubbles' \"Clear!\" move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where killing one of the Act 3 Boss's allies at the exact same time it's about to perform a certain action would crash the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the last scene of the Act 4 Boss could be skipped if damaged fast enough",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a cutscene during the Final Boss could act wacky if the Boss was Immobilized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "-Raven's \"Influenza\" will now act as full DP recovery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new thing to a scene during the game's Ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please continue reporting bugs here in the Steam community or over on our Official HorrorVale Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 20,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/1797820624513017"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-26T03:18:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.069Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.069Z"
+  },
+  {
+   "id": "horrorvale-120814@1.1.1",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-30T00:52:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HorrorVale has received another patch, albeit an extremely minor one, to fix some issues with the major 1.1 update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed an issue where Velma was bugged and the player might be stuck unable to buy the new Monsterpedia from her",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where some enemies were mis-Typed in the Monsterpedia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where certain Moments involving Jekyll could break his transformation cycle (If this occured for you in your save, just visit any Red Coffin to reset him)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Moments Tutorial wouldn't appear in Alice's Diary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some issues with certain Moments giving incorrect required characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a minor issue with Scotty's Cheap Shot not working for one of the Bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a Slime Salesman would remain after the Quest is complete and mess with Quest completion if interacted with on older saves (Just go to the screen he's found at to fix this for your save)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a similar issue with a Sharp Dog in the Woods of Mystery during \"Where We Belong\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed some minor issues with the new map screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "-Added 7 new Moments, totaling to 20 Moments overall!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As stated in the 1.1 Announcement, 1.1 is the last major HorrorVale patch. As far as we're concerned, the game is now \"Feature Complete\". There may be future patches for bug fixes or possibly Quality of Life changes, but the curtains for HorrorVale have now closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Development on HorrorVale: Act M has begun!",
+     "items": [
+      {
+       "text": "Act M is a small Spin Off title featuring THE Mothman, as you experience his side of the story and learn new aspects of HorrorVale and Mothman himself that you never knew before. Recruit Cryptids to your Crew as you fight against the Creepy menace and Mothman battles his personal demons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned for Updates on this!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/1795283637900534"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-30T00:52:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.068Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.069Z"
+  },
+  {
+   "id": "horrorvale-120814@1.0.4",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-24T22:24:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game has received another patch, so please take a look at all the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bit of a short one, but expect a big cool patch this Halloween!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed an issue where NPCs would wander into cutscenes during \"For Great Justice\" and look awkward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Party Members would be temporarily invisible after defeating the Final Secret Boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where you could get stuck on the stairs on the Third Floor of Dracula Manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Jackie's Ultimate would reset your BGM back to max no matter what your setting was",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where opening the Puppet Checklist in the Woods of Mystery can crash the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Alice's Ultimate didn't work the described way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the achievement for recruiting Raven didn't trigger if you find the item she requires beforehand. If you've already done the Quest, return to her house with her in your Party to get the achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed(?) the memory leak issue, so end game crashes should no longer happen. Please let us know if you still experience it because it's difficult to test on our end",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "-Movement speed in the HVPD ventilation system has been increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Shovel will now do an attack on the first turn like most Chaser enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Expanded the range in which The Shovel can notice you and start pursuing you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a slightly dark overlay (similar to later locations) to the vents to up the SPOOK factor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the location of a Death's Door slightly more obvious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new teleport in \"The Underside\" that lets you skip the maze after defeating the Miniboss there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-After finding the Bunker in \"Tale of Two Birds\", you'll now be automatically warped back to Scary Town instead of having to make the trip again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new consumable item called \"Magic Eyeball\" to various Jiang stores everywhere. This will allow you to scan enemies without a Party Member with a scan skill (some of these can also be found in Act 0)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added an optional way of solving the Frog Note puzzle for people who are hard of hearing (Just tell the nearby Scarecrow you can't hear well)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new hint to the Blood Chalice puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Mask Guy will now give you some direction of where to go next after finding all the Pages in \"See No Evil\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Alice will now make note of the Symbols in the Ruined Lab so you pay attention to them earlier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new hint to the final Light Pillar puzzle in The Engine Sector",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a new hint to Dollop's final request",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs To Be Fixed (In Progress)",
+     "items": [
+      {
+       "text": "-Changing the SFX Slider completely ignores character voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Cheap Shot does not work on enemies in Act 4 at all",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Features To Be Added (In Progress)",
+     "items": [
+      {
+       "text": "-Unique Cheap Shots for Bosses and special enemies from Scotty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Additional Optional Party Member Dialogue during main story events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Optional Dialogue for specific Party Members during fights in the Optional Dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Transformation aspect for Transmog Tongue and Gumball Gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Some way to keep track of what States do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Enemy Bestiary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Dream Colosseum allowing you to re-fight bosses with endgame stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 10,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0,
+    "topNew": [
+     "-Unique Cheap Shots for Bosses and special enemies from Scotty",
+     "-Additional Optional Party Member Dialogue during main story events",
+     "-Optional Dialogue for specific Party Members during fights in the Optional Dungeon"
+    ]
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/6212245217911835640"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-24T22:24:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.068Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.068Z"
+  },
+  {
+   "id": "horrorvale-120814@1.0.3",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-18T01:32:33.000Z",
+   "notes": [
+    {
+     "title": "1.0.3 Patch Notes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game has received another patch, so please take a look at all the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will be continuing to work on things throughout the month!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed an issue where you could collect a second Shrinkshroom in Ludwig's Lab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where viewing the secret ending would mute voice SFX temporarily",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the incorrect requirements were listed for the Quest \"To Be Stronger\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Slimy Salesman will appear endlessly in Act 3 (You may need to buy another Thing from him to make him go away permanently in existing saves)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Made the game credits less taxing on the game's memory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed a horrible typo in Dracula Manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where character portraits were misasligned in an Act 3 segment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Quest \"Friends Like These\" could be started before it's supposed to be unlocked and mess with the Diary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "-Spirit and Willpower rings have had their effectiveness lowered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed Phantasmic Wind Slash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed Million Candy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Lowered the effectiveness of \"Calming Cavort\" from 40% of DP to 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "-Lowered the amount of turns required to progress in the scripted fight at the end of \"Slimy Business\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Jackie and Mask Guy will now translate Pumplin dialogue for you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added more dialogue for Mr. Y via the Walkie Talkie, including one in act 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Painkiller will now sell Bean & Leaf drinks in Layla's Lane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs To Be Fixed (In Progress)",
+     "items": [
+      {
+       "text": "-Changing the SFX Slider completely ignores character voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Using Jackie's ultimate will knock the BGM volume back to 100 regardless of where you set it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Extended play periods can cause the game to crash during the ending sequence due to a memory leak. Until this is fixed, simply taking breaks and closing the game and re-opening it will refresh the cache and avoid the issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Features To Be Added (In Progress)",
+     "items": [
+      {
+       "text": "-Additional Optional Party Member Dialogue during main story events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Optional Dialogue for specific Party Members during fights in the Optional Dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Transformation aspect for Transmog Tongue and Gumball Gun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Features That May Be Added Later",
+     "items": [
+      {
+       "text": "-Some way to keep track of what States do",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Enemy Bestiary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Dream Colosseum allowing you to refight bosses with endgame stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Developer Blog",
+     "items": [
+      {
+       "text": "Now, we also wanted to take this opportunity to talk a little bit about The Future as well, since people are starting to make progress through the game with many actually beating it as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So let's go over some of the things we have lined up next, many of which are happening thanks to us reaching various Wishlist goals prior to launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Webs Prequel Comic (Act W)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Originally, we wanted to get this comic together and out BEFORE the game's launch to help hype it up, but unfortunately there was a lot more polishing necessary for launch, so it got put on the backburner. We still want to put it together, and I would even expect it before the end of the year, but don't expect a huge amount of \"New Lore\", this was just to hype up the game after all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Digital Artbook",
+     "items": [
+      {
+       "text": "Another Wishlist Goal we reached was a Digital Artbook! It will take some time to put this together, so I would expect it to come out AFTER the Prequel Comic, but BEFORE the next thing we're going to talk about. We're excited to share all of our little doodles and concept art that resulted in the game you can play today. Most of them are not very good. I am sorry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now for the big thing everyone is probably wondering around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Act M",
+     "items": [
+      {
+       "text": "First of all, what IS Act M?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Act M is going to be a short side story featuring none other than THE Mothman. We keep calling it DLC, but it's more like a small standalone game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It will detail the story of HorrorVale from Mothman's perspective, not just the present but also before the events of HorrorVale AND directly after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You'll be able to recruit a small gang of Cryptids to join you on your Mothy journey as Mothman is forced to face moral issues as well as his own demons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a much shorter game with a much smaller scope than HorrorVale. At max, you can expect an 8 hour playthrough if you do everything. (Current Estimate)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you can see from the patch notes, we're still currently working on polishing up HorrorVale, but once that's done, Development on Act M can begin. It's impossible to truly determine a time frame right now, because one factor affecting this is how \"HorrorVale\" itself does. Obviously, if I could work on Game Development full time, Act M will come out sooner rather than later. Sales for HorrorVale are somewhat promising currently, but we'll have to see how it's done at the end of the Year to really get a good scope of the game's performance. If things can pick up, perhaps Act M can come out mid next year! (That would be really cool.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oh yeah, about Launch...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HorrorVale Launch",
+     "items": [
+      {
+       "text": "We also wanted to talk a little bit about Launch, because it was very crazy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We didn't entirely know what to expect given this was our first game, but launch was overwhelming to say the least. I was reading comments and Discord messages for what felt like a week straight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One thing I certainly did not expect were the amount of Bugs and Issues found in Launch Week. I expected some for sure, but not to the extent there was, and not of the outright soft locking variety.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I deeply apologize for this, and the patience that people had was extremely re-assuring. I was working to get patches out as soon as I possible could. These issues were especially frustrating because many of them were the direct result of things I added or fixed about the game the WEEK right before launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I just want to clarify that our Team of Testers is a handful of dedicated Volunteers, who have helped us out on this long journey for no reason other than the goodness of their heart and passion for the project. Because their work was entirely volunteer work, I specifically never set deadlines or strong instructions on how to test, what to test, etc. I told them to just play the game whenever they want and report stuff they find. I'm just explaining this because I don't want anyone to think these launch issues were the result of poor testing on their part.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Personally, finding out about these issues was deeply upsetting for me.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I care very deeply about the experience of playing HorrorVale...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That is to say, I don't really mind if someone has a bad experience because they don't like the combat or the puzzles or the story, but what DOES bother me is if somebody has a bad experience because the game doesn't work as it should. So once again I am deeply grateful for everybody's patience that first week. I'm very happy to see that for the most part everybody had a great time anyway!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Truthfully, there were more things I wanted to include at Launch, and I would've liked it if I had time to play the game more myself, but it wasn't to be, and it felt very silly to delay the launch over things I could easily add launch week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "...Little did I know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Summary",
+     "items": [
+      {
+       "text": "We will continue working on getting all the issues in the game fixed (including the big ones mentioned earlier!). We want to more or less be finished with patches by the end of October or early November (Outside of future smaller patches if more bugs are found) so we can move onto other things (Such as Act M...).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope everybody is enjoying their time in HorrorVale, and stay tuned for more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Dustin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Batworks Software",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 11,
+    "balance": 4,
+    "other": 35,
+    "ps5": 0,
+    "topNew": [
+     "-Additional Optional Party Member Dialogue during main story events",
+     "-Optional Dialogue for specific Party Members during fights in the Optional Dungeon",
+     "-Transformation aspect for Transmog Tongue and Gumball Gun"
+    ]
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/6212244583177749866"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-18T01:32:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.067Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.067Z"
+  },
+  {
+   "id": "horrorvale-120814@1.0.2",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-11T01:39:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game has received another patch, so please take a look at all the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will be continuing to work on things throughout the month!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed an issue where Pumplin Farm would give no rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where generator noises would persist after destroying one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the wrong background was used in a rare enemy encounter at Dracula Manor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Femur Breaker lack their voices in a certain area late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where cutscene versions of Webs, Bolt, and Beatrice weren't getting disposed of properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where you could become trapped in a room upon revisitng a location in \"Tale of Two Birds\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Ring of Resolve and Ring of Fate used the wrong percentage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Farmers of Greenur Pasturs could clone themselves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Raven wouldn't be levelled properly if you start her quest with the Mushroom already in your inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where later bosses couldn't do anything when Enraged",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a certain Secret Boss minions wouldn't re-appear properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Battle song wouldn't reset after fighting two optional bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Act 2 Secret Boss would mute battle music entirely after it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the player's sprite wouldn't properly reset after the boat minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where you could get stuck on a table when running from The Killer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Dance Off could be re-done by talking to a Receptionist in \"Dance Till You Die\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Kris' moves are out of order when transformed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the third encounter with the Slime Salesman could be permanently killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Took some steps to hopefully mitigate memory issues explained later",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "-Slightly nerfed the Nethergrizz",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Slightly nerfed the Nethermound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Reduced the damage of \"Cursed Stance\" and the chance of inducing Rage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed \"Pumplin Pirouette\" slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed \"Missile Volley\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Increased the damage of \"Burning Comet\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed the Plush Backpack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Also Nerfed the Ring of Resolve and Fate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed \"Sucrose Meltdown\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Made the Annoying Clowns more Annoying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed \"Hookshot\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed \"Rifle Beam\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "-Reduced the respawn timer for Rotten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Moved the Orange coffin in the Underside to a better location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reworded a hint in DracCorp Blood Bank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a \"hint\" to Dollops last request",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Marty will now tell you which locker is his to avoid confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Marty will now appear in the Breaker Room if you interact with the Breaker Box at least",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "once to offer to solve the puzzle for you in exchange for 100 Candy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made the moveable blocks in Derelict Dungeon very slightly lighter than the rest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made farming for Candy via Hard Sell a lot more obnoxious and boring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Made it more obvious how to start \"Cat's Out of The Bog\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed the solution for the puzzle in \"The Dark Side\" to something more reasonable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a reward for finding all Scaries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Changed some misleading dialogue from Edna",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ongoing Issues (Still Being Worked On)",
+     "items": [
+      {
+       "text": "-Changing the SFX Slider completely ignores character voices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Using Jackie's ultimate will knock the BGM volume back to 100 regardless of where you set it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Extended play periods can cause the game to crash during the ending sequence due to a memory leak. Until this is fixed, simply taking breaks and closing the game and re-opening it will refresh the cache and avoid the issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 19,
+    "balance": 12,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/6931694080293340509"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-11T01:39:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.066Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.066Z"
+  },
+  {
+   "id": "horrorvale-120814@1.0.1",
+   "gameId": "horrorvale-120814",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-05T00:13:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have updated the game with a hot fix patch to address some issues found in Version 1.0.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "-Fixed an issue where the Fog Overlay for the Woods of Mystery wouldn't disappear under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where a party member could join the party prematurely if you interact with an invisible tile in The Bone Zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where Nizar's first hint was misleading by correcting when the event is triggered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where the Sidequest \"With Friends Like These\" was not properly displaying in the Diary when it should be. If you've already started Act 3 before this patch, it won't show up in the Diary, but you can still complete the Quest by returning to the final dungeon of Act 2 after you meet Shelby in Act 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where an enemy in the Quest \"Tale of Two Birds\" would softlock the game if interacted with",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where starting the Quest \"Let's Go To The Moon\" before clearing out the Cursed Bell at Dracula Manor would prevent the player from leaving the Quest area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fixed an issue where interacting with Bubbles from the side would softlock the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "-Nerfed the Spooktacular Ring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed the Unstable Staff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Buffed Kenneth's Evasion further",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Removed the DP cost for Kenneth's Glow Ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "-Nerfed the Enemies in the Quest \"Underworld's Strongest\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Note there are still some other smaller issues we are aware of that will be rectified in the next patch that will likely happen next week, but as of now we wanted to ensure these got taken care of first since they were critical. The Balancing fixes are just a bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 6,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/6350729003499520014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-05T00:13:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.065Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.065Z"
+  },
+  {
+   "id": "horrorvale-120814@major-2024-06-27",
+   "gameId": "horrorvale-120814",
+   "displayName": "-Town Notice - Wishlist Rally Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-27T00:50:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "October of last year we announced we were running a \"Wishlist Rally\", encouraging people to Wishlist the game to reach various goals. Now that we're nearing the game's release, let's see how we're doing...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right now we're sitting at 2,670 Wishlists, which means we've reached our first goal, the \"Webs Prologue Comic\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This comic will feature the bounty hunter Webs McGregor as he faces off against the Creepy menace in a short but sweet prequel story that'll be releasing sometime prior to the game's release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The next major goal on the meter is the \"Mothman Story DLC\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As it would be officially known as \"HorrorVale: Act M\", This side story will feature Mothman and his crew of cryptids as they battle their way through Creepies and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Taking place concurrently to the main story in \"HorrorVale\", \"Act M\" will allow you to experience the story from a new perspective to learn more about it and of course more about Mothman and his motivations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Development on \"Act M\" will only start after HorrorVale is released, so you don't have to worry about it conflicting with the development of the main game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, if you haven't already maybe considering throwing a Wishlist our way?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not only is it completely free, but once the game releases it'll help us tremendously with store visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you haven't seen it already, the new Release Date for HorrorVale was announced recently so please go check out that announcement:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1114650"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1114650/view/5842939267307666801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-27T00:50:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1114650",
+      "checkedAt": "2026-11-12T07:23:58.063Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:58.063Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,811 @@
+{
+ "game": {
+  "id": "phantom-breaker-battle-grounds-ultimate-319268",
+  "igdbId": 319268,
+  "name": "Phantom Breaker: Battle Grounds Ultimate",
+  "cover": {
+   "imageId": "co955n",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co955n.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar35d5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar35d5.jpg"
+  },
+  "ps5Release": "2025-04-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "phantom-breaker-battle-grounds-ultimate-319268@1.04.4163",
+   "gameId": "phantom-breaker-battle-grounds-ultimate-319268",
+   "displayName": "Patch 1.04.4163",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-16T07:00:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's a small patch to tidy things up and fix a few annoying bugs:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cleaned up some UI issues on the Profile Card challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The crown icon on stage select now shows correctly. 👑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed several character state bugs that were blocking scene progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Rocket Panda Games Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067350/view/1813674388929215"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-16T07:00:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.689Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-16T07:00:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.689Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-16T07:00:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.628Z"
+  },
+  {
+   "id": "phantom-breaker-battle-grounds-ultimate-319268@1.04.4141",
+   "gameId": "phantom-breaker-battle-grounds-ultimate-319268",
+   "displayName": "Patch 1.04.4141",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-04T08:30:58.000Z",
+   "notes": [
+    {
+     "title": "Gameplay Adjustments & Balancing",
+     "items": [
+      {
+       "text": "Adjusted enemy AI patterns and overall balance in DLC stages (especially on Easy/Normal).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Refined boss mechanics and event timing to improve flow and prevent progression locks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted enemy attack frequency and damage values in several DLC encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Skill loadout available during co-op play (result screen)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where certain bosses or mid-bosses could get stuck or fail to appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved camera and UI misalignment during Battle Ground and event scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a progression blocker caused by client disconnects or stage transitions in online play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected missing shadows and background assets in some DLC stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple crashes related to online lobbies, session cleanup, and character select transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed boss retreat events not resetting the camera to default view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a bug where characters could remain controllable in a KO state after area changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed errors when reconnecting to lobbies or attempting to join full sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed various localization errors and profile card asset issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Online / Networking Improvements",
+     "items": [
+      {
+       "text": "Improved session stability across all platforms (PS4/PS5, Xbox, Switch, Steam, Epic).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Better session cleanup when a host disconnects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed lobby hang-ups and sync issues after returning from character select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved handling of client disconnects so remaining players update correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added better timeout and kick logic for inactive/missing player input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Refined error recovery and session logic across platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’ve fixed a lot with this update, and more improvements are on the way. Thanks for sticking with us and sharing your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Rocket Panda Games Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 9,
+    "balance": 4,
+    "other": 0,
+    "ps5": 1,
+    "topNew": [
+     "Improved session stability across all platforms (PS4/PS5, Xbox, Switch, Steam, Epic).",
+     "Better session cleanup when a host disconnects.",
+     "Fixed lobby hang-ups and sync issues after returning from character select."
+    ]
+   },
+   "sourceIds": [
+    "steam-2067350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067350/view/1809869180027206"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-04T08:30:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.688Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-04T08:30:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.688Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-04T08:30:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.627Z"
+  },
+  {
+   "id": "phantom-breaker-battle-grounds-ultimate-319268@1.03.3506",
+   "gameId": "phantom-breaker-battle-grounds-ultimate-319268",
+   "displayName": "Patch 1.03.3506",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-10T00:00:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is a quick patch to improve your gaming experience",
+     "items": [
+      {
+       "text": "Ending View Count Issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skipping some endings under rare conditions was preventing them from being properly recorded. This is now fixed—your progress should reflect accurately going forward!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor Bug Fixes & Optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've tackled several minor bugs and made some behind-the-scenes improvements to keep things running smoothly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for sticking with us—we appreciate your feedback and support. Stay tuned for more updates soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Rocket Panda Team 🐼",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067350/view/1799088287880643"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-10T00:00:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.687Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-10T00:00:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.687Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-10T00:00:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.626Z"
+  },
+  {
+   "id": "phantom-breaker-battle-grounds-ultimate-319268@1.03.3473",
+   "gameId": "phantom-breaker-battle-grounds-ultimate-319268",
+   "displayName": "Patch 1.03.3473",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-02T00:00:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just pushed a small hotfix to address a specific issue affecting throw behavior during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hitstop throw fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where canceling a throw move during a hitstop instant caused it to fail and behave incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for sticking with us as we fine-tune the game. More updates are on the way—stay sharp and keep those combos going!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "– The Rocket Panda Team 🐼",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067350/view/1798454487619204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-02T00:00:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.687Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-02T00:00:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.687Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-02T00:00:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.625Z"
+  },
+  {
+   "id": "phantom-breaker-battle-grounds-ultimate-319268@1.03.3459",
+   "gameId": "phantom-breaker-battle-grounds-ultimate-319268",
+   "displayName": "Patch 1.03.3459",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-25T22:25:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for continuing to battle with us in Phantom Breaker: Battle Grounds Ultimate! This hotfix rolls out a handful of key improvements and bug fixes to keep your experience running smooth and solid:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy Clearing Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue where certain enemies weren’t being properly counted, which could prevent progression in some areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ranking Display Tweak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The leaderboard now correctly caps at 999 entries as originally intended. Keep climbing and make your mark among the top!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Offline Launch Support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now boots normally on Steam while offline—as long as your Steam client is running.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Throw Attack Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where enemies could become stuck after being hit with a strike throw.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If a character is damaged mid-throw, the game now handles it correctly without freezing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional Stability Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved error handling to prevent edge-case progression blockers and online play disruptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thanks again for all the support and feedback—you help us keep pushing PB:BGU to the next level!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy gaming,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Rocket Panda Team 🐼",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067350/view/1797820624506404"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T22:25:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.686Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T22:25:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.686Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-25T22:25:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.625Z"
+  },
+  {
+   "id": "phantom-breaker-battle-grounds-ultimate-319268@1.03.3436",
+   "gameId": "phantom-breaker-battle-grounds-ultimate-319268",
+   "displayName": "Patch 1.03.3436",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-19T08:04:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve just rolled out a small patch to improve your experience in PBBGU. Here’s what’s included in this update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exit Option: Added the option to Exit the game by pressing the cancel button while in the title menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been working on these tweaks based on your feedback and we're truly grateful for them. As always, thanks so much for your continued support, and we’ll keep improving the game with your suggestions in mind!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy gaming,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Rocket Panda Team 🐼",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2067350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2067350/view/1797185861697167"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-19T08:04:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.686Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-19T08:04:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2067350",
+      "checkedAt": "2026-11-13T03:27:54.686Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-19T08:04:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:01.624Z"
+  }
+ ],
+ "issues": []
+}

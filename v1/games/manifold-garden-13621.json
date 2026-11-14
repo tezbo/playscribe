@@ -1,0 +1,1661 @@
+{
+ "game": {
+  "id": "manifold-garden-13621",
+  "igdbId": 13621,
+  "name": "Manifold Garden",
+  "cover": {
+   "imageId": "co2ws9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2ws9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ardcu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ardcu.jpg"
+  },
+  "ps5Release": "2021-05-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "manifold-garden-13621@1.1.0.17370",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.17370",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-31T22:32:55.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed bug where pressing the \"Steam\" button on the Steam Deck caused the gyroscope position to be reset, resulting in inability to take screenshots while using the gyroscope photo mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug that caused certain Restore points to be hidden. The restore points were being saved properly, but were not shown in cases where the number of seconds in the time played was zero (not the TOTAL seconds played, but the seconds of the timestamp). Since the default autosave period was set to 3 minutes, these auto-save entries would always end in zero eg 3:00, 6:00, 9:00 and were being incorrectly hidden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the \"Capture\" button on Steam Deck since it isn't applicable on this device. It saved the file to the C drive which is not accessible to the user.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/4621277624688613675"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-31T22:32:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-31T22:32:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.125Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-31T22:32:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.618Z"
+  },
+  {
+   "id": "manifold-garden-13621@1.1.0.17357",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.17357",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-29T12:51:31.000Z",
+   "notes": [
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "Upgraded Steam SDK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded controller interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Steam Deck photo mode gyro control",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some localizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Miscellaneous bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/4514316500017195853"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-29T12:51:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-29T12:51:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.125Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-29T12:51:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.618Z"
+  },
+  {
+   "id": "manifold-garden-13621@1.1.0.15769",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.15769",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-19T20:49:15.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixes bug where \"off\" and \"on\" were reversed in the Traditional Chinese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes progression blocking bug where carrying cube through certain doors in alternate routes could cause the cube to teleport out of your hands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changes epilepsy warning from a standard 10 second warning to 3 seconds + remaining duration of load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with invisible solid collider object in World_613_LongBridgeLongTower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/4204657340181148324"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-19T20:49:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.124Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-19T20:49:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.124Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-07-19T20:49:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.617Z"
+  },
+  {
+   "id": "manifold-garden-13621@1.1.0.15569",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.15569",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-10T20:58:40.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Issue where the \"What does it all mean?\" achievement did not unlock properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Bug: In World_003, the red laser sometimes turns off upon reloading a save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug: Adjustments to Photo Mode settings after selecting \"Randomize\" are not rendered to output image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/4072920612517447778"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-10T20:58:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.124Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.617Z"
+  },
+  {
+   "id": "manifold-garden-13621@1.1.0.15521",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.15521",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-23T17:36:12.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Issue where an extraneous folder was being included in the game executable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Audio settings are not consistent between sessions. The player must enter the Audio Settings menu after relaunching the game in order to restore their settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/4074045244008151098"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-23T17:36:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.123Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.616Z"
+  },
+  {
+   "id": "manifold-garden-13621@1.1.0.15463",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.15463",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-20T20:47:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance and Stability Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Minor issues with Photo Mode localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Selecting “Reset” in the options menu does not revert colorblind mode settings back to their original state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issue where the tutorial prompts for the cube rotation mechanic do not show up properly in alternative routes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: loadLevel debug command does not immediately load the level,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issues where achievements were being disabled incorrectly when the debug console was used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issue where the Watercolor effect in Photo Mode did not render correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Known issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio settings are not consistent between sessions. The player must enter the Audio Settings menu after relaunching the game in order to restore their settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/4570566565011138956"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-20T20:47:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.123Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.615Z"
+  },
+  {
+   "id": "manifold-garden-13621@1.1.0.14963",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.14963",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-01-29T23:09:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed super-sized screenshots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Chinese and Japanese text appearing incorrectly in Photo Mode panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing translation to Colorblind Preview Panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated German localization for \"Quit To Desktop\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed console not activating commands the first time they are entered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Known Bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some Chinese and Japanese characters are missing in colorblind preview panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/4050393736343337485"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-01-29T23:09:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.122Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.615Z"
+  },
+  {
+   "id": "manifold-garden-13621@1.1.0.14704",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Patch 1.1.0.14704",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-11-11T17:24:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue where users would get stuck on a blank credits screen after the ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed localization issue in control remapper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loss of focus when resetting the gameplay panel while colorblind options are selected with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some tutorial keys displaying off-center",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added option for slow draw in the settings file for users experiencing invisible cubes. Players can now edit settings.txt file and addthe line \"slowdraw 1\" to permanently enable alternate rendering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The opening start screen background now shows different levels depending on player progress in the most recent save on startup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Photo mode correctly saves DOF and Manifold Garden Logo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "900 level missing colliders are fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "TOGGLE PHOTOGRAPHY MODE remap menu is localized correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Opening the debug console doesn't disable achievements unlocking. Only using a selected list of commands disables achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/3872494575584632825"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-11-11T17:24:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.122Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:05.614Z"
+  },
+  {
+   "id": "manifold-garden-13621@major-2018-12-11",
+   "gameId": "manifold-garden-13621",
+   "displayName": "The Game Is Playable Start To Finish + Development Update Video #12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-12-11T18:30:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Back again with another update and video. I know I haven't been keeping up with updates here as frequently. We've just been keeping our heads down and working away on the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have got some good news. The game is now finally playable from start to finish. You can start from the start screen, play through the game, get to the ending, get the credits sequence, and then go back to the start screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Needless to say, this is a major milestone for us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've included more information and game footage in the latest development update video:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one ended up longer than usual, but there was a lot of ground to cover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tech",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The save system and level loading system had been persistent problems for a long time, and getting the two to work together was especially challenging. A large part of the issue was due to the complexity of these systems. Manifold Garden has persistent save - you can carry objects between levels, save the game at any point and restore to that exact state. On top of that, we have dynamic level loading - once the game starts, there is no load screen of any kind. Instead, levels are loaded and unloaded automatically in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Behind the scenes, there's a lot going on. Scenes need to be tracked and save data needs to be updated accordingly. If a particular scenario is overlooked, it's easy to end up with duplicate data, causing the game to not load or save. This was a major problem for playtesters as it prevented them from progressing very far. After spending quite a bit of time tackling this issue, we're happy to say that these issues are fixed. At least, we haven't seen observed them in the playtests for a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Otherwise, for tech, it’s been a lot of little bugs here and there. Object physics behaving weirdly in certain points, being able to noclip into the wall if you change gravity at just the right angle, stuff like that. We’ve been addressing these as they come up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We were having a lot of issues with audio at one point. Sounds crackling, sounds getting delayed, sounds not playing at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the end, a lot of it turned out to be the way we had things set up in FMOD. For the team, this was our first time using FMOD, and there’s a lot of nuance to the program. The number of active voices you can have, which sounds are streamed, etc. A lot of the problems didn’t come up when testing individual levels, but once you have the whole game running, and hundreds of objects loaded all emitting sound, that was when it became an issue. Fortunately, a lot of the problems have since been addressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also added a custom audio occlusion system. While the basics of the system were straightforward, getting audio occlusion to work across portals proved to be much trickier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the video, starting a 5:55, you can check out a short preview of the audio design and an explanation of the audio occlusion system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The art style of the game is pretty finalized. Most of the remaining tasks are polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are minor things like the button here needing to be updated to match the style of the cube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We still need to play around with color correction as well. This is especially evident in the green gravity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All in all though, the art issues are fairly minor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Design has undergone a massive and significant change in the last 6 months. It became clear with the most recent playtests that the layout of the world was too convoluted. Additionally, there was too much emphasis on large open areas. While these do provide stunning vistas, they were overused, which lead to a lot of pacing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been focusing on streamlining the core experience, and adding more diversity in level size and design. There are now more mid-sized indoor levels in between the large outdoor spaces, which provide strong contrast and a better sense of progression through the game. Previously, we were seeing players getting to 90 minutes, and just stopping due to feeling overwhelmed or lost. Now, we’re seeing players go for 4, 5 or more hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Production",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Between the design changes, development, and overseeing the project, I haven’t really had much time left for anything else.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re on track to get the game out in early 2019. I know at the beginning of this year that I said 2018 was going to be the year. We didn’t quite make it, but we did make really significant progress. There are still several things that need to be sorted before we can announce a launch date, but we’re getting there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’m excited to be in this final stretch. It’s been a long journey, but there’s still ways to go, but I’m so happy to have made it this far. In the coming months, we’re going to be publishing a series of articles and videos explaining all the tech of the game in detail: how our graphics pipeline works, how we’re optimizing levels, and so on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to stay up-to-date, there are a couple of options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mailing list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "YouTube channel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And don’t forget to wishlist the game here on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/2416641943191101854"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-12-11T18:30:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.121Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:44.784Z"
+  },
+  {
+   "id": "manifold-garden-13621@major-2018-05-03",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Development Update Video #11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-05-03T02:59:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Development update video #11 is now up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are currently focusing on audio design. In addition to making the actual sound effects and filters, I also have to make a lot of tools to help us balance and debug audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Above is a custom tool I built to enable and disable each sound effect in the game. This is really important if we're trying to tweak the timing and volume level of one specific sound. Even with an action as simple as pressing a button to open a door involves a multitudes of sounds. This tool allows us to disable everything except one, and has been incredibly useful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another tool is shown above. This displays every sound that is currently playing in the game. Initially, audio debugging was very frustrating. I'd hear an incorrect sound playing, but would not be able to tell where it was coming from or what it was. With this tool, I can see a list of all the sounds currently playing, which categories they're in, and how many there are.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been useful figuring out which sounds are not being called to stop when they're supposed to, or which ones have duplicates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It also has the bonus feature of filtering out certain sounds, such as water and laser, from being displayed. The reason is that these sounds involve multiple sound emitters for one object, and if each one is printed out, it can take up the entire display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/2394104285093693051"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-05-03T02:59:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.120Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:44.783Z"
+  },
+  {
+   "id": "manifold-garden-13621@major-2018-04-16",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Development Update Video #10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-04-16T01:05:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Development Update Video #10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Unity 2017.4",
+     "items": [
+      {
+       "text": "We recently upgraded to Unity 2017.4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are a few key reasons for this. The main one is that we can now use MSAA for Anti-aliasing instead of just super sampling. We’re using our own rendering pipeline, and it wasn’t possible for us to use MSAA until 2017.4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tech",
+     "items": [
+      {
+       "text": "As far as the rest of the tech is concerned, we’re not adding new features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re focusing on optimization, visual glitches, and bugs - basically making sure the game runs as smoothly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are a lot of interconnected systems, so it often feels like we’re playing whack-a-mole with bugs. We fix one, but then 2 more come up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the optimizations we’ve done is we’re using a slightly different render system to render the duplicates. In the past, to create duplicates for the cube, there were 125 instances (as it was on a 5x5x5 grid). However, this meant there were 125 transforms getting updated. The new system actually bypasses the renderer component. Instead of sending information for each transform to the GPU, we store the information for one in a buffer, then just look it up and add the positional offsets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, we’re also now doing frustum culling on the GPU.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saving and loading continues to be a really tricky problem, but it’s becoming more stable. Testing it is rather time-consuming, as it involves playing through the game multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "We've been working on audio design for the past several months. Most of the sounds in the game are currently placeholder, as we’re focusing on the technical side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have about 90% of the audio hooks in. The remaining hooks involve more technical complications. For example, we need to have different sound filters depending on whether you’re indoor or outdoor. This means we need a systematic way distinguish the spaces, which isn't as straightforward when there is world wrapping and complex architecture. There are also situations like having sounds play continuously when you go through a portal (The approach we are using here is to have the sound emitter on the player instead of on the door itself).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "We’ve finished localization. Currently for launch we are planning on having: English, French, Spanish, German, Italian, Russian, Japanese, and both Traditional and Simplified Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There’s still some work left to adjust the layout for each language and to accommodate the difference in length of words.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Design",
+     "items": [
+      {
+       "text": "Most of my focus with level design now is figuring out and refining the pacing in the last third of the game. At some point, I will return to the opening level and retweak it. I was at GDC last month and saw a lot of room for improvement when people were playing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional Info",
+     "items": [
+      {
+       "text": "As always, you can find me on twitter and twitch, where I stream development daily.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/2758894130299662172"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-04-16T01:05:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.119Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:44.782Z"
+  },
+  {
+   "id": "manifold-garden-13621@major-2017-12-13",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Development Update Video #9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-12-13T00:58:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I'm back with another update. I had hoped to release the game this year, but as you can see, that hasn't happened. Lots of things have come up and development has been slower than expected. Currently looking at early 2018.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tech",
+     "items": [
+      {
+       "text": "At this point with tech, we are featured-locked (thankfully). We're not adding anything new gameplay-wise, just focusing on optimization and making the game more stable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of edge cases with the game saving and loading system, but it's mostly stable now. Saving and loading games has been a big pain to get right. In Manifold Garden, there is a timer in the background running to save the game regularly. The player can also press \"Save Game\" to save the game, as long as it's not during specific moments where it's disallowed (during transitions, etc). At the same time, neighbor levels are loaded in and unloaded dynamically. Getting all the systems to play together nicely has been a real headache, but it's more or less there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's a huge relief because previously playtesters would have to leave the game running on the computer if they wanted to take a break. Now, they can close the game, and not lose all their progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're working on Mac build as well, but having some problems with this as we don't have a mac machine to work or test on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sound Design",
+     "items": [
+      {
+       "text": "I've integrated FMOD into the project to begin sound design (more news on that soon). It was pretty straightforward and took much less time than I had expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting to focus on the PS4 version once again. Lots of issues initially, but this was expected as we hadn't touched the build in months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Photography Mode",
+     "items": [
+      {
+       "text": "We've added photography world back into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Had to disable this feature while I did a major refactor last year. We had to switch between two cameras, and it was just kind of a pain to maintain at the time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's currently using the new graphics pipeline that Arthur implemented, and I've brushed up on the UI. It's still pretty basic at the moment, but we're not going to add anything until everything else is done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm pretty excited about this feature. Can't wait to see what people come up with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Design",
+     "items": [
+      {
+       "text": "I'm continuing to focus on level design. In the last update, I talked about how there were a few design challenges we were facing and some proposed solutions. These have been implemented, and it's definitely an improvement. Players get a sense of their purpose much earlier in the game, which really helps establish where they are going and what they're working towards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Art Assets",
+     "items": [
+      {
+       "text": "Been working with a few artists part-time to improve various assets in the game. Mostly focusing on replacing place holder items with final assets, and also adding animation. Here's a selection of the improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Producer",
+     "items": [
+      {
+       "text": "I've started working with a producer to stay on schedule, and it has been incredibly helpful. I've gone from thinking \"what does a producer do?\" to \"how can anyone get by without one?\". We check in on a weekly basis, and I've found it really helpful in establishing realistic milestones and staying focus on what's important (shipping).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/2281501616661116015"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-12-13T00:58:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.119Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:44.750Z"
+  },
+  {
+   "id": "manifold-garden-13621@major-2017-10-30",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Development Update Video 8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-10-30T23:21:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In which I discuss the state of the tech, new visuals, and solutions to various design problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/2140759684358517591"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-10-30T23:21:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.117Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:44.749Z"
+  },
+  {
+   "id": "manifold-garden-13621@major-2017-07-03",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Development Update Video #7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-07-03T06:17:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just released the 7th development update video for Manifold Garden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the levels are connected up, and the game is playable from start to finish. There are still a lot of bugs that need to be fixed, and a lot of design iteration, but this is a good foundation to build on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've also sent out a build of the game to the beta testers (currently using itch.io Refinery for that). Once we get closer to release, I will start doing beta tests on Steam to get more familiar with the process of releasing a game here.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Also show off bits of new visuals in the video.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, let me know if you have any questions or suggestions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "William",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/2564086801874507138"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-07-03T06:17:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.116Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:44.738Z"
+  },
+  {
+   "id": "manifold-garden-13621@major-2017-05-22",
+   "gameId": "manifold-garden-13621",
+   "displayName": "Development Update Video",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-05-22T00:44:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've made a video summarizing the last 10 months or so of development down to 5 minutes. It covers a brief introduction of the game, and showcases some of the new mechanics:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "These are some of the topics covered",
+     "items": [
+      {
+       "text": "Save system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New water art style",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tree growing animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New portal system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "World shrinking mechanic: The last one of these videos I did was back in June 2016, then development got really busy and I stopped. Now that the architecture of the game is more or less set, I'd like to produce these on a biweekly basis.: Let me know if there are any specific topics you'd like me to cover, or if you have any questions or suggestions.: Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "William",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-473950"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/473950/view/1904306376100381419"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-05-22T00:44:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-473950",
+      "checkedAt": "2026-11-13T03:25:15.115Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:44.734Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "a62f2a1c8e00",
+   "text": "Audio settings are not consistent between sessions. The player must enter the Audio Settings menu after relaunching the game in order to restore their settings.",
+   "status": "open",
+   "firstReleaseId": "manifold-garden-13621@1.1.0.15521"
+  },
+  {
+   "id": "e1e7f46fae26",
+   "text": "Bug: In World_003, the red laser sometimes turns off upon reloading a save file.",
+   "status": "open",
+   "firstReleaseId": "manifold-garden-13621@1.1.0.15569"
+  },
+  {
+   "id": "3d8e265779fe",
+   "text": "Bug: Adjustments to Photo Mode settings after selecting \"Randomize\" are not rendered to output image.",
+   "status": "open",
+   "firstReleaseId": "manifold-garden-13621@1.1.0.15569"
+  }
+ ]
+}

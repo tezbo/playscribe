@@ -1,0 +1,595 @@
+{
+ "game": {
+  "id": "the-legend-of-heroes-trails-of-cold-steel-iii-26564",
+  "igdbId": 26564,
+  "name": "The Legend of Heroes: Trails of Cold Steel III",
+  "cover": {
+   "imageId": "cobb5w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobb5w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar496v",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar496v.jpg"
+  },
+  "ps5Release": "2024-02-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iii-26564@1.07",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iii-26564",
+   "displayName": "Patch 1.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-09T16:51:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a patch for Trails of Cold Steel III which improves how the game interacts with platform achievement APIs. This should prevent performance issues in some circumstances, specifically when a large number of achievements was already unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that this issue surfaced due to changes in how Steam deals with repeated achievement API calls, and this change affects many of our prior releases in similar ways. We are committed to patching all affected releases, but this has taken some time, especially for cases where we need to re-build games for which we already archived various development resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-991270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/991270/view/1785321795739464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:51:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-991270",
+      "checkedAt": "2026-11-13T03:33:34.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:51:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-991270",
+      "checkedAt": "2026-11-13T03:33:34.237Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-09T16:51:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.317Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iii-26564@1.06",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iii-26564",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-11T14:01:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a while, but we are providing a new update to Trails of Cold Steel III today. This is primarily in response to some relatively recent changes in behaviour on a subset of systems with AMD GPUs, but we also sneaked in a few more fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix potential text-rendering-related performance issues which could occur on AMD GPU hardware on some systems.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improve collision detection to prevent getting out-of-bounds in some rare scenarios and at specific framerates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve responsiveness of Alt-F4 for quitting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note on Reverting to Previous Versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we of course aim for each new version to only solve issues and provide improvements over all previous ones, it is always possible for something to break on some particular configuration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Therefore, we keep all versions available as Beta branches in Steam. Should an update lead to issues on your system, you can revert to a previous branch by selecting \"Properties\" -> \"Betas\" in the Steam library and choosing a version from the drop down menu. If you can confirm that the new version caused a problem, please report it as a regression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Durante",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-991270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/991270/view/5589599109276280150"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-11T14:01:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-991270",
+      "checkedAt": "2026-11-13T03:33:34.237Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.316Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iii-26564@1.05",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iii-26564",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-24T15:49:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you are enjoying Trails of Cold Steel III!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a minor update which fixes a startup crash issue on uncommon system configurations:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash on startup when launching the game on a system with no audio devices while having video playback enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note on Reverting to Previous Versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we of course aim for each new version to only solve issues and provide improvements over all previous ones, it is always possible for something to break on some particular configuration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Therefore, we keep all versions available as Beta branches in Steam. Should an update lead to issues on your system, you can revert to a previous branch by selecting \"Properties\" -> \"Betas\" in the Steam library and choosing a version from the drop down menu. If you can confirm that the new version caused a problem, please report it as a regression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Durante",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-991270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/991270/view/2698159409991835695"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-24T15:49:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-991270",
+      "checkedAt": "2026-11-13T03:33:34.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.315Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iii-26564@1.04",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iii-26564",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-23T22:40:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you are enjoying Trails of Cold Steel III!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a minor update which fixes issues related to DLC packaging and the localization system used for DLCs:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue which could cause crashes upon loading some DLC content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rendering issue with portraits for characters wearing DLC costumes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Note on Reverting to Previous Versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we of course aim for each new version to only solve issues and provide improvements over all previous ones, it is always possible for something to break on some particular configuration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Therefore, we keep all versions available as Beta branches in Steam. Should an update lead to issues on your system, you can revert to a previous branch by selecting \"Properties\" -> \"Betas\" in the Steam library and choosing a version from the drop down menu. If you can confirm that the new version caused a problem, please report it as a regression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Durante",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-991270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/991270/view/2698159409989253203"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-23T22:40:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-991270",
+      "checkedAt": "2026-11-13T03:33:34.236Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.314Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iii-26564@1.02",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iii-26564",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-11T10:08:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you are enjoying the demo for Trails of Cold Steel III on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We just released another minor update which fixes an issue discovered on some specific hardware configurations:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rendering problem where battle area indicators were corrupted when using MSAA modes on some AMD graphics cards.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Durante",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-991270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/991270/view/2579938650944650870"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-11T10:08:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-991270",
+      "checkedAt": "2026-11-13T03:33:34.235Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.314Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-of-cold-steel-iii-26564@1.01",
+   "gameId": "the-legend-of-heroes-trails-of-cold-steel-iii-26564",
+   "displayName": "Update 1.01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-10T22:40:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you are enjoying the demo for Trails of Cold Steel III on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We just released a minor update which makes the following improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an FXAA anti-aliasing option. This gives you a more performance-efficient choice for anti-aliasing in addition to the previously available MSAA modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue which could cause the background music to be interrupted or stop playing in some scenes on some systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a required dependency was not being installed, preventing the game from launching on some systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I've also seen some questions regarding demo save files which I'd like to answer here. Yes, your progress in the demo carries over to the full game! You will be able to pick up exactly where you left off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Durante",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-991270"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/991270/view/2579938650942924369"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-10T22:40:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-991270",
+      "checkedAt": "2026-11-13T03:33:34.234Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.311Z"
+  }
+ ],
+ "issues": []
+}

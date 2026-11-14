@@ -1,0 +1,1081 @@
+{
+ "game": {
+  "id": "baby-steps-252502",
+  "igdbId": 252502,
+  "name": "Baby Steps",
+  "cover": {
+   "imageId": "co6llb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6llb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2cfl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2cfl.jpg"
+  },
+  "ps5Release": "2025-09-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "baby-steps-252502@7.1",
+   "gameId": "baby-steps-252502",
+   "displayName": "Patch 7.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-12T19:31:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch just fixes a soft lock introduced in the last patch where Nate wouldn't get up holding the pedometer and the cup at the same time (and possibly other combinations of items).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "uwu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1818752592128570"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-12T19:31:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.256Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-12T19:31:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.256Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-12T19:31:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.589Z"
+  },
+  {
+   "id": "baby-steps-252502@7",
+   "gameId": "baby-steps-252502",
+   "displayName": "Patch 7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-25T19:23:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small patch that fixes some issues and softlocks reported by players. We have a larger patch in the works coming soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a couple of terrain holes in the Z-loop point past the mountain at the end of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Put the first two rooms of the fortress on a different loading tile so that they load in earlier and can’t fail to be loaded when you arrive on slower hard drives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Put an invisible collider under the bed in the fortress to stop lantern getting stuck when it rolls under there, sorry to the reddit user who suffered this fate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed gap under frozen stream in snowy area, south edge, nearby the crashed train",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where clear times over 24 hours would display as the wrong time in the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where quitting after seeing a campfire scene could, in rare cases, cause you to get into a softlocked state in the snowy area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the time you spent in the credits was added to your clear time for determining the ‘most punctual person’ achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made slippery sand just a tiny bit easier to walk up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some other minor compatibility and visual tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1816849002024572"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-25T19:23:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.256Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-25T19:23:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.256Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-25T19:23:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.588Z"
+  },
+  {
+   "id": "baby-steps-252502@5",
+   "gameId": "baby-steps-252502",
+   "displayName": "Patch 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-08T17:19:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Lots of small fixes and tweaks in this release, many based on community reports. Thanks to everyone who reported a bug!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spruce saplings in the forest bent a different amount in their bark and leaves when touched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix potentially being able to get under the stairs of the tower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix being able to fall through the floor of the big spiral stair inside the fortress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bathwater in cabin will no longer appear on low quality (where we don’t have enough water mesh resolution)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix it not being morning when “going for a walk” after the ending of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The handle on the bucket hat should move a bit more naturally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Closed small hole on left of minecart tunnel to salt mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Closed a couple gaps at the top of the tower that a player was able to fall through and get trapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added safety under the box hell to prevent players getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the non-Latin localization of the player time/steps stats shown in the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the simplified Chinese translation of ‘firetower’ from 火焰塔 to 瞭望塔",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where changing save slots while holding a clock or pedometer especially in left hand could cause animation anomalies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it harder to get softlocked in the fortress while being far away from the lantern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the quarry, right before the area where you swim under an arch, we removed two wooden beams to make it harder for players to get stuck on the structure holding up the rail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed wrong collider on wooden scaffold stairs nearby the “ball pit” sculpture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "One player found a way to exit the fortress but still be in the dark ‘indoor’ weather, this is fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a little world-penetration safety under the manbreaker, to help with high-speed collisions from falling there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "One player had reported that the fortress would not be visible if they looped all the way around the game over the endgame mountain. This should be fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wind sounds have been normalized to a consistent value, so regions should differ less in terms of wind volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Milk sounds have had their high end attenuated (should be slightly less harsh on headphones)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player VO banks have been mixed, so there should be less audible tonal differences between cutscenes and all types of in-world VO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Running water should be louder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1813041031180604"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T17:19:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.255Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T17:19:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.255Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-08T17:19:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.588Z"
+  },
+  {
+   "id": "baby-steps-252502@4",
+   "gameId": "baby-steps-252502",
+   "displayName": "Hotfix 4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-01T16:29:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "hi!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "maxi here! this **hot fix** is just for **hot beats**. almost every song has gotten a bit of polish & many sound totally different.: for a behind-the-scenes PoV: we had an unfortunate launch week snafu wherein all of the songs in the game, with a few exceptions, had tracks that were playing the wrong samples. i have been hard at work getting our ableton live importer compatible with the most recent versions, and am so so so ecstatic for you all to hear some of the true intention behind the bizarre and beautiful babystep beats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "team audio would encourage you to stay down the next time you fall, as all the songs have alternate versions that kick in when you fall. we are still tuning that system and making it as impactful as possible.: expect so many more songs to come as the patches roll in.: again for visibility: we had a number of late stage set backs on the audio side, bc it's very challenging to keep a game with such complex music & sound design hitch free. we realized, to my absolute horror, only after implementing the design in one audio system, that we had to build a low level audio system ourselves if we wanted smooth gameplay (which obv obv we do!!!), but that took many months out of our schedule.: finally, just a note to say the audio will be subject to lots of change over the coming months.: my team and i worked really hard on the core interaction sounds, the narrative, etc. & just so happened the level design completion came in a bit faster than songs & audio polish—given that we had to do the audio equivalent of integrating a new physics system & were off fixing bugs about crashes on systems with particular generations of SIMD instruction sets. not quite fun work, but making reactive sound for a tight physics action game means you have to be willing to dig into the tech at a super low level. but that is (mostly) all behind us now!: ok that's probably tmi for 99% of you! soon we'll be setting much more of the dynamic music system live (sorry for any overly enthusiastic birdos rn). it will be improvising atop the existing tracks, should be v cool, esp for players who spend a lot of time with the game. first in line is some dynamic music for the in-game animals, so stay tuned: patch notes on the audio side should stay pretty darn exciting for a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1811772772447766"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T16:29:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.254Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T16:29:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.254Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-01T16:29:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.587Z"
+  },
+  {
+   "id": "baby-steps-252502@3",
+   "gameId": "baby-steps-252502",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-30T19:21:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The save game system will now use two additional backups that are written less often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix key trophy falling through world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for held items being pushed into geometry and causing a joint explosion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix out of bounds in the crown dream.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix out of bounds in the propeller hat dream.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve the fortress recovery ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Jim's well not staying closed upon reloading the area leading to a potential soft lock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix being able to clip the trigger for the campfire cutscene in the apartment by going into the corner of the room causing nate to fall infinitely through the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added gamma boost when you're far from your lantern in the dark in the fortress so it's easier to find your way back to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix jagged river edges on low quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix entering a cutscene with the binoculars up causing the overlay to be on over the cutscene and Nate to be only floating eyes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Nate being semi-transparent in a cutscene if you entered the cutscene with the camera inside him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix breaking the vase before hearing from Mitchell causing an infinite Pause screen to appear.: -3 songs with extended tracks for more variation and better sounding \"fallen\" states: -5 new songs!: -snowier snow snogs: -one fewer songs bc there's a song in the song hospital: -wind gusts much less blast-y: -mix polish on a spoilery cutscene: Hello, Gabe here! This patch fixes an issue some people have had with their saves getting corrupted or lost after a crash . We have made it a lot safer, and hopefully this should never happen again. If anyone has lost their save and wants me to send them a save from an equivalent part of the game just @ me on the discord! So sorry about that I know how much it sucks in a game where progress can be so hard won!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1811772772418503"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-30T19:21:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-30T19:21:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.254Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-30T19:21:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.587Z"
+  },
+  {
+   "id": "baby-steps-252502@2",
+   "gameId": "baby-steps-252502",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-26T18:14:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hotfix 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix Nate occasionally exploding when rubbing a hat on a wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix some potential softlocks involving clipping through the floor. And one in the castle with the lantern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix a few bad holes near crater lake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix lantern buoyancy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix magenta door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Block off castle exit to prevent getting too lost in a certain moment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixes for about half of the songs having incorrect sample mappings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Physics sound loops no longer stick around after objects have reached rest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Tamed the loudest wind sounds, improved mix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed popping issues with some VO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Reduced audio dsp artifacts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1811772772285101"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-26T18:14:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-26T18:14:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.253Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-26T18:14:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.586Z"
+  },
+  {
+   "id": "baby-steps-252502@1",
+   "gameId": "baby-steps-252502",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-24T13:03:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fix an intermittent crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix soft lock in well",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix soft lock with ice cream",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New songs and mix changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1811772772210859"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T13:03:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.252Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T13:03:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.252Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-24T13:03:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.586Z"
+  },
+  {
+   "id": "baby-steps-252502@patch-2025-06-13",
+   "gameId": "baby-steps-252502",
+   "displayName": "Demo Patch, Discord competition.",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-13T22:26:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Posted a new build!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "got flowing water to whine,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "keep the sound of the natural world at an arm's length,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "level design tweaks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "another attempt to fix colliders sometimes failing to load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've also started a weeklong speedrunning competition on the discord: https://discord.gg/BabySteps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44225257/7b5d17636e59dc59f4a6309586cf32facb2dec01.png\"](art from chobusaiku on the discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1802354289608828"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-13T22:26:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.252Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.585Z"
+  },
+  {
+   "id": "baby-steps-252502@patch-2025-06-12",
+   "gameId": "baby-steps-252502",
+   "displayName": "Demo patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-12T14:08:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44225257/3c661f804e27d27e6aa18a55668c9828d21bf5ee.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hi, we've posted an update for the demo! Here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-improve impact sound sync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-tamed birds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-level design tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-added discord link",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-attempted to fix no colliders on switch save slot bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-tiny camera tweaks to make it zoom in a little less aggressively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-fixed japanese text problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-default quality to low if your computer has less than 8 gigs of vram to try to avoid crashing on launch",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thanks so much for playing the demo! We have a discord now for bug reports, feedback and discussion: https://discord.gg/BabySteps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "photo credit: Dama in the discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1281040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1281040/view/1802354289563838"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-12T14:08:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1281040",
+      "checkedAt": "2026-11-13T03:15:33.251Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:21.584Z"
+  }
+ ],
+ "issues": []
+}

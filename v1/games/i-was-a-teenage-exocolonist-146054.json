@@ -1,0 +1,1448 @@
+{
+ "game": {
+  "id": "i-was-a-teenage-exocolonist-146054",
+  "igdbId": 146054,
+  "name": "I Was a Teenage Exocolonist",
+  "cover": {
+   "imageId": "cob5iq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob5iq.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4v1u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4v1u.jpg"
+  },
+  "ps5Release": "2022-08-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "i-was-a-teenage-exocolonist-146054@7",
+   "gameId": "i-was-a-teenage-exocolonist-146054",
+   "displayName": "Patch 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-12T19:10:57.000Z",
+   "notes": [
+    {
+     "title": "🍄🩹👖 A quick patch",
+     "items": [
+      {
+       "text": "Thanks to our avid players continuing to report issues via the feedback menu in the game, I was finally able to track down a couple longstanding but very rare bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One involved savegames becoming corrupted, especially memories from past lives. There was a backup system and workarounds to fix it after it happened, but I hope this update finally prevents it from happening in the first place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The other involved cards not getting properly added to your inventory, most notably collectibles. I'm still not sure how that happens (mods??) but at least there's a workaround for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️💡🌐Workshop update",
+     "items": [
+      {
+       "text": "Our August update added Steam Workshop support, and modders have been filling it with good stuff. Especially languages! Through the workshop we now have translations into French, Simplified Chinese, German, Brazilian Portuguese, and Korean!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Here's a guide for how to use this, or create and upload your own workshop mod:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://steamcommunity.com/sharedfiles/filedetails/?id=3727950488\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sarah ːnyaaː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1148760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1148760/view/1849192144184287"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T19:10:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.524Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T19:10:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.524Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-12T19:10:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T02:33:04.228Z"
+  },
+  {
+   "id": "i-was-a-teenage-exocolonist-146054@major-2026-08-10",
+   "gameId": "i-was-a-teenage-exocolonist-146054",
+   "displayName": "Steam Workshop Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-10T17:08:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Happy fourth Exoversary everyone! We're celebrating 🍄🚀 I Was a Teenage Exocolonist 🍄🚀 a bit early this year to coincide with the Choices Matter Festival and our first game update in, well, a while!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Steam Workshop Modding Support!",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37830808/ae55935a377a69a0ab752cb23b1beef906bdfbb4.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I'm stoked to announce we've added Steam Workshop support to I Was a Teenage Exocolonist. This should make it a little easier for modders to share simple text-based mods which change story files or data files. These sorts of mods can translate Exo into other languages, or add new events to the game. Changing gameplay or adding new images is still a little more complicated, and for the meantime easier done via fan-maintained tools like ExoLoader.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In addition to supporting Steam Workshop, you can now install text mods directly via the filesystem. Here's a guide on how to make, upload, and install story and data file mods:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Exocolonist Workshop Guide",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "And here's a link to our shiny new workshop page, ready for you to upload your game mods:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Exocolonist Steam Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This update (build 6602) also includes a few small bug fixes related to language translation, but I tried to avoid messing with too much, to minimize breaking stuff. I was tempted, but game updates are scary! I did unfortunately break the extremely cool and extensive ExtraColonist fan mod, which is now up to year 14! They'll have an update soon but you can also revert the base game to the old version (3127) if you need to by swapping to its beta branch in the Steam client.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you find any bugs, please report them through the in-game feedback menu!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💬 Discord AMA with the Exocolonist Team",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37830808/af2fe56627abad06bd81bdb12d0c34e0fd4c68f0.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]On Thursday, August 13th at 2PM PT / 5PM EDT, join Lindsay, Mei and I for an AMA in the official Finji Discord Server to celebrate the game's 4th anniversary! Mei will be working on a new anniversary doodle. Visit the Discord event page to set a reminder, and let us know who you'd like Mei to draw on Thursday. Get your questions ready for us and we'll see you then!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧸 Plushie Giveaways all this week",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37830808/d32a5d310453caa35cbfd49d219c5d19ad070e3c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, Poayo does still have some Dys dolls from an earlier run for sale on their Etsy shop. They're cute af in their little onsies and catmaid outfits holeeeee!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy Exoversary,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sarah ːnyaaː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1148760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1148760/view/1840310314352120"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T17:08:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.523Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-10T17:08:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.524Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-10T17:08:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:08.340Z"
+  },
+  {
+   "id": "i-was-a-teenage-exocolonist-146054@4",
+   "gameId": "i-was-a-teenage-exocolonist-146054",
+   "displayName": "Patch 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-03T15:17:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I am still chasing that sweet green checkbox for being fully verified on Steam Deck. Although those in the know can tell you it plays beautifully on there already, there are some sync issues that could make it annoying to switch between deck and PC and downgrade us to only \"playable\".",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "While I was tackling that, I went through all the bug reports you lovely, lovely people have sent through the game's feedback menu (thank you! ːexoflexː) and fixed some small issues with particular cards and rare errors. Here's the list:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Typos typos teh-zypos! (\"only\" 20 of them)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make Small Skills Boost perk and Clear Minded status roll their chances separately instead of adding them together in a confusing way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Bravely Helping to Fight and other +1 to total cards showing bonus beside the total, but not actually adding it to the total on rounds 2 and 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Tracking the Airsquid card text to explain it only affects physical cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Confirmation dialog when forgetting or not forgetting a card while relaxing, so it's much harder to skip by that option by accident",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warn in a popup the first five times any file fails to save during each play session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly speed up first game boot after install or update (stop unnecessarily recompiling story files)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix controllers not closing text input popups on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Hide resolution and quality settings on Steam Deck and stop syncing them between deck and pc, just default to what works best on that specific hardware",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Sarah ːnyaaː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1148760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1148760/view/5124585319849509253"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-03T15:17:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.522Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-03T15:17:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.522Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-03T15:17:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:57.070Z"
+  },
+  {
+   "id": "i-was-a-teenage-exocolonist-146054@3",
+   "gameId": "i-was-a-teenage-exocolonist-146054",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-11T08:22:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I Was a Teenage Exocolonist Patch #3, version 2716 (March 16) is up now on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This build restores some accidentally lost content, adds custom cursors, fixes issues with equipment bonuses and some statuses, and a bunch more small issues and typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "store hogs in save files and offer to restore if Groundhogs.json corrupt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improve loading an age 11+ game in a demo version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "custom cursors, can be disabled via settings, bigger on 4k",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "better fix for cards getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "redirecting thumper now adds to defense one time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "immediately skip current card challenge when you disable it via tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "show card art and text in controller tooltips that include both",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "strip exoscript markup from all user-entered names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix starting the game in controller mode with no controller plugged in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix hitting home with H hotkey while entering name if input box loses focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix feedback menu truncating jankily after 13 lines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix tooltips disappearing too fast when using mouse and keyboard together",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix steam deck tutorial where it says \"click\" so we can finally be verified",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix disabling past lives with negative checks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix WAKE UP font being huge sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix medallion and other gear bonuses that should only be on the first round",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix becoming enlightened after first or second perk with gear skill bonuses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix fillbars not showing changes when gear bonuses push skill over 100",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix autosaving when returning from an expedition before the date changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix showing -15 when you have net +0 skill change and gear equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix calm and starving statuses not affecting skill changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix not showing skill bonus info in bubble tooltip when net is +0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix remove incrementMonth to keep from skipping important events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix opening credits menu during ending doesn't let you close it again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix upgrading hopeye",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix missing skill card sub-events for vace/rex/nomi/sym",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix old sol not saying interesting things about many endings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "a regular helping of narrative fixes and typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another giant thank you to everyone who reported bugs from inside the game's feedback menu! I couldn't have found these without you! ːexoflexː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sarah",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 17,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1148760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1148760/view/5121196841305922246"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-11T08:22:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.521Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-11T08:22:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.521Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-11T08:22:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:57.052Z"
+  },
+  {
+   "id": "i-was-a-teenage-exocolonist-146054@2",
+   "gameId": "i-was-a-teenage-exocolonist-146054",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-15T17:00:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I Was a Teenage Exocolonist Patch #2, version 2315 (November 15th) is up now on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "More typos and a few bugs with gear and collectibles squashed. Patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix double-equipping gear when upgrading, not being able to equip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix crystal cluster making cards unselectable in controller mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix negative skill bonuses for statuses (mourning, injured etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix (hopefully) can't drag battle cards in mouse mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix (maybe) groundhogs steam sync issue, stop saving on game exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix gear menu card scaling in biggerMenus mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix some job start events that weren't high priority",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix a bunch of references after you preempt famine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "move hard-coded english strings into localization tsv for modding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "buncha typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One bug I'm hoping to (maybe) fix with this update is an issue where past memories are disappearing (characters from the main menu, endings and achievements in the gallery). This might be due to a Steam sync issue reverting the file Groundhogs.json. If you think this might still be happening to you with the new version 2315, please report it from inside the game, and if possible please also email your Steam cloud_log.txt and cloud_log previous.txt files to support@finji.co (C:\\Program Files (x86)\\Steam\\logs on Windows, ~/Library/Application Support/Steam/logs on MacOS, ~/.local/share/Steam/logs on Linux).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Another issue I haven't been able to track down is fast-disappearing tooltips. They're supposed to stick around under your mouse, not disappear after a second! If this is happening to you (especially if you can figure out why!) please report it from inside the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Sarah ːnyaaː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1148760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1148760/view/6368680725439832862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-15T17:00:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.521Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-15T17:00:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.521Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-15T17:00:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:56.931Z"
+  },
+  {
+   "id": "i-was-a-teenage-exocolonist-146054@1",
+   "gameId": "i-was-a-teenage-exocolonist-146054",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-05T17:22:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I Was a Teenage Exocolonist Patch #1, version 2204 (October 4th) is now live on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "It fixes a few big bugs (the gym does something now!), a bunch of rarer issues (all cards now gettable!), plus better support for the Steam Deck and non-16:9 aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "No more letterboxing - resize the game window to whatever scale you want!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so so so much to everyone who sent in bug reports and helped me track these down, especially machine-specific problems and all those obscure typos and issues in hidden corners of the narrative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any more problems, please report them from inside the game so it sends me your logs and stuff too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "change vibration toggle to an intensity slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improve controller navigation of settings and custom gender menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "force teleport back inside colony during glow or when too young",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improve collectible use with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "upgrading cards now works, eg marz1 disappears when you get marz2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increase food if you find mushrooms while foraging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "optimize opening the deck menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "show \"start your next life\" on main menu after an ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improve food supplies notice in depot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "no more cake for sale while starving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "remove sound from northway games splash logo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "back up savegames, memories, and settings to avoid file corruption",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "hide mouse cursor while in gamepad or keyboard-only mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "smoother switching between mouse and gamepad/keyboard-only mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "support ultra-widescreen monitors and more other resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "improve text menu layout for 16:10 and other resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "default some machines to lower resolution or lower quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "on steam deck always show selection reticle, use gamepad tooltips",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "change steam deck default settings and remove keyboard bindings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "on macs, hide buggy/unused vsync setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "running game directly from exe no longer connects to steam client",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "disable gamepad when exocolonist window loses focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "optional setting to show controller glyphs on PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "backup fonts for Japanese, Korean, Sim/Trad Chinese, other accents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "rename feedback menu to \"report a bug\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix upgrading cards at the gym",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix mid-life \"Clear Past Memories\" getting stuck in final event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix missing tracking the airsquid events and card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix missing beautiful vista card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix \"Delete All User Data\" wasn't properly clearing everything",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix backpack gear card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix gamepad shoulder button nav moving to unmet characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix button tooltips hanging around after menu closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix story text jumping down to the first button on first page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix hidden pets not showing up in relax park events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix tutorial for exploration zones not appearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix age 19 impossible battles being too easy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix credits scroll jumping down after a few seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix two infinite engineering / bravery skill loops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix to audio issue that sometimes froze cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix mourning events playing after that status is gone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix clearing chara stories when you load the game in glow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix cancel button triggering \"Go Home\" instead of \"Keep Exploring\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix card challenge tutorial straight example cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix challenge goal box briefly saying overgoal on win/lose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix bonus skills not awarded in skip card challenges mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix grabbing collectibles behind blocking events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix showing unique cards you already have in choice buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix black edges on some special ending art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix card header backgrounds sometimes disappearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix rebellion skill increase bubble tooltip text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix text scrolling down after canceling gifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix age 17 big portrait disappearing when you change appearance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix navigation up from top-right chara on charas menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix pressing submit on popup input field now triggers OK button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix undoing picking a friend in intro leaving bonus skill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix not closing gallery when main menu opened via system menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix briefly showing wrong info on deck menu as it opens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix characters being prematurely marked as met during dreams",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix being able to interact with battle menu during win/lose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix incompatibility with turkish operating systems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix disappearing gamepad reticle after using input field",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix saving email address on the feedback menu like we used to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix northway games logo on linux / steam deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix software keyboard not opening on steam deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix left menu button on steam deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "fix around 50 minor typos and small narrative issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enjoy and take care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sarah",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 39,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1148760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1148760/view/4613399405937169847"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-05T17:22:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.519Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-05T17:22:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1148760",
+      "checkedAt": "2026-11-13T03:23:23.520Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-05T17:22:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:16:56.926Z"
+  }
+ ],
+ "issues": []
+}

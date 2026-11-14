@@ -1,0 +1,707 @@
+{
+ "game": {
+  "id": "stasis-bone-totem-140866",
+  "igdbId": 140866,
+  "name": "Stasis: Bone Totem",
+  "cover": {
+   "imageId": "cobnhk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobnhk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arudv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arudv.jpg"
+  },
+  "ps5Release": "2024-03-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "stasis-bone-totem-140866@1.0.4.3",
+   "gameId": "stasis-bone-totem-140866",
+   "displayName": "Update 1.0.4.3",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-08-23T14:01:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Japanese and Brazilian Portuguese translations (credited in files and on the language selection menu).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added FAN icon to flag the language selection screen to differentiate fan translations from official translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated torpedo puzzle screen to support ultra wide-screen monitor edges correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated clock puzzle screen to support ultra wide-screen monitor edges correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated spirit door puzzle screen to support ultra wide-screen monitor edges correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated portraits in PDAs to be more accurate to the characters portrayed in each diary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the white flash from portraits in PDAs; the animation is now more subtle and less distracting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added better clear clue images (from computers/trash/popups, etc.).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added many more graphical hints for puzzles that players had difficulty solving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Achievement/Collection graphics to match all storefronts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Error Analytics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1426010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1426010/view/5875595438691959851"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-23T14:01:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1426010",
+      "checkedAt": "2026-11-13T03:31:39.209Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-23T14:01:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1426010",
+      "checkedAt": "2026-11-13T03:31:39.209Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-23T14:01:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:51.650Z"
+  },
+  {
+   "id": "stasis-bone-totem-140866@1.0.3.4",
+   "gameId": "stasis-bone-totem-140866",
+   "displayName": "UPDATE 1.0.3.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-14T15:45:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "WINDOWS 1.0.3.4 UPDATE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved GamePad Virtual Cursor speed option to Input (From Accessibility)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Gamepad/SteamDeck instant directional facing option for characters ('Instant Face Direction')",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added camera zoom on gamepad (arrow buttons, up and down)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Spanish credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recreated clue graphic in Omega Forward Lab for Scrubber puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animated submariners' PDA profile pics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the maturation chamber puzzle speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed rendered PDA portraits skipping frames on animations, increased count to 180 frames",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated internal achievement graphics to match other platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhanced flashback scenes to better convey story elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added flashing light to crane console in 'The Blister'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated PC rendered images to provide more puzzle clues/story elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Charlie indicator when interacting with Calaban, showing a 'use on' marker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the default video volume by 15%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shifted sharpen effect on graphics to only occur after bloom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed power balance puzzle to account for the second possible solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 3,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1426010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1426010/view/5480373588782978417"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-14T15:45:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1426010",
+      "checkedAt": "2026-11-13T03:31:39.208Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:51.648Z"
+  },
+  {
+   "id": "stasis-bone-totem-140866@1.0.2.1",
+   "gameId": "stasis-bone-totem-140866",
+   "displayName": "UPDATE 1.0.2.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-06T17:48:21.000Z",
+   "notes": [
+    {
+     "title": "JUNE 06, 2023",
+     "items": [
+      {
+       "text": "Inventory Bug; rarily, you could double-click on a craft slot, while holding an item and remove an item accidentally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Delay to opening PDA on entering a new scene increased at 2 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missed names to credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Switch from brain to cutscene faster when Moses examines the dead brain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moses exits the transport faster when in transit, when all events are satisfied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce the volume of the intro video.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect Mac description of globules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “stumped legs” description in the LIMA sub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “breaking” sp error in scene at well POD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remove all hint labels when the first character switch occurs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased gamepad timer of descriptions to a 15 seconds hide delay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a gamepad debug for translation testing - up, down, left, right, B,B,B,B,B,B, up, down, left, right Activates on Main menu only.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Omega lab microscope bug on closing microscope while action is beeing performed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed possible bug in the fields where Charlie is taken - convo wasn't triggered on character switched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed possible bug inserting Charlie into the pod - convo wasn't triggered if player clicked out quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Expanded the internal convo logging system to take in 550 conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed possible ending bug that soft locked the game on the final screen with the grenade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the autosave to 6 minutes to avoid propagating bad saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fix gitch where torpedo could still be unlocked after puzzle is completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enlarged the crane terminal at the digg site hostpot for gamepad users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enlarged the hotspot for the falling crane at the temple gorge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enlarged First convo detection zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Middle Mouse click binding to skip conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enlarged the Faran computer hotspot size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enlarged the POD control at Omega base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enlarged the birthing chamber vault door hotspot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exposed debug info - Press F3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the menu ockout bug on some gamepads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the menu lockout on the Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the auotsave isssue on some systems using the gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "de - Fixed some German Loca lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 2,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1426010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1426010/view/5151601211244997740"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-06T17:48:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1426010",
+      "checkedAt": "2026-11-13T03:31:39.207Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:51.646Z"
+  },
+  {
+   "id": "stasis-bone-totem-140866@major-2021-08-27",
+   "gameId": "stasis-bone-totem-140866",
+   "displayName": "STASIS 2 - BONE TOTEM - AUGUST UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-27T06:58:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I'm excited to update you on the progress of STASIS 2 - BONE TOTEM!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GRAPHICS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once we've decided on how the puzzle works, it can take several days to design and illustrate the associated scenes. A puzzle may span several large screens, so all of the rooms have to be planned and detailed concurrently to ensure that the puzzles and interactions will work. We also have to take into account that our puzzle solutions will often involve multiple characters in different areas. STASIS 2 features character switching like the classic adventure game, Day of the Tentacle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Working with our 3D technician, Mark, who is a 40-year veteran architectural expert, made all the difference in BEAUTIFUL DESOLATION. Structures actually worked as they would in real life (that is until Chris made them look post-apocalyptic). His work on the new STASIS game is fantastic and brings a real-world ‘this could exist?’ edge to the imagery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are some elements for a yet-to-be-revealed part of the story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chris is working on the final chapter of Mac and Charlie and so the gameplay is heating up! We have connected most of the game environments together which means you can traverse from one side of the world to the other. Specific puzzle implementation (ie. puzzle code!) will only happen once all screens are completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are trying to find a balance between the familiar world of STASIS and something new and interesting as you can see in these screenshots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "GAMEPAD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nic has been hard at work implementing native gamepad control - a first for our games - which has not been an easy task, as the scope of reference for gamepad controlled point-and-click adventures is little to none. We considered the ‘virtual cursor’ method that would be easiest in so far as you have a cursor that the player can move with the gamepad. However, this seems like we're losing a great opportunity to explore a different player interface mechanic. Our games have always been a disadvantage as compared to their 3D first-person counterparts, as we need to rely on the players' other senses to form for immersion. The mouse control forms a disconnect whereas the gamepad is a direct control input of the character which could be interesting to explore. We also don't want to isolate our mouse-only players so it is a fine line to balance.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Bearing this in mind, we also have our limitations as essentially a two-man studio. We did it! You can now hot-swap the gamepad and mouse, and STASIS will play as per normal. The systems are also similar so it means less duplicated code to do the same tasks. This may make future console releases quicker and more seamless to our own internal development QA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MUSIC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you know, we pride ourselves on only working with the best. We have a surprise for you, but it shall only be revealed later. It's epic!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WRITING",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daniel has been hacking away at the text descriptions in the world. Whereas we dedicated a month to write the descriptions in the previous STASIS game, Daniel has now spent the better part of the year writing and crafting each description. He is an immensely talented professional RPG writer and I am sure you will love his prose!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "WISHLIST",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please wishlist the game if you have not already. This is important for the Steam metrics when we launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SOCIALS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Be sure to follow me on Twitter: https://twitter.com/StasisGame and we keep our Blog updated with minor news here: https://www.thebrotherhoodgames.com/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chris & Nic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1426010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1426010/view/4018887653982856216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-27T06:58:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1426010",
+      "checkedAt": "2026-11-13T03:31:39.206Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:51.644Z"
+  }
+ ],
+ "issues": []
+}

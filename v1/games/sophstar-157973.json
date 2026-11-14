@@ -1,0 +1,1546 @@
+{
+ "game": {
+  "id": "sophstar-157973",
+  "igdbId": 157973,
+  "name": "Sophstar",
+  "cover": {
+   "imageId": "co4qpy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4qpy.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arx6y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arx6y.jpg"
+  },
+  "ps5Release": "2022-10-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sophstar-157973@1.13",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.13",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-08-17T20:12:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We corrected a bug where dying during the True Last Boss could remove 2 lives instead of 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trully sorry about that, it was added when we updated the game recently to use the new Gamemaker version (And thus adding the new bullet and video options)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Should be okay now. This should have gone live sooner, but Steam was being difficult to us last week, hehe. All is well, if anyone has any trouble, as usual, let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/1840944183787158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-17T20:12:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.577Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-17T20:12:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.577Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-17T20:12:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.739Z"
+  },
+  {
+   "id": "sophstar-157973@post-2026-06-18",
+   "gameId": "sophstar-157973",
+   "displayName": "1.12B",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-06-18T19:42:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As the user who discovered this bug put it: \"can't have a new update without causing more issues.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bug introduced in the latest update could cause the game to crash during Stage 6. This issue has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The problem was caused by the migration to a newer version of GameMaker. We failed to catch it before releasing the update, and for that I apologize.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everything should be working properly now (fingers crossed!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/1835871199305355"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T19:42:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T19:42:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.577Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-18T19:42:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.738Z"
+  },
+  {
+   "id": "sophstar-157973@1.11",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-29T03:01:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated Sophstar to Version 1.11",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes to this version",
+     "items": [
+      {
+       "text": "Fixed bug with level 5 background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong frame animation showing when ship enters screen after losing a life",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with bonus pickups not awarding the right amount of points on Advanced score mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added \"nonsense\" video filter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you find any problems with this version please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/5141475722343780958"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-29T03:01:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.576Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-29T03:01:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.576Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-29T03:01:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.737Z"
+  },
+  {
+   "id": "sophstar-157973@post-2023-05-10",
+   "gameId": "sophstar-157973",
+   "displayName": "Rollback to previous version",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-05-10T22:31:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We had a small update a few weeks ago, it was a very small change, but we had 2 reports of the game randomly crashing after that update which seems to be related to the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we're rolling back to the previous version which we know it was working properly and had no game-breaking problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upon until we find what's the problem we'll keep this version live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/5140340308867325261"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-10T22:31:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.575Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-10T22:31:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.576Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-10T22:31:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.737Z"
+  },
+  {
+   "id": "sophstar-157973@1.10",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-04T22:11:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We updated Sophstar to V1.10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's using a newer Steam SDK, which may make the game run with less problems when using Linux (Including Steam Deck)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We also corrected a small bug where the incorrect frame animation would be used when the ship is re-entering the screen after exploding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As usual, if you have any trouble with this version, just shout it out at our forum!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/5138087875080837284"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-04T22:11:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.575Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-04T22:11:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.575Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-04T22:11:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.736Z"
+  },
+  {
+   "id": "sophstar-157973@1.09",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.09",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-31T21:31:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We updated the game to version 1.09",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It just fixes a bug with the Score Attack mode, where sometimes when playing on the ORIGINAL Scoring Mode would make the Bonus Item not give the player any points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope it didn't hurt many people hiscores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, if you have any trouble with this version, let us know in our forum!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4621277624688458282"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-31T21:31:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.575Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.736Z"
+  },
+  {
+   "id": "sophstar-157973@1.07",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.07",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-29T19:05:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated the game to 1.07 version. This was just some minor bug-fixes which apparently no one had noticed....",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Unlockables were being unlocked automatically before the condition to unlock then were met. If you get stuff unlocked before the right time, congratulations, consider it a bonus :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Online Leaderboards wasn't updating when changing difficulty on certain occasions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have any problems with this version, just report them at the usual place:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4258723269527173793"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-29T19:05:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.574Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.735Z"
+  },
+  {
+   "id": "sophstar-157973@1.06",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.06",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-16T20:36:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated Sophstar to version 1.06.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now there's a Training Mode! You can practice any levels you've beaten before, without worrying about running out of lives! (You always have 98 lives on Training Mode :D )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unfortunately there was no way to get the progress you already had, so you'll have to beat the levels after the update to enable training mode on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also practice against just the bosses... even on their Hyper Mode! And they won't revert to normal mode if you die on training mode, so you can keeping practicing as long as you wish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also hold Select on the gamepad or Backspace on the keyboard for a quick level restart.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Just select \"Arcade Mode\", then select \"Training Mode\" and good luck!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We tested this update enough to make sure there were no new bugs after implementing Training Mode, but if any slipped through us, please report at the usual thread and we'll try to fix it as fast as we can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux version should be coming next very soon!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4259848535825003256"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-16T20:36:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.574Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.734Z"
+  },
+  {
+   "id": "sophstar-157973@major-2022-03-01",
+   "gameId": "sophstar-157973",
+   "displayName": "1.05C Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-01T15:05:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The 1.05C update went very silent, but we guessed some people may be wondered why it exists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We actually jumped from A to C version, because some corrections were done so quickly we didn't even upload them to Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We fixed a bug with the game crashing in Level 5 cutscene, which begun to happen with 1.05 version (It stayed on the game for less than 8 hours :D )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We made some minor optimizations so the game ran with using less GPU resources. The game is insanely light as it is, but we had a couple of reports of stuttering mainly when using a recording/streaming program like OBS Studio and we hope this is gone by now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We optimized the C64 and \"Famines\" filters so they don't slowdown the game on older machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We made a few changes regarding the Linux version (still beta-testing, but it's coming up!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "That's it, We are sure most people wouldn't even have noticed those small changes :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4246335832526620854"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-01T15:05:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.573Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.734Z"
+  },
+  {
+   "id": "sophstar-157973@1.05",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.05",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-27T20:11:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated the game to version 1.05. We've added a few more filters, now you can play with C64, MSX1, NES and other palette.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also made a major overhaul on the way the game writes Japanese texts and revised all the dialogs on this language. We are still doing another revision, but we believe the game may be now more enjoyable for japanese-speaking people",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also corrected a few typos on dialogs. We found hilarious no one so far had noticed Soph says something about \"Doing *grills* to become a pilot\", LOL :D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're still beta-testing the Linux build, but we're going to take a couple of days to rest (It's Carnaval here in Rio de Janeiro, where we're based!). We expect the Linux version to be up very soon!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4246335832520110388"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-27T20:11:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.573Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.733Z"
+  },
+  {
+   "id": "sophstar-157973@1.04",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-27T00:41:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Our programmer was updating the Scanline filter so it looked better when playing on higher resolutions... and he was having so much fun that he decided to add a lot of new filters. And they are all unlocked from the get-go!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "He says he still wants to add an MSX Palette filter because it's the computer he grew up with and learned how to code ... let's see if he will find time to do this :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Corrected a bug that prevented the game to upload scores on Endless Mode - Hard Difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an option to make the enemy bullets \"pulsate\", as we've been told this would make the game easier for colorblind people",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We are *still* working on the Japanese translation patch, so keep an eye on it ! - We want to thank our japanese translator, Luiza Fernandes, for the tireless work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And our friend Sho Akutsu who pointed out the problems with the Japanese text and is helping us a lot with it. We will add his name to the Special Thanks section of the credits on next update, but we wanted to thank him right away, as his help is being immensely valuable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4246335832517150225"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-27T00:41:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.572Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.733Z"
+  },
+  {
+   "id": "sophstar-157973@major-2022-02-23",
+   "gameId": "sophstar-157973",
+   "displayName": "1.03C Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-23T02:04:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Okay, we lied, but just a little bit. We've said that the C version would be the last one in this branch but... here's version 1.03D!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some filters made the options screen unreadable, it was almost impossible to go back to the options screen to turn them off if you had activated one of them. Now these filters are only activated within the game. If there is still a filter that makes the options screen difficult to read, or if you find any other bugs, you already know, let us know at:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Changed the Warning sound, music and add some effects when you activate Hyper Mode. (What? You haven't activated it yet? Well, it's a secret :) )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an \"Auto\" border option, which changes the border depending on the in-game state and the ship you are playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the font for the name in highscores when the name is too big to fit the screen or contains foreign or special characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the \"Silver Head\" boss would not fire its bullet patterns correctly in Timed Challenge mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the boss graphics for the first stage to make it more obvious where his safe areas are.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the wrong level 1 boss hitbox that allowed the player to stay alive on top of it when it shouldn't .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where part of the background continued to scroll with the game paused in level 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the position of some background assets on level 7. Pretty sure no one noticed but our programmer did and it was driving his crazy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We continue to work to improve the Japanese translation of the game. We'll have news about it soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you all are enjoying Sophstar!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4246335832502791999"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-23T02:04:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.571Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T10:24:30.732Z"
+  },
+  {
+   "id": "sophstar-157973@1.03b",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.03B",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-21T05:14:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've updated the game to version 1.03B",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes made",
+     "items": [
+      {
+       "text": "Added option to turn off the right analog stick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warning screen if you start the game without Steam connection and that you won't be able to upload hiscores",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that caused controller vibration to stay on even when the player turned it off in the options screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It is no longer necessary to have the Steam Overlay turned on to upload hiscores",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you find any problems with this version, please report us in the topic below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know there are still some minor issues with the display in Tate mode, and we're working to resolve them! We are also working on adding some accessibility options for colorblind players and players with increased sensitivity to light effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4246335198905779606"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-21T05:14:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.571Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.730Z"
+  },
+  {
+   "id": "sophstar-157973@major-2022-02-20",
+   "gameId": "sophstar-157973",
+   "displayName": "1.03A Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-20T09:52:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We found a bug on the endless mode that made the game easier than it was supposed to be on this mode.... and we made this an extra mode! As many people were already having lots of fun with this mode the way it was, we kept it this way (and we fixed the long periods with no incoming enemies), and we've \"added\" the original planned mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now endless mode has 2 difficulty levels, Hard (the one planned originally) and Easy (the way it was up until now). Play the one you find more fun, each one has its own leaderboards (online and offline)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We also made these changes",
+     "items": [
+      {
+       "text": "New borders were updated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Screen position when in full screen was fixed, it should be centered in most if not all resolutions by now (If it isn't on your screen, let us know! - but you can fix it yourself on the video options)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes in the results screen on arcade mode, now showing level reached and number of continues used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cadet school result screen now shows what level was played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug-fixed when Nina collected a power up when her clone was on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing the size of the window now keeps the windon inside the display if the window is bigger than the display. Please note this may deform the pixels, so avoid playing it this way and use a correct window size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected the window size so now it display at the correctly 16:9 ratio when in yoko mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please note this version has an \"a\" on its name, because we have more changes planned for this version, but our programmer needed some sleep (He's been working a lot these last 2 days!), we know there are still some fixing to be done, mainly with the display and how the screen is being shown on tate mode. We're trying to add proper support for most screen resolutions, but for now you can change the screen using the Zoom and Screen Position options (Which we want to make a little better too).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for the support and we hope you're enjoying the game! If you find any problems or bug, please repoprt at:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4246335198902842009"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-20T09:52:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.570Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.730Z"
+  },
+  {
+   "id": "sophstar-157973@post-2022-02-19",
+   "gameId": "sophstar-157973",
+   "displayName": "New Borders options!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-02-19T21:55:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We just updated the game with lots of new border options! Most of them now fit the whole screen on every resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update your version and choose your favourite one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4246335198901029253"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-19T21:55:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.570Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:30.729Z"
+  },
+  {
+   "id": "sophstar-157973@1.01",
+   "gameId": "sophstar-157973",
+   "displayName": "Update 1.01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-11T00:26:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We know the game hasn't been launched yet, but some streamers and other media people have been palying the game, and we figured out some stuff needed to be changed before launch. So if for some reason you already had played the game, here are the main changes on version 1.01 :",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dumont now has a wider main shot and it's teleport explosion does a little more damage;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dumont's fake explosion now has a different color and sound effect, so players don't get confused if they are dying or teleporting;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small change on Rigby's main show, now they cover a bigger area;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cadet School menu now works better, rembering the last trial you played;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We added a confirmation screen before quitting a game, so players don't get frustrated when accidentally quitting;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small corrections on localization texts;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed some of the trials in the Cadet School mode to reflect the changes we made to some ships after the first demo;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a small bug when teleporting half a second before finishing a level;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game now remembers the last score system you chose for the arcade mode, so if you want to play advance mode you don't need to keep changing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the bosses patterns were changed so it gets a littler easier. But we won't tell which one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have any trouble with the new version or if you see a bug, tell us on the community forum or join our discord server at https://discord.com/invite/WsBt9Y6!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/6154735015615772803"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-11T00:26:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.569Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:45.514Z"
+  },
+  {
+   "id": "sophstar-157973@major-2021-06-17",
+   "gameId": "sophstar-157973",
+   "displayName": "Demo update.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-17T21:25:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We pushed a small update for our playable demo. It fixes a few issues in the different options menus, most importantly one that made the game free in the \"Redifine Controller Buttons\" screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you can use Enter/ESC to go forward and back at the menus, and we hope the \"Press Start/Enter\" at the title screen makes clear that Enter works as the Start button for keyboard players :)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1410440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1410440/view/4056035920056050906"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-17T21:25:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1410440",
+      "checkedAt": "2026-11-13T03:31:00.568Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:45.513Z"
+  }
+ ],
+ "issues": []
+}

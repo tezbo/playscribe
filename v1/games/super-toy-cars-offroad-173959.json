@@ -1,0 +1,360 @@
+{
+ "game": {
+  "id": "super-toy-cars-offroad-173959",
+  "igdbId": 173959,
+  "name": "Super Toy Cars Offroad",
+  "cover": {
+   "imageId": "co5oqw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5oqw.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar15el",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar15el.jpg"
+  },
+  "ps5Release": "2022-04-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "super-toy-cars-offroad-173959@major-2022-11-02",
+   "gameId": "super-toy-cars-offroad-173959",
+   "displayName": "Steam Deck compatibility update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-02T08:39:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Implemented bars to have a 16:9 screen ratio in-game as well as in the menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented support for going back in the menus using the gamepad even if it's not the gamepad used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1511190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1511190/view/4732747437197607861"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-02T08:39:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-02T08:39:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.143Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-02T08:39:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:01.856Z"
+  },
+  {
+   "id": "super-toy-cars-offroad-173959@post-2022-11-02",
+   "gameId": "super-toy-cars-offroad-173959",
+   "displayName": "Better support for Steam Deck",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-11-02T07:13:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Better support for Steam Deck by making the 16:10 resolution work well with bars up and down so that it looks like 16:9 just as intended",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1511190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1511190/view/4732747437197390266"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-02T07:13:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-02T07:13:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.143Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-02T07:13:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:01.855Z"
+  },
+  {
+   "id": "super-toy-cars-offroad-173959@post-2022-10-30",
+   "gameId": "super-toy-cars-offroad-173959",
+   "displayName": "Minor Steam Deck fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-30T21:38:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improved Steam Deck support. Still working on that.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1511190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1511190/view/4706851091185329655"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-30T21:38:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-30T21:38:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.142Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-30T21:38:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:01.854Z"
+  },
+  {
+   "id": "super-toy-cars-offroad-173959@post-2022-03-05",
+   "gameId": "super-toy-cars-offroad-173959",
+   "displayName": "1.02r3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-03-05T11:34:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Third release of patch 1.02. This one should work as expected. Apologies for the issues with the previous updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1511190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1511190/view/4247462367437496850"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-05T11:34:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:01.852Z"
+  },
+  {
+   "id": "super-toy-cars-offroad-173959@1.02",
+   "gameId": "super-toy-cars-offroad-173959",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-03T17:04:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added option to restart a race in the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved AI to avoid it pulling too far ahead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other improvements and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1511190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1511190/view/4247462367431047158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-03T17:04:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1511190",
+      "checkedAt": "2026-11-13T03:32:13.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:01.852Z"
+  }
+ ],
+ "issues": []
+}

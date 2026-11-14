@@ -1,0 +1,1548 @@
+{
+ "game": {
+  "id": "frogun-152051",
+  "igdbId": 152051,
+  "name": "Frogun",
+  "cover": {
+   "imageId": "co4w8g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4w8g.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1omo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1omo.jpg"
+  },
+  "ps5Release": "2022-08-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "frogun-152051@1.92.2",
+   "gameId": "frogun-152051",
+   "displayName": "Update 1.92.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-06T19:55:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a while since the last patch went out, but that time hasn't been wasted! This is the last big update to Frogun, and should solve all known bugs (except a small selection left as they are for speedrunners to keep using as before!), and includes a bit extra QoL features. Without further ado, here's the update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Made posed models for the bosses to use in their death animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made final boss level results not auto-advance to credits if the level was finished before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added “hold to speed up” to credits scene (20x speed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made the expert time trial not require a full level emblem to appear first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made all medals trigger their achievement again when loading the game, in case some didn’t trigger it due to connection problems in the past",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added swap jump/grab buttons option to menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed wrong settings on vertical fog in Brutal Rush",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shop icons in level select map don't show \"completed level\" sparkles anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a source of lag near falling icycles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As you can see, we've gone from broader changes to more minute ones, and the game now works and runs better than ever thanks to all of your feedback! 🐸💙",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "But wait, one more thing!",
+     "items": [
+      {
+       "text": "As always, thank you so very much for your support, your feedback, and your encouragement. See you soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575470/view/4613399405941202083"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-06T19:55:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575470",
+      "checkedAt": "2026-11-13T03:21:19.540Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-06T19:55:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1575470",
+      "checkedAt": "2026-11-13T03:21:19.540Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-10-06T19:55:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:43.971Z"
+  },
+  {
+   "id": "frogun-152051@1.92",
+   "gameId": "frogun-152051",
+   "displayName": "Update 1.92",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-14T12:49:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on feedback from 1.91, we've now updated the game on the main branch to 1.92 - the beta branch also reflects this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This continues on the set of changes already made to the game to deliver some fixes to commonly mentioned issues, such as high refresh rate instability, item persistence, and many other bugfixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CHANGES MADE IN THIS BUILD",
+     "items": [
+      {
+       "text": "The list of changes is as follows - this list also includes fixes from 1.91:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High refresh rate time scale fixes - FPS logic has been changed to be more frame independent, with behavior shifted to a fixed timescale. This is the biggest change and should make the game far more comfortable for many players, esp. those playing at high FPS rates who found issues with things like bouncing or grappling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made items collected except for obsidian skulls persistent in a single run through death - this experimental change was much asked for by players and was implemented on our end in response to feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made vases with coins that were collected respawn, but empty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shoot/Camera 45º snapping options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made “Stomp” attack by Prickly never get out of the platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a note icon on the results screen during the emblem completion phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made vases which don’t contain coins to have a red colour pattern instead of green, adding a visual differentiation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed redundant death areas at the start of Running with fear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that prevented L's model from appearing in the bestiary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Set checkpoint spawn camera direction to correct direction on all levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed death animation able to trigger when resetting, which caused a timer bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Snowball collision improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wintry shouldn't get stuck in columns anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Wintry’s start animation so it’s inside the ground and not floating outside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed death area in steep descent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made enemies restart their alert status on respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug that would cause fly enemies to not register the hit at specific angles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hexy’s tiara not unlocking the doppelganger medal when used against Hexy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dying without reaching any checkpoints resets the death counter to zero - this was a much asked for request especially among completionists and speedrunners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved “Restart Level” option in pause menu to 2nd from top",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved camera sensitivity X, camera sensitivity Y, camera damping, drop shadow, and character normal shadow to graphics instead of gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Reset to checkpoint\" option in pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that would prevent level music doesn’t play again after dying in some bossfights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added invert x-axis option to menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed coins at the start of the skull path in Pushy Hallway",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed sound issue so audio channels aren’t filled in Wintry’s intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed an arc which caused Renata to get stuck under it on Trap Hall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Jake jump correctly after respawning, and improved Jake race behavior on certain levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed hollow trunk with hole collider so Renata cannot slide down the sides of the hole",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hat models still displaying a shadow if character shadows were disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made tar bubbles hook area bigger and more forgiving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made jump after tilted shrooms in At the finish line shorter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made health not get to two lines if the text is too long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added deadzone option (sensitvity) for movement in addition to camera if possible; also increase general movement deadzones - another much asked for change for accessibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed wrong column in Race at the topside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Refined camera damping/smoothing behavior so it dampens the Y-axis more than X, so the camera doesn’t have the current problem of “trailing” after the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added ability to skip dialogues- another much asked for change for accessibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made spike vine hitboxes smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed trees from dialogue area on Mountain Jog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hexy’s icon in level select is now that of a boss level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Wintry's hitbox sometimes hitting the player when ramming into her",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fireballs don't have blob shadows anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can't zipline towards fireballs anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various other small tweaks & QoL changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed internal timer bug that affected all of the bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented 45º Snap options to save/load correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that prevented Hide Timer option to save/load correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Wintry's hitbox during her floating state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that would make the input used during pause the moment the pause menu was closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coin chests’ break sound is now assigned to the sound effects audio volume slider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added nullReferenceException error handlers in UI Control code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Renata can now shoot the Frogun twice in the air, if the first shot misses.: This update is possible thanks to all of your feedback, and more is coming soon! Thank you everybody!: And last, a big announcement!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Frogun will be on Tokyo Game Show 2022!",
+     "items": [
+      {
+       "text": "Finally, thank you all for keeping up with the Frogun updates, and I'm looking forward to sharing more news soon! 🐸💙",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 15,
+    "balance": 0,
+    "other": 36,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575470/view/4705721386244504917"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-14T12:49:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575470",
+      "checkedAt": "2026-11-13T03:21:19.539Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:03.112Z"
+  },
+  {
+   "id": "frogun-152051@1.8",
+   "gameId": "frogun-152051",
+   "displayName": "Update 1.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-10T18:07:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all! The test branch's patch update is now live on the main branch of Frogun as we're more confident of it's stability, so everybody should be getting an update to the live version of the game soon. This updates the game from the launch version (1.6.3) to v1.8. However! We've made a few changes detailed below, as not everything from the test made it into this version after a lot of thought.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've played the test, then you'll already be familiar with most of the fixes below. If not though, there's a smorgasbord of QoL improvements and minor fixes that we've implemented in response to feedback! Check it all out below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've also implemented multiplatform (multi-device/PC + Steamdeck) Cloud Saving! More info on this (and some pre-cautions) below.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Removed fall areas near S-shaped skull section at the start of Chamber Of Spooks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed level select chests opening sound playing full volume all at once when entering the level select map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Jake stop hurting in races, and for him to only \"bop\" the player for a split second if collided with. (causes a stun rather than damage - this was a common complaint because of narrow pathways - we didn't want to remove the challenge, so we didn't remove *all* damage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed start of level animation not consistently playing upon starting a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Experimental camera damping slider; smooths camera movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made input made during the \"unpause\" frame not affect the player character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed third Eyemerald to white coin in Golden Depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed bugged coin vases inside stair in Scorchy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Y position forcing method for bosses (should help with bosses such as Scorchy getting stuck).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added invert x-axis option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Correctly rotated checkpoints so spawning on them will point players in the correct direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed blob shadow from Wintry's ice spears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set Wintry's NPC sounds to the sfx volume channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Beelzebub's shots spawn correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Beelzebub's spike wall spikes actually hurt you if you jump on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made hanging spiders stay down for two seconds more, so chaining them is easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made shortest slide-jump a bit longer in Golden Depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made timed color pullers not emit tic tac sound if a button of the same color activates the color without timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coded bouncy mushrooms to not affect the player while in the \"death in water\" action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed \"Hatter's special\" hat unlock conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fade out music method.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Option to force shots to snap to 45 degree angles, before autoaim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the switch timer ticking sound could loop infinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made final level stop victory music before going into credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed fourth Max. HP chest requirements from 15 wings and 20 rings to 10 wings and 15 rings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed last Max. HP chest requirements from 30 to 15 full emblems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collider of thin square columns so they have a full block hitbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing delay between skull and eyes parts of emblem in level results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced delay between emblem pieces in level results from 1 second to 0.75 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed tongue artifacts when shooting near Hatter at the end of Race on the topside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed tree branch mesh collider to a box collider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed invisible blocks in Mountaintop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed floating tiles at the end of Cold cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed invisible blocks in Slidey Spikey Cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed position of Dark Cave, Haunted Ruins and Gold Ruins vertical fog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated credits backer name change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified obsidian skull path entrance in Golden depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the one barrage in Super Beelzebub that didn't wait for the pillar to spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced health of Prickly and Kicky to 2 in Boss rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Wintry, Scorchy and Hexy to 3 in Boss rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Prickly from 5 to 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Kicky from 4 to 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Wintry from 5 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Scorchy from 5 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Hexy from 5 to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Beelzebub from 7 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of L from 3 to 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed empty vase at the end of horizontal column in Breaking in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed coins inside the Obsidian Skull path in Pushy hallway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked Obsidian Skull path in The tar swamp to reduce the length of the bubble chain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added slope near the start of Mountain jog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly modified start area of Hot Feet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed blinking blocks on the moving spike rod section near the end in Treasure vault.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed duplicated \"Published by Top Hat Studios\" text at the end of the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added emblem legend to level select screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made it so that picked coin count cannot surpass total coin amount in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam cloud save integrated. You may see a momentary frame jitter when buying a new hat, unlocking more HP, or on the results screen after finishing a level - this is where the save data is wrapped in order to push it into the cloud without introducing another loading screen. It should not interrupt actual gameplay, however. NOTE: THERE IS SOME ADDITIONAL NOTICE HERE: SEE LAST COMMENTS: And some additional issues which were found in the beta-test branch - these are new fixes NOT from that branch:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed boss behaviour in At The Top Of The World sometimes malfunctioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 100% progression counter not calculating in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed expert time trial recordings being incorrect in some circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed too dark shader in the brutal boss rush mode (and several other fog areas).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiplayer coin count sometimes displaying incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "WHAT DIDN'T MAKE IT IN FROM THE TEST VERSION",
+     "items": [
+      {
+       "text": "As mentioned in the last post, we felt that the test had issues with balancing our game design of challenge next to the ideal balance of difficulty and easiness. The test had a lot of checkpoints added, and we've removed these to maintain the challenge. However, there are checkpoints specifically near all obsidian skull entrances now - this should help with creating a better sense of fairness for completing these challenge segments. However, we listened to all user feedback and have a solution in the works. Please see below for expectations in the next beta-test branch build (will be live over the next few days).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "COMING IN THE NEXT UPDATE",
+     "items": [
+      {
+       "text": "Our aim for the next update patch for the game will address very high refresh rate issues (like at 165hz and 240hz), to better make animation and physics/game logic more independent of FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This coming update will also do some additional difficulty balancing as mentioned above. Below is what you can expect on the next upcoming test.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've heard from a lot of you that going to lengths and backtracking to pick up all the coins, only to lose them by dying before hitting a checkpoint - forcing the whole process to be done again, often multiple times - is quite frustrating. While there is meant to be a sense of challenge in having to not just collect things but also make it out alive, we acknowledge there's a need for balance. We also feel the experimental solution of simply adding checkpoints incorrectly removed challenge without better balancing the game mechanically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In response to this, we will be introducing an experimental fix for changing collectibles to have persistent collected behaviour in levels - so if you die, any coin you've collected remains collected, but you'll respawn at last checkpoint. This is only within each level session themselves, however - if you quit the level without finishing, they won't remain collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Furthermore, we have decided \"challenge items\" (the obsidian skulls) will still require visiting a checkpoint, something which is balanced with the current checkpoint solution. We feel keeping this mainly for widespread collectibles like coins is the best balancing solution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other things we'd like to include in this next test include additional smoothing options, as well as further accessibility options in the gameplay menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "TRADING CARDS AND EXTRAS",
+     "items": [
+      {
+       "text": "In the next UPDATE, we also plan to introduce trading cards, badges, emotes, and backgrounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NOTICE ON CLOUD SAVES",
+     "items": [
+      {
+       "text": "In order to ensure that saves do not have issues, we've introduced a means of transitional save data. This means for EXISTING save data, it will *not* auto-sync with the cloud. There will need to be an action which invokes the save behaviour first, so AFTER opening the game and completing a level your gamedata will correctly sync to the cloud. Basically, you do not need a new save or anything, but you need to trigger/invoke a save event in the current file for it to sync said file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FOR CONSOLE PLAYERS",
+     "items": [
+      {
+       "text": "Patches are in the works for all consoles and should be delivered on all versions and platforms by the end of the month. We need manual validation from platforms for patches, so these are slightly delayed. We expect the patch to include ALL fixes including from the next upcoming test (the coin fix), so expect a MEGA-PATCH on the horizon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 18,
+    "balance": 10,
+    "other": 41,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575470/view/4607764924147160886"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-10T18:07:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575470",
+      "checkedAt": "2026-11-13T03:21:19.538Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-10T18:07:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1575470",
+      "checkedAt": "2026-11-13T03:21:19.538Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-10T18:07:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:43.968Z"
+  },
+  {
+   "id": "frogun-152051@patch-2022-08-07",
+   "gameId": "frogun-152051",
+   "displayName": "Preliminary patch now available on beta branch! Details inside.",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-07T20:14:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone! We've been hard at work on the game in response to your comments and feedback. We're thrilled with the great reception to the game, and at the same time we've been listening to what you have to say about some of the parts that feel rougher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first of these changes are ready, and the game is actually quite remarkably complicated under the hood! For this reason, instead of reflecting it to the main file branch immediately, we're doing some tests to ensure that nothing has broken unintentionally as a result of these changes. However, we recognise that some of you really want to experience these sooner than later, so for that we're making it available via the Steam beta branch for everyone who wishes to play immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To access the beta branch to try the update, go to Frogun in your steam library -> Right click on Frogun -> Properties -> Betas -> Enter beta access code QwhcSbyEhoSN1ciu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any unexpected behaviours or bugs while playing this beta branch version, then please let us know! In a few days, as we've had more time to verify this update, it'll be mirrored over to the main branch of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Removed fall areas near S-shaped skull section at the start of Chamber Of Spooks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed level select chests opening sound playing full volume all at once when entering the level select map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Jake stop hurting in races, and for him to only \"bop\" the player for a split second if collided with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed start of level animation not playing upon starting a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Experimental camera damping slider; smooths camera movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made input made during the \"unpause\" frame not affect the player character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed third Eyemerald to white coin in Golden Depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed bugged coin vases inside stair in Scorchy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Y position forcing method for bosses (should help with bosses getting stuck).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added invert x-axis option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra checkpoints in most levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Correctly rotated checkpoints so spawning on them will point players in the correct direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed blob shadow from Wintry's ice spears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set Wintry's NPC sounds to the sfx volume channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Beelzebub's shots spawn correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Beelzebub's spike wall spikes actually hurt you if you jump on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made hanging spiders stay down for two seconds more, so chaining them is easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made shortest slide-jump a bit longer in Golden Depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made timed color pullers not emit tic tac sound if a button of the same color activates the color without timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coded bouncy mushrooms to not affect the player while in the \"death in water\" action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed \"Hatter's special\" hat unlock conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fade out music method.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Option to force shots to snap to 45 degree angles, before autoaim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the switch timer ticking sound could loop infinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made final level stop victory music before going into credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed fourth Max. HP chest requirements from 15 wings and 20 rings to 10 wings and 15 rings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed last Max. HP chest requirements from 30 to 15 full emblems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collider of thin square columns so they have a full block hitbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing delay between skull and eyes parts of emblem in level results.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced delay between emblem pieces in level results from 1 second to 0.75 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed tongue artifacts when shooting near Hatter at the end of Race on the topside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed tree branch mesh collider to a box collider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed invisible blocks in Mountaintop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed floating tiles at the end of Cold cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed invisible blocks in Slidey Spikey Cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed position of Dark Cave, Haunted Ruins and Gold Ruins vertical fog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated credits backer name change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified obsidian skull path entrance in Golden depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the one barrage in Super Beelzebub that didn't wait for the pillar to spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced health of Prickly and Kicky to 2 in Boss rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Wintry, Scorchy and Hexy to 3 in Boss rush.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Prickly from 5 to 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Kicky from 4 to 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Wintry from 5 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Scorchy from 5 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Hexy from 5 to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of Super Beelzebub from 7 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced health of L from 3 to 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed empty vase at the end of horizontal column in Breaking in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed coins inside the Obsidian Skull path in Pushy hallway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked Obsidian Skull path in The tar swamp to reduce the length of the bubble chain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added slope near the start of Mountain jog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly modified start area of Hot Feet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed blinking blocks on the moving spike rod section near the end in Treasure vault.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed duplicated \"Published by Top Hat Studios\" text at the end of the credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added emblem legend to level select screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made it so that picked coin count cannot surpass total coin amount in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam cloud save integrated. THIS IS NOT YET LIVE AS IT MUST BE FUNCTIONAL ACROSS BRANCHES FROM MAIN, but the functionality has now been coded. It will activate once the beta is confirmed fully stable and pushed to live. Once live, you may see a momentary frame jitter when buying a new hat, unlocking more HP, or on the results screen after finishing a level - this is where the save data is wrapped in order to push it into the cloud without introducing another loading screen. It should not interrupt actual gameplay, however.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 13,
+    "balance": 10,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575470/view/4598757090462075547"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-07T20:14:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575470",
+      "checkedAt": "2026-11-13T03:21:19.537Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:15:03.107Z"
+  }
+ ],
+ "issues": []
+}

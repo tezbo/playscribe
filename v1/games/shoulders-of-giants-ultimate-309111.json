@@ -1,0 +1,475 @@
+{
+ "game": {
+  "id": "shoulders-of-giants-ultimate-309111",
+  "igdbId": 309111,
+  "name": "Shoulders of Giants: Ultimate",
+  "cover": {
+   "imageId": "co8nyx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8nyx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar312r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar312r.jpg"
+  },
+  "ps5Release": "2024-08-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shoulders-of-giants-ultimate-309111@1.9.6",
+   "gameId": "shoulders-of-giants-ultimate-309111",
+   "displayName": "Patch 1.9.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-22T18:40:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Drop-in camera now stops moving when you pause the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where magnifying glass could hit robot in best friend mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the Spear air attack could get stuck inside enemies with solid collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked the skill tree UI to be less prone to scaling issues/wiggles/jiggles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a case where players could lose a BFM match if the frog spawned too soon before the robot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The dummy/target health in the hub world scales with HEAT in the late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Possible workaround for engine ability system crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance update: Shield knights now deflect a more forgiving angle of melee attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2283880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2283880/view/5875595438689019657"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-22T18:40:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.595Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-22T18:40:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.595Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-22T18:40:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.729Z"
+  },
+  {
+   "id": "shoulders-of-giants-ultimate-309111@1.9.5",
+   "gameId": "shoulders-of-giants-ultimate-309111",
+   "displayName": "Update 1.9.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-16T20:48:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a networking issue that could cause butterfly shot to not work for client players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some English ability descriptions for clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deployed turrets now consistently orient properly for client players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Friend Mode: sticky frog projectiles should no longer *ever* attach to your robot best friend (as opposed to merely *usually* not attaching)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now rebind the left and right arrow keys (fixed in 1.9.4)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more instrumentation to crash logs (btw please press \"Send\" if the game crashes on you!). All reported game crashes have been internal GPU crashes or deep in Unreal's engine code, making them much harder to track down. This extra info will help.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2283880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2283880/view/6909171012600465719"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-16T20:48:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.594Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-16T20:48:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.594Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-16T20:48:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.729Z"
+  },
+  {
+   "id": "shoulders-of-giants-ultimate-309111@1.9.3",
+   "gameId": "shoulders-of-giants-ultimate-309111",
+   "displayName": "Patch 1.9.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-13T20:38:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another small set of fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where input rebindings would not get saved (big goof on our part here--this worked in development builds but not in the real installed game🙃)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some sound effects for storm missions to be less distracting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug where the plasma projectiles would sometimes teleport to the center of the map for multiplayer clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Butterfly crystals should now be visible on goo enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note for crossplay players: this update is still in the process of releasing everywhere else.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a great day!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kyle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2283880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2283880/view/5963414363409828067"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-13T20:38:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.593Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-13T20:38:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.593Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-13T20:38:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.728Z"
+  },
+  {
+   "id": "shoulders-of-giants-ultimate-309111@1.9.2",
+   "gameId": "shoulders-of-giants-ultimate-309111",
+   "displayName": "Hotfix 1.9.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-12T20:43:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.9.2 Hotfix is deployed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This minor update addresses a few small issues",
+     "items": [
+      {
+       "text": "We've added a setting to adjust the Field of View change when sprinting. The text is still being localized but we know some folks needed this, so its in right now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an AI issue where the Bone Swarm boss would not chase you sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a very rare (afaik this hasn't hit anyone outside of our team) crash bug relating to the Darkness core",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Plasma projectiles no long live forever if you shoot them into the sky",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The cracks created by the Geyser ability disappear much sooner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased button double-press protection for gamepad players in the level select menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Kyle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2283880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2283880/view/5963414363406197103"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-12T20:43:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.592Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-12T20:43:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2283880",
+      "checkedAt": "2026-11-13T03:30:28.593Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-12T20:43:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:08.727Z"
+  }
+ ],
+ "issues": []
+}

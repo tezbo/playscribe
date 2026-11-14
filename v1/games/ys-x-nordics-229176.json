@@ -1,0 +1,630 @@
+{
+ "game": {
+  "id": "ys-x-nordics-229176",
+  "igdbId": 229176,
+  "name": "Ys X: Nordics",
+  "cover": {
+   "imageId": "co7s9q",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7s9q.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2j85",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2j85.jpg"
+  },
+  "ps5Release": "2023-09-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ys-x-nordics-229176@1.0.9",
+   "gameId": "ys-x-nordics-229176",
+   "displayName": "Update 1.0.9",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-19T15:43:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing an update for Ys X: Nordics with variety of small new features, general improvements, and mostly minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Add Steam Timeline markers when a new BGM track is played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Offer the choice to have Steam verify the game's integrity upon crashes while running with Steam enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Improve UI texture and font rendering sampling on low-res screens (e.g. Steam Deck)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improve PCSS shadow sampling quality in some situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improve out-of-the-box performance on some specific configurations (specifically, \"auto\" extra_host_write_buffering now enabled by default on Intel dGPUs, and disabled by default on AMD iGPUs)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improve SDL input compatibility (change SDL hints to only use XInput and HID API)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fix recapture drill menu list button repeat handling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Windows 11 24H2 dropping raw input randomly when alt-tabbing",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ignore extra user folders in the save location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some text fixes in the French localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add missing Japanese translation for a setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, if you want to revert to the previous version for any reason, you can do so using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Add Steam Timeline markers when a new BGM track is played",
+     "Offer the choice to have Steam verify the game's integrity upon crashes while running with Steam enabled",
+     "Improve PCSS shadow sampling quality in some situations"
+    ]
+   },
+   "sourceIds": [
+    "steam-2731870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2731870/view/1805431065405710"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-19T15:43:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.053Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-19T15:43:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.053Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-19T15:43:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:49.191Z"
+  },
+  {
+   "id": "ys-x-nordics-229176@1.0.8",
+   "gameId": "ys-x-nordics-229176",
+   "displayName": "Update 1.0.8",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-11T09:30:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a minor patch for Ys X: Nordics, which addresses the following issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved a crash which could occur in the ship loadout menu when using the mouse to change the selected slot.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed dialog message and selection window placement for very narrow or wide aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eliminated graphical shadow artifacts which could occur temporarily after changing the aspect ratio or field of view, before loading a new map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved some text in the French and English localizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, if you want to revert to the previous version for any reason, you can do so using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2731870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2731870/view/6148070194801718827"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-11T09:30:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.052Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-11T09:30:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.052Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-11T09:30:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:49.190Z"
+  },
+  {
+   "id": "ys-x-nordics-229176@1.0.4",
+   "gameId": "ys-x-nordics-229176",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-20T16:17:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing another patch for the Ys X: Nordics Demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full list of general changes and improvements",
+     "items": [
+      {
+       "text": "Fix a very rare crash which could occur during game startup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update the Steam Deck controller button glyph for the \"View\" button (was previously based on the pre-release Steam Deck design).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improve rounding when scaling render targets, potentially very slightly increasing quality where there was an off-by-one sizing error before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some minor text fixes (Japanese, French and English).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix Japanese UI text font in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Remove the \"Portrait Supersampling\" option. MSAA/SGSSAA now also applies to the scenes where this applied, so it is rather superfluous and could lead to excessive VRAM usage.: If you have a lot of VRAM and for some reason really want to render e.g. 16 samples for every single pixel on the equip screen you can still access it via the \"danger_portrait_supersampling\" option in the settings file.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "There are also some coop-specific changes",
+     "items": [
+      {
+       "text": "Improve the behaviour when falling off cliffs with both characters. (Prevent a potential long falling and warping loop)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disable automatic camera adjustments in coop, regardless of setting. This is very distracting in coop, and as explained in the previous post on this feature, the suggested method is to have one player in charge of the camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tune the chain power parameters to be slightly more effective more quickly. Previously it was possible to get to a distance of >30 meters between the characters with some deliberate movement, this should now be impossible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent coop in a few very small maps, where it is also not meaningful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Fix a very rare crash which could occur during game startup.",
+     "Some minor text fixes (Japanese, French and English).",
+     "Fix Japanese UI text font in some situations."
+    ]
+   },
+   "sourceIds": [
+    "steam-2731870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2731870/view/6212244583187279985"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-20T16:17:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.051Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-20T16:17:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.051Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-20T16:17:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:49.189Z"
+  },
+  {
+   "id": "ys-x-nordics-229176@1.0.2",
+   "gameId": "ys-x-nordics-229176",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-16T09:35:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a minor patch for the Ys X: Nordics Demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The primary goal is to fix a specific type of startup crash that could happen on some systems with a slightly outdated Visual C++ Redistributable package. This issue could be solved by manually updating the package, but we were also able to work around it at the game level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the full list of changes",
+     "items": [
+      {
+       "text": "Fix a potential crash on startup on systems with slightly outdated Visual C++ redistributables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a packaging issue which caused the demo to show Japanese text in one event in chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor updates to some dynamic button prompt placements in tutorial screenshots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Correctly save the \"additional footholds\" choice selected at the start of a game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix an afterimage effect with Mana Seed Divination",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2731870"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2731870/view/6212244583171678509"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-16T09:35:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.051Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-16T09:35:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2731870",
+      "checkedAt": "2026-11-13T03:36:50.051Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-16T09:35:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:49.188Z"
+  }
+ ],
+ "issues": []
+}

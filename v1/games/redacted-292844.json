@@ -1,0 +1,993 @@
+{
+ "game": {
+  "id": "redacted-292844",
+  "igdbId": 292844,
+  "name": "[Redacted]",
+  "cover": {
+   "imageId": "co90o0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co90o0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2u7t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2u7t.jpg"
+  },
+  "ps5Release": "2024-10-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "redacted-292844@1.0.0.6",
+   "gameId": "redacted-292844",
+   "displayName": "Patch 1.0.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-17T17:59:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where selecting a reward and then dying could cause progress to be lost or respawning to fail. Players can now safely choose rewards without experiencing progress loss or respawn problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2229940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2229940/view/1785774543693502"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T17:59:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2229940",
+      "checkedAt": "2026-11-13T03:29:00.156Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T17:59:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2229940",
+      "checkedAt": "2026-11-13T03:29:00.156Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-17T17:59:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:38.560Z"
+  },
+  {
+   "id": "redacted-292844@1.0.0.5",
+   "gameId": "redacted-292844",
+   "displayName": "Patch 1.0.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-19T18:14:22.000Z",
+   "notes": [
+    {
+     "title": "NEW FEATURES",
+     "items": [
+      {
+       "text": "Added support for PlayStation gamepad icons on PC & Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Fixed an issue where some combinations of items would cause healing to damage the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where weapon upgrades were not applying when equipping from the kiosk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a rival could be damaged before an intro sequence was completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue with the last corpse failing to spawn in a specific room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue at the end of the Watcher Run where the guard wasn’t wearing the correct suit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue for unexpected game closures during the Watcher Run, allowing players to resume progress without resetting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted camera behavior to prevent continuing a run when a rival escapes if a door is entered at the end of the timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted arrow color, size, and positioning for gas pipe indicators to improve visibility, especially on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue that made the ATOM fire when aiming and pressing the melee attack button on a controller while using the alternative control scheme.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Lights Out Experiment (RoF) showing incorrect values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain experiment descriptions displaying at level 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various crash fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GENERAL",
+     "items": [
+      {
+       "text": "Improved camera smoothness during dashing and aiming at 30 FPS to prevent camera jumps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ensured rival subtitles appear over the death screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Addressed an issue where music would incorrectly play if no corpse spawned in the room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Steam Deck users would see incorrect tooltips when hovering items in the Pause Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed visual issues with ground decals rendering on top of geometry for specific attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue where rivals could appear squished on the 2D full-body character art.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "Corrected behavior of the escape key in kiosks to prevent unintended pauses on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "EXPERIMENT TUNING",
+     "items": [
+      {
+       "text": "Adjusted multiple experiment abilities across Physical, Combustion, Cryo, Energy, Biotech, Gravity, and Science categories, enhancing damage, effect durations, area of effect, and status effect chances to improve overall gameplay balance and effectiveness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bleed - Damage",
+     "items": [
+      {
+       "text": "Previous: 3 Damage Per Tick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 7 Damage Per Tick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Hit Man - Damage",
+     "items": [
+      {
+       "text": "Previous: 40% | 80% | 100% | 110% | 120%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 100% | 150% | 180% | 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Clobberin’ Time - Bleed Chance Increased",
+     "items": [
+      {
+       "text": "Previous: 25% | 40% | 55% | 70% | 85%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 40% | 60% | 80% | 90% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Raw Power - Buff Duration (seconds)",
+     "items": [
+      {
+       "text": "Previous: 3 | 4 | 5 | 6 | 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New: 5 | 6 | 7 | 8 | 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Human Tornado - Crit Chance",
+     "items": [
+      {
+       "text": "Previous: 20% | 30% | 40% | 50% | 60%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 30% | 50% | 70% | 85% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Course For Destruction - Buff Duration (seconds)",
+     "items": [
+      {
+       "text": "Previous: 3 | 4 | 5 | 6 | 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New: 5 | 6 | 7 | 8 | 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "All This And More - Area of Effect Increase",
+     "items": [
+      {
+       "text": "Previous: 300 | 450 | 600 | 750 | 900",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 400 | 600 | 800 | 900 | 1000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Systemic Death - Critical Multi Buff",
+     "items": [
+      {
+       "text": "Previous: 5% | 10% | 15% | 20% | 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New: 20% | 30% | 40% | 50% | 60%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "I’m On Fire - Damage",
+     "items": [
+      {
+       "text": "Previous: 40% | 80% | 100% | 110% | 120%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 100% | 150% | 180% | 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Kick Out The Jams - Buff Duration (seconds)",
+     "items": [
+      {
+       "text": "Previous: 3 | 4 | 5 | 6 | 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New: 5 | 6 | 7 | 8 | 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Give Me Fire - Area Increase (all ranks)",
+     "items": [
+      {
+       "text": "Previous: 450",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 600",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Give Me Fire - Ignite Chance",
+     "items": [
+      {
+       "text": "Previous: 30% | 50% | 70% | 85% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 70% | 80% | 90% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Cold Feelings - Freeze Chance",
+     "items": [
+      {
+       "text": "Previous: 5% | 10% | 15% | 20% | 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 10% | 20% | 30% | 40% | 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Hell Freezes Over - Chill Chance",
+     "items": [
+      {
+       "text": "Previous: 20% | 40% | 60% | 80% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 30% | 50% | 70% | 85% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mr. Freeze - Chill Chance",
+     "items": [
+      {
+       "text": "Previous: 20% | 40% | 60% | 80% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 30% | 50% | 70% | 85% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Nailed To The Floor - Damage",
+     "items": [
+      {
+       "text": "Previous: 40% | 80% | 100% | 110% | 120%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 100% | 150% | 180% | 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Nailed To The Floor - Chill Chance",
+     "items": [
+      {
+       "text": "Previous: 20% | 40% | 60% | 80% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 30% | 50% | 70% | 85% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Snowball - Damage",
+     "items": [
+      {
+       "text": "Previous: 30 | 40 | 50 | 55 | 60",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50 | 60 | 70 | 75 | 80",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Code Blue - Damage",
+     "items": [
+      {
+       "text": "5 -> 10 (all ranks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Static Age - Damage",
+     "items": [
+      {
+       "text": "Previous: 40% | 80% | 100% | 110% | 120%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 100% | 150% | 180% | 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Action Man - Buff Duration (seconds)",
+     "items": [
+      {
+       "text": "Previous: 3 | 4 | 5 | 6 | 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New: 5 | 6 | 7 | 8 | 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fearless Vampire Killer - Damage",
+     "items": [
+      {
+       "text": "Previous: 40% | 80% | 100% | 110% | 120%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 100% | 150% | 180% | 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "I Don’t Care About You - Rot Chance",
+     "items": [
+      {
+       "text": "Previous: 20% | 40% | 50% | 60% | 70%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 30% | 50% | 70% | 85% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "I Don’t Care About You - Damage",
+     "items": [
+      {
+       "text": "25 -> 35 (all ranks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wound Up - Buff Duration (seconds)",
+     "items": [
+      {
+       "text": "Previous: 3 | 4 | 5 | 6 | 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New: 5 | 6 | 7 | 8 | 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "No Control - Damage",
+     "items": [
+      {
+       "text": "Previous: 40% | 80% | 100% | 110% | 120%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 100% | 150% | 180% | 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The Crusher - Area of Effect",
+     "items": [
+      {
+       "text": "Previous: 300 | 400 | 500 | 550 | 600",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 400 | 500 | 600 | 700 | 800",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Jump Back - Replenish Chance",
+     "items": [
+      {
+       "text": "Previous: 15% | 30% | 45% | 60% | 75%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 20% | 40% | 60% | 80% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Overtime - Damage",
+     "items": [
+      {
+       "text": "Previous: 40% | 80% | 100% | 110% | 120%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 50% | 100% | 150% | 180% | 200%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Overtime - Scan Chance",
+     "items": [
+      {
+       "text": "Previous: 20% | 40% | 60% | 80% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 30% | 50% | 70% | 85% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Uncontrollable Urge - Haste Chance",
+     "items": [
+      {
+       "text": "Previous: 10% | 20% | 40% | 50% | 60%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 20% | 40% | 60% | 80% | 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Professional Againster - Area of Effect",
+     "items": [
+      {
+       "text": "Previous: 300 | 350 | 450 | 550 | 600",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New: 300 | 400 | 500 | 600 | 650",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Rise Above - Buff Duration (seconds)",
+     "items": [
+      {
+       "text": "Previous: 3 | 4 | 5 | 6 | 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New: 5 | 6 | 7 | 8 | 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 26,
+    "fixed": 12,
+    "balance": 16,
+    "other": 28,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2229940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2229940/view/1783238125382252"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T18:14:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2229940",
+      "checkedAt": "2026-11-13T03:29:00.155Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-19T18:14:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2229940",
+      "checkedAt": "2026-11-13T03:29:00.155Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-19T18:14:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:38.559Z"
+  },
+  {
+   "id": "redacted-292844@1.0.0.4",
+   "gameId": "redacted-292844",
+   "displayName": "Patch 1.0.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-31T04:05:38.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the player could take damage during Rival intro sequences due to lingering projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue where only two projectiles fired from the final corpse when using the Murder Missile Mortar schematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the death camera could go out of bounds when a Sentient dies during the tentacle wall attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the sludge suit's final upgrade caused bosses to drop level-ups instead of experiments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with aggressive start not working correctly in Rival Arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rot explodes twice now requires at least 1 experiment that can rot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the pause menu doesn't open when using the keyboard in the upgrade screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Mouse & Keyboard Controls Improvements: GRP and melee attacks can now be aimed with the mouse. Fixed an issue where turning with the mouse was harder during a charged attack.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The game now displays in Windowed Fullscreen on all handheld devices across all modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2229940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2229940/view/6146943657173887281"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-31T04:05:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2229940",
+      "checkedAt": "2026-11-13T03:29:00.154Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-31T04:05:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2229940",
+      "checkedAt": "2026-11-13T03:29:00.154Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-31T04:05:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:38.558Z"
+  }
+ ],
+ "issues": []
+}

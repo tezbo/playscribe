@@ -1,0 +1,1934 @@
+{
+ "game": {
+  "id": "elementallis-140804",
+  "igdbId": 140804,
+  "name": "Elementallis",
+  "cover": {
+   "imageId": "co5bt1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5bt1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6evs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6evs.jpg"
+  },
+  "ps5Release": "2026-04-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "elementallis-140804@1.0.21",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.21",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-01T17:07:19.000Z",
+   "notes": [
+    {
+     "title": "Tiny update that includes the following fixes",
+     "items": [
+      {
+       "text": "When dying in very specific spots, when respawning, the camera didn't position properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some texts in Catalan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1847920302245451"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T17:07:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.284Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-01T17:07:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.284Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-01T17:07:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.794Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.20",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.20",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-08T11:09:51.000Z",
+   "notes": [
+    {
+     "title": "Tiny update that includes the following fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where dashing above water through a scene transition the transition didn't load the next scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a camera change on the beach that didn't trigger under specific circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1842846814455340"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-08T11:09:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.283Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-08T11:09:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.283Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-08T11:09:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.794Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.19",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.19",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-15T08:37:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Very small update fixing a single bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the darkness wouldn't disappear when traversing a certain spot in the Academy basement from the opposite direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1838407329253592"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T08:37:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.283Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-15T08:37:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.283Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-15T08:37:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.793Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.18",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.18",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-13T08:39:40.000Z",
+   "notes": [
+    {
+     "title": "Small update that includes the following fixes",
+     "items": [
+      {
+       "text": "You could place a sliding pillar in a place blocking the exit in a cave in Draganeu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You could get the ethereal bestiary achievement without beating the living statue enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rare bug where player could get stuck inside walls. To prevent this, we reinforced some walls in the Electric Temple miniboss and all the last temple's minibosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You could get stuck if you moved a box inside a conveyor belt a certain way in a room in the Training Temple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There was a camera change collider a bit too big in the beach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When placing ice on an elevator, the player kept sliding while going down or up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you set the attack button to \"cancel\" you couldn't trigger the attack animation of the enemies inside the bestiary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1837955055362797"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T08:39:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.282Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-13T08:39:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.282Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-13T08:39:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.792Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.17",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-24T09:14:01.000Z",
+   "notes": [
+    {
+     "title": "A very small update that includes the following fixes",
+     "items": [
+      {
+       "text": "There were some pushable statues in the Nature Temple that could fail to reset properly when exiting the room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some adjustments to Catalan texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1836506165545316"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-24T09:14:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.282Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-24T09:14:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.282Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-24T09:14:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.791Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.16",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-02T12:18:18.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "Now you can't use the heavy ball while being frozen or while falling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Earth Temple boss waits half a second after transforming so that a couple animations don't overlap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Worm enemy didn't always show the frozen layer when frozen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The boss in the Training Temple could not drain life properly under a certain situation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A spot in the beach you could rarely get stuck on (this was fixed by reseting the game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1833968530900285"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-02T12:18:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.281Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-02T12:18:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.281Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-02T12:18:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.790Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.15",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.15",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-30T11:10:37.000Z",
+   "notes": [
+    {
+     "title": "Changes based on feedback",
+     "items": [
+      {
+       "text": "Last temple miniboss and final boss stage now use electricity and ice much less frequently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a shortcut between the volcano village and the teleport, making the path to the upgrades shorter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now the compass also show the completion percentage for each area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Colossus enemy didn't chase player when frozen during the initial animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a safety check for jumps. If the player is stuck, then the jump stops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the music could stop during the final boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the arrow traps on the earth temple could stop firing arrows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There was a spot in the forest where the player could get stuck when jumping from water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you went to the second floor of the mall and purchased something, went back and talked to the shopper again, the game could freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the elementadium description on English and German. They now point the player towards Roc to upgrade equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A chest in the Earth Temple had a duplicate id.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1833968530893327"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-30T11:10:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.281Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-30T11:10:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.281Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-30T11:10:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.789Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.14",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-21T09:42:31.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "There was a spot in the snow caves where you could dash and get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An elevable block could make the player stuck in the electric temple when doing a specific route",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When setting the sfx volume to the minimum and returning to the menu, it reset to the max value",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When placing ice and sliding towards Heart Containers, the heart container could be triggered multiple times, giving the player more than one heart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1833334318568389"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-21T09:42:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.279Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-21T09:42:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.279Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-21T09:42:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.788Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.13",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.13",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-17T10:51:54.000Z",
+   "notes": [
+    {
+     "title": "Includes the following changes",
+     "items": [
+      {
+       "text": "A couple scene transitions in the overworld could be skipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments to the Wind Temple Boss. Now the wind streams leave you more room to move and the dashing should feel more responsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was a room in the last temple where the player could get stuck, forcing to reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When using RT on gamepads that have a digital instead of analog trigger, if pressed very quick it stopped working for a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Fire Temple Boss had an issue where it made the player able to move even when drowning on lava",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You could place portals right on the room transitions, so you could teleport while moving between rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1832700592795885"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-17T10:51:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.279Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-17T10:51:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.279Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-17T10:51:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.787Z"
+  },
+  {
+   "id": "elementallis-140804@major-2026-05-15",
+   "gameId": "elementallis-140804",
+   "displayName": "Fixing one issue with last update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-15T17:08:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Last update introduced a bug related to items. When obtaining the first sword, it wasn't able to cut grass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When upgrading an armor, the armor value didn't apply.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Both were fixed by reloading the game, but now it's not necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1832700592792706"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-15T17:08:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.278Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-15T17:08:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.278Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-15T17:08:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.786Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.12",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-15T13:37:01.000Z",
+   "notes": [
+    {
+     "title": "Includes the following changes",
+     "items": [
+      {
+       "text": "Portals that go under walls now become red and blocked until they don't have walls above",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was a spot in the Earth Temple where you could jump to the lower floor and you shouldn't be able to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the shape of a room in the Training Temple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Wind Boss now stays vulnerable a bit more and the trigger for the dash to make it spin is a bit larger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed how the game loads inventory to avoid certain issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1832700592792019"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-15T13:37:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.278Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-15T13:37:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.278Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-15T13:37:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.786Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.11",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-11T11:23:14.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "Water bubble now bursts when the come in contact with boulders and spikes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a safety check to prevent heart pieces and mana shards from being duplicated when collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fix to teleport players who got stuck in unreachable areas in the beach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you got the Fire element and, withouth finishing the temple, went to the Nature Temple, the progress was a bit confusing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1832065502820949"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-11T11:23:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.277Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-11T11:23:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.277Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-11T11:23:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.785Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.10",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-09T11:20:26.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "The purple tint that appears when you are near the Academy could persist if you went from the Academy to the beach over the water on a specific position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you swapped your inputs for accept and cancel, the game didn't properly register inputs on the upgrading equipment or buying gems screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a couple mechanisms on the Water Temple to make easier to retrace your steps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You could trigger a cutscene earlier than intended by exiting Amalric's house, re-entering and going to bed instead of picking the tree branch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer use the heavy ball while climbing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Quick Assign for elements now persist after closing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the design of a room in the Earth Temple (the one where you have to extinguish torches)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed a couple sentences so it's easier to know what to do in the desert and in the mountains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1832065502817308"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-09T11:20:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.277Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-09T11:20:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.277Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-09T11:20:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.784Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.9",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-04T07:34:37.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "When entering and exiting a cave hole very fast, the game could spawn the player in a wrong position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fix to ensure that if the big chest is opened, the player always has the boss key available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There were certain spots in the beach that respawned the player in a wrong position when drowning there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A puzzle in the last temple was intended to be solved with the temple's element, but could be solved without it. Also, it could be solved on its own by exiting and entering the room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155576791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-04T07:34:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.276Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-04T07:34:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.276Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-04T07:34:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.783Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.8",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-03T13:41:12.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "Changed the switch position of the puzzle with Renat so it's easier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When placing the object instanced with the last element on a platform, its sprite stayed if the player exited and entered the room again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with a minecart in the ice temple",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155575518"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-03T13:41:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.276Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-03T13:41:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.276Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-03T13:41:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.782Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.7",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-02T20:34:58.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "A block puzzle in the Nature Temple could keep you inside",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you dashed backwards right after changing scene, you could avoid changing scene again, placing the character out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you placed Ice on the training ground in the Academy, it wasn't visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There was a spot in the factory that if you fall there, the player didn't respawn on the floor and kept falling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sentences in Catalan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you gothit while drowning and you died, you respawned with the wrong sprite and collisions. Allowing to move to places you shouldn't be and getting a possible softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155574458"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-02T20:34:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.275Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-02T20:34:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.275Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-02T20:34:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.781Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.6",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-01T21:41:16.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "If you open doors and pick keys in a certain order in the last temple, you could run out of keys being unable to continue: This path fixes it and gives a key to people who were in that situation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you entered a cave in the volcano from the exit using the wind ability, a block could get you stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155572594"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T21:41:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.273Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T21:41:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.273Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-01T21:41:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.780Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.5",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-01T16:44:56.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "Fixed some German translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you fell on a cave and exited and falled again quickly, the character could spawn in a wrong position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A cutscene in Tramunt could trigger even if the character had entered the house if you didn't enter behind her",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155571912"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T16:44:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.272Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T16:44:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.272Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-01T16:44:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.779Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.4",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-01T09:33:05.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "When using wind to dash across ledges in the Volcano, you could get stuck on the lava",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The description for the Water Gem in Spanish was written in English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a camera change in the Volcano",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When dying and on a minecart, the character can't move when they respawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155570743"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T09:33:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.271Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-01T09:33:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.272Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-01T09:33:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:43.778Z"
+  },
+  {
+   "id": "elementallis-140804@1.0.3",
+   "gameId": "elementallis-140804",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-30T11:53:14.000Z",
+   "notes": [
+    {
+     "title": "Includes the following fixes",
+     "items": [
+      {
+       "text": "There was a spot in the cabin where you could jump and get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When dying at the final temple miniboss, the player can get stuck in a cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155567863"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-30T11:53:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.271Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-30T11:53:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.271Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-30T11:53:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:59.265Z"
+  },
+  {
+   "id": "elementallis-140804@patch-2026-04-30",
+   "gameId": "elementallis-140804",
+   "displayName": "First Patch Now Released!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-30T09:23:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We released our first patch today, which includes the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When swapping A and B controls, markers couldn't be placed properly on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In Catalan language there were a couple sentences that put /ART instead of the proper article",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The minecarts in the Volcano mines and the Ice Temple could have the wrong path under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You could use the wind in the wind temple to avoid a group of elevable blocks. When done, a restart was needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When the player got frozen after being killed, the game could pause, needing to restart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A camera change in the beach could trigger incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The room where you get the Ice element now closes when you enter, forcing the player to jump down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1304280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1304280/view/1831432155567419"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-30T09:23:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.270Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-30T09:23:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1304280",
+      "checkedAt": "2026-11-13T03:20:01.270Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-30T09:23:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:13:59.265Z"
+  }
+ ],
+ "issues": []
+}

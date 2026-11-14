@@ -1,0 +1,976 @@
+{
+ "game": {
+  "id": "ancient-farm-226223",
+  "igdbId": 226223,
+  "name": "Ancient Farm",
+  "cover": {
+   "imageId": "co9z3r",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9z3r.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1zcc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1zcc.jpg"
+  },
+  "ps5Release": "2026-09-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ancient-farm-226223@major-2026-02-17",
+   "gameId": "ancient-farm-226223",
+   "displayName": "Game Update | The Well",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-17T21:53:40.000Z",
+   "notes": [
+    {
+     "title": "A new structure has been added to the game: the Well.",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/8cc09158882ff0ce14cbcd66575ce90b4a019692.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Every so often, you will need to activate it, but once it is up and running, the Well will take care of watering a 20x20 patch all on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This new feature is our answer to one of your most frequent requests about crop watering. You wanted a way to cut down on repetitive watering chores without losing the hands-on feel that makes our farming special.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In fact, in one of the community discussions, players specifically suggested adding a well - so that’s exactly what we did.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Well preserves the heart of manual farming, while offering a clever mid-game shortcut that saves you time and effort, without making your farm run itself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you for inspiring us with your ideas. We cannot wait to see what you suggest next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1933930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1933930/view/1824644522848772"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-17T21:53:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1933930",
+      "checkedAt": "2026-11-11T18:33:55.073Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:55.073Z"
+  },
+  {
+   "id": "ancient-farm-226223@1.0.26",
+   "gameId": "ancient-farm-226223",
+   "displayName": "Update 1.0.26",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-23T17:34:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for the feedback and the many suggestions! Today, we are releasing another update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog | 1.0.26",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an infinite source of wood – fruit trees can now be cut down using an axe (AXE) and provide wood when they are fully grown or dried.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fully grown trees now provide different amounts of wood depending on their size:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smaller trees → 10 wood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Larger trees → 14 wood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trees can no longer be dug out – they are now properly cut down instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Young trees drop only sticks when cut down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fully grown trees now drop sticks in addition to the wood described above.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some tree types without a clear trunk only drop sticks when cut down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the rules for removing trees – they can now only be removed with an axe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added an autosave option",
+     "items": [
+      {
+       "text": "Autosave triggers every 5 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "& at the end of each season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0,
+    "topNew": [
+     "Autosave triggers every 5 minutes",
+     "& at the end of each season",
+     "Best,"
+    ]
+   },
+   "sourceIds": [
+    "steam-1933930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1933930/view/1822556746162490"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T17:34:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1933930",
+      "checkedAt": "2026-11-11T18:33:55.073Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:55.073Z"
+  },
+  {
+   "id": "ancient-farm-226223@1.0.21",
+   "gameId": "ancient-farm-226223",
+   "displayName": "Update 1.0.21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-15T14:42:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update makes the game more comfortable to play, improves the mechanics, and polishes the controls and visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Infinite source of grass: We heard that getting enough grass for your animals was tough during long games. Now, you can dig up withered or harvested crops with a shovel to get grass. This makes grass renewable, so you won’t run out, even in long sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/c116199c4f06ea6491d98d4ed816bfbdd2801ef8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Variable amounts of grass from crops: When introducing the ability to obtain grass from withered and harvested crops, we decided to vary the amount obtained by plant type. We wanted this to serve both as an element of gameplay balance and as a reflection of the use of plant residues in animal hay. Here are a few examples:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grains (e.g., wheat, barley) are the main source of grass (after refinement, also hay). After harvesting, a lot of straw and plant debris remain, so they provide a solid amount of grass.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carrots are an example of a smaller plant that yields significantly less biomass, so the amount of grass from a single field is lower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Garlic and onions do not provide grass, since these plants are not usually fed to animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Watermelon takes up more space in the field and therefore yields slightly more than other plants, but at the expense of space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a result, different crops now not only have different production uses, but also different impacts on the hay supply, which gives you more meaningful choices when planning your farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved feel of moving oxen and plows: We have improved the overall feel of controlling them. In addition, issues with incorrect rock and water boundary detection, which could previously cause unnatural behavior, have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Safer save loading: We have added a confirmation window when loading a game state to prevent accidental overwriting or loss of saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved aquatic plant fertilization: Fertilization of aquatic plants has been optimized, and the animation will always play correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better UI scaling (UltraWide): We have improved UI scaling for UltraWide monitors. The UI layout should now also display correctly on less standard resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved plow range: The plow range has been adjusted to match its actual size. The plowed field now better matches the tool's width, both mechanically and visually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better scale matching for plows and harnesses: We have adjusted the visual scale of plows and harnesses to better match the scale of other objects in the game world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1933930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1933930/view/1821922921813231"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-15T14:42:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1933930",
+      "checkedAt": "2026-11-11T18:33:55.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:55.072Z"
+  },
+  {
+   "id": "ancient-farm-226223@1.0.14",
+   "gameId": "ancient-farm-226223",
+   "displayName": "Update 1.0.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-11T17:27:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Farmers! Thank you very much for all your support, bug reports, and valuable feedback — it really helps us improve Ancient Farm. This update focuses on improving interactions, fixing bugs, and polishing the overall gameplay feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Improved plow and ox interaction system - The default interaction now allows you to quickly attach the plow to the ox. Additionally, a \"MORE\" menu under the \"Q\" key has been added, offering two options: Attach plow and Store plow in backpack. Interactions with the ox itself still work the same as before. This change should provide a smoother, more intuitive gameplay experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/8535720d00fc2942daf228d359a090ded6d22582.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the tutorial seed crafting key - Players can now recreate tutorial seeds if they were accidentally used by pressing R.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players received two building hammers after restarting the game post-tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added UI information about splitting item stacks in the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added equipment/item size information - Sizes are now visible both in the inventory and at the merchant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the icon of the item placed into the animal feeding trough",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed several typos and small issues in translations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved quickslot behavior - Swapping items in quickslots no longer causes a delay when using them, making switching and using items smoother and more responsive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Once again, thank you for all the support and feedback - it truly helps shape the future of Ancient Farm. If you encounter any issues or have suggestions, feel free to share them with us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DevTeam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1933930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1933930/view/1821288646584333"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-11T17:27:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1933930",
+      "checkedAt": "2026-11-11T18:33:55.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:55.072Z"
+  },
+  {
+   "id": "ancient-farm-226223@patch-2026-01-09",
+   "gameId": "ancient-farm-226223",
+   "displayName": "Day 2 Patch | Changelog",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-09T17:29:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Farmers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​Thank you for your feedback. It really helps us improve the game. Here are the fixes and improvements included in the DAY 2 update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Tool interaction improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved tool interactions so that tool actions no longer interfere with building panels, such as pastures or water troughs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/22a22d2464e57abad351a35cefbcb0d57c3c4400.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Building demolition improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues with demolishing houses and crafting stations, and adjusted the amount of resources you get back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI glitch fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the building’s UI sometimes stayed on screen after demolition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inventory & quickslot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the inventory would scroll on its own while assigning items to quickslots. Inventory management should now be smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Plant and tree size info added to the merchant panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of you wanted to see plant sizes at the merchant. We’ve added this info for both plants and trees, so you can make better choices before buying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/7fdea91bae8d77bf4cfc441786bf679e64b4189c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial quest sound adjustment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We made the tutorial quest completion sound softer, since some of you found it annoying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Building materials sale cost rebalance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the prices of building materials at the merchant. This affects wood, stone, planks, and stone blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faster quickslot usage & improved animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We reduced the cooldown for using items from quickslots and improved the animations of performed actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/270dca562d92f67db144d59d31d3c548022e3b22.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lighting and fog improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the lighting and fog systems, which sometimes caused unwanted effects, such as a slight screen blur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We hope these updates improve your experience. As always, thank you for your support and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1933930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1933930/view/1821288646581538"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-09T17:29:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1933930",
+      "checkedAt": "2026-11-11T18:33:55.071Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:55.071Z"
+  },
+  {
+   "id": "ancient-farm-226223@dayone-2026-01-08",
+   "gameId": "ancient-farm-226223",
+   "displayName": "Day one patch",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-08T18:10:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Farmers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for sharing your feedback and suggestions. Here’s a list of the changes we’ve made in the Day 1 Patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What’s new & improved",
+     "items": [
+      {
+       "text": "More quickslots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some of you mentioned running out of space for quick slot items, which was inconvenient. Now, you can use up to 9 quickslots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/83c68f2af4b408892af1dd5c6f23af1bb860513e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clearer information about seeds and seasons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It wasn’t always clear when certain seeds should be planted or avoided. Now, both in the merchant panel and your inventory, you can easily see when a seed is safe to plant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/43163972/b9341240860d9a9664be9db3541ec25574a14d43.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Price balance adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’ve adjusted some item prices to better match your expectations and improve the game’s balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Default language fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The game now correctly selects the proper default language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visual effect update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We’ve renamed the visual effect from “Depth of Field” to “Blur,” and it’s now turned off by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We hope you enjoy these updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you for your feedback. It really helps us make the game better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Best regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "More quickslots",
+     "[img src=\"{STEAM_CLAN_IMAGE}/43163972/83c68f2af4b408892af1dd5c6f23af1bb860513e.jpg\"]",
+     "Clearer information about seeds and seasons"
+    ]
+   },
+   "sourceIds": [
+    "steam-1933930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1933930/view/1821288646579374"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-08T18:10:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1933930",
+      "checkedAt": "2026-11-11T18:33:55.070Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:55.071Z"
+  },
+  {
+   "id": "ancient-farm-226223@1.0.5",
+   "gameId": "ancient-farm-226223",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-08T09:54:20.000Z",
+   "notes": [
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "Added automatic detection of the system’s default language for new players on first launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled \"Depth of Field\" by default. It can still be turned on in the game settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1933930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1933930/view/1821288646578291"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-08T09:54:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1933930",
+      "checkedAt": "2026-11-11T18:33:55.070Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:55.070Z"
+  }
+ ],
+ "issues": []
+}

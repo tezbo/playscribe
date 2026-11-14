@@ -1,0 +1,860 @@
+{
+ "game": {
+  "id": "leafy-corner-363341",
+  "igdbId": 363341,
+  "name": "Leafy Corner",
+  "cover": {
+   "imageId": "coccpl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coccpl.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar67ct",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar67ct.jpg"
+  },
+  "ps5Release": "2026-07-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "leafy-corner-363341@1.0.3",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-02T09:53:15.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Reduced watering required when there are more plants in the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased 'Reduced Watering' effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed Russian localization referring to unlocking 10 pots instead of plants to reach the next reputation level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Orders requiring the 'Trailing' attribute will no longer appear before reaching the 4th level of reputation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when the same plant was selected for more than one customer while the game was paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue where the sofa clipped into a plant in the background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1839676055892341"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-02T09:53:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-13T03:24:33.415Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-02T09:53:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-13T03:24:33.416Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-02T09:53:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.438Z"
+  },
+  {
+   "id": "leafy-corner-363341@1.0.2",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-19T14:41:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Russian translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Italian translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Indonesian translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Traditional Chinese translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various localization bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further reduced water usage when 'Reduced Watering' is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Reduced Watering' is now correctly handled for plants that are overwatered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased initial water level for succulents after planting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "UI/UX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed language selection to a drop-down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics and Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new floor patterns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added red undertones for Peperomia Rosso",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked furniture colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music and sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced volume of 'Variegation Discovered' notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Music is now faded out properly when travelling back to the Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed getting stuck in Character Creation when entering it while the Tutorial is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to remove objects that have other objects placed on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 3,
+    "balance": 2,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1838407329263753"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-19T14:41:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-13T03:24:33.415Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.437Z"
+  },
+  {
+   "id": "leafy-corner-363341@1.0.1",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-05T09:37:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Thai translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various localization bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a button to duplicate furniture and decorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Watering is now possible through metal furniture parts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new customer requests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an additional task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed purchase and sell prices for some plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the amount of tokens required to unlock some plants and pots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the amount of tokens obtained for completing tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted some of the task requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made certain requests accept additional plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics and Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new wallpaper options (brick wall and night sky wallpaper)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed shirt geometry that was causing glitches on one of the body types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a semi-transparent cursor for active watering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to disable motion blur",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented a few performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added information about variegated plants in the tips menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 2,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1834602721190050"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-05T09:37:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-13T03:24:33.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.437Z"
+  },
+  {
+   "id": "leafy-corner-363341@major-2026-04-10",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Playtest Results and Development Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-10T18:19:35.000Z",
+   "notes": [
+    {
+     "title": "Playtest results",
+     "items": [
+      {
+       "text": "Hello, Kasia here! It’s been two months since we released the playtest of Leafy Corner. Thank you so much to everyone who played the game and shared their feedback with us! Here is the summary! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Almost 7000 players signed up for the playtest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve received over 1500 answers in our feedback form",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As you can see in the chart below, 92,1% of respondents would most likely or definitely play the full version of the game! This is a great result that has surpassed our expectations! 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are aware that the game is not for everyone, and those who rated it low expected a more advanced management game with strategic actions and time pressure. I personally love both types of games (stress-free and hardcore management), but a hardcore management game was not our goal with this one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What players enjoyed about the game?",
+     "items": [
+      {
+       "text": "Cozy, relaxing vibe - it makes us super happy, as this was exactly our goal. We wanted to create a chill, non-stressful experience, so it’s great to see so many of you enjoyed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Different types of plants - yep, the game is all about that. We all love plants!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decorating the shop - we are really glad you enjoyed it, even though some things were very easy to miss (our fault, we didn’t mention some of the things in the tutorial, for example, how to customize walls and floors). We saw some of your creations and were REALLY impressed by your creativity!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics - that makes me personally extremely happy! I put a lot of time and heart into making every single asset, from 3D models to textures and icons, and it’s great to see it being appreciated. Everything in the game is human-made (no AI), and we are very proud of that! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music - all credits for that go to Samantha van der Sluis. The music she composed fits the vibe of the game perfectly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI - it was surprising to see this one mentioned so often. We put a lot of heart into making the UI clear and nice-looking, so I'm glad you noticed and appreciated it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What players disliked about the game?",
+     "items": [
+      {
+       "text": "Watering - after we received some negative comments about watering, we released a patch with reduced watering needs for plants. That seemed to fix the problem, as after the patch, we started receiving much fewer comments about that. We analyzed your feedback carefully, and a lot of you find the watering mechanic satisfying and relaxing (us, the devs, included!), while some of you don’t really enjoy that aspect of the game. Because of that, we have decided to add an option (disabled by default) to further reduce the watering needs of plants if you are the type of player who prefers not to interact too much with this mechanic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No day-and-night cycle - At the beginning of the developement we tried the \"end of the day\" approach, but after testing it just didn't feel right for us. We didn't like the idea of doing stuff at a specific time and wanted to make a game where you do these things as they go along. We think both design approaches are good in their own way, but continuous days feel more fit for this game. I know you are worried about the shopkeeper being really tired from continuous work, but let's imagine the shopkeeper is resting when you are sleeping. 😴 Also, we have removed the clock to reduce the stress from seeing the time flow by so fast! 🕒",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big thanks again to all of you who have played the game and left feedback! It was also filled with some really nice ideas for new features, and while we wish we could implement most of them, it’s not really possible with our small team of two people, so we had to carefully choose which ones we can add to the game. We need to prioritize finishing the game to deliver you the most polished experience in Q3 2026! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Development update",
+     "items": [
+      {
+       "text": "Each day we are working hard on the game, so let me share some of the exciting things we’ve worked on recently! A lot of these are things we have added based on your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By the way, you will get to see some of them in the demo, that we plan to release on April 17th!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Character customization",
+     "items": [
+      {
+       "text": "A LOT of you were asking for this feature, and we are super excited to share that you will now be able to customize your character!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, you won't be forced to wear dungarees. Yeah, I know some of you weren't fans, so I added multiple clothing options. 🎨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New plants",
+     "items": [
+      {
+       "text": "I can officially and happily say that the game now has A HUNDRED plants! It includes variegated versions, that we all love so much! I’m still not done and I keep adding new ones, but breaking past this number feels nice! 🍃",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Can you name all of the plants in the picture?)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "A new type of requests",
+     "items": [
+      {
+       "text": "We added a new type of requests to make helping customers even more fun and diverse! They can now ask for a recommendation based on a picture they show us. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Snapping pots to furniture",
+     "items": [
+      {
+       "text": "This was also mentioned in the feedback form, so Kacper used his mad math skills to make it possible! 🤓 This is optional so by default you can still place objects freely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MacOS version",
+     "items": [
+      {
+       "text": "Turns out a lot of you are Mac users! We don’t have much experience with this system, but Kacper has been working really hard to make the game work on MacOS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sounds",
+     "items": [
+      {
+       "text": "Some of you noticed the playtest version lacked sound design, but don’t worry, they are now in the game! 🎵🎶🎵",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Meow?",
+     "items": [
+      {
+       "text": "We received a lot of comments asking about having a shop’s pet, so we added a cat! I won’t tell you where to find it, but I can tell you it will be in the demo. 😺",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "...and more",
+     "items": [
+      {
+       "text": "We have also worked on many other things including more walls and floor variants, more decorations, bugfixing, optmizations and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for following our development journey! We can't wait to share the DEMO version with you, so stay tuned for April 17th! 💚🌱",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kasia and Kacper 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1829528821310960"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-10T18:19:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-13T03:24:33.414Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.433Z"
+  },
+  {
+   "id": "leafy-corner-363341@major-2025-12-08",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Leafy Corner 🍃 Decemeber Developement Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-08T18:31:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We wanted to share a few exciting updates about Leafy Corner. 🍃",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of you have been asking whether the game will include variegated plants, so... we added them to the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They have a small chance to appear when you plant normally, and you can’t simply purchase them the same way you buy regular plants. We hope this makes discovering them feel more exciting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the last month, we were also working on controller support (the game is now fully playable with a controller!), and we ran the game on Steam Deck for the first time. Reaching that milestone helped us confirm that the game already works well on a handheld, and we’re now focused on refining the experience for the next round of playtests.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We are also filling the game with more content, including new plants and decorations, but there is still a lot to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for all your support. We will keep working on improving the game so stay tuned for more updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kasia & Kacper 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1818118366183513"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T18:31:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-13T03:24:33.412Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.432Z"
+  }
+ ],
+ "issues": []
+}

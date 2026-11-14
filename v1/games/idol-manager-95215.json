@@ -1,0 +1,1456 @@
+{
+ "game": {
+  "id": "idol-manager-95215",
+  "igdbId": 95215,
+  "name": "Idol Manager",
+  "cover": {
+   "imageId": "co53te",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co53te.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ariph",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ariph.jpg"
+  },
+  "ps5Release": "2022-08-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "idol-manager-95215@1.0.6",
+   "gameId": "idol-manager-95215",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-21T17:42:19.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Removing an idol from a room won't disable the auto practice setting in this room. However, the idol that you removed won't get picked up for any auto practice for 1 minute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed: Idol salary getting stuck at ¥1,000 when using +/- buttons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Popup for manually changing idol salary not displaying any text in Japanese and Chinese versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Idols that work in a cafe could show up in multiple rooms at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mods",
+     "items": [
+      {
+       "text": "You can now create custom auditions. Use this dialogue effect (available in the latest version of the editor): Meta -> Custom Audition -> IDs of unique idols separated with spaces (at least one idol, up to five): You can check how it works in the updated Unique Idol Example Mod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/5418383147754364541"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-21T17:42:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.339Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.339Z"
+  },
+  {
+   "id": "idol-manager-95215@1.0.5",
+   "gameId": "idol-manager-95215",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-31T17:54:30.000Z",
+   "notes": [
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Relationship notifications don't block event text anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed: BGM sometimes not looping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mods",
+     "items": [
+      {
+       "text": "You can now set which voice your custom idols should use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Use parameter \"vo_default\" (you can check updated Unique Idol Example mod on Steam Workshop)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Possible values: Idol01-Idol06, Amami, Aya, Azumi, Dance, Doctor, Fujie, Fujimoto, Intern, Kato, Music, Office, RivalF, RivalM, Sawamura, Shimizu, Style, Tanaka, Yuzuru",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep in mind that some of these characters don't have a full set of sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/4018887653999074879"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-31T17:54:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.339Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.339Z"
+  },
+  {
+   "id": "idol-manager-95215@1.0.4",
+   "gameId": "idol-manager-95215",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-28T17:45:50.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "A warning will be displayed if you don't have enough idols or staffers for the next story event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed: Context menu for idol's auto practice setting always showing visual traits as not selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Changing single's title when digital only release is selected would make the quantity field visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Projected attendance of a concert not changing after adding/removing songs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Levelling up Performance to level 10 on Unfair difficulty was impossible (requirement for concert attendance was higher than venue's max capacity)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Bankruptcy warning in the money tooltip still showed up after getting finances into the black",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Not being able to click anything after getting one of the endings and then loading a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: One of the Phantasm Facade events sometimes not triggering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Popup for random event outcomes sometimes appeared with the text scrolled to the bottom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Single Formation popup showing idols from the previous formation for a second",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: It was possible to add one idol to the formation twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Scandal points counter could display wrong value after getting new scandal points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Full scandal points tooltip didn't show up after loading a game until your number of scandal points changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some of the random events outcomes added/removed a wrong number of fans (bunny costume, game otaku, old photos)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Elections popup - removed the \"lock\" icon from the single selection button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Tooltip with the information about accident chances during a concert was hidden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mods",
+     "items": [
+      {
+       "text": "Custom BGM songs will play one after another instead of looping until the next event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Mods that added custom BGM music caused a memory leak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/4018887653988132745"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-28T17:45:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.338Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.338Z"
+  },
+  {
+   "id": "idol-manager-95215@1.0.3",
+   "gameId": "idol-manager-95215",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-11T22:48:00.000Z",
+   "notes": [
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed: Sales chart getting stuck on the same month after playing for a long time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Not being able to hire Aya when playing in Russian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Music gallery sometimes not working in Russian and Brazilian Portuguese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Credits showing old text from the beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The game could sometimes use a random name for the main rival group",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Single production cost not updating after changing marketing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Pushes not saving/loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Stats screen could wrongly display \"Bankruptcy\" and \"Scandal\" endings as locked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Cloud saves not working on Linux",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Added more backer names to the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Thai font",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/4040278393512971252"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-11T22:48:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.338Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.338Z"
+  },
+  {
+   "id": "idol-manager-95215@1.0.2",
+   "gameId": "idol-manager-95215",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-07T22:40:20.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Increased speed at which staffers gain experience",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Idols that you hire as staffers will have better skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Release Single\" button will be orange while there's a penalty for releasing singles too often",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You don't need to start the game with tutorial enabled to get the \"Where do I know that name from?\" achievement anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements in \"new day\" calculations for players with lots of idols",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Influence\" skill of player's staff character:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Socializing cooldown reduced by (player's influence skill / 2) days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bonus to the amount of influence points you get over your idols",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bonus to flirting success chances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed: One of the CGs not unlocking (If you needed it for an achievement, you should get it after opening the CG gallery)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: \"We only hire the best\" achievement unlocked when you hired a \"professional\" staffer instead of an \"expert\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: A dating event in Shibuya could freeze if the idol's \"cute\", \"cool\", \"sexy\" and \"pretty\" skills are maxed out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: New rival groups being generated with empty names after playing for a long time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Story rival groups releasing singles in post-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: It was possible to avoid socialization cooldown by using the idol context menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Jankiness when spamming mouse clicks during a concert",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed: Idol getting bullied again right after you stopped bullying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mods",
+     "items": [
+      {
+       "text": "You can now replace gameplay music with other tracks from the game or your own .wav files, check the example mod for instructions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unique idols: New parameter \"can_be_hired_again\" in params.json; Set it to true if you want this idol to appear in auditions again after her graduation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Auditions freezing if default idols are disabled and you run out of unique idols to hire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/4032396530949397572"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-07T22:40:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.337Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.337Z"
+  },
+  {
+   "id": "idol-manager-95215@1.0.1",
+   "gameId": "idol-manager-95215",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-07-31T23:05:28.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Idols will now slowly drain mental stamina if you pay them below minimum wage (¥20,000 /w, only on normal and unfair difficulties)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed: Achievements not unlocking (\"Sweeter than vanilla\", \"Parfection!\", \"Giga-pancake\", \"Beating like a hammer\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Not getting any \"sexy\" business proposals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Final event of Chapter 2 not triggering if the center of your #1 single graduated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: One of the events of Chapter 2 not starting properly (being stuck on the office background)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Spa tooltip not updating as soon as the value changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Theater stats not saving/loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Save/load menu and Continue button not working if there's a corrupted auto save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: It was possible to set idol salaries so high that they'd start paying you instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Removed \"buzz\" from business proposal tooltips (it used to be a resource in old versions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: One of the graduation messages showed instead of the actual date",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Song name generator ignored one of the sets of words",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Stylists displaying their max stat lower than it actually is",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Various small fixes in jp and cn localizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mods",
+     "items": [
+      {
+       "text": "Unique idols: You can now set stat value but ignore stat potential and vice versa. The missing value will be generated randomly instead of being 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Custom random event illustrations not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Playing with a texture mod then disabling the mod could break the save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: It was possible to create an event that would trigger itself in a loop, making the save file so large the game would stop launching.: If you can't find your save file in the game, this probably happened to you.: Check if your save file is bigger than 15mb: PC - C:\\Users\\*username*\\AppData\\LocalLow\\Glitch Pitch\\Idol Manager\\data\\story_mode: MAC - ~/Library/Application Support/Glitch Pitch/Idol Manager/data/story_mode: The file is probably filled with copies of something like the code on the screenshot. You can just delete the repeating code and it should work again. Or you can send me the file (contact@idolmanager.net) and I'll see if I can fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/4038025597320384709"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-31T23:05:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.336Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.336Z"
+  },
+  {
+   "id": "idol-manager-95215@10",
+   "gameId": "idol-manager-95215",
+   "displayName": "Update 10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-09-18T01:24:25.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Sales chart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The music sales chart updates every month with a ranking of the top-selling singles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The charts aren't just there to stroke the egos of top performers; the rankings are also a valuable source of what sort of music is popular and trending. If you want to stay trendy, watch the musical chart to see what genres, lyrical themes, and choreography styles are currently popular. Trending genres are more likely to appeal to casual fans, while hardcore fans tend to have more esoteric tastes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Styling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Think your idol needs a new look? You can now change their hairstyle or accessory using the newly-added styling feature. (Click the \"scissors\" menu icon on the bottom-right.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Added 10 new hairstyles and 4 new accessories. (Maybe you should try out the newly-added styling option to see if any of the new looks suit your tastes!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes to singles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each demographic now has a certain \"soft cap\" to how many copies of a single they can buy; after reaching the soft cap, gains for this demographic get exponentially smaller. (If you want to keep increasing sales after hitting market saturation with a certain demographic, you may want to diversify your target demographics and try to appeal to a wider audience.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Misc improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Idol profiles now show idol's dating status based on what the player has learned about them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated doctor and manager sprites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the effect that Hype over 100% has on profits in bigger venues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a tooltip that shows current day of the week when hovering over the date display in the bottom left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now use arrow keys and enter key to select dialogue options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Editor changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added != (not equal) operator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added check for: friendship | influence | romance level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added check for: age | can date | can drink",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added various checks for bullying and dating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added actor action variable_remove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added story characters page and \"change sprite\" action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added start_dialogue action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various quality-of-life improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Modding changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Staff sprites are now moddable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now create your own story characters. See JSON/Events/characters.json",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now create and edit gendered variables. See JSON/Constants/vars.json",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed: Wrong name used in one of reactions to conflict events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Concert status stuck in production",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Corrupt auto save file breaking save/load popup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: One of the story dialogues launched in 1440 days instead of 1440 hours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Quitting the game in the middle of a substory could break it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization: Auto-resizing of some text elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization: \"Pushes\" tooltip showing English text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization: Randomly showing English text in random events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 28,
+    "fixed": 8,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Sales chart",
+     "The music sales chart updates every month with a ranking of the top-selling singles.",
+     "Styling"
+    ]
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/2406534841122655973"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-18T01:24:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.335Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.335Z"
+  },
+  {
+   "id": "idol-manager-95215@9",
+   "gameId": "idol-manager-95215",
+   "displayName": "Update 9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-08-17T21:03:43.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Reworked relationship system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Previously, there was just one \"relationship\" meter that governed your relationship with each idol. This has been split into three separate stats: \"friendship,\" \"influence,\" and \"romance.\" Each starts at level 0, and can level up to level 5, or down to level -5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Friendship is a measure of how much an idol generally likes you, similar to how the old relationship stat worked. Romance is a measure of romantic interest, and determines how willing an idol is to date or enter a relationship with you; it's affected by actions like flirting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Influence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It's nice to be both liked and respected, but the two don't always go hand in hand. Influence is a separate meter which measures how indebted an idol feels to you: generally speaking, you gain influence with idols by doing favors for them, and you lose influence by asking idols to do favors for you. Similarly, uncovering compromising information about idols (and agreeing to keep it secret) will cause you to gain influence over them, but if they learn compromising information about you, it may cause you to lose influence over them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If your influence level with an idol is positive, it means that you have influence over her; a negative value indicates that she has influence over you (and you probably owe her a favor if you want to get things back to normal). If an idol has influence over you, she cannot be fired!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The following events affect influence",
+     "items": [
+      {
+       "text": "You will lose influence with an idol if she becomes injured",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fulfilling an idol's wish will cause you to gain influence with her",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You gain a small amount of influence with any \"pushed\" idols each month",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your choices in certain substories and random events can also gain or lose influence (depending on the story or event) and affect other relationship stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spending influence on favors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the benefits of gaining influence with an idol is the opportunity to spend that influence to ask her for favors. All of the following requests can be made of an idol if you have enough influence over her:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forced breakup: You can tell an idol to dump her current boyfriend or girlfriend. The amount of influence required depends on several factors: if she's unhappy in her current relationship, she may be more willing to break up than if she likes her current partner. Additionally, if you have a \"no restrictions\" dating policy, it'll be harder to force an idol to break up. However, if you have a group policy which forbids dating, you can take this action without spending any influence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stop bullying: If you know that an idol is bullying another member of the group, you can use influence to force her to stop. If an idol is being bullied by a clique, telling the clique leader to stop the bullying will cause most of the other clique members to stop bullying as well (but you might still have a hanger-on who has to be persuaded separately from the clique leader). If you don't have enough influence with the clique leader to tell her to stop the bullying, you can tell the clique members individually to stop bullying: if you can separately influence half the group to stop bullying, the rest of the group will fall into line and stop bullying as well (regardless of how the clique leader feels).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spying and blackmail: You can tell an idol to try to dig up dirt on another idol by rooting through her belongings or casually stalking her. If the spy is successful (random chance), you may gain influence over the idol she was spying on by uncovering evidence of misconduct, depending on how severe and potentially scandalous her misconduct is. An idol's willingness to spy for you is based on certain factors, such as her relationship with the target: idols will be less willing to spy on friends, and more willing to spy on their enemies. Idols who like you (either as a friend or as a romantic partner) will also be more willing to spy for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "New hairstyles and accessories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Three new accessories and 19 new hairstyles have been added. (More hairstyles will be added in future updates.) For the next update, we're planning on adding an option to change hairstyles and accessories.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked salary system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The game now tracks how much money each idol earns for you. You can check this number in their profile or in the salaries popup. The bottom-right corner of the default view now also has a button to bring up the salaries popup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "An idol's desired salary is based on their current fame level, how much money they're currently earning for you, and how much you're paying other idols. (If an idol sees that her peers have high salaries, she may start to feel underpaid.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Under the old system, idols with 9 or 10 fame would sometimes demand absurdly high salaries. The new system (which factors in how much money she's actually making for the company) should help to alleviate this problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changes to single creation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Selecting a marketing strategy for your single is now optional. Choosing to produce a single with no marketing strategy removes the need to have a business manager work on the project before it can be released.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Marketing strategies that are tied to a ticket or other physical item bundled with the CD (e.g. handshake events) have a scaling cost that is based on the number of CDs being produced, while marketing strategies that aren't tied to the physical product (e.g. fake scandal) have a fixed cost. (This was always the intended behavior, but small changes have been made to make this more consistent.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Miscellaneous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now drag and drop tasks into an office when the staffer is working on a business proposal. The staffer will resume working on it after completing the task.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Checkbox buttons in context menus are now green when selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Separate checkboxes for auto physical and mental stamina recovery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Separate checkboxes for auto injury and depression treatment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Info\" button with a tooltip that shows related active tasks when creating a new single, show, or special event, and during elections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Details\" widget now also shows how many special events are waiting for your action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now sort idols in the \"Formation\" popup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now change the cast, host and title of a running show",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now reorder songs in the New Concert popup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now edit the set list of a concert in production",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a warning icon with a tooltip on singles, shows and concerts in production where a participating idol was automatically removed or replaced due to injury or graduation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Unity to the latest version, which should improve performance for some players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed: Idols on hiatus were still getting into conflicts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Pressing 1, 2 or 3 in the New Concert popup unpaused the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Wrong position of one of the portraits in the birthday event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Wrong word order in dialogue for Single wishes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Graduation could cause a time freeze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Tasks widget showed tasks of graduated idols",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Settings popup only worked in the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: No more 9,999/10,000 sales",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issues with mentorship dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization: Auto resized text in a few places where overflowing was an issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization: Fixed text that was untranslatable (some buttons, tooltips, context menus, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 28,
+    "fixed": 11,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-821880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/821880/view/3556075649727716874"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-17T21:03:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-821880",
+      "checkedAt": "2026-11-12T07:24:09.334Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:09.334Z"
+  }
+ ],
+ "issues": []
+}

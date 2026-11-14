@@ -1,0 +1,4593 @@
+{
+ "game": {
+  "id": "conscript-137619",
+  "igdbId": 137619,
+  "name": "Conscript",
+  "cover": {
+   "imageId": "coc09m",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc09m.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arll9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arll9.jpg"
+  },
+  "ps5Release": "2024-07-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "conscript-137619@2.1.0.1",
+   "gameId": "conscript-137619",
+   "displayName": "Patch 2.1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-06T16:30:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/3ec698d7d0650a9c73cbca595af85d6d1a7b689e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update provides a number of small fixes to the game, including a key fix first raised by the community (thank you for helping to improve CONSCRIPT)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed a bug where combining stacked items could cause their value to drop to 0 and be unusable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some items did not show up in the shop after upgrading a save game to the Director's Cut update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where upgrading a save game to the Director's Cut update slightly offsets several maps to the North",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Just to reiterate, this'll be the final update for the game (unless anything major is thrown my way). More battles await us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Good luck out there, Soldiers! 🫡",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1286990/CONSCRIPT_Directors_Cut/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/1832065502809609"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T16:30:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.936Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-06T16:30:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.936Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-06T16:30:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.219Z"
+  },
+  {
+   "id": "conscript-137619@2.1.0.0",
+   "gameId": "conscript-137619",
+   "displayName": "Patch 2.1.0.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-21T16:30:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/350f2f566cfd8944c219932af10ed2535f11112c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v2.1.0.0 PATCH NOTES",
+     "items": [
+      {
+       "text": "(Insert CONSCRIPT: Director’s Cut - Dualshock Edition joke here)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ADDITIONS",
+     "items": [
+      {
+       "text": "Added “Controller Icons” control option to manually change what controller icons are displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra “Torch” button input to turn Trench Torch on and off if it is in your inventory. This can be rebinded like any other input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can skip the entire flashback sequence on the chapter end screen when playing on NewGame+ and go straight to the next chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed bug where corpses would re-animate in a bugged state when set on fire with a fire crate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where armor sound effects would play when moving in a flashback sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Execution Error” crash when moving to a new room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Pierre's diary could not be re-read without leaving the room in the 5th flashback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where door connecting Rat Nest and Old Ruins would re-lock itself after opening when playing on an old save file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the color of the dot in the middle of the crosshair was not being affected by the cursor color setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where changing the keyboard rebind for walk toggle was not saving.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug where the gas attack music would stop abruptly after the intro battle in chapter 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an extra visual indicator for rubble on the map for the Fort Vaux outside entrance room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized gas particles to improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased Steamcloud file limit so all 100 save files could be synced correctly between devices.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "BALANCE CHANGES",
+     "items": [
+      {
+       "text": "Morphine removes shellshock (same as 2x alcohol).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "This will be the last update unless any other major issues come up. Onwards to new things!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1286990/CONSCRIPT_Directors_Cut/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 9,
+    "balance": 3,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/1822556746157137"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-21T16:30:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.935Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-21T16:30:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.935Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-21T16:30:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.218Z"
+  },
+  {
+   "id": "conscript-137619@2.0.2.0",
+   "gameId": "conscript-137619",
+   "displayName": "Patch 2.0.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-17T16:30:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/1cc7646046b61b348aa66dfea535e35f5fb4a42a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v2.0.2.0 Patch Notes",
+     "items": [
+      {
+       "text": "Fixed issue where starting the game with Complete Bag Start wouldn’t grant the 4 special item specific slots on NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the text on the special bag slots would display “-1” when playing on NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the explosive barrel in the moat room of Fort Vaux was hard to shoot without taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you couldn't remove map markers individually when the maximum amount is placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where infection sound cue would play when entering the Shanty room from the Swamp room in the Road.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed oversight where you could cheese hardcore mode by saving into different save slots. From now on, once your initial hardcore save is created, the game only gives you an option to override that specific save slot and not any others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where \"Indoctrinated\" achievement was not unlocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where new achievements would not pop on Steam when starting the game even though the challenge has been completed offline.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where the dogtag item combination was not the same as the locker code in the weapons storage in Fort Vaux on NewGame+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Infinite Ammo item was being removed from the player inventory or item storage and would have to be rebought on NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where you could buy the New Boots item twice in NG+ if playing on a v1.0 save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential fix for frame-perfect bug where enemies would become invincible during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1286990/CONSCRIPT/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/1819386365087198"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T16:30:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.934Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T16:30:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.935Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-17T16:30:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.217Z"
+  },
+  {
+   "id": "conscript-137619@2.0.1.0",
+   "gameId": "conscript-137619",
+   "displayName": "Patch 2.0.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-11T16:30:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/de90d4d447d9cb1818ee61e36909dd41ffcad912.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v2.0.1.0 Patch Notes",
+     "items": [
+      {
+       "text": "Fixed issue where the Merchant would sell a Craftsman’s Kit even if the player already had one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where knife could be used even when it wasn’t in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where control rebinds were not being saved properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where music would keep playing when exiting to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where sell prices for items would be different when selling from the item storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where buying a gun or melee weapon from the merchant would result in a bugged item. If you had a bugged gun, you can just sell it back to the merchant from storage to get rid of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the “Abandon post?” prompt would appear in the front line battle in chapter 1 despite completing the battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the cursor would become bugged if you scrolled down to the reset button when rebinding gamepad buttons and then tried to scroll back up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the trench torch light would not get destroyed when depositing the trench torch in to item storage while wearing a gas mask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where starting a NG+ file with the complete bag start setting would cause a bugged knife inventory slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash that would occur when killing the soldier in the Isolation room in Fort Vaux.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash that would occur when placing held item down and exiting inventory in the same frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential fix for random “REAL argument is unset” rare crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed English typo in Gas Mask description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor spelling error and script cleanups in English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the game detects corrupted save data and crashes, the error message will actually say that now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ruby pistol buy/sell value slightly reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1286990/CONSCRIPT_Directors_Cut/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/1818752592124285"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T16:30:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.934Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T16:30:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.934Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-11T16:30:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.216Z"
+  },
+  {
+   "id": "conscript-137619@major-2025-12-04",
+   "gameId": "conscript-137619",
+   "displayName": "DIRECTOR'S CUT Update Available Now!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-04T16:00:31.000Z",
+   "notes": [
+    {
+     "title": "DIRECTOR'S CUT UPDATE DEVLOG",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/67e766008c8049d3818199f1cdd2cb559194403f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soldiers, it has been a while! I hope you’ve all been well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’ve spent a lot of time since release closely monitoring feedback from reviews and have been working on a massive QOL & Accessibility expansion update for CONSCRIPT over the past year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I originally wanted to get another patch out closer to launch, but it just kept getting bigger and bigger so I decided to just roll it all into one huge update. There were a lot of other roadblocks that were totally out of my control that also pushed the release timeline back. But we're here now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full patch notes can be found here, so the purpose of this post is to give a broad overview. The main goal with this update was to iron out as many of the common criticisms in a way that I felt didn’t mess with the original flow or spirit of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reading through a lot of the negative reviews, it seems there were a lot of smaller issues with the base game that compounded over the 12 hour runtime, leading to frustration for many players. Hopefully all these small changes and time-saves add up to reduce down-time and increase the overall pace of progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the spirit of classic survival horror, I’ve titled this update the “Director’s Cut” update. I’d consider this to be the version of the game I’d have released if I had a bit more time to playtest the game thoroughly myself before launch with no pressure and stress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note: this update is compatible with older save files, but for an optimal bug-free experience it’s recommended you start a fresh playthrough. It is also not advised that you use a new v2.0 save file on a v1.0 un-updated version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/2de4c03cb194d0ece44219ca280e9c9b7c0f52b5.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Part 1: New harder difficulty options",
+     "items": [
+      {
+       "text": "This update includes some brand new difficulty options to enjoy (or suffer through).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New Shellshock difficulty has been added to the game, which provides an even harder difficulty than Veteran mode. Enemy soldiers are faster and hit harder, and their health regenerates in-between room changes. Only for the most battle hardened of soldiers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/50e803515667406ed2d5441780d11331888d4257.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You can now choose to play the game on Hardcore mode (permadeath) before starting a new save file. If you enable this, your save file will be erased upon death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You can earn a new S++ rank on Hardcore mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tread carefully! You can enable Hardcore mode with any standard difficulty setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/50f7374d0ddd36f9566b5d74ee3339e78bc386e0.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Part 2: New items & unlockables",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/98ce6f23aaecf774497441a3af026cd246bff518.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Included in this update are some new items available in both the regular game and also in NewGame+ as rewards for completing the game. Some of these were beta items that didn’t make the cut for v1.0, others are totally new.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Craftsmans Kit item added to Merchant shop in chapter 3. Increases the amount of ammo received from crafting when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combat Guide item added to the Merchant shop in chapter 4. Increases melee charging speed, increases melee critical hit chance and halves the amount of durability damage inflicted on weapons when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dog Collar item added to the Merchant shop in chapter 5 for an expensive price. This item stops rats from spawning when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Torch Upgrade Kits are available throughout the game, allowing you to upgrade the battery life of your Trench Torch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Knife Sharpeners available throughout the game, allowing you to upgrade the damage of the Knife.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gunpowder (G) item added to the Merchant shop in NewGame+. Allows you to craft Grenade Launcher ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Boots item added to Merchant shop in NG+ for an expensive price. This item gives the player unlimited stamina when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Infinite Launcher weapon added after completing the game on Hardcore Shellshock difficulty. Acts like the regular Grenade Launcher but you never have to reload it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gold Armor added after completing the game on Shellshock difficulty with S+ rank. Acts like regular armor but with infinite durability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Criticism: “Too much backtracking & inventory management, even by classic survival horror standards”",
+     "items": [
+      {
+       "text": "New shortcuts were added throughout the game to help progress flow at a smoother pace. Thanks to these shortcuts, there is much less down time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/d7e7616aa480d7d5c94a729c5dd0e4feaca32c61.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These new shortcuts are most noticeable in chapters 3 & 5, where they were needed most.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/8c630a9f0e9691d4167370c682faacdc6c90e932.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few more item storage boxes have also been placed throughout the game, meaning less pointless backtracking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/2d81c3176ec6c05698bcd0a732cddecae3353ad4.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New option that gives player unlimited sprint when not in combat to reduce the amount of time you spend managing stamina while running around. You can get around the map way faster when not having to worry about stamina! This really helps increase the pace of backtracking when you do need to do it. There are also a bunch of other new options you can check out in the full patch notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/5250ebb305523f3bcfc1d78832dc28deb1747621.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Four new special items added to the Merchant’s shop that give the player four extra inventory slots specifically for the Gas Mask, Torch, Knife and Lighter - freeing up some inventory space for other items you want to pick up. These items were chosen as they are all fairly essential for a playthrough and are needed at random intervals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/dfc9d437a323e33ef2cf01d8401707c47f0d0091.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are now more options to use or consume items that are on the ground without having to have enough space to pick them up. For example, you can insert batteries into the torch without needing space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/f2c6008cbe13bb3129733c962ac355ce1f9c3cde.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can also combine items on the ground with items in your inventory without needing a free slot. This eliminates the issue where you'd have to run back to an item storage box just to combine an item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/859124449aa9a00ede8069bf9cf44c7104d3aadf.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If backtracking and inventory management is seriously something you despise in games, you can now start the game with the “Complete Bag” setting which starts you with all 16 inventory slots + 4 new special slots. An \"A\" rank will be the highest rank you can achieve if you do this. With this enabled, inventory management basically becomes a non-issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/d76242ce5f12849eef95685091da3d40566166fd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New save rooms have been added throughout the game, including one in Fort Souville, reducing the need to travel across the fort to access an item storage box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/17d4a3d3c07ec26f3c77ea7541e5cf3ec0eeda08.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now sell items in the item storage box directly to the Merchant without having to go back and forth between the shop and item storage box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/da4483a6186ae54da775db36cdaa3cddf7a0468f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Criticism: “Combat lacks depth and often feels like ‘Benny Hill’ with too much running around”",
+     "items": [
+      {
+       "text": "Can now move slowly while aiming and shooting - giving the player more manoeuvrability in tight spaces. This makes combat feel a bit more dynamic and less “sprint away -> shoot -> sprint away -> reload”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shotguns now easily stagger groups of enemies backwards when the player is surrounded by enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fully charged melee strikes now cause more knockback on enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Criticism: “Secret ending is too obtuse and missable”",
+     "items": [
+      {
+       "text": "Flashback replay feature has been added after chapter 4. Simply sleep in the bed in Fort St. Michel where chapter 3 ends to replay any flashbacks you’ve completed. This can be done at any time after chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/8302ee7541aa9cd11492b703c0d6eef5a4a7351f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Criticism: “Too many cigarettes in the late game with nothing to spend on”",
+     "items": [
+      {
+       "text": "New bonus items have been added to the Merchants shop to give players more to buy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A larger stock of standard items have been added to the Merchant shop, with some items like Gun Parts becoming infinitely purchasable at the end of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/797e06f7a3e55701a49f57d8c1bc3c6ff3fa4396.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Criticism: “Too hard to keep track of what items you’ve left in a room”",
+     "items": [
+      {
+       "text": "You can now place map markers after purchasing the Pin Set item from the Merchant, which allows you to mark the map with pins. Doing this can help you remember what you left in different rooms, or if there are any points of interest you need to return to later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/4fd0d43f62d4e528209d206d48a3d603fd6eb0da.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Criticism: “Chapter 3…”",
+     "items": [
+      {
+       "text": "New shortcuts have been added to chapter 3 in various rooms to help with the flow of the level design.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/7c40a2f6f4a9d29354d4ccfc33e81abe096fc051.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new hidden save room has been added to the Road area, which means less running around and less progress lost if you die.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/ba5eaf6b9ecd60a3f43a5de7a9e3abb98cc6bbfa.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visually, certain rooms in the Road area have been made clearer. Hopefully this means less time trying to navigate through parts of the map that are visually confusing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/c48f3c2bb4bc8a597afcf7b1fa509291fe7b5b89.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Road map has added details where you can now clearly see the shape and form of each room–further aiding navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/ca37d3cc199fabc91ff5c4f627a5b97ab64ae63c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In NewGame+, truck fast travel is available from the start of chapter 3, meaning you don't have to make the long trek down to Fort Saint Michel every playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/ed6286f0b0d78ddd7422806fc9aff2e9383de39d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Criticism: “Records screen is barebones and doesn't provide enough info on previous playthroughs...”",
+     "items": [
+      {
+       "text": "The records screen has gotten a substantial upgrade, and now shows your best rank, saves, heals, time and deaths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/1ebb40c3e4af43593feac94c58b8fd21f12e56b7.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’ve only touched on a small portion of the changes made. Read the full patch notes below for a more in depth breakdown of the changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other miscellaneous improvements & additions",
+     "items": [
+      {
+       "text": "Assigned items now have a visual indicator that appears next to the player when swapping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/77fc58145f15972545d4494e0fd24a668b025c36.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When examining weapons in the inventory, more stats are given.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/4c3da49563397899685e1db99626e04ed6c43176.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Major NPCs now all have a unique character portrait that is displayed when you talk to them, helping give life to their character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/bfb0c563dcc38f5ecfb48068fb91e035ace76fcd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New \"Diary\" file automatically added to the Files collection. André automatically writes new entries as the story progresses. This helps you remember previous narrative events if you take some time off the game and return.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/2296ed4eb67887c56ac9fc9ee57bd0ba003be9f8.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now examine save files to get more info about them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/eff763ec778cc5101ea51e52cbf073f9b70cdd2c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Atmosphere and style of the main menu changes depending on your progress in the last played save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/d3adc6fa376c21b21375a7e0b188de5b1fb95e24.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New bag styles to unlock, including \"Classic\" style (guess the reference).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/3d8374cbe49ea290cc9c3a5493890bea5e04e9a0.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now save the game at the end of a chapter before the flashback sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/d1949232d8dccc8c81abc2d0f13ec7f02a69707a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There's a bunch of new accessibility and QOL options available to play around with. For example, you can now change the colour of the health bar and also assign colours to the player, enemies and NPCs to help differentiate them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/661bff9ade8955f3015851c859cbdebd5e131643.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Part 4: New achievements",
+     "items": [
+      {
+       "text": "8 new achievements have been added to the game for you to complete!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In My Restless Dreams - Complete a flashback replay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Remember the Basics - Kill 15 enemies with a melee weapon with the Combat Guide in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Assembling Parts - Craft ammunition 5 times with the Crafting Kit in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trench Foot - Run 1,000m with the New Boots equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blood and Iron - Complete the main story on any difficulty with the Hardcore setting enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dead Sentry - Complete the main story on Shellshock difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Making a New World - Achieve an S+ rank on Shellshock difficulty (no ending 1A or 1B).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Void of War - Complete the main story on Shellshock difficulty with the Hardcore setting enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/73de73353db748562cfd0c74883d4020e59fdc49.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Legacy Steam Branch",
+     "items": [
+      {
+       "text": "For those who want to go back and play the original Steam release, or continue their current playthroughs uninterrupted—I’ve implemented a Steam beta branch for you to revert your game version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To access this branch, right-click on CONSCRIPT in your Steam library and then click on “Properties.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Then, from the “Properties” menu, click on the “Betas” tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From there, you can select the Legacy version from the drop-down menu to install the original 1.0 version of CONSCRIPT.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: v2.0 save files will be incompatible with v1.0 of CONSCRIPT.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, v1.0 save files are backwards compatible with v2.0—although it is still recommended you start a fresh save file for an optimal bug-free & balanced experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/e0c9cbe2b910ffa1a3f0c65e923e97e6040531c5.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank You!",
+     "items": [
+      {
+       "text": "This will be the last major update for CONSCRIPT. Despite my best efforts, I was not able to secure the funding to develop a DLC expansion. For me to create fully-fledged new content, it’d have to be quite reduced in scope, which is something I’m not willing to do. CONSCRIPT is a very personal project for me, and so I don’t really want to add to the universe if I can’t give it everything it deserves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, I am really happy with this Director’s Cut update, and I think it’s a really good final form to leave the game in. At this point, I’m not really sure if I’ll ever return to the world of CONSCRIPT—time will tell. But thank you to everyone who took the time to play the game, it means a lot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Reviews",
+     "items": [
+      {
+       "text": "If you played the game and had hangups with any of these issues and left a negative Steam review for the game, it’d be greatly appreciated (if you have the time) if you could check out the new update and reconsider your review! If you play the update and still don’t like the game, that’s fair too, of course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those who had issues with the pacing of the game, I'm positive you'll find many improvements here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Getting the total Steam review score back to Overwhelmingly Positive would be a dream come true for me and would greatly help my future projects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And for those who took the time to leave a positive review, thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/5043608b01627d8bc366d6e2b2be0007866bc463.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's Next?",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/a17e8d6881c7bc4b029bb8632060605223fb58c7.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've started pre-production on my next title, but I won't be ready to show any actual gameplay for a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the spirit of PROJECT ABEL (true fans will remember...) I've given it the temporary title of PROJECT CAIN.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is not CONSCRIPT II unfortunately, but I think fans of CONSCRIPT will find a lot to appreciate in it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can follow me on X/Twitter here for future development updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Or you can signup for future updates via email on my newsletter signup on my website here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's all for now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until next time, soldiers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jordan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1286990/CONSCRIPT/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 44,
+    "fixed": 0,
+    "balance": 7,
+    "other": 71,
+    "ps5": 0,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/37541422/98ce6f23aaecf774497441a3af026cd246bff518.png\"]",
+     "Torch Upgrade Kits are available throughout the game, allowing you to upgrade the battery life of your Trench Torch!",
+     "Knife Sharpeners available throughout the game, allowing you to upgrade the damage of the Knife."
+    ]
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/1818118366173324"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T16:00:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.929Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T16:00:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.929Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-04T16:00:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.210Z"
+  },
+  {
+   "id": "conscript-137619@post-2025-12-04",
+   "gameId": "conscript-137619",
+   "displayName": "DIRECTOR'S CUT Patch Notes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-04T16:00:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/37541422/67e766008c8049d3818199f1cdd2cb559194403f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "CONSCRIPT DIRECTOR’S CUT UPDATE (v2.0) PATCH NOTES",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v2.0.0.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW GENERAL FEATURES",
+     "items": [
+      {
+       "text": "New SHELLSHOCK difficulty added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hardest difficulty setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies move faster, hit harder and have more health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies replenish health in between room changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "6 slot inventory to start the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fewer healing resources available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trench Torch Pouch, Lighter Pouch, Gas Mask Canister and Knife Scabbard items added to Merchant for 150 cigarettes each. Once purchased, these items provide a permanent item slot for their corresponding items above the usual inventory slots. The inventory screen has been slightly rearranged and updated for this mechanic to work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now move while aiming, shooting and reloading weapons. The speed at which you move is quite low but does offer some more maneuverability when in close quarters combat. When in deep mud, you cannot move and aim anymore. When moving and aiming, the crosshair never shrinks and accuracy is low. This can be toggled on or off in the Gameplay settings menu if you want to revert back to the classic system, but this is on by default now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Map marker system added. Purchase the Pin Set item from the Merchant for cheap to access this feature. Place map markers to remind yourself about items, ammo, enemies or points of interest in a room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "After chapter 3 you can replay flashbacks at any time by resting at the bed at Fort St. Michel. This means you can always achieve the secret ending if your cowardice level is low enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A chapter end screen has been added, allowing you to save your game at the end of a chapter but before the flashback sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When on the save menu you can examine the save files to see what extra settings have been enabled or disabled. This also includes extra info on your save game such as a save date timestamp (timestamp only available on new saves).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weather effects and atmosphere of the main menu changes depending on the progress of the last save file played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When talking to important NPCs, a new graphical portrait of them is displayed on screen to help give life to some of the characters. You can disable these in the Gameplay settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "André’s Diary file has been added to your files list automatically. This is a special file that is updated with very brief story summaries when you manually save your game at a save journal. If you’ve left your game file for a while and can’t remember what was happening, this provides a brief overview for you to find your bearings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When starting NG+, you can now modify difficulty and game parameters for the new playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New graphics on the extra settings menu depending on what parameters are selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW ITEMS & FILES",
+     "items": [
+      {
+       "text": "Craftsman’s Kit item added to Merchant shop in chapter 3. Increases the amount of ammo received from crafting when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combat Guide item added to the Merchant shop in chapter 4. Increases melee charging speed, increases melee critical hit chance and halves the amount of durability damage inflicted on weapons when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Infinite Launcher weapon added after completing the game on Hardcore Shellshock difficulty. Acts like the regular Grenade Launcher but you never have to reload it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gold Armor added after completing the game on Shellshock difficulty with an S+ rank. Acts like regular armor but with infinite durability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dog Collar item added to the merchant shop in chapter 5 for an expensive price. This item stops rats from spawning when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Boots item added to Merchant shop in NG+ for an expensive price. This item gives the player unlimited stamina when held in inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gunpowder (G) item added to the Merchant shop in NewGame+. Allows you to craft Grenade Launcher ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Torch Upgrade Kit item has been added to the Merchant shop and also placed throughout the game. This increases the battery life of your torch by 5 minutes. A NG playthrough will only have 6 of these, but on NG+ you can keep upgrading to extend the battery life to a maximum of 3 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Knife Sharpener item has been added to the Merchant Shop and also placed throughout the game. This increases the damage of the knife by 0.1 points per upgrade. The Knife maxes out at 2.0 damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Field Manual file has now been split into two different pickups. Field Manual 1 is focused on combat and general gameplay, whereas Field Manual 2 is focused on inventory management. Field Manual 2 is found shortly after picking up your first shovel weapon. Both Field Manuals have visual button prompts to help with tutorialization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Support Request file has been expanded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW CHALLENGES & REWARDS",
+     "items": [
+      {
+       "text": "8 new in-game challenges added with corresponding achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In My Restless Dreams - Complete a flashback replay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Remember the Basics - Kill 15 enemies with a melee weapon with the Combat Guide in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Assembling Parts - Craft ammunition 5 times with the Craftsman’s Kit in your inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trench Foot - Run 1,000m with the New Boots equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blood and Iron - Complete the main story on any difficulty with the Hardcore setting enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dead Sentry - Complete the main story on Shellshock difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Making a New World - Achieve an S+ rank on Shellshock difficulty (no ending 1A or 1B).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Void of War - Complete the main story on Shellshock difficulty with the Hardcore setting enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Classic bag style added for completing the “Dead Sentry” challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Silver bag style added for completing the “Blood and Iron” challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW OPTIONS & SETTINGS",
+     "items": [
+      {
+       "text": "Added Hardcore (permadeath) mode in the Extra Setting menu before you start a new game (Save Settings is now called Extra Settings).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Complete Bag Start mode in the Extra Setting menu before you start a new game. This lets you start the game with all inventory slots open, all ammo pouch upgrades and all 4 new special bag slots open on game start - greatly reducing the need for backtracking and item management during a playthrough. A is the maximum rank that will be achievable if using this setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Deadzone adjustment for controllers added to Control options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enable / disable controller detection added to Control options (PC only).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added setting to disable game pausing when the window becomes unfocused in the Display options (PC only).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Health bar color adjustment added to Accessibility options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player, enemy and ally color adjustment added to Accessibility options to assist with visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quick select visual overlay setting added to Gameplay options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Infinite sprint when not in combat setting added to Gameplay options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crowdfunding references toggle setting added to Gameplay options. This changes a very small amount of photo sprites and item descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character Portraits setting added to Gameplay options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aim Movement setting added to Gameplay options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Voice acting volume adjustment setting added to Audio options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 3840x2400 and 2560x1600 resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weapon indicator fade setting to Gameplay options. If disabled, the HUD element that shows your current weapon and ammo will never fade out and will always be visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "LEVEL DESIGN CHANGES",
+     "items": [
+      {
+       "text": "In chapter 1 after finding Pierre, you have to manually carry him down to the bed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Rat Nest room added to the Support Trench underground. This serves as a connection between the Mess Hall and Sunken Artillery rooms. When all rat holes in the Support Trench are destroyed, this room will be free of rats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The underground level of the Support Trench has been expanded and now serves as a connecting route between the southwest and northeast parts of the map. Travelling through here will be treacherous however, so you’ll have to decide which floor is safer to traverse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fuel generators have been added to Fort Souville and the Sewers in chapter 5. These allow you to permanently light up the area at the cost of fuel. The amount of fuel depends on the difficulty selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New save room and upper floor (1F) added to Fort Souville, opposite the burning hot door on GF (only one room was added here).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shortcut added between the bottom and upper rooms of the Fort Souville basement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After meeting the Lieutenant at the bottom of Fort Souville in chapter 2, you have the option to fast travel to the front lines by speaking with him in the Depot C room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After completing the second trench battle in chapter 2, you have the option to fast travel to the Supply Line by speaking with Marcel who now spawns in the Souville Weapons Storage room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New hidden save room added to the Road area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shortcut added between the Horse Stable and Trench Access rooms in the Road area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After obtaining the Trench Tool in chapter 3, some craters in the farm area are patched by an NPC to help reduce backtracking time. The remaining craters in the middle of the room get patched in chapter 4, as per the original game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When playing on NewGame+, truck fast travel is available as soon as you start chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In chapter 3, if the player goes up to the Horse Stable and collects the Horse Shoe Key before getting the Trench Tool, the truck gets activated instantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trees cut down the left of the first save room in chapter 3 to reduce backtracking time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trees cut down in the ruined church room in chapter 3 to reduce backtracking time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added save point after the rolling boulder in chapter 3 (before the minefield).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some subtle extra visual cues, paths and lights in the Road area to help navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rubble that appears during the first front line battle disappears after chapter 3 to reduce backtracking time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The door between the Mess Hall and Monitor Tunnel in the Support Trench does not get blocked off in chapter 4 on Training and Recruit difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shortcut added next to the Town Cellar where you pick up the Wash House Key, connecting both sides of this room together.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shortcut added between the town save room and sewer entrance in chapter 5 meaning you no longer have to pass through the sewers again in chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item storage box added to the town cellar room where you find the washhouse key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tree cut down in the Cemetery room in chapter 5 to reduce backtracking time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New fountain added in the Cemetery room that acts as a shortcut once the water in the town has been drained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Overall level of darkness is reduced in the Road area once the player obtains Trench Tool to help visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wooden planks placed over the mass graves behind enemy lines in chapter 6 so you don't have to backtrack through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Wash Room in chapter 5 now contains a sink of fresh water that you can wash the Rock item in at any time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A soldier appears in Fort St. Michel in chapter 5 that offers to refill LMG ammo for a high cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A soldier appears in Fort St. Michel in chapter 5 that offers to sell you Machine Gun (Chauchat) ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The burning town sequence at the start of chapter 6 has been slightly changed. Enemies from the previous chapter despawn and are replaced with flame troopers that drop some items if you kill them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moveable crate removed from the eastern Moat room in Fort Vaux, meaning you don’t have to push it to access the shortcut.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A second spark plug is placed at the end of chapter 6 in the East Storage room in Fort Vaux. Now you can have both generators up and running at once towards the end of the chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shortcut added between the Fort Communications room and Bowels room in Fort Vaux.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new room was added to Fort Vaux before the Drop Shaft. The aesthetic of this room tells you in advance what ending you are heading towards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item storage box added to the East Storage room in Fort Vaux.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can jump down from No Man’s Land into the German Trench after chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gas Mask item appears in the town cellar in chapter 5 if the player never picked it up in chapter 2, preventing a softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most enemies in the Support Trench despawn in chapter 6, allowing you to do an item pickup run there if needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some item pickup locations are changed and rearranged to reduce overall inventory management across a playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smaller level design and graphical changes for various rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QOL IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Critical hit percent now added to the weapon examine screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Stopping power and penetration icons added to the weapon examine screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Melee weapon max durability icon added to the weapon examine screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Current ammo in a gun is now displayed on the weapon examine screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Current durability of melee weapons is now displayed on the weapon examine screen as a percent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Trench Torch maximum battery life and current battery life as a percentage is now displayed on the examine screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can now assign the Gas Mask to the quick select buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The stamina bar turns slightly red when you are close to running out of stamina.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can now combine a torch battery with the torch to recharge the battery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Torch no longer has to be equipped to insert a battery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can insert a torch battery from the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can combine an item on the ground with an item in your inventory without needing a free slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can repair a melee using a repair kit from the ground without needing a free slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can wrap around the inventory slots when moving, for example if you’re in the right most slot and try to move right, it will wrap around to the first slot on the left. And vice-versa.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can quickly cancel moving an item in the inventory to return it to its original position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can sell items in the item storage box directly to the Merchant without having to go back and forth between the shop and item storage box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When buying items from the Merchant with a full inventory, you have the option to send it to your item storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When selling melee weapons, the durability percent is displayed next to the name of the weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The text color of items you can’t sell is now red in the Merchant sell menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The merchant menu now doesn’t display items that are out of stock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can skip up and down 10 slots in the item storage box menu for faster navigation using the LB and RB buttons (Q and E on keyboard).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New sound and visual effect when player is hit while low on health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Armor foley sounds added when the player moves with armor equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The default red health bar increased in brightness to help visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the amount of time it takes for the game to proceed after completing a puzzle by 2 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When quickly selecting an assigned weapon, the quick select overlay will appear on screen to the left of the player to help players remember what they have equipped (setting to enable/disable this has also been added, but it is on by default).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the amount of item storage box storage slots to 200.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 89 extra save slots (99 total now).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Numbers added to save slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can scroll up and down save slots with the mouse wheel.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Can cycle up or down by 10 save slots when pressing left or right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When loading a save file, last used checkpoint autosave file is displayed above the manual saves,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When attempting to pick up an item with a full inventory, the item name will now appear in the textbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can reset the options group in each different settings category individually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Current difficulty is displayed on the pause menu at all times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Challenges on the challenge screen will display a small lock icon if they are tied to an in-game unlockable. Viewing that challenge close up displays an image of the unlockable once it has been unlocked. This helps players keep track of what they’ve unlocked or if they have anything else left to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can now give the Medic an alcohol bandage to progress the quest in chapter 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Text flow for throwing a grenade in a rat hole has been improved and no longer offers you a choice if you don’t have any grenades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Can now light fuel quickly by just using the lighter item instead of having to spill the fuel first, then use the light. Although you can still do it the old way if you want to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased movement speed when carrying Pierre.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now skip the opening splash screens and go straight to the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The records screen now tracks heals, deaths and saves alongside highest rank and best time across all difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "An average total rank is given that calculates the average of your ranks across all difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Perfect” scores for different categories are highlighted in red.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quick selecting assigned items with the mouse wheel has been made more responsive.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Transition speed between rooms has been made faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now rotate the minefield map in chapter 3 (no more negative reviews about the minefield please…).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "MAP IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Added map icon for the heavy howitzer in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icons for the fire in Fort St. Michel and fire in Fort Souville.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icon for the bed in Fort St. Michel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icons for the rubble that blocks the Support Trench West during the artillery carry sequence in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icons for the fountains and water pool in chapter 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icon for the sewer piping in chapter 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icons for the rubble that falls in the town area during chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icons for the twin generators in Fort Vaux in chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icon for the pigeon in Fort Vaux in chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added map icons for all rat holes in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The map for the Road area has been made more detailed and now reflects the in-game environment more clearly to help navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Map updated in many instances to more accurately reflect blockages that are present in the environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated some map background images.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "GENERAL IMPROVEMENTS",
+     "items": [
+      {
+       "text": "General polish to visuals of the upgrade and trade screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Descriptions for certain items have been slightly revised and now offer some more information on the use of the item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly redesigned the bag style inventory backgrounds to more accurately depict the uniforms they are based off of.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly reduced amount of time it takes the item storage box to open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To compensate for the amount of new options, the options screen scrolls up and down now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Transition between option menus is now instant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Difficulty text descriptions are now more detailed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Small NPC portrait images have been cleaned up and improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The flashing effect that occurs during the finale of the game in chapter 6 has been modified to be less harsh on the eyes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visual effects in Fort Vaux have been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now block an enemy that is jumping into a trench by repairing the barbed wire before they start jumping down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some enemies now cycle between rotations when idle to provide more opportunities to stealth around them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When the fresh puttee items are equipped, player animation speed is increased to give a visual indicator of the speed increase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Low pass audio filter applied to player vocalization sounds when wearing a gas mask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sound design subtly improved across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "COMBAT BALANCE CHANGES",
+     "items": [
+      {
+       "text": "A small dot appears in the center of your crosshair when it is fully locked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shotgun blasts now cause close enemies to stagger backwards more reliably, making it more useful for crowd control when the player is surrounded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Greatly reduced the frequency of enemies hitting you through walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Overhauled bullet collision detection to greatly reduce frequency of missing enemies that the reticule is aiming at.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Time to charge a melee strike has been slightly increased, but fully charged melee strikes now cause weaker enemies to stagger backwards if the weapon isn’t broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy sprint speed lowered slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rifleman bullet hit detection has been made more consistent and fairer particularly when the player runs to cover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New enemy death animation for stealth kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On Shellshock difficulty, the amount of melee enemies that can surround a player is increased from 2 to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy soldiers will occasionally kill rats that charge towards them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy melee hitboxes can kill rats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy chasing speed depends on difficulty selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You can kill 2 rats at once with a fully charged melee strike, and only 1 rat with an uncharged melee strike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shotgun blasts now reliably kill rats. Other gun types are still less reliable and innacurate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Elite Trench Raiders and Snipers can no longer be instantly killed with a fully charged rifle shot when unaware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fire Gasoline Crates have been buffed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Revolver fire rate has been increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Revolver fire rate upgrade costs increased by 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Revolver maximum damage upgrade increased across every upgrade. Maximum damage has been increased from 3 to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New damage upgrade available for Elephant Rifle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Double Barrel fire rate made quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mustang-11 damage increased across every upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "CONTROL CHANGES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can now change the quick select assigned weapons when in aiming state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can swing your currently equipped melee weapon without having to aim by pressing the attack button. If you have no melee weapon equipped this will default to the Knife (if it is in your inventory).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can now enter reload state from sprint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Both strong and normal knife attacks have been made faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Melee swing animations are slightly faster across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When playing with KBM, there is now a walk / run toggle input that can be rebinded like any other key (default key is CTRL).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Can now use the D-pad on puzzle screens to move the cursor when using a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "GENERAL BALANCE CHANGES & ADDITIONS",
+     "items": [
+      {
+       "text": "Unlimited Saves and Checkpoints are turned on by default before starting a new game if the player has not completed the game yet (you can still turn them off if you want for a first playthrough).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can now combine Chemical Fluid with Alcohol to create Fuel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Stamina recharges automatically when entering a new room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Stamina recharges automatically when using the item storage box or talking to the Merchant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can now sell Body Armor to the Merchant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Max capacity of a stack of Grenades & Fire Bombs increased from 3 to 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mouse fade setting moved from Game to Control options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Infinite gun parts available from the Merchant shop in chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "More general consumables added to the Merchant shop in chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rat infection chance adjusted across all difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Training: 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Recruit: 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Soldier: 40%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Veteran: 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shellshock: 100%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rat initial spawn time rates adjusted across all difficulties. Random choice between values per corpse:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Training: 60, 90, 120 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Recruit: 30, 60, 90 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Soldier: 25, 35, 45 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Veteran: 10, 15, 20 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shellshock: 5 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The time it takes for rats to begin their player agro checks is reduced to 3 seconds on Veteran, and 2 seconds on Shellshock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "POW gives 10 more cigarettes across all difficulties when returning the missing photo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On Training difficulty, health automatically regenerates to 50% of base amount when not in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On Recruit difficulty, health automatically regenerates to 25% of base amount when not in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Surgical Kit now has an added ability to regenerate low health to 25% of the original amount when not in combat. This stacks with automatic health regeneration on Training and Recruit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Certain item positions and barrel contents have been changed and replaced with cigarettes to reduce item management. Merchant stock for some items has been slightly increased to compensate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When holding the Evasion Tactics item, the player can roll through breakable wooden walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All melee weapons destroy barrels with a weak strike. No need to charge up with the shovel and knife any more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Default torch battery life adjusted across all difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The order of items in the Merchant shop is now neater and things are grouped together more logically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sell & buy prices for certain items have been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Base damage of the Knife is now reduced to 0.2, but can be upgraded with the Knife Sharpener throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Players are no longer given tiny amounts of cowardice for hiding in dugouts. After the initial launch patch this happened at a rate so slowly that it was unlikely that it’d ever change your ending unless you were AFK in a hideout while the game was running. But now it won’t be an issue regardless.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If the player has abandoned a key battle and is heading for the coward ending, they can override the coward ending by getting a certain amount of kills by the end of the game depending on the difficulty selected (Training: 100, Recruit: 150, Soldier: 200, Veteran. 250, Shellshock: 300). However, if you abandon all 3 major battles in chapter 1, 2 and 4 you will be locked into a coward ending with no chance at redemption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The way the values on the records screen are saved is a bit different now. Records are weighted in this order: Ranking > Time > Saves or Heals. This is not how the overall rank is calculated, but how the game saves your highest ranked playthrough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Deaths during a playthrough are now considered when a ranking is assigned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On Training difficulty, overworld fuel pickups grant 3 fuel. On Shellshock fuel pickups grant 1 fuel. 2 is the default on all other difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On Shellshock difficulty the default light circle around the player is reduced in size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rolling boulder speed changes depending on difficulty selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the cost of the Luger and Elephant Rifle in the merchant shop to encourage early game weapon experimentation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can no longer roll when carrying the heavy artillery in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New personal logo added to initial splashscreen on game start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Steam Deck controller icons get used automatically when playing on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Small typo fixes and script clean ups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where rats would become invincible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where DBNO soldiers could still be heard screaming even if they’ve despawned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where soldiers would double swing their melee weapons when hit by a pistol bullet mid animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected some texture load timings to avoid instances of the game hitching and briefly pausing during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Xbox Series controller via bluetooth issues should be fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Various small bug fixes & improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1286990/CONSCRIPT/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 130,
+    "fixed": 8,
+    "balance": 71,
+    "other": 37,
+    "ps5": 0,
+    "topNew": [
+     "New SHELLSHOCK difficulty added.",
+     "Hardest difficulty setting.",
+     "Enemies move faster, hit harder and have more health."
+    ]
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/1818118366173325"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T16:00:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.932Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T16:00:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.933Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-04T16:00:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.215Z"
+  },
+  {
+   "id": "conscript-137619@1.0.1.2",
+   "gameId": "conscript-137619",
+   "displayName": "Update 1.0.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-13T13:11:06.000Z",
+   "notes": [
+    {
+     "title": "MINOR UPDATE v1.0.1.2",
+     "items": [
+      {
+       "text": "Another quick patch today, soldiers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed oversight where Fort Souville had an extra floor on the map (1F).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where game would crash when entering Blockhouse Eugene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where one of the Twin Knight boss enemies would momentarily come back to life and attack player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Alright, now I'm on holiday for real!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/5963414363408696359"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-13T13:11:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.927Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-13T13:11:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.927Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-13T13:11:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.206Z"
+  },
+  {
+   "id": "conscript-137619@1.0.1.1",
+   "gameId": "conscript-137619",
+   "displayName": "Update 1.0.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-08T15:16:00.000Z",
+   "notes": [
+    {
+     "title": "MINOR UPDATE v1.0.1.1",
+     "items": [
+      {
+       "text": "English typo fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Old minefield map inspection in the Road has been made visually clearer with red markings instead of green.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where stairs to crate storage in Fort Souville was incorrectly labeled on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "West side of Fort Souville basement is now accessible after chapter 3 and no longer blocked off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where shooting a rat with a turret would crash the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where pressing the reload button would trigger a sound effect even if you're not reloading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where PS4 and PS5 controller mappings were incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 3,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/5963414363390792147"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-08T15:16:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.926Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-08T15:16:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.926Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-08T15:16:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:24.205Z"
+  },
+  {
+   "id": "conscript-137619@1.0.1.0",
+   "gameId": "conscript-137619",
+   "displayName": "Update 1.0.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-07T14:02:35.000Z",
+   "notes": [
+    {
+     "title": "SOLDIERS!",
+     "items": [
+      {
+       "text": "The first major patch has arrived…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When it comes to balance, there were 2 major points I wanted to address with the v1.0.1.0 update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1) Fix the OP unbalanced rats.",
+     "items": [
+      {
+       "text": "The discourse around the rats genuinely took me by surprise as it was never a point that ever was noticed during playtesting, usability reports or the mock reviews we did months ago. It’s very clear to me now though that this mechanic definitely needed some more testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "So, they had to be nerfed. They're still annoying enough to contribute to the decision making process when going between rooms but they should feel not as cheap now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New rat holes have also been added to some late-game rooms so you have more options to deal with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "2) Mitigate some totally unnecessary backtracking in the mid-late game.",
+     "items": [
+      {
+       "text": "There’s points in the game where backtracking doesn’t serve the core survival horror decision making and so I’ve made a few slight tweaks to help alleviate this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Namely, there have been numerous itemboxes added in areas to help the flow of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 3 has also been streamlined a little bit and made less painful overall with fast travel now being available much earlier. The map now resembles more of a loop instead of a simple straight line which I think works better anyway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Admittedly these are areas that just seemed to be total blind spots for me during development, which is kind of embarrassing. There was a lot for me to balance during the development cycle however, so I hope you understand. When the game launched last week, watching Twitch streams was the first time I had been able to see the game played from start to finish with my own eyes. This was tremendously helpful, and also illuminated some things that need work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, the ending requirements have been slightly tweaked. There have been quite a few people getting the Coward ending that plainly just shouldn't have. So I've made some adjustments there too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also a whole host of bug fixes here too. Apologies if there were any bugs ruining your experience at launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you left a negative review concerning these issues and you feel like this patch has helped, it would be greatly appreciated if you could flip the review to positive! If you still find yourself annoyed and don't like the game overall though, that's fair too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's next?",
+     "items": [
+      {
+       "text": "I'm away from development for the next month to go on my first real holiday in many years, which is much needed after the stress of launching this game (it has been a long 7 years). When I get back, I'll be able to assess whether or not I can keep working on the game with updates and DLC (this all depends on sales).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're enjoying the game and haven't left a review yet, it would be really appreciated if you could take the time to do so! Steam reviews help the game's visibility and if the game does well it opens the door for DLC, which I'd love to do. We are almost at 500 reviews with a high rating of 95% which means CONSCRIPT will get the Overwhelmingly Positive tag!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I also don't want to have to stop working on CONSCRIPT and have to get a real job, so there's that too...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Bug where semi automatic guns would jam and cause a glitched crosshair on lower end hardware SHOULD be fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where non-combinable items were not appearing as red when in combine mode (for example a chem fluid + chem fluid).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock where the slate in the town weaver basement became unobtainable when re-entering the room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the final sequence, added rubble to block players going back up to the Outer Perimeter once a certain event happens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various English typo fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where combinable treasure items and their gemstone counterparts displayed text in their description that indicated they are safe to sell.: Increased reliability of igniting oil slicks with bullets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where chapter 2 trench raiders weren’t despawning properly upon the return to the trench in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where “Discard” would still be highlighted after trying to discard a key item and then changing inventory slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minecart position in the Mining room in the Road area saves properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where multiple enemy corpses couldn’t be burnt with one fuel slick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where enemy would still cry out when in DBNO state after being burnt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the time it takes for an enemy corpse to enter a burnt state, to avoid situations where a player lights fuel and then quickly leaves a room which then wastes the fuel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where directional keys and enter key could not be rebinded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where game would crash if refusing to take the gas mask in chapter 2 if you had a full inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where rats would spawn on enemies that die in deep mud.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where rats were spawning on the wrong bodies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where rats would spawn on an exploded body.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where rats that are hardcoded into certain rooms would respawn after being killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the map icon for the gun storage ladder wasn’t appearing on map in the Town area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where destroying a rat hole with two separate grenades in your inventory would cause a bugged grenade item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you couldn’t access combine mode on certain items like the surgical kit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where trench wire openings would stay closed on NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where selling the LMG could result in having half a cigarette.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where selling the LMG could result in an infinite money glitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Elite Trench Raiders could be stealth killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where merchant, save point and itembox map icons aren't appearing on the Front Lines map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual bug where the inventory slot arrow depth was too low on the puzzle inspection screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual bug where the handcannon depth was wrong when reloading while facing up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where “abandon your post?” text would appear after chapter 4 in No Man’s Land.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where inventory would crash when spamming the mouse while in a puzzle screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug where enemies would still spawn in the East Support Trench despite patching up the wire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual bug where steam coming out of the flame trooper backpack was pointing in the wrong direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where you could escape the church basement in chapter 5 without proceeding to chapter 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the reflecting pool would not work after giving the prisoner his photo in chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the merchant would disappear from the reflecting pool after giving the prisoner his photo in chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the player would fly out of the map when trying to climb up a wall in the Road area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed oversight where player could collect multiple knives on NG+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where a barracks door in Fort Vaux was displaying the wrong door type on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "POSSIBLE fix to the ending crash that has been reported a few times across all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "RAT BALANCE CHANGES",
+     "items": [
+      {
+       "text": "One fewer rats spawn on Elite Trench Raider, Snipers and Knights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cooldown on rats being able to damage players is now global and increased to 1 second per PLAYER HIT instead of each individual rat having an individual cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fuel now stacks to 10 instead of 4 to help reduce itembox trips when burning bodies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can hit one rat at a time with a fast melee strike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can hit two rats with one overhand strong melee strike now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The time it takes rats to start checking for player location is increased to a random value between 3 & 4 seconds when entering a new room. This is to avoid tricky situations where rats are camped in front of a door. So now the player has a bit more time to evade them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Instead of a rat respawning on room entrance, it will respawn a set amount of time after it is killed which is dependent on the difficulty setting (training = 15 minutes, recruit = 10 minutes, soldier = 5 minutes, veteran = instant).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rats return to their original corpse when they move too far away from it (distance depends on difficulty).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The chance of successfully shooting a rat is now dependent on the critical hit chance of the gun you’re using with a difficulty modifier on top of that (training = 5x, recruit = 4x, soldier = 3x, veteran = 2x). Shotguns get an added bonus here due to their spread, making them a reliable way to deal with rats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rat agro distance depends on difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rat poison chance reduced to 5% on Training, 10% on Recruit, 15% on Soldier and 30% on Veteran.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added rat hole to Cave Shelter room in Fort Souville.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added rat hole to Thoroughfare room in the Town area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added rat hole to Streets room in the Town area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added rat hole to Subventilation Shaft room in Fort Vaux.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If a rat hole is closed, corpses in that room no longer spawn flies to indicate there’s no need to burn them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Brief extra note added in the Back Entrance room in the Support Trench.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "BACKTRACKING BALANCE CHANGES",
+     "items": [
+      {
+       "text": "Added an item box to the Lodge room in the Road area to mitigate some unnecessary backtracking in chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an item box to the Blockhouse Désiré room in the Support Trench to mitigate some unnecessary backtracking in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an item box to the Medical Tent Berthe room to mitigate some unnecessary backtracking in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an item box to the Gun Shop Storage room to mitigate some unnecessary backtracking in chapter 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Merchant now offers fast travel in the Road area upon acquiring the Trench Tool to avoid unnecessary backtracking, instead of at the start of chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "GENERAL BALANCE CHANGES & ADDITIONS",
+     "items": [
+      {
+       "text": "Added V-Sync option for PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fuel added to Medical Tent Berthe and Gunshop Storage rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can now cancel out of any reload regardless of weapon type (ESC key or B button).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Locked doors that need the Souville Key are marked as “Locker Door (Souville)”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Small subtle lights and dirt paths added to visually signpost certain key things throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added some small rocks to the center of the Wasteland room in the road area to add visual clarity to where you can’t go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Can now change assigned weapons while sprinting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered requirements for all ranks below A.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hidden value that dictates ending 2 has been lowered significantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted LMG sell price.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Elite Trench Raiders cannot be killed with stealth anymore (sorry, this was a bug).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added some subtle markings to the map for various rooms to indicate where you can’t go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added blockage map icons for the underground Cave Shelter room in Fort Souville during chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added blockage map icon to Front Line Trench battlefield during chapter 2, in front of the combination lock door in the intro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Debris that falls in the final sequence when coming back from the outer perimeter stairs triggers slightly earlier to stop people sprinting straight into it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "“Spill” prompt added to Fuel item instead of “Use”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added extra text to the Rat Note detailing how an “overhead swing” is effective on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added extra text to First Aid Kit description detailing that it can be used to clear infections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered controller stick sensitivity slightly when selecting items from the merchant menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Checkpoints added after you recruit soldiers in chapter 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Being kicked by an enemy soldier does not drain body armor durability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "+ Smaller bug fixes and polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 41,
+    "balance": 43,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/5963414363386960339"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-07T14:02:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.925Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-07T14:02:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.926Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-08-07T14:02:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:47.841Z"
+  },
+  {
+   "id": "conscript-137619@major-2022-09-16",
+   "gameId": "conscript-137619",
+   "displayName": "CONSCRIPT 2022 DEMO UPDATE (+New Trailer, New Devlog)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-16T02:42:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I have a lot of exciting news today, soldiers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW DEMO UPDATE",
+     "items": [
+      {
+       "text": "I have uploaded a new update to the CONSCRIPT demo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It has been nearly a year since the last demo update, so I thought I'd upgrade it to more accurately reflect the gameplay of the final game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New features in the 2022 (0.3.0) edition",
+     "items": [
+      {
+       "text": "New intro cinematics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated character designs for enemies and protagonist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New NPCs and NPC behaviours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Inventory visual design upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated menu designs and menu controls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "16:10 resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combat rebalance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved combat setpieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New animations for certain actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated sound design and new music tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More save files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Object pushing mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mounted machine gun turret mechanic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New visual effects for fire, smoke, gas and explosions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated and more detailed map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Puzzle inspection screen is more intuitive (inspired by RE2R)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy corpses persist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "HD button prompts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many smaller bug fixes and improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you've already played the 2021 version, this won't offer any new areas - it's just a refinement of the same chunk of the game. Saves are not compatible with the previous demo either.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW GAMEPLAY TRAILER",
+     "items": [
+      {
+       "text": "Here's the new CONSCRIPT 2022 Trailer that premiered on Duel Screen's Another Indie Showcase & Realms Deep 2022.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "NEW DEVLOG",
+     "items": [
+      {
+       "text": "I only just recently returned from my trip to Gamescom and Verdun! You can read my recap here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gamescom was a great experience, and travelling through the hills of Verdun for the first time gave me a lot of inspiration for the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I spent a week following the old trench lines and exploring overgrown abandoned forts. CONSCRIPT is going to become extra authentic now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, make sure to follow the Conscript Twitter or join the Discord for more frequent updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And if you haven't already, make sure to wishlist the game! It really helps me out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 28,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "I have uploaded a new update to the CONSCRIPT demo!",
+     "New intro cinematics",
+     "Updated character designs for enemies and protagonist"
+    ]
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/6258337460545694862"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-16T02:42:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.924Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:47.784Z"
+  },
+  {
+   "id": "conscript-137619@0.2.0.5",
+   "gameId": "conscript-137619",
+   "displayName": "Update 0.2.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-21T06:30:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey soldiers! Hope you've all been enjoying the new demo over spooky season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v0.2.0.5 of the CONSCRIPT Demo is now live. This patch contains quite a few changes in response to feedback I've gathered over the past two weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v0.2.0.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major changes made to melee durability system. Melee weapons still have durability but they are not discarded upon breaking (you can still do that manually in the inventory if you want). Broken weapons can still be used but their power is greatly reduced and you can no longer get critical hits with them. This should help solve the \"Breath of the Wild\" dillemma.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is now only one shovel in the intro to compensate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new item - Weapon Repair Kit. Can be found in the overworld or purchased from the merchant for 30 cigarettes. Using this with a damaged melee weapon will restore it to full strength. (You’ll have to start a new file to have it appear).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Melee weapons in itembox show durability percent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the knife and shovel, it now takes a fully charged melee strike to break barrels. This was to help demonstrate that “stronger attack = more damage and stun” and onboard players confused by the melee system. Stronger weapons like the club will be able to smash them with a weak attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A fully focused rifle shot or a fully charged melee strike will kill basic enemies in one shot if they haven’t spotted you yet. This helps give the rifle weapon class it's own unique advantage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a very slight acceleration to player movement when going from idle to run states. May help give the movement a little more weight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can roll off ledges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player sprint speed increased slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If a trench raider is below 50% health they cannot sprint anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trench raiders more inclined to kick you away to avoid player stunlocking them with melee.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some extra slight and subtle environmental tutorilization in the intro. It is now a bit clearer that the first enemy is in fact trying to kill you (some people thought he was an ally).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Button tutorial pop ups appear. These can be turned off any time in the options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Short objective notifications appear to help you remember what the current goal is (similar to RE2 Remake). These can be viewed on the map screen at any time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wearing the torch makes it easier for enemies to spot you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam screenshots now work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fastest clear time can be viewed from the main menu results screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Menu controls are now affected by control rebind settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smaller bug fixes and optimization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*This update may cause some issues with older saves. I'd start a new file just to be sure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remember to post feedback in this thread if you have any thoughts or feeling about the demo! I'm always open to feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you find any bugs or problems, make sure to post it in the bug report thread. There are still a few issues I'm currently ironing out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1286990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1286990/view/4103335143104622886"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-21T06:30:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1286990",
+      "checkedAt": "2026-11-13T03:17:42.923Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:47.782Z"
+  }
+ ],
+ "issues": []
+}

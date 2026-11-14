@@ -1,0 +1,119 @@
+{
+ "game": {
+  "id": "ys-x-proud-nordics-326507",
+  "igdbId": 326507,
+  "name": "Ys X: Proud Nordics",
+  "cover": {
+   "imageId": "cobmlx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobmlx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5ydm",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ydm.jpg"
+  },
+  "ps5Release": "2026-02-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ys-x-proud-nordics-326507@1.0",
+   "gameId": "ys-x-proud-nordics-326507",
+   "displayName": "Patch 1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-22T19:42:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a minor update that primarily resolves some text issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix various Spanish text issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix various English text issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Change wording of \"Transfer\" to \"Import\" for loading clear saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the (very unlikely) event that this update causes a regression for you, you can revert to the prior \"version_1.0.3_r10\" branch on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3949290"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3949290/view/1844115010505269"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T19:42:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-3949290",
+      "checkedAt": "2026-11-13T03:36:50.443Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T19:42:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3949290",
+      "checkedAt": "2026-11-13T03:36:50.443Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-22T19:42:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:49.384Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,5529 @@
+{
+ "game": {
+  "id": "avowed-135994",
+  "igdbId": 135994,
+  "name": "Avowed",
+  "cover": {
+   "imageId": "co7nbb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7nbb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3uwz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3uwz.jpg"
+  },
+  "ps5Release": "2026-02-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "avowed-135994@2.1",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-25T17:12:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Envoys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Today we are releasing Patch 2.1 for Avowed with the latest bug fixes and a community requested feature!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Community Requested Feature",
+     "items": [
+      {
+       "text": "In the previous update, we implemented 3 encounters in each region that would respawn enemy units. We’ve added a toggle in the settings menu to disable respawning enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Go to Settings > Gameplay > Combat > Check Toggle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue causing the player to get stuck leaning to the right during third person mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when engaging in combat with a Skeleton Barbarian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when starting Photo Mode near a Xaurip Elder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where companions would not look at the Envoy during inter-region party camp conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where switching loadouts would remove the cooldown reduction of grimoire abilities when casting from the hot bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Abilities from the grimoire and hotkey bar now properly separate their cooldown depending on which way they were used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where frame limits were incorrectly disabled when DLSS-FG was enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where XeSS Frame Generation did not work properly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the \"Browse Photos\" option not being functional in Photo Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain decals would fail to display until game was reloaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Yatzli's Obsidian Collection outfit not appearing for players who have the Premium Upgrade entitlement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain terrain shaders would initially show up incorrectly after clearing shader cache.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed the “You cannot change character” line during character creation confirmation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Capped the companion ability points to the maximum purchasable amount of 16, to prevent notifications for additional unusable points in New Game+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where rebinding certain buttons would prevent user from closing tutorial pop-ups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where characters would sometimes stretch during ragdoll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1827626365768682"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T17:12:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.081Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T17:12:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.081Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-25T17:12:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.235Z"
+  },
+  {
+   "id": "avowed-135994@major-2026-02-17",
+   "gameId": "avowed-135994",
+   "displayName": "Avowed Anniversary Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-17T18:03:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It has been one year since the launch of Avowed and the team is ending its post-launch roadmap with a substantial anniversary update built with both returning and new players in mind. This release delivers long-requested community features and a broad slate of quality-of-life improvements; including a fan driven feature to bring Avowed even closer to its Pillars of Eternity franchise roots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://youtu.be/MtoGSz4Kv1o\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let’s break down all of the big new additions that are coming to the game with this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Playable Species",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Headlining the anniversary update is a major expansion to character creation: three new playable species join the existing Humans and Elves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dwarves – The most well-traveled species in Eora, the stout dwarves are known for their great strength and tenacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orlans – Their two-toned skin, prominent ears, and hirsute bodies all in the smallest size of Kith make them stand outs in Eora.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aumaua – Towering, powerfully built, and physically imposing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With all five of the Eoran kith species now available, players have more ways than ever to define who their envoy is as they decide the fate of the Living Lands. The new species are available for selection at character creation, but for those who are looking are currently in the middle of an adventure and are looking for a change, a mirror has been added to the Party Camp that allows players to change their appearance, including species, at any time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44236998/34fa2af47f6ac992977cce731f70b402ae2f3371.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not only do the different species change how you look, but the team has also added in stat bonuses for all species adding another layer to character creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Humans",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Resolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Dexterity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Perception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aumaua",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+2 Might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dwarves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Constitution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Orlans",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Perception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 Resolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To team up with species specific stat boosts, we have also added a stat boost that comes along with your background choice, adding more to your build variety.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arcane Scholar - +2 to Intellect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Court Augur - +2 to Resolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Noble Scion - +2 to Perception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vanguard Scout - +2 to Dexterity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "War Hero - +2 to Constitution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Return to the Living Lands Again and Again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Game Plus is now available after completing the main story. This mode is designed to reward mastery, experimentation, and making the all-powerful build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When starting a New Game Plus save, players will bring along with them:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All unlocked abilities (with the exception of godlike abilities which are gained through story progression/world exploration)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All spent attribute points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All unique weapons and armors—but they are reset to level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All unlocked enchantments remain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All unique gloves and boots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any equipped Common Weapons or Armor items are kept, but they are reset to level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EDIT: The above detail was incorrect, and all uncommon weapons and armor are removed at the start of NG+. This is to provide players a consistent experience, regardless of what items they had in their inventory when they ended the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]The following are removed from the player at the start of a New Game Plus:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All common weapons and armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Companions must be picked up via story progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Companions keep their talent points and start at level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All resources that had been collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enchanting materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Food ingredients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All consumables that had been collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All quest items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All god totems/trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fast travel points/fog of war",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The aforementioned godlike abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44236998/118a5a03f03bdd68afac1cc17534be833af215e4.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To ensure challenge scales alongside player power",
+     "items": [
+      {
+       "text": "Enemy stats are increased across the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now have a chance to have modifiers applied to them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elemental Modifiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fire: Immune to Fire damage and accumulation. Attacks also now deal Fire damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frost: Immune to Frost damage and accumulation. Attacks also now deal Frost damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shock: Immune to Shock damage and accumulation. Attacks also now deal Shock damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Poison: Immune to Poison damage and accumulation. Attacks also now deal Poison damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bleed: Immune to Bleed damage and accumulation. Attacks also now deal Bleed damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Physical Modifiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Haste: Increased movement speed, attack speed, and lowered cooldown timings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glass Cannon: Increased damage dealt and damage received",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Colossal: Increased maximum health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Life Steal: Attacks restore the enemy’s health by a percentage of the damage dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crippled: Reduced movement speed and attack speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sturdy: Increased stability making it harder for them to be stunned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Natural Immunity: Immune to all status accumulations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forceful: Increased impact on attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vindictive: Increased damage dealt based on the amount of health lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attribute stat cap rises from 15 to 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An important note for those who have already completed Avowed: Since New Game Plus is being added post release and the game was not initially designed with it in mind, a completion save will be necessary in order to take advantage of the mode. You will need to load a point of no return save or later and beat the game to make a proper New Game Plus save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44236998/d91213d06c5b89b9b4ca84e53975a614d736a18b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Game, Your Way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For players who want even finer control, Avowed now includes custom difficulty modifiers, allowing you to tune the game’s systems to your preferred experience. These new options are found by scrolling down through the “Game” tab of the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjust player",
+     "items": [
+      {
+       "text": "Damage dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health, stamina, and essence resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elemental status effect threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health and essence regeneration rates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potion and food restoration rates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interrupt or knockdown ease",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second Wind cooldown time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carry capacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parry window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjust enemy",
+     "items": [
+      {
+       "text": "Damage output",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health pool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stun, interrupt, or knockdown ease",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elemental status effect threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aggro threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjust companion",
+     "items": [
+      {
+       "text": "Damage dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health max",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elemental status effect threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aggro threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "As well as general adjustments",
+     "items": [
+      {
+       "text": "Merchant prices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Equipment upgrade material costs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fall damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Trap damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Item quality damage reduction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Custom game options allow you to better play the game your way. These options can be changed and adjusted at any time during the game so be sure to mix and match all you’d like. Some also add in XP modifiers to boost your gains further.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Important note: While changing these options will not negate most achievements that you may be hunting down, they will invalidate a Path of the Damned achievement. That achievement must be done without use of the custom game options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New Weapon Type: Quarterstaff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A brand new weapon type is joining the arsenal with the quarterstaff. Designed with the archmage fantasy in mind, the quarterstaff is a new bludgeoning weapon that comes complete with wand style stun finishers. Unleash brutal physical combos along with a fury of spells that would make even Concelhaut jealous.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44236998/fb9b10feea29a1c41a9407f6fc1d5eed16f95b0d.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Photo Mode and Quality-of-Life Enhancements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "While far from completing everything that is coming in the anniversary update, there are a few more notable callouts:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Photo Mode – Capture your envoy, companions, and the Living Lands from any angle and share your journey.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved lighting and visual polish throughout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The ability to skip previously unskippable conversations with a certain god",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY2BgYGAAAAAFAAGKM+MAAAAAAElFTkSuQmCC\"][img src=\"{STEAM_CLAN_IMAGE}/44236998/2cab5a461f15060a6494b611c7e5116ea0a164a9.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A World Built for Return Visits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "For those who are making their return to Avowed to check out the anniversary update, welcome back. If this is your first time in the Living Lands, you are about to enter a world of wonderous flora and fauna, exceptional exploration, and satisfying combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "This is just a touch of what is in the update as the full patch notes go into more detail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Patch 2.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44236998/345c44ad2c9f77a4108cd06e0502cef046194503.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Be sure to check out the previous updates to see what else the team has added in case you’ve missed it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Patch 1.3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Patch 1.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Patch 1.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The fate of an island is up to you; forge it to your will.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 26,
+    "other": 98,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1824644522848354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-17T18:03:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.079Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-17T18:03:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.080Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-17T18:03:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.234Z"
+  },
+  {
+   "id": "avowed-135994@2.0",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-17T18:03:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Greetings Envoys,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]It has been one year since the launch of Avowed and the team is ending its post-launch roadmap with a substantial anniversary update built with both returning and new players in mind. This release delivers long-requested community features and a broad slate of quality-of-life improvements; including a fan driven feature to bring Avowed even closer to its Pillars of Eternity franchise roots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]If you come across any issues or bugs, please contact our support team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Game+",
+     "items": [
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]New Game Plus is now available after completing the main story. This mode is designed to reward mastery, experimentation, and making the all-powerful build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]When starting a New Game Plus save, players will bring along with them:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All unlocked abilities (with the exception of godlike abilities which are gained through story progression/world exploration)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All spent attribute points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All unique weapons and armors—but they are reset to level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All unlocked enchantments remain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All unique gloves and boots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All necklaces, all rings, and all trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Any equipped Common Weapons or Armor items are kept, but they are reset to level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "EDIT: The above detail was incorrect, and all uncommon weapons and armor are removed at the start of NG+. This is to provide players a consistent experience, regardless of what items they had in their inventory when they ended the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]The following are removed from the player at the start of a New Game Plus:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All common weapons and armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Companions must be picked up via story progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Companions keep their talent points and start at level 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All resources that had been collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgrade materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enchanting materials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Food ingredients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All consumables that had been collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All food",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All quest items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All god totems/trinkets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fast travel points/fog of war",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The aforementioned godlike abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]To ensure challenge scales alongside player power:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy stats are increased across the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies now have a chance to have modifiers applied to them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Elemental Modifiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fire: Immune to Fire damage and accumulation. Attacks also now deal Fire damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Frost: Immune to Frost damage and accumulation. Attacks also now deal Frost damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shock: Immune to Shock damage and accumulation. Attacks also now deal Shock damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Poison: Immune to Poison damage and accumulation. Attacks also now deal Poison damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bleed: Immune to Bleed damage and accumulation. Attacks also now deal Bleed damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Physical Modifiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Haste: Increased movement speed, attack speed, and reduced cooldown timers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Glass Cannon: Increased damage dealt and damage received",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Colossal: Increased maximum health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Life Steal: Attacks restore the enemy’s health by a percentage of the damage dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crippled: Reduced movement speed and attack speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sturdy: Increased stability making it harder for them to be stunned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Natural Immunity: Immune to all status accumulations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Forceful: Increased impact on attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vindictive: Increased damage dealt based on the amount of health lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Attribute stat cap rises from 15 to 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]An important note for those who have already completed Avowed: Since New Game Plus is being added post release and the game was not initially designed with it in mind, a completion save will be necessary in order to take advantage of the mode. You will need to load a point of no return save or later and beat the game to make a proper New Game Plus save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Playable Species",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Included in the anniversary update is a major expansion to character creation: three new playable species join the existing Humans and Elves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dwarves – The most well-traveled species in Eora, the stout dwarves are known for their great strength and tenacity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Orlans – Their two-toned skin, prominent ears, and hirsute bodies all in the smallest size of Kith make them stand outs in Eora.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aumaua – Towering, powerfully built, and physically imposing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Not only do the different species change how you look, the team has also added in stat bonuses for all species adding another layer to character creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Humans",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Resolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Elves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Dexterity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Perception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aumaua",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+2 Might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dwarves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Constitution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Orlans",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Perception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "+1 Resolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Additionally, players will receive stat bonuses depending on their chosen background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Arcane Scholar - +2 to Intellect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Court Augur - +2 to Resolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Noble Scion - +2 to Perception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vanguard Scout - +2 to Dexterity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "War Hero - +2 to Constitution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Improved Character Creation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]Added new Godlike features, color variants, and presets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Custom Difficulty",
+     "items": [
+      {
+       "text": "[p align=\"start\"]For players who want even finer control, Avowed now includes custom difficulty modifiers, allowing you to tune the game’s systems to your preferred experience. These new options are found by scrolling down through the “Game” tab of the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Adjust player",
+     "items": [
+      {
+       "text": "Damage dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health, stamina, and essence resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elemental status effect threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health and essence regeneration rates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Potion and food restoration rates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interrupt or knockdown ease",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second Wind cooldown time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carry capacity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parry window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Adjust enemy",
+     "items": [
+      {
+       "text": "Damage output",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health pool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stun, interrupt, or knockdown ease",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elemental status effect threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aggro threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]Adjust companion",
+     "items": [
+      {
+       "text": "Damage dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health max",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elemental status effect threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aggro threshold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[p align=\"start\"]As well as general adjustments",
+     "items": [
+      {
+       "text": "Merchant prices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Equipment upgrade material costs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fall damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Trap damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Item quality damage reduction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Important note: While changing these options will not negate most achievements that you may be hunting down, they will invalidate a Path of the Damned achievement. That achievement must be done without use of the custom game options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Photo Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Capture your envoy, companions, and the Living Lands from any angle and share your journey. Includes a free or fixed camera, filters, character rotation and toggle, post-process effects, and gradients. Photo Mode is accessed from the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]New Weapon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]A brand new weapon type is joining the arsenal with the quarterstaff. Designed with the archmage fantasy in mind, the quarterstaff is a new bludgeoning weapon that comes complete with wand style stun finishers. Unleash brutal physical combos along with a fury of spells that would make even Concelhaut jealous.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]New Stun Finishers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]New stun finishers added for One-Handed Weapons and Two-Handed Weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Respawning Encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Respawning encounters have been added to Dawnshore, Emerald Stair, Shatterscarp, and Galawain’s Tusks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]New Quality of Life Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Players can now change their Envoy’s appearance after character creation via the mirror in the party camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Newly placed workbenches allow players to upgrade gear without returning to party camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All player Backgrounds now have an added attribute bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added option to end dream conversations early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Powder keg chain reactions now occur with a short delay, instead of all exploding simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased max Controller Vibration Intensity (in the Controller Settings menu) from 1.0 to 2.0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added keyboard-based turning in accessibility options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]Improvements to Lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The lighting has been improved across all regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the lighting in conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Graphics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated XeSS to 2.1. Xe Frame Generation, Xe Super Resolution, and Xe Low-Latency mode are now available to more GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]All Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Crashes and stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The game should now longer crash after Fog of War has been cleared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Addressed an issue causing Barbaric Smash killing blow VFX to remain on the player indefinitely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue when creating save games that could cause NPCs to be stuck when reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Performance and Optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Resolved an issue where NVIDIA Reflex Low Latency was missing \"Off\" option while upscaling is disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ray tracing is now off by default on Handheld PCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added Mid Luminance values to HDR settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Various performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue with the Two-Handed Axe special attack not being aligned while in third person view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Companion animations no longer stutter during conversations and exploration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "All audio should now play properly when cooking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Quests & Conversations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decals for puzzle in Sallow Steppe should now render properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The camera should behave normally during conversation with Tazaraak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]UI/UX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ability and Grimoire Cost Discounts are now shown in the Character tab of the Ledger, as well as the maximum (-90%) available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Tanglefoot's icon on Player's and enemy's HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New Icon added to help distinguish Flurry of Blows on enemy’s HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Text should no longer overlap tabs in certain languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed description for several active abilities that were incorrectly labeled as passive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Resolved an issue where \"confirm override\" pop-up was not showing while switching presets in the Extras tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Marius' Hunter Sense disappeared from hotbar after leaving Party Camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vital bars are showing proper preview values for some skills when upgraded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where \"Survivalist\" ability did not reflect additional bonuses in UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Blunted hits no longer include blood VFX when \"Combat Blood\" is disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]Combat/Systems Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue where various Area of Effect sources like Arcane Veil interfered with aiming player spells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Swinging guillotines in the Garden remain disabled after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Yatzli's Explosive Blast did not break destructibles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Some unique weapon enchantments now work properly while Dual Wield Mastery is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Already broken destructibles no longer receive damage numbers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Loot now directly drops at the feet of a shattered frozen enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 78,
+    "fixed": 0,
+    "balance": 63,
+    "other": 23,
+    "ps5": 0,
+    "topNew": [
+     "[p align=\"start\"]",
+     "[p align=\"start\"]When starting a New Game Plus save, players will bring along with them:",
+     "All spent attribute points"
+    ]
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1824644522848353"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-17T18:03:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-17T18:03:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.078Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-17T18:03:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.231Z"
+  },
+  {
+   "id": "avowed-135994@1.5",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 1.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-15T17:14:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Envoys,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.5 Patch Notes for Avowed are here, featuring new updates, community requested changes, and bug fixes. Thank you for your feedback, suggestions, and support, and we look forward to sharing future updates with you! If you come across any issues or bugs, please contact us at support.obsidian.net.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In other great news, Avowed is now Steam Deck Verified!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Features and Improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hardware",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Avowed is Steam Deck Verified",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New Ranger and Fighter Abilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We added new abilities and passives to the Fighter and Ranger tree to round out the classes compared to the Wizard tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In order to accommodate these new additions, all of your Envoy’s abilities have been refunded at no cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ranger Abilities",
+     "items": [
+      {
+       "text": "Shadow Step - Step into the Beyond, reappearing behind your enemy. Upgrades will Mark the target, lowering their Damage Reduction and resetting Shadow Step’s cooldown after landing a killing blow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fan of Daggers - Throw a set of poisoned daggers that hit multiple enemies and cause Poison accumulation. Upgrades increase the number of daggers thrown and apply Slow as well as interrupt enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoke Bomb - Throw down a Smoke Bomb, creating a cloud that interrupts your enemies as you dodge backwards out of the way. Upgrades increase damage and deal Elemental Accumulation that matches your currently equipped throwable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chilling Surprise - Set a trap to be triggered by an approaching enemy. The trap deals high Frost Accumulation to nearby enemies upon detonation. Upgrades increase the number of traps that can be set at a time and reduce the Essence cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ranger Passives",
+     "items": [
+      {
+       "text": "Concussive Shot - Shooting an enemy’s Weak Point causes them to take increased Stun from melee weapons for the next few seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sharpshooter - Deal increased Weak Point damage that scales with the number of consecutive Weak Points you deal within several seconds of each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deadly Poison - The Poisoned status deals increased damage to enemies. Upgrades increase the amount of Poison Accumulation you deal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fighter Abilities",
+     "items": [
+      {
+       "text": "Driving Kick - A powerful kick that breaks through enemy Blocks, dealing damage and launching enemies through the air. Upgrades increase damage, adds Explosive Damage, and creates and area of effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barbaric Smash - Deal a massive blow to your enemy. If that blow kills the enemy, absorb a percent of their current Stun to unleash on the next enemy you hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deep Breath - Inhale deeply, immediately recovering 100% of your Stamina and temporarily reducing the Stamina cost of your actions by 50%. Upgrades reduce the cooldown, increase the temporary reduction cost of Stamina to 100%, and allow you to refill your Breath Meter while underwater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reviving Exhortation - Revives an ally from a great distance and grants them Temporary Health. Upgrades reduce the Essence cost and heals you and all currently standing allies by a small amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fighter Passives",
+     "items": [
+      {
+       "text": "Dual Wield Mastery - Your dedicated training has unlocked a more powerful Special Attack to perform on Stunned enemies while dual wielding melee weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adrenaline - When below 50% Health, your Attack Damage is increased by 25%. When below 25% Health, your Attack Damage is increased by another 25% and your Stability is increased by 20%. Upgrades will cause the first lethal blow you receive to leave you with 1 Health and make you Invulnerable for a few seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloodlust - The Bleeding status deals increased damage to enemies. Upgrades increase the amount of Bleed Accumulation you deal and adds additional Attack Damage to Bleeding enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vanguard - Gain a chance to negate the damage from an incoming attack. This chance scales with the number of enemies targeting you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Unique Items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We found that players were not able to play specific builds that they wanted to early on in the game. So, we added more unique gear through these regions to assist with that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dawnshore",
+     "items": [
+      {
+       "text": "New Unique Mace, Spear, Two-Handed Hammer, Wand, Arquebus, and Robe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Emerald Stair",
+     "items": [
+      {
+       "text": "New Unique Two-Handed Axe, Pistol, Two-Handed Hammer, Bow, and Robe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Shatterscarp",
+     "items": [
+      {
+       "text": "New Unique Two-Handed Axe, One-Handed Axe, and Robe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Galawain’s Tusks",
+     "items": [
+      {
+       "text": "New Unique Spear, Two-Handed Sword, and Robe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy Combat Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Several enemies will now be able to use player abilities such as Returning Storm, Ring of Tire, Taunt, Clear Out, Blizzard, and Tanglefoot. Additionally, there are now two different types of barriers that enemies can put up: Physical, which blocks melee attacks, and Magic, which blocks magic attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Community Highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics Upscaling OFF previously used TAA, now it will be properly off. There is now a new separate option for enabling TAA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 40FPS option to the FPS Limit setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FSR Quality setting now has \"Native AA\" displayed before the \"Quality\" option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map information now fills in a larger area around the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hands no longer clip when opening chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with player not being able to swap the drinks during the \"One Last Drink\" quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quest \"Shadows of the Past\" now updates correctly in the journal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Piercing Thrusts description now correctly reflects what weapons it affects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where shooting a bow would block ability Spirit Lance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated visual representation of enchantment to show that upgrades will replace the base one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Menu screens and widgets did not register input correctly when another navigation input is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Thalla's ground stomp attack to better match the size of the area of attack indicator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Doubled the cap on Ring of Fortune crit chance bonus from 5% -> 10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Japanese and Korean language options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements to Cooking and Crafting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual clarity has been improved for the Cooking and Crafting screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cooking and Crafting in Party Camp uses items from the player's Stash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added indicator for food that has been previously cooked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pressing spacebar now confirms choices in the Cooking and Crafting screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI/UX Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Custom Map Markers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Journal and Quest pages now remember your expansion settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new accessibility setting \"Change Holds to Toggles/Presses\" which changes hold inputs to a toggle or press input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The \"Auto Track Quests Mode\" setting is now set to \"On New Quest\" by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fire blights now do slightly less damage and fire accumulation to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced damage caused by Vindictive Band on crits from poison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Storm Sworn's Thunderous Shot enchantment projectile has had its number of bounces reduced from 3 to 2 and its base Shock Damage reduced from 50 to 25 and has increased stun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Key Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues that could lead to GPU crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Killing Xaurips in Dehengen's cabin before her quest starts no longer blocks the quest progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All available quest objectives for all maps are now visible regardless of what location the player is in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the Bounce upgrade for Wands would cause the player to deal less damage when power attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Awareness gain for additional enemies is now faster while in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that caused killed Spider enemies to stay in their original state after activating Arachnophobia Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies sometimes blocked immediately after the player broke their block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fire hazards spawned from projectiles from immediately deactivating when near water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with certain weapons dealing too much damage from accumulation effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where companions could use locked abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where casting certain spells while reloading caused them to become unusable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where successfully using Reflect ability disabled attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wizard spells no longer require base essence threshold to cast if their cost has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where enemies lingered in investigation for too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crashes and stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issues that could lead to GPU crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance and Optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance of Arachnophobia Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed performance issue when player uses Blizzard ability when close to water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where player hands were sometimes misaligned when using Maegfolk Arm Key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where player hands were sometimes misaligned when opening chests in first person.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quests & Conversations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dreamthralls in the abandoned house at the bottom of Eagle's Reach will no longer kill each other.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with missing dialogue options during conversation with Warden Kosmin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unique items can no longer be bought twice if purchased before a game changing event in Solstice Keep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Killing Xaurips in Dehengen's cabin before her quest starts no longer blocks the quest progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with conversation with Marius at the Grinning Balarok not starting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dialogue now correctly starts combat with Liviu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sliding into conversation no longer causes Envoy's legs to be detached and obscure player's view while crouching.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue with Player not being able to swap the drinks during the \"One Last Drink\" quest was resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI/UX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where quest icons for Heart of Valor were not appearing correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues with the objective marker during \"Nature vs Nurture\" quest were resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Failing to cast an ability no longer causes the pop-up message to flash multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed grimoire spell icons temporarily disappearing in specific circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Objective marker no longer shows a wrong spot during Chorus of the Lost Quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where text might not fit within the tab on certain languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed and issue where untracked quest markers would show up as tracked on the minimap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where height icons on the minimap would point incorrect direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where maximum text size caused overlap in Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where multiple waypoints instead of a single waypoint were appearing for quests with multiple objectives outside the current map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where currently selected facial scar color does not have a checkmark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player was unable to scroll through Quest entries when scrolling to the bottom of any treasure map while using controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All available quest objectives for all maps are now visible regardless of what location the player is in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Steady Aim’s requirement level to unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Effect radius indicator for spells no longer appears under the player character instead of the location that it was aimed at.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Auto Track Quests Mode\" setting is now set to \"On New Quest\" by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed cooking issues where crafting maximum possible servings to cook was not correct.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where videos on Ledger Tutorials would not be displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player is not able to scroll the item's description via controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Journal cannot be scrolled up after pressing Read All.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Radial Menu closes instead of going back to previous tab while using the controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ledger Map info Panel navigation issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Mouse hovering over Ability icon doesn't select it causing spacebar to interact with a different trait.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue were grenade icon was not greyed out when in party camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Menu screens and widgets do not register input correctly when another navigation input is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quest \"Shadows of the Past\" now updates correctly in the journal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Piercing Thrusts description now correctly reflects what weapons it affects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics Upscaling OFF previously used TAA, now it will be properly off. There is now a new separate option for enabling TAA.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 40FPS option to the FPS Limit setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "FSR Quality setting now has \"Native AA\" displayed before the \"Quality\" option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated visual representation of enchantment to show that upgrades will replace the base one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue with Player character getting stuck in the terrain at Mt. Forja Exterior was resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Corrosive Siphon Green beam was left behind after a creature was hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue which caused the shadow to be missing for multiple head types in First Person.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Combat/Systems Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where player was able to apply bleed accumulation to bleed immune enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Thalla's ground stomp attack to better match the size of the area of attack indicator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Medium-sized Fire Blight's Fire Barrage attack now deals proper damage and applies the correct hit reactions to targets hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue of player being able to throw grenades while in Shadowing Beyond.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All enemies are correctly alerted upon starting combat with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where bullets were able to pass through the Xaurip Shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Awareness gain for additional enemies is now faster while in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Bleed and Poison immunity to the Ekidian Spirits in Naku Kubel to match other spirit enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed instances in which projectile from Wand weapons would deal damage more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the Bounce upgrade for Wands would cause the player to deal less damage when power attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where enemies were able to jump through a closed gate in the Siege of Paradis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue which caused the starting weapon not to appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue which caused the Tanglefoot ability to be unusable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Into the Fray\" ability would not pull the enemy towards the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused killed Spider enemies to stay in their original state after activating Arachnophobia Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemies sometimes blocked immediately after the player broke their block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grimoire will no longer disappear when summoned weapon expires while casting Wizard active ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed fire hazards spawned from projectiles from immediately deactivating when near water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where \"Bunch of peppers\" can be used as a single vegetable ingredient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused wand attacks to push enemies out of Pull of Eora too rapidly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with certain weapons dealing too much damage from accumulation effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where companions could use locked abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Blight Tank shield regenerating too quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Equal Footing\" enchantment for the Fair Play weapon would not pull the enemy towards the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where casting certain spells while reloading caused them to become locked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Retribution was not being triggered after the player takes damage from spiders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where successfully using Reflect ability disabled attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wizard spells no longer require base essence threshold to cast if their cost has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where shooting a bow would block ability Spirit Lance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Programming fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where enemies lingered in investigation for too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Companions will no longer get stuck behind the door to Trial of Strength.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gjeda's Journal no longer contains two identical entries while game language is set to Polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Halma's Fancy Item is now correctly translated into non-English languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Malthea is no longer misgendered while game language is set to Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Credits to include more members of development",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 64,
+    "balance": 1,
+    "other": 89,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1805065414371770"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-15T17:14:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.076Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.228Z"
+  },
+  {
+   "id": "avowed-135994@1.3.1",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 1.3.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-27T17:41:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Envoys,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch is now available! This update includes important fixes, so be sure to update your game when you see it. If you are encountering any problems, please continue to let us know at Obsidian Entertainment Support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— The Avowed Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Community Requested Features",
+     "items": [
+      {
+       "text": "Added 'high contrast' support for several UI screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Native Anti-Aliasing option for FSR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Quests",
+     "items": [
+      {
+       "text": "The quest \"Our Dreams Divide Us Still\" will now correctly advance at the end of combat for affected players. This includes a retroactive fix for players who load a save made post combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turning the winch to save Solace Keep will no longer fail to save Solace Keep in rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI Fixes & Improvements",
+     "items": [
+      {
+       "text": "Experience Gained notifications no longer stay visible indefinitely when the hide HUD option is toggled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quest markers and items on the Compass now appear as intended if the player has selected the option \"Lock Compass to North\" in Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Status icons near the player's health bar will no longer be cut off if many statuses are active at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Switching upscaling settings to TSR will no longer unnecessarily apply the Screen Percentage value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The setting to Hide XP Notifications now behaves as expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When using the quest tracking option to not track the next quest, Quest beacons will no longer point to completed quest objectives, when a quest is complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Addressed a rare instance where enemies could disappear from the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Consumed items no longer reappear in the player's inventory under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Orlan hair now renders correctly on higher quality settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pentiment achievement no longer requires the completion of a side quest in Emerald Stair that is only available based on certain main quest decisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player will no longer end up in a broken state that prevents them from receiving the achievement \"Cooking by the Book\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The recipe for Crafting Adra from Adra Shards no longer disappears when the player upgrades Scavenger ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance Improvements",
+     "items": [
+      {
+       "text": "Improved performance on Beauty and Balanced modes on Xbox when in larger cities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Added 'high contrast' support for several UI screens.",
+     "Added Native Anti-Aliasing option for FSR.",
+     "Improved performance on Beauty and Balanced modes on Xbox when in larger cities."
+    ]
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1795283637826075"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-27T17:41:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.074Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.227Z"
+  },
+  {
+   "id": "avowed-135994@1.3",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-13T17:01:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to take a moment to thank you for your continued reports, feedback, and suggestions. Your insights are valuable to us, and we appreciate the time and effort you put into sharing your experiences with us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our team is committed to ongoing support, and we’re always looking for ways to improve. Your input is key to help us refine and expand Avowed, and we are excited to keep rolling out updates. Within the next few weeks, we are going to be releasing a roadmap that will go over some of the plans we have that will be coming to the game over the upcoming year, so keep your eyes peeled!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for being part of our community—we appreciate your support and look forward to sharing more with you in the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— The Avowed Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Community Requested Features",
+     "items": [
+      {
+       "text": "The player will now receive an additional talent point at levels 5, 10, 15, 20, 25, 30. Players with save files past those levels will receive the additional points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "High Contrast Documents: New option increases font size and applies bold styling to all documents, tutorials, in-game pop-ups, and the ledger's quest tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Walk Toggle: Players using mouse and keyboard can now toggle between walking and running.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HUD Customization:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "HUD Toggle Keybind: A new keybind (default: Backslash) hides all HUD elements for cleaner screenshots.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HUD Opacity Slider: Adjust the transparency of the HUD to your preference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Camera & Compass Options:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Third-Person FOV Slider: Added to Graphics Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Static Compass Option: Players can now lock the compass to always point North instead of rotating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controller & Input Improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Full support for customizing controller keybinds.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Crashes & Major Issues",
+     "items": [
+      {
+       "text": "Game Stability Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash when switching music during level transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Xbox App (PC) Launch Crash Fixed: No longer crashes with error 0xc0000005.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed a save data issue causing crashes related to spawning enemies with save/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a Fast Travel crash that could sometimes occur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a rare crash affecting ROG Ally and Intel-integrated laptops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Main Menu frame rate is now capped to prevent crashes and hardware isues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quests & Dialogues",
+     "items": [
+      {
+       "text": "Quest Progression Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Quest Available\" icon for Ranger Verano no longer appears after the quest becomes inaccessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"The Finer Things in Battle\" quest now triggers reliably and will retroactively complete for players who already met its requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attacking the xaurips in Dehengen’s cabin before the \"Find Her Cabin\" objective now properly progresses the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Our Dreams Divide Us Still\" – Combat at Mount Forja now consistently ends to advance the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Dawntreader\" quest fix: Now properly turn-inable to Ofryc even if Kai and Marius are not in the party.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Elder Offerings\" quest fix: Now properly resolves if the player both paid for the stolen food and returned it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Boundaries of Antiquity\" quest fix: Prevented an issue where players could skip a required conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"An Untimely End.\" - Ygwulf and the rebels no longer become hostile after sparing him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC & Conversation Adjustments:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Adelarro and opponents failing to appear if Dreamthralls were killed before starting a side quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Amalia will now always give you the key to her camp’s chest when speaking with her.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Constable Hajime now correctly rewards players for bounties even if \"Heart of Valor\" isn’t completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marius’s Training Offer: His training offer is now more accessible in conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conversations will no longer drop unexpectedly if enemies detect the player while in dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Restartable Dialogues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Players can now restart conversations with",
+     "items": [
+      {
+       "text": "The illusion in the \"Face Your Fears\" quest (Shatterscarp).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Runyd the watcher if dialogue ended prematurely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ranger Casagrada in \"Steel Resolve\" after progressing past \"Ancient Soil.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Systems & Gameplay Improvements",
+     "items": [
+      {
+       "text": "Combat & Enemy Behavior:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Arrow Decals Improved: More visible in XSX Performance mode for \"The Wasteland Courier\" quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pistols now hit targets more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Companions with the Shocked status effect no longer electrocute the player when nearby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies react more reliably to arrow impacts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ranged enemies are less confused when the player moves in and out of cover.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Spells & Abilities:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Essence cost reductions now properly apply and no longer prevent spellcasting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed cases where totem effects would stop working after conversations or cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Into the Fray\" ability can now be canceled into other actions sooner, improving combo potential.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quest & Loot Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fast Travel is now disabled during certain animations to prevent getting stuck when quest items are consumed before progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If Old Nuna was defeated but the bounty quest didn’t progress, returning to the location now correctly updates the quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If Belderreno was defeated but no bounty trophy was received, players can now revisit the bounty location to find the trophy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Loot in the Yellowband area no longer falls into the environment, preventing collection issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controls & Performance:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mouse 4/5 buttons can now be bound to actions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Optimized elemental accumulation effects for better performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized the Tebaru Sanakis spirit visuals to improve performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reducing VO volume now also reduces reverb/echo for characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upscaling no longer defaults to DLSS every time the game is launched.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Collision & Environmental Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted Eothasian temple collision to prevent going out of bounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Doors at Naku Tedek now correctly unseal when reloading a save if combat was already completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed rock collision near the Strangled Adra in Dawnshore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wall textures in Emerald Stair Pargrunen Cache now render properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes & Miscellaneous",
+     "items": [
+      {
+       "text": "General Stability & Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when relocating ladders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when dying while using Shinobi Sneeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issues with respawning enemies, such as the Sporeking reappearing after being killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unkillable Dreamthralls outside of Thirdborn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Ryngrim's rotating wheel would shift when the game was out of focus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI & Localization Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gjeda’s Journal no longer contains duplicate entries when playing in French.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The description for the food item Saucco now displays correctly in all languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Medical Supplies quest item now has the correct icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Navigation & World Interactions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player can no longer become stuck in the Cistern after dying in combat with Ygwulf.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sliding under obstacles now works properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The player can now properly talk to Ambassador Hylgard, Ryngrim, Lodwyn, and others if combat previously interrupted a quest-related conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sargamis no longer gets stuck when walking toward the lever in Eothasian Temple.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For the full patch notes, please visit our forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 32,
+    "fixed": 24,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0,
+    "topNew": [
+     "HUD Customization:",
+     "HUD Opacity Slider: Adjust the transparency of the HUD to your preference.",
+     "Camera & Compass Options:"
+    ]
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1794102528079094"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T17:01:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.073Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.226Z"
+  },
+  {
+   "id": "avowed-135994@1.2.4",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 1.2.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-27T18:03:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch is now live! This update brings important fixes and improvements, so be sure to update your game when it becomes available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We truly appreciate all of your reports and feedback—it’s invaluable in helping us identify and address issues to improve the game. Your support and patience mean a lot to us, and we want you to know that we’re listening. Our team is committed to making Avowed the best experience possible for everyone, and we will continue working hard to refine and enhance the game based on your input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have a dedicated team focused on making Avowed better and better, and we’ll have more to announce soon. Stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues, please let us know at support.obsidian.net—your feedback helps us make the game even better!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— The Avowed Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crashes & Major Issues",
+     "items": [
+      {
+       "text": "Adjusted character settings so that unkillable characters will now respawn if they mysteriously die, preventing blocked quest progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quests & Area Design",
+     "items": [
+      {
+       "text": "Loot piles will no longer be placed in unexpected locations when created while the player is far away. Previously affected saved games will now have the loot pile back where the owning character died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players who killed Kostya and destroyed Solace Keep will no longer experience a dropped conversation when speaking with the leaders of the Living Lands during The Siege of Paradis. (Players with affected saves can now simply walk in and out of the meeting space to retrigger the conversation.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bounty Masters in Dawnshore, Shatterscarp, and Galawain’s Tusks now correctly allow players to turn in bounties, even if they have acquired more trophy items than expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vemas now allows players to turn in Debt of Blood, even if they had already spoken to him upon returning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player will no longer become stuck with no objectives active during An Untimely End.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the player could become stuck in the environment near Dehengen's Cottage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy loot will no longer disappear if the player killed Ygwulf and the assassins in the Cistern, saved their game, and then reloaded that save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ambassador Hylgard can no longer die from drowning in The Strangleroot while following the player, which was preventing him from appearing at the embassy in Paradis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player will no longer be blocked from finishing Ancient Soil if Fior mes Iverno becomes inaccessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Systems & Gameplay Improvements",
+     "items": [
+      {
+       "text": "Godless chests and sarcophagi now have currency in their loot lists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgrade materials (metal, wood, leather) are now more consistently available across stores in each region.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgrade materials now properly refresh when store stock updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Autosave frequency has been changed from 5 minutes to 10 minutes by default. (This can still be adjusted in player settings.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Autosave slots increased from 3 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ability Bleeding Cuts now applies Bleed Accumulation more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Logging into Xbox Network on Steam no longer resets the player's selected language setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Kai is now less likely to teleport inside a wall while using Leap of Daring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Companions now assist in combat more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual & Art Fixes",
+     "items": [
+      {
+       "text": "Militia Guard patrolling Claviger's Landing now has the correct neck texture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted health bar position for the enemy Putrid Skeleton Wizard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed jittering of player hair and armor when afflicted by Poison Accumulation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced opacity of a water fountain inside Ondra's Temple.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface (UI) & Controls",
+     "items": [
+      {
+       "text": "Companion abilities bound to the Quick Slot menu no longer become undone after reloading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new settings for controller users to adjust gamepad look acceleration strength and ramp-up time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Corrected typos in the Encumbrance tutorial and on the Compiling Shaders screen (now correctly states “a few minutes” instead of “a few moments”).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Launching Avowed with DirectX 11 is now disabled, as the game does not support it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Some players have been using a DirectX 11 launch parameter as a workaround for various crashes, performance problems, or compatibility concerns. However, this can introduce additional problems that we cannot troubleshoot or resolve, including unexpected visual or performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you're encountering startup crashes, we recommend updating your drivers, verifying your game files, or reaching out to our support team at support.obsidian.net for assistance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 7,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0,
+    "topNew": [
+     "Godless chests and sarcophagi now have currency in their loot lists.",
+     "Upgrade materials (metal, wood, leather) are now more consistently available across stores in each region.",
+     "Upgrade materials now properly refresh when store stock updates."
+    ]
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1792751526015174"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-27T18:03:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.225Z"
+  },
+  {
+   "id": "avowed-135994@1.2.3",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 1.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-21T18:01:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new patch is now available! This update includes important fixes, so be sure to update your game when you see it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are encountering any problems, please continue to let us know at support.obsidian.net.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "— The Avowed Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crashes & Major Issues",
+     "items": [
+      {
+       "text": "Resolved a crash related to GameThread timing out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when pressing ESC after climbing a ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that occurred when playing on PC with an Xbox Account signed in and losing an internet connection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Addressed a rare rendering-related crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quests & Area Design",
+     "items": [
+      {
+       "text": "Yatzli now correctly advances \"A Path to the Garden\" quest even if \"One Last Drink\" was completed before meeting Temerti & Yatzli in Thirdborn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ofryc will now appear as intended in Paradis near the end of \"Dawntreader.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Shadows of the Past\" now progresses correctly if the player enters Naku Kubel immediately after it becomes accessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sanza now correctly rewards the player when turning in the first map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wilfrith's Map is now removed from the player’s inventory when given to Sanza.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a \"Quest Available\" icon from a quest giver in Shatterscarp if they have been killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where a conversation with Yatzli during \"The Siege of Paradis\" would start too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a dream conversation in Dawnshore would end prematurely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected conditionals preventing certain end slides from playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The \"Precious Light\" quest marker now appears correctly if Adelgund was spoken to before the quest starts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Amadio in Emerald Stair no longer reacts as if the xaurips have been killed when only damaged by an elemental interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sargamis' dialogue after choosing to sacrifice himself is no longer cut off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where dreamthralls outside of Naku Kubel would drop dead unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Xaurips in the Deadfall Highlands (Shatterscarp) will no longer follow the player outside their intended area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barrier collision is now correctly removed after a conversation in front of Naku Kubel and fast traveling to Party Camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Belderreno bounty encounter now spawns more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can no longer skip talking to Darle after burning the nests in \"Fires in the Mine.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where four of the same Great Sword could be picked up outside of Paradis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players can now properly give illicit goods to Daiko under certain conditions in \"The Wasteland Courier.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now properly exit the conversation with Forgemaster Dela in Solace Keep when unsure about which weapon to upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can no longer use parkour on the rocks to bypass part of \"Boundaries of Antiquity.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Pyromancer in Dawnshore no longer clips into and out of the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Message From Afar\" quest now properly completes if the player exited The Strangleroot in an unintended way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a proper quest marker for \"Mapping the Living Lands: Galawain’s Tusks.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Systems, Gameplay, and Balance Updates",
+     "items": [
+      {
+       "text": "Corrected the requirements for the achievement “The Outer Worlds.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Arcane Veil Balance Adjustments:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Damage Reduction: 50% → 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cooldown: 10s → 15s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Environmental Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Characters are no longer affected by electrified water when standing above it, jumping over it, or standing on an ice platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Companion Behavior:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Companions will now assist in combat more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Companions will no longer rarely disappear after skipping a cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Combat & Encounters:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Encounters with waves of enemies now spawn more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed rare cases where NPCs would teleport under the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved behavior for water-borne electrical damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Melee weapons (except one-handed swords) now properly trigger camera shakes when hitting enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Newly spawned enemies during combat now detect the player correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player Movement & Camera Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where the Steel Garotte guard's weapon would enlarge when taking damage before a conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The player camera no longer lurches when opening a small lockbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The player will no longer:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Levitate briefly after opening a sarcophagus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Momentarily uncrouch when opening a small lockbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Be unable to move after loading a save where Arcane Veil was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Get stuck aiming down sights after a cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Audio Improvements",
+     "items": [
+      {
+       "text": "Adjusted music mix volumes based on story moments and vistas in:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Emerald Stair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Galawain's Tusks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shatterscarp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Garden",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Sound Fixes",
+     "items": [
+      {
+       "text": "\"Arduous Delay of Motion\" ability now plays an audio effect upon enemy impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Barbaric Shout\" now correctly plays the shout sound every time it is used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual & Art Fixes",
+     "items": [
+      {
+       "text": "Camera Framing Adjustments:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Before dispelling the barrier to Naku Kubel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In conversations with gossiping Fiorian Citizens in Emerald Stair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During \"The Siege of Paradis\" quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In Naku Kubel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "With Cinzia in Thirdborn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved fog appearance in the opening area of The Garden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted lighting near the Shrine to Skaen in Emerald Stair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPCs now correctly look at the player rather than at the camera during the debate with Giatta, Vidarro, and Quillici in Fior mes Iverno.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed graphical artifacts from the dreamscourge effect in Emerald Stair near the Farmer’s Market.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "User Interface (UI) & Controls",
+     "items": [
+      {
+       "text": "Fixed \"Insufficient Funds\" and strikethrough text incorrectly appearing in store screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cloud Syncing:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When saving fails, a more descriptive error message now appears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If save sync fails after logging in, a dialog will now display listing the failed save syncs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HUD & Indicators:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted directional damage indicators to not display during damage-over-time effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where damage numbers were previously failing to appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clarified text for Cross Save pop-ups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loot windows now show correct values for stacked coins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller & Inventory Fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam & Xbox icons now appear in the Main Menu to indicate the logged-in account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Settings now correctly apply saved controller layouts after restarting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upon crafting the maximum amount of an item, focus now returns to that item’s recipe entry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inventory values are now hidden for items that cannot be sold (e.g., quest items and upgrade materials).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "Credits: Various corrections were made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization: French tutorials now display properly localized images.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 23,
+    "balance": 24,
+    "other": 35,
+    "ps5": 0,
+    "topNew": [
+     "Adjusted music mix volumes based on story moments and vistas in:",
+     "Emerald Stair",
+     "Galawain's Tusks"
+    ]
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1792116353234153"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-21T18:01:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.071Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.224Z"
+  },
+  {
+   "id": "avowed-135994@1.2.2",
+   "gameId": "avowed-135994",
+   "displayName": "Patch 1.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-18T17:56:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.2.2 is here, bringing a variety of fixes and improvements based on your feedback. From crash and quest fixes to gameplay tweaks and UI updates, we’ve addressed several community-requested issues to make your experience even better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you run into any other issues or have feedback, be sure to reach out—we appreciate your support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Community-Requested Fixes",
+     "items": [
+      {
+       "text": "Updates to Equipment Tier difference feedback and penalties/bonuses:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed Tier penalty system from a hard tier to tier system and made it dynamic based on players equipment and the tier (and sub-tier) of the enemy. Tier difference rules now only apply when there is a +/- 4 level gap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tier II enemies will now play a small reaction animation when struck by lower-tier weapons, instead of not reacting at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced damage reduction when player weapons are closer in tier to an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Significantly decreased how often companions comment about player needing better armor and/or weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgrade materials can no longer be sold to merchants to inadvertently make upgrading difficult. We have a longer-term fix involving buying back from merchants in the works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Missing NPCs",
+     "items": [
+      {
+       "text": "In specific situations, some NPCs weren’t where they should be. Saving the game, and re-loading will put them back where they should be. We will have a fix soon that fixes the situation completely and doesn’t require a save and load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quest & Exploration Fixes",
+     "items": [
+      {
+       "text": "The brambles in the Delemgan Glade will now vanish when the Adragan Heart is acquired, preventing players from getting stuck inside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grysca (the apothecary) now correctly speaks with the player to advance An Untimely End, even if they previously encountered a bug with Thalla the Ogre spawning twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a system to respawn key characters when loading a save if they were previously missing and blocking quest progression (including Ambassador Hylgard and The Watcher Runyd).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Companion & NPC Improvements",
+     "items": [
+      {
+       "text": "Reviving companions in combat now restores them to 75% of their maximum health instead of 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Starting health of companions has been increased to help with their viability in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Merchants & Economy",
+     "items": [
+      {
+       "text": "Merchants at the Dawnshore docks now offer 'Fine' gear in addition to 'Common' gear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crashes & Major Issues",
+     "items": [
+      {
+       "text": "Removed chance to crash when casting Corrosive Siphon on destructible objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized resource handling of VFX while the game is paused via radial menus to prevent rare leaks and crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quest & Area Design",
+     "items": [
+      {
+       "text": "Fixed invisible collision blocking the player in Strangleroot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented players from charging into unintended areas in Strangleroot, avoiding quest progression issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies now navigate the bridges of the lava tubes more consistently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First Contact with the Enemy quest now progresses correctly if all badges are collected before speaking to Nauki.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players can now complete Steel Resolve after the main quest in Emerald Stair if they had completed enough objectives beforehand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kowha now responds correctly if the player returns to them after starting One Last Drink.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialog with Giatta upon leaving Naku Tedek now triggers consistently when loading saves before the conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Mapping the Living Lands quest conditions to allow starting from future regions before talking to the quest giver in Dawnshore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated A Lady Never Tells quest flow so it correctly completes in the quest log when starting via the courtesan, getting the shipment, then speaking to Giuliana.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Governor Ignasi’s option to turn in the spy can now only be triggered once instead of being repeatable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conversations with leaders in the final area no longer end prematurely when choosing the Let me reconsider option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made an additional ending option for the leadership conclave available to players who initially backed out but wish to reconsider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted environment art near the Trantons bounty in Emerald Stair to prevent bounty loot from becoming unobtainable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Previously missing voice-over lines in ambient content now play correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Systems & Gameplay Improvements",
+     "items": [
+      {
+       "text": "Seeds of Vengeance summons now scale correctly with health and damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "One-handed weapon Parry enchantments now function as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Party buffs from the player now correctly target companions only, instead of summoned creatures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Kai no longer gets stuck if using Unbending Defense while mid-air with Leap of Daring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved frame rate when rendering damage numbers on multiple enemies at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved item randomization when restocking shops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blast ability for wands now plays the correct visual and sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved logic for animations on companions at the end of combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved transitions on the top of Mt. Forja.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed interaction inconsistencies with objects and NPCs obscured by other characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controllers no longer rumble when loading a save before the final boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issues with pond coin interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added error codes for save game failures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved where characters are looking during certain conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Audio Improvements",
+     "items": [
+      {
+       "text": "Cutscene in Naku Kebel now properly plays sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Eating food from the radial menu now provides audio feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased volume of Woedica’s voiceover audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player voice now plays more consistently for abilities with vocal components.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved transitions between music intensity levels when exploring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Music during the end slides now plays at the intended volume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual & Art Fixes",
+     "items": [
+      {
+       "text": "Updated Banner Dwarf’s outfit LODs to reduce clipping during animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Captain Ngunu’s neck is now properly merged with his head.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steel Garrote Soldiers have re-grown their missing hands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved shadow quality on Xbox Series X Performance Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "User Interface (UI) & Controls",
+     "items": [
+      {
+       "text": "Cloud transfer prompt is now properly centered on ultrawide displays.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Xbox cloud transfer dialog buttons no longer shake rapidly when hovering over the bottom part of the button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Initial splash screens now properly support Chinese characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interaction prompts pop up more reliably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Opening a radial menu after leaving and returning to the game no longer triggers the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unintended English characters in the One Last Drink quest journal for non-English languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cloud save UI now defaults to selecting the recommended option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 22,
+    "fixed": 17,
+    "balance": 1,
+    "other": 22,
+    "ps5": 0,
+    "topNew": [
+     "Reviving companions in combat now restores them to 75% of their maximum health instead of 50%.",
+     "Starting health of companions has been increased to help with their viability in combat.",
+     "Seeds of Vengeance summons now scale correctly with health and damage."
+    ]
+   },
+   "sourceIds": [
+    "steam-2457220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2457220/view/1791580426132696"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-18T17:56:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2457220",
+      "checkedAt": "2026-11-13T03:15:29.069Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:19.223Z"
+  }
+ ],
+ "issues": []
+}

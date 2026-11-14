@@ -1,0 +1,143 @@
+{
+ "game": {
+  "id": "lego-voyagers-347646",
+  "igdbId": 347646,
+  "name": "LEGO Voyagers",
+  "cover": {
+   "imageId": "co9xgs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9xgs.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar48d2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar48d2.jpg"
+  },
+  "ps5Release": "2025-09-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "lego-voyagers-347646@1.0.7",
+   "gameId": "lego-voyagers-347646",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-09T13:17:30.000Z",
+   "notes": [
+    {
+     "title": "The following issues have been fixed",
+     "items": [
+      {
+       "text": "Issues related to combining different brands of wireless controllers for local co-op",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues related to playing the game in full screen on high-refresh-rate gaming monitors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues related to signing in with your Epic account and using the Epic Games Overlay",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adding key alternatives for playing on keyboard (with updated tutorial)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Steam Deck / Linux - Intro video was not playing in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various minor gameplay and physics issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adding new custom graphics options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Applied latest Unity security patch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1538550"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1538550/view/1813041031207815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-09T13:17:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1538550",
+      "checkedAt": "2026-11-13T03:24:38.177Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-09T13:17:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1538550",
+      "checkedAt": "2026-11-13T03:24:38.177Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-09T13:17:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:38.403Z"
+  }
+ ],
+ "issues": []
+}

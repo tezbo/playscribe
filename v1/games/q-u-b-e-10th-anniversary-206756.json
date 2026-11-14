@@ -1,0 +1,1302 @@
+{
+ "game": {
+  "id": "q-u-b-e-10th-anniversary-206756",
+  "igdbId": 206756,
+  "name": "Q.U.B.E. 10th Anniversary",
+  "cover": {
+   "imageId": "co4ygb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4ygb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1qsk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1qsk.jpg"
+  },
+  "ps5Release": "2023-01-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@1.2.348",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 1.2.348",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-17T14:56:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some minor fixes to the Q.U.B.E. Create sandbox in this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Future updates will mostly be minor fixes, with an occasional new feature thrown in. We're happy to take requests for further features and add them to the list of to-do - join our Discord for more info!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a load of log spam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed name of Goal Area to Trigger Box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to retrigger the Trigger Box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed old publishing preview files.: Enjoy creating!: The Q.U.B.E. Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/6890025005363759805"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-17T14:56:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.996Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-17T14:56:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.996Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-17T14:56:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.565Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@0.5.33.298",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 0.5.33.298",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-08T14:42:28.000Z",
+   "notes": [
+    {
+     "title": "Q.U.B.E. Create",
+     "items": [
+      {
+       "text": "Build v0.5.33.298 just deployed these changes to Steam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW FEATURE: - Added Gizmo scaling options. Cycle through R to toggle. You can now scale a number of objects in the editor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW FEATURE: - Added Reset button. Attach to puzzle objects to reset them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW FEATURE: - Player Death option in World Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW FEATURE: - Added Kill Fence. This will instantly kill the player if Player Death option is enabled and player touches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW FEATURE: - Added Turret. This will kill the player after 3 impacts if Player Death option is enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added colour palette to change cable connector properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added elevator target display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bugs with laser redirector, loops, and multiple input sources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bugs when copying light panels. Their properties are now copied too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed chamber door staying open sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "KNOWN ISSUES",
+     "items": [
+      {
+       "text": "The Force Field has some performance issues right now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/5395938616798314988"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-08T14:42:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.996Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-08T14:42:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.996Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-08T14:42:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.564Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@0.4.32.271",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 0.4.32.271",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-13T23:57:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Update notes for Q.U.B.E. Create v0.4.32.271",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW FEATURE: - Added music player selection options for custom levels. Accessible from the World Properties menu. Songs will preview when clicking on them. Songs will only play during Play Mode or in Published levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated overall lighting, and updated shadows so they aren't so dark overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Credits screen in menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated menus with consistent headers & styles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added object name text UI when an object is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Goal area fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moving component fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added basic chamber door that can be activated/deactivated by weight switches etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added actor culling distance ranging from 12000 to 20000 units to aid performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added light culling to aid performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Turned off casting of shadows by default on point lights, spot lights, and light panels. Added option to cast shadows on individual lights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added lighting options in light panels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed orange light panel to be a cracked/broken down styled panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weight switch attachment beam fix & optimisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collision issue with Lift.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added code methods to change material colours of light panels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added colour picker to geometry and modular meshes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added colour picker to lights and light panel options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added teleporter as a method to end the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Potential fix for World/Local Space UI getting stuck when loading up a new level.: We hope you enjoy the latest updates to Q.U.B.E. Create! Keep the feedback and suggestions rolling in our Discord: https://discord.gg/ZSHz9kg9VV: Remember to share content on socials and use #qubegame to tag!: Thanks again!: The QUBE Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 1,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/6438516944125787464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-13T23:57:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.995Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-13T23:57:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.995Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-13T23:57:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.564Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@0.3.31.249",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 0.3.31.249",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-07T12:26:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Q.U.B.E. Create, the free level editor that is available with Q.U.B.E. 10th Anniversary has just posted the following changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Hidden Open Object List when playing published level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magnet looping sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed physics objects not following magnet direction when rotated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added outer cone angle to spot light properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Global Illumination not saving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mouse sensitivity settings not saving.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed shadow detail quality setting not being able to go lower than Medium.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added more items to the geometry menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed resetting to default sky values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed moving component reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed world magnet overlap check.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NEW FEATURE: Cable Connector.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW FEATURE: Dynamic Forcefield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW FEATURE: Goal Area (General Trigger).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 8,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/5159491482908807661"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-07T12:26:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-07T12:26:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.995Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-07T12:26:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.563Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@1.4.24",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 1.4.24",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-15T13:20:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added DLAA in Video options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Achievements not unlocking throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/5839532486229047316"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-15T13:20:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-15T13:20:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.994Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-15T13:20:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.561Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@1.3.20",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 1.3.20",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-09T09:28:26.000Z",
+   "notes": [
+    {
+     "title": "Fixed the DLSS integration",
+     "items": [
+      {
+       "text": "Now displays correct modes: Off - Auto - Ultra Quality - Quality - Balanced - Performance - Ultra Performance.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Unsupported modes now display as \"Mode Not Supported\".",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/5124585954862572906"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-09T09:28:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-09T09:28:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.994Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-09T09:28:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.561Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@0.2.30.234",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 0.2.30.234",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-26T14:40:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "NEW FEATURE: Camera focus on selected object with F on the keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "NEW FEATURE: Added Object List to list all objects created in the world. Selecting them in the list will select them in the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Texture aligning to world location on walls and modular mesh walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential fix for icons not displaying for some users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Pausing makes objects not moveable after unpausing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added dedicated Lights menu. Moved Point Light there, and added Spot Light.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added options to change colour of lights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Light options are now copied when duplicating light objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/5124584686242650298"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-26T14:40:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.993Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-26T14:40:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.993Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-26T14:40:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.560Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@0.1.28.218",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 0.1.28.218",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-12T16:36:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Q.U.B.E. Create v0.1.28.218 is now live on Steam for all users that own Q.U.B.E. 10th Anniversary!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Patch notes are as follows",
+     "items": [
+      {
+       "text": "Light panels emit more light.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed World Magnets(Classic Magnets): Activated magnets doesn't affect newly spawned physics actors. Magnet range system didn't work correctly. Physics actors now disable when out of the range. Magnets now turn off when returning to Edit mode from Play mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented copying of Magnet Managers due to complications with pairings. The game now displays a failure message when attempting to copy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NEW FEATURE: Added feature to update existing steam published levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW FEATURE: Added methods to change, save and load material colours for walls via Object Properties window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Screen being unselectable after initial creation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Elevator being unselectable after using it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Physics Actor being too \"fragile\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed new objects not getting selected when creating and cloning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potential fix for button materials not being visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW FEATURE: Added Object List menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed lift/text properties menus not toggling off from keybind and other menus being toggled on.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various code optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/5124582150178670330"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-12T16:36:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.992Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-12T16:36:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.993Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-12T16:36:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.560Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@1.2",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-30T09:00:22.000Z",
+   "notes": [
+    {
+     "title": "Q.U.B.E. 10th Anniversary v1.2",
+     "items": [
+      {
+       "text": "We have listened to the community, taking on feedback and fixing issues. We'd like to thank everyone who has bought the game and joined in on the Discord server to express their feedback and opinions. Here's what we've changed in v1.2:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes -",
+     "items": [
+      {
+       "text": "Fixed floating panels in Sector 8. There was a misplaced panel floating in the middle of Sector 8!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with key bindings. Keybindings would not rebind correctly!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with Reset To Defaults in the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level Added -",
+     "items": [
+      {
+       "text": "We took on the feedback from many of the community that loved a classic puzzle that was originally excluded from the game, and we recreated it. We have added Tough Going playable from the Extras menu - it's a blast from the past that we hope you'll enjoy, and not pull your hair out too much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Until next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Q.U.B.E. team.: Toxic Games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Until next time!",
+     "The Q.U.B.E. team.: Toxic Games."
+    ]
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/4979322040012430124"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-30T09:00:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.992Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:26.559Z"
+  },
+  {
+   "id": "q-u-b-e-10th-anniversary-206756@1.1",
+   "gameId": "q-u-b-e-10th-anniversary-206756",
+   "displayName": "Patch 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-07T16:02:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Q.U.B.E. 10th Anniversary v1.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What an exciting 4 weeks it has been, first off we'd like to thank all of you for your feedback and support this far - we're still dedicated to making sure the game is everything you want.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.1 Updates: -",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes -",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug that was causing issues in the Sector 8 end slate user interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in which starting a new game in Sector 8 would not reset the collectable items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various user interface text issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quality of Life -",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Development console key moved from Tab to the ` (backtick) key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reset puzzle sound effect changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor level design updates and fixes in various places throughout sector 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased default look sensitivity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Additions -",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've added an option to enable or disable the outline around cubes that can be interacted with, when hovering over them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you again for all the feedback, both positivity and negative - it all helps us make the game the best possible and we really appreciate the reviews coming in so far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rushy,: Toxic Games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1564220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1564220/view/4613399405944255454"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-07T16:02:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1564220",
+      "checkedAt": "2026-11-13T03:28:38.991Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:28:38.991Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "d6fecdfa320d",
+   "text": "The Force Field has some performance issues right now.",
+   "status": "open",
+   "firstReleaseId": "q-u-b-e-10th-anniversary-206756@0.5.33.298"
+  }
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "game": {
+  "id": "milano-s-odd-job-collection-347902",
+  "igdbId": 347902,
+  "name": "Milano’s Odd Job Collection",
+  "cover": {
+   "imageId": "co9xuz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9xuz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4qcn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4qcn.jpg"
+  },
+  "ps5Release": "2025-12-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "milano-s-odd-job-collection-347902@1.0.4",
+   "gameId": "milano-s-odd-job-collection-347902",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-19T18:05:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've released an update for Milano's Odd Job Collection to resolve some issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "we've found",
+     "items": [
+      {
+       "text": "Fixed an issue preventing the Buon Appetito Achievement from popping consistently",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated a translation so that \"Lucha Libre\" is now displayed as \"Luchador\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated missed instances of Mood/Energy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a popup on launch that describes how to open the Syrup UI menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new licenses menu tab in the Syrup UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Incremented version number",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a detection bug for the Steam Pad detection that occurred if Steam Input: was disabled",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3582980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3582980/view/1825093633185847"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-19T18:05:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-3582980",
+      "checkedAt": "2026-11-13T03:25:40.296Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-19T18:05:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3582980",
+      "checkedAt": "2026-11-13T03:25:40.296Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-19T18:05:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:19.809Z"
+  }
+ ],
+ "issues": []
+}

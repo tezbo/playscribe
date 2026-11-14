@@ -1,0 +1,1362 @@
+{
+ "game": {
+  "id": "heartworm-132711",
+  "igdbId": 132711,
+  "name": "Heartworm",
+  "cover": {
+   "imageId": "co79lv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co79lv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arik1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arik1.jpg"
+  },
+  "ps5Release": "2026-10-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "heartworm-132711@post-2026-07-22",
+   "gameId": "heartworm-132711",
+   "displayName": "Minor bug fix - Involuntary movement bug finally fixed",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-22T14:34:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a rare but very annoying and game breaking issue that only affected some users, where the character would move in circles/on their own.: This bug was extremely difficult to catch because I was never able to reproduce it on my own. When a player commented about it recently, I decided to take another look since it had been a while. Heartworm uses Unity's new Input System, and I saw that we had set as composite bindings in the Move and Turn actions. After looking into it, I found that it's unlikely was actually ever used for any real input, and more than likely was picking up any HID device or driver - including virtual devices registered via driver software (audio, rgb, macros, etc.). Unity was likely guessing an axis center for these devices, normalizing it, and the result was the character moving seemingly on its own.: Again, due to the nature of this bug and my inability to reproduce it, I can't personally confirm the fix, but the player who reported it most recently confirmed the fix worked for them on a test branch, so I am pushing it live. If for some reason you run into this issue after updating, please let me know.: Thanks,: Vincent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/1839041357024104"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-22T14:34:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.573Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.573Z"
+  },
+  {
+   "id": "heartworm-132711@major-2025-10-10",
+   "gameId": "heartworm-132711",
+   "displayName": "Unity Security Update/Small Bug Fix Patch",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-10T19:06:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Due to the recently found potential security vulnerability in some Unity versions (https://unity.com/security/sept-2025-01) I had to update the engine version, so that is the main focus of this build. I don't believe the game was effected, but I updated just to be safe. I did some testing, but there is the possibility that this introduces unexpected issues. I hope it's not the case but please let me know if you find anything weird.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other bug fixes include",
+     "items": [
+      {
+       "text": "Fixed player controls issue after LTS update - Enabled \"input consumption\" which is a new project setting that was added by the LTS update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera mods being deleted if you saved/loaded while camera was unequipped or stored in item box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed face material not changing in spider outro cutscene for certain costumes (i.e. tapekeeper costume)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Statue enemy damage hitbox not being disabled sometimes after defeating them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vincent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/1813041031249659"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T19:06:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.573Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.573Z"
+  },
+  {
+   "id": "heartworm-132711@hotfix-2025-10-02",
+   "gameId": "heartworm-132711",
+   "displayName": "Save/Load Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-02T16:08:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "An issue was reported where sometimes loading the game would lead to a black screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A player submitted their save file and I was able to solve the issue - turns out there was a minor reference error I had missed when adding the new camera mod.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This hot fix should solve it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vincent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/1811772772480274"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-02T16:08:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.572Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.572Z"
+  },
+  {
+   "id": "heartworm-132711@1.1",
+   "gameId": "heartworm-132711",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-22T16:57:11.000Z",
+   "notes": [
+    {
+     "title": "Hey Everyone!",
+     "items": [
+      {
+       "text": "You can also now purchase the game’s soundtrack - featuring 60 original songs written for the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As previously mentioned, with this update, there is a new, optional increased difficulty called “Challenge” mode, with a new costume reward upon completion. This will require much stricter management of resources and more careful decision-making in regard to when to fight or flee. (The original, normal difficulty of the game still exists, of course.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also a number of other additions and changes, outlined below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Introduced Hard/Challenge mode, selectable at the pre-game menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Challenge mode: Increased static enemy HP by 25%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Challenge mode: Static Enemy slow chance increased to 50% (from 25%).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Challenge mode: Significantly less health and ammo spawns; the camera bag is not accessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Challenge mode: The Deer boss increased HP by x1.75.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beating the game on Challenge mode now unlocks baseball skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introduced Long Exposure(charge) mod in the chess puzzle in the cave behind the waterfall in the Wilderness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased minimum charge mod damage from 5 to 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased max charge mod damage from 40 to 50.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added visual particle FX for charge mod attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an icon on the camera sprite to signify when the charge mod is equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clean up the enemy dog's behaviour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced The Unchained enemy run speed from 5.72 to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Unchained enemy fov reduced from 180 to 45",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Deer boss not roaring at the start of the fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Deer boss: fixed the footprint spawner not spawning footprints after the cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the shelf from the yellow Office hall to further avoid traffic jams.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Final Boss Fight Adjustments",
+     "items": [
+      {
+       "text": "Gears now come in from the sides, forcing the player into the center, removing the \"safe\" areas until the sweep attack, when the gears retract.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "TK Slam attack order is now randomized, but a light red warning circle appears to telegraph the location of the attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased frequency of falling brick attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed visuals for fireballs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the amount of film given in the final boss fight from 24 to 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Credits updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some missing loc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing dialogue to subtitles in gallery 4 - third and fourth lines were not showing up as subtitles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI/UX",
+     "items": [
+      {
+       "text": "Fixed the incorrect map trigger in the Wilderness clearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed menu/bg image offset while in a 4:3 aspect ratio on the pre-game difficulty select menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed change tabs (Q/E) not working when opening map from Inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the map system, changing the area progress of the previous scene area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed softlock when rebinding keyboard after starting rebind with controller",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added difficulty to the ranking screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed inaccessible area from parking map sprite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional Bug Fixes",
+     "items": [
+      {
+       "text": "Attempt to fix the rare elevator softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flash lingering (camera to flashlight exploit)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempt to fix the rare aiming stuck bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked gallery VOs to use the same VO sequences that are used elsewhere",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the gallery word puzzle, sometimes acting strangely when solving while the voiceover is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed infinite mod/combining issue when a camera was already modded and combine was used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed credits camera easing into the first camera - added camera blend to make sure it cuts instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed voiceover trigger from solving attic door and added it to a trigger earlier in the attic room that plays when Sam has the complete emblem or both parts in her inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed confusing train barrier flavor text on the left side of the scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ranking scene minor adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The electric pole missing map trigger has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added interruption state to the scene fade animator in an effort to solve a rare issue where the scene would not fade in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the empty subtitle bar popping up when subtitles are disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Office table collider in the meeting room layer changed so you can shoot through it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player pushing while aiming fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Watermill collision issue in front of waterfall, nav mesh rebaked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "As always,",
+     "items": [
+      {
+       "text": "thank you so much for playing and for your feedback. I really appreciate every single one of you for taking a chance on this game I put my all into.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Vincent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 22,
+    "balance": 8,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/1811138915527404"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-22T16:57:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.571Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T07:23:42.571Z"
+  },
+  {
+   "id": "heartworm-132711@1.0",
+   "gameId": "heartworm-132711",
+   "displayName": "Update 1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-14T14:30:22.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "We wanted to thank everyone so much for your continued support during the launch of Heartworm. Seeing everyone's reception to the game has been amazing. While Vincent and team are hard at work on a content patch that will add things like a harder difficulty mode...and more, a new patch is out now with various bug fixes and quality of life tweaks. The full patch notes are below. We will continue to monitor for bugs, and if you haven't already, make sure to leave a review!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Various puzzle fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various map fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could soft lock themselves behind shelves in the abandoned house basement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various texture, trigger, and collision fixes in the Neighborhood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Subway pillar colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some lighting issues in the Wilderness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hospital puzzle text cutoff in certain languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting in the Funeral Home and Save Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the yellow Office corridor file interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a specific enemy not spawning in the Neighborhood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the archive chess game would override the bedroom chess result",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mine track collision in Caves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect door placement in the Neighborhood map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed respawning antiseptic near cave exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Chapter 5 subtitle issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the waterfall would sometimes not remain open after solving piano puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Chapter 5 fixed camera angle placement issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Tapekeeper boss stun animation would sometimes not trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a tree blocked a camera shot in Woods intro cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life Updates and Minor Adjustments",
+     "items": [
+      {
+       "text": "Added \"Camera\" volume slider for camera flash audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Steam Deck now defaults to its native resolution",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In the Warehouse, Chase sequence no longer resets when you leave and return",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved loading time in Caves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered volume of wilderness intro/outro cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added glow to save room computers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased intensity of subway flickering hint light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated credits and credit sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved balancing for Ending Ranking requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 20,
+    "balance": 8,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/1808061939342467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-14T14:30:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.570Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.570Z"
+  },
+  {
+   "id": "heartworm-132711@major-2024-12-21",
+   "gameId": "heartworm-132711",
+   "displayName": "End of Year Development Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-21T20:45:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As we close out the year and move towards the launch of Heartworm next year, we wanted to start showing off more of the game to get everyone excited for Sam's journey through the unknown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Demo Update",
+     "items": [
+      {
+       "text": "In case you missed it, we refreshed the demo after PAX to include the new boss fight and make the demo experience a better representation of the game. This latest version features improved textures from the original demo, the ability to enhance your camera with mods, and, most excitingly, a chance to play one of the boss fights from the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let's get a look at what we're here to talk about.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Welcome to the Neighborhood",
+     "items": [
+      {
+       "text": "If you've played either version of the demo, you're likely very familiar with The Neighborhood. But did you know there are still areas left to explore?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When Sam enters Platt St. Deli, the rush of memories is instant. The store is so familiar—the shelves lined with cereal, the scent of fresh-cut meat, the soft chime of the bell above the door. This was where her Grandfather once worked, and Sam has so many fond memories of this place. But being back here now, she can't seem to find those fond memories; instead, she only feels the sadness as she's reminded yet again of what he's gone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Static Wraith",
+     "items": [
+      {
+       "text": "The Static Wraiths shudder and warp as they trudge, their shifting masses of discordant distortion ceaselessly pulsing to an unnatural rhythm. They wander, ever emitting their mournful hum, the fading echoes of memories slipping away. Each one, visitor lost to this place—every flicker and buzz an an echoing reminder of loss- of refusal to let go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Static Wraith attacks by releasing a flow of static. As the static flows over Sam, it slows their movement. The longer Sam is caught in the static, the more sluggish she becomes. The Wraith uses this moment to close the gap, forcing Sam to overcome the static and fight back before it can strike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Social Links",
+     "items": [
+      {
+       "text": "Vincent Adinolfi's Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Tiktok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/1786573930698176"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-21T20:45:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.568Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.568Z"
+  },
+  {
+   "id": "heartworm-132711@major-2024-09-16",
+   "gameId": "heartworm-132711",
+   "displayName": "Post-PAX Development Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-16T15:01:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a while since we've updated everyone on the progress that's been made in Heartworm, so we wanted to keep you all in the loop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PAX West Demo",
+     "items": [
+      {
+       "text": "In case you missed it, we showcased a fresh, updated demo at PAX! This new version featured improved textures from the original demo, the ability to enhance the camera with mods, and, most excitingly, a thrilling boss fight from the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Check out the Wilderness",
+     "items": [
+      {
+       "text": "In addition to showcasing the demo, we also wanted to give you a glimpse of some new environments you'll be able to explore in the game beyond The Neighborhood!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During Sam's journey, they will find themselves lost in the dense Wilderness. What truths wait down the trail?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a comparison, here's a screenshot showing the pixelated filter on/off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"I was so happy to be able to show off the new demo at PAX West and even more so to watch people enjoy it. Admittedly I am always pretty nervous showing off the game, but that melted away so quickly as I met and talked to everyone who is excited about Heartworm. A lot of you had positive things to say and great feedback - it's really inspiring to hear how excited people are for this game and how passionate they are about the genre. Can't wait to show you more.\" - Vincent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Social Links",
+     "items": [
+      {
+       "text": "Vincent Adinolfi's Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Tiktok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Twitter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Youtube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Instagram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DreadXP Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/6250522009528000343"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-16T15:01:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.567Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.567Z"
+  },
+  {
+   "id": "heartworm-132711@4.1",
+   "gameId": "heartworm-132711",
+   "displayName": "Update 4.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-29T14:56:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "saving/loading working as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "found files viewable from inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reworked emblem puzzle so you can't just guess it as soon as you enter the level anymore :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "made the game harder, removed a lot of items and changed their placement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "made enemies health more varied, and added more feedback when you damage them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "gave sam an injured state as well as a visual cue for when she takes damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "changed controls to feel a bit more natural (inventory is also cancel, changed it to circle)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed typo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "new music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "new sfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "minor interaction and content additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/4836332027673891824"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-29T14:56:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.566Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.566Z"
+  },
+  {
+   "id": "heartworm-132711@2.2.2",
+   "gameId": "heartworm-132711",
+   "displayName": "Patch 2.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-02T02:34:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed inventory/pause menu lock bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added chapter select to main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "removed broken achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "did i mention i added quick turn?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "very small interaction and content additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1257030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1257030/view/4706851091193372754"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-02T02:34:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1257030",
+      "checkedAt": "2026-11-12T07:23:42.566Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:42.566Z"
+  }
+ ],
+ "issues": []
+}

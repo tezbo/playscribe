@@ -1,0 +1,4211 @@
+{
+ "game": {
+  "id": "tormented-souls-ii-262678",
+  "igdbId": 262678,
+  "name": "Tormented Souls II",
+  "cover": {
+   "imageId": "co9y0u",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9y0u.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3og2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3og2.jpg"
+  },
+  "ps5Release": "2025-10-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tormented-souls-ii-262678@1.5.0.28",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.5.0.28",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-13T16:49:08.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "A big thank you to all testers who provided feedback on the beta version of patch 1.5.0.26 over the last few weeks. We've now released patch 1.5.0.28 for everyone so please make sure to update to the latest version of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Improved flamethrower aiming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that could leave the player unable to move, act or pause after being hit by an enemy on random, rare occasions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could leave the player stuck looking at the Iron Maiden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an incorrect interaction with the laser eye.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed elevator controls being accessible from outside the elevator, which could cause the player to clip through floors and ceilings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character stuttering when attacking with the nail gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allowed outfits to be changed without opening the wardrobe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Default Outfit appearing twice in the wardrobe after respawning in the Guest Room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause Session 47 to appear duplicated when removed from the player’s inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the camera becoming stuck near the stairs in the Refectory during New Game+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Diver enemy failing to pursue the player through the Bunker Elevator Passage during New Game+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a delay in the first ghost enemy appearing in the Cemetery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the first boss’s second-phase cutscene triggering incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interact icon in Cemetery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy levitation issue in Apothecary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Fixed PS5 controller detection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Graphics and display",
+     "items": [
+      {
+       "text": "Adjusted UI pixel sizing to meet Steam Deck verification requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed brightness settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FSR not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed screen tearing when using a 4K monitor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting in the Bunker Elevator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed excessive brightness in the final cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flickering and disappearing head shadows, including in the Lower Wing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Flamethrower drifting VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI and languages",
+     "items": [
+      {
+       "text": "Fixed Arabic and Turkish not appearing in the language selection menu on first launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed debug text from the loading screen before the secret ending conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed overlapping text and visible debug text on the autosave entry in the Load Game screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect area information appearing in empty save slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the shotgun icon displaying an incorrect number of barrels when using weapon shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reverted text sizes from Steam Deck version for map text UI (Made smaller).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added Ultrawide support for UI.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed initial boot language not applying properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance and stability",
+     "items": [
+      {
+       "text": "Fixed a crash when using a cassette tape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cage crash sound repeating in the Processing Plant’s Other Side.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PQube and Dual Effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 30,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1849192144188131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T16:49:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T22:38:14.220Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-13T16:49:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T22:38:14.220Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-13T16:49:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T22:38:14.220Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.5.0.26",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.5.0.26",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-09T15:00:23.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "We’ve just soft-launched patch 1.5.0.26 via our public beta branch. You can access this version of Tormented Souls 2 as follows:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right click on the Tormented Souls 2 app in your Steam library and select ‘properties’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click ‘Game versions & betas’ from the sidebar and select the ‘public beta’ from the list of game versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click ‘Installed files’ from the sidebar and click ‘verify integrity of game files’. Your game should now automatically update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new patch includes more settings and controller options, plus minor bug fixes. If you encounter any issues while playing this version, please leave a comment on this post. We’ll continue to test the patch ourselves, and all being well, will roll it out to all players in the coming weeks. See below for the full changelog:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay and Controls",
+     "items": [
+      {
+       "text": "Fixed PS5 controller detection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Improved flamethrower aiming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that could leave the player unable to move, act or pause after being hit by an enemy on random, rare occasions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could leave the player stuck looking at the Iron Maiden.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an incorrect interaction with the laser eye.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed elevator controls being accessible from outside the elevator, which could cause the player to clip through floors and ceilings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character stuttering when attacking with the nail gun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allowed outfits to be changed without opening the wardrobe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Default Outfit appearing twice in the wardrobe after respawning in the Guest Room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could cause Session 47 to appear duplicated when removed from the player’s inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cameras, enemies and progression",
+     "items": [
+      {
+       "text": "Fixed the camera becoming stuck near the stairs in the Refactory during New Game+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Diver enemy failing to pursue the player through the Bunker Elevator Passage during New Game+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a delay in the first ghost enemy appearing in the Cemetery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the first boss’s second-phase cutscene triggering incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Graphics and display",
+     "items": [
+      {
+       "text": "Adjusted UI pixel sizing to meet Steam Deck verification requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed brightness settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FSR not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed screen tearing when using a 4K monitor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting in the Bunker Elevator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed excessive brightness in the final cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flickering and disappearing head shadows, including in the Lower Wing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Menus and text",
+     "items": [
+      {
+       "text": "Fixed Arabic and Turkish not appearing in the language selection menu on first launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed debug text from the loading screen before the secret ending conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed overlapping text and visible debug text on the autosave entry in the Load Game screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect area information appearing in empty save slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the shotgun icon displaying an incorrect number of barrels when using weapon shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio and stability",
+     "items": [
+      {
+       "text": "Fixed a crash when using a cassette tape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cage crash sound repeating in the Processing Plant’s Other Side.Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PQube and Dual Effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 26,
+    "balance": 0,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1846018067933594"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T15:00:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.479Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.407Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.5.0.20",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.5.0.20",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-12T10:45:09.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "Thanks to all of you who helped to test the beta version of patch 1.5.0.17 over the last few weeks, we're now happy to announce that we have pushed patch 1.5.0.20 live to all players 🥳",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New languages & language fixes",
+     "items": [
+      {
+       "text": "Added Turkish language support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Arabic language support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Arabic fonts for inventory, map, and label text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with dialogue name misalignment on non-Arabic languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Arabic text alignment on load and save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Settings",
+     "items": [
+      {
+       "text": "HDR now functions as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted brightness and gamma settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added ultrawide support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added FPS limiter setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where players were unable to scale up to 2K resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controllers",
+     "items": [
+      {
+       "text": "PS5 DualSense functions correctly when using wired and wireless mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed PS5 glyph issue on PS5 controller Type A.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed issue where Type C controller layout would stay on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Additional polish",
+     "items": [
+      {
+       "text": "Added animation to tentacles around Joseph in the Train Station area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added grime and dirt effects to tape on the phone in the Town area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added blood splatter effects to the first additional Shotgun pipe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General bugfixes",
+     "items": [
+      {
+       "text": "Fixed lighting issue where the Caroline’s shadow intermittently vanished and reappeared in the Lower Wing area of the Processing Plant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with school elevator where point of interest interactions were inconsistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio issue where the crying girl could still be heard after completing the puzzle in the School bathroom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where candles surrounding mirrors would become unlit when returning from the ‘Other Side’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue where shimmer effect was missing on the povidone object in the container office area of the Town section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text issue where description of cave collapse did not accurately reflect the visual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where candles on the ‘Other Side’ mirror glow before being lit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cursor will now snap to ‘Are you sure?’ pop-up window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Shotgun icon shows incorrect number of barrels when equipped using weapon shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Shotgun icon would sometimes display incorrectly in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting issue where lighter would flicker when opening the map in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue where the Iron Maiden’s texture would pop in late after the cutscene in which she is defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed chance of crash if Iron Maiden boss is damaged before taking dagger items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Bunker Elevator could be interacted with from the outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping text issue in save screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue with flickering poster in Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy behaviour issue where Diver enemy would not chase the player as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Caroline’s outfit can be changed even when the wardrobe is closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where ghost enemy can fall out of arena during Dr Hertz battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where ‘Crucifixion’ achievement would trigger when ghost enemy fell out of arena during Dr Hertz battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the shadow of Caroline’s head would flicker in the school basement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "DLC-related bugfixes",
+     "items": [
+      {
+       "text": "Fixed issue where DLC costumes were not appearing as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Caroline’s costume would change during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed texture issue where the ‘Rebel Biker’ costume was not showing Caroline’s belly button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Game Plus-related bugfixes",
+     "items": [
+      {
+       "text": "Fixed issue where Flamethrower would aim to the side even when the target is dead ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Please be aware of the following known issues",
+     "items": [
+      {
+       "text": "FSR & DLSS settings are still being worked on and have not yet been implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "There is stutter during transition to the Harvester introduction cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tank controls can cause movement stutter when exiting inventory quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 33,
+    "balance": 1,
+    "other": 6,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1840944183773647"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-12T10:45:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.478Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-12T10:45:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.478Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-12T10:45:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.407Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.5.0.17",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.5.0.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-27T15:37:37.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone,",
+     "items": [
+      {
+       "text": "We’ve just soft-launched patch 1.5.0.17 via our public beta branch. You can access this version of Tormented Souls 2 as follows:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right click on the Tormented Souls 2 app in your Steam library and select ‘properties’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click ‘Game versions & betas’ from the sidebar and select the ‘public beta’ from the list of game versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click ‘Installed files’ from the sidebar and click ‘verify integrity of game files’. Your game should now automatically update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new patch includes two new languages, more settings and controller options, plus minor bug fixes. If you encounter any issues while playing this version, please leave a comment on this post. We’ll continue to test the patch ourselves, and all being well, will role it out to all players in the coming weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New languages",
+     "items": [
+      {
+       "text": "Added Turkish language support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Arabic language support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Arabic fonts for inventory, map, and label text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Settings",
+     "items": [
+      {
+       "text": "HDR now functions as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted brightness and gamma settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added ultrawide support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added FPS limiter setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where players were unable to scale up to 2K resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controllers",
+     "items": [
+      {
+       "text": "PS5 DualSense functions correctly when using wired and wireless mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed PS5 glyph issue on PS5 controller Type A.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed issue where Type C controller layout would stay on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General bugfixes",
+     "items": [
+      {
+       "text": "Fixed lighting issue where the Caroline’s shadow intermittently vanished and reappeared in the Lower Wing area of the Processing Plant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with school elevator where point of interest interactions were inconsistent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio issue where the crying girl could still be heard after completing the puzzle in the School bathroom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where candles surrounding mirrors would become unlit when returning from the ‘Other Side’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue where shimmer effect was missing on the povidone object in the container office area of the Town section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text issue where description of cave collapse did not accurately reflect the visual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added animation to tentacles around Joseph in the Train Station area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added grime and dirt effects to tape on the phone in the Town area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added blood splatter effects to the first additional Shotgun pipe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where candles on the ‘Other Side’ mirror glow before being lit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cursor will now snap to ‘Are you sure?’ pop-up window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Shotgun icon shows incorrect number of barrels when equipped using weapon shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting issue where lighter would flicker when opening the map in certain areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue where the Iron Maiden’s texture would pop in late after the cutscene in which she is defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Bunker Elevator could be interacted with from the outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping text issue in save screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issue with flickering poster in Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy behaviour issue where Diver enemy would not chase the player as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "DLC-related bugfixes",
+     "items": [
+      {
+       "text": "Fixed issue where DLC costumes were not appearing as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Caroline’s costume would change during cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed texture issue where the ‘Rebel Biker’ costume was not showing Caroline’s belly button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Game Plus-related bugfixes",
+     "items": [
+      {
+       "text": "Fixed issue where Flamethrower would aim to the side even when the target is dead ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Please be aware of the following known issues",
+     "items": [
+      {
+       "text": "FSR & DLSS settings are still being worked on and have not yet been implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "There is stutter during transition to the Harvester introduction cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tank controls can cause movement stutter when exiting inventory quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 25,
+    "balance": 1,
+    "other": 10,
+    "ps5": 2,
+    "topNew": [
+     "Added Turkish language support.",
+     "Added Arabic language support.",
+     "Added Arabic fonts for inventory, map, and label text."
+    ]
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1839041357035963"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-27T15:37:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.477Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.406Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.5.0.12",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Hotfix 1.5.0.12",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-18T08:59:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have just pushed hotfix 1.5.0.12 which resolves the following issue:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iron Maiden boss now takes damage as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dual Effect and PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1835871199303455"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T08:59:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.476Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-18T08:59:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.476Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-18T08:59:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.404Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.5.0.11",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.5.0.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-16T14:04:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick update to share today as we've just pushed patch 1.5.0.11 live. This patch was created in response to an issue we discovered in the last patch whereby lighting and cutscene quality had been unintentionally reduced. Thank you to the community members who flagged this and apologies for the inconvenience caused. We've also included a few bugfixes for the Dr. Hertz fight that were still being reported, see below for the full changelog:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lighting & cutscene quality fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-enabled Fullscreen for certain monitor sizes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where weapons did not work during Dr. Hertz boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Dr. Hertz minions fell through the floor during boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Dr. Hertz did not remain in \"downed\" pose.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Dr Hertz did not always take damage when intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1835236783574455"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T14:04:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.476Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-16T14:04:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.476Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-16T14:04:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.404Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@patch-2026-06-04",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "New patch live!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-04T17:03:38.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone,",
+     "items": [
+      {
+       "text": "A new patch is now live for Tormented Souls 2! See below for the full list of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players cannot interact with the Church mirror after completing the puzzle and must move away and then return.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shotgun icon changes number of barrels when using weapon shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flashlight spins without input when examining in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game crashes when entering Classroom 103.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fatal Error crash while the game is paused in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Type C controller will stay on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player is unable to upscale to 2k.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Credits alignment issue on ultrawide resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New Game Plus specific bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Laser eye unlocked with 10 batteries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Laser Eye weapon isn’t available in the Workshop on subsequent NG+ runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser Eye aim does not go straight when used against Nautilus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser Eye aims to the upper level of the mall instead of a nearby enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser Eye does not work on Dr Hertz at certain angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flamethrower aims to the side even when the target is straight ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements and trophies fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not all achievements unlock during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch is available for all PC platforms (including Epic Games Store and GOG) and will arrive on PlayStation 5 and Xbox Series X|S in the next few weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Behind the scenes we're working on another patch that should address the remaining issues currently in our backlog, and will be ready to go live at the end of this month.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 20,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1834602721188216"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-04T17:03:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.475Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-04T17:03:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.475Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-04T17:03:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.403Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.5.0.2",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.5.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-20T08:39:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re excited to share a new patch for Tormented Souls 2 today that we will be soft launching on our public beta branch. This latest patch (patch 1.5.0.2) will include the following bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players cannot interact with the Church mirror after completing the puzzle and must move away and then return.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shotgun icon changes number of barrels when using weapon shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flashlight spins without input when examining in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game crashes when entering Classroom 103.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fatal Error crash while the game is paused in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Type C controller will stay on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player is unable to upscale to 2k.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Credits alignment issue on ultrawide resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New Game Plus specific bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Laser eye unlocked with 10 batteries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Laser Eye weapon isn’t available in the Workshop on subsequent NG+ runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser Eye aim does not go straight when used against Nautilus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser Eye aims to the upper level of the mall instead of a nearby enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Laser Eye does not work on Dr Hertz at certain angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flamethrower aims to the side even when the target is straight ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements and trophies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not all achievements unlock during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can access this patch by",
+     "items": [
+      {
+       "text": "Right clicking on the Tormented Souls 2 app in your Steam Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting ‘Game versions & betas’ from the side panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting the public_beta game version from the list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting ‘Installed files’ from the side panel and clicking ‘Verify integrity of game files’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any issues with the latest patch, please let us know in this thread - https://steamcommunity.com/app/2464280/discussions/0/845132370469214108/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As with our last update, if no major issues are reported during this soft launch we will push this patch to all players on Steam, Epic Games Store, and GOG next week, with the PlayStation 5 and Xbox Series X|S versions following the week after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "We appreciate your support as we continue to work on improving Tormented Souls 2 for everyone! We’ll have more information to share about the next update soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 26,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1833334318565702"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-20T08:39:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.474Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.402Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@major-2026-04-23",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "📢 Update on development in 2026",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-23T15:36:31.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone,",
+     "items": [
+      {
+       "text": "First of all, we’d like to apologise for going quiet these last few months. We completely understand your frustrations regarding outstanding bugs and wanted to reassure you that we are committed to continuing development on Tormented Souls 2 in 2026. Following the release of the ‘New Game Plus’ update on 12th February we have been investigating a number of new issues alongside historic bugs, and so we wanted to give you a quick update on our plans for patches in the coming weeks and months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we’re soft launching the 1.4.1.3 patch on a public beta branch. This patch includes the following bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General bugfixes",
+     "items": [
+      {
+       "text": "Knocking the Iron Maiden into a corner will result in no interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Iron Maiden will cause the player to be stuck in loop animation after taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FPS drops in Iron Maiden boss fight when using the shotgun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dr Hertz could not be defeated due to enemies not spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rubber Hose item disappears from inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elevator displays no power in the church after completing the puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quick turn does not work when switching from tank controls to analog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save data displays \"Standard\" when playing on Assisted difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Game Plus specific bugfixes",
+     "items": [
+      {
+       "text": "Incorrect ammo count “100” is displayed on the Flamethrower icon in NG+ mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgrade text on electric lance is incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Nuclear batteries disappeared after placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Players can access this patch by",
+     "items": [
+      {
+       "text": "Right clicking on the Tormented Souls 2 app in their Steam library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting ‘Game versions & betas’ from the side panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting the public_beta game version from the list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting ‘Installed files’ from the side panel and clicking ‘Verify integrity of game files’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you do encounter any issues with this new patch please report them in this thread.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If no major issues are reported we’ll push this patch to all players on Steam, Epic Games Store, and GOG next week and then update the PlayStation 5 and Xbox Series X|S versions the week after that. Going forwards we’ll aim to have all platforms updated with new patches every 3-4 weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "General bugfixes",
+     "items": [
+      {
+       "text": "Final boss game crash and black screen when completing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Game Plus specific bugfixes",
+     "items": [
+      {
+       "text": "Tormented difficulty now remains locked after completing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Standard+ mode remains locked after completing NG+ on Assisted difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Laser eye unlocks without all nuclear batteries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Laser eye does not work on Dr Hertz at certain angles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Achievements and trophies",
+     "items": [
+      {
+       "text": "Certain achievements and trophies are not triggering correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Certain achievements and trophies are not popping retroactively",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thanks for your understanding and we really do appreciate your patience while we continue to improve Tormented Souls 2 for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll be back with another update soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 13,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1830797770233512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-23T15:36:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-23T15:36:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:38:29.306Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-23T15:36:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.306Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@major-2026-02-12",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "'New Game Plus' update now live!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-12T13:08:18.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "We’ve got some great news to share as we’ve just launched a major FREE update for Tormented Souls 2!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Centred around a challenging ‘New Game Plus’ mode, additional content includes tougher enemies, deadly new weapons, more secrets, and even a bonus costume for Caroline! Read on to find out what’s in store…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔥Bigger challenge, deadlier weapons!",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44541046/03ae4f1ec397c1e3ce9fddfc7865d95073fcb874.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlocked immediately after completing the game for the first time, ‘New Game Plus’ ratchets up the tension by increasing both the enemy count and adding even more jumpscares! Fortunately for Caroline, this mode also introduces two new weapons. The ‘Electric Lance’ is an experimental device that delivers a lethal shock at close-range, while the highly volatile ‘Flamethrower’ sets Caroline’s enemies ablaze in spectacular fashion!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔐New secrets to discover!",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44541046/fb68adb39c3a23c75204df652a0fc1b3d3346a6a.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "While playing through ‘New Game Plus’, Caroline should keep a close eye out for ‘Nuclear Batteries’. These twelve collectable items are scattered across Villa Hess, and rumour has it that collecting them all will unlock the secret of the strange mechanical device that has mysteriously appeared in front of the town’s ruined Train Station. But there’s more! By achieving the ‘true’ ending of ‘New Game Plus’ players will be treated to a special ending that pays homage to the series’ classic survival horror roots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🦴 ‘Mature Caroline’ bonus costume revealed!?",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44541046/f6500dcb10414df34f158519b7b10f62357e13a6.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To reflect the challenge of the mode, Caroline can now unlock a ‘New Game Plus’ specific bonus costume, which really emphasises her excellent ‘bone structure’. Players will find this fun outfit in the wardrobe of the Convent Guest Room after completing a 'New Game Plus' run-through (on any difficulty) where they have also solved the nuclear batteries puzzle and obtained the 'true ending'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new content is also now live on all platforms 😎",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎞️ Celebrate Caroline’s achievements with the ‘Tormented Souls 2 Accolades Trailer’",
+     "items": [
+      {
+       "text": "2025 was an amazing year for us having reached the incredible milestone of over 100,000 units sold within the first 6 weeks of release! We even picked up some award nominations in the process including:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Game of the Year at The Horror Game Awards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Latin American Indie at the The Indie Game Awards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horror Game of the Year at the LATAM Indie Awards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Standout release at the Latin American Games Showcase: The Game Awards Edition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To celebrate everything that Tormented Souls 2 accomplished thanks to your support we've released an ‘Accolades Trailer’ showcasing Caroline at her finest, set against the epic end-credits track ‘Open Your Heart’ by series composer NyxTheShield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We really hope you enjoy the new content!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1824459501606757"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T13:08:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T13:08:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.473Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-12T13:08:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.401Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.3.5",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Hotfix 1.3.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-21T10:19:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Following yesterday's release of patch 1.3.4 we were made aware that the fuse puzzle softlock was still persisting for some players. This hotfix should resolve the following issue:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]- Fixed: The fuse puzzle items will now display if players loaded a previous save that had the fuses placed in the puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1816849002013473"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T10:19:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T10:19:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.472Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-21T10:19:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.399Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.3.4",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.3.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-20T12:38:15.000Z",
+   "notes": [
+    {
+     "title": "Hi all,",
+     "items": [
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Following yesterday's release of patch 1.3.3 two issues were raised by the community regarding the cemetery and school fuse box puzzles whereby key items left in the puzzles were disappearing after the update was installed. To remedy this we have just released patch 1.3.4:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed: The letter puzzle items will now display if players loaded a previous save that had the items placed in the puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The fuse puzzle items will now display if players loaded a previous save that had the fuses placed in the puzzle.: We are aware of two outstanding issues that can potentially block progress. These instances are rare and we will be working with affected users to deliver a solution and once again thank you for your patience:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "A black screen will sometimes appear when transitioning from the Commercial District to the Train Station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sometimes the rubber hose will not respawn if the player fails to correctly solve the elevator puzzle in the Church.: Once again we have created a new community feedback thread for this patch: https://steamcommunity.com/app/2464280/discussions/0/678482693017645783/: Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1816849002010573"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-20T12:38:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.471Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-20T12:38:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.471Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-20T12:38:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.399Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.3.3",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.3.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-19T11:58:27.000Z",
+   "notes": [
+    {
+     "title": "Hi everyone!",
+     "items": [
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just released patch 1.3.3 which includes fixes for 40+ issues while also addressing the outstanding softlocks that were present in 1.3.2. See below for the full changelog:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed: Collecting all weapons would not unlock the Hoplophile achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Costumes appeared to duplicate, and Caroline would become invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Equipping and unequipping the Lighter caused the darkness mechanic to break",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Player now receives Joseph's diary \"02. The Sacred Book of the Nephilim\" after interacting with Joseph",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issue where Joseph's diary could be duplicated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect icon displayed if upgrading the Shotgun with only the second upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Player could break wooden crates in the Sewers without having the Detachable Flashlight equipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players now correctly receive items from wooden crates in School East Corridor B",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Animation issue with ladders when aiming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Sandbag collision clipping through pillar in the Cloister",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Traps could push Caroline on top of environmental objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Unable to interact with the wardrobe in the Guest room for a second time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could teleport from the Commercial District to the Mall when interacting with a car trunk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Joseph would still be present in the Processing Plant after leaving the scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Lower Wing elevator became unusable and displayed a message about insufficient power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Camera would become locked when skipping the VHS cutscene in the Processing Plant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could get stuck in an alcove in the Cemetery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players lost control of the plant trolley in the Playground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Undercroft elevator became unusable and displayed a message about insufficient power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Camera would not update correctly in the Containment Ward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added pointing statues in particular locations to hint at hidden items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Save files were mistakenly overwritten in the background of the save/load menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Controller vibration for heartbeats continued when the game was paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Results screen would show incorrect data for saves recorded and healing items used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Windows key can no longer be bound to an input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: The center Cryptex dial will sometimes rotate on pickup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The letter puzzle in the Cemetery would sometimes not complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The letter puzzle in the Cemetery could be completed with the wrong solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issue where fuses would disappear from the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: On rare occasions, Iron Maiden's mask would not open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Camera issues during the Harvester boss fight when transitioning from cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Dr Hertz defeat cutscene was in 4:3 aspect ratio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Caroline's self-healing would be disabled when dying in the Dr Hertz boss fight (Assisted difficulty)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Pighead would not get electrocuted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: On rare occasions, the final boss would only fire lasers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Being grabbed by multiple ghosts caused a soft lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemies spawning incorrectly when exiting the School",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Diver enemies could knock Caroline through walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visuals",
+     "items": [
+      {
+       "text": "Fixed: Caroline's neck during cutscenes when wearing the police costume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Caroline's hair textures during opening cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Tree clipping in the South Corridor 2F next to the dead nun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the stairs icon in the West Corridor (Convent)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Shimmers could be seen through walls in the Dining Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a shimmer effect to the Manual Jack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cemetery B1 map has been updated to display the corridor in the Burial Chamber",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Added SFX when turning on the electric generator in Subject Containment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added SFX to the final boss tentacles upon defeat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localisation and Text",
+     "items": [
+      {
+       "text": "Fixed: The word \"Electrical\" was missing in the Symbol Paper model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Room names were cut off in the Upper Wing and Reception on the Processing Plant map: [p align=\"start\"]As was the case last time around, we have retired the previous community feedback thread and have created a new one for 1.3.3. Should you encounter any other issues while playing please post them here: https://steamcommunity.com/app/2464280/discussions/0/678482693017586786/: We aim to have this patch live across all other platforms by 2nd December and thank you again for your patience while we squashed the outstanding bugs on Steam.: The team will now be focusing on a free content update that will include the much requested New Game Plus as well as some deadly new weapons to experiment with! We'll be able to share more news about this in the coming weeks 😎: [p align=\"start\"]Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 41,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1816849002007442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-19T11:58:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.469Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-19T11:58:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.469Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-19T11:58:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.398Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.3.2",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Patch 1.3.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-10T11:04:59.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone!",
+     "items": [
+      {
+       "text": "Thank you for your patience as we worked through all of your feedback and bug reports over the past few weeks 🙏 Following a short beta period we have now rolled out patch 1.3.2 which should address over 60 issues including the softlocks that have been frustrating players since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPORTANT: During the beta period we were made aware of two instances of persisting softlocks in 1.3.2:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue 1: Sometimes the main cemetery (tomb dials) puzzle does not trigger correctly after it is completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solution: Ensure that you save in the Cemetery Office immediately after entering the cemetery area for the first time. If you encounter the softlock issue reloading the Cemetery Office save should clear the bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issue 2: In rare instances, fuse items placed in the School Generator Room or held in the players inventory in v1.2 are disappearing in v1.3.2. We are investigating why this is happening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Solution: For some players collecting the fuse items from the fuse box and saving in v1.2 before switching over to v1.3.2 resolves the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As an extra precaution we are keeping the v1.2 of the game live on a separate public beta branch so that players can revert to this version if need be. You can access the branch as follows:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Right click on the Tormented Souls 2 app in your Steam library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Select ‘properties’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Select ‘betas’ from the left-hand menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Click on the ‘beta participation’ dropdown and select ‘rollback_1.2.0'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Select ‘installed files’ from the left-hand menu and click ‘verify integrity of game files’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed: Registry achievement unlock condition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Master Key achievement unlock condition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Hoplophile achievement unlock condition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Serial Killer achievement unlock condition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Vindication achievement unlock condition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Ranger achievement unlock condition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Upper Wing elevator became unusable and displayed a message about insufficient power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Warehouse elevator became unusable and displayed a message about insufficient power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: School elevator became unusable and displayed a message about insufficient power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Burial Chamber elevator became unusable and displayed a message about insufficient power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could go out of bounds in the Cemetery Grounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could go out of bounds in the Arcade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The darkness mechanic not triggering in the Lower Wing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Joseph's diary, \"03. The Dark Book is Here!\", could be obtained twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the (unintended) fifth Joseph diary entry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Players could lose control of the Kitchen and the Playground moveable objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Unlocked Laboratory door would lock again when leaving the area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Elevator Passage elevator to the Ancient Temple became unusable and displayed a message about insufficient power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Soft lock when pressing the change target input",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Soft lock in the Iron Maiden boss fight when interacting with the boss during stand-up animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Item pick-up interactions in the Iron Maiden boss fight were unresponsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Iron Maiden jumped to downed animation if hit during the roar animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Iron Maiden cutscene would freeze if the inventory was open upon Iron Maiden's defeat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Soft lock in the Harvester boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: An unusable Harpoon could be collected after the Harvester was defeated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Dr Hertz boss entered down stage before all other enemies were defeated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional visuals to Dr Hertz defeat animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Caroline's death animation would be in mid-air when killed by Pighead's grab attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Lighting in Pighead defeated cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The final boss would sometimes stop attacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The final boss could be damaged during its invulnerable stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Game crashed after defeating the final boss while spamming multiple inputs during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked the final boss's animations during the close-up camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Enemies in the South Corridor were unaffected by Nailer shots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Invisible enemies in the Computer Lab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemy behaviour in the Janitor's Room tunnel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Turning off DLC costumes removed the white t-shirt outfit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Keyboard and mouse input rebinding not functioning correctly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed: Aiming issue when changing from controller Type C to keyboard and mouse controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed: 3rd and 4th save slots did not work as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Cryptex interaction soft lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Players could get stuck in the environment after completing the Pharmacy fridge puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: The VHS Tape - Freezer item could be removed from the VHS player in the Conference Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Third reliquary piece could sometimes be blocked by an invisible placeholder item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Reliquary pieces would sometimes disappear when leaving the area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Four Horsemen puzzle interaction soft lock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Four Horsemen puzzle soft lock when closing the interact window quickly after pressing a rotate button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Fuses would sometimes disappear after being placed in the Generator Room fuse board slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Hawk Figurine could not be obtained if the safe in the Other Side was closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Church elevator will sometimes display \"No power\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localisation and Text",
+     "items": [
+      {
+       "text": "Changed the description of Gasoline, Coil Nails, Acid Test Tubes, and Powder and Shot to inform players that these are ammo items (still missing in PT-BR)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: Incorrect text when attempting to combine items with the Shotgun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Typo for Extended Automatic Nailer (EN)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Results screen displayed an incorrect number of enemies killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Typo in Sister Miriam's diary, \"04. Sister Inquisitor\" (EN)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented the missing translation when interacting with the table in the Torture Museum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Text disappeared too quickly on Chapter House door puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: French translation during Crematorium cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect text displayed when examining the Cassette Player for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect interaction text in Upper Wing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect text displayed when examining the Club Key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The credits have been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visuals",
+     "items": [
+      {
+       "text": "Fixed: V-Sync not working as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Enemy death animation would repeat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Ammo count remained in quickslot after weapon shortcut was changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Button layout Type C displayed the wrong button icon when being grabbed by enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Caroline disappeared from cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Lighting issue when interacting with the judas cradle in the Torture Museum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Trench coat outfit would disappear in the Iron Maiden defeated cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Plant Sprayer model incorrect textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Lighting issue in Butcher Shop Cellar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing elevator map icons in Reception",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Slaughter Room door lights would turn off after leaving the room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Cemetery constellation boards obscured by descriptive text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Camera issue in Mass Grave (Other Side)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Computer Lab combination key icon not displayed on the map after interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Girls' Restroom mirror candles obscured by poor lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Apple Seeds reappeared after the Classroom 103 puzzle was completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The brightness has been increased during the bad ending cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: VHS puzzle icons not updating on the map after completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Incorrect Unreal Engine icon on taskbar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed: The shadows audio continued after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Some items contained within breakables objects missing SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented the missing brazen bull SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented the missing blood statue SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the volume of the steam pipe SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Corrected the School Basement elevator interaction SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Classroom 103 teacher breathing SFX continued after completing the puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented the missing Bunker elevator doors SFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Dr Hertz boss fight music would end without looping: Finally we are aware of a number of other issues that we are still investigating and fixing:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known issues",
+     "items": [
+      {
+       "text": "End slate displays the incorrect number of health items used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "End slate displays the incorrect number of saves made",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Caroline's animation can get stuck when using tank controls and switching quickly from running to the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New ammo descriptions for Gasoline, Coil Nails, Acid Test Tubes, and Powder and Shot are missing in PT-BR",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dr Hertz death cutscene plays in 4:3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Examining the Lighter displays no or incorrect description text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Settings cannot be upscaled to 2K and 4K",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reliquary piece models are too bright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elevator alarm SFX continues when game is paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera gets stuck when the cutscene of Caroline entering the Freezer (Past) is skipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players must interact with Joseph twice to get \"02. The Sacred Book of the Nephilim\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Caroline can get stuck in the environment when pushed by enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Joseph's diary 04, \"04. The Evil Spell\", can be picked up in both the Playground and the Train Station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Isabella's diary 03, \"03. Children are Disappearing\", can be picked up in both Classroom 103 and Arcade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Incorrect icon display for upgraded Shotgun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghost enemies can get stuck on Caroline when attacking simultaneously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shotgun displays incorrect inventory icon when second additional barrel is combined without first additional barrel: As there are so many fixes included in this patch, we have created a new bug reporting and feedback thread which you can find here: https://steamcommunity.com/app/2464280/discussions/0/663845090710682252/: Thanks for being so understanding as we work through our backlog. We hope that this latest patch will deliver a better experience for everyone and we’ll continue to work on improving Tormented Souls 2 and delivering more fixes in the next patch.: Dual Effect & PQube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 76,
+    "balance": 1,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1815580768387726"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-10T11:04:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.468Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-10T11:04:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.468Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-10T11:04:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.397Z"
+  },
+  {
+   "id": "tormented-souls-ii-262678@1.0.2",
+   "gameId": "tormented-souls-ii-262678",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-04T15:15:55.000Z",
+   "notes": [
+    {
+     "title": "Hi all!",
+     "items": [
+      {
+       "text": "We’re just checking in to give you a quick update on the Steam demo version of Tormented Souls 2. Since launching a few weeks back over 27,000 players have now experienced this special demo edition, which is truly staggering! Naturally with so many of you playing, we’ve received A LOT of feedback which we have been reviewing and discussing as a team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we’re releasing the 1.0.2 patch for the demo which addresses several of the bigger pain points that the community has raised, please read on for a full list of what we have changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Added Type C control scheme.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Anna's character model.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased radius size of interaction points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the animation of the lighter being equipped when coming off a ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with physics on the elevator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several fixes to facial animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved melee weapon system on breakable objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed collision from breakable objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added breakables on staircase at Belltower to decrease backtracking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new hint for the Cryptex puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated cable colour for electrical panel in Prison",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Redesigned puzzle for electrical panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the ability to pick up the electrical panel puzzle hint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added zoom in/out feature on Map for Controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance throughout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where occasionally players would get into a softlock when dashing with Hammer and switching instantly to the Nailer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Cryptex puzzle where the mesh would separate from the puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players will be stuck in auto aiming when switching from the Lighter to the Nailer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with corrupted map in Jailer room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could attack an enemy before the jump scare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the shortcut menu will not work when coming off a ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when loading auto save in Basement and then entering South Corridor 1F",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with FPS dropping when opening the Map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for all the feedback and support, we’ll endeavour to address as much as possible before the final release this year, and we’ll be back with more updates over the coming months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dual Effect and PQube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Added Type C control scheme.",
+     "Improved Anna's character model.",
+     "Increased radius size of interaction points."
+    ]
+   },
+   "sourceIds": [
+    "steam-2464280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2464280/view/1803527891772529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-04T15:15:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2464280",
+      "checkedAt": "2026-11-13T03:34:28.466Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:23.394Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "d9c2702a9a42",
+   "text": "End slate displays the incorrect number of health items used",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "7ab8db57ff15",
+   "text": "End slate displays the incorrect number of saves made",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "81ee407c5fe4",
+   "text": "Caroline's animation can get stuck when using tank controls and switching quickly from running to the inventory",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "75b7b62aad27",
+   "text": "New ammo descriptions for Gasoline, Coil Nails, Acid Test Tubes, and Powder and Shot are missing in PT-BR",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "42552dbed6c8",
+   "text": "Dr Hertz death cutscene plays in 4:3",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "1cc7a3d06022",
+   "text": "Examining the Lighter displays no or incorrect description text",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "a847359bb7ff",
+   "text": "Settings cannot be upscaled to 2K and 4K",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "5935dcaf0b9b",
+   "text": "Reliquary piece models are too bright",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "65069c1125ec",
+   "text": "Elevator alarm SFX continues when game is paused",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "d76480ec56c5",
+   "text": "Camera gets stuck when the cutscene of Caroline entering the Freezer (Past) is skipped",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "30954f0101a9",
+   "text": "Players must interact with Joseph twice to get \"02. The Sacred Book of the Nephilim\"",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "9b7fe366a261",
+   "text": "Caroline can get stuck in the environment when pushed by enemies",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "a27f6d5217c0",
+   "text": "Joseph's diary 04, \"04. The Evil Spell\", can be picked up in both the Playground and the Train Station",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "7fbd34fd57a3",
+   "text": "Isabella's diary 03, \"03. Children are Disappearing\", can be picked up in both Classroom 103 and Arcade",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "52f415608fe1",
+   "text": "Incorrect icon display for upgraded Shotgun",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "45a679edd22c",
+   "text": "Ghost enemies can get stuck on Caroline when attacking simultaneously",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2"
+  },
+  {
+   "id": "b4d95abaddaa",
+   "text": "Shotgun displays incorrect inventory icon when second additional barrel is combined without first additional barrel: As there are so many fixes included in this patch, we have created a new bug reporting and feedback thread which you can find here: https://steamcommunity.com/app/2464280/discussions/0/663845090710682252/: Thanks for being so understanding as we work through our backlog. We hope that this latest patch will deliver a better experience for everyone and we’ll continue to work on improving Tormented Souls 2 and delivering more fixes in the next patch.: Dual Effect & PQube",
+   "status": "addressed",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.2",
+   "addressedBy": "tormented-souls-ii-262678@major-2026-02-12",
+   "addressedAt": "2026-02-12T13:08:18.000Z"
+  },
+  {
+   "id": "d7efa2dd4e77",
+   "text": "A black screen will sometimes appear when transitioning from the Commercial District to the Train Station.",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.4"
+  },
+  {
+   "id": "5b665fc78dbd",
+   "text": "Sometimes the rubber hose will not respawn if the player fails to correctly solve the elevator puzzle in the Church.: Once again we have created a new community feedback thread for this patch: https://steamcommunity.com/app/2464280/discussions/0/678482693017645783/: Dual Effect & PQube",
+   "status": "addressed",
+   "firstReleaseId": "tormented-souls-ii-262678@1.3.4",
+   "addressedBy": "tormented-souls-ii-262678@major-2026-02-12",
+   "addressedAt": "2026-02-12T13:08:18.000Z"
+  },
+  {
+   "id": "79f7b17e0bf7",
+   "text": "There is stutter during transition to the Harvester introduction cutscene.",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.5.0.17"
+  },
+  {
+   "id": "dba38e79c726",
+   "text": "Tank controls can cause movement stutter when exiting inventory quickly.",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.5.0.17"
+  },
+  {
+   "id": "ac5689e0275f",
+   "text": "Dual Effect & PQube",
+   "status": "open",
+   "firstReleaseId": "tormented-souls-ii-262678@1.5.0.17"
+  }
+ ]
+}

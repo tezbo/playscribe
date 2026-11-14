@@ -1,0 +1,1682 @@
+{
+ "game": {
+  "id": "war-hospital-145074",
+  "igdbId": 145074,
+  "name": "War Hospital",
+  "cover": {
+   "imageId": "co77mr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co77mr.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arx2y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arx2y.jpg"
+  },
+  "ps5Release": "2024-01-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "war-hospital-145074@8",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-15T14:58:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New update is coming today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed descriptions of top-left-hand shortcuts being cut off on ultrawide resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed main menu softlock which could occur, if a player paused the game with the time-speed dial, entered the Scout Tent, then left the game to the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ultrawide resolution will no longer stretch loading screen graphics and videos and instead was outfitted with a black overlay on the sides of the screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved title stability over longer play sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced RAM usage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The War Hospital Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/6474562312195991656"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-15T14:58:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-15T14:58:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.139Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-15T14:58:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.086Z"
+  },
+  {
+   "id": "war-hospital-145074@7",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-03T13:35:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "War Hospital is now available for 3 months, and we love seeing you play and sharing your saves with us! The devs are Brave Lamb Studio worked very hard and delivered today a new patch, including many feedbacks you gave us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Code",
+     "items": [
+      {
+       "text": "Fixed worker slots' collision area extending above them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "VIPs waiting for player's decision if they should be added to work are no longer counted against workers with an assignment when selecting Staff Lodging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Canteen tutorial sometimes not showing if the player saved and loaded the game before it should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reshaped paths for vehicles to prevent temporary jams caused by civilians stopping on a sidewalk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patients who die when in the trenches waiting to be carried for too long now show a communicate that they died in transit (previously they died quietly and player lost morale without being informed)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bugged actors that were spawned in the Infinity or position 0,0,0 to spawn correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scouts ordered after previous team was killed sometimes being stuck on train station if the timing was correct",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a sequence break that happened after the previous chapter was ended when in a Kitchen UI (rare occurrence)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Canteen UI sometimes bugging out with certain VIPs or refugees being accepted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash that occurred when the game language was set to Japanese, Chinese, or Korean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game Design",
+     "items": [
+      {
+       "text": "Chapter 2's Witch Doctor quest now properly unlocks Depot or Looting Location on the map, depending on player's choice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The \"Cause a Full Belly Is a Righteous Belly!\" achievement is now properly serialized and does not need to be completed in one sitting to unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where VIP civilians in the Rehabilitation Tent when the Plague event started could become sick, potentially locking one doctor's bed by having the doctor stay in a loop of waiting for the patient that the medics will never carry (while the operation is marked to start)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the communicate that shows when no medics are working on cemetery counting medics in transit with a corpse while assigned to the cemetery, to be ignored and therefore showing the communicate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Fixed the Enter Scout Tent button for Mouse controls in the top left corner not showing properly at the very start of Chapters 2 and 3",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "(PC ONLY) Fixed mouse detection size of a mission entry when previewing scout squad within the Scout Tent to be of correct size (it was slightly too big, covering detection of the mission above)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the \"Preview teams\" button in Scout Tent not doing anything on Gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Arts",
+     "items": [
+      {
+       "text": "Fixed soldiers carrying boxes in trenches sometimes having wrong animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented various fixes to Simplified Chinese translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed text clipping in French and German for various special HQ tasks the player can send workers on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text clipping in French Save UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the size of in-game tooltips for added readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The War Hospital Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/5756237364304539149"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-03T13:35:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-03T13:35:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.139Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-03T13:35:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.085Z"
+  },
+  {
+   "id": "war-hospital-145074@6",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-01T16:04:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New patch is major is actually being pushed right now on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In fact, it corrects the saves problems as well as the various specific problems that prevented players from completing certain missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Code",
+     "items": [
+      {
+       "text": "• Fixed GOG builds not registering some achievements properly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Fixed a rare occurence in which a scout team could not be awarded resources a quest promised them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a save made when an operation emergency is waiting for player's reaction potentially breaking after load when continuously doing the save-load loop in the same gameplay session",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a crash that could occur if a player loaded a game in which a truck comes back with resources from some location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a number of errors that could cause a savestate to be loaded improperly and show the loading screen overlaying the gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a rare instance of workers potentially stuck on custom missions once they are complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a small number of niche old issues that could linker in some savestates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Design",
+     "items": [
+      {
+       "text": "• East Asian fonts made approx. 25% bigger in most places to improve readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed UI toggle shortcuts being available when in decision views (like Operation Emergency) which could lead to decisions being made accidentally by the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed UI toggle shortcuts being available when inside CCS, Rehabilitation Tent or Scout Tent (it caused unintended behaviour)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed doctor's rest marker resetting on its own if the doctor was not tired at all when the marker was being set",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed VIP medic brothers potentially breaking ordering of new medics from HQ after a save/load loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• \"Not enough medicine\" info no longer overrides info on how long a doctor will be resting, when set to rest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fix for wrong option description appearing in Worries About the Daughter Scout Quest in chatper 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a potential bugged Worker Level Up option that could be available if the worker was part of a special event - like a nurse being mentored by Head Nurse Janet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Combat power of a wounded patient is now visible in their card checked during operation event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Patient's face is now shown correctly in the operation event patient card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Slight improvements to workers' names' readability in the assignment UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed inspection of the Patients in the CCS showing erroneous info before entering Rehabilitation Tent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed the Enter Scout Tent button for Mouse controls in the top left corner not showing properly at the very start of Chapters 2 and 3",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Art",
+     "items": [
+      {
+       "text": "• Fixed humans' animations sometimes not changing to correct ones when they were out of the screen for some time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The War Hospital Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/5688680204374223880"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-01T16:04:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-01T16:04:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.138Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-01T16:04:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.085Z"
+  },
+  {
+   "id": "war-hospital-145074@5",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-27T15:56:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New patch is coming today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a possible temporary lock of a doctor's working state if they were forced to rest while at full energy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scouts killed on missions are now properly dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the player could lock themselves from turning off a Tutorial prompt if they accessed it while getting a task from HQ when playing on a controller and switching to KB/M configuration before turning the windows off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading a game saved during combat cutscene processing the combat as if the player had not enough defenders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed starting chapter 2 or 3 when having the Advance Dressing Station's ambulance garrage upgraded sometimes causing locks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the CONTINUE button not showing if it led to Chapter 2 or 3 save, only fixing after entering LOAD ui and back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few potential block of medics' tasks that were a result of an older bug no longer present in current versions, which could bleed out onto newer ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Release From Duty box potentially breaking progression and requiring restart if the user put enough soldiers there to yield +30% or more morale gain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed social reaction dialogues preventing player from activating level-up for characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Design",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the morale gain preview in the Release From Duty box when at +20% and over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some clipping assets around the Watermill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The War Hospital Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/5728086065200555223"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-27T15:56:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.137Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-27T15:56:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.137Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-27T15:56:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.084Z"
+  },
+  {
+   "id": "war-hospital-145074@4",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-12T16:27:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New patch is coming today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a potential memory leak that could bug out a truck on the scout map after taking certain steps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed memory leak that could happen upon losing the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Load Game UI invoked after losing is no longer windowed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A truck which was cancelled now properly can be assigned again onto a depot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Set Default\" button to Options UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed ADS ambulances sometimes not driving off to CCS after being given 2 wounded to carry: The War Hospital Team: https://store.steampowered.com/app/1553000/War_Hospital/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/5589599109280294760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-12T16:27:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.136Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-12T16:27:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.136Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-12T16:27:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.083Z"
+  },
+  {
+   "id": "war-hospital-145074@3",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-01T16:13:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope all is going well on the Front, we need reinforcements and that's why we're sending you a new trainload of merchandise... sorry, fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technique",
+     "items": [
+      {
+       "text": "Added autosave feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added shortcuts for all buttons that are present in the top left corner of the screen (the same ones that are accessible via the gamepad's shoulder buttons). These shortcuts are also bindable in the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added binding in the menu to the following keyboard controls: camera panning, camera rotation, pausing, changing game's speed, skipping dialogue/cinematics",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Saving when a task window is visible (gamepad only) no longer leads to sequence break on load (this is not retroactive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare memory leak that would cause the IGM to be unresponsive after a Chapter was complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Game Design",
+     "items": [
+      {
+       "text": "Fixed an issue where the soldier's value markers were empty at the end of the rehabilitation process if the process was very quick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resources are no longer truncated when loading with more than basic Warehouse capacity after upgrading the warhouse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed workers carrying wounded or items from train sometimes blocking and possibly impacting performance (this is not retroactive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing food depot in Chapter 2 Scout Quest \"Family Matters Are Never Simple\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bottom rehabilitation tent cards not scrolling up on their own after being moved and sometimes potentially blocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Amputated german captives no longer invisible in the rehabilitation tent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "German Captives' patient cards no longer hide their surname after loading the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed workers sent onto special tasks at the end of the chapter blocking when progressing to the next",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated splines for ADS ambulances to prevent collisions when one vehicle leaves the garrage while the other approaches it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nurses assignment to the Hospital wards now is correctly capped at the amount that can work there. The cap has been fixed to behave correctly with upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing wounded on Mine Explosion in Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Priority to carry wounded from ADS to ambulance is now higher than to carry wounded from trenches to ADS as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrades with unmet requirements now state these requirements in the description (for clarity, mostly for the Truck Garrage which requires a Scout Tent, both in different tabs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed misc events like the construction of the Memorial Stone breaking the game's progress in various ways (like locking combat from happening or the whole Chapter from finishing) (this won't be retroactive in most cases)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Older saves with a quest for X-Ray that have the upgrade locked for some reason now have that upgreade specifically unlocked (no need to use the \"Turn off tutorials\" workaround)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scout teams can no longer be sent back to hospital when they are on an active mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Problematic spaces where staff could get stuck in certain situations were excluded from navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The War Hospital Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/5582843074941241451"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-01T16:13:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.136Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-01T16:13:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.136Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-01T16:13:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.083Z"
+  },
+  {
+   "id": "war-hospital-145074@2",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-18T16:27:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "War Hospital has now been available for a week, and once again we'd like to thank you for your many messages of support and patience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We love seeing you play the game, and it's a pleasure to read your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update is now available on PC (it should also be submitted on consoles shortly).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Design",
+     "items": [
+      {
+       "text": "Fix for supplies not arriving after Train Derailment in Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed popups sometimes calling invalid, unresponsive windows that caused blocking of player's progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with VIP workers that were denied working within the Hospital which would stay in when progressing to the next chapter, possibly taking other worker's place and causing performance issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Digging the tunnel: Work in the dark quest appearing 2 times in a row",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "medics will no longer ignore wounded/dead people in rehabilitation tents (that could've gotten there due to other soldier's traumatic breakdowns)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalancing of improvements construction times and costs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decreased cost of hiring new units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased the amount of Morale lost when a patient dies being denied operation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "fixed ambulances sometimes not driving away after wounded have been taken from them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a corner case in which some upgrades of buildings might not expel people passing by them, effectively blocking them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed most cemetery entries stating that a patient died in transport when in fact, it could've been not so (this is not retroactive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tooltips show up after hovering for 0.4s instead of 2s like before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed Engineers with production cost reduction gained via a positive trait stacking incorrectly with a production cost reduction upgrade of their workstation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Technique",
+     "items": [
+      {
+       "text": "general optimization improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed font issues that happened after saving when using Asian languages and then loading and changing the language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "16:10 resolution should be visible in the settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a critical error that could cause trucks traveling to points on the Scouting Map to break the game upon loading another save, requiring a restart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed an issue with \"ghost ambulances\" (ones that would just stand in the way and block the road) that could spawn after the player loaded the game after turning it off and on again (this is not retroactive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some bloated saves not loading properly (and hopefully not bloating anymore)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loading a game with tutorials OFF after changing them in the Main Menu to ON, potentially disallowing the player from interacting with buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some bugged load states not loading properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed VIP patients that died showing with a white rectangle for a face when viewed in the cemetery UI after loading the game (this is not retroactive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for black screen appearing after Arillery Attack during Digging Mine in Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed workers assigned to the same task as a worker with a trait affecting others (such as \"Extraverted\") potentially crashing the game when assigned to Upgrade tasks or special story tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Art",
+     "items": [
+      {
+       "text": "Removed barrels clipping with a wall in the 1st tier of Engineering Depot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "fixed VIP German soldier patient having his job not localized in the cemetery UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The War Hospital Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 2,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/5510784213098395222"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-18T16:27:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.135Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-18T16:27:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.135Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-18T16:27:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.082Z"
+  },
+  {
+   "id": "war-hospital-145074@1",
+   "gameId": "war-hospital-145074",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-12T16:42:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Major,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we'd like to thank you. So many of you have bought War Hospital, after many months of patience and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for all your feedback. A first patch is arriving today, and we'll be continuing to work on the futures patches over the next few weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the changelog",
+     "items": [
+      {
+       "text": "Returning from any main menu view back to the base view with gamepad no longer turns off the game (ref: https://steamcommunity.com/app/1553000/discussions/0/5829413348543354306/)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "21:9 visible in options again",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Old saves done before release should not be broken now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various visual fixes to units moving in columns/lines on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Medic teams will now not desynchronise their shifts upon load effectively blocking themselves from working at all",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The columns of soldiers with vehicles will no longer negatively impact saving when they are on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soldiers' rank in the Rehabilitation Tent no longer shows an additional 1 or 2 black marks for unobtainable rank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HQ task UI will no longer popup when a tutorial window is visible causing a sequence block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial windows that keep showing up will stop up to after third occurence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple minor fixes to the english lockit - mainly missing \"on\" in \"operate on patients\" phrases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eng Localization Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any new bugs, please let us know at this e-mail address \"support@war-hospital.zendesk.com\", and include as much information as possible:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your PC configuration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screenshots / videos of the bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your save (found here: C:\\Users\\\\AppData\\LocalLow\\Brave Lamb Studio\\War Hospital\\Steam\\)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The War Hospital Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "War Hospital is available now on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Join-us",
+     "items": [
+      {
+       "text": "War Hospital on X/Twitter War Hospital on Facebook War Hospital on Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1553000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1553000/view/6300039510123899913"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-12T16:42:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.134Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-12T16:42:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1553000",
+      "checkedAt": "2026-11-13T03:35:41.134Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-12T16:42:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.081Z"
+  }
+ ],
+ "issues": []
+}

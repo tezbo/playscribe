@@ -1,0 +1,4520 @@
+{
+ "game": {
+  "id": "worship-144971",
+  "igdbId": 144971,
+  "name": "Worship",
+  "cover": {
+   "imageId": "co2vzc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2vzc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar44kv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar44kv.jpg"
+  },
+  "ps5Release": "2026-11-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "worship-144971@post-2026-11-04",
+   "gameId": "worship-144971",
+   "displayName": "Steam Cloud temporarily disabled until tomorrow",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-11-04T23:03:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/3721f567461a6b21db540f85ae7cd494021e98f2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players have reported their progression being deleted when switching to another device.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We think we found the root of the issue and we should be able to push a hotfix tomorrow morning to fix this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until this is fixed, we've temporarily disabled Steam Cloud sync from Worship to prevent progress loss on your save file. We'll let you know once this is back! Until then, we suggest you only play on one device.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Sorry for the inconvenience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1848557880481140"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T23:03:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.562Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T23:03:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.562Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-04T23:03:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.721Z"
+  },
+  {
+   "id": "worship-144971@14",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 14",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-01T23:00:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/f80dd3add0a9a890e87de7bf6d963602326e9f1a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Following the Quality of Life update we’ve launched last month, we’re launching a small update to fix a handful of annoying bugs we had in the latest version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "fixed a bug where the same module could be there twice in the same run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where liftable item would be soft locked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a Bug where the health bar would not show up all the time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where removed rituals would come back after saving and reloading a game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug with recall while swarming follower stuck on liftable object",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed a bug where grabbing dead followers could mess up the total follower count",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made sure the fonts where the right size on steam deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We have a bunch of minor bugs and feedback polishing tasks we're going to include in the next major update for Worship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The team is mainly focused on additional content for the next major update of Worship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for play Worship, fellow cultists!",
+     "items": [
+      {
+       "text": "[p align=\"start\"]That's all for today! Somewhere in May, we will be sharing important news regarding the next steps of Worship and the full release of the game planned for later this year. Stay tuned for more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As usual, if you encounter a bug while playing Worship, please let us know via the bug report form, the Steam forums or the Chasing Rats Games discord server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1828894815556062"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-01T23:00:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.561Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.720Z"
+  },
+  {
+   "id": "worship-144971@major-2026-03-03",
+   "gameId": "worship-144971",
+   "displayName": "QoL improvement update for Worship",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-03T23:09:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/f0a6f7efd3a685949f81dfb2ab8dd28378b16cab.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Praise the Old Gods, an update for Worship is coming today!",
+     "items": [
+      {
+       "text": "With a couple days late of our roadmap schedule, we’re happy to release the Quality of Life update for Worship on Steam today!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This post is here to highlight the newest features we’ve included in Worship to make your life easier, list the bugs we’ve fixed and give you bits and pieces on the content we’re also working on for the next updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Input Rebinds",
+     "items": [
+      {
+       "text": "A popular request we got from players since the early access launch was the ability to rebind actions to different inputs. The wait is finally over, you will now be able to change your controls on keyboard & mouse and on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You’ll find the input rebind menu in the Options of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/1ac50524d5eda688a1be68092faf6d103145071f.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Better resolution support",
+     "items": [
+      {
+       "text": "Since launch, we had some restrictions on the proper support for different resolutions and aspect ratio, including widescreen support. This update now fixes these issues and you can now enjoy Worship on your wide monitors and with the right aspect ratio on Steam Deck!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As for every piece of content, features or changes we add to Worship during the early access development, we might have missed something. If you notice anything weird on the way Worship looks on your monitor, please let us know on the Steam forums or directly on Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wind shader",
+     "items": [
+      {
+       "text": "Speaking of how Worship looks, we had a wind effect for the trees and grass on the back burner for years now. The Quality of Life update launching today also includes these new visual effects to elevate the various devastated warzones meditative environments of Worship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/02488a8b8668df82a9825f38e253290159828cc8.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skippable cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Okay to be fair we mainly did this one to make our lives easier rather than it being requested by the community, but we’ve added the option to skip Test of Faith cutscenes if you want to immediately jump into the action. After seeing these cutscenes for the thousandth of times, we figured that introducing this feature would be well worth the time (even though the hand drawn animation still slaps).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, nothing adds more quality of life to a game session than not encountering bugs, so a lot of our time for this update was focused on fixing bugs in Worship. Here’s a list of the most significant issues that we fixed in the latest update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Followers will not start attacking bells and other random buildings after destroying a reward chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Relics will spawn the correct amount of Followers when banked after reloading a game more than once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the thorn brambles were not applying damage properly during the second Test of Faith",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple collider issues related to flexible content in the world generation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple art assets floating in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The sculpting block encounter will always sculpt the god currently being worshipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upon reloading a save file, the completed encounters are now more representative of the completed stage in game and on the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked and made some changes on the the flip turtle encounter so it is more reliable and easier to complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Summons will no longer become invincible and non-functional after disengaging enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Recall will no longer get stuck in loop when playing with controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a multitude of level art assets not dissolving when the cultist is standing behind them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some grammatical errors in tutorial and ability descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some audio issues in the City part of the Shattered Plateau",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer kill the cultist by using the cantrip ability with a damage amplifier upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies will no longer randomly get stuck in idle animations when disengaging combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the Sealing completion of the Sealed Titan encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple issues causing the Cultist to jump in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing the cultist get stuck in the grabbing animation with no followers in hands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some visual issues with the blood absorb VFX on drinkables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blood absorption is now more reactive and responsive than before, making it a lot easier to quickly absorb blood spots or erase a small portion of a blood symbol",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue related to save files and tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dark modes now apply to all in-game UIs uniformly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lore interactible in horror lair no longer spawn a second time after completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed frogs allies erratic behaviour due to mishandled obstacle avoidance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mirror utility building not rewarding devotion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted huge delay before game over screen appeared after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed enemy animation sometime being accelerated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bell being able to be inflicted status effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some spells being unable to damage grim monolith",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Cardinal NPC sometimes being targeted by followers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with utility building socket in upgrade UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with sealed titan sometimes playing its sealed animation twice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issues we are currently working on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here’s the list of the issues we’re currently working on. Most of them are difficult to reproduce and we’ve tried some trouble to properly find steps to reproduce them. If anyone encounters them during their playthrough, please let us know through the bug report form or on the Steam discussion boards:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've stumbled on a bug where your \"following\" follower count is higher than the total amount of followers. We have yet to find a reliable way to reproduce this and we've observe this can make some objects impossible to interact with. If you encounter this bug, a save and reload should fix the problem until we find a fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During combat, the object lifted by a follower can fall at the follower’s feet, being dragged on the ground, hiding the followers behind it. We’ve tried a bunch of different fixes for this issue, but we’ve been seeing it again from time to time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've still encountered a few times where an object can no longer be lifted by followers if they get knock down when they are trying to lift the object and waiting for another followers to join them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ritual shapes recognition sometimes doesn't register right, more specifically with the Tribute and the Summon Goopling ritual shapes. Erasing part or all the ritual shape should fix the issue until we introduce a more relevant solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies sometimes don’t have their health bar appearing over their head when fighting. We had a lot of improvement with this issue, but it can still happens on enemies fighting other factions when loaded into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These issues are all somewhat annoying but also difficult to reproduce. Since most of them do not completely ruin the player experience, we've decided shipping the update and push a hot fix patch once we get more information on these bugs would be an adequate plan of action for the moment. Considering most of these bugs are related to core system of Worship, such as followers and rituals, finding \"quick fix\" often means introducing new bugs, but all of those issues have potential solution we will be trying in the next few days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What’s next",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside the Quality of Life improvement update, most of our team have been working on new content and features for future updates. As you may have seen in our previous posts, we’re currently working on a new zone to add to the gameplay loop and, as you know, each zone includes a Test of Faith to complete. Also, we’ve been working on new enemies, new upgrades, God variants and new encounters to add to your future runs. In the coming weeks, expect some news from us regarding our plans for the launch of Worship 1.0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another thing we’re actively working on is to rethink some of our gameplay systems based on feedback and observations we made during playtests. Developing with the full release in mind, we want to make sure we give ourselves the tools to balance Worship and make it a stimulating experience with different strategies viable. At the moment, we’re looking at the power levels of Followers and the commitment of casting rituals during combat. We’re currently testing different iterations on those systems to see if we find something that gives us relevant tools for game balance in the long run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expect news from us in the next few weeks, until then, stay safe out there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 19,
+    "balance": 1,
+    "other": 35,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1826362059915315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-03T23:09:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.560Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.719Z"
+  },
+  {
+   "id": "worship-144971@13",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 13",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-05T21:40:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/a8be5f6437a175fa605b731e855424215f7b032a.png\"]Lucky number 13!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This hotfix should take care of most of the big irritants still in the game, If you spot anything else acting up, please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue with dark mode not working properly;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with banking in tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the cultist would get stuck in the throw animation, preventing them from doing anything;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with assets on the ground and their colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kessessa's utility building would not properly save its progress;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where followers would sometimes die before the cultist got hit;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the sculpting block not properly saving itself upon using 'save and quit';",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game now autosaves upon arriving in the 2nd zone;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Catalysts and relics your followers are carrying are now saved;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some animation timings with ritual charges and when offering relics;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with the throwing animation;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with some UI objects not rendering in the right color;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some missing lines in Indonesian;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "Some cultist animations might play improperly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're looking into making the game playable in more aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for your patience fellow cultists!",
+     "items": [
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on Worship's store page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1815580768240224"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-05T21:40:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.559Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.717Z"
+  },
+  {
+   "id": "worship-144971@12",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 12",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-28T22:03:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/abec1ab88c3244d6e9370a79ad5bf84b1c894c8e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still in the trenches ceremonial grounds, squishing bugs following the update's launch. Expect at least another hotfix in the next couple of day to get rid of the remaining bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue that could softlock your run if you save and quit after killing the boss, but before making the tribute rites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lifted object sometimes being dropped/socketed before reaching the socket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed game resolution booting in 16:10 aspect ratio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to changes options that aren't sliders in the option menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed god communion background issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with tutorial and save system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some dialogues during phase 2 with Kessessa playing the wrong texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sculptor being duplicated during phase 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We are aware of an issue than can block the throw in a weird state until you press recall button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some cultist animations might play improperly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at ways to make the save and quit also keep track of any catalyst and relics your followers are carrying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We want to make Kessessa's building keep track of its progression in between test of faith and when you save and quit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for your patience fellow cultists!",
+     "items": [
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on Worship's store page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1814309641619970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-28T22:03:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.558Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.717Z"
+  },
+  {
+   "id": "worship-144971@11",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 11",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-27T22:59:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/2515e8cdaeae30dd7e91989641f2a874b38a4ad8.png\"]With the Awakening of Kessessa update that just launched, we have a few fixes to deliver today! We still have a couple of other bugs that we want to get rid of in the next few days so expect another hotfix patch sooner than later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Getting hit while using a channeled ritual now doesn't get the cultist stuck in channelling animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed upgrade unlocked UI pop-up showing the wrong catalyst type color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the treasure trove (boulder, clam and skull) spawning reward at the wrong place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the cult base menu that wasn't displaying the correct building in your cult base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the god selection screen navigation on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shcrub attack hitbox sometimes not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ulmira could be duplicated in the sacrifice cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual feedback when followers are given to the cult following a relic offering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some texts and missing translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We are aware of an issue than can block the throw in a weird state until you press recall button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have a few issues with UI, notably one that makes the game run in unsupported (yet) resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some cultist animations might play improperly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at ways to make the save and quit also keep track of any catalyst and relics your followers are carrying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We want to make Kessessa's building keep track of its progression in between test of faith and when you save and quit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for your patience fellow cultists!",
+     "items": [
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on Worship's store page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 14,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1814309641584227"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T22:59:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.558Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.716Z"
+  },
+  {
+   "id": "worship-144971@major-2025-10-27",
+   "gameId": "worship-144971",
+   "displayName": "The Awakening of Kessessa - Content Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-27T17:04:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It is now spooky season and we are here to provide you with an update about everything regarding Worship right as Halloween is around the corner! We hope you’reready for it because it’s quite a big one. Let’s jump straight into it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New God to Worship",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/2b656cd7016ae4bfff5e8dce99eb2e23702d7d2e.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It is out of the bag now! Kessessa is officially making her way to Worship with a brand new kit for you and your cult. Assist her in her never-ending pursuit for knowledge and be rewarded in kind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You’ll unlock Kessessa after having proven your abilities to her.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gods identity improvements",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/d1d5f368331e0590d147d0b00387bc36a1c23714.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The gods you can serve in Worship already have a strong identity, through their imposing visuals, unique music and soundscape, goals, dialogues and more. That said, a lot of players have been vocal about wanting more gameplay elements to differentiate your worshipped god and we agreed with that sentiment. To add to the gameplay experience each gods offers through their starting upgrades, ritual and unique building, we’ve now added the following features for each god in the game to make your worshipping experience feel more unique.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pledging your faith to a god now comes with its unique cantrip. A basic spell you can cast with blood directly from your reserves, instead of drawing on the ground,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The benefits provided by worshipping a god are now unique to that deity. You can no longer acquire the blessing and rituals of the gods you do not serve through catalyst during your runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We added even more unique visuals elements for worshipping each gods: the devotion bar, the blood reserve and game-over screen are now themed to the god you serve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In rapid fire, the section below goes over what each god’s kits entail. Skip ahead if you don’t want spoilers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "An-Ansgaidh",
+     "items": [
+      {
+       "text": "Passive Ability: Mercy killing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apostles of An-Ansgaidh are rewarded for their acts of mercy, notably freeing mortals from their painful existence. Offering corpses as tribute gives some blood back to cultists.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cantrip: Blood Dart",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Casting your basic spell will send forth a piercing dart made of your own blood. This spell can travel a small distance before dissipating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting Ritual: Ghastly Claws",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the same vein (ha) as the Blood Dart, Ghastly Claws are imitations of An Ansgaidh’s own clawed hands. Sending them forth will tear both foes and destructible objects from a distance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cult Building: Sculptor Workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A talented sculptor made his home inside your cult base. Bring him catalysts and receive relics in An-Ansgaidh’s image in exchange. These will please your god greatly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hubryus",
+     "items": [
+      {
+       "text": "Passive Ability: Embrace Madness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Worshippers of Hubryus willingly discard their sanity to devote themselves to the art of rituals. Your cultist has a bigger starting health pool for drawing rites, but takes more damage from enemy attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cantrip: Chaos Warp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your basic spell warps the targeted area, damaging foes and healing allies within it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting Ritual: Summon Goopling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Summon a Goopling from the Unseen Depths to fight for your cult.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cult Building: Hubryus' Mutation Hatchery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can sacrifice your own followers and fuse them in death to summon Folhorrors allies to fight battles for you. These hulking masses of flesh are forces to be reckoned with in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Content - Kessessa",
+     "items": [
+      {
+       "text": "Passive Ability: Knowledge is Power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Kessessa faithful are empowered by the artifacts they study for their goddess. Each relic carried by your followers increases movement speed and cantrip damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW Cantrip: Cosmic Tear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This spell unleashes a dimensional tear at enemies when cast. This hits at close range, and its range and damage and effects can be upgraded with the Cosmic Attuner. Has a low blood cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgrade 1: Area of Effect and damage increases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgrade 2: Damage increases and now applies the crystalized status effect to enemies it hits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgrade 3 (will only be accessible when the third zone is introduced to the game): now breaks shields and deal more damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW Starting Ritual: Knowledge Mine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This ritual summons a lore sentry that waits for enemies to enter its range. It will detonate, unleashing a devastating and overwhelming mental attack onto your cult’s foes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NEW Cult Building: Cosmic Attuner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This contraption in your cult base harnesses science and magic to exchange relics of knowledge for a gradually evolving mastery of your Cosmic Tear cantrip. While worshipping Kessessa, you can obtain special relics that are worth multiple relics when offered to the Cosmic Attuner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Encounter",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/b9ad8395a50ea7ecc1748dcdfecd8d4008c8c840.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your cult is not alone in the pursuit of the Dark Arts. You might now stumble upon a fellow cultist who requires help in completing an ancient rite. Surely, nothing wrong will come out of it if you help them… Yes? Right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Test of Faith Sacrifice and Rewards",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/0dcc636d3382544009b3e628a9b4f981a20750f4.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first and most difficult part of completing a Test of Faith is slaying the ones who oppose your cult. The newly introduced second part is the most easy one. You must now draw the rites and use the corpse of a powerful foe as a vessel to expand your god influence into the Mortal realm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And your god will be sure to reward you plentifully.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Building Types",
+     "items": [
+      {
+       "text": "As a reward for your faith, your god will bestow you an additional building that will help you in your dark endeavors. In addition to your cult expanding its base, you will now receive one of these two buildings after completing your Test of Faith:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blood Factory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Summoning Mirror",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We will leave you the joy of discovering and playing around with them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As we get closer to the 1.0 version of Worship, we intent to add more of these building into the Test of Faith reward pool. We look forward to the variety this will add to your runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Improved Save System",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/44a597a73476744d46ca25628b537991dab6c273.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This was a highly requested feature by players on Steam. While we had an autosave feature between phases, players requested a way to be able to save anytime during their run. We’re happy to say we worked hard to bring this much needed improvement as part of this update!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Whenever you need to take a break, you’ll be able to save and quit the game. The game will then remember how many followers you had, which encounters you did previously, as well as keep all your unlocked upgrades. Neat!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Status effects afflicting the player are now displayed in the UI above the blood reserve, with their remaining duration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Huntress' Powershot ability now displays a visual indicator telling you where it will land.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When casting a cantrip, the cultist now turn themselves in the aimed attack's direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay objects now should never be spawn in unwalkable areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved impact visual feedback when throwing followers on enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes and Optimization",
+     "items": [
+      {
+       "text": "Follower lifting objects now have the same speed as their cult leader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hitboxes for enemies in the second Test of Faith",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upgrades existing in other starting kits are now ignored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with banking multiple relics at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with god selection UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple issues when alt+tabbing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing visual feedbacks in Hubryus' Cult Base when ready to depart for a Test of Faith",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed death animation not playing when dying while channeling a ritual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While fighting the Painter's guards, you can no longer talk to Painter, which makes it easier to grab your followers nearby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Tendrils of Agony doing no damage if the shape drawn was too small",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed status effect with improper duration and tick effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed poison status visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision issues with the Boulder Trove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Noxious Shape upgrade",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rewarded devotion when completing encounters with NPCs now has the proper timing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some navigation issues with controller in the menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an encounter variant with broken puzzle solution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sped up quitting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of issues with the new content, hopefully saving you the pain of encountering those",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "What's next",
+     "items": [
+      {
+       "text": "In the next couple of days, we'll be monitoring how player experience this new update to make sure we can bring hotfixes to irritatting bugs that might've slipped through the cracks. Othwerwise, we'll be communicating an updated roadmap, with more information for what's to come. In the meantime, enjoy worshipping Kessessa and let us know what you like the most in the update and what you hope to see in the next one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 28,
+    "fixed": 19,
+    "balance": 0,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1814309641575686"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T17:04:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.557Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.715Z"
+  },
+  {
+   "id": "worship-144971@10",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 10",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-25T19:14:45.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed various small bugs tied to quitting the main gameplay;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause followers to move while reacting to the recall command;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused blood recognition system to fail upon entering the Test of Faith;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with relics not being rewarded when multiple were offered at the altar in rapid succession;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused liftable objects to spawn in spots where they wouldn't be accessible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where followers would become unowned when entering a Test of Faith arena;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that caused the book menu to not update properly when an upgrade was destroyed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where followers would sometimes attack neutral ennemies unprovoked upon getting up;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with cursor highlights changing size for no apparent reason;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Piercing Throw bug that would cause the throw sound effect every frame;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would cause summoned creatures to spin around wildly (like a ballerina) when trying to follow the player;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[Added in on 08-26-25]: Fixed a bug where the audio was not mixed properly after pausing the game;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected some grammar and spelling mistakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimization & Others",
+     "items": [
+      {
+       "text": "Gameplay Menu (Esc/Start while in game) now pauses the game;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading times are a bit shorter;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Added in on 08-26-25]: Improved the audio mix;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polished some visuals on the Sculptor and his building;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polished some visuals for the Tribute ritual;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "Working on a bug that sometime causes targeting to stop working on Eleanor;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking to fix an issue causing some UI elements to not appear when pressing ESC/Start during loading;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking into a potential memory leak when leaving the game open for several hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We heard the feedback regarding the save system and permadeath. We are looking at both short term and long terms improvements to address your issues in that regard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We will look at how we can add more gameplay differences and impact tied to the choice of god to Worship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for your patience fellow cultists!",
+     "items": [
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on Worship's store page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 18,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1808601382584318"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-25T19:14:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.713Z"
+  },
+  {
+   "id": "worship-144971@09",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 09",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-19T20:04:04.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where objects couldn't be picked up after their carrier have been killed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where buttons would become unresponsive after finishing the tutorial and going back to the Main Menu;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that displayed pink artifacts when starting a new run after completing a previous one;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that would leave particles behind when swapping a relic for a catalyst;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing strings in credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "Working on a bug that sometime causes targeting to stop working on Eleanor;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Working on a bug where followers would sometimes attack neutral ennemies unprovoked upon getting up;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking to fix an issue causing some UI elements to not appear when pressing ESC/Start during loading;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking into a potential memory leak when leaving the game open for several hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We heard the feedback regarding the save system and permadeath. We are looking at both short term and long terms improvements to address your issues in that regard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We will look at how we can add more gameplay differences and impact tied to the choice of god to Worship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for your patience fellow cultists!",
+     "items": [
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on Worship's store page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 11,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1808061939511783"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-19T20:04:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.555Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.713Z"
+  },
+  {
+   "id": "worship-144971@08",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 08",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-15T20:29:29.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where having an old run save file could cause crashes after an update;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where objects couldn't be picked up after their carrier had been knocked down;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized the follower swarming mechanics when dealing with large amounts of followers;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a symbol recognition issue that sometimes caused a delay in the recognizing of a drawn symbol;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would cause followers and ennemies to run into walls;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where thrown followers would keep going after hitting their target;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in menus that caused some icons not to display at all;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Hubryus' utility building's VFX;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted a visual issue with Blood Combustion's aura;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some missing particle systems for rituals;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Changes and Balancing",
+     "items": [
+      {
+       "text": "Knife cursor now hides itself when entering gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the Folhorror (summon from Hubryus building)'s stats with the following:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Max health lowered;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Damage reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "Working on a bug where some objects can't be picked up;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking to fix an issue causing some UI elements to not appear when pressing ESC/Start during loading;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking into a potential memory leak when leaving the game open for several hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We heard the feedback regarding the save system and permadeath. We are looking at both short term and long terms improvements to address your issues in that regard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We will look at how we can add more gameplay differences and impact tied to the choice of god to Worship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thank you for your patience fellow cultists!",
+     "items": [
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on Worship's store page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 15,
+    "balance": 4,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1808061939383550"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-15T20:29:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.554Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.712Z"
+  },
+  {
+   "id": "worship-144971@major-2025-08-08",
+   "gameId": "worship-144971",
+   "displayName": "Shepherd of Horrors - Early Access update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-08T21:50:23.000Z",
+   "notes": [
+    {
+     "title": "Cultists, Rejoice!",
+     "items": [
+      {
+       "text": "The first Worship update has been summoned and is OUT NOW!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As promised on the Early Access roadmap, also visible on the Store page, Shepherd of Horror is our first minor update to make its way into the game. We've been hard at work at not only fixing bugs, but also bringing exciting new content to the world of Worship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Asides from new upgrades/rituals and new things to encounter during your games, the update completely changes Hubryus' starting building, the Mutation Hatchery! This update also adds plenty of improvements to the summons and allies aspect of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/91ef9840dc1140bf11be9ed5bd5943f495b0e3b0.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gods-related Cult Abilities Rework",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/dfcd77cd50e85a8833e4b6868a34ba33535b310e.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hubryus' Mutation Hatchery rework",
+     "items": [
+      {
+       "text": "You can now sacrifice your followers and fuse them in death to summon Folhorrors allies to fight battles for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sacrified followers bodies no longer stay behind. Their flesh and blood is used in the making of your subservient abominations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An-Ansgaidh's \"Berserk Followers\" starting upgrade is replaced with the newly introduced \"Mercy Killing\" upgrade. Mercy Killing gives you some blood back as you offer corpses to your god using the Tribute ritual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Upgrades & Rituals to acquire",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/c8a00a2b7e55475b8f831ba8bc20bff037eaa038.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Ritual - Shadow leap",
+     "items": [
+      {
+       "text": "With this new ritual, you can leap to a nearby destination in immaterial shadow form while damaging every foes in your path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/3cb0cb28fbf3bf17f1bb1ae70add7cd608265fe7.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Ritual - Summon Rift Hydra",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/d11914eeadf7602d2e2ddc882e053ae32a6644d3.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Invoke a mighty Rift Hydra, the apex predator from the Molewurm species. Legend says if you cut one head in the mortal realm, two regrow in the Unseen Depths and vice-versa. Unfortunately you don’t have a follower with shears at the ready in the other world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Ritual Passive - Noxious shapes",
+     "items": [
+      {
+       "text": "Fumes from the Unseen Depths now seeps into ritual shapes you cast, poisoning the nonbelievers that breathe this cursed air. Your god shall spare the faithful from the noxious effects, but you’ll have to endure the stench.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/7222cf8a4541a3a7488a9a0cb123756c39745f13.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cultist Passive - Explosive Drinking",
+     "items": [
+      {
+       "text": "Syphoning blood now channels a growing explosion that detonates once you stop absorbing. The more blood absorbed, the deadliest the explosion gets. The perfect marriage of gluttony and wrath.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/8f378e0533c11db9e1624fe3a9a7adfe8e028244.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "An-Ansgaidh's Starting Upgrade - Mercy killing",
+     "items": [
+      {
+       "text": "Apostles of An-Ansgaidh are rewarded for their acts of mercy, notably freeing mortals from their painful existence. Offering corpses as tribute give cultists some blood back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Encounters to spice up your exploration",
+     "items": [
+      {
+       "text": "A mysterious Kessessa themed puzzle encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Eldritch Hatcheries to turn catalyst into a specific types, which can help cultists achieve their dream synergies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Akka blockades, standing their ground against the Last Church and holding precious godless prisoners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We don't want to spoil all the fun for these so you'll have to scour the world while seeking devotion for you god to see what secret they hold!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Enemy Variant",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/0d6c1c19212c073c159b0055a9b0008f2fab1b37.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Inquisitor Variant - The Heretic Slayer",
+     "items": [
+      {
+       "text": "This elite variant of the inquisitor can pose a real threat to your cult, starting at the 2nd zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Be wary of his holy shockwave projectiles as well as his lunge combo attack that you should shieldbreak and cancel when you have the chance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes & Optimization",
+     "items": [
+      {
+       "text": "Summons and other cultist allies have been improved in the following ways:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Summons and allies now follow you as you head into a Test of Faith and when you are sent back to cult base.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now recall summons and allies to command them to disengage from combat for some time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The amount of each summon you can command is now displayed in the ritual description section of grimoire when looking at summoning rituals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you try to summon more allies than your current limit, older summons above the cap are killed and new ones are summoned to take their place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Killed summons no longer leave a corpse behind, and instead are burned away and returned to the Unseen Depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interacting with an upgrade buildings will now open the ritual menu to display said upgrade's description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted catalysts types' random rates to favor ritual catalysts a little bit more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A memory optimization that makes Worship considerably less memory hungry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "We tackled a ton of issues in the past few weeks, as you might've noticed with the 7 hotfix patches we released since Worship's release into Early Access. That said, this update also contains its own considerable pile of fixed bugs! In rapid fire:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a navigation issue that made followers unable to path around some collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed projectiles playing an impact feedback when colliding with allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented most instances of cultist being able to get to a unintended height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some visuals on tribute's VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some background scaling in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an invisible collision in the Untamed Borderlands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed objects sometimes being impossible to lift or interact with, even with enough followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller issues that made the D-Pad Up close the grimoire menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with liftables' pathing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with followers audio and HUD counter when killed instantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some errors in some displayed texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed throw not working in certain contexts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed summons/allies sometimes stacking on the same point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI not showing up if menu input was pressed during loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small visual asset on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Followers and allies are now able to properly path around upgrade monuments/buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an interaction with the cultist that sometimes soft-locked the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We are looking at fixing objects being sometimes impossible to lift or interact with. We fixed this partially, as stated in the bug fix portion of the patch notes, but there are still some instances where this keeps on happening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are aware of an issue causing performance problems when swarming on destructible objects with a lot of followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the single player experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We heard the feedback regarding the save system and permadeath. We are looking at both short term and long terms improvements to address your issues in that regard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We will look at how we can add more gameplay differences and impact tied to the choice of god to Worship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "What's Next?",
+     "items": [
+      {
+       "text": "This content update is the first of many for Worship! We are actively reading your feedback, some of which we addressed in this update, some other we have planned in upcoming updates. The next big thing we have planned on the roadmap is a major update planned for Fall 2025:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/2cdb1a394f6f27202f3ff21dc6f6c8aec36bb191.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aside from the updates planned on the roadmap, we will continue fixing bugs and releasing hotfix patches to make the game increasingly more stable and eventually bug free.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, what are you waiting for? Don your robes, summon forth forces from the Unseen Depths and plunge the mortal world into madness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank you all so much for delving into the world of Worship!",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/99d6f538569a4d439f6881f049fa64971545c816.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you next time for a new update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Chasing Rats team: [img src=\"{STEAM_CLAN_IMAGE}/40035617/b5dd353493d3b5e05eda80c06aec7ce97a61bde8.png\"][img src=\"{STEAM_CLAN_IMAGE}/40035617/4e336eca7a18e1c3d651bc64b255363f87cc9b8e.png\"] [img src=\"{STEAM_CLAN_IMAGE}/40035617/0b107078298f1796e6130924a22b3f3031e44b90.png\"] [img src=\"{STEAM_CLAN_IMAGE}/40035617/800cae53c2c6c1b8cf6e6fc81f00fea92d4208d4.png\"] [img src=\"{STEAM_CLAN_IMAGE}/40035617/2d2fc1e54687ac88daec184991147802f8bb75c4.png\"] [img src=\"{STEAM_CLAN_IMAGE}/40035617/6fd6a4739e4388018394b57c387f6456cde84742.png\"] [img src=\"{STEAM_CLAN_IMAGE}/40035617/89a90a437dd62dd942d5f523138b87ceb3ad8eb7.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 22,
+    "balance": 1,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1807332909616401"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T21:50:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.553Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:35.711Z"
+  },
+  {
+   "id": "worship-144971@07",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 07",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-29T23:32:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/dff3e4f28120a449f153aaa0f83d024644c9cab8.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes & Optimization",
+     "items": [
+      {
+       "text": "We further improved the way our navigation is managed for followers (not the same as last hotfix). This should improve even more follower navigation performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An optimization pass was done on the way we dissolve assets when they are in front of the cultist. This can improve performance a bit for GPU. Bigger improvement for the GPU are in the works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed followers not being teleported back to the cult base after a successful test of faith.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue making players unable to change tabs (Rituals, Upgrades, Map) in the grimoire UI on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed monuments/upgrades being mismatched between the cult base and the upgrades UI in the grimoire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We are looking at fixing objects being sometimes impossible to lift or interact with even with enough followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We looking to fix an issue causing some UI elements to not appear when pressing ESC/Start during loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are aware of an issue causing performance problems when swarming on destructible objects with a lot of followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We looking into a few issues regarding summons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking into a potential memory leak when leaving the game open for several hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We heard the feedback regarding the save system and permadeath. We are looking at both short term and long terms improvements to address your issues in that regard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We will look at how we can add more gameplay differences and impact tied to the choice of god to Worship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on the Worship's Steam page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 10,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1806698490630405"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-29T23:32:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.552Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.552Z"
+  },
+  {
+   "id": "worship-144971@06",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 06",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-24T21:31:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/2057cf9f2a7a1a9bdcf905f80e42840e6f1c383c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We improved the way our navigation is managed for followers and enemies. You shouldn't see a big difference in behavior, but performance should be a lot better when walking around with a lot of followers. The game should be a lot less laggy with tons of followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed some lag spikes (and potential crashes) when moving around with huge amount of follower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We are looking at fixing objects being sometimes impossible to lift or interact with even with enough followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We looking to fix an issue causing some UI elements to not appear when pressing ESC/Start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are aware of an issue causing performance problems when swarming on destructible objects with a lot of followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We looking into a few issues regarding summons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking into a potential memory leak when leaving the game open for several hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We heard the feedback regarding the save system and permadeath. We are looking at both short term and long terms improvements to address your issues in that regard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We will look at how we can add more gameplay differences and impact tied to the choice of god to Worship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on the Worship's Steam page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1806064758621809"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-24T21:31:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.551Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.551Z"
+  },
+  {
+   "id": "worship-144971@05",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 05",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-23T00:35:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/d9985249f7a7b73c2ed052b1712e662dd10a411c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Multiplayer has been temporarily removed from the main game. See the announcement here for all the information. Its still possible to access multiplayer from the beta branch called “beta-multiplayer”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you can set Fullscreen mode to windowed. Which should make it easier for players to manage multi-screen setups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We now allow OS specific key combination (ex: Windows + Enter) to switch fullscreen mode for Worship.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Monument/Upgrades should now properly appear on the upgrades grimoire page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We have a big performance improvement in the work, especially in ongoing games with a lot of followers => ETA In the next few days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at fixing objects being sometimes impossible to lift or interact with even with enough followers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "To be added to Worship's roadmap",
+     "items": [
+      {
+       "text": "This new section will now list features and improvements that we are adding to our roadmap planning following player feedback and/or issues that the team judged worth tackling. Keep on telling us how you feel about the game and we'll do our best to focus on what the community is asking for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We heard the feedback regarding the save system and permadeath. We are looking at both short term and long terms improvements to address your issues in that regard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We are looking at improvements for the symbol recognition, but these might have to wait for the bigger updates planned in the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) We will look at how we can add more gameplay differences and impact tied to the choice of god to Worship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Community feedback) More resolutions and aspect ratio support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on the Worship's Steam page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 5,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1806064758560255"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-23T00:35:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.550Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.550Z"
+  },
+  {
+   "id": "worship-144971@major-2025-07-23",
+   "gameId": "worship-144971",
+   "displayName": "Update - Multiplayer, Save System and short term plan",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-23T00:35:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/ce134a7eeb465e6925187028912d87ac959e4e96.png\"]Hello fellow cultists!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few days has passed since the early access launch and we already received an impressive amount of feedback from players. A lot of players were pretty vocal about their appreciation of the player fantasy, the originality of the game and its various mechanics. Although we’re truly grateful for the positive feedback the community has given us so far, we are also aware that there are parts of the game that need more support and that are not reaching both players’ and our own expectations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An important thing to consider while we are talking about the main issues surrounding the early access launch is that Chasing Rats Games is a small team. We have to prioritize our work towards the most important issues but we can’t tackle them all at the same time and some issues are more time consuming to address than others. Considering this, we want to be as transparent as possible with our players, since we consider this key to a successful Early Access development. So it’s time to dive into those specific subjects and share our thoughts and plan of actions with the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Save system",
+     "items": [
+      {
+       "text": "A lot of players have been vocal of their dissatisfaction regarding the save system in Worship. We’ve read every comment on Steam and Discord and we’ve noticed a misunderstanding regarding how the game saves.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The most common complaint we’ve received is the absence of a save system. To clarify things, there is a save system in Worship, auto-saving your progression at the beginning of every gameplay phase. Every time you reach the Test of Faith (boss fight) or get to a new zone to explore, your progress is saved. This means if you need to take a break during a play session of Worship, you can quit and get back to where you left off when you want. The source of the misunderstanding is probably due to the fact that you lose the progress you’ve made in a run when you die, as it’s commonly the case in roguelites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Despite the presence or absence of the Save System, it is clear to us that the way saves and permadeath are handled in Worship in its current form is not meeting players expectations. For these reasons, we’ll take a step back to develop something closer to what players are asking us. We’ll make sure to update you on the subject as soon as we have a better idea of what we can implement and add to the updates planned on the roadmap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "State of Multiplayer",
+     "items": [
+      {
+       "text": "We’ve been working day and night to make the online multiplayer functional for the early access release but, as a lot of players stated in the past 24 hours, the state of Worship’s multiplayer is unplayable. It is not up to the players, the Kickstarter backers and our own standards. For these reasons, we made the difficult decision to remove the multiplayer from the main game until we take the time to refactor our code base properly. As stated above, we cannot put our development effort everywhere at once, so in order to simultaneously bring new content updates planned on the roadmap as well as other improvements that you are asking for, we have to put some other things aside. We apologize for the inconvenience of this decision. The Multiplayer Support has been added to the backlog of the roadmap. The Steam page has also been updated for the time being to make sure we are not misleading players looking to join the cult.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For those of you who still want to play multiplayer, even in its broken state, a Steam beta branch is available to everybody. The branch is called “beta-multiplayer” and should automatically be included in the Properties section of your game on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "To access the Steam beta branches, follow these steps",
+     "items": [
+      {
+       "text": "Go to your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right click on Worship and then click “Properties”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the Properties window, find the tab called “Betas”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this section, you will find a rolldown menu which includes the “beta-multiplayer” branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By selecting the beta branch, your game will automatically update in your Steam library with the multiplayer available for you to play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To go back to the main version of Worship, select the “None” option in the rolldown menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll try to update the beta branch as often as we update the game, but keep in mind that some updates might be skipped for this version of the game and we will not be trying to fix the multiplayer issues in the branch until we’ve finished the refactors in the work for the main version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are aware of the frustration some of the players will have towards this decision, we hear you and we feel you. We’re the first to be disappointed when it comes to this, but it is important for us to create a good experience for our players and the multiplayer is just simply not there at the moment. It would not be respectful for players not to act on it and this was the only solution we could make in the short term. We’ll make sure to update the community when we have news regarding multiplayer, but consider this might take months to get there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Everything else",
+     "items": [
+      {
+       "text": "We know these aren’t the only issues Worship has at the moment. Some players voiced inconsistencies with the symbol recognition and several annoying bugs still remain. Please bear with us as we continue pushing hotfix patches while moving towards the updates planned on the roadmap. We are still on track for those, so we hope you are looking forward to the upcoming content and features!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your understanding and your enthusiasm towards Worship. Your feedback is valuable and our main and only priority is to make sure Worship develops into a positive experience for as many people as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Expect news from us shortly and until then, godspeed everybody,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alexis and the Chasing Rats team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1806064758560254"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-23T00:35:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.549Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.549Z"
+  },
+  {
+   "id": "worship-144971@04",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 04",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-22T00:25:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/be02686d015cc72dacbab45cd9323c7afd215ccb.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another week another swarm of bugs taken care of! This one includes some QOL and should iron out the issues that remained with some prophecies, fix annoying skins issues and more. We are grateful to everyone that reported bugs and gave feedback. It helped us a lot to get those fixes and improvements in the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Molewurm orb is now a relic that can be gifted at the altar for some devotion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allies health bars are now a bit smaller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An-Ansgaidh Shepherd cantrip no longer hits allied summons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new \"Text Duration\" slider in options to allow displaying texts for a longer duration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Art & Visuals",
+     "items": [
+      {
+       "text": "Updated the painter module level art to fix some misplaced assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the labyrinth module level art to fix some misplaced assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the fog VFX in the musician module so it now properly appears properly on top off level art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shcrub's shadow now disappear when it dies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Altar runes on the ground around your cult base now properly light up after you reach the devotion thresholds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some catalysts sometime being invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would prevent the Blood reserve shaking feedback when certain upgrades were acquired",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix ending screen numbers sometimes being too long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Prophecies",
+     "items": [
+      {
+       "text": "\"The unbroken few\" and \"Bloodless crusade\" progress bar now properly reflect player progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"But the World Refused to Die\" prophecy now properly grants the lore entry when completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Eternal Rebirth\", \"All is dust\" and \"Seeker of Truths\" prophecy now properly increases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Two infidels, one stone\" and \"Many infidels, one boulder\" are now tracking simultaneous kill properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed an exploit allowing players to trigger Eleanor Soul Vessel multiple time in the same run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that could break the Japanese language when toggling languages on and off from the option menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music should now properly transition from world to modules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would prevent sending multiple follower to lift a single object",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would allow players to dismiss followers while they were being knocked down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would make summoned creature spawn with missing health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would permanently lock player input after a boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would make Ulmira's health bar still show after Eleanor had been beaten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would let player destroy bells if player threw too many followers on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue about summons not properly losing their status effect on death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the size of some level art colliders in the cabal marshland zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interacting with the altar rune no longer reverts the cultist skin to the base skin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Continuing a save file no longer messes up the skins that were chosen by the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thats all for today, you may resume your rites!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 17,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1849192144183557"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T16:06:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.563Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.547Z"
+  },
+  {
+   "id": "worship-144971@03",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 03",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-18T18:20:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/994bab849af0099536176844f6a859794f963655.png\"]Hey everyone! It's been amazing seeing you all play the 1.0 version of Worship these past few days! We've been working on a bunch of fixes that are going your way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added content",
+     "items": [
+      {
+       "text": "Added \"Hope never existed\" prophecy & reward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Speedrun the apocalypse\" prophecy & reward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"Apex Predator\" prophecy & reward",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Issues regarding cloud save on Steam are now fixed and cloud saves are available",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enrage VFX no longer disappear before enrage effects also expires",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bone eruption visual no longer disappear abruptly upon reaching it's max distance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Better reward are now given for some variant of the summoning ceremony module",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Follower death curse upgrade rebalance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "---- Duration reduced: 10 sec -> 7.5 sec",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "---- Damage multiplier reduced: 1.25 -> 1.20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Knowledge is power base upgrade now properly grant move speed to the cultist when relics are being carried by follower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stopped some prophecies from completing themselves even when the conditions aren't met",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the likelyhood of having a bad surprise when opening a tribute chest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hubryus' mark is no longer invisible over the head of certain enemy and boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some visuals on the Eldritch Prophecy page on some resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some visuals on the devotion bar to make it easier to notice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Polished the music transition when you traverse to a new location while currently being still in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed portal position when completing Sealed Titan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hubryus Shaper utility building visuals when despawning followers on activation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added VFXs to the eldritch fissure of the plateau",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Soul Vessel summon now disappears properly on death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed death overlay visual not playing properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ancient Labyrinth module completion feedback now properly plays when the module is completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Unholy Explorer\" prophecy now properly track distance across runs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ans Smite charge state are now visually more obvious",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prophecies numbers now properly display on the same line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a scaling issues on Chaos Warp base cast visual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Goopacabras do not keep playing sounds after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved audio balance during boss fights to make them generaly less noisy and improve the audibility of important sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved visuals on enemies spawning at a position visible by the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a bread range of tweaks and fixes to the game audio balance when combat become very frantic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly reduced tutorial zone music volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moving toward a boss in an arena does not cause performance drop anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overlapping hitboxes from a single enemy ability do not multi-hit the cultist anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorial circle drawing gate is now more permissive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thats all for today, enjoy the apocalypse!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 32,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added \"Hope never existed\" prophecy & reward",
+     "Added \"Speedrun the apocalypse\" prophecy & reward",
+     "Added \"Apex Predator\" prophecy & reward"
+    ]
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1848664643347265"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T20:05:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.562Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.546Z"
+  },
+  {
+   "id": "worship-144971@02",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 02",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-17T21:56:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/55e20d32c100fa7ace89088873a769ddf43a57b8.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issues making players getting stuck in infinite loading screens (finally!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to insert additional catalysts in sockets that already have buildings in them, during the game's second phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a multiplayer issue that sometimes caused enemy visuals to not appear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We have a big performance improvement in the work, especially in ongoing games with a lot of followers => ETA early next week",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have a fix in the work to remove that annoying delay when opening the ritual book",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We'll have an announcement tomorrow regarding multiplayer. We are aware that the state of multiplayer is Worship is currently way rougher than we intended. We've temporarily updated the steam page to reflect that. If you are looking at Worship purely for the multiplayer experience, we would advise you to wait for a couple of updates until we get it to a state we consider playable. Sorry for the inconvenience and thank you all for you patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on the Worship's Steam page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1805431065348779"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-17T21:56:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.545Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.545Z"
+  },
+  {
+   "id": "worship-144971@01",
+   "gameId": "worship-144971",
+   "displayName": "Hotfix 01",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-16T21:32:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40035617/099c9e4caa337966928d3e9a6f8976ba64c43c2d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug that could get players stuck in loading after returning to main menu from the lobby screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that sometimes made Ulmira able to teleport away during the first boss ending cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong inputs being displayed in the ritual book",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Discord link from the button in the multiplayer menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bugs we are actively working on",
+     "items": [
+      {
+       "text": "We have a big performance improvement in the work, especially in ongoing games with a lot of followers => ETA early next week",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are hard at work to improve the state of multiplayer with gradual fixes that will improve the multiplayer experience in the coming days/weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at players getting stuck in loading after the gameover screen or the run end screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at temporarily locking multiplayer to 2 players to make it more stable while we improve the state of multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at improving loading times in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are looking at a couple of more minor annoying bugs in the singleplayer experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you are wondering what we have planned for upcoming content, you can refer to our roadmap on the Worship's Steam page!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1848557880480939"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-04T21:36:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.561Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-13T03:36:31.545Z"
+  },
+  {
+   "id": "worship-144971@major-2025-02-24",
+   "gameId": "worship-144971",
+   "displayName": "Worship Demo update - Steam Next Fest",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-24T17:28:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The Worship demo has a new update for Steam Next Fest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Come test out the latest changes and features in the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1548180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1548180/view/1792116353329492"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-24T17:28:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1548180",
+      "checkedAt": "2026-11-13T03:36:31.543Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:36:31.543Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,2316 @@
+{
+ "game": {
+  "id": "echo-weaver-290107",
+  "igdbId": 290107,
+  "name": "Echo Weaver",
+  "cover": {
+   "imageId": "cod3qs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cod3qs.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6raa",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6raa.jpg"
+  },
+  "ps5Release": "2026-10-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "echo-weaver-290107@1.0.10",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Patch 1.0.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-05T00:55:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "IMPROVEMENTS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Automatically giving the new Vos closure lead to players who already have his shortcut lead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Automatically giving a particular early Red Room lead if you get the final lead of that thread, to avoid confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-More sequence-break protections across Quarry and further prevention of breaking into the Quarry climb early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Corrected a frustrating wall kick shaft layout during Quarry climb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Forced VSync to remain active while navigating menus and changed the default FPS setting from Unlimited to 60 FPS, so hardware doesn’t have the chance to go crazy by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a backup check for the Tetsa blip spots achievement so players with pre-existing save data do not have to rediscover them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Eased up on the platforming required to access the Depths plinth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Tuned down cultist fast patrol speeds that looked silly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Improvements to some tutorial dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Typo fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Fix to music not playing again for the rest of the session if you churn/reloop from inside the pumphouse (or a few other specific music-change spots).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fix to bursting into or near ceilings sometimes bumping you way back, making for some rough platforming in spots (especially some particular plinth runs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Another - hopefully final! - attempted fix for the rare bootup splash crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where Verrik's trigger scene in the chapel would continue playing after he was trapped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed Paternost energy barriers not animating when turning on and off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Resolved an issue allowing players to warp during the final gauntlet while holding a particular item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed cultist bomb not disappearing if it wasn't actively watched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where players could carry both an item and the Glaive through a warp simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a loop issue where achieving a new best time at a Wayfinder Plinth would lock out the option to \"Reloop\" if the reward was already claimed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where the Wayfinder hit sound would play unexpectedly when reloading an area from a plinth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed visual layering issues for glaive fire effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Corrected the positioning of the \"Forgotten Annex\" map label to prevent overlapping, along with adjustments to miscellaneous Depths labels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where Navene's theme would occasionally continue playing after a memory ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Resolved ambient sounds improperly carrying over when exiting to the title menu and re-entering the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Bypassed the Verrik scene post-learning warp if you have already captured or reconciled with him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where keys left on the Paternost would persist across different time loops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Resolved an issue where entering a rift while holding an item caused buggy behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where rebinding keys could cause propagating menu errors.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Resolved an issue where storage lockers failed to save state across chunk-loading boundaries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where spawned Major Time Crystals became invisible if collected more than once in the same session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed a bug where using Burst into a ceiling failed to trigger a kickback if there was standing room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed broken girder assets that were flipped due to chunk baking overrides.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue where fixing the Pumphouse after completing all of Vos's chores would route him to the Pumphouse instead of his house.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1848557880481357"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-05T00:55:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.981Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-05T00:55:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.981Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-05T00:55:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.675Z"
+  },
+  {
+   "id": "echo-weaver-290107@1.0.9",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Hotfix 1.0.9",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-26T21:49:53.000Z",
+   "notes": [
+    {
+     "title": "A few quick things that were meant to be in the last patch",
+     "items": [
+      {
+       "text": "Rebalance to gold times for Assembly door and Depths plinths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Ivo spot map icons now properly show for people who had already opened those prior to patch 1.0.7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix to music not playing again for the rest of the session if you churn/reloop from inside the pumphouse (or a few other specific music-change spots).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix to bursting into or near ceilings sometimes bumping you way back, making for some rough platforming in spots (especially some particular plinth runs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Easier access to a particular sync near the Assembly door, if you're trying to re-run certain things around there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1847286114046871"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T21:49:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.981Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T21:49:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.981Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-26T21:49:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.674Z"
+  },
+  {
+   "id": "echo-weaver-290107@1.0.8",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-23T22:31:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "First of all, yes the versioning got a little funky. But in an attempt to sync up the version numbers across all platforms, we had to bump PC to a new format. So here we are, 1.0.8!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, we’re trying to slow down to weekly patches going forward (unless some emergency necessitates otherwise). Thank you to everyone who is playing and sharing! You guys are the best <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BIG IMPROVEMENTS",
+     "items": [
+      {
+       "text": "A particular kind of swirling rock storm now properly stops the glaive, preventing weird sequence-breaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding a chill place to wait in the courtyard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More prevention to escaping the final gauntlet and getting out into the world, especially via some particular start room shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improvements to courtyard key run: the path from town more clearly marked, and bramble section above a bit less frustrating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improving crit text and leads to better nudge you to Vos’ final location, to finish his quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ivo’s spots show on map now after examining or using them, and update their map icon based on state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better hiding of Ivo’s final spot, to help prevent stumbling into it early. Added lines from Ivo to help guide you there when it’s time to find it. Also improved some weird fumbly interactions that could happen when trying to do this final spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BIG FIXES",
+     "items": [
+      {
+       "text": "Delayed feel to a particular kind of secret environmental jump if you double-jumped first.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trigger alignments to their visuals for same kind of jumping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Getting stuck in the environment if warping too quickly through flowers or pipes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sometimes getting stuck in environment when performing an advanced late-game movement ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Applying the bootup crash video fix to all versions of the logo videos. (This crash was only affecting a rare user who was on a particular very new graphics card).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cannot respawn final Ivo seed in the same loop you lose it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing some memory leaks that could possibly lead to degraded experience over long sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rare soft lock on Vos/Nova town convo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cleaning up some vibration and deadzone edge cases that could potentially lead to swallowed inputs / unresponsive feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Consoles only) Fixing game freezes on any dialogue after talking to Tetsa at a blip spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "NEW CONTENT",
+     "items": [
+      {
+       "text": "Delicious ambient sound updates throughout Spillways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Beautiful new Ivo cave ambience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New “tinkering” animation for Ivo, when holding the thing you give him.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Post-planting chatter for all Ivo seeds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "OTHER IMPROVEMENTS",
+     "items": [
+      {
+       "text": "More time pickups to prison block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved grappling around reservoir and Ivo, spacing points out better for cleaner movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better camera feel in the Ocean.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixing door asset alignment on some of the tower doors, and slightly brightening those to stand out a tiny bit more as interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Raising an early Intermind shortcut nudge so you don't trigger it accidentally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Will no longer show the forced start room “Churn” tutorial if you’ve ever churned even once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Toning down cultist thrown knife damage and cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nerfing zombie on the way to Prototype Node, so he isn’t annoyingly constantly puking at you when we’ve forced the glaive away from you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly wider allowable range for warping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add a quick way to get back to Ivo after planting his furthest-away seed (there’s good dialogue there that I’m guessing most people have missed up until now!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Item grounded\" pfx now emits in worldspace, to not look funky when dropping, starting and stopping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't show Intermind lake nudges if you've met Ivo, since that means you’ve already been out the way she’s nudging you towards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixing asset alignment on pumphouse entry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moving pumphouse sign off to the right so it doesn’t overlap interacting with Vos later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better cam centering on the Tetsa / Verrik convo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Less intense lighting to shrines (was blowing things out in several places, and making it hard to see there was blue fire there).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changing the geo around the barrier at the end of the Depths loop to just be a normal walking path, not a warp. So you can’t get stuck in there from a bad warp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Smoother mixing between Ivo's animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pausing back'n'forth blast doors in a particular lake spot when in a certain kind of secret endgame state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Less intense vibration for PS5 and Switch controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Bursting into walls at an angle is smoother, no more weird catches or falls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved map feels: consistent precision for map cursor; keep map markers / pins / reticle at fixed size while zooming; map panning backwards on a light left-stick push.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "OTHER FIXES",
+     "items": [
+      {
+       "text": "FPS-dependent feel goofs: jump-cancel grapple and fast fall are no longer fps-dependent (meaning they will no longer be super hard to execute at very high framerates)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stun locks if warping down onto hazards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performing Nova's quest shortcut doesn't stop her from going about her normal business.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing up Ivo behaving strangely in his final seed loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secret endgame state can expire while long-pressing for a critical final sequence action, leading instead to doing another action entirely (and an annoying, time-wasting one at that).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing unlocking achievement Miller Time early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vivary softlock if warping away after activating all linkers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Calcified Enth use when time is running out locks into slow motion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ivo’s “grab” prompt doesn’t show unless he already has the item he wants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prompt for Ivo’s final spot goes away properly now after you’re done with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Foreground cog in upper church had a bad pivot, and could be badly covering the security office.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Secret room in lake approach could be revealed just from sliding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cultists around reservoir can get stuck glitching between two frames, with annoying sound playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A particular secret item hidden in the ocean wouldn’t have its prompt showing when it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grapple point on a particular grapple block in the quarry becomes unusable after moving it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Anchor Node Mercy map objective marker was way below the actual node location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Parallax on gears in the control room were wacky, fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing OOB above skybridge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing some of the broken girders in spillways being misaligned or flipped in build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed zooming the map during the pin-placed shake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Typo and markup fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More null checks and safety nets and the like.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 33,
+    "fixed": 32,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1,
+    "topNew": [
+     "A particular kind of swirling rock storm now properly stops the glaive, preventing weird sequence-breaking.",
+     "Adding a chill place to wait in the courtyard.",
+     "Improving crit text and leads to better nudge you to Vos’ final location, to finish his quest."
+    ]
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1847286114038172"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T22:31:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.980Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T22:31:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.980Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T22:31:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.673Z"
+  },
+  {
+   "id": "echo-weaver-290107@1.0.0.67",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Hotfix 1.0.0.67",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-19T05:58:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A quick patch just to fix a particular achievement for Tetsa still not being unlockable in the last patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes the main issue with location Courtyard not counting for her achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes similar issue with her Lead not logging for same location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changing the trigger for both to happen at the beginning of the long convo, not the end.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Safety-checking this achievement every single loop start, not just at each spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusting Verrik position for that convo since there was a weird overlap with foreground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1846651706688924"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-19T05:58:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.979Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-19T05:58:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.979Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-19T05:58:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.672Z"
+  },
+  {
+   "id": "echo-weaver-290107@1.0.0.66",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Patch 1.0.0.66",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-17T07:28:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We did it! We survived a whole week of the game being out! Thank you to everyone playing and sharing <3 It means the world to us. We’re going to try to take it easy this weekend (for real this time), but before we sign off, here’s a bunch of stuff!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BIG IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Adding much-needed Ivo dialogue that directs you how long to wait, and whether that waiting is in the next loop or the same loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Larger acceptable area for doing a particular final action to end the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Leaving you an extra minute after activating the final sequence, to be a little nicer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved guidance on getting early-game players to reservoir: big ol’ pipe leading there; faster res drain plus breadcrumb pickups leading down; fixing intermind reservoir hint coming AFTER lake is drained too much, not BEFORE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BIG FIXES",
+     "items": [
+      {
+       "text": "Attempted fix for bootup crash on specific graphics cards, when finishing first logo video.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing all Tetsa blip spots counting both for Leads and achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing speedrunner grapple item unlock interfering with seeing the grapple big overlay during the actual tutorial - whoops!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Anchor Node Jurat no longer bugs out if you already are in the state it’s trying to teach you about when you enter it. (A similar fix for Anchor Node Vera is still in flight - we thought we had it but not quite.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All-Knowing Ivo no longer takes your glaive and gives you a seed (this never should have been happening! Big confusion...).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing not being able to talk to grumpy Ivo in the same loop you plant his seed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Verrik can initiate Lower Chapel escape from church elevator shaft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loop one tutorial loop: fixed the moving platform in the dark room not having any lights. No idea when this broke or why! So sorry!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Making a critical pickup in final sequence easier to spot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "OTHER IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Properly hiding a particular NPC’s start room shortcut if you’re in the final sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Always giving Vos \"lake fixed\" lead every time you talk to him at lake. Also giving it if you finish all his tasks, since at that point you know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusting grapple points and cam on falling island, to limit early grapple discovery here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Glitch fx added to a certain barrier in the final sequence, for guidance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lowering the brightness of that last torch in that same spot in the final sequence, since all that stacked lighting makes things crazy hot and bright.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Safety net check for plinth and collectables achievements every loop start, instead of only when you do those things, just in case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Showing node image but not thread name for these two leads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lil shake when town recluse says \"what do you want?!\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lake guide pipes are behind main fade layer now, finally. Less intense looking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pumphouse pipes in high contrast mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Easing up frustration with optional prison cell 1 platforming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "An itty bitty more time to perform the secret learned in Anchor Node Jurat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Move bramble walls in Depths tutorial rift to prevent hopping over it - learn the dang thing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jump feel tweaks: slightly heavier grav on early jump cancel; slightly shorter min jump height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusting this grapple near windmill 102 as it could be easy to derp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Audio balance and fixes throughout, especially in final sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "OTHER FIXES",
+     "items": [
+      {
+       "text": "PC can sometimes get stuck flying upwards forever after a grapple.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Verrik could sometimes, after doing his shortcut, still send you to jail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Throw through start room water causing issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preventing OOB from tutorial areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More OOB prevention in Sky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "OOB fix through brambles in Z's town cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slight update to jump impulse that should decouple it from performance better. (Maybe... hopefully...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A particular secret move tech was removing time if you held it too long - it no longer does.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Helping prevent discovery of same move tech too early because of early cheevo pop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowering sight distance on turret that can peg you while attempting prison cell 1 challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Preventing warping into water, by any means (even secret ones).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing bad layering on post-crush purple plants rubble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Collapsing floors and closing flower platforms now pause when activating the late-game world state change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing some spillways elevator leads showing thread name too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Getting the code for same elevator early without any clear reason why, if you managed to come from the wrong direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing some secret room weirdness on the tunnels secrets map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing scale of CE on Vos crate drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing some grapple block behaviors in Sky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adding blocker for rotating rooms in Verrik escape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing secret room in lower chapel extending into shaft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resetting church elevator if player runs out of time while riding it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More safety nets for null refs, missing refs, exceptions, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Continued markup and typo fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 20,
+    "fixed": 32,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Larger acceptable area for doing a particular final action to end the game.",
+     "Leaving you an extra minute after activating the final sequence, to be a little nicer.",
+     "Properly hiding a particular NPC’s start room shortcut if you’re in the final sequence."
+    ]
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1846651706684003"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-17T07:28:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.978Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-17T07:28:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.978Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-17T07:28:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.671Z"
+  },
+  {
+   "id": "echo-weaver-290107@1.0.0.64",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Update 1.0.0.64",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-13T23:34:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Some quick things for today!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX: Pacifist achievement not popping if an enemy got killed incidentally (but environmental hazards or what not).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Rebinding sometimes causing some crazy issues in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: More typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Some NPC lead threads were closing early as of yesterday's update. Fixed now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Knowing things about the Town Recluse that you shouldn't, too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Reports of Ivo sometimes not being talk-to-able at the end of his quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "IMPROVEMENT: Nerfing a particularly nasty plinth time in the Prison Block. Sorry!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Popping Ivo achievement as soon as you do the thing, instead of waiting for you to have to talk with them again (which was missable).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Some polish to that same scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Better visibility in upper dark room during the intro tutorial loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Popping a bunch of optional endgame achievements as soon as credits start, instead of having to wait through all credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1846651706672663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T23:34:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.977Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T23:34:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.977Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-13T23:34:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.669Z"
+  },
+  {
+   "id": "echo-weaver-290107@1",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-12T22:58:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey all! We tried to take a little bit of rest over the weekend (were we successful? not sure...), but we're back with a big ol' patch of goodies. Let's dive in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(And FYI, trying to stay as spoiler-free as possible in these, but you might read occasional names of areas and some early-game techniques in here.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BIG IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Removing level design friction when trying to reach a particular tutorial spot in the far west of lake. Let the people in!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding a certain kind of angled platforming challenge during the tutorial rift at Anchor Node Jurat, to introduce that concept for later.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gating the long Quarry top run with same platforming challenge, to help limit frustration if somehow people get in there early and are trying to do it without knowing how.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improving critical teaching dialogue during the tutorial rift at Anchor Node Vera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebalancing the platforming challenge getting to Anchor Node Mercy, as it was seriously tripping people up and making them think they needed to come back later. LET THE PEOPLE IN!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seriously nerfing the prayer statue at the bottom of the Depths. (What were we thinking...)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Giving a dive valve out of a particular fast travel exit point in sky, where at best you could be forced to Churn the loop without wanting to, and at worst could occasionally lead to serious accidental discovery with major sequence-break consequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moving all NPC shortcut lead nodes under a new single thread, for much easier referencing and cleaner organization. This also lets us close down the main NPC threads as you finish them the long way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding map markers for Z and Ivo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BIG FIXES",
+     "items": [
+      {
+       "text": "Big safety net: in case a particular time upgrade doesn't go through when you do it, we force it to fix itself for the next loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lead checkboxes now work for \"The Final Loop\" thread.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lead checkboxes also now work NPC final loop activities...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Properly showing the icon in the Status menu for a particular late-game skill when you learn it high up in the tippy top of Quarry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing leak that was causing opening the map to take longer and longer each time you did it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing Vos to actually move to his final location no matter what order you do his tasks in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "NEW CONTENT",
+     "items": [
+      {
+       "text": "Adding death and take-hit sounds for shield rush enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding new Quarry music track to tippy top run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "OTHER IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Slowing down zombie enemy puke times by a lot (they were crazy fast!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Making pipes into reservoir more noticeable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Allowing exiting of particular passcode terminals in Quarry to be done with ESC key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusting a particular hanging grapple in Spillways run to not get clipped by the moving box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding an extra grapple in the Ocean that makes it slightly more pleasant to get from one point to another, when attempting the final loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding dotted lines to map to represent Spillways elevator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Faster fades for helping some NPCs, especially ones you might need to redo a bunch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A little bit of extra level design nudging in Anchor Node Jurat to help people stay on track and see the memories in the correct order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Toning down some early Intermind lines to match the tone of her throughout the rest of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removing \"attempts\" from particular keypads that were never meant to have attempts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding some ambient sfx to the top west floor of church.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "OTHER FIXES",
+     "items": [
+      {
+       "text": "Allowing re-grabbing non-glaive items post warp, to help keep the flow going.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing upper church balcony not loading properly if you got there by tricky means.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing giving knowledge info early in particular Depths spot if you got there by tricky means.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removing zoom icons from quick map on KBM.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixing taking damage during end-of-loop potentially getting stuck on white screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing a particular mid-game shortcut popping the big shortcut banner every time you used it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing odd black fade behavior in a small room in the Depths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removing some leftover dev hotkeys that were allowing doing shenanigans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a torch in the Depths loop not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removing glitch fx for a particular barrier where that's not possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing loop clock unpausing when a particular late-game ability expired while in the Ocean.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing out-of-bounds spot in Spillways elevator shaft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing out-of-bounds spot near Lower Chape entrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various typo fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing some music looping issues on the music tracks themselves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing weird Nova vocals verb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing not being able to complete Anchor Node Jurat tutorial if your loop is currently maxed out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adding some preventative glaive stoppers for trying to warp into sky, because of all the tricksters out there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing Xbox Series controller not working with Bluetooth on Mac.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Stretching size of background \"main fade\" layer to account for ultrawide.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Shoring various null refs, stale refs, exceptions, and other oddball warnings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rare \"stuck on black screen when checking map\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing map pins sometimes pinning in the wrong spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moving a particular time crystal being in the wrong parent object, leading it to show a crate image on it (why?!! we have no idea... but it's fixed now).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 22,
+    "fixed": 28,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Improving critical teaching dialogue during the tutorial rift at Anchor Node Vera.",
+     "Seriously nerfing the prayer statue at the bottom of the Depths. (What were we thinking...)",
+     "Adding map markers for Z and Ivo!"
+    ]
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1846018067942432"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-12T22:58:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.977Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-12T22:58:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.977Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-12T22:58:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.668Z"
+  },
+  {
+   "id": "echo-weaver-290107@1.0.0.61",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Hotfix 1.0.0.61",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-09T17:41:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another quick patch coming in to fix a gnarly audio bug! Plus a couple other goodies:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MAJOR FIX: Music can start stacking and getting very loud over loud play sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX: Null-checking loading a spot in a mid-game zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Opening Credits don't trigger again in the same session you reset data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Fixing glaive dropping into late game area if you plant it somewhere specific, then leave, then warp back to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: \"No Music\" spots like start room or some late game spots were allowing existing music to keep playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Map area name labels being offset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: Ripple fx for early game reveals are back after many months of being broken!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1846018067934213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T17:41:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.976Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T17:41:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.976Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-09T17:41:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.667Z"
+  },
+  {
+   "id": "echo-weaver-290107@1.0.0.60",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Hotfix 1.0.0.60",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-08T18:45:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks everyone who's already playing! <3 Just a few quick things here that we found overnight. More to come!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIX: Act 1 escape song wouldn't stop playing if you finished the whole escape a second time in the same session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: After that, music could behave very oddly, not starting when entering new areas. A lot of silence resulted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIX: A small body of water in far west of mid-game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "OPTIMIZATION: Smoother loading around the same mid-game area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Better music changes when passing back through early-game area after credits run is done.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1846018067931087"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T18:45:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.975Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-08T18:45:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.975Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-08T18:45:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.666Z"
+  },
+  {
+   "id": "echo-weaver-290107@major-2026-06-15",
+   "gameId": "echo-weaver-290107",
+   "displayName": "Echo Weaver Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-15T16:02:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Weavers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Time Trials!",
+     "items": [
+      {
+       "text": "There are now three plinths to find in the demo. Race to reach each one in the fastest time possible from the start of the loop! You can restart your loop right there to get a better time or continue on and explore. Those plinths will be there every loop so you can revisit the challenge at any time.[img src=\"{STEAM_CLAN_IMAGE}/44913409/eefb7e31dd444d3e32b0da6485d4775859d5072f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discord Speedrun Competition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I will be giving away an Echo Weaver Steam key once Echo Weaver launches to the top times for each plinth. I will also give a couple keys in a drawing for those who participated and didn’t reach the top time. One person can’t win multiple categories.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The competition ends next Monday, June 22 at 9am PST. We will announce our winners shortly after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Retro Runner Stream",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out Retro Runner, the Ninja Gaiden World Record Holder, as they play the Echo Weaver demo on Twitch at 11am PST!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Art Polish",
+     "items": [
+      {
+       "text": "The art got a bit of a polish run since the last update! Even the first room you spawn in got a massive art overhaul. The environments really stand out and do a much better job at finding betting different and interesting. The old demo had some issues feeling samey in some areas. VFX and SFX were also updated to improve the feel of the game.[img src=\"{STEAM_CLAN_IMAGE}/44913409/9184ec76510e6117442471a18214c6cbc570c71f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updated Levels",
+     "items": [
+      {
+       "text": "Some players of the old demo may notice that routes and rooms have changed. I won’t go too deep into this as that will be a bit spoilery and something you should discover yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Story",
+     "items": [
+      {
+       "text": "There are new echo rifts that give even more context to the world of Provenance! Find them throughout the world and learn more about the past and the mysteries of this world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Be sure to check out the Echo Weaver demo and if you enjoy it, please give us a wishlist and share it with a friend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-riv otter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Be sure to check out the Echo Weaver demo and if you enjoy it, please give us a wishlist and share it with a friend!",
+     "-riv otter"
+    ]
+   },
+   "sourceIds": [
+    "steam-2184080"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2184080/view/1835236783570956"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-15T16:02:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2184080",
+      "checkedAt": "2026-11-13T03:19:51.974Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:37.664Z"
+  }
+ ],
+ "issues": []
+}

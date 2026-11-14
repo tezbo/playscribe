@@ -1,0 +1,596 @@
+{
+ "game": {
+  "id": "evil-west-141547",
+  "igdbId": 141547,
+  "name": "Evil West",
+  "cover": {
+   "imageId": "co4udq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4udq.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arlh8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arlh8.jpg"
+  },
+  "ps5Release": "2022-11-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "evil-west-141547@1.0.5",
+   "gameId": "evil-west-141547",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-21T13:36:22.000Z",
+   "notes": [
+    {
+     "title": "Hey Hunters!",
+     "items": [
+      {
+       "text": "Our new update is now live on Steam! The complete patch notes is available down below, happy reading!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "COSMECTICS",
+     "items": [
+      {
+       "text": "Added a new stylish coat, hat and scarf, called the Invincible set. It’s rewarded for the players who complete the entire game in True Death mode. Please note that in order to get the Invincible set, you need to complete a True Death playthrough after updating the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "ALL PLATFORMS",
+     "items": [
+      {
+       "text": "While sporting the Invincible set of clothes, the player regains a small amount of HP with every Gauntlet damage dealt to the enemies. This feature works even with only one piece of clothing equipped, but scales up with the remaining ones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BLOCKERS",
+     "items": [
+      {
+       "text": "Fixed a potential loss of entire game progress related to the True Death mode being accidentally turned on at the start of the NewGame+.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the infinite loading screen (a.k.a. infinite fade-from-black) glitch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a possible Glamour related softlock while reloading the miniboss checkpoint in the Smoke & Mirrors mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the progression softlock if the player died and moved to the previous arena after respawn in The First Spark mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "BLOCKERS - COOP",
+     "items": [
+      {
+       "text": "Fixed a conditional blocker when both players die during the tutorial in certain points of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a conditional blocker in The Heist mission where one player died to a gatling enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a conditional blocker, when two players used the traversal interactions before the waterfall section of the Devil’s Pass mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "ALL PLATFORMS",
+     "items": [
+      {
+       "text": "Fixed the bug causing the player and/or enemies falling underneath the level after using the Touchdown perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed couple instances where the player could get permanently stuck inside the ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit allowing the players to continue the True Death mode playthrough even after death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Sticky Sticks upgrade causing occasional performance and stability issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple places where the player could get stuck in the ground while using the Zapper skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the instances where enemies could stop respawning in some encounters of the Where Oil Smells Like Blood mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed couple situations where the Scorcher hose was constantly flashing while using the weapon.: -Fixed some of the secret chest collectables not being properly saved while replaying the mission from the Lore menu, effectively locking some players out of the Chest Nuts achievement/trophy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the enemy weak spots not reacting to the Rifle shots with Railgun upgrade activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the possible Railgun upgrade charging VFX desynchronization caused by specific actions chaining.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the possible occlusion of breakable debris blocking the shooting targets in the cart ride sequence of the Remote RI Outpost mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "BUGFIXES - COOP",
+     "items": [
+      {
+       "text": "Tweaked the revive interaction, so that neither dodging nor damage can interrupt it in the heat of battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "XBOX",
+     "items": [
+      {
+       "text": "Fixed the players not being able to stream the game online straight from the console.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "Fixed a controller stick not working properly if the player has two controllers plugged into the PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 19,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1065310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1065310/view/5000716037438805343"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-21T13:36:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1065310",
+      "checkedAt": "2026-11-13T03:20:23.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-21T13:36:22.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1065310",
+      "checkedAt": "2026-11-13T03:20:23.461Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-12-21T13:36:22.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:56.749Z"
+  },
+  {
+   "id": "evil-west-141547@1.0.4",
+   "gameId": "evil-west-141547",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-01T15:11:19.000Z",
+   "notes": [
+    {
+     "title": "Hey Hunters!",
+     "items": [
+      {
+       "text": "Our first update is now live on Steam! The complete patch notes is available down below, happy reading!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "ALL PLATFORMS",
+     "items": [
+      {
+       "text": "You can now toggle the Camera Shake in the Game options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now restart the current mission from the Lore menu’s Missions section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PC",
+     "items": [
+      {
+       "text": "You can now change the sprint action on keyboard to be a toggle instead of hold-to-sprint.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The arrow cursor keys are not hard bound to the camera movement any more.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the Exit button in the EULA screen upon the first launch of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can now adjust the FOV (Field of View) angle in the options menu, which is especially useful if you own an ultrawide monitor.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "BLOCKERS",
+     "items": [
+      {
+       "text": "The player is no longer blocked while replaying the Remote RI Outpost mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player can’t get blocked any more while destroying the glamour seals in the Smoke and Mirrors mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The player won’t get blocked inside the Man of People mission while destroying the monster nests. Note: the mission needs to be restarted from the Lore menu for this fix to work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "ALL PLATFORMS",
+     "items": [
+      {
+       "text": "Fixed the analogue sticks player movement not working on some controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a combat sound staying active after the enemy’s death for one of the large enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player being able to throw the enemy out of the arena in The Questionable Cargo mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the cases where starting or loading the mission could take too long and the screen would never fade out from black.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some of the large enemies’ HP pools being wrong if the player switches difficulty mid-encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player being able to shoot Revolver even on cooldown, when combined with swapping from the Scorcher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of the traversal interactions being active during the encounter in the Where Oil Tastes Like Blood mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the player animation stuttering while using the Rifle close to the enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Crippling Rod not always working properly against the Highborn enemy ranged attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "COOP",
+     "items": [
+      {
+       "text": "Fixed the players being able to get soft-locked if they both died during tutorial in The First Spark mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1065310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1065310/view/4979322040017014529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-01T15:11:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1065310",
+      "checkedAt": "2026-11-13T03:20:23.460Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-01T15:11:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1065310",
+      "checkedAt": "2026-11-13T03:20:23.461Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-12-01T15:11:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:56.748Z"
+  },
+  {
+   "id": "evil-west-141547@major-2022-11-29",
+   "gameId": "evil-west-141547",
+   "displayName": "A first update is on its way!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-29T16:48:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there Hunters!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'd like to extend a huge thanks to all of you playing right now! Evil West is at the top of the charts and the team is glued to all the streams and videos -",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "THANK YOU!",
+     "items": [
+      {
+       "text": "We read and compile your feedback and reports, and we're happy to announce that our first update to fix some of the issues you might have encountered will be released very soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any issues with the game, please submit a ticket in our support center.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll do our best to help you there, and it will help the team to fix the issue faster for all players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1065310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1065310/view/4836332027674174676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-29T16:48:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1065310",
+      "checkedAt": "2026-11-13T03:20:23.460Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-29T16:48:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1065310",
+      "checkedAt": "2026-11-13T03:20:23.460Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-29T16:48:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:56.747Z"
+  }
+ ],
+ "issues": []
+}

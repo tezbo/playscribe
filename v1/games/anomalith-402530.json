@@ -1,0 +1,964 @@
+{
+ "game": {
+  "id": "anomalith-402530",
+  "igdbId": 402530,
+  "name": "Anomalith",
+  "cover": {
+   "imageId": "coc3jf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coc3jf.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5wt6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5wt6.jpg"
+  },
+  "ps5Release": "2026-10-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "anomalith-402530@major-2026-11-12",
+   "gameId": "anomalith-402530",
+   "displayName": "Update and Artifact Balance Adjustments",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-12T13:26:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46132459/892473ff6e96914477e6b165a2c32fc8996fefc9.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we would like to share information about additional bug fixes, improvements based on player feedback, and game balance adjustments, particularly changes to Artifact effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First, we owe you an apology.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the November 6 update, we made balance changes to certain Artifacts without notifying players in advance or including these changes in the patch notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We sincerely apologize for failing to properly communicate these important changes to game balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have now completed a thorough review of the Artifact adjustments. Below, we will explain the contents of the November 12 update, along with the changes made to Artifact effects since launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "【Bug Fixes】",
+     "items": [
+      {
+       "text": "Fixed the achievement check logic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where removing certain attachments was not properly reflected on the model in the Development screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the crosshair would not display correctly for certain firearms after retrying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that occurred when retrying against a certain boss encountered late in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "【Improvements Based on Player Feedback】",
+     "items": [
+      {
+       "text": "Added detailed information for items in Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "【Game Balance Adjustments】",
+     "items": [
+      {
+       "text": "Adjusted the balance of certain Artifacts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "【DLC Display Name Change】",
+     "items": [
+      {
+       "text": "Changed the name of the Side Mission included in the \"Lost Property Control Organization\" collaboration DLC set from \"Contradictory Object Detected\" to \"Lost Property Control Organization\" Collab Mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "※ The \"Lost Property Control Organization\" Collab Mission is unlocked after clearing \"Miyanohatacho Shopping Street\" and can be accepted from the mission board in the Workshop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "※ The DLC content itself remains unchanged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "■ About the Artifact Balance Adjustments",
+     "items": [
+      {
+       "text": "We would like to explain the changes made to Artifact effects since launch, including the adjustments implemented on November 6 and the additional changes made on November 12, as well as the reasoning behind them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In the patch released on November 6, we reduced the effectiveness of certain Artifacts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We do not intend to restrict players from discovering strategies that go beyond what the development team originally anticipated through extensive gameplay, experimenting with different combinations, or optimizing their builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We believe that playstyles and strategies developed through players' own creativity are an important part of what makes ANOMALITH enjoyable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "That said, the Artifacts we adjusted were capable of providing extremely powerful effects once obtained, regardless of game progression or player level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We felt that this significantly limited the appeal of other Artifacts and equipment choices, ultimately undermining the overall gameplay experience. For this reason, we decided to adjust their balance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We understand that these changes may be difficult to accept for players who had been making use of the affected Artifacts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We also recognize that we should have delivered the game with appropriate balance in place from the beginning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We deeply apologize that insufficient balance testing before launch has resulted in us making these changes after players had already begun enjoying the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In addition to these reductions, we have also increased the effectiveness of certain Artifacts to encourage the use of a wider variety of equipment and combinations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Please see the details below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "【Buffs】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shooting Chip \\[Ammo Conservation]: Increased activation chance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shooting Chip \\: Increased activation chance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Attack Chip \\[Melee Specialization]: Increased attack power bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Attack Chip \\[Weak Point Focused]: Significantly increased attack power bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Self-Regenerating Thorn: Significantly increased MP recovery amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "※ Only Attack Chip \\[Weak Point Focused] was updated on November 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "【Nerfs】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Floating Cartridge: Reduced damage percentage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Attack Chip \\[Weak Point Strike]: Reduced attack power bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "ANOMALITH",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gai Kidokoro, Producer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "& the entire Development Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 25,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Added detailed information for items in Storage."
+    ]
+   },
+   "sourceIds": [
+    "steam-4017880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4017880/view/1849192144182918"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T13:26:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-4017880",
+      "checkedAt": "2026-11-13T03:14:52.792Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-12T13:26:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4017880",
+      "checkedAt": "2026-11-13T03:14:52.792Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-12T13:26:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:05.901Z"
+  },
+  {
+   "id": "anomalith-402530@major-2026-11-06",
+   "gameId": "anomalith-402530",
+   "displayName": "Apology for Game Issues Update Information and Next Steps",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-06T11:00:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46132459/cd02ba7e8a7289658874fbbbbe44cb5214f0adac.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Details and Next Steps ◢",
+     "items": [
+      {
+       "text": "Since launch, many players around the world have chosen to play ANOMALITH. We sincerely thank you for your support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the same time, we are aware of multiple issues affecting the game, including critical bugs that prevent game progression, as well as issues with various game systems and visual presentation that disrupt immersion in the game's world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We deeply apologize for the inconvenience and frustration these issues have caused to everyone who has been looking forward to ANOMALITH and to those who are currently playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since launch, we have expanded our bug investigation and testing capacity to several times what we originally planned, prioritizing the investigation and resolution of the most critical issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update, we have adjusted loading processes and fixed bugs that could prevent game progression. We have also made improvements to controls and quality-of-life features wherever possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below are the details of this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "■ Update Rollout Status",
+     "items": [
+      {
+       "text": "Steam: Update available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "【New Features】",
+     "items": [
+      {
+       "text": "Added an \"Unequip\" button for gun attachments and Artifacts in the Customization menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Artifact information to the Sell and Storage screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Artifact information to the anomalous object conversion menu at vending machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "【Bug Fixes】",
+     "items": [
+      {
+       "text": "Adjusted loading processes during map transitions and retries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the drone would sometimes fail to appear after retrying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that could prevent game progression when performing certain actions during item transfers through the Portal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the defensive skill \"Decoy\" could become unusable under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where interaction icons would remain visible in certain areas of the Hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted item drops in certain areas of Keisen Mall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed map-related issues caused by attacks from certain enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the mouse cursor position would be offset on certain monitors.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue in \"Anomalous Death Zone\" where the mouse cursor would remain visible after opening the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted the positions of certain safes that appear as rewards for defeating enemies in \"Tuned Zone.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various other minor issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "【Game Balance Adjustments】",
+     "items": [
+      {
+       "text": "Adjusted the balance of the following enemies:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cyclops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hanging Head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Igarami",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "■ Next Steps",
+     "items": [
+      {
+       "text": "While this update brings further improvements, a number of issues remain unresolved, and we have not yet reached a level of stability that allows everyone to enjoy the game with confidence. We sincerely apologize once again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will continue to make resolving these issues our highest priority.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the same time, while prioritizing critical bug fixes, we will also work on improvements to controls and quality-of-life features based on feedback received through social media and other channels, addressing what we can in parallel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "━━━━━━━━━━━━",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are deeply grateful to everyone who has reported bugs, shared honest feedback, and continued to support ANOMALITH.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once again, we sincerely apologize for the significant inconvenience and frustration we have caused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our entire team remains committed to taking responsibility for these improvements and living up to your expectations and trust—not just through words, but through future updates and the quality of the game itself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ANOMALITH",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gai Kidokoro, Producer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "& the entire Development Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 9,
+    "balance": 4,
+    "other": 18,
+    "ps5": 0,
+    "topNew": [
+     "Added an \"Unequip\" button for gun attachments and Artifacts in the Customization menu.",
+     "Added Artifact information to the Sell and Storage screens.",
+     "Added Artifact information to the anomalous object conversion menu at vending machines."
+    ]
+   },
+   "sourceIds": [
+    "steam-4017880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4017880/view/1848664643345091"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T11:00:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-4017880",
+      "checkedAt": "2026-11-13T03:14:52.791Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T11:00:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4017880",
+      "checkedAt": "2026-11-13T03:14:52.791Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-06T11:00:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.345Z"
+  },
+  {
+   "id": "anomalith-402530@major-2026-10-07",
+   "gameId": "anomalith-402530",
+   "displayName": "Improvements & Update Information",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-07T16:50:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46132459/c834f96762f76cec79eb8279f90ceefcac41641e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have released the following update for the currently available demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Main Update Details",
+     "items": [
+      {
+       "text": "After clearing the demo, you will be able to develop one of the three “Armed Schoolgirl” outfit sets included as a Digital Deluxe Edition exclusive bonus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add ANOMALITH to your Steam wishlist and stay tuned for release day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4017880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4017880/view/1846018067926818"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-07T16:50:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-4017880",
+      "checkedAt": "2026-11-13T03:14:52.790Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.343Z"
+  },
+  {
+   "id": "anomalith-402530@major-2026-09-29",
+   "gameId": "anomalith-402530",
+   "displayName": "Improvements & Update Information",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-29T11:00:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46132459/c834f96762f76cec79eb8279f90ceefcac41641e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are continuing to update the game based on the feedback and requests we receive from players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These updates are aimed at improving the overall gameplay experience and usability, so you can enjoy the demo more comfortably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates Implemented",
+     "items": [
+      {
+       "text": "Added the “Survival” difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added mouse support for various UI elements, including the main menu and inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where only certain keys could be assigned when using a keyboard, and expanded key binding options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added mouse sensitivity adjustment options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added the ability to use healing items via shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted some player animations and added new animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted various numerical values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issues affecting certain weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated some 3D models.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor improvements and bug fixes.: If you encounter any bugs or issues while playing, please let us know through the bug report form below.: We will continue working on improvements so we can deliver the best possible full release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4017880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4017880/view/1844751498233868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-29T11:00:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-4017880",
+      "checkedAt": "2026-11-13T03:14:52.790Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.342Z"
+  },
+  {
+   "id": "anomalith-402530@major-2026-08-04",
+   "gameId": "anomalith-402530",
+   "displayName": "Improvements & Update Information",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-04T04:00:43.000Z",
+   "notes": [
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/46132459/80b2670e7385c7b293eb23fda5547b9adf91efa3.png\"]",
+     "items": [
+      {
+       "text": "Based on the bug reports and feedback we have received, we have promptly released an update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are also sharing our plans for future fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For more details, please see the attached image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Should you encounter any issues while playing, please let us know through the Bug Report Form linked below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will continue working to improve the game and deliver the best possible full release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4017880"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4017880/view/1839676055896453"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-04T04:00:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-4017880",
+      "checkedAt": "2026-11-13T03:14:52.789Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:58.341Z"
+  }
+ ],
+ "issues": []
+}

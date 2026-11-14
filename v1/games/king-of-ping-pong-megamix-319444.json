@@ -1,0 +1,895 @@
+{
+ "game": {
+  "id": "king-of-ping-pong-megamix-319444",
+  "igdbId": 319444,
+  "name": "King of Ping Pong: Megamix",
+  "cover": {
+   "imageId": "co90eo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co90eo.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar36g3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar36g3.jpg"
+  },
+  "ps5Release": "2025-09-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "king-of-ping-pong-megamix-319444@1.1.2",
+   "gameId": "king-of-ping-pong-megamix-319444",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-28T06:48:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey champions! 👑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve got a quick update bringing a Fullscreen function to the gallery, alongside a small tweak to arcade mode Wilfred’s super gain to bring him back in line with the other opponents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Notes",
+     "items": [
+      {
+       "text": "Clicking on a highlighted gallery entry will now open the image in Fullscreen!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arcade mode Wilfred’s super gain has been adjusted so that he no longer gains more super than the player does during rage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a translation error when changing languages from Japanese to English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes regarding texts have been implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "please get in touch with us through our Discord Server if you have spotted any other bugs or have any recommendations! Thank you for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspicious Jam Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2940100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2940100/view/1797820624580500"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-28T06:48:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2940100",
+      "checkedAt": "2026-11-12T08:23:20.132Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:20.132Z"
+  },
+  {
+   "id": "king-of-ping-pong-megamix-319444@1.1.1",
+   "gameId": "king-of-ping-pong-megamix-319444",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-16T03:18:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey champions! 👑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hoping everyone has been enjoying the super update! We’ve got a small update bringing Japanese localisation, fixes to various aspect ratios, and some small gameplay tweaks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Notes",
+     "items": [
+      {
+       "text": "The game is now available in Japanese! You can change the current language in settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A tutorial for Super abilities will now appear after the punish tutorial when facing Wilfred for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is now a notification when a new paddle skin has been unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI now scales correctly the following aspect ratios: 21:9, 32:9, 4:3, 3:2, 5:3.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ultrawide aspect ratios are now boxed to 16:9 to prevent scaling issues between menu and gameplay UI.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Activating super before the rage cutscene will now no longer consume your super.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reset all save data option in settings now brings up a prompt instead of immediately clearing all your save data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paddle skins reset correctly when save data is reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the NO button is now the first selected button when clicking quit in game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor fixes regarding texts have been implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The fixes in this patch are thanks to members of our community! So as always, please get in touch with us through our Discord Server! Thank you for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warm regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Suspicious Jam Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2940100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2940100/view/1797185861592399"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-16T03:18:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2940100",
+      "checkedAt": "2026-11-12T08:23:20.131Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:20.131Z"
+  },
+  {
+   "id": "king-of-ping-pong-megamix-319444@major-2025-03-24",
+   "gameId": "king-of-ping-pong-megamix-319444",
+   "displayName": "Major Update - Supers, Rebalancing, QoL",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-24T12:04:18.000Z",
+   "notes": [
+    {
+     "title": "Hey champions!",
+     "items": [
+      {
+       "text": "Addressing a lot of the feedback about the game, we have a major update coming out for all of you! This update highlights are as follows!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance Adjustments - Spin has received yet another nerf, giving you ample time to figure out how it works. In addition,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Super Abilities - Both you and enemy champions now have a super attack that charges up over the match. Activate it and use it wisely, as it can be a huge gamechanger!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "QoL - You're now able to skip the loading screens after restarts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Customization - Unlock a variety of paddles to use against enemy champions by completing achievements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Assist Mode - If you're struggling with Arcade mode, we have added an option inside settings to make your journey way easier. However, it is NOT the intended experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other game secrets!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Additions: Custom Paddles",
+     "items": [
+      {
+       "text": "Players are no longer confined to a single boring paddle. There now different paddles to collect in-game! Can you collect them all?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mirror Paddle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Frying Pan",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tennis Racket",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pixel Paddle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Broken Paddle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pure Gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Additions: Super",
+     "items": [
+      {
+       "text": "Players now have a super ability! Use the specified keybind to activate your Super Killshot to negate half of the next damage you receive and deal a massive amount of stamina damage in return. Gain charges faster by doing critical hits and killshots!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Which brings us to enemies. Enemies also has their own unique super abilities now. All of them has their own Supers that you have to look out for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ivan's Winter Strike - Increases the ball speed and deals an increased amount of stamina damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wilfred's Castling - Deals a significant amount of stamina damage and completely negates the damage received.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Nemo's Vanishing Strike - Causes the ball to disappear until the second bounce.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pat's Supersonic - Fires a supersonic shot to a direction indicated by a crosshair, dealing an increased amount of stamina damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ping's God Hand - Creates multiple illusions of the ball while dealing an increased amount of stamina damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Additions: Secret Boss",
+     "items": [
+      {
+       "text": "There is a super secret boss you can fight now. Good luck!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Additions: Adaptive Learning",
+     "items": [
+      {
+       "text": "Enemies can no longer be \"cheesed\" by shooting the ball into the same spot, as they will adapt to it quickly and start punishing heavily. How adaptive an enemy is scales on difficulty!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Accessibility",
+     "items": [
+      {
+       "text": "Added an \"Assist Mode\" accessibility option for Arcade Mode, allowing you to progress through the Arcade easier with +100% damage. Note that this is not the intended difficulty of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "All opponents in Arcade Mode has close to a 25% reduction in their max stamina bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All opponents in Arcade Mode has close to a 25% increase in their stamina damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spin is reworked to scale based off the opponent's spin ability. This means that the during first time players encounter spin, the spin rate of Takaoka Nemo will not be as intense as it originally gets in hopes of facilitating a better difficulty curve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Takaoka Nemo will have an increased spin scaling throughout Championship Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Killshots will no longer cost any stamina.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added visual effects to indicate when the player has run out of stamina.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ingame UI will be temporarily hidden during certain in-game cinematics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Championship mode will now provide additional score multipliers, giving players an additional method to grab the achievement for 250000 points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are 2 additional achievements on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can skip through the restart cinematics, allowing for much faster restarts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Frame skips will no longer soft lock the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the credits scene still plays after exiting to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Championship difficulty Wilfred no longer has access to your brainwaves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, we will monitor this update for any issues that come up. Please be in touch with us through our Discord Server!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 4,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0,
+    "topNew": [
+     "Mirror Paddle",
+     "Frying Pan",
+     "Tennis Racket"
+    ]
+   },
+   "sourceIds": [
+    "steam-2940100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2940100/view/1794830910998535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-24T12:04:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2940100",
+      "checkedAt": "2026-11-12T08:23:20.130Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:20.130Z"
+  },
+  {
+   "id": "king-of-ping-pong-megamix-319444@1.0.9",
+   "gameId": "king-of-ping-pong-megamix-319444",
+   "displayName": "Update 1.0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-23T03:55:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey champions! 👑",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been a week since King of Ping-Pong: MEGAMIX launched, and a week since Nemo has beaten up hundreds of challengers. That being said, we'd like to thank all of you for playing the game, and to announce that we have a Week 1 Update, containing some difficulty balancing and bug fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug showing the wrong player name or title \"Challenger\" ingame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the end credits can get out of sync, causing the subtitles to play at a wrong rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the end credits does not show up properly in certain aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Difficulty Balancing",
+     "items": [
+      {
+       "text": "Adjusted Arcade Nemo's difficulty ramping - reduced initial power on spin attacks, increased power slightly on non-spin attacks. Same deal with her post-rage, but to a smaller extent. This was done in order to introduce \"Spin\" at an easier rate to new players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Arcade Pat's difficulty ramping very slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the stamina damage taken on Championship V very slightly. Ivan, Nemo, and Pat deals around 5-10% more stamina damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We're still working hard on getting localizations for the game. We hope you enjoy King of Ping-Pong: MEGAMIX!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Suspicious Jam Team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 6,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2940100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2940100/view/1783872412035152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-23T03:55:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2940100",
+      "checkedAt": "2026-11-12T08:23:20.128Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:20.128Z"
+  },
+  {
+   "id": "king-of-ping-pong-megamix-319444@0.1.4",
+   "gameId": "king-of-ping-pong-megamix-319444",
+   "displayName": "Update 0.1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-17T12:40:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey challengers! This is a minor update for the Steam Next Fest demo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "You will now unlock the next champion as soon as you defeat the previous one - meaning that even if you quit, your progress will continue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization has been done on the scene - while there is still no graphic settings, the game should run with way less load now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some issues regarding UI has been squished,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you at Steam Next Fest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2940100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2940100/view/6212244583175795234"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T12:40:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2940100",
+      "checkedAt": "2026-11-12T08:23:20.125Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:20.125Z"
+  },
+  {
+   "id": "king-of-ping-pong-megamix-319444@0.1.3",
+   "gameId": "king-of-ping-pong-megamix-319444",
+   "displayName": "Update 0.1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-14T06:05:34.000Z",
+   "notes": [
+    {
+     "title": "Hey, champions!",
+     "items": [
+      {
+       "text": "Steam Next Fest is closing in, and as we approach that huge event, we are updating the demo with some significant gameplay and quality of life changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "The timing window where you can hit the ball is significantly increased, especially the \"Early\" window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now buffer inputs while moving around, whereas before you can only input after you have finished a movement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All opponent champions has received buffs in order to better reflect their difficulty in the full game. This buff mainly involves ball speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life Changes",
+     "items": [
+      {
+       "text": "You can now choose to continue the Arcade Mode after beating a champion in a singles match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glossary unlocks for champions will be unlocked after beating them in Arcade Mode - there is no need to re-fight them in singles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are slight changes to the UI to ensure that it will be more intuitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you at Steam Next Fest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2940100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2940100/view/6211118320236783680"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-14T06:05:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-2940100",
+      "checkedAt": "2026-11-12T08:23:20.117Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:20.118Z"
+  }
+ ],
+ "issues": []
+}

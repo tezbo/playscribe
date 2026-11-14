@@ -1,0 +1,1030 @@
+{
+ "game": {
+  "id": "rift-racoon-121905",
+  "igdbId": 121905,
+  "name": "Rift Racoon",
+  "cover": {
+   "imageId": "co1sbk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1sbk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aray8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aray8.jpg"
+  },
+  "ps5Release": "2021-05-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "rift-racoon-121905@1.8",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Update 1.8",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-07-09T18:27:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "When you collected a level's diamond, it wouldn't get blue in the Pause menu. It would only get blue on the pause menu once you returned to a level where you've already collected the diamond. That is now fixed, the diamond will appear blue right in the moment you collect it. If you get a diamond and die, though, it will go blank again, because you have to save your diamond in a checkpoint. If you save your diamond in a checkpoint and then quit the level without completing it, you'll also lose the diamond. Checkpoints save diamonds, so you can die and die and retry the same level until completing it. Only by completing a level that you truly acquire the diamond.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now reactivate checkpoints to save your collected diamond! Rarely there were situations in which you activated a checkpoint, got the diamond, and couldn't save the diamond because the checkpoint was already active. Now it won't happen again, because you can reactivate the checkpoint to save your diamond. Simply touch it again.: This was pretty much a \"diamond\" update. Hope these fixes make the experience even more enjoyable!: Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marcos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/3444640809423338308"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-07-09T18:27:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.718Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.718Z"
+  },
+  {
+   "id": "rift-racoon-121905@major-2020-06-25",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Rift Racoon BIG Summer Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-06-25T17:40:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey! Marcos here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rift Racoon is going to participate on the Steam Summer Sale with a 65% discount, so this is a great time to finally get your copy! Not only because of the price deduction, but also because of the SUMMER UPDATE that has just come out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Skin",
+     "items": [
+      {
+       "text": "A new color palette that resembles summer colors is now available for your racoon! Unlike the other skins, this one is already unlocked from the start, so you just have to select it in the Stage Select menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now you can teleport, climb and jump around well dressed for the summer season! Hope you enjoy it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Abillity (+ major bug fix)",
+     "items": [
+      {
+       "text": "This one is a little hard to explain, so bear with me here and pay close attention if you really want to nail understanding this!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Take a look at this gif. It shows a problem you might have come across playing the game, but it's quite rare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the first four teleportations, everything works fine. I teleport, and then jump. But on the last ones, I teleport and do a weird short hop. What is happening?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Well, in the last attempts I entered impatient mode and started teleporting and then jumping almost immediately after teleporting. So what I did was press the teleport button and then, almost immediately after pressing the teleport button, pressed the jump button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This didn't work properly. What should happen is that you would teleport and THEN jump, but you did both actions at the same time. And not only that, the teleporting cancelled your jump height, so for that reason you did this weird short hop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is now fixed, and not only that, I turned this bug fix into a new abillity! If you press the jump button immediately after teleporting, you can do this:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "How cool is that??!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Teleporting and jumping at almost the same time (you have to press the teleport button slightly sooner) sideways will produce what I call a Teleport Jump! You will go airborne, but still being able to teleport one more time! You can teleport twice in the air, covering more space horizontally!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can also do a High Jump by teleporting upwards and jumping at almost the same time! You'll jump really high and still have one teleport remaining!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is definitely an advanced abillity and you're NOT required to master it in order to complete the game. Heck, trying to use this might make the game even harder! But it will be really fun for those who have already mastered the main abillities and are looking for new ways to traverse Rift Racoon's levels!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "So if you're a new player warping into Rift Racoon, don't mind this new abillity for a while. You can try it later!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I'm really happy about this new addition, because it fixed a bug that was bumming me down for quite a while AND added a new advanced abillity to the game (something that I really wanted, so experienced players and speedrunners could explore more possibilities).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level Improvements",
+     "items": [
+      {
+       "text": "These ones are much simpler, so I'll tell about them bullet point style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New checkpoint in levels 2-5 and 3-2, to make'em easier without influencing on the challenges they present",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the height of a recharging drone in 2-10, making it less likely that you'll hit it before hitting the one under it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the height of the diamond in 2-13, making it a little easier to get",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a few blocks in the beginning of 1-4, 2-1, 2-3, 2-4, 2-10, 2-12, 2-14, 3-1, 3-2, 3-4, 3-7, 3-8, 3-13, 4-6 and 4-8 to prevent you from teleporting up to the ceiling (this change has been done because of the new High Jump abillity, that allows you to reach higher parts of levels you should'nt be able to reach)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added one block to 1-5 to allow for a skip if you're crafty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed some blocks on 2-19 to allow for a skip if you're crafty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Game Improvements and Bug Fixes",
+     "items": [
+      {
+       "text": "Moving platforms will now drag you upwards if you don't land on top of them, in order to make them easier to handle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the collision in moving platforms so it won't look like you're floating over it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small glitch in which the head bonk effect would appear over your head if you teleported into a wall while in a climbing state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small glitch in which a blue box would spawn alongside the head bonk effect and disappear after a few seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a simple bug where holding up and down on the keyboard and then teleporting would play the teleport sound and effects but keep the racoon in the same place",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the diamond would remain dark, as if it has been gotten, if you get the diamond and save it at a checkpoint and then quit the level. Saving a diamond at a checkpoint doesn't actually make you get it. You have to finish the level to really make the diamond count as collected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where very rarely, in Casual mode, you would get stuck in a wall for good",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And, wow, that was a lot, but everything has been listed and explained!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you already own Rift Racoon, hope you enjoy the new update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's all for today. Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 21,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/3444639924494717656"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-06-25T17:40:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.716Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.717Z"
+  },
+  {
+   "id": "rift-racoon-121905@1.6",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-05T21:05:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marcos here, bringing you another Rift Racoon update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It was a simple one this time. First, a few bugs were fixed on the coyote time and jump anticipation systems, explained in the previous update. They were working, but not at all times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second, a little change was made on level 3-14. There was a bit in the middle that was waay too frustrating. There were two spikes set on a running machine. It was way too tricky. I moved the first spike closer to the other, so you'll have more breathing room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for playing Rift Racoon! Hope you're having fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/2582187916832847452"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-05T21:05:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.715Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.715Z"
+  },
+  {
+   "id": "rift-racoon-121905@1.5",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-12-02T20:10:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marcos here, bringing you another Rift Racoon update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This one will improve the game's overall gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first thing changed were the SPIKES. Yeah, those annoying spikes. They are less annoying now. They are a joy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The *hitbox*, or, in non-gamedev terms, the thingy that, if touched, makes something happen in the game (in the spike's case, the player death), was greatly reduced!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "It used to be like this",
+     "items": [
+      {
+       "text": "It's like this now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Check out how you can get REALLY in the spike's face before dying!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Notice that even the old hitbox didn't fill the whole spike's image, but it still felt quite unfair. Rift Racoon aims to be a difficult, but fair game. I don't want to challenge you to learn hitboxes and stuff. I want to challenge, mostly, your precision controlling your racoon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To be honest, I knew all along that the spike's hitbox wasn't great. The only reason I stretched it so much in the past was because of this:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This happens with the new hitbox. It's narrower, so you can jump safely on the side of spikes in borders. This allows for some really unwanted skips on levels. Specially on 3-2 (you could skip pretty much all of the last section on this level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But, don't worry! I won't let you skip through all my hard work! I programmed a solution!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The spikes on edges of platforms WILL REMAIN with a wide hitbox, so you won't be able to skip levels, like shown on the gif before this one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Win-win, right? You get a better hitbox on spikes, and I still get to see people playing through my whole levels, without skipping them! :D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second change is COYOTE TIME!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I don't know who invented the term 'Coyote Time', but it references to how cartoon characters (like Coyote) can float a bit in mid-air before falling down a cliff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can add this to platformer games, and allow the player to jump a few miliseconds before falling! I added this to Rift Racoon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It might look like a bug, or like something that shouldn't happen, but believe me: It will make the gameplay better. I bet you fall a lot into spikes or holes because you were trying to jump on the edge of a platform. With this new addition, you will still make the jump, instead of falling to your death!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I feel like I say 'death' and 'dying' a lot in these updates. I'm not sadistic. I swear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have to add, playing the game on slow motion while recording the previous gif was pretty fun. For some reason I thought it would be funny to see Tucker (the racoon) running away from a missile in slow motion. Turns out it is quite the sight!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Look at him, running for his life, hahaha!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yeah, way to go, JUST AFTER saying you're not sadistic you post a gif like that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I still promise I'm not sadistic!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now for the third change! This one doesn't have a cool name like 'Coyote Time', so I'll call it 'Asking for a jump while in mid-air'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the gif above I tried to show you the moment in which I press the jump button. Notice I pressed it before landing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this new addition, you can press the jump button right before landing, and you will still jump! This is pretty cool, and you won't be like: \"%%@# this game! I did press the jump button! Why didn't he jump???\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I bet it happened sometimes, didn't it?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The thing is that, before this update, you could only input a jump while on the ground. This is a problem in intense sections in which you have to jump multiple times in sequence. You won't notice a jump didn't happen because you \"didn't press it on the ground\", but did press it a few moments before landing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And this concludes today's update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you find any bugs, or have any suggestions that might improve the game, lemme know in the community center!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks! Have a great week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marcos, full-time Rift Racoon updater (not really)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/2551782186274121762"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-12-02T20:10:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.714Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.714Z"
+  },
+  {
+   "id": "rift-racoon-121905@1.4",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Update 1.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-26T23:05:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for playing Rift Racoon! Hope you're enjoying!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today's update is very small and simple, but will definitely make the experience better. First, I've changed a bit level 2-2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, you won't fall a short distance onto the last platform. This was a bit frustrating, because if you were standing on the left corner of the upper platform once making the downwards teleport, you would fall onto the spikes, because of the short distance you had to fall until landing on the last platform. Now, once teleporting down you will land immediately on the platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The last change on this level was on the part where this level's diamond is hidden. I won't spoil it for those who haven't yet found the diamond, but it's a bit easier to get it now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There's kind of a big change related to gameplay. Now, holding down while climbing a wall won't let you keep climbing it. You'll fall! This makes it easier on sliding bits, like this one in 2-5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When you teleport down, you'll already be falling. It won't happen anymore a situation in which you teleport through the spike, keep climbing up (while holding down) and die on the spike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hopefully this makes the game even better for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you find any bugs or have any suggestions, please adress to me via the community center.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/2551782186252877915"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-26T23:05:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.713Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.713Z"
+  },
+  {
+   "id": "rift-racoon-121905@1.3",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-06T23:41:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Wow, the updates just don't stop! And we're not just fixing bugs, I promise lol, because this time it ain't a bug fix!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major menu update",
+     "items": [
+      {
+       "text": "Now you can see which stages have collected diamonds, and which don't!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The selected level has a bright highlight in it, so you can REALLY know what level the cursor is pointing to: Diamond hunting is much easier now, right? I hope you have fun collecting them all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/2448197582016982012"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-06T23:41:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.711Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.711Z"
+  },
+  {
+   "id": "rift-racoon-121905@1.2",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-04T20:13:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Only bug fixes and minor changes today",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs fixed",
+     "items": [
+      {
+       "text": "Well, turns out the bug I thought I fixed on the previous patch wasn't really fixed (at all). The saw sounds! The saw sounds kept playing on to future levels if you skipped the level ending cutscene (in which the drone chases you). The only thing that the last patch helped solve here was that you could stop the saw sounds by going back to the menu. Now this bug is gone forever. The saw sounds only play when you're near then.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "I found a major bug on the game's saving system, but it's gone now. Sometimes, when you finished a level, the game didn't manage to save in time for the next level. Result: some progress would get lost from time to time. You would close the game on level 2-10 and find out, once you opened it again, that it just save until 2-8. What a bummer! But don't worry, it won't happen anymore (I hope! If it does, please let me know).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Minor level changes",
+     "items": [
+      {
+       "text": "I tweaked a little level 2-19. Increased the size of the first running machine and increased the distance between the two spikes in this level's last challenge (the climbing running machine with spikes, moving platforms and saws). This level is a bit less difficult now.: Thanks! If you find anything that needs fixing, lemme know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marcos, Rift Racoon developer and part-time bug catcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/2451574645873471504"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-04T20:13:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.710Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.710Z"
+  },
+  {
+   "id": "rift-racoon-121905@1.1",
+   "gameId": "rift-racoon-121905",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-11-02T13:50:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fun Patch Notes (Fun because I'm not gonna be all technical here. I'm gonna write it in understandable english):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where the saw sounds would keep playing even if you left the level through the Pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in Casual Mode where, if you were hit by something while also stuck into a wall, you would be stuck in the wall forever (well, not really forever, just until you Restart the game through the pause menu, which was a pretty ugly thing to ask of the players)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Now pressing F12 won't open a bizarre screen anymore! You can take as many screenshots as you want now (please do, I want to see you play)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level changes",
+     "items": [
+      {
+       "text": "Changed the placement of the second checkpoint on level 2-9. Now it's right behind the sliding challenge with spikes, so it will be easier to complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some spikes to the walls in level 2-9. Did you know you could climb the mountain and walk right past through the mid part of the level, like if you were going into a Super Mario warp zone? Well, now you can't anymore, because that was not intended by the developer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Major changes",
+     "items": [
+      {
+       "text": "Now you won't respawn on top of moving platforms or running machines after falling in a pit in Casual Mode. That wasn't very helpful, because spawning on top of moving platforms usually led you to falling again, and so did spawning on top of running machines, for they would keep moving the character sideways until he fell into a pit again. So, to be clear, this makes Casual mode easier: Thanks! If you find anything else that needs fixing, please report me through the game's Community Center ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Marcos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1025460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1025460/view/2451574645865283472"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-11-02T13:50:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1025460",
+      "checkedAt": "2026-11-12T10:23:17.708Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:17.708Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,750 @@
+{
+ "game": {
+  "id": "lisa-the-painful-definitive-edition-252188",
+  "igdbId": 252188,
+  "name": "Lisa: The Painful - Definitive Edition",
+  "cover": {
+   "imageId": "co6l8w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6l8w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2cge",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2cge.jpg"
+  },
+  "ps5Release": "2023-07-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "lisa-the-painful-definitive-edition-252188@patch-2023-08-29",
+   "gameId": "lisa-the-painful-definitive-edition-252188",
+   "displayName": "Major patch: localization, UI updates, and more!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-29T21:42:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, today we’ve released a new patch for LISA: Definitive Edition. The update is out today on Steam, Xbox, and Nintendo Switch, with PlayStation coming soon. This update includes localization support, overhauled battles, and new fixes/features driven by community feedback. Thank you for all the input you’ve given us since launch, and thank you especially for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "As always, if you spot any issues, please share them with us via our official bug report form: https://airtable.com/shrzWMdBD7QWWt2fg.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s a full list of changes",
+     "items": [
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for Spanish (Spain), Spanish (Latin America), French, German, Italian, Portuguese, and Russian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General QoL and Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ‘X’ key can now be used to show the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ‘Q’ and ‘E’ keys can now be used to toggle between actors for the Skills, Equipment, and Status submenus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a screen “Stretch” mode to the Options Menu in addition to int scaling off/on modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"Controls Icons\" option to the Options Menu for changing how control icons are displayed to match specific input types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a frame stutter when passing in front of certain events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shortened the file path for Unity-generated Addressables data. This might fix issues for some users if their game data path was exceeding the Windows path limit of 260 characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Painful) Fixed a music issue when skipping the scrolling credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Joyful) Fixed bugged movement speed if the player unequips Buddy’s mask while riding on Rando's shoulders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Joyful): Fixed some minor graphical issues with the final Brad sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some typo fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated some credits names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battle QoL and Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battle text and state popups have been redesigned to have better positioning, timing, text sizing, and fading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battle info popups in the upper left have been overhauled with improved message timing and stacking. Info text size can also be adjusted with the “Dialogue Size” option in the Options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Timing for the display of skills during battles has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now play an additional flash when taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy motion actions (sprite movements) during battles have been expanded and improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HP/SP/TP generation popups now occur at the end of each turn. Ex: taking damage from the Bleed state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with TP generation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added additional DualShock 4 / DualSense lightbar effects during battles, such as a flash when taking damage, inflicting damage, healing, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved battle results screen, including transition effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled the battle results screen during certain instances, such as the final boss encounters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed actor KO’d sound not playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some targeting issues when performing combo inputs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with showing the wrong skill icon when the actor is unable to perform an action for the current turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A few other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 5,
+    "balance": 0,
+    "other": 22,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-335670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/335670/view/5141475722346619815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-29T21:42:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.072Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-29T21:42:28.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.072Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-29T21:42:28.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:44.326Z"
+  },
+  {
+   "id": "lisa-the-painful-definitive-edition-252188@post-2023-07-28",
+   "gameId": "lisa-the-painful-definitive-edition-252188",
+   "displayName": "7-28-23 Patch Notes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-07-28T19:50:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone. We've released a new Steam update with a few additional bug fixes across the game. Details below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where status effect expiration messages could sometimes conflict with other events and break the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Marty/Buddy fight when doing damage too quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting a Game Over upon entering a fight if using the Gang Menu to equip only KO'd party members",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Shocklord not resetting his KO'd state between EWC Tag Team matches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed party member skill icon not resetting in battles if they are unable to move for the current turn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dashing being permitted in Muddy Village: We are also working on additional bug fixes, UI/UX improvements, additional control options, and more. And, as noted previously, localization will also be coming to the game shortly. We appreciate your patience, and we're looking forward to getting these updates to you as soon as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-335670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/335670/view/5124584686250727131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-28T19:50:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.071Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-28T19:50:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.071Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-28T19:50:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:44.325Z"
+  },
+  {
+   "id": "lisa-the-painful-definitive-edition-252188@7.21",
+   "gameId": "lisa-the-painful-definitive-edition-252188",
+   "displayName": "Update 7.21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-21T23:43:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we're pushing out a major update for LISA to Steam. This update fixes a lot of graphical glitches reported by the community, rebalances combat, and addresses one of our most egregious sins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First off, a lot of folks were disappointed by missing graphics, including the Aurora town degenerate who claps when you fall on his friend. We’ve fixed a large number of those that have been reported, and are still working on a few more known instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speaking of visuals, we have a number of UI/UX fixes cooking, but these need a bit more time to get just right, so please stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, based on your feedback, we've re-balanced mechanics involving gaining TP in both games. Essentially, we've decided to restore TP gain from damage-taken, but with some tweaks to the original design that we feel dials in the challenge properly– especially for Joyful. Please let us know how it feels. Your feedback is very valuable as we continue to address combat balance and difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, in more somber news, we want to extend our sincere apologies for any inconvenience caused by the changes to “Work Harder.” Please take a look at our official public apology video (link below).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for holding us accountable. We value your continued support as we strive to do better and uphold the standards you rightfully expect from us. Thank you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full update notes",
+     "items": [
+      {
+       "text": "Re-balanced mechanics involving gaining TP from damage.TP-based characters will now receive half TP from damage dealt. On Painless Mode in both games, characters receive full TP from damage dealt (as in the original games).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential cause of softlocks at campfires.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting an instant Game Over upon entering a fight if party members are forcibly removed from your party and all remaining members are KO'd.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dismounting the bicycle incorrectly setting Brad's face graphic to no arms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed progress getting reset for the secret Painful boss and the boss restarting if you walk all the way to the left upon returning to the boss lair map after ending cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed down input being locked after completing the secret Painful boss (quitting and reloading a save should also fix this).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed clapping animation not playing the first time in Aurora Town when Brad falls on a dude.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Brad's bat swing animation not being visible during Rick's Cleansing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Buzzo's walk animations at the end of the joy force-feeding cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Buffalo's animations in the cutscene after winning his fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Joyful): Fixed a tile passability bug inside secret content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added \"Work Hardly Working\" and “Work Smartly Working” to the Music Player in Painful. Please see Dingaling's Official Public Apology (above).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-335670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/335670/view/5124584051975036884"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-21T23:43:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.070Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-21T23:43:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.070Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-21T23:43:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:44.305Z"
+  },
+  {
+   "id": "lisa-the-painful-definitive-edition-252188@post-2015-09-11",
+   "gameId": "lisa-the-painful-definitive-edition-252188",
+   "displayName": "\"Easy Mode\" plus new content!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2015-09-11T18:38:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "By popular demand LISA the Joyful now has an \"Easy Mode\"... Have fun. <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bou'll have to find it first you jackasses! HAHAHA!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also Buddy now has more attacks and abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also you can find new equipment to strengthen yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "<3,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DL",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-335670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/335670/view/4249665521681294367"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-09-11T18:38:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.069Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:44.304Z"
+  },
+  {
+   "id": "lisa-the-painful-definitive-edition-252188@major-2015-07-18",
+   "gameId": "lisa-the-painful-definitive-edition-252188",
+   "displayName": "Update for the default build: Engine improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2015-07-18T18:26:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "based on the influx of new feedback from the midweek madness feature we've decided to update the default build with some improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is now a better F1 screen, you will be able to change the most frequently used engine settings directly on that screen in the Graphics tab and the settings will persist. We realize that launch options and config files aren't really a satisfying solution for a lot of people.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new settings screen also features some buttons to setup recommended window sizes quickly at the click of a button, if you don't like the way smooth upscaling looks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game font's size has been decreased ever so slightly, so there should hopefully no longer be any cut off text in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you should encounter any issues please report them, you can use the original version of the default build by opting into the old-default branch on the betas tab in the game's properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UPDATE: There was a bug on Windows that would cause configuration changes to not be saved properly, this was fixed with the hotfix released at around 4PM PDT.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-335670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/335670/view/423686857818237563"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-07-18T18:26:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-335670",
+      "checkedAt": "2026-11-13T03:24:47.068Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:44.290Z"
+  }
+ ],
+ "issues": []
+}

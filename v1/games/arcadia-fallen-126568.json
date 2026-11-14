@@ -1,0 +1,1680 @@
+{
+ "game": {
+  "id": "arcadia-fallen-126568",
+  "igdbId": 126568,
+  "name": "Arcadia Fallen",
+  "cover": {
+   "imageId": "co8fus",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8fus.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arl92",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arl92.jpg"
+  },
+  "ps5Release": "2023-02-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "arcadia-fallen-126568@major-2026-06-25",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update Notes for June 24",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-25T09:49:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a small update that fixes some localization issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Version 1.3.1.1",
+     "items": [
+      {
+       "text": "Fixed an issue where locale text wasn't loading properly for choice menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized localization data management slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope everyone is enjoying their time in Anemone Valley! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/1836506165548632"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-25T09:49:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.492Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-25T09:49:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.492Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-25T09:49:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:02.807Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@1.3",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-16T13:12:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released the third major update for Arcadia Fallen!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]While developing the sequel, we have expanded on the code and systems used for the first game. To bring Arcadia Fallen into the future and make it more on par with its sequel, we have maintained the original game and released a new version with numerous improvements to the visuals, controls, and performance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Mipmap Support",
+     "items": [
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]A custom mipmap implementation that was developed for Arcadia Fallen II has been added to Arcadia Fallen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Shaders usually perform a nearest-neighbor anti-aliasing algorithm, which means that when multiple pixels in an image take up a single screen pixel, it will only consider the nearest 4 pixels in the grid. Say, when a source image of 1000x1000 pixels has a screen area of 100x100 pixels, for every displayed pixel, there is 10x10 or 100 pixels worth of information, where only the nearest 2x2 pixels will be considered, and this leads to a significant loss of data and artifacts like jagged edges and broken lines that become more severe the further the two sizes are apart. This is called downsampling. Likewise, when a source image is smaller than the screen area, the pixel values are interpolated, which leads to the image becoming blurry. This is called upsampling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Mipmaps are pre-rendered downsampled images of any texture in steps of halves, which have been created considering all information in the source image, instead of just the nearest 4 pixels. If your source image is 512x512 pixels, it will have mipmaps of 256x256, 128x128, 64x64, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]The custom system we created picks a mipmap of the exact size of the screen area or larger (to prevent upsampling), but no larger than twice the size of the screen area (to prevent downsampling). This means that for the 100x100 screen area in the example above, the game would use a mipmap of 128x128 instead of the source image, and for a larger screen with a screen area above that, it would use a source image of 256x256, and so on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]As a result, the system ensures the game looks its best on all devices and screens, while still being highly performant.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adaptive 4K Support",
+     "items": [
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Our mipmap system also has a custom implementation for mipmaps streaming designed for 2D games. Standard mipmap streaming is designed for 3D games, where textures for objects far in the distance have some of their mipmaps stripped to reduce GPU memory usage, since there is no reason to have a 4K texture loaded to the GPU for an object that only takes up a small amount of the screen area. By stripping unnecessary mipmap levels for objects in the distance, the game can drastically reduce GPU memory usage while still supporting high-quality textures for objects that are rendered closer to the screen. Mipmap streaming can also drastically improve load times, since unused mipmaps won't be loaded at all. Using these concepts, we have created a custom implementation of mipmap streaming designed for 2D games with adaptive 4K support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]When a screen is too small or the GPU doesn't have enough memory to support 4K, the game won't load 4K textures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Hidden characters and other inactive objects will have their largest mipmap level stripped, effectively reducing their GPU memory usage by 66% when they aren't visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We have also improved preloading of character textures, so textures for poses/expressions that aren't used in a scene are no longer loaded, which has drastically reduced the amount of GPU memory used in most scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Despite adding mipmaps and improving 4K support, which has increased the size of most texture assets by 60~300%, the game often uses 10~30% of the GPU memory it did before!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Alert prompts can now be canceled by clicking outside the pop-up frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved peripherals support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved touch support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved software keyboard support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Numerous minor improvements to controls and UI audio feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with keybindings not being reloaded properly after discarding changes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Visual Improvements",
+     "items": [
+      {
+       "text": "Improved 4K support for numerous assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the rendering quality of held ingredients when placing ingredients during the alchemy minigame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved texture quality for numerous assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crunch compression has been disabled to reduce the amount of overall artifacts from lossy compression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed numerous non-power-of-two (NPOT) textures, which used more GPU memory than necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The credits scene now reuses in-game graphics instead of playing a video.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized video files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance Improvements",
+     "items": [
+      {
+       "text": "Improved preloading of numerous assets for fast loading times and reduced CPU usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved memory handling of numerous assets for reduced memory usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved shader variant stripping, removing more than 50 unnecessary shader variants for reduced GPU memory usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized numerous shaders for improved GPU performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other Changes",
+     "items": [
+      {
+       "text": "Upgraded the scene light system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded Unity version by more than 3 years of updates and improvements to the game engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly improved how letters fade in for spoken text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly improved the bobbing animation for the line indicator arrow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Hofland' is now consistently spelled with one 'f'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some typos and other text errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made async operations more robust.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized numerous scripts and operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We have noticed many players are replaying or playing the original game for the first time following the release of the sequel, and we're happy that we can now make the first game an even better experience for players with big and small devices! 🧡",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 1,
+    "balance": 0,
+    "other": 38,
+    "ps5": 0,
+    "topNew": [
+     "Improved 4K support for numerous assets.",
+     "Improved the rendering quality of held ingredients when placing ingredients during the alchemy minigame.",
+     "Improved texture quality for numerous assets."
+    ]
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/1830163047257414"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-16T13:12:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.491Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-16T13:12:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.491Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-16T13:12:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:02.807Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@major-2022-11-18",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update Notes for November 18",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-18T16:16:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a small update that adds some minor improvements to the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Version 1.2.3",
+     "items": [
+      {
+       "text": "Characters that cannot appear in a scene will no longer be preloaded, significantly reducing memory allocation and usage in most scenes, while making sure characters are ready for when they need to appear. Best of both worlds!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with banter sometimes not playing correctly when returning to the map, since the previous update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where being presented with multiple choices for a location on the map could cause banter to skip forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We hope everyone is enjoying their time in Anemone Valley!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4789043687478126243"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-18T16:16:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.490Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:12.336Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@1.2",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-16T18:30:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released the second major update for Arcadia Fallen! —Please read below for the full details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Japanese Language Support",
+     "items": [
+      {
+       "text": "We are happy to announce that Arcadia Fallen is now available in Japanese! Adding localization to the game has been a huge undertaking by the team, but a year after the game's initial release it is finally ready! To everyone who's been waiting, thank you so much for your patience and we hope you'll enjoy our game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Improvements",
+     "items": [
+      {
+       "text": "The game now features a splash screen on start up, so players won't wait on a white screen indefinitely if their computer is taking a while to load the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Error Fixes",
+     "items": [
+      {
+       "text": "Improved preloading of scene to reduce potential stall time before first dialog is displayed after loading or starting a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where the player character would sometimes appear to wear a flower crown in the text log or offscreen portraits, when they shouldn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where banter with people not in your party could appear when returning to the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potentially rather severe memory leak caused by faulty operation cleanup when a scene was aborted. Say, if the game was waiting for a character to enter before continuing the story when it was aborted, the operation for the character to enter would be cancelled properly, but the waiting operation to continue the story would never be cancelled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tomorrow will be the game's first-year anniversary! A big thank you to everyone who has played our game in the past year and we are looking forward to bringing you more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Galdra Team ːmimeː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4789043687471229244"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-16T18:30:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.489Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:12.335Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@major-2022-08-11",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update Notes for August 11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-11T13:11:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a small update that adds some minor improvements to the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Version 1.1.1",
+     "items": [
+      {
+       "text": "Fixed an issue with voice over lines for nameless NPCs sometimes not being playable from the text log.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players would sometimes not get to select who to visit, when more characters were at the same location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved text log layout slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved how light affects characters in a scene, so the white outer line art remains crisp, in particular in darkly lit locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized loading speed and rendering of some character assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope everyone is enjoying their time in Anemone Valley!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4607764924150053721"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-11T13:11:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.488Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:12.295Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@1.1",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-24T13:42:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released the first major update for Arcadia Fallen! —Please read below for the full details",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story",
+     "items": [
+      {
+       "text": "Mette has springled the game with more than 50 new lines and reactions from characters as you progress through the story that are triggered by the choices and friendships you make along the way, to make every playthrough even more special and unique, and provide a welcome freshness to anyone who were to replay the game in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Voice Over",
+     "items": [
+      {
+       "text": "A few previously unused voice over clips for Rune and Ann have also been introduced to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Text Log",
+     "items": [
+      {
+       "text": "The game now has a text log that tracks the latest up to 100 entries of dialogue and choices! It remembers the tone-label of choices and the pose and expressions of characters. From the text log, players will also be able to replay the voice over of previously spoken lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ascend Outfit Color",
+     "items": [
+      {
+       "text": "Players can now select a second color for their outfit. For the long masculine hairstyle, the second outfit color also changes the color of the hairtie. All players with an existing playthrough will be able to change their outfit colors from the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Alchemy",
+     "items": [
+      {
+       "text": "Volatile Ingredient and Empowered Ingredient texts now appear with the exact same shimmering colors in tutorial text as the orbs in the table, to better connect the terms to their respective elements in the alchemy table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a mixture explodes, the ingredients that caused the explosion will now flare up before it happens, making it less abrupt while also giving players a better indication of what caused the explosion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A bookmark has been added to the alchemy book, which gives access to previous tutorials and allows players to read up on new rules for the alchemy minigame after they have become more familiar with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Safe Puzzle",
+     "items": [
+      {
+       "text": "Players who are having trouble with the safe puzzle can now call on Ann ːannː for assistance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Subtitles",
+     "items": [
+      {
+       "text": "An option to show subtitles for the intro video has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Audio levels have been adjusted throughout the game. Most prominently, voice over volume for Mime, Morgan, Quinn, and Ronan has been adjusted to make voice over volume significantly more even.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Controller glyphs are now displayed for PC, similar to how they are displayed for Nintendo Switch, and supports all Nintendo Switch, PlayStation, and Xbox controllers. Glyphs will also be displayed for some keyboard and mouse controls, such as the controls for turning wheels counterclockwise.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Touch controls have been improved throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An option to adjust the auto-advance speed of unspoken dialogue has been added to better accommodate different reading speeds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Graphics",
+     "items": [
+      {
+       "text": "Players can now see the most prominent personality traits their character picks up throughout their journey in the save file preview, to give players a better overview of their playthroughs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The alchemy book now sports a new blue color to make it slightly different from the save files book.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When accessing the companion menu through the game menu, players will now be able to scroll through past entries for every companion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The selection indicator for the map has been improved with white outline to make it easier to tell which location is selected while using a controller or keyboard controls.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Error Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where Goldner's dialogue portrait was being displayed too low on the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the close animation for the alchemy book could play twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a few voice over clips would not be played properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where saving right when the screen had faded to white or black during a scene could cause the scene to not play correctly after being loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the parallax effect for the background image would not scroll correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you experience any other issues, please don't hesitate to let us know either here on Steam or on our Discord server! 🧡",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 18,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4598755821876165319"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-24T13:42:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.488Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:12.281Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@major-2022-05-28",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update Notes for May 28",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-28T11:21:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a small update for the Windows version of the game!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Version 1.0.6 (Windows)",
+     "items": [
+      {
+       "text": "Fixed an issue where player colors would sometimes not load correctly for specific scenes in the game (hotfix on May 11).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where a very specific combination of choices throughout the game could lead you to getting stuck near the ending (hotfix on May 12).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with some alchemy recipes not being possible following the former hotfix —sorry!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved some loading operations to make the game run a bit better when under the most processing stress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you experience anything else, please don't hesitate to let us know either here on Steam or on our Discord server! 🧡",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4437747060833502238"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-28T11:21:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.487Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:12.280Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@major-2022-04-21",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update Notes for April 21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-21T18:17:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a small update to the game that fixes some errors players have been experiencing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Version 1.0.5",
+     "items": [
+      {
+       "text": "Fixed a rare issue where Ann's ːannː emote speech bubble would sometimes be askew.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where background parallax could cause the background to disppear outside the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with background parallax stopping abruptly instead of moving smoothly when cursor was near the edge of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved video player error handling, which should hopefully fix any rare issues with playing videos preventing players from progressing or starting the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you experience anything else, please don't hesitate to let us know either here on Steam or on our Discord server! 🧡",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4348797798076133052"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-21T18:17:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:11.884Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@major-2022-01-27",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update Notes for January 27",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-27T00:17:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released another small update to the game with some bug fixes, improvements, and minor edits to the story!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Version 1.0.4",
+     "items": [
+      {
+       "text": "Fixed an issue where Kaidan's romance banter would not occur properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Michael not being properly displayed during Ann's romance banter, when played from the Extra's menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where romance banter would sometimes be listed under an incorrect character in the Extras menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Romance banter is now shown directly under the character whom Morgan is being romantic with, instead of being nested under the pair whom the banter is between.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added music to all banter scenes when played from the Extras menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing flower crowns to two of Kaidan's poses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare issue where flower crowns would sometimes be displayed inconsistently for Morgan in a scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where a character might not leave or enter a scene properly during fast-forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when loading where the pose and expression of a character sometimes weren't resumed properly for characters that weren't visible in the scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an adventurous option would be given to a kind Morgan in place of a kind option in Chapter 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a soldier would be incorrectly transparent during a scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an incorrect voice-over line for Morgan Voice 1 in Chapter 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an incorrect voice-over line for Michael in Chapter 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the conditions for one of the endings were too lenient.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an insignificant memory leak when loading voice-over lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When a star choice appears for the first time during the prologue, a text will appear at the top of the screen that explains what they mean. The star indicates a choice where you call upon others for assistance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the cursor graphics on some OSX devices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized some town map operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor edits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4237326104317532462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-27T00:17:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.486Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:11.882Z"
+  },
+  {
+   "id": "arcadia-fallen-126568@major-2021-11-23",
+   "gameId": "arcadia-fallen-126568",
+   "displayName": "Update Notes for November 22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-23T01:03:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just released a small update to the game that fixes a few minor issues and adds something extra for players who manage to complete their alchemy collection!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Version 1.0.3",
+     "items": [
+      {
+       "text": "Added a new setting to the Extras menu on the title screen for players who complete all alchemy challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed an impossible alchemy challenge from the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the alternative solution to sedating the guard in chapter 1 not being registered correctly, which meant some parts influenced by this choice could not be reached properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a male villager could appear instead of Marie in chapter 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Master Alchemist and Perfect Crime achievements can now be properly completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Galdra Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1174640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1174640/view/4227186657157283568"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-23T01:03:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1174640",
+      "checkedAt": "2026-11-13T03:14:58.485Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:11.763Z"
+  }
+ ],
+ "issues": []
+}

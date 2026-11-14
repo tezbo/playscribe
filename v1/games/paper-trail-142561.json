@@ -1,0 +1,972 @@
+{
+ "game": {
+  "id": "paper-trail-142561",
+  "igdbId": 142561,
+  "name": "Paper Trail",
+  "cover": {
+   "imageId": "coadvj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coadvj.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1m5l",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1m5l.jpg"
+  },
+  "ps5Release": "2024-05-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "paper-trail-142561@patch-2024-06-03",
+   "gameId": "paper-trail-142561",
+   "displayName": "Paper Trail First Patch!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-03T12:10:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you've been enjoying Paper Trail! We're here today to release a patch with a few fixes, noted below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed UI issues with world select when switching save slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated missing credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed lock state if folding quickly between papers in tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blackscreen on load in Caves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889740/view/5742731639344492400"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-03T12:10:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889740",
+      "checkedAt": "2026-11-13T03:27:41.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-03T12:10:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1889740",
+      "checkedAt": "2026-11-13T03:27:41.746Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-03T12:10:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:52.488Z"
+  },
+  {
+   "id": "paper-trail-142561@major-2023-07-25",
+   "gameId": "paper-trail-142561",
+   "displayName": "Paper Trail - June / July 2023 Development Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-25T09:01:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone - we’ve been hard at work unfolding and refolding levels in Paper Trail as we absorb community feedback from playtesting - as a result, these updates are likely to become a little further apart. Fear not, you will still get regular updates…. just maybe not monthly… lets maybe call this the Paper Trail 6-7 weekly update?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This past month has been extremely busy - we’ve updated our game demos on Steam and PS5 (feel free to check them out!) and have been busy localising the entire game into 13 different languages. We’ve integrated Steam Deck support and introduced a BRAND NEW mechanic for our Ocean level which needed a bit of a revamp following community playtest feedback (we really do listen!). We’ve also hit 50, 000 Steam wishlists and are continuing to see more of our little game on influencer streams and in the press.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "You can also find us on Twitter (or do we call it X now?) where we post behind-the-scenes development content and keep everyone updated on our progress!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Steam Demo!",
+     "items": [
+      {
+       "text": "The demo we've had available on Steam has long been out of date, so we decided to coincide a new demo launch with the Future Game Show feature! This was much closer to our showcase demo and includes 4 worlds, brand new characters to interact with, Steam Deck and gamepad support, full localisation into 13 languages, and countless bug fixes and quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New PS5 Demo!",
+     "items": [
+      {
+       "text": "Sony requested a PS5 demo for them to showcase at Bitsummit! We'd previously provided a very old demo, so decided to update the PS5 demo for parity with the new Steam demo. PlayStation have updated their Unity version requirements, so we had to increase Unity version for the whole project, which always creates some issues. In terms of controls, we needed to add gamepad support for new mechanics, the PlayStation touchpad needed reimplementing, and after the update we were having some pretty persistent crashes due to graphics jobs. We fixed everything though, and passed Sony's 'showcase cert' process first-time with no issues raised! We've also nearly finished the PS4 port, but more on that next month!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck Support",
+     "items": [
+      {
+       "text": "We added support for a big new platform this month - the Steam Deck! This involved a lot more work than expected - we ported across the wobbly cursor from the console, added trackpad support, added Steamworks, as well as customising all our menu options and making lots of improvements to the game feel for handheld consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Improved Gamepad Support",
+     "items": [
+      {
+       "text": "As the Steam Deck is basically a controller, it made sense for us to also ship the new demo with controller support. This was new functionality outside of PS5, so was a sizable task, and included some nice new features like D-pad movement, improved menu navigation, better UI element support like dropdowns and sliders, as well as detecting and switching between different controller types and updating UI and tutorials accordingly. We did just buy an obscure Logitech controller though, and that doesn't work, so still more work to be done!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Lightbeam Mechanic",
+     "items": [
+      {
+       "text": "So you thought we were finished with mechanics! Think again! After our playtesting sessions with Indium, and our internal frustrations building levels for the Ocean environment, we realised we were lacking a 'wow' mechanic for Ocean that could carry through to the end of the game. One thing which surprised us was the powerlines mechanic in Cathedral was universally everyone's favourite, so we decided to build on the strengths of that and create a lightbeam/mirror mechanic. It may be a bit of a puzzle cliche, but it works really well with folding, so we don't care!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Demo Localised Into 13 Languages",
+     "items": [
+      {
+       "text": "Having submitted and passed our localisation demo with Netflix, we rolled out the localisation to our PS5 and Steam demos. This allows us to showcase the demo with Sony at Bitsummit in Japanese, and also to get feedback from players on Steam in regards to the translation. We already have lots of comments from our international community on Discord so we’re looking forward to taking those comments on board and improving further where we can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Accessibility Kick-Off",
+     "items": [
+      {
+       "text": "Ensuring our games are as accessible as possible to those with disabilities has always been very important to the founders. Despite the great reception for the accessibility features we added to our previous game Hue, there were still things we missed, and we want to bring in a professional this time around. Enter Cameron Akitt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cameron has been an accessibility consultant for 4 years, worked on numerous AAA games, and spearheaded the inclusion of sign language in Forza Horizon 5 - the first notable game to do so! Cameron has put together a high-level proposal of accessibility features for Paper Trail, and we'll be working closely with him over the next month to wireframe, prototype, implement and test the most important features for launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cutscene Changes",
+     "items": [
+      {
+       "text": "Having implemented the first five cutscenes, it's become clear that some parts work really well, but other parts are either very obscure or not very satisfying. This is usually because we sent off designs without properly testing fold solutions - which at the time made sense as we hadn't implemented cutscene tech! Now that we have all the tech implemented, we'll ensure we test sketched up ideas first before sending them off for final art. On the plus side, changes are relatively easy and can be mostly done by repurposing existing art. Below are some examples of changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ocean Levels",
+     "items": [
+      {
+       "text": "Based on feedback from our testing sessions with Indium, our ocean environment required a significant rethink. We came up with a new lightbeam mechanic, prism reflectors to redirect light, statues with shields that also redirect light, and light-activated switches which raise/lower platforms. This sounds like a lot, but it was mostly just beams/reflectors, the rest were repurposed or combined mechanics. These mechanics are all working brilliantly, but it meant we had to effectively do a full redesign of the ocean environment. We won’t spoil the actual level design for you - but we look forward to you experiencing it for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cathedral Levels",
+     "items": [
+      {
+       "text": "The Cathedral levels weren't in nearly as bad a state as Ocean, in fact, many players said it was their favourite environment, but we were able to identify lots of areas for improvement. These are now fully implemented, and ready for testing! Again, we don’t want to spoil any of the changes - especially if you’ve played through the levels already in playtesting - so feel free to check them out next time you get the chance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Character Profiles",
+     "items": [
+      {
+       "text": "As we start to hone in on character dialogue and localisation, it was important for us to define character names, profiles, relationships and other personality quirks and mannerisms. This has now been completed for all characters in the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ocean",
+     "items": [
+      {
+       "text": "The Ocean environment has been a real challenge creatively, as we've struggled with the stair mechanic adding lots of inconsistent height planes, and the water creating lots of visual noise. Below you can see the many different directions we tried to take it in:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultimately we settled on what feels like a Middle-Eastern Atlantis - an ancient city of Islamic architecture that crumbled into the ocean. Remnants of forgotten technology still lurk below the water, with strange levers activating bright lights, and shifting platforms connected to worn electrical cables, buzzing ominously from the depths below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "50,000 Wishlists!",
+     "items": [
+      {
+       "text": "In June alone we had over 15,000 wishlists, bringing our total to over 50,000! There's been a ton of different factors, but the most notable have been Future Game Show, Hue cross-promotion, advertising campaigns, a Chinese marketing campaign, storefront localisation, a #1 post on r/SteamDeck subreddit and some NextFest coverage (despite not being in this NextFest!).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Press",
+     "items": [
+      {
+       "text": "We did our own PR blast to coincide with the Future Game Show and new demo launch, which also got some fantastic coverage across GamesRadar, NintendoLife, PocketGamer, GoNintendo and more for a total of 39 articles with a total reach of 78 million views in accordance with SimilarWeb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below you can see some snippets!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Future Game Show",
+     "items": [
+      {
+       "text": "It's been a huge month of gaming news due to Summer Game Fest and all the events around that, so we've been super fortunate to secure a major spot in Future Game Show despite all the noise of big AAA announcements. We put a ton of work into coinciding our new demo launch with the event, and were still up at 5am the day before fixing Steam Deck bugs ahead of the big announcement! Everything went smoothly though, and we had our second biggest day ever in Steam wishlists thanks to the push - so it was totally worth it!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Summer Game Fest with Netflix",
+     "items": [
+      {
+       "text": "Whilst we've been locked away finishing the demo in rainy Norfolk, Netflix has been showing Paper Trail to press and influencers in LA for Summer Game Fest! This has helped generate huge amounts of press coverage and some very positive coverage on YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Netflix Tudum Event in Brazil",
+     "items": [
+      {
+       "text": "The world tour also extends to São Paulo, Brazil, where Paper Trail was also being showcased by Netflix for Tudum: a global pop culture event that covers their original films, television series and games!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Awards",
+     "items": [
+      {
+       "text": "We're delighted to say that we won the Rising Star Award in the IndieCup UK Awards, as well as getting nominations for Critics' Choice and Most Anticipated game! There were some fantastic games in the finalists, and we're super pleased our friends at Bonsai Collective won the Most Anticipated Game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thanks for taking the time to read our update and if you haven’t already - you can wishlist Paper Trail and check out the free demo below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 4
+   },
+   "sourceIds": [
+    "steam-1889740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889740/view/5124584051987383185"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-25T09:01:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889740",
+      "checkedAt": "2026-11-13T03:27:41.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:11.725Z"
+  },
+  {
+   "id": "paper-trail-142561@major-2023-06-07",
+   "gameId": "paper-trail-142561",
+   "displayName": "Paper Trail - May 2023 Development Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-07T08:49:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Happy June, Paper Trail enthusiasts!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "May came and went faster than you can turn a page, and we’ve been hard at work! (How is it June already?!) We’ve got some really exciting stuff to share, from bug updates to new story content and character animations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make sure to add Paper Trail to your wishlist to keep up with these monthly updates and more. Thank you to everyone who provided feedback during testing, and to you, for reading this post!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improved Folding",
+     "items": [
+      {
+       "text": "Our lead developer went rogue and secretly redesigned the fold handle UI! On the left you can see the old UI, where we had a relatively small circle, and on the right a rough hand drawn line which spans the edge of the paper. After lots of testing, all our players preferred the new UI! One thing which did frustrate players, and had been raised previously with the old UI, was how small the drag area was, and with some drag interactions feeling missed. This has now been significantly improved and spans the whole edge of the paper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Power Lines Improvements",
+     "items": [
+      {
+       "text": "From our rounds of playtesting this month, power lines have proven to be one of the most popular mechanics in the game! One person did comment that they felt a bit glitchy, and we were indeed aware of a number of bugs which caused lines to flicker and suffer from other visual issues. These have all now been fixed, and we're confident power lines are release-ready as a mechanic!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Dynamic Splash Screen",
+     "items": [
+      {
+       "text": "This was a super low priority task which had been on our radar for a while, but we wanted to create a layered parallax effect on the splash screen based on cursor position, as well as adding in-game effects like falling leaves and wind trails. We were able to implement it whilst waiting for builds, and it looks great! The next thing we need to do is add accelerometer support to the parallax for mobile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Guidance Arrows",
+     "items": [
+      {
+       "text": "We found that some players were getting lost in the village at the beginning of the game, not easily following other visual indicators. To really ensure no players get stuck at the start, we've added guidance arrows which trigger after a short period of time, so it's clear where they have to go. This is important as we've found once players get to caves, they're absolutely fine, as it's much more linear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Key UI",
+     "items": [
+      {
+       "text": "We had a lot of testers suggesting the inclusion of a key UI so it's clear when you've collected one or more keys. The new UI is a keychain, which each new key gets added to! The skeuomorphic touch to the UI is a bit of a departure from the stylised minimalist aesthetic for the rest of the UI, so will need revisiting, but the idea and implementation work well!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lots of Bug Fixes for QA/Localisation",
+     "items": [
+      {
+       "text": "Despite all the improvements listed above, the majority of development time this last month was spent doing bug fixes for both QA and Localisation builds. For QA we really wanted to ensure the builds were as bug free as possible so we could get clear results regarding good/bad elements of the game, without technical issues clouding their judgement/feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Cutscenes",
+     "items": [
+      {
+       "text": "We've now implemented 3 new cutscenes, so roughly half the cutscenes are now complete to a basic level. They still need a polish pass, VO added and some UX improvements, but generally they're right on track and they're working really well to support transitioning between environments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Final Characters Complete!",
+     "items": [
+      {
+       "text": "The last two character designs for the game are now complete! Below we have a little mischievous boy in the Autumn environment who starts the fire. We also have the Castaway's wife, who is eagerly awaiting his return to the fishing village! Now these are complete we can move onto animating all the characters... oh wait, that is also now complete!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Character Animations",
+     "items": [
+      {
+       "text": "We've now completed all character animations for the game! Below you can see the last batch of characters animated this month! Now we have the daunting task of exporting and implementing all these animations into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below you can see the Birdwatcher implemented into the Treetops environment!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ruins",
+     "items": [
+      {
+       "text": "We have finished revisiting ruins, one of our strongest environments - to breathe new life, new puzzles, stronger narrative flow, a well refined difficulty curve, and a heaped tablespoon of new art assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of the puzzles in this environment are our favourite in the entire game, and we’ve been seeing equally positive feedback from testing. We feel the balance between novelty and difficulty is where we want it to be now, as well as feeling like it's a particularly pretty environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Unique Sprites",
+     "items": [
+      {
+       "text": "Although the ruins were in a good place in terms of concept and basic art, one thing it was lacking was variety. We’ve painted up a bunch of new buildings, rock formations, sculptures, statues, bridges, and more - to lend a sense of progression, mystery, and fullness to the environment. It now feels fully fleshed out, with some really lovely art moments scattered throughout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "End Art Scene",
+     "items": [
+      {
+       "text": "You’ve folded, flipped, dragged, and pushed your way through the ruins to the very end - and are rewarded with the entrance to the next environment, the cathedral! We wanted a grand doorway, shrouded in mystery - that hints at the runic powerline mechanic that lay in wait behind the doors. We had a lot of fun painting and designing this - and are really happy with how it turned out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Future Game Show",
+     "items": [
+      {
+       "text": "Future Game Show got in touch with us directly and asked if we'd like to be included in their Spring Showcase. We're super excited to be included in the event, and we're coordinating with FGS and Honest PR to drop a new Steam demo to coincide, along with a press release. We've also got some brand new 4K footage for the stream!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Summer Games Fest",
+     "items": [
+      {
+       "text": "We're also going to be shown during Summer Game Fest! Last year the event attracted 3.5 million peak concurrent global viewers and we're expecting even more this year. We’re really excited about this one and can’t wait to show off the game to more people!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localisation",
+     "items": [
+      {
+       "text": "We've now developed all our localisation systems to release quality, implemented a pseudo-loc strings table from Lionbridge which will allow us to identify any implementation issues, have added language switching support, and have included a wide selection of fonts for different character sets which still match the look and feel of the game. We've also sent the final text over for demo localisation, and once we have that translated, will be ready to create a fully localised demo build!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for reading - we've got some really exciting news coming up over the next few months. Keep your eyes and ears peeled for playtesting opportunities as well as MAYBE a new demo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889740/view/5129083846334675367"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-07T08:49:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889740",
+      "checkedAt": "2026-11-13T03:27:41.743Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:11.640Z"
+  },
+  {
+   "id": "paper-trail-142561@major-2023-05-05",
+   "gameId": "paper-trail-142561",
+   "displayName": "The Paper Trail April Community Development Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-05T14:08:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Paper Trailers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Does that sound right? Paper Trailers? Paper Fans! Paper.... we'll work on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back with another community development update that totally wasn't due to be released in April. It's a big one - we've got new art. new characters, new animations, and most importantly new awards!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy getting a peek behind the development curtains and don't forget - you can check out the demo and wishlist us on Steam to be updated when we release.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Save System",
+     "items": [
+      {
+       "text": "We've conducted a major overhaul of the save system to improve checkpointing - this will now improve overall reliability of the save system and also more accurately place players back at their level of progression after leaving the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wires/Vines Tech Art",
+     "items": [
+      {
+       "text": "Something which regularly features in our concept art, but hasn't really translated to the game yet is swaying vines with things attached to them. Whether that's vines with dangling foliage attached, wires with dangling light bulbs, or in this case ropes with hanging lanterns. This required some editor tools to be developed so the designers could place and adjust bezier curves in the editor and pin game objects to control points. We had some time on the flight to GDC, so we decided to build it then (efficient working!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fire Five World Level Designs",
+     "items": [
+      {
+       "text": "In the last update, we mentioned all the work done on completing the first five worlds in the game! In this update we essentially finished them, adding in art scenes at the beginning/ends, decorating magic moments and redesigning any problematic areas. We’re really happy with the outcome and can’t wait to share more in upcoming playtests!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cinematics",
+     "items": [
+      {
+       "text": "Cinematic (not to be confused with cutscenes) are essentially short in-game animations where we hijack the camera and show a sequence of events, usually to emphasise a special moment. These have been added throughout usually at midpoints and endpoints of environments to add some reward, and break up the puzzles. We still have some work to do on these, but the implementation and flow is now fully working!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cutscenes",
+     "items": [
+      {
+       "text": "We've made numerous changes to cutscenes including a new UI which shows how close the player is to solving the paper they're on, flashes to white on completion so it's clearer when players have progressed, a complicated new timing system so camera panning slows down if there's a lot of VO remaining, and lots more! Below you can see it running on iPad:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Select",
+     "items": [
+      {
+       "text": "We're continuing work on designing unique art for the level select screens which encompass each world. Below you can see the unique artwork for the Autumn and Village environments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Characters",
+     "items": [
+      {
+       "text": "We're very nearly finished with all the character designs for Paper Trail! For this update, we have two new faces, the Birdwatcher and the Rich Old Lady.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Birdwatcher is introduced at the beginning of the Treetops environment. Initially, they appear to be an innocent observer of rare birds, but things aren’t exactly what they seem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Rich Old Lady makes her appearance at the beginning of the City environment, where she falls prey to the Street Urchin who steals her handbag!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Swamp",
+     "items": [
+      {
+       "text": "The final puzzle in swamps was a challenge to dress, featuring many moving parts and a high level of mechanical density. It is decorated and functional in its current state, but we feel it will need a thorough re-design in order to fit both the difficulty curve and the aesthetic requirements of the environment. Thematically, we went for a crumbling ‘temple of frogs’ - a concept which we would happily re-apply to any future design changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Swamp End Art Scene",
+     "items": [
+      {
+       "text": "The scene at the end of swamps that leads into treetops and the bridging cutscene is now in game, with a unique reverse side to match. A ladder, some lanterns, and a ruined plaza/foreground has been added to provide context in both directions. Previously just a placeholder static image, we now have motion in the form of light rays, shadows, and foliage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Treetops Trapdoors",
+     "items": [
+      {
+       "text": "A small but interesting design challenge in each environment is localising existing mechanics to fit within the new aesthetic. In this example, we were struggling to make pressure pad-activated doors make sense within the context of suspended wooden platforms. So instead opted for pressure pad-activated trapdoors - functionally exactly the same as doors but much more sensical in this setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Treetop Final Levels",
+     "items": [
+      {
+       "text": "The final puzzle for treetops is dressed and ready for business! A grand central structure, with supporting buildings to house the teleporting doors. This is a tricky level but we hope that we’ve managed to give it the artistic flair it deserves whilst maintaining visual clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Treetops Intro and End Art Scenes",
+     "items": [
+      {
+       "text": "Upon completing the difficult final puzzle in treetops, you ascend a rickety tower and come out inside a giant bird's nest, complete with two huge eggs! We had fun layering up the structure, showing Paige ascending through empty windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting off the treetops, we have a dizzying top-down perspective of the incredible climb Paige has just completed. Darkness has fallen, and the glowing lamps recede into the inky depths below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Mid Art Scene",
+     "items": [
+      {
+       "text": "Continuing the theme of breaking up puzzle fatigue by including central art-focused scenes with a low problem-solving intensity - we’ve included an art scene in treetops too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continuing with our rule of breaking up continuous back-to-back puzzles with interspersed art scenes, we’ve included a broken-down cuckoo clock/birdhouse in the middle of treetops. You fix it up, it strikes 12, and the doors spring open! Allowing you to progress and spurring a character interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "30k Steam Wishlists",
+     "items": [
+      {
+       "text": "After being featured in Steam events for PAX Rising and The Mix, we've now hit a major milestone of 30,000 wishlists! We’re super happy with all the support we’ve received so far and we can’t thank the community enough for their support as we edge closer to launch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Swag",
+     "items": [
+      {
+       "text": "Ahead of all the events we decided to get a bunch of material printed to support the showcases. This included 2 giant free-standing banners, postcards, business cards, freestanding wishlist upsell cards, and our favourite - T-shirts with the character from the game embroidered on the pocket. Whilst we aren’t actively offering this merch for purchase - we thought it would be cool to show everyone (we really love it)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Awards - Game Connection America",
+     "items": [
+      {
+       "text": "As we were nominated for four(!) awards at this year’s Game Connection America awards, we received free entry and exhibition tickets. In order to best optimise our time, the design and art leads elected to split up to cover separate events. It was an honour to be selected amongst such a tightly curated group of games - including some really heavy hitters like ‘Planet of Lana’ and ‘Wandering Village’, and even more of an honour to be the only game to receive two awards! One for ‘Best Casual Game’ and another for ‘Best Upcoming Game’.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crochet Paige had a great time exploring the amazing baseball stadium which hosted the event. The day was spent showing the game on iPad, speaking to other nominees, fielding questions from the press, and eating too many hot dogs to be sensible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game BAFTAs",
+     "items": [
+      {
+       "text": "We were honoured to attend the game BAFTAs and meet with other developers on our table, some of the BAFTA-winning studios, as well as sharing a few drinks with colleagues from across the industry. We don’t look too bad in tuxedos either if I do say so myself!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1889740"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1889740/view/5138087875083257308"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-05T14:08:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1889740",
+      "checkedAt": "2026-11-13T03:27:41.742Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:21:11.635Z"
+  }
+ ],
+ "issues": []
+}

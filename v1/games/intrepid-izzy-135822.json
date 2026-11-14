@@ -1,0 +1,262 @@
+{
+ "game": {
+  "id": "intrepid-izzy-135822",
+  "igdbId": 135822,
+  "name": "Intrepid Izzy",
+  "cover": {
+   "imageId": "co2p9e",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2p9e.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arxf0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arxf0.jpg"
+  },
+  "ps5Release": "2022-12-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "intrepid-izzy-135822@major-2026-10-29",
+   "gameId": "intrepid-izzy-135822",
+   "displayName": "DirectX version update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-29T12:26:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update replaces DirectX 9 with DirectX 11. This should improve compatibility and frame rate issues with modern GPUs, some of which lack functional DirectX 9 support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-908560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/908560/view/1847920302234566"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-29T12:26:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-908560",
+      "checkedAt": "2026-11-13T03:23:38.452Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-29T12:26:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-908560",
+      "checkedAt": "2026-11-13T03:23:38.452Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-29T12:26:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:15.467Z"
+  },
+  {
+   "id": "intrepid-izzy-135822@1.0.19",
+   "gameId": "intrepid-izzy-135822",
+   "displayName": "Update 1.0.19",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-01T19:41:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello friends,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is not the first update to Intrepid Izzy, but it is the first one with an annoucement and a changelog!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "v1.0.19",
+     "items": [
+      {
+       "text": "The version number is now displayed on the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keyboard controls: Enter no longer pauses the game, only Esc does. Enter can now be used to confirm dialogues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed \"Game Over\" screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where objectives could re-appear after previously being completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed location in East Pole where Izzy could get stuck while wearing the vampire suit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save slot preview image for Temple of Nuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added dotted lines between connected doors on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Leviathan now has some defense against the vampire special, so the fight isn't over too quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added crates to the uppercut tutorial in Blobby Blob Dungeon, to make sure it can't be inadvertently skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bullets in \"Plerg!\" have a slightly larger hitbox now, which should make the game feel more intuitive/fair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new NPC in the Chocolate Mine provides hints about garlic and the helmet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many other small changes in various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Earlier updates",
+     "items": [
+      {
+       "text": "F,F+A move is disabled by default, because for some players it happened by accident.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash bug when opening the map screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several places in levels where Izzy could get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 6,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-908560"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/908560/view/3788045724614212502"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-01T19:41:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-908560",
+      "checkedAt": "2026-11-13T03:23:38.451Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:15.465Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1492 @@
+{
+ "game": {
+  "id": "lake-127743",
+  "igdbId": 127743,
+  "name": "Lake",
+  "cover": {
+   "imageId": "cocvwb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocvwb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "armd9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/armd9.jpg"
+  },
+  "ps5Release": "2022-04-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "lake-127743@5",
+   "gameId": "lake-127743",
+   "displayName": "Patch 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-12T14:55:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix \"Ring doorbell\" shown incorrectly when package can be dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix motel sign incorrect placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Thomas wearing Christmas sweater for several days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect time of day during some events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mildred moonwalking / walking in place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with dialogue audio not properly unloading from memory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/5395938616812926800"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-12T14:55:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-12T14:55:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.405Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-12T14:55:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:30.713Z"
+  },
+  {
+   "id": "lake-127743@4",
+   "gameId": "lake-127743",
+   "displayName": "Patch 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-30T15:29:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing collider diner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update farm missing chairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent mail truck from blocking conversations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed font missing characters in Chinese and Japanese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed credits in menu not matching end game credits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed not being able to walk when loading a save while sitting on a bench or delivering a letter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated Vsync and Window mode settings. Fullscreen should now be exclusive fullscreen. Vsync and refresh rate should be applied correctly again.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed car horn only usable once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of smaller audio related fixes. Hopefully the problem is solved, if not a lot less frequent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you do still encounter any audio issues, please let us know. Here are some things you can try that might help:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing the priority and affinity of the executable through the Task Manager might help resolve audio issues in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enable or disable Vsync and try limiting your framerate. Several players have reported the problem occurs (more often) on higher frame rates. This might help reduce the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please try to enable or disable exclusive mode via the properties of your audio device through Windows (\"Allow applications to take exclusive control of this device\"). This has been reported to solve the issue in some rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/5395937983661410273"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T15:29:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.405Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T15:29:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.405Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-30T15:29:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:30.712Z"
+  },
+  {
+   "id": "lake-127743@3",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-21T16:18:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed phone ringing audio missing in classic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several smaller technical improvements and changes to help track down the audio issue(s).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Politely asked Frank to leave the Weiss residence during the evening, he can no longer be seen in the kitchen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed random strange camera shots during Nancy scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Beth is not spawning at her store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where Frank is looking away during scene at the shed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected a branching error in the scene where Frank is hiding behind the counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated demo build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Demo saves cloud saving and several other small fixes. Hopefully all saves can be played again, if not make sure to let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/5382426458970385691"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-21T16:18:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.404Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-21T16:18:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.404Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-21T16:18:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:30.711Z"
+  },
+  {
+   "id": "lake-127743@2",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-17T11:27:54.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed autopilot audio missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 400 E Lakeview Blvd incorrect position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tutorial not stopping correctly resulting in a performance drop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several smaller technical fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/6560117310267534210"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-17T11:27:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.404Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-17T11:27:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.406Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-17T11:27:54.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:24:28.406Z"
+  },
+  {
+   "id": "lake-127743@1",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-16T15:51:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed addresses that blocked the player from delivering parcels:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "104 Jackson Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "105 Jackson Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "106 Jackson Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "207 Jackson Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "300 Jackson Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "302 Jackson Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "403 Main Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "405 Main Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "107 W 1st Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "105 W 2nd Street",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/6560117310264556095"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-16T15:51:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.403Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-16T15:51:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.406Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-16T15:51:24.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:24:28.406Z"
+  },
+  {
+   "id": "lake-127743@1.0.10.1",
+   "gameId": "lake-127743",
+   "displayName": "Update 1.0.10.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-14T12:49:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small patch that includes a few minor changes. After this update we will nog longer support Windows 8, as Microsoft has also ended support for it on January 10, 2023",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Credits update. Added missing entries and fixed scrolling issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash in main menu fixed. This was an issue that happened on most Windows 8 and 8.1 devices. A few clever users have solved this on their own by removing or renaming the file. We have now implemented a fix for this so you no longer have to tinker with the files to get the game running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windows 8 no longer supported. The game will still be playable on Windows 8, but we will no longer offer support for Windows 8 specific issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a localisation issue where English text would be displayed when another language is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're still looking for a solution to the pesky audio bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, if you encounter any bugs or issues, please create a post in the Bugs/Known Issues section of the forums. For more info, please see this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/5036749277247664959"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-14T12:49:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-14T12:49:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.403Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-14T12:49:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:30.709Z"
+  },
+  {
+   "id": "lake-127743@1.0.10",
+   "gameId": "lake-127743",
+   "displayName": "Update 1.0.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-25T13:07:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added languages: Italian & Hungarian.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added controls rebinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed controller detection when not using Steam Input.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Many bugfixes and optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you find any issues, please report them in the appropriate section of the community forums.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/4514316500002666750"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-25T13:07:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.402Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-25T13:07:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.402Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-25T13:07:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:30.709Z"
+  },
+  {
+   "id": "lake-127743@1.0.9",
+   "gameId": "lake-127743",
+   "displayName": "Update 1.0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-28T15:11:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Skip dialogue line: if you're replaying the game and don't want to listen to every single spoken sentence again, switch on this option in the Settings -> Language menu. Off by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Robert: is referred to as 'Robert' after meeting him in all cases now instead of 'Lumberjack'. Sorry about that, Mr. Harris.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ghostblasters: Lori now reliably responds correctly when you get a highscore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jack: fixed a few face animations that kept him from blinking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Angie: a conversation with her in week 2 no longer breaks when your friendship level with her is low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maureen: no longer pops off screen suddenly in a diner scene with Meredith and Robert.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Parcel models: various larger packages have been rotated a little to better fit into Meredith's hands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Motel: moved a certain parked car to prevent Auto Pilot from crashing the mail truck into said car.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Motel: removed a certain floating easter egg.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Autopilot: fixed a few cases where the autopilot would not move. If you still experience issues using the autopilot, please let us know! If possible, include a start/end location to help us narrow down the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/4186652357024349391"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-28T15:11:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:30.708Z"
+  },
+  {
+   "id": "lake-127743@1.0.8",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1.0.8",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-13T15:42:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed: Localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Large & overlapping fonts for all languages have been brought back to normal size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Situation where Meredith would make a phone call while holding another object (Sorry Mortimer!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Opening Steam-Overlay prevents player from interacting when returning to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Several cases where engine audio was noticeable when it should not have been.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, we are working hard to solve any remaining issues. If you have any additional info, or experience any (new) bugs, please feel free to share it with us in the Bugs/Known Issues subforum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/4101082696718352203"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-13T15:42:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:58.388Z"
+  },
+  {
+   "id": "lake-127743@1.0.7",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1.0.7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-29T18:32:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed: the Fast Travel feature would sometimes explode when the mail truck was already on Auto Pilot. Added extra checks resulting in much safer journeys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: when setting a course using the Auto Pilot feature, opening the map while the loading screen was active would pause the game. No longer possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: on low framerates, the camera would move frantically all the time when walking around as Meredith. The camera found inner peace again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: when playing GhostBlasters for the first time, the tutorial would somtimes stay on-screen even when you stopped playing. Now disappears and resets properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, we are working hard to solve any remaining issues. If you have any additional info, or experience any (new) bugs, please feel free to share it with us in the Bugs/Known Issues subforum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/3938951840877321919"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-29T18:32:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.400Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:58.388Z"
+  },
+  {
+   "id": "lake-127743@1.0.6",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1.0.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-20T19:17:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed black camera pictures! Finally admire your snapshots in all their glory. (Any pictures that are still black are definitely Nancy's fault.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the seemingly random teleport bug on Friday September 12! Poor Meredith was sometimes hurled across time and space to Robert's home, without her trusty mail truck. Not anymore!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, we are working hard to solve any remaining issues. If you have any additional info, or experience any (new) bugs, please feel free to share it with us in the Bugs/Known Issues subforum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/5418383147750964467"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-20T19:17:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.400Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:58.387Z"
+  },
+  {
+   "id": "lake-127743@1.0.5.1",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1.0.5.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-10T14:52:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A few changes in late game dialogue branching, improving the clarity and gameflow, as well as updated sound implementation, and several technical improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated sound implementation, hopefully fixing certain reported issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor technical improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the number of options to give the RV to Angie during the Open Mic Night, thereby hopefully reducing the perceived importance of that option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added the option in the finale to choose the RV ending even when Angie has it in her possession. This felt like a better fit after the conversation that came before it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always, we are working hard to solve any remaining issues. If you have any additional info, or experience any (new) bugs, please feel free to share it with us in the Bugs/Known Issues subforum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/4020014731798750078"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-10T14:52:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.400Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:58.387Z"
+  },
+  {
+   "id": "lake-127743@1.0.5",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1.0.5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-08T16:40:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed \"Return to post office\" bug. In several cases this was shown too early or not at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues related to saving/loading. Please let us know if you're still experiencing any issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly reduced splash screen audio volume. Let us know if this is still too loud!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of smaller narrative fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working hard to solve any remaining issues. If you have any additional info, or experience any (new) bugs, please feel free to share it with us in the Bugs/Known Issues subforum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/4020014731791741386"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-08T16:40:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.399Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:58.386Z"
+  },
+  {
+   "id": "lake-127743@1.0.4",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1.0.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-03T16:43:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "More achievement fixes. All achievements should be working. Let us know if you encounter issues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Licensing information updated (English only for now, sorry! Translations are on their way).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for all the reported issues/bugs and feedback so far! We really appreciate it and we are hard at work to squash bugs and make improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please note, we are a very small team so please have some patience! Thank you for understanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/4020014099092406464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-03T16:43:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.399Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:58.385Z"
+  },
+  {
+   "id": "lake-127743@1.0.3",
+   "gameId": "lake-127743",
+   "displayName": "Hotfix 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-02T16:14:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Since the release yesterday we have been hard at work trying to solve as much of the reported issues as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Invert Y axis setting applied to photocamera controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update Input Plugin (Should fix several controller issues). TIP: Try turning on or off Steam Input -> Lake > Properties > Controller > Enable/Disable Steam Input. Also try turning on/off the controller support in Controller General Settings (Steam).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Achievement (final choice Robert) fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Azerty detection fixed. Formerly it would detect a qwerty keyboard as azerty. This should now be fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Tech detail. Now using new Unity Input API.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any other issues, especially input related, please let us know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any info related to bugs and/or issues can be posted in the Bugs/Known Issues subforum and we will try our best to look into it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1118240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1118240/view/4020014099088694108"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-02T16:14:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1118240",
+      "checkedAt": "2026-11-13T03:24:28.398Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:17:58.384Z"
+  }
+ ],
+ "issues": []
+}

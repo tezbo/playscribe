@@ -1,0 +1,1096 @@
+{
+ "game": {
+  "id": "deckline-342637",
+  "igdbId": 342637,
+  "name": "Deckline",
+  "cover": {
+   "imageId": "co9rl1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9rl1.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3kp2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3kp2.jpg"
+  },
+  "ps5Release": "2026-03-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "deckline-342637@hotfix-2026-10-09",
+   "gameId": "deckline-342637",
+   "displayName": "Hotfix: Draws",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-09T11:11:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed draws: playing your last card no longer ends the match on the spot, so your opponent can still answer it, and if they beat it with their own last card it’s a draw and the draw achievement unlocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3481320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3481320/view/1846018067932960"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T11:11:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3481320",
+      "checkedAt": "2026-11-13T03:18:47.663Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T11:11:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3481320",
+      "checkedAt": "2026-11-13T03:18:47.663Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-09T11:11:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:02.872Z"
+  },
+  {
+   "id": "deckline-342637@major-2026-09-22",
+   "gameId": "deckline-342637",
+   "displayName": "Deckline — Major Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-22T11:20:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It has been a while.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deckline launched as one hand of Durak, played in a room you could not touch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is about both halves of that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Durak is a fuller game now, with Passing, proper attack rules, draws, three opponents, new scoring and more ways to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And the room is no longer just something you sit in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can look around. Listen to the radio. Find things. Learn a little more about where you are.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you preferred Deckline the way it was, Classic Durak is still there. Choose it before the match and play as before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/de72d0cd18373ed4550016f4bacf66919de4cf38.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Passing Durak",
+     "items": [
+      {
+       "text": "Passing (переводной) is now playable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instead of defending against an attack, you can play a card of the same rank onto the table and pass the entire attack to your opponent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your opponent can pass it back, too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose PASSING when starting a match, or stay with CLASSIC for the original mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/a59b52c6ef50e6c2179426278c10efeacca6488d.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Six-card attack limit",
+     "items": [
+      {
+       "text": "The maximum attack size has been increased from five cards to six, matching the proper Durak rule.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lowest trump attacks first",
+     "items": [
+      {
+       "text": "The first attacker is no longer decided by a coin flip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whoever holds the lowest trump begins the match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Draws",
+     "items": [
+      {
+       "text": "Matches can now end in a draw.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the deck is empty and both players get rid of their final cards together, nobody is the fool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A draw does not affect your score or win streak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously, this situation was incorrectly counted as a victory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "There are now three difficulty levels",
+     "items": [
+      {
+       "text": "RECRUIT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "SOLDIER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "VETERAN",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Soldier is the opponent Deckline originally shipped with and remains unchanged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Veteran is more careful. He remembers cards that have already been played and is much less willing to spend his trumps early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Each difficulty also puts a different soldier across the table from you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/5e7a396fd21c647f8cab987572be9a98d9644fa7.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Wins now reward score based on the opponent you defeat",
+     "items": [
+      {
+       "text": "Recruit — +10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Soldier — +25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Veteran — +40",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A loss costs 25 points on every difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The leaderboard now reflects how you perform rather than simply how many matches you have played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/066b8688b29e65ebbc4ade8d180dd9c9a45fd81c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The room",
+     "items": [
+      {
+       "text": "The room has changed quite a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Look around",
+     "items": [
+      {
+       "text": "There are now 17 things in the room you can inspect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tap the right mouse button to enter look mode, or hold it to freely move the camera.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click something that catches your attention and you may learn a little more about it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are no glowing outlines or markers telling you what can be examined.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You have to look.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/2805524e600720f8c21b4eb4355d20eadf83b1ae.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The radio works",
+     "items": [
+      {
+       "text": "The radio is no longer decoration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tune in between matches and you may catch one of eight transmissions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They are heard in order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/eb4fe4e5189f2704cfb8250581df91372cab8d94.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Records",
+     "items": [
+      {
+       "text": "Everything you discover in the room is tracked in the Records section of the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A counter also shows how much there is still left to find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/6475d78ff36ab2a84b21f079e548f0fccf623530.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The clock runs",
+     "items": [
+      {
+       "text": "The wall clock now actually keeps time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The lamp burns",
+     "items": [
+      {
+       "text": "The kerosene lamp now consumes fuel while it is lit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is no fuel gauge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instead, watch the flame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As the lamp gets closer to empty, the flame gets smaller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And the lamp has a reason to exist now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A shell landing close enough can knock out the electricity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/45b1d60e94e8283f4276ae6bd37bdea570cca8f7.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Pills",
+     "items": [
+      {
+       "text": "Pills still steady your hands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They now also reduce the amount of time your controls are locked after a direct shell impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Getting into the next hand",
+     "items": [
+      {
+       "text": "A number of smaller changes have been made to make Deckline faster and easier to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Play again without reloading",
+     "items": [
+      {
+       "text": "Starting another match no longer reloads the entire scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From the result screen, press Enter or Space and a new hand is dealt immediately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The tutorial is not repeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/2e2996c498534163dfeea28ab03307ce9b44e6e7.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Playable card hints",
+     "items": [
+      {
+       "text": "Cards now give you immediate feedback on whether they can be played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Green means the card is currently legal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Red means it is not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This can be disabled in the settings if you prefer to read the table yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/303a06c53e65ececed98bb14c1de7b77b96afcbc.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enter ends your turn",
+     "items": [
+      {
+       "text": "You no longer need to use the knife every time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pressing Enter now ends your turn as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Rulebook",
+     "items": [
+      {
+       "text": "Deckline now has an in-game rulebook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It can be opened from both the main menu and the pause menu, and is available in every supported language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Turn speed",
+     "items": [
+      {
+       "text": "A new Turn Speed option controls the waiting time between actions during a turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This also includes the delay around the knife.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "No more waiting for impossible moves",
+     "items": [
+      {
+       "text": "If you have no legal card left to play, the game will no longer sit there waiting for input that cannot happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Settings",
+     "items": [
+      {
+       "text": "The settings menu has been expanded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can now configure",
+     "items": [
+      {
+       "text": "Resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Window mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Frame rate limit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "V-Sync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Effects volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shelling volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now also ships with a frame rate limit enabled by default, preventing the GPU from running unnecessarily at full load when higher frame rates are not needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screen effects can now be controlled separately as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screen shake, light flicker and the shell shock effect can each be disabled independently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The shelling itself still happens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It just stops taking the screen with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Achievements have received a fairly large pass as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The long-term win achievements now require",
+     "items": [
+      {
+       "text": "50 / 100 / 250 wins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The loss achievements now require",
+     "items": [
+      {
+       "text": "25 / 50 / 100 losses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have already passed one of the new thresholds, the corresponding achievement will be granted the next time you launch the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Six new achievements have also been added for",
+     "items": [
+      {
+       "text": "Defeating the Veteran",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Winning five matches in a row against the Veteran",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Winning a Passing Durak match after passing an attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ending a match in a draw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hearing every radio transmission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Examining everything in the room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45573882/967aac79b499a3ff89f93fa6996bf7ba45b82777.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Descriptions have also been added to Bullseye and Purgatory, while incorrect descriptions for Handy and Dilettante have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There was also an issue where players who skipped past the score requirements for Collector or Scorer could permanently miss those achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "That has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Turkish",
+     "items": [
+      {
+       "text": "Deckline is now available in Turkish, bringing the total to 13 supported languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Every new line introduced in this update has been translated into all thirteen languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The fonts have also been rebuilt so unsupported characters should no longer appear as empty boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Alongside everything above",
+     "items": [
+      {
+       "text": "A match can no longer register as both a win and a loss at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pill effects no longer carry over into the next match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shelling now properly becomes more frequent as the deck gets smaller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ceiling bulb now flickers like an unstable electrical supply rather than visual static.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing language no longer stops working after the first match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Outdated control instructions in the tutorial have been corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Discord link in the main menu works again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That is the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have not played Deckline in a while, there is quite a bit more waiting at the table now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The cards are still there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But the room has been waiting, too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 7,
+    "other": 96,
+    "ps5": 0,
+    "topNew": [
+     "Defeating the Veteran",
+     "Winning five matches in a row against the Veteran",
+     "Winning a Passing Durak match after passing an attack"
+    ]
+   },
+   "sourceIds": [
+    "steam-3481320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3481320/view/1844115010503899"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T11:20:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-3481320",
+      "checkedAt": "2026-11-13T03:18:47.662Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-22T11:20:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3481320",
+      "checkedAt": "2026-11-13T03:18:47.663Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-22T11:20:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:02.871Z"
+  },
+  {
+   "id": "deckline-342637@hotfix-2025-05-08",
+   "gameId": "deckline-342637",
+   "displayName": "May 8, 2025 - Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-08T11:47:30.000Z",
+   "notes": [
+    {
+     "title": "Introduction",
+     "items": [
+      {
+       "text": "Thank you all for playing the game and sharing your feedback! It means the world to us. We are monitoring your suggestions, comments, feedback 24/7 to see what can be done to improve the general gameplay experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Please note that we have seen your multiplayer requests! This is a feature that we are ready to implement, however, we will be looking at the game's current performance to see whether creating multiplayer mode will be viable for us or not. Thank you for your understanding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Hotfix",
+     "items": [
+      {
+       "text": "Direct artillery hit chance reduced to 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI turn and card placement speed set to minimum delay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved performance issues on some AMD devices.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved overall performance across all hardware configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Don't forget to leave your reviews on Steam! If you are experiencing any technical issues, please, reach out to us via Discord or any other format you prefer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3481320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3481320/view/1799088287830602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-08T11:47:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-3481320",
+      "checkedAt": "2026-11-13T03:18:47.661Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:59:02.868Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,733 @@
+{
+ "game": {
+  "id": "lost-ember-rekindled-edition-314439",
+  "igdbId": 314439,
+  "name": "Lost Ember: Rekindled Edition",
+  "cover": {
+   "imageId": "coavxu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coavxu.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar33fx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar33fx.jpg"
+  },
+  "ps5Release": "2025-11-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "lost-ember-rekindled-edition-314439@1.0.6.1",
+   "gameId": "lost-ember-rekindled-edition-314439",
+   "displayName": "Patch 1.0.6.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-04T16:15:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another very small patch fixes some issues with detecting whether DLSS/FSR is supported in the current system. Those checks would sometimes fail even though they shouldn't have and are now more robust!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "And that's it, nothing too exciting happening :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your moonies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3086580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3086580/view/1818118366173367"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T16:15:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.875Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T16:15:23.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.875Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-04T16:15:23.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.590Z"
+  },
+  {
+   "id": "lost-ember-rekindled-edition-314439@1.0.6",
+   "gameId": "lost-ember-rekindled-edition-314439",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-03T19:19:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just uploaded another patch with a couple of quick fixes for reported issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "some translations in the legendary souls map lost their ID and weren't correctly shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "in some cases the game could be saved when at a location without escape. This should now lo longer happen - and if it still does the game will check the current location on load and transport the player to a valid location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "music volume was reset for some tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the menu for collectibles of the main story is no longer accessible (or in case of legendary animals unlockable) from the legendary souls map to avoid confusion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the quest menu was not navigable by gamepad when opened from a quest notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "sliders in the menu can no longer reach negative values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased default camera speed to more closely match original game: Hope that solves most of your issues, but if not please continue to reach out and report anything you still encounter!: Your moonies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3086580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3086580/view/1818118366171072"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T19:19:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.874Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-03T19:19:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.874Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-03T19:19:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.589Z"
+  },
+  {
+   "id": "lost-ember-rekindled-edition-314439@major-2025-12-01",
+   "gameId": "lost-ember-rekindled-edition-314439",
+   "displayName": "A small update to Legendary Souls",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-01T19:04:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After some of you mentioned difficulties finding your way in the Legendary Souls map, we slightly changed how the map and embers work and add tutorials for the map and legendary animals, since those likely were often overlooked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update also includes various smaller fixes for bugs reported in our discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're gonna think about more ways of making your life a little easier without ruinging exploration, so if you have any specific issues, feel free to reach out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your moonies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3086580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3086580/view/1817483467046298"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-01T19:04:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.874Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-01T19:04:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.874Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-01T19:04:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.588Z"
+  },
+  {
+   "id": "lost-ember-rekindled-edition-314439@post-2025-11-29",
+   "gameId": "lost-ember-rekindled-edition-314439",
+   "displayName": "Save Game synchronisation issue with old Lost Ember game",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-29T12:46:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we just uploaded a quick patch after some of you reported issues with saved games in the old Lost Ember. If you previously opened an old savegame file with the new Rekindled version, it was no longer shown in the old game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That should no longer happen with this patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unfortunately, for now, the patch does not include a way to reset the savegame so the old Lost Ember can read it. So if you already saved over your old files, you can simply send us the files and we'll repair them manually for you! We'll look further into an automatic way of doing that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your moonies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3086580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3086580/view/1817483467041354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T12:46:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.873Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-29T12:46:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.873Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-29T12:46:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.588Z"
+  },
+  {
+   "id": "lost-ember-rekindled-edition-314439@post-2025-11-28",
+   "gameId": "lost-ember-rekindled-edition-314439",
+   "displayName": "Improved DLSS & FSR options",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-28T21:17:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As previously announced we added several DLSS options and included FSR for Non-NVIDIA cards!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can now choose your upscaling method - if any - and toggle frame generation on or off.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please do report back if these new settings help improve your experience or if you wish more options were included!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For now, have a nice weekend and enjoy the game! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your moonies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3086580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3086580/view/1817483467040480"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-28T21:17:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.873Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-28T21:17:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.873Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-28T21:17:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.587Z"
+  },
+  {
+   "id": "lost-ember-rekindled-edition-314439@patch-2025-11-27",
+   "gameId": "lost-ember-rekindled-edition-314439",
+   "displayName": "DLSS & Performance Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-27T21:01:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since some of you reported performance issues we went ahead with some enhancements we have been preparing and fast-tracked the patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new patch adds not only NVIDIA DLSS support and enhancements - which should be automatically activated for NVIDIA cards - but also adds a new \"Performance Mode\" to the video settings that swaps some internal settings for those of you who prefer 60fps over all little details.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Please do let us know if you experience more issues (and ideally what kind of setup you have), so we can address as many of those as possible!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will keep working on performance and stability and some little polish and likely release more patches in the coming days! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your moonies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3086580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3086580/view/1817483467037801"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-27T21:01:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.872Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-27T21:01:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.872Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-27T21:01:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.587Z"
+  },
+  {
+   "id": "lost-ember-rekindled-edition-314439@major-2025-11-27",
+   "gameId": "lost-ember-rekindled-edition-314439",
+   "displayName": "DLC Issue + Performance Patch",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-27T20:02:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heyo everybody!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lost Ember: Rekindled and Lost Ember: Legendary Souls is finally here!Unfortunately it was a bit of a messy start with some technical issues where several people are currently not able to buy the DLC.We’ve already reported the issue to Valve and hope they’ll be able to resolve it as soon as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the moment it’s out of our hands, but we sincerely apologize for the inconvenience and appreciate your patience while this gets sorted out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "On a brighter note",
+     "items": [
+      {
+       "text": "We’re already working on a performance patch to address the issues some players are experiencing. The update is in progress and should be available soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With much love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your moonies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3086580"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3086580/view/1817483467037736"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-27T20:02:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.871Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-27T20:02:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3086580",
+      "checkedAt": "2026-11-13T03:24:57.871Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-27T20:02:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:50.586Z"
+  }
+ ],
+ "issues": []
+}

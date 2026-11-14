@@ -1,0 +1,248 @@
+{
+ "game": {
+  "id": "sqwrk-251857",
+  "igdbId": 251857,
+  "name": "Sqwrk",
+  "cover": {
+   "imageId": "co6kv7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6kv7.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2c65",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2c65.jpg"
+  },
+  "ps5Release": "2025-07-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sqwrk-251857@post-2025-10-14",
+   "gameId": "sqwrk-251857",
+   "displayName": "unity security fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-14T13:40:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "patched newly discovered unity security vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2440280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2440280/view/1813041031372481"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T13:40:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2440280",
+      "checkedAt": "2026-11-13T03:31:28.363Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T13:40:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2440280",
+      "checkedAt": "2026-11-13T03:31:28.363Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-14T13:40:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.708Z"
+  },
+  {
+   "id": "sqwrk-251857@post-2025-06-21",
+   "gameId": "sqwrk-251857",
+   "displayName": "bugfix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-21T14:03:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "bugfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2440280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2440280/view/1802893906796204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-21T14:03:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2440280",
+      "checkedAt": "2026-11-13T03:31:28.362Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:31:28.363Z"
+  },
+  {
+   "id": "sqwrk-251857@post-2025-06-06",
+   "gameId": "sqwrk-251857",
+   "displayName": "Fix to desert 4 registering as cleared",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-06T10:21:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "for the game to register levels as cleared in order to unlock the extra level it's supposed to save this information when you finish the level after you've completed all of the challenges. This wasn't working for desert 4. If you've previously obtained all the challenges you will need to play the level through one more time for it to count towards unlocking the extra level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2440280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2440280/view/1801617199421574"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-06T10:21:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2440280",
+      "checkedAt": "2026-11-13T03:31:28.362Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:31:28.362Z"
+  },
+  {
+   "id": "sqwrk-251857@post-2025-04-28",
+   "gameId": "sqwrk-251857",
+   "displayName": "fixed problem recording challenges on tower 5",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-04-28T08:02:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "On tower 5 it wasn't recording that the level was cleared after you got all the challenges to count towards unlocking the extra level. If you've already got the challenges in that level you will have to play it through again for it to count. you don't need to actually do the challenges again but you have to clear the level by coming in at least third place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2440280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2440280/view/1797820624582271"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-28T08:02:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2440280",
+      "checkedAt": "2026-11-13T03:31:28.361Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:45.705Z"
+  }
+ ],
+ "issues": []
+}

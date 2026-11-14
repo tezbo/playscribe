@@ -1,0 +1,1106 @@
+{
+ "game": {
+  "id": "trine-5-a-clockwork-conspiracy-245390",
+  "igdbId": 245390,
+  "name": "Trine 5: A Clockwork Conspiracy",
+  "cover": {
+   "imageId": "co6dpx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6dpx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar29qd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar29qd.jpg"
+  },
+  "ps5Release": "2023-08-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "trine-5-a-clockwork-conspiracy-245390@2",
+   "gameId": "trine-5-a-clockwork-conspiracy-245390",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-16T14:01:31.000Z",
+   "notes": [
+    {
+     "title": "Major Fixes / Additions",
+     "items": [
+      {
+       "text": "Crossplay added between all of the following platforms in public and private games: All different PC storefronts, Nintendo Switch, Xbox One and Series.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Virtual keyboard enabled for consoles for password input, allowing private games to support Crossplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Invite feature added (does not support Crossplay!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Invites enabled for all consoles, within their own console families.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[PC only] In Friend Only games, Steam and Epic overlay supports inviting and joining into ongoing games, as well as inviting into lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[PC only] Gog can invite friends into Friend Only lobbies through the invite button only.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[PC only] AMD: Fixed flickering shadows for older than RDNA2 cards",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "General fixes",
+     "items": [
+      {
+       "text": "Fixed hosted lobbies sometimes not appearing in the \"Browse Games\" -list when there were many ongoing games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Plugged a memory leak.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare case where a joining player brought in an extra local player with them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed local players spawning off screen in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[Xbox only] Fixed an issue that would sometimes cause joining to fail on Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "[PS5 only] Fixed vibration not working on DualSense controller(s).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "[PS5 only] Fixed Experienced Heroes Achievement not triggering correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "[PC only] FPS limiter is now a slider instead of a text field in Steam Big Picture mode and Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[PC only] Steamdeck: Fixed and updated on-battery frame rate limit from 30 -> 60 fps.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Save system",
+     "items": [
+      {
+       "text": "Fixed a case of getting stuck joining a game when player's save slots were full.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Quick Join creating new saves, if player already had a save of that game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Gameplay",
+     "items": [
+      {
+       "text": "Last used character is now remembered in Classic games if players use a character not default for their player number.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed being unable to descend a ledge into ledgegrab if standing slightly over the edge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved ledgegrabbing on sloped terrain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disallowed client having story progress locked skills unlocked, that the host doesn't yet have, if they played the same save further on their own and then join back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed \"Last player remaining\" -effect persisting after disconnecting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Skills",
+     "items": [
+      {
+       "text": "Fixed a rare crash when controlling another Pontius' Prismatic Talisman.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed object lock effect persisting on Pontius' thrown sword.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some upgrades being able to use incorrect player number for their function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exploding clone no longer deals damage to the final boss through its invulnerability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 4",
+     "items": [
+      {
+       "text": "Fixed a sharp camera re-focus after breaking out of the Garden Party Gazebo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 7",
+     "items": [
+      {
+       "text": "Pontius breaks laws of physics less and no longer can get out of bounds in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented starting a fight too early by throwing boxes ahead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 8",
+     "items": [
+      {
+       "text": "Gate Guardian nor Tower Guardian can get stuck anymore to their flamethrower attack if Amadeus shoves a box to their face.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 9",
+     "items": [
+      {
+       "text": "One less puzzle that can be broken with Wind Burst and cause player to get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed broken French localizations for opening cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 12",
+     "items": [
+      {
+       "text": "Added a rope target to the bottom of the elevator near the end of level, in case player falls off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Level 15",
+     "items": [
+      {
+       "text": "Fixes and improvements to the Sauna secret.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 18 and 19",
+     "items": [
+      {
+       "text": "Fixed Clockwork Mages causing softlocks by falling off or spawning so that they never teleported back up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localizations",
+     "items": [
+      {
+       "text": "Fixed overlapping texts in Nintendo Switch's localizations of Czech, German and Japanese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 24,
+    "balance": 0,
+    "other": 6,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-1436700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1436700/view/6560117310264277581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-16T14:01:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1436700",
+      "checkedAt": "2026-11-13T03:34:50.671Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-16T14:01:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1436700",
+      "checkedAt": "2026-11-13T03:34:50.671Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-16T14:01:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.500Z"
+  },
+  {
+   "id": "trine-5-a-clockwork-conspiracy-245390@1",
+   "gameId": "trine-5-a-clockwork-conspiracy-245390",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-14T15:24:33.000Z",
+   "notes": [
+    {
+     "title": "Major Fixes",
+     "items": [
+      {
+       "text": "Added Friends-Only games on all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Final Boss achievements and popups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where proper audio failed to load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "AMD: Fixed flickering issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Online / Multiplayer fixes",
+     "items": [
+      {
+       "text": "Browse game & Online multiplayer: Support for friends only games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now host an online multiplayer lobby for friends only using the \"Host Friends\" button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lobbies: Fixed the max lobby search result(s)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Fixes",
+     "items": [
+      {
+       "text": "Added a failsafe to prevent issues with low fps configurations (Level 4 water puzzle fix)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Limited the amount of jumps player can do with Wind Burst Leap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fused objects are now always kept active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed levitation stagger getting canceled early if levitating a staggered enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Levitation: Properly synced switching from over-the-head levitation to accurate levitation when playing on gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various physics optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with invisible players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pontius's charge direction incorrectly syncing in online multiplayer (made sure he faces forward when charging)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Game Over blocking final cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player ghost effect sometimes getting disabled after immortality flashing ends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI/Locale",
+     "items": [
+      {
+       "text": "Options menu fonts now update when text language is changed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Matched players menus background size and position with other similar menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated buttons for \"default\", \"highlight\", and \"pressed\", fixing them in both the Lobby and the Players Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the background menu image with a more high resolution version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set player name to \"local host name\" if it's empty. This should fix some offline game hosting issue for GOG users.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with controller vibration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed game not pausing when controller disconnects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for narration being skipped in Level Select Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for not being able to buy/refund upgrades on Nintendo Switch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"controller missing\" popup pause not being cleared in all the cases where the popup was closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tab menu (Skill tree, customization, collections) text fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse hover no longer prevents the use of keyboard or controller to navigate tab menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Customize character button now works with mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed W and S keys on PC causing double input on level select menus checkpoint list",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed \"The Spell of Gravity Reversal\" overlapping with upgrade point counter on Nintendo Switch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Swapped \"Difficulty\" and \"Password\" sorting options in browse menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Players menu to better fit localizations on Nintendo Switch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Major Cutscene audio fix to joining players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed many objects being incorrectly affected by Wind Burst",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 1",
+     "items": [
+      {
+       "text": "Pressure plate fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 2",
+     "items": [
+      {
+       "text": "Fix early skeleton spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 3",
+     "items": [
+      {
+       "text": "Missing waterwheel sound fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 4",
+     "items": [
+      {
+       "text": "Fixed the water wheel puzzle not working correctly for users with low FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reset the rotation of the ending puzzle double-pole waypointdrive (also adjusted the collisions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed moving platform moving from windburst, potentially getting entirely stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a charge triggered voiceline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spikes fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ropetarget fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battlemusic fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 5",
+     "items": [
+      {
+       "text": "Audio stopper tweak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music volume fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 6",
+     "items": [
+      {
+       "text": "Cart issues fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 7",
+     "items": [
+      {
+       "text": "Music volume fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 8",
+     "items": [
+      {
+       "text": "Fixed missing collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 9",
+     "items": [
+      {
+       "text": "Minor audio fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 11",
+     "items": [
+      {
+       "text": "Fixed issue with a Lava area cover",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various audio fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a platform and breakable wall issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy navigation fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ledgegrab fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 12",
+     "items": [
+      {
+       "text": "Added a simple hatch in a multiplayer normal puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Level 13",
+     "items": [
+      {
+       "text": "Audio fix to physics object",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windburst fix to elevator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 14",
+     "items": [
+      {
+       "text": "Minor audio and physics fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Camera fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windburst basket fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 16",
+     "items": [
+      {
+       "text": "Minor art fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Valeribot getting stuck in egg bomb attack state with a well timed cannon shot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 17",
+     "items": [
+      {
+       "text": "Out of bounds fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 18",
+     "items": [
+      {
+       "text": "Cube stopper fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animation culling fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for mage enemy not respawning after knocking it off the platform in the final fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented early triggering of a fight before solving a puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Level 19",
+     "items": [
+      {
+       "text": "Audio fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level 20",
+     "items": [
+      {
+       "text": "Fixed incorrect music playing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed final boss trophy unlock and credits stuff so they'll actually have time and are guaranteed to trigger for client(s)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Also fixed end of level trophies to trigger earlier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Fixed missing impact sounds in multiple levels: Lvl 7: Gold Bars, Lvl 6: Hard Mirror Box Wheels, Lvl 16: Wheel Rock, Lvl 17: Electric Generator, Lvl 13: Beam Block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed Polish typo in language choices",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed German linebreak in menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Level exit: Increased the fade out time a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cinematics: Fix for level 9 skill quest cinematic camera spinning weirdly if the opening cinematic was played during the same run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bow drawing visualisation not showing for joining players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash related to Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash caused by a controller player using keyboard and/or mouse to navigate customization menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added additional THQN and Globalstep names to Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 41,
+    "balance": 0,
+    "other": 35,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1436700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1436700/view/5480373588782924893"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-14T15:24:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1436700",
+      "checkedAt": "2026-11-13T03:34:50.670Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-14T15:24:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1436700",
+      "checkedAt": "2026-11-13T03:34:50.670Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-14T15:24:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.499Z"
+  }
+ ],
+ "issues": []
+}

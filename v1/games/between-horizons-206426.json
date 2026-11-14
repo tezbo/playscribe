@@ -1,0 +1,928 @@
+{
+ "game": {
+  "id": "between-horizons-206426",
+  "igdbId": 206426,
+  "name": "Between Horizons",
+  "cover": {
+   "imageId": "co4x54",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4x54.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1v9j",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1v9j.jpg"
+  },
+  "ps5Release": "2024-09-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "between-horizons-206426@1.3.0",
+   "gameId": "between-horizons-206426",
+   "displayName": "Update 1.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-25T12:17:53.000Z",
+   "notes": [
+    {
+     "title": "Happy Arrival Day 🚀",
+     "items": [
+      {
+       "text": "This is Julian from DigiTales. Between Horizons launched two years ago today, and we want to thank you all for your continued support – for playing the game, leaving reviews, and providing feedback. To show our appreciation, we've prepared a big anniversary patch for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42144621/d8ea3e308a9b63936bcf7d242877d48ee3243da3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "But first...",
+     "items": [
+      {
+       "text": "Since Between Horizons was released, we've been very busy here at DigiTales, mostly with developing our third detective adventure From Ruins. It's coming to Steam next year, and you can already wishlist the game right now:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/4024450/From_Ruins__A_Detective_Adventure/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've also ventured into publishing, and are excited to announce the first title we signed: The Great Sassanelli, an interactive novel about a travelling circus in WWI by Forking Paths Gardening. Coming to PC later this year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2195490/The_Great_Sassanelli__An_Interactive_Novel/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All that being said, we carved out the past few weeks to work on a Between Horizons patch: version 1.3.0 is live now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42144621/d8ea3e308a9b63936bcf7d242877d48ee3243da3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Less is more: 2D Mode",
+     "items": [
+      {
+       "text": "With today's update, we are introducing a whole new dimension, or rather lack thereof, to the game: You can now switch between a 2D and a 3D perspective. We had this idea a long time ago when playing around with the in-game camera, but there was no time to add it during production.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42144621/31c95f90f66028630dad4ffd4944153daa1685da.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've finally added it today, which entailed a minor rework of all environments in the game, all scripted content etc. to work flawlessly in both modes. This also means that you may notice some tweaks to the 3D version here and there, including some camera-related bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The choice between 2D and 3D is merely down to your aesthetic preference, as there are no gameplay differences between the two. If you ever change your mind while playing, don't worry: you can always switch back and forth in the video settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other 1.3.0 improvements",
+     "items": [
+      {
+       "text": "In addition to the new mode, we've been gathering community reports on Steam and Discord since version 1.2.0 came out last year. We are addressing all of them in today's update; see the full patch notes below for a comprehensive overview. As always, please let us know if you have any feedback to share. We also read and appreciate all the reviews, so keep them coming! If you want to see more frequent updates from us, follow along on our socials!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We hope you enjoy the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Until next time!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Julian from DigiTales",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42144621/d8ea3e308a9b63936bcf7d242877d48ee3243da3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Full patch notes",
+     "items": [
+      {
+       "text": "of game version 1.3.0, live March 25th 2026",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/42144621/5bf47132276de56ec8d8410675175c4a8eb3a7ee.png\"]",
+     "items": [
+      {
+       "text": "Added the ability to switch between 2D and 3D camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added prompt to pick one to start out with when starting a new save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted all scenes, camera movements, scripted content to work with both Added some helper icons to facilitate navigation in 2D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Camera fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where showing evidence for the first time would not trigger dialog camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where camera would briefly skip after certain cutscene movements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where camera would skip after entering certain level sections for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked some camera angles & positions in 3D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Content fixes & improvements",
+     "items": [
+      {
+       "text": "Added more guidance to help players find undiscovered cases in the second act (details below 👇)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Michio's clue said he died when he didn't",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the origin of Power Rod B in its clue description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored a missing trigger factoring into the Anarchy and Law And Order achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Stella was present in an epilogue scene where she shouldn't be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pain Killers case: NPCs no longer react to medical records after case is closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where area music would briefly fade in and back out before cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where area music would play in parallel with scripted music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other bug fixes",
+     "items": [
+      {
+       "text": "Scripted character movements are much more deterministic now, preventing bugs at low FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some clues would not show outlines while in interactable range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected placement of the ping effect on numerous scannable objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minor graphical glitches across multiple levels (e.g. Z fighting)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the wrong NPC would be shown as interlocutor on the dialog log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the elevator platform model in the Inner Hull wouldn't move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing texts on Turkish machines (details below 👇)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed remaining instances of \"invisible dad bug\" (details below 👇)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other changes",
+     "items": [
+      {
+       "text": "Lights on broken doors now flash to make them more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some slight optimization measures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved scaling of interact prompt icons (they're bigger now when further away)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced splash & loading screen with new key artwork",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced game shortcut icon with new key artwork",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[img src=\"{STEAM_CLAN_IMAGE}/42144621/45976b959b3921b9c74f557fd54b185c2bbec73f.png\"]",
+     "items": [
+      {
+       "text": "Some of the issues we are fixing with today's update were reported by our lovely community. With your support, we have been able to track down and squash a handful of very tricky bugs since the 1.0 release. Some of these are repeat offenders, which we attempted and failed to (fully) fix in previous patches:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🕵️ Discovering cases in the second act",
+     "items": [
+      {
+       "text": "Some players reported that after closing all ongoing cases in the second act, no new case seemed to be available. This is not a bug, but a result of poor player guidance that can occur due to a large number possible game states. While the game accounted for most of them already, we've finally patched up the remaining holes by adding more journal updates nudging you towards any missed case(s).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "❓ Missing strings on Turkish machines",
+     "items": [
+      {
+       "text": "Some of our Turkish players reported that a seemingly random selection of in-game texts showed up as \"Missing translation\". We fixed this issue for some players in version 1.2.0, but with today's update, it should finally be gone for good! Apologies to our Turkish players for the long wait. The culprit was a conversion between the dotted i and the dotless ı, which resulted in a mismatch in string IDs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚪 \"Invisible dad\" bug",
+     "items": [
+      {
+       "text": "Some players reported William was suddenly invisible in the opening sequence, which led to an infinite loading screen at the next scene transition. While our fix in version 1.2.0 resolved it for some people, today's update further solidifies the logic around this issue. The problem stems from a corrupted file package that may unfortunately still linger on your machine. If you still experience this problem, verify the integrity of your game files, and you should be able to proceed through the sequence without issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1921980/Between_Horizons__A_SciFi_Detective_Adventure/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42144621/d8ea3e308a9b63936bcf7d242877d48ee3243da3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 23,
+    "balance": 1,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1921980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1921980/view/1827626365767945"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T12:17:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1921980",
+      "checkedAt": "2026-11-13T03:15:57.518Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T12:17:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1921980",
+      "checkedAt": "2026-11-13T03:15:57.518Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-25T12:17:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:36.409Z"
+  },
+  {
+   "id": "between-horizons-206426@1.2.0",
+   "gameId": "between-horizons-206426",
+   "displayName": "Update 1.2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-04T12:46:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is Julian from DigiTales. Today, I am very happy to announce the first major update to Between Horizons in a long time. 🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.2.0 features a lot of fixes to community-reported issues as well as a host of visual upgrades and convenience improvements. We know that some of these bugs were pointed out quite a while ago, and we apologize for the long wait. Like many indie studios lately, we've had an incredibly turbulent and stressful year focused on economic survival. This update is the first sign that we have emerged from the turmoil – bruised and battered, but still standing. With that, we are officially back to work on the next mainline DigiTales title. It's a long ways away, but we will start posting about it on our socials later this year. Follow us there to stay in the loop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may have already noticed some changes outside of the game itself. To tell you the truth, Between Horizons has not been performing as well on the store fronts as our first game Lacuna (although still okay), which we attribute to a few different factors. Among other things, we believe that it's much harder to quickly understand the type of experience the game promises to deliver. To alleviate this, we have decided to add a subtitle (\"A Sci-Fi Detective Adventure\") and change the key artwork. We hope you like the new and improved version, once again created by our friend and concept artist Jon Dawo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's very hard to convince the store algorithm that your game deserves more visibility. If you enjoyed the game and/or just want to show your appreciation for our continued work, leaving a review would help us out a great deal. And if you've been eyeing the game for a while, let this update be your sign to finally check it out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before delving into the patch notes, I want to tease one more thing: We already have another major Between Horizons update planned. While 1.2.0 focusses on improving the existing experience, the next one will introduce a whole new and pretty unique feature. Sorry for being cryptic, but I think the surprise will be worth it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you enjoy today's update! Please let us know what you think.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Julian & the DigiTales Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Again, our apologies for keeping you waiting for some of these. In order of decreasing severity:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements now work again on GOG",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Having a virtual or physical joystick connected to the PC no longer leads to a crash on startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a lot of missing strings occurring when PC was set to certain system languages (e.g. Turkish)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Speculative but promising fix for some players experiencing William disappearing in prologue sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Opening the \"show evidence\" UI now reliably shows the correct clue name from the start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It should no longer be possible to start floating past the end of any staircases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the current feed message on the PDA dashboard was not saved between sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Speculative fix for some players getting stuck after the case The Setup is opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where \"back\" sound effect would be triggered many times at once in Cases tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where events tied to collecting a clue would not fire reliably",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Zephyr not moving & ring being placed incorrectly in some ending shots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interaction outlines on train station exits not appearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Floor in the hospital no longer covers up the stairs to the train station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed flowing water in Farm area being invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the selected sprite on the display behind Stella's bed was not saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a very rare bug where Joseph was absent from navigation room finale, resulting in stuck game state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Water outside flooded Residential Area bunk no longer floats in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a small number of spelling mistakes across various texts (English localization)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Stella briefly appearing to float above train station stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All UI boxes are now properly 9-sliced and scaled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed network cable in the hospital appearing prematurely",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cleaned out obsolete project files, decreasing game size and memory use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We made a few improvements that should make the overall experience more enjoyable, most notably:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now attempts to save much more frequently, not just after certain actions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Considerably improved performance of save operation, eliminating lag spike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interaction outlines on 2D sprites no longer shine through player (or other sprites)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Stella marker on map much more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a tutorial that explicitly introduces clues filter feature (since many players missed this)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a third quality level (medium) to video settings, quality levels overall now have more impact",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We spent a lot of time reworking the lighting in the majority of scenes from the ground up:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved overall look and vibe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed lots of lightbaking errors (e.g. absent objects would still cast shadows)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some objects would be lit incorrectly after scene transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed (some) Extras looking darker than other characters in the scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some computer screens in various scenes not glowing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decreased total size of lighting data by cleaning up lights & probes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We ironed out a few things that irked us about the story logic:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clues now become un-interactable when related cases aren't ongoing (instead of disappearing)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When characters die in the story, their clue text is now updated accordingly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented an additional way of progressing in Pain Killers case",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a few more unlockable text updates to existing clues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shortened the Psychiatric Department hallway, eliminating unused space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player can now interact with Chichi from the very beginning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sweeping improvements to scripted scenes (e.g. pacing, character placements, visuals)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We further improved the look of most scenes in various ways. Among other things:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added animated displays to Network Office and around Inner Hull corridors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more armed guards around the ship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced some Extras at the funeral with known NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Filled up multiple empty spaces in Public Area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The display in the classroom scene is now animated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added animated display above drumset in Activities Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added static injured Extras around the ship after [major spoiler event]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Propaganda screens now randomize animation starting points instead of playing in sync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented Leona sitting with Kimi (her pet) after hospital scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated main menu: improved color grading and logo placement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 16,
+    "balance": 1,
+    "other": 37,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1921980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1921980/view/1801617199358671"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-04T12:46:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1921980",
+      "checkedAt": "2026-11-13T03:15:57.516Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-04T12:46:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1921980",
+      "checkedAt": "2026-11-13T03:15:57.517Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-04T12:46:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:36.408Z"
+  }
+ ],
+ "issues": []
+}

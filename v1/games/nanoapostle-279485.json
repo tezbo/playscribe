@@ -1,0 +1,1162 @@
+{
+ "game": {
+  "id": "nanoapostle-279485",
+  "igdbId": 279485,
+  "name": "NanoApostle",
+  "cover": {
+   "imageId": "co8ql9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8ql9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2o5v",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2o5v.jpg"
+  },
+  "ps5Release": "2025-04-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "nanoapostle-279485@7",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Hotfix 7",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-27T11:28:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Further fixes for NanoApostle, thank you all for the continued feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Players",
+     "items": [
+      {
+       "text": "Optimize the aiming assist system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase the hitbox width for shooting, reducing the chances of missed shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix the issue where regular blocking would override the spin slash state, causing a block failure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Hunter",
+     "items": [
+      {
+       "text": "Increase the margin of error for the Level Achievement where the player is hit less than N times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Kurozan",
+     "items": [
+      {
+       "text": "Increase the margin of error for the Level Achievement where the player is hit less than N times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Fix some minor bugs and issues where the process may get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Provide a unified visual cue when enemies perform attacks that require charged blocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/1784506358975417"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-27T11:28:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.381Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.381Z"
+  },
+  {
+   "id": "nanoapostle-279485@6",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Hotfix 6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-07T15:11:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Further fixes for NanoApostle, thank you all for the continued feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Players",
+     "items": [
+      {
+       "text": "Optimized the shooting and aiming experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Commander",
+     "items": [
+      {
+       "text": "Fixed some visual effect display and damage detection errors for Commander.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attempted to fix an issue where Commander could get stuck during phase transitions. (Still under observation, if this error occurs, please report it using F10, thank you.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Kurozan",
+     "items": [
+      {
+       "text": "Deactivated the damage detection for explosion attacks earlier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the phase 3 cutscene for Kurozan was interrupted by actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Kurozan's combat experience, including reducing the execution time of Iai Slash in phase 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Wenny",
+     "items": [
+      {
+       "text": "Fixed an issue where players could no longer speak with Wenny after clearing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a new interaction to hug Wenny in the later stages of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Boss health will no longer display as 00.0% when it’s extremely low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the timing for some Boss music triggers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level Achievement progress will now be displayed in real-time in the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where certain Level Achievements based on taking fewer hits were not correctly achieved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a Bug Report button in the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/6350729003509082079"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-07T15:11:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.380Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.380Z"
+  },
+  {
+   "id": "nanoapostle-279485@5",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Hotfix 5",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-20T16:09:44.000Z",
+   "notes": [
+    {
+     "title": "Players",
+     "items": [
+      {
+       "text": "Fixed an issue where the player would sometimes not play the correct animation after dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Commander",
+     "items": [
+      {
+       "text": "Adjusted the interval for Commander’s Cross Laser Drone attack to be more reasonable. It will no longer be used too frequently or infrequently (e.g., immediately reusing after clearing the drones or not using them at all during the entire fight).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Hunter",
+     "items": [
+      {
+       "text": "Added a damage accumulation progress indicator during Hunter’s self-repair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Hunter’s various shots would sometimes not aim at the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed unnecessary visual effects that would sometimes play for Hunter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Reaper",
+     "items": [
+      {
+       "text": "Improved certain combat experiences and visual details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where Reaper could get stuck in certain situations (still being monitored; if this issue occurs, please report it using F10, thank you).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Kurozan",
+     "items": [
+      {
+       "text": "Fixed an issue where Kurozan's grapple would ignore the player's invincibility state and still grab them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kurozan's ground rupture damage area could be cleared by the player's charged attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/6341720536506755727"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-20T16:09:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.379Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.379Z"
+  },
+  {
+   "id": "nanoapostle-279485@4",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Hotfix 4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-19T16:49:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "NanoApostle continues to improve thanks to the feedback of the community!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Players",
+     "items": [
+      {
+       "text": "Adjusted control inputs to allow using Spin Slash immediately after a charged attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Commander",
+     "items": [
+      {
+       "text": "Added hacking method prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Reaper",
+     "items": [
+      {
+       "text": "All attack warning effects for Reaper and its clones now appear in front of the fog, allowing players to see attack warnings even in foggy areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhanced the visual effects when Reaper’s clones fly back to the main body after death, with a gradual acceleration to increase visibility in foggy areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Kurozan",
+     "items": [
+      {
+       "text": "Fixed an issue where the lights in the scene did not turn on after skipping phase transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where using Jump Slash after a Grapple Hook would significantly reduce the movement distance of the Jump Slash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly adjusted Kurozan's behavior tree and animations, and resized some hitboxes to better match the visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Fixed a bug where pausing the game during a grab-throw action didn’t pause the game correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/6341720536503210676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-19T16:49:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.379Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.379Z"
+  },
+  {
+   "id": "nanoapostle-279485@major-2024-09-18",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Update: Boss Fixes & More",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-18T15:59:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've got a larger update to address some of the issues in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Anita",
+     "items": [
+      {
+       "text": "Enhanced the values of certain modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the \"Injury Plague\" module, adding a cooldown for Infect application and reducing the energy gain reduction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where the status of some modules was not correctly displayed on the HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Charge Shoot would apply more infections than the maximum allowed to bosses, causing some infections to not trigger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Commander",
+     "items": [
+      {
+       "text": "Reduced the health of all Drones to decrease the time players spend dealing with them (Commander’s health has been increased to balance the difficulty).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Drones now immediately attack for the player after being hacked, rather than waiting for the right moment. Hacked drones now only require one shot to hack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Molter",
+     "items": [
+      {
+       "text": "Fixed an issue where Molter would instantly generate spikes during Armor Repair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where scene masks would block danger warning icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Reaper",
+     "items": [
+      {
+       "text": "Fixed an issue where Reaper's Level Achievement displayed an incorrect number of required tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Hunter",
+     "items": [
+      {
+       "text": "Hunter’s arc-based abilities will no longer cast repeatedly during their effect period to reduce combat confusion. (For example, as long as BombArrow/Trap is still \"Falling\" to the field, no additional BombArrow/Trap abilities will be cast.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the self-destruct speed of Hunter’s traps and enlarged their hitbox to make them easier to clear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where Hunter’s arrows would flip direction, preventing attacks outside the warning range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Kurozan",
+     "items": [
+      {
+       "text": "Fixed an issue where Kurozan would get stuck after being hit by Charge Shoot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some visual errors and behaviors for Kurozan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Adjusted the time management logic to prevent scenarios where the game would speed up abnormally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted certain visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated the tutorial for Charge Attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PQube & 18Light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 6,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/6341720536499439089"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-18T15:59:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.378Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.378Z"
+  },
+  {
+   "id": "nanoapostle-279485@3",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-16T11:00:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "More fixes incoming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted player module values, and adjusted boss health and attack power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug where Challenge Level’s Level Achievement could be repeatedly achieved and reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where players could use the mouse to purchase locked modules",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Molter could get stuck when repairing armor, where repeated destruction points prevented triggering, and some visual effects playback issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Spin Slash could trigger twice under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Berserker would continue attacking during the Phase 2 cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kurozan had unusually long idle times, and significantly adjusted its behavior and various details, making it more challenging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the invincibility time from Commander’s grab ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted some timing and recoil parameters for player’s Charge Attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where some buttons on the NS Pro controller couldn’t be bound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/6250522009527389655"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-16T11:00:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.377Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.377Z"
+  },
+  {
+   "id": "nanoapostle-279485@2",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-13T17:00:52.000Z",
+   "notes": [
+    {
+     "title": "Thank you all for the feedback so far!",
+     "items": [
+      {
+       "text": "The team are hard at work at implimenting your feedback into the game. Here are a list of new fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added full-screen toggle options in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the input conditions for charged attacks to make them easier to trigger and no longer get stuck in other states, while also making the effects more noticeable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed display layer errors for certain visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Kurozan's split shuriken could not be eliminate by the Pulse Slicer, and some errors related to shuriken throwing direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the damage range of Commander’s Drone Laser sometimes did not match the warning area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted some player visual effects to make them more prominent on the battlefield.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed various issues with boss's grabbing abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed execute's inconsistent key prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some triggering conditions for Molter's Level Achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where button icons displayed incorrectly when using the Nintendo Switch joystick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 2,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/6250522009517368171"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-13T17:00:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.377Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.377Z"
+  },
+  {
+   "id": "nanoapostle-279485@dayone-2024-09-12",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Day one patch",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-12T17:58:57.000Z",
+   "notes": [
+    {
+     "title": "The following updates have been made following a recent hotfix",
+     "items": [
+      {
+       "text": "Fixed an issue where the Boss would perform a fixed set of action after retrying the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where completing the Challenge Level allowed players to repeatedly obtain Ability Points from the Level Achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/6250522009513869733"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-12T17:58:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.376Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.376Z"
+  },
+  {
+   "id": "nanoapostle-279485@major-2024-05-17",
+   "gameId": "nanoapostle-279485",
+   "displayName": "Demo Update (Patch notes)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-17T10:23:35.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "Fixed the bug where the commander stops acting after entering the second phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where the commander's wreckage appears above Anita.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug where hacked drone are not destroyed after the commander is defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Adjusted the frequency and damage of Anita's light attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted and weakened some visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the commander's combat experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Player data gathering (Opt-in)",
+     "items": [
+      {
+       "text": "Added a feature to collect gameplay information. (This allows developers to adjust the experience, and players can choose whether to send information at the start interface.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "1) 修正指揮官進入二階後有機會不再行動的錯誤",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2) 修正指揮官的殘骸顯示在主角之上的錯誤",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3) 修正指揮官戰敗後友方浮游炮沒有摧毀的錯誤",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4) 調整主角的輕攻擊頻率和傷害",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5) 調整並減弱部份視覺表現",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6) 調整指揮官的戰鬥體驗",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7) 新增收集遊玩資訊的功能 (供開發者調整體驗用, 玩家可以在起始介面選擇是否回傳資訊)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 3,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2400640"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2400640/view/5747233970421732953"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T10:23:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2400640",
+      "checkedAt": "2026-11-12T08:24:50.375Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:50.375Z"
+  }
+ ],
+ "issues": []
+}

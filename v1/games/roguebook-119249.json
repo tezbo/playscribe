@@ -1,0 +1,5891 @@
+{
+ "game": {
+  "id": "roguebook-119249",
+  "igdbId": 119249,
+  "name": "Roguebook",
+  "cover": {
+   "imageId": "co4bob",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4bob.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar54tx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar54tx.jpg"
+  },
+  "ps5Release": "2022-02-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "roguebook-119249@1.10.15",
+   "gameId": "roguebook-119249",
+   "displayName": "Update 1.10.15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-05T09:06:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Adventurers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you've been enjoying your travels in the Roguebook. Today's patch is a follow up to our last patch, aimed at addressing some of the bugs and crashes people have been experiencing following the release of the tournament mode and Fugoro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Fugoro is now unlocked instantly if the DLC is owned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The achievement 'Neverending Story' now unlocks correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The death counter of the 2 heroes in the tournament menu is now displayed in the global stats panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked Wheel of Chaos to work with most effects applied to the leading hero",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Triton Bodyguard no longer can trigger on allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fugoro's pipe on the overworld is now prioritized over Apex’ tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent socketing cost when changing gems to cards that spend all Faeria",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Time of legends narrative will no longer appear without both heroes’ starting treasures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stacked cards are now sorted so that the lowest cost card is first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a speech from Naddim speech the first time a player starts a new run with an affordable embellishment after the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the possibility for duplicate talents with 'Seal of Talents'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various text fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a possible cheat in the tournament mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when retrieving stolen treasure from Fugoro with the Fugoro DLC enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when opening talents tab for the first time while the lootbag is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could enter the tutorial’s first battle without Sorocco",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when a run is dropped from battle as cards can still be played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a blocker in Compendium when selecting a card while loading is not complete",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a case where Fugoro's Staff prevented Recharge from working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple melee/ranged instances on the same card not being correctly evaluated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some effects not applying to heroes when revived",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tooltips hiding card text when too numerous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Imperial Camp training could be done with not enough money in the player's possession",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed arrow keys not scrolling to the focused item in scroll lists",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sharra’s Shimmer Strike animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed boss reward 'Token of Heroism' being stuck if taken last with a gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed return to hand or deck effects when the hero is dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some ultra-wide screen issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the interaction between the Ogre Dance status and the Hammer Time card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some minors crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to tournament scoring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the game being locked after the last boss if the Seal of One is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Global statuses are now visible again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 20,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4347669995477853220"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-05T09:06:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.513Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-05T09:06:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.513Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-04-05T09:06:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:26.696Z"
+  },
+  {
+   "id": "roguebook-119249@hotfix-2022-03-03",
+   "gameId": "roguebook-119249",
+   "displayName": "Hotfixes - Input Lag fix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-03T15:20:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've pushed some hotfixes this week that dealt with the frustrating 'lag' problems people were encountering when playing cards in battle since the last update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update also included some other random fixes. Here's the list:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the \"input lag\" problem when playing cards in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where paying an ally with an activate ability removed tooltips from the battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a method to duplicate gems infinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Epilogue maluses and the Gem mine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where treasure from the Fugoro event was not properly appearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Let us know if you continue to experience slowness when playing cards. Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4247462367430784676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-03T15:20:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.511Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-03T15:20:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.511Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-03-03T15:20:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:26.694Z"
+  },
+  {
+   "id": "roguebook-119249@1.10",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-24T09:36:39.000Z",
+   "notes": [
+    {
+     "title": "Today’s major update introduces three new things",
+     "items": [
+      {
+       "text": "The Tournament system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "\"Fugoro, Merchant of Wonders\" - A new Hero DLC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Story Tournaments are special events where you compete against any number of other players and watch your placement update live as you play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The new hero is none other than Fugoro, the Merchant of Wonders. You can find more info on him on the store page. How is Fugoro a \"hero\", yet also a thief you encounter in the game? You may find out a bit more by playing him and listening to what he has to say...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You won't need to get the Fugoro DLC to play him right away. In this update, we are guaranteeing him to appear in the first few days of tournaments - which means you can try him there as long as you like. After a few days, he'll go into the randomized hero pool with all the others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fugoro has been a lot of work, and we think all players will enjoy him. We're pretty happy with how he's turned out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tournaments however, may only be for some of you - but we encourage you to give them a try. We have always wanted to introduce a social competitive aspect to Roguebook, but knew it should be secondary to the main game. Finally, we have introduced a system we are happy with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "What are Story Tournaments?",
+     "items": [
+      {
+       "text": "Story tournaments are a competition between players to see who can complete a run the fastest, or score the most points. While similar to a “daily run,” story tournaments are special in that they start at the exact same time for everyone. This means that in order to finish first, you’ll likely need to be there at the starting line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Why not a Daily Run?",
+     "items": [
+      {
+       "text": "We wanted to make these runs a special event that occurs only a couple times per day. The idea is to make these runs a more social and spectator friendly version of what is normally a daily run - something that is available for 24 hours and you can complete at your leisure. There is a bit of a gap in those between yourself and the other players that we wanted to close a bit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We imagine that some players will gather and rush to be the first to complete the tournament as soon as it starts, then those players who remain will go for the highest score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your “Finish time” will always be from the time the tournament officially begins. For example, if the tournament starts at 6pm and you finish it at 8pm, your finish time will be 2 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each tournament has a designated set of heroes, and 3 special modifiers. Embellishments are set the same for everyone, and everyone has the same exact seed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It does not matter what DLC you own when competing in a tournament. All heroes are available to everyone in any tournament.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After the fastest players have finished, players can then compete to score the most points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "When do the tournaments start?",
+     "items": [
+      {
+       "text": "Twice a day, a new Story tournament is generated. We aim to start these tournaments at staggered times in order to accommodate as many players across the world as practical.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Each Story Tournament has the following rules",
+     "items": [
+      {
+       "text": "Everyone plays on the same run seed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The run is set to “Epilogue 6” difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All hero cards are unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A baseline of embellishments is applied to the seed: (These embellishments are completely independent of what the player currently has. Everyone will have the same.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Three special tournament modifiers (mutators) are applied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What are the tournament modifiers?",
+     "items": [
+      {
+       "text": "Each run has 3 special modifiers applied to it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first modifier will always be a Global modifier that affects everything in the run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The other two modifiers have a chance to be deck randomization or a hero-specific modifier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The end result should be a dramatically unique run each tournament, and hopefully only rarely broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What information can you see during the run?",
+     "items": [
+      {
+       "text": "Your current highest ranking placement medal: (This ranking is dynamically updated live)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time elapsed since the beginning of tournament",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Global statistics:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players: Total players entered into the tournament",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deaths: Total players who have been defeated in the run (or abandoned)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finishers: Total players who defeated chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Lockout periods",
+     "items": [
+      {
+       "text": "Once the tournament is close to ending, there are several lockout notifications that occur to players attempting to join, or currently playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Less than 4 hours remaining",
+     "items": [
+      {
+       "text": "New players will be warned that only 4 players remain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Less than 1 hour remaining",
+     "items": [
+      {
+       "text": "Players are locked from joining the current tournament. You must wait to join the next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is to prevent players from joining a tournament that they likely will not be able to finish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When a tournament’s time expires, all player runs end and a new tournament begins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How many runs can you do in the same tournament?",
+     "items": [
+      {
+       "text": "Only the first run (win or lose) will only count toward your leaderboard placement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Afterwards, you may retry that tournament as much as you like until the timer expires. You will not change your placement, but you can still earn pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Conclusion",
+     "items": [
+      {
+       "text": "We hope you enjoy this new major feature for Roguebook. We hope it will be a way for you to enjoy the game with friends and compare your performances in very special circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As mentioned, this feature is being released simultaneously with our new hero, Fugoro - and you can find him in game right now in the tournament menu - or you can just pick up the DLC and play him normally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After a few days, he will have a chance to randomly appear in tournaments just like all of the other heroes. You’ll never have to own him to play with him in a tournament.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing Roguebook! Needless to say, this is probably the biggest update we've ever released in one day. Hope you like it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Don't forget!",
+     "items": [
+      {
+       "text": "We're going to be checking out both the Tournament Mode (free content) and Fugoro (paid DLC) on stream tonight at Twitch where we'll walk you the content available in this update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 34,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4246335832507576818"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-24T09:36:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.510Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-24T09:36:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.512Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-02-24T09:36:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:26.693Z"
+  },
+  {
+   "id": "roguebook-119249@major-2022-02-23",
+   "gameId": "roguebook-119249",
+   "displayName": "Update Live Stream - February 24th 6PM CET",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-02-23T16:03:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It's a content DROP tomorrow with both the Tournament Mode (free content) and Fugoro (paid DLC) being added to Roguebook. It's a lot of new content, so join us tomorrow on Twitch where we'll walk you through what you can expect from the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, don't forget! Fugoro will be available in all the tournaments throughout this weekend for all players regardless of whether you own the Fugoro DLC or not. After this, he will be a regularly rotating character in this mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4246335832504913451"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-23T16:03:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.509Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:26.690Z"
+  },
+  {
+   "id": "roguebook-119249@1.9",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-12T10:13:57.000Z",
+   "notes": [
+    {
+     "title": "Overview",
+     "items": [
+      {
+       "text": "Back onto the topics of updates, the first update this year adds some extra features and has a few balance adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Victory screen",
+     "items": [
+      {
+       "text": "We've added a new fully animated screen to celebrate when the heroes score a victory run. Fugoro's dark and corrupted shop will morph into a brighter and flourishing version, as the generally malevolent Roguebook becomes 'satisfied'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Sound FX",
+     "items": [
+      {
+       "text": "We have added 21 new unique sounds to specific cards in an effort to add a bit more depth and hero personality to battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Sharra",
+     "items": [
+      {
+       "text": "Smoke Bomb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shimmerstrike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lightning Draw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fan of Knives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "High Five",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time Strike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sorocco",
+     "items": [
+      {
+       "text": "Fire Oil",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buckle up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ogre Soup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dig",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Seifer",
+     "items": [
+      {
+       "text": "Dark Knowledge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ritual Strike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whipcrack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Aurora",
+     "items": [
+      {
+       "text": "Time stop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Split the Timeline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toadsuit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Battle Toads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Triton Banquet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tadpals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quicken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Starting Loot Bag",
+     "items": [
+      {
+       "text": "When a new run begins, any Embellishments that give you items will all appear together inside of a loot bag instead of separate and sequentially. This hopefully will make the starting sequence for new runs more smooth and comprehensible. This is a quality of life feature we have wanted to add for some time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Thank you for your feedback on our recent balance discussion news post. In the end, we decided it would be best to focus only on the changes we think will have the most impact without disrupting the general Roguebook experience. We saw some great discussions that we truly appreciate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The following balance changes are being applied in this update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fill the Pot",
+     "items": [
+      {
+       "text": "Rarity changed from Common to Rare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Empower",
+     "items": [
+      {
+       "text": "Rarity changed from Rare to Common.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(This is to balance out Aurora's rarity pool after adjusting Fill the Pot)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bronze Boomerang",
+     "items": [
+      {
+       "text": "Can now only be played once per turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Miscellaneous",
+     "items": [
+      {
+       "text": "The in-game Credits have been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor bugs and glitches fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Conclusion",
+     "items": [
+      {
+       "text": "As we mentioned in our last update, this is a smaller update than typical as we are working on a larger one including a whole new Hero and the Tournament system. Not to mention preparation for the release on consoles. You can expect all of those in the next couple of months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regardless, we hope you enjoy the latest additions to Roguebook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Abrakam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 2,
+    "other": 33,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4224939931823813782"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-12T10:13:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.508Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:26.689Z"
+  },
+  {
+   "id": "roguebook-119249@1.8.3",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.8.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-30T15:53:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we are releasing an update to live servers that contains mostly bug fixes, with one balance change to Sharra's Berserking talent which was incorrectly set a bit high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sharra's Berserking talent is now correctly set to 2 block, down from 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berserking localisation corrected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unstable Capacitor now works correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Molten Spice now swaps Sorocco correctly when blocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash that sometimes happened when playing Wild Swing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that sometimes happened when playing Shaytan Moonstone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash when flying on a Magic Carpet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some crashes involving the \"Wheel of Chaos\" event",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected camera movement when selecting a hero in the starting area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected UI involving lead hero selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for D-pad in menu navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the life counter for the Hunting Spear treasure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bold formatting in Blue Pendulum description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a tutorial crash that could happen when using ink while Naddim is speaking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when dropping a run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Djinn's Lamp behavior when one hero is dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Icon for Sharra's Bravado talent updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to miscellaneous minor bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4224935490654331754"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-30T15:53:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.508Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:26.687Z"
+  },
+  {
+   "id": "roguebook-119249@1.8",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-19T10:28:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we are releasing our 4th major update since the release of Roguebook in June of this year. This update contains some new cards, talents, optimizations, and the usual bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We thank you for all enjoying the game so far, and have some big news on what is to come next…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Cards",
+     "items": [
+      {
+       "text": "We announced the winner of our design contest at the end of last month, and are releasing the fully playable cards today. These cards become automatically available and require no additional unlocking. Congratulations, Alex!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Talents",
+     "items": [
+      {
+       "text": "You may not have noticed, but Sharra and Aurora have been behind on talents compared to the rest of the heroes. With today’s update, each hero will be brought to the same total of 12 possible talents each.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Sharra",
+     "items": [
+      {
+       "text": "Bravado",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sharra gains 1 Power for each stack of Courage she has.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Berserking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the end of each turn, gain 2 Block for each stack of Courage Sharra has.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Threefold Rhythm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The third card Sharra plays each turn gains 3 Power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Aurora",
+     "items": [
+      {
+       "text": "Breeder",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first time you summon Frogs each turn, summon 3 more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These talents will be available on all future runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjustments and Bug Fixes",
+     "items": [
+      {
+       "text": "Added further optimizations to game performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added controller support for hero selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chosen hero skins are now displayed for all characters in the hero selection panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where voice lines were disabled on the first start up of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several issues with displaying tooltips during battle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues involving Unstable Capacitor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Characters should no longer randomly become completely white",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When disabled, flash gems are no longer completely greyed out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disintegrate now draws itself at the start of each battle, consistent with Binding Topaz behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stopped Naddim from flying into the sky when the player has a Magic Carpet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed edge cases which allowed players to skip unlocking Seifer by using a Wind Gate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several typos and localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with the tutorial system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sharra now says the correct voice line when picking up her 3rd Faeria orb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "What’s next?",
+     "items": [
+      {
+       "text": "This is the first update since release that does not contain a major new feature - and there is a reason for that. We have been actively working on a few big things that might interest you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Daily Tournaments",
+     "items": [
+      {
+       "text": "In short, we will be releasing a system of daily tournaments for players to compete in. These events will contain special modifiers and have global rankings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to provide you another way to enjoy our game, if you’re interested in this sort of thing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This feature is huge, but already in production and is coming your way. Stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Hero",
+     "items": [
+      {
+       "text": "The fifth hero for Roguebook is already in its internal testing phases. This is perhaps the #1 most requested feature for the game. We’ve actually been working on them for some time, but we’re far enough along now to be confident to announce they will be ready early next year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This hero will be available in normal runs via DLC, but you will be able to use them in the Daily Tournament system with everyone else for free.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Who is the hero? Someone you may not expect...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Console Release in February - 2022",
+     "items": [
+      {
+       "text": "We’re happy to announce that our console versions will become available this February.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Working on the console versions has taken an enormous amount of time, and it’s been going on in the background of every update we have ever released. However, we’re quite pleased with the progress. Apologies for the delay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Conclusion",
+     "items": [
+      {
+       "text": "If you can’t tell, we have a goal to please as many types of players as possible. Don’t plan on getting the console version? No problem, we still have a major tournament feature coming for you. Don’t like the idea of daily tournaments? No problem, we have another hero coming for you. Don’t want a new hero? Well, uhh… really? Sorry :(",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In all seriousness, we recognize today’s major update is relatively small in comparison to the huge ones we have released previously. We just felt it was important to let you know why.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team Abrakam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 14,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4227186657144147823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-19T10:28:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.507Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:26.686Z"
+  },
+  {
+   "id": "roguebook-119249@1.7.4",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.7.4",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-08T15:03:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today's Roguebook update fixes a variety of crashes we have detected or have been reported to us since the last update. Overall stability should now be improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, the following specific issues have been addressed:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the Achievement for purchasing all Rank 1 Embellishments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple instances of the same room should no longer appear in Gem Mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players should no longer automatically move at the beginning of each chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the animation for gaining Faeria during battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4186653398784864120"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-08T15:03:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.506Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.075Z"
+  },
+  {
+   "id": "roguebook-119249@1.7",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-20T09:09:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today’s update contains a number of additions to Roguebook, as well as the usual bug fixing and optimizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While our last update focused more on tracking player data more thoroughly, this update is more content focused. We are happy to introduce: Flash Gems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Flash Gems",
+     "items": [
+      {
+       "text": "Flash Gems can now be found in the game. These are very powerful gems that shatter after being played only once. They can be acquired as loot randomly from battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flash Gems can be unlocked as an Embellishment toward the top of the Embellishment tree. If you’re a veteran player, make sure to unlock the Embellishment before you begin your next run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may carry up to 3 Flash gems at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Battle Socketing",
+     "items": [
+      {
+       "text": "Of course, Flash Gems might not be very useful if you’re unable to craft them into cards during battle. Therefore, we have introduced Battle Socketing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now have the ability to socket gems into cards during battle, whether they are Flash Gems or not. This ability is not linked to any new Embellishment, and will be available now in all battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may have noticed with this update that we have also decreased the total amount of inventory slots for gems to 6. Of those 6 slots, up to 3 may be Flash Gems. If you loot a gem when your pack is full, it will simply drop to the ground nearby for you to pick up later. This works for end of chapter bosses as well. (The gem simply follows you to the next Chapter, and lies at your feet)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Enemies",
+     "items": [
+      {
+       "text": "We have added a new enemy encounter for each chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 1: Zephir Vulpine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 2: Frogtosser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 3: Unstable Forgeling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Tarum, the Forest World",
+     "items": [
+      {
+       "text": "Looking up, it as if a mountain is moving. Birds and more are stirred from massive branches, filling the air with all manner of woodland detritus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A voice booms forth as if the earth speaks, and it becomes clear this is no lifeless mound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Come,” it resonates, “The times are dark. Your bark is soft. I have plenty to spare, as you see.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the thing could smile, there was no way of knowing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tarum will grant you your choice of defensive blessings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wind Gate",
+     "items": [
+      {
+       "text": "The wind picks up, and sand fills the air. A strange tower raises out of the desert here, banners flapping noisily in the gale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A high pitched tone resonates from the top of the structure, where it seems shaped to harness the flow of the wind in a very precise manner. There is an energy about it. The air feels charged like a battery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A caretaker speaks from its marbled steps. “Grains of sand. Do you fly forward, or back?”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wind Gates will allow you to skip to the next chapter, or visit another narrative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chrysalis",
+     "items": [
+      {
+       "text": "A strange green casing dangles from a nearby tree. A chrysalis perhaps, but one so large?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Something pulses from within. As they watch, a moth lands on its skin. Slowly and silently, it disappears within.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "What danger will be birthed from such a womb?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You may choose to destroy the Chrysalis, or carry it along with you at a cost. Maybe it will hatch into something good?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Flash Wind",
+     "items": [
+      {
+       "text": "A figure is seen in the desert, moving extremely fast. He stops briefly in front of the heroes, and introduces himself as a student of Khalim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Greetings, stone feet. Would you race?”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Flash Wind encounter will add a special swapping card to your deck, or double your speed on the world map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life changes and improvements",
+     "items": [
+      {
+       "text": "Inks and consumables will now drop to the ground when your inventory is full, as well as gems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There are now card selection hotkeys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You may now disable and reenable Embellishments at will, once purchased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an achievement for beating the new final boss “Twin Chaos”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Our data has shown that the newest boss, Twin Chaos, is a bit too easy compared to the other bosses. We’ve given him a slight boost in power to be more of a challenge relative to his counterparts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On another note, the addition of Flash Gems and Battle Socketing is a general upgrade for player power level across the board. We hope they give players a few more options in those tough battles where they need just a little boost to pull it off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed many miscellaneous crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New sound balancing + various sound fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Autofocus should behave more intuitively when selecting a card from hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Multiple voice lines can no longer be played at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adamant Blood now properly increases Seifer's life by 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "0 cost Defends should now properly swap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Epilogue 15+ entries in run summary are now consistent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tooltips should no longer linger when choosing rewards in narratives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a special case when playing Spirit Spice as your last card in hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The intro can no longer be skipped when launching the game for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gold auto pickup in the Greed is Good Epilogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Radiant Heart tooltips should no longer become stuck on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you couldn't use a directional ink without inputting a direction on the controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Referenced card and tooltips should no longer remain after exiting compendium",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could press Drop Run twice on a slower machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Epilogue tutorial could be skipped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Conclusion",
+     "items": [
+      {
+       "text": "We hope you enjoy our latest update. We are already working on the next, and have some really exciting features planned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If what you were looking for wasn’t in this update, perhaps it will be in the next. Please keep letting us know. The best place for that is here on Steam, or on our official Discord server at discord.gg/Roguebook.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Community Localisation",
+     "items": [
+      {
+       "text": "We are currently actively working on improving our localisation through community efforts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We seem to have French and German fairly well covered at this time, but if you’re fluent in one of the other languages supported by Roguebook - please feel free to reach out to us and we can work with you to improve the game. If you’re interested, please contact us in our Discord server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Design Contest Award Stream",
+     "items": [
+      {
+       "text": "Along with today’s patch, we are also announcing the winner of the Black Lotus design contest live on stream @17:30 CEST with Richard Garfield on the following channels:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "twitch.tv/FaeriaTV",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "twitch.tv/nacon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please make sure to follow so you don’t miss us go live. We’ll be going over many honorable mentions as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 16,
+    "balance": 2,
+    "other": 31,
+    "ps5": 0,
+    "topNew": [
+     "We have added a new enemy encounter for each chapter.",
+     "Chapter 1: Zephir Vulpine",
+     "Chapter 2: Frogtosser"
+    ]
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4103335143101381881"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-20T09:09:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.505Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.074Z"
+  },
+  {
+   "id": "roguebook-119249@hotfix-2021-09-21",
+   "gameId": "roguebook-119249",
+   "displayName": "Hotfixes - September 21st",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-21T14:47:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've released a small update today that fixes a few of the major issues we've seen since the release of 1.6. Thank you for your continued reports/feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We don't normally like to make smaller balance changes between major updates, but the case of Magda's Scissors was a bit severe. You'll now need to search a little harder for this special tool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epilogue page rewards should now be awarded in the correct amount",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magda's Scissors have been moved to Epic rarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash that occurred in Russian language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, feel free to discuss things here, or with us in our official Discord server at discord.gg/Roguebook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/5418383147753922533"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-21T14:47:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.505Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.072Z"
+  },
+  {
+   "id": "roguebook-119249@1.6",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-15T08:37:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we are releasing a major Roguebook update for PC, Mac, and Linux versions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Before we go further, it is important to note that runs from previous versions will become incompatible with 1.6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have a run in progress, you will be prompted the following when you log in:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From here, you may either drop your current run and begin anew in 1.6, or choose to downgrade your version and continue. Once you downgrade, however, you will need to re-update in order to continue playing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please find further detailed instructions in this separate news post:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controller support",
+     "items": [
+      {
+       "text": "Roguebook is now fully supported on controller. Here are most of the default bindings:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Legacy and Run Summaries",
+     "items": [
+      {
+       "text": "There will now be a comprehensive history logged of all your previous runs. You can find this in the \"Progression\" area of the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, each completed run will now have its own summary page where you can view your journey in brief. This summary will be shown at the end of each run, and can be accessed again at any time in the Legacy menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hero Progress Revamp",
+     "items": [
+      {
+       "text": "We have revamped the Hero Progress screen in the main menu. Where previously it only showed your progress to the next level up, it now shows:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your wins with each hero pair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your total runs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highest Epilogue reached with each hero pair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your highest and current win streaks in various tiers of Epilogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Epilogue 15+ Mode",
+     "items": [
+      {
+       "text": "We have introduced a sandbox mode for those who have completed Epilogue 15. You may now enter Epilogue 15+ mode, which allows you to stack additional modifiers on top of the most difficult ones in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While we have plans for more challenges in the future, for now we found this to be a pretty simple way to introduce a new mode of play for the time being. This feature is more intended to be something extra to enjoy, rather than become ‘the highest level’ of play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Epilogue Completion Tracking",
+     "items": [
+      {
+       "text": "Each Epilogue now tracks which heroes you have completed them with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the above screenshot, Sharra is the only hero left to complete this specific Epilogue modifier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Final boss",
+     "items": [
+      {
+       "text": "We have introduced an additional final boss in the last chapter: Twin Chaos. This will bring the total number of potential final bosses to 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Twin Chaos is a battle against two manifestations of the Roguebook: Pain and Wrath",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You’ll need to manage your attacks against both. You’ll be unable to swap until you hit one of them, and must hit the other as much as possible to reduce its damage. Good luck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Treasures",
+     "items": [
+      {
+       "text": "Five new treasures have been added to the game. These treasures are globally available in all future runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Narratives",
+     "items": [
+      {
+       "text": "Four new narrative events have been added to the game, including three that are hero-specific. This rounds out the hero-specific narratives to all four heroes. (Aurora had one previously)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sharra: Day of the Dragons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sorocco: Ogre Dance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seifer: Blood Song",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All heroes: Celeste, Crystal Dragon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "We’ve added new hero animations to the following cards",
+     "items": [
+      {
+       "text": "Sharra: Gain Dagger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aurora: Gain Sip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sorocco: Gain Headbang",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sorocco: Firebreath",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sorocco: Flatten",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sorocco: Hammertime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seifer: Disintegrate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seifer: Doom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several of these are the result of our last community survey on what card they would like to see animated most. The most common response was Firebreath, followed by Flatten and Hammer Time… apparently people like seeing Sorocco do things. Disintegrate and Doom were the highest voted Seifer cards, so we put those in too. We also added in some animations for the stackable cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Overall, we’ve determined the increase in difficulty in the higher Epilogues from version 1.5 was a bit too much. Here is some data we have on what happened to the overall win rates across three sections of Epilogue groups. (Blue =1-5, Green = 6-10, Purple = 11-16)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You can see the dip on August 11th, when 1.5 was released. This is a bit more dramatic of an increase in difficulty than we intended, so we have toned it back a bit. The earlier Epilogues were unaffected, so we have not made many changes there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Here are the major balance changes that come with version 1.6:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In the Exploration category: Four epilogue modifiers have been swapped in their order in an effort to smooth that particular category's progression of difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The scaling of Chapter 1 and 2 Elites and Bosses has been decreased in the higher epilogue levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tiki Palanquin and Cap-10 in particular have much weaker scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lantern faeries have less health at all Epilogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gem Mine Traps now have less health at all epilogues, and lowered Epilogue scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Other specific changes and fixes",
+     "items": [
+      {
+       "text": "The entire system for saving the progress of a run has changed. This involved a huge refactoring of the code and will be mostly unnoticeable to players, except for the above mentioned issues with continuing a run from the previous version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It is now possible to Use or Discard healing hearts while the loot bag is opened. This is useful when all 3 slots are full while on the loot bag UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Naddim will no longer inappropriately turn his back to you. Was a bit rude.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Camera position improvements on the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The amount of particles on the sky of Chapter 2 has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several performance improvements to background particles in general.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Gem Mine background texture has had some improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Conclusion",
+     "items": [
+      {
+       "text": "Thank you for your continued feedback when playing Roguebook. We have more major updates planned, and are already in the process of working on the next. While this one may not have the content you’re looking for, perhaps it will appear in the next. As always, feel free to leave us feedback here on Steam, or in our official Discord at discord.gg/Roguebook.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 18,
+    "fixed": 7,
+    "balance": 8,
+    "other": 16,
+    "ps5": 0,
+    "topNew": [
+     "Twin Chaos is a battle against two manifestations of the Roguebook: Pain and Wrath",
+     "Five new treasures have been added to the game. These treasures are globally available in all future runs.",
+     "Sharra: Day of the Dragons"
+    ]
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/3936698772940521635"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-15T08:37:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.504Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.072Z"
+  },
+  {
+   "id": "roguebook-119249@1.5",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-10T08:04:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We welcome you to our latest patch. Version 1.5 has addressed so many issues it's hard to know where to start. The team has been working non-stop since our launch in June. This patch is the fruits of our labour, it not only includes fixes for known issues, improvements on QoL, and directly implemented community feedback... buuuut also NEW FREE content too. The Gem Mines!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, your feedback is essential in streamlining the Roguebook experience for everyone. Please take your time to have a look at how we've improved the game for you, and if you like, leave a comment below. We're reading everything. Thank you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW FEATURE: GEM MINES",
+     "items": [
+      {
+       "text": "Enter the mine, defeat the traps, loot the treasure. Gem Mines are a new unlockable area to explore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Traps",
+     "items": [
+      {
+       "text": "The gem mines are filled with traps. Each trap you defeat gives you access to more treasure.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New traps to encounter",
+     "items": [
+      {
+       "text": "Swinging Guillotine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crystal Door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Living Wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Debilitator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Puzzling Wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Orb of Resistance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Three Flowers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Traps provide unique challenges to defeat them within a certain amount of turns. (Or in some cases… survive them).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New map and battle environment",
+     "items": [
+      {
+       "text": "Gem mines feature an entirely new underground map tileset and battle background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Unlocking the Gem Mines",
+     "items": [
+      {
+       "text": "You’ll find Gem Mines available as a new Embellishment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you have the Gem Mine embellishment, every new run will have a guaranteed Gem Mine. Gem Mines are always located in the Oversky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The price for entering a Gem Mine is 2 brushes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "MORE NEW FEATURES",
+     "items": [
+      {
+       "text": "Linux !!!Linux !!! The long awaited Linux version is available now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Configurable keyboard hotkeys have been added to the game. You can adjust these from the settings menu. (Note that this is the first implementation, and we have plans to add more hero related ones in the future.).: Note : this feature will be fully complete with the patch 1.6 with notably the movement of the heroes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New unique animations have been added to the game, including Mortars, Hailstorm, Rain of fish, and Soul Eater eating allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The fluidity of playing cards has been improved.. You can now spam cards very quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Narrative Events",
+     "items": [
+      {
+       "text": "Rain of Fish: A unique event that requires Aurora in the party. (We plan to implement unique events for each hero in the future)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Imperial Camp: Choose to train with the troops, or swear an oath to the emperor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wheel of Chaos: Take it with you, or spin it for good luck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Soul Pact: Offer part of your soul for additional power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Lead",
+     "items": [
+      {
+       "text": "1 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack for 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase this damage by 3 for each Ally you control.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Windstorm Archer",
+     "items": [
+      {
+       "text": "2 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ally, Aggressive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Activate - Attack an enemy. Lose Aggressive this turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Valkyrie",
+     "items": [
+      {
+       "text": "2 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack the leading enemy for 5, gain 1 energy and draw a card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Repeat for each Courageyou have. Lose all your Courage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sentinel Strike",
+     "items": [
+      {
+       "text": "1 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Common",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack for 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If this kills an enemy, gain 8 Block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wild Swing",
+     "items": [
+      {
+       "text": "2 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Discard your hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack for 6 times the number of cards discarded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ulani",
+     "items": [
+      {
+       "text": "0 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Epic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At the start of your turn, add a random card to your hand for each point of spirit Ulani has.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Kobold Tactics",
+     "items": [
+      {
+       "text": "1 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Common",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack for 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If this kills an enemy. attack the leading enemy for 8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Red Curtain",
+     "items": [
+      {
+       "text": "1 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gain 16 Block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seifer loses 4 life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Call to Arms",
+     "items": [
+      {
+       "text": "2 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All Allies gain 2 Spirit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Empower",
+     "items": [
+      {
+       "text": "1 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose an enemy, your other hero attacks them for 12 and gains 2 Power for the rest of the turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Reallocate",
+     "items": [
+      {
+       "text": "1 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Common",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until the end of turn, reduce an enemy's Power by 2 and your other hero gains 2 Power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fist of the tortoise",
+     "items": [
+      {
+       "text": "2 cost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Attack for 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gain Protection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exhaust",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "War Banner",
+     "items": [
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whenever you end a turn with 8 Block or less, the leading hero gains 1 Courage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Didjeridoo",
+     "items": [
+      {
+       "text": "Epic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Draw one extra card at the start of your turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Oradrim Censer",
+     "items": [
+      {
+       "text": "Common",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whenever you Exhaust a card, gain 1 Block",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Magda's Tiara",
+     "items": [
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Radiant Hearts heal 5 more life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ruby of Valor",
+     "items": [
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This card's attacks deal bonus damage equal to your Courage + 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sapphire of Valor",
+     "items": [
+      {
+       "text": "Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gain 1 Courage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have also added a new achievement for completing a gem mine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality Of Life",
+     "items": [
+      {
+       "text": "Certain animations have been sped up to increase game pace. This is an area we plan on focusing more on in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hovering an ally or hero with activated ability now shows combat predictions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s now possible to skip the animation at the start of a run by pressing any key (after your first run)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now click on cards in the shop to enlarge them before buying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rune of Sights now prioritize finding more valuable events, and avoids smaller gold piles and Vaults.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “end of run” sequence is now more polished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Eye for an Eye and Burst Powder now stack with themselves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A lot of text has been reworked to be more clear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BALANCING",
+     "items": [
+      {
+       "text": "The game has been changed to try and make it harder at high epilogues but more ‘fair’ at all levels. Final bosses have been tweaked so they don’t hard counter certain strategies as much. On the other hand the scaling from epilogues has been increased. In conjunction with this various cards/gems/talents/treasures have been changed to make it harder for the heroes to get completely out of control. Most notably, many gems that give energy to the heroes have been toned down or reworked so that the game does not have to be balanced around 8 energy per turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "On the other hand, despite the game being a little easier than we would like at higher epilogues, Sharra needs help as she has been consistently underperforming compared to the other heroes. This patch she gained small damage buffs to 15 cards in her kit to help her in her identity as the hero with the highest up front damage in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Final Boss Changes",
+     "items": [
+      {
+       "text": "Avatar of Mist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mist no longer automatically destroys the player’s deck every few turns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instead, he will dissolve cards from the player’s discard when he takes damage. In this way, players always get a chance to play any card before it is dissolved (Unless they fail to block)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "He will still dissolve cards when he lands an attack. However, he dissolves less per hit while attacking multiple times at lower damage values. This lets you get 'partial success' where you block half an attack and only have half as many cards destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Avatar of Greed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the cards in deck now cost +1 permanently, but cards created afterwards will not be increased. (For example, adding Daggers to your hand will cost 0)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Epilogue Changes",
+     "items": [
+      {
+       "text": "Epilogue difficulty scaling has been generally increased: Enemies at higher epilogues do more damage and have more life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy statuses now scale with Epilogues where appropriate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stealth has been replaced with: Guardian Spirits: At the start of each battle, give all enemies protection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rising Fervor now gives enemies +1 power each turn in all battles, instead of only normal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greed is Good damage increased from 2 -> 3. Gld auto pickup is now disabled during this epilogue. Damage no longer triggers when picking gold from loot bags.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Compulsive: Shop/Alchemist cost increased from 20% -> 40%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lantern Faeries: Reworked so that they are easier to kill initially, but scale in HP over a chapter. You now reveal spaces based on how much damage you deal, rather than if you killed them or not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Battle Changes",
+     "items": [
+      {
+       "text": "XP for killing the first boss has been increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies can now apply Aura of weakness on random positions instead of always at the front.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rainbow Yak’s base stats have been toned down a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apex Predator has received a significant buff. It is harder to stagger, has more life, and does more damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Berserker and Rapala Elite battles in chapter 2 have been made a bit easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Legendary tiki palanquin has been tweaked. On the third turn he now attacks and gains power instead of attacking and giving weak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Events, stories",
+     "items": [
+      {
+       "text": "Adjust what chapters some narratives can appear in to make them less high rolly early game and better on average late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Card, Gems, and Treasures",
+     "items": [
+      {
+       "text": "Buff 15 Sharra cards so she is more bursty :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Move spinning blade to rare from common",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rework Recall: Now common, changed from “return all daggers from your dissolve pile to your hand” to 2e “combo, add 3 daggers to your hand. If this is discarded or exhausted, add a dagger to your hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buff mania, decrease cost from 1 to 0. Decrease set rage from 6 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dissolve cards can no longer be copied in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Primal skull changed from \"+4 cost, gain 8 energy.\" to \"gain 15 block. This costs 1 energy more.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"shield of the chosen\" now increases your block to 20 even if you had some block already. Previously only worked if you had 0 block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase the damage taken per card with Eye of Insanity from 3 to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerf Kappa study. Now draw 2 cards instead of 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Talent Changes",
+     "items": [
+      {
+       "text": "(PARTY) Quick Thinking: changed from “When you have no cards in hand, draw a card.” to “The first time each turn you have no cards in hand, draw a card.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(PARTY) Rending Blow: now bleeds for 1/3 the damage instead of half.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(PARTY) Stoicism: now blocks for 4 each turn, down from 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SOROCCO) Guardian: has been removed.(Whenever the heroes play a Defend, draw a card.) It has been replaced with Ogre Tempo: Every 3 times the heroes swap, add a Headbang to your hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SEIFER) Adamant Blood: (Receive no wounds when Seifer dies) now also gives Seifer +10 max HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(SHARRA) Hidden Blades: now gives 3 Daggers, down from 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(AURORA)Cold Blood now draws a card at the start of the turn if Aurora has 7 life or less, down from 5 or less.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shadowed Gem, Snipestone and Heroic Emerald have been reworked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shadowed Gem: is now Charged Ruby:: Rare. Charge. Hero attacks from this card deal +4 damage when played from the back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snipestone reworked to: Legendary. Each time the hero hits with this card, inflict a critical hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heroic Emerald is now Warden’s Diamond: Common. Retain. At the end of your turn, if this is in your hand gain 1 Block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "The cloud save on mac has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sorocco’s Insatiable talent has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hammer Time’s text has been adjusted to clarify how it works with discounts and cost increases. “This always costs all your energy. “",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aurora’s Teapot achievement now works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Several bugs involving deck reshuffling have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The settings panel should no longer be ironically too big on large screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some crashes involving using a brush while a golden faerie is alive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Majinata’s Blessing now blesses properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tiki Palanquin will no longer incorrectly use his “Legendary Boss” moveset in all Epilogues. Whoops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Volley’s dynamic number has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now see the gems on Seifer's reference card when he is enraged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adamant Blood’s reference card now properly appears. (Wound)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Devil Cry now has the ability to socket damage modifier gems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enraged versions of cards in the shop now display gems sockets correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected some Narratives where the card highlight was missing on drafts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trance and Aurora's dream now draw the expected amount of cards, even if you have stackables in your hand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Take Cover no longer triggers when Sharra takes 0 damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Defender of the Homeland has been fixed. He was blocking and gaining power more often than intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Deck and Party buttons now properly translate when changing language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Garudan's Talon no longer fires infinitely after being triggered once, in some instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the “Complete With All Hero Pairs” achievement that prevented it from advancing when it thought heroes were not in the correct order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shaman behaviour has been further tweaked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"On fire\" now goes down to 0 stacks and disappears instead of staying at 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a crash when continuing a run with the magic carpet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix gate scene and shop scene for the resolution 21:9",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Promote had different play behaviour on rage mode, now you play it by dragging it onto an ally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix an issue with auras that could be on the wrong character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ban Fugoro's hat from the shop to fix a bug where it would not reveal the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 27,
+    "balance": 2,
+    "other": 115,
+    "ps5": 0,
+    "topNew": [
+     "Enter the mine, defeat the traps, loot the treasure. Gem Mines are a new unlockable area to explore.",
+     "Swinging Guillotine",
+     "Crystal Door"
+    ]
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4032396530958102006"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-10T08:04:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.502Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.069Z"
+  },
+  {
+   "id": "roguebook-119249@1.49",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.49",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-07-06T15:09:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our patch this week focuses on addressing a wide array of bugs, as well as a few balance changes. These balance changes are still relatively small in scope in comparison to what we have planned. Reducing some of the more frustrating RNG is on our radar, as well as more adjustments to Seifer. You can expect more changes from us in this area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FEATURES/QOL",
+     "items": [
+      {
+       "text": "The progression file is now zipped and backed up if the current save file becomes corrupted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Time of Legends alternate starting treasures are now Legendary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some translations have been adapted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes focus on three main areas",
+     "items": [
+      {
+       "text": "Reducing the variance in certain battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Giving Sharra a few more multi hit cards and some additional strength",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Toning down some of the more ridiculous combos in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Difficulty",
+     "items": [
+      {
+       "text": "Generally, the game is close to where we want the difficulty to be, but possibly too easy at higher epilogues. That said, there are also certain fights that can occasionally have patterns that feel too hard and unfair. An example is the Fugu battle being exceedingly dangerous if they both increase their power on the first turn, guaranteeing they both attack the turns afterwards, or players happening to get a hand with only cards on their front character vs Rapalla and having to eat 20+ damage to play the turn at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Since we have the data and we like to share, here is a set of graphs showing the average damage taken per fight, split into categories:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Boss",
+     "items": [
+      {
+       "text": "Note that these charts don't take into account things like Healing taken, so the numbers are skewed higher than the true result of the battle. Anyway, it's still a decent snapshot across the board and shows how the fights compare to one another.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Heroes",
+     "items": [
+      {
+       "text": "Sharra in particular has been lagging behind the other heroes. It is intended that she is more fragile than the others, but she was not sufficiently explosive in her damage to make up for it. Some small changes were made to buff some of her common and rare cards and to give her more multi hits to get synergies rolling. We will continue monitoring the situation to see if she still needs more help afterwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roguebook has always been intended as a ‘breakable’ game where people can dream up and play out insane combos. However, when your combo is socketing one gem into flex to deal infinite damage for 1 mana things have gone too far. This breaks the game in a way that snuffs out other elements of gameplay and is overly consistent, since the gem and card are ‘always drawn at the same time.’ The bleed archetype, while not quite as bonkers was, too consistently out of control. Breaking the game is encouraged, but we want it to be less common and more varied in how it comes about.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other than that, there are some scattered changes made to improve how certain cards and treasures play as a separate issue from their power level. An example is Seifer’s Cloak now working while you are at exactly half life, so that if a player reads it incorrectly it always breakpoints in the players favour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With all this said, balance is still a work in progress! In the future we are still looking at making sure Sharra is as powerful as she deserves, and if Seifer does too much of everything without clear weaknesses. We also continue to monitor how much variance there is in the world map and in certain battles, along with the overall difficulty level of the game and how it changes with different epilogues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Fugu behaviour has been tweaked so they are less syncronised, leading to less brutal turns. Their scaling has also been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rapala is now less punishing when you cannot swap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a count down to Rebel Slinger sleep turns, and increased it by 1 in certain battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Stop defender of the homeland powering up for the first few turns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Duel now hits twice for 5 instead of once for 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shadow strike now hits twice for 2 damage instead of once for 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Red Diamond is now properly no longer considered an attack. This removes the Red Diamond + Flex/Shock and Awe infinite, for example.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Blade Twist now has dissolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Blood crystal: Inflict bleed equal to half damage dealt, was equal to full damage dealt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mirror Moonstone rarity increased to Epic from Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cap-10's defense is now scaling properly in the Legendary Bosses Epilogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The chance of Apex Predator spawning in a given run was incorrectly set too high.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Drain Strength now exhausts on both sides instead of only when not enraged",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shock and Awe now has charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Grim Syphon now dissolves if played with rage mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fodder is now aggressive and has 3 spirit instead of 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Seifer's Cloak now gives you the power buff while at half life, instead of below half life. (Edit, this means at half life AND below, instead of just below)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "FIXES",
+     "items": [
+      {
+       "text": "Using the Shaman quickly after playing a card no longer results in the ability being wasted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Majinata will no longer turn invisible when a possessed enemy is killed with a stackable card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dynamic numbers on gem texts should now display correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dynamic numbers in certain status tooltips now display correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The game no longer crashes if a save file of the run doesn't exist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resetting the tutorials has been temporarily disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using \"Drain Strength\" + \"Rainbow Gem\" will no longer make the game explode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pressing spacebar in certain weird moments will no longer crash the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shard of Hunting now no longer gets incorrect damage boosts when socketed on cards like Witstrike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Summoning Crystal can now only be socketed on allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tiki Totem now properly only gives power to its equipped hero",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eye of the Apex and Savage Fang no longer crash the game when socketed on neutral cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using Chosen One on a Flame Stoker will no longer break its spirit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tadpals should now always properly cost 0 instead of being 1 cheaper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Toadsuit now properly tagged as a Block card for gem insertion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when attacking in some rare circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You now no longer need to kill Rakoan Shieldmates in the Warmachine fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sharra's starting area lights moved to correct position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Magic Carpet positioning adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inks no longer silently disappear when looting multiple inks quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a bug where Jagged :ewel would do nothing if you killed the primary target of the attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Follow the Boss\" now spends rage if you play it in rage mode while having no allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"follow the boss\" can now be played even if you have no aggressive allies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Simulacrum of Obedience\" now now occur in all chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash on Turkish Windows.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly improved combat predictions by reducing the number of times where a \"?\" is displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer retroactively select talents and break the whole darn thing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Treasure bar max width adjusted so that it does not conflict with gold or settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rank 3 of Deep Pockets now gives the correct amount of gold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Amai Candelabra will no longer be in the treasure pool for the Thousand Eyes Epilogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when activating certain events in certain technical circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Speech bubble improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect tooltips on Golden Faeries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tooltip improvements involving consumables and brushes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lantern Faerie tooltips fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Language of Overworld tooltips now changes immediately when changing language in options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Golden Faeries now always lock the brushes and inks if the current epilogue doesn't prevent it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Scaled Naddim down in the shop scene to a more proper size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug causing card cost reductions to be canceled if a card was already at 0 cost (typical example is the interaction between Ogre Cookie and melee/ranged/combo where the second cost reduction was not properly applied after Cookie's reduction ended)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Dynamic Number for Aurora's Splash card",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed random crashes when trying to load Epilogues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 41,
+    "balance": 22,
+    "other": 7,
+    "ps5": 0,
+    "topNew": [
+     "The progression file is now zipped and backed up if the current save file becomes corrupted",
+     "Time of Legends alternate starting treasures are now Legendary.",
+     "Some translations have been adapted."
+    ]
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4032392655107715303"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-06T15:09:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.500Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.067Z"
+  },
+  {
+   "id": "roguebook-119249@hotfix-2021-06-25",
+   "gameId": "roguebook-119249",
+   "displayName": "Hotfix: June 25th, 2021",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-25T14:47:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed several crashes that would happen when cards were played very quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're applying this small patch today as this bug was causing a lot of problems for players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just to be clear, we have a lot more bug fixes on the way, but this one was deemed critical enough to push on its own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for the continued bug reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One other big issue that is on our radar is Steam Cloud issues. If you run into problems with the Steam Cloud messing with your save file, please send a message to support@abrakam.com with the order of operations that happened that lead to your problem.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Example report",
+     "items": [
+      {
+       "text": "Patched to version 1.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Started game in offline mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Had problems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a great weekend, and thanks for playing our game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4032392655067628442"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-25T14:47:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.499Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.065Z"
+  },
+  {
+   "id": "roguebook-119249@1.4",
+   "gameId": "roguebook-119249",
+   "displayName": "Patch 1.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-23T13:10:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to the first major post-release patch notes for Roguebook. This update is being applied to Steam today, and is meant to address a number of issues we have been tracking since release. Thank you for all the reports that have helped us develop these fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch will also introduce some small balance changes to the game, which are discussed further down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FEATURE & IMPROVEMENTS",
+     "items": [
+      {
+       "text": "The general performance of the game has been improved and optimized.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now use the “WASD” keys to move the camera around",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the camera scroll speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added wide screen resolutions support in settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Aurora is now always visible in Chapter 3 if you have beaten the game once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked the visual for Aurora unlock event background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The new run button is renamed to “New Run +” after completing the first run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added various new and improved animations and visual effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added various new and improved sound effects and voice-overs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an additional tutorial to explain that the darker paper tiles are obstacles you can't cross.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various text improvements/updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BALANCING",
+     "items": [
+      {
+       "text": "With our first post-release balance patch, we had a few important goals. We are a bit limited in what we can achieve here to mere number tweaks, but will be able to change more in future patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Firstly, we wanted to reduce the power of enemies that were outliers in how dangerous they were, or could lead to unfun play patterns. One big offender here is the Avatar of Mists. In the short term, we have lowered its numbers and nerfed the major Dissolve debuff to occur later in the fight for a lesser effect. In the long term, we are looking at a larger rework for this boss. Expect some more interesting changes in the future when we're able to apply some deeper adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Heroes in general",
+     "items": [
+      {
+       "text": "Here you can see our launch data on the average winrates across each hero pair. Keep in mind, this is a global average and doesn't account for player skill or any other variable. It shows us a few things, among which is that Seifer is by-and-large the most successful run companion, and Sharra and Aurora are the least successful pairing. The following adjustments are made with this in mind, but are not expected to make each bar perfectly even. We'll be able to observe the effects of today's changes and make evaluations from there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sharra and Seifer",
+     "items": [
+      {
+       "text": "We feel that our starting hero is lagging slightly behind with her ability to deal enough damage, despite her starting treasure being wholly focused on enabling that. In future patches we are looking to make a few more of her cards multi-hit attacks, but for now we've applied a couple smaller changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seifer, on the other hand, has been a bit too efficient at doing everything. He's has had a few of his numbers brought down slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gems and Crazy Combos",
+     "items": [
+      {
+       "text": "Certain cards or gems that were going a bit too crazy too easily have been toned down a bit. Roguebook is very much a game about breaking things in half with insane combos or clever set ups, but the magic can be broken when it is too easy to do this using the same tools each time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With all of that in mind, here are today's balance adjustments:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 1",
+     "items": [
+      {
+       "text": "Tiki fight: Tikis now have turns where they do not attack. The Tiki Elite now does less damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 2",
+     "items": [
+      {
+       "text": "Rakoan Berserker: His triple attack has been removed to make him less punishing against heavy card plays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rapala: Song of confusion reduced to 2 turns down from 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BOSS: Cap-10: Status effect uptime reduced, so it is rarer to end up with both heroes vulnerable or have a permanent aura of weakness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 3",
+     "items": [
+      {
+       "text": "Bomb Bot: Is now less binary on if you can kill the bomb bot or not",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Avatar of Mists: Damage has been lowered in general so they are easier to block. The debuff that directly dissolves the players deck now appears later in the fight to allow the player more opportunities draw key cards. Legendary avatar of mists now triggers off 8 cards played instead of 6 cards played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sharra",
+     "items": [
+      {
+       "text": "Buffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Horse Master spirit increased from 3 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thousand cuts damage per hit increased from 5 to 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rally rarity increased to Epic from Rare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Sorocco",
+     "items": [
+      {
+       "text": "Buffs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whirlwind block per enemy increased from 3 to 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mystic Egg reduced to 2 cost from 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mortars cost increased to 2 from 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Seifer",
+     "items": [
+      {
+       "text": "Nerfs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sulfuric Barrier reduced to 7 block and 7 rage from 8 block and 8 rage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flame Blast damage reduced to 14 damage from 15",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brimstone Needle moved to Common from Rare. Damage adjusted to 22-30 from 25-35.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Krog's Dinner Rarity increased to Rare from Common.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dragonfire base damage reduced to 5 from 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gems",
+     "items": [
+      {
+       "text": "Resonant Moonstone: Removed from the game pending rework",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Acorn of plenty: removed from the game pending rework",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mirrored Moonstone: Moved from Rare to Epic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will be reintroducing replacement gems in a future patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Sky Towers now spawn close to player during the “Thyrian Expedition” narrative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gem drop rate in the \"Three Wishes\" narrative is now the same as gem stones drop rates for that chapter. (Was previously only Common)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other drop rates for narratives now should meet the above standard (from common to the drop rates of the chapter)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chalice from the Palace: Chances for higher rarity cards increased. Can now choose to skip the draft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "The bug fixes in this patch are many. The below is an attempt to list every one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the infinite loading on start up glitch. If you already have this glitch you will need to delete your progression file to remove the bug. C:|Users||AppData|LocalLow|Abrakam Entertainment SA|Roguebook|Saves|Steam_). Unfortunately, this will delete your progression. We apologize for this. However, we are able recover one for you. For help in this, please email support@abrakam.com or contact Atmaz#0923 on Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cards should no longer randomly be extremely large.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed map events sometimes not being triggered when stepping on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Strongman timing fixed so that it gives faeria after your card has resolved (came up with hammer time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Phantom Strike now works properly from within the deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shop prices for a few cards that were incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exotic Pet no longer triggers off of itself when entering play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blade Barrier now works with Red Diamond.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Riposte now checks if the hit came from an attack, rather than just if the heroes took damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Permanent Malaise\" hitting the wrong target if there was a swap or retreat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the keyword \"Unique\" from Luduan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the invisible Combo keyword from the card Reload.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Insatiable\" talent when reloading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss Reward cards now properly display the spirit of allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it seemed as if players were losing pages at the end of a run. (You should never lose pages)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bottom bar buttons are now disabled to avoid crashes during loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tiki Cultist is now correctly labeled as a summon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hammer Time no longer gets cost discounts from melee or ranged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where parts of Apex Predator or Palanquin could survive when others died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When a hero is on fire, the status no longer persists on 0 life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can no longer slot Red Diamond on flex.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Triton Trainer numbers when stacked/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Repulse\" no longer Charges when it gains 0 block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thyrian shield and Red Pendulum no longer buff blocks for 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed gem tags so that the 'exhaust on an ally' crash is fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rarity wrapping in tooltips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lower case b in block french localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The first draft for the \"Chalice from the palace\" can no longer give cards for the wrong hero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lockup when returning to main menu after having beaten a boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Screenshot toggle made more consistent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Menu button disabled during map reveal animation on a new run to avoid locking up the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Brush button disabled when going to main menu to avoid locking up the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix treasure outlines when Sharra throws a dagger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Magic Inkcap fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when removing an item from the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Seifer transition to Rage in certain instances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Seifer no longer can have rage FX in the Shop and Gate. It was scaring Naddim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes to Exotic Pet regarding charge and retreat cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected Seifer's Wrath mini card art.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Effects when a creature is destroyed no longer disappear prematurely when certain creatures die.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bombot FX fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cap-10’s block was not scaling on legendary bosses epilogue and is now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the incorrect Rage card being displayed when added to hand while Seifer is at full rage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Seifer allies life value and life in dynamic texts when Seifer is at full rage (mostly for Krog's Dinner).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visuals for pile text in draft panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New translations added for vault of wisdom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add reverb on Chapter 3 battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Blood Crystal now accounts for block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Malus card can no longer be chosen for socket narrative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented Dark Tiles tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Edible now says how much power Krog will get from eating his dinners under power multiplier effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a shadow gem crash with allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Queen Magda narrative cannot appear if you have a Magda treasure,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Apex Predator spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enabled \"eyes following mouse\" on main menu,",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Berserk's brew now does damage like it says it does rather than attacking. This means that it no longer combos with Flex or Shock and Awe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aura of Confusion now correctly hits the hero that initiated if they play a retreat card from the front.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The displayed power for heroes stays the base value after a power multiplier is applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some instances where cards in hand were being hidden behind others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Eye of the Apex now correctly applies Dissolve",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gabrian Compass no longer appears with Lantern Faeries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some weird movements and positioning of cards when playing stackable cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stacked cards being cancelled when played too fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Jagged Jewel infinite with Meteor Shard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some problems in black loading screen before the battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Only the first stackable card can be selected now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the card not appearing in hand when using Shaman's ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 67,
+    "balance": 2,
+    "other": 38,
+    "ps5": 0,
+    "topNew": [
+     "The general performance of the game has been improved and optimized.",
+     "You can now use the “WASD” keys to move the camera around",
+     "Increased the camera scroll speed"
+    ]
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4032392655060101195"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-23T13:10:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.498Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.064Z"
+  },
+  {
+   "id": "roguebook-119249@dayone-2021-06-17",
+   "gameId": "roguebook-119249",
+   "displayName": "Day one patch",
+   "kind": "dayOne",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-17T14:35:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've pushed a small patch live fixing some day 1 issues;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The font for the traditional chinese, simplify chinese, japanese, koreen have been fixed (previously there were missing characters)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first battle you encounter loads much much faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The steam save cloud is working correctly (this is actually already fixed on live, too)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Magic Inkcap fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yakkapult has been nerfed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dialog popups last 1 second more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Doom Coin art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor bugs fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/4056035920055013211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-17T14:35:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.497Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.062Z"
+  },
+  {
+   "id": "roguebook-119249@major-2020-03-13",
+   "gameId": "roguebook-119249",
+   "displayName": "The Major March Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-03-13T17:11:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Today we are deploying our next major update for the Alpha version of Roguebook. We are nearing the end of our major updates for the Alpha client as we prepare the real “beta” with all the fancy bells and whistles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve teased what we’ve been working on for this update earlier this year, but a few things have changed since then. This is also why it’s arrived a little later than planned. Sorry about that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This isn’t just a content update, but a major overhaul of some core designs in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve done a good bit of internal testing and tweaking to the point where we think we are ready for the public to test it. That’s you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Without further ado, here are the patch notes for the Major March update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Talents",
+     "items": [
+      {
+       "text": "We’ve completely overhauled the bonuses you get when increasing the amount of cards in your deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The idea behind talents, and deck rewards in general, are to incentivize the gathering of cards and creation of large decks, rather than min/maxing your deck into a very specific build that performs only one function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How our talents work",
+     "items": [
+      {
+       "text": "There are six tiers of Talents, each unlocked at a certain amount of cards in your deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Talent Tier Thresholds: 15, 20, 25, 30, and 35 cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each talent tier gives you the choice between 3 talents: (1 neutral talent, 1 for hero A, 1 for hero B).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Available talents are selected randomly from a pool. This is so that whenever you start a new run, you can’t stick to a “preferred build” which would dictate your drafting experience too much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Allies",
+     "items": [
+      {
+       "text": "Introducing… Allies!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Or to put it in a less exciting way, equipment cards have been rethemed as allies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The origin of this change was thematic. We felt that relics and equipment were too conceptually close. We also wanted to take advantage of the broad range of creatures in Faeria lore that could be called on as interesting cards in Roguebook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mechanically, the big difference is that all allies have a certain amount of strength. This number can influence a wide range of things, from the strength of their abilities to how much damage they do when attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some allies attack, some allies do not. Some allies are Goki.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "World Maps",
+     "items": [
+      {
+       "text": "With this update, we are introducing six new maps to Roguebook, two for each chapter. The old maps are gone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The big reason for this is that we have totally changed the basic design concept behind map exploration. Previously, we had treated normal battles as ‘rewards’ that you need to seek and draft a card afterward. This lead to problems where some players would routinely skip battles because they felt too dangerous, even though we intended them to be both rewarding and fun.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instead, we have decided to make normal battles mandatory by placing them in choke points, and removing the card draft award from them. They will still give you gold for defeating them, but really what you are looking for are the rewards hidden behind those fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Card drafts themselves are now additional map events you can find on their own.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Roads",
+     "items": [
+      {
+       "text": "Roads have been added to the game. For now, these are roughly implemented as brown tiles to move across - but will look much fancier in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Roads do what you think they do - they allow you to move faster than normal. Generally, the best rewards will be off the beaten path and away from the roads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hero Resurrection",
+     "items": [
+      {
+       "text": "We have updated the hero revival system to avoid issues where losing a character could be seen as a ‘positive’ thing to happen to you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This is what happens now",
+     "items": [
+      {
+       "text": "When a hero dies, all of its cards in your deck are transformed into “Revive Songs.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You must play 3 of these cards in order to resurrect the hero, and transform their cards back to normal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Wound” cards are also added to your deck as before, but we have increased the amount to 3 after some testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All Wounds are removed from your deck after defeating a chapter boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hero Swapping",
+     "items": [
+      {
+       "text": "Yes, we are changing the Hero Swapping system again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This has proved to be one of the most difficult design challenges to overcome. We thought we had it solved with “whenever you play a card of a hero, that hero moves to the front”. We were wrong - it still felt off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve done a lot of internal testing on this front.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First, we tried disabling the auto-swapping and made a new keyword called “Heroic,“ which moves the hero to the front if it isn’t already. Basically, we keyworded the functionality from before. It felt better, but after testing we didn’t like that it’s easy to forget that card X has Heroic or not. It was leading to fatal and frustrating mistakes. After a few weeks of playing with Heroic we then came to this idea: why not just say that all “Block” cards have Heroic?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, that’s what we did.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is how swapping works now",
+     "items": [
+      {
+       "text": "Whenever a hero plays a Block card, that hero moves to the front if it isn’t already.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s it. There are also some new keywords to compliment this new system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ranged: Costs 1 less if this hero is in the back",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Melee: Costs 1 less if this hero is in the front",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charge: Move this hero to the front",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Charge” is being used on very few cards, basically to let an aggressive hero like Sharra have ways to move the front and gain their benefits from being there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another new keyword is Aggressive. This is for allies only. An ally with Aggressive attacks at the end of your turn for a number equal to its strength.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Misc Changes",
+     "items": [
+      {
+       "text": "Loads and loads of new cards, relics, and gems. We could list them all out, but so much has changed it is probably better you just play and see for yourself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An important note is that, for this patch, we have limited hero selection to Sharra and Sorocco specifically. We know this isn’t as fun, but we decided it is much better right now to focus entirely on these heroes and expand their card base to a point that feels more like the final game. We’ll try to get Aurora and Seifer back in asap. Sorry for the wait!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s about it! There are probably more changes we haven’t mentioned here, but so much has been adjusted it’s difficult for us to remember it all. We have been testing with Roads so long, for example, that we almost forgot they were new.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, enjoy the new build! Please let us know how it feels here, or in our official Discord channel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s available now on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Team Abrakam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 45,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1076200"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1076200/view/3893864668614280761"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-03-13T17:11:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1076200",
+      "checkedAt": "2026-11-13T03:29:24.496Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:23:08.059Z"
+  }
+ ],
+ "issues": []
+}

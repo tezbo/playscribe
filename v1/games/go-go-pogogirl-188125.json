@@ -1,0 +1,550 @@
+{
+ "game": {
+  "id": "go-go-pogogirl-188125",
+  "igdbId": 188125,
+  "name": "Go! Go! PogoGirl",
+  "cover": {
+   "imageId": "co5dqv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5dqv.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1e0l",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1e0l.jpg"
+  },
+  "ps5Release": "2023-02-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "go-go-pogogirl-188125@1.0.6",
+   "gameId": "go-go-pogogirl-188125",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-12T11:22:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here's a small update! Mainly some under-the-hood changes, but there are two things you might notice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If using a controller, the tutorial bird will now spit out button graphics instead of letters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've added a new achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The achievement is actually the main reason for this update, as it's a birthday present to my best childhood friend. Feel free to try and unlock it on your own, but since it's easier to stumble upon for new players, here's what you need to do: At the start of a level, press left before you press right. Do this in three levels, and you'll unlock the achievement! This is in reference to my buddy, who religiously always checks the left side of the screen before actually proceeding through the levels...and honestly, so do I most of the time. I mean, one game once hid a secret there, so there might be another one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you haven't read the spoiler, here's a at least a hint: Be curious, suspicious, and think of a place where 2D platformer designers like to hide stuff, then check that place in multiple levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, happy birthday Greg!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1681010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1681010/view/5747236506606432054"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-12T11:22:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1681010",
+      "checkedAt": "2026-11-13T03:21:48.850Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-12T11:22:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1681010",
+      "checkedAt": "2026-11-13T03:21:48.850Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-12T11:22:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:21.677Z"
+  },
+  {
+   "id": "go-go-pogogirl-188125@1.0.5",
+   "gameId": "go-go-pogogirl-188125",
+   "displayName": "Update 1.0.5",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-08-24T01:31:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Time for another update! This time it's just a bug fix, but it's a pretty big one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a memory leak related to the timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turns out, for some reason the new timer was leaking memory, meaning it kept using more and more memory but it didn't release any. This, of course, isn't a good thing, because it could cause the game to lag or even crash if you kept it running for long enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While I wasn't able to entirely figure out why it happens (it's something buried deep within the HaxeFlixel/OpenFL/Lime libs) I found a way around it. And hey, in gamedev, that's usually good enough...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1681010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1681010/view/4514316499997263291"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-24T01:31:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1681010",
+      "checkedAt": "2026-11-13T03:21:48.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:21.677Z"
+  },
+  {
+   "id": "go-go-pogogirl-188125@1.0.4",
+   "gameId": "go-go-pogogirl-188125",
+   "displayName": "Update 1.0.4",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-12T12:35:42.000Z",
+   "notes": [
+    {
+     "title": "I've once again fiddled with the game. Here's what changed",
+     "items": [
+      {
+       "text": "An issue with disappearing sound has (hopefully) been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game should now start in fullscreen when using Big Picture mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added three new achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Ando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1681010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1681010/view/5849624375818060252"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-12T12:35:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1681010",
+      "checkedAt": "2026-11-13T03:21:48.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:21.676Z"
+  },
+  {
+   "id": "go-go-pogogirl-188125@1.0.3",
+   "gameId": "go-go-pogogirl-188125",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-02-15T14:44:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Time for another update! One thing many people have asked me about is some sort of timer functionality in the game, so that they could try to speedrun it a little easier. So that's what I added! I also fixed a bug where an achievement wouldn't unlock. Those things are tricky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A timer now tracks and saves your times for every level, so get speedrunning! Don't want to feel pressured? Just turn it off in the options!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Humanitarian Pogo achievement couldn't be unlocked. If you have beaten the game already, this achievement should now automatically unlock when you enter the level select screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Ando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1681010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1681010/view/6154735015632508961"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-15T14:44:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1681010",
+      "checkedAt": "2026-11-13T03:21:48.848Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:21.676Z"
+  },
+  {
+   "id": "go-go-pogogirl-188125@1.0.2",
+   "gameId": "go-go-pogogirl-188125",
+   "displayName": "Update 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-01-29T20:46:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, I've been working around the clock since release to fix the remaining bugs found by you. I hope I succeeded!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where PogoGirl and other sprites would be invisible for some users",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the CRT filter would turn the screen black for some users",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some achievements didn't unlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The issue with the invisible PogoGirl was obviously the most pressing one. It took me a while to find the cause, but I managed to track it down to the shaders. PogoGirl has a shader applied to her to make her flash in certain instances. However, the way I wrote the shader wasn't 100% compatible with all graphics cards, and it seems like especially integrated Intel cards just weren't having it and outright refused to render the sprite at all (instead of, you know, giving an error message one might use to debug *cough*). This also meant that the screen-wide CRT shader would basically prevent the rendering of...well, anything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So I dug through the shaders and cleaned them up, and it should be working now! If you are still having this issue, please let me know and post your graphics card details along with it. I'll see what I can do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry about this issue, I'm a solo dev and sometimes feel like I don't know what I'm doing. Hope you enjoy the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many thanks to CheekyLions, half, Nathan Altice and Carls493 for helping me track down and fix the shader bug!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1681010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1681010/view/4237326104327925265"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-29T20:46:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1681010",
+      "checkedAt": "2026-11-13T03:21:48.848Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:21.675Z"
+  },
+  {
+   "id": "go-go-pogogirl-188125@1.0.1",
+   "gameId": "go-go-pogogirl-188125",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-27T21:08:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, first of all thank you for the phenomenal reception of Go! Go! PogoGirl! So far the game has received nothing but love, and that makes me really happy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of course, a few bugs were bound to pop up, so today I uploaded version 1.0.1 of the game. It contains the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the pause menu would disappear immediately after opening when using a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The explicit tutorial messages now show the input depending on what input device was most recently used",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​There have also been reports by a small number of users that PogoGirl and/or other sprites are invisible during gameplay. If you have encountered this issue, please reach out to me! I'm currently gathering data so that I can start figuring out what's causing it and how to fix it. I'll keep you posted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​Thanks for your support, and happy bouncing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Ando",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "​",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1681010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1681010/view/4237326104320697974"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-27T21:08:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1681010",
+      "checkedAt": "2026-11-13T03:21:48.847Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:21.675Z"
+  }
+ ],
+ "issues": []
+}

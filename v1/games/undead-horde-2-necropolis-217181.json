@@ -1,0 +1,1938 @@
+{
+ "game": {
+  "id": "undead-horde-2-necropolis-217181",
+  "igdbId": 217181,
+  "name": "Undead Horde 2: Necropolis",
+  "cover": {
+   "imageId": "co6bmx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6bmx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1v2q",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1v2q.jpg"
+  },
+  "ps5Release": "2023-05-31",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "undead-horde-2-necropolis-217181@1.0.5",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-14T05:56:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Mac OS users have been suffering from a rendering issue in the citadel area, caused by an OpenGL shader bug. Patch 1.0.5 is fixing this, along with a few other tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed stonebarracks OpenGL render bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added small minimum time for trying raise on button press to make hold action more clear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed 'Power Elixir' and 'Race for the Relic' quests getting stuck at times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sound engine issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Draugr Sword icon overflow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing effect gfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/5126832680916365048"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T05:56:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.684Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T05:56:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.684Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-14T05:56:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.909Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@1.0.4",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-15T14:04:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The annual Finnish Game Awards were held in Helsinki, Finland on 4th of May, and Undead Horde 2: Necropolis came home with the Big Screen Game of the Year award!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the change log for the accompanying patch",
+     "items": [
+      {
+       "text": "Lots of performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added localization Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed inventory stuck on exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed 'command cap full' error message when trying to rise unraisable graves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spawning a megacoin if loot value is huge, to reduce perf hit on high dimension looting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed necro urn not breaking at very high dimensions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More legendary drops at very high level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash bug fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some memory leaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/6557848386955935946"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-15T14:04:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.684Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.909Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@1.0.3",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-27T10:18:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have received a bunch of requests for changing the gamepad tooltip icons, and version 1.0.3 is now out with options for xbox, ps4, ps5, or even nintendo switch icons! You can find the selection under Control Options. Mouse cursor hiding should also work better now, when playing with a gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Meanwhile under Graphics Options, a display selector has appeared over the resolution list for those of you with multiple monitors. A smattering of other tweaks and fixes are along for the ride.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the complete change log, which you can find inside the game as well:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to change gamepad icon typeset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to select active display in graphics settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 1000 gold rewards for returning excess jars/runes/effigies in ng replaying dimension 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bone wall hitting enemy very near player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hovering bone walls when casting near ledge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soul jar disappear bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cursor hiding when using gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clarified a talent description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forced 1 unit type to revive wheel when starting ng+ to avoid getting stuck in tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No respawn button in tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Soul Searching quest getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added worldmap hint to a quest shard in The Last Resort",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Forcing raised units to pathfinding grid if spawned inside collider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed camera distance bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI shader transition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced floating fences with bare trees in the first forest level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed text overflow in Anvil UI with some languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance on initial rubble remove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 8,
+    "balance": 0,
+    "other": 8,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/5133583642650671630"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-27T10:18:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.683Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-27T10:18:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.683Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2023-04-27T10:18:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.908Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@1.0.2",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-13T07:44:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 1.0.2 is bringing some features and improvements we've received requests for from all of you, so thanks for those!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A preview of the item being crafted has been a particularly requested thing, so that's now here, as well as a keyboard shortcut to the quest log.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Also included is a performanc optimization when applying a rune effect to a large horde, a couple of new item affixes, and a smattering of bug fixes of course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the change log",
+     "items": [
+      {
+       "text": "Added preview of item craft",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made early levels in Dimension 2+ more difficult",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the effect of Staff Cooldown reduction item property at higher levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Two new item affixes that increase Poison/Fire damage to enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rebalanced mana costs to be cheaper at lower levels, and more expensive at higher levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced summons to last longer at lower levels, and less at higher levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed loot system bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed stash gamepad tooltips orientation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed giants not being able to fit into a tunnel at Plunderer's Retreat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Dimension 4 not being unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Areas Cleared miscalculation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hidden levels now remain visible on the world map after you have visited them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 'Q' as a shortcut button to open Quest Log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed mana cost affix duplicating/compare bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aligning leaderboard names after 1k/2k ranks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized beam drawing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blocked dropping of items with level req > max player level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed word order for items in Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Renamed Animalism talent to Food Chain, to avoid confusion with the Animalism affix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 3,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/6539831443777408752"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-13T07:44:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.683Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.907Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@patch-2023-04-06",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "First Post-Release Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-06T08:46:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The first patch 1.0.1 is out now, with tons of tweaks and fixes, based on all of your wonderful feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll be taking a short Easter break as usual here in Finland, but there's plenty more improvements to make come Tuesday.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's a change log",
+     "items": [
+      {
+       "text": "Removed EA roadmap from change log",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed language choices not being saved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with players sometimes experiencing lag when switching levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed zombie hp increase ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed King of Undead achievement unlocking bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Benevictus repeat in Old Town",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed npc/noble house build bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Baroness of Fire/Ice now follows player faster, reducing kiting tactics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved HP of enemy buildings in Dimension 2+",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Templar's Holy Aura to only work against melee attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rune of Isolation's duration set to 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed enemy units getting stuck in Solarfall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked the effectiviness of Support units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the length of Confusion spell at higher levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Magnar and Brown Beard reappearing after player death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Throne screen defaults to max era instead of current",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed grave-raised units being stuck in a swamp level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked leaderboards drawing a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed player getting stuck when raising inside exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaks to loot rarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated icon for Vigor level up cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed keybinding bug with F1",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Horde Info screen tutorial for German language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Summoner's amulet being written in black in German",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 13,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/5121196841287764701"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T08:46:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.682Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.907Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@patch-2023-03-23",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Minor Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-23T13:53:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Here's some minor fixes and tweaks, while awaiting the big day next week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed quest line getting stuck when returning to dimension 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed necro shield sometimes not blocking same-frame damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with troops shooting through walls in Desert4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed archmage duplicating when leaving the stage mid fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weakened Fire Mages a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Critical strike chance in affixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Zooming out a bit on narrow aspect ratios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/5125698536879512593"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-23T13:53:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.681Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.904Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@major-2023-03-08",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Update With New Game+ And German Localization in Beta!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-08T12:39:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've just pushed an update into the beta branch. It includes the New Game+ with the first \"dimension\" unlocked and German localization. So, if you've managed to beat the game, it's now possible to sit on the throne and change to another dimension with increased difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll publish a more detailed change log here with the official default branch release, but you can head to the beta branch and play it today if you want.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "How to access beta: https://steamcommunity.com/app/2065810/discussions/0/3720566578371791473/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/5070528810288397617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-08T12:39:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.680Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.903Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@patch-2023-02-16",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Minor Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-16T14:17:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Version 0.9.4 is bringing a bunch of bug fixes, with a few other tweaks and improvements, while we work on getting NG+ ready for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Change log follows",
+     "items": [
+      {
+       "text": "Fixed sound engine bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minimap bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Burn affix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reading some settings sooner, to enable custom cursor on start up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed stash scroll buttons offset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed settings updating in-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed locked chest calling itself a gate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Showing gained mana with text particle, like gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leveling enemy poisons etc in Necrodome",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed units spawning off ground when coming from teleport in desert level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a path to secret getting units stuck in Outskirts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other path finding grid tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed modifiers init bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Keyboard navigating revive wheel: scroll shortest distance",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added player hit wobble shading to stone barracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated minimap icon for Elven Crystals, Cauldrons and Orc totems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Gambit getting pushed by horde",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Hiding tutorial level text floaters when not relevant",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed erroneous invisible blocker in citadel dungeon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed bone nova icon from Staff of Necromancy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed timing of some necrospeaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Text tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/5059267908814444164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-16T14:17:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.680Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.903Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@major-2023-01-26",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Update in Beta: New Necrodome Areas!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-26T13:10:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "There's a new update in the beta branch (0.9.2). The main highlight is the opening of two new Necrodome areas. We'll post a more detailed announcement when the update moves into the main branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're also testing an alternate boxshot version starting with this beta push.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start preparing for Part 4 too - our goal is to launch Part 4 in beta next week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Instructions on how to access the beta branch: https://steamcommunity.com/app/2065810/discussions/0/3720566578371791473/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/5035622109509301477"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-26T13:10:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.679Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.902Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@1",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-14T11:21:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Great news: Part 2 is now open and roughly doubles the available content! That said there's a lot more to come: Parts 3 and 4 for the campaign, endless game mode Necrodome and a challenging NG+ after the completed campaign. Overall Undead Horde 2 will have a good bit more content than the predecessor. We'll also keep listening to community feedback to improve the game overall as we continue preparing Part 3 for opening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Currently we're working on the Necrodome and we hope to release a beta version this week! Part 3 opening will most likely happen in early January after a short holiday break starting late next week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Units",
+     "items": [
+      {
+       "text": "Introducing the Mummy, the Bard, the Hierophant, the Wolf and the Scorpion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Areas",
+     "items": [
+      {
+       "text": "Venture into the Sands of Kook and deeper into the Elven Lands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Enemies",
+     "items": [
+      {
+       "text": "Face new enemies like the scorpions lurking in the caves below the desert.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "And here's the detailed change list",
+     "items": [
+      {
+       "text": "Opened up the second part of the campaign and related content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Skeleton Bard unit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added some achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced Necromancer starting hitpoints a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Restricted portal/veinpoint travel between biomes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Zombie HP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Zombies' weakness to fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Weakened Painless Death-talent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Undying Horrors-talent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed unit building upgrade description texts to match actual unit values",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated skele unit descs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing affix prefix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Town Hall upgrade prices increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added empty option to unit statue selector screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled monsterpedia until player has seen some more enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renamed Frozen Obelisk to Freezing Monolith in quest desc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed player unit type bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rune quest getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed quest item duplication bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unit building UI bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed f1 reporter super-updating game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed key names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Golas not turning toward target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed profile delete buttons hiding with gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed active talents text draw overflow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 10,
+    "balance": 3,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/6839319551999556048"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-04T09:21:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.682Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-13T03:35:05.678Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@major-2022-12-12",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Monday Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-12T19:07:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've now moved the first update into default branch so it'll be available for everyone without opting into beta branch. It included all kinds of fixes and changes mostly from community feedback - thanks for those! The details are here: https://store.steampowered.com/news/app/2065810/view/3610228455162964350",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're currently testing the release candidate for Part 2 major update. Here's a list of some new achievements we just entered into Steamworks and they'll be available for completion in the update very soon. Stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/4980448574124088768"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-12T19:07:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.678Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.678Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@0.7.14",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Update 0.7.14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-09T15:40:33.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Our first focus was to do some immediate fixes according to player feedback. Some highllights include improved unit positioning and improved building targeting. We'll keep working on these further, but try these and keep us posted on what you think: The exact feedback helps us pinpoint how to change the unit AI to better respond to player expectations. Since it's Friday we'll enter weekend mode and might not be that active until Monday but keep the feedback coming - we'll get to it as soon as we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the patch notes for the first update",
+     "items": [
+      {
+       "text": "Units keep hitting spawning building if new hostile target is far enough",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Avoidance priority for player units (Melee > Ranged > Support)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added item names to merchant screen and updated gfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Buffed Corpse Candle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Corpse Candles don't respond to go command",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed revive wheel responding to 5-key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed item eot bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated stash gfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced summon scepters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elven crystals no longer repair themselves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed discord link",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated heart item gfx",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added exit confirm dialog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moved Crystal Mine entrance a bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added black backdrop to unknown talent icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted pressureplate to not get overexposed when lit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Elven Fire Crystal is now fire-proof",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed dialogue not continuing if ctrl pressed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed existing units not upgrading when upgrading unit building and exiting screen from a different unit building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unit building visual progress upgrade bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added possible kobold note removal to quest step",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Warding barrier fx changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked collectible pick/sell info floaters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hinting Elven Sanctuary on enter level quest step",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added color-coding to Unit Building Upgrade info",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked pre-restore Necropolis minimap, it looks less crowded now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor level tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Part 2 Opening",
+     "items": [
+      {
+       "text": "As promised, we'll be moving quickly regarding new content, so this is already in private testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're really eager to test the next part in the closed test branch, DM \"knotto\" on 10tons discord channel #undeadhorde-2-general-chat (server is discord.gg/10tons). Please note answering might take a while outside office hours in local Finnish time. This is the most untested branch and for some parts basically work in progress, so backup your saves or use a different save slots. Only for the bravest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Necrodome",
+     "items": [
+      {
+       "text": "Unlike Undead Horde, this game will have an endless challenge arena and it will be called Necrodome. We'll release the first version in the beta branch as soon as we can so. The you can always face off against endless waves of living while we work on opening the next area. The exact date is still open, but we hope to do that soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's a sneak peek from the level editor",
+     "items": [
+      {
+       "text": "We hope to have it in testing in the near future as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What's Next",
+     "items": [
+      {
+       "text": "Check out the Early Access Roadmap: https://steamcommunity.com/games/2065810/partnerevents/preview/3390675458878439295",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 6,
+    "balance": 2,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/4980448574112632936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-09T15:40:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.677Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.677Z"
+  },
+  {
+   "id": "undead-horde-2-necropolis-217181@major-2022-09-02",
+   "gameId": "undead-horde-2-necropolis-217181",
+   "displayName": "Development Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-02T08:42:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "So, we finally published the Steam page for Undead Horde 2: Necropolis. Welcome! We wanted to show a lot of varied game content from our different environments before going live so it took us until early September to reach this point. I'll start our updates with a brief history of the project and where we are at this point and what we're doing next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Undead Horde is our second best selling title to date after DYSMANTLE, so making a sequel has been on the table for some time. Also, after many of us working over four years on DYSMANTLE (and some of us are still working on DYSMANTLE) and after releasing Skeletal Avengers, we wanted to do a project which we could finish in a bit over a year or so. With this background we decided it would be a suitable time to continue the Undead Horde saga a bit!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In early 2022 we started working. The goal was to create a game which is definitely Undead Horde, but with enough changes to offer something fresh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are three major differences with UH2 compared to UH1. I'll outline them here so you know better what to expect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first major difference are the raise mechanics. In UH1 you could raise only the exact unit you just killed. In this game we have something called the \"Raise Wheel\". You can assign 1-5 units onto the wheel and then decide on the go which unit you want to raise from enemy remains. Enemies leave behind remains which are the source of your undead warriors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second major difference is the game hub. In UH1 it was called the crypt but in UH2 you get a whole city called Necropolis. In the beginning the city is razed by the living. In the process they also capture all the denizens into soul jars and take them back to the lands of the living. These were just some innocent souls frolicking happily in the Necropolis after their death. However, the living invented this thing called Soul Jar which they use to capture the souls back. The souls are not happy for this: Who would like to live in a jar for all eternity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In any case - the player's goal is to rebuild the Necropolis and bring back its denizens. Each additional denizen can be assigned to a building which can yield various benefits like new abilities, perks or stat bonuses. They also make the city more lively as they walk around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The third major difference is connected to the first. Since the connection between the raised unit and killed unit is broken, we are now able to create a unique set of minions for the player. There are over a dozen types which are all unique. They include your standard skeletons but then extend to more exotic units like hierophants, liches and death knights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So those were the three major differences. There are more, but these are the most obvious. They make the game feel fresh as even the core gameplay changes a bit when you can decide which kind of undead you raise instead of just mirroring the enemy throughout the whole game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Currently we're working on polishing the first chapter on the game and and some parts of the second and third chapters. This will most likely be the extent of our early access release. We'll be looking for alpha testers in the near future, so stay tuned for that and join our discord for all the latest 10tons gossip: https://discord.gg/10tons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2065810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2065810/view/4621277624693797761"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-02T08:42:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2065810",
+      "checkedAt": "2026-11-13T03:35:05.675Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.675Z"
+  }
+ ],
+ "issues": []
+}

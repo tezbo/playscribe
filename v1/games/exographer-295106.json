@@ -1,0 +1,683 @@
+{
+ "game": {
+  "id": "exographer-295106",
+  "igdbId": 295106,
+  "name": "Exographer",
+  "cover": {
+   "imageId": "co90o2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co90o2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2vbf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2vbf.jpg"
+  },
+  "ps5Release": "2024-09-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "exographer-295106@58",
+   "gameId": "exographer-295106",
+   "displayName": "Patch 58",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-19T10:59:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi explorers. ScifunGames and Abylight Studios want to thank you for playing Exographer and your positive reviews. Have you discovered the Natitan legacy yet? An exciting journey awaits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are back to announce our third Exographer patch, version number 58, with bug fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Patched the CVE-2025-59489 Unity security vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where save files were corrupted by special characters in the Steam user name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Character",
+     "items": [
+      {
+       "text": "Fixed a bug where the character is unable to teleport to recover from an out-of-bound death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Greenhouse (level): fixed a bug where the puzzle is resolved but the main picture cannot be taken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2834320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2834320/view/1819386365094781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T10:59:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2834320",
+      "checkedAt": "2026-11-13T03:20:26.667Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T10:59:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2834320",
+      "checkedAt": "2026-11-13T03:20:26.667Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-19T10:59:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:58.897Z"
+  },
+  {
+   "id": "exographer-295106@57",
+   "gameId": "exographer-295106",
+   "displayName": "Patch 57",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-13T16:48:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi explorers. ScifunGames and Abylight Studios want to thank you for playing Exographer and your positive reviews. We are overwhelmed by the great reception of the game, and these help us to reach new players. Have you discovered the Natitan legacy yet? An exciting journey awaits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are back to announce our second Exographer patch, with general improvements and bug fixes. Thanks for your feedback, it helps a lot with polishing, and making Exographer an even better game. We also updated our main art, to better communicate the style of gameplay: an exploration puzzle adventure, where players will be able to discover an exciting story, with characters, locations and powers based on particle physics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please find down here every element we introduced with the latest patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Character",
+     "items": [
+      {
+       "text": "Fixed a bug where the character animation freezes upon falling death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Initialization: Fixed a bug where the absurd matters were not the right ones, after finishing and restarting the game with the absurd matters inverted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General: Adjust the tablet opening based on where the character really is (temple, mirror, microscope, control room…)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mirror Room (level): The zinc rock clue can now be taken anytime in its three positions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microscope (level): Raise some blue light intensity to be more visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Antichamber (level): Fixed a bug where the library button could be blocked by teleporting during animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Academy (level): Ladder to microscope now stays deployed if powered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Academy (level): Large zoom out now only triggers when interacting with the bench.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cosmic (level): Fix the absurd matter exchange in the hidden zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cosmic (level): Fixed a bug where the door leading to the charm cave was not activated anymore if the player teleported during animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yurt (level): Fixed a bug where opening the tablet while jumping in a particular place was leading to a black screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charm cave (level): Fixed a bug where opening the tablet in the secret area led to a black screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charm cave (level): Fix a sprite of a broken magnet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strange yurt (level): Align the inside door position with the outside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scintillating (level): Replace a visual water effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Muonic Sanctuary (level): The door to the secret level can now be triggered freely and the ladder is always deployed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Muonic Sanctuary (level): The rosette lock can be reused after its first use to open and close the door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Control room (level): Fixed a bug where the automatic doors were not reacting well while taking pictures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Control room (level): Added a Wedic dispenser for better quality of life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Emulsive (level): Remove a random smoke.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wedic station (level): Fixed a bug where the wheel could not be turned if player teleported during animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lonely (level): Fixed a bug where you could send multiple Tungsten bars at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lonely (level): Fixed a bug where the tracks were not displayed anymore after replacing the good tungsten bar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Analyses",
+     "items": [
+      {
+       "text": "Unlocking the antipixule in the rosette can now trigger the ending scene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where the arrows are moving while using the chronogram and the antigram",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Media and chronograms: Remove two rays to make the tutorials clearer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial analysis - Fix a bug where the card is already selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cards and points of interest can be associated based on a larger overlap zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locked cards in the easy analysis mode are now trackable. Route - Now displayed on already correct cards in easy mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "W Station: fixed the track sizes at the entry zoom level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User interface improvements",
+     "items": [
+      {
+       "text": "Large clue display: Hide arrows if it’s impossible to go next or previous.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Large clue display: Justify text to the left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rosette display: Handling the Shgig boson encrypted texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Page display: Allowing to go to the next or previous pages when the current page is not yet found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Navigation: Fixing the pre-selection on Dpad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Larger button outlines on popup, main menu and pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tablet: Change the close icon, not to mistake it with X.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Banner: Fixed a bug where the level banner displayed an encrypted version of the already discovered level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Follow Abylight Studios on Steam (https://store.steampowered.com/publisher/Abylight) to get the latest news on our games, sales, bundles discounts and new releases.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 2,
+    "balance": 0,
+    "other": 31,
+    "ps5": 0,
+    "topNew": [
+     "Large clue display: Hide arrows if it’s impossible to go next or previous.",
+     "Large clue display: Justify text to the left.",
+     "Rosette display: Handling the Shgig boson encrypted texts."
+    ]
+   },
+   "sourceIds": [
+    "steam-2834320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2834320/view/1794102528078311"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T16:48:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2834320",
+      "checkedAt": "2026-11-13T03:20:26.666Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T16:48:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2834320",
+      "checkedAt": "2026-11-13T03:20:26.667Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-13T16:48:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:58.896Z"
+  },
+  {
+   "id": "exographer-295106@56",
+   "gameId": "exographer-295106",
+   "displayName": "Patch 56",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-17T11:31:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi explorers. ScifunGames and Abylight Studios want to thank you for playing Exographer and your positive reviews. Have you discovered the Natitan legacy yet? An exciting journey awaits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are back to announce our latest Exographer patch, version number 56, with general improvements and bug fixes. Thanks for your feedback, it helps a lot with polishing, and making Exographer an even better game. Please find down here every element we introduced with the latest patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Character",
+     "items": [
+      {
+       "text": "Fixed a bug where the player’s animation is frozen after loading a picture upon a death event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Initialization: Fixed a bug where the absurd matters are not the right ones, after finishing the game with the absurd matters inverted, and then start a new game right away.: Source Antichamber (level): Added an absurd fog line to climb back if the player is aiming to complete its map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yurt (level): Fixed a bug where you cannot go up again if you reach the top and load the green fire picture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Glowing Forge (zone): Enhance graphic visibility of platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greenhouse (level): Added a reset button for the whole line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zediacal Workshop (level): Fixed a bug where you leave the area with the glove unlocked, but not picked, resulting in being stuck in front of an absurd mud on your wayback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wedic Station (level): Fixed an arrow in the analysis so that the card matches the picture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last Flooded Depth area: Added some insights and hints to help the player find the secret door entry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shattered Borders (zone): The thunder rhythm is now saved inside the last snap the player takes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Waber’s Ascent (level): Fixed a bug where the automatic elevators are not reacting to the thunder anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lonely Experiment (level): Fixed a bug where the Tungsten bars line is locked when teleporting to a picture of this very level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Popup: Place the reticle on the first of the two buttons on a popup display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Chinese: Fixed two wrong Natitan names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Go high: include the falling part of the jump to be valid and unlock the achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are continuously working on enhancing the experience of playing Exographer. Remember to report anything you find through your gameplays, and we will fix it in upcoming patches. Thank you, again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This improvements and fixes are also available for Exographer on other platforms: Xbox, PS5, Epic Games and Nintendo Switch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 17,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2834320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2834320/view/6212244583175619929"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T11:31:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2834320",
+      "checkedAt": "2026-11-13T03:20:26.665Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-17T11:31:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2834320",
+      "checkedAt": "2026-11-13T03:20:26.665Z"
+     },
+     "bundles": [],
+     "verification": "official",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-17T11:31:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:58.894Z"
+  }
+ ],
+ "issues": []
+}

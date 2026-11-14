@@ -1,0 +1,880 @@
+{
+ "game": {
+  "id": "bat-boy-172891",
+  "igdbId": 172891,
+  "name": "Bat Boy",
+  "cover": {
+   "imageId": "co6j6w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6j6w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar14ta",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar14ta.jpg"
+  },
+  "ps5Release": "2023-05-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bat-boy-172891@1.0.9",
+   "gameId": "bat-boy-172891",
+   "displayName": "Patch 1.0.9",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-31T02:02:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small change to how the default resolution is calculated on a new installation to better accommodate uncommon display resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where the boss at level 2 could, on rare occasions, pass through walls or floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect tile in the background of level 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/5141476355655908763"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-31T02:02:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-31T02:02:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.421Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-08-31T02:02:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.041Z"
+  },
+  {
+   "id": "bat-boy-172891@1.0.8",
+   "gameId": "bat-boy-172891",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-07T11:56:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue where Bat Boy would sometimes get hit when performing the “Bull Rush” ability through an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Cloud Saving was not work properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overall improvement on projectile collision detection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/5124582150159742951"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-07T11:56:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.420Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-07T11:56:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.420Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-07-07T11:56:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.041Z"
+  },
+  {
+   "id": "bat-boy-172891@1.0.6",
+   "gameId": "bat-boy-172891",
+   "displayName": "Patch 1.0.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-14T06:57:48.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue in level 11 where using the grappling ribbon in a specific spot of the level could cause a softlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where Bat Boy sometimes would get stuck when running on destructible blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed flickering effect from the ghosts in the background of level 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where it was possible to change the screen scaling from the button remapping option in the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a couple of issues when remapping keys for keyboard.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue where, right after finishing the game, going back and fighting the last boss again would cause projectiles not to spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved control over the batspin. Now, when calling back the bat while in batspin by pressing the attack button, it is easier to bounce on it as it comes back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/5126832680916519125"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T06:57:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.420Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-14T06:57:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.420Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-14T06:57:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.040Z"
+  },
+  {
+   "id": "bat-boy-172891@1.0.5",
+   "gameId": "bat-boy-172891",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-06T10:42:24.000Z",
+   "notes": [
+    {
+     "title": "Content",
+     "items": [
+      {
+       "text": "Fixed issue where a healing item in level 9 that would appear only once. Now it is set to respawn if the player dies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where using the bat to bounce on an enemy or a projectile during the same frame Bat Boy starts climbing a ladder would cause the ladder to not work properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where the last boss sometimes would not perform some attacks after the player has died at least once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed overlapping icons in the Japanese version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed sprite layering issue in level 12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Fixed issue where a healing item in level 9 that would appear only once. Now it is set to respawn if the player dies.",
+     "Fixed issue where the last boss sometimes would not perform some attacks after the player has died at least once.",
+     "Fixed overlapping icons in the Japanese version."
+    ]
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/5151601211243918753"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-06T10:42:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.419Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-06T10:42:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.419Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-06T10:42:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.039Z"
+  },
+  {
+   "id": "bat-boy-172891@1.0.4",
+   "gameId": "bat-boy-172891",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-02T13:22:20.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where Pigzy ninjas would not make any sound when appearing and disappearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in level 7 where the boss could clip through the floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in level 9 where an area with spikes would not damage the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where for some players, physics on ladders and with certain projectiles would acted differently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in the training area after clearing level 10 where it was possible to trigger a screen transition to a room where the player is not present.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where it was possible to use the \"Bouncing Basketball\" skill in the last stage at a point where it should not be allowed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/5151601211229746664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-02T13:22:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.419Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-02T13:22:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.419Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-02T13:22:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.039Z"
+  },
+  {
+   "id": "bat-boy-172891@1.0.3",
+   "gameId": "bat-boy-172891",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-30T11:17:50.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue in level 8 where entering the wrong door with a key could cause the player to lose that key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where under certain circumstances, one of the enemies in the tutorial area of level 8 would become invincible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where it was possible to go out of bounds in level 10 using an enemy to push you against the wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the bull rush skill would stop immediately after starting if the player was very close to a block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where bombs from Moonstar (boss) would damage the player even with the bubble shield: was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in level 11 where it was possible to go out of bounds using a ladder with a block on top.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where boss of level 2 could go out of screen while dashing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved camera movement and a platform length in the minecart section of level 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where falling crates in level 7 could get out of sync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed error in Japanese dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/5151600576605981227"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-30T11:17:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.418Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-30T11:17:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.418Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-30T11:17:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.038Z"
+  },
+  {
+   "id": "bat-boy-172891@1.0.2",
+   "gameId": "bat-boy-172891",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-26T11:27:33.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where an achievement in Groovy House would not trigger under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the camera could get stuck at the end of the second auto-scrolling section of level 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where a mid-boss in the last level could teleport to a random position at the start of the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where it was possible to go out of bounds in level 8.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in level 9 auto-scroll section where player could spawn out of camera range when squashed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a very rare issue where after slowing down time with a Time Orb, the game physics would not behave correctly after restoring normal time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced number of bounces made by the tennis ball thrown by the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/5151600576591431565"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-26T11:27:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.417Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-26T11:27:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.417Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-05-26T11:27:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.038Z"
+  },
+  {
+   "id": "bat-boy-172891@major-2022-09-20",
+   "gameId": "bat-boy-172891",
+   "displayName": "A Tiny Update for TGS 2022",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-20T06:51:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We made a tiny update to the build for TGS 2022. And decided to share it with everyone on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Below are the patch notes",
+     "items": [
+      {
+       "text": "Patch 0.6.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New pet system. One pet included in the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New batspin jump animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New song in Groovy House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Redesigned room in Groovy House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New strike counter upon death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Revised death animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New sound effects added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added emojis to conversations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Several bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1709350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1709350/view/6258337460560895155"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-20T06:51:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1709350",
+      "checkedAt": "2026-11-13T03:15:42.417Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:28.037Z"
+  }
+ ],
+ "issues": []
+}

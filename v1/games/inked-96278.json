@@ -1,0 +1,765 @@
+{
+ "game": {
+  "id": "inked-96278",
+  "igdbId": 96278,
+  "name": "Inked",
+  "cover": {
+   "imageId": "co27og",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co27og.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5p3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5p3.jpg"
+  },
+  "ps5Release": "2021-09-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "inked-96278@major-2024-03-06",
+   "gameId": "inked-96278",
+   "displayName": "Inked Update - What's New? 📢",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-06T09:40:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're happy to announce that we've regained publishing rights for Inked!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, we've added a minor sandbox mode that allows you to play around with an endless amount of objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also remember that you can play the 2018 version of Inked, in a separate beta track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sincerely,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Somnium Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-690120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/690120/view/5679673637647977846"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-06T09:40:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-690120",
+      "checkedAt": "2026-11-13T03:23:34.085Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-06T09:40:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-690120",
+      "checkedAt": "2026-11-13T03:23:34.085Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-06T09:40:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:13.321Z"
+  },
+  {
+   "id": "inked-96278@3",
+   "gameId": "inked-96278",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2018-06-05T17:17:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone 👋,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For this update, we concentrated on balancing certain aspects of the game based on the feedback we got from you. 📢",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have changed the level architecture in several places in the game to balance out new puzzles of those areas with the repetitive ones (e.g. using ramps for traversing). Coupled with improved controls from the older patch this should lead to a less frustrating experience when playing the game, as there will be a bit less tricky platforming and less repeated actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An example of the architecture changes in the desert.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are also adding three new achievements called Inking Veteran, Astronaut and Samurai tactics. We will let you guys figure out how to get them 😉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the next update, we have plans for an improved saving system and other balancing changes, but we would like to hear you. What would you like to see improved in Inked in the following weeks? 🔧🔨📐",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where water from the fountain was going through objects. (Water towers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the ferry platform did not get reset to a start position after NH dies. (Swamp)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the graphics of the plug hole. (Swamp)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the puzzle could be skipped by blocking the fire with 3 cubes. (Frostland)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the black fire is drawn in the center of the screen, causing multiple issues and bugs. (Final fight)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Various architecture improvements in Sea of Simple Geometry, Forest, Desert, and Frostland.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the detection system of the security cameras.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various other small improvements and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sincerely yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Somnium Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 5,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Various architecture improvements in Sea of Simple Geometry, Forest, Desert, and Frostland.",
+     "Improved the detection system of the security cameras.",
+     "Various other small improvements and bug fixes."
+    ]
+   },
+   "sourceIds": [
+    "steam-690120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/690120/view/2396358622015938659"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-06-05T17:17:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-690120",
+      "checkedAt": "2026-11-13T03:23:34.085Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:13.320Z"
+  },
+  {
+   "id": "inked-96278@2",
+   "gameId": "inked-96278",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2018-05-24T14:19:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone 👋,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second patch for Inked is live now and here are some of the biggest changes / additions. 📝",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But before we get into details, we would like to thank all of you who played Inked. We got some really heartwarming feedback which keeps us going. We also recieved constructive feedback that we are actively working on. Thank you all! 💖",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on your requests we have added Russian and Polish subtitles. We have also added some essential hints during loading time, which should refer you to the alternative control layouts and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📀DEMO 📀",
+     "items": [
+      {
+       "text": "One of the biggest announcements is that Inked now has a demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are interested in the game, you can now enjoy its first hour and then decide if you want to purchase the whole experience. 🎮 You can travel through the Sea of Simple Geometry, Pillar Forest and the Water Towers, and start uncovering the beauty of Inked. We wanted the Demo to be more than enough, so you can experience a lot of the mechanics, enjoy a couple of environments, some beautiful music and get a very good glimpse at the story and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We have added the Steam Cards! You can now get",
+     "items": [
+      {
+       "text": "7 Steam Cards - collect these awesome selfies of the Nameless Hero, Aiko and Buddy taken across all of Paperworld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Badges - Based on the growing of the Cherry blossom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "6 Backgrounds - to spice up your Steam profile pages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "8 Emojis - to give your messages some Inked flavour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Along with these additions we made another round of tweaks to the game, which should make the experience more enjoyable. 🔧🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For the next patch we are planning some surprises for those of you that like hunting achievements and much more, but more on that soon 🙈 🙉 🙊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Global improvements",
+     "items": [
+      {
+       "text": "Implemented Russian and Polish localizations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented hints and tips on the loading screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where character got killed by the closing sliding gate, even though there was enough space between character and the gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where character would get teleported to a wrong checkpoint after dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Improved a few water tower puzzles to reduce the difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the difficulty of the boulders uphill puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the architecture of the big pillar puzzle in Forest area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various other small improvements and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sincerely yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Somnium Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "7 Steam Cards - collect these awesome selfies of the Nameless Hero, Aiko and Buddy taken across all of Paperworld",
+     "Badges - Based on the growing of the Cherry blossom",
+     "6 Backgrounds - to spice up your Steam profile pages"
+    ]
+   },
+   "sourceIds": [
+    "steam-690120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/690120/view/2394106188078370105"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-05-24T14:19:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-690120",
+      "checkedAt": "2026-11-13T03:23:34.084Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:13.319Z"
+  },
+  {
+   "id": "inked-96278@patch-2018-05-10",
+   "gameId": "inked-96278",
+   "displayName": "Inked - first patch is out now! ✒",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2018-05-10T14:16:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone 👋,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first patch for Inked is live now! As previously announced, this patch will primarily address some difficulties with controls, but will also offer better usability options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are also a number of smaller tweaks to the game that we have done which should make certain levels more polished.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Mouse and keyboard",
+     "items": [
+      {
+       "text": "Reduced character momentum when starting and stopping. It should be easier to control the character and make platforming easier.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added alternative movement type. This allows you to move “forward” using only the “W” key. (Check the Settings / Controls).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added hotkeys (1-6) to allow quick Sketch object selection.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Controller",
+     "items": [
+      {
+       "text": "Improved sketch positioning. Sketch object should now be easier to move around the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Fixed an issue where drawn object stays hovering in the air. (Water towers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the water was not raised fully to the top. (Water towers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the movement of buoys (blue floating cubes). (Water towers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the speed of the first crocodile in the motorboat section. (Swamp)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where cowboy hat was not visible behind objects. (Desert)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the fight would not start after the character dies. (Top of the mountain Temple boss fight)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where controller sketch object cursor was invisible in some black background areas. (Factory)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various other small improvements and bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are continuing our work on the game, still concentrating on improving the experience in every way. Let us know in the comments what do you think about this patch and whether it has improved your experience 🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "P.S. We have a bigger announcement coming soon so keep a close watch on all our channels 😵😎",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sincerely yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Somnium Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 12,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-690120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/690120/view/3822871998310039730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-05-10T14:16:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-690120",
+      "checkedAt": "2026-11-13T03:23:34.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:13.318Z"
+  },
+  {
+   "id": "inked-96278@patch-2018-05-02",
+   "gameId": "inked-96278",
+   "displayName": "Inked - first patch news",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2018-05-02T08:04:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on the first patch for Inked!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since the release we have received feedback regarding the difficulty of the controls and object placement in the game. We are working on several tweaks and additions which should give you better control and more freedom to choose the way you want to play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is our first effort to make the experience of controlling the character and positioning the objects better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have also made a number of smaller changes and improvements to the game which should make the experience more streamlined in certain areas of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The changes are coming soon, but stay tuned for an official announcement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sincerely yours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Somnium Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-690120"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/690120/view/2394104285090844641"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-05-02T08:04:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-690120",
+      "checkedAt": "2026-11-13T03:23:34.083Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:13.317Z"
+  }
+ ],
+ "issues": []
+}

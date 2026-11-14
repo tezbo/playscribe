@@ -1,0 +1,1540 @@
+{
+ "game": {
+  "id": "carmageddon-rogue-shift-378311",
+  "igdbId": 378311,
+  "name": "Carmageddon: Rogue Shift",
+  "cover": {
+   "imageId": "coay63",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coay63.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar581x",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar581x.jpg"
+  },
+  "ps5Release": "2026-02-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "carmageddon-rogue-shift-378311@3.3",
+   "gameId": "carmageddon-rogue-shift-378311",
+   "displayName": "Update 3.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-23T15:04:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Drivers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're back with another quick update to improve your experience out there on the Wasteland.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES & IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Fixed memory leak impacting initial level loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed prices of some permanent upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera position not being persistent across events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1712100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1712100/view/1844751498218722"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-23T15:04:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.356Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-23T15:04:20.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.357Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-23T15:04:20.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.030Z"
+  },
+  {
+   "id": "carmageddon-rogue-shift-378311@3.1",
+   "gameId": "carmageddon-rogue-shift-378311",
+   "displayName": "Update 3.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-09T14:53:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Long time no see, Drivers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We can’t rid the world of the Wasted, but we can squash some bugs and do a little work under the hood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES & IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Many memory optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected a rare crash that occurred when quitting the game from the main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FSR upscaler not activating properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Engine sounds should now play consistently when loading completes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Respawning at the finish line should no longer add a bonus lap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chief Biggun & Wastehead have lost their resurrection ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dark lighting on some levels and time of day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved visibility of some vehicle components",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Patch 4 is still in the works! Although it's still too early to give any specifics, the team is taking a very close look at the community's most requested features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stay tuned for more info on the future of Carmageddon: Rogue Shift.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1712100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1712100/view/1843481262689291"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T14:53:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.356Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-09T14:53:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.356Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-09T14:53:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.030Z"
+  },
+  {
+   "id": "carmageddon-rogue-shift-378311@3",
+   "gameId": "carmageddon-rogue-shift-378311",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-03T17:32:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45865349/20d89d7643609ddca166f71b681ad3d27820ece5.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://www.youtube.com/watch?v=kKR1vvN59Xw&rco=1\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚨 ATTENTION ALL DRIVERS 🚨",
+     "items": [
+      {
+       "text": "Patch 3 has arrived, and with it come 2 new challenges, a new event type, a new car, and a slew of balance changes, bug fixes, and quality-of-life improvements! (Patch 3 will hit consoles as soon as each version is approved by their platform.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Challenge Modes",
+     "items": [
+      {
+       "text": "“Old Fashioned Way” Can you crash through tougher competition without weapons? Opponents won’t respawn when wrecked, just like the good ol’ days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“No Second Chances” Buckle up and avoid damage like the plague, because every mistake WILL cost you in the long run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Event Type",
+     "items": [
+      {
+       "text": "Added Arena event and 3 arenas to fight for survival on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Vehicle",
+     "items": [
+      {
+       "text": "Added Mitsushi, based on a particular Group B rally car. Frail and slippery, but fast and deadly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Steering Wheel Support",
+     "items": [
+      {
+       "text": "Steering wheel support added to the main game branch, added configuration for the Logitech G920",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Rebalancing",
+     "items": [
+      {
+       "text": "Faster acceleration. All vehicles have more torque at low RPMs so they accelerate faster. Top speeds haven’t changed much, but…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More boost is granted for wrecking enemy vehicles and killing Wasted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stronger boost push for harder and more satisfying bashing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firecracker and SQR-NE55 swapped in the Black Market",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Introduced “Lucky Finds” in the Campaign shops: you can occasionally find items that have not yet been unlocked in the Black Market, to encourage exploration and add variety in the early to mid game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tremorz gameplay improvements; review of the lock system, phases timing, weak spot collider position and size, melee damage multipliers. Improved response to weapon hits. Revised speed when close to the player vehicle, and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed a generic crash caused by certain physics interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Common Wasted sometimes stuttering when player drives close",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Common Wasted flying on Tremorz’s Gorge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Common Wasted blasting off into space after being killed while submerged in sewage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a broken animation for Siren seen from far afield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed flying and underground Boomers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed postmortem reflex from cars (sidebash animation no longer loops if used at the moment of death)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved destruction effects of cardboard boxes (No green Mazdas were hurt during the process)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed clipping on camera shake while using Bonnet Camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tuned FOV and movement for Bonnet Camera on race intro sequences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Intensified visible blood splatter visuals for Bonnet Camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed weapons mounted on roof not disappearing with wrecked cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed “Reset to default” option not resetting some options to default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong default video settings for the Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issues related to wrong Scaling Resolution values while using Upscalers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Machine Gun Turret missing word “Turret” in its name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed OG Eagle spontaneously emitting glass shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing fins on OG Eagle if player have entered Photo Mode from Bonnet Cam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lights on Enforcers being pink on low quality settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed scoring actions on Enforcers in Survival not recognizing types of Enforcers and not granting correct bonus points from perks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Weapon Dealer not offering upgrade to the currently owned weapon when the weapon tier difference was too big",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Horde containers not being able to be opened via weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shortened base boost duration of Piccolo to match the other cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed \"beyblades\" from barrels dropped by Bullzerker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed “Death Cheater” achievement being triggered by quitting the race while in Last Stand mode (We know it also fits the name but no, sorry!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Improved performance of Common Wasted and their navigation precision and collision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance and various minor visual glitches of ragdolling corpses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Perks",
+     "items": [
+      {
+       "text": "Fixed Score-related perks (such as Russian Roulette, M.A.X. or Big Game Hunter) not giving a correct amount of credits and boost points in certain cases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Streamlined Pyromaniac’s description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Altered Gun’s Game behavior: now counts amount of times a weapon has been bought since the start of the run instead of since acquiring the perk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Bulk not scaling its bonus collision damage correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tracks",
+     "items": [
+      {
+       "text": "Fixed flying checkpoint flares on Downtown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visible finish checkpoint flare effects over the cutscene ending the tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoothed ground collision near obstacles in the crash site area on The Hospital",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a prankster with an umbrella from one of tunnel exits on Thunderhill events who made the rain appear and disappear rapidly over a specific track section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI/UX",
+     "items": [
+      {
+       "text": "Added “Wrong Way” indicator for the final boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various instances of “selection buildup” SFX not being played when it should",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed possibility of “ELITE” caption of Elite events clipping through other icons on the campaign map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue of Elite event’s finish position displaying 2nd place even though the player has finished 1st by a small margin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrongly formatted text for secondary objectives about boosting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pivot point and rotation issues for Orbital Camera in Photo Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Photo Mode camera clipping through the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Weapon Dealer camera pointing at wrong weapon mounting spots on Piccolo Enforcer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera clipping through the car on rolling start cutscene while using Bonnet View",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rumble not working while firing a Lasergun",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed challenge posters briefly showing Easy Mode poster on every challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stay tuned to our social media channels for future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Team 34BT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 31,
+    "balance": 1,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1712100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1712100/view/1836506165571147"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-03T17:32:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.355Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-03T17:32:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:38:29.275Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-03T17:32:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.275Z"
+  },
+  {
+   "id": "carmageddon-rogue-shift-378311@2",
+   "gameId": "carmageddon-rogue-shift-378311",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-03T15:14:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Strap in Drivers, we’ve got a good one for you. Challenge Mode, Steering Wheel Support on our beta branch, and a whole host of improvements coming your way. We’re also taking a quick look at what else is in store for Rogue Shift at the end of the patch notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Console players, you know the drill. Patch 2 will hit your platform as soon as each platform-specific version is approved by their respective platform holder. Stay tuned to our socials, as we’ll announce when each build has been approved and is rolling out to players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Challenge Mode",
+     "items": [
+      {
+       "text": "Have you beaten the Campaign? Think you’re hot stuff? Prove yourself with the 6 new Challenges, each twisting the rules and spicing up the gameplay in different ways. Some examples include The Long Road (which turns all Death Races into Elite Races), Infected! (heavier, deadlier, and more numerous Wasted), Expiry Date (free Restocks and cheaper items, but Perks expire after a few Events!), and Expert Handling (more realistic simulation of surface friction). Can you clear them all?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed “Easy Mode” from game options. Easy Mode is now a Challenge Mode you must select when starting a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "[EXPERIMENTAL | PC ONLY] Steering Wheel Support",
+     "items": [
+      {
+       "text": "Steering wheel support has been implemented natively for the Logitech G29 and Thrustmaster T598. To access steering wheel support, you will need to switch to our beta branch steering_wheel_controller using the code iwanttofiddle.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Just like with the handling adjustments we previously tested on a beta branch, we’ll also be pinning a feedback thread over on the Steam Forums.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Game Balance",
+     "items": [
+      {
+       "text": "Added weakness to melee damage for Tremorz. Melee builds are now more effective against it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved readability of Tremorz's various attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered Tremorz’s HP on Easy Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tweaked Tremorz's melee hitbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tweaked Tremorz's speed and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Retuned the handling of the Shellbee, the Hawk GT and the Silverhound following player feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tweaked behavior of Turfwar bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Other Fixes & Improvements",
+     "items": [
+      {
+       "text": "Fixed an issue which made buttons in the main menu disappear and show tips during transitions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock caused by rapidly pressing inputs in the Main Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Boomers not being able to roam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue allowing opponents to sometimes skip a lap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Batflock blocking Lasergun damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated description of Economic Upturn (Now mentions +10% cap).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the description for the Performance Kit: Transmission IV perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed blue VFX on every scoring action when the perk Conversion is equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the description for Drift secondary objectives when using imperial units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed permanent slo-mo state after using Photo Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added feedback when taking a screenshot in Photo Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added UI feedback to wrecking the first boss in the Turfwar Boss event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller rumble not activating on consecutive boosts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the timer on the End Run victory screen showing total playtime instead of run time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted audio mix when using the Bonnet Cam camera view for a more immersive experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Boss’ health bar not being visible when using the Bonnet Cam camera view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed snappiness of camera movement when using the Bonnet Cam camera view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tuned camera knockback on shooting when using the Bonnet Cam camera view to prevent clipping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed SFX of opening a container on Scavenge Hunt playing twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed number pad camera navigation on Maim Street not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the experience when using the Bonnet Cam camera view for OG Eagle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed overlapping text in some languages and screen resolutions on the controls overview screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various wrong unlock amounts displayed in the Stats screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Terrain Quality not being affected by Quality Preset change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed localization issues in Simplified and Traditional Chinese (“Terminal” track name and notification about opponent finishing the race).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Patch 3?!",
+     "items": [
+      {
+       "text": "That’s right. We’re confirming that there will indeed be a Patch 3. This third patch will expand the available Challenges with one or two new modes that are sure to feel like a blast from the past.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Following the same blast-from-the-past theme, we’re also working on an entirely new Event type that we think will demolish your expectations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned to our socials for teasers and more information!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 25,
+    "balance": 7,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1712100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1712100/view/1828894815560604"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-03T15:14:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.354Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-03T15:14:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.354Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-03T15:14:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.027Z"
+  },
+  {
+   "id": "carmageddon-rogue-shift-378311@1",
+   "gameId": "carmageddon-rogue-shift-378311",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-27T16:03:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again! We’re back today with some shiny new features for Rogue Shift.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Console players, all of this as well as console-specific crash fixes are coming as soon as each platform-specific version is approved. Stay tuned to our socials, as we’ll announce when each build has been approved and is rolling out to players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now let’s jump in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Free Vehicle: Grosso",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45865349/1b98e25dccbe4d8b976a9ee151055015ceef83d8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As a token of our gratitude for clearing out 50 million Wasted, we stole this sweet AWD ride from the Enforcers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Grosso’s innate perk is Lock Jammer, which gives the player a longer immunity window to Weapon Lock after evading with a Boost or a Sidebash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "To unlock the new car, simply update the game and the Grosso should already be added to your garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bonnet Cam",
+     "items": [
+      {
+       "text": "Now you can really stare into the dead eyes of the Wasted as you run them over!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To change your camera, press ‘C’ on keyboard or up on the d-pad for consoles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improved Handling and Other Fixes",
+     "items": [
+      {
+       "text": "A huge thank you to everyone who tested the new handling and sent us feedback! We made a few additional adjustments based on your input from the beta, and are now rolling these updates out to the main branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "*SOME SETTINGS MAY BE OVERRIDDEN BY THE NEW PATCH / STEERING OPTIONS. Please check your settings if anything feels strange.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "And as always, let us know if we overtuned anything!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other Fixes, Enemy AI Improvements",
+     "items": [
+      {
+       "text": "We continue to work on and implement various crashes and enemy ai/behaviour improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues related to the Final Boss disappearing for a long time or altogether.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minimap issues on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the cursor drift issue while on the campaign map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vehicles now load faster in the garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked various sound effects that typically occur during a race to improve auditory clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck Verification ✅",
+     "items": [
+      {
+       "text": "Not new news, but Carmageddon Rogue Shift is Steam Deck Verified! You can even play on desktop then switch to your Steam Deck and keep your progress. Just make sure your save file is backed up via Steam Cloud.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Your Wasteland Champions",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45865349/8912fc5aa68372d764b778044336309072683263.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Congrats to tyler1 and King Vader for winning our Car Destruction event! You can find them in-game until there’s no one left in the Wasteland.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "More To Come!",
+     "items": [
+      {
+       "text": "Just like we mentioned in our Roadmap post, there’s still more to come, including Challenge Mode and Steering Wheel Support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1712100/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 8,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/45865349/1b98e25dccbe4d8b976a9ee151055015ceef83d8.jpg\"]",
+     "As a token of our gratitude for clearing out 50 million Wasted, we stole this sweet AWD ride from the Enforcers.",
+     "To unlock the new car, simply update the game and the Grosso should already be added to your garage."
+    ]
+   },
+   "sourceIds": [
+    "steam-1712100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1712100/view/1825727806711244"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T16:03:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.353Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T16:03:52.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:38:29.275Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-27T16:03:52.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.275Z"
+  },
+  {
+   "id": "carmageddon-rogue-shift-378311@patch-2026-02-13",
+   "gameId": "carmageddon-rogue-shift-378311",
+   "displayName": "Pedal to the Metal Patch | Updated Handling Beta Branch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-13T19:03:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve been diligently reading, watching, and listening to every discussion and review we can find.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drivers, we hear you loud and clear: you want better maneuverability, simpler recovery, and more precise controls. We've gone back to the drawing board and cooked up a patch that rebalances the handling model to give you the crunchier, more grounded experience you’ve been asking for, while keeping true to our vision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since this is a high-impact, high-speed intervention, we want to test it first in a dedicated Steam beta branch and hear your thoughts before releasing these changes more widely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How To Test",
+     "items": [
+      {
+       "text": "For those that already know how to join a beta branch, please join the NEW_WHEELS_NEW_ME branch using the code iwanttofiddle. Then after you feel you’ve given the new build enough of a test drive, head over to this pinned forum thread to share your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have never joined the beta branch of a Steam game before, please follow these steps:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right-click on Carmageddon: Rogue Shift from your Steam library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click Properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A pop-up window will appear. Click Game Versions & Betas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Find the text input box under the Private Versions section. Enter the code iwanttofiddle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click Check Code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You should now see the NEW_WHEELS_NEW_ME branch as an option. Select this branch and update the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now have the test build! Don’t forget, after you feel you’ve given the model enough of a test drive, head over to this pinned forum thread to share your feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "▪️Tire Physics Overhaul",
+     "items": [
+      {
+       "text": "We’ve reworked our friction curves to mitigate that cliff’s-edge feeling of instantly losing control. Tires now have a generally more progressive grip loss, allowing you to catch slides and drift more predictably instead of snapping into a spin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "▪️Steering Responsiveness",
+     "items": [
+      {
+       "text": "Increased default steer rates across all vehicles. Your wheels will corner faster, reposition faster when you let go of your steering, as well as counter-steer more promptly, giving you more agency when a slide starts to go wrong. You'll still feel the difference in weight between cars, but the steering input will now translate into wheel rotation consistently across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "▪️Steering Rate",
+     "items": [
+      {
+       "text": "This option now lets you act directly on the steering responsiveness, allowing you to control how quickly your wheels reach maximum steering angle. This affects both analog and keyboard controls. We’re giving you *a lot* of freedom here, you can achieve some pretty dramatic results if you push away from the default value of 1.2, so thread carefully.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "▪️Steering Curvature",
+     "items": [
+      {
+       "text": "This controls how linear the steering response will be on controllers, allowing you to reduce sensitivity in the initial movement of the stick, or to have a more direct response. As mentioned, this does not affect keyboard controls.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "▪️Acceleration Curves",
+     "items": [
+      {
+       "text": "Increased responsiveness at low speeds, especially when shifting into reverse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We’ll be evaluating your feedback and aim to implement the best changes as soon as possible. Console players, all changes made will be included in Patch 1, which includes Bonnet Cam and a few more fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 2,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1712100"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1712100/view/1824644522840287"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-13T19:03:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1712100",
+      "checkedAt": "2026-11-13T03:16:58.352Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:11:01.304Z"
+  }
+ ],
+ "issues": []
+}

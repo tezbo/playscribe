@@ -1,0 +1,1185 @@
+{
+ "game": {
+  "id": "tau-cubis-157855",
+  "igdbId": 157855,
+  "name": "Tau Cubis",
+  "cover": {
+   "imageId": "co78te",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co78te.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arx4i",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arx4i.jpg"
+  },
+  "ps5Release": "2024-09-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tau-cubis-157855@post-2025-10-06",
+   "gameId": "tau-cubis-157855",
+   "displayName": "October 06 : CVE-2025-59489 Security Fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-06T14:57:21.000Z",
+   "notes": [
+    {
+     "title": "Security",
+     "items": [
+      {
+       "text": "Security fix for Windows, Linux and MacOS version : Unity CVE-2025-59489",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/1811772772608982"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T14:57:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T14:57:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.746Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-06T14:57:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.718Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2025-06-03",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update June 03 : Max Score",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-03T13:20:15.000Z",
+   "notes": [
+    {
+     "title": "Bugs / Improvements",
+     "items": [
+      {
+       "text": "No longer allow score to be higher than the max value of an Int32 (ie 2147483647) to comply with Valve leaderboard requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add dynamic font for score in menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Correct some glyphs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tone down interface sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other minor corrections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/1800991756473563"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-03T13:20:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-03T13:20:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.746Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-03T13:20:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.717Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2025-04-25",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update April 25",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-25T12:51:21.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Graphical modifications on multiple maps to improve visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce gold target for Map 02 Tesla Only mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce gold target for Map 12 Wave mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs",
+     "items": [
+      {
+       "text": "Rework Tower highlight system (bugs correction and visual)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Correct particles display for Technic tower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Correct mouse wheel behaviour in Linux version",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Repair buy/sell score popups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/1797820624492958"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T12:51:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-25T12:51:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.745Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-04-25T12:51:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.717Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2025-01-05",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update Note January 05",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-05T16:18:39.000Z",
+   "notes": [
+    {
+     "title": "Gameplay ",
+     "items": [
+      {
+       "text": "Wave counter now available for all modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs ",
+     "items": [
+      {
+       "text": "Fix wave timer when using time scale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Play \"unlock all challenges\" sound only when setting it, not when starting session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduce trophies effect sound level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/1787858252815814"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-05T16:18:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-05T16:18:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.745Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-05T16:18:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.716Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2024-11-26",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update Note November 26",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-26T19:48:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "BUG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Victories achievements.: GAME",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve overall performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/1783872412152977"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-26T19:48:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-26T19:48:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.744Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-26T19:48:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.716Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2024-10-13",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update October 13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-13T16:26:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "BUG",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix conditions for achievements. In some cases, conditions was not reset when restarting a challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/6211118320234709539"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-13T16:26:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-13T16:26:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.744Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-13T16:26:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.715Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2024-09-02",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update September 09",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-02T16:57:26.000Z",
+   "notes": [
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Add display of required scores for trophies of each challenge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase starting ressource for:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map 06 \"In Town\" Mode Mission 600 => 700",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map 14 \"Warpflies Shore\" Mode Mission 2600 => 2800",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map 14 \"Warpflies Shore\" Move Wave 1800 => 2000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG",
+     "items": [
+      {
+       "text": "Correct Steam avatar orientation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bugfix and UI fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/6240387642469486416"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-02T16:57:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.743Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.715Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2024-07-16",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Major update July 12 : German and Japanese version !",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-16T09:50:26.000Z",
+   "notes": [],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/6000566704283412169"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T09:50:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.743Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.714Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2024-04-04",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update April 04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-04T14:14:18.000Z",
+   "notes": [
+    {
+     "title": "GAME",
+     "items": [
+      {
+       "text": "Add Time scale 0 for Tactical Pause.: Yes, you can now stop time in game !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "VISUAL",
+     "items": [
+      {
+       "text": "Correct avatar background color",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small UI changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dynamic font size for player name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/5756237364308282968"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-04T14:14:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.743Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.714Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2024-02-01",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Small Update Feb 01",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-01T13:27:46.000Z",
+   "notes": [
+    {
+     "title": "GAME",
+     "items": [
+      {
+       "text": "Add helping message at start of 2 last Maps : Maps require to use the towers in combinations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG",
+     "items": [
+      {
+       "text": "Better confine Mouse cursor in game for Linux multi-monitor",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Cloud synchronisation problem with Linux version",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Correct Disruptor Damage Effect (too bright)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/5582843074940821847"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-01T13:27:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.742Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.713Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2023-12-04",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Small Update Dec 04",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-04T18:18:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Migrate from SMAA to TAA for better Anti Aliasing quality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce exposure/brightness level for MAP 03 \"Take your time\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/5395937983676419735"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-04T18:18:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.742Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.713Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2023-11-28",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Small Update Nov 28",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-28T12:06:57.000Z",
+   "notes": [
+    {
+     "title": "VISUAL",
+     "items": [
+      {
+       "text": "Adapt font parameters for better readability on low resolution display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add effect for enemy damage (in addition to impact effect)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG",
+     "items": [
+      {
+       "text": "Popup missing for build not allowed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cursor was going through buildings in Map \"In Town\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/5382426458995128484"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-28T12:06:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.741Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.713Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2023-11-26",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Small Update Nov 26",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-26T14:09:47.000Z",
+   "notes": [
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Map 01 \"Gunhed\" : Increase starting ressource: +100 for Mission and Wave modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map 04 \"It's a Trap\" : Increase starting ressource: +200 for Mission and Wave modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map 07 \"It's a Maze\" : Increase starting ressource: +200 for Mission and Wave modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map 10 \"Green Route\" : Increase starting ressource: +400 for MIssion and Wave modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map 10 \"Green Route\" : Reduce score required for Gold trophy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "BUG",
+     "items": [
+      {
+       "text": "Option \"Unlock all challenges\" was not working in all cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/5382426458988181688"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-26T14:09:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.741Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.712Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2023-11-19",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Small Update Nov 19",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-19T11:15:13.000Z",
+   "notes": [
+    {
+     "title": "BUG",
+     "items": [
+      {
+       "text": "Tower Range effect in Map 02",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resize some UI fields in Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/6560117310274790917"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-19T11:15:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.740Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.712Z"
+  },
+  {
+   "id": "tau-cubis-157855@major-2023-11-18",
+   "gameId": "tau-cubis-157855",
+   "displayName": "Update Note for Nov 18",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-18T09:57:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Return of Demo version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor game balance changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor UI fields changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1001930"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1001930/view/6560117310270949858"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-18T09:57:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1001930",
+      "checkedAt": "2026-11-13T03:32:32.740Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.711Z"
+  }
+ ],
+ "issues": []
+}

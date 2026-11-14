@@ -1,0 +1,432 @@
+{
+ "game": {
+  "id": "ovivo-29388",
+  "igdbId": 29388,
+  "name": "Ovivo",
+  "cover": {
+   "imageId": "co1z3g",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1z3g.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ard88",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ard88.jpg"
+  },
+  "ps5Release": "2021-04-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ovivo-29388@patch-2026-10-28",
+   "gameId": "ovivo-29388",
+   "displayName": "Patch: resolution setting and fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-28T17:29:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small update for OVIVO.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Screen item to Settings: choose the resolution and fullscreen or windowed mode. If the screen size looks off after the update, change it there.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New installs start at your display's native resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gamepad: the Start button no longer jumps you to the next checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed leftover developer keys (Q, R, C, F1, F2).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Linux: fixed the launch setting.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated the engine to Unity 6, which also closes the Unity vulnerability CVE-2025-59489.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game no longer sends anonymous usage statistics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If something doesn't work, let us know in the Steam discussions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-597700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/597700/view/1847920302232052"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-28T17:29:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-597700",
+      "checkedAt": "2026-11-13T03:27:34.064Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-28T17:29:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-597700",
+      "checkedAt": "2026-11-13T03:27:34.064Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-28T17:29:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:48.228Z"
+  },
+  {
+   "id": "ovivo-29388@post-2021-06-02",
+   "gameId": "ovivo-29388",
+   "displayName": "FIXED: Achievements Bug",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-02T08:46:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi folks! We have finally fixed the issue when the game didn't give the last two achievements (all dots collected and all symbols collected). Just update the game and you will receive achievements if you had reached them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your support and patient. We are so grateful that our game after all these years still has such attention.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-597700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/597700/view/4093189347038626093"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-02T08:46:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-597700",
+      "checkedAt": "2026-11-13T03:27:34.063Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-02T08:46:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-597700",
+      "checkedAt": "2026-11-13T03:27:34.063Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-06-02T08:46:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:48.226Z"
+  },
+  {
+   "id": "ovivo-29388@2.0",
+   "gameId": "ovivo-29388",
+   "displayName": "Update 2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-11-23T15:11:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have great update of our game OVIVO on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New music tracks.: Folks, we know you love original tracks but we had to change the tracks because of the copyright issues. We asked the composer(Brokenkites) to make a special version of his tracks for OVIVO. The new tracks came out great and we think that they fit the game even better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New feature (only for Windows and Linux): We’ve added a special liquid like effect when OVO switches between Black and White worlds.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-597700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/597700/view/2149769425914951760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-11-23T15:11:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-597700",
+      "checkedAt": "2026-11-13T03:27:34.062Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:48.225Z"
+  },
+  {
+   "id": "ovivo-29388@1.0.2",
+   "gameId": "ovivo-29388",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-09-08T16:38:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed bug with wrong speed scale at first level when the main character gets into a hint ring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved music and sfx volume tuning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor bug fixes and graphical improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-597700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/597700/view/2127244540323337130"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-09-08T16:38:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-597700",
+      "checkedAt": "2026-11-13T03:27:34.061Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:48.224Z"
+  },
+  {
+   "id": "ovivo-29388@1.0.1",
+   "gameId": "ovivo-29388",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-05-24T10:16:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added launcher for change options of screen resolution and graphics quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bug with saves (thanks Jelly for her report in Community Hub)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fixes and game improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-597700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/597700/view/1904306757807988238"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-05-24T10:16:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-597700",
+      "checkedAt": "2026-11-13T03:27:34.060Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:48.222Z"
+  }
+ ],
+ "issues": []
+}

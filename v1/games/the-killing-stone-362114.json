@@ -1,0 +1,2173 @@
+{
+ "game": {
+  "id": "the-killing-stone-362114",
+  "igdbId": 362114,
+  "name": "The Killing Stone",
+  "cover": {
+   "imageId": "coab99",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coab99.jpg"
+  },
+  "squareCover": null,
+  "artwork": null,
+  "ps5Release": "2026-10-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-killing-stone-362114@major-2026-11-10",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Nov 9 Update: Fixes and Polish",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-10T03:39:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small update that brings a few fixes, some early game balance tweaks, and some extra visual polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed rare case where HUD markers could drift from their targets (for real this time - almost positive, we were finally able to reproduce this thanks to some bug reports).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare case where tooltips for cards in pact exchanges could be obscured by other cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collision on the Fanghella stone in the void during The Reckoning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed voiced quip that could play too often in the Mariken ritual in the Abyss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a missing voice line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Tweaked the difficulty of an early game battle in the Abyss to smooth out the initial difficulty/complexity ramp a bit more and reduce the likelihood of it going on too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Polish",
+     "items": [
+      {
+       "text": "Added extra visuals on family members to reflect the temperature changes in the house and other locations in the late game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1848664643357952"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T03:39:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.318Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T03:39:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.318Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-10T03:39:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.186Z"
+  },
+  {
+   "id": "the-killing-stone-362114@major-2026-10-30",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Update for Oct. 30th: Happy Halloween!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-30T20:12:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update has a much requested quality of life improvement, as well as some fixes to minor visual issues and some rare bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The biggest change in this update is that now when hovering boon/banes, or cards that spawn cards, you will see a popup of the cards that will be spawned to give you more information about their effects. An example is the Deck Specific Bane for \"Cult of the Worm\", which grants the Conqueror Worm creature to the demon. Now when hovering that bane, you will see details about conqueror worm AND the cards that Conqueror Worm spawns. This also applies to Pact Exchanges, Draw Discard piles, creatures on the board, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We also added an option to disable camera shake in card battles, since we saw that some people would prefer to play without it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition there are some bugfixes and tweaks we have found from bug reports (THANK YOU) and watching people play the game:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a very rare hang in card battles that could be caused by Renunciation mixing with Second Chance in a unique sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed margin spacing for HUD markers when the target is outside your field of view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for rare case (we hope, it is very hard to repro) where HUD markers could drift off of their targets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some VO that was missing in the endings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked repetition on some Mariken quips that were triggering too often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for Gifting Burdens FX sometimes being incorrectly oriented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updates to a few translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1847920302240311"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T20:12:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.317Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-30T20:12:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.318Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-30T20:12:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.186Z"
+  },
+  {
+   "id": "the-killing-stone-362114@hotfix-2026-10-24",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Small hotfix 10/24",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-24T23:45:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small fix for a sequencing bug that made a character appear somewhere too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1847286114040909"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-24T23:45:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.317Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-24T23:45:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.317Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-24T23:45:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.185Z"
+  },
+  {
+   "id": "the-killing-stone-362114@patch-2026-10-23",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Small patch with a few fixes",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-23T21:45:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch has a few small fixes to some UI elements being visible when they shouldn't as well as a fix to a conversation that could fail to end properly. There are also a few other small polish fixes to some feedback and language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1847286114038059"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T21:45:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.317Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T21:45:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.317Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T21:45:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.185Z"
+  },
+  {
+   "id": "the-killing-stone-362114@post-2026-07-22",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Patch Notes: July 21, 2026",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-07-22T03:21:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small hotfix, primarily intended to address an issue with a minor section of story content not playing when it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "During Rasmine's witching hour , there was a bit of narrative during a conversation that was being skipped, which also led to a few minor visual bugs. Thanks to the player on our Discord who brought this to our attention!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition there is a small fix to some lighting during the night phase of the game. As always, thanks for playing and we look forward to your thoughts and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1839041357022943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-22T03:21:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.316Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.184Z"
+  },
+  {
+   "id": "the-killing-stone-362114@4",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-05T21:43:23.000Z",
+   "notes": [
+    {
+     "title": "Greetings, witches, warlocks, and magic lawyers who talk to cats!",
+     "items": [
+      {
+       "text": "This update is a gently cursed cornucopia - we've got bug fixes, deck balance changes, reward structure changes ... and another all-new optional questline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45748225/f96c4bccbe5e3ce40b382f1d46933bfcda5de583.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Narrative",
+     "items": [
+      {
+       "text": "We've added optional story content to Vollem's chapter, which allows you to investigate the origins of a character who hasn't had much time in the spotlight yet. Also, for the first time, we've added the ability to catch up with a demon lord - other than the Devil himself - outside of the Trial / Fanghella challenge. The new content can be accessed after the second ritual of Vollem's chapter (Valravn offers a little prompting).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-progress Vollem runs should be ok, but there may be visual bugs, characters not being where expected and the things of that sort. To best experience the new content we recommend starting a fresh Vollem chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "On the gameplay front, we have moderately rebalanced Rasmine's starter deck. Your feedback indicated that there were a few too many swerves from what players had learned during Malthe's chapter of the game, so getting a Rasmine run started felt like too steep a climb. The new deck, we hope - will provide a higher \"floor\" for Rasmine runs - and help you cope with dangers that only appear from the 2nd chapter onward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "We also have enhanced the rewards for Elite battles. To defeat a Boss was self-evidently rewarding, of course. Choosing a Trial path through a Minion was inherently advantageous because it reduced fiction, some decks weather those with Armor, or heal back to full after such a fight. Elite nodes, though - are serious fights, they can be dangerous or thrilling ... but didn't offer intrinsic rewards. Payers didn't want to risk their long-term goals after trying one or two out. Depending on the map layouts, there often just wasn't a reason to put up with Elites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Now, each Elite card battle awards Revelations. These either allow you more reroll chances at any other node like Pact or Forge - or a lot more currency to take away the bids of Demon Lords while bargaining for permanent changes to your Banes and Boons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "General Polish",
+     "items": [
+      {
+       "text": "We improved feedback for assets that are turned to \"Traitors\", improving fx transitions in/out and when in the state. We also fixed a few cards that weren't behaving as expected or which were missing proper VFX feedback for their actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are hungry for your feedback on any of these changes - story, gameplay, or both if you'd like to put an even bigger smile on One Eye's face. Thank you all for helping The Killing Stone find the right sweet spot of mystery and challenge. Enjoy, and there's still more to come!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full change list for the curious",
+     "items": [
+      {
+       "text": "New questline in Vollem's chapter focusing on Black Milk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Elite battles now award 6 Revelations on victory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated tutorial to introduce Revelations before Elite battles and properly train that Elite battles now have Revelation rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Nith to dollhouse void, appears during Black Milk quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Valravn prompt to Mr. Chops questline in Rasmine's chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New post process fx for Black Milk quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaks to interaction settings to make some cases more reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to some bad fade transitions during Vollem and Rasmine witching hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Herald visibility in Ras witching hour pre-cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Font of Inspiration to work with Vardøgr Omen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Full rework of Renunciation to not slide reserves to dead figurines, as well as move reserves in the proper direction indicated by the card (was often incorrect).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added representative FX to Spectral Bomb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added death SFX/VFX to chants to make it more clear when they are killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New SFX/VFX for transitions in and out of \"Traitor\" state, as well as light Vardøgr OmenFX while \"Traitor\" is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed lighting build error for \"Morning\" time of day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 4,
+    "balance": 3,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1836506165574685"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-05T21:43:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.316Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.183Z"
+  },
+  {
+   "id": "the-killing-stone-362114@3",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-05T17:21:44.000Z",
+   "notes": [
+    {
+     "title": "New Story Elements",
+     "items": [
+      {
+       "text": "In this update, we have added some new narrative content over the course of Rasmine's chapter, which expands the storyline of supporting characters. It is optional, and therefore modest compared to the main plot - but will ultimately affect the Reckoning in a small way, once the final game is released.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your feedback helped motivate this particular work. We knew we wanted to fill out Rasmine's chapter with more story, but the form it took was still somewhat open. Several of you had either asked to learn more about the rest of the Svangård family tree, or requested reasons to poke around Våkenatt, the mysterious estate-in-exile of the Svangård family. Thank you all again for sharing those thoughts with us - and please keep them coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you want to experience it in a pristine state, we recommend starting a new Rasmine chapter. Previous savegames in this chapter may not interact with the new content elegantly, \"quest\" content in particular is not always backwards-compatible. After a Ritual or two, you should see the new dialogue opportunities appear somewhere in the house. To be clear, this will NOT break existing progress, but there may be inconsistencies, like characters not being in the right place for the dialogue they are delivering, depending on the exact state of your save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45748225/ef6dc45801b62ae3bc6ccd44838d67b076a5fdcd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual Updates",
+     "items": [
+      {
+       "text": "We have also done some polishing to the visuals in this update. In particular we have done a new lighting and atmosphere pass on the manor for the mid-chapter rituals against One-Eye to better reflect the strange atmosphere of those interludes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition we did a pass through many of the character locations in the game and did special lighting for each in order to improve clarity/visibility (it is dark game by design, but you should never struggle to find game relevant details) and to improve the look and mood of the locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Along with numerous small fixes, we improved the transitions between gameplay and conversations to give the game a little more polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Two notable changes here",
+     "items": [
+      {
+       "text": "By player request, we changed the Withering(3) option in the forge to WIthering(Last) to make sure that you can always reach the 4th or 5th cards in a pact for removal. The previous implementation made it too hard to remove inheritance from a 4th position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We changed Doomed Overguard to not have tunnel by default. In watching people play and in our own testing, we found it made the card far too niche and hard to use in general play, especially since it is in Rasmine's starting deck. We are looking at Rasmine's starting deck in general, and may alter it further in the next update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full List",
+     "items": [
+      {
+       "text": "For the completionist, here is the full list of notable fixes and changes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New optional storyline quest in Rasmine's chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tuned sound of bell in Vollem witching hour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updates to save/load system to allow adding new content to existing saves (previously new save/load content would be pruned by the system on load). Many additional tweaks and fixes to make sure this worked as intended (PLEASE LET US KNOW IF YOU SEE ANYTHING FAIL HERE).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cinematic actors no longer prune on load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Smoother transitions between gameplay and conversations (many downstream fixes to existing transitions to support this).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New lighting for numerous character positions: Nicka and Vollem pre wedding, Vollem at the Grotto stairs, Nicka in the grotto, Nicka at the railing, Nicka by the washbasin, Vollem in the fainting room, others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed rare hang if you hit continue too fast during the ritual complete screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made sure Vollem and Nicka were in the right place during Rasmine's witching hour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Withering(3) is now Withering(Last), removes the last card from a pact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed floating rock in grotto.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed pop in camera animation after the final ritual in a chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The damage preview nails on Grim Tribute are now visible all the time instead of immediately preceding the attack to provide more clarity on how much damage it will do and when it updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feast card text updated to specify that it heals 1 wound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New fog, postprocess and lighting for the manor before the mid chapter rituals with One-Eye.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated Malthe position during mid-chapter ritual with one eye to better reflect mental state of his dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated tutorial text to better set expectations around difficulty of a full inheritance cleanse, clarify that it is a modifier on success, not REQUIRED for success.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated tutorial text around expunge to better reflect the relative importance of clearing inheritance against other goals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added One-Eye figurine to dollhouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Nils figurine to dollhouse after completing the Malthe questline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked shadow scare to have better timing en route to the study.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Forced streaming on ritual contract to avoid blurry texture in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for rare hang related to incredible combo of Redirecting Mask, Siren, and Soul of Ras.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There are more new story and gameplay improvements to come - The Killing Stone is already a much better game for your feedback and suggestions. Please keep it coming, and thank you all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 4,
+    "balance": 1,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1834602721191551"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-05T17:21:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.315Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.182Z"
+  },
+  {
+   "id": "the-killing-stone-362114@hotfix-2026-05-10",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Hotfix for April Update",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-10T00:54:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix for game hang that could occur when the demon is considering moves that involve the \"Soul of Ras\" card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for an untranslated line when failing a ritual before bargaining has been introduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New attempt to fix the \"white void\" bug on certain GPUs (particularly some Intel cards).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1832065502818500"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-10T00:54:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.314Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.181Z"
+  },
+  {
+   "id": "the-killing-stone-362114@post-2026-04-30",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Polish, Quality of Life, and BUGS! - Patch Notes 4/30/26",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-04-30T22:40:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A lot of our work this month was adjustments to The Reckoning as we continue to prepare that experience for 1.0. In addition to that, we added some quality of life improvements based on areas where we saw players becoming confused, added polish in several areas, and fixed pile of bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One notable fix we could really use feedback on is the “white void” bug that was affecting certain GPUs, especially Intel Iris. We think we have fixed this, but we could really use someone who has experienced the bug to verify that it worked, since we cannot reproduce it with our hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Improvements",
+     "items": [
+      {
+       "text": "Added a pop up modal when you confirm bidding in the last round of bargaining if you have enough revelations to remove demon bids that you haven’t used. We have seen a lot of players miss this feature, and it is key to tipping the odds in your favor!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polished the feedback for when a boon or a bane triggers during a card battle. The goal was to make this more noticeable and visually attractive. A HUGE improvement was also made to how they display when playing at higher speeds (this part bordered on a bugfix, but technically wasn’t).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced the distant terrain in the intro sequence with all new art to better reflect the location and visual target.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45748225/1d203a67497d5e1c102e051e62537b39cae0f591.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New visual effects on cards and creatures when they are “copies” to clarify that state (distinguishing copies has particular significance in The Reckoning).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45748225/3cf391053cb831d60714b0a52ac3d959f2dd6f9e.gif\"] [img src=\"{STEAM_CLAN_IMAGE}/45748225/8be286be737efe992b0ab4ed9d1414e20edac114.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you complete any optional rituals, you can now “ascend” the altered Mariken deck from those rituals for use in The Reckoning. This is done at the end of the chapter when ascending the family member deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added slight pulse to eligible cards when navigating forge options to clarify player affordance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New spooky moment in the grotto that triggers under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Small tweaks to mouse collision with cards make interaction reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved visual feedback and messaging when switching profiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New VFX for Vardogr Omen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New VFX for Skittering Leech.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hooked up SFX to Shield chant triggering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added sounds to torches leading to the grotto.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added “inky” hand treatment to ritual washing sequence to better match the written narrative.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visual polish to snowy footprints in intro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added bell sound and camera shake to Vollem’s witching hour sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update to 3D card display for better performance and visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Possible fix for \"White Void\" bug on Intel Iris GPUs. (we’ll need someone who has experienced this bug to verify this for us! Please let us know!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for bug with ejection that could lead to endless thinking loop from the demon AI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for “Sleep” prompt in the Maven’s room appearing at the wrong time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for end run not respecting typewriter setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected text on Soul Trader bane.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for incorrect coloring on reserve slots for some enemy controlled reserves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Revelations tutorial in bargaining is now a Modal for a better reminder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed broken boon/bane navigation on end run screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed coloring for bargain stake removal text to be more legible and match bane/boon rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with GPU lightmass that created broken shadows on rotated meshes and updated lighting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for sleeping bomb action order that could lead to unintended (and broken) effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix to Contagious Laughter visualization on undo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed One Eye Violin scare not cleaning up properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed deprecated keyboard mapping from options.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug with card positions that could occur on discard or play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed board visibility and interaction when you have 4 reserve slots (camera angle adjusts to allow you to interact with those reserves now).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for incorrect rich text formatting on certain bane stakes in bargaining.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for rare case where the main menu would become non-responsive with gamepad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mismatch on UI location for client portrait when transitioning from ritual map to a recovery room and back.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 18,
+    "fixed": 19,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Replaced the distant terrain in the intro sequence with all new art to better reflect the location and visual target.",
+     "[img src=\"{STEAM_CLAN_IMAGE}/45748225/1d203a67497d5e1c102e051e62537b39cae0f591.png\"]",
+     "Added slight pulse to eligible cards when navigating forge options to clarify player affordance."
+    ]
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1831432155569869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-30T22:40:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.313Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.180Z"
+  },
+  {
+   "id": "the-killing-stone-362114@post-2026-03-25",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "Balance, Bugs, and Betterment (+Steam Deck Verified!) - Patch Notes 3/25/2026",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-25T16:02:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Masters of the Occult.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firstly, thank you all for your continued feedback and support of The Killing Stone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As an early access title, we are beholden to you, dear player, to find what our next move should be. We are proud to continue our journey with you, and it’s with that in mind that we have been working away on a particularly large patch (and Steam Deck verification!) for you all .",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This is bringing in a number of changes to your overall player experience, and turning our gaze towards balancing. Here are the highlights…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have tweaked some cards, bundles, and decks to the family member chapters that should bring some balance to these battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have added the ability to restart a ritual from the manor house after failure. This means you have a chance to explore, play Optional Rituals, change their familiar, etc. before having to go back into the same ritual you just failed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New playthroughs will create a checkpoint at the first real ritual so that restarting Malthe’s chapter will skip the intro and beginning tutorial content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We have added a “Story Mode” difficulty change prompt to the failure screens. This is not a judgment on you or your skill, dear player! We are just surfacing our accessibility options in case you need them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have adjusted the logic for the Forge and Cursed Cards so that the forge options are dynamic and respond to if/how many cursed cards you have in your deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have fixed a glitch so the cleansed Cursed Cards carry between the main run and the Optional Rituals more predictably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have addressed how creatures that directly impact reserves respond to one another.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have adjusted our ritual map to include more restoration nodes, giving you more opportunities to choose between rest/health and revelations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have done a general balancing pass on the ritual maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We did a pass on balance for Optional rituals, focusing on the maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have added further explanation regarding player rewards gained from beating Optional Rituals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have added tooltips to banes, boons, and bargaining screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made unlocked cards post Ritual hoverable with tooltips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revamped unlock screen to give clarity on what is unlocked, as well as allow inspection of the unlocked cards/boons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added material treatment for modified creatures to better see when an upgraded creature has been placed by either the demon or the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "And for those of you seeking the Full Knowledge, well, we are, of course, here to serve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes and Fixes",
+     "items": [
+      {
+       "text": "Fixed issue with One Eye’s dialogue at the start of Vollem runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTUX soft lock in reserves training if player selected Comet Archer too quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTUX soft lock when failing a ritual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bundle “Scalpel at the Neck” is now rare instead of uncommon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for cursed bundle “Bait the Strike” offering Thought Eater at increased cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed guest room bed being prematurely labelled as interactive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dollhouse being available during witching hours and granting an extra optional ritual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for unreachable conversation icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for confusing “wash hands” request in witching hour on Malthe replays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clarification of optional ritual reward mechanics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Targeted Withering no longer counts towards forge upgrade limits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where invalid data could roll as an optional ritual reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated presentation on battle beginning and ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed pact exchange to show a pie chart of deck composition, to better illustrate the overall changes being made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Withering” (card removal) operations no longer count toward pact modification limit in the Forge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Re-rolls in the Forge start cheaper (2 Revelations) and increase in cost with each re-roll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updates to Pact Exchange art to connect it to the soul figurines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boon/Bane tooltips will now draw over quips.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "World geometry tweaks for better performance and shadow behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added VFX for when Renunciation moves reserves for clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added subtle head bob to player movement (and the option to disable this).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing card art for Haste.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Numerous tweaks to font sizes and UI elements for Steam Deck Verification.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for figurines clipping into game board elements when both demon and player have battle line expansion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed card tooltip placement to not cover hovered figurine in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More very small tweaks and fixes (this list would get too long!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Card and Battle Updates",
+     "items": [
+      {
+       "text": "Lost Voice now only pulls the host into reserve. Any reserves are deployed in place. The cost was reduced 3 → 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spectral Bomb’s description is now: Target any Reserve. Deal wounds equal to its health to its Host.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hell’s Heart and Burnout no longer damage Eyes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy minion deck “Intrusion” has been tuned to decrease its direct damage capabilities in favor of creature elimination.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy boss Yoke and Shackle no longer has the “Man Blinders” bane in family rituals. It’s been replaced with “Boom and Bust” -On Gather: Gain 1 AP on odd turns, lose 1 AP on even turns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vollem’s boon no longer reduces chant cost, only grants extra reserve slots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Boon “Polyglot” reduces overall chant cost now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy deck Press Gang no longer uses “Expanded Mind Token” as a deck-specific bane.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No Plan Survives now counts discards made over the whole turn - not just the ones made after NPS is played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Cycles” has been removed from the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The DSB \"Overturned Dirt\" used by mini boss deck \"A History of Dust\" has been replaced by Flush Hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cards “Changeling-Gate”, “Skald”, and “Fate-Trader” have been removed and replaced with…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Vardøgr Omen” is now Creature: Parasite - If this is played in reserve, send host back to the owner’s hand. Destroys copies. Cost: 3, STR: 1, HP: 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Ransomed Heir” is now Chant: Parasite - On Deploy: Send the most recent Host to the owner of this card's hand. Cost: 2, HP: 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "”Fate Thief” - Invocation: Steal the highest strength card from your opponent’s hand. Cost: 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Siren’s health increased 2 → 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“The card Nullwhere Spirit” was renamed to “Doomed Overguard”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sleeping Bomb’s description edited for clarity, but keeping its original behavior. It now reads: “When this Wakes, it immediately attacks. When this attacks, it dies.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Closer of Paths now applies a strength bonus based on the number of enemy discards rather than dealing wounds on gather.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Valravn’s boon no longer pulls from the enemy graveyard. It now steals from their hand and forces them to discard the original. So now Val’s power will always yield a result.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Demon deck Ugly Sentiments no longer double buffs Altar Calls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rotten Rung text clarification.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Black Milk’s Boon now grants an Ephemeral Spark card on discard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bundle “Disparate Visions” now contains two Legions instead of 2 Closer of Paths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New “Soul Trader” bane for One-Eye. Related to the ongoing work on the Reckoning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Thanks For The Feedback!",
+     "items": [
+      {
+       "text": "And now we come to the end of this large update. Again, we wish to thank you and ask of you one thing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have enjoyed The Killing Stone please consider leaving a review here on Steam!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "For all games, reviews make a big difference to how many people Steam shows the game to, so it would mean the world to us if you did. Similarly, we really appreciate those of you who have joined the Discord and left us feedback and suggestions in there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lastly, this update really did make the most of many F8 bug reports that Early Access players have been sending in, so thank you to everyone who has been submitting those. They help a lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Until next time, Maven.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": ">Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 25,
+    "balance": 0,
+    "other": 45,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1827626365768515"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-25T16:02:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.312Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.179Z"
+  },
+  {
+   "id": "the-killing-stone-362114@patch-2026-02-27",
+   "gameId": "the-killing-stone-362114",
+   "displayName": "New Language Support and Bug Fix Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-27T14:54:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Masters of the Occult,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been a week since The Killing Stone launched, so before we get into today's update, we wanted to take a second to say thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for believing in our vision for this game, thank you for talking about it, streaming it, leaving a review, and telling your friends. We’re incredibly grateful to see so many of you rally around our 17th Century horror.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But, to business!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Languages Unlocked",
+     "items": [
+      {
+       "text": "Firstly, we’re happy to announce that we have updated the game to support four additional languages: Simplified Chinese 中文, Latin American Spanish, French, and German.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This update also comes with some tweaks and fixes to issues that our players have found. Again, thank you! So, let’s get into it…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Changes and Fixes",
+     "items": [
+      {
+       "text": "Credits have been updated to include the Localization Team, and we’ve updated a few other contributors per request.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Numerous textual updates to the Narrative, fixing Typos and tweaking language slightly where it was confusing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Numerous Minor UI Animation Glitches have been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved hit detection on hovered cards to better match card on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Revelation count will now appear in all rooms, even if the player has skipped the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a Softlock related to breaking out of the Chops Introduction Cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a Softlock related to a Tutorial not firing during the Forge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor UI Fixes related to Input Icons sometimes being the wrong input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for incorrect illustration animation during Vollem chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for unreachable talk icon appearing below the grotto (state is saved, so requires player “contemplate” the dollhouse if mid chapter)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "UI tweaks to draw attention to Undo and available options in forge/pact/boon/bane/bargain rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for One Eye being difficult to interact with when returning from a Ritual during the Tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the Ordering of the Dialogue Choices in Conversations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the boon “Riddle-Cleaving Edge” having a bane background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved legibility of a text line in the Forge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Texture fixes on statues in Intro sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for failing a ritual before bargaining is introduced and being sent to remove a chit from a non-existent bargaining game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Small animation fixes to Mr. Chops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased font legibility on familiar selection and demon bane announcements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Card Changes and Fixes",
+     "items": [
+      {
+       "text": "Fix for Echo having no functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Flail dealing only 2 Damage when its description says 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Changeling-Gate destroying cards in its opponent’s deck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Dhampyr being drawn as Ennui when using Valravn’s ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Siren being drawn as Abhorrence when using Valravn’s ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "NOTE: Intel UHD and Iris Xe cards not supported",
+     "items": [
+      {
+       "text": "Lastly, please note that the game is not compatible with Intel UHD and Intel Iris Xe cards. We do not have plans to support these cards, and these systems may experience issues. Thank you for your understanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As we mentioned at the top, we are incredibly grateful for all the love and support the game has received so far. If you have enjoyed the game, we ask if you could leave a review here on Steam. Reviews still make a huge difference to the game's visibility, especially for small teams like ours!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We will have more news, our content roadmap, and more to come in the future, but for now…",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you out there, Maven.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Question",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 24,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2781470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2781470/view/1825727806710956"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-27T14:54:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2781470",
+      "checkedAt": "2026-11-13T03:33:24.311Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:49.178Z"
+  }
+ ],
+ "issues": []
+}

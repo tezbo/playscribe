@@ -1,0 +1,698 @@
+{
+ "game": {
+  "id": "war-mongrels-138062",
+  "igdbId": 138062,
+  "name": "War Mongrels",
+  "cover": {
+   "imageId": "co2t6x",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2t6x.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arxf7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arxf7.jpg"
+  },
+  "ps5Release": "2023-04-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "war-mongrels-138062@post-2023-09-25",
+   "gameId": "war-mongrels-138062",
+   "displayName": "Changelist #46979",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-25T08:30:59.000Z",
+   "notes": [
+    {
+     "title": "Global",
+     "items": [
+      {
+       "text": "PC STEAM game version may detects connected gamepad type: xbox/ps4/ps5 and automatically changes gamepad icons;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixes to offset in options menu sliders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Chapter 12",
+     "items": [
+      {
+       "text": "Fixes to challenge 'Kill all enemies' on map12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1101790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1101790/view/5219165352637608221"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T08:30:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1101790",
+      "checkedAt": "2026-11-13T03:35:41.672Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T08:30:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1101790",
+      "checkedAt": "2026-11-13T03:35:41.672Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-25T08:30:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:59.235Z"
+  },
+  {
+   "id": "war-mongrels-138062@post-2022-10-28",
+   "gameId": "war-mongrels-138062",
+   "displayName": "Changelist #46210",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-28T11:00:11.000Z",
+   "notes": [
+    {
+     "title": "Changelist #46210",
+     "items": [
+      {
+       "text": "Attempt to fix the issue, where in specific scenario property of one actor was wrongly written in save. This led to crashes of the fore-mentioned save game files while being fully loaded. This should secure that from happening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sadly this won't fix those once-broken save games. ːsteamsadː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1101790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1101790/view/4706851091176426717"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-28T11:00:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1101790",
+      "checkedAt": "2026-11-13T03:35:41.671Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:41.671Z"
+  },
+  {
+   "id": "war-mongrels-138062@post-2022-10-27",
+   "gameId": "war-mongrels-138062",
+   "displayName": "Changelist #46195",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-27T13:52:34.000Z",
+   "notes": [
+    {
+     "title": "Changelist #46195",
+     "items": [
+      {
+       "text": "fixes to some weird GPU crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "enhanced crash reporter to get some more info regarding other weird crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Patch with bug fixes coming soon. ːsteammockingː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1101790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1101790/view/4706851091173217440"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T13:52:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1101790",
+      "checkedAt": "2026-11-13T03:35:41.670Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:41.670Z"
+  },
+  {
+   "id": "war-mongrels-138062@patch-2021-12-09",
+   "gameId": "war-mongrels-138062",
+   "displayName": "December Patch Changelog",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-09T15:39:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Last large patch in 2021. Thank you for all the reports getting us to this point :) Work continues!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPORTANT NOTE ABOUT SAVES: Please remember about the public branch named 'previous_game_version' for War Mongrels, which allows you to play the last game version, pre-patched. If you want to continue the game from a pre-patch saved game state, please switch over to that branch (in Properties => Betas), finish your current chapter, switch back to the 'default' branch and continue the journey with the latest fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelist 41602",
+     "items": [
+      {
+       "text": "Fixes to Russian and Italian localisations.: [Dog Behavior]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Many fixes around dogs and their combat, looking for enemies, attack patterns, they also now do not get stuck while observing the watch, they won't also attack through fences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dogs are faster now - it is not that easy to run away from them also they do not change into homing missiles after treating them with Greta's gas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stopped the dog attack animation upon loading a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dogs cone of attack is now properly coloured.: [Save System]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes in restoring chain type patrols after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There was an issue when if you loaded a game while a throwable (i.e grenade) was thrown it could block the ability to save the game - it is now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to the issue where after loading a gamestate after killing the enemy with melee attack he was dead but his model was still standing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to the issue where after loading a gamestate after killing the enemy with a trap he was dead but his model was still standing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Drawer cabinets now behave properly after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gasoline pool now saves and loads properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are now checking if a save game is able to create every step of the savegame creating sequence. Before that there was a small chance that we might end with a situation where a save has been created when it should not be. I.E. playable hero being dead after walking on the mine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced progress with play time in the save/load menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There was a possibility that a graphic of the key being carried by a hero could end up being hidden after loading a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with Rubble’s throwing knife being teleported to 0,0,0 after loading a save at a specific timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a weird issue where the GetTimer function could return junk data. May lead to some Timers being ignored after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It was possible for the AI to be stuck in reloading an ability - this could lead to save games being blocked - it is now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue of heroes being stuck in hiding places after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to how enemies propagate info about entering combat - fixed some strange cases where enemies would not register our heroes properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes in regards to creating dynamic squads of enemies - this fixes the issue of two enemies going to the same decoy even after their squad was disbanded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for the AI sometimes not moving together to some decoys if they were in a squad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some fixes to how much time a search could take after the enemy was alerted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is now possible for the AI to stop observing something and switch to something new.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to enemies sometimes being stuck in a loop of ignoring an item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to the ammo counter in combat mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix unlocking 'HOLOCAUST... TIMES FIVE.' article along with 'Explorer - Find a collectible' achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A bunch of small items won't now absorb decals from enviro.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies now can move via node doors while being in combat mode, while also they will now use node doors properly when looking for the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can't now charge or pick up bodies through the fences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gasoline pools now have proper collision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where an enemy could get stuck observing things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MG42 cones are now a better match with the vision cone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IsCombatModeEnabled is always false for the dead guy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some fixes to how the medkits work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with broken lobby and multiplayer session state after client leaves mid travel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Looking around animation is blocked for enemies that are sitting - fixes the issue of their cone beign misplaced after being gassed by Greta.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greta is now properly playing her Charm animation if the enemy has a weapon drawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The fence near the separating two parts of the map now blocks line of sight and projectiles to prevent exploits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An officer sitting on a bench near the garrison was quite blind. For some reason he was stuck in the collision of the nearby GuardHouse which blocked his perception. He is ok now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed navmesh that for some reason generated underground and could disturb heroes moving in prone positions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some projectile collision issues within buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with mines not saving properly and not being properly shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some projectile collision issues within buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fence doors now behave properly after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the unnecessary door that was hidden under the floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where you could sneak by with Manfred near the beginning of the level and pass the whole market arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the blocking issue when you killed all officers before rallying partisans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some fixes to the ledges that you can climb on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a wall on the German side that did not properly block perception.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Medkits are now working properly for all heroes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After picking up an ammo box it stops highlighting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tank from the hospital now properly drives through the gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tanks won't be on fire anymore after loading a save before destroying them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest markers for both SDKFZ and Tanks are now properly attached to those vehicles both on the server and the client.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rubble now can properly pick up handgun ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 21,
+    "balance": 0,
+    "other": 36,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1101790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1101790/view/4224936849650903639"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-09T15:39:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1101790",
+      "checkedAt": "2026-11-13T03:35:41.667Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:41.667Z"
+  },
+  {
+   "id": "war-mongrels-138062@major-2021-10-27",
+   "gameId": "war-mongrels-138062",
+   "displayName": "Future update schedule and claim your FREE OST",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-27T16:13:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’d like to update you on where we are with post-release updates. As you’ve seen so far, we’ve been actively patching the game in order to improve stability, address gameplay issues you’ve raised, as well as to get rid of all the bugs you’ve reported.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Going forward, we’ll be patching War Mongrels twice a week. One patch will be focusing on stability and optimization, while the second patch will (typically) include mostly gameplay improvements. We’re going to stick to this plan until we’re fully happy with the state of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please make sure to keep your game up-to-date! Also, ensure that you have the latest version of War Mongrels before reporting a bug. It’s going to help us immensely when sifting through your reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a thank you for your reports, patience, and support at launch, we’ve also released a free War Mongrels OST DLC. It’s going to be available to claim for a limited time, so pick it up now! The music was created by Adam Skorupa, our dear friend and acclaimed composer known for The Witcher, Painkiller, Bulletstorm, and many more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1101790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1101790/view/4186652357020864239"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-27T16:13:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1101790",
+      "checkedAt": "2026-11-13T03:35:41.666Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:41.666Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1272 @@
+{
+ "game": {
+  "id": "the-pedestrian-25837",
+  "igdbId": 25837,
+  "name": "The Pedestrian",
+  "cover": {
+   "imageId": "co1wln",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1wln.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arr1y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arr1y.jpg"
+  },
+  "ps5Release": "2021-01-29",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-pedestrian-25837@post-2025-12-11",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Quality of life and Engine Upgrade",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-11T20:58:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch is primarily an update to the engine. But there are a quite a few quality of life additions and changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unity Engine Upgrade (This version fixes the recent Unity security vulnerability)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter Selection (In the options menu)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance optimization (Nothing major, lots of little improvements)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of bug fixes. Too many to list!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If for any reason you want to play the original release. I've archived it under Properties->Betas->Beta Participation->Original Release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have any issues, please send us an email at contact@skookum-arts.com",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/1818752592124988"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T20:58:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.683Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T20:58:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.684Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-11T20:58:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.427Z"
+  },
+  {
+   "id": "the-pedestrian-25837@post-2020-02-25",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "macOS Catalina",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-02-25T18:46:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We mentioned in our previous patch that we were having some trouble getting our build through the Apple approval process (ONLY affects Catalina users). We've been working on it since that update and unfortunately we were not able to get it approved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Why?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Long story short, when we put out our initial release build on 1/28 it was officially approved by Apple's system. Shortly after our release, Apple updated their approval requirements and various components from the game engine and plugins no longer met them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So what does this mean?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're running the game on macOS Catalina. You might get a message pop up saying the game can't run. If that happens, you can navigate to the System Preferences>Security and Privacy and allow the app to run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have any trouble and need help, don't hesitate to email contact@skookum-arts.com.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2578811485610716332"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-25T18:46:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.683Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.426Z"
+  },
+  {
+   "id": "the-pedestrian-25837@patch-2020-02-25",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Patch 2/25/20",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-25T18:44:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's some more bug fixes and improvements. Most of these were done because you all gave feedback through the in game bug reporter. So thanks for using it and letting us know your thoughts :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where you can skewering the player on a wall piece in the subway and innercity hubs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where certain achievements could be triggered in the wrong area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed VSync and volume resetting to default after starting a new game in the options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera snap when in the elevator going to the finale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Baked occlusion culling in the finale area to fix chalk lines popping in and out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated \"Falling\" puzzle to fix easy exploit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added platform to university hub exit sign to improve ease of use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the total number of assignable controllers from 1 to 10 (You should now be able to control the game with multiple controllers)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add e/space to options menu as an alternative to the enter key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added chalk arrow at puzzle in locker room (This should help with some confusion)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added wooden platform for the cardboard box in the finale to raise it into the player's view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gameboy portal in the finale now automatically pulls you in (This should remove confusion about pressing the e key)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added axial deadzone and sensitivity to joysticks instead of radial (This makes the controller a little more forgiving when walking across platforms)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dying no longer forces a full reset (This removes confusion in the rooftop area when dying would reset props in a painted sign)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed softlock in innercity \"Dumber\" puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Rooftops arch3 subhub to avoid being able to grab the wire with one box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added flashing lights to power source and above closet in apartment area(This should help make the process a little smoother)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "399 sticky note now hides when returning from finishing the rooftops area(This should remove the confusion of what code is required)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thanks so much for playing our game! Have a great week!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Baked occlusion culling in the finale area to fix chalk lines popping in and out",
+     "Updated \"Falling\" puzzle to fix easy exploit",
+     "Added platform to university hub exit sign to improve ease of use"
+    ]
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2578811485610711057"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-25T18:44:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.682Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.425Z"
+  },
+  {
+   "id": "the-pedestrian-25837@patch-2020-02-08",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Linux Patch 02/08/20",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-08T02:27:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're running the game on Linux with a language that uses commas instead of periods in your number system(Polish, German, French). This latest build fixes a bug at the end of the game that would cause various sign doors to load incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thanks! Have a wonderful weekend :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2582187916840884880"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-08T02:27:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.682Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.425Z"
+  },
+  {
+   "id": "the-pedestrian-25837@patch-2020-02-06",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Patch 02/06/20",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-02-06T23:29:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all so much for playing The Pedestrian. We've been busy this past week fixing some bugs and making some improvements. There is still more that needs done, but one step at a time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where going into the options menu when you died caused player to be stuck and invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where props continued to function when in options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted \"Blue\" colliders in the subway to avoid signs getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed animated objects sometimes playing multiple times or getting stuck in a loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed transition to \"Vein\" level in innercity to avoid getting key stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed \"Dumber\" level in innercity to have a crusher-button combination instead of key-door to remove ability to leave puzzle with key",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "(Controller) Cursor move assist now ignores invalid node connections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Controller) Removed cursor move assist when moving signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Worked on compatiblility with demo version. First achievement transers to full version along with save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Music Improvements",
+     "items": [
+      {
+       "text": "Finale music implemented (Was too quiet without any music)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "University music now fades when you start leaving area instead of final puzzle (There could be a significant gap of time without any music)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted opening lobby music (Removed piano to make repetitive aspect less annoying)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted puzzlemode filters on music to not be as quiet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Small tweaks to subway last loop and final oneshot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed puzzlemode effect completely for \"War\" level in downtown coffee shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thanks so much for submitting your bug reports. We've been going through them and doing our best to resolve them. Have a wonderful week :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NOTE! to macOS users. This patch is not going live for you. Your patch is going out at a later date. We've ran into an issue with macOS app approval and are working to resolve it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "(Controller) Cursor move assist now ignores invalid node connections",
+     "(Controller) Removed cursor move assist when moving signs",
+     "Worked on compatiblility with demo version. First achievement transers to full version along with save file"
+    ]
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2582187916836823602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-02-06T23:29:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.681Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.424Z"
+  },
+  {
+   "id": "the-pedestrian-25837@major-2019-12-21",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Christmas Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-12-21T22:06:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For this month’s update we wanted to do something a little different. Because we’re nearing the end of development, it’s the perfect time to look back on where we came from. So we created a video of us reacting to some of our old builds! We have demos from 2015, 2016, 2017, and one from much earlier! So we’d love it if you gave the video a watch, as our Christmas present to you. Thank you all for your continued support as we push towards the January 29th release!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2592316573855927079"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-12-21T22:06:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.681Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.423Z"
+  },
+  {
+   "id": "the-pedestrian-25837@major-2019-10-21",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Official October Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-21T17:37:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey guys!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to the October monthly update! During the time of spooky season and turning leaves, The Pedestrian is nearing completion. We had an internal goal to release the game around the 20th of October. But a couple weeks back we decided we’d rather not rush the marketing portion of the release. Also, as we’re getting close to the holiday season, we wanted to avoid any of the unknowns that come with a release during sales and holidays. So we switched our 20th of October goal to be more of a “Game is complete” deadline. While pushing our actual release date out. So without further ado, The Pedestrian is scheduled to be released in mid January. We’ll have an official teaser trailer before the end of the month for the masses. We just wanted to give you all the inside scoop. Ok, now that the major announcement is out of the way we’ll move on to our normal monthly update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Website - Steam Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Video Devlog -",
+     "items": [
+      {
+       "text": "Above is our awesome video version of our update. It contains the contents of our written update just in a more visual format.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updating a Train -",
+     "items": [
+      {
+       "text": "Our train received an update that made the train more useful and prettier. We reallocated some of our gameplay goals to be inside the trains and elevators. The hubs were getting a little cluttered with everything being piled up inside them. So with moving some stuff to the train, it’s helped clean up the hubs quite a bit. We’ve also added in an awesome stylized video while the train is going.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Audit Tasks -",
+     "items": [
+      {
+       "text": "Downtown level swapped, assigned signs static, improved some internal sign spacing in puzzles and hubs, and tweaked the locations of various signs. All of these were part of a gameplay/level audit. This is where we went around and made notes on sign related changes, we also made changes based on tester feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Puzzle mode Tweaks -",
+     "items": [
+      {
+       "text": "Recently we’ve made some improvements to the way that puzzle mode works. Many of the concerns with puzzle mode in the past have been from things happening without being clear what exactly caused it. So now we have a much better system where you are given a preview of what will happen before anything needs to be committed. So if you want to break a connection, just drag the node off and before you release it will show that the puzzle will reset, and which items will move because of it. If you don’t want that outcome, just place the node back in its original location and nothing will change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Camera Shake -",
+     "items": [
+      {
+       "text": "We use this tool called a sequence object to animate many of the movable objects in our game world. This week we added in a function that makes the camera shake while animations are going off. Not only does this help notify the player when things are happening, but it’s also one of those easy wins that improve immersion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Smashing Bugs -",
+     "items": [
+      {
+       "text": "Our virtual controller had some issues when the frame rates would rise above the 150 fps mark. Moving signs around would cause them to fly recklessly across the scene. Apparently you could also walk through closed doors, which wasn’t intended. So those were fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Additional Improvements -",
+     "items": [
+      {
+       "text": "We’ve always had a door opening animation, but the ladder opening animation has just been squashing and stretching of the ladder visual. So we now have an actual animation for when you connect two ladders to each other. Another thing is our player is no longer actual mesh, he’s now textures on various quads. This helps make the player fit in better with the rest of the sign visuals. The blending on the edges of our player is now much less harsh because of this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Kickstarter design -",
+     "items": [
+      {
+       "text": "We’ve been working with various kickstarter backers on finalizing their rewards. A few of the big ones are in the works now, but we won’t show anything to refrain from spoilage. It’s something we’re super excited about, with it being the first “secret” thing besides our story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feature Videos -",
+     "items": [
+      {
+       "text": "Jed has been doing a series, walking us through different features of The Pedestrian. The first video is about how we’ve implemented our end credits system and the second delved into the ins and outs of a virtual cursor, why we chose to use it and how it was implemented. If you’re interested in more detailed behind the scenes updates, then these videos are for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "So what’s next?",
+     "items": [
+      {
+       "text": "Our plans for now are to wrap up any of the small projects we have going on and continue to put our efforts towards testing. Since we have a little extra time, we’re going to focus on gameplay and user experience. Taking any chance we have to get those easy wins. While we’re doing that, we’ll also put more focus on the actual release process. Getting all our marketing material in order, creating trailers, and pushing forward with the Mac and Linux builds.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thanks so much, as always, for being an awesome community! We’ll continue to create updates to keep you all in the loop. Bye for now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Website - Steam Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2404285581875883601"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-21T17:37:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.680Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.422Z"
+  },
+  {
+   "id": "the-pedestrian-25837@major-2019-09-20",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Official September Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-09-20T18:47:06.000Z",
+   "notes": [
+    {
+     "title": "Oh hi there,",
+     "items": [
+      {
+       "text": "I didn’t see you behind all this fantastic progress we’re making. It’s currently a major push period in the Skookum Arts studio, the desk handcuffs have been brought out and the energy liquid of choice is on tap. We’re at the super exciting point of development where things that are finalized, are actually final. And fun things we didn’t realize would be an issue, are actually an issue. So come join us on our guided tour through development during September.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Steam Page - Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Devlog -",
+     "items": [
+      {
+       "text": "As always, we’d love it if you would check out the video version of our update. It’s similar to our written update, except in video format. So you basically get to have the update read to you. Click here or the image below to watch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization -",
+     "items": [
+      {
+       "text": "We’ve put The Pedestrian to the test at great risk to our own hardware. Kidding... well kinda. Jed has replaced many of the components from his computer with older pieces in order to test out performance. It’s all been extremely encouraging on what level of computer can handle the game. He’s also picked up a monitor to clean up issues with different aspect ratios and resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Menu Settings -",
+     "items": [
+      {
+       "text": "Functionality of all our menu items has also been a focus this month. Things like resolution, window mode, graphic settings. All these items seem to be simple but with a couple of our game restrictions it’s caused them to be a bit more time consuming than we originally anticipated. We’ve also updated the menu icons because they just weren’t meshing well with the rest of the visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Visuals Lockdown + Ending -",
+     "items": [
+      {
+       "text": "We’ve done visual tweaks to many of the game’s lacking shots and worked on the top secret section. So along with adding assets into the scenes and updating shots, also comes re-lightmapping the scenes. We have to continue to make sure new stuff merges with the old stuff. One way we make sure is through testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Testing Wave -",
+     "items": [
+      {
+       "text": "Speaking of which, we’ve hosted another wave of testing. Thanks so much to those of you who participated in that. It helps so much to finding all those odd bugs and situations that we would never encounter ourselves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Music Markup -",
+     "items": [
+      {
+       "text": "New tune! Give it a listen, maybe?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Second Playable Character -",
+     "items": [
+      {
+       "text": "The female bathroom symbol has made her return! She was kinda in the game, then not, and now back. She had never been a selectable character, only pickable through the backend. But now she’s selectable, playable, and savable. Rejoice!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Store Page Update -",
+     "items": [
+      {
+       "text": "We’ve given our store page a huge facelift. The screenshot and videos where all from back when our Kickstarter was live. So everything has now been updated to be brand spankin’ new. Check it out here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While you’re there you might find a thing called a wishlist button. We’d be syked if you were to press it, but I digress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Creating a Sign Video -",
+     "items": [
+      {
+       "text": "We created a short video about the process behind making a sign in the game. Going from concept to realizing the vision in-game. It’s a quick watch, so check it out here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Minor updates to improve play experience -",
+     "items": [
+      {
+       "text": "Obviously there’s been a bunch of new random things and tweaks that might not be worth mentioning. Things like the way animations are shown through portals, signs dynamically updating to improve performance, and a new puzzle! Huh, I guess they were worth mentioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What’s Next?",
+     "items": [
+      {
+       "text": "Next we have a few player animation edits, more music implementation, ending credits, and a few sign content updates. That plus a few dozen other smaller things, but besides that we’re getting super close. Things are happening, stay tuned so you don’t miss it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Steam Page - Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2406534841132500507"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-09-20T18:47:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.679Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.421Z"
+  },
+  {
+   "id": "the-pedestrian-25837@major-2019-08-21",
+   "gameId": "the-pedestrian-25837",
+   "displayName": "Official August Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-08-21T15:27:38.000Z",
+   "notes": [
+    {
+     "title": "Hello All!",
+     "items": [
+      {
+       "text": "So it’s late August now, and that means it's The Pedestrian update time! We didn’t have an official update last month, mostly because there wasn’t much to share at that point in development. But this month we’re switching back to the normal update structure. Some fun stuff has been happening that we’re excited to share.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Steam Wishlist - Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Monthly Update Video!",
+     "items": [
+      {
+       "text": "First and foremost, if you’d like to see this update in video form then please click the link at the top and enjoy. Otherwise, continue reading below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Music",
+     "items": [
+      {
+       "text": "We had a big leap in Pedestrian music implementation. Just a couple weeks ago our sound guy, Logan, came down to Skookum Headquarters for about a week. During that time we delved into the ins and outs of implementing the music with all of our game systems. One of the big hurdles that was solved is how the music interacts with the save system. We needed to make sure that if you load into any part of the game, then the appropriate music piece starts. It’s so crazy to think that our game will have sound in it, since we’ve been playing silent for years. We have a nice little preview of a song that will be in The Pedestrian. Click below to listen to the sweet tune!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Story",
+     "items": [
+      {
+       "text": "Our story points are mostly good to go. The majority of the story used to be told at the end of the game. But now we’ve integrated a key story element into the gameplay to help guide the player towards our story’s finale. The story remains very minimal, so it is non intrusive on your experience. But we’re excited to see how players will interpret the story if they choose to pay attention. And really all that’s left for story is some animations and visual/audio effects to support some of the bigger story sections.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Area Transitions",
+     "items": [
+      {
+       "text": "We also worked on the loading between area sequences. Before when you were switching between areas there would be a distinct change in the way some of the objects looked. Lighting settings were different from scene to scene, which caused an odd lighting switch when scenes loaded and unloaded. Now everything is consistent and you visually can’t tell that anything has changed. This really is crucial for one of our design goals of seamless gameplay. We’ve also added more visual effects on top of the loading to give some visual feedback on what’s happening during the transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Working on more testing feedback",
+     "items": [
+      {
+       "text": "One of the main puzzle mechanics wasn’t as clear as we’d liked. This made a later section of the game much more difficult because of this poor communication. So we added in some animations and visuals that should help players learn what they were missing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The rooftop mechanic has gotten an upgrade! We worked to get the rooftops mechanic up to snuff. Meaning we tweaked it to use rules and design choices that are more consistent with the rest of the game. This should help players use the rules that they have learned up until now, but in a different and more interesting way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What are the next major steps?",
+     "items": [
+      {
+       "text": "Implement or fulfill some Kickstarter rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continue to add in sweet sweet musical goodness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Create fun marketing stuff (like updating the steam store page and an official trailer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conduct a bit more testing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The minor tweaking and testing of the rooftops puzzle mechanic change is our highest gameplay priority. And the rest of the listed items should wrap up the game nicely. So thank you all so much for reading and/or watching our August update. Keep an eye out for future updates on our socials and wishlist The Pedestrian on Steam to be sure to be notified of release.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Be safe out there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Twitter - Facebook - Steam Wishlist - Website",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466630/view/2416665403766323845"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-21T15:27:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-466630",
+      "checkedAt": "2026-11-13T03:33:49.678Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:02.420Z"
+  }
+ ],
+ "issues": []
+}

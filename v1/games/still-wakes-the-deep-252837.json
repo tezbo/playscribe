@@ -1,0 +1,919 @@
+{
+ "game": {
+  "id": "still-wakes-the-deep-252837",
+  "igdbId": 252837,
+  "name": "Still Wakes the Deep",
+  "cover": {
+   "imageId": "co8dbd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8dbd.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4yfs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4yfs.jpg"
+  },
+  "ps5Release": "2024-06-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "still-wakes-the-deep-252837@1.6.3",
+   "gameId": "still-wakes-the-deep-252837",
+   "displayName": "Update 1.6.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-07T10:00:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we are releasing a small patch that packs a punch - by thawing the frozen and demystifying the hidden. Thank you all so much for your patience as we have been working on this - your reports helped us identify patterns and locate the problem!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed an issue that caused the fog to be incredibly potent in Still Wakes the Deep, especially on the deck. Now you can see your monsters friends clearly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused freezes when the corruption effect played on both Still Wakes the Deep and Siren’s Rest, especially on AMD GPUs. This should have a positive knock-on effect for anyone who has other GPUs and also experience this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made alterations to the umbilical cord during Scene 3 of Siren’s Rest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s all for now. Thank you all so much. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622910/view/1803527891859547"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-07T10:00:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.625Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-07T10:00:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.625Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-07T10:00:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:54.901Z"
+  },
+  {
+   "id": "still-wakes-the-deep-252837@1.6",
+   "gameId": "still-wakes-the-deep-252837",
+   "displayName": "Update 1.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-25T12:59:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been thrilled to see your reaction to exploring the wreckage of the Beira D in Still Wakes the Deep: Siren’s Rest, the new paid story expansion. Today, we’re releasing a patch packed full of fixes and adjustments, much of which is driven by your feedback. Below is a full breakdown of what’s coming in the patch, available now on all platforms:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PATCH NOTES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added a Memento collection menu, so players can track which mementos they’ve discovered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Chapter Selector option, based on community feedback. Players can now head straight to the beginning of any chapter they have previously completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue that caused an invisible wall to appear and create a softlock when collecting a whisky bottle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved multiple issues causing some players to experience blockers or softlocks when retracing their steps, potentially triggering previous checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue on Steam Deck where the game would have its width and height flipped when run in Desktop Mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made several improvements to the umbilical system for it to function in a more reliable way:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for the umbilical clipping through walls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the umbilical cord would be invisible when respawning or restarting from a checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General behaviour improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where VSync would re-enable when leaving the options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixes related to upscalers and frame generation handling",
+     "items": [
+      {
+       "text": "Lifted FPS limitations when using DLSS and Intel XeFG Frame Generation",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the screen size was reset when using DLSS or FSR",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DLSS-G Frame Generation can now only be enabled in Fullscreen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Intel XeFG can now only be enabled in Windowed Fullscreen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with flickering textures when using XeSS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue that caused DLSS to turn off after closing the game",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "AMD FSR3 has been updated to 3.1.4",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "DLSS has been updated to 2025.04.16",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Intel XeSS has been updated to v2.0.8.1",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various fixes and improvements around dialogue triggers",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated and improved music, mixing, and sound effects throughout Siren’s Rest",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Made several visual adjustments",
+     "items": [
+      {
+       "text": "Fixed multiple visual and collision clipping issues in Siren’s Rest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made several visual improvements to the dead bodies in Siren’s Rest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed the reticle during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issues with camera transitions and player warping during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added more visual and audio warnings for oxygen depletion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made adjustments and fixes to the antagonist encounter, providing more visual clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated several animations and visual effects during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the high contrast mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the look and feel of water and fog, as well as fixed several bugs related to water volumes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Various localisation issues fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue that caused Siren’s Rest to not be purchasable on Epic for some users",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Please note: Some players may find their save spawn point being slightly further back than their last point of progression. This is to avoid any corrupted data. Your progress with achievements and mementos will remain the same.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "That’s all for now. Thank you all so much. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 13,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622910/view/1803527891474426"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-25T12:59:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.624Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-25T12:59:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.624Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-25T12:59:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:54.901Z"
+  },
+  {
+   "id": "still-wakes-the-deep-252837@patch-2025-06-20",
+   "gameId": "still-wakes-the-deep-252837",
+   "displayName": "Details on Post-Launch Patch for Still Wakes the Deep: Siren's Rest",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-20T15:01:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks so much to the entire Still Wakes the Deep community for sharing your thoughts since diving into the Siren’s Rest paid story expansion. We’ve been doing some diving of our own, wading through player feedback and documenting points for our team to action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our planned post-launch patch is being worked on right now and will be released once all tests are complete, very likely before the end of June. This patch will include a wide range of fixes and optimisations for both the expansion and base game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The patch will include fixes for audio and dialogue bugs such as overlapping voice lines. It will also further improve visuals, including multiple fixes for the umbilical cord in Siren’s Rest and resolving reports of missing tentacles from a certain… antagonist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ll also be adding a couple of minor new features, including a memento tracker, and a chapter select option, which may help with discovering a secret towards the finale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re continuing to investigate reports around soft locks in the expansion, commonly when players retrace their steps. We’re also investigating reports around crashes on some PCs using AMD cards and will keep trying to establish a solution and any potential workarounds for users. Please continue to use our reporting form, available in the bottom right corner of our website, to let us know about any issues you come across in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Full patch notes will be shared for the update as it rolls out. Until then, we’ll continue to gather your feedback and focus our efforts here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622910/view/1802893906765044"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T15:01:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.623Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-20T15:01:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.623Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-20T15:01:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:54.899Z"
+  },
+  {
+   "id": "still-wakes-the-deep-252837@major-2024-12-10",
+   "gameId": "still-wakes-the-deep-252837",
+   "displayName": "Silver Screen update is now live!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-10T14:01:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Good day, our dear and wonderful player community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It may be the holiday season, but your shift isn't over – Cadal is tempting the staff back to the Beira D with promises of gold, frankincense... and Muir. A free update for the game is available now - we added a new Silver Screen visual mode, and a Chapter Select option to jump into the story wherever you please.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Silver Screen mode allows you, the players, to immerse yourselves into the game in a stark monochrome, providing an even more cinematic atmosphere. See the Beira D in a new light as you fight to survive on the collapsing rig – no yellow paint in sight. Silver Screen mode can be toggled at any time from the Video section of the Settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also new to Still Wakes the Deep is Chapter Select, allowing you to relive your favourite moments of the game whenever you choose. The game has been separated into 23 scenes, allowing you to experience memorable scenes – such as Caz's standoff with Rennick at the start of the game, or the eerily beautiful elevator ride through the pontoons – whenever you like. Chapter Select is available from the main menu. We really hope you enjoy these and get excited about Still Wakes the Deep all over again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since launch, Still Wakes the Deep has received numerous accolades, including being named one of The New York Times' Best Video Games of 2024, a nomination for Best Supporting Performance at the Golden Joystick Awards 2024, and winning two TIGA Awards for Best Audio Design and Heritage in Games. We also received a whooping 9 nominations at this year's Horror Game Awards. It's been quite a ride and none of this would be happening without your, our wonderful players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Do be sure to follow us on our socials for all future updates. ✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◼️ Bluesky",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◼️ Facebook",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◼️ LinkedIn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◼️ Reddit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◼️ YouTube",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◼️ TikTok",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◼️ Twitter - TCR & SWTD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622910/view/1785321795768052"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-10T14:01:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.622Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-10T14:01:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.622Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-10T14:01:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:53.226Z"
+  },
+  {
+   "id": "still-wakes-the-deep-252837@1.3",
+   "gameId": "still-wakes-the-deep-252837",
+   "displayName": "Patch 1.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-16T09:01:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear wonderful community of ours,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're so thankful for your incredible support for Still Wakes the Deep. It's resulted in a great score on all platforms and our team is thrilled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Still, we are aware that a few of you were affected by some nasty bugs. We apologise for them and have now quashed them! The patch 1.3 for Still Wakes the Deep is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NEW FEATURES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Yellow Markers toggle in the settings menu and when starting a new game. When set to \"Reduced\", additional yellow markers (such as yellow paint stains) will be removed to increase exploration difficulty. This does not affect objects such as ladders, railings, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Restart Scene function in the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a setting to reduce the number of UI action prompts so they only appear on the first interaction with an object. This does not affect quick time event prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[PC Game Pass] Added three upscaling technology plugins: > AMD FidelityFX Super Resolution 3 (FSR3): > NVidia Deep-Learning Super Sampling (DLSS): > Intel Xe Super Sampling (XESS) (AI Enhanced Super Sampling)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[PC Game Pass] Added additional resolutions when playing in windowed mode: BUG FIXES: General",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed clipping issues with characters and clothing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with character hair and textures not displaying properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several reported crashes and softlocks preventing progression: UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with subtitles turning back on after dying despite being turned off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with light switch UI displaying incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where button bindings were not displaying correctly in tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where WASD button prompts were not displaying at the correct size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"skip cutscene\" prompt did not fade away properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several overlapping UI issues: Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the requirements for \"McLeery\" so it now unlocks faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the requirements for \"Me and My Spoon\" so it now unlocks faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue with \"Walking Simulator\" where time spent sprinting was not tracked correctly: Huge thanks for your patience in bearing with us.: (And if you were able to benefit from the patch and found joy in the game in the end, may we ask you to please consider leaving a review or updating an existing one, if you've left one. It'd be such a gift.): Thank you, all! We'll be in touch in the next few weeks with more cool BTS content about the game. So many more interesting stories to tell!✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 10,
+    "balance": 2,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1622910"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1622910/view/6000566704283287909"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T09:01:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.621Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T09:01:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1622910",
+      "checkedAt": "2026-11-13T03:31:46.621Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-07-16T09:01:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:53.224Z"
+  }
+ ],
+ "issues": []
+}

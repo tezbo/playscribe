@@ -1,0 +1,478 @@
+{
+ "game": {
+  "id": "scorn-19817",
+  "igdbId": 19817,
+  "name": "Scorn",
+  "cover": {
+   "imageId": "co4v5c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4v5c.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar7dp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar7dp.jpg"
+  },
+  "ps5Release": "2023-10-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "scorn-19817@1.2.2.0",
+   "gameId": "scorn-19817",
+   "displayName": "Patch 1.2.2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-16T19:07:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings Scorn players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have some important updates to share with you. We will be implementing pre-caching of shaders to prevent stuttering during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The previous update (FSR-Dec) lacked the PSO cache, causing some players to experience stuttering despite their configuration. This version of the PSO cache is improved and covers more cases to ensure that your gaming experience is as smooth as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In response to feedback from some of our players, we are also adding Steam Trading Cards to the game. We hope that this feature will enhance your overall experience and provide an additional layer of engagement with Scorn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued support and stay tuned for more updates on Scorn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-698670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/698670/view/5125698536854798961"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-16T19:07:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-698670",
+      "checkedAt": "2026-11-12T10:23:51.918Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.918Z"
+  },
+  {
+   "id": "scorn-19817@1.2.1.0",
+   "gameId": "scorn-19817",
+   "displayName": "Patch 1.2.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-06T15:43:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a pleasure reading your comments and watching your gameplay as you venture through the nightmarish hellscape that is Scorn!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of you have made suggestions, we are listening and implementing changes accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have been compiling your comments on some of the issues you have encountered and today we're happy to release patch v 1.2.1.0 (Steam Build: 10089557) focusing primarily on quality-of-life improvements alongside FSR 2.1 support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can find the detailed list of fixes that the patch brings to the game below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "NPC respawning after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scripted animation replaying after loading the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced \"Use\" action range on the main door console in ACT I.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mistplane light issue on ACT II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main character gets stuck in ACT V.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting the \"Windowed mode\" changes the resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various issues with the environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updates and Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FSR 2.1 implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While the world is celebrating the annual Game Awards, you can save 25% off Scorn's launch price. This discount will be available for only a week -- starting December 5!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for your support and stay tuned for future updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-698670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/698670/view/4979322040035317781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-06T15:43:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-698670",
+      "checkedAt": "2026-11-12T10:23:51.917Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.917Z"
+  },
+  {
+   "id": "scorn-19817@1.1.8.0",
+   "gameId": "scorn-19817",
+   "displayName": "Patch 1.1.8.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-27T15:00:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scorn has now been live for a couple of weeks and we have been humbled by your feedback. We've put a lot of passion in to the game and it's been a pleasure seeing all of you venturing into the mesmerizing labyrinth of Scorn!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have been compiling your comments on some of the issues you have encountered and we're happy to release today patch v 1.1.8.0 (Steam Build: 9813636) focusing mostly on quality of life improvements. You will find below the detailed list of fixes that the patch brings to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A player can get stuck in the hurt machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A player can get stuck in the collision after performing a glory kill",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After killing the Boss in Act V, players are unable to pick up the dropped item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A player might die by falling through the floor at certain positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "German localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spanish localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FOV issues on ultrawide screens",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Position of the ammo/heal container when a player uses heal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Capsule blockers on a bridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Act V loading issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crash when exiting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Occasional NPC freezes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various collisions causing issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updates and Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the Continue option after a player finishes the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the Load and the Quit game options from the death screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added safety check for a corrupted save slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Load last checkpoint option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Act III-II hard save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated checkpoint positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated list of the Kickstarter backers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated FSR 2.0 label in the Options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated positions of certain assets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for your support and stay tuned next week for more Halloween updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-698670"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/698670/view/4706851091173388548"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-27T15:00:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-698670",
+      "checkedAt": "2026-11-12T10:23:51.915Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:51.915Z"
+  }
+ ],
+ "issues": []
+}

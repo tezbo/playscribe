@@ -1,0 +1,848 @@
+{
+ "game": {
+  "id": "silent-hill-2-222341",
+  "igdbId": 222341,
+  "name": "Silent Hill 2",
+  "cover": {
+   "imageId": "coavaf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coavaf.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1ys1",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1ys1.jpg"
+  },
+  "ps5Release": "2024-10-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "silent-hill-2-222341@1.07",
+   "gameId": "silent-hill-2-222341",
+   "displayName": "Patch 1.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-30T09:18:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "On 30th January 2025, we made some adjustments to the game for Steam® users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please check that the version number in the lower right corner of the main menu is displayed as v.1.1.258,834.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed Razer Chroma™ RGB Lighting issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved some Lying Figure animations to prevent clipping when passing through windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential crash related to missing DirectX libraries",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Additional fixes for the rotating cube in the Labyrinth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some minor AI fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124490/view/1790214123076920"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-30T09:18:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.461Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-30T09:18:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.461Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-30T09:18:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:10.637Z"
+  },
+  {
+   "id": "silent-hill-2-222341@1.06",
+   "gameId": "silent-hill-2-222341",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-22T09:36:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "On 22th November 2024, we carried out an update to make some adjustments to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please check that the version number on the bottom right of the game top screen is v.1.1.248,905.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical",
+     "items": [
+      {
+       "text": "Fixed interference between saving a game and properly performing vibrations on the controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved range and step for mouse sensitivity",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed mouse input issues",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issues with game controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed door markers in Brookhaven Hospital",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved extended movement spots to fix enemies clipping issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed audio issues in Ox Section of Toluca Prison",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft blocker in labyrinth (player will be no longer permitted to exit neither of the Labyrinth Paths after obtaining a map)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed map markers in Boar Section of Toluca Prison",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed map markers in Western South Vale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Maria’s navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue with triggering some of Maria lines multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Final Boss movement and disappearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mannequins stuck in their ambush state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interactions with hard-to-get collectibles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Boss animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added tooltip for picking up tablets in Toluca Prison final puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed translation issues for changing difficulty during gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "According to our players feedback, breathing skin walls during Abstract Daddy Boss Fight has been restored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed blocker after the cutscenes with forced lowest FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blockers in Brookhaven Hospital",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with car lights in South Vale during the night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Mannequins presenting ragdoll behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed other minor issues with: foliage, collisions, typos, light glitches, visible occluders, loading levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 18,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124490/view/1783872412009387"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T09:36:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.460Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T09:36:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.460Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-11-22T09:36:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:19.028Z"
+  },
+  {
+   "id": "silent-hill-2-222341@1.05",
+   "gameId": "silent-hill-2-222341",
+   "displayName": "Patch 1.05",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-25T11:26:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "On 25th October 2024, we carried out an update to make some adjustments to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to announce a new update for SILENT HILL 2 that addresses a critical issue in the Labyrinth level, after last Patch 1.04 for both Steam® and PlayStation®5 players, and introduces Steam Cloud save functionality for PC players on Steam®. Please check that the version number on the bottom right of the game top screen is v.1.1.244,738.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "• Labyrinth Progression Blocker",
+     "items": [
+      {
+       "text": "Fixed an issue where players who saved their game in the Labyrinth, after Toluca Prison, on the previous version encountered a progression blocker if the save data was loaded after updating to Patch 1.04. We have implemented a fix by adding a safeguard that forces proper activation of the necessary triggers, ensuring smooth progression moving forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "• Steam Cloud Saves",
+     "items": [
+      {
+       "text": "We have enabled Steam® Cloud support for PC players on Steam®. Please note that the game will automatically sync with the latest cloud save data. If the cloud save is more recent than the local save, it will overwrite the local data without a warning pop-up. We recommend players back up their local saves if you wish to keep multiple versions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you for your patience and for reporting issues as we continue to improve your experience. We appreciate your understanding and ongoing support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2124490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124490/view/6212245217911853395"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T11:26:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.459Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-25T11:26:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.459Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-25T11:26:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:19.027Z"
+  },
+  {
+   "id": "silent-hill-2-222341@1.04",
+   "gameId": "silent-hill-2-222341",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-21T09:50:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello SILENT HILL 2 fans!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A few words form the team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we would like to express our deepest gratitude for your continued support during the launch of the game and all the love you shared with us recently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve read your impressions, admired your incredible screenshots and enjoyed your discussions about the mysteries and easter eggs hidden in SILENT HILL 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The First Patch is here!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On the other hand, we also played close attention to any reported issues and went through your feedback regarding bugs, game performance and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for sharing this essential data with us as it helps us work on fixes to improve your overall experience with SILENT HILL 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we are happy to share that the first game patch has just landed on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Technical",
+     "items": [
+      {
+       "text": "Reduced visual glitches when using the latest version of NVIDIA DLSS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added an option to enable DLSS frame generation in the menu when using DLSS for supersampling.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "NVIDIA Reflex is now active when DLSS frame generation is enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added support for AMD FSR 3.1.1.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added an option to enable AMD Fluid Motion Frames in the menu when using FSR 3.1 for supersampling.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Updated Intel Nanites to support upcoming driver updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance and optimization for Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed stuttering issues related to sky map generation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an option to enable/disable HZB culling to fix stuttering on some AMD/Intel GPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "All graphic settings should be saved locally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed an issue with translation for UI “High” preset not being translated and displayed correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Wooden Plank appearing during James’ death animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed streaming issue where staring at the walls inside the Grand Market caused problems with loading all of the environment around James",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where interacting with the wrong side of the peephole in Brookhaven Hospital teleported James to the other side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where breaking windows near Neely’s Bar got James stuck in the window frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that allowed James to access the inaccessible balcony in Blue Creek Apartments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Abstract Daddy’s behavior during boss fight where the enemy was not hitting James properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple issues with Abstract Daddy’s 3rd TV – it should now have the correct audio, and the wall won’t interfere with its position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with a question mark from the Conference Room not disappearing after obtaining Cinderella figurine in Lakeview Hotel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with collision detection with the Dayroom walls in Brookhaven Hospital",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where James was falling under the map when approaching Laura entering Brookhaven Hospital from the bushes on the left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed debug numbers displayed behind wallpapers in Blue Creek Apartments' Clock Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resolved an issue with James not being able to leave the 3F corridor in the Lakeview Hotel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the lightbulb on the 3rd floor of Blue Creek Apartments constantly switching on and being impervious to destruction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved an issue with the small coffee table blocking James in the corner of the room located in Woodside Apartments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where after completing the Disgust Path in Labyrinth, the player was forced to do it all over again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with Spider Mannequins getting stuck when attacking James while he is going through squeeze traversal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with James getting stuck in the window frame while attacking Lying Figures located outside of the window",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added more natural movement for James when switching weapons while aiming",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with triggering Spider Mannequin event on Fear Path in the Labyrinth multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the ability to pick up items during the final boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue with picture frames overlapping in the Moth Room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the deformation of Nurses’ skirts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue occurring when displaying the information about unlocking NewGame+ which didn’t appear in the player’s chosen language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visible unloading of the door of an abandoned garage in the west side of South Vale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed question mark on the map during Chute Puzzle in Woodside Apartments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 23,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2124490"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2124490/view/6212244583189945522"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-21T09:50:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.458Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-21T09:50:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2124490",
+      "checkedAt": "2026-11-13T03:30:32.458Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-21T09:50:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:19.019Z"
+  }
+ ],
+ "issues": []
+}

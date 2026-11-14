@@ -1,0 +1,1900 @@
+{
+ "game": {
+  "id": "speedball-340189",
+  "igdbId": 340189,
+  "name": "Speedball",
+  "cover": {
+   "imageId": "cobchj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobchj.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3l19",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3l19.jpg"
+  },
+  "ps5Release": "2026-01-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "speedball-340189@1.2.8.0",
+   "gameId": "speedball-340189",
+   "displayName": "Patch 1.2.8.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-24T14:01:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've hammered out a few more issues that were tripping up players in the Speedball arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements, rewards and League Mode wins should now all be awarded correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Goal keepers were being a little too active in the goal area, diving further than expected. So we have taken them back to boot camp and they should now stay guarding that goal!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in the arena!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/5496dd6d676649ff685b02b96e352fb8c2fa3c71.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Updated localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various achievements will now unlock correctly on all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pausing is now possible in all tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various possible crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players are no longer able to continue playing after one player has forfeit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where voice over would be incorrect if a player forfeits a match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online Rewards will now unlock immediately after completing the requirements, instead of needing an additional online match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The correct winner will now be displayed in the post-match screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed online win streak counter to display correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players will no longer get stuck in the half time screen if the other player forfeits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The goalkeeper will no longer get stuck holding onto the ball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the controller disconnect message would remain on screen if Player 2’s controller was disconnected during the match end cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players will now be able to reconnect their second controller if it disconnects during the team select screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players will no longer T-pose when not moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Goalkeeper AI in cases where players were passing near the goal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved Goalkeeper AI to not dive so far away from the goal when missing a dive tackle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the play match button would become unusable if the player cancelled matchmaking during the initialising stage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online mode ranks will now display correctly when rank changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game would freeze when launching in offline mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player 2 will now see their own team, during half time team management and be able to switch their own tactics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "League Mode",
+     "items": [
+      {
+       "text": "Fixed an issue where some save data would be lost after completing League Mode for the third time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game would freeze if all players had a “Critical” injury",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "League Mode rewards will now be correctly awarded if you win the championship match after finishing 2nd place in the leader boarded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you experience any further issues, please contact our Help Centre.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"] For all the latest news and updates be sure to follow Speedball on all our social channels: X, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 22,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1827626365765776"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T14:01:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.533Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T14:01:42.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.533Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-24T14:01:42.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:38.006Z"
+  },
+  {
+   "id": "speedball-340189@1.1.5.0",
+   "gameId": "speedball-340189",
+   "displayName": "Hotfix 1.1.5.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-12T14:00:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have launched hotfix 1.1.5.0 on Speedball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition to the fixes we have added a further zoom on the camera for getting even closer to the brutal action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A full list of fixes can be found here: http://reb.to/SpeedballPatchNotes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1824459501606871"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T14:00:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.532Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T14:00:32.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.532Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-12T14:00:32.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:38.004Z"
+  },
+  {
+   "id": "speedball-340189@1.1.4.0",
+   "gameId": "speedball-340189",
+   "displayName": "Patch 1.1.4.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-10T14:01:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you to all players who reported issues with the game difficulty not feeling correct, after investigation we found that difficulty settings weren't always applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Starting matches after todays patch you should find that Beginner and Easy will now feel like a welcome step into the arena, and Brutal and Hard will be less considerate to the broken bones of your players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We look forward to seeing your heated matches to become League Mode champion, in whichever difficulty you chose!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in the arena!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/dc36d1b4eee03047d12ed5266fd5389e8f68bff9.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Global",
+     "items": [
+      {
+       "text": "Fixed an issue where getting jump tackled could get the ball stuck in the air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved performance when switching to “Online” tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted detection for the achievement “No Sick Days” to unlock correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Achievements “I can do this with my eyes closed”, “Clean Sheet”, “Goal? Never Heard of Them”, “Comeback Kid” and “Savaged” will now unlock correctly on all platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where players would be stuck in a T-pose and not move",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Difficulty selected will now be correctly applied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Team stats will now be displayed correctly if either team forfeits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the game could freeze if your team became fully depleted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated localisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Online Mode",
+     "items": [
+      {
+       "text": "Fixed an issue where your armour style would sometimes change to your previous opponents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where team stats would not update after a match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Team Tactics” and “Line Up” will now change correctly after half time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Matches will no longer display as a draw if either player forfeits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved selection in the arena selection screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue around changing a team’s name after changing game language",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue around changing a team’s name after reconnecting to the internet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Team names will no longer generate blank using the randomise option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quick Play",
+     "items": [
+      {
+       "text": "Fixed an issue where custom match length timer settings would not apply correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where “Team Tactics” would not change correctly after half time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Incorrect team badges will no longer be shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue that prevented accepting an Invite a Friend match invite while already playing a match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabling Half Time via “Edit Match” custom settings will now correctly apply",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speedball Stadium overview will now only display the correct number of Multiplier hoops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toggling “Score Limit” and “Match Timer” on and off will now display the correct description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "League Mode",
+     "items": [
+      {
+       "text": "Fixed an issue where pressing buttons too quickly on the recruitment screen would cause the selection menu to not display correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where returning to the “Select New Player” screen would cause the background to display incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players will now be able to play as a League Mode team who have already won the championship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players will now wear their own helmets in the final cutscene of League Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Points table will now reset correctly after completing League Mode and starting again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selecting “Match History” on the “Next Match” screen will now function as intended",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you experience any further issues, please contact our Help Centre.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"] For all the latest news and updates be sure to follow Speedball on all our social channels: Twitter, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 12,
+    "balance": 1,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1823825466508493"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-10T14:01:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.531Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-10T14:01:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.531Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-10T14:01:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:38.004Z"
+  },
+  {
+   "id": "speedball-340189@major-2025-10-30",
+   "gameId": "speedball-340189",
+   "displayName": "Speedball - October Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-30T14:00:40.000Z",
+   "notes": [
+    {
+     "title": "We have just patched Speedball with a brand new update.",
+     "items": [
+      {
+       "text": "This update builds on community feedback from you, our players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Arena selection in League Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More competitive AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved tutorials",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added impactful VFX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Taking on your feedback",
+     "items": [
+      {
+       "text": "Since the September Speedball Update we have been absorbing everything said in our recent Player Survey, Steam Forums and our dedicated Discord server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of these suggestions was to include the \"Speedball Stadium\" (our tribute to the past) in our League Mode - which offers a classic Speedball layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Play Vs Developers",
+     "items": [
+      {
+       "text": "Another chance for you to test yourself against our Developers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Friday 31st October 3pm - 5pm GMT",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Play Online Mode between these hours and you will face down against the fiercest foes from Rebellion!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Update Notes",
+     "items": [
+      {
+       "text": "Improved Tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed requirements for online unlockable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved player AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Goalkeepers will now react more appropriately",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Harder difficulty AI will now try to score more goals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new VFX for collisions and player switching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added arena selection for League Mode, now choose between Normal, Brutal and Speedball Stadium",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where players were not gaining form in League Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/15ddabead696a0cd0997ae3315479b94f5119a15.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join Our Discord",
+     "items": [
+      {
+       "text": "We’re seeking fan ideas and feedback on how to grow the game and encourage players to join Speedball's dedicated Discord forum to engage with our developers and contribute to the development cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"]For all the latest news and updates be sure to follow Speedball on all our social channels: X, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 1,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1815034432872051"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-30T14:00:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:38.002Z"
+  },
+  {
+   "id": "speedball-340189@major-2025-09-09",
+   "gameId": "speedball-340189",
+   "displayName": "Speedball - September Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-09T13:00:10.000Z",
+   "notes": [
+    {
+     "title": "Speedball - September Update",
+     "items": [
+      {
+       "text": "Ahead of Play vs Devs on Friday afternoon, we are releasing our latest update for Speedball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With a fresh new look, and a host of new changes and features, it's time to get stuck back into the arena and become Speedball champion once again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Invite a friend",
+     "items": [
+      {
+       "text": "Starting in this update, you can now invite a Steam friend to play against in Speedball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose from a selection of pre-made teams, select your arena and you're ready to go!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Custom game rules",
+     "items": [
+      {
+       "text": "If you want to have a longer match with a friend or vs the CPU. You can now customise the match!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boost the time to a lengthy 15 minutes, or increase the damage taking to a whopping 400%, and play the most brutal game of Speedball yet!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/306a9a8e0e6410224a0b51266ee0dc74f00aedbd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Arenas",
+     "items": [
+      {
+       "text": "We have so many new arenas in this update, filling out the league mode roster with each team having their own arena with unique styles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Team Traits",
+     "items": [
+      {
+       "text": "Teams in League mode and quickplay now have a trait to assist them in home arena games. Is there a team you have yet to try? Maybe give Rage 2000 a season with their increased damage on tackles!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/15ddabead696a0cd0997ae3315479b94f5119a15.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full additions and changes",
+     "items": [
+      {
+       "text": "New UI - Front End and Match HUD have been updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Invite friend - You can now make a private lobby for you and a friend to play Speedball with your rules!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Tutorial Scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various AI Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Two new teams available in Quick Play and Online Customisation options,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ms Snuffle Piglets & The Judges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Themed Arenas - BioPrime Lab, Favela and Subway Abandoned",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Arena Hazards - Ball Electrifier & Rebound Bumper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked some arenas to have less hazards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "These arenas now have a \"Brutal\" version, with all the hazards still included, for maximum injury opportunities!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Speedball Stadium",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This new arena layout some dedicated fans may recognise from Speedball 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the Practice Stadium",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This arena is Speedball at it's simplest, just two teams, two goals and a ball!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Join Our Discord",
+     "items": [
+      {
+       "text": "We’re seeking fan ideas and feedback on how to grow the game and encourage players to join Speedball's dedicated Discord forum to engage with our developers and contribute to the development cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"]For all the latest news and updates be sure to follow Speedball on all our social channels: X, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0,
+    "topNew": [
+     "New UI - Front End and Match HUD have been updated",
+     "Invite friend - You can now make a private lobby for you and a friend to play Speedball with your rules!",
+     "New Tutorial Scenarios"
+    ]
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1809869180196854"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-09T13:00:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:38.001Z"
+  },
+  {
+   "id": "speedball-340189@major-2025-05-13",
+   "gameId": "speedball-340189",
+   "displayName": "Speedball – League Mode Single Player Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-13T13:03:09.000Z",
+   "notes": [
+    {
+     "title": "League Mode is here!",
+     "items": [
+      {
+       "text": "In Speedball’s League Mode, 10 teams compete over a season to be crowned champions. To take your team of rookies to the top, you will need to grow a squad of up to 18 all-stars, and manage who you play, bench or rest for each game. Effectively rotating your players throughout the season will be key to managing the fatigue of your players and preventing injuries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pick your best team using each player’s set of unique stats (including shot power, speed, durability etc) and traits (such as pyromaniac, rioter, star shooter and pitcher). You will need to draft in new players throughout the season to bolster your ranks and replace your losses – remember, there are no-holds barred in the arena!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Additions",
+     "items": [
+      {
+       "text": "League Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Subway Arenas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grand Central",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "King's Terminus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vandal Hyper-Tracksuit Armour Style",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/c2b9a4f6d4ff33b4df76890a6dfe10239ef51d43.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Join Our Discord",
+     "items": [
+      {
+       "text": "We’re seeking fan ideas and feedback on how to grow the game and encourage players to join Speedball's dedicated Discord forum to engage with our developers and contribute to the development cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For all the latest news and updates be sure to follow Speedball on all our social channels: X, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "League Mode",
+     "Subway Arenas",
+     "Grand Central"
+    ]
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1799088287989967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-13T13:03:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.529Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:38.000Z"
+  },
+  {
+   "id": "speedball-340189@major-2025-02-25",
+   "gameId": "speedball-340189",
+   "displayName": "Speedball - KillTek Khaos Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-25T14:31:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/a446ada5006f5546f44dcfda976bb49c5cdcfee6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Get ready for EVEN MORE DANGER",
+     "items": [
+      {
+       "text": "In the most dangerous game of Speedball!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take a defensive formation as KillTek's weapons factory is a prime area for experimentation,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And your team are the test subjects!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With the KillTek update you will find three brand new arenas:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Armoury",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grid HQ",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cryogenesis Grounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In The Armoury and Grid HQ you will find your team surrounded by KillTek's latest creations, the KillTek TripWire and the thunderous Thumpers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You will need your most nimble players to evade these dangers, so get warmed up to dash and jump around these menacing sports arenas!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "New Arenas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "KillTek - Introducing TripWire and Thumper Dynamic Arena Elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Armoury",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Grid HQ",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Snow Arena - Introducing the Ice Grate Dynamic Arena Element",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cryogenesis Grounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Armour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "KillTek BodyGuard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "8 Base Armour Styles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "8 Exotic Armour Styles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where users may experience in delay in being able to switch players if they were in control of a player that is a victim of a takedown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where users may experience a crash when selecting rematch option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed and issue where users may be unable to dismiss the Options screen using controller if accessed during the transition from the team select screen to arena select screen in Local Quickplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Join Our Discord",
+     "items": [
+      {
+       "text": "We’re seeking fan ideas and feedback on how to grow the game and encourage players to join Speedball's dedicated Discord forum to engage with our developers and contribute to the development cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For all the latest news and updates be sure to follow Speedball on all our social channels: Twitter, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 3,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0,
+    "topNew": [
+     "New Arenas",
+     "KillTek - Introducing TripWire and Thumper Dynamic Arena Elements",
+     "The Armoury"
+    ]
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1792116353358529"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-25T14:31:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:37.999Z"
+  },
+  {
+   "id": "speedball-340189@major-2024-12-10",
+   "gameId": "speedball-340189",
+   "displayName": "Speedball - Festive Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-10T14:33:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/27672491571ba8d1b81ab2e13d8cd860002b3471.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deck the Speedballs with holly!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To warm the hearts of our Speedball players, today we have released a new update bringing festive cheer to the arena!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are continuing to work on all the feedback supplied by our community and hope you enjoy this seasonal content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Festive Updates",
+     "items": [
+      {
+       "text": "New Arena 'Candy Cane Court' added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Festive Armour patterns and colours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor UI Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join Our Discord",
+     "items": [
+      {
+       "text": "We’re seeking fan ideas and feedback on how to grow the game and encourage players to join Speedball's dedicated Discord forum to engage with our developers and contribute to the development cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For all the latest news and updates be sure to follow Speedball on all our social channels: Twitter, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1785321795768962"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-10T14:33:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.527Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:37.998Z"
+  },
+  {
+   "id": "speedball-340189@major-2024-11-26",
+   "gameId": "speedball-340189",
+   "displayName": "Speedball - Winter Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-26T14:35:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Folks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today marks the launch of the Winter Update for Speedball. This update introduces a slew of new content for Speedball and continues to address the issues that have been highlighted by our dedicated community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The winter update features a brand new arena, new dynamic arena elements, cosmetics and more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/b8721b31716aae72012b66ce68e840f754d9a6fa.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Newly added",
+     "items": [
+      {
+       "text": "New Arena 'Tundra Dome' added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Dynamic Arena Element 'Ice Turret' added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Manager Level Cap raised.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Challenges added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional Armour colours added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Resolved issue where players were unable to opt out of player analytics being recorded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where players could not access offline modes when playing offline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved HUD error where a players star count would be affected when deactivating an opponents stars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where the ball would not reset when stuck outside the arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved bug where switching to a player you previously passed to would cause a loss of functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player profile now updates correctly when scoring a goal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue where adjusting game resolution to differ from system settings would cause flashing lights during cinematic moments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Join Our Discord",
+     "items": [
+      {
+       "text": "We’re seeking fans’ ideas and feedback on how to grow the game and encourage players to join Speedball's dedicated Discord forum to engage with our developers and contribute to the development cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For all the latest news and updates be sure to follow Speedball on all our social channels: Twitter, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 7,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0,
+    "topNew": [
+     "New Arena 'Tundra Dome' added.",
+     "New Dynamic Arena Element 'Ice Turret' added.",
+     "Manager Level Cap raised."
+    ]
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/1783872412145292"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-26T14:35:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:37.998Z"
+  },
+  {
+   "id": "speedball-340189@patch-2024-11-06",
+   "gameId": "speedball-340189",
+   "displayName": "Speedball - Nov 6th Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-06T14:01:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Folks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Those of you who have entered the Arena today will notice a new patch has just gone live. This patch aims to address some of the issues that have been highlighted by our community since we launched into early access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Despite the cold weather, we've also really been hankering for some ice cream. Something tells us we'll hearing a lot more about frozen treats in the coming future...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45277808/0527b2b038a5eb071b00235396ac7fede9e2e6aa.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your continued support, below is the full list of fixes included in todays patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ICE CREAM! introduced into Speedball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed error in which audio would not play correctly after a disconnected match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player 2's game profile now updates correctly during offline matches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed error which prevented players from progressing past the sign in screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug which allowed Hidden Achievement to be unlocked by AI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug which affected player speed intermittently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Join Our Discord",
+     "items": [
+      {
+       "text": "We’re also seeking fans’ ideas and feedback on how to grow the game and encourage players to join Speedball's dedicated Discord forum to engage with our developers and contribute to the development cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/1795190/Speedball/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For all the latest news and updates be sure to follow Speedball on all our social channels: Twitter, Facebook, Instagram and YouTube.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1795190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1795190/view/6148070194801563765"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-06T14:01:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1795190",
+      "checkedAt": "2026-11-13T03:31:13.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:37.996Z"
+  }
+ ],
+ "issues": []
+}

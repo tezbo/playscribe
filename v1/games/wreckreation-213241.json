@@ -1,0 +1,1017 @@
+{
+ "game": {
+  "id": "wreckreation-213241",
+  "igdbId": 213241,
+  "name": "Wreckreation",
+  "cover": {
+   "imageId": "co52tg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co52tg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5k7b",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5k7b.jpg"
+  },
+  "ps5Release": "2025-10-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "wreckreation-213241@18",
+   "gameId": "wreckreation-213241",
+   "displayName": "Update 18",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-27T13:06:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update is heavily focused around physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]A lot of the work has been about making vehicle interactions feel more believable and less unpredictable. AI should behave more consistently when colliding with you in the Takedown camera, traffic are less likely to suddenly launch itself across the map at warp speed, and we’ve improved some impacts that could produce odd reactions or instant takedowns from very minor contact. There's still more work to do here, but it should feel a lot more solid",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]There’s also a good number of general fixes and improvements as well, including reduced shader stalling, the much requested 'finish times on race results in all circumstances', audio muting removed in VOIP, UI clean-up and a number of crash fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full list below",
+     "items": [
+      {
+       "text": "[p align=\"start\"]General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added finish times onto race results screens regardless of whether you beat your best time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed audio muting in online games when someone uses Voice Chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes caused by swapping events on the map if you remix a public event while your vehicle is also in the trigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Remapped the Rate button to prevent accidental ratings when swapping events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed incorrect reporting of \"Other Stats\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimised shaders to help reduce stalling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added warning not to remap arrow keys",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed \"Experimental\" label from LiveMix buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed broken HLODs on Lanois Bridge and Observation Towers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]Physics / AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced glitching when AI hit the player car during takedown camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed AI getting shot forwards when grazing the side of your vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where AI vehicles could drive inside one another (although we’ve found another version of this when they respawn in Road Rage, so that’s next on the list)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where traffic could fly around at extreme speeds or move laterally across the road",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made AI slightly tougher against walls and each other so the slightest touch doesn’t immediately result in a crash/takedown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 7,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1594040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1594040/view/1833968530885344"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T13:06:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.827Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-27T13:06:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.828Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-27T13:06:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:37.385Z"
+  },
+  {
+   "id": "wreckreation-213241@17",
+   "gameId": "wreckreation-213241",
+   "displayName": "Update 17",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-05T14:28:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks to our Discord members we discovered there were some issues with online connectivity that had got much worse recently - so we have been investigating that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A reminder what's in this Patch",
+     "items": [
+      {
+       "text": "Waiting longer before a challenge starts, ensuring all players have received the data (note you will therefore notice a longer load if the challenge is large or players have low bandwidth/high latency)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixing an issue where a default engine cap meant large challenges were not being broadcast to players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Displaying challenge size as a percentage in the map popup, so players can see when they are near or over the limit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Preventing hosts from launching challenges over 100% of the allowed size in multiplayer (these can still be played offline)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "As a result of these we are hoping to see a significant improvement in the amount of Online crashes and disconnects !",
+     "items": [
+      {
+       "text": "Note there is still one disconnect issue remaining due to latency issues which we are still investigating. Players who are geographically closer to one another are less likely to encounter these issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have some more fixes in the works and will update on those soon. In the meantime do let us know how you get on with the new patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1594040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1594040/view/1831432155580235"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-05T14:28:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.827Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-05T14:28:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.827Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-05T14:28:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:37.385Z"
+  },
+  {
+   "id": "wreckreation-213241@16",
+   "gameId": "wreckreation-213241",
+   "displayName": "Update 16",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-14T15:22:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve had to adjust our plans slightly after a few issues came up that we felt were important to fix properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]An update is now live with the following fixes and improvements across all platforms (unless otherwise specified):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\ Resolved a crash occurring in online sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\ Experimental Drift Mode is not longer experimental and is enabled by default. Legacy drift mode can still be enabled via the DJ Menu → Settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\ Added a Setting to disable Parking Lots to improve performance (and in doing so allow car switching at any time). When parking lots are disabled, changing car becomes available under \"Mix My Car\" in the DJ Menu (same as it is online).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\ Extended streaming range to prevent players from outrunning world streaming in the Weld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\\ Corrected the 0-62mph string for the Weld",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1594040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1594040/view/1829528821318112"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T15:22:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.826Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-14T15:22:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.826Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-14T15:22:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:37.384Z"
+  },
+  {
+   "id": "wreckreation-213241@14",
+   "gameId": "wreckreation-213241",
+   "displayName": "Update 14",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-24T14:00:50.000Z",
+   "notes": [
+    {
+     "title": "Welcome to our 14th Update",
+     "items": [
+      {
+       "text": "Here is what's included",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Drifting",
+     "items": [
+      {
+       "text": "Our new Drifting Model, thoroughly tested and loved by our Patreon players, is now available to all players (switch to it in Mix My Car)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've also made the following Additional Drift Improvements (for those who were already playing it).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⁃ Drift entry is now more consistent across all cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⁃ Drift exit is less \"sticky\", meaning there isn't a big delay right at the end of counter-steering before actually exiting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⁃ Drift transitions have been improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⁃ Cars are much less likely to roll over (even part way) when drifting over the start of a downward slope on Sky Tracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⁃ Braking and Handbraking now have a larger slowing effect while drifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Liveries",
+     "items": [
+      {
+       "text": "The Motorhead, Headbanger, Vagabond, Hauler, Powerslave, Mulsanne, Cigarello and Bison all have new liveries created by Wreckreation player ‘Biggie’ - 34 new liveries in total",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to another Wreckreation player KekAnTing the cop cars now have county alternate liveries available via Customise My Car.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Fixes and Improvements",
+     "items": [
+      {
+       "text": "We've upgraded the Boost system on the Huntsville Hauler and Maiden Manhattan cars (and their Wreckoning versions) so they can carry 95% of their top speed when boosting offroad (to match other cars in the Offroad class).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We've fixed barrel rolls being limited to 1 roll on keyboard controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Finally, last not very much not least - SkyTracks have been optimised allowing for larger tracks to be uploaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for everyone who continues to feed back on the game. We are loving working so closely with the community. See you soon. If you're not already there, consider joining us on Discord or Patreon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1594040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1594040/view/1827626365765760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T14:00:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.825Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-24T14:00:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.825Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-24T14:00:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:37.383Z"
+  },
+  {
+   "id": "wreckreation-213241@13",
+   "gameId": "wreckreation-213241",
+   "displayName": "Patch 13",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-02T14:04:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[p align=\"start\"]Our 13th free update, Patch 8, is live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Last week, just as we were preparing to release, we discovered a 100% reproducible crash that would have impacted anyone creating events. We held the update back to fix it properly. That inevitably caused a delay, but it was the right call.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]This update includes significant changes to the new drift model (now available as an option to all Patreon members - free and paid), AI and Sky Track fixes, and the addition of Top 6 Global Leaderboards for all event types.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Leaderboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Top 6 leaderboard for every event is now shown in the Event panel for all Event types including Custom Events, via the Map (note: does not show on race results).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42794223/14be116c4905b05ecd003c07fc30d305e11ef15c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Handling changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Drift",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed drift exit taking too long",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where some cars (particularly RWD Bruisers) could spin out and become stuck driving in reverse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced resistance when exiting a drift by steering out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Tuned vehicle rotation during drift, especially when steering in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Automatic gearbox is no longer disabled while drifting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This fixes the issue where you could start drifting at 50 mph in 2nd gear, boost to 200 mph, and still remain in 2nd",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Handbrake now correctly increases turn-in (previously had no effect)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked steering response on certain cars to reduce lag/floatiness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved the Experimental Drift Model to a more obvious location in the DJ Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42794223/c7136c3bd7ef3449e95fe034e7fa87b133c02407.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Handling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed strange roll/spin correction while airborne",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Handling: Tweaked suspension setup for Hooper Powerslave to make it more stable when cornering (especially on Sky Tracks)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]PC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Key bindings can now be accessed via DJ Menu > Settings as well as Map > Help.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[p align=\"start\"]AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed AI crash when landing jumps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI spinning out when shunting other cars (including the player)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced AI confusion caused by bumps/jumps during Sky Track lap races",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "[p align=\"start\"]SkyTracks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash that affected any track with a checkpoint on a jump where a loop came close to the top of the checkpoint.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash if you went into daydream on a SkyTrack near a junction without a road attached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We know many of you are eagerly awaiting news on the Weld, Blackspots, Construction Vehicles, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]As we explained on our Patreon last week, larger feature updates need funding behind them. We’re continuing to work on that in parallel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]If you’d like to help move things forward, there are a few ways that genuinely make a difference:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Join our Patreon, even as a free member, it all helps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep playing and stress-testing the update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Report reproducible issues clearly (especially crashes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Set leaderboard times and flag anything that looks rogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Share Creator Challenges and events you’re proud of",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spread the word to friends who love arcade driving games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Every bit of interest strengthens the case for what we can build next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 3,
+    "other": 31,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1594040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1594040/view/1825727806717625"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-02T14:04:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.824Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-02T14:04:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.825Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-02T14:04:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:37.383Z"
+  },
+  {
+   "id": "wreckreation-213241@patch-2026-01-23",
+   "gameId": "wreckreation-213241",
+   "displayName": "Quick Patch to Fix some new Issues we just found!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-23T16:07:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have just published a quick patch to solve a few things we discovered this week and wanted to get sorted quickly. Thanks to everyone involved in getting this out so quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue where first race would reset you back on the Sky track at the end, requiring a game reset to bypass (also affected all Sky Track races that ended with a jump off an off-ramp)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed virtual keyboard not appearing on console when entering Share codes (to view other people’s challenges)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "For Patreon members look for a poll later today asking you to prioritise what Quality of Life changes we should focus on next.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/42794223/9367f5b17174b8e34d13eed8ff746e10daa58e84.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1594040"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1594040/view/1822556746162231"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T16:07:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.823Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-23T16:07:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1594040",
+      "checkedAt": "2026-11-13T03:36:33.824Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-23T16:07:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:37.381Z"
+  }
+ ],
+ "issues": []
+}

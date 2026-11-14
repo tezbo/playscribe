@@ -1,0 +1,1568 @@
+{
+ "game": {
+  "id": "trifox-107180",
+  "igdbId": 107180,
+  "name": "Trifox",
+  "cover": {
+   "imageId": "co50nn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co50nn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1j66",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1j66.jpg"
+  },
+  "ps5Release": "2022-11-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "trifox-107180@1.0.3.3",
+   "gameId": "trifox-107180",
+   "displayName": "Update 1.0.3.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-06-09T12:42:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A while back we added additional language support to the console versions of the game and are now happy to also bring these languages to the PC audience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The following languages have been added with this update",
+     "items": [
+      {
+       "text": "Korean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Traditional Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you've been playing the game and enjoyed your experience so far, do consider leaving a Steam review as this really helps us out a great amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As always feel free to join our Discord (http://discord.trifox-game.com/) and let us know what you think of the game and/or the changes made within this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All the best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-The Trifox Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Korean",
+     "Japanese",
+     "Traditional Chinese"
+    ]
+   },
+   "sourceIds": [
+    "steam-1211240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1211240/view/5129083846342555795"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-09T12:42:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.875Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-09T12:42:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.875Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-06-09T12:42:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.145Z"
+  },
+  {
+   "id": "trifox-107180@1.0.3.2",
+   "gameId": "trifox-107180",
+   "displayName": "Hotfix 1.0.3.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-22T10:09:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have prepared another hotfix for you all to enjoy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been playing the game and enjoyed your experience so far, do consider leaving a Steam review as this really helps us out a great amount.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always feel free to join our Discord (http://discord.trifox-game.com/) and let us know what you think of the game and/or the changes made within this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The Trifox Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where you could get stuck in an infinite position reset loop if you fell into the abyss at the exact time the boss transitioned to its final blow stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could 1 shot the boss using certain attacks after dying during the final blow stage and replaying the final section of the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turrets will now correctly target the boss weapons during the final stage of the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ensured that turrets can apply the final blow to the boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1211240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1211240/view/4836332027647687048"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-22T10:09:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.875Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.144Z"
+  },
+  {
+   "id": "trifox-107180@1.0.3.1",
+   "gameId": "trifox-107180",
+   "displayName": "Hotfix 1.0.3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-17T18:28:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We decided to create a quick hotfix that fixes a minor camera issue during the final moments of the final bossfight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This issue was introduced with the previous patch and has now been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HUD and UI",
+     "items": [
+      {
+       "text": "Replaced the XboxOne X,A,B and Y 3D icons with the different variants that closer match the 2D variants. This change should improve readability of the icons under different lighting conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the default fallback controller X,A,B and Y 3D icons to use the more readable version matching the XBox One Controller glyph changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Added 2 additional gold coins to guide players a little bit better towards the exit of the head puzzle chest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Improved one of the camera transitions after defeating the final boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the camera didn’t reset correctly after dying before applying the final blow to the boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1211240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1211240/view/4789043687474842673"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-17T18:28:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.874Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.144Z"
+  },
+  {
+   "id": "trifox-107180@1.0.3.0",
+   "gameId": "trifox-107180",
+   "displayName": "Update 1.0.3.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-11-16T11:39:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new update for the game is now available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This time a somewhat smaller update with some minor balance and quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been playing the game and enjoyed your time with it, please consider leaving us a review as this really helps us out a great deal <3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And as always feel free to join our Discord (http://discord.trifox-game.com/) and let us know what you think of the game and/or the changes made within this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Trifox dev team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HUD and UI",
+     "items": [
+      {
+       "text": "The back button will now also disable erase mode in the play menu. This should make it more intuitive to navigate that menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Turkish localization thanks to Plus Localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "Fixed the capsule collision radius of the Triple Hybrid to match the one of the other Warrior collisions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Protector",
+     "items": [
+      {
+       "text": "Fixed an issue where the shield could be destroyed by the stone golem shockwaves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tommy Gunner",
+     "items": [
+      {
+       "text": "Reduced the projectile damage from 10 to 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Light Gunner",
+     "items": [
+      {
+       "text": "Reduced the projectile damage from 10 to 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Heavy gunner",
+     "items": [
+      {
+       "text": "Adjusted the projectile colors and effects to provide a better distinction compared to the Tommy Gunner and Light Gunner projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Final boss",
+     "items": [
+      {
+       "text": "Adjusted the projectile colors and effects to provide a better distinction compared to the Tommy Gunner and Light Gunner projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Statue Heads that are taken with you to the final beach area will now return to land when thrown in the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Added a dissolve effect on the rock near the power socket to improve player visibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked the camera when entering the minecart to improve popup visibility when the player reaches the cart faster than the camera can blend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved collision on the turnstile and added metal sfx when walking on top of it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a rendering issue where all the grass seemed to be gliding on the floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the 2nd bruiser on the right during the steamworks (2nd level) elevator fight would get stuck on the door before it closes. This would kill the bruiser before it got a fighting chance.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed extra unneeded checkpoint listeners from the reactor cores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added checkpoint reset behavior to the reactor cinematic chain wrapper, fixing an issue where the cutscene bars could become active after death when the reactor has been overloaded but the cutscene hadn't triggered yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Removed the rock spires in the green topside munchie arena from grabbing the mouse cursor.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Removed the rock spires & arches in the purple topside worm arena from grabbing the mouse cursor. Removed the pillars at the dungeon entrance from grabbing the mouse cursor.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the depth of field wasn't updated in the dungeon map room cutscene due to a animation parameter name mismatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed double checkpoint listeners on the doors + trackers that are used in the central dungeon progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the forcing of the central room drills in an end state could cause a strong shake for 2-3 frames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the safe positions were not correctly reset after dying during the final phase of the bossfight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where there was a specific window of opportunity in which you could die or trigger a checkpoint reset while the boss transition cinematic was starting and trigger an infinite loop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a camera angle toggle issue after beating the final boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved a camera transition in the tunnel to reduce the amount of visual obstruction towards the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 4,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1211240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1211240/view/4789043687470195471"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-16T11:39:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.873Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.143Z"
+  },
+  {
+   "id": "trifox-107180@1.0.2.0",
+   "gameId": "trifox-107180",
+   "displayName": "Update 1.0.2.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-29T21:29:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another round of player feedback and general improvements have made it into the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most notably the newly added ability to skip the intro cinematic and hubworld cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This was a common requested feature, especially from a lovely bunch of speedrunners who have picked up the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Check out the speedrunning channel on our Discord if you want to see what kind of crazyness they have been coming up with to get that fastest time possible.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that at this moment in time only the Intro, outro and the hubworld monitor and loadoutroom reveal cinematics will be skippable by holding down the interact button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The gameplay cinematics that are part of the levels remain non-skippable until further notice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always feel free to join our Discord (http://discord.trifox-game.com/) and let us know what you think of the game and/or the changes made within this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been playing the game and enjoyed your time with it, please consider leaving us a review as this really helps us out a great deal <3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the best,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Trifox dev team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "HUD and UI",
+     "items": [
+      {
+       "text": "Added some music and SFX to the splash screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the spacing on the pause menu buttons to ensure all languages fit correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the current level name in the pause menu wouldn't update when changing the language to and from Chinese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Flamethrower turret",
+     "items": [
+      {
+       "text": "Reduced the min required distance from 2m to 1m",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue that caused the music to no longer be playing correctly when returning to hub or title screen during certain cinematics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "The intro cinematic can now be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "The initial hubworld cinematic can now be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The loadout room + first world unlock cinematics can now be skipped. The doors still open normally but without the cinematic being in control so that the player gets the player feedback of what has happened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All the screen cinematics can now be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "The loot chests rewarded at the end of the level will now spawn at the next checkpoint so they will respawn properly when checkpoint resetting or loading from a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Fixed an issue where certain ground collision objects were set to an incorrect layer. This allowed you to blink into the floor and accidentally end up in the water when you didn’t want to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Fixed an issue where the air vortex tunnel door collider could close a fraction too soon, causing you to get stuck in the air vortex top section depending on your speed moving through the tunnel. This was caused by the trigger zone that's responsible for closing the door is hugging the door collider. These have now been air gapped by 1.5m. Extra safeties have also been added so the door will re-open if it was closed and the player is still inside the top section. In this case the player can jump back into the air vortex and the door will open allowing the player to exit without having to resort to a checkpoint reset.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Extended the trigger zone used for culling destructibles, loot & wild ice on the mountain peak, so you don't see stuff pop in/out when standing on the furthest floating rocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Added deployment blockers on top of the crystals to avoid issues where deployables would be placed exactly on top of the crystal and thus preventing the deployable from applying its effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Improved the health strip visualization on the arm weak points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the damage visualization on the arm weak points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved targeting of the weak points when playing the game with mouse and keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved the tightness of the boss hazard collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Added missing sfx to the arms when damaging them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "The cinematics skip button will no longer change the credits scroll speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The outro cinematics can now be skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 8,
+    "balance": 1,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1211240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1211240/view/4706851091181666329"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-29T21:29:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.873Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.142Z"
+  },
+  {
+   "id": "trifox-107180@1.0.1.0",
+   "gameId": "trifox-107180",
+   "displayName": "Update 1.0.1.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-21T19:16:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The first Trifox update is a thing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has been a tremendous help in pinpointing any potential issues and painpoints within the game that our team might have missed along the way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Below you can find the full and detailed list of the changes that have been made for this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always feel free to join our Discord (http://discord.trifox-game.com/) and let us know what you think of the game so far and/or the changes made within this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care and have fun :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Changes",
+     "items": [
+      {
+       "text": "Added support to the save file verification to ensure the registered chest order can be updated based on the save file template. This is required in order to ensure parity and to make sure the gem unlock order tracking will function correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new tracker in the save file to allow the visualization of the new gems being unlocked in the correct order as they can be found in the levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue where the player was pushed around when interacting with complex, multi collision moving objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "HUD and UI",
+     "items": [
+      {
+       "text": "Adjusted the level completed gem unlocking to visualize which gems are and were unlocked based on their order in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the level exit gem unlocking to visualize which gems are and were unlocked based on their order in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the level selection screen gem visualization to show what gems you are still missing based on their order in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the height of the ability unlock tooltip so it’s no longer intersecting with the player while standing on the button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added equipt button tooltips for the movement abilities to help players understand how the movement ability assignment works and to improve the clarity during the tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the restart option in the pause menu so it restarts the level from the start. This behavior could be achieved by returning to the hub and restarting the level, but this button will allow players to do this faster. (Progress in the level will be lost.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a quick retry option in the pause menu which has the behavior of the old restart. It will load the level at the last achieved checkpoint. (Progress beyond that checkpoint will be lost.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the hub pause screen stats display was showing the wrong information. The hub pause screen will now show how many total gems you have collected instead of how many you have found in the current level and the total combined checkpointed playtime instead of the current level checkpointed playtime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "Reduced the sprint start time by half.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Memory Shards",
+     "items": [
+      {
+       "text": "Inverted the movement of the homing target effect so it’s even more obvious to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the color of the homing target effect to tie it more to the ability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added additional SFX to the homing target beacon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the damage output from 4 to 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a safety check to avoid the possibility of hitting yourself with the memory shards and setting a beacon when spinning around very quickly. You can still trick target yourself but only if you actually intend to do so.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Essence whip",
+     "items": [
+      {
+       "text": "Damage will now no longer be dependent on the speed at which you whip the enemies and always apply the full damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Spikeslam",
+     "items": [
+      {
+       "text": "Removed the collision detection from some of the spawn particle systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extended the collision detection to ensure a better hit detection on certain very steep slopes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a safety mechanism so that (in the rare occasion) that your attack didn’t find a surface to spawn the Spikeslam wall, you will not lose your charge/cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "EarthBender",
+     "items": [
+      {
+       "text": "Removed the collision detection from some of the spawn particle systems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Immobilization field",
+     "items": [
+      {
+       "text": "Reduced the lifetime of the Immobilization field from 30s to 15s.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added damage to the Immobilization field to make it a more valuable ability for certain loadouts and to allow for interesting shard bomb combos. 1 damage per second.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Helicopter",
+     "items": [
+      {
+       "text": "Enabled the abort interrupt window. The player can now use the interrupt button to cancel out of the movement ability and drop at the current location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Adjusted the dissolve settings of one of the cross beams in the loadout room to avoid the screen from being blocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated some of the ability videos to match the changes made.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Removed some of the pickup drops inside of the crates that are in the water to avoid players from being lured to their death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly tweaked some of the camera setups to provide a better view of the pillar puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added additional geometry to the top of the pillars to help the player with the platforming puzzle. Before we noticed that quite a number of players missed the jumps because of the small surface area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added additional hints for the pillar puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly improved the button collision in the top pillar puzzle button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the force with which you drop the statue heads so that they will drop closer to the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Added health pickups to some of the enemies during the cart alignment sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the difficulty setup of the minecart sequence to avoid issues where the hard and higher difficulty modes were almost impossible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hard difficulty hp multiplier is now 0.75 instead of 0.5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Insane difficulty hp multiplier is now 0.5 instead of 0.25.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced a hidden explosive barrel with a regular barrel to avoid any further work accidents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved the rocketeer in the storage area platform slightly forward so he is easier to hit. He also comes running into view now instead of being there from the start to blow you into tiny bits and pieces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed propellers above factory entrance & thumper not moving because they were statically batched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added collision to elevator platform console at the crane arena entrance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed debug logging that was still active on the thumper door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the elevator ramp would not collide with the engineer deployables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could mage blink through the trigger zone starting the final encounter of the wastelands02 level, not triggering it when intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra collision to the balloon propellor case which was not targetable with pointer setup. (wasn't really an issue with controller due to auto aim.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Added safety collision in the river rapids exit area to avoid accidental blink positions on top of out of bounds pillars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the camera in the river rapids exit to avoid full camera view blocking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed the Freeze Cam trigger zones in the void during the orange dungeon section having collision with the deployables, causing a green ghost/blueprint feedback for deployables.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra collision to the mystical doors that enable/disable via the door controller. This fixes an issue where the player could dash back into the air vortex tunnels before they close, causing a soft lock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra collision to the green puzzle secret cages to prevent players from cheesing it and squeezing in between the door and the cage, potentially getting stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked floor collision in the purple secret room for a nicer movement experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed accidental double checkpoint reset on laser gate causing the gates to be open after checkpoint resetting depending on order of execution/framerate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small black frame fade in issue on the final cutscene that opens the laser gate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a collision issue in the orange trial that forced the player to jump to get on the button that opens the first door when standing on the rock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Added some dissolve setups to a number of crystals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Added a safety boss position reset to allow the boss to recover from the rare issue where its rotation can get out of sync.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "The health bar of the boss will now remain visible after destroying all the arms in the second stage until you deliver the final blow. This should make it more obvious that the fight is not quite over when all arms are destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed a rare issue where if you would take lethal damage right after you defeated the final boss, the cutscene would be mixed with a boss resetting. The player will now already be invincible to avoid this issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if the player would die right before delivering the final blow, the health bar of the boss would not reset with everything else. Making it impossible to see how much health the boss has left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 18,
+    "balance": 11,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1211240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1211240/view/4714731755416766786"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-21T19:16:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.871Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.141Z"
+  },
+  {
+   "id": "trifox-107180@1.0.0.9",
+   "gameId": "trifox-107180",
+   "displayName": "Hotfix 1.0.0.9",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-14T21:42:11.000Z",
+   "notes": [
+    {
+     "title": "General Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where you could only achieve level completion achievements related to the equipped loadouts if you didn’t die during the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1211240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1211240/view/6402455182509502544"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-14T21:42:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1211240",
+      "checkedAt": "2026-11-13T03:34:49.870Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:16.140Z"
+  }
+ ],
+ "issues": []
+}

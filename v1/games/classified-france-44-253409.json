@@ -1,0 +1,1249 @@
+{
+ "game": {
+  "id": "classified-france-44-253409",
+  "igdbId": 253409,
+  "name": "Classified: France '44",
+  "cover": {
+   "imageId": "co6wxx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6wxx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2cum",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2cum.jpg"
+  },
+  "ps5Release": "2024-03-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "classified-france-44-253409@major-2025-10-04",
+   "gameId": "classified-france-44-253409",
+   "displayName": "❗Update Required",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-04T15:49:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We want to let you know about an important update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A recently identified security vulnerability within Unity has been spotted, and while there is currently no evidence of impact on users, we’re taking all relevant steps to ensure you’re on the latest and safest version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To keep you safe, we’ve released a new patch that addresses the issue. Please update your game as soon as possible to stay protected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "You can read more about it here",
+     "items": [
+      {
+       "text": "As always, our priority will be on keeping our games safe and enjoyable for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2085370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2085370/view/1811772772545850"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T15:49:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:17:28.350Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-04T15:49:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:17:28.350Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-04T15:49:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:16.017Z"
+  },
+  {
+   "id": "classified-france-44-253409@1.03",
+   "gameId": "classified-france-44-253409",
+   "displayName": "Patch 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-17T09:08:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Campers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today brings the release of Patch 1.03 which is intended as a hotfix for many of the errors reported by the community once Patch 1.02 was released. Thank you for taking the time to inform us of these errors and your patience as we addressed them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a note to any console players who may be reading this, currently Patch 1.03 is only available on the PC versions of Classified: France ‘44. We intend to release a version of 1.03 for consoles as soon as it has been given full clearance by our QA teams.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue that affected older saved data where Mission Tokens wouldn’t spawn on the Campaign Map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that would occur when reinforcements entered the map whilst an allied unit had retreated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when an ally died during the enemy turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that would occur when an ally recovered on the same turn a unit with the \"Quit Messing About\" skill died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that would occur if an ally died from enemy Overwatch whilst having AP remaining.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that would occur if an ally died whilst shooting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur if a recovering ally died during the enemy turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that would occur if an ally died before they gained the Defiance buff on the following turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur as enemies performed actions during the enemy turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when alerting enemies with Melee.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when firing at enemies with Overwatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when loading a save immediately after shooting an enemy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that would occur if a stunned enemy entered the recovering state from bleeding at the start of a turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Allied units wouldn’t be able to move on their turn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where saves could not be loaded in newly created User Generated missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game would hardlock after an enemy used an MG Nest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the camera could get stuck over a dead allies location when they died whilst running into enemy Overwatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 17,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2085370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2085370/view/5747233970421543253"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T09:08:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:17:28.350Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-17T09:08:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:38:29.276Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-17T09:08:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.276Z"
+  },
+  {
+   "id": "classified-france-44-253409@1.02",
+   "gameId": "classified-france-44-253409",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-01T16:00:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Campers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, as well as the Agent Pack release we are also dropping the 1.02 patch across all platforms. For consoles, this means you'll also get the fixes and changes from 1.01 and the below changelog.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's mentioned in the Mission Changes section, but as another warning, If you have a save midway through one of the missions that have received changes and begin to play from that, you will still have the old layout and changes until you either restart the mission or select the mission again from the Campaign Map. This was done to keep your save files in-tact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, let's get to the notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Updated the Factions Flags to emphasise they are interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced load times for missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mission Changes",
+     "items": [
+      {
+       "text": "Worth noting - If a mission that has been updated is mid-play you will continue saves with the old layout until it is selected from the campaign map or restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Getaway - Adjusted enemy start positions, bringing reinforcement positions closer to player start position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Codebreakers - Reduced starting enemy presence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rapid Raiders - Changed a Sapper to a Rifleman and made the patrol path near the field radio more forgiving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Killing Place - Reduced subclass difficulty of enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Liquidate Agent 15 - Reduced reinforcement intensity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Haunted Marsh - Adjusted enemy reinforcement positions, reduced subclass difficulty, added medkits and brought player start position closer to MG nests, reducing overall number of enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Assassin's Deed - Reduced enemy start count. reduced enemy spawn intensity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Breakout - Reduced subclass difficulty of starting units & reinforcements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Operation Goldfinch - Adjusted Armoured Car position, increased enemy subclass difficulty, adjusted patrol of key carrier, and brought enemies closer to combat area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lancet - Changed mission type to an ambush mission, reinforcement timer is visible from mission start, adjusted reinforcement position, mission doesn't abruptly end if the player kills all enemies on the map before reinforcements arrive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guns at Saint Amar - Adjusted enemy reinforcement position, adjusted enemy squad groupings, increased intensity of infinite reinforcements slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Trenchworks - Adjusted enemy spawn positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slay Le Voirloup - Adjusted aggressiveness of enemy units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vengeance - Increased enemy reinforcement intensity, added additional starting enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Elite Difficulty Rebalance",
+     "items": [
+      {
+       "text": "Injuries at Elite Level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cap on injuries to morale lowered from 65% to 50%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Cap on injuries to AP lowered from 8 to 6 AP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Loss of Health per physical injury increased from 20% to 25%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Loss of Morale per physical injury increased from 15% to 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Loss of AP per point of fatigue increased from 1 to 2 AP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Campaign Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced victory threshold for Stalemate to 67%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Weapon Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerfed proc chances for Stun, Disorient and Expose",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced morale damage output for bolt-action rifles, semi-auto rifles, and M30 Drilling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerfed damage output for M30 Drilling by 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced morale damage output for melee weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerfed Mk 2 grenade blast damage by 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerfed Grenade morale damage output for frag radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Heer, Fallschirmjager, Gestapo base accuracy buffed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Morale curves reprofiled - steeper increase in early game and flatter in late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Heavy class base morale buffed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Heer Heavy base health buffed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Snipers gain 1 Armour",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the class of the informer in mission 'Liquidate Agent 15' to Officer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where Shooting Action Cameras would sometimes play in front of another object which obstructed most of the camera's view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the incorrect mission day cost could be listed on the “Operation Lamprey” Mission Briefing screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Primary Objective on “Recce Birds” would not complete as intended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where hovering over a Contextual Action Pop-up and pressing Resume/Quicksave would then incorrectly cause allies to move.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Shooting Action Cameras on Tiger Trap cut to a grey screen at the start & end of Action Cameras",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where characters could freeze after picking up documents or after an allies attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a button binding icon for the Enemy Focus button which would display as a Debug String when using some keyboard layouts.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Melee Action Camera would often be obstructed by Fadable objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemy AI reinforcements would sometimes timeout causing them to stop acting in missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where cycling the Toggle region UI with a gamepad on a region that had nothing on it could trigger a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where performing a quickload and selecting a QTE at the same time could trigger a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where restarting the mission just after throwing a grenade could trigger a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlocks that could occur when reinforcements with Elite Scout spawned on “Operation Pall Mall”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where using an MG Nest whilst a demolition cutscene played caused the HUD to disappear which would then lead to a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Spawn Ally\" function wouldn’t work as intended in the Mission Creator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player would incorrectly receive a 10% higher experience reward from each mission after 26 or less days to D-day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an enemy could be killed with melee from a distance when the new enemy type pop-up was triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Demolition would not trigger if the Blast Door cutscene was triggered at the same time causing a blocker on “The U-Boat” & “Danger Close”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where at certain zoom levels, allied units would turn invisible beside and above the bunker on the “Codebreakers”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where if the Third Wave & Gestapo spawned at the same time, a secondary objective could not be completed on “The Call”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where saving & loading after planting the demolition charges caused the demolition radius to disappear on “The U-Boat” & “Danger Close”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Enemy Tokens on the Campaign Map would have no intention displayed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where lines from Overwatch would still be visible under units after coming out of Overwatch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemy AI would use Overwatch into a hedge on “Slay Le Voirloup”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the enemy officer could get stuck in Patrol after being alerted when noticing Luke is missing on “Breakout”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where units would not rotate towards the path chosen by the player after vaulting from the crouch state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was not possible to spawn some characters \"On Start\" as they lacked a preset team setup in the Mission Creator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Camera Start Position value was not saved in the Mission Creator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Extraction zone would move when save & loading on any user-created mission featuring multiple Extraction Area assets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where selecting the \"Enemy focus\" option whilst the player was hovering over no units removes would then remove the players ability to select units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where selecting cancel on a QTE whilst the unit was vaulting would not stop the unit from completing the action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where multiple resolutions would not be applied after resolution was set to 1280x720.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where two different versions of the Status Effect “Stunned” were being used for Abilities & Weapon Procs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the preview models of some assets would appear scaled when changing the asset's position in the Mission Creator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where multiple placed destructible vehicle assets would be affected by gravity after launching the mission in the Mission Creator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where rescuing a character that was inside of an enemy vision cone wouldn’t alert enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in the \"Starting the mission with too many units in the Roster\" pop-up in the Mission Creator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where enemy units would not react to Suspicious Noise upon placing a demolition charge on an Armoured Car on “Greyhounds”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where characters in the Bound pose would sometimes hold a Primary Weapon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the graphics settings were not saved after restarting the title if the player saved them by exiting the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Break/Suppress target text was not shown correctly on the Attack Info Panel if the attacker was Suppressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a delay would occur before a Spec Ops mission begins loading after selecting \"Launch mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where loading a Campaign Map save from a mission would cause placeholder assets to appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where swapping between 2 shooting actions whilst aiming would cause the character to stop using the aiming animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where units would enter the Full Cover animation in the wrong direction after shooting an enemy behind them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a discrepancy between the secondary objectives shown on the mission briefing screen and mission reward screen on “Getaway”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Dilemma ‘Directorate 5’ would not award an outcome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Luke Anson would face the wrong direction in cover depending on the direction the character entered the cover from on “Breakout”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where loading a save with Dilemma open would allow the player to enter a mission with the entire team selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Taunt skill would not work as expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where firing at/killing an enemy would trigger too many Voice Lines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a single enemy would be displayed as a Target multiple times on the Target List.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the armoured car icon would appear twice on the Target List.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where line of sight was not obstructed with the roof of the train carriage on Operation Mailman.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where unequipping a unique knife off of a character incorrectly gave them the \"Boot Knife\" instead of the “Trench Knife”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where swapping unique outfit pieces from one unit to another caused the unit to where an outfit piece not tied to their default gear pool",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where selecting a cell to move just before an MG Nest was fired caused the unit to get stuck on the MG.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where using an MG Nest whilst it was faded could lead to a crash/exception.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where ending the turn just after alerting enemies would make some of them time out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Health & Morale bar would disappear too quickly after a unit died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a delay before the Move Grid/Actions were refreshed when swapping between units.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Console Fixes",
+     "items": [
+      {
+       "text": "Fixed a crash that occurred after long sessions due to memory issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PS5 Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed an issue where loading a Spec Ops mission just after launching the game would sometimes trigger a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where audio would stutter whilst loading into missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Xbox Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where the player would be unable to see DLC if installed on the main menu until entering gameplay and returning to the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Console",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known issue on the console versions of 1.02 where the armoured cars won't always fire at you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A crash occurs when reinforcements enter the map whilst an allied unit has retreated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 66,
+    "balance": 22,
+    "other": 22,
+    "ps5": 1,
+    "topNew": [
+     "Updated the Factions Flags to emphasise they are interactable.",
+     "Reduced load times for missions"
+    ]
+   },
+   "sourceIds": [
+    "steam-2085370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2085370/view/5766372999940387608"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-01T16:00:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:17:28.348Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-01T16:00:59.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:17:28.349Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-01T16:00:59.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:16.015Z"
+  },
+  {
+   "id": "classified-france-44-253409@1.01",
+   "gameId": "classified-france-44-253409",
+   "displayName": "Patch 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-28T15:30:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch Notes - Steam Patch - V.1.01",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ATTENTION CAMPERS!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we bring you our first PC update to Classified: France ‘44 which is our public 1.01 build. This is to address some of the more frequent issues the community have reported since launch, but we intend to deploy a larger update with substantial fixes, balance changes and more closer to the end of April (subject to change).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’d like to thank everyone who has been engaging in the forums, on our socials and our Discord for reporting issues and their overall experiences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NOTE: These changes are not live on console versions, the following changes are scheduled to come to consoles with the 1.02 patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "User-created mission saves can now be loaded without triggering a DLC missing error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy units will no longer instantly disappear on death and will now fade out over a few seconds if the new “Corpse Visibility” setting is off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "Added new “Corpse Visibility” game option in the settings menu to keep corpses visible and prevent the fading out on death if enabled. Note: Enemies will not react to corpses if “Corpse Visibility” is set to ON.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "The text for the Level 2 Description of the Heavy skill “Bulletstorm” overlaps in French, Italian and German.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2085370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2085370/view/5749481331437308018"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-28T15:30:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:17:28.347Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-28T15:30:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2085370",
+      "checkedAt": "2026-11-13T03:17:28.347Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-28T15:30:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:16.013Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "cb1d8bee9cb0",
+   "text": "The text for the Level 2 Description of the Heavy skill “Bulletstorm” overlaps in French, Italian and German.",
+   "status": "open",
+   "firstReleaseId": "classified-france-44-253409@1.01"
+  },
+  {
+   "id": "3351af85311a",
+   "text": "Console",
+   "status": "open",
+   "firstReleaseId": "classified-france-44-253409@1.02"
+  },
+  {
+   "id": "933f2e82b749",
+   "text": "Known issue on the console versions of 1.02 where the armoured cars won't always fire at you.",
+   "status": "open",
+   "firstReleaseId": "classified-france-44-253409@1.02"
+  },
+  {
+   "id": "348ceadda3a7",
+   "text": "A crash occurs when reinforcements enter the map whilst an allied unit has retreated.",
+   "status": "addressed",
+   "firstReleaseId": "classified-france-44-253409@1.02",
+   "addressedBy": "classified-france-44-253409@1.03",
+   "addressedAt": "2024-05-17T09:08:35.000Z"
+  }
+ ]
+}

@@ -1,0 +1,948 @@
+{
+ "game": {
+  "id": "the-legend-of-heroes-trails-to-azure-23323",
+  "igdbId": 23323,
+  "name": "The Legend of Heroes: Trails to Azure",
+  "cover": {
+   "imageId": "cob8gl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob8gl.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar123t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar123t.jpg"
+  },
+  "ps5Release": "2026-09-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.2.8",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.2.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-10T21:04:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "here comes a small follow-up patch to 1.2.7 with the following improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a crash in Extra menu with Auto Text Advance enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exclude a few additional specific textures (e.g. cloud shadows) from point sampling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix message log background turning black when the display resolution changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/1848664643361215"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T21:04:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-10T21:04:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.140Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-10T21:04:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.900Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.2.7",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.2.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-06T20:47:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "this is just a small follow-up patch to 1.2.5 with the following improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a crash when leaving the camp menu and opening the save list in the same frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a regression on map textures in the intermission event \"Lloyd's Nightmare\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix a boat hull texture when using the original texture option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Exclude a few additional specific textures (e.g. cloud shadows) from point sampling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add a Japanese translation for the new settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/1845383656397557"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-06T20:47:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-06T20:47:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.139Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-06T20:47:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.899Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.2.5",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.2.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-10T16:10:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "it's been a while!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we are releasing a patch for Trails to Azure which brings feature parity with the new releases on PS5 and Switch 2. Obviously, the PC version was already quite feature-rich, but there are two new settings worth mentioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40784458/b316dd43bb4b426955b3e10de9efb3d2e6da15b6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Texture Style",
+     "items": [
+      {
+       "text": "The first one is called \"Texture Style\", and implements something that was requested -- not quite frequently, but a few times. In short, this setting allows switching between the modernised textures used in the PC version so far (\"Modern\"), and the original textures the initial release of the game shipped with (\"Classic\"). The latter can also be set to point sampling for a very old-school look.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here's a comparison",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40784458/27b0d1fcd90d1f0a05351a5d547856d92f6d1cab.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Color Space",
+     "items": [
+      {
+       "text": "The second new setting allows you to select between two color spaces for the game: sRGB and bt.709. Different versions of the game on different prior platforms were presented in either of these, so it's hard to say which one is more \"correct\", but the former is brighter and with slightly less contrast compared to the latter. As such, we decided to offer both options. Choose whichever one you prefer (sRGB is the first).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/40784458/bcec1e9896b1bbbe0f15978f73ca19eb6295e24b.jpg\"] [img src=\"{STEAM_CLAN_IMAGE}/40784458/9832fa9d64b85a0b95eedc9d9ca132059b164f52.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Changes",
+     "items": [
+      {
+       "text": "Fix various text and localization issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Be more resilient and/or informative in a few specific crash scenarios on some types of hardware.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a possible texture reloading bug when switching between languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Avoid polling disconnected controller slots every frame. This might very slightly improve performance in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix framerate drops with high polling rate (especially > 1000 Hz) mice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 11,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/1843481262692716"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-10T16:10:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-10T16:10:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.139Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-09-10T16:10:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.899Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.1.19",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.1.19",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-09T17:00:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "today we are releasing a patch for Trails to Azure which improves how the game interacts with platform achievement APIs. This should prevent performance issues in some circumstances, specifically when a large number of achievements was already unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note that this issue surfaced due to changes in how Steam deals with repeated achievement API calls, and this change affects many of our prior releases in similar ways. We are committed to patching all affected releases, but this has taken some time, especially for cases where we need to re-build games for which we already archived various development resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman, PH3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/1785321795739936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T17:00:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.898Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.1.18",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.1.18",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-08-28T19:31:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "in today's patch for Trails to Azure, we have gathered a large number of mostly relatively minor fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimize text rendering, particularly reducing frametime spikes when rendering new text at high FPS and with the fast text speed option enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes to text and text layout issues in both Japanese and English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various fixes to map rendering and/or collision geometry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow the use of multiple controllers simultaneously",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Display the correct button prompts in some circumstances when playing in Japanese",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix a small potential memory leak in the movie player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improve the handling of input binding reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent a rare potential soft-lock when closing shops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Limit maximum screen flashing speed of some effects with turbo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/5141475722342643232"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-28T19:31:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.897Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.1.12",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.1.12",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-18T19:25:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "in today's patch for Trails to Azure, we have included the following fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve audio device initialization on some software setups (should now match the behaviour of Zero in all aspects)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update the ED and OP movies for some platforms/languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix potential reference leaks when switching resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix mouse scrolling on minimap with respect to camera rotation",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Change input binding used in Horror Coaster minigame from `S-Break` to `Shortcut Menu`",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor map geometry fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/6539831519504695410"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-18T19:25:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.137Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.897Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.1.11",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.1.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-29T16:07:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "in today's patch for Trails to Azure, we have included the following fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the same experimental fast text option included in Zero. To use it, set \"fastTextSpeed\" to \"true\" in the category in \"%localappdata%\\Falcom\\Ao\\settings.toml\". This is not intended for general use -- please use this option at your own risk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fix a potential crash caused by a memory corruption when unlocking too many records at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Don't trigger records repeatedly when resuming from the latest save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix an issue in windowed mode where content might be drawn at an offset on startup.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Don't move the cursor on the car fast travel map if the user is using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improve button prompt spacing in some UIs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/5143714207947492622"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-29T16:07:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.137Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.896Z"
+  },
+  {
+   "id": "the-legend-of-heroes-trails-to-azure-23323@1.1.10",
+   "gameId": "the-legend-of-heroes-trails-to-azure-23323",
+   "displayName": "Patch 1.1.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-18T09:57:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "in today's patch for Trails to Azure, we have included the following fixes and improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a potential crash when advancing the Master Quartz level-up window too quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some instances where achievements would not be unlocked correctly after importing data from another release of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor 3D geometry fixes in a few maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the battle UI placement of the HP/EP/CP labels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented a workaround for loading Trails from Zero clear saves when in a WINE environment with separate prefixes (such as on the Steam Deck). For standard cases, it should now \"just work\", as long as you also have Trails from Zero installed on the same device, and started it at least once to make sure the saves are synchronized.: [expand type=details]Specifically, this now works if all individual Steam game prefixes are in the same root, which is the default Proton configuration. If you have multiple custom WINE prefixes you will still have to do a manual copy or symlink.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "As always for our releases, in case you experience any regressions you can revert to prior versions of the game using the Steam \"Beta\" feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Peter \"Durante\" Thoman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1668520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1668520/view/5125698536860695122"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-18T09:57:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1668520",
+      "checkedAt": "2026-11-13T03:33:36.136Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:53.896Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,906 @@
+{
+ "game": {
+  "id": "silver-pines-313597",
+  "igdbId": 313597,
+  "name": "Silver Pines",
+  "cover": {
+   "imageId": "cod2rg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cod2rg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6p8z",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6p8z.jpg"
+  },
+  "ps5Release": "2026-10-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "silver-pines-313597@3",
+   "gameId": "silver-pines-313597",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-06T16:34:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45060161/7d42095fd4a5b5a67265bc0a2fc4a83d3f33e351.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The third Steam patch for Silver Pines is now live. This patch fixes a number of remaining softlocks, including the Sheriff's department cassette player softlock. This patch also adds improvements to save handling when data is corrupted, UI and font scaling tweaks, and more! Read the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes (Beware Spoilers!)",
+     "items": [
+      {
+       "text": "Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks to some UI to increase font sizes and the game UI now allows scaling up to 110% using the 'UI Scale' option under 'Display' settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an option to exclude the camera from the quick item menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dualsense light bar controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can now press 'new game' from the main menu when a game is actively loaded, so you no longer need to delete a profile or switch profile to start a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix speedrun timer UI being cut off on some aspect ratios.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix storage box appearing incorrectly on the map in the Funeral Home.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improvements to save handling when data is corrupted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed being able to take more photos than allowed in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization and text fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI improvements for stair and ladder traversal icons, now appear smoother and are no longer shown in some places where it wasn't necessary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks the sheriff safe puzzle input to not allow false positives.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix getting hit by an enemy standing close-by while trying to interact makes the player character not be able to turn around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix soft lock with cassette player in Sheriff's department.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaks to item pickup logic to attempt to fix some rare cases where you can fail to pickup an item but it still gets removed from the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks to some stair cases missing permanent collision where you could fall through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed game over menu not appearing when the red overlay was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix quick map incorrectly repositioning to the bottom-right corner when opened in Nightmare area using controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the bell sound in nightmare ruin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shortened some frames on the crouched swing to make it less likely to look like you hit an enemy w/o hitting them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some animation issues when drawing some weapons next to a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for player being stuck in sheriff lobby boss fight from broken boss door interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Reverting keybinds will not be saved on game exit.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Hide cursor on all platforms during start-up intro videos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix gas tank not being set correctly as destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevent being able to be knocked out of boss door interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for cancelling an item transfer from storage to inventory causes the item to disappear visually.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix player not detecting a nearby drop when they are in the middle of turning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Update game completion calculation to include all the relevant upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Item duplication when reloading save game while using a temporary item from quick use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix Fog Shambler can now attack player when they are too close.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix enemies being able to follow you into some boss fight areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for preventing player from clipping into geometry and climbing walls by dropping items near walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for being soft locked when playing with 'infinite stamina' unlock when swimming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft lock where you can shoot out lights in motel rabbit hole scene and then not be able to use door with no flashlight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix some tutorials incorrectly showing multiple times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wind chime showing the incorrect state in some scenes in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "TV Studio fire escape collision fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks to flashlight low battery notification to appear earlier and use the same color as other elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix game unlock checkboxes in new game menu not playing any UI audio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Options Page input button UI tweak for PC.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for some areas of the game where the mouse cursor would not be correctly locked to the game window.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Voiceover events for locked doors and rusted padlocks will no longer trigger every time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And as ever, please continue to send us over your feedback, either in the #feedback or #bug-reports channels of the Silver Pines Discord, or through the Steam Discussions forum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2333000/Silver_Pines/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 23,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2333000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2333000/view/1848664643346444"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T16:34:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2333000",
+      "checkedAt": "2026-11-13T03:30:34.714Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-06T16:34:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2333000",
+      "checkedAt": "2026-11-13T03:30:34.714Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-06T16:34:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:11.751Z"
+  },
+  {
+   "id": "silver-pines-313597@1",
+   "gameId": "silver-pines-313597",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-09T15:33:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45060161/832702216581a0f648a7223b1998a0e08df7cf53.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you're all enjoying your time in Silver Pines so far! We've been listening to player feedback over the last 24 hours and have put together a hotfix to primarily address the performance and optimization issues some players are experiencing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Added new DirectX 11 launcher option to help improve performance",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a few specific scenarios that could cause softlocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with enemies blocking the elevator in the Union Apartments building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please continue to send us over your feedback, either in the #feedback or #bug-reports channels of the Silver Pines Discord, or through the Steam Discussions forum. All of your feedback is extremely valuable to us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And you haven't already, please consider leaving a review for Silver Pines on the store page:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2333000/Silver_Pines/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2333000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2333000/view/1846018067933752"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T15:33:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2333000",
+      "checkedAt": "2026-11-13T03:30:34.712Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-09T15:33:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2333000",
+      "checkedAt": "2026-11-13T03:30:34.712Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-09T15:33:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:11.749Z"
+  },
+  {
+   "id": "silver-pines-313597@2",
+   "gameId": "silver-pines-313597",
+   "displayName": "Patch 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-12T15:33:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45060161/d2d2e302698c2c891fc91d726327e17f0b186d08.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The second patch for Silver Pines is now live on Steam. This patch fixes some of the softlock situations some players have experienced, increases the max photo count, tweaks the Nightmare mode balance, and more! Read the full patch notes below.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you for all your feedback over the last week. It's very useful for us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes (Beware Spoilers!)",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various interactable objects no longer functioning if the player is interrupted when opening them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to help with a bug that sometimes can cause the Sheriff Department boss fight to not progress correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for several Riverside locations where you could get stuck if you entered them without a flashlight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to get stuck if you get hit when entering/exiting a ladder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several locations where it was possible to go out of bounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some objects in the final boss fight being in the wrong state during the chase sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cat Collar in the Clinic basement appearing and disappearing at the wrong time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player being positioned incorrectly when unlocking the door to the gas station garage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various collision fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various text and localization fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased max photo count from 30 to 100.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved fire effects from Molotovs and explosive gas tanks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Balance Tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nightmare difficulty balance tweaked slightly to make the early game a little smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The boxcutter now does 50% more damage while broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please continue to send us over your feedback, either in the #feedback or #bug-reports channels of the Silver Pines Discord, or through the Steam Discussions forum. All of your feedback is extremely valuable to us!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And you haven't already, please consider leaving a review for Silver Pines on the store page:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2333000/Silver_Pines/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 1,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2333000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2333000/view/1835236783563868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T15:33:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2333000",
+      "checkedAt": "2026-11-13T03:30:34.711Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:30:34.713Z"
+  },
+  {
+   "id": "silver-pines-313597@patch-2026-06-05",
+   "gameId": "silver-pines-313597",
+   "displayName": "Silver Pines Demo Patch out now",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-05T15:30:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45060161/532619f28e808c3aa2b52afdd4f8871c05ade74d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A big thank you to everyone who has tried the Silver Pines demo and provided us with feedback in the Steam Forums or in the Silver Pines Discord. It's extremely helpful to hear what you all think at this stage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just put out a patch for the demo that introduces some bugfixes and changes requested by the community. This includes a fix for the performance issues some players have been experiencing when streaming the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Read the full patch notes below for more information.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Patch Notes",
+     "items": [
+      {
+       "text": "Default Display type updated to 'Exclusive Fullscreen', should provide improve performance especially while streaming*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to disable film grain effect in 'Display' options, which should also help with video stream performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Update to video transcoding to remedy issues where video playback, should fix getting stuck on black screen bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for mouse cursor not being locked to the borders of the game application on multi monitor setups",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added new messy death animations for enemies when killed by bigger weapons (such as the shotgun)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combat / danger ambience intensified",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crawler enemies have been rebalanced to be more interesting to fight and made slightly more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed take item input event sometimes triggering incorrectly when picking up new item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix melee weapon item panel not being refreshed correctly on game reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix getting stuck on the stairs inside the rabbit hole bar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix getting stuck underneath the boardwalk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skip duplicate voiceover lines triggering multiple times (for example, ringing the bell is rung over and over)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies should no longer camp the bottom of the stairs inside the motel shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to enemies death animations when they are killed while trying to get back up from knockdown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inline text hints now correctly read rebound keys.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various typos and wording fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix 'press any button' intro page not responding to all buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* We have had multiple reports of players experiencing performance degradation over time and this seems to mostly be caused by streaming the game, such as when sharing the game on Discord or recording with OBS. This seems to be an issue with Windows and running the Unity applications in Borderless Windowed mode, so we are testing out a change here to default the game to 'Exclusive Fullscreen' instead. If you stream the game using Discord, OBS, or similar software and experience performance degradation over time, make sure you are using either Exclusive Fullscreen or Maximized Window. You may also see improvements in this by making sure you are running the latest drivers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45060161/de4457b8e4ec5e258e6fe48132441274e44857dc.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Click here to join the Silver Pines Discord!",
+     "items": [
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/2333000/Silver_Pines/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2333000"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2333000/view/1834602721191210"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-05T15:30:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-2333000",
+      "checkedAt": "2026-11-13T03:30:34.710Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:11.746Z"
+  }
+ ],
+ "issues": []
+}

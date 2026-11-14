@@ -1,0 +1,338 @@
+{
+ "game": {
+  "id": "paper-ghost-stories-third-eye-open-204157",
+  "igdbId": 204157,
+  "name": "Paper Ghost Stories: Third Eye Open",
+  "cover": {
+   "imageId": "co5k9f",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5k9f.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1od5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1od5.jpg"
+  },
+  "ps5Release": "2024-09-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "paper-ghost-stories-third-eye-open-204157@1",
+   "gameId": "paper-ghost-stories-third-eye-open-204157",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-20T16:15:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1.) Added audio sliders to let you boost the volume of music and SFX by another 40%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2.) Fixed an English typo in Chapter 7: \"go ourside the circle.\" -> \"go outside the circle.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3.) Fixed a rare stuck bug in the marble game (Chapter 7).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4.) Applied fix to prevent a rare issue where the staircase door in Chapter 8 can knock up the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1983300"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1983300/view/6341720536506770745"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-20T16:15:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.173Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-20T16:15:43.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.173Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-20T16:15:43.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:52.349Z"
+  },
+  {
+   "id": "paper-ghost-stories-third-eye-open-204157@post-2024-09-11",
+   "gameId": "paper-ghost-stories-third-eye-open-204157",
+   "displayName": "Quick fix 3: Apply FPS Cap",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-11T10:13:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Unintended behaviors are seen when the game runs at high FPS. Limiting the maximum frame rate to 60 to ensure consistency across devices of different specs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1983300"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1983300/view/6250522009509045033"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-11T10:13:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.172Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-11T10:13:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.172Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-11T10:13:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:52.349Z"
+  },
+  {
+   "id": "paper-ghost-stories-third-eye-open-204157@post-2024-09-06",
+   "gameId": "paper-ghost-stories-third-eye-open-204157",
+   "displayName": "Quick Fix 2: Typo Fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-06T02:11:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Fixed 3 English typo found in Chapter 8 and Chapter 9.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"No not yet...\" -> \"No, not yet...\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Hehe, not not really.\" -> \"Hehe, no, not really.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"Oh course everyone treats her different.\" -> \"Of course everyone treats her different.\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1983300"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1983300/view/6242640076598699937"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-06T02:11:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.172Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-06T02:11:38.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.172Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-06T02:11:38.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:52.348Z"
+  },
+  {
+   "id": "paper-ghost-stories-third-eye-open-204157@post-2024-09-05",
+   "gameId": "paper-ghost-stories-third-eye-open-204157",
+   "displayName": "Quick Fix 1: Typo Fix",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-09-05T04:52:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a typo in the first conversation of Chapter 5. From 'but they they will' to 'but then they will'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1983300"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1983300/view/6242640076595462001"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-05T04:52:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.171Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-05T04:52:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1983300",
+      "checkedAt": "2026-11-13T03:27:41.171Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-09-05T04:52:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:52.346Z"
+  }
+ ],
+ "issues": []
+}

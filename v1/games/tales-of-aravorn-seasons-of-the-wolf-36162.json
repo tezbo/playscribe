@@ -1,0 +1,168 @@
+{
+ "game": {
+  "id": "tales-of-aravorn-seasons-of-the-wolf-36162",
+  "igdbId": 36162,
+  "name": "Tales of Aravorn: Seasons of the Wolf",
+  "cover": {
+   "imageId": "co42wa",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co42wa.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arfxa",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arfxa.jpg"
+  },
+  "ps5Release": "2022-06-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tales-of-aravorn-seasons-of-the-wolf-36162@1.1.4",
+   "gameId": "tales-of-aravorn-seasons-of-the-wolf-36162",
+   "displayName": "Update 1.1.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-15T07:54:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "What's New in 1.1.4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixes a crash bug during Rowinda's flashback quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "several enemies artwork was removed by mistake, now they will show up again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-333390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/333390/view/1785774543615007"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-15T07:54:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-333390",
+      "checkedAt": "2026-11-13T03:32:26.720Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:13.851Z"
+  },
+  {
+   "id": "tales-of-aravorn-seasons-of-the-wolf-36162@1.1.2",
+   "gameId": "tales-of-aravorn-seasons-of-the-wolf-36162",
+   "displayName": "Update 1.1.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-12T12:15:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "When I did the previous 1.1.1 update I forgot to update some libraries to the new Python 3.0 framework resulting in crashes when accessing some vendors. This should now be fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also I've updated to a new Ren'Py version since previous one had some issues with certain graphic drivers, which could display garbage on screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements also should work fine. Thanks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-333390"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/333390/view/1785774543523879"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T12:15:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-333390",
+      "checkedAt": "2026-11-13T03:32:26.719Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T12:15:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-333390",
+      "checkedAt": "2026-11-13T03:32:26.719Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-12T12:15:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:13.851Z"
+  }
+ ],
+ "issues": []
+}

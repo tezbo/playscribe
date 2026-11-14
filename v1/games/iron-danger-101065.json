@@ -1,0 +1,882 @@
+{
+ "game": {
+  "id": "iron-danger-101065",
+  "igdbId": 101065,
+  "name": "Iron Danger",
+  "cover": {
+   "imageId": "coa536",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa536.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arqjf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arqjf.jpg"
+  },
+  "ps5Release": "2023-08-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "iron-danger-101065@1.03.02",
+   "gameId": "iron-danger-101065",
+   "displayName": "Update 1.03.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-12-16T15:05:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are happy to provide you with a major update, so if you have had Iron Danger gathering dust in your library, now it’s great time to start playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full patch notes can be found at the end of this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of the main goals with the update has been fixing a big number of rewinding related issues that could’ve caused some things to not work correctly after rewinding on specific spots. These issueshave mostly been about enemies acting incorrectly, but in some cases they could have caused some levels to not be able to be completed without restarting them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another important aspect has been to make the game a bit easier. We started this with some balancing in early levels of the game and improving the gameplay mechanics tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to also thank all of you in our community for such great support and feedback during this year. Have a great rest of the year and enjoyable seasonal celebrations! Stay safe and healthy!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added new tutorial elements in the tutorial level that better indicate the correct timing for evades and blocks by highlighting the timeline position player should rewind to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed panicking AI not acting correctly if it couldn't instantly find suitable position to run into",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI corpse investigation logic when re-discovering dead body",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI perceptions not updating correctly with moving perception targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple doors (like Fireweed hatch) opening on its own after rewinds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed backup not arriving in Logjam level if game was rewound after doing damage to the dam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed picking up barrels through walls in some spots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "About a hundred small trigger fixes that could have caused issues on rewinds in different levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with Keyus not rising up correctly from grounds in rewinds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential culling issue with Spike Traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Grouse's destructible nest not working correctly when rewinding after hitting it once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some Possessed Automatons didn't show correct examination text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed some broken examinable stuff where the examination text couldn't be found",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues with chopping down Creep Trees not working correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Wait action having a cooldown on Hard mode, preventing chaining it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tooltips showing invalid cooldown times (rounding error)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tooltips showing invalid duration of many actions, especially in Hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed level results screen upgrade details showing some wrong cooldown and speed values in Hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Level 1-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed one engineer from inside the castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed one engineer from top of the stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed one engineer from the marketplace: Level 1-4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed flanking bandit from the first combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed one bandit from campfire, leaving only 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed crossbow from a bandit at the campfire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made all bandits have 50hp: Level 2-3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed one Keyu Master from the falling tree ambush: Level 2-4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed one shaman from the last room, leaving only one: Level 2-5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed one guard from the fight before Aurolith",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made enemies have little less HP as player characters are weaker in this level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Cleave action takes 3 heartbeats instead of 2 in Hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 17,
+    "balance": 12,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-899310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/899310/view/3886008544064226816"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-12-16T15:05:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-899310",
+      "checkedAt": "2026-11-12T07:24:16.254Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:16.254Z"
+  },
+  {
+   "id": "iron-danger-101065@patch-2020-04-23",
+   "gameId": "iron-danger-101065",
+   "displayName": "First major patch now available. Also: Free Demo out now!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2020-04-23T17:06:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s nearly a month since Iron Danger came out and we are happy to provide you with the first patch for the game, including lots of fixes and extra polish. Thanks for helping us to spot some of the issues by reporting them. The exact content for the patch can be found at the end of this post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other really exciting news is that we have decided to have a free demo of the game available! If you are still unsure if Iron Danger is the game for you or you have just been saving your money to get a game bit later, you can grab the demo and give it a go. All your progress in the demo will be transferred to the full game as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And when you have decided that you really want to buy the game, now it is the perfect time to do it in a style!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Supporter Bundle is in -34% sale, which means that you’ll get it for less than the normal price for only the game. The Supporter Bundle includes some really cool things, such as the Iron Danger graphic novel and highly praised game soundtrack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So no need to keep on waiting, just jump in and get your bundle at https://store.steampowered.com/bundle/13860/Iron_Danger_Supporter_Bundle/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "--------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iron Danger - patch update v1.01.08 release notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Common changes, apply to all the places where such an element is in use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Fixed angle of water decal. Caused some minor visual glitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Removed dissolve shader from temple stair material so that see through effect BUGFIX: does not break stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Improvement on pier object material to not get drilled holes by obstructed camera view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Automaton movement was jerky when he tried to watch characters and walk at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: AI - You could get different rewind results by casting fireball to an unaware enemy and rewinding backwards and not casting the fireball. Enemy still spotted you like you would have cast the fireball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Achievement trigger for getting shards was broken. Fixed so that you'll retroactively get achievements for all shards you have not received achievement when collecting one shard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PERFORMANCE: Performance optimizations to character animations (CPU)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PERFORMANCE: Performance optimizations in player character pathfinding when there were element effects on screen. You could sometimes get bad performance spikes when hovering inside such areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PERFORMANCE: Performance optimizations in NPC pathfinding for distant NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Adjusted path finding evaluations for element effects, allowing both characters and NPCs to try more often to find a way through hazardous elements if no other route is found.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Automaton no longer can use interactable props, like eat Roosterfish for healing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Enemies could sometimes stay hidden inside ground even though they were actively fighting against the player characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Topi's roundhouse kick upgrade was showing wrong duration for both basic kick and roundhouse kick in the upgrade screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Troll hunter achievement was not awarded if the player rewound the game just after killing a troll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Fixed small scaling issues with enemies in several levels. Earlier this was the source of some visual glitches in enemy indicators.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Keyu Shaman had the wrong portrait artwork.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Lead actress’ name had typo in it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Action toolbar's item usage tooltips did not have \"cancel\" text translated to all languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Charge, Bull Rush and Dodge sometimes showed their targeting visuals in wrong place if there was no valid direction to use them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "BUGFIX: Element tooltip background box was not always scaled correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Camera cone is bigger for dissolve effect (seeing better through trees, walls etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FEATURE: Added tutorial page to journal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Changed some examinable mundane items to not have examinable highlights and texts (such as baskets etc).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Changed roofs to hide in between camera and character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Some parts of credits texts reformatted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "IMPROVEMENT: Changed block, wide block and block arrows to have constant duration in all difficulty levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "IMPROVEMENT: Finishing blow and the Finisher skills",
+     "items": [
+      {
+       "text": "Can now also be used against swamped and frozen enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Targeting improved so that if a character was prone, swamped or frozen when action started, they'd receive the damage even though they'd lose status effect before dealing the damage. Also, not allowed to target characters without such status effects anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IMPROVEMENT: Minor tweak to reduce the amount of situations where the enemy is able to just get a bit out of reach when you are attacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IMPROVEMENT: Disabled interactable props no longer show prediction of their usage (such as some levers in Sunken Temple)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level-specific changes. Warning, may contain mild spoilers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Sometimes bandit camp conversation happened only after combat. If we end up into combat before it, the conversation is now never shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IMPROVEMENT: Added some extra stealth grass around bandit camp to give additional variety if entering camp from different direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Fireweed was missing from minimap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Some small fences and railings blocked fireballs, arrows etc. Fixed to be able to shoot through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IMPROVEMENT: Fine tuning the first bandit discussion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Enemy guard conversation was triggered multiple times when rewinding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Removed interaction from lock runes as you are not meant to interact with them in this level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Missing Voice-overs in one conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: It was possible to get stuck behind broken pillar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Automaton power plates could be activated multiple times and also receive same conversation all over again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: It was possible to get stuck behind broken pillar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PERFORMANCE: Performance improvements on level specific trigger handling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Rewinding in specific spot could break the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Conversation was playing multiple times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[Part 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Rewinding Angksuw conversation could break the camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level start conversation only played after combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character shadows had a noisy visual glitch on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: In one room, the barrel blocked movement so that you could not enter through the door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Rewinding in shard chamber could break the end of the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Player was able to walk through and inside big decoration pipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Automaton light was very strong, sometimes hindering playability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: Player was able to walk through and inside big decoration pipes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: It was possible to sneak behind the last troll and enter the temple without entering into combat with it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BUGFIX: It was possible to walk on the water in one spot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chapter 7",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Part 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "IMPROVEMENT: Reduced light intensity from bear tank front light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 51,
+    "fixed": 0,
+    "balance": 0,
+    "other": 35,
+    "ps5": 0,
+    "topNew": [
+     "Can now also be used against swamped and frozen enemies",
+     "IMPROVEMENT: Disabled interactable props no longer show prediction of their usage (such as some levers in Sunken Temple)",
+     "Level-specific changes. Warning, may contain mild spoilers!"
+    ]
+   },
+   "sourceIds": [
+    "steam-899310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/899310/view/3112493747267419423"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-04-23T17:06:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-899310",
+      "checkedAt": "2026-11-12T07:24:16.253Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:16.253Z"
+  }
+ ],
+ "issues": []
+}

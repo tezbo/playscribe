@@ -1,0 +1,891 @@
+{
+ "game": {
+  "id": "nuclear-blaze-153876",
+  "igdbId": 153876,
+  "name": "Nuclear Blaze",
+  "cover": {
+   "imageId": "co4a95",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4a95.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aruid",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aruid.jpg"
+  },
+  "ps5Release": "2024-05-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "nuclear-blaze-153876@patch-2022-03-18",
+   "gameId": "nuclear-blaze-153876",
+   "displayName": "Quick Friday patch and Linux news",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-18T14:33:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This small update includes the following changes, based on your feedback:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now customize your GamePad buttons from the Controls menu, like it's 2022. Please note that Gamepad button customization is only possible with an actual controller plugged in. Otherwise, you'll only see Keyboard controls there.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Default gamepad controls were slightly changed: LB/RB are now used for Water Down/Up respectively, and RT is now an alias for the X button (ie. spray water)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed possible \"soft-locks\" in some levels (ie. being stuck in a death loop™ or in some weird spot)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various level design and balancing fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Linux, when?",
+     "items": [
+      {
+       "text": "I have made good progress on the dedicated Linux build, which was tested successfully on :",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Ubuntu (18.x, 19.x and 20.x)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Manjaro 21.x",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I hope to have it publicly available by next week. If you want to participate and test it on your own machine, please visit this forum thread:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1662480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662480/view/4259848535831369378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-18T14:33:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662480",
+      "checkedAt": "2026-11-12T09:23:30.851Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:30.851Z"
+  },
+  {
+   "id": "nuclear-blaze-153876@1.5",
+   "gameId": "nuclear-blaze-153876",
+   "displayName": "Update 1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-16T13:43:18.000Z",
+   "notes": [
+    {
+     "title": "Alert level increased!",
+     "items": [
+      {
+       "text": "\"Hold My Beer\" is a complete rework of the whole campaign to extend the playable content. It's much more than just some \"Hard difficulty mode\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All levels were updated with new areas to explore! But be careful, as new threats will also get in your way: automated turrets, nasty acid pools...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A world of mystery",
+     "items": [
+      {
+       "text": "The Hold My Beer update adds tons of new secrets and hidden Easter eggs everywhere! Pay attention to details, check every walls and look for cats or other weird things.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "By the way, I implemented a new Level Selection screen to make your cats hunt a little bit easier ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And for the most adventurous explorers out there, 2 new secret endings are to be unveiled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Halligan Axe",
+     "items": [
+      {
+       "text": "This new tool will allow you to destroy doors in much faster way and to break barricade walls to reveal more secrets. Or traps. Well honestly, it's probably more traps than secrets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Adjustable difficulty",
+     "items": [
+      {
+       "text": "Difficulty options were reworked to be more meaningful. Remember that it's not about making the game easier, it's about adjusting the challenge to your own gamer profile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "And for me, it's just about making sure my family can still play the game, from my hardcore gamer cousin to my now 4yrs old boy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "New features",
+     "items": [
+      {
+       "text": "\"HOLD MY BEER\" mode: this new game mode is unlocked by beating the game once. A full re-exploration of the game world, with many new hidden areas in all levels, new devastating threats and new tactical elements. Fire propagation will also be faster, forcing a more precise and tactical approach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new LEVEL SELECT screen when using CONTINUE from title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the original jam version of Nuclear Blaze, made in 48 hours, for curious players out there ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Reworked ALL levels to integrate tons of \"HoldMyBeer mode\" related gameplay variations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added an extra ending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Automated Defense Turrets in \"HoldMyBeer\" mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Acid water pools because fire wasn't entertaining enough",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better control of the Dodging movement: if you press the opposite direction while dodging, this will brake a lot. I know you add tons of fun dodging into fire, sorry for fixing that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's now possible to Dodge (and cancel) while breaking a wooden door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed a few Wasps in Hive and Containment Chamber. They will still appear if you play in HoldMyBeer mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the old difficulty option \"Fast Fires\" which was merged into the HoldMyBeer feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced Wasps HP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced Wasps attack charge speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an Armor in the \"Electric\" level (only available in normal mode)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Seems like more cats lost their way inside Site 16.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you leave a level with a cat, and the cat hasn't reached its exit yet, it will now magically exit, because that's what cats do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage on enemies will be increased when using the \"Powerful water\" accessibility setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User interface and ergonomics",
+     "items": [
+      {
+       "text": "The new level select screen shows levels with missed cats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a \"checkpoint reached\" notification.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When you die, the fog of war is no longer reset and discovered area stay \"revealed\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new accessibility setting to adjust Fire Propagation Speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new display setting to reduce or remove bright flashes and camera shakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Time will now slow down and fire will stop propagating while reading a document.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added full PATCH NOTES to the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added extra \"combo\" keyboard controls for accessibility purpose (meant to help players having difficulty holding multiple buttons at the same time, like Water + Up). On gamepad, these are bound to LT/RT.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a \"Press twice to confirm\" security when pressing the RESTART LEVEL key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the \"Fire warning\" setting (it's now always ON, as it's more of a quality-of-life feature than an actual difficulty option)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All levels now have a proper intro title (the one that appears in the bottom left corner).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved Credits, Patch notes and a new homepage link inside ABOUT menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doors opened by cinematic events should no longer show up a \"Button required\" tip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added actual percentage value near Difficulty bar in Settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"level\" speed run timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed \"computer turning on\" sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dodging in front of an ingame document will no longer show up the doc content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing 1920x1080 resolution to windowed resolutions list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreased infra-red triggers sound volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed position of setting descriptions in scrolling menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a way to backtrack to the hidden cat in \"Access\" level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dozens of level-design related minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Kid mode",
+     "items": [
+      {
+       "text": "Added \"Secret base\" level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an explorable Fire Station in ending level (by popular request)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed water auto-aiming bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ladder climbing rare bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added \"victory\" jingle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better fog rendering in Kid Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Technical stuff",
+     "items": [
+      {
+       "text": "Fixed various game-controller related minor bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect music volume after playing a \"jingle\" (eg. when unlocking a permanent upgrade)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reworked the way \"saved cats\" counter is stored to avoid various bugs & issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed \"Dodge\" tooltip appearing in the wrong place in level \"Bad Omen\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed \"Fire extinguished\" sound that sometimes went crazy when wiping out heavy fires.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor translations fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 8,
+    "balance": 5,
+    "other": 27,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1662480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662480/view/4259848535823956832"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-16T13:43:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662480",
+      "checkedAt": "2026-11-12T09:23:30.850Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:30.850Z"
+  },
+  {
+   "id": "nuclear-blaze-153876@1.0.3",
+   "gameId": "nuclear-blaze-153876",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-22T08:58:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a new \"Fire warning\" option (enabled by default) which... well, warns you when you step in fire, or when the ground starts burning under your feet. This can be disabled in Accessibility settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated various sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new sound for falling wrecks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly slower fire propagation in default setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Vehicle Bay checkpoints: you now restart with an Armor if you die in this level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small control issue where \"climbing ladders\" was confused with \"aiming up\". Watering should now have priority over climbing to avoid some annoying deaths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player flickering when holding a Valve while trying to walk away from it. At the same time. Really? Why would someone do that in the first place?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Valves and Panels usage sounds that sometimes didn't play properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player weird 180-reverse-kick animation when moving away from a door you kicked open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced game size on disk by ~30% by optimizing a few things, like it's 2021",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Portuguese and Basque fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many minor level design fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1662480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662480/view/4103335143108637250"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-22T08:58:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662480",
+      "checkedAt": "2026-11-12T09:23:30.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:30.849Z"
+  },
+  {
+   "id": "nuclear-blaze-153876@1.0.2",
+   "gameId": "nuclear-blaze-153876",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-20T12:29:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an achievement related crash (\"Entrance\" exception at the beginning of the game).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added 2 secret cats. Somewhere. In the early game. Oh wait, did I say that?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a few extra checkpoints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked Laboratory level difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added game version number to title screen (bottom left corner).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visually separated Keyboard controls for \"Unlocked upgrades\" (eg. Aim UP, Aim Down & Dodge) to a separate section to avoid confusion.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added some 4K resolutions to the Screen Resolution menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a water refill on the first fire truck after landing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced Wasps hit box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Minor level design fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 1,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1662480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662480/view/4103335143101888212"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-20T12:29:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662480",
+      "checkedAt": "2026-11-12T09:23:30.849Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:30.849Z"
+  },
+  {
+   "id": "nuclear-blaze-153876@1.0.1",
+   "gameId": "nuclear-blaze-153876",
+   "displayName": "Update 1.0.1",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-10-18T14:29:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an incorrect version message on the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed menu opening twice when opening Steam Overlay",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1662480"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662480/view/4698935641769970187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-18T14:29:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662480",
+      "checkedAt": "2026-11-12T09:23:30.848Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:30.848Z"
+  }
+ ],
+ "issues": []
+}

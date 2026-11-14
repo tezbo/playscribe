@@ -1,0 +1,734 @@
+{
+ "game": {
+  "id": "helvetii-119673",
+  "igdbId": 119673,
+  "name": "Helvetii",
+  "cover": {
+   "imageId": "co3wkm",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3wkm.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arqap",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arqap.jpg"
+  },
+  "ps5Release": "2023-02-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "helvetii-119673@1.1",
+   "gameId": "helvetii-119673",
+   "displayName": "Patch 1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-21T15:29:06.000Z",
+   "notes": [
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "A new cooking minigame is available on the camp site. Pay Chef Bob to cook various meals that can give a stat buff to the whole party!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "31 new items, included new character specific artefacts, food, general treasures and Bob curios have been added to the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new unlockable moves for all characters in the sigil menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each costumes will now have unique sub-attacks (down + attack on the ground). Note that some of the items have been replaced with new costume specific items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You may encounter a new enemy in your travels: the Korrigan! Whack em before they run away and you could get a very nice prize ~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A new boss rush mode will appear in the main menu as soon as the game has been completed once (when hard mode gets unlocked)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Brazilian Portuguese localization has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A handful of new rooms have been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Changes",
+     "items": [
+      {
+       "text": "The Sigil screen has been reworked. It will now show you currented unlocked (but not acquired) sigils, acquired ones, and locked sigils will also show you what you need to do to obtain them. The toggle now toggles the characters instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various stat and price changes applied to some of Bob's food items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bob now has random hints for you when talking to him",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added small alert sounds when overlapping with chests, altars or shops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for Steam Deck buttons",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Visual update to the mouse buttons to help differentiate them",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Changed look of status effects to make them more readable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Character Changes",
+     "items": [
+      {
+       "text": "Added more \"Combo branches\" inputs, meaning being able to continue actions after accidentally falling off a platform while attacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Charged attacks now reset air combos and can all be dash cancelled. It takes also slightly longer for the charge to start (12 more frames)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made a few Divico hitboxes a bit more consistent and added more early cancels into other attacks (such as air heavy into stomp)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the enemy pushback on Divico's final heavy stab to avoid the enemy flying all over",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unyielding stance: Getting hit while doing strong attacks with this item will no longer reset the combo meter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renart's super attacks can chain faster into regular combos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Treacherous Reach has an added guard break effect on Renart's Down+ ground attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snaz time now also gives +1 dexterity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nammeios's burst has its base cost reduced to 20 (from 30)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nammeios's charged attack (tornado) will now delete projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nammeios air dash attack will systematically reset Caros's position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nammeios's Spirit Walk Item now gives +5 agility when powered up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the damage scaling of Toutatis's left ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Enemy Changes",
+     "items": [
+      {
+       "text": "Guarding enemies have been changed slightly, as now hitting the shield enough time will also trigger a guard break. However, if you wait too long, they will use a critical attack after guarding for a few seconds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The ogre's whirlwind attack now will knock away all enemies in proximity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mask of Want's attack out of guard is faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blight demon's HP has been increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blight demons's hitboxes have been adjusted and will miss the player less often. All their attacks have a chance to bleed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of Octavius's attacks have seen its damage slightly boosted as well as his health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "A slight delay has been added between when you open the chest/activate an altar and are able to pick up an item/forge a pact to avoid accidental instant pick ups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Further general optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some faulty music and ambiance swaps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 3,
+    "balance": 1,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1094590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1094590/view/5410576585130307484"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-21T15:29:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1094590",
+      "checkedAt": "2026-11-13T03:22:43.627Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-21T15:29:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1094590",
+      "checkedAt": "2026-11-13T03:22:43.627Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-12-21T15:29:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.317Z"
+  },
+  {
+   "id": "helvetii-119673@1.0.1",
+   "gameId": "helvetii-119673",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-10T11:38:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where Toutatis's \"Lower damage on low health\" passive wasn't working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Belenos' \"You take less damage\" passive wasn't working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Belisama's spears not scaling with dexterity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players are now invincible during summoning, to avoid being interrupted by attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turbo mode can now be unlocked after beating frenzy. Don't worry, you don't have to beat it again if you already did before the patch came out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toutatis's damage has been increased on L2 ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some sigill costs have been reduced",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1094590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1094590/view/5036749277232904230"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-10T11:38:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1094590",
+      "checkedAt": "2026-11-13T03:22:43.626Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-10T11:38:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1094590",
+      "checkedAt": "2026-11-13T03:22:43.626Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-10T11:38:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.884Z"
+  },
+  {
+   "id": "helvetii-119673@major-2022-09-08",
+   "gameId": "helvetii-119673",
+   "displayName": "Demo update and coming events !",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-08T14:47:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hoot here with a few updates concerning both the demo and upcoming events!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updated Demo",
+     "items": [
+      {
+       "text": "FIrst off, we have recently updated the public demo with a brand new version, in anticipation of the next Steam Next Fest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The list of changes since last September would be too long, but just to list a few:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Larger FOV and better enemy indicators (giving you a better view of what's surrounding you/about to hit you)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved visuals and loads of optimization for weaker machines",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tighter character handling (game's pace has been sped up across the board)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All summons available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revamped encounters with normal and hard mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Whole bunch of QOL stuff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And of course, buttons/keys rebinding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(However, we did take out level 2 from the demo. Considering the amount of base content available now, we didn't want to potentially spoil players too early and have them discover more on release.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope both newcomers and players who have played the previous version will enjoy this recent update!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, let us know if anything breaks or that you would like to see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We might not be able to fix things immediately, but we're keeping a close eye and will push a patch if needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming events",
+     "items": [
+      {
+       "text": "For those who want to say hello in person and/or try out the game in full, we'll be present at the two following events!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tokyo Game Show: From September 15th to 18th (public days on the 17th and 18th)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As well as",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HeroFest 2022 (in Bern, Switzerland), from October 14th to the 16th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will be showcasing the game on the Switch for both events and just generally hang around and chill, as indie devs do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 19,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1094590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1094590/view/4606641560248655194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-08T14:47:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1094590",
+      "checkedAt": "2026-11-13T03:22:43.626Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.883Z"
+  },
+  {
+   "id": "helvetii-119673@major-2021-10-06",
+   "gameId": "helvetii-119673",
+   "displayName": "Small Demo Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-06T10:29:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A brief update to inform we've patched the demo a few times in the past few days to address some minor issues and tweak a few things that were pointed out to us. Thanks to everyone who has provided us helpful feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "On the most notable things",
+     "items": [
+      {
+       "text": "We've added a \"Disable Screenshake\" option in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've fixed some issues related to DS4 and DualSense controllers not working properly and showing the wrong inputs in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are aware that Linux users currently have issues with PlayStation inputs not showing properlywhen using DS4/DualSense controllers. We apologize for the inconvenience and we'll continue to look for solutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc"
+       ]
+      },
+      {
+       "text": "Other than that, we've also slightly tweaked some encounters to ease up a bit for newcomers and some minor bug fixes in the mix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our game has native Playstation controller support. If you're having issues with the game registering double inputs, please check your \"General Controller Settings\" under Settings > Controller and uncheck \"Playstation Configuration Support\" to see if it solves your issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "As for now, we probably won't update the demo more, so we can focus on the development of the final game (unless an incredibly critical issue arises). We'll still read all your feedback and work towards improving the end product!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Much obliged so much for your understanding and feedback. We hope you enjoy our demo! ☺",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-1094590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1094590/view/4069556867200232238"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-06T10:29:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-1094590",
+      "checkedAt": "2026-11-13T03:22:43.625Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:46.882Z"
+  }
+ ],
+ "issues": []
+}

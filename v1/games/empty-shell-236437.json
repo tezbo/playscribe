@@ -1,0 +1,3342 @@
+{
+ "game": {
+  "id": "empty-shell-236437",
+  "igdbId": 236437,
+  "name": "Empty Shell",
+  "cover": {
+   "imageId": "co78ni",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co78ni.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar25ec",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar25ec.jpg"
+  },
+  "ps5Release": "2024-07-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "empty-shell-236437@post-2025-11-02",
+   "gameId": "empty-shell-236437",
+   "displayName": "Flashlight drone fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-02T13:31:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick fix for a bug related to the flashlight drone: dropping any gadget from the inventory was causing the flashlight drone to disappear (and needed to be equipped again).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now it's fixed : )",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/1815034432969363"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-02T13:31:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.763Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-02T13:31:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.763Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-11-02T13:31:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.335Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2025-10-06",
+   "gameId": "empty-shell-236437",
+   "displayName": "Quick Unity Fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-06T11:41:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick update to fix the recent security vulnerability issue that may affect all Unity games built in the past few years.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The volunteers already have their own problems... they don't need any more vulnerability issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/1811772772604120"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T11:41:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.763Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-06T11:41:01.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.763Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-06T11:41:01.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.334Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2025-08-15",
+   "gameId": "empty-shell-236437",
+   "displayName": "Gadget amount fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-15T07:07:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick patch: using the \"Ammo Scarcity\" modifiers was zeroing the amount of gadgets bought from the Upgrades Station. Now it's fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/1808061939364892"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-15T07:07:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.762Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-15T07:07:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.763Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-15T07:07:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.334Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2025-08-11",
+   "gameId": "empty-shell-236437",
+   "displayName": "Difficulty resetting bug",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-11T14:26:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "a quick patch to fix an issue that appeared after the latest major update. In some cases, the difficulty would reset to \"Easy\". This problem has now been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sorry about that and thanks for pointing this out!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/1807332909701572"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-11T14:26:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.762Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-11T14:26:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.762Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-08-11T14:26:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.333Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2025-06-08",
+   "gameId": "empty-shell-236437",
+   "displayName": "Small tweak for That One Level",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-08T11:53:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Since I've been told more than once that one particular level might be a bit too harsh (even by EMPTY SHELL standards), I decided to make a simple change that should make things feel a little less unfair, without disrupting the overall balance of the run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Basically, instead of facing 3 big enemies in that area, you'll now encounter no more than 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A small tweak, but sometimes that’s all it takes to make the difference between life and death (for the volunteer).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You probably know which level I’m talking about. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know how it goes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/1801617199488653"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-08T11:53:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.762Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-08T11:53:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.762Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-08T11:53:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.332Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2025-05-25",
+   "gameId": "empty-shell-236437",
+   "displayName": "Main menu button",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-25T19:17:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've just added a new button to the main menu :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/1800357164511791"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-25T19:17:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.761Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-25T19:17:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.761Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-25T19:17:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.331Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-12-09",
+   "gameId": "empty-shell-236437",
+   "displayName": "Melee hits small fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-09T16:49:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you were experiencing issues with melee hits not registering at times, this should now be fixed :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/1785321795739435"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:49:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.761Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T16:49:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.761Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-09T16:49:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.330Z"
+  },
+  {
+   "id": "empty-shell-236437@major-2024-10-28",
+   "gameId": "empty-shell-236437",
+   "displayName": "New weapons update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-10-28T17:12:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's never enough when facing the abominations that inhabit the island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update provides the volunteers with some new tools.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From now on, four new weapons can be found in the Facility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I don’t want to spoil too much, so I’ll leave it to you to find and try them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/6212245217911957716"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-28T17:12:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.760Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-28T17:12:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.760Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-28T17:12:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:46.328Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-07-18",
+   "gameId": "empty-shell-236437",
+   "displayName": "Steam Deck Verified",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-07-18T21:33:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Good news: EMPTY SHELL has been labeled as \"Verified\" for Steam Deck!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "With this update, you'll see some QoL improvements that enhance the experience on the Steam console, mostly related to UI text sizes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Text has been increased slightly for the PC version as well (you still have the options for \"original,\" \"medium,\" and \"big\" UI sizes).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Additionally, the option to select the controller vibration intensity has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5969041959966058598"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-18T21:33:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.760Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.833Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-06-11",
+   "gameId": "empty-shell-236437",
+   "displayName": "Charging Soulless quick fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-11T07:08:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick fix for the Charging Soulless, which sometimes got stuck running towards a wall. It's now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is especially important for the Daily Test Rooms, as the issue could cause a soft lock or, more rarely, a hard lock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5746109972566173468"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-11T07:08:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.759Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.831Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-06-02",
+   "gameId": "empty-shell-236437",
+   "displayName": "Recoverable stuff + pixelation",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-02T13:26:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've been reading some reviews lately and more than one player was pointing to how harsh is the loot recovered from the dead volunteer after you die.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, today's update brings some changes to the amount/type of items you'll find while looting the dead body. Specifically:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EASY",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "higher probability to recover weapons/gadgets/consumables/ammo (20% more each)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "can recover more than one ranged weapon/gadget",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "higher amount of cash recovered (30-35% more)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "can recover up to 10 upgraded stats (was 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MEDIUM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "higher probability to recover weapons/gadgets/consumables/ammo (10% more each)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "can recover more than one ranged weapon/gadget",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "higher amount of cash recovered (10-20% more)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "can recover up to 6 upgraded stats (was 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HARD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "higher probability to recover stuweapons/gadgets/consumables/ammoff (5% more each)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "higher amount of cash recovered (10% more)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "can recover up to 4 upgraded stats (was 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NIGHTMARE AND MORE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another important update is the new option (long due, i know) to completely disable the pixelation in-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I like the game very pixelated, but i understand that not everyone might like it that way :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5742731639341041981"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-02T13:26:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.759Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.830Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-04-20",
+   "gameId": "empty-shell-236437",
+   "displayName": "Safety first",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-20T17:58:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A quick update for a couple of gadgets, the rocket launcher turret and the anti-tank mine: i've made them a little less dangerous to use. Specifically:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the rocket launcher turret now has a 2 seconds deployment time before starting to target enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the anti-tank mine now has a 1 second deployment time before activating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This way, unexpected situations (like blowing up) should decrease significantly :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5762994032398879626"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-20T17:58:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.830Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-03-16",
+   "gameId": "empty-shell-236437",
+   "displayName": "Devices + Daily test rooms quick fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-16T21:40:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just a quick fix for the circular saw in the room \"The Experimental Room\", that sometimes was not dealing damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, two devices have been revisited to be more efficient, in terms of damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/7309977427443430575"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-16T21:40:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.829Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-03-15",
+   "gameId": "empty-shell-236437",
+   "displayName": "Daily Test Rooms small fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-03-15T16:20:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just fixed a problem that sometimes was preventing the volunteer from opening a supply box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/7309977427438975834"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-15T16:20:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.757Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:20:04.758Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-02-01",
+   "gameId": "empty-shell-236437",
+   "displayName": "Items dropped close to Upgrade Station",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-01T10:40:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a small update to fix a common problem: when dropping items close to an Upgrade Station, now the box spawns far enough to avoid the action override that sometimes was preventing to interact again with the box or the Upgrade Station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5582843074940397833"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-01T10:40:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.757Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.826Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-01-22",
+   "gameId": "empty-shell-236437",
+   "displayName": "(Mild) ammo rebalancing",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-01-22T10:57:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update brings a ammo rebalancing (mild, for now). You are more likely to notice it at higher difficulties, but in general:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "now there are more Small caliber bullets and slightly less Medium caliber bullets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the spawn of Shells and Large caliber bullets has been slightly reduced too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "the prices and the amounts of bullets in the Upgrade Stations have been adjusted (less cheap)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also, MD5A2-B has been buffed, specifically",
+     "items": [
+      {
+       "text": "faster reload time (2.2s -> 1.5s)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "damage increased by 4%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "kickback increased by 48% (was too low due to the low rate of fire, compared to automatic weapons)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "You will now see how much bullets you're buying at the Upgrade Stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5510784213112141206"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-22T10:57:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.756Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.826Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2024-01-08",
+   "gameId": "empty-shell-236437",
+   "displayName": "Level exit prompt",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-01-08T16:33:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This small update brings a prompt at the end of each level that asks for an interaction to proceed to the next one, so that you don't accidentally exit a level leaving stuff you were planning to recover behind.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5410576585196072869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-08T16:33:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.756Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.825Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-12-20",
+   "gameId": "empty-shell-236437",
+   "displayName": "Steam Deck quick fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-20T16:11:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "just added a quick QoL fix. Basically, if running on the Steam Deck, at first launch the default UI size will be \"Big\".",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you already launched the game, then, if you want, you can manually change the UI size from the options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5410576585126769693"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-20T16:11:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.756Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.824Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-12-18",
+   "gameId": "empty-shell-236437",
+   "displayName": "Small fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-18T10:47:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "just increased the spawn probability of an item that was already \"secret\" enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5409450219986796874"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-18T10:47:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.755Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.823Z"
+  },
+  {
+   "id": "empty-shell-236437@major-2023-12-12",
+   "gameId": "empty-shell-236437",
+   "displayName": "Technical update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-12T11:12:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've just updated the Prologue to match some content (QoL updates, bug fixing, balancing and UI/effects options) of the full version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is just a technical update to prioritize the loading of the save files from the Prologue, rather than the Next Fest demo, that was only available in October for one week.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5395938616812362769"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-12T11:12:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.755Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.823Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-11-20",
+   "gameId": "empty-shell-236437",
+   "displayName": "Stats fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-20T15:59:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "A couple of stats bug fixes, today",
+     "items": [
+      {
+       "text": "Kills, Deaths and Rounds Fired counters in the leaderboard were resetting after a \"New game\", now they keep updating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Equipment Found Bonus stat was increasing after opening the same box multiple times, now fixed to increase only once per box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/6560117310279155499"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-20T15:59:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.755Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.821Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-11-18",
+   "gameId": "empty-shell-236437",
+   "displayName": "Some improvements",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-18T09:30:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's the changelog for this update",
+     "items": [
+      {
+       "text": "Now Upgrade Stations show the type of ammo used by ranged weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Beta and Gamma Emitter Devices inflict way more damage than before (and last a little longer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Devices prices has been tweaked (the mid-late game ones are a little cheaper)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a problem with the Found Documents that was preventing to get the TRUTH achievement if you played the Prologue or the Next Fest Demo before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug that was misaligning some elements of the UI when changing the resolution from the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/6560117310270883347"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-18T09:30:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.754Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.820Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-11-09",
+   "gameId": "empty-shell-236437",
+   "displayName": "Worm difficulty scaling",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-09T15:50:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a quick update for the Worm. Now its wind-up time scales with difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Still a narrow window between it lights up and the attack, but it's 75% larger on easy, 40% larger on medium and 15% larger on hard (didn't change on NIGHTMARE or NG+).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5302486387998483273"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-09T15:50:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.754Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.809Z"
+  },
+  {
+   "id": "empty-shell-236437@major-2023-11-08",
+   "gameId": "empty-shell-236437",
+   "displayName": "Technical update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-08T20:05:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just fixed a problem that could happen very rarely. Some player, after a crash on startup (even a power failure) had a config file corrupted that was preventing the game to boot properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now it's fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, one document (79) seemed to spawn too infrequently. This is fixed as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5302486387995484213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-08T20:05:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.753Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.809Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-11-06",
+   "gameId": "empty-shell-236437",
+   "displayName": "Small ammo drop + small QoL",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-06T16:23:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Another small update, today",
+     "items": [
+      {
+       "text": "Now Armed Soulless (except for the ones with Rocket Launcher) drop a (very) few ammo on death (the amount scales with difficulty)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've removed the \"floating\" effect from the Found documents screen, to improve readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When close enough, the dropped ammo is automatically collected if you already own the same type of ammo or a compatible weapon (and have enough space in the inventory).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Otherwise is dropped in the form of a lootable package.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5288974951221587261"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-06T16:23:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.753Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.808Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-11-04",
+   "gameId": "empty-shell-236437",
+   "displayName": "Radios",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-04T21:53:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've seen questions about the purpose of the radios being asked more than once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They always had an hidden purpose, but i decided to add another one (at least for some of them).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is also related to a dark detail in a level on the East side of the island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know how it goes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5288974951215132558"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-04T21:53:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.753Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.807Z"
+  },
+  {
+   "id": "empty-shell-236437@major-2023-11-02",
+   "gameId": "empty-shell-236437",
+   "displayName": "Small update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-02T08:40:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Just a couple of minor things",
+     "items": [
+      {
+       "text": "I've added an index id to the \"found documents\". Could be useful for reference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The price of the Rocket Launcher Turret is now 850 (it was 800) and the ammo is now 3 (it was 5): it was too overpowered after the Rockets/Grenades update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5288974951205832869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-02T08:40:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.752Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.806Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-31",
+   "gameId": "empty-shell-236437",
+   "displayName": "Special Gas Mask recharge time",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-31T16:34:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've reduced the recharge time of the Special Gas Mask (about ~50%): the consumption rate is still the same, but now you don't have to wait THAT much to let the mask recharge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5229301621594828297"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-31T16:34:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.752Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.806Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-30",
+   "gameId": "empty-shell-236437",
+   "displayName": "Terminate volunteer + minor fixed",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-30T14:36:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "From now on you'll find the \"Terminate volunteer\" button in the pause screen: this way, if needed, you can quickly end a session and start with a new volunteer (from the same level).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Also",
+     "items": [
+      {
+       "text": "now the distance of the previously dead volunteer body scales with difficulty: closer on Easy, slightly closer on Medium and Hard (didn't change on NIGHTMARE/NG+)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed a couple of metal containers that weren't shielding properly from the rotating laser in the second level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5229301621590883293"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-30T14:36:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.751Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.805Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-29",
+   "gameId": "empty-shell-236437",
+   "displayName": "Enemies with shotguns rebalance",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-29T07:30:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small fix: rebalanced the damage of the enemies armed with shotgun (it was too high after the shotgun overhaul update).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5229301621586160229"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-29T07:30:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.751Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.805Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-28",
+   "gameId": "empty-shell-236437",
+   "displayName": "Shotguns Overhaul + The Barge + Accuracy",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-28T11:17:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update will bring some changes to the shotguns in the game. Specifically:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pump action shotgun: 30% more damage, ~11% less damage decay (distance), 20% less spread",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revolver shotgun: 10% more damage, 12% less damage decay (distance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Double-barreled shotgun: 20% more damage, 12% less damage decay (distance)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, shotgun pellets (for every type of shotgun) has now a 35% probability to pass through enemies and damage other enemies in the line of fire.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Beyond shotguns",
+     "items": [
+      {
+       "text": "now you can find the previously dead volunteer body in The Barge level too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed the final accuracy stat (now should be correct)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5229301621583092333"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-28T11:17:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.751Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.801Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-26",
+   "gameId": "empty-shell-236437",
+   "displayName": "Console screen input fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-26T12:47:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey! There was a problem for some players using some input keys (minus, backslash) in the Console screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now it's fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5229301621576028787"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T12:47:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.750Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.800Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-23",
+   "gameId": "empty-shell-236437",
+   "displayName": "UI, Rocket Launcher and Grenade Launcher",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-23T14:59:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's a few things that comes with this update",
+     "items": [
+      {
+       "text": "When UI Effects is turned off, the flickering effect too now is completely turned off in the in-game views (inventory, lore items, puzzles, upgrades, etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rocket launchers is now way more devastating (~80% more), but rockets are more scarce",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Same for the Grenade Launcher, less powerful than a Rocket Launcher, but less expensive and with more ammo to be found",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the \"drop inventory item\" button in the keybindings screen",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5218041989057800229"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-23T14:59:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.750Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.800Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-22",
+   "gameId": "empty-shell-236437",
+   "displayName": "Recoverable items fine tuning",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-22T09:56:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just fine tuned a little the recoverable items probabilities: speaking of weapons, before you were able to recover a ranged one OR a melee one. Now you could recover both, with a higher probability for the melee one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, reduced the probability to get swarmed by too many big enemies in a couple of levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5218041989053391319"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-22T09:56:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.754Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-21",
+   "gameId": "empty-shell-236437",
+   "displayName": "Recoverable Stats",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-21T09:53:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for all the feedback as usual. This update brings upgraded stats as recoverable items from the volunteer dead body.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should create a better feeling of progression and makes difficulty, while still challenging, less harsh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You'll be able to recover up to 3 of your previously upgraded stats (if you had less, you'll find all of them).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've changed/fixed a few other things, this is the full change log:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded stats recoverable from dead volunteer body",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Critical chance stat now gives a 3% boost, while slightly less common to find (was 1%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bug that sometimes was causing the doors in the reactor room of the Aerospace Center to stay closed should be fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new Upgrade Station in The Woods (now there are 2, previously was 1)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You'll always find at least one medikit and some ammo in the Upgrade Stations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Looping sfx while leaving a stationary turret or depleting a machine gun drone is fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know of the new update feels!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5218041989049739086"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-21T09:53:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.754Z"
+  },
+  {
+   "id": "empty-shell-236437@major-2023-10-20",
+   "gameId": "empty-shell-236437",
+   "displayName": "Update: respawn after death and fairness",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-20T10:40:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this update i've tried to make less painfull (while still challenging) respawning after death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While with the previous update i've increased the probability to recover equipment from the previous volunteer body, this time i've changed the spawn location of the body: they were spawning in the same room they died, but this means that, due to the layout diversification each time, could have been at the opposite side of the level (or straight in a boss room), that actually jeopardize the very purpose of recovering equipment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now you still have to explore and find the body, but it will be more closer to the initial rooms, rather than in some remote location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Obviously, I'm trying to keep the game very challenging... just more fair :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other than that, these are the other changes",
+     "items": [
+      {
+       "text": "The probability of finding equipment now scales with the difficulty level (higher on easy, lower on NIGHTMARE)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Easy difficulty is now a little easier (less damage taken, more damage given)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nailguns are more powerful",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Devices prices have been tweaked (a little less expensive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know how it goes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5218041989046212687"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-20T10:40:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.753Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-20",
+   "gameId": "empty-shell-236437",
+   "displayName": "Recoverable items and more",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-20T00:04:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update brings some changes to the type and amount of items you can recover from a volunteer dead body. It used to be pretty much just credits (the probabilities of recovering something else were very low). Now it's more likely to recover ammo, medikit (or plates) and sometimes a weapon or a gadget.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The probability scales with levels, so you'll notice more starting from the third/fourth level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The amount of ammo you spawn with has been also increased a little, always based on levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, it's more likely to spawn with a \"better\" weapon in mid-later levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've swapped a Big Soulless (the charging enemy) with another enemy at the beginning of the 8th level, cause it was really out of place, especially if you had just respawned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That's it for now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5218041989044604037"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-20T00:04:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.752Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-19",
+   "gameId": "empty-shell-236437",
+   "displayName": "Manual zoom option",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-19T13:14:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick update with a new feature: you can now decide between original and manual zoom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Original is the automatic one, while manual disable the automatic one and let you zoom in/zoom out using mousewheel or controller d-pad up/d-pad down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, fixed a bug that wasn't translating the key bindings views if opened before in another language.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5218041989042956465"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-19T13:14:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.751Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-18",
+   "gameId": "empty-shell-236437",
+   "displayName": "Disappearing ammo bug",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-18T10:31:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I've just fixed a weird bug causing some gadgets depleting ammo from the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Still investigating if this was actually the problem some players had seeing ammo disappear from inventory, but could be it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'll keep you posted!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5218041989038900593"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-18T10:31:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.750Z"
+  },
+  {
+   "id": "empty-shell-236437@major-2023-10-17",
+   "gameId": "empty-shell-236437",
+   "displayName": "Readability quick update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-10-17T17:06:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just did a quick update on the UI, especially in parts with lot of text (like story view, lore items view, inventory, upgrades, etc).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "In general",
+     "items": [
+      {
+       "text": "bigger text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "less distortion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's not perfect yet, but it should be an improvement already.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feel free to let me know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/6438516944139325988"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-17T17:06:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.746Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.724Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-17",
+   "gameId": "empty-shell-236437",
+   "displayName": "Some small fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-17T10:48:13.000Z",
+   "notes": [
+    {
+     "title": "Hey! Just a few things, for now",
+     "items": [
+      {
+       "text": "The fixed machine gun turrets caliber has been corrected. The Cal. 50 was a little misleading, cause they're good but not THAT powerful. It's now 7.62x54r, makes more sense.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And always the fixed machine gun turrets do a little more damage, now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Zombie Big Soulless (the enemy that charges you) is now less bullet spongy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some levels colliders here and there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/6438516944138368695"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-17T10:48:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.720Z"
+  },
+  {
+   "id": "empty-shell-236437@post-2023-10-16",
+   "gameId": "empty-shell-236437",
+   "displayName": "Rocks collider fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-16T22:45:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Rocks collider fix, nothing fancy, for now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/6438516944136540090"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-16T22:45:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.745Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.719Z"
+  },
+  {
+   "id": "empty-shell-236437@major-2023-09-03",
+   "gameId": "empty-shell-236437",
+   "displayName": "Update: starting bonus/malus",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-03T09:00:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Actually, i spoke too soon: i made a few test and the feature is not engaging enough, so i'm putting this aside, for now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'll think about something better :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2243110"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2243110/view/5141476355667904550"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-03T09:00:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2243110",
+      "checkedAt": "2026-11-13T03:20:04.744Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:14:02.717Z"
+  }
+ ],
+ "issues": []
+}

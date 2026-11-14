@@ -1,0 +1,384 @@
+{
+ "game": {
+  "id": "return-to-monkey-island-195517",
+  "igdbId": 195517,
+  "name": "Return to Monkey Island",
+  "cover": {
+   "imageId": "co56kr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co56kr.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar69ea",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar69ea.jpg"
+  },
+  "ps5Release": "2022-11-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "return-to-monkey-island-195517@1.5",
+   "gameId": "return-to-monkey-island-195517",
+   "displayName": "Patch 1.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-08T18:14:26.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone, Today we have some amazing things to share with you!",
+     "items": [
+      {
+       "text": "We added German voice-over to the game featuring original Guybrush voice actor Norman Matt!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition to that, there were some minor bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2060130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2060130/view/4732747437220928967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-08T18:14:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2060130",
+      "checkedAt": "2026-11-13T03:29:07.033Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-08T18:14:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2060130",
+      "checkedAt": "2026-11-13T03:29:07.033Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-11-08T18:14:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:44.034Z"
+  },
+  {
+   "id": "return-to-monkey-island-195517@1.3.3",
+   "gameId": "return-to-monkey-island-195517",
+   "displayName": "Patch 1.3.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-10-07T19:41:08.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone! New patch is here!",
+     "items": [
+      {
+       "text": "Trivia card fix for players that couldn’t get the last card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a key rebinding issue relating to the middle mouse button",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Trivia card fix for players that couldn’t get the last card."
+    ]
+   },
+   "sourceIds": [
+    "steam-2060130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2060130/view/4613399405944808948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-07T19:41:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2060130",
+      "checkedAt": "2026-11-13T03:29:07.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:44.033Z"
+  },
+  {
+   "id": "return-to-monkey-island-195517@1.3.2",
+   "gameId": "return-to-monkey-island-195517",
+   "displayName": "Patch 1.3.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-27T15:33:55.000Z",
+   "notes": [
+    {
+     "title": "Hello everyone! Got a new patch with new fixes check it down bellow!",
+     "items": [
+      {
+       "text": "Possible for fix for mouse events when using a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix for red flash on MacBook Pro 13 inch.: Set pref: metalCompatibilityFloat16ColorBuffer: 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed graphics card support message.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Offline Steam achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Small game bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for Translation typos and other text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2060130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2060130/view/4589754330750611407"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-27T15:33:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2060130",
+      "checkedAt": "2026-11-13T03:29:07.032Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:44.033Z"
+  },
+  {
+   "id": "return-to-monkey-island-195517@1.3.1",
+   "gameId": "return-to-monkey-island-195517",
+   "displayName": "Patch 1.3.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-22T16:31:08.000Z",
+   "notes": [
+    {
+     "title": "Hello! We are continuing with bug fixes!",
+     "items": [
+      {
+       "text": "Fixed sleeping Windows and a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance and stability improvements on low-end machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have an amazing day and thank you for your patience and understanding!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2060130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2060130/view/4589754330732540163"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-22T16:31:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2060130",
+      "checkedAt": "2026-11-13T03:29:07.031Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:44.033Z"
+  },
+  {
+   "id": "return-to-monkey-island-195517@1.2",
+   "gameId": "return-to-monkey-island-195517",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-20T16:01:19.000Z",
+   "notes": [
+    {
+     "title": "Hello! Here is a small patch to fix some of the issues that you encountered on release. We are still going through reports and working on fixing them all out!",
+     "items": [
+      {
+       "text": "Fixed sleeping Windows and a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Performance and stability improvements on low-end machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2060130"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2060130/view/6258337460562287198"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-20T16:01:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2060130",
+      "checkedAt": "2026-11-13T03:29:07.031Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:44.032Z"
+  }
+ ],
+ "issues": []
+}

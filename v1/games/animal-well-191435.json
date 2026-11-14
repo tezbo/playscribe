@@ -1,0 +1,1121 @@
+{
+ "game": {
+  "id": "animal-well-191435",
+  "igdbId": 191435,
+  "name": "Animal Well",
+  "cover": {
+   "imageId": "co4hdh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4hdh.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6ra9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6ra9.jpg"
+  },
+  "ps5Release": "2024-05-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "animal-well-191435@post-2024-10-22",
+   "gameId": "animal-well-191435",
+   "displayName": "Minor change to input handling",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-10-22T19:12:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Input is now accepted from all connected gamepads, regardless of player index. This should result in a smoother experience when multiple gamepads are connected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can even play with multiple gamepads at the same time if, for whatever reason, you wanted to do that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/6212244583195013975"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-22T19:12:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.183Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-10-22T19:12:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.183Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-10-22T19:12:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:57.129Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-06-14",
+   "gameId": "animal-well-191435",
+   "displayName": "More minor fixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-14T00:34:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-- Improved Korean localization, along with other small adjustments to others languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- Fixed softlock where player could get trapped behind fallen stalactite without the ability to reach their disc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/6890025005350641740"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-14T00:34:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-14T00:34:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.182Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-14T00:34:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:57.129Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-06-05",
+   "gameId": "animal-well-191435",
+   "displayName": "More small fixes and adjustments",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-05T16:01:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-- improved Korean localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- fixed bug where walking through a certain door at a certain time would result in player exiting in the wrong place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- Sack now sparkles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5746109972545648818"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-05T16:01:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.182Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-05T16:01:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.182Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-05T16:01:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:57.128Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-06-03",
+   "gameId": "animal-well-191435",
+   "displayName": "Some small fixes and adjustments",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-06-03T21:06:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-- Fixed bug where player could reach zero heath and not die in a specific situation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- Added another fix for save files that experienced missing mock disc bug in past and never got fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- Added tiny hint that a certain situation is dangerous",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- A certain creature can now walk on water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5742731639345849873"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-03T21:06:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.181Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-03T21:06:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.181Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-06-03T21:06:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:57.127Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-28",
+   "gameId": "animal-well-191435",
+   "displayName": "Lowered SSE4.1 requirement for CPU to SSE3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-28T15:24:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Previously the game required SSE4.1 to run. I've now made some slight modifications so as to only require SSE3. This will improve compatibility with some older CPUs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5741605105625815991"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-28T15:24:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.181Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-28T15:24:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.181Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-28T15:24:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:57.126Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-27",
+   "gameId": "animal-well-191435",
+   "displayName": "Small Fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-27T15:43:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-- Added better error message to let players know their video card or driver doesn't support dx12",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-- Fixed issue where player could clip through a wall while climbing ladders in a couple spots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- Fixed a certain entity sometimes appearing in a space it was not supposed to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- Fixed exploit involving the flute, and a very specific secret area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5741605105622216902"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-27T15:43:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.180Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-27T15:43:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.180Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-27T15:43:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:57.126Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-23",
+   "gameId": "animal-well-191435",
+   "displayName": "Some more small fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-23T22:23:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-- fixed potential soft lock when breaking large stalactite in bat cave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- fixed potential flickering in very very very late game area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- adjusted a few vines to remove some misleading single pixels gaps in map visibility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- fixed issue where kangaroo would on one occasion spawn one tile above the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- fixed black screen when exiting from a certain area and starting a new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5741605105608651200"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T22:23:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.179Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T22:23:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.180Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-23T22:23:36.000Z"
+     }
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T15:09:02.905Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-21",
+   "gameId": "animal-well-191435",
+   "displayName": "Fixed startup crash",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-21T02:46:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This should hopefully fix a startup crash that some people were seeing! If you are still having issues let me know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5747233970435155254"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-21T02:46:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.179Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-21T02:46:21.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.179Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-21T02:46:21.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:02.905Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-20",
+   "gameId": "animal-well-191435",
+   "displayName": "More fixes!!!",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-20T18:13:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-- In rare situations where you missed out on a certain late game event, in previous builds, you now have another chance to access it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- Added an additional point where the speedrun timer flashes on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- adjusted collider width of fish head by one pixel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- added more detailed error messages for when the game fails to start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-- fixed missing glyphs in credits in some other languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch, does not fix the startup crash some people have been experiencing, but I am now setup to more easily debug it. If you are one of the people experiencing it, I would greatly appreciate if you could go into the Windows Event Viewer, and share the error details with me! Once again, I'm sorry this has been taking a while and really appreciate everyone's patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5747233970433858258"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-20T18:13:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.178Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-20T18:13:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.179Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-20T18:13:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:02.904Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-14",
+   "gameId": "animal-well-191435",
+   "displayName": "More Fixes!!",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-14T22:05:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Large stalactites no longer block visibility or cause gaps in map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where frisbee would sometimes spin in place, when being interacted with in a certain way on the same frame it bounces off a wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit with a very secret area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed timing on multi item puzzle in final area, to be slightly less demanding",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved French localization for unlit candle: -Made it impossible to trigger fireworks more than once in rare situation where it would block access to another part of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduce flashing option now addresses another part that was reported as uncomfortable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5768625435415190994"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-14T22:05:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.178Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-14T22:05:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.178Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-14T22:05:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:02.904Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-13",
+   "gameId": "animal-well-191435",
+   "displayName": "More fixes",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-13T01:44:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added numpad key-bindings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed softlock if crow manages to carry you offscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "improved Ukrainian and German localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed bug where map tiles would sometimes, in very rare and specific situations, get marked as visited",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "removed stray geyser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5768625435408453045"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T01:44:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.177Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T01:44:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.178Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-13T01:44:11.000Z"
+     }
+    }
+   ],
+   "revision": 6,
+   "updatedAt": "2026-11-13T03:14:49.177Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-10",
+   "gameId": "animal-well-191435",
+   "displayName": "A few small fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-10T13:21:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improved Korean translation for a certain item name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted death animation when 'reduced flashing' is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Certain tiles are no longer respawned on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for your patience everyone! Fixes for some other reported issues are still coming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5768625435399283315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-10T13:21:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.176Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-10T13:21:14.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.176Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-10T13:21:14.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:02.902Z"
+  },
+  {
+   "id": "animal-well-191435@post-2024-05-09",
+   "gameId": "animal-well-191435",
+   "displayName": "Fixed potential softlock",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-09T17:52:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "When entering ghost switch block room near dogs, via turtle hole, with bubble, but without disc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-813230"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/813230/view/5768625435396323979"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-09T17:52:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.176Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-09T17:52:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-813230",
+      "checkedAt": "2026-11-13T03:14:49.176Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-09T17:52:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:09:02.901Z"
+  }
+ ],
+ "issues": []
+}

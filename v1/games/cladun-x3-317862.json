@@ -1,0 +1,175 @@
+{
+ "game": {
+  "id": "cladun-x3-317862",
+  "igdbId": 317862,
+  "name": "Cladun X3",
+  "cover": {
+   "imageId": "coa2g8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa2g8.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3tbv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3tbv.jpg"
+  },
+  "ps5Release": "2025-02-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cladun-x3-317862@1.02",
+   "gameId": "cladun-x3-317862",
+   "displayName": "Update 1.02",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-24T17:00:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello players,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we released an update for Cladun X3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It primarily includes bug fixes and quality of life improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes in this patch have changed the game's Steam Deck verification to Verified.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog",
+     "items": [
+      {
+       "text": "In the \"Download Cladun X2 & This Is Sengoku Edit Data\" menu, password input now supports pasting from clipboard (Ctrl + V).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the game could freeze in dungeons such as Bird Cage 1F under specific circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue on Steam Deck where the game would not exit immediately when closing the game from the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where menu scrolling using a laptop trackpad would continue indefinitely under specific device configurations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted birthday entry text and UI to clarify that birthday information is never sent to the game server. (See this post for further information)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where specific text was displayed with the incorrect font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor text fixes. (English, French)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any issues with this patch, please post to the troubleshooting forums or contact us at gamesupport@nisamerica.com .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3812660"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3812660/view/1814309641479667"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-24T17:00:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3812660",
+      "checkedAt": "2026-11-13T03:17:26.876Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-24T17:00:02.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3812660",
+      "checkedAt": "2026-11-13T03:17:26.876Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-24T17:00:02.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:15.165Z"
+  }
+ ],
+ "issues": []
+}

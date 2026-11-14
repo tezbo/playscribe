@@ -1,0 +1,687 @@
+{
+ "game": {
+  "id": "out-of-sight-312565",
+  "igdbId": 312565,
+  "name": "Out of Sight",
+  "cover": {
+   "imageId": "co9g8y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9g8y.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar32w5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar32w5.jpg"
+  },
+  "ps5Release": "2025-05-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "out-of-sight-312565@1.1.103",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Patch 1.1.103",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-09T09:24:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improved level loading system to fix rare issues where characters would fail to appear or triggers would fail to happen (resulting in e.g. unintentionally closed doors).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue in the DLC where reloading a specific checkpoint in Act 2 would block progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some lighting issues in Chapter 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where master volume setting would reset if you died.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1848664643354781"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-09T09:24:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.606Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-09T09:24:25.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.606Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-09T09:24:25.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:42.624Z"
+  },
+  {
+   "id": "out-of-sight-312565@1.1.96",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Update 1.1.96",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-19T10:08:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the \"Careful, Teddy!\" achievement to not appear even though you completed it. For those affected, loading the last save in your game and finishing the game again should now grant you the achievement properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1827626365752637"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T10:08:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-19T10:08:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.605Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-03-19T10:08:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:42.623Z"
+  },
+  {
+   "id": "out-of-sight-312565@1.1.93",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Hotfix 1.1.93",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-24T09:30:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where movable tables would disappear if loading an existing save file in the lastest patch. Players playing on new saves in the new patch were not affected. Affected players can keep playing on their saves after this hotfix and the tables should have returned to their proper places",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1825093633196926"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T09:30:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.605Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-24T09:30:31.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.605Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-02-24T09:30:31.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:42.621Z"
+  },
+  {
+   "id": "out-of-sight-312565@1.0.48",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Patch 1.0.48",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-08T13:00:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a rare issue where the lift in chapter 4 near the 4-key-door could get stuck when the player steps on it to go up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where you could be detected in Chapter 3 when hiding under the table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could be detected when hiding behind a box in Chapter 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1803527891896158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-08T13:00:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.604Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-08T13:00:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.604Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-07-08T13:00:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:42.619Z"
+  },
+  {
+   "id": "out-of-sight-312565@major-2025-06-19",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Out of Sight update: Guiding indicator option and demo fix!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-19T09:06:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have been making some updates for Out of Sight!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We heard your wishes and have added an option to turn off the guiding indicators (in the form of yellow tape and other visual indicators that point the way forward) along with some other fixes. This makes it possible for all you players to explore the game unguided if you wish!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have also updated our demo with some visual fixes to make it even more enjoyable to try! Last but not least, we fixed the missing translations in the settings menu and the auto-save popup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Celebrate Out of Sight´s one-month anniversary with us by joining Sophie and Teddy on their adventure!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1802893906723829"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-19T09:06:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.603Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-19T09:06:55.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.604Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-19T09:06:55.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:42.619Z"
+  },
+  {
+   "id": "out-of-sight-312565@1.0.44",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Patch 1.0.44",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-16T09:00:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Slower systems that cannot stream in new areas of the game fast enough will now pause to finish loading the area before allowing you to enter. This fixes an issue where key elements like locked doors or switches could be missing until they finished loading. Or you falling through missing floor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare issue where Clayton could get stuck in the Chapter 3 workshop room due to the door closing before he was able to exit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Chapter 7 pipe-ceiling-room where you could get stuck if you moved up the pipes without Teddy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Teddy was very difficult to pick back up in some locations (notably on movable boxes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the \"YoYo\" collectible where you could pick up both the collectible and Teddy at the same time, making you stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made inverted horizontal/vertical look work on mouse as well (previously only worked on controller)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Other minor fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1802354289685350"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-16T09:00:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.603Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-16T09:00:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.603Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-06-16T09:00:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:42.618Z"
+  },
+  {
+   "id": "out-of-sight-312565@hotfix-2025-05-24",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Hotfix May 24th",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-24T16:32:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue caused by the previous hotfix where Lost & Found collectibles would not grant achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Any collectibles affected by this bug will now automatically grant their respective achievement when opening the Lost & Found page on a save where they have been collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue caused by the previous hotfix where the \"Lucille's Blanket\" collectible did not show up in the Lost & Found list after being collected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1800357164476707"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-24T16:32:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-24T16:32:48.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.602Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-24T16:32:48.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:52.698Z"
+  },
+  {
+   "id": "out-of-sight-312565@hotfix-2025-05-23",
+   "gameId": "out-of-sight-312565",
+   "displayName": "Hotfix May 23rd",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-23T17:52:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue with the end room of the Banquet hall in Chapter 7 where restarting from a checkpoint could cause a movable box to get permanently stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur if opening the collectibles menu immediately after starting to pick up a new collectible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2526310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2526310/view/1800357164447103"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T17:52:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.602Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-23T17:52:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2526310",
+      "checkedAt": "2026-11-13T03:27:22.602Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-05-23T17:52:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:20:52.698Z"
+  }
+ ],
+ "issues": []
+}

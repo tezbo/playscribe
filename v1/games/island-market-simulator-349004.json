@@ -1,0 +1,2051 @@
+{
+ "game": {
+  "id": "island-market-simulator-349004",
+  "igdbId": 349004,
+  "name": "Island Market Simulator",
+  "cover": {
+   "imageId": "cobolp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobolp.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5hm6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5hm6.jpg"
+  },
+  "ps5Release": "2026-10-18",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "island-market-simulator-349004@1.0.5",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-10T13:03:44.000Z",
+   "notes": [
+    {
+     "title": "👷 New Apprentice Features",
+     "items": [
+      {
+       "text": "Your apprentices just leveled up. Two big additions to what Greg, Jesse, and Walter can do for you:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🐄 Barn Product Collection — Apprentices now collect products from your barn animals and bring them to the front of the market. Sit back and watch the goods stack up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🥊 Thief Protection — Apprentices now actively guard the market against thieves. No more losing goods to sneaky visitors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "On top of that, some of the existing apprentice features have had their prices reduced — hiring hands is now more accessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/71cddad09abc02e6cacf862f166813bc4c12284d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🚨 Critical Fixes",
+     "items": [
+      {
+       "text": "Client Harvestable Count: Players connecting as clients were seeing \"0\" for harvestable products even when there were plenty. Fixed — clients now see the correct counts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kraken Set — Client Visibility: Fixed an issue where the Kraken set wouldn't appear for clients and couldn't be found in the market after loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Recycling System — Client Destroy: Fixed a bug where clients couldn't destroy items in the recycling system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spoiled Products in Fresh Crate: Placing spoiled products in a fresh product crate would still let them sell as fresh. Fixed — mixing spoiled with fresh now spoils the fresh ones too (as it should).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Apprentice Camera Lock: Assigning a task to an apprentice who already had one would leave the camera stuck on them. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Asparagus Icon: Asparagus was showing a seed icon instead of its product icon. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decoration Item Icons: Many decoration items were displaying incorrect icons. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Roulette Sound Settings: Roulette game sounds weren't tied to the audio settings. Now they are.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Customer Shelf Congestion: Customers could get stuck in front of shelves. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Big fixes, better apprentices, keep the feedback coming. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 10,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1843481262692150"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-10T13:03:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.395Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.395Z"
+  },
+  {
+   "id": "island-market-simulator-349004@1.0.4",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-08T21:27:04.000Z",
+   "notes": [
+    {
+     "title": "🎰 New Feature: Roulette",
+     "items": [
+      {
+       "text": "Feeling lucky?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A roulette game has been added. Drop your items, place your bet, and let the wheel decide. Pick your side — black, red, or green — and either double your products or lose them completely. High risk, high reward. Perfect for when you're feeling brave (or stupid).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/b3f2df732c52db3efe834fdb03856f3ca6d585ab.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Critical Co-op Farm Bug: The critical client-side bug in the farm system has been fixed — you can now do everything together in co-op. Huge apologies for this one, it shouldn't have taken this long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Market Stock Panel: The market stock panel you check with the TAB key now works error-free and in sync. What you see is what's actually there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quality Lighting: Fixed an issue where lighting would dim incorrectly based on different qualities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "License Panel — Sushi & Sandwich Cars: Fixed an issue where the \"Owned\" text wasn't showing after purchasing sushi and sandwich cars in the license panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We've still got a long road ahead of us and we're doing our best. We're a tiny team with a single developer — we hope we can keep making you happy. We have some big plans and even bigger dreams. Thanks for being with us on this journey. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Feeling lucky?",
+     "[img src=\"{STEAM_CLAN_IMAGE}/45543285/b3f2df732c52db3efe834fdb03856f3ca6d585ab.png\"]"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1842846814456788"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-08T21:27:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.394Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.395Z"
+  },
+  {
+   "id": "island-market-simulator-349004@1.0.3",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-06T18:29:08.000Z",
+   "notes": [
+    {
+     "title": "🐙 Patch v1.0.3 — Kraken Shelves, Balance & Community Fixes",
+     "items": [
+      {
+       "text": "Another round of updates driven by your feedback — and more coming soon that we think you're really going to enjoy. 👀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🐙 New: Kraken Special Series Shelves",
+     "items": [
+      {
+       "text": "A brand-new Kraken Special Series of shelves is now available for purchase with IMS Coin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "What makes them special? Items placed on Kraken shelves don't spoil. Stock them, walk away, come back — your products stay fresh until they sell. Perfect for anything you can't move in a hurry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/89f3ebd957adc8ae59d6191ce8d60eea63bbd07a.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/fec3f4b1af1e8f38543c5641c8395dee274799d0.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "💡 Greenhouse Lights",
+     "items": [
+      {
+       "text": "The greenhouse used to go dark at night. Lights have been added — it's now properly lit around the clock. No more fumbling around in the dark to check on your crops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚖️ Balance Changes",
+     "items": [
+      {
+       "text": "Fish Prices: Based on your feedback that fish prices were too high and in many cases fishing alone was making massive money, fish prices have been updated and moved to a much more reasonable pricing model.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Day Start Timing: The day was ending too fast — by the time you'd prepped everything and were ready to sell, half the day was already gone. Also based on your feedback, the day now only starts progressing the moment you open the market. Take all the prep time you need.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Sushi Restaurant Menu: The menu at our little sushi restaurant wasn't descriptive enough, and there was a mix-up with the sushi colors. Both fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Apprentice Trash Task Lock: If you assigned an apprentice to clean up trash and then threw out any trash yourself, the apprentice would get stuck and stop doing anything. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for the feedback — more surprises on the way. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 2,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "A brand-new Kraken Special Series of shelves is now available for purchase with IMS Coin.",
+     "[img src=\"{STEAM_CLAN_IMAGE}/45543285/89f3ebd957adc8ae59d6191ce8d60eea63bbd07a.png\"]",
+     "[img src=\"{STEAM_CLAN_IMAGE}/45543285/fec3f4b1af1e8f38543c5641c8395dee274799d0.png\"]"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1842846814451457"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-06T18:29:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.394Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.394Z"
+  },
+  {
+   "id": "island-market-simulator-349004@1.0.2",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-04T21:32:25.000Z",
+   "notes": [
+    {
+     "title": "🎨 New Visual Look",
+     "items": [
+      {
+       "text": "The overall look of the game has changed. The island now has a more saturated and sharper look — colors pop more, details are clearer, and everything just feels a little more alive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🏃 Reworked Character Controller",
+     "items": [
+      {
+       "text": "The character controller has been reworked. Movement is now faster and more comfortable — no more sluggish response, no more fighting the controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Quest Completion: Fixed various issues around quest completion — quests now register and finalize as they should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quest Save Data: Fixed an issue where quests you'd already completed and delivered would be lost after loading a save. Your progress now sticks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monitor Switching: Fixed a bug that occurred when switching to a second monitor. Transitions between screens are now smooth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Connection Feedback: In the old version, when a player couldn't connect, no feedback was shown. The game now clearly tells you why the connection failed — no more guessing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sharper island, smoother movement — keep the feedback coming. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1842846814447882"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-04T21:32:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.393Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.393Z"
+  },
+  {
+   "id": "island-market-simulator-349004@post-2026-09-04",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "🖥️ Widescreen Support, Monitor Selection & Localization Fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-09-04T16:54:27.000Z",
+   "notes": [
+    {
+     "title": "🖥️ Widescreen Support, Monitor Selection & Localization Fixes",
+     "items": [
+      {
+       "text": "Another post-launch update — some big requests knocked out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🖥️ New Feature: Widescreen Support",
+     "items": [
+      {
+       "text": "Widescreen support has been added to the game. If you're playing on an ultrawide monitor, the game now scales properly — no more black bars, no more cropped UI. The island fills your screen the way it should.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🖱️ New Feature: Monitor Selection",
+     "items": [
+      {
+       "text": "Running a multi-monitor setup? You can now choose which monitor the game runs on — no more accidentally launching on the wrong screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🌐 Localization Fixes",
+     "items": [
+      {
+       "text": "Many localization issues across the game have been fixed — translations should read more naturally and display correctly in more places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More updates on the way — thanks for the feedback. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1842846814447239"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-04T16:54:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.393Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.393Z"
+  },
+  {
+   "id": "island-market-simulator-349004@hotfix-2026-09-04",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "🔧 Post-Launch Hotfix — Builder UI & Co-op Invite Fixes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-04T10:27:17.000Z",
+   "notes": [
+    {
+     "title": "🔧 Post-Launch Hotfix — Builder UI & Co-op Invite Fixes",
+     "items": [
+      {
+       "text": "Quick fixes after the v1.0 launch — thanks to everyone who reported these!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Builder Panel \"Owned\" Text: When an item was purchased in the builder panel, the \"Owned\" text didn't fit properly. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Co-op Invite Connection: When two players were already on the island, invites between them wouldn't connect even after being sent. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More updates and new content are on the way — and fast. We're not slowing down after v1.0 — quite the opposite. With the feedback you're sharing, we'll keep updating until we've reached a much more polished, stable version. Stay tuned. 🌊",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1842846814446005"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-04T10:27:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.392Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.392Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.4.33",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.4.33",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-24T21:47:02.000Z",
+   "notes": [
+    {
+     "title": "⌨️ Patch v0.4.33 — Custom Keybindings, Controller Support & Co-op Fix",
+     "items": [
+      {
+       "text": "Play the way you want. Better controller support, keys you can finally bind to whatever makes sense to you, and a critical co-op fix so nobody gets stuck mid-quest.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⌨️ New Feature: Custom Keybindings",
+     "items": [
+      {
+       "text": "Not everyone plays with a QWERTY layout. Not everyone's hands are the same. And frankly, some default keys just don't feel right.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can now remap keys to whatever you want. Head into the settings, pick your action, and set it to the key that makes sense for you. AZERTY layouts, left-handed setups, muscle memory from other games — all supported now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "⌨️ Fully customizable keybindings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "🔄 On-screen prompts update automatically — if you rebind \"Throw\" from Q to F, the game will show F everywhere the tooltip appears",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎮 Improved Controller Detection",
+     "items": [
+      {
+       "text": "Controller support just got a lot smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller detection has been significantly improved — the game now picks up connected controllers more reliably and handles them properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Co-op Quest Delivery Lock: Fixed a bug in co-op mode where delivering certain quests could lock the player in place, preventing further actions. The interaction now completes cleanly and the player is free to move on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bind your keys, plug in your controller, and get back out there. ⌨️🎮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1841579228676718"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-24T21:47:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.391Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.391Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.4.32",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.4.32",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-14T12:29:58.000Z",
+   "notes": [
+    {
+     "title": "🔧 Patch v0.4.32 — Bug Fixes",
+     "items": [
+      {
+       "text": "A round of small but important fixes. Save slots are safer, pet names stay consistent, sign drawings actually persist, and item placement doesn't cheat anymore. Details below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "💾 Save System",
+     "items": [
+      {
+       "text": "Save Slot Overwrite Protection: When all three save slots were full and you started a new game, an existing save could get overwritten. The game now stops before starting and warns you instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No Slot Selected Warning: Fixed an issue when starting the game without selecting a save slot. It's now handled cleanly with the right prompt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐾 Pets",
+     "items": [
+      {
+       "text": "Pet Name Sync: Fixed a mismatch where the name floating above your pet's head could differ from the name shown in the interaction prompt. Your pet's name now appears exactly as you typed it, everywhere.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🪧 Signs",
+     "items": [
+      {
+       "text": "Drawings Persistence: Fixed an issue where the drawings you made on signs would disappear after quitting and re-entering the game. Your artwork now properly comes back with your save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📦 Placement",
+     "items": [
+      {
+       "text": "Overlapping Placement: Fixed an issue where fast clicking could place an item in a spot that overlapped with another object. The placement check now runs at the exact moment of placement — no more sneaking things into taken spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎮 Controls",
+     "items": [
+      {
+       "text": "Lingering Meter Bar: Fixed an issue where a certain meter bar could stay on screen longer than it should. The bar now disappears immediately when you release the key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everyone reporting these — small fixes today, better game tomorrow. 🙏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1840944183779497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-14T12:29:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.391Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.391Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.4.31",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.4.31",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-31T16:33:23.000Z",
+   "notes": [
+    {
+     "title": "🐾 Patch v0.4.31 — Pets & Horse Riding",
+     "items": [
+      {
+       "text": "The island has always been about the work — hauling, stocking, selling. But it was missing something. Life. Companions. A reason to look around and notice what's next to you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That changes today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🐾 New Feature: Pets",
+     "items": [
+      {
+       "text": "You can now adopt a pet. A cat or a dog — each with its own personality — is waiting to be part of your story.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Pick one, give them a name, and they're yours. They'll follow you across the island, tag along on deliveries, wait for you at the market, and just... be there. Because sometimes it's nice to have someone by your side who isn't waiting for their groceries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🐱 Adopt a cat or 🐕 a dog — each with their own character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "✏️ Name your pet — they're yours now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🏝️ They follow you around the island wherever you go",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/42f84e6c3eb53370911caa88d6e1f0597981f430.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🐴 New Feature: Horse Riding",
+     "items": [
+      {
+       "text": "The island is big. Your legs are not.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Horses are now rideable. Hop on and cover ground way faster than walking — every corner of the island suddenly feels a lot closer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "But that's not all. Horses can carry cargo, too. Load up saddlebags and crates and haul your harvest in one trip instead of five. And yes — you can name your horse. Meet Secretariat. Meet Shadowfax. Meet whatever you decide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🐴 Ride horses across the island — a lot faster than walking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📦 Carry cargo with saddlebags and crates — one trip does it all",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "✏️ Name your horse — companions deserve names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/4a06743fbea2db62f844115f6b33dec1af9aaf5c.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/1d243fb474b091dc01602403821fb94210854d15.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The market gets busy. The road gets long. It's better with a friend by your side and a horse under you. 🐾🐴",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "You can now adopt a pet. A cat or a dog — each with its own personality — is waiting to be part of your story.",
+     "🐱 Adopt a cat or 🐕 a dog — each with their own character",
+     "✏️ Name your pet — they're yours now"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1839676055888792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-31T16:33:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.390Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.390Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.3.31",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.3.31",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-05T20:03:49.000Z",
+   "notes": [
+    {
+     "title": "🏀 New Feature: Basketball",
+     "items": [
+      {
+       "text": "Sometimes running a market gets serious. Sometimes you just want to mess around with a friend.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A basketball minigame has been added to the island. Grab a ball, shoot some hoops, and earn cash for every basket you sink.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Why add it? Simple — we want more things you can do together with your friends in the game. Not everything has to be about work. Shoot around between deliveries, settle bets with your co-op partner, or just chill. The island is bigger than the market counter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🏀 New basketball minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💰 Earn cash per basket",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "👥 Perfect for co-op downtime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/57e8fb1ffe96157b7b6dfb01a52f7accd13d216d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🌱 New Feature: Fertilizer Machine",
+     "items": [
+      {
+       "text": "Until now, empty crates only had one purpose: sell them off for a bit of cash. That felt like a waste.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There's now a fertilizer machine right across from the greenhouses. Drop your empty crates in and it'll break them down into fertilizer — giving your farming setup a serious boost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "For now, 3 fertilizer types are available. This is only the beginning — the fertilizer system will expand significantly in upcoming updates, with more variety and deeper integration into your farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🌱 New fertilizer machine, across from the greenhouses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "♻️ Turn empty crates into fertilizer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🧪 3 fertilizer types available now — more on the way",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/f253bfb58ec6f6f02d0b65eebbfad63cbf734146.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Buried Seeds: Fixed an issue where some seeds could get stuck beneath the soil.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization: Various localization errors have been corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🔮 What's Coming",
+     "items": [
+      {
+       "text": "Keep following the updates. As we get closer to the full release, much bigger updates are on the way — the kind that we think will really make your day. Stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shoot some hoops, fertilize your crops, and have fun out there. 🏀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Sometimes running a market gets serious. Sometimes you just want to mess around with a friend.",
+     "🏀 New basketball minigame",
+     "💰 Earn cash per basket"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1836506165574574"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-05T20:03:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.389Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.390Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.3.30",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.3.30",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-20T19:59:13.000Z",
+   "notes": [
+    {
+     "title": "🔧 Patch v0.3.30 — Bug Fixes & Inventory Number Keys",
+     "items": [
+      {
+       "text": "A community-driven patch. Thanks to everyone who reported these on the forums — we've gone through your bug threads and knocked them out one by one. Plus, a long-requested quality-of-life addition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "⌨️ Quality of Life: Number Key Inventory Switching",
+     "items": [
+      {
+       "text": "The mouse wheel was the only way to scroll through your inventory slots. That's a lot of scrolling.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can now switch inventory slots with the number keys 1-2-3-4-5. Faster, snappier, and a lot easier on the wrist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/23f7bcb0164f4018032200ce2e7926e54073ba3b.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Wide Pantry Shelf/Rack — Loss of Space: Fixed an issue where crates couldn't be placed on the wide pantry shelf/rack even though there was clearly enough room. (Reported by Aussienutz — thanks!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bag Thrown Through Cellar Wall: Fixed a bug in the corner of the fully-expanded cellar where throwing a selected bag with Q would send it straight through the wall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Host vs Invitee Market Lighting: Fixed an issue where the host saw proper market lighting while invited players saw none (or vice-versa). Everyone now sees the same lighting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Buggy Delivery Points: Fixed issues with delivery points — particularly around pirate deliveries — that could cause the location to behave unpredictably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/2f7675d2339ea4cedb41579d61add886ac1cac50.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Big thanks to everyone reporting bugs in the forums — keep them coming. We read every one. 🙏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1835871199309973"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-20T19:59:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.387Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.387Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.3.29",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.3.29",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-12T09:33:12.000Z",
+   "notes": [
+    {
+     "title": "🗄️ New Feature: Pantry Organization",
+     "items": [
+      {
+       "text": "Let's be honest — the pantry was a mess.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Products would pile up inside in a chaotic jumble, with no way to bring order to the chaos. Not anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The pantry can now be properly organized with shelves. Four different shelf types have been added, letting you arrange your stock the way you want — by type, by category, or however your inner shopkeeper sees fit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🗄️ 4 different shelf types for the pantry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📦 Organize products neatly instead of dumping them in a pile",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/22d78d281867f6723f31bcc8c43a9cfdccc2df21.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🪧 New Feature: Drawable Signs",
+     "items": [
+      {
+       "text": "Signs are coming to the game. Place them in the market or in the pantry, and draw on them yourself — name your sections, mark your categories, or just doodle something cute. Your store, your style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🪧 Place signs in the market or pantry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🎨 Draw on them — categorize your goods or get creative",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/ed334d4165c96423b760169f03790f9081bedadd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🥊 Ragdoll Thieves",
+     "items": [
+      {
+       "text": "Catching a thief used to feel a bit... weightless. Not anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thieves now ragdoll when hit — they drop to the ground with proper physics, and the whole interaction finally feels as satisfying as it should.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/deab91fd7d6ea9eb20b2099d5a2e432ad63e83f2.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🚀 Massive Optimization Update",
+     "items": [
+      {
+       "text": "A big one. We've done a serious pass on performance across the board.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Results vary by hardware, but on average we're seeing a jump from 85 FPS to 120 FPS. Smoother gameplay, snappier response, less heat from your machine — all wins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚀 Average FPS: 85 → 120",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚙️ Performance improvements across multiple systems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💻 Impact varies by hardware — most setups should feel noticeably smoother",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/244c375f92aa8ff05c000f1ed4cedfc5455429dd.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Save File Visibility: Fixed an issue introduced with the character customization update where save files were not appearing in the save slot menu. Your saves are right where you left them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Organize your shelves, doodle your signs, smack your thieves at 120 FPS. It's a good day on the island. 🗄️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 2,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Let's be honest — the pantry was a mess.",
+     "Products would pile up inside in a chaotic jumble, with no way to bring order to the chaos. Not anymore.",
+     "🗄️ 4 different shelf types for the pantry"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1835236783562823"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-12T09:33:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.386Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.386Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.2.29",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.2.29",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-09T06:32:41.000Z",
+   "notes": [
+    {
+     "title": "✨ New Feature: Make the Character Yours",
+     "items": [
+      {
+       "text": "Up until now, everyone who set foot on the island looked pretty much the same. That changes today.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character customization and gender selection have arrived.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Before you start your adventure, you'll now step into a brand-new character creation screen. Choose your gender, pick a hairstyle that suits you, set your skin tone, and add accessories — earrings, beards, mustaches, and more depending on what you choose. The pirate ship in the background is waiting, but the look that boards it is up to you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "👨‍🦰 Gender Selection — Female characters are now playable for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💇 Multiple hairstyles for both male and female",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "✨ Customization options — skin color, eyebrows, accessories, earrings, beards & mustaches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🚢 A brand-new character creation screen before you set sail",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/c19ff0a93c97c8de27596cdd2185896c1c8efca3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/aed8e69f21ca9349d373202e0cc7b11d119f63b7.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔜 Coming Soon",
+     "items": [
+      {
+       "text": "This is just the start. New customization options will be added to the current categories soon — more hair, more accessories, more ways to make your character feel uniquely yours. Stay tuned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Step into the mirror. The island is waiting to meet the new you. ✨",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Up until now, everyone who set foot on the island looked pretty much the same. That changes today.",
+     "Character customization and gender selection have arrived.",
+     "👨‍🦰 Gender Selection — Female characters are now playable for the first time"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1834602721200901"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-09T06:32:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.385Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.386Z"
+  },
+  {
+   "id": "island-market-simulator-349004@0.2.28",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "Patch 0.2.28",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-24T10:05:25.000Z",
+   "notes": [
+    {
+     "title": "🔧 Patch v0.2.28 — Critical Bug Fixes",
+     "items": [
+      {
+       "text": "A small but important patch. We've tracked down a chain of bugs that could cascade into corrupted saves and locked-up players — all of them are now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes",
+     "items": [
+      {
+       "text": "Crash When Buying Shelves or Animals: Talking to an NPC while holding certain objects could cause the game to crash on the spot. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inventory Lock After Recycling Spoiled Items: Throwing a spoiled item into the recycle machine left the item stuck in your hand — you couldn't drop the bag, couldn't buy a new one, and any purchase attempt would crash the game. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Frozen Player After Loading a Save: If you ran into either of the bugs above, your save could get corrupted. Reloading would leave you holding an item you couldn't use, unable to switch slots, drop items, or interact with the bag system at all. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks to everyone who reported these — keep the feedback coming. 🙏",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1833334318575174"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-24T10:05:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.385Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.385Z"
+  },
+  {
+   "id": "island-market-simulator-349004@major-2026-05-23",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "💾 Save Slots Update & Fish Price Balancing",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-23T07:20:27.000Z",
+   "notes": [
+    {
+     "title": "💾 New Feature: Save Slots",
+     "items": [
+      {
+       "text": "One island, one story — until now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Multiple save slots have arrived.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Want to start over without losing your main run? Curious how things would have gone if you'd built things differently? Playing with one group of friends and another solo? You don't have to choose anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each slot is its own world, with its own progress, its own choices, and its own story. Build a thriving market in one. Disappear into a fishing village in another. Try something completely different in a third. Switch between them whenever you want your runs are saved separately and stay that way.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💾 Multiple save slots each one a fully independent run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "📖 Tell different stories side by side, no overwriting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🔄 Switch between slots anytime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "⚖️ Balance Changes",
+     "items": [
+      {
+       "text": "Fish Prices: Fish prices across the board have been reviewed and rebalanced for a fairer, more consistent economy. Rare catches feel rare again, and common catches don't undercut the work that goes into them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "New slot, fresh start. Where will this one take you? 💾",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 0,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "One island, one story — until now.",
+     "Multiple save slots have arrived.",
+     "💾 Multiple save slots each one a fully independent run"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1833334318573461"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-23T07:20:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.384Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.384Z"
+  },
+  {
+   "id": "island-market-simulator-349004@major-2026-05-19",
+   "gameId": "island-market-simulator-349004",
+   "displayName": "🍣 Mini Sushi Restaurant Update & Bug Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-19T18:39:14.000Z",
+   "notes": [
+    {
+     "title": "🍣 New Feature: Mini Sushi Restaurant",
+     "items": [
+      {
+       "text": "Those fish you've been hauling in? It's time to put them to work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A brand-new Mini Sushi Restaurant has arrived on the island.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Head to the Builder and upgrade your Sushi Restaurant to unlock 5 different sushi recipes, one by one, in sequence. Each upgrade brings a new dish to your menu — and a new way to turn your daily catch into profit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Use the fish you've caught out on the water to prepare these dishes and serve 5 distinct sushi menus to your customers. The better you fish, the better you cook.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🏗️ Upgrade through the Builder to unlock recipes in order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🐟 Turn your caught fish into fresh sushi",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🍣 5 different sushi menus to serve your customers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45543285/bb7ccf6ef1ae67781ee8fee2fdaa0d31fb3529f4.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔧 Bug Fixes & Improvements",
+     "items": [
+      {
+       "text": "End-of-Day Report — Online Tablet Order Income: Income from orders accepted and delivered via the market tablet wasn't appearing in the end-of-day report. Successful deliveries now show up both as income and as sold-item entries in the report.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements (Co-op): In multiplayer, reputation achievements were only awarded to the host. Reputation achievements are now granted to all players on their own accounts (Market / Village / Kingdom / Pirate).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrupted Save on Exit with Damaged Item: Exiting to the main menu while holding a spoiled/rotten item could corrupt the save and trigger various strange bugs. This has been fixed — damaged items no longer corrupt the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Save Reliability (Counters): A counter-related issue could potentially corrupt the entire save file. Such issues are now isolated and no longer affect the rest of the save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boat Ladder: Climbing back onto the boat from the water was too difficult. The boat ladder has been enlarged to make boarding easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Invisible Wall Stutter: Moving along the invisible wall boundary occasionally froze the game for about 2 seconds, and in some cases the boat could get stuck. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gingerbread Clipping: Holding the gingerbread cookie item caused model clipping issues. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Daily Settlement Screen: The order count shown on the sleep settlement screen was incorrect and order profits weren't included. Both have been corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fresh fish, fresh sushi. Get rolling! 🍣",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 9,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Those fish you've been hauling in? It's time to put them to work.",
+     "A brand-new Mini Sushi Restaurant has arrived on the island.",
+     "🏗️ Upgrade through the Builder to unlock recipes in order"
+    ]
+   },
+   "sourceIds": [
+    "steam-3391510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3391510/view/1832700592801698"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-19T18:39:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-3391510",
+      "checkedAt": "2026-11-12T07:24:17.384Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:17.384Z"
+  }
+ ],
+ "issues": []
+}

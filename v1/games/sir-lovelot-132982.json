@@ -1,0 +1,254 @@
+{
+ "game": {
+  "id": "sir-lovelot-132982",
+  "igdbId": 132982,
+  "name": "Sir Lovelot",
+  "cover": {
+   "imageId": "co2tlk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2tlk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "araww",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/araww.jpg"
+  },
+  "ps5Release": "2021-03-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sir-lovelot-132982@patch-2025-10-10",
+   "gameId": "sir-lovelot-132982",
+   "displayName": "Unity security vulnerability patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-10T08:14:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Unity security vulnerability CVE-2025-59489 has been patched in build 1.51",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1055170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1055170/view/1813041031233686"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T08:14:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1055170",
+      "checkedAt": "2026-11-13T03:30:35.888Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T08:14:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1055170",
+      "checkedAt": "2026-11-13T03:30:35.888Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-10T08:14:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.605Z"
+  },
+  {
+   "id": "sir-lovelot-132982@1.21",
+   "gameId": "sir-lovelot-132982",
+   "displayName": "Update 1.21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-29T14:48:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you sooo much for the support you've given us since launch! Your valuable feedback has helped us understand what to fix, change or improve and make Sir Lovelot a better game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Time to list all the recent changes",
+     "items": [
+      {
+       "text": "Managed to make controls for jumping even more snappy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added triple checks to all achievements forcing them to unlock properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some leaderboards showing players with 0 playtime at the top of the list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Certain effects and background elements are auto-disabled on slower hardware",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some tweaks to a few levels and colliders based on user feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented fast reload buttons/keys mostly requested by speedrunners",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Many minor fixes and overall performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mapped gamepad controls to more buttons...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "...which fittingly brings us to the next point. What’s left to do?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keyboard & gamepad remapping options. This is proving to be a headache as currently keyboard and gamepad inputs are not separate. This means that remapping the keyboard also overwrites the gamepad and vice-versa. But we’ll get there.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Display missing & hidden collectables in the current level (most likely on the pause screen vs. the HUD, not to spoil the fun for those who wish to go searching without help)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s about it. Thanks again everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best wishes and have fun with Sir Lovelot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1055170"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1055170/view/4074045878072755929"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-29T14:48:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1055170",
+      "checkedAt": "2026-11-13T03:30:35.887Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-29T14:48:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1055170",
+      "checkedAt": "2026-11-13T03:30:35.887Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2021-04-29T14:48:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:12.604Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,351 @@
+{
+ "game": {
+  "id": "fobia-st-dinfna-hotel-133059",
+  "igdbId": 133059,
+  "name": "Fobia: St. Dinfna Hotel",
+  "cover": {
+   "imageId": "co4l4i",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4l4i.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1kw9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1kw9.jpg"
+  },
+  "ps5Release": "2022-06-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "fobia-st-dinfna-hotel-133059@01.02",
+   "gameId": "fobia-st-dinfna-hotel-133059",
+   "displayName": "Patch 01.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-09-12T11:45:30.000Z",
+   "notes": [
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Fixed BUG when loading the game in Christopher's house, spaces were added to the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed BUG where it was possible to move cursor during save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed BUG that the \"humanoid\" would not pass through a door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PUZZLES",
+     "items": [
+      {
+       "text": "Fixed BUG in Book Puzzle, where the book disappeared from the position if the player left the room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "IMPROVEMENTS",
+     "items": [
+      {
+       "text": "It is now possible to skip cutscenes in \"NEW GAME +\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It is now possible to increase the FOV up to 110.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support to Asus Aura.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "It is now possible to skip cutscenes in \"NEW GAME +\".",
+     "It is now possible to increase the FOV up to 110.",
+     "Added support to Asus Aura."
+    ]
+   },
+   "sourceIds": [
+    "steam-1298140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1298140/view/4606641560262765336"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-12T11:45:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1298140",
+      "checkedAt": "2026-11-13T03:21:05.494Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-12T11:45:30.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1298140",
+      "checkedAt": "2026-11-13T03:21:05.494Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-12T11:45:30.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:31.048Z"
+  },
+  {
+   "id": "fobia-st-dinfna-hotel-133059@01.01",
+   "gameId": "fobia-st-dinfna-hotel-133059",
+   "displayName": "Patch 01.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-19T01:09:18.000Z",
+   "notes": [
+    {
+     "title": "GAMEPLAY",
+     "items": [
+      {
+       "text": "Fixed a NEW GAME+ BUG where the remaining skill points were not showing up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a BUG where the player could leave the elevator after pressing the button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a BUG that caused the 'basement 3' door lights won't turn green",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a collision BUG where the chapel door does not save its state after opening.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the BUG that caused the Spider to not attack you in the fight against it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the BUG of the pistol tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PUZZLES",
+     "items": [
+      {
+       "text": "Fixed BUGs where the player could click again on PUZZLES after finishing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a BUG where you can leave Christopher's house without getting all the items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed BUG of being in the forest without all necessary items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a BUG where the Gas 320 compounds are not saved in the machine if you don't get them the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Implemented a function to disable camera shake when walking. To activate go to: OPTIONS MENU/ACCESSIBILITY/CAMERA SHAKE, turn it on/off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ammo Amount Rebalance, the total amount is now decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased Aggression and Speed ​​of Basic Monster (HUMANOID)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Decreased the time of power outages (blackouts).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It's now included a sign on basement 3 door to return to the monitoring room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now heal while walking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The piano monster's maximum health has been decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[Now small bugs cannot attack while you have the notebook open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased time interval between the small spider attacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upon leaving the game a message is displayed warning that unsaved progress will be lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam Cloud Save",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 10,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Ammo Amount Rebalance, the total amount is now decreased.",
+     "Increased Aggression and Speed ​​of Basic Monster (HUMANOID)",
+     "Decreased the time of power outages (blackouts)."
+    ]
+   },
+   "sourceIds": [
+    "steam-1298140"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1298140/view/4937651144701649212"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-19T01:09:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1298140",
+      "checkedAt": "2026-11-13T03:21:05.493Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-19T01:09:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1298140",
+      "checkedAt": "2026-11-13T03:21:05.493Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-07-19T01:09:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:31.047Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,509 @@
+{
+ "game": {
+  "id": "lil-guardsman-243914",
+  "igdbId": 243914,
+  "name": "Lil' Guardsman",
+  "cover": {
+   "imageId": "co6lhn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6lhn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar29tx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar29tx.jpg"
+  },
+  "ps5Release": "2024-01-23",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "lil-guardsman-243914@hotfix-2024-04-15",
+   "gameId": "lil-guardsman-243914",
+   "displayName": "Hotfix on PC/Mac",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-15T19:11:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Attention, Sprawl denizens!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We pushed a hotfix today for the PC/Mac versions of the game. The fix addresses an issue that caused it to freeze in levels 1-3 if you access the level select screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thanks to everyone for playing and for supporting us with your great feedback! ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1924360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1924360/view/6474562312196631825"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-15T19:11:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1924360",
+      "checkedAt": "2026-11-13T03:24:46.213Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-15T19:11:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1924360",
+      "checkedAt": "2026-11-13T03:24:46.213Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-15T19:11:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:43.021Z"
+  },
+  {
+   "id": "lil-guardsman-243914@major-2024-03-21",
+   "gameId": "lil-guardsman-243914",
+   "displayName": "Patch Update: Bug and Continuity Fixes",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-21T18:17:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings to all members of the Sprawl’s City Council, Mages Guild, Guard Corp, and Goblin Liberation Army!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to our community’s amazing feedback, we have released an update that addresses a number of issues. We are so grateful to everyone who took time to share their experience and who helped us improve our game. This won’t be the last update, so please keep sharing with us as you play!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugs squashed",
+     "items": [
+      {
+       "text": "Fixed navigation issue in Garby’s Alley that resulted in Lil getting stuck in the bottom right corner of the location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug that caused Dwarf Tinkerer to ignore player after interacting with him in level 3 if you restarted using the level select function, making it impossible to fix the jukebox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where using a specific series of inputs between good and low-budget crystals you could soft-lock the game in the toolkit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typo in Bosco Hoolihan’s turn in level 8 that revealed to the world what our placeholder character sprite looks like (note: it looks like the MSN messenger icon!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Spanish, German and Chinese localization for bullwhip upgrade description in Garby's Shoppe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue in Level 11 Meribella turn. You can no longer destroy her shell, and then discover it again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Continuity Nips & Tucks",
+     "items": [
+      {
+       "text": "Issue with Grumpkin T. Dankworth in level 8 & 10 If you reunite Grumpkin with Whelp and his end of day result indicates they run off together and he dies, you will not see him at the docks in level 10!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed continuity error involving Julian and Gary Goblin in levels 4 and 6. If you jail them, you won’t see them at jail anymore during level 6 but instead at the Goblin Liberation Army Headquarters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed continuity error involving Gary Goblin in level 12. Fixed bug where if you saved Gary from turning to the dark side, he obviously won’t be in the final confrontation with Tyronius (and die).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed continuity error with the Troll suspect in level 9. If you jail the troll, he obviously can’t be in the tavern with his human date!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Hilltop Games Team: https://store.steampowered.com/app/1924360/Lil_Guardsman/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Join the community",
+     "items": [
+      {
+       "text": "DISCORD | TWITTER | HILLTOP TWITTER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1924360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1924360/view/5686430301718738836"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-21T18:17:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1924360",
+      "checkedAt": "2026-11-13T03:24:46.212Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-21T18:17:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1924360",
+      "checkedAt": "2026-11-13T03:24:46.212Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-03-21T18:17:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:43.021Z"
+  },
+  {
+   "id": "lil-guardsman-243914@major-2023-06-29",
+   "gameId": "lil-guardsman-243914",
+   "displayName": "Lil’ Guardsman - Demo Access Update 📢",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-29T17:07:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Good day, future Guardsman!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Surprise! - Guardsman Training (demo) will remain available beyond Steam Next Fest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NOTE",
+     "items": [
+      {
+       "text": "We've decided to leave the LG demo up so people can continue to discover and share our game. We are, however, leaving it up in its current state, so it won't reflect all the changed based on the great feedback we've gotten this week, so think of it as a time capsule.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎥 Official Trailer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💬 Official Discord Server",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📎 All Lil' Guardsman links",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you are excited for Lil’ Guardsman’s full release. In the meantime there are a few things you can do:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◦ Wishlist Lil’ Guardsman here on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "◦ Follow our socials for news, behind-the-scenes content & more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "◦ Tag us on socials when you post about Lil’ Guardsman",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "💜 GLHF,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Versus Evil Community Manager – Rezza/Sydney",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1924360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1924360/view/5124582150131371077"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-29T17:07:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1924360",
+      "checkedAt": "2026-11-13T03:24:46.211Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:16.159Z"
+  },
+  {
+   "id": "lil-guardsman-243914@post-2023-06-12",
+   "gameId": "lil-guardsman-243914",
+   "displayName": "Lil' Guardsman Demo Patch Notes 📝",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-06-12T21:47:56.000Z",
+   "notes": [
+    {
+     "title": "Hello Guardsman!",
+     "items": [
+      {
+       "text": "We have been absolutely blown away with the reception & feedback for the Lil' Guardsman Demo. Getting this slice of the game out into the public's hands has been such a wonderful experience. The team has worked so hard on this experience of the game. We're so glad that you're enjoying it & we're happy to share the list of updates & fixes coming to the demo below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Updates",
+     "items": [
+      {
+       "text": "Streamer Layout in settings moves the character dialogue headshots to the lower-right corner of the screen (instead of alternating sides), leaving the lower-left corner open for the streamer on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Improvements to the demo gamepad compatibility (inc. controller issue that would result in a soft lock after tutorial)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with the streamer settings toggling Lil’s VO and NPC’s VO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Misc. bugs squished!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known Issues",
+     "items": [
+      {
+       "text": "Sound settings under construction!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Join us in our Official Discord Server for chit-chat, feedback + bug posting, dev BTS content & more. If you enjoyed your demo experience we'd really appreciate you wishlisting Lil' Guardsman here on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1924360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1924360/view/5129083846354870486"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-12T21:47:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1924360",
+      "checkedAt": "2026-11-13T03:24:46.210Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:18:16.157Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "e7130ec9945a",
+   "text": "Sound settings under construction!",
+   "status": "open",
+   "firstReleaseId": "lil-guardsman-243914@post-2023-06-12"
+  }
+ ]
+}

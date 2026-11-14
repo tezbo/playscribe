@@ -1,0 +1,1651 @@
+{
+ "game": {
+  "id": "mineko-s-night-market-49514",
+  "igdbId": 49514,
+  "name": "Mineko's Night Market",
+  "cover": {
+   "imageId": "co7589",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7589.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1lrp",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1lrp.jpg"
+  },
+  "ps5Release": "2023-10-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.9e",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.9e",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-02-07T00:39:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed infinite toolStoreLock check (prevented some players from exiting their home if they were in a particular quest state after “???”)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5589599109259664373"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-07T00:39:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-07T00:39:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.304Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-02-07T00:39:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.625Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.9d",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.9d",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-01-29T23:29:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This build fixes a gamebreaking bug where the quest at The Caves was incompletable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5519792046264447413"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-29T23:29:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.304Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-29T23:29:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.304Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-29T23:29:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.625Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.8",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.8",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-01-24T23:32:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed player icon sometimes disappearing on the Bus Stop Map UI, Bus Map sometimes becoming inactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disable cat/hairball interactions during Metal Rock minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Temple Apprentice at Nikko Temple accepts normal/perfect, not just perfect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Camera fade-in checker (updated action for porting team to address ramen shop bug on consoles)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tool Shop reopens after ??? quest (to address issue where some players missed buying a particular tool)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reset Sneak mode on player switch (addresses bug of Mineko being in half sneak mode during some player switch scenarios)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing \"¿¡\" characters to font",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5519792046246228627"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-24T23:32:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-24T23:32:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.304Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-01-24T23:32:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.624Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.6",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-30T03:13:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed (for good???) end of Ramen Shop sometimes getting stuck on loading screen if completed at end of night",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed (for good???) a certain NPC that is appearing in the Village/Market when they’re supposed to be missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Agents sometimes not appearing outside home on cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Force UI focus on Close button on tutorial opens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5395937983659547951"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T03:13:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.303Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-30T03:13:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.303Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-30T03:13:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.624Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.5",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-28T00:48:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Block interactions during mining minigame to avoid double interaction bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Possible fix for Bus Stop UI Map sometimes being non-interactive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Journal/Inventory buttons now close Bus Stop Map if above fails",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed rendering on a Cliffside ship material",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gray/orange hairball look descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Moriko's hearts showing above Oda",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed collider player was getting stuck on at The Gardens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added missing characters to font files: ÁÍÓÚÑ",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More work on Audio ducking during loading screens (for consoles)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5382426458993410164"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-28T00:48:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.302Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-28T00:48:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.303Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-28T00:48:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.623Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.3",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-09T04:27:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed “Friend To All” Achievement to award properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Audio ducking during loading screens (in preparation for Switch audio hitching issues)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unblock frozen player on Ramen Shop entry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Gift Envelope Look description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rock name sometimes being incorrect after mining",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5302486387996755093"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-09T04:27:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.302Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-09T04:27:56.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.302Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-09T04:27:56.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.622Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.1",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-11-01T04:55:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Nikko not re-appearing in backyard after end in some players' saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Items sometimes not showing up at the Market Fry Booth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Mulberry branches now yield 2 instead of 1 on every pick-up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced some Market Food items that were way too rare with a better chance at showing up during any season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked Boximal rarities (Catfish and Nikko are less impossible to receive)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now interact with and see the names of donated items in the Museums",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5288974951201618258"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-01T04:55:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.301Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-01T04:55:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.302Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-11-01T04:55:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.621Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.2.0",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.2.0",
+   "kind": "dayOne",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-26T03:38:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The digging minigame at the Beach and Cliffside has been redone to now play in-situ instead of in a minigame window. Digging still launches from interacting with the Digging Booth NPC to enter “metal detecting mode”. The player can now manually explore the Beach and Cliffside with the metal detector to look for items. Heading back towards the Booth/Bus Stop and leaving the “metal detecting area” will automatically remove the player from “metal detecting mode”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5229301621574638714"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T03:38:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.301Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-26T03:38:17.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.301Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-10-26T03:38:17.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.609Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.1.3",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.1.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-24T03:00:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Octo Pull now plays in-situ instead of in a minigame window to avoid minigame freezes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Octo Pull now costs $30 instead of $50 with higher reward yields for some resource prizes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed stutter on Mineko when sneak walking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Nikko Quests are re-activated on completion of main storyline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Chika sometimes taking Terracotta Planters from the player even if you don’t have enough",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased text size in control remapper",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed proper music playing during Market Events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Block Nikko chase from occurring before sleeping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed HQ UI remaining on screen when leaving HQ before completing quest",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5218041989059627541"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-24T03:00:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.300Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.540Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.1.1",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.1.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-07T03:03:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Useless cabinet in the room now acts as a Fav Item Display storage box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug: Planter Boxes are now properly categorized in the Crafting tab of the Inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug: Fixed a specific NPC missing from the Village when they were supposed to be un-missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug: Gem Museum now accepts Sparkly Rock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220292521186404657"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-07T03:03:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.300Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.539Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.12",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.12",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-06T00:28:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Balance: Lowered Energy cost of Mining, Axe, and Hairball picking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug: NPC Gifting now accepts a combination of regular and perfect versions of crafts if the player has a combination that would make the yield. It will prioritize taking regular versions first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug: Fixed Granny’s house upgrades not showing up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug: Fixed an annoying bug where hotspots (magnifying glass interactions) would sometimes stop working for a second or two immediately after closing the Inventory menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220292521182366336"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-06T00:28:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.300Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.539Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.10",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.10",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-04T23:25:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hot fix for an issue where some players were getting stuck in a state where their main quests weren’t advancing after a certain point. If you’ve cleared The Docks, Dark Forest, and The Caves and have a bug where you haven’t seen a particular cutscene at the bus stop that involves the Artifacts and Bobo, take the bus to any location. Upon your return, this cutscene should re-trigger and advance your main quests again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220292521178562464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-04T23:25:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.299Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.538Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.9",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.9",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-04T05:27:05.000Z",
+   "notes": [
+    {
+     "title": "Minor update",
+     "items": [
+      {
+       "text": "Added a debug log for bug reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When reporting quest-breaking bugs, please go to the Options screen in your Journal. From this screen, hold down the Z key for two seconds to bring up the debug log. Please send along this screenshot with quest-breaking bug reports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220292521175831978"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-04T05:27:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.299Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.537Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.8",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-04T03:05:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Digging minigame now rewards 2-5 Clay/Sand per successful hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed resource booth showing up before Cliffside cleared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Properly unload Reward UI on digging minigame ends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Rockin Rolls not being donatable to the Market Food Museum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Nikko Follower mentioning wrong season during cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Typo fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220292521175474165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-04T03:05:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.298Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.537Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.7",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.7",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-02T23:16:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue of a minigame window that sometimes gets stuck on the screen on the end of Metal Rock mining minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a certain NPC not appearing in Village after that NPC was discovered safe",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed bush decorations that were crowding the front of the Food Museum entrance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Re-ordered \"Display items\" (new default) and \"Call customers\" buttons in Market bartering to avoid accidentally button mashing to call customers too early",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A memento now appears in Mineko’s room upon completion of the main story",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Market Bus cutscene interrupting end game cutscene if completed on a Saturday",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220291886503168245"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-02T23:16:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.298Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.536Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.6",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.6",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-10-02T05:10:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bobo's Mom won't mention Art Craftbench if it's not actually for sale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Inventory category for Fish (Fish/Squeezed Fish)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Inventory Auto-sorts to not leave blank spaces with hidden items below the scroll",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fish Museum now only accepts the proper crab item (Old donated crabs will still be honored)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ruby now spawns mostly around the Village, fixed her key item RNG, and now offers two different items per day: one in the Day, one in the evening",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Rio’s relationship randomly resetting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added player switch tip to Beach quest intro",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Rockin Rolls not being donatable to Market Food Museum",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220291886500418267"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-10-02T05:10:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.535Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.5",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-30T04:29:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added visible note to empty bottle icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If player accidentally loses the Tool Belt (key item) another one will appear where the previous one was found",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the Bean/GardenPlot quest starting over again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Journal entry to Sugihara looking for 5 Machine Parts, not 4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing transparency on deco item in General Store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where an NPC that’s supposed to be missing is still showing up in the Night Market",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed colliders in the Village",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased chances of Beetle Brand Ramen showing up in the General Store",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed the stuck bottle in The Gardens (you can now take it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220291886493027044"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-30T04:29:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:22.215Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@0.8.0.4",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Update 0.8.0.4",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-09-28T22:51:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the Dock quest to properly end if the Cat Counter is at 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed HQFl2 fly-in camera, main camera, lockers, vents, restarts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the old Crab (bugged) inventory item from the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a showing up in dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/5220291886488526234"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-28T22:51:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.296Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:11.012Z"
+  },
+  {
+   "id": "mineko-s-night-market-49514@major-2018-08-28",
+   "gameId": "mineko-s-night-market-49514",
+   "displayName": "Mineko’s Night Market Summer Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-08-28T18:03:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! Happy Season of the Burning Sun! We’ve been working on a LOT of new features in the last few months that we’d like to reveal to you here TODAY. So, come along and see what’s new!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Costumes",
+     "items": [
+      {
+       "text": "Mineko can now craft COSTUMES! Certain areas will only be accessible when wearing a disguise (secret hideouts!), wearing protective gear (treacherous terrain!), or trendy clothing (anywhere teens hang out)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Locations Locations Locations",
+     "items": [
+      {
+       "text": "We’ve been fleshing out the island of Mt. Fugu with art for new locations to explore, new resources to discover, and new friends to befriend (if you’re nice)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crafting",
+     "items": [
+      {
+       "text": "All crafts will involve minigames, so we’ve been busy designing and experimenting with a bunch of new workbench minigame concepts! Work it! Work it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Resources",
+     "items": [
+      {
+       "text": "We’ve been adding (and still adding!) and tweaking (and tweaking further!) interactions for the various resource gathering interactions like mining, firefly catching, and snow monkey grooming (what?!)!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quests",
+     "items": [
+      {
+       "text": "We have been busy working and reworking (and reworking) the Quest system. It’s important for us to not allow the story to interrupt the player’s pace while still offering an engaging direction. We think (hope) we are close to this goal!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Night Market Main Events",
+     "items": [
+      {
+       "text": "Oh! And I guess a game with “Night Market” in the title should have a Night Market. The Night Market will feature 16 unique weekly Main Events, like Cat Racing, Tea Ceremonies, and Sumo-Suit Wrestling!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Thank you",
+     "items": [
+      {
+       "text": "We’re truly grateful for all your patience and kindness while we continue to develop the game. We are so excited for you to play it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-762940"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/762940/view/2444779293805917411"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-08-28T18:03:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-762940",
+      "checkedAt": "2026-11-13T03:25:44.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:10.973Z"
+  }
+ ],
+ "issues": []
+}

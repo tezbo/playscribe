@@ -1,0 +1,92 @@
+{
+ "game": {
+  "id": "psycho-dream-42420",
+  "igdbId": 42420,
+  "name": "Psycho Dream",
+  "cover": {
+   "imageId": "cob2fe",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob2fe.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar41vv",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar41vv.jpg"
+  },
+  "ps5Release": "2025-09-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "psycho-dream-42420@post-2025-09-08",
+   "gameId": "psycho-dream-42420",
+   "displayName": "Fixed 1st Boss",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-08T18:33:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch fixes the 1st Boss tentacle issues reported on discussions and by email.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3387440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3387440/view/1809869180171698"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T18:33:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-3387440",
+      "checkedAt": "2026-11-13T03:28:33.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T18:33:19.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3387440",
+      "checkedAt": "2026-11-13T03:28:33.806Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-08T18:33:19.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:23.596Z"
+  }
+ ],
+ "issues": []
+}

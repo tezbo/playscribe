@@ -1,0 +1,2433 @@
+{
+ "game": {
+  "id": "wander-stars-211607",
+  "igdbId": 211607,
+  "name": "Wander Stars",
+  "cover": {
+   "imageId": "co5hpf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5hpf.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1rfb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1rfb.jpg"
+  },
+  "ps5Release": "2025-09-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "wander-stars-211607@1.3.3",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.3.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-05T15:16:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, wanderers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re skipping from 1.3.0 to 1.3.3 in order for all platforms to have the same version number. All changes made for 1.3.1 and 1.3.2 have been internal, so all fixes for today’s update will include all of those internal changes as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now that that’s out of the way, here are the changes and bug fixes for the latest patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed a few missing characters in Japanese and updated the script with translator changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Reset button in the Settings menu corrupting all localization fonts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Simplified Chinese and Traditional Chinese font materials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue with font colors being incorrect in the episode end results. All languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Pep Ups menu Bonus Words appearing with missing borders. All languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with episode title card images appearing differently when compared to English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a string in the input profile name prompt that would fail to be translated when changing languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed an issue for Windows 11 users that reported that the build was not being signed properly by the Unity Engine in the building process.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where Pep Ups were being duplicated if the player pressed too quickly the continue button with controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the tutorial battle when playing with controllers that would dismiss the tutorial modal and play a different battle track on top of the current music track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Reset button in the Settings menu that would replace the resolution options with a duplicate of display mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the load and unload of the episode map assets that could cause map spaces to be duplicated randomly in Episode 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock damage loop when fighting against enemies that used MINE and retaliating against them with COUNTER type words.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the shift button in the profile name keyboard which had to be pressed twice to change capitalized letters.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with controllers and confirm screens that would require two inputs in order to accept or decline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a combat exception in the tutorial battle that would remove input from the player if the enemy was healed by them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialogue auto play settings not being saved properly when changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed character name box colors for a few NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Shadow Wolfe visuals and stats in EP6 EVENT #613.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pep Ups menu scrolling for controllers using the right stick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41409318/78582d05300259c1aad8773f577862e774846a22.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 19,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1840310314339470"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-05T15:16:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.653Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-05T15:16:49.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.653Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-05T15:16:49.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:58.103Z"
+  },
+  {
+   "id": "wander-stars-211607@1.2.5",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.2.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-17T17:56:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "UPDATE #2: The issue has been resolved and the latest patch is now live again. Thank you all for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UPDATE: There was a mix up with this patch and we have reverted it momentarily to sort it out. For those of you who installed the update, your save file might have been replaced with a testing file called “aminowana” that unlocks 100% of the game for QA purposes. If this happened to you, please send us an email to hello@papercastlegames.com and we’ll restore a save file with your previous progress. Sorry for the inconvenience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "/////",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Original",
+     "items": [
+      {
+       "text": "Hello, wanderers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "QOL changes",
+     "items": [
+      {
+       "text": "The game now remembers discovered enemy attributes across battles during an episode run. This change does not affect additional randomized attributes for certain enemy types, only permanent attributes will be recorded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the prepare menu, it no longer clears all your equipped words when turning back from the stats selection. B button (Cancel) now clears one equipped word at a time, instead of closing the whole menu. It is now required to hold down the cancel button for a short time to close the menu with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boombots will now consider fleeing the battle in a few turns if the player doesn’t have the LULLABY word equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed mouse hover detection for main menu buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Zombody enemy is now immune to the stun status effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Word DEFLECT no longer appears as a pep up word in the level up menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Word REFRESH now displays the correct amount of cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the challenge mode button in the episode select menu. It no longer becomes unusable after completing a challenge run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an additional issue when leaving the challenge button pressed and returning to the main menu- after returning the button would remain pressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It is now possible to hover for more info on stats/words in the level up menu if you have a lower amount of honor points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an overlapping text issue in the speech bubble from the store menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a combat softlock caused by abandoning Episode 1 during the tournament fight, and starting a different episode right after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the end episode results bonus for “No Enemy KOs” sometimes not granting the bonus honor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a black screen softlock after being defeated by Anzu in Episode 1 challenge mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in all challenge mode battle results. Failing the special condition would not grant the “No enemy KO's” bonus, even if all enemies were peaced out correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a failsafe solution to the pep ups menus becoming unselectable with controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the special condition for \\[not using SP] still granting bonus honor after using SP in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If the player enters a battle against a Lightdroid and no equipped words grant block points, the Lightdroid will flee the fight in fewer turns than before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with maps with chaser enemies while playing with a mouse. If two chasers met in between spaces, it would occasionally cause the player to be unable to move until the chasers reached their destinations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with chaser enemy battles that would occasionally reset the map after the fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with maps in darkness and enemy chasers sometimes appearing on top of the darkness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the word REFRESH not recovering cooldowns when fighting the final boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue for mouse inputs where enemies at their breaking points could not be hovered or clicked in that state.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue in the Episode Select menu with the INFO and STATS buttons remaining in “pressed” state, after switching between Training and Settings menus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the participation price of event #103 from 15 to 10 ñols.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some users reported issues with Steam cloud failing to save properly. We made some adjustments to the Demo app, let us know if any issues persist related to cloud saving.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "That´s it for today! If you have any issues make sure to share your feedback in the Steam forums or back at our discord. You can also email us at hello@papercastlegames.com if you have any additional issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 21,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1819386365087568"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T17:56:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.652Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T17:56:47.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.652Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-17T17:56:47.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:58.102Z"
+  },
+  {
+   "id": "wander-stars-211607@1.2.4",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.2.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-11T12:01:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, wanderers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve got a ton of fixes and adjustments for the most recent patch. Thank you so much for your patience and for reporting any issues you might have encountered!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Changed the way the game closes itself when using \\ button in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made adjustments to the saving method in order to avoid data corruption when closing the game under certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an additional issue in episode 5 ACT 1-2 that would cause a black screen and sometimes data wipes after closing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the final attack VFX against a boss fight triggering even if the boss was immune, resistant, evading, among others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the pep up “One more thing” granting more than 1 word slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an enemy selection issue with mouse clicks in a episode 5 ACT 3 event battle.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a sequence break issue in episode 4 after clearing the \"Trial of Boldness\" battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a failsafe for a normal battle softlock occurring in episode 2 in which combat UI would sometimes fail to load randomly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a failsafe for two separate reported softlocks of enemies repeating their attacks on a loop and killing the player in the process.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an event in EP2 ACT2 that was not inflicting damage after Ringo was struck by lighting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the after credits scene of episode 10 when attempting to open the settings menu during the cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an UI issue in the map menus when switching from mouse to controller input and vice versa.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a combat softlock that would occur when enemies/bosses died by status effect damage (bleed, burn, shock) as soon as they used PASS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a combat targeting issue with mouse input while fighting 3 or more enemies. Using multi-target words like WIDE would cause the last selected enemy to always be selected for attacking, regardless of which enemy was clicked.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue when using LULLABY against an enemy with an active counter. It no longer puts Ringo to sleep.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock in episode 7 ACT 1-5 caused by clicking the space with the fleeing enemy. If the enemy was in an adjacent space to the player, the game would occasionally lock all inputs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug with the challenge Darkdroids that would morph into a Roboto Arms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the auto-scroll for attributes getting stuck when enemies had only 4 words in a column.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the pep ups menu when switching from controller to mouse and returning to main menu. It would make the pep ups menu stay open on the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a UI issue while playing on a map with chaser enemies. If a chaser enemy caught the player while a map menu was open, it would persist in the battle and softlock it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with the mod word ONE that would not recover 1 turn of cooldown at all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the challenge mode button getting stuck after finishing a challenge episode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a Steam Deck resolution issue with the background images of the episode select menu.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a failsafe to a words menu issue caused by selling words in the store menu. This would cause the menu to get stuck and wouldn’t allow any other mod words to be added or removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted episode 6 normal mode boss attributes, and fixed the special barrier issue with immunities and the final attack VFX.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the price value of WAVE from 30 to 50 honor points in the level up menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with REFRESH not recovering turns of cooldown and also messing up other words' cooldowns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boombots no longer explode infinitely if two of them are defeated at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you have any issues, make sure to share your feedback in the Steam forums or back at our Discord. You can also email us at hello@papercastlegames.com if you have any additional issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 25,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1813041031271938"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-11T12:01:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.651Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-11T12:01:11.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.651Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-11T12:01:11.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:58.101Z"
+  },
+  {
+   "id": "wander-stars-211607@1.2.3",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-28T20:56:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there, wanderers! Here are the most recent fixes and adjustments for Wander Stars.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Several bugs in the words menu have been discovered and fixed. Thank you for reporting these in the past few days! If you discover any new issues, please let us know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Goal spaces no longer trigger the next cutscene automatically, it requires player input to activate. It is now possible to explore all maps without accidentally touching the goal space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the player stats where it was possible to have the same word in different attributes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit with pep ups that grant additional resistances and immunities. The additional attributes no longer stay with you when unequipping the pep up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit when adding a 3 slot word with 3 available slots that weren’t adjacent. It would allow the player to add the big word and occupy 8 slots, which is more than the maximum limit of 7.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an exploit in the map store that would allow the player to infinitely sell duplicated words. It is no longer possible to sell words and items consecutively in the sell menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare instance of a softlock when dying against Wolfe in episode 1 and losing all stats and equipment gathered up to that point.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with exit spaces that would make the exit arrow disappear if the reward is accepted while the map navigation bar is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the risky attribute being reset to balanced if the player used SAVE & QUIT in the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "CLEAR and RANDOM buttons in the words menu for map/prepare menu no longer sound incredibly loud when pressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock caused by dying of shock damage and using the ITEM word at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an animation error in EP5 SC5 of a character disappearing before the fade out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the EP2 ACT2 event \"Spirit procession” not inflicting damage in option B.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in EP5 ACT2 event “Pirate merchant”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance adjustments",
+     "items": [
+      {
+       "text": "Adjusted base values, size and cooldowns for SPIRITED, SPIRITUAL, SPIRITIST, BOOT, BAT, MIGHTY, BOLD, INSTANT, and SWIFT.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted HP and breaking point range for Roboto Guards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted EP1 normal and challenge bosses resistances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted EP6 normal and challenge enemy resistances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced “Breaking down” and “Broken down” pep up values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If you have any issues make sure to share your feedback in the Steam forums or back at our discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 7,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1811772772352577"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-28T20:56:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.650Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-28T20:56:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.650Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-28T20:56:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:58.100Z"
+  },
+  {
+   "id": "wander-stars-211607@1.2.2",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.2.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-22T13:28:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello wanderers, we hope you’re enjoying your adventure so far! We’ve received quite a few bug reports since launch so we would like to thank all of you for sharing your feedback, and for being so understanding and patient with us while we sort out these issues. Below is a list of the things that have been fixed for the latest patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in which Pep Ups bonus words would refuse to be removed even after using the clear button or closing and reopening the game. This also seemed to affect normal words from time to time. This solution is temporary and remains under observation, some remaining issues may continue. Please let us know if you find any additional problems related to word equipping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the words menu with mouse input in which word text color would stay white, even after being clicked and equipped. This issue was not present with controller input.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "It is now possible to one shot the final boss in one turn without blocking progress. This also created an additional issue where player words would disappear after adding them to the slots array.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pause menu buttons have been adjusted to avoid confusion. \\[MAIN MENU] is now \\[SAVE & QUIT] and \\[END EPISODE] has been moved down and changed to \\[ABANDON RUN].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The charge mechanic can only be used with attack actions now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a softlock in the tutorial battle caused by pressing the end turn button and closing the pause menu at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock that happens when defeating a boss while being hurt by the burn status effect with low HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock in the items/discard menu when using a healing item while already having full HP. It is no longer possible to use healing items at full HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in \\ in which getting caught by guards for not making them fall asleep would duplicate Ringo’s map sprite after returning to the map. This issue had the potential of corrupting save files if the game was forcefully closed while it was saving when this occurred. If anybody else has any issues with their save files because of this or for any other reason, reach out to us at hello@papercastlegames.com and we’ll restore it for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Decreasing the frame rate in the settings menu would cause Treasure Get buttons to never spawn. This has been fixed and tested with all other available frame rates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved some cutout elements while playing on Steam Deck native resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We decided to prioritize issues that were affecting normal play and softlocks. We still have more things we want to fix, but we wanted to upload a patch as soon as possible to fix the most pressing issues so you can keep enjoying your adventure with as few hiccups as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s all for now, see you next time on Wander Stars!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1811138915522495"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-22T13:28:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.649Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-22T13:28:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.649Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-22T13:28:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:58.099Z"
+  },
+  {
+   "id": "wander-stars-211607@1.2.1",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.2.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-18T10:50:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It’s almost time for the full release tomorrow!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41409318/3529c88608d0d9c3621002afbfff9933711d7964.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We decided to update the demo to be closer to the final quality of the full game. There are a lot of bug fixes, UI adjustments, and quality of life improvements. Since it’s too much to count everything, here’s a more general list:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI sound effects levels have been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller input UI fixes like being able to remove one word at a time instead of clearing all words. No need to redo all your word selection anymore! You can now hold down the B button to clear all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Open and close boss zones with the left joystick button is now possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speaking of words, they can now be added and replaced regardless of slot size. So if you have a small action word you can instantly replace it with a medium or big word, regardless of MOD/ELE words in the action array.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pep ups menu has been improved, not only the UX but also a lot of exploits related to bonus words not equipping correctly or even affecting cooldowns for other words.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pep ups affecting equipment limits incorrectly has also been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The story script has been revised and improved in some areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is now possible to freely change display resolution and display mode. Included for Steam Deck resolutions as well.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Controller input stopped being weird in the items menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ringo no longer shouts twice for every attack, she was getting a bit hoarse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Honor points are not being multiplied by two when transitioning from episode end results and episode select menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And so much more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope to see you tomorrow for the big day!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 16,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1811138915388933"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-18T10:50:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.648Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:58.098Z"
+  },
+  {
+   "id": "wander-stars-211607@major-2025-07-17",
+   "gameId": "wander-stars-211607",
+   "displayName": "Wander Stars Release Date Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-17T14:59:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41409318/00a29f6b241b3a929d0d942f9b60600799aef587.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone, we have some news to share.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wander Stars is coming out a little bit later than you might have expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we want to thank you for participating in the open beta. We truly value every bit of feedback and ideas that you have shared with us, but it has also made it very clear that we need more time to truly deliver the game we wanted to make from the start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We heard you loud and clear – the UI is broken in many places and often confusing. The combat bugs can ruin the fun, and the balancing is a bit wacky starting from episode 2 onwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So based on your feedback, we have decided to take a bit more time to polish, balance, and take care of the bugs currently hindering the game. We’ve also been working on overdrive to meet our previous deadline, so taking a bit more time will not only make the game better overall, but it is also necessary for us to take care of our wellbeing as we approach the finish line.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And in an Underhero-like twist of events, Wander Stars is now launching on September 19. That’s right, on the 7th anniversary of Underhero!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/573320/Underhero/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That’s a very long time, and we are truly thankful for your patience with us and for being here all these years. We really think the wait will be worth it, and we can’t wait to share the final and improved version of Wander Stars with all of you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1805431065339382"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-17T14:59:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.647Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.647Z"
+  },
+  {
+   "id": "wander-stars-211607@1.1.1",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-14T19:20:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there, we hope you’ve had a wonderful Next Fest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve been reading your feedback and working on some general bug fixes for the demo:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Wolfe would fail to join the party again after a game over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where using an item would sometimes heal enemies instead of the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock caused by quitting episode 1 and immediately starting over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock in the treasure/power up menu. It wouldn’t spawn the accept button if you changed resolutions in settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with controllers that would invert enemy targets selection, if there were 3 or more in the battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a new action total feature, where you can see how much damage your action will inflict if it’s normal, weak, or resist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added letter-boxing for ultra wide resolutions, maintaining the correct aspect ratio of 16:9 the game was designed for.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed undefeated run appearing as 0 in episode end results, when it should display the bonus value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the SP button spawning a placeholder button icon during tutorials if you used a mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed challenge mode special conditions repeating for all combats in the same map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed challenge mode special condition that inflicts bleed with weaks, now affects all actors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare instance where the dark overlay of the pause menu would remain active after closing the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Ringo’s landing animation smoke VFX. The Shader displayed a border around the smoke that looked very weird.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the combat deed “First turn finish”. It would occasionally reward the player with honor even after several turns passed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That's it for today. As always thank you for playing, and please share your feedback so we can improve the game even further!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paper Castle Team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 11,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1802354289636238"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-14T19:20:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.647Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.647Z"
+  },
+  {
+   "id": "wander-stars-211607@1.1.0",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-09T16:20:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone, it’s been a while!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41409318/a3f43e12fb348dce3a45cd55fcfd961dd57636b3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today we're happy to announce the new and improved demo for Wander Stars!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The change-log is kind of massive, so we will just list major additions to the game:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save system (save & quit) added!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Profiles menu added. Name your save file, copy it, rename it again, exciting~",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cutscene pause AND skip cutscene features added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller remapping added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big optimization sweep for the core game systems! Since we have to make it run on a Switch, it now runs very efficiently with stable framerates on any platform! Thanks Ricky!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Episode select menu added (only includes episode 1 for the demo).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Episode 1 challenge mode added! A way harder episode 1 awaits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Training menu added! Use your hard earned honor to train permanent upgrades and words.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prepare menu added! Prepare your build and word loadout before the episode starts, while you listen to chill music.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speaking of music, we added a lot of new music by our composer Sayth Vashra!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New sound effects by our sound designer Severi Ojala and ambience tracks added too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cutscenes and dialogue adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat difficulty rebalancing for normal and challenge mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam Deck support, with proper controller glyphs added. (We would love some feedback here, SD users!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "And a lot of bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41409318/f89ccc82454329a850b80652fd5eb05dd0512bb8.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is still a game in development of course, so more bugs are to be expected. We’re happy to hear your feedback in the Steam forums or back at our discord.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a fun Next Fest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paper Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/1801617199528051"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-09T16:20:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.646Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.646Z"
+  },
+  {
+   "id": "wander-stars-211607@1.0.5",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-24T16:22:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Welcome back, wanderers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the changes and fixes for the newest demo patch",
+     "items": [
+      {
+       "text": "Added a fix for a randomly occurring softlock when closing the pause menu. The dark overlay would refuse to leave and wouldn’t let the game continue. Darkness eradicated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using rewind (pause/game over menus) in certain conditions wouldn’t recover cooldowns or replenish the player to full HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We have now added additional fixes for different ways to trigger this previous bug “Fixed a softlock fighting a boss where the final hit white VFX would get stuck on screen, rendering the rest of the playthrough unplayable.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "“Softlock happening late in the demo where characters fail to show up in combat.” This issue continues to pop up for some players, and we have attempted more solutions. If you experience this issue again, please let us know with any info you can provide in hopes of tracking down the origin of the problem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the combat buttons that would change the text of the buttons to placeholder text and render the buttons unusable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In the previous update we changed the way SP is used. But it was still possible to increase your spirit slots above your limit when words were already placed in any of the slots. It is now fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Trying to add a second elemental word when one was already in a slot, would let you add another word on top of the element. Basically two words would share the same slot. Exploit fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is a game in development, and we encourage any feedback you can give us to improve the game even more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please use the Steam general discussions or our discord server to reach us directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paper Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/5963413094345093360"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-24T16:22:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.644Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.644Z"
+  },
+  {
+   "id": "wander-stars-211607@1.0.4",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-12T07:15:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again, wanderers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the changes and fixes for the new version",
+     "items": [
+      {
+       "text": "Changed the way SP is used in combat. Now it can only recover used spirit slots, instead of granting extra slots for huge attacks too early in the game. You can earn additional slots if you find power ups or train for the permanent slot upgrade in the full game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Options/pause menu now available for quitting or restarting the episode in the map sections. (Progress is not saved in the demo version).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Combat word box page scrolling is smoother now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Combat word box now shows 1/1 page when there are not enough words for two pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock in the tutorial where the end turn button wasn’t usable in one specific instance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using a controller and spamming the A button before the first tutorial caused words to not appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock fighting a boss where the final hit white VFX would get stuck on screen, rendering the rest of the playthrough unplayable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added another possible fix for a softlock mentioned in the previous patch notes: “softlock happening late in the demo where characters fail to show up in combat.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kingjoe enemy now appear with their own names in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed “Exclusive Fullscreen” display mode for causing flickering issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a small issue in the “Thanks for playing” screen. There was a timer for enabling clicks and button presses that was not removed when the new wishlist and main menu buttons were added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug when using the PEACE button while there were words in the spirit slots that interrupted the peace sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved treasure get item randomization when receiving more than one item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is a game in active development, and we´re always looking out for more feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please use the Steam general discussions or our discord server to reach us directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paper Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 16,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/5747236506605806933"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-12T07:15:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.643Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.643Z"
+  },
+  {
+   "id": "wander-stars-211607@1.0.3",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-19T12:41:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there, wanderers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the changes and fixes for the new version",
+     "items": [
+      {
+       "text": "Spamming the peace button no longer softlocks combat with mouse and controllers.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed two typos. One for Greyjoe's barks, another for \"EVENT#106 - Grandma calling\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fix for a softlock happening late in the demo where characters fail to show up in combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ctrl key no longer speeds up animations for combat and map. It is still available for cutscene skipping however.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the Kingjoe enemy, they would use RETIRE randomly and leave the fight?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Action words from pep ups now look different when not equipped or equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in the words menu where pep up words refused to be cleared up from the equipped side of the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in combat with certain pep up action words that would refuse to work when pressing the OK button to execute an action.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fix for boss zone UI that would not show up for some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare instance where using JAB against a boss would trigger the Boss impact frame vfx for the first hit and softlock after the second hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved treasure space item drop randomization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when discarding items and canceling would not let you use the item afterwards and basically waste it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where previous plays would save user display settings. Forcing 16:9 aspect ratio caused issues with players that had already played on 1.0.1 before the fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Entering the display menu in settings no longer takes you out of fullscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It is now possible to change resolution values in the settings menu for 16:9 aspect ratios. (Other aspect ratios not supported yet).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a \"Wishlist\" button and a \"Main Menu\" button when the demo is over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is a game in development, and we encourage any feedback you can give us to improve the game even more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please use the Steam general discussions or our discord server to reach us directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paper Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 18,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/5747233970429370497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-19T12:41:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.642Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.642Z"
+  },
+  {
+   "id": "wander-stars-211607@1.0.2",
+   "gameId": "wander-stars-211607",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-13T08:26:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there, and thank you for playing the Wander Stars demo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the changes and fixes for the new version",
+     "items": [
+      {
+       "text": "Tutorial skip prompt added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Force 16:9 aspect by default (other aspect ratios not supported yet)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where map menus could be triggered while moving to an event/combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock when trying to restart the episode using rewind and/or quit after a game over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual bug where it would seem like it was possible to equip words even when the limit was already reached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an input problem when trying to exit the combat VS screen that would softlock the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an UI issue when using healing items on the map. The icon would stay permanently if a cutscene was triggered soon after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It's no longer possible to end your turn during the boss fight tutorial message.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock while fighting the second boss. If they we're KOd by the bleed status after pressing end turn, the bleed damage would loop until the heat death of the universe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This is a game in active development, and we encourage any feedback you can give us to improve the game even more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Please use the Steam general discussions or our discord server to reach us directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Paper Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 12,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/5768625435409472026"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-13T08:26:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.641Z"
+  },
+  {
+   "id": "wander-stars-211607@2022",
+   "gameId": "wander-stars-211607",
+   "displayName": "Update 2022",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-10T18:58:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been a year since we announced our Kickstarter campaign for Wander Stars. A lot of things have changed since then, but the most important thing is that we signed a publishing deal for Wander Stars! That’s why we have decided to postpone the Kickstarter indefinitely. The game is still early in development but everything is going well, and now that our financial needs are covered we just want to focus on making the best game we can.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have any questions, you can find us at our discord server.⭐️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of love,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paper Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1575810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1575810/view/6368680725421911747"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-10T18:58:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1575810",
+      "checkedAt": "2026-11-13T03:35:39.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:39.640Z"
+  }
+ ],
+ "issues": []
+}

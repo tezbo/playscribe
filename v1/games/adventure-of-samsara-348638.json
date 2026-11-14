@@ -1,0 +1,757 @@
+{
+ "game": {
+  "id": "adventure-of-samsara-348638",
+  "igdbId": 348638,
+  "name": "Adventure of Samsara",
+  "cover": {
+   "imageId": "co9yi0",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9yi0.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3z0l",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3z0l.jpg"
+  },
+  "ps5Release": "2025-09-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "adventure-of-samsara-348638@2.0.4",
+   "gameId": "adventure-of-samsara-348638",
+   "displayName": "Update 2.0.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-06T17:59:44.000Z",
+   "notes": [
+    {
+     "title": "Changes include",
+     "items": [
+      {
+       "text": "Missing glyphs for pressing analog sticks on Dual Shock 2 added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a minor issue with savegame if the player close the game before getting the sword",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a minor issue that could cause the player to loose navigation on the menu through analog stick only in some screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a major issue that would break the game when delivering a specific amount of Data Cube to Memoristo, if the game language is set to German.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1292460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1292460/view/1840310314342770"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T17:59:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-06T17:59:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.297Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-06T17:59:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.088Z"
+  },
+  {
+   "id": "adventure-of-samsara-348638@2.0",
+   "gameId": "adventure-of-samsara-348638",
+   "displayName": "Update 2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-27T14:03:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In the post-launch update, players can take on a new optional boss, the “Buzz Killer Swarm,” a high intensity battle against three cybernetic insects. The update also expands exploration with new secret rooms, hidden pathways, invisible walls and hidden upgrades. Movement and Combat has been refined, giving players more fluid control of the Solar Champion. A new in-game Bestiary has also been added, allowing players to view detailed enemy entries, including images, names and descriptions of foes encountered throughout the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additional content in the post-launch update includes",
+     "items": [
+      {
+       "text": "Combat Overhaul – Combat and movement have been refined to feel faster and more responsive, making it easier to avoid enemy attacks by dashing, and to use health potions during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quality of Life Improvements – New improvements include full PC input remapping, clearer map labeling when new areas are discovered, and an extra option on the main menu allowing players to replay cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Boss and Enemy Rebalancing – Several boss and enemy encounters have been rebalanced, including difficulty adjustments to Athalos, as well as refined AI, movement behavior, attack patterns and damage logic for Dhar’klaw and Doctor Gwar’udum, resulting in more consistent and satisfying fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug Fixes and General Improvements – A range of fixes and polish updates have been implemented, including camera behavior during unlock sequences, resolved progression blockers and various balance tweaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Adjusted input buffering, making it easier to avoid enemy attacks with dash or to use health potions during combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Knockback logic changes - Post-hit invulnerability works against body damage, making it harder for the player to pinball between enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boss fights rebalancing: Athalos, Gwar'udum, Dhar'klaw, Argonian Defense System, and Gargantuan Slime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy rebalancing: Armadillo and Frozen Spear Ghoul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brand new boss added to Murky Pipeworks: The Buzz Killer Swarm!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Spells",
+     "items": [
+      {
+       "text": "Flame Spikes - Creates a sequence of fire pillars in front of the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rune Bomb - creates a proximity rune that blows after some time or by proximity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New CURSED items that provide great benefits with some risky strings attached:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Necromancer’s Touch - Gauntlet item that reduces max health but drains enemy life on melee damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cursed Mage Strength - Gauntlet item that reduces max health but increases max Mana",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Progression Changes",
+     "items": [
+      {
+       "text": "Brand-new rooms and secret areas to explore - providing alternate paths and exploration routes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Murky Pipeworks' teleport can now be activated before reaching the Dead Complex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Health upgrades from altars provide a smaller health increase, but more altars are added to the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life improvements",
+     "items": [
+      {
+       "text": "Bestiary provides image, name and description of all defeated enemies (accessible via pause menu)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Map: Area names shown on the map after first room for the area is visited",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Control remap available through Options menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Extras” menu on the main menu allows players to rewatch in-game cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Myth lines from interacting with Monoliths can now be read on the altar inside the Orphic Crypt Teleporter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ending cutscenes are now longer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New “Adventure” Easter Egg ending, if Kosmonauto quest is completed before finishing game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Polish and improvements to enemy animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 17,
+    "fixed": 0,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Flame Spikes - Creates a sequence of fire pillars in front of the player.",
+     "Rune Bomb - creates a proximity rune that blows after some time or by proximity.",
+     "New CURSED items that provide great benefits with some risky strings attached:"
+    ]
+   },
+   "sourceIds": [
+    "steam-1292460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1292460/view/1830797770242507"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-27T14:03:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.296Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-27T14:03:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.296Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-27T14:03:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.088Z"
+  },
+  {
+   "id": "adventure-of-samsara-348638@1.0.12",
+   "gameId": "adventure-of-samsara-348638",
+   "displayName": "Update 1.0.12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-01T18:44:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed missing sound on a skeleton enemy;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed navigation on some menus with mouse and keyboard or gamepad;",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed moonwalking enemy that would go out of the room;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved attack pattern for the Frost Troll;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed breakable chains triggering more than once when hit;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed jump during hard fall animation;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "PT-BR localization fix for one of Potisto's lines;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1292460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1292460/view/1811772772451063"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T18:44:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T18:44:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.295Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-01T18:44:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.087Z"
+  },
+  {
+   "id": "adventure-of-samsara-348638@1.0.10",
+   "gameId": "adventure-of-samsara-348638",
+   "displayName": "Update 1.0.10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-12T02:54:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an uncommon bug where plants would not be burned by the Lux Emitter;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the door to go back to the checkpoint right after killing Doctor Gwar'udum;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "other small adjustements all around;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1292460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1292460/view/1810503566435868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-12T02:54:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-12T02:54:45.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.295Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-12T02:54:45.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.086Z"
+  },
+  {
+   "id": "adventure-of-samsara-348638@1.0.9",
+   "gameId": "adventure-of-samsara-348638",
+   "displayName": "Update 1.0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-11T14:42:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bowgun sigil tutorial placed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boiler Quest hint on map improved to be marked until the Boiler is powered up;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death sound playing when switching level on the Eurynomous Pit;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spikes on Dead Complex correctly animated;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Impossible to get Monolyth on Murky Pipeworks fixed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frozen worm shown on Eurynomous Pit background as expected;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix to some wall being possible to just walk through;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1292460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1292460/view/1810503566419168"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-11T14:42:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.294Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-11T14:42:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.294Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-11T14:42:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.086Z"
+  },
+  {
+   "id": "adventure-of-samsara-348638@post-2025-09-09",
+   "gameId": "adventure-of-samsara-348638",
+   "displayName": "Overall improvements and bugfixes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-09T04:38:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixing wall traversal bug that might happen in some cases;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Riposte after sucesful parry sound effect playing correctly;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Combat area for some dragon encounters improved;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some active buttons/tabs visibility improved;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "D-pad not working on menu on some controllers fixed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some enemy attacks visual effects improved;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1292460"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1292460/view/1809869180185035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-09T04:38:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.293Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-09T04:38:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1292460",
+      "checkedAt": "2026-11-13T03:14:18.293Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-09-09T04:38:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:39.085Z"
+  }
+ ],
+ "issues": []
+}

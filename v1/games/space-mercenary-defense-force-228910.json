@@ -1,0 +1,2754 @@
+{
+ "game": {
+  "id": "space-mercenary-defense-force-228910",
+  "igdbId": 228910,
+  "name": "Space Mercenary Defense Force",
+  "cover": {
+   "imageId": "co7d4n",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7d4n.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar24ge",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar24ge.jpg"
+  },
+  "ps5Release": "2024-05-01",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "space-mercenary-defense-force-228910@1.0.2.3",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 1.0.2.3",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-05-02T17:10:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue with encounter reward upgrade choices where the sprite and colour was incorrect for synergy and final upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Outer Atmospheric Lightning animation not playing correctly after pausing or levelling up while the threat event is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the charger miniboss counting as 2 completions for the encounter when killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Armour Repair Drones now correctly gives 1HP on pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the turbo mode text now changing to the high res font when selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed game over stats and credits text scaling issue when the high res font is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text panel scaling issue for ship skin descriptions when high res font is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation issue with the unlock popup screen when scrolling to the final unlock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation issue when closing the ship skin select so now the skin button is selected instead of the perk button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ship skin hover descriptions staying active after closing and reopening the skin select menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5766372999944209745"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T17:10:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-02T17:10:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.814Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-02T17:10:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.232Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@1.0.2.2",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 1.0.2.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-12-18T14:48:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In the game over screen, changed the displayed equipped perk icon so that nothing is shown for locked or unequipped perks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the game over screen, changed the layering so that the equipped perk icon is behind equipped module names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue displaying HP that affected ships with more than 3 HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with minibosses and the laser teleporter miniboss' portal remaining when returning to the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the ship purchase sfx stopping early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the clone backup challenge modifier so that the clone bosses no longer affect boss HP bar values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made it so that the laser twin bosses cannot be ionised while performing their double spin laser attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Area Select Module from flying offscreen after the target enemy dies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to the interactions of bosses spawning while the previous boss is still alive:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If more than 1 boss is alive at once, the screen now only unlocks after all are killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previous bosses will not affect the displayed HP bar of the most recently spawned boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After killing a boss, the HP bar will change to match the other boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the game not ending and softlocking after killing the final boss if the final boss spawns before you can kill the previous boss/bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller UI navigation issues:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coin toss: fixed not being able to select the double or nothing button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coin toss: fixed losing controller navigation after unpausing while the coin toss screen is open",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Astral Upgrades: fixed not highlighting the default selected button upon opening the Astral Upgrade screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5409450219987408397"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-18T14:48:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.814Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.232Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@1.0.1",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Hotfix 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-22T21:04:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue when trying to select the 4th or 5th challenge invasion in a system with a controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When returning from the challenge invasion screen with a controller, the challenge invasion button will now be selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When entering the mode select screen with a controller, the classic mode button will now be the default selected button instead of the challenge invasion button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5382426458974757935"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-22T21:04:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.813Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.231Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@1.0",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-14T16:17:06.000Z",
+   "notes": [
+    {
+     "title": "1.0 Release Update",
+     "items": [
+      {
+       "text": "The major 1.0 release is finally here, bringing tons of new content, unlocks, improvements, fixes, and changes! Since this is planned as the final update, I wanted to make it worthwhile and include as much as possible to push Space Mercenary Defense Force to the best it can be. Thank you for playing the game and I hope you enjoy this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Challenge Invasions",
+     "items": [
+      {
+       "text": "The primary focus of this update is the new Challenge Invasions, unique challenge runs with gameplay modifiers to overcome. Customise your build to best suit each challenge and try to save the planets from the invading aliens! Complete challenges to unlock additional planetary systems featuring increasingly difficult modifiers and complete all challenges in a system to unlock that system's bonus challenge! There are 3 planetary systems with 5 challenges each for a total of 15 Challenge Invasions to conquer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ship Skins",
+     "items": [
+      {
+       "text": "The next major addition of this update is ship customisation through skins. All 9 ships have a base skin and 3 additional skins to unlock and purchase through playing. From re-colours to new patterns and full sprite changes, these new skins provide bonus late-game objectives to complete and save up your credits for!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Threat Events",
+     "items": [
+      {
+       "text": "Also introduced are 3 new threat events increasing the total to 6. You can no longer encounter the same threat event twice in a row, even between runs. The new threat events are:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pulsing Solar Flare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shooting Star Attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Accelerated Meteor Shower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All threat events have been balanced to occur slightly less frequently over their duration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Unlock Pop-Up indicator",
+     "items": [
+      {
+       "text": "After unlocking something in-game you will now be prompted, upon returning to the menu, with information on what has been unlocked. E.g: Celestial Modifiers, ship perks, ship skins, bonus Challenge Invasions, Challenge Invasion systems, and Turbo mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ship Turret Fire Rate And Damage Rework",
+     "items": [
+      {
+       "text": "The ship's turret fire rate has been reworked to be calculated in rounds per second (rps) and all turret fire rate upgrades now show specific stat info on their rps increase or decrease. This means that the ship turret fire rate will no longer scale disproportionately as you acquire more upgrades. Turret damage upgrades now also show how much they affect your damage as a percentage value and all turret upgrades have been tuned to improve overall balance in deciding between branch choices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Astral Upgrade Changes",
+     "items": [
+      {
+       "text": "Several Astral Upgrades have been altered and rebalanced to improve build customisation and upgrade decisions. Also, some upgrade costs have changed, and some upgrade stacking amounts have changed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed on exp pickup upgrades so that they now stack a specified amount of times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an on-screen indicator for the exp pickup upgrades when they are active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an on-screen indicator for the level up beacon upgrades showing how close it is to being deployed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed 'Turret attack speed on exp pickup' to increase exp radius on exp pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed 'Turret damage on exp pickup' to decrease ship size on exp pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed turret attack speed beacon to provide module charge rate instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed how level up beacon upgrades stack - now remaining at being deployed every 3 levels but increasing the beacon's radius with the upgrade level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the turret shot and hit upgrades so that they can now be upgraded a second time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed 'Heal on boss spawn' to spawn an HP pickup every 7 minutes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed 'Deal bonus damage to bosses' to spawn a magnet pickup every 5 minutes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed 'Spawn an HP pickup every 500 kills' to spawn a coin flip chance event every 800 kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed 'Spawn a magnet pickup every 250 kills' to spawn a wheel spin chance event every 1000 kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed 'Gain an extra life on death' to heal to 1HP the first time you would receive lethal damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered 'Defensive modules charge 25% faster' to 20%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "The following Celestial Modifiers have been changed",
+     "items": [
+      {
+       "text": "Scorpio - replaced 'enemies lose -10%HP' with 'encounters grant double score'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Capricorn - changed to 'a second threat event occurs, threat event duration is -15 seconds'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ship Perks",
+     "items": [
+      {
+       "text": "A ship's perk is no longer required to be unlocked before you can select a perk for that ship. This means that you can equip any unlocked perk on any ship. The locked perk sprite has been changed to a question mark indicating that you can click it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI Improvements",
+     "items": [
+      {
+       "text": "Improved the click & drag functionality for Celestial Modifiers and level up upgrade trees - added sliding physics upon releasing and no longer accidentally clicking the selected button while scrolling past it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Astral Upgrade description text size scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In Astral Upgrade descriptions removed brackets and added colour to key values and costs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved hover and selected button clarity in the ship hangar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed interactable elements in ship module slots and level up upgrade trees for clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed and improved game over screen equipped module name box sizing and text scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the colour of upgrade tree hover info names for more visual clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed the colour of synergy module names for visual clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an extra period to threat event icon ancronyms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved threat event warning text typing effect so that it remains a constant size for longer texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a glow effect to the main planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added credits for the new key art.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay changes & Balancing",
+     "items": [
+      {
+       "text": "Added 7 new achievements for Challenge Invasions and 3 new achievements for skins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added ship turret damage and fire rate stat multipliers to balance acquiring additional upgrades relative to their starting values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made imbued enemies give double exp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed certain encounter tasks to improve consistency and quality of encounters:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed \"Retrieve enemy parts to charge the conduit\" AoE encounter task.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed \"Retrieve & deliver parts to the marked locations\" Escort encounter task.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed \"Defeat the invading wave of enemies\" & \"Defeat the empowered enemy invaders\" Combat encounter tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Praetor's ship perk requirement now counts all chance event payouts (coin flip, wheel spin, slot machine) instead of just slot machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Altered the Praetor's ship perk to affect all chance event payout odds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made miniboss HP scale as the game progresses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased the Off World Targeting explosion radius so that it is within the size of the targeting reticle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved how 'on hurt' upgrades work, improving consistency and fixing issues with Shield Generator and Armoured Charge interactions with other upgrades and damage sources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Decreased the poison cloud effective area to make it clearer where is safe vs. where you will take damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved the mini in-game wheel spin preview animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reworked one of the final boss' attacks to be more readable to improve dodgeability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Module & Upgrade Changes & Balancing",
+     "items": [
+      {
+       "text": "Synergising modules have a greater chance to show up vs. other modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If you have empty module slots, you have increased chances to be offered upgrades to equipped modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added 2 new utility upgrade trees, an HP/size tree and a chance event tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Heavy Armour upgrade has been moved into the new tree and replaced with Giant Armour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed ship size increase to Amour Impact Redirection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced turret upgrades:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Turret damage upgrades provide slightly lower damage values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Turret fire rate tree upgrade values are slightly increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Turret rebalance branches (dual barrel tree) stat increases and decreases are lowered and normalised.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Turret shot speed upgrades are lowered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Moved the Dual Barrel turret upgrade to appear later in the upgrade tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed laser upscaling upgrade to deal up to +50% damage at max range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made changes to how subsequent module fire rate upgrades affect the number of shots per second so that they are no longer disproportionate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a branch to Mine Deployment Module for the vortex upgrades vs. exploding mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed Mine Deployment upgrade icons to use the new mine sprite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added deployable life timer bars to Mine Deployer mines and Hull-Piercer drills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed Armoured Charge to count as a Melee module and made it Defensive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If you have both Armoured Charge and Portable Shield Generator modules equipped and active, the one most recently acquired will activate first instead of both together.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made Portable Shield Generator no longer prevent poison damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Shotgun Blaster damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed Missile Launcher barrel synergy to only apply to the first shot of a burst.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered the fire rate and active time of Banana Skin Deployer bananas so that not so many remain active at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed Vamp Scythe HP charging so that it no longer only counts swipe kills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added more info to Vamp Ray as to how much the max required charge increases or decreases with its upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Buffed Ice Cream Cannon's stats by increasing its fire rate and damage for all flavours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Buffed Fireworks Launcher by increasing its base damage, and increasing Explosive Tip's damage and Improved Formula's radius increase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added II numerals to Turret Optical Enhancements and Turret Barrel Rifling upgrades in the dual barrel upgrade tree for more clarity between upgrade icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed looping audio continuing to play while paused or levelling up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some looping audio no longer continuing after pausing/levelling up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed perks not visually updating their progress and only updating upon restarting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed imbued enemies not resetting their colour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed imbued enemy exploders not exploding sometimes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Fuel Leak's fire effect having a green aura.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed skull effects (damage to all non-boss enemies) not dealing appropriate damage to overhealed enemies i.e. imbued enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue during the final boss death animation where it could remain white from the damage flash effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the laser twin boss sparking effect remained when returning to the menu while its active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with laser twin bosses if they get ionised and separated on different sides of the screen, affecting certain attack patterns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an occasional menu issue where the ship's jet flame particles would flicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue during the death animation when close to the edge of the playable area where it would zoom into the centre and not onto the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Beam Sentry homing synergy so it no longer flickers and is smooth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Fork Stabber visual issues with ship scaling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug with displayed HP when returning to the menu while Armoured Charge's armour is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Area Select paint bucket synergy creating buckets in the incorrect position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed targeted burst modules not remaining at max charge when no enemies are in range e.g. Missile Launcher with the burst upgrade will now remain at a yellow max charge bar instead of misfiring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Sprinkler Sentry ice cream synergy where it would not create ice cream scoops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed E.T. Paralyser scaling issues with ship size and hitbox width.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Area Select's visual area staying on screen when returning to the menu while it is being drawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cross Contamination achievement not unlocking properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with not being able to access Steam interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed having the game paused after the death animation ends causing issues with the game over screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 14,
+    "fixed": 23,
+    "balance": 43,
+    "other": 25,
+    "ps5": 0,
+    "topNew": [
+     "Improved Astral Upgrade description text size scaling.",
+     "In Astral Upgrade descriptions removed brackets and added colour to key values and costs.",
+     "Improved hover and selected button clarity in the ship hangar."
+    ]
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5302486388016774676"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-14T16:17:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.812Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.230Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.9.2.1",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Hotfix 0.9.2.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-16T13:10:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Virgo Celestial Modifier explosion scaling. Explosions will correctly scale to have a doubled explosion area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed poison cloud scaling over time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed poison cloud explosion damage not doubling with the Leo Celestial Modifier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed and improved score text rainbow flashing effect at 50+ killstreak",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/6079346804882540984"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-16T13:10:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.811Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.228Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.9.2.0",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Hotfix 0.9.2.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-14T14:42:54.000Z",
+   "notes": [
+    {
+     "title": "Fixes & Changes",
+     "items": [
+      {
+       "text": "Fixed off world targeting scaling incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Steam rich presence in-game timer going below 00:00",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Prize Earnings achievement not unlocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed quitting while a killstreak is fading not resetting the killstreak text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed imbued enemy effects not showing sometimes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased imbued shooting enemy shot speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with returning to menu and encountering off world targeting breaking the first explosion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5124583599318126374"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-14T14:42:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.810Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.227Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.9.1",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.9.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-08T17:45:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update brings fixes, Steam enhanced rich presence functionality, & introduces imbued enemies to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Imbued Enemies",
+     "items": [
+      {
+       "text": "Imbued enemies are empowered with random effects, making them harder to kill, and giving various abilities. Throughout the game, enemies have an increasing chance to spawn imbued with a random effect. Imbued effects include gaining the ability to shoot, explode on death, leave a poison cloud on death, become smaller and gain movement speed, & grow larger and gain additional health. All imbued enemies gain 50% HP.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Increasing imbued Chances",
+     "items": [
+      {
+       "text": "When enemies deal damage to you, their chance to becoming imbued increases and only slowly decreases as they are imbued.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Rich Presence",
+     "items": [
+      {
+       "text": "Rich presence is now added into the game giving additional game information insights to your Steam status. Friends will be able to see how far you have progressed in your run or whether you are customising your Astral upgrades, Celestial modifiers, or changing your ship in the hangar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is an example of what it now looks like when you are in a run:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & Changes",
+     "items": [
+      {
+       "text": "Added controller support for the coin flip event when selecting a coin side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an arrow indicator to the coin flip event when selecting a coin side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain animations flickering after playing (i.e. enemy poison cloud explosions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a slot machine issue that could occur late in the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made slight changes to enemy spawn probabilities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5124582150164269768"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-08T17:45:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.810Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.226Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.9",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-30T20:21:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This major update brings 2 all new chance events & changes to the slot machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chance events are luck-based random chance minigames like the slot machine event that has been in the game since launch. This update introduces the coin flip and wheel spin events to the game to provide some bonus help and excitement to your runs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Coin Flip Event",
+     "items": [
+      {
+       "text": "Test your luck through the flip of the coin and win big with it's payout rewards! Pick your side, charge up your coin flip, and let it go - just hope it lands on your choice! Risk it all with the double or nothing double-down, after successfully winning once, do you have what it takes to repeat your luck?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Wheel Spin Event",
+     "items": [
+      {
+       "text": "Prove your skills with the wheel and win it all! Charge up your spin and watch the wheel go as it ticks past all the potential prizes to be won. Time your charge perfectly and you might just win the jackpot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Event Rewards & Slot Machine Changes",
+     "items": [
+      {
+       "text": "All events have the potential to payout with several rewards:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exp coins",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exp gems",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exp magnets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skulls (damage to enemies)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "HP pickups",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The value of the exp coins is determined by your progress in the game. The further into your run, the greater the exp value. This is now applied to the slot machine odds too meaning you can no longer get the largest exp jackpot in the first few minutes. However, greater exp value coins can still appear with reduced chance relative to your progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Preview Animations",
+     "items": [
+      {
+       "text": "Event preview animations have been added to provide extra flair and make them appear less static before you interact with them. Slot machines display spinning panels, the chance wheel spins, & the coin will flip while they wait for you to use them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Achievements",
+     "items": [
+      {
+       "text": "Lastly, there are 4 new event-related achievements to hunt in this update. Earn all the rewards you can to unlock them!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0,
+    "topNew": [
+     "Lastly, there are 4 new event-related achievements to hunt in this update. Earn all the rewards you can to unlock them!"
+    ]
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5124582150135509182"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-30T20:21:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.809Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.223Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.8.5",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.8.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-24T14:56:40.000Z",
+   "notes": [
+    {
+     "title": "New Modules",
+     "items": [
+      {
+       "text": "This update brings 4 new dessert-themed modules to the game to help defend against the alien invasion while satisfying your sweet tooth!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Ice Cream Cannon Module",
+     "items": [
+      {
+       "text": "Cycle through launching different flavour scoops with different effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Choose between upgrading each flavour up to a max of 2 times or spread them out evenly between all flavours!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strongest in the mid-late game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Banana Skin Deployment Module",
+     "items": [
+      {
+       "text": "Launches banana skins that ionise enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade to increase the amount of banana skins deployed, their active time, ionise duration, aoe ionisation, & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although they dont deal direct damage, these banana skins are strong in the mid-late game with their ability to stun large groups!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Giant Fork Stabber Module",
+     "items": [
+      {
+       "text": "Quickly stabs a giant fork outwards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade to increase the damage, range, fire rate, improved targeting to attack the largest group, & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strong in the early-mid game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Birthday Cake Surprise Module",
+     "items": [
+      {
+       "text": "Deploys a special birthday cake loaded with a random surprise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade to increase each surprise's unique effect and the overall cake fire rate!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strong in all stages of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Legacy Save File Fixes",
+     "items": [
+      {
+       "text": "This update also fixes potential issues with the legacy save file conversion that was included in the previous Steam Cloud update. The way the legacy save file is converted has been fully redone to account for any potential errors or inconsistencies in the file. Any invalid or missing data will be overwritten with default values and the new save file will correctly replace it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you have any issues please reach out in the Steam Discussions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5124581515262291396"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-24T14:56:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.809Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.223Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.8.3",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.8.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-12T20:29:46.000Z",
+   "notes": [
+    {
+     "title": "Turbo Mode",
+     "items": [
+      {
+       "text": "This update brings an optional Turbo mode that can be unlocked by achieving your first victory and toggled in the main menu before starting a run. If you have achieved a victory before this update, it will already be unlocked for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turbo mode speeds up all movement in the game by 50% including enemies and projectiles. If the game feels too slow to your liking normally, test your skill with this new mode toggle!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Included with Turbo mode is a new achievement unlocked by achieving a victory with Turbo mode enabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes & Fixes",
+     "items": [
+      {
+       "text": "Fixed some explosions having their radius incorrectly set to 0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased visibility of the Telekinetic Arrow Module for more clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/6557848386945980995"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-12T20:29:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.808Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.222Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.8.2",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.8.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-07T22:53:02.000Z",
+   "notes": [
+    {
+     "title": "New Modules",
+     "items": [
+      {
+       "text": "This update brings 3 new deployable modules to help stop the alien invasion!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Deployable Sprinkler Sentry Module",
+     "items": [
+      {
+       "text": "Deploys a sentry turret that fires in a sprinkler pattern",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade to increase deploy rate, active time, damage, attack patterns, & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strongest in the mid-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hull-Piercer Drill Module",
+     "items": [
+      {
+       "text": "Launches a drill that attaches to and drills through enemies, continuing until it runs out of time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade to increase fire rate, active time, damage, homing, & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strongest in the mid game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Telekinetic Arrow Module",
+     "items": [
+      {
+       "text": "Sends out piercing arrows that lock onto enemies and charge forward, damaging everything in their path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade to increase fire rate, damage, number of charges, improve targeting, deal additional damage to all enemies hit, & more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Strongest in the mid/late-game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & Changes",
+     "items": [
+      {
+       "text": "Fixed constellation complete achievement unlocking when all up to the final modifier are unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue preventing the final Celestial Modifier from unlocking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation issue when pausing quickly after the level up screen opens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some ships not playing jet thruster SFX in the menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed poison cloud explosion radius scaling more than it should throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed final upgrades not showing the correct icon when displayed in the game over screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed mortar strike knockback force not being correct",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where sometimes the remaining Laser twin boss would fly across the screen after it's twin dies instead of flying off the closest side",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Laser twin boss where after one dies it would remain stationary during one attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed laser twin boss so that when one dies, the other sets its hp to an increased amount and grows bigger",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential issue with laser twin boss where after one dies and the remaining one does it's laser spin attack, it would return and face the incorrect direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 11,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5138087875091872597"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-07T22:53:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.807Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.221Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.8.1",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.8.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-27T22:17:31.000Z",
+   "notes": [
+    {
+     "title": "Store Page Update",
+     "items": [
+      {
+       "text": "The Steam store page for Space Mercenary Defense Force has received a long overdue update adding a new trailer video for the v0.8 synergy upgrades release, showing most of the new content added since launch, new screenshots, and improved gifs in the description section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Game Update",
+     "items": [
+      {
+       "text": "This update brings 2 new achievements, ship stat comparison markers in the hangar, alterations to enemy spawn timers, & fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Achievements",
+     "items": [
+      {
+       "text": "Big Winnings - Win a jackpot payout from a slot machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Total Synergy - Acquire 4 synergy upgrades at once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Ship Stat Comparison Markers",
+     "items": [
+      {
+       "text": "When viewing ships in the hangar screen you will now see convenient markers indicating whether the selected ship's stats are higher, lower, or the same as the equipped ship's stats, improving instant readability and making it easier to see how stats differ from one another.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes & Fixes",
+     "items": [
+      {
+       "text": "Changed enemy spawn timers for the final 4 minutes and pre-boss timings (the minute before a boss spawns)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed module tree controller navigation for upgrades when moving up in a branch in the first upgrade choice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved rainbow flashing score text to better show the range of colours before fading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Big Winnings - Win a jackpot payout from a slot machine.",
+     "Total Synergy - Acquire 4 synergy upgrades at once."
+    ]
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5133583642652491173"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-27T22:17:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.807Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:35.220Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.7",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-12T23:00:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This major update introduces encounters into the game. Encounters are optional side-objectives that appear throughout a run and provide additional rewards on completion. This update features 2 encounter groups each with 3 objectives for a total of 6 different tasks with more to come in the future!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Encounters",
+     "items": [
+      {
+       "text": "Every 6-8 minutes an encounter will spawn on the map away from the player, playing an audio queue, & occasionally flashing on the minimap to draw attention to it so you don't miss out. This means you will be able to complete 2 encounters every run. You can also choose to ignore encounters and play the game without them but you will miss out on their rewards. Only 1 encounter can be on the map at a time and they will time out if you do not activate them in time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once you approach an encounter, the type will be revealed by it's visual design:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Conduits",
+     "items": [
+      {
+       "text": "Conduit encounters focus on surviving and charging the conduit to complete the objective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Area Survival - Remain within the area to charge the conduit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Area Elimination - Kill enemies within the area to charge the conduit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conduit Repair - Retrieve parts from enemies to charge the conduit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Drop Pods",
+     "items": [
+      {
+       "text": "Drop pod encounters focus on escorting followers to complete the objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escort Repair - Collect & Deliver parts to the marked locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escort Survivors - Locate & Escort survivors to the planet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Escort VIP - Escort the VIP to the unmarked location",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flying over the encounter will activate it, revealing it's given objective from the corresponding list, and a timer will start counting down. If the timer reaches 0 the encounter fails and is cancelled, preventing you from earning any rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Rewards",
+     "items": [
+      {
+       "text": "Upon completion, encounters always drop a level up gem and provide a choice between any 3 rewards:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You are always guaranteed only 1 upgrade choice, prioritising module upgrades or turret upgrades if your ship has no slots or all slots are equipped and completed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3 Skulls - Immediately kill all non-boss enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EXP magnet - spawn an exp magnet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Heal 2 HP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Earn 500 credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "+1 max HP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase ship turret damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase ship turret fire rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase ship move speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase ship EXP collection radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & Changes",
+     "items": [
+      {
+       "text": "Lowered Astral Upgrade ship turret fire rate increases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added blue transparent background to the minimap for more clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes Space Hook Module not moving after firing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5070528810304548213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-12T23:00:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.806Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:12.708Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.6.4.0",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Hotfix 0.6.4.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-26T17:45:14.000Z",
+   "notes": [
+    {
+     "title": "Hotfixes",
+     "items": [
+      {
+       "text": "Fixed Area Select highlight area overlapping UI elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5059268543368505827"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-26T17:45:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.805Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:12.707Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.6.2.0",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Hotfix 0.6.2.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-12T19:51:48.000Z",
+   "notes": [
+    {
+     "title": "Hotfixes",
+     "items": [
+      {
+       "text": "Fixed Deployable Remote Sentry laser size scaling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed Mine Deployment Module to count as deployable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Escape Plan upgrade not activating on taking contact damage that would kill you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5036749277241443191"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-12T19:51:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.805Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:12.706Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.6",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-28T22:40:35.000Z",
+   "notes": [
+    {
+     "title": "Hangar Ship Select Overhaul",
+     "items": [
+      {
+       "text": "This update focuses on revamping the ship select UI to better show the differences between ships instead of hiding important changes like speed and turret stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new ship select displays all available ships and the information for any selected ship:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship name - all ships now have a name for better identification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship display and module slots - same as before showing the position & direction of module slots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ship stats including HP, Speed, & number of modules",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turret stats including damage & fire rate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All ships have been slightly modified to have different stats and feel more unique from one another.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Ships",
+     "items": [
+      {
+       "text": "Along with the hangar revamp 4 all-new ships are included with unique designs. All previous ships with modules have 4 module slots but these new ships have varying amounts from 2 to 6 and can be divided into 2 groups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Turret Ships",
+     "items": [
+      {
+       "text": "The 'Zephyr' and 'Praetor' ships have only 2 backwards and 3 forwards module slots respectively. To compensate, they have increased speed and turret stats. These designs give them more agility and focus on their turrets to keep up with the damage output required in the later stages of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Non-Turret Ships",
+     "items": [
+      {
+       "text": "The 'Drekar' and 'Devastator' ships are the more unique additions as they are the first ships to not have a turret equipped. Upon starting the game with one selected, you are given a starting offensive module instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I hope you enjoy these ships and the challenge and experimentation they bring!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Resized module select screen to fix ship overlap with confirm button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed astral upgrade tier 1 text position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed module order in game over screen for when not all module slots are filled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed remote sentry lasers piercing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation issue when opening the celestial modifier screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed beacons overlapping with with final boss' arms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Coming Soon",
+     "items": [
+      {
+       "text": "Ship Perks are in the works to be added soon in a future update. Keep an eye out for when they drop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 6,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5035622109518040372"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-28T22:40:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.804Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:12.705Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.5.5.0",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Hotfix 0.5.5.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-23T15:47:44.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue in some regions where the game could not initialise on launch, causing greater issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5035621474425950723"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-23T15:47:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.804Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:12.704Z"
+  },
+  {
+   "id": "space-mercenary-defense-force-228910@0.5.0",
+   "gameId": "space-mercenary-defense-force-228910",
+   "displayName": "Update 0.5.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-18T23:28:51.000Z",
+   "notes": [
+    {
+     "title": "Hotfixes",
+     "items": [
+      {
+       "text": "Fixed button SFX playing on startup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue preventing astral upgrade on kill effects from working (heal/spawn slot machine/spawn magnet)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller losing navigation when changing resolution or window mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added SFX to changing volume from sliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slightly lowered chance of magnets spawning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Astral Upgrades",
+     "items": [
+      {
+       "text": "Swapped \"Small turret fire rate up\" and \"Offensive modules deal (5/10/15)% more damage\" upgrades to allow for equipping both turret upgrades or both module upgrades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2220320"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2220320/view/5623338145763240884"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-18T23:28:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-2220320",
+      "checkedAt": "2026-11-13T03:31:10.803Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:25:12.702Z"
+  }
+ ],
+ "issues": []
+}

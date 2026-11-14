@@ -1,0 +1,192 @@
+{
+ "game": {
+  "id": "another-crusade-135681",
+  "igdbId": 135681,
+  "name": "Another Crusade",
+  "cover": {
+   "imageId": "co2tah",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2tah.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1pbk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1pbk.jpg"
+  },
+  "ps5Release": "2023-09-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "another-crusade-135681@1.3",
+   "gameId": "another-crusade-135681",
+   "displayName": "Update 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-26T01:04:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update fixes corrupted save files in cases where a saved game contained an equipment item registered as a consumable. If this was your case, the equipment item would have been changed to a potion. To retrieve the missed equipment, simply revisit the stage where it was located, and it will be automatically unlocked. This process also checks for achievements, ensuring that you won't miss out on any.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2016190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2016190/view/5759616966666362826"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T01:04:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2016190",
+      "checkedAt": "2026-11-13T03:14:54.302Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-26T01:04:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2016190",
+      "checkedAt": "2026-11-13T03:14:54.302Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-04-26T01:04:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:59.052Z"
+  },
+  {
+   "id": "another-crusade-135681@1.2",
+   "gameId": "another-crusade-135681",
+   "displayName": "Patch 1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-09-25T21:36:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fixed the issue of opening a chest when having a full inventory and entering battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-EASY MODE now available - You can select the difficulty when starting a new game, or change it later in the options menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Item restoration after a game over - You will now retain the last items you had before entering a fight, allowing you to use them without concern for losing them in battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added a landing point indicator for the Swamp platforming puzzle - This will display where Rai will land after a jump, specifically on the platforms in the Swamp level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Varenna's sequence input background - When casting any of Varenna's magic that requires a specific input sequence, a small background will appear behind the buttons, making them easier to see.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue with PS joysticks not registering the correct axis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2016190"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2016190/view/5219165352639596663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T21:36:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-2016190",
+      "checkedAt": "2026-11-13T03:14:54.301Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-09-25T21:36:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2016190",
+      "checkedAt": "2026-11-13T03:14:54.301Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-09-25T21:36:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:33:59.051Z"
+  }
+ ],
+ "issues": []
+}

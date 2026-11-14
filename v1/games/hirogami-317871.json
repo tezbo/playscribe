@@ -1,0 +1,656 @@
+{
+ "game": {
+  "id": "hirogami-317871",
+  "igdbId": 317871,
+  "name": "Hirogami",
+  "cover": {
+   "imageId": "co8v6d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8v6d.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3e6p",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3e6p.jpg"
+  },
+  "ps5Release": "2025-09-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hirogami-317871@19.99",
+   "gameId": "hirogami-317871",
+   "displayName": "Update 19.99",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-05T19:28:54.000Z",
+   "notes": [
+    {
+     "title": "Hello, heroes!",
+     "items": [
+      {
+       "text": "We hope you’ve had a tear-riffic holiday season, and that your 2026 is unfolding smoothly so far. We’re writing this update to inform you that Hirogami’s base price has officially been updated to $19.99 USD, effective immediately across all platforms and regions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This decision was made after much discussion and consideration of your thoughts and feedback, and we feel this new price is both more reflective of the amount of in-game content Hirogami offers, and more accessible to our community as a whole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all so much for your continued patience, understanding, and support since our initial launch in September 2025. We hope Hirogami can be enjoyed by countless players all over the world, and that this pricing update helps bring that goal to life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3135840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3135840/view/1819386365124270"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-05T19:28:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:22:57.171Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-05T19:28:54.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:22:57.171Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-01-05T19:28:54.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:54.699Z"
+  },
+  {
+   "id": "hirogami-317871@1.02",
+   "gameId": "hirogami-317871",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-08T12:18:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi folks,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A quick update today for Hirogami fixing a few smaller issues that we've seen reported. Full details on these fixes below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're incredibly grateful for all our players who have left us feedback since launch -please do keep it coming! We read everything and are always looking to improve things where we can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the meantime, if you are enjoying your time in the world of Hirogami, then please do consider leaving a review on Steam. Every single review helps!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Until next time,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kakehashi Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "***",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Hirogami 1.02 - Changelog",
+     "items": [
+      {
+       "text": "Fixed bug where the sliding platforms at the end of Ch2-2 randomly affecting jump",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy spawner placement improvement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Treasure chest placement improvement in Ch2-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed ceiling geometry in Ch7-1 to prevent player getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimization of the climbable vines system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization of the treasure chest Ch9-1 to fix bug with \"get all treasure chest\" level objective completion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General camera transition improvement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General traversal improvement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3135840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3135840/view/1818118366182404"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T12:18:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:22:57.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T12:18:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:22:57.170Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-12-08T12:18:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:54.698Z"
+  },
+  {
+   "id": "hirogami-317871@major-2025-10-23",
+   "gameId": "hirogami-317871",
+   "displayName": "Hirogami is 35% OFF - Major Update OUT NOW!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-23T17:08:26.000Z",
+   "notes": [
+    {
+     "title": "✨ Hirogami is 35% off on Steam! Grab it for $19.49 now until November 6th! ✨",
+     "items": [
+      {
+       "text": "On behalf of the entire team, thank you so much for giving Hirogami your time and support. None of this would have been possible without you, and we hope these brand new updates reflect how important Hirogami and its community are to us. ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We’re also pleased to announce that the PS5 Japanese physical release is out today! You can find it on the Kakehashi Games website with global shipping options available.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you again, and let the (new-and-improved!) adventures unfold!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "The Hirogami Team",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45219306/980cfa21c704c285064dfe340b384c9c051eb494.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major Update Inclusions",
+     "items": [
+      {
+       "text": "Adjusted fixed camera angles in various chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered crane requirements for unlocking late-game levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced overall enemy HP for all chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced combat and reduced enemy count for all chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted “No Damage” mission objectives to be easier in various chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made checkpoints more frequent in various chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shortened charge time for all fold form upgraded abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the hitbox size for Hiro’s tornado wind attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added accessibility option to turn chromatic aberration on or off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added accessibility option to reduce brightness of certain in-game transformations, such as building bridges or other structures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Patched collision bugs that cause Hiro to get stuck in environmental geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased text size for Steam Deck gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "balance",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 6,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3135840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3135840/view/1814309641446536",
+    "ps5Page": "https://www.kakehashigames.com/hirogami-ps5.html"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-23T17:08:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:22:57.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-23T17:08:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:38:29.284Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-23T17:08:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.285Z"
+  },
+  {
+   "id": "hirogami-317871@major-2025-10-17",
+   "gameId": "hirogami-317871",
+   "displayName": "Announcing Major Update for Hirogami",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-17T14:29:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, everyone! 🌸 It’s been a little over a month since Hirogami launched, and we’ve spent that time reading each and every review, comment, and social post you’ve made, sitting in on every livestream we can, and eagerly listening to your thoughts and feelings on the game, its content, and the ups and downs of your experiences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "We’ve heard your requests, and we’re excited to announce that Hirogami will receive a major update on Steam on October 23rd, 2025 at 10AM PST / 1PM EST!",
+     "items": [
+      {
+       "text": "(PlayStation 5 will also receive this update at a slightly later time due to certification timelines and platform-specific processes. We will share a date for PS5 players as soon as we know more. Thank you for your patience!)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here is what you can expect when Hirogami’s new update lands",
+     "items": [
+      {
+       "text": "Adjusting fixed camera angles in various chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Lowering crane requirements for unlocking late-game levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reducing overall enemy HP for all chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebalancing combat and reducing enemy count for all chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusting “No Damage” mission objectives to be easier in various chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Making checkpoints more frequent in various chapters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shortening charge time for all fold form upgraded abilities.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increasing the hitbox size for Hiro’s tornado wind attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding accessibility option to turn chromatic aberration on or off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adding accessibility option to reduce brightness of certain in-game transformations, such as building bridges or other structures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Patching collision bugs that cause Hiro to get stuck in environmental geometry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increasing text size for Steam Deck gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Many of these features have already been implemented, and are being tested internally as we speak! This update would not have been possible without your thoughtful feedback, honesty, and patience, and we’re hopeful the changes being made will uplift our most important priority: making Hirogami the absolute best it can be for our players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "From all of us at Kakehashi Games & Bandai Namco Studios Singapore, thank you for your trust. We hope this update instills confidence in our efforts to give Hirogami - and its wonderful community - the care, respect, and love it deserves. ❤️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In addition to these exciting changes, we’re also happy to announce that the Japanese physical release of Hirogami on PS5 will land on October 23rd as well! 🎉 Be sure to keep an eye out for it at your favorite import stores!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Once again, thank you so much for playing Hirogami. We’ll share more details as soon as we can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The Hirogami Team",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45219306/980cfa21c704c285064dfe340b384c9c051eb494.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 1,
+    "topNew": [
+     "Adjusting fixed camera angles in various chapters.",
+     "Lowering crane requirements for unlocking late-game levels.",
+     "Reducing overall enemy HP for all chapters."
+    ]
+   },
+   "sourceIds": [
+    "steam-3135840"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3135840/view/1813674388973118"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-17T14:29:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:22:57.168Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-23T23:59:00.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3135840",
+      "checkedAt": "2026-11-13T03:22:57.169Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-10-23T23:59:00.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:38:29.317Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,3208 @@
+{
+ "game": {
+  "id": "source-of-madness-107204",
+  "igdbId": 107204,
+  "name": "Source of Madness",
+  "cover": {
+   "imageId": "co4qlr",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4qlr.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar114d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar114d.jpg"
+  },
+  "ps5Release": "2022-05-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "source-of-madness-107204@patch-2024-05-29",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Slumbering Patch and New game trailer!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-29T17:16:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings and salutations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I am happy to announce that Midnight Horde got an alpha trailer and Source of Madness got lots of fixes and improvements!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Okay back to the actual Patch!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major Changes",
+     "items": [
+      {
+       "text": "Exiting the safe save scene now saves the run so if it crashes you should be able to replay from there anyway. But not if you die or exit the run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monster melee combat overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Combat",
+     "items": [
+      {
+       "text": "Monsters should be slightly stronger and faster with their limbs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monster attack timings are now much faster, but their attack window is shorter which should give more interesting fights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some more monster classes to difficulty 1 that only existed on difficulty 2 before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed how force is applied on attacks that should result in fewer super jumps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Limb damage can now propagate 0 damage to the main body instead of 1 which nerfs some lower level attacks that are smaller than 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nerfed hp on laser fliers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "Fixed pooling jumping and landing special effects issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bloodmancer ability issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved movement animations to be more snappy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hurt effect now scales correctly with ultra wide resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Lovecraft as a first name",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where you got a different name and stats than shown in the character selection",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Infinite spawner in forest of lies now dies after spawning 50 monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First scene in loam land now uses correct post effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loam land is slightly less blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug final boss was missing a post effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPCs now grab the post effect the player uses to make the text talk camera change less jarring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Widescreen support for transitions and main menu and character selection scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved snappyness of the character selection scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Spotlight in character selection now works better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed control mapper localization for left and right in French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fingers crossed I did not break anything with my fixes, but if so, let me know!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "//Per",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 1,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5742731639327043555"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-29T17:16:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.643Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-29T17:16:36.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.643Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-29T17:16:36.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.567Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2024-05-19",
+   "gameId": "source-of-madness-107204",
+   "displayName": "New patch soon!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-19T14:17:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings and salutations!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm working on a new patch and if you would feel so inclined, you can help me test it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I will combo this patch with announcing the first trailer of Midnight Horde, once the patch is ready to set live.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To try the patch, you need to join the patch testing branch with the password: \"iwouldliketobeatester\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know what you think and if you find major bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is the changelog",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Major Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exiting the safe save scene now saves the run so if it crashes you should be able to replay from there anyway. But not if you die or exit the run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters & Combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters should be slightly stronger and faster with their limbs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some more monster classes to difficulty 1 that only existed on difficulty 2 before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "Fixed pooling jumping and landing special effects issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bloodmancer ability issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved movement animations to be more snappy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hurt effect now scales correctly with ultra wide resolutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Infinite spawner in forest of lies now dies after spawning 50 monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First scene in loam land now uses correct post effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loam land is slightly less blue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Widescreen support for transitions and main menu and character selection scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved snappiness of the character selection scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Spotlight in character selection now works better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed control mapper localization for left and right in French",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Always appreciate a wishlist on my new game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I wish you the best",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "//Per",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5747233970429615768"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-19T14:17:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.642Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-19T14:17:58.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.642Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-05-19T14:17:58.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.567Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2023-07-02",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Balance patch in the Beta Branch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-02T20:56:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So I have done some balance work and tweaks based on feedback in the reviews. Mostly adressing early game cheese with some aoe weapons and nightmare difficulty boss hp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This patch is not live in the main branch but exist in the patchtesting branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main part is that I have nerfed and reworked how much damage dealt to a limb is propegated back to the main body of the monster. Hopefully this will mean that it is harder to cheese monsters, but also that it will result in more body parts being blown off and a bit more challenging early on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On top of this I have removed the damage propagation on some aoe weapons that dealt low damage per attack but ended up being a bit too OP when you hit all of the different body parts at the same time. Though I did not nerf this on bosses and elite (big ones) because that would make the game too hard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have lowered the hp and damage scaling in the two other difficulties and balanced the final boss HP for those difficulties. I have also lowered the HP of flying beam monsters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One big monster buff, is that I have increased the velocity and force of monster punches, this might break the monster in some cases if I have over done it. So please help me test it to find out if I need to dail it back. But I do think they are more fun to fight with these force values!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To test it out, join the patchtesting branch with this password \"iwouldliketobeatester\" in the properties -> beta section. Please give me feedback in this thread if you find broken things or if you simply like the update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also check out and wishlist Midnight Horde.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That is all, Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Per",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5124582150142883782"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-02T20:56:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.993Z"
+  },
+  {
+   "id": "source-of-madness-107204@hotfix-2023-02-27",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Hotfixes and smaller changes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-27T14:07:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "You no longer need to beat a difficulty to access the difficulty altar and all difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Bug: Ambience Volume slider not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General menu alignment improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevented damage flashing on some inanimate objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Cannot unlock skill\" text was not localized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5059268543371598059"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-27T14:07:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.641Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-27T14:07:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.641Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-02-27T14:07:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.565Z"
+  },
+  {
+   "id": "source-of-madness-107204@major-2023-01-07",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Asus minor update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-07T15:35:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Okay updated to 1.1.3 minor changes but properly tested this time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5035620387695466727"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-07T15:35:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-07T15:35:57.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.641Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-07T15:35:57.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.564Z"
+  },
+  {
+   "id": "source-of-madness-107204@hotfix-2023-01-05",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Reverted ASUS hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-05T16:35:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Reverted ASUS hotfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5000716037493918187"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-05T16:35:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-05T16:35:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.640Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-05T16:35:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.563Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2023-01-05",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Minor ASUS patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-05T13:23:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Updated gifs to behave better for ASUS AURORA effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5000716037493430844"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-05T13:23:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.640Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-05T13:23:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.640Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2023-01-05T13:23:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.563Z"
+  },
+  {
+   "id": "source-of-madness-107204@post-2022-09-07",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Multiplayer player mapping changed",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-07T14:19:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We now let you pick between 1-5 players in the menu, instead of automatically assigning all connected controllers at the start of a game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4606641560244941601"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-07T14:19:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.639Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-07T14:19:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.639Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-07T14:19:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.561Z"
+  },
+  {
+   "id": "source-of-madness-107204@post-2022-09-06",
+   "gameId": "source-of-madness-107204",
+   "displayName": "UI scale interaction with tooltip fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-06T11:43:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In some extreme cases the tooltips can grow outside the bounds of the screen when max UI scale is set. To fix this it now is moved slightly upwards based on the number of line of texts it has if it is in the lower part of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4621277624708824271"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-06T11:43:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.639Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-06T11:43:40.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.639Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-06T11:43:40.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.560Z"
+  },
+  {
+   "id": "source-of-madness-107204@post-2022-09-02",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Mini fix",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-09-02T07:56:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bug fix: Multiplayer was not localized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4621277624693680774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-02T07:56:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.638Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-09-02T07:56:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.638Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-09-02T07:56:05.000Z"
+     }
+    }
+   ],
+   "revision": 8,
+   "updatedAt": "2026-11-13T03:31:06.638Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2022-08-15",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Patch: Back from Summer",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-15T12:41:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings and Salutations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items, bugs and UI readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this patch we have improved UI scaling and readability when you zoom in to improve readability for smaller screens like the Steamdeck. We have also done some balancing and a lot of bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item: Augment Storm Turret",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item: Augment: Frost Turret",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item: Ring: Ice Spikes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased base speed slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed Curse: Playing with Fire",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced Poison Bomb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced Force Push",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced Fire Bomb",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced Gem Ring",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Massive rework and polish on scaling up UI for smaller screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased default text size in some areas like the save zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing back difficulty did not enable the path to Act 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgrade to allow blood and money to drop worked incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Items no longer fall down in Character Selection menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prologue in the Loam Lands, materials had different light settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aim towards mouse was accidentally on by default for gamepads in some scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Icemancer was still used instead of cryomancer in some scenarios",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No auto-select in General Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you all had a nice summer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Per",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 2,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4607764924164547889"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-15T12:41:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.637Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-15T12:41:46.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.637Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-08-15T12:41:46.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.558Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2022-06-20",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Patch: Insanity",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-20T13:12:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings and Salutations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is our first big post launch patch, it contains fixes and two new difficulties that can be enabled in the tower of knowledge once you beat act 3. These difficulties also come with a host of new enemy designs, some that will also be added to the rest of the game. We have also added a fan made Turkish translation of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "Difficulty 2 and 3 has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New monster enemy classes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Turkish has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Death stats has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Combat",
+     "items": [
+      {
+       "text": "2 new Difficulties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved monster spawn variety",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Final boss damage area is now more visible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved visuals on monster melee attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Stilt legged monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Damage spikes now scaled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Damage spikes have mostly been removed from difficulty 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Monster Class: Hedgehog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Monster Class: Beam flier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Monster Class: Carbuncles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Monster Class: Inferno",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Monster Class: Fester",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Monster Class: Mistborn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Monster Class: Insane beam flier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Monster Class: Insane fire flier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Balanced the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "On the death screen there are now stats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The death screen is now a prompt that allows you to exit the game instead of continuing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lifesteal now scale with item tier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed playing with fire curse to now have a chance to drop a fire bomb on casting a fire spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Icemancer has been renamed to Cryomancer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented a gamma slider for the graphics menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now disable HP bars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Status effects from Trinkets now scale with item tier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dark Gateway now scale with item tier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The final boss died after destroying one of the tentacles in a certain order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sewer levels had a buggy stone that is now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You could fall of a platform in ToK",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Spell casting could break if you if you picked up a spell while being max charge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quality name not set at start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "That is all for now, cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 16,
+    "fixed": 8,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/6214419350718911266"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-20T13:12:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.637Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-20T13:12:13.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.637Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-06-20T13:12:13.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:33.557Z"
+  },
+  {
+   "id": "source-of-madness-107204@2",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Patch 2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-05-16T15:42:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is our second quick patch to make sure you can enjoy the game without any hiccups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Lowered the cost of several essential unlocks in the skill tree to help people get online quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed Spikes from Forest of Lies as well due to being hard to read and understand",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Correctly display save slot crystals for completing Act 2 and Act 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed early Access text after beating Act 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved end of Act 2 text positioning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Correct Resolution on pressing apply in graphic settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed apply button from the General menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Flying hood from default drop table when not unlocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 2,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5849624375833100894"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-16T15:42:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.636Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-16T15:42:18.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.636Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-16T15:42:18.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.985Z"
+  },
+  {
+   "id": "source-of-madness-107204@post-2022-05-14",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Privacy and Quality of Life",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-14T15:10:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It has come to our knowledge that by accident we have been collecting more data than we would have liked. This was due to somewhat hidden default settings that we did not realize were on. Thus we have worked pretty hard yesterday and today to get a fix in to Opt-Out checkbox for people who do not wish to share game balancing data with us. As well as making sure that we delete what was collected and change what is being collected. We also made sure to give you some nice Quality of Life as well while we are patching. We will add a privacy policy to the steam page ASAP as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "Improved visibility on cooldown spells and when they are ready",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a General Menu into options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now change so that the dash aims at the mouse in the General Menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can Opt-out of game data sharing in the General Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now bind several actions to one button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loner now has the correct name instead of TOWER OF KNOWLEDGE",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Japanese language issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Temporarily removed spikes from monsters in Cave of Lost souls, however take note that we will add back hedgehog creatures in a future patch. But they should be more obvious and fair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Privacy",
+     "items": [
+      {
+       "text": "device info is no longer collected (contained hardware details, IP, and some local paths). This data was on by default and we don't need it. - login location IPs are still collected but without the last part (ipv4 last number becomes zero). This data is mainly used to understand our demographics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "client focus time is no longer collected. This was a measure turned on by default to measure time spent in the game, and we don't need that data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we still send some gameplay data such as unlocking items, completing biomes, or dying. This data is anonymous and helps us balance the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Data is saved for a duration of 30 days (unchanged). - Data that has already been collected is not removed yet but we're working together with the support of Playfab to ensure this gets purged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will add a privacy policy asap to list what data is collected and why.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added an in-game check box to opt-out of analytics data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "unity crash/exception logs are still being sent. These contain details about hardware but are not tied to an individual player. This data is important to help us improve game stability. This will be clarified in the privacy policy also.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you understand that this was a mistake on our part with a limited indie gamedev team of 3 people with a lot of pressing tasks to do all the time we did not spend enough time with the game analytics tool to prevent this.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are sorry about that and hope that you can forgive us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/5849624375825736942"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-14T15:10:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.635Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-14T15:10:33.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.635Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2022-05-14T15:10:33.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.984Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2022-03-28",
+   "gameId": "source-of-madness-107204",
+   "displayName": "mini patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-28T15:09:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed new unlock bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized viewing unlockable items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Softer view box for skill tree nodes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Skilltree item descriptions could be legendary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4258723269522932602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-28T15:09:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.635Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.983Z"
+  },
+  {
+   "id": "source-of-madness-107204@post-2021-12-31",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Happy New Year!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-12-31T12:52:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed infinity loading screen, and added fireworks for the new year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carry Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4224938027328476162"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-31T12:52:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.634Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.980Z"
+  },
+  {
+   "id": "source-of-madness-107204@post-2021-11-18",
+   "gameId": "source-of-madness-107204",
+   "displayName": "New Translations",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-18T14:29:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added translations for Foul Magic Patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Regards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carry Castle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4227186657141115855"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-18T14:29:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.634Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.980Z"
+  },
+  {
+   "id": "source-of-madness-107204@post-2021-11-09",
+   "gameId": "source-of-madness-107204",
+   "displayName": "A new Beginning",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-11-09T15:41:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings refugees of the Loam Lands!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a bit of a spontaneous patch that we wanted to do because of the Thunderful World Event. We have improved the prologue and blood pool for new players. We have also improved the Character movements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "Item: Charred hood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Item: Flying hood",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skill Tree, you can now navigate and read locked nodes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shield Bubble can now protect from melee attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked cloth physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Player falls faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Player runs slightly faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Jumping and Falling animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Redesigned the Skill Tree and Blood Pool area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redesigned the Prologue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed missing Japanese characters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Monsters could get super-speed in the wrong direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "There might be a few texts that have yet to get translations, but they will be in English for now, sorry about that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Regards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Carry Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4186653398788602150"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-09T15:41:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.633Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.979Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2021-10-29",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Patch: Fixes and improvements",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-29T13:48:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch contains a range of improvements and fixes, based on the feedback on the previous update. Thanks everyone for your suggestions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Combat",
+     "items": [
+      {
+       "text": "Changed the reward chest from the Blood Worm boss to not open automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decreased the damage of Bloodmancer’s blood orb explosions slightly. This mainly affects the early part of a run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bloodmancer’s blood orbs drain your life slightly faster, but also gain power faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "When you get a family curse it will also show the name of the curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the name of your current family curse in the character window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Items & Spells",
+     "items": [
+      {
+       "text": "Spells that spawn on the ground, for example Gem Ring, now show an indication effect on the ground before appearing, and are easier to aim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated the mechanics for stacking buffs and effects, to correctly support both limited and unlimited stacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "The Curse Master NPC will not let you spend Evenstar if you don’t have any curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new water puzzles in R’lyeh and increased the chance of getting an underwater area in the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved some small level design details in Dungeon of Forgotten Knowledge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added heat crystals to the challenge rooms in Plateau of Leng.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The turrets in Loam Land which shoot purple projectiles are now easier to destroy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a shop to the new harbour part of Loam Land, to guarantee that the level always contains a shop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Optimized the performance of a waterfall in Loam Land.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "User Interface",
+     "items": [
+      {
+       "text": "Added the correct translations for all new texts in the previous patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The mouse cursor is now locked to the game screen when playing in fullscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug with how family curses are saved, which caused the curse to reset back to a previous one when you entered a new level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed curse tentacles to not get stretched or stuck when going into a side area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The new healer NPC in the shop was always giving the “Color of the Blind” curse, but should now give you a random curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The stats window will now correctly show stats changes while having the inventory open, for example if a buff expires.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the heat crystals in Plateau of Leng to not lower the music volume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed colliders in the end part of Forest of Lies to prevent falling out of the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few visual bugs in Plateau of Leng.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed physics of some trees and mushrooms in Cave of Lost Souls to not get stretched out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 8,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/4186652357027780817"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-29T13:48:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.633Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.978Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2021-10-04",
+   "gameId": "source-of-madness-107204",
+   "displayName": "Patch: Unexpected",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-04T11:54:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This patch is called “Unexpected” because we were originally going to save it for the Reckoning Patch. We want to make sure you get the fixes and improvements faster, so as we say in Swedish “hoppas det smakar”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Combat",
+     "items": [
+      {
+       "text": "Weaker monster muscle strength (This will make them less stiff)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You now knockback monsters more with spells",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Monsters now fade more obviously at the first step of death, they are affected more by the light system to make them darker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced punch attack force to not fly as much",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hit/Crit effects no longer trigger on none-life objects like stones.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "Inventory should be nicer on the eyes now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed Auto-Shoot with the right aim-stick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated cloth system and Player now has a bit nicer cloak physics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Player jump blending between animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Player now jumps slightly higher on the second jump to not feel as floaty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved lock aim direction on gamepad while casting a spell",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Items & Spells",
+     "items": [
+      {
+       "text": "Uncommon, Rare, and Legendary now has increased stats values compared to Common items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buffed Hood of Teeth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nerfed Boulder Ring speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed knockback on Copper Ring, Eye of Cthulhu, and Kings Ring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased Knockback on Flame Lance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Color of Rarity should now be more visible before pickup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Options",
+     "items": [
+      {
+       "text": "Option to quit run instead of exit to menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Keymapping contrast between button states",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "World",
+     "items": [
+      {
+       "text": "Doors should be more obvious lit up when the player is close",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Colliders in Forest of Lies and The Moon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Harder to Rocket Jump over the Towers of Madness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Camera not being delayed in some Chunks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed Legacy Pyromancer Altar UI (can be found at the blood pool like usual)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Geomancer Sidearea",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved choke point in Crystal Cave of Cave of Lost Souls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Added a pooling system for loot and currency drops, this should eliminate death lag spikes of monsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Boss HP bar should now be behind the death-screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Achievement for completing Act 1 and exiting Tower of Knowledge is now fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some cameras that did not have the new camshake script on it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fast equipment between hoods now properly removes status effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boulder Ring should no longer push you through the floor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dash logic has been improved to avoid players being moved outside the level by the physics system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chest in Worm Fight no longer has interaction active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 6,
+    "balance": 3,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/3938951840894520660"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-04T11:54:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.632Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.977Z"
+  },
+  {
+   "id": "source-of-madness-107204@patch-2021-09-27",
+   "gameId": "source-of-madness-107204",
+   "displayName": "PATCH: They hide in the shadows",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-27T12:01:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you all for joining us on the Early Access launch. We have worked hard on this patch and will continue to do so on the forthcoming patches ahead. Later today we will also post our Roadmap, outlining our future plans.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "A new class, the Geomancer, can now be discovered and unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New spells and items can be unlocked in the Geomancer skill tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Monsters & Combat",
+     "items": [
+      {
+       "text": "Reduced the extreme monster jumps that occurred sometimes, especially on the mini-bosses and on flying monsters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the Life of monster limbs slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Relax the muscles of dead monster limbs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Turn off animations of dead monsters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more variation to the shape of mini-bosses in The Loam Land.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the visibility of monster attacks slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Player",
+     "items": [
+      {
+       "text": "The dash is now able to dash into monsters. This can help you out when being completely cornered and should improve the flow in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the base movement speed of the player slightly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased healing from Small Life Flask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced healing from normal Life Flasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Balanced the stats of some family names.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Randomize the starting spells of new characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Items & Spells",
+     "items": [
+      {
+       "text": "Fire Bomb Ring now deals friendly fire and has a shorter range, but still knocks back monsters nicely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The bombs from Fire Bomber Gem trinket now have friendly fire and slightly less damage and area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fire Pillar Ring now has a tighter range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced the Hood of Teeth healing and health cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balanced the Life stats on hoods.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the amount of +% Life from random stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Balanced the gold value of some rings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a sound effect when picking up loot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Options",
+     "items": [
+      {
+       "text": "Added a setting for cam shake in the Graphics menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Moved the shop on The Moon to later in the level to let you gear up with more gold.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the width of the pillar platforms on the Act 1 boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed that the dash could go to -1 charge at the beginning of a level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed gamepad detection if connecting multiple gamepads, or using third-party gamepad software.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where you could get stuck at 0 HP and become immortal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved aiming when running and aiming in different directions, especially for spells with a longer cast time. We’re still working on one additional fix for gamepad aiming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Going to the balcony of Tower of Knowledge no longer incorrectly grants the hidden area achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The cooldown in the tooltip was wrong for some spells.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stop the player from dashing when exiting certain UIs with the gamepad back button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a special case where the player character got stuck in the cast animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased the cooldown ongoing in/out of hidden areas and challenge rooms, to prevent accidental double clicks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dead limbs could sometimes still apply poison or burning on touch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed the description of Pyromancer to match its bonuses. This is not a nerf, just a text fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the legendary stat “+% Damage against burning enemies” which didn’t work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "-The Carry Castle Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 13,
+    "balance": 8,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1315610"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1315610/view/3936699406884260190"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-27T12:01:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1315610",
+      "checkedAt": "2026-11-13T03:31:06.631Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:24:51.976Z"
+  }
+ ],
+ "issues": []
+}

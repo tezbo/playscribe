@@ -1,0 +1,3639 @@
+{
+ "game": {
+  "id": "uncle-chop-s-rocket-shop-214710",
+  "igdbId": 214710,
+  "name": "Uncle Chop's Rocket Shop",
+  "cover": {
+   "imageId": "co54t5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co54t5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1ul3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1ul3.jpg"
+  },
+  "ps5Release": "2024-12-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@hotfix-2025-03-10",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Uncle Chops Rocket Shop - Hotfix 10/03/2025",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-10T16:15:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Build-a-Gumball vending machine disappearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect controller navigation in Headlight module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved controller navigation in Headlight module - it should now be much easier moving between corner screws.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed incorrect colour of Hot Streak invoice item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1793384379506180"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-10T16:15:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.291Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-10T16:15:51.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.291Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-10T16:15:51.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.763Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@1.1",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-07T16:39:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A content update for Uncle Chop’s Rocket Shop has just dropped – what a time to be alive!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside the standard array of bug fixes and accessibility options, you’ll find seven brand-spankin’ new vending machines that will open up some fun and interesting playstyles. The Inflationator, for example, is all about quantity over quality, offering an escalating bonus for every job taken in the run. The Large Loss Nullifier, on the other hand, is all about scoring that one big fuck-up, turning your biggest penalty on the invoice to a positive number. You meant to do that, right? Rigggghhht.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition to these are five new Omen upgrades. Some are geared specifically to supporting the use of Vending Machines, others designed to soothe specific pains, like Fatal jobs (go on, have a go at repairing the Reactor, don’t be scared). You’ll also find a new ship type, and a jukebox in the Speakeasy, where you can choose the soundtrack to your work day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Vending machines",
+     "items": [
+      {
+       "text": "Added 7 new vending machines:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Build-a-Gumball - Get the Gumball you want, no questions asked!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Inflationator - Adds 3% to the invoice for each completed job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Large Loss Nullifier - Sets the highest breakage value on the invoice to 1. (Disabled on boss ships)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small Loss Flipper - Flips the smallest loss on the invoice to positive. (Disabled on boss ships)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faction Cookies - Increases the chance of customers being the selected faction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faction Milk - Adds a 20% bonus to jobs who's customer matches the set faction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Card Radar - Alerts the owner when a nearby ship contains a trading card.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Omen Upgrades",
+     "items": [
+      {
+       "text": "Added 5 new Omen upgrades:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vending Variety (3 Tiers) - Increase the number of Vending Machine options by 2, 4, 6.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nap Time - Sleep through first R.E.N.T. Deliveries will arrive when you wake up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Workshop Coupon (2 Tiers) - The first/two purchase(s) in Logistics Management is discounted by 50%!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second Wind - Survive one fatal job! Wake up at the end of the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Extra Vending Machine Slot - Unlocks a vending machine slot in the Speakeasy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Music player. Found in the Speakeasy, you can now play any track from the games soundtrack whilst you work!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new ship. The Schlepper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced the Chunky bonus to 80%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Colour blind friendly mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level pull LED has R/G letter indicating is it's Red or Green.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Donut orders no longer affected by lighting. This should help with contrast between colour palette.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gumballs use an alternate colour palette (Color-Blind Safe by IBM).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added option to disable skipping dialogue when dialogue has yes/no options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed canister preview appearing in Honk Pancake Picker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing invoice item name for missing motors in AI module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Short Sighted Achievement not being granted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with using tool controls & touch controls on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed cursor lag on Steam Deck when using USB mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Towing feeing being listed as 125 when it's actually 250.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with VR crash event occasionally adding towing fees to subsequent jobs that day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 5,
+    "balance": 1,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1793384379410731"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-07T16:39:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.290Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-07T16:39:29.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.290Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-03-07T16:39:29.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.763Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2025-01-31",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 31/01/25",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-31T15:37:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issues caused by leaving the heart in save storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTL Gems disappearing from saved Gem Packs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ship accessories (wires, etc) clipping through modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved controller FTL Gem pack handling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with nearly drained Fuel cells displaying as empty, resulting in explosions if changing the fuel type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed VR fade effect triggering on VR module igniting regardless of if the player is currently in VR.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue of Washing Machine keypad inconsistently resetting focus to the \"1\" key on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Hologram boss making a request whilst leaving in untimed mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typo in coffee dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Camera not resetting correctly when game window loses focus during Hologram boss' end speech.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added unique polaroids for Mankini Wilbur.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with Loan-O-Matic being uninteractable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with text formatting of percents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mooncalf effect lingering indefinitely after receiving a trinket.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Wilbur freezing in Wardrobe menu when changing skins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 13,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1790214123118878"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-31T15:37:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.289Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-31T15:37:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.289Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-31T15:37:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.762Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@patch-2025-01-27",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Patch Now Live",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-27T16:07:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks to everyone who's reported issues! With your help, here's what we've done in today's update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with Polaroid socket accepting other items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with VR levels resetting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lighthouse VR switch can no longer be interacted with prior to a bulb being inserted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lighthouse bulb can no longer be removed once the level is fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed VR Warehouse re-rolling selected box when re-entering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "VR player is now reset to spawn when re-entering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various instances of screen shake not respecting the option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Honk Pancake maker not registering a present Pancake when left in overnight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTL Gem pack not saving correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTL Gem incorrect colour on load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Money Tree bonus being rewarded after placing and then removing the Money Tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Tomfoolery module caused by pausing when the game loses focus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Realiser's item socket accepting any item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player can no longer go to sleep in the Magpie Ending when the Consequence Chamber has been called.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Final Boss softlock caused by fainting from Radiation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTL core extractor not being movable on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Amended FTL manual page to accurately describe the Fill/Drain Lever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inventory item placement being blocked by movable objects behind the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved controller support for FTL Gem Packs. Alt-click functionality now is used to toggle between zipper and pack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed VR screen locked items showing unlocked in Hive Ending when default state is locked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gas filter showing broken state in placement preview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Gas filter leak visuals reappearing when changing modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues caused by entering VR when holding a tool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mr. Manager moonwalking offscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed instance of one developer's jet lag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 19,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1789580505439775"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-27T16:07:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.289Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-27T16:07:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.289Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2025-01-27T16:07:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.761Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-18",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 18/12/2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-18T20:22:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Limbo drinks event now uses God skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Magpie stand blocking Hidden remote in Empyrean questline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated pages in Reactor section.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed wire weirdness in station storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed loaded wire weirdness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI mood calculation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hive sign not displaying Sprinkles recipient in French.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magpie Stand endless audio bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typo in Magpie dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ship landing sfx now pauses if game is paused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vastly improved Workshop storage usability on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1786409468853087"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-18T20:22:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.288Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-18T20:22:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.288Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-18T20:22:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.761Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-17",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 17/12/2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-17T18:03:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed layout issue in Japanese version of Cultist manual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed looping issue with evening soundtrack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typo in Mooncalf dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed typo in Magpie dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed line of Mooncalf dialogue using incorrect font colour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Swine Untimed instruction layout issues affecting some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed visual issues with God Wilbur skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Kyle not showing in Ending Drinks if he has been freed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magpie tray not saving contents.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magpie Magnetiser not working properly in basement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dropped cultist page's location adjusted if Right Workshop Annex is purchased after it's dropped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR music effect now respects music volume.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed typo in Droose dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed swine competency feedback giving incorrect error warnings when referencing the throttle levers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed how swine competency test B spawns to set k3 to a position that lets you change it properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ensured reset button considers above change when used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed being able to drop boxes in the top section of the right workshop expansion causing floating boxes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785774543693958"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T18:03:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.288Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T18:03:03.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.288Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-17T18:03:03.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.760Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-16",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 16/12/2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-16T18:22:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed typo in speakeasy dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magpie Stand bell still sounding after membership is revoked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved resolution of important textures (polaroid, Droose's business card, etc) on low graphics setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed Kyle T-pose after Kyle has been freed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If player's progress towards Magpie quota falls below 0 (from ignoring the Magpie booth), any positive progress (magpie packs, magpie modifier jobs) will reset player quota to 0 and then add the reward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed AI band clipping through panel when attached only to right rotator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed motor particle fx not scaling with module size.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unique passive dialogue lines being repeated by npcs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor changes to AI Grimoire pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Warehouse VR level no getting added to pool after unique crash event.- Fixed VR module saving a level as experienced if the player failed to fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Retroactively fix saves effected by the previous two issues. This will grant VR achievement if all other criteria is met.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed All modules achievement not triggering.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magpie revoking membership before introducing the Magpie Stand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled manual open while moving in Lawmakers lift.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oil module will always have plenty of fluid if it rolls a gas as the incorrect fluid.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vastly increased FTL payouts when swapping or replacing cores to take into account costs of new cores.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 9,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785774543661617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T18:22:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.287Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-16T18:22:04.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.287Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-16T18:22:04.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.759Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-13",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 13/12/2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-13T16:49:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed trickiness placing upper left bulb in Starmap when using controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General improvements to honk component movement with controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue with Anti Tamper module not letting player cut wires with controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Disengage lever screw sometimes not interactable on certain resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AI module not warning about Pancake requirement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues draining liquid from FTL Door with controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Uncle Chops saying end of day dialogue when ritual has been ended before end of day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magpie modifiers & Magpie stand customers spawning after membership is revoked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "People continuing from demo will now retroactively get achievement \"You're Who, Now?\" if they have heard related story dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed draining heat in Oil Module working when the heat sink is slid out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mooncalf's drone sfx not being cleaned up if triggering a level load whilst in the effect AOE.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "During Where's Wilbur Droose can no longer use Side Annex lift.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue in Lawmakers ending where Wilbur can find himself unable to interact with his bed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cardbinder being tricky to interact with.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785774543563774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-13T16:49:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.286Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-13T16:49:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.287Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-13T16:49:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.759Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-12",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 12/12/2024",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-12T19:08:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed trickiness with placing Pancake in Rebreather.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ship Module names now show when moving the ship pit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time store will no longer give duplicate machines until player has all machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inventory not showing when tabbing out during animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Calm Demeanor achievement not being granted if boss has already been beat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed levers extracted off ships being destroyed when ship despawns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Repeatedly pressing back in VR no longer resets the return transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reactor core now can be repaired by Auto-Repair Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken IC now more closely matches Grimoire diagram.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made Magpie Revoked slightly easier to achieve.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed duplicate donut quota objective on Hive day 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect objective after VR union on hive day 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added penalty for leaving the VR panel open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed ship med/hard having incorrect placement of interior modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed removable lever screws protruding through the Refuel module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Dough Shaper duplicating donuts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Dough Shaper accepting additional donuts when already containing them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 10,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785774543533581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T19:08:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.286Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-12T19:08:09.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.286Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-12T19:08:09.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.758Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-11",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 11/12/2024",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-11T18:08:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed softlocks in Cultist Ending.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Pancakes being placeable through glass in Rebreather & AI modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added arm holes to Metal Wilbur skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed issue with Logistics Terminal not correctly registering switch state if switches were set before it was powered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Chop's boss on taller resolutions having some dialogue overflowing off screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed fluid canisters disappearing overnight when left on fluid filler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cockpit getting confused between LEDs and switches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed oil disabling cooling when not the active module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Magnetiser disabling some features of modules placed on its right.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed asteroid generation in VR lighthouse level to prevent them colliding with the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed cooler charging you for ice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed ice material not crushing properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a fee in the rebreather for not screwing up the canister clamps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Side annex elevator will move to down position if Wilbur gets radiation poisoning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785774543499367"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-11T18:08:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.285Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-11T18:08:26.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.285Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-11T18:08:26.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.758Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-10",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 10/12/2024",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-10T18:02:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey y'all,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here's the deets of todays patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aaron, Ben & Jo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog 10/12/2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gumballs save their colours overnight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Grover no accepting wax when playing on taller aspect ratios (Steam Deck included).",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed safe dial anchor point being off-center.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made safe dial more manageable on controller.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased contrast on Pipebomb wires.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rotated segments of Pipebomb wires to make the double colour wire more identifiable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Cockpit fuse check flashing green instead of blue like the manual suggests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased leeway on Cockpit throttle levers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added some visual indicators to help get the engine started in the Cockpit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed apparent duplicating of potential treasure in the Magnetiser.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed controller navigation in AI module incorrectly snapping to switches when using screwdriver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Donut Aficionado achievement not being granted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Anti-Tamper module occasionally starting with number 5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced Anti-Tamper sequence length by 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed last instructions sometimes overlaying success screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Paul's crashed ship appearing on day 7 after he leaves with no player intervention.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 3,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785321795773961"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-10T18:02:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.285Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-10T18:02:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.285Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-10T18:02:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.757Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@hotfix-2024-12-09",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Hotfix 09/12/24",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-09T20:19:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an audio crash caused by AI module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785321795744628"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T20:19:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.284Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-09T20:19:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.284Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-09T20:19:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.757Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-08",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 08/12/2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-08T15:37:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey y'all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy Sunday! Patch has just gone live with the latest round of fixes. Huge thanks to everyone who has reported an issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aaron, Ben & Jo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "xoxo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changelog 08/12/2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed cockpit fuel pump drain changing fuel type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed door on Magpie Stand not blocking the placement of items into the sealing jig.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed safety glass on Hive Topper not blocking placement of donuts into machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed having to flush toilet once before system starts filling when spawned with missing pump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cockpit switches failing to save state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bulbs broken whilst lit not turning off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cockpit sequence issues slightly differing from manual description.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hive customer strings having weird formatting in Japanese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "When the holy trinity of reactor issues happens it decays 40% slower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced chance of reactor spawning with a completely empty core.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed Reactor not re-imbursing you for replacing the aforementioned broken core.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Reactor billing you if you decided not to replace the broken core when you weren't asked to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with Lawmakers magazines not loading correctly when left in ammo filler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Geiger continuing to tick at last level when crate is removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Oil module is kinder towards very tiny amounts of different fluids that can be discerned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased minimum incorrect fluid oil modules can spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue with Magpie Screen occasionally requesting incorrect thing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FTL Drive should no longer report incorrect magnet when it's not broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 13,
+    "balance": 2,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785321795705581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-08T15:37:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.284Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-08T15:37:35.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.284Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-08T15:37:35.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.756Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-07",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Changelog 07/12/2024",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-07T17:41:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey y'all",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again to everyone who has played so far! It's really been an unbelievable pleasure seeing everyone's thoughts and feelings about Uncle Chop's.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big thanks to everyone who has reported a bug. We're fixing them as quick as we can. Steam forum peeps, we see you, and are gonna get to the suggestions once the bugs reports slow down. We do read every post!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't forget to join us for our launch live stream at 7PM UTC!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anyway, here's ya patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aaron, Ben & Jo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "xoxo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Magpie Magnetiser catching fire in workshop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabled Magpie Stand on last day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed timer buttons playing sound forever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stopped HV fuse being broken/missing prior to the shop expanding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed crash associated with Droose Wilbur skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing checklist string for FTL Drive gem change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed motors in AI module sometimes docking with incorrect rotation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed binning one end of a wire not behaving as expected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Sunhopper ship rear module not being extinguishable by hose.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed icon for Autorepair Inventory Storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed camera issue caused my entering campervan during Where's Wilbur",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Doodad achievement being granted on broken doodad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked object pool for Magnetiser quest to make it a little easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed clipping issues with Magnetiser in annex.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made Tomfoolery levels 2 + 3 easier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nudge station storage slightly to the left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Magpie Job removing wrong quest objective on successful hand-in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tool mode control being inverted on Electric Screwdriver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Reactor fuel low breakage partially disabling the stability getting reset when inserting a core.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTL Drive sometimes spawning incorrect gem.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed rare issue with civilian refuel not registering correctly in invoice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed FTL Backend occasionally not spawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Perfectionist charging you for not cracking their safe.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 17,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785321795677329"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-07T17:41:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.283Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-07T17:41:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.283Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-07T17:41:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.755Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@post-2024-12-06",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Patch Notes and a Thank You",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-06T16:06:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey ya'll,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks so much to everyone who has played the game so far! We're reading all of your thoughts and feedback and fixing any issues as quickly as we can!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you've been enjoying Chop's so far it would mean the world to us if you could leave a review, they mean a lot right now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cheers,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aaron, Ben & Jo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "xoxo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog 06/12/2024",
+     "items": [
+      {
+       "text": "Fixed incorrect text display on encoder for Japanese & Chinese characters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with checklist rows starting crossed off if previous job had matching issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added fine for triggering anti-tamper alarm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added sound queue and visual effect to anti-tamper instructions to avoid confusion with identical consecutive .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed overflowing instructions on anti-tamper module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed hold prompt on vending machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed cases where carryables could be dropped and never picked up again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Tea job trying to break more modules than it could spawn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed number alignment on the Shit Eater.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tripled the extra time you get from the Floodlights in frantic mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed AI lever getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added sound effect for Emotional Shutdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed book being dockable within AI module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 9,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1785321795642774"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-06T16:06:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.282Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-06T16:06:07.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.283Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-06T16:06:07.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.754Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@patch-2024-12-05",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Minor Patch 05/12/2024",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-05T20:55:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue with users not receiving deluxe skin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FIxed localisation issue on revert key bind buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issue with some key rebinds not loading on startup (may require one-off rebind).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed error in timed mode descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/1784506359254325"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T20:55:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.282Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-05T20:55:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.282Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2024-12-05T20:55:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:29.754Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@hotfix-2024-06-12",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Look, a Demo Hotfix!",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-12T13:56:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "I suppose it's more of a warmfix at this point, given the timeframe. Anyway:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed inventory not showing after pausing the game during transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed HUD staying on screen after pausing the game during transition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Hive queue locking after 6 orders.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed checklist issue after finishing Omen giftbox mystery job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/5747236506606823489"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-12T13:56:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.281Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.281Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@hotfix-2024-06-11",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Say No to Bugs – Demo Hotfix Now Live",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-11T16:47:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hope everyone's having a good time with the demo! While you've been fixin' ships, we've been fixin' some bugs:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Pancake Workshop module was placed at incorrect height.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the fence not detecting card when in station storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with donut placement in Hive fryer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Honk can breakage being available in easy jobs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed encoder slightly floating above ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed module crates clipping with workshop modules when placing on ground.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crates not displaying contents in prompt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed lighting in untimed mode showing wrong times of day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed workshop module load issue.: Noice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/5746109972567640277"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-11T16:47:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.281Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.281Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@major-2024-04-25",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Playtest Update 25/04/24",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-25T12:27:19.000Z",
+   "notes": [
+    {
+     "title": "Just a few bug fixes",
+     "items": [
+      {
+       "text": "Fixed a soft-lock in tutorial when receiving manual.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a soft-lock when skipping Fence dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Droose being able to run on Wilbur's head.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "... and a quality of life change",
+     "items": [
+      {
+       "text": "Halved required key-hold time to skip dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To those who haven't yet, feel encouraged to (and sorry you missed out on Droose standing on Wilbur's head).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/5759616966664444606"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-25T12:27:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.280Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.280Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@4",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-20T17:27:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "You know the drill – you tell us what's wrong, we make it right, all is forgiven.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To everyone with access to the playtest who hasn't yet got involved, now's the perfect time; we'll be running the playtest until at least the end of the year, while chillin' at the Discord fireside.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're in the US, UK, Canada or Australia and haven't yet signed up, it's not too late – head over to the store page and request access, and we'll grant you entry shortly after.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed full-screen manual scale being too large in small modules.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Manual emissive light now scales with module scale.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bin entering the aether when dragged offscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted wire generation logic with intent to resolve modules not correctly interpreting wire layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issues with wires not routing their input correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed sockets for levers not previewing placeable object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed upgrade description text defaulting to fluid machine description until hovered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Manual",
+     "items": [
+      {
+       "text": "Fixed typo on camera page 4.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Fixed polaroids not saving the correct state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed removeable levers not updating their function correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Modules",
+     "items": [
+      {
+       "text": "Added manual page icon to Tomfoolery module.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added manual page icon to Cartridge Encoder workshop machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed cartridge encoder platformer waypoint to display correct text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Accessibility",
+     "items": [
+      {
+       "text": "Added Click & Hold Mouse options. When this setting is enabled, a second click is required to release holding. Can be applied either to all module interaction or to movable objects only.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you use this feature, please provide any feedback on Discord to help improve this, as with any other accessibility features/issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/5410576585126961767"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-20T17:27:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.279Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.279Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@3",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-19T16:48:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "More fixes for the fixers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Fixed items getting stuck in fence module (\"It is a greedy machine, no takebacks!\").",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Wilbur falling off workshop annex elevator causing upper floor to be inaccessible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with incorrect workshop slot placement in Workshop Annex.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with elevator not working when carrying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Limbo Droose's end of playtest dialogue repeating. Note: existing saves that have beaten the playtest will still experience this dialogue a single time before new dialogue begins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed instance of Limbo Droose dialogue being out of order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft-lock when adding time with floodlights after the day ends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Lowered the cost of the bulb.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a second bullet point to this section because having only one felt weird.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Modules",
+     "items": [
+      {
+       "text": "Star Map – fixed star map material not correctly updating when replacing a broken IC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Headlights – rebalanced the earnings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/5409450219991357620"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-19T16:48:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.278Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.278Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@2",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-18T17:48:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another day, another update, another big thanks to everyone involved!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Several texture optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked workshop annex slot positions to prevent environment occluding inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where movables getting stuck in sockets when left overnight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added preview when placing refuel station.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed options buttons' scale not returning to default after hover-over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed soft-lock with hose when cancelling tool whilst spraying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being unable to leave Kyle's lair during the tutorial (shame, he was enjoying the company).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed manual being able to be lost off screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed modules being cut-off screen left on narrower aspect rations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed texture streaming issue with book when docked in tray.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Workshop Machines",
+     "items": [
+      {
+       "text": "Fluid Filler – can no longer switch modes whilst fluid cannister is attached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Honk Pancake Maker – fixed being able to place pancakes in hovering over the machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Items",
+     "items": [
+      {
+       "text": "Pump – fixed pump not being interactable in inventory on following day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/5409450219987864589"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-18T17:48:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.278Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.278Z"
+  },
+  {
+   "id": "uncle-chop-s-rocket-shop-214710@major-2023-12-16",
+   "gameId": "uncle-chop-s-rocket-shop-214710",
+   "displayName": "Playtest Build Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-16T19:32:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’ve just pushed a patch for the playtest build. Here’s what’s changed:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Changes",
+     "items": [
+      {
+       "text": "Fixed manual being available early to the player in the tutorial module where they first receive it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to get a mystery job in tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tutorial soft lock after letting the day timer run out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weird objective text wrapping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked some Droose tutorial dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly reduced intensity of landing ship camera shakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crashed ship will only ever spawn with Oil module on day 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Security mini-boss – will now spawn with Oil and Fuel modules + one random one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Security mini-boss – reduced total breakage allowance on job (i.e. less can go wrong).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collision on arrival capsule launch controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Controls and Interface",
+     "items": [
+      {
+       "text": "Added 'a' & 'd' keybinds to tool mode toggling",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted auto-round value on screws – this should result in less unwanted snapping back!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added key prompt for Toilet module hose trajectory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked dialogue control prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now auto-hides irrelevant control prompts when in conversation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed checklist being stuck on screen for a short time after handing in job.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with tutorial objectives not correctly removing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Module Changes",
+     "items": [
+      {
+       "text": "Star Map module – fixed manual icon not being attached to door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Star Map module – fixed issue resulting in false reporting of doors being left unsecured.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tomfoolery module – now only appears from day 2 onwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tomfoolery module – now correctly loads error level when cartridge is not correctly encoded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VR module – now only appears from day 2 onwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oil module – tweaked acceptable max oil level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Oil module – tweaked related manual pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Security module – tweaked related manual pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Security module – increased the max timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Security module – increased the top-up timer increment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 1,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1849790"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1849790/view/5409450219980837792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-16T19:32:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1849790",
+      "checkedAt": "2026-11-13T03:35:05.277Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-13T03:35:05.277Z"
+  }
+ ],
+ "issues": []
+}

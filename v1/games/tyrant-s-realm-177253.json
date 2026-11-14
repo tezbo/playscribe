@@ -1,0 +1,895 @@
+{
+ "game": {
+  "id": "tyrant-s-realm-177253",
+  "igdbId": 177253,
+  "name": "Tyrant's Realm",
+  "cover": {
+   "imageId": "co7dea",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7dea.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar17bk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar17bk.jpg"
+  },
+  "ps5Release": "2026-08-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tyrant-s-realm-177253@post-2025-04-03",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Flask challenge fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-04-03T10:04:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where the \"finish the level without drinking a flask\" challenge would wrongly fail.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1795917897321032"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-03T10:04:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.473Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@post-2025-03-18",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Active challenge description added to pause screen",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-18T14:58:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a simple description text for the currently active challenge chest. Visible in the pause menu when a challenge chest is not yet unlocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1794102528238975"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-18T14:58:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.473Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.473Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@major-2025-03-12",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Tyrant's Realm – Free Content Update Now Live!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-12T17:01:08.000Z",
+   "notes": [
+    {
+     "title": "Greetings, warriors of the Realm!",
+     "items": [
+      {
+       "text": "A brand-new free content update has arrived in Tyrant’s Realm, bringing fresh challenges and rewards to those brave enough to face them. Whether you’re a seasoned fighter or a newcomer looking to sharpen your skills, this update has something for everyone. Here’s what’s new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Master the Art of Boss Parrying",
+     "items": [
+      {
+       "text": "Test your reflexes against the fiercest foes! The long-requested Boss Parrying system is now live, giving you the power to counter and turn the tide of battle against even the deadliest adversaries. Precision and timing are key—perfect your parries and dominate the battlefield!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Challenges for High Difficulty Modes",
+     "items": [
+      {
+       "text": "For those seeking an even greater test of skill, we’ve introduced new challenges for the highest difficulty levels. Sharpen your strategies, push your limits, and prove you have what it takes to conquer the Realm’s toughest trials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "24 New Challenge Chest Rewards & New Cosmetic Outfits",
+     "items": [
+      {
+       "text": "Complete the Challenges and unlock 24 brand-new rewards from Challenge Chests! These exclusive items will push you to complete objectives faster and more efficiently—only the most dedicated challengers will claim them all.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additionally, the Challenge Chest now holds new cosmetic outfits, allowing you to customize your warrior’s look as you battle through the Realm. Earn them by completing challenges and stand out among your fellow champions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Update Now and Prove Your Might!",
+     "items": [
+      {
+       "text": "This free update is available now—jump back into Tyrant’s Realm and test your skills against these new trials. Let us know what you think, and as always, we’ll see you in the fight!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay sharp, stay relentless, and rule the Realm!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1794014851395555"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-12T17:01:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.472Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@major-2025-02-01",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Tyrant’s Realm Update – Steam Deck Verified & More!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-01T20:57:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Adventurers, we have some exciting updates for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Steam Deck Verified!",
+     "items": [
+      {
+       "text": "Tyrant’s Realm is now officially Steam Deck Verified! This means you can take your adventure on the go with full support for controls, performance, and UI. Whether you’re battling through dungeons or strategizing for your next fight, you can now do it anywhere, anytime.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Steam Trading Cards Are Now Live!",
+     "items": [
+      {
+       "text": "The wait is over—Steam Trading Cards for Tyrant’s Realm have arrived! Start collecting cards as you play, trade with friends, and unlock exclusive badges, profile backgrounds, and emoticons to show off your Realm achievements. Who will be the first to collect them all?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ongoing QoL Fixes & Future Content Updates",
+     "items": [
+      {
+       "text": "We’re committed to continuously improving your experience in Tyrant’s Realm. Expect minor quality-of-life improvements in upcoming patches to refine gameplay, enhance performance, and address player feedback. But that’s not all—we’re also shifting our focus towards larger content updates in the future. Stay tuned for new features, mechanics, and surprises as we continue expanding the world of Tyrant’s Realm!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for being part of this journey. Your support means everything, and we can't wait to share what’s next. Keep conquering, strategizing, and forging your legend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1790214123157695"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-01T20:57:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.472Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.472Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@post-2025-02-01",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Misc fixes and improvements",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-02-01T17:20:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Falling through floor fix (please report if still happening)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Prevent key from falling through map (Forge lava pit for example)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ranged attack kills achievement fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Physics interactions should be more stable than previously with low end PC specs: Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mouse thumb keys support for rebind",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Invert camera X option added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player HUD visibility options added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brightness slider added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted Steadfast Warden attack animations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted font sizes in some UI elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thanks to everyone that helped report and track bugs that we're present in the game, it's a huge help for us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 2,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1790214123152820"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-01T17:20:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.471Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.471Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@post-2025-01-23",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Achievements Fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-23T12:00:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed Steam achievements related issues that some players were experiencing. Now you should be able to unlock achievements retroactively. Some achievement counters might have had some bugs but those have been fixed now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1789580505303946"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-23T12:00:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.471Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.471Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@major-2025-01-22",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Rebind Keys Update (plus small fixes)",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-22T09:36:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "REBIND KEYS Feature",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Blueprint dropping out of map fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Rune Wrath weapon damage scaling fix (UI bug)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windowed/fullscreen toggle not applying fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player footstep sounds adjusted",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1789580505268145"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-22T09:36:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.470Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.470Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@post-2025-01-17",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Small fixes",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-17T12:40:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fixed an issue that caused the Primate Enforcer to become invincible after the death of Twisted Alchemist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed an issue relating to armor abilities and their damages to bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Nerfed Knight's Armor's shield rush stunning ability on bosses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1789039014366658"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-17T12:40:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.470Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.470Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@hotfix-2025-01-16",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Release Hotfix (resolution related crash first time launching)",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-16T18:38:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where the first time launching the game in an unusual resolution would cause a crash. Thanks to \"Hardwater\" from Discord for the quick bug report!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/1789039014342375"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-16T18:38:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.469Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.469Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@0.29",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Update 0.29",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-08-20T16:44:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "UPDATE 0.29 Available Now!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "-Lighting overhaul",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Weapons",
+     "items": [
+      {
+       "text": "-Brass Knuckles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Iron Claws",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "New Armors",
+     "items": [
+      {
+       "text": "-Nomad Gear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Warrior's Kilt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Moribund Armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes & Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Snow barrels added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "-Adjusted Rune classes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "-Lighting overhaul",
+     "-Brass Knuckles",
+     "-Iron Claws"
+    ]
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/5127964289184380457"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-08-20T16:44:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.469Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.469Z"
+  },
+  {
+   "id": "tyrant-s-realm-177253@0.25",
+   "gameId": "tyrant-s-realm-177253",
+   "displayName": "Update 0.25",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-06-29T18:11:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added three stats to player: Light, Medium and Heavy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Find Rune Altars to gain more runes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons, Armors and Shields all have a rune type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Runes boost attack, defense and health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2259260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2259260/view/5124582150131533096"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-29T18:11:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2259260",
+      "checkedAt": "2026-11-12T16:50:24.468Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:24.468Z"
+  }
+ ],
+ "issues": []
+}
